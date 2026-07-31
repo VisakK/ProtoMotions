@@ -563,6 +563,12 @@ class EnvContext:
     # Environment state
     ground_heights: Optional[Tensor] = FieldPath()
     noisy_ground_heights: Optional[Tensor] = FieldPath()
+    # Per-episode translation from reference-clip coordinates into this env's
+    # spawn location (XY on flat terrain, plus terrain height). Exposed so a
+    # component can place a *different* clip's reference into the same frame the
+    # env's own reference lives in -- needed to evaluate one skill's critic on
+    # another skill's trajectory (see examples/experiments/mimic/node_value_join.py).
+    respawn_root_offset: Optional[Tensor] = FieldPath()
     terrain: Optional[TerrainContext] = NestedField(TerrainContext)
     scene: Optional[SceneSurfaceContext] = NestedField(SceneSurfaceContext)
     body_contacts: Optional[Tensor] = FieldPath()
@@ -602,6 +608,7 @@ class EnvContext:
         previous_processed_action: Optional[Tensor] = None,
         ground_heights: Optional[Tensor] = None,
         noisy_ground_heights: Optional[Tensor] = None,
+        respawn_root_offset: Optional[Tensor] = None,
         terrain: Optional[TerrainContext] = None,
         scene: Optional[SceneSurfaceContext] = None,
         body_contacts: Optional[Tensor] = None,
@@ -664,6 +671,7 @@ class EnvContext:
         # Environment state
         self.ground_heights = ground_heights
         self.noisy_ground_heights = noisy_ground_heights
+        self.respawn_root_offset = respawn_root_offset
         self.terrain = terrain
         self.scene = scene
         self.body_contacts = body_contacts

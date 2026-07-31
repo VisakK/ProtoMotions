@@ -943,6 +943,7 @@ class BaseEnv:
             # Environment state
             ground_heights=ground_heights,
             noisy_ground_heights=noisy.ground_heights,
+            respawn_root_offset=self.respawn_root_offset,
             terrain=TerrainContext(
                 self.terrain.height_points,
                 self.terrain.height_samples,

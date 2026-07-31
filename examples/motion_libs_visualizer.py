@@ -34,9 +34,11 @@ parser.add_argument(
 parser.add_argument(
     "--robot",
     type=str,
-    choices=["g1", "rigv1", "h1_2", "smpl", "soma23"],
+    choices=["g1", "rigv1", "h1_2", "smpl", "smpl_yogi", "soma23"],
     default="g1",
-    help="Robot to load (g1, rigv1, h1_2, smpl, or soma23)",
+    help="Robot to load (g1, rigv1, h1_2, smpl, smpl_yogi, or soma23). "
+    "The yoga clips are FK'd on the smpl_yogi skeleton (longer arms, 74 kg) -- "
+    "playing them on 'smpl' renders the mean-shape body and misdraws the limbs.",
 )
 parser.add_argument("--headless", action="store_true", help="Run in headless mode")
 parser.add_argument(
@@ -135,6 +137,11 @@ ROBOT_SPECS = {
         viz_bodies=[],
     ),
     "smpl": RobotSpec(
+        viz_bodies=[],
+    ),
+    # Same kinematic_info as smpl (byte-identical dof names/limits); only the
+    # bone lengths and masses differ, so the same empty viz spec applies.
+    "smpl_yogi": RobotSpec(
         viz_bodies=[],
     ),
     "soma23": RobotSpec(
