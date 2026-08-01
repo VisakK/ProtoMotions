@@ -39,7 +39,10 @@ Example:
     )
 """
 
+import math
 from typing import Any, Dict, List, Optional, Union
+
+import torch
 
 from protomotions.envs.context_views import EnvContext
 from protomotions.envs.mdp_component import MdpComponent
@@ -265,6 +268,117 @@ def nearest_surface_obs_factory(
         static_params={
             "terrain_horizontal_scale": terrain_horizontal_scale,
             "body_ids": body_ids,
+        },
+    )
+
+
+def contact_obs_v1_factory(
+    body_ids: List[int],
+    force_reference_n: float = 100.0,
+    force_clip_n: float = 5000.0,
+    force_rate_reference_n_per_s: float = 1000.0,
+    force_rate_clip_n_per_s: float = 50000.0,
+    friction_mu: float = 1.0,
+    friction_utilization_clip: float = 2.0,
+    velocity_reference_mps: float = 2.0,
+    contact_age_clip_s: float = 2.0,
+    air_age_clip_s: float = 2.0,
+) -> MdpComponent:
+    """Build the versioned aggregate current-contact observation component.
+
+    The component binds only clean simulator state. Vector forces are rotated
+    into the root-heading frame by the pure kernel; world-up force and
+    body-origin velocity channels remain explicitly flat-ground proxies.
+
+    Args:
+        body_ids: Non-empty rigid-body IDs in deterministic output order.
+        force_reference_n: Signed/unsigned force log-compression reference.
+        force_clip_n: Absolute force compression clip.
+        force_rate_reference_n_per_s: Force-rate compression reference.
+        force_rate_clip_n_per_s: Absolute force-rate compression clip.
+        friction_mu: Flat-ground friction proxy coefficient.
+        friction_utilization_clip: Ratio represented by a proxy value of one.
+        velocity_reference_mps: Body-origin velocity normalization scale.
+        contact_age_clip_s: Contact duration represented by one.
+        air_age_clip_s: Air duration represented by one.
+    """
+    from protomotions.envs.obs import compute_contact_obs_v1
+
+    if not body_ids:
+        raise ValueError("contact_obs_v1_factory requires at least one body ID")
+    if any(
+        not isinstance(body_id, int) or isinstance(body_id, bool)
+        for body_id in body_ids
+    ):
+        raise TypeError("contact_obs_v1_factory body IDs must be integers")
+    if min(body_ids) < 0:
+        raise ValueError("contact_obs_v1_factory body IDs must be non-negative")
+    if len(set(body_ids)) != len(body_ids):
+        raise ValueError("contact_obs_v1_factory body IDs must be unique")
+
+    scalar_params = {
+        "force_reference_n": force_reference_n,
+        "force_clip_n": force_clip_n,
+        "force_rate_reference_n_per_s": force_rate_reference_n_per_s,
+        "force_rate_clip_n_per_s": force_rate_clip_n_per_s,
+        "friction_mu": friction_mu,
+        "friction_utilization_clip": friction_utilization_clip,
+        "velocity_reference_mps": velocity_reference_mps,
+        "contact_age_clip_s": contact_age_clip_s,
+        "air_age_clip_s": air_age_clip_s,
+    }
+    non_finite = [
+        name for name, value in scalar_params.items() if not math.isfinite(value)
+    ]
+    if non_finite:
+        raise ValueError(
+            f"contact_obs_v1_factory parameters must be finite: {non_finite}"
+        )
+    for reference_name, clip_name in (
+        ("force_reference_n", "force_clip_n"),
+        (
+            "force_rate_reference_n_per_s",
+            "force_rate_clip_n_per_s",
+        ),
+    ):
+        reference = scalar_params[reference_name]
+        clip = scalar_params[clip_name]
+        if reference <= 0.0 or clip <= reference:
+            raise ValueError(
+                f"{clip_name} must be greater than {reference_name} > 0; "
+                f"got {clip} and {reference}"
+            )
+    for name in (
+        "friction_mu",
+        "friction_utilization_clip",
+        "velocity_reference_mps",
+        "contact_age_clip_s",
+        "air_age_clip_s",
+    ):
+        if scalar_params[name] <= 0.0:
+            raise ValueError(f"{name} must be greater than zero")
+
+    return MdpComponent(
+        compute_func=compute_contact_obs_v1,
+        dynamic_vars={
+            "root_rot": EnvContext.current.root_rot,
+            "rigid_body_vel": EnvContext.current.rigid_body_vel,
+            "rigid_body_contact_forces": (
+                EnvContext.current.rigid_body_contact_forces
+            ),
+            "previous_contact_forces": EnvContext.previous_contact_forces,
+            "contact_active_state": EnvContext.contact_active_state,
+            "contact_age_steps": EnvContext.contact_age_steps,
+            "contact_air_age_steps": EnvContext.contact_air_age_steps,
+            "contact_temporal_valid": EnvContext.contact_temporal_valid,
+            "dt": EnvContext.dt,
+        },
+        static_params={
+            # MdpComponent migrates this once to the runtime device, avoiding a
+            # host-to-device ID allocation in the observation hot path.
+            "body_ids": torch.tensor(body_ids, dtype=torch.long),
+            **scalar_params,
+            "w_last": True,
         },
     )
 
@@ -831,7 +945,7 @@ def contact_match_rew_factory(
         dynamic_vars={
             "sim_contacts": EnvContext.current.rigid_body_contacts,
             "ref_contacts": EnvContext.mimic.ref_state.rigid_body_contacts,
-            "contact_body_ids": EnvContext.contact_body_ids,
+            "contact_body_ids": EnvContext.contact_reward_body_ids,
         },
         static_params={
             "weight": weight,
@@ -1506,6 +1620,7 @@ __all__ = [
     "historical_reduced_coords_obs_factory",
     "previous_actions_factory",
     "nearest_surface_obs_factory",
+    "contact_obs_v1_factory",
     "mimic_target_poses_max_coords_factory",
     "mimic_target_poses_future_rel_factory",
     "mimic_target_poses_reduced_coords_factory",

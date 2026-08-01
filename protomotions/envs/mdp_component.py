@@ -151,6 +151,24 @@ class MdpComponent:
         self.dynamic_vars = dynamic_vars
         self.static_params = static_params or {}
         self._device_ready = False
+
+    def __getstate__(self) -> Dict[str, Any]:
+        """Serialize configuration without preserving runtime device readiness.
+
+        ``torch.save`` may capture a component after its static tensors were
+        migrated to a simulator device. A later ``torch.load(map_location=...)``
+        can move those tensors while leaving a stale ``_device_ready=True``.
+        Resetting the flag makes the first compute after load migrate every
+        static tensor to the newly resolved runtime device.
+        """
+        state = self.__dict__.copy()
+        state["_device_ready"] = False
+        return state
+
+    def __setstate__(self, state: Dict[str, Any]) -> None:
+        """Restore serialized configuration and require device preparation."""
+        self.__dict__.update(state)
+        self._device_ready = False
     
     def resolve_args(self, ctx: "EnvContext") -> tuple:
         """Resolve dynamic_vars from context and prepare func params.

@@ -3,6 +3,7 @@
 
 """Tests for typed context views and MDP component factories."""
 
+import io
 from types import SimpleNamespace
 
 import torch
@@ -67,6 +68,10 @@ def test_current_and_historical_views_precompute_accessors(monkeypatch):
     assert torch.equal(current.root_pos, state.root_pos)
     assert torch.equal(current.root_height, state.rigid_body_pos[:, 0, 2])
     assert torch.equal(current.anchor_pos, state.rigid_body_pos[:, 2, :])
+    assert torch.equal(
+        current.rigid_body_contact_forces,
+        state.rigid_body_contact_forces,
+    )
     assert torch.equal(current.anchor_local_ang_vel, state.rigid_body_ang_vel[:, 2, :] + 10.0)
     assert EnvContext.current.anchor_pos.path == "current.anchor_pos"
     assert EnvContext.mimic.ref_state.rigid_body_pos.path == "mimic.ref_state.rigid_body_pos"
@@ -171,8 +176,15 @@ def test_control_contexts_and_env_context_store_optional_views():
         body_contacts=torch.ones(2, 3, dtype=torch.bool),
         current_contact_force_magnitudes=torch.ones(2, 3),
         prev_contact_force_magnitudes=torch.ones(2, 3) * 2.0,
+        previous_contact_forces=torch.ones(2, 3, 3) * 3.0,
+        contact_active_state=torch.ones(2, 3, dtype=torch.bool),
+        contact_age_steps=torch.ones(2, 3, dtype=torch.long),
+        contact_air_age_steps=torch.zeros(2, 3, dtype=torch.long),
+        contact_temporal_valid=torch.tensor([True, False]),
         progress_buf=torch.tensor([4, 5]),
         contact_body_ids=torch.tensor([0, 2]),
+        contact_observation_body_ids=torch.tensor([0, 1, 2]),
+        contact_reward_body_ids=torch.tensor([0, 2]),
         non_termination_contact_body_ids=torch.tensor([1]),
         odom_scale=torch.ones(2),
         odom_yaw_cos_sin=torch.tensor([[1.0, 0.0], [0.0, 1.0]]),
@@ -190,6 +202,11 @@ def test_control_contexts_and_env_context_store_optional_views():
     assert env_context.steering.tar_speed.tolist() == [3.0, 3.0]
     assert env_context.path.height_conditioned is True
     assert env_context.target.tar_proximity_threshold == 0.5
+    assert env_context.previous_contact_forces.shape == (2, 3, 3)
+    assert EnvContext.current.rigid_body_contact_forces.path == (
+        "current.rigid_body_contact_forces"
+    )
+    assert EnvContext.contact_temporal_valid.path == "contact_temporal_valid"
 
 
 def _bindings(component):
@@ -198,6 +215,20 @@ def _bindings(component):
 
 def _params(component):
     return component.get_params()
+
+
+def test_mdp_component_serialization_resets_static_tensor_device_readiness():
+    component = factories.contact_obs_v1_factory([0, 2])
+    component._device_ready = True
+    buffer = io.BytesIO()
+
+    torch.save(component, buffer)
+    buffer.seek(0)
+    restored = torch.load(buffer, weights_only=False, map_location="cpu")
+
+    assert restored._device_ready is False
+    assert restored.static_params["body_ids"].device.type == "cpu"
+    assert restored.static_params["body_ids"].tolist() == [0, 2]
 
 
 def test_observation_factories_bind_expected_context_paths():
@@ -233,6 +264,26 @@ def test_observation_factories_bind_expected_context_paths():
     previous = factories.previous_actions_factory(history_steps=3, processed=True)
     assert _bindings(previous) == {"historical_actions": "historical.processed_actions"}
     assert _params(previous)["history_steps"] == 3
+
+    contact = factories.contact_obs_v1_factory(
+        body_ids=[2, 0],
+        force_reference_n=50.0,
+        force_clip_n=1000.0,
+    )
+    assert _bindings(contact) == {
+        "root_rot": "current.root_rot",
+        "rigid_body_vel": "current.rigid_body_vel",
+        "rigid_body_contact_forces": "current.rigid_body_contact_forces",
+        "previous_contact_forces": "previous_contact_forces",
+        "contact_active_state": "contact_active_state",
+        "contact_age_steps": "contact_age_steps",
+        "contact_air_age_steps": "contact_air_age_steps",
+        "contact_temporal_valid": "contact_temporal_valid",
+        "dt": "dt",
+    }
+    assert _params(contact)["body_ids"].tolist() == [2, 0]
+    assert _params(contact)["force_reference_n"] == 50.0
+    assert _params(contact)["force_clip_n"] == 1000.0
 
     max_target = factories.mimic_target_poses_max_coords_factory(
         use_noisy=True,
@@ -321,6 +372,7 @@ def test_reward_factories_and_bundles_bind_expected_context_paths():
         zero_during_grace_period=False,
     )
     assert _bindings(contact_match)["ref_contacts"] == "mimic.ref_state.rigid_body_contacts"
+    assert _bindings(contact_match)["contact_body_ids"] == "contact_reward_body_ids"
     assert _params(contact_match)["zero_during_grace_period"] is False
 
     force_change = factories.contact_force_change_rew_factory(
@@ -346,6 +398,28 @@ def test_reward_factories_and_bundles_bind_expected_context_paths():
     ]:
         component = factory_fn(weight=0.9, sigma=1.3)
         assert _params(component) == {"weight": 0.9, "sigma": 1.3}
+
+
+def test_contact_match_factory_ignores_contacts_outside_reward_body_ids():
+    component = factories.contact_match_rew_factory()
+    reward_body_ids = torch.tensor([1, 2])
+    ref_contacts = torch.tensor([[False, True, False]])
+
+    def compute(sim_contacts):
+        ctx = SimpleNamespace(
+            current=SimpleNamespace(rigid_body_contacts=sim_contacts),
+            mimic=SimpleNamespace(
+                ref_state=SimpleNamespace(rigid_body_contacts=ref_contacts)
+            ),
+            contact_reward_body_ids=reward_body_ids,
+        )
+        return component.compute(ctx)
+
+    baseline = compute(torch.tensor([[False, False, False]]))
+    non_reward_body_changed = compute(torch.tensor([[True, False, False]]))
+
+    assert torch.equal(baseline, torch.tensor([1.0]))
+    assert torch.equal(non_reward_body_changed, baseline)
 
 
 def test_termination_and_metric_factories_bind_metadata_and_wrappers():

@@ -7,6 +7,7 @@ Contains pure tensor compute kernels for:
 - Humanoid observations (max-coords, reduced-coords, historical)
 - Mimic target poses
 - Masked mimic observations
+- Physics-informed current-contact observations
 - Steering observations
 - Path following observations
 - State history buffers
@@ -71,6 +72,22 @@ from protomotions.envs.obs.target import compute_target_obs
 # Nearest surface observation compute kernel
 from protomotions.envs.obs.nearest_surface_obs import compute_nearest_surface_vectors
 
+# Physics-informed current-contact observation compute kernels
+from protomotions.envs.obs.contact import (
+    CONTACT_OBS_V1_PER_BODY_DIM,
+    CONTACT_OBS_V1_GLOBAL_DIM,
+    CONTACT_OBS_V1_LAYOUT,
+    CONTACT_OBS_V1_GLOBAL_LAYOUT,
+    DEFAULT_CONTACT_FORCE_ON_THRESHOLD_N,
+    DEFAULT_CONTACT_FORCE_OFF_THRESHOLD_N,
+    signed_log_compress,
+    unsigned_log_compress,
+    contact_obs_v1_dim,
+    unflatten_contact_obs_v1,
+    compute_contact_obs_v1,
+    update_contact_state,
+)
+
 # Observation noise utilities
 from protomotions.envs.obs.observation_noise import (
     NoisyObservations,
@@ -124,6 +141,19 @@ __all__ = [
     "compute_target_obs",
     # Nearest surface observation compute kernel
     "compute_nearest_surface_vectors",
+    # Physics-informed current-contact observation compute kernels
+    "CONTACT_OBS_V1_PER_BODY_DIM",
+    "CONTACT_OBS_V1_GLOBAL_DIM",
+    "CONTACT_OBS_V1_LAYOUT",
+    "CONTACT_OBS_V1_GLOBAL_LAYOUT",
+    "DEFAULT_CONTACT_FORCE_ON_THRESHOLD_N",
+    "DEFAULT_CONTACT_FORCE_OFF_THRESHOLD_N",
+    "signed_log_compress",
+    "unsigned_log_compress",
+    "contact_obs_v1_dim",
+    "unflatten_contact_obs_v1",
+    "compute_contact_obs_v1",
+    "update_contact_state",
     # Observation noise utilities
     "NoisyObservations",
     "apply_observation_noise",

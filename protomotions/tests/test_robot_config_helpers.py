@@ -102,6 +102,8 @@ def test_robot_config_post_init_resolves_anchor_defaults_and_abstract_body_names
     assert config.number_of_actions == 3
     assert config.mimic_small_marker_bodies == ["root", "head"]
     assert config.contact_bodies == ["left_foot"]
+    assert config.contact_observation_bodies == ["left_foot"]
+    assert config.contact_reward_bodies == ["left_foot"]
     assert config.trackable_bodies_subset == config.kinematic_info.body_names
     assert config.control.control_info["path"] == "/assets/robot.xml"
 
@@ -123,8 +125,69 @@ def test_robot_config_update_fields_reprocesses_body_name_aliases(monkeypatch):
     config.update_fields(contact_bodies=["root", "all_right_foot_bodies"])
 
     assert config.contact_bodies == ["root", "right_foot"]
+    assert config.contact_observation_bodies == ["root", "right_foot"]
+    assert config.contact_reward_bodies == ["root", "right_foot"]
     with pytest.raises(ValueError, match="has no field"):
         config.update_fields(missing=True)
+
+
+def test_robot_config_contact_selections_are_independent_ordered_and_deduplicated(
+    monkeypatch,
+):
+    config = _robot(
+        monkeypatch,
+        contact_bodies=[
+            "all_right_foot_bodies",
+            "root",
+            "all_left_foot_bodies",
+            "right_foot",
+        ],
+        contact_observation_bodies=[
+            "all_right_foot_bodies",
+            "root",
+            "root",
+        ],
+        contact_reward_bodies=[
+            "all_left_foot_bodies",
+            "all_left_foot_bodies",
+        ],
+    )
+
+    assert config.contact_bodies == ["root", "left_foot", "right_foot"]
+    assert config.contact_observation_bodies == ["root", "right_foot"]
+    assert config.contact_reward_bodies == ["left_foot"]
+
+    config.update_fields(contact_observation_bodies=None)
+    assert config.contact_observation_bodies == config.contact_bodies
+    assert config.contact_reward_bodies == ["left_foot"]
+
+
+def test_robot_config_contact_selections_validate_names_and_sensor_subset(monkeypatch):
+    with pytest.raises(
+        ValueError,
+        match=r"contact_bodies contains body names.*missing",
+    ):
+        _robot(monkeypatch, contact_bodies=["missing"])
+
+    with pytest.raises(
+        ValueError,
+        match=r"contact_observation_bodies must be a subset of contact_bodies.*head",
+    ):
+        _robot(
+            monkeypatch,
+            contact_bodies=["root", "left_foot"],
+            contact_observation_bodies=["head"],
+        )
+
+    with pytest.raises(
+        ValueError,
+        match=r"contact_reward_bodies must be a subset of contact_bodies.*right_foot",
+    ):
+        _robot(
+            monkeypatch,
+            contact_bodies=["left_foot"],
+            contact_reward_bodies=["right_foot"],
+        )
 
 
 def test_abstract_names_to_body_names_handles_none_all_lists_and_literals(monkeypatch):

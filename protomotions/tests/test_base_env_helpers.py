@@ -460,6 +460,12 @@ def _make_env(
     env.odom_yaw_cos_sin = torch.zeros(num_envs, 2)
     env.odom_yaw_cos_sin[:, 0] = 1.0
     env.prev_contact_force_magnitudes = torch.zeros(num_envs, 2)
+    env.previous_contact_forces = torch.zeros(num_envs, 2, 3)
+    env.contact_active_state = torch.zeros(num_envs, 2, dtype=torch.bool)
+    env.contact_age_steps = torch.zeros(num_envs, 2, dtype=torch.long)
+    env.contact_air_age_steps = torch.zeros(num_envs, 2, dtype=torch.long)
+    env.contact_temporal_valid = torch.zeros(num_envs, dtype=torch.bool)
+    env._physics_step_count = 0
     env._current_raw_action = torch.zeros(num_envs, 2)
     env._current_processed_action = torch.zeros(num_envs, 2)
     env._current_context = None
@@ -609,6 +615,12 @@ def test_base_env_cached_body_ids_and_clean_context_without_history():
     ctx = BaseEnv.context.fget(env)
 
     assert torch.equal(env.contact_body_ids, torch.tensor([0]))
+    assert env.contact_observation_body_names == ["root"]
+    assert torch.equal(env.contact_observation_body_ids, torch.tensor([0]))
+    assert env.contact_reward_body_names == ["root"]
+    assert torch.equal(env.contact_reward_body_ids, torch.tensor([0]))
+    assert torch.equal(ctx.contact_observation_body_ids, torch.tensor([0]))
+    assert torch.equal(ctx.contact_reward_body_ids, torch.tensor([0]))
     assert torch.equal(ctx.non_termination_contact_body_ids, torch.tensor([0, 1]))
     assert ctx.historical is None
     assert ctx.noisy_historical is None
@@ -617,6 +629,23 @@ def test_base_env_cached_body_ids_and_clean_context_without_history():
     assert ctx.current_processed_action is env._current_processed_action
     assert BaseEnv.context.fget(env) is ctx
     assert env.control_manager.populate_calls[-1] is ctx
+
+
+def test_base_env_contact_observation_and_reward_ids_are_independent():
+    env = _make_env(history=False)
+    env.robot_config.contact_bodies = ["root", "foot"]
+    env.robot_config.contact_observation_bodies = ["foot"]
+    env.robot_config.contact_reward_bodies = ["root"]
+
+    assert env.contact_body_ids.tolist() == [0, 1]
+    assert env.contact_observation_body_names == ["foot"]
+    assert env.contact_observation_body_ids.tolist() == [1]
+    assert env.contact_reward_body_names == ["root"]
+    assert env.contact_reward_body_ids.tolist() == [0]
+
+    ctx = BaseEnv.context.fget(env)
+    assert ctx.contact_observation_body_ids.tolist() == [1]
+    assert ctx.contact_reward_body_ids.tolist() == [0]
 
 
 def test_base_env_spawn_offsets_cover_scene_and_non_scene_paths():
@@ -732,6 +761,79 @@ def test_base_env_motion_validation_rejects_body_count_mismatch():
         BaseEnv._validate_motion_lib_compatibility(env)
 
 
+def test_base_env_contact_support_validation_fails_fast_and_checks_body_order():
+    from protomotions.envs.component_factories import contact_obs_v1_factory
+
+    env = _make_env()
+    env.config.observation_components = {
+        "contact_obs_v1": contact_obs_v1_factory([0])
+    }
+    missing_forces = _robot_state()
+    missing_forces.rigid_body_contact_forces = None
+
+    with pytest.raises(RuntimeError, match="requires rigid_body_contact_forces"):
+        BaseEnv._validate_contact_observation_support(env, missing_forces)
+
+    BaseEnv._validate_contact_observation_support(env, _robot_state())
+
+    env.config.observation_components["contact_obs_v1"] = (
+        contact_obs_v1_factory([1])
+    )
+    with pytest.raises(ValueError, match="must match.*order"):
+        BaseEnv._validate_contact_observation_support(env, _robot_state())
+
+
+@pytest.mark.parametrize(
+    ("force_on", "force_off"),
+    [
+        (1.0, 2.0),
+        (1.0, -1.0),
+        (float("inf"), 2.0),
+        (5.0, float("nan")),
+    ],
+)
+def test_base_env_contact_tracking_config_rejects_invalid_thresholds(
+    force_on,
+    force_off,
+):
+    env = _make_env()
+    env.config.contact_force_on_threshold_n = force_on
+    env.config.contact_force_off_threshold_n = force_off
+
+    with pytest.raises(ValueError, match="finite values"):
+        BaseEnv._validate_contact_tracking_config(env)
+
+
+def test_base_env_contact_diagnostics_are_sampled_and_finite():
+    from protomotions.envs.component_factories import contact_obs_v1_factory
+
+    env = _make_env()
+    env.config.observation_components = {
+        "contact_obs_v1": contact_obs_v1_factory([0])
+    }
+    env.config.contact_diagnostics_interval = 1
+    env._physics_step_count = 1
+    env.contact_active_state[:, 0] = torch.tensor([True, False, True])
+    env.contact_age_steps[:, 0] = torch.tensor([1, 2, 3])
+    env.contact_temporal_valid[:] = True
+    env.previous_contact_forces[:, 0] = 1.0
+
+    BaseEnv._record_contact_diagnostics(env, env.simulator.state)
+
+    assert env.extras["contact/num_observation_bodies"].item() == 1.0
+    assert env.extras["contact/any_selected_contact_fraction"].item() == pytest.approx(
+        2.0 / 3.0
+    )
+    assert env.extras["contact/max_contact_age_s"].item() == pytest.approx(
+        3 * env.dt
+    )
+    assert all(
+        torch.isfinite(value).all()
+        for key, value in env.extras.items()
+        if key.startswith("contact/")
+    )
+
+
 def test_base_env_reset_flow_mixes_default_and_reference_resets():
     env = _make_env(scenes=2, motions=2, history=True)
     env.config.odom_scale_range = (2.0, 2.0)
@@ -763,6 +865,57 @@ def test_base_env_reset_flow_mixes_default_and_reference_resets():
     empty_obs, empty_info = BaseEnv.reset(env, env_ids=[])
     assert empty_info == {}
     assert set(empty_obs) == {"terrain", "scene"}
+
+
+def test_base_env_partial_reset_clears_only_selected_contact_temporal_state():
+    env = _make_env(motions=0, scenes=0, history=False)
+    env.previous_contact_forces[:] = torch.arange(18).reshape(3, 2, 3)
+    env.contact_active_state[:] = True
+    env.contact_age_steps[:] = torch.tensor([[7, 8], [9, 10], [11, 12]])
+    env.contact_air_age_steps[:] = 4
+    env.contact_temporal_valid[:] = True
+    preserved_previous = env.previous_contact_forces[[0, 2]].clone()
+    preserved_contact_age = env.contact_age_steps[[0, 2]].clone()
+    captured = {}
+
+    def capture_observations(env_ids, context):
+        captured["env_ids"] = env_ids.clone()
+        captured["previous"] = context.previous_contact_forces.clone()
+        captured["valid"] = context.contact_temporal_valid.clone()
+        captured["active"] = context.contact_active_state.clone()
+        captured["current_forces"] = (
+            context.current.rigid_body_contact_forces.clone()
+        )
+        captured["current_contacts"] = (
+            context.current.rigid_body_contacts.clone()
+        )
+
+    env.compute_observations = capture_observations
+
+    BaseEnv.reset(env, env_ids=torch.tensor([1]))
+
+    assert torch.equal(captured["env_ids"], torch.tensor([1]))
+    assert captured["valid"][1].item() is False
+    assert not captured["previous"][1].any()
+    assert not captured["active"][1].any()
+    assert not captured["current_forces"][1].any()
+    assert not captured["current_contacts"][1].any()
+    assert not env.previous_contact_forces[1].any()
+    assert env.contact_temporal_valid[1].item() is False
+    assert torch.equal(
+        env.previous_contact_forces[[0, 2]], preserved_previous
+    )
+    assert torch.equal(env.contact_age_steps[[0, 2]], preserved_contact_age)
+    assert env.contact_temporal_valid[[0, 2]].all()
+
+    # The first real post-physics sample exposes current contact while keeping
+    # the force-rate gate closed. It is finalized only for the following step.
+    BaseEnv._update_contact_state(env, env.simulator.state, torch.tensor([1]))
+    assert env.contact_active_state[1].all()
+    assert env.contact_age_steps[1].eq(1).all()
+    assert env.contact_temporal_valid[1].item() is False
+    BaseEnv._finalize_contact_state(env, env.simulator.state, torch.tensor([1]))
+    assert env.contact_temporal_valid[1].item() is True
 
 
 def test_base_env_reset_all_defaults_can_apply_reset_noise_without_ref_resample(

@@ -59,6 +59,45 @@ class EnvConfig:
         default=0,
         metadata={"help": "Window length for smoothing contact labels. 0 = no smoothing.", "min": 0}
     )
+    contact_force_on_threshold_n: float = field(
+        default=5.0,
+        metadata={
+            "help": (
+                "Aggregate-force threshold (N) that activates the hysteretic "
+                "current-contact state when the simulator raw-contact flag is "
+                "inactive."
+            ),
+            "min": 0.0,
+        },
+    )
+    contact_force_off_threshold_n: float = field(
+        default=2.0,
+        metadata={
+            "help": (
+                "Aggregate-force retention threshold (N) for an active "
+                "hysteretic current-contact state. A simulator raw-contact flag "
+                "also retains contact regardless of this threshold."
+            ),
+            "min": 0.0,
+        },
+    )
+    contact_diagnostics_interval: int = field(
+        default=0,
+        metadata={
+            "help": (
+                "Environment-step interval for contact_obs_v1 aggregate diagnostics. "
+                "0 disables diagnostics."
+            ),
+            "min": 0,
+        },
+    )
+    contact_diagnostics_max_envs: int = field(
+        default=256,
+        metadata={
+            "help": "Maximum number of environments sampled by contact diagnostics.",
+            "min": 1,
+        },
+    )
     skip_correct_terrain_height_on_flat: bool = field(
         default=True,
         metadata={"help": "Skip terrain height correction when terrain is flat (optimization)."}

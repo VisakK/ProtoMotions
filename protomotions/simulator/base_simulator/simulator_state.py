@@ -388,6 +388,7 @@ class RobotState(BaseBatchedState):
                 "rigid_body_vel": (num_bodies * 3,),
                 "rigid_body_ang_vel": (num_bodies * 3,),
                 "rigid_body_contacts": (num_bodies,),
+                "rigid_body_contact_forces": (num_bodies * 3,),
             }
         else:
             return {
@@ -399,6 +400,7 @@ class RobotState(BaseBatchedState):
                 "rigid_body_vel": (num_bodies, 3),
                 "rigid_body_ang_vel": (num_bodies, 3),
                 "rigid_body_contacts": (num_bodies,),
+                "rigid_body_contact_forces": (num_bodies, 3),
             }
 
     def merge_fields_from(

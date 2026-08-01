@@ -145,6 +145,10 @@ def test_robot_state_properties_indexing_assignment_and_dict_roundtrip(capsys):
     assert state.num_dofs == 2
     assert state.get_shape_mapping()["rigid_body_pos"] == (2, 3)
     assert state.get_shape_mapping(flattened=True)["rigid_body_pos"] == (6,)
+    assert state.get_shape_mapping()["rigid_body_contact_forces"] == (2, 3)
+    assert state.get_shape_mapping(flattened=True)[
+        "rigid_body_contact_forces"
+    ] == (6,)
     assert state.flatten_bodies("rigid_body_pos").shape == (2, 6)
     flattened_dof = state.flatten_bodies("dof_pos")
     assert torch.equal(flattened_dof, state.dof_pos)

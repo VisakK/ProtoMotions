@@ -194,6 +194,18 @@ class RobotConfig:
     contact_bodies: Optional[Union[List[str], str]] = (
         None  # "all" means all bodies. Contact sensors are expensive to simulate, so we only spawn them when required.
     )
+    contact_observation_bodies: Optional[Union[List[str], str]] = None
+    """Bodies exposed by contact observations.
+
+    ``None`` falls back to :attr:`contact_bodies`, preserving the legacy
+    behavior in configurations which only define the simulator sensor set.
+    """
+    contact_reward_bodies: Optional[Union[List[str], str]] = None
+    """Bodies used by contact-matching rewards.
+
+    ``None`` falls back to :attr:`contact_bodies`, preserving the legacy
+    reward body set.
+    """
     trackable_bodies_subset: Union[List[str], str] = "all"
 
     non_termination_contact_bodies: Union[List[str], str] = "all"
@@ -213,6 +225,12 @@ class RobotConfig:
     kinematic_info: KinematicInfo = field(init=False)
     number_of_actions: int = field(init=False)
     anchor_body_index: int = field(init=False)
+    _contact_observation_bodies_use_fallback: bool = field(
+        init=False, repr=False, default=True
+    )
+    _contact_reward_bodies_use_fallback: bool = field(
+        init=False, repr=False, default=True
+    )
 
     # Dictionary of simulator-specific simulation parameters
     simulation_params: SimulatorParams = field(default_factory=SimulatorParams)
@@ -271,7 +289,11 @@ class RobotConfig:
         self.mimic_small_marker_bodies = abstract_names_to_body_names(
             self.mimic_small_marker_bodies, self
         )
-        self.contact_bodies = abstract_names_to_body_names(self.contact_bodies, self)
+        self._contact_observation_bodies_use_fallback = (
+            self.contact_observation_bodies is None
+        )
+        self._contact_reward_bodies_use_fallback = self.contact_reward_bodies is None
+        self._resolve_contact_body_fields()
         self.trackable_bodies_subset = abstract_names_to_body_names(
             self.trackable_bodies_subset, self
         )
@@ -303,14 +325,69 @@ class RobotConfig:
                 raise ValueError(f"RobotConfig has no field '{key}'")
             setattr(self, key, value)
 
+        if "contact_observation_bodies" in kwargs:
+            self._contact_observation_bodies_use_fallback = (
+                kwargs["contact_observation_bodies"] is None
+            )
+        if "contact_reward_bodies" in kwargs:
+            self._contact_reward_bodies_use_fallback = (
+                kwargs["contact_reward_bodies"] is None
+            )
+
         # Reprocess fields that depend on the updated values
         self.mimic_small_marker_bodies = abstract_names_to_body_names(
             self.mimic_small_marker_bodies, self
         )
-        self.contact_bodies = abstract_names_to_body_names(self.contact_bodies, self)
+        self._resolve_contact_body_fields()
         self.trackable_bodies_subset = abstract_names_to_body_names(
             self.trackable_bodies_subset, self
         )
+
+    def _resolve_contact_body_fields(self):
+        """Resolve, order, and validate all contact-related body selections."""
+
+        self.contact_bodies = resolve_body_names_in_kinematic_order(
+            self.contact_bodies,
+            self,
+            field_name="contact_bodies",
+        )
+
+        observation_selection = (
+            self.contact_bodies
+            if self._contact_observation_bodies_use_fallback
+            else self.contact_observation_bodies
+        )
+        reward_selection = (
+            self.contact_bodies
+            if self._contact_reward_bodies_use_fallback
+            else self.contact_reward_bodies
+        )
+        self.contact_observation_bodies = resolve_body_names_in_kinematic_order(
+            observation_selection,
+            self,
+            field_name="contact_observation_bodies",
+        )
+        self.contact_reward_bodies = resolve_body_names_in_kinematic_order(
+            reward_selection,
+            self,
+            field_name="contact_reward_bodies",
+        )
+
+        sensor_bodies = set(self.contact_bodies or [])
+        for field_name, selected_bodies in (
+            ("contact_observation_bodies", self.contact_observation_bodies),
+            ("contact_reward_bodies", self.contact_reward_bodies),
+        ):
+            missing_sensor_bodies = [
+                name for name in (selected_bodies or []) if name not in sensor_bodies
+            ]
+            if missing_sensor_bodies:
+                raise ValueError(
+                    f"{field_name} must be a subset of contact_bodies so the "
+                    "simulator reports contact state for every selected body. "
+                    f"Missing from contact_bodies: {missing_sensor_bodies}. "
+                    f"Resolved contact_bodies: {self.contact_bodies or []}"
+                )
 
 
 def abstract_names_to_body_names(
@@ -334,3 +411,37 @@ def abstract_names_to_body_names(
         return robot_config.common_naming_to_robot_body_names[names]
     else:
         return [names]
+
+
+def resolve_body_names_in_kinematic_order(
+    names: Optional[Union[List[str], str]],
+    robot_config: RobotConfig,
+    *,
+    field_name: str,
+) -> Optional[List[str]]:
+    """Resolve a body selection and return unique names in kinematic order.
+
+    Abstract aliases are expanded with :func:`abstract_names_to_body_names`.
+    Literal names are validated here so configuration errors are reported
+    before simulator construction.
+    """
+
+    resolved_names = abstract_names_to_body_names(names, robot_config)
+    if resolved_names is None:
+        return None
+    if isinstance(resolved_names, str):
+        resolved_names = [resolved_names]
+
+    all_body_names = robot_config.kinematic_info.body_names
+    all_body_name_set = set(all_body_names)
+    missing_names = list(
+        dict.fromkeys(name for name in resolved_names if name not in all_body_name_set)
+    )
+    if missing_names:
+        raise ValueError(
+            f"{field_name} contains body names that are not present in the robot "
+            f"kinematic model: {missing_names}. Available bodies: {all_body_names}"
+        )
+
+    selected_name_set = set(resolved_names)
+    return [name for name in all_body_names if name in selected_name_set]

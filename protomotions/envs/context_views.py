@@ -91,6 +91,7 @@ class CurrentStateView:
     rigid_body_vel: Tensor = FieldPath()
     rigid_body_ang_vel: Tensor = FieldPath()
     rigid_body_contacts: Tensor = FieldPath()
+    rigid_body_contact_forces: Tensor = FieldPath()
     dof_pos: Tensor = FieldPath()
     dof_vel: Tensor = FieldPath()
     dof_forces: Tensor = FieldPath()
@@ -126,6 +127,9 @@ class CurrentStateView:
         self.rigid_body_vel = state.rigid_body_vel
         self.rigid_body_ang_vel = state.rigid_body_ang_vel
         self.rigid_body_contacts = getattr(state, "rigid_body_contacts", None)
+        self.rigid_body_contact_forces = getattr(
+            state, "rigid_body_contact_forces", None
+        )
         self.dof_pos = state.dof_pos
         self.dof_vel = state.dof_vel
         self.dof_forces = getattr(state, "dof_forces", None)
@@ -574,11 +578,18 @@ class EnvContext:
     body_contacts: Optional[Tensor] = FieldPath()
     current_contact_force_magnitudes: Optional[Tensor] = FieldPath()
     prev_contact_force_magnitudes: Optional[Tensor] = FieldPath()
+    previous_contact_forces: Optional[Tensor] = FieldPath()
+    contact_active_state: Optional[Tensor] = FieldPath()
+    contact_age_steps: Optional[Tensor] = FieldPath()
+    contact_air_age_steps: Optional[Tensor] = FieldPath()
+    contact_temporal_valid: Optional[Tensor] = FieldPath()
     dt: float = FieldPath()
     progress_buf: Optional[Tensor] = FieldPath()
 
     # Contact tracking
     contact_body_ids: Optional[Tensor] = FieldPath()
+    contact_observation_body_ids: Optional[Tensor] = FieldPath()
+    contact_reward_body_ids: Optional[Tensor] = FieldPath()
     non_termination_contact_body_ids: Optional[Tensor] = FieldPath()
 
     # Per-episode odometer corruption parameters (sampled once at episode reset).
@@ -614,8 +625,15 @@ class EnvContext:
         body_contacts: Optional[Tensor] = None,
         current_contact_force_magnitudes: Optional[Tensor] = None,
         prev_contact_force_magnitudes: Optional[Tensor] = None,
+        previous_contact_forces: Optional[Tensor] = None,
+        contact_active_state: Optional[Tensor] = None,
+        contact_age_steps: Optional[Tensor] = None,
+        contact_air_age_steps: Optional[Tensor] = None,
+        contact_temporal_valid: Optional[Tensor] = None,
         progress_buf: Optional[Tensor] = None,
         contact_body_ids: Optional[Tensor] = None,
+        contact_observation_body_ids: Optional[Tensor] = None,
+        contact_reward_body_ids: Optional[Tensor] = None,
         non_termination_contact_body_ids: Optional[Tensor] = None,
         odom_scale: Optional[Tensor] = None,
         odom_yaw_cos_sin: Optional[Tensor] = None,
@@ -643,8 +661,15 @@ class EnvContext:
             body_contacts: Boolean contact flags for tracked bodies (optional).
             current_contact_force_magnitudes: Current contact force magnitudes (optional).
             prev_contact_force_magnitudes: Previous contact forces (optional).
+            previous_contact_forces: Previous aggregate body-force vectors.
+            contact_active_state: Hysteretic current contact state for all bodies.
+            contact_age_steps: Consecutive active-contact steps for all bodies.
+            contact_air_age_steps: Consecutive inactive-contact steps for all bodies.
+            contact_temporal_valid: Whether each environment has a previous force sample.
             progress_buf: Episode progress counters (optional).
             contact_body_ids: Indices of bodies to track contacts for (optional).
+            contact_observation_body_ids: Body IDs exposed by contact observations.
+            contact_reward_body_ids: Body IDs used by contact-matching rewards.
             non_termination_contact_body_ids: Body IDs that may contact the ground without fall termination.
             odom_scale: Per-episode odometer scale [num_envs] (optional).
             odom_yaw_cos_sin: Per-episode yaw bias as (cos, sin) [num_envs, 2] (optional).
@@ -677,10 +702,17 @@ class EnvContext:
         self.body_contacts = body_contacts
         self.current_contact_force_magnitudes = current_contact_force_magnitudes
         self.prev_contact_force_magnitudes = prev_contact_force_magnitudes
+        self.previous_contact_forces = previous_contact_forces
+        self.contact_active_state = contact_active_state
+        self.contact_age_steps = contact_age_steps
+        self.contact_air_age_steps = contact_air_age_steps
+        self.contact_temporal_valid = contact_temporal_valid
         self.progress_buf = progress_buf
 
         # Contact tracking
         self.contact_body_ids = contact_body_ids
+        self.contact_observation_body_ids = contact_observation_body_ids
+        self.contact_reward_body_ids = contact_reward_body_ids
         self.non_termination_contact_body_ids = non_termination_contact_body_ids
 
         # Per-episode odometer corruption parameters

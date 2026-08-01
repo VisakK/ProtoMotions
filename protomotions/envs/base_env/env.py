@@ -46,7 +46,9 @@ Key Features:
 """
 
 from functools import cached_property
-from typing import Any, Dict, Optional, TYPE_CHECKING, Tuple
+import logging
+import math
+from typing import Any, Dict, List, Optional, TYPE_CHECKING, Tuple
 
 import torch
 from torch import Tensor
@@ -96,6 +98,9 @@ from protomotions.robot_configs.base import RobotConfig
 if TYPE_CHECKING:
     from protomotions.components.scene_lib import SceneLib
     from protomotions.components.motion_lib import MotionLib
+
+
+log = logging.getLogger(__name__)
 
 
 class BaseEnv:
@@ -190,6 +195,12 @@ class BaseEnv:
         # Contact force tracking for impact penalty rewards
         # Initialized properly after simulator init when we know num_bodies
         self.prev_contact_force_magnitudes = None
+        self.previous_contact_forces = None
+        self.contact_active_state = None
+        self.contact_age_steps = None
+        self.contact_air_age_steps = None
+        self.contact_temporal_valid = None
+        self._physics_step_count = 0
 
         # Action buffers (current step only; previous actions come from state_history)
         num_actions = robot_config.number_of_actions
@@ -220,6 +231,8 @@ class BaseEnv:
         Called at the end of __init__ to finalize simulator setup after visualization
         markers have been created (potentially by child env class override).
         """
+        self._validate_contact_tracking_config()
+
         if (
             hasattr(self.robot_config, "kinematic_info")
             and self.robot_config.kinematic_info is not None
@@ -230,6 +243,25 @@ class BaseEnv:
         num_bodies = self.robot_config.kinematic_info.num_bodies
         self.prev_contact_force_magnitudes = torch.zeros(
             self.num_envs, num_bodies, dtype=torch.float, device=self.device
+        )
+        self.previous_contact_forces = torch.zeros(
+            self.num_envs,
+            num_bodies,
+            3,
+            dtype=torch.float,
+            device=self.device,
+        )
+        self.contact_active_state = torch.zeros(
+            self.num_envs, num_bodies, dtype=torch.bool, device=self.device
+        )
+        self.contact_age_steps = torch.zeros(
+            self.num_envs, num_bodies, dtype=torch.long, device=self.device
+        )
+        self.contact_air_age_steps = torch.zeros(
+            self.num_envs, num_bodies, dtype=torch.long, device=self.device
+        )
+        self.contact_temporal_valid = torch.zeros(
+            self.num_envs, dtype=torch.bool, device=self.device
         )
 
         if self.config.num_state_history_steps > 0:
@@ -284,8 +316,321 @@ class BaseEnv:
         self._component_manager = ComponentManager(self.device)
         self._observation_buffer: Dict[str, Tensor] = {}
 
-        # Initialize observations
+        # Seed the stateful contact tracker from the first available simulator
+        # sample. The initial observation still reports temporal_valid=0; after
+        # it is computed, this sample becomes the previous value for the next step.
+        current_state = self.simulator.get_robot_state()
+        self._validate_contact_observation_support(current_state)
+        self._update_contact_state(current_state)
+        self._log_contact_observation_contract()
+
+        # Initialize observations.
         self._initialize_observations()
+        self._finalize_contact_state(current_state)
+
+    def _validate_contact_tracking_config(self) -> None:
+        """Validate state-tracker and diagnostics parameters before simulation."""
+        force_on = float(
+            getattr(self.config, "contact_force_on_threshold_n", 5.0)
+        )
+        force_off = float(
+            getattr(self.config, "contact_force_off_threshold_n", 2.0)
+        )
+        diagnostics_interval = int(
+            getattr(self.config, "contact_diagnostics_interval", 0)
+        )
+        diagnostics_max_envs = int(
+            getattr(self.config, "contact_diagnostics_max_envs", 256)
+        )
+        if (
+            not math.isfinite(force_on)
+            or not math.isfinite(force_off)
+            or force_off < 0.0
+            or force_on < force_off
+        ):
+            raise ValueError(
+                "Contact hysteresis requires "
+                "contact_force_on_threshold_n >= "
+                "contact_force_off_threshold_n >= 0 and finite values; got "
+                f"{force_on} and {force_off} N."
+            )
+        if diagnostics_interval < 0:
+            raise ValueError("contact_diagnostics_interval must be >= 0")
+        if diagnostics_max_envs < 1:
+            raise ValueError("contact_diagnostics_max_envs must be >= 1")
+
+    def _validate_contact_observation_support(
+        self, current_state: RobotState
+    ) -> None:
+        """Fail early when the configured backend cannot satisfy v1's contract."""
+        components = self.config.observation_components
+        if "contact_obs_v1" not in components:
+            return
+
+        backend = getattr(self.simulator.config, "_target_", type(self.simulator).__name__)
+        forces = current_state.rigid_body_contact_forces
+        contacts = current_state.rigid_body_contacts
+        expected_shape = (
+            self.num_envs,
+            self.robot_config.kinematic_info.num_bodies,
+            3,
+        )
+        if forces is None:
+            raise RuntimeError(
+                f"contact_obs_v1 requires rigid_body_contact_forces, but backend "
+                f"'{backend}' returned None."
+            )
+        if tuple(forces.shape) != expected_shape:
+            raise RuntimeError(
+                f"contact_obs_v1 expected rigid_body_contact_forces with shape "
+                f"{expected_shape}, but backend '{backend}' returned "
+                f"{tuple(forces.shape)}."
+            )
+        if contacts is None:
+            raise RuntimeError(
+                f"contact_obs_v1 requires rigid_body_contacts, but backend "
+                f"'{backend}' returned None."
+            )
+        if self.contact_observation_body_ids.numel() == 0:
+            raise ValueError(
+                "contact_obs_v1 requires at least one "
+                "contact_observation_bodies entry."
+            )
+
+        expected_ids = self.contact_observation_body_ids.tolist()
+        contact_component_ids = components["contact_obs_v1"].static_params.get(
+            "body_ids"
+        )
+        contact_component_ids_list = (
+            contact_component_ids.tolist()
+            if isinstance(contact_component_ids, Tensor)
+            else list(contact_component_ids or [])
+        )
+        if contact_component_ids_list != expected_ids:
+            raise ValueError(
+                "contact_obs_v1 body_ids must match the resolved "
+                "contact_observation_bodies order. "
+                f"Expected {expected_ids}, got {contact_component_ids}."
+            )
+        if "contact_proximity_obs" in components:
+            proximity_ids = components[
+                "contact_proximity_obs"
+            ].static_params.get("body_ids")
+            proximity_ids_list = (
+                proximity_ids.tolist()
+                if isinstance(proximity_ids, Tensor)
+                else list(proximity_ids or [])
+            )
+            if proximity_ids_list != expected_ids:
+                raise ValueError(
+                    "contact_proximity_obs body_ids must match the resolved "
+                    "contact_observation_bodies order. "
+                    f"Expected {expected_ids}, got {proximity_ids}."
+                )
+
+    def _log_contact_observation_contract(self) -> None:
+        """Log the versioned body ordering and observation dimensions once."""
+        components = self.config.observation_components
+        if "contact_obs_v1" not in components:
+            return
+
+        from protomotions.envs.obs import contact_obs_v1_dim
+
+        num_bodies = len(self.contact_observation_body_names)
+        proximity_dim = (
+            num_bodies * 3 if "contact_proximity_obs" in components else 0
+        )
+        log.info(
+            "contact_obs_v1 bodies (kinematic order): %s",
+            self.contact_observation_body_names,
+        )
+        log.info("Contact reward bodies: %s", self.contact_reward_body_names)
+        log.info(
+            "Contact observation contract: K=%d, contact_obs_v1=%d, "
+            "contact_proximity_obs=%d",
+            num_bodies,
+            contact_obs_v1_dim(num_bodies),
+            proximity_dim,
+        )
+
+    def _reset_contact_state(self, env_ids: Tensor) -> None:
+        """Clear temporal contact state for a partial or full environment reset."""
+        self.previous_contact_forces[env_ids] = 0.0
+        self.contact_active_state[env_ids] = False
+        self.contact_age_steps[env_ids] = 0
+        self.contact_air_age_steps[env_ids] = 0
+        self.contact_temporal_valid[env_ids] = False
+
+    @staticmethod
+    def _clear_reset_contact_sample(
+        current_state: RobotState,
+        env_ids: Tensor,
+    ) -> RobotState:
+        """Mask contact buffers that may be stale immediately after teleport.
+
+        Some simulator backends, including Isaac Lab, update articulation
+        kinematics immediately when reset state is written but do not refresh
+        contact sensors until the next physics step. Reset-return observations
+        therefore use an explicit no-contact sample. The first post-physics
+        sample exposes current contact force with ``temporal_valid=False`` and
+        becomes the previous sample only after that observation is computed.
+
+        The returned state is a clone so a backend-owned state object or tensor
+        can never be modified through a returned view.
+        """
+        reset_observation_state = current_state.clone()
+        if reset_observation_state.rigid_body_contact_forces is not None:
+            reset_observation_state.rigid_body_contact_forces[env_ids] = 0.0
+        if reset_observation_state.rigid_body_contacts is not None:
+            reset_observation_state.rigid_body_contacts[env_ids] = False
+        return reset_observation_state
+
+    def _update_contact_state(
+        self,
+        current_state: RobotState,
+        env_ids: Optional[Tensor] = None,
+    ) -> None:
+        """Update hysteresis and duration buffers from one current state sample."""
+        if (
+            current_state.rigid_body_contact_forces is None
+            or current_state.rigid_body_contacts is None
+        ):
+            return
+
+        from protomotions.envs.obs import update_contact_state
+
+        if env_ids is None:
+            raw_contacts = current_state.rigid_body_contacts
+            contact_forces = current_state.rigid_body_contact_forces
+            previous_active = self.contact_active_state
+            previous_contact_age = self.contact_age_steps
+            previous_air_age = self.contact_air_age_steps
+        else:
+            raw_contacts = current_state.rigid_body_contacts[env_ids]
+            contact_forces = current_state.rigid_body_contact_forces[env_ids]
+            previous_active = self.contact_active_state[env_ids]
+            previous_contact_age = self.contact_age_steps[env_ids]
+            previous_air_age = self.contact_air_age_steps[env_ids]
+
+        active, contact_age, air_age = update_contact_state(
+            raw_contacts=raw_contacts,
+            contact_forces=contact_forces,
+            previous_active=previous_active,
+            previous_contact_age_steps=previous_contact_age,
+            previous_air_age_steps=previous_air_age,
+            force_on_threshold_n=float(
+                getattr(self.config, "contact_force_on_threshold_n", 5.0)
+            ),
+            force_off_threshold_n=float(
+                getattr(self.config, "contact_force_off_threshold_n", 2.0)
+            ),
+        )
+
+        if env_ids is None:
+            self.contact_active_state.copy_(active)
+            self.contact_age_steps.copy_(contact_age)
+            self.contact_air_age_steps.copy_(air_age)
+        else:
+            self.contact_active_state[env_ids] = active
+            self.contact_age_steps[env_ids] = contact_age
+            self.contact_air_age_steps[env_ids] = air_age
+
+    def _finalize_contact_state(
+        self,
+        current_state: RobotState,
+        env_ids: Optional[Tensor] = None,
+    ) -> None:
+        """Promote the current force to the previous sample after observation."""
+        forces = current_state.rigid_body_contact_forces
+        if forces is None:
+            return
+        if env_ids is None:
+            self.previous_contact_forces.copy_(forces)
+            self.contact_temporal_valid.fill_(True)
+        else:
+            self.previous_contact_forces[env_ids] = forces[env_ids]
+            self.contact_temporal_valid[env_ids] = True
+
+    def _record_contact_diagnostics(self, current_state: RobotState) -> None:
+        """Record sampled aggregate statistics without changing policy inputs."""
+        interval = int(getattr(self.config, "contact_diagnostics_interval", 0))
+        components = self.config.observation_components
+        if (
+            interval <= 0
+            or "contact_obs_v1" not in components
+            or self._physics_step_count % interval != 0
+        ):
+            return
+
+        num_sample_envs = min(
+            self.num_envs,
+            int(getattr(self.config, "contact_diagnostics_max_envs", 256)),
+        )
+        ids = self.contact_observation_body_ids
+        forces = current_state.rigid_body_contact_forces[:num_sample_envs, ids]
+        previous = self.previous_contact_forces[:num_sample_envs, ids]
+        active = self.contact_active_state[:num_sample_envs, ids]
+        valid = self.contact_temporal_valid[:num_sample_envs]
+        force_rate = (forces - previous) / max(float(self.dt), 1e-6)
+        force_rate = torch.where(
+            valid[:, None, None], force_rate, torch.zeros_like(force_rate)
+        )
+
+        force_magnitude = torch.linalg.vector_norm(forces, dim=-1)
+        force_rate_magnitude = torch.linalg.vector_norm(force_rate, dim=-1)
+        upward = torch.clamp(forces[..., 2], min=0.0)
+        horizontal = torch.linalg.vector_norm(forces[..., :2], dim=-1)
+
+        params = components["contact_obs_v1"].static_params
+        force_clip = float(params.get("force_clip_n", 5000.0))
+        force_rate_clip = float(
+            params.get("force_rate_clip_n_per_s", 50000.0)
+        )
+        friction_mu = float(params.get("friction_mu", 1.0))
+        friction_clip = float(params.get("friction_utilization_clip", 2.0))
+        friction = horizontal / (friction_mu * upward + 1e-6)
+        friction = torch.clamp(friction / friction_clip, 0.0, 1.0)
+
+        self.extras.update(
+            {
+                "contact/active_body_fraction": active.float().mean(),
+                "contact/any_selected_contact_fraction": active.any(dim=1)
+                .float()
+                .mean(),
+                "contact/force_magnitude_mean": force_magnitude.mean(),
+                "contact/force_magnitude_p95": torch.quantile(
+                    force_magnitude, 0.95
+                ),
+                "contact/force_magnitude_p99": torch.quantile(
+                    force_magnitude, 0.99
+                ),
+                "contact/force_rate_magnitude_p95": torch.quantile(
+                    force_rate_magnitude, 0.95
+                ),
+                "contact/force_rate_magnitude_p99": torch.quantile(
+                    force_rate_magnitude, 0.99
+                ),
+                "contact/max_contact_age_s": (
+                    self.contact_age_steps[:num_sample_envs, ids].max()
+                    * float(self.dt)
+                ),
+                "contact/force_component_clip_fraction": (
+                    forces.abs() >= force_clip
+                )
+                .float()
+                .mean(),
+                "contact/force_rate_component_clip_fraction": (
+                    force_rate.abs() >= force_rate_clip
+                )
+                .float()
+                .mean(),
+                "contact/friction_utilization_proxy_mean": friction.mean(),
+                "contact/friction_utilization_proxy_max": friction.max(),
+                "contact/num_observation_bodies": torch.tensor(
+                    float(ids.numel()), device=self.device
+                ),
+            }
+        )
 
     def _validate_motion_lib_compatibility(self):
         """Validate that the motion file is compatible with the robot config."""
@@ -449,6 +794,42 @@ class BaseEnv:
         return build_body_ids_tensor(
             self.robot_config.kinematic_info.body_names,
             self.robot_config.contact_bodies,
+            self.device,
+        )
+
+    @cached_property
+    def contact_observation_body_names(self) -> List[str]:
+        """Resolved names exposed by contact observations."""
+        body_names = getattr(
+            self.robot_config, "contact_observation_bodies", None
+        )
+        if body_names is None:
+            body_names = self.robot_config.contact_bodies
+        return list(body_names or [])
+
+    @cached_property
+    def contact_observation_body_ids(self) -> torch.Tensor:
+        """Body indices exposed by contact observations."""
+        return build_body_ids_tensor(
+            self.robot_config.kinematic_info.body_names,
+            self.contact_observation_body_names,
+            self.device,
+        )
+
+    @cached_property
+    def contact_reward_body_names(self) -> List[str]:
+        """Resolved names used by contact-matching rewards."""
+        body_names = getattr(self.robot_config, "contact_reward_bodies", None)
+        if body_names is None:
+            body_names = self.robot_config.contact_bodies
+        return list(body_names or [])
+
+    @cached_property
+    def contact_reward_body_ids(self) -> torch.Tensor:
+        """Body indices used by contact-matching rewards."""
+        return build_body_ids_tensor(
+            self.robot_config.kinematic_info.body_names,
+            self.contact_reward_body_names,
             self.device,
         )
 
@@ -712,9 +1093,11 @@ class BaseEnv:
         checks for resets, and stores raw robot state in extras for logging.
         """
         self.progress_buf += 1
+        self._physics_step_count += 1
+        current_state = self.simulator.get_robot_state()
+        self._update_contact_state(current_state)
 
         if self.state_history is not None:
-            current_state = self.simulator.get_robot_state()
             ground_heights = self.terrain.get_ground_heights(
                 current_state.rigid_body_pos[:, 0]
             ).squeeze(-1)
@@ -780,7 +1163,7 @@ class BaseEnv:
             )
 
         # Build context once and reuse for observations, rewards, and terminations
-        self._current_context = self._build_global_context()
+        self._current_context = self._build_global_context(current_state)
 
         self.compute_observations(context=self._current_context)
         self.compute_reward(context=self._current_context)
@@ -790,14 +1173,17 @@ class BaseEnv:
 
         self.extras["terminate"] = self.terminate_buf
 
-        rbs: RobotState = self.simulator.get_robot_state()
+        rbs = current_state
         for k, _ in rbs.get_shape_mapping(flattened=True).items():
             self.extras[f"raw/{k}"] = rbs.flatten_bodies(k)
+
+        self._record_contact_diagnostics(rbs)
 
         # Update previous contact forces for next step's impact penalty
         self.prev_contact_force_magnitudes[:] = torch.norm(
             rbs.rigid_body_contact_forces, dim=-1
         )
+        self._finalize_contact_state(rbs)
 
     def user_reset(self):
         """Force environments to reset on next check (triggered by user input)."""
@@ -874,7 +1260,9 @@ class BaseEnv:
             self._current_context = self._build_global_context()
         return self._current_context
 
-    def _build_global_context(self) -> EnvContext:
+    def _build_global_context(
+        self, current_state: Optional[RobotState] = None
+    ) -> EnvContext:
         """Build a fresh global context for observations, rewards, and terminations.
 
         Creates typed EnvContext with view wrappers around existing data structures.
@@ -890,7 +1278,8 @@ class BaseEnv:
         Returns:
             Typed EnvContext for observation/reward/termination functions.
         """
-        current_state = self.simulator.get_robot_state()
+        if current_state is None:
+            current_state = self.simulator.get_robot_state()
         anchor_idx = self.robot_config.anchor_body_index
 
         ground_heights = self.terrain.get_ground_heights(
@@ -952,10 +1341,17 @@ class BaseEnv:
             body_contacts=body_contacts,
             current_contact_force_magnitudes=current_contact_force_magnitudes,
             prev_contact_force_magnitudes=self.prev_contact_force_magnitudes,
+            previous_contact_forces=self.previous_contact_forces,
+            contact_active_state=self.contact_active_state,
+            contact_age_steps=self.contact_age_steps,
+            contact_air_age_steps=self.contact_air_age_steps,
+            contact_temporal_valid=self.contact_temporal_valid,
             dt=self.dt,
             progress_buf=self.progress_buf,
             # Contact tracking
             contact_body_ids=self.contact_body_ids,
+            contact_observation_body_ids=self.contact_observation_body_ids,
+            contact_reward_body_ids=self.contact_reward_body_ids,
             non_termination_contact_body_ids=self.non_termination_contact_body_ids,
             # Per-episode odometer corruption parameters
             odom_scale=self.odom_scale,
@@ -1174,11 +1570,19 @@ class BaseEnv:
             )
 
         self.simulator.reset_envs(new_states, new_object_states, env_ids)
+        current_state = self.simulator.get_robot_state()
+        self._reset_contact_state(env_ids)
+        current_state = self._clear_reset_contact_sample(current_state, env_ids)
 
         default_mask = ~torch.isin(env_ids, ref_env_ids)
         if self.state_history is not None:
             self._reset_state_history(
-                env_ids, default_mask, ref_env_ids, motion_ids, motion_times
+                env_ids,
+                default_mask,
+                ref_env_ids,
+                motion_ids,
+                motion_times,
+                current_state=current_state,
             )
 
         # Reset control components after motion_manager has been reset
@@ -1206,7 +1610,6 @@ class BaseEnv:
 
         # Update cached noisy obs for the reset envs with fresh noise
         if self._current_noisy_obs is not None:
-            current_state = self.simulator.get_robot_state()
             ground_heights = self.terrain.get_ground_heights(
                 current_state.rigid_body_pos[env_ids, 0]
             ).squeeze(-1)
@@ -1223,7 +1626,8 @@ class BaseEnv:
         # Recompute observations after reset to reflect new control component state
         # Invalidate and rebuild context since state changed
         self._current_context = None
-        self.compute_observations(env_ids, context=self.context)
+        self._current_context = self._build_global_context(current_state)
+        self.compute_observations(env_ids, context=self._current_context)
 
         return self.get_obs(), {}
 
@@ -1277,6 +1681,7 @@ class BaseEnv:
         ref_env_ids: Tensor,
         motion_ids: Optional[Tensor],
         motion_times: Optional[Tensor],
+        current_state: Optional[RobotState] = None,
     ):
         """Reset state history buffer for specified environments.
 
@@ -1289,6 +1694,7 @@ class BaseEnv:
             ref_env_ids: Environment indices using reference motion reset.
             motion_ids: Motion IDs for ref envs (or None).
             motion_times: Motion times for ref envs (or None).
+            current_state: Optional already-fetched post-reset simulator state.
         """
         default_env_ids = env_ids[default_mask]
         num_history_steps = self.state_history.num_history_steps
@@ -1297,7 +1703,8 @@ class BaseEnv:
 
         # Default reset: repeat current simulator state to all buffer slots
         if len(default_env_ids) > 0:
-            current_state = self.simulator.get_robot_state()
+            if current_state is None:
+                current_state = self.simulator.get_robot_state()
             ground_heights = self.terrain.get_ground_heights(
                 current_state.rigid_body_pos[default_env_ids, 0]
             ).squeeze(-1)
@@ -1555,6 +1962,15 @@ class BaseEnv:
             "respawn_root_offset": self.respawn_root_offset.clone(),
             "odom_scale": self.odom_scale.clone(),
             "odom_yaw_cos_sin": self.odom_yaw_cos_sin.clone(),
+            "prev_contact_force_magnitudes": (
+                self.prev_contact_force_magnitudes.clone()
+            ),
+            "previous_contact_forces": self.previous_contact_forces.clone(),
+            "contact_active_state": self.contact_active_state.clone(),
+            "contact_age_steps": self.contact_age_steps.clone(),
+            "contact_air_age_steps": self.contact_air_age_steps.clone(),
+            "contact_temporal_valid": self.contact_temporal_valid.clone(),
+            "physics_step_count": self._physics_step_count,
         }
         if self.state_history is not None:
             snapshot["state_history"] = self.state_history.save_state()
@@ -1593,6 +2009,28 @@ class BaseEnv:
         if "odom_scale" in snapshot:
             self.odom_scale.copy_(snapshot["odom_scale"])
             self.odom_yaw_cos_sin.copy_(snapshot["odom_yaw_cos_sin"])
+        if "previous_contact_forces" in snapshot:
+            self.prev_contact_force_magnitudes.copy_(
+                snapshot["prev_contact_force_magnitudes"]
+            )
+            self.previous_contact_forces.copy_(
+                snapshot["previous_contact_forces"]
+            )
+            self.contact_active_state.copy_(snapshot["contact_active_state"])
+            self.contact_age_steps.copy_(snapshot["contact_age_steps"])
+            self.contact_air_age_steps.copy_(snapshot["contact_air_age_steps"])
+            self.contact_temporal_valid.copy_(
+                snapshot["contact_temporal_valid"]
+            )
+            self._physics_step_count = snapshot.get(
+                "physics_step_count", self._physics_step_count
+            )
+        else:
+            # Backward compatibility for snapshots created before temporal
+            # contact state existed. The first post-restore force rate is gated.
+            self.prev_contact_force_magnitudes.zero_()
+            self._reset_contact_state(env_ids)
+            self._update_contact_state(self.simulator.get_robot_state())
         self._current_noisy_obs = snapshot.get("_current_noisy_obs")
         self._current_context = None
 
