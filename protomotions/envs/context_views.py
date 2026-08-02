@@ -521,6 +521,93 @@ class SceneSurfaceContext:
 
 
 # =============================================================================
+# IsaacLab Contact-Sensor Context
+# =============================================================================
+
+
+class IsaacLabContactContext:
+    """Selected IsaacLab contact-sensor tensors and policy-step state.
+
+    This view is intentionally separate from :class:`RobotState`.  IsaacLab's
+    aggregate contact vectors contain normal force only, while its filtered
+    friction forces and mean contact points have backend-specific validity and
+    filter axes that do not fit the backend-common robot-state contract.
+
+    The body axis is already arranged in the observation component's declared
+    order.  Filter axes retain the deterministic order reported by the
+    simulator capability (terrain first, followed by scene objects).
+    """
+
+    normal_force_w: Tensor = FieldPath()
+    normal_force_history_w: Tensor = FieldPath()
+    normal_force_valid: Tensor = FieldPath()
+    normal_force_history_valid: Tensor = FieldPath()
+    sensor_data_valid: Tensor = FieldPath()
+
+    filtered_normal_force_w: Optional[Tensor] = FieldPath()
+    filtered_normal_force_history_w: Optional[Tensor] = FieldPath()
+    filtered_normal_force_valid: Optional[Tensor] = FieldPath()
+    filtered_normal_force_history_valid: Optional[Tensor] = FieldPath()
+    friction_force_w: Optional[Tensor] = FieldPath()
+    friction_force_valid: Optional[Tensor] = FieldPath()
+    mean_contact_point_w: Optional[Tensor] = FieldPath()
+    mean_contact_point_valid: Optional[Tensor] = FieldPath()
+    pair_slot_valid: Optional[Tensor] = FieldPath()
+
+    body_weight_n: Tensor = FieldPath()
+    previous_normal_force_w: Tensor = FieldPath()
+    previous_active: Tensor = FieldPath()
+    previous_contact_age_s: Tensor = FieldPath()
+    previous_air_age_s: Tensor = FieldPath()
+    temporal_valid: Tensor = FieldPath()
+
+    def __init__(
+        self,
+        *,
+        normal_force_w: Tensor,
+        normal_force_history_w: Tensor,
+        normal_force_valid: Tensor,
+        normal_force_history_valid: Tensor,
+        sensor_data_valid: Tensor,
+        body_weight_n: Tensor,
+        previous_normal_force_w: Tensor,
+        previous_active: Tensor,
+        previous_contact_age_s: Tensor,
+        previous_air_age_s: Tensor,
+        temporal_valid: Tensor,
+        filtered_normal_force_w: Optional[Tensor] = None,
+        filtered_normal_force_history_w: Optional[Tensor] = None,
+        filtered_normal_force_valid: Optional[Tensor] = None,
+        filtered_normal_force_history_valid: Optional[Tensor] = None,
+        friction_force_w: Optional[Tensor] = None,
+        friction_force_valid: Optional[Tensor] = None,
+        mean_contact_point_w: Optional[Tensor] = None,
+        mean_contact_point_valid: Optional[Tensor] = None,
+        pair_slot_valid: Optional[Tensor] = None,
+    ):
+        self.normal_force_w = normal_force_w
+        self.normal_force_history_w = normal_force_history_w
+        self.normal_force_valid = normal_force_valid
+        self.normal_force_history_valid = normal_force_history_valid
+        self.sensor_data_valid = sensor_data_valid
+        self.filtered_normal_force_w = filtered_normal_force_w
+        self.filtered_normal_force_history_w = filtered_normal_force_history_w
+        self.filtered_normal_force_valid = filtered_normal_force_valid
+        self.filtered_normal_force_history_valid = filtered_normal_force_history_valid
+        self.friction_force_w = friction_force_w
+        self.friction_force_valid = friction_force_valid
+        self.mean_contact_point_w = mean_contact_point_w
+        self.mean_contact_point_valid = mean_contact_point_valid
+        self.pair_slot_valid = pair_slot_valid
+        self.body_weight_n = body_weight_n
+        self.previous_normal_force_w = previous_normal_force_w
+        self.previous_active = previous_active
+        self.previous_contact_age_s = previous_contact_age_s
+        self.previous_air_age_s = previous_air_age_s
+        self.temporal_valid = temporal_valid
+
+
+# =============================================================================
 # Main Context Class
 # =============================================================================
 
@@ -575,6 +662,9 @@ class EnvContext:
     respawn_root_offset: Optional[Tensor] = FieldPath()
     terrain: Optional[TerrainContext] = NestedField(TerrainContext)
     scene: Optional[SceneSurfaceContext] = NestedField(SceneSurfaceContext)
+    isaaclab_contact: Optional[IsaacLabContactContext] = NestedField(
+        IsaacLabContactContext
+    )
     body_contacts: Optional[Tensor] = FieldPath()
     current_contact_force_magnitudes: Optional[Tensor] = FieldPath()
     prev_contact_force_magnitudes: Optional[Tensor] = FieldPath()
@@ -622,6 +712,7 @@ class EnvContext:
         respawn_root_offset: Optional[Tensor] = None,
         terrain: Optional[TerrainContext] = None,
         scene: Optional[SceneSurfaceContext] = None,
+        isaaclab_contact: Optional[IsaacLabContactContext] = None,
         body_contacts: Optional[Tensor] = None,
         current_contact_force_magnitudes: Optional[Tensor] = None,
         prev_contact_force_magnitudes: Optional[Tensor] = None,
@@ -658,6 +749,7 @@ class EnvContext:
             noisy_ground_heights: Noisy ground height for actor (optional).
             terrain: Terrain tensor context (optional).
             scene: Scene object surface context (optional).
+            isaaclab_contact: IsaacLab-specific contact-sensor context (optional).
             body_contacts: Boolean contact flags for tracked bodies (optional).
             current_contact_force_magnitudes: Current contact force magnitudes (optional).
             prev_contact_force_magnitudes: Previous contact forces (optional).
@@ -699,6 +791,7 @@ class EnvContext:
         self.respawn_root_offset = respawn_root_offset
         self.terrain = terrain
         self.scene = scene
+        self.isaaclab_contact = isaaclab_contact
         self.body_contacts = body_contacts
         self.current_contact_force_magnitudes = current_contact_force_magnitudes
         self.prev_contact_force_magnitudes = prev_contact_force_magnitudes
@@ -741,5 +834,6 @@ __all__ = [
     "TargetContext",
     "TerrainContext",
     "SceneSurfaceContext",
+    "IsaacLabContactContext",
     "EnvContext",
 ]

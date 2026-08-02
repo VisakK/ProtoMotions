@@ -30,6 +30,8 @@ from protomotions.simulator.isaaclab.utils.scene import SceneCfg
 from protomotions.simulator.isaaclab.config import (
     IsaacLabSimulatorConfig,
     ProtoMotionsIsaacLabMarkers,
+    build_contact_filter_metadata,
+    get_contact_sensor_observation_cfg,
 )
 from protomotions.simulator.isaaclab.utils.collision_baking import (
     ensure_baked_collision_usd,
@@ -47,6 +49,11 @@ from protomotions.simulator.base_simulator.simulator_state import (
     StateConversion,
     ObjectState,
     ResetState,
+)
+from protomotions.simulator.base_simulator.contact_sensor_state import (
+    ContactFilterMetadata,
+    ContactSensorState,
+    sanitize_contact_vectors,
 )
 
 
@@ -106,6 +113,18 @@ class IsaacLabSimulator(Simulator):
         self._sim = SimulationContext(sim_cfg)
         self._sim.set_camera_view([2.5, 0.0, 4.0], [0.0, 0.0, 2.0])
 
+        # These attributes remain inert unless the nested IsaacLab capability is
+        # explicitly enabled.  Keeping them initialized makes the disabled path
+        # both cheap and unambiguous.
+        self._contact_filter_metadata = ContactFilterMetadata()
+        self._rich_contact_sensors = []
+        self._rich_contact_body_names = ()
+        self._rich_contact_sim_body_indices = None
+        self._rich_contact_common_body_indices = None
+        self._contact_sensor_data_valid = None
+        self._body_weight_n = None
+        self._warned_body_weight_unavailable = False
+
         # Scene construction below needs _proj_config before _init_projectiles runs
         self._resolve_proj_config()
 
@@ -162,6 +181,13 @@ class IsaacLabSimulator(Simulator):
         if self.scene_lib.num_scenes() > 0:
             scene_cfgs, self._initial_scene_pos = self._preprocess_object_playground()
 
+        num_scene_objects = len(scene_cfgs) if scene_cfgs is not None else 0
+        self._contact_filter_metadata = build_contact_filter_metadata(
+            self.config,
+            num_scene_objects=num_scene_objects,
+            terrain_available=self.terrain is not None,
+        )
+
         scene_cfg = SceneCfg(
             config=self.config,
             robot_config=self.robot_config,
@@ -170,6 +196,7 @@ class IsaacLabSimulator(Simulator):
             scene_cfgs=scene_cfgs,
             terrain=self.terrain,
             projectile_config=self._proj_config,
+            contact_filter_metadata=self._contact_filter_metadata,
             replicate_physics=scene_cfgs
             is None,  # When there are objects, disable physics replication
         )
@@ -429,6 +456,254 @@ class IsaacLabSimulator(Simulator):
                 object.write_root_state_to_sim(objects_start_pos)
 
         self._apply_domain_randomization_if_needed()
+        self._initialize_contact_sensor_capability()
+
+    def _initialize_contact_sensor_capability(self) -> None:
+        """Resolve and validate the opt-in humanoid contact sensor contract."""
+
+        contact_cfg = get_contact_sensor_observation_cfg(self.config)
+        if not contact_cfg.enabled:
+            return
+
+        resolved_metadata = ContactFilterMetadata(
+            labels=contact_cfg.resolved_filter_labels,
+            prim_path_exprs=contact_cfg.resolved_filter_prim_path_exprs,
+            scene_object_indices=(
+                contact_cfg.resolved_filter_scene_object_indices
+            ),
+        )
+        if (
+            resolved_metadata != self._contact_filter_metadata
+            or contact_cfg.resolved_num_filters
+            != self._contact_filter_metadata.num_filters
+        ):
+            raise RuntimeError(
+                "IsaacLab resolved contact filter config does not match the "
+                "live scene metadata."
+            )
+
+        configured_body_names = tuple(self.robot_config.contact_bodies or ())
+        if not configured_body_names:
+            raise ValueError(
+                "IsaacLab rich contact observations require at least one "
+                "RobotConfig.contact_bodies sensor body."
+            )
+
+        missing_sensors = [
+            body_name
+            for body_name in configured_body_names
+            if body_name not in self._contact_sensor_map
+        ]
+        if missing_sensors:
+            raise RuntimeError(
+                "IsaacLab rich contact observations are missing contact sensors "
+                f"for bodies: {missing_sensors}."
+            )
+
+        sim_body_names = list(self._robot.data.body_names)
+        common_body_names = list(self._body_names)
+        try:
+            sim_indices = [
+                sim_body_names.index(body_name) for body_name in configured_body_names
+            ]
+            common_indices = [
+                common_body_names.index(body_name)
+                for body_name in configured_body_names
+            ]
+        except ValueError as exc:
+            raise RuntimeError(
+                "A configured IsaacLab contact sensor body is absent from the "
+                "simulator/common body ordering."
+            ) from exc
+
+        sensors = [self._contact_sensor_map[name] for name in configured_body_names]
+        self._validate_contact_sensor_shapes(sensors, configured_body_names)
+
+        self._rich_contact_sensors = sensors
+        self._rich_contact_body_names = configured_body_names
+        self._rich_contact_sim_body_indices = torch.tensor(
+            sim_indices, dtype=torch.long, device=self.device
+        )
+        self._rich_contact_common_body_indices = torch.tensor(
+            common_indices, dtype=torch.long, device=self.device
+        )
+        # A reset/teleport invalidates the sensor buffers until the next complete
+        # control interval supplies decimation fresh newest-first samples.
+        self._contact_sensor_data_valid = torch.zeros(
+            self.num_envs, dtype=torch.bool, device=self.device
+        )
+        # ProtoMotions currently has no humanoid mass-randomization term. Read
+        # live articulation masses once, after domain randomization, and avoid a
+        # PhysX query plus CUDA synchronization on every observation step.
+        self._body_weight_n = self._compute_body_weight_n()
+
+        log.info(
+            "IsaacLab rich contact sensors: bodies=%s sim_indices=%s "
+            "common_indices=%s history=%d filters=%s pair_data=%s "
+            "contact_points=%s friction=%s capacity=%d",
+            configured_body_names,
+            sim_indices,
+            common_indices,
+            self.decimation,
+            self._contact_filter_metadata.labels,
+            contact_cfg.track_pair_data,
+            contact_cfg.track_contact_points,
+            contact_cfg.track_friction_forces,
+            contact_cfg.max_contact_data_count_per_prim,
+        )
+        if contact_cfg.track_pair_data and (
+            contact_cfg.track_contact_points
+            or contact_cfg.track_friction_forces
+        ):
+            log.warning(
+                "IsaacLab pair contact extraction is enabled for %d per-body "
+                "sensors. Contact-point/friction unpacking may synchronize the "
+                "GPU; benchmark throughput before large-scale training.",
+                len(configured_body_names),
+            )
+
+    def _validate_contact_sensor_shapes(self, sensors, body_names) -> None:
+        """Fail early when the pinned IsaacLab tensor contract is not met."""
+
+        contact_cfg = get_contact_sensor_observation_cfg(self.config)
+        num_filters = self._contact_filter_metadata.num_filters
+        expected_aggregate_shape = (self.num_envs, 1, 3)
+        expected_history_shape = (self.num_envs, self.decimation, 1, 3)
+        expected_pair_shape = (self.num_envs, 1, num_filters, 3)
+        expected_pair_history_shape = (
+            self.num_envs,
+            self.decimation,
+            1,
+            num_filters,
+            3,
+        )
+
+        for body_name, sensor in zip(body_names, sensors):
+            sensor_body_names = tuple(sensor.body_names)
+            if sensor_body_names != (body_name,):
+                raise RuntimeError(
+                    f"Contact sensor for '{body_name}' must resolve exactly one "
+                    f"body; got {sensor_body_names}."
+                )
+            if sensor.cfg.history_length != self.decimation:
+                raise RuntimeError(
+                    f"Contact sensor for '{body_name}' has history length "
+                    f"{sensor.cfg.history_length}; expected decimation "
+                    f"{self.decimation}."
+                )
+            if sensor.cfg.update_period != 0.0:
+                raise RuntimeError(
+                    f"Contact sensor for '{body_name}' must update every physics "
+                    f"substep; got update_period={sensor.cfg.update_period}."
+                )
+            if tuple(sensor.cfg.filter_prim_paths_expr) != (
+                self._contact_filter_metadata.prim_path_exprs
+            ):
+                raise RuntimeError(
+                    f"Contact sensor for '{body_name}' filter order "
+                    f"{tuple(sensor.cfg.filter_prim_paths_expr)} does not match "
+                    f"metadata {self._contact_filter_metadata.prim_path_exprs}."
+                )
+            if sensor.cfg.track_air_time != contact_cfg.track_air_time:
+                raise RuntimeError(
+                    f"Contact sensor for '{body_name}' air-time tracking does "
+                    "not match the rich contact configuration."
+                )
+
+            data = sensor.data
+            self._require_sensor_shape(
+                body_name,
+                "net_forces_w",
+                data.net_forces_w,
+                expected_aggregate_shape,
+            )
+            self._require_sensor_shape(
+                body_name,
+                "net_forces_w_history",
+                data.net_forces_w_history,
+                expected_history_shape,
+            )
+            timer_fields = (
+                "current_contact_time",
+                "current_air_time",
+                "last_contact_time",
+                "last_air_time",
+            )
+            if contact_cfg.track_air_time:
+                for field_name in timer_fields:
+                    self._require_sensor_shape(
+                        body_name,
+                        field_name,
+                        getattr(data, field_name),
+                        (self.num_envs, 1),
+                    )
+            elif any(
+                getattr(data, field_name) is not None for field_name in timer_fields
+            ):
+                raise RuntimeError(
+                    f"Contact sensor for '{body_name}' unexpectedly allocated "
+                    "air/contact timers while tracking is disabled."
+                )
+
+            if not contact_cfg.track_pair_data:
+                continue
+            if num_filters == 0:
+                raise RuntimeError(
+                    "IsaacLab pair contact data require at least one filter slot."
+                )
+            self._require_sensor_shape(
+                body_name,
+                "force_matrix_w",
+                data.force_matrix_w,
+                expected_pair_shape,
+            )
+            self._require_sensor_shape(
+                body_name,
+                "force_matrix_w_history",
+                data.force_matrix_w_history,
+                expected_pair_history_shape,
+            )
+            if contact_cfg.track_friction_forces:
+                self._require_sensor_shape(
+                    body_name,
+                    "friction_forces_w",
+                    data.friction_forces_w,
+                    expected_pair_shape,
+                )
+            elif data.friction_forces_w is not None:
+                raise RuntimeError(
+                    f"Contact sensor for '{body_name}' unexpectedly allocated "
+                    "friction force data while tracking is disabled."
+                )
+            if contact_cfg.track_contact_points:
+                self._require_sensor_shape(
+                    body_name,
+                    "contact_pos_w",
+                    data.contact_pos_w,
+                    expected_pair_shape,
+                )
+            elif data.contact_pos_w is not None:
+                raise RuntimeError(
+                    f"Contact sensor for '{body_name}' unexpectedly allocated "
+                    "contact point data while tracking is disabled."
+                )
+
+            if sensor.contact_physx_view.filter_count != num_filters:
+                raise RuntimeError(
+                    f"Contact sensor for '{body_name}' resolved "
+                    f"{sensor.contact_physx_view.filter_count} filter slots, but "
+                    f"metadata defines {num_filters}: "
+                    f"{self._contact_filter_metadata.labels}."
+                )
+
+    @staticmethod
+    def _require_sensor_shape(body_name, field_name, tensor, expected_shape) -> None:
+        if tensor is None or tuple(tensor.shape) != expected_shape:
+            actual_shape = None if tensor is None else tuple(tensor.shape)
+            raise RuntimeError(
+                f"Contact sensor '{body_name}' field '{field_name}' has shape "
+                f"{actual_shape}; expected {expected_shape}."
+            )
 
     def _apply_domain_randomization_if_needed(self) -> None:
         all_env_ids = torch.arange(self.config.num_envs, dtype=torch.int)
@@ -588,6 +863,12 @@ class IsaacLabSimulator(Simulator):
                 self._sim.render()
             self._scene.update(dt=self._sim.get_physics_dt())
 
+        if self._contact_sensor_data_valid is not None:
+            # history_length == decimation and Scene.update() ran after every
+            # physics substep, so every history slot now belongs to the current
+            # post-reset control interval.
+            self._contact_sensor_data_valid[:] = True
+
     def _apply_simulator_pd_targets(self, pd_targets: torch.Tensor) -> None:
         """Applies PD position targets using IsaacLab's internal PD controller."""
         self._robot.set_joint_position_target(pd_targets, joint_ids=None)
@@ -640,6 +921,17 @@ class IsaacLabSimulator(Simulator):
                 self._object[object_idx].write_root_state_to_sim(
                     init_object_root_state[:, object_idx], env_ids
                 )
+
+        if get_contact_sensor_observation_cfg(self.config).enabled:
+            self._reset_contact_sensors(env_ids)
+
+    def _reset_contact_sensors(self, env_ids: torch.Tensor) -> None:
+        """Clear rich humanoid contact buffers on a full or partial teleport."""
+
+        for sensor in self._contact_sensor_map.values():
+            sensor.reset(env_ids)
+        if self._contact_sensor_data_valid is not None:
+            self._contact_sensor_data_valid[env_ids] = False
 
     # =====================================================
     # Group 4: State Getters
@@ -780,7 +1072,10 @@ class IsaacLabSimulator(Simulator):
         for body_idx, body_name in enumerate(sim_body_names):
             if body_name in self._contact_sensor_map:
                 contact_sensor = self._contact_sensor_map[body_name]
-                # net_forces_w has shape [num_envs, 1, 3], extract the single body dimension
+                # IsaacLab net_forces_w is normal-force-only. Preserve this
+                # legacy RobotState field for compatibility; richer consumers
+                # must use get_contact_sensor_state() for pair/friction data.
+                # Shape is [num_envs, 1, 3], so extract the validated body axis.
                 rigid_body_contact_forces[:, body_idx, :] = (
                     contact_sensor.data.net_forces_w.clone()[:, 0, :]
                 )
@@ -791,6 +1086,265 @@ class IsaacLabSimulator(Simulator):
             rigid_body_contact_forces=rigid_body_contact_forces,
             state_conversion=StateConversion.SIMULATOR,
         )
+
+    def get_contact_sensor_state(
+        self, env_ids: Optional[torch.Tensor] = None
+    ) -> Optional[ContactSensorState]:
+        """Return finite, common-body-mapped IsaacLab contact measurements.
+
+        Aggregate and filtered force tensors contain normal force only.  Actual
+        friction is copied exclusively from IsaacLab's ``friction_forces_w``.
+        Average pair contact positions retain a separate validity mask and must
+        not be interpreted as centers of pressure.
+        """
+
+        contact_cfg = get_contact_sensor_observation_cfg(self.config)
+        if not contact_cfg.enabled:
+            return None
+        if self._contact_sensor_data_valid is None or not self._rich_contact_sensors:
+            raise RuntimeError(
+                "IsaacLab rich contact sensors were enabled but the simulator "
+                "capability has not been initialized."
+            )
+
+        sensor_data = [sensor.data for sensor in self._rich_contact_sensors]
+        lifecycle_valid = self._contact_sensor_data_valid
+
+        normal_force_w = torch.stack(
+            [data.net_forces_w[:, 0, :] for data in sensor_data], dim=1
+        )
+        normal_force_history_w = torch.stack(
+            [data.net_forces_w_history[:, :, 0, :] for data in sensor_data],
+            dim=2,
+        )
+        normal_force_w, normal_force_valid = sanitize_contact_vectors(
+            normal_force_w, lifecycle_valid
+        )
+        (
+            normal_force_history_w,
+            normal_force_history_valid,
+        ) = sanitize_contact_vectors(
+            normal_force_history_w, lifecycle_valid
+        )
+
+        filtered_normal_force_w = None
+        filtered_normal_force_history_w = None
+        filtered_normal_force_valid = None
+        filtered_normal_force_history_valid = None
+        friction_force_w = None
+        friction_force_valid = None
+        mean_contact_point_w = None
+        mean_contact_point_valid = None
+        pair_slot_valid = None
+
+        if contact_cfg.track_pair_data:
+            static_filter_valid = self._get_static_filter_validity()
+            pair_static_valid = static_filter_valid[:, None, :].expand(
+                -1, len(sensor_data), -1
+            )
+            pair_history_static_valid = static_filter_valid[
+                :, None, None, :
+            ].expand(-1, self.decimation, len(sensor_data), -1)
+
+            filtered_normal_force_w = torch.stack(
+                [data.force_matrix_w[:, 0, :, :] for data in sensor_data],
+                dim=1,
+            )
+            # Slot validity describes whether a configured body/filter pair is
+            # meaningful in this environment.  Keep it distinct from sensor
+            # lifecycle validity so a reset is not encoded as a missing slot.
+            pair_slot_valid = pair_static_valid & torch.isfinite(
+                filtered_normal_force_w
+            ).all(dim=-1)
+            filtered_normal_force_history_w = torch.stack(
+                [
+                    data.force_matrix_w_history[:, :, 0, :, :]
+                    for data in sensor_data
+                ],
+                dim=2,
+            )
+            (
+                filtered_normal_force_w,
+                filtered_normal_force_valid,
+            ) = sanitize_contact_vectors(
+                filtered_normal_force_w, lifecycle_valid, pair_static_valid
+            )
+            (
+                filtered_normal_force_history_w,
+                filtered_normal_force_history_valid,
+            ) = sanitize_contact_vectors(
+                filtered_normal_force_history_w,
+                lifecycle_valid,
+                pair_history_static_valid,
+            )
+
+            if contact_cfg.track_friction_forces:
+                friction_force_w = torch.stack(
+                    [data.friction_forces_w[:, 0, :, :] for data in sensor_data],
+                    dim=1,
+                )
+                pair_slot_valid &= torch.isfinite(friction_force_w).all(dim=-1)
+                friction_force_w, friction_force_valid = (
+                    sanitize_contact_vectors(
+                        friction_force_w, lifecycle_valid, pair_static_valid
+                    )
+                )
+            if contact_cfg.track_contact_points:
+                mean_contact_point_w = torch.stack(
+                    [data.contact_pos_w[:, 0, :, :] for data in sensor_data],
+                    dim=1,
+                )
+                mean_contact_point_w, mean_contact_point_valid = (
+                    sanitize_contact_vectors(
+                        mean_contact_point_w, lifecycle_valid, pair_static_valid
+                    )
+                )
+                # A no-contact point is expected to be NaN in IsaacLab.  It
+                # invalidates only the measurement, not the configured pair slot.
+
+        current_contact_time_s = self._stack_optional_sensor_scalar(
+            sensor_data, "current_contact_time", lifecycle_valid
+        )
+        current_air_time_s = self._stack_optional_sensor_scalar(
+            sensor_data, "current_air_time", lifecycle_valid
+        )
+        last_contact_time_s = self._stack_optional_sensor_scalar(
+            sensor_data, "last_contact_time", lifecycle_valid
+        )
+        last_air_time_s = self._stack_optional_sensor_scalar(
+            sensor_data, "last_air_time", lifecycle_valid
+        )
+        body_weight_n = self._body_weight_n
+
+        if env_ids is not None:
+            if isinstance(env_ids, int):
+                env_ids = torch.tensor([env_ids], device=self.device, dtype=torch.long)
+
+            def select_envs(tensor):
+                return None if tensor is None else tensor[env_ids]
+
+            normal_force_w = select_envs(normal_force_w)
+            normal_force_history_w = select_envs(normal_force_history_w)
+            lifecycle_valid = select_envs(lifecycle_valid)
+            normal_force_valid = select_envs(normal_force_valid)
+            normal_force_history_valid = select_envs(normal_force_history_valid)
+            filtered_normal_force_w = select_envs(filtered_normal_force_w)
+            filtered_normal_force_history_w = select_envs(
+                filtered_normal_force_history_w
+            )
+            filtered_normal_force_valid = select_envs(filtered_normal_force_valid)
+            filtered_normal_force_history_valid = select_envs(
+                filtered_normal_force_history_valid
+            )
+            friction_force_w = select_envs(friction_force_w)
+            friction_force_valid = select_envs(friction_force_valid)
+            mean_contact_point_w = select_envs(mean_contact_point_w)
+            mean_contact_point_valid = select_envs(mean_contact_point_valid)
+            pair_slot_valid = select_envs(pair_slot_valid)
+            current_contact_time_s = select_envs(current_contact_time_s)
+            current_air_time_s = select_envs(current_air_time_s)
+            last_contact_time_s = select_envs(last_contact_time_s)
+            last_air_time_s = select_envs(last_air_time_s)
+            body_weight_n = select_envs(body_weight_n)
+
+        return ContactSensorState(
+            body_names=self._rich_contact_body_names,
+            sim_body_indices=self._rich_contact_sim_body_indices,
+            common_body_indices=self._rich_contact_common_body_indices,
+            filter_metadata=self._contact_filter_metadata,
+            normal_force_w=normal_force_w,
+            normal_force_history_w=normal_force_history_w,
+            sensor_data_valid=lifecycle_valid.clone(),
+            normal_force_valid=normal_force_valid,
+            normal_force_history_valid=normal_force_history_valid,
+            filtered_normal_force_w=filtered_normal_force_w,
+            filtered_normal_force_history_w=filtered_normal_force_history_w,
+            filtered_normal_force_valid=filtered_normal_force_valid,
+            filtered_normal_force_history_valid=(
+                filtered_normal_force_history_valid
+            ),
+            friction_force_w=friction_force_w,
+            friction_force_valid=friction_force_valid,
+            mean_contact_point_w=mean_contact_point_w,
+            mean_contact_point_valid=mean_contact_point_valid,
+            pair_slot_valid=pair_slot_valid,
+            current_contact_time_s=current_contact_time_s,
+            current_air_time_s=current_air_time_s,
+            last_contact_time_s=last_contact_time_s,
+            last_air_time_s=last_air_time_s,
+            body_weight_n=body_weight_n,
+        )
+
+    @staticmethod
+    def _stack_optional_sensor_scalar(sensor_data, field_name, lifecycle_valid):
+        values = [getattr(data, field_name) for data in sensor_data]
+        if any(value is None for value in values):
+            if not all(value is None for value in values):
+                raise RuntimeError(
+                    f"IsaacLab contact sensor field '{field_name}' is allocated "
+                    "inconsistently across bodies."
+                )
+            return None
+        tensor = torch.stack([value[:, 0] for value in values], dim=1)
+        valid = torch.isfinite(tensor) & lifecycle_valid[:, None]
+        tensor = torch.nan_to_num(tensor, nan=0.0, posinf=0.0, neginf=0.0)
+        return torch.where(valid, tensor, torch.zeros_like(tensor))
+
+    def _get_static_filter_validity(self) -> torch.Tensor:
+        """Return per-environment validity for configured terrain/object slots."""
+
+        metadata = self._contact_filter_metadata
+        filter_valid = torch.ones(
+            self.num_envs,
+            metadata.num_filters,
+            dtype=torch.bool,
+            device=self.device,
+        )
+        if not any(index is not None for index in metadata.scene_object_indices):
+            return filter_valid
+
+        object_valid = self.scene_lib.get_per_object_valid_mask().to(
+            device=self.device, dtype=torch.bool
+        )
+        for filter_idx, object_idx in enumerate(metadata.scene_object_indices):
+            if object_idx is not None:
+                if object_idx >= object_valid.shape[1]:
+                    raise RuntimeError(
+                        f"Contact filter '{metadata.labels[filter_idx]}' maps to "
+                        f"missing scene object slot {object_idx}."
+                    )
+                filter_valid[:, filter_idx] = object_valid[:, object_idx]
+        return filter_valid
+
+    def _compute_body_weight_n(self) -> Optional[torch.Tensor]:
+        """Read current articulation mass and convert it to a force scale."""
+
+        try:
+            masses = self._robot.root_physx_view.get_masses().to(self.device)
+            if masses.ndim != 2 or masses.shape[0] != self.num_envs:
+                raise RuntimeError(f"unexpected mass shape {tuple(masses.shape)}")
+            total_mass = masses.sum(dim=1, keepdim=True)
+            gravity_magnitude = torch.linalg.vector_norm(
+                torch.as_tensor(
+                    self._sim.cfg.gravity, device=self.device, dtype=total_mass.dtype
+                )
+            )
+            body_weight_n = total_mass * gravity_magnitude
+            if not torch.isfinite(body_weight_n).all() or not (
+                body_weight_n > 0.0
+            ).all():
+                raise RuntimeError("mass or gravity produced a non-positive scale")
+            return body_weight_n
+        except (AttributeError, RuntimeError, TypeError, ValueError) as exc:
+            if not self._warned_body_weight_unavailable:
+                log.warning(
+                    "Could not compute IsaacLab articulation body weight; the "
+                    "contact observation must use its configured fallback force "
+                    "reference. Reason: %s",
+                    exc,
+                )
+                self._warned_body_weight_unavailable = True
+            return None
 
     def _get_simulator_object_contact_buf(
         self,

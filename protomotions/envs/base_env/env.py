@@ -72,6 +72,7 @@ from protomotions.envs.context_views import (
     HistoricalView,
     TerrainContext,
     SceneSurfaceContext,
+    IsaacLabContactContext,
 )
 from protomotions.envs.obs.observation_noise import (
     NoisyObservations,
@@ -200,6 +201,17 @@ class BaseEnv:
         self.contact_age_steps = None
         self.contact_air_age_steps = None
         self.contact_temporal_valid = None
+        # Separate temporal state for the opt-in IsaacLab-normal-force
+        # observation.  It cannot share contact_active_state: the legacy
+        # tracker deliberately ORs in backend raw flags, whereas this contract
+        # uses force-only 5/2 N hysteresis.
+        self.isaaclab_previous_normal_force_w = None
+        self.isaaclab_previous_active = None
+        self.isaaclab_contact_age_s = None
+        self.isaaclab_air_age_s = None
+        self.isaaclab_contact_temporal_valid = None
+        self._isaaclab_contact_sensor_indices = None
+        self._isaaclab_contact_body_ids = None
         self._physics_step_count = 0
 
         # Action buffers (current step only; previous actions come from state_history)
@@ -263,6 +275,7 @@ class BaseEnv:
         self.contact_temporal_valid = torch.zeros(
             self.num_envs, dtype=torch.bool, device=self.device
         )
+        self._initialize_isaaclab_contact_buffers()
 
         if self.config.num_state_history_steps > 0:
             # Check if observation noise is configured - if so, allocate noisy buffers
@@ -320,13 +333,20 @@ class BaseEnv:
         # sample. The initial observation still reports temporal_valid=0; after
         # it is computed, this sample becomes the previous value for the next step.
         current_state = self.simulator.get_robot_state()
-        self._validate_contact_observation_support(current_state)
+        isaaclab_contact_state = self._get_isaaclab_contact_sensor_state()
+        self._validate_contact_observation_support(
+            current_state, isaaclab_contact_state
+        )
         self._update_contact_state(current_state)
         self._log_contact_observation_contract()
 
         # Initialize observations.
+        self._current_context = self._build_global_context(
+            current_state, isaaclab_contact_state
+        )
         self._initialize_observations()
         self._finalize_contact_state(current_state)
+        self._finalize_isaaclab_contact_state(isaaclab_contact_state)
 
     def _validate_contact_tracking_config(self) -> None:
         """Validate state-tracker and diagnostics parameters before simulation."""
@@ -359,11 +379,113 @@ class BaseEnv:
         if diagnostics_max_envs < 1:
             raise ValueError("contact_diagnostics_max_envs must be >= 1")
 
+    def _isaaclab_contact_components(self) -> Tuple[List[Tuple[str, Any]], List[Tuple[str, Any]]]:
+        """Return aggregate and pair components independent of key prefixes.
+
+        MaskedMimic copies expert components under ``expert_``-prefixed keys.
+        Looking at the pure function identity (represented by its stable public
+        name here to avoid an eager import cycle) keeps the simulator contract
+        available to both Stage-1 and Stage-2 configurations.
+        """
+        core_names = {
+            "compute_isaaclab_contact_obs_v1",
+        }
+        pair_names = {
+            "compute_isaaclab_contact_pair_obs_v1",
+        }
+        core = []
+        pair = []
+        for key, component in self.config.observation_components.items():
+            compute_func = getattr(component, "compute_func", None)
+            name = getattr(compute_func, "__name__", "")
+            if name in core_names:
+                core.append((key, component))
+            elif name in pair_names:
+                pair.append((key, component))
+        return core, pair
+
+    @staticmethod
+    def _component_body_ids(component: Any) -> List[int]:
+        body_ids = component.static_params.get("body_ids")
+        if isinstance(body_ids, Tensor):
+            return [int(value) for value in body_ids.tolist()]
+        return [int(value) for value in (body_ids or [])]
+
+    def _initialize_isaaclab_contact_buffers(self) -> None:
+        """Allocate opt-in temporal state without affecting legacy configs."""
+        core_components, pair_components = self._isaaclab_contact_components()
+        if not core_components and not pair_components:
+            return
+        if not core_components:
+            raise ValueError(
+                "isaaclab_contact_pair_obs_v1 requires an "
+                "isaaclab_contact_obs_v1 component with the same body order"
+            )
+
+        body_ids = self._component_body_ids(core_components[0][1])
+        if not body_ids:
+            raise ValueError(
+                "isaaclab_contact_obs_v1 requires at least one observation body"
+            )
+        on_threshold = core_components[0][1].static_params.get(
+            "contact_on_threshold_n"
+        )
+        off_threshold = core_components[0][1].static_params.get(
+            "contact_off_threshold_n"
+        )
+        for key, component in core_components[1:]:
+            if self._component_body_ids(component) != body_ids:
+                raise ValueError(
+                    f"IsaacLab contact component '{key}' uses a different body order"
+                )
+            if (
+                component.static_params.get("contact_on_threshold_n") != on_threshold
+                or component.static_params.get("contact_off_threshold_n")
+                != off_threshold
+            ):
+                raise ValueError(
+                    "All IsaacLab aggregate contact components must share "
+                    "hysteresis thresholds because they share temporal state"
+                )
+        for key, component in pair_components:
+            if self._component_body_ids(component) != body_ids:
+                raise ValueError(
+                    f"IsaacLab pair contact component '{key}' must use the "
+                    "aggregate component's body order"
+                )
+
+        self._isaaclab_contact_body_ids = torch.tensor(
+            body_ids, dtype=torch.long, device=self.device
+        )
+        shape = (self.num_envs, len(body_ids))
+        self.isaaclab_previous_normal_force_w = torch.zeros(
+            *shape, 3, dtype=torch.float, device=self.device
+        )
+        self.isaaclab_previous_active = torch.zeros(
+            *shape, dtype=torch.bool, device=self.device
+        )
+        self.isaaclab_contact_age_s = torch.zeros(
+            *shape, dtype=torch.float, device=self.device
+        )
+        self.isaaclab_air_age_s = torch.zeros(
+            *shape, dtype=torch.float, device=self.device
+        )
+        self.isaaclab_contact_temporal_valid = torch.zeros(
+            self.num_envs, dtype=torch.bool, device=self.device
+        )
+
     def _validate_contact_observation_support(
-        self, current_state: RobotState
+        self,
+        current_state: RobotState,
+        isaaclab_contact_state: Optional[Any] = None,
     ) -> None:
         """Fail early when the configured backend cannot satisfy v1's contract."""
         components = self.config.observation_components
+        core_components, pair_components = self._isaaclab_contact_components()
+        if core_components or pair_components:
+            self._validate_isaaclab_contact_observation_support(
+                isaaclab_contact_state, core_components, pair_components
+            )
         if "contact_obs_v1" not in components:
             return
 
@@ -428,9 +550,167 @@ class BaseEnv:
                     f"Expected {expected_ids}, got {proximity_ids}."
                 )
 
+    def _get_isaaclab_contact_sensor_state(self) -> Optional[Any]:
+        """Read the rich capability only when a configured component needs it."""
+        core_components, pair_components = self._isaaclab_contact_components()
+        if not core_components and not pair_components:
+            return None
+        getter = getattr(self.simulator, "get_contact_sensor_state", None)
+        return None if getter is None else getter()
+
+    def _validate_isaaclab_contact_observation_support(
+        self,
+        contact_state: Optional[Any],
+        core_components: List[Tuple[str, Any]],
+        pair_components: List[Tuple[str, Any]],
+    ) -> None:
+        """Validate backend capability, body mapping, history, and pair fields."""
+        backend = getattr(
+            self.simulator.config, "_target_", type(self.simulator).__name__
+        )
+        if contact_state is None:
+            component_keys = [key for key, _ in core_components + pair_components]
+            raise RuntimeError(
+                f"IsaacLab contact observations {component_keys} require the "
+                "rich contact-sensor capability, but backend "
+                f"'{backend}' returned None. Use the IsaacLab backend and enable "
+                "simulator.contact_sensor_observation."
+            )
+        if self._isaaclab_contact_body_ids is None:
+            raise RuntimeError(
+                "IsaacLab contact temporal buffers were not initialized before "
+                "capability validation."
+            )
+
+        expected_body_ids = [
+            int(value) for value in self._isaaclab_contact_body_ids.tolist()
+        ]
+        if expected_body_ids != self.contact_observation_body_ids.tolist():
+            raise ValueError(
+                "isaaclab_contact_obs_v1 body_ids must match the resolved "
+                "contact_observation_bodies order. Expected "
+                f"{self.contact_observation_body_ids.tolist()}, got "
+                f"{expected_body_ids}."
+            )
+
+        common_sensor_ids = [
+            int(value) for value in contact_state.common_body_indices.tolist()
+        ]
+        if len(set(common_sensor_ids)) != len(common_sensor_ids):
+            raise RuntimeError(
+                "IsaacLab contact capability reported duplicate common body indices"
+            )
+        sensor_index_by_common_id = {
+            common_id: sensor_id
+            for sensor_id, common_id in enumerate(common_sensor_ids)
+        }
+        missing = [
+            body_id
+            for body_id in expected_body_ids
+            if body_id not in sensor_index_by_common_id
+        ]
+        if missing:
+            missing_names = [
+                self.robot_config.kinematic_info.body_names[body_id]
+                for body_id in missing
+            ]
+            raise RuntimeError(
+                "IsaacLab observation bodies lack configured contact sensors: "
+                f"{missing_names}. Sensor bodies are {contact_state.body_names}."
+            )
+        self._isaaclab_contact_sensor_indices = torch.tensor(
+            [sensor_index_by_common_id[body_id] for body_id in expected_body_ids],
+            dtype=torch.long,
+            device=self.device,
+        )
+
+        expected_history = int(self.simulator.decimation)
+        actual_history = int(contact_state.normal_force_history_w.shape[1])
+        if not contact_state.history_newest_first:
+            raise RuntimeError(
+                "IsaacLab contact observation requires newest-first force history"
+            )
+        if actual_history != expected_history:
+            raise RuntimeError(
+                "IsaacLab contact history must equal control decimation; got "
+                f"H={actual_history}, decimation={expected_history}."
+            )
+        expected_envs = self.num_envs
+        if contact_state.normal_force_w.shape[0] != expected_envs:
+            raise RuntimeError(
+                "IsaacLab contact capability returned the wrong environment axis: "
+                f"{contact_state.normal_force_w.shape[0]} versus {expected_envs}."
+            )
+
+        if pair_components:
+            required_pair_fields = (
+                "filtered_normal_force_w",
+                "filtered_normal_force_history_w",
+                "filtered_normal_force_valid",
+                "filtered_normal_force_history_valid",
+                "friction_force_w",
+                "friction_force_valid",
+                "mean_contact_point_w",
+                "mean_contact_point_valid",
+                "pair_slot_valid",
+            )
+            missing_fields = [
+                name
+                for name in required_pair_fields
+                if getattr(contact_state, name) is None
+            ]
+            if missing_fields:
+                raise RuntimeError(
+                    "isaaclab_contact_pair_obs_v1 requires filtered normal "
+                    "force, true friction force, and mean contact point data; "
+                    f"missing fields: {missing_fields}. Enable pair data, "
+                    "track_friction_forces, and track_contact_points."
+                )
+            if contact_state.filter_metadata.num_filters < 1:
+                raise RuntimeError(
+                    "isaaclab_contact_pair_obs_v1 requires at least one "
+                    "terrain or scene-object filter"
+                )
+
     def _log_contact_observation_contract(self) -> None:
         """Log the versioned body ordering and observation dimensions once."""
         components = self.config.observation_components
+        core_components, pair_components = self._isaaclab_contact_components()
+        if core_components:
+            from protomotions.envs.obs import isaaclab_contact_obs_v1_dim
+
+            num_bodies = int(self._isaaclab_contact_body_ids.numel())
+            state = self._get_isaaclab_contact_sensor_state()
+            num_filters = state.filter_metadata.num_filters
+            pair_dim = 15 * num_bodies * num_filters if pair_components else 0
+            log.info(
+                "IsaacLab contact observation bodies (common order): %s",
+                [
+                    self.robot_config.kinematic_info.body_names[body_id]
+                    for body_id in self._isaaclab_contact_body_ids.tolist()
+                ],
+            )
+            log.info(
+                "IsaacLab contact sensor indices=%s common_indices=%s "
+                "filters=%s",
+                self._isaaclab_contact_sensor_indices.tolist(),
+                state.common_body_indices.tolist(),
+                state.filter_metadata.labels,
+            )
+            log.info(
+                "IsaacLab contact contract: aggregate=isaaclab_contact_obs_v1 "
+                "K=%d H=%d dim=%d; pair=isaaclab_contact_pair_obs_v1 "
+                "enabled=%s F=%d dim=%d; normal-force semantics="
+                "IsaacLab normal-only; filters=%s",
+                num_bodies,
+                state.normal_force_history_w.shape[1],
+                isaaclab_contact_obs_v1_dim(num_bodies),
+                bool(pair_components),
+                num_filters,
+                pair_dim,
+                state.filter_metadata.labels,
+            )
+
         if "contact_obs_v1" not in components:
             return
 
@@ -460,6 +740,196 @@ class BaseEnv:
         self.contact_age_steps[env_ids] = 0
         self.contact_air_age_steps[env_ids] = 0
         self.contact_temporal_valid[env_ids] = False
+
+    def _reset_isaaclab_contact_state(self, env_ids: Tensor) -> None:
+        """Clear only selected environments in the rich-contact tracker."""
+        if getattr(self, "isaaclab_previous_normal_force_w", None) is None:
+            return
+        self.isaaclab_previous_normal_force_w[env_ids] = 0.0
+        self.isaaclab_previous_active[env_ids] = False
+        self.isaaclab_contact_age_s[env_ids] = 0.0
+        self.isaaclab_air_age_s[env_ids] = 0.0
+        self.isaaclab_contact_temporal_valid[env_ids] = False
+
+    def _select_isaaclab_contact_bodies(
+        self, tensor: Optional[Tensor], body_axis: int
+    ) -> Optional[Tensor]:
+        if tensor is None:
+            return None
+        if self._isaaclab_contact_sensor_indices is None:
+            raise RuntimeError(
+                "IsaacLab contact sensor-to-observation mapping is unavailable"
+            )
+        return tensor.index_select(body_axis, self._isaaclab_contact_sensor_indices)
+
+    def _build_isaaclab_contact_context(
+        self, contact_state: Optional[Any]
+    ) -> Optional[IsaacLabContactContext]:
+        """Select one capability sample into the policy's deterministic K order."""
+        if getattr(self, "isaaclab_previous_normal_force_w", None) is None:
+            return None
+        if contact_state is None:
+            raise RuntimeError(
+                "Configured IsaacLab contact observations have no sensor state"
+            )
+        if self._isaaclab_contact_sensor_indices is None:
+            core, pair = self._isaaclab_contact_components()
+            self._validate_isaaclab_contact_observation_support(
+                contact_state, core, pair
+            )
+
+        normal_force_w = self._select_isaaclab_contact_bodies(
+            contact_state.normal_force_w, 1
+        )
+        normal_force_valid = self._select_isaaclab_contact_bodies(
+            contact_state.normal_force_valid, 1
+        )
+        normal_force_history_valid = self._select_isaaclab_contact_bodies(
+            contact_state.normal_force_history_valid, 2
+        )
+        sensor_data_valid = (
+            contact_state.sensor_data_valid
+            & normal_force_valid.all(dim=1)
+            & normal_force_history_valid.all(dim=(1, 2))
+        )
+        body_weight_n = contact_state.body_weight_n
+        if body_weight_n is None:
+            core_components, _ = self._isaaclab_contact_components()
+            fallback = float(
+                core_components[0][1].static_params.get(
+                    "fallback_force_reference_n", 600.0
+                )
+            )
+            body_weight_n = torch.full(
+                (self.num_envs, 1),
+                fallback,
+                dtype=normal_force_w.dtype,
+                device=self.device,
+            )
+
+        return IsaacLabContactContext(
+            normal_force_w=normal_force_w,
+            normal_force_history_w=self._select_isaaclab_contact_bodies(
+                contact_state.normal_force_history_w, 2
+            ),
+            normal_force_valid=normal_force_valid,
+            normal_force_history_valid=normal_force_history_valid,
+            sensor_data_valid=sensor_data_valid,
+            filtered_normal_force_w=self._select_isaaclab_contact_bodies(
+                contact_state.filtered_normal_force_w, 1
+            ),
+            filtered_normal_force_history_w=(
+                self._select_isaaclab_contact_bodies(
+                    contact_state.filtered_normal_force_history_w, 2
+                )
+            ),
+            filtered_normal_force_valid=self._select_isaaclab_contact_bodies(
+                contact_state.filtered_normal_force_valid, 1
+            ),
+            filtered_normal_force_history_valid=(
+                self._select_isaaclab_contact_bodies(
+                    contact_state.filtered_normal_force_history_valid, 2
+                )
+            ),
+            friction_force_w=self._select_isaaclab_contact_bodies(
+                contact_state.friction_force_w, 1
+            ),
+            friction_force_valid=self._select_isaaclab_contact_bodies(
+                contact_state.friction_force_valid, 1
+            ),
+            mean_contact_point_w=self._select_isaaclab_contact_bodies(
+                contact_state.mean_contact_point_w, 1
+            ),
+            mean_contact_point_valid=self._select_isaaclab_contact_bodies(
+                contact_state.mean_contact_point_valid, 1
+            ),
+            pair_slot_valid=self._select_isaaclab_contact_bodies(
+                contact_state.pair_slot_valid, 1
+            ),
+            body_weight_n=body_weight_n,
+            previous_normal_force_w=self.isaaclab_previous_normal_force_w,
+            previous_active=self.isaaclab_previous_active,
+            previous_contact_age_s=self.isaaclab_contact_age_s,
+            previous_air_age_s=self.isaaclab_air_age_s,
+            temporal_valid=self.isaaclab_contact_temporal_valid,
+        )
+
+    def _finalize_isaaclab_contact_state(
+        self,
+        contact_state: Optional[Any],
+        env_ids: Optional[Tensor] = None,
+    ) -> None:
+        """Commit the current force-only state after observations consume it."""
+        if (
+            getattr(self, "isaaclab_previous_normal_force_w", None) is None
+            or contact_state is None
+        ):
+            return
+        from protomotions.envs.obs import update_isaaclab_contact_state_v1
+
+        selected_force = self._select_isaaclab_contact_bodies(
+            contact_state.normal_force_w, 1
+        )
+        valid = (
+            contact_state.sensor_data_valid
+            & self._select_isaaclab_contact_bodies(
+                contact_state.normal_force_valid, 1
+            ).all(dim=1)
+            & self._select_isaaclab_contact_bodies(
+                contact_state.normal_force_history_valid, 2
+            ).all(dim=(1, 2))
+        )
+        if env_ids is not None:
+            selected_force = selected_force[env_ids]
+            valid = valid[env_ids]
+            previous_active = self.isaaclab_previous_active[env_ids]
+            previous_contact_age = self.isaaclab_contact_age_s[env_ids]
+            previous_air_age = self.isaaclab_air_age_s[env_ids]
+            temporal_valid = self.isaaclab_contact_temporal_valid[env_ids]
+        else:
+            previous_active = self.isaaclab_previous_active
+            previous_contact_age = self.isaaclab_contact_age_s
+            previous_air_age = self.isaaclab_air_age_s
+            temporal_valid = self.isaaclab_contact_temporal_valid
+
+        core_components, _ = self._isaaclab_contact_components()
+        params = core_components[0][1].static_params
+        active, contact_age, air_age, _, _ = update_isaaclab_contact_state_v1(
+            normal_force_w=selected_force,
+            previous_active=previous_active,
+            previous_contact_age_s=previous_contact_age,
+            previous_air_age_s=previous_air_age,
+            temporal_valid=temporal_valid & valid,
+            dt=float(self.dt),
+            contact_on_threshold_n=float(params["contact_on_threshold_n"]),
+            contact_off_threshold_n=float(params["contact_off_threshold_n"]),
+        )
+
+        if env_ids is None:
+            scoped_ids = torch.arange(
+                self.num_envs, dtype=torch.long, device=self.device
+            )
+            destination_ids = valid.nonzero(as_tuple=True)[0]
+            source_mask = valid
+        else:
+            scoped_ids = env_ids
+            destination_ids = env_ids[valid]
+            source_mask = valid
+        invalid_ids = scoped_ids[~valid]
+        if invalid_ids.numel() > 0:
+            # Never bridge force deltas, hysteresis, transitions, or ages over
+            # a reset/non-finite sensor interval.  The next valid sample is a
+            # fresh first sample with temporal_valid=False.
+            self._reset_isaaclab_contact_state(invalid_ids)
+        if destination_ids.numel() == 0:
+            return
+        self.isaaclab_previous_normal_force_w[destination_ids] = selected_force[
+            source_mask
+        ]
+        self.isaaclab_previous_active[destination_ids] = active[source_mask]
+        self.isaaclab_contact_age_s[destination_ids] = contact_age[source_mask]
+        self.isaaclab_air_age_s[destination_ids] = air_age[source_mask]
+        self.isaaclab_contact_temporal_valid[destination_ids] = True
 
     @staticmethod
     def _clear_reset_contact_sample(
@@ -631,6 +1101,180 @@ class BaseEnv:
                 ),
             }
         )
+
+    def _record_isaaclab_contact_diagnostics(
+        self, contact_state: Optional[Any]
+    ) -> None:
+        """Record scale, clipping, lifecycle, and pair-validity diagnostics."""
+        interval = int(getattr(self.config, "contact_diagnostics_interval", 0))
+        core_components, pair_components = self._isaaclab_contact_components()
+        if (
+            interval <= 0
+            or not core_components
+            or contact_state is None
+            or self._physics_step_count % interval != 0
+        ):
+            return
+
+        num_sample_envs = min(
+            self.num_envs,
+            int(getattr(self.config, "contact_diagnostics_max_envs", 256)),
+        )
+        contact = self._build_isaaclab_contact_context(contact_state)
+        force = contact.normal_force_w[:num_sample_envs]
+        history = contact.normal_force_history_w[:num_sample_envs]
+        weight = contact.body_weight_n[:num_sample_envs].clamp_min(1.0e-4)
+        force_bw = force / weight[:, None, :]
+        history_bw = history / weight[:, None, None, :]
+        params = core_components[0][1].static_params
+        force_clip = float(params.get("force_clip_bodyweights", 10.0))
+        force_delta_clip = float(
+            params.get("force_delta_clip_bodyweights", 10.0)
+        )
+        history_norm_bw = torch.linalg.vector_norm(history_bw, dim=-1)
+        sensor_valid = contact.sensor_data_valid[:num_sample_envs]
+        temporal_valid = (
+            contact.temporal_valid[:num_sample_envs] & sensor_valid
+        )
+        previous_force = contact.previous_normal_force_w[:num_sample_envs]
+        force_delta_bw = torch.where(
+            temporal_valid[:, None, None],
+            (force - previous_force) / weight[:, None, :],
+            torch.zeros_like(force),
+        )
+
+        from protomotions.envs.obs import update_isaaclab_contact_state_v1
+
+        active, contact_age, air_age, _, _ = update_isaaclab_contact_state_v1(
+            normal_force_w=force,
+            previous_active=contact.previous_active[:num_sample_envs],
+            previous_contact_age_s=(
+                contact.previous_contact_age_s[:num_sample_envs]
+            ),
+            previous_air_age_s=contact.previous_air_age_s[:num_sample_envs],
+            temporal_valid=temporal_valid,
+            dt=float(self.dt),
+            contact_on_threshold_n=float(params["contact_on_threshold_n"]),
+            contact_off_threshold_n=float(params["contact_off_threshold_n"]),
+        )
+        active &= sensor_valid[:, None]
+
+        force_norm_bw = torch.linalg.vector_norm(force_bw, dim=-1)
+        upward_support_bw = torch.clamp(force[..., 2], min=0.0).sum(
+            dim=1
+        ) / weight.squeeze(-1)
+        upward = torch.clamp(force[..., 2], min=0.0)
+        upward_total = upward.sum(dim=1, keepdim=True)
+        load_fraction = upward / (upward_total + 1.0e-6)
+        if force.shape[1] > 1:
+            support_entropy = -(
+                load_fraction
+                * torch.log(torch.clamp(load_fraction, min=1.0e-6))
+            ).sum(dim=1) / math.log(force.shape[1])
+            support_entropy = torch.where(
+                upward_total.squeeze(1) > 1.0e-6,
+                support_entropy,
+                torch.zeros_like(support_entropy),
+            )
+        else:
+            support_entropy = torch.zeros_like(upward_support_bw)
+
+        diagnostics = {
+            "isaaclab_contact/sensor_data_valid_fraction": (
+                sensor_valid.float().mean()
+            ),
+            "isaaclab_contact/body_weight_n_mean": weight.mean(),
+            "isaaclab_contact/normal_force_bodyweights_mean": force_norm_bw.mean(),
+            "isaaclab_contact/normal_force_bodyweights_max": force_norm_bw.max(),
+            "isaaclab_contact/substep_peak_bodyweights_p95": torch.quantile(
+                history_norm_bw.amax(dim=1), 0.95
+            ),
+            "isaaclab_contact/substep_peak_bodyweights_p99": torch.quantile(
+                history_norm_bw.amax(dim=1), 0.99
+            ),
+            "isaaclab_contact/force_component_clip_fraction": (
+                force_bw.abs() >= force_clip
+            )
+            .float()
+            .mean(),
+            "isaaclab_contact/force_delta_component_clip_fraction": (
+                force_delta_bw.abs() >= force_delta_clip
+            )
+            .float()
+            .mean(),
+            "isaaclab_contact/active_body_count_mean": active.float()
+            .sum(dim=1)
+            .mean(),
+            "isaaclab_contact/contact_age_s_mean": contact_age.mean(),
+            "isaaclab_contact/air_age_s_mean": air_age.mean(),
+            "isaaclab_contact/upward_support_bodyweights_mean": (
+                upward_support_bw.mean()
+            ),
+            "isaaclab_contact/support_load_entropy_mean": support_entropy.mean(),
+            "isaaclab_contact/aggregate_measurement_valid_fraction": (
+                contact.normal_force_valid[:num_sample_envs].float().mean()
+            ),
+            "isaaclab_contact/history_measurement_valid_fraction": (
+                contact.normal_force_history_valid[:num_sample_envs]
+                .float()
+                .mean()
+            ),
+            "isaaclab_contact/num_observation_bodies": torch.tensor(
+                float(force.shape[1]), device=self.device
+            ),
+        }
+        for body_idx, common_body_id in enumerate(
+            self._isaaclab_contact_body_ids.tolist()
+        ):
+            body_name = self.robot_config.kinematic_info.body_names[common_body_id]
+            diagnostics[
+                f"isaaclab_contact/active_fraction_by_body/{body_name}"
+            ] = active[:, body_idx].float().mean()
+        if pair_components:
+            slots = contact.pair_slot_valid[:num_sample_envs]
+            points = contact.mean_contact_point_valid[:num_sample_envs]
+            friction = contact.friction_force_valid[:num_sample_envs]
+            filtered_valid = contact.filtered_normal_force_valid[
+                :num_sample_envs
+            ]
+            pair_measurement_valid = (
+                slots
+                & sensor_valid[:, None, None]
+                & filtered_valid
+                & friction
+            )
+            pair_normal_norm = torch.linalg.vector_norm(
+                contact.filtered_normal_force_w[:num_sample_envs], dim=-1
+            )
+            pair_friction_norm = torch.linalg.vector_norm(
+                contact.friction_force_w[:num_sample_envs], dim=-1
+            )
+            pair_ratio = pair_friction_norm / (pair_normal_norm + 1.0e-4)
+            valid_ratios = pair_ratio[pair_measurement_valid]
+            if valid_ratios.numel() == 0:
+                ratio_p50 = torch.zeros((), device=self.device)
+                ratio_p95 = torch.zeros((), device=self.device)
+            else:
+                ratio_p50 = torch.quantile(valid_ratios, 0.50)
+                ratio_p95 = torch.quantile(valid_ratios, 0.95)
+            diagnostics.update(
+                {
+                    "isaaclab_contact/pair_slot_valid_fraction": (
+                        slots.float().mean()
+                    ),
+                    "isaaclab_contact/mean_contact_point_valid_fraction": (
+                        (points & slots).float().sum()
+                        / slots.float().sum().clamp_min(1.0)
+                    ),
+                    "isaaclab_contact/friction_measurement_valid_fraction": (
+                        (friction & slots).float().sum()
+                        / slots.float().sum().clamp_min(1.0)
+                    ),
+                    "isaaclab_contact/friction_to_normal_ratio_p50": ratio_p50,
+                    "isaaclab_contact/friction_to_normal_ratio_p95": ratio_p95,
+                }
+            )
+        self.extras.update(diagnostics)
 
     def _validate_motion_lib_compatibility(self):
         """Validate that the motion file is compatible with the robot config."""
@@ -1095,6 +1739,7 @@ class BaseEnv:
         self.progress_buf += 1
         self._physics_step_count += 1
         current_state = self.simulator.get_robot_state()
+        isaaclab_contact_state = self._get_isaaclab_contact_sensor_state()
         self._update_contact_state(current_state)
 
         if self.state_history is not None:
@@ -1163,7 +1808,9 @@ class BaseEnv:
             )
 
         # Build context once and reuse for observations, rewards, and terminations
-        self._current_context = self._build_global_context(current_state)
+        self._current_context = self._build_global_context(
+            current_state, isaaclab_contact_state
+        )
 
         self.compute_observations(context=self._current_context)
         self.compute_reward(context=self._current_context)
@@ -1178,12 +1825,14 @@ class BaseEnv:
             self.extras[f"raw/{k}"] = rbs.flatten_bodies(k)
 
         self._record_contact_diagnostics(rbs)
+        self._record_isaaclab_contact_diagnostics(isaaclab_contact_state)
 
         # Update previous contact forces for next step's impact penalty
         self.prev_contact_force_magnitudes[:] = torch.norm(
             rbs.rigid_body_contact_forces, dim=-1
         )
         self._finalize_contact_state(rbs)
+        self._finalize_isaaclab_contact_state(isaaclab_contact_state)
 
     def user_reset(self):
         """Force environments to reset on next check (triggered by user input)."""
@@ -1261,7 +1910,9 @@ class BaseEnv:
         return self._current_context
 
     def _build_global_context(
-        self, current_state: Optional[RobotState] = None
+        self,
+        current_state: Optional[RobotState] = None,
+        isaaclab_contact_state: Optional[Any] = None,
     ) -> EnvContext:
         """Build a fresh global context for observations, rewards, and terminations.
 
@@ -1280,6 +1931,11 @@ class BaseEnv:
         """
         if current_state is None:
             current_state = self.simulator.get_robot_state()
+        if (
+            isaaclab_contact_state is None
+            and getattr(self, "isaaclab_previous_normal_force_w", None) is not None
+        ):
+            isaaclab_contact_state = self._get_isaaclab_contact_sensor_state()
         anchor_idx = self.robot_config.anchor_body_index
 
         ground_heights = self.terrain.get_ground_heights(
@@ -1308,6 +1964,9 @@ class BaseEnv:
             )
 
         scene_surface_context = self._build_scene_surface_context()
+        isaaclab_contact_context = self._build_isaaclab_contact_context(
+            isaaclab_contact_state
+        )
 
         # Build context with view wrappers
         ctx = EnvContext(
@@ -1338,6 +1997,7 @@ class BaseEnv:
                 self.terrain.height_samples,
             ),
             scene=scene_surface_context,
+            isaaclab_contact=isaaclab_contact_context,
             body_contacts=body_contacts,
             current_contact_force_magnitudes=current_contact_force_magnitudes,
             prev_contact_force_magnitudes=self.prev_contact_force_magnitudes,
@@ -1571,7 +2231,9 @@ class BaseEnv:
 
         self.simulator.reset_envs(new_states, new_object_states, env_ids)
         current_state = self.simulator.get_robot_state()
+        isaaclab_contact_state = self._get_isaaclab_contact_sensor_state()
         self._reset_contact_state(env_ids)
+        self._reset_isaaclab_contact_state(env_ids)
         current_state = self._clear_reset_contact_sample(current_state, env_ids)
 
         default_mask = ~torch.isin(env_ids, ref_env_ids)
@@ -1626,7 +2288,9 @@ class BaseEnv:
         # Recompute observations after reset to reflect new control component state
         # Invalidate and rebuild context since state changed
         self._current_context = None
-        self._current_context = self._build_global_context(current_state)
+        self._current_context = self._build_global_context(
+            current_state, isaaclab_contact_state
+        )
         self.compute_observations(env_ids, context=self._current_context)
 
         return self.get_obs(), {}
@@ -1974,6 +2638,22 @@ class BaseEnv:
         }
         if self.state_history is not None:
             snapshot["state_history"] = self.state_history.save_state()
+        if getattr(self, "isaaclab_previous_normal_force_w", None) is not None:
+            snapshot.update(
+                {
+                    "isaaclab_previous_normal_force_w": (
+                        self.isaaclab_previous_normal_force_w.clone()
+                    ),
+                    "isaaclab_previous_active": (
+                        self.isaaclab_previous_active.clone()
+                    ),
+                    "isaaclab_contact_age_s": self.isaaclab_contact_age_s.clone(),
+                    "isaaclab_air_age_s": self.isaaclab_air_age_s.clone(),
+                    "isaaclab_contact_temporal_valid": (
+                        self.isaaclab_contact_temporal_valid.clone()
+                    ),
+                }
+            )
         if self._current_noisy_obs is not None:
             from dataclasses import fields as dc_fields
 
@@ -2031,6 +2711,23 @@ class BaseEnv:
             self.prev_contact_force_magnitudes.zero_()
             self._reset_contact_state(env_ids)
             self._update_contact_state(self.simulator.get_robot_state())
+        if getattr(self, "isaaclab_previous_normal_force_w", None) is not None:
+            if "isaaclab_previous_normal_force_w" in snapshot:
+                self.isaaclab_previous_normal_force_w.copy_(
+                    snapshot["isaaclab_previous_normal_force_w"]
+                )
+                self.isaaclab_previous_active.copy_(
+                    snapshot["isaaclab_previous_active"]
+                )
+                self.isaaclab_contact_age_s.copy_(
+                    snapshot["isaaclab_contact_age_s"]
+                )
+                self.isaaclab_air_age_s.copy_(snapshot["isaaclab_air_age_s"])
+                self.isaaclab_contact_temporal_valid.copy_(
+                    snapshot["isaaclab_contact_temporal_valid"]
+                )
+            else:
+                self._reset_isaaclab_contact_state(env_ids)
         self._current_noisy_obs = snapshot.get("_current_noisy_obs")
         self._current_context = None
 

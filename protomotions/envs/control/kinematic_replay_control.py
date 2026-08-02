@@ -91,6 +91,11 @@ class KinematicReplayControl(ControlComponent):
         
         # Set robot state directly
         self.env.simulator.reset_envs(ref_reset_state, ref_object_state, env_ids)
+        reset_contact_state = getattr(
+            self.env, "_reset_isaaclab_contact_state", None
+        )
+        if reset_contact_state is not None:
+            reset_contact_state(env_ids)
         
         # Prevent double reset
         self.env.progress_buf[env_ids] = 0

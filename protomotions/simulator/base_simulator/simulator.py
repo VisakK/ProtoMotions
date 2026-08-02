@@ -39,6 +39,9 @@ from protomotions.simulator.base_simulator.simulator_state import (
     ObjectState,
     ResetState,
 )
+from protomotions.simulator.base_simulator.contact_sensor_state import (
+    ContactSensorState,
+)
 from protomotions.simulator.base_simulator.config import (
     MarkerState,
     VisualizationMarkerConfig,
@@ -1098,6 +1101,20 @@ class Simulator(RecordingMixin, ABC):
             simulator_bodies_contact_forces.convert_to_common(self.data_conversion)
         )
         return simulator_bodies_contact_forces
+
+    def get_contact_sensor_state(
+        self, env_ids: Optional[torch.Tensor] = None
+    ) -> Optional[ContactSensorState]:
+        """Return backend-specific rich contact data when supported and enabled.
+
+        The generic simulator contract deliberately does not synthesize history,
+        filtered pair data, friction, or contact locations.  Backends which can
+        expose those measurements override this method; all others return
+        ``None`` so opt-in observations can fail with a clear capability error.
+        """
+
+        del env_ids
+        return None
 
     def get_binary_body_contacts(
         self, env_ids: Optional[torch.Tensor] = None, threshold: float = 0.01

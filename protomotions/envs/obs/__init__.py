@@ -88,6 +88,26 @@ from protomotions.envs.obs.contact import (
     update_contact_state,
 )
 
+# IsaacLab-specific contact-sensor observation compute kernels.  These are a
+# parallel, explicitly named contract and do not replace ``contact_obs_v1``.
+from protomotions.envs.obs.contact_isaaclab import (
+    ISAACLAB_CONTACT_OBS_V1_PER_BODY_DIM,
+    ISAACLAB_CONTACT_OBS_V1_GLOBAL_DIM,
+    ISAACLAB_CONTACT_PAIR_OBS_V1_PER_PAIR_DIM,
+    ISAACLAB_CONTACT_OBS_V1_LAYOUT,
+    ISAACLAB_CONTACT_OBS_V1_GLOBAL_LAYOUT,
+    ISAACLAB_CONTACT_PAIR_OBS_V1_LAYOUT,
+    ISAACLAB_CONTACT_DEFAULT_ON_THRESHOLD_N,
+    ISAACLAB_CONTACT_DEFAULT_OFF_THRESHOLD_N,
+    isaaclab_contact_obs_v1_dim,
+    isaaclab_contact_pair_obs_v1_dim,
+    unflatten_isaaclab_contact_obs_v1,
+    unflatten_isaaclab_contact_pair_obs_v1,
+    update_isaaclab_contact_state_v1,
+    compute_isaaclab_contact_obs_v1,
+    compute_isaaclab_contact_pair_obs_v1,
+)
+
 # Observation noise utilities
 from protomotions.envs.obs.observation_noise import (
     NoisyObservations,
@@ -154,6 +174,22 @@ __all__ = [
     "unflatten_contact_obs_v1",
     "compute_contact_obs_v1",
     "update_contact_state",
+    # IsaacLab-specific contact-sensor observation compute kernels
+    "ISAACLAB_CONTACT_OBS_V1_PER_BODY_DIM",
+    "ISAACLAB_CONTACT_OBS_V1_GLOBAL_DIM",
+    "ISAACLAB_CONTACT_PAIR_OBS_V1_PER_PAIR_DIM",
+    "ISAACLAB_CONTACT_OBS_V1_LAYOUT",
+    "ISAACLAB_CONTACT_OBS_V1_GLOBAL_LAYOUT",
+    "ISAACLAB_CONTACT_PAIR_OBS_V1_LAYOUT",
+    "ISAACLAB_CONTACT_DEFAULT_ON_THRESHOLD_N",
+    "ISAACLAB_CONTACT_DEFAULT_OFF_THRESHOLD_N",
+    "isaaclab_contact_obs_v1_dim",
+    "isaaclab_contact_pair_obs_v1_dim",
+    "unflatten_isaaclab_contact_obs_v1",
+    "unflatten_isaaclab_contact_pair_obs_v1",
+    "update_isaaclab_contact_state_v1",
+    "compute_isaaclab_contact_obs_v1",
+    "compute_isaaclab_contact_pair_obs_v1",
     # Observation noise utilities
     "NoisyObservations",
     "apply_observation_noise",

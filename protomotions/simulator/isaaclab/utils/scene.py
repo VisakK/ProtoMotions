@@ -1,7 +1,9 @@
 # SPDX-FileCopyrightText: Copyright (c) 2025-2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
 # SPDX-License-Identifier: Apache-2.0
 
+import logging
 from typing import Optional
+
 from protomotions.components.terrains.terrain import Terrain
 from protomotions.robot_configs.base import RobotConfig
 import isaaclab.sim as sim_utils
@@ -13,9 +15,19 @@ from isaaclab.sensors import ContactSensorCfg
 from isaaclab.terrains.terrain_importer_cfg import TerrainImporterCfg
 from isaaclab.utils.assets import ISAAC_NUCLEUS_DIR
 from protomotions.simulator.isaaclab.utils.usd_utils import TrimeshTerrainImporter
-from protomotions.simulator.isaaclab.config import IsaacLabSimulatorConfig
+from protomotions.simulator.isaaclab.config import (
+    IsaacLabSimulatorConfig,
+    build_contact_filter_metadata,
+    build_humanoid_contact_sensor_kwargs,
+    get_contact_sensor_observation_cfg,
+)
 from protomotions.simulator.base_simulator.config import ProjectileConfig
+from protomotions.simulator.base_simulator.contact_sensor_state import (
+    ContactFilterMetadata,
+)
 from protomotions.robot_configs.base import ControlType
+
+log = logging.getLogger(__name__)
 
 
 @configclass
@@ -38,6 +50,7 @@ class SceneCfg(InteractiveSceneCfg):
         terrain: Optional[Terrain] = None,
         scene_cfgs=None,
         projectile_config: Optional[ProjectileConfig] = None,
+        contact_filter_metadata: Optional[ContactFilterMetadata] = None,
         pretty=False,
         *args,
         **kwargs,
@@ -45,6 +58,12 @@ class SceneCfg(InteractiveSceneCfg):
         super().__init__(*args, **kwargs)
 
         activate_contact_sensors = robot_config.contact_bodies is not None
+        rich_contact_cfg = get_contact_sensor_observation_cfg(config)
+        if rich_contact_cfg.enabled and not robot_config.contact_bodies:
+            raise ValueError(
+                "IsaacLab rich contact observations require non-empty "
+                "RobotConfig.contact_bodies."
+            )
 
         # lights
         if True:  # pretty:
@@ -200,15 +219,40 @@ class SceneCfg(InteractiveSceneCfg):
             self.robot.spawn = self.robot.spawn.replace(rigid_props=new_rigid_props)
 
         if activate_contact_sensors:
-            sensing_filter = ["/World/ground/terrain/mesh"]
+            legacy_sensing_filter = ["/World/ground/terrain/mesh"]
             for obj_idx in range(num_objects_per_scene):
-                sensing_filter.append(f"/World/envs/env_.*/Object_{obj_idx}")
+                legacy_sensing_filter.append(f"/World/envs/env_.*/Object_{obj_idx}")
+            if rich_contact_cfg.enabled:
+                if contact_filter_metadata is None:
+                    contact_filter_metadata = build_contact_filter_metadata(
+                        config,
+                        num_scene_objects=num_objects_per_scene,
+                        terrain_available=terrain is not None,
+                    )
+                if (
+                    rich_contact_cfg.track_pair_data
+                    and rich_contact_cfg.max_contact_data_count_per_prim < 16
+                ):
+                    log.warning(
+                        "IsaacLab rich contact data capacity is %d contacts per "
+                        "sensor prim. Broad, all-body contact may require at least 16.",
+                        rich_contact_cfg.max_contact_data_count_per_prim,
+                    )
+
             for body_name in robot_config.contact_bodies:
-                contact_sensor_cfg = ContactSensorCfg(
-                    prim_path=f"{robot_config.asset.usd_bodies_root_prim_path}{body_name}",
-                    filter_prim_paths_expr=sensing_filter,
-                    history_length=config.sim.decimation,
+                sensor_kwargs = build_humanoid_contact_sensor_kwargs(
+                    config,
+                    prim_path=(
+                        f"{robot_config.asset.usd_bodies_root_prim_path}{body_name}"
+                    ),
+                    legacy_filter_prim_path_exprs=tuple(legacy_sensing_filter),
+                    filter_metadata=(
+                        contact_filter_metadata
+                        if contact_filter_metadata is not None
+                        else ContactFilterMetadata()
+                    ),
                 )
+                contact_sensor_cfg = ContactSensorCfg(**sensor_kwargs)
                 setattr(self, f"contact_sensor_{body_name}", contact_sensor_cfg)
 
         if terrain is not None:

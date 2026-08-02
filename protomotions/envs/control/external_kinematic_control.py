@@ -68,6 +68,11 @@ class ExternalKinematicControl(ControlComponent):
         
         # Apply the stored pose (no object support)
         self.env.simulator.reset_envs(self._next_pose, None, env_ids)
+        reset_contact_state = getattr(
+            self.env, "_reset_isaaclab_contact_state", None
+        )
+        if reset_contact_state is not None:
+            reset_contact_state(env_ids)
         
         # Prevent environment reset logic
         self.env.progress_buf[:] = 0
@@ -87,4 +92,3 @@ class ExternalKinematicControl(ControlComponent):
     def populate_context(self, ctx: EnvContext) -> None:
         """External kinematic control doesn't add any context variables."""
         pass
-

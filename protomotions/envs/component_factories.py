@@ -383,6 +383,191 @@ def contact_obs_v1_factory(
     )
 
 
+def _validate_isaaclab_contact_body_ids(body_ids: List[int], factory: str) -> None:
+    if not body_ids:
+        raise ValueError(f"{factory} requires at least one body ID")
+    if any(
+        not isinstance(body_id, int) or isinstance(body_id, bool)
+        for body_id in body_ids
+    ):
+        raise TypeError(f"{factory} body IDs must be integers")
+    if min(body_ids) < 0:
+        raise ValueError(f"{factory} body IDs must be non-negative")
+    if len(set(body_ids)) != len(body_ids):
+        raise ValueError(f"{factory} body IDs must be unique")
+
+
+def isaaclab_contact_obs_v1_factory(
+    body_ids: List[int],
+    contact_on_threshold_n: float = 5.0,
+    contact_off_threshold_n: float = 2.0,
+    force_clip_bodyweights: float = 10.0,
+    force_delta_clip_bodyweights: float = 10.0,
+    velocity_clip_mps: float = 5.0,
+    duration_clip_s: float = 2.0,
+    fallback_force_reference_n: float = 600.0,
+    force_epsilon_n: float = 1.0e-4,
+    load_fraction_epsilon: float = 1.0e-6,
+) -> MdpComponent:
+    """Build the opt-in ``20*K+6`` IsaacLab normal-contact observation.
+
+    Unlike :func:`contact_obs_v1_factory`, this component consumes the
+    IsaacLab contact-sensor capability: normal-force substep history,
+    body-weight scaling, and a force-only policy-boundary hysteresis tracker.
+    The existing backend-common contract remains unchanged.
+    """
+    from protomotions.envs.obs import compute_isaaclab_contact_obs_v1
+
+    factory = "isaaclab_contact_obs_v1_factory"
+    _validate_isaaclab_contact_body_ids(body_ids, factory)
+    scalar_params = {
+        "contact_on_threshold_n": contact_on_threshold_n,
+        "contact_off_threshold_n": contact_off_threshold_n,
+        "force_clip_bodyweights": force_clip_bodyweights,
+        "force_delta_clip_bodyweights": force_delta_clip_bodyweights,
+        "velocity_clip_mps": velocity_clip_mps,
+        "duration_clip_s": duration_clip_s,
+        "fallback_force_reference_n": fallback_force_reference_n,
+        "force_epsilon_n": force_epsilon_n,
+        "load_fraction_epsilon": load_fraction_epsilon,
+    }
+    non_finite = [
+        name for name, value in scalar_params.items() if not math.isfinite(value)
+    ]
+    if non_finite:
+        raise ValueError(f"{factory} parameters must be finite: {non_finite}")
+    if contact_off_threshold_n < 0.0 or contact_on_threshold_n < contact_off_threshold_n:
+        raise ValueError(
+            "contact_on_threshold_n must be greater than or equal to "
+            "contact_off_threshold_n >= 0"
+        )
+    for name in (
+        "force_clip_bodyweights",
+        "force_delta_clip_bodyweights",
+        "velocity_clip_mps",
+        "duration_clip_s",
+        "fallback_force_reference_n",
+        "force_epsilon_n",
+        "load_fraction_epsilon",
+    ):
+        if scalar_params[name] <= 0.0:
+            raise ValueError(f"{name} must be greater than zero")
+
+    return MdpComponent(
+        compute_func=compute_isaaclab_contact_obs_v1,
+        dynamic_vars={
+            "root_rot": EnvContext.current.root_rot,
+            "rigid_body_vel": EnvContext.current.rigid_body_vel,
+            "normal_force_w": EnvContext.isaaclab_contact.normal_force_w,
+            "normal_force_history_w": (
+                EnvContext.isaaclab_contact.normal_force_history_w
+            ),
+            "previous_normal_force_w": (
+                EnvContext.isaaclab_contact.previous_normal_force_w
+            ),
+            "previous_active": EnvContext.isaaclab_contact.previous_active,
+            "previous_contact_age_s": (
+                EnvContext.isaaclab_contact.previous_contact_age_s
+            ),
+            "previous_air_age_s": (
+                EnvContext.isaaclab_contact.previous_air_age_s
+            ),
+            "temporal_valid": EnvContext.isaaclab_contact.temporal_valid,
+            "body_weight_n": EnvContext.isaaclab_contact.body_weight_n,
+            "normal_force_valid": (
+                EnvContext.isaaclab_contact.normal_force_valid
+            ),
+            "normal_force_history_valid": (
+                EnvContext.isaaclab_contact.normal_force_history_valid
+            ),
+            "sensor_data_valid": EnvContext.isaaclab_contact.sensor_data_valid,
+            "dt": EnvContext.dt,
+        },
+        static_params={
+            "body_ids": torch.tensor(body_ids, dtype=torch.long),
+            **scalar_params,
+            "w_last": True,
+        },
+    )
+
+
+def isaaclab_contact_pair_obs_v1_factory(
+    body_ids: List[int],
+    contact_on_threshold_n: float = 5.0,
+    force_clip_bodyweights: float = 10.0,
+    tangential_normal_ratio_clip: float = 2.0,
+    contact_point_scale_m: float = 1.0,
+    fallback_force_reference_n: float = 600.0,
+    force_epsilon_n: float = 1.0e-4,
+) -> MdpComponent:
+    """Build the optional ``15*K*F`` filtered IsaacLab pair observation.
+
+    Friction is taken only from IsaacLab's dedicated filtered friction tensor.
+    The contact location is an average sensor position, never labelled as a
+    center of pressure.  Pair slots are body-major then filter-major.
+    """
+    from protomotions.envs.obs import compute_isaaclab_contact_pair_obs_v1
+
+    factory = "isaaclab_contact_pair_obs_v1_factory"
+    _validate_isaaclab_contact_body_ids(body_ids, factory)
+    scalar_params = {
+        "contact_on_threshold_n": contact_on_threshold_n,
+        "force_clip_bodyweights": force_clip_bodyweights,
+        "tangential_normal_ratio_clip": tangential_normal_ratio_clip,
+        "contact_point_scale_m": contact_point_scale_m,
+        "fallback_force_reference_n": fallback_force_reference_n,
+        "force_epsilon_n": force_epsilon_n,
+    }
+    non_finite = [
+        name for name, value in scalar_params.items() if not math.isfinite(value)
+    ]
+    if non_finite:
+        raise ValueError(f"{factory} parameters must be finite: {non_finite}")
+    if contact_on_threshold_n < 0.0:
+        raise ValueError("contact_on_threshold_n must be non-negative")
+    for name in (
+        "force_clip_bodyweights",
+        "tangential_normal_ratio_clip",
+        "contact_point_scale_m",
+        "fallback_force_reference_n",
+        "force_epsilon_n",
+    ):
+        if scalar_params[name] <= 0.0:
+            raise ValueError(f"{name} must be greater than zero")
+
+    return MdpComponent(
+        compute_func=compute_isaaclab_contact_pair_obs_v1,
+        dynamic_vars={
+            "root_rot": EnvContext.current.root_rot,
+            "rigid_body_pos": EnvContext.current.rigid_body_pos,
+            "filtered_normal_force_w": (
+                EnvContext.isaaclab_contact.filtered_normal_force_w
+            ),
+            "friction_force_w": EnvContext.isaaclab_contact.friction_force_w,
+            "mean_contact_point_w": (
+                EnvContext.isaaclab_contact.mean_contact_point_w
+            ),
+            "pair_slot_valid": EnvContext.isaaclab_contact.pair_slot_valid,
+            "mean_contact_point_valid": (
+                EnvContext.isaaclab_contact.mean_contact_point_valid
+            ),
+            "body_weight_n": EnvContext.isaaclab_contact.body_weight_n,
+            "filtered_normal_force_valid": (
+                EnvContext.isaaclab_contact.filtered_normal_force_valid
+            ),
+            "friction_force_valid": (
+                EnvContext.isaaclab_contact.friction_force_valid
+            ),
+            "sensor_data_valid": EnvContext.isaaclab_contact.sensor_data_valid,
+        },
+        static_params={
+            "body_ids": torch.tensor(body_ids, dtype=torch.long),
+            **scalar_params,
+            "w_last": True,
+        },
+    )
+
+
 def mimic_target_poses_max_coords_factory(
     use_noisy: bool = False,
     with_velocities: bool = True,
@@ -1621,6 +1806,8 @@ __all__ = [
     "previous_actions_factory",
     "nearest_surface_obs_factory",
     "contact_obs_v1_factory",
+    "isaaclab_contact_obs_v1_factory",
+    "isaaclab_contact_pair_obs_v1_factory",
     "mimic_target_poses_max_coords_factory",
     "mimic_target_poses_future_rel_factory",
     "mimic_target_poses_reduced_coords_factory",

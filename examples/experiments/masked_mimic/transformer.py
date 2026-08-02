@@ -24,6 +24,100 @@ def additional_experiment_arguments(parser: argparse.ArgumentParser):
     )
 
 
+def configure_robot_and_simulator(
+    robot_cfg: RobotConfig,
+    simulator_cfg: SimulatorConfig,
+    args: argparse.Namespace,
+):
+    """Propagate an IsaacLab-rich expert's sensor contract for distillation.
+
+    Expert observation components are copied later by :func:`env_config`, but
+    the simulator scene is constructed from the student configs.  Without this
+    pre-env hook, a rich Stage-1 expert would receive prefixed observation
+    components while its all-body/history/pair sensors remained disabled.
+    Non-rich experts and runs without an external expert are strict no-ops.
+    """
+    expert_model_path = getattr(args, "expert_model_path", None)
+    if not expert_model_path:
+        return
+
+    from copy import deepcopy
+
+    from protomotions.agents.supervised.expert_utils import (
+        get_expert_actor_in_keys,
+    )
+    from protomotions.utils.config_utils import (
+        load_resolved_configs_from_checkpoint,
+    )
+
+    expert_configs = load_resolved_configs_from_checkpoint(expert_model_path)
+    expert_agent_cfg = expert_configs["agent"]
+    actor_keys = set(get_expert_actor_in_keys(expert_agent_cfg))
+    aggregate_key = "isaaclab_contact_obs_v1"
+    pair_key = "isaaclab_contact_pair_obs_v1"
+    if aggregate_key not in actor_keys and pair_key not in actor_keys:
+        return
+
+    expert_robot_cfg = expert_configs["robot"]
+    expert_simulator_cfg = expert_configs["simulator"]
+    current_target = getattr(simulator_cfg, "_target_", "")
+    expert_target = getattr(expert_simulator_cfg, "_target_", "")
+    if "isaaclab" not in current_target.lower() or "isaaclab" not in expert_target.lower():
+        raise ValueError(
+            "An IsaacLab-rich MaskedMimic expert requires both expert and "
+            "student rollout simulators to use IsaacLab; got "
+            f"student='{current_target}', expert='{expert_target}'."
+        )
+
+    current_body_names = list(robot_cfg.kinematic_info.body_names)
+    expert_body_names = list(expert_robot_cfg.kinematic_info.body_names)
+    if current_body_names != expert_body_names:
+        raise ValueError(
+            "IsaacLab-rich expert and student robots must have identical common "
+            "body-name ordering."
+        )
+
+    expert_contact_cfg = getattr(
+        expert_simulator_cfg, "contact_sensor_observation", None
+    )
+    if expert_contact_cfg is None or not expert_contact_cfg.enabled:
+        raise ValueError(
+            "Expert actor requires IsaacLab contact observations, but its saved "
+            "simulator contact_sensor_observation capability is disabled."
+        )
+    if pair_key in actor_keys and not (
+        expert_contact_cfg.track_pair_data
+        and expert_contact_cfg.track_contact_points
+        and expert_contact_cfg.track_friction_forces
+    ):
+        raise ValueError(
+            "Expert actor requires isaaclab_contact_pair_obs_v1, but its saved "
+            "sensor config does not track pair data, friction, and contact points."
+        )
+    if not hasattr(simulator_cfg, "contact_sensor_observation"):
+        raise ValueError(
+            "Student IsaacLab simulator config lacks contact_sensor_observation"
+        )
+
+    # Sensor coverage may expand, but reward semantics remain the student's.
+    current_reward_bodies = list(robot_cfg.contact_reward_bodies or [])
+    sensor_names = set(robot_cfg.contact_bodies or []) | set(
+        expert_robot_cfg.contact_bodies or []
+    )
+    merged_sensor_bodies = [
+        name for name in current_body_names if name in sensor_names
+    ]
+    expert_observation_bodies = list(
+        expert_robot_cfg.contact_observation_bodies or []
+    )
+    robot_cfg.update_fields(
+        contact_bodies=merged_sensor_bodies,
+        contact_observation_bodies=expert_observation_bodies,
+        contact_reward_bodies=current_reward_bodies,
+    )
+    simulator_cfg.contact_sensor_observation = deepcopy(expert_contact_cfg)
+
+
 def terrain_config(args: argparse.Namespace):
     """Build terrain configuration."""
     from protomotions.components.terrains.config import TerrainConfig
