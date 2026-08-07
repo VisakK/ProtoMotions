@@ -125,23 +125,38 @@ def compute_contact_match_rew(
     sim_contacts: Tensor,
     ref_contacts: Tensor,
     contact_body_ids: Tensor,
+    normalize: bool = False,
 ) -> Tensor:
-    """Contact matching reward using foot contact bodies.
-    
-    Penalizes mismatch between simulated and reference foot contacts.
-    Uses contact_body_ids (typically foot bodies).
-    
+    """Penalize disagreement between simulated and reference contact state.
+
+    Both sides mean "this body is in contact with anything" -- the simulated
+    flags come from the per-body net contact force, which self-collision makes
+    true for body-body contact as well, so reference labels must be built the
+    same way (see ``data/scripts/annotate_contacts_geometric.py``).
+
     Args:
         sim_contacts: Simulated contact flags [num_envs, num_bodies].
-        ref_contacts: Reference contact flags [num_envs, num_bodies].
-        contact_body_ids: Indices of bodies to track contacts for [num_contact_bodies].
-    
+        ref_contacts: Reference contact flags [num_envs, num_bodies]. May be
+            float when the motion library smooths labels over a window.
+        contact_body_ids: Indices of bodies to score [num_contact_bodies].
+        normalize: Divide by the number of scored bodies, so the penalty is a
+            mean mismatch fraction in [0, 1] rather than a count. Leave False
+            to preserve the historical count semantics; set it True whenever
+            the scored set is larger than the feet, otherwise the term's scale
+            silently grows with the number of bodies and swamps the tracking
+            rewards.
+
     Returns:
         Contact mismatch penalty tensor [num_envs].
     """
     sim_contacts_subset = sim_contacts[:, contact_body_ids]
     ref_contacts_subset = ref_contacts[:, contact_body_ids]
-    return torch.abs(sim_contacts_subset.float() - ref_contacts_subset.float()).sum(dim=1)
+    mismatch = torch.abs(
+        sim_contacts_subset.float() - ref_contacts_subset.float()
+    ).sum(dim=1)
+    if normalize:
+        mismatch = mismatch / max(int(sim_contacts_subset.shape[1]), 1)
+    return mismatch
 
 
 def compute_contact_force_change_rew(

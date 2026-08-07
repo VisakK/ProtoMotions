@@ -928,12 +928,20 @@ def pow_rew_factory(
 def contact_match_rew_factory(
     weight: float = -0.1,
     zero_during_grace_period: bool = True,
+    normalize: bool = False,
 ) -> MdpComponent:
     """Factory for contact matching reward.
+
+    The scored bodies are ``robot_config.contact_reward_bodies``; the reference
+    labels come from the motion library's contact field. Both must mean the same
+    thing -- "in contact with anything" -- or the term rewards nonsense.
 
     Args:
         weight: Reward weight (typically negative).
         zero_during_grace_period: If True, zero reward during grace period.
+        normalize: Score the mean mismatch fraction instead of the raw count.
+            Required once more than the feet are scored, so the term's magnitude
+            does not scale with the number of bodies.
 
     Returns:
         MdpComponent configured for contact matching.
@@ -950,6 +958,7 @@ def contact_match_rew_factory(
         static_params={
             "weight": weight,
             "zero_during_grace_period": zero_during_grace_period,
+            "normalize": normalize,
         },
     )
 

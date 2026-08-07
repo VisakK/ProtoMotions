@@ -88,6 +88,7 @@ def test_mimic_fsq_basic_config_factories_and_inference_overrides():
     assert env_cfg.reward_components["contact_match_rew"].static_params == {
         "weight": -0.1,
         "zero_during_grace_period": True,
+        "normalize": False,
     }
 
     assert agent_cfg.batch_size == 32

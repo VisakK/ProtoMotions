@@ -6,6 +6,8 @@
 import argparse
 from types import SimpleNamespace
 
+import pytest
+
 from examples.experiments.mimic import mlp_2x_no_contact_rew as baseline
 from examples.experiments.mimic import mlp_contact_rich as contact_rich
 from protomotions.envs.obs import contact_obs_v1_dim
@@ -101,3 +103,43 @@ def test_smpl_yogi_contact_rich_config_preserves_baseline_except_inputs():
         == baseline_agent_cfg.save_epoch_checkpoint_every
         == 2000
     )
+
+
+def test_contact_match_rew_normalize_scales_by_body_count():
+    """Normalized scoring must not grow with the number of scored bodies."""
+    import torch
+
+    from protomotions.envs.rewards import compute_contact_match_rew
+
+    sim = torch.tensor([[1.0, 0.0, 1.0, 0.0, 1.0, 1.0]])
+    ref = torch.tensor([[0.0, 0.0, 1.0, 1.0, 1.0, 0.0]])
+    feet = torch.tensor([0, 1, 2, 3], dtype=torch.long)
+    everything = torch.arange(6, dtype=torch.long)
+
+    # Raw counts: scoring more bodies mechanically inflates the penalty.
+    assert compute_contact_match_rew(sim, ref, feet).item() == 2.0
+    assert compute_contact_match_rew(sim, ref, everything).item() == 3.0
+
+    # Normalized: a mean mismatch fraction, comparable across body sets.
+    assert compute_contact_match_rew(sim, ref, feet, normalize=True).item() == 0.5
+    assert compute_contact_match_rew(
+        sim, ref, everything, normalize=True
+    ).item() == pytest.approx(0.5)
+
+    # A perfect match is zero either way; total disagreement saturates at 1.
+    assert compute_contact_match_rew(sim, sim, everything, normalize=True).item() == 0.0
+    assert compute_contact_match_rew(
+        sim, 1.0 - sim, everything, normalize=True
+    ).item() == 1.0
+
+
+def test_contact_match_rew_handles_smoothed_float_reference():
+    """Motion libraries smooth contact labels into [0, 1]; the kernel must cope."""
+    import torch
+
+    from protomotions.envs.rewards import compute_contact_match_rew
+
+    sim = torch.tensor([[1.0, 0.0]])
+    ref = torch.tensor([[0.75, 0.25]])
+    ids = torch.arange(2, dtype=torch.long)
+    assert compute_contact_match_rew(sim, ref, ids, normalize=True).item() == pytest.approx(0.25)

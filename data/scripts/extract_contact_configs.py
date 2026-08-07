@@ -285,6 +285,25 @@ class ClipGeometry:
             gap[idx], wa[idx], wb[idx] = g, a, b
         return gap, wa, wb
 
+    def member_gaps(self, pair_key):
+        """Per-member-body gaps behind a zone pair's min: ([C,T], [(body,...)]).
+
+        ``pair_series`` collapses the member combos to their argmin because a
+        zone is the unit of the configuration database.  A per-*body* consumer
+        (reference contact labels for a contact-matching reward) needs to know
+        which members are actually touching, not just the closest one -- a flat
+        foot rests on both its ankle and its toe box.
+        """
+        if ":G" in pair_key:
+            zone = pair_key.split(":")[0]
+            members = [(b, None) for b in ZONES[zone]]
+            gaps = [geom_ground_distance(self.world_geom(b))[0] for b in ZONES[zone]]
+        else:
+            za, zb = pair_key.split("+")
+            members = [(a, b) for a in ZONES[za] for b in ZONES[zb]]
+            gaps = [self._combo_distance(a, b)[0] for a, b in members]
+        return torch.stack(gaps), members
+
     def pair_series(self, pair_key):
         """Min over member-body combos; returns dict of [T]-tensors."""
         if ":G" in pair_key:
@@ -661,7 +680,19 @@ class HeadingFrame:
 # --------------------------------------------------------------------------- #
 # Per-clip extraction.
 # --------------------------------------------------------------------------- #
-def extract_clip(path, mjcf, thresholds, calibrate=False):
+def compute_active_pairs(path, mjcf, thresholds, calibrate=False):
+    """Load one clip and resolve per-frame activity for every zone pair.
+
+    This is the whole detection pipeline -- geometry, hysteresis, the loose
+    body-body tier and the static-support model -- with none of the segment /
+    event bookkeeping.  ``extract_clip`` builds the configuration database on
+    top of it; per-frame consumers (e.g. reference contact labels for a
+    contact-matching reward) use the returned ``active`` masks directly.
+
+    Returns ``None`` for a file that is not a motion dict, the calibration
+    payload when ``calibrate`` is set, and otherwise a dict with the clip
+    geometry, per-pair series, and the cleaned ``active`` masks.
+    """
     torch.set_num_threads(1)
     motion = torch.load(str(path), map_location="cpu", weights_only=False)
     if not isinstance(motion, dict) or "rigid_body_pos" not in motion:
@@ -686,7 +717,12 @@ def extract_clip(path, mjcf, thresholds, calibrate=False):
                 "frames": int(T),
                 "frac_below": {str(th): float((g < th).mean()) for th in (0.005, 0.01, 0.02, 0.03, 0.05, 0.1)},
             }
-        return {"motion": path.stem, "fps": fps, "pairs": out, "hist_edges_mm": [-50, 600, 2]}
+        return {
+            "calibration": {
+                "motion": path.stem, "fps": fps, "pairs": out,
+                "hist_edges_mm": [-50, 600, 2],
+            }
+        }
 
     th = thresholds
     merge_n = round(th["merge_s"] * fps)
@@ -727,6 +763,41 @@ def extract_clip(path, mjcf, thresholds, calibrate=False):
         p = f"{z}:G"
         promo = clean_active(promoted[zi], merge_n, loose_dwell_n)
         active[p] = merge_short_breaks(active[p] | promo, merge_n)
+
+    return {
+        "motion": motion, "fps": fps, "body_names": body_names, "clip": clip,
+        "T": T, "pairs": pairs, "series": series, "th": th,
+        "merge_n": merge_n, "dwell_n": dwell_n, "loose_dwell_n": loose_dwell_n,
+        "bins": bins, "gravity_root": gravity_root, "strict": strict,
+        "make_th": make_th, "active": active,
+        "inconsistent_frames": inconsistent_frames,
+    }
+
+
+def extract_clip(path, mjcf, thresholds, calibrate=False):
+    resolved = compute_active_pairs(path, mjcf, thresholds, calibrate=calibrate)
+    if resolved is None:
+        return None
+    if calibrate:
+        return resolved["calibration"]
+
+    motion = resolved["motion"]
+    fps = resolved["fps"]
+    body_names = resolved["body_names"]
+    clip = resolved["clip"]
+    T = resolved["T"]
+    pairs = resolved["pairs"]
+    series = resolved["series"]
+    th = resolved["th"]
+    merge_n = resolved["merge_n"]
+    dwell_n = resolved["dwell_n"]
+    loose_dwell_n = resolved["loose_dwell_n"]
+    bins = resolved["bins"]
+    gravity_root = resolved["gravity_root"]
+    make_th = resolved["make_th"]
+    active = resolved["active"]
+    inconsistent_frames = resolved["inconsistent_frames"]
+    del dwell_n, loose_dwell_n  # kept above for callers that need the cadence
 
     hf = HeadingFrame(motion)
 

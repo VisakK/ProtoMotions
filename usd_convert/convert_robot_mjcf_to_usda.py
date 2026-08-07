@@ -23,6 +23,9 @@ The full pipeline is:
        a. Remove the "_cleaned" suffix leaked from the temp filename.
        b. Add ``over "worldBody" (active = false)`` to deactivate the extra
           articulation root that the MJCF importer creates from <worldbody>.
+     Then restore the MJCF geom densities onto the physics layer
+     (apply_mjcf_masses_to_usd.py) -- the importer zeroes them, which makes
+     PhysX silently substitute its own 1000 kg/m^3 default.
   6. Delete the temporary cleaned XML.
 
 Prerequisites:
@@ -81,6 +84,7 @@ import xml.etree.ElementTree as ET
 
 CONVERTER_SCRIPT = os.path.join(os.path.dirname(__file__), "convert_mjcf_to_usd.py")
 PATCH_SCRIPT = os.path.join(os.path.dirname(__file__), "patch_usd_visual_meshes.py")
+MASS_SCRIPT = os.path.join(os.path.dirname(__file__), "apply_mjcf_masses_to_usd.py")
 
 ELEMENTS_TO_STRIP = ["contact", "sensor", "tendon"]
 
@@ -362,6 +366,39 @@ def main():
         print("\nPatched USDA: removed _cleaned suffix, added worldBody override.")
     else:
         print(f"\nWARNING: Expected USDA not found at {usda_path}", file=sys.stderr)
+
+    # Step 5b: Restore the geom densities the MJCF importer drops.
+    # It writes physics:density = 0.0 on every rigid body, which UsdPhysics reads
+    # as "unspecified" and PhysX replaces with its 1000 kg/m^3 default -- silently
+    # simulating the robot at the wrong mass.
+    physics_usd_path = os.path.join(
+        output_dir, "configuration", f"{stem}_physics.usd"
+    )
+    if os.path.isfile(physics_usd_path):
+        print("\nRestoring MJCF densities...")
+        mass_cmd = [
+            sys.executable,
+            MASS_SCRIPT,
+            "--mjcf",
+            input_path,
+            "--usd",
+            physics_usd_path,
+            "--no-backup",  # freshly generated; the MJCF is the backup
+        ]
+        mass_result = subprocess.run(mass_cmd)
+        if mass_result.returncode != 0:
+            print(
+                "WARNING: Density restoration failed. The robot will simulate at "
+                "PhysX's default 1000 kg/m^3. Re-run manually:\n"
+                f"  python {MASS_SCRIPT} --mjcf {input_path} --usd {output_dir}",
+                file=sys.stderr,
+            )
+    else:
+        print(
+            f"\nWARNING: Expected physics layer not found at {physics_usd_path}; "
+            "densities NOT restored.",
+            file=sys.stderr,
+        )
 
     # Step 6: Clean up temp file
     if os.path.isfile(cleaned_path):
