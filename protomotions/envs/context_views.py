@@ -65,6 +65,12 @@ class RobotStateView:
     dof_vel: Tensor = FieldPath()
     dof_forces: Tensor = FieldPath()
     local_rigid_body_rot: Tensor = FieldPath()
+    # Measured ground reaction, present only on force/pressure-captured
+    # reference motions (the MOYO yoga corpus). None everywhere else, so any
+    # term reading these must handle absence rather than assume zeros.
+    rigid_body_ground_forces: Tensor = FieldPath()
+    ground_reaction: Tensor = FieldPath()
+    ground_reaction_valid: Tensor = FieldPath()
 
 
 # =============================================================================
@@ -92,6 +98,7 @@ class CurrentStateView:
     rigid_body_ang_vel: Tensor = FieldPath()
     rigid_body_contacts: Tensor = FieldPath()
     rigid_body_contact_forces: Tensor = FieldPath()
+    rigid_body_ground_forces: Tensor = FieldPath()
     dof_pos: Tensor = FieldPath()
     dof_vel: Tensor = FieldPath()
     dof_forces: Tensor = FieldPath()
@@ -129,6 +136,9 @@ class CurrentStateView:
         self.rigid_body_contacts = getattr(state, "rigid_body_contacts", None)
         self.rigid_body_contact_forces = getattr(
             state, "rigid_body_contact_forces", None
+        )
+        self.rigid_body_ground_forces = getattr(
+            state, "rigid_body_ground_forces", None
         )
         self.dof_pos = state.dof_pos
         self.dof_vel = state.dof_vel
@@ -272,6 +282,12 @@ class MimicContext:
     anchor_idx: int = FieldPath()
     ref_lr: Tensor = FieldPath()
 
+    # Motion phase (which clip each env tracks and where in it). Lets reward
+    # kernels index precomputed per-reference-frame side-channel tables
+    # (phase gates, per-pair contact targets) without touching MotionLib.
+    motion_ids: Tensor = FieldPath()
+    motion_times: Tensor = FieldPath()
+
     # Future root properties (precomputed)
     future_root_pos: Tensor = FieldPath()
     future_root_rot: Tensor = FieldPath()
@@ -298,6 +314,8 @@ class MimicContext:
         future_dof_vel: Tensor,
         anchor_idx: int,
         ref_lr: Tensor,
+        motion_ids: Optional[Tensor] = None,
+        motion_times: Optional[Tensor] = None,
     ):
         """Initialize MimicContext with precomputed derived values.
 
@@ -311,9 +329,13 @@ class MimicContext:
             future_dof_vel: Future DOF velocities [num_envs, future_steps, num_dofs].
             anchor_idx: Index of anchor body for computing anchor-relative values.
             ref_lr: Reference DOF in local rotation format for DOF tracking rewards.
+            motion_ids: Motion id per env [num_envs] (long), for side-channel lookups.
+            motion_times: Motion time per env [num_envs] (seconds into the clip).
         """
         # Store direct values
         self.ref_state = ref_state
+        self.motion_ids = motion_ids
+        self.motion_times = motion_times
         self.future_pos = future_pos
         self.future_rot = future_rot
         self.future_vel = future_vel

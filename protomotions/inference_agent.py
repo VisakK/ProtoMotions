@@ -132,6 +132,7 @@ AppLauncher = import_simulator_before_torch(args.simulator)
 
 # Now safe to import everything else including torch
 import logging  # noqa: E402
+import sys  # noqa: E402
 from pathlib import Path  # noqa: E402
 import torch  # noqa: E402
 from protomotions.utils.hydra_replacement import get_class  # noqa: E402
@@ -142,6 +143,15 @@ from lightning.fabric import Fabric  # noqa: E402
 logging.basicConfig(level=logging.INFO, format="%(levelname)s:%(name)s: %(message)s")
 
 log = logging.getLogger(__name__)
+
+# Ensure the repo root is on sys.path, mirroring train_agent.load_experiment_module().
+# Frozen configs can hold objects whose classes are defined in experiment modules (e.g.
+# `examples.experiments.mimic.pair_contact_terms.PairEncourageReward`), and unpickling
+# them imports that module by its dotted path. Running this file as a script puts
+# `<repo>/protomotions` on sys.path rather than `<repo>`, so `examples` would not resolve.
+_REPO_ROOT = str(Path(__file__).resolve().parent.parent)
+if _REPO_ROOT not in sys.path:
+    sys.path.insert(0, _REPO_ROOT)
 
 
 # def tmp_enable_domain_randomization(robot_cfg, simulator_cfg, env_cfg):

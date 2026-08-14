@@ -188,6 +188,8 @@ class MimicControl(ControlComponent):
             future_dof_vel=future_dof_vel,
             anchor_idx=self.env.robot_config.anchor_body_index,
             ref_lr=ref_lr,
+            motion_ids=motion_ids,
+            motion_times=motion_times,
         )
     
     def create_visualization_markers(self, headless: bool) -> Dict[str, VisualizationMarkerConfig]:

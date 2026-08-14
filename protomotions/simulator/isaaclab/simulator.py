@@ -771,8 +771,17 @@ class IsaacLabSimulator(Simulator):
         sim_body_names = self._robot.data.body_names
         num_bodies = len(sim_body_names)
 
+        self._validate_contact_sensor_filters_once()
+
         # Pre-allocate tensor for contact forces (initialized to zeros)
         rigid_body_contact_forces = torch.zeros(
+            self.num_envs, num_bodies, 3, device=self.device
+        )
+        # Ground-only normal force per body: the terrain column (filter index 0,
+        # see sensing_filter construction in utils/scene.py) of each per-body
+        # sensor's filtered force matrix. Body-body net force = contact_forces
+        # minus this column.
+        rigid_body_ground_forces = torch.zeros(
             self.num_envs, num_bodies, 3, device=self.device
         )
 
@@ -784,13 +793,63 @@ class IsaacLabSimulator(Simulator):
                 rigid_body_contact_forces[:, body_idx, :] = (
                     contact_sensor.data.net_forces_w.clone()[:, 0, :]
                 )
+                # force_matrix_w has shape [num_envs, 1, num_filters, 3]; it is
+                # allocated iff the sensor has filter prims (always true here:
+                # every body sensor filters against the terrain mesh).
+                force_matrix = contact_sensor.data.force_matrix_w
+                if force_matrix is not None:
+                    rigid_body_ground_forces[:, body_idx, :] = force_matrix[
+                        :, 0, 0, :
+                    ]
 
         if env_ids is not None:
             rigid_body_contact_forces = rigid_body_contact_forces[env_ids]
+            rigid_body_ground_forces = rigid_body_ground_forces[env_ids]
         return RobotState(
             rigid_body_contact_forces=rigid_body_contact_forces,
+            rigid_body_ground_forces=rigid_body_ground_forces,
             state_conversion=StateConversion.SIMULATOR,
         )
+
+    def _validate_contact_sensor_filters_once(self) -> None:
+        """Assert every per-body contact sensor's filter prims resolved.
+
+        The documented PhysX failure mode is SILENT: a filter pattern that
+        cannot be matched one-to-one leaves ``filter_count`` intact while the
+        resolved ``filter_paths`` contain empty strings, and every filtered
+        force column reads exactly zero forever (see
+        ``data/scripts/record_contact_physics.py`` and the num_envs>1 trap in
+        ``notes/Physics_insights.md``). The one-sensor-per-body layout used
+        here is the documented one-to-one case and is expected to pass — this
+        guard exists so a future regression fails loudly instead of feeding
+        zero ground forces into reward terms.
+        """
+        if getattr(self, "_contact_filters_validated", False):
+            return
+        for body_name, contact_sensor in self._contact_sensor_map.items():
+            n_cfg = len(contact_sensor.cfg.filter_prim_paths_expr)
+            if n_cfg == 0:
+                continue
+            view = contact_sensor.contact_physx_view
+            assert view.filter_count == n_cfg, (
+                f"contact sensor '{body_name}': filter_count={view.filter_count} "
+                f"!= configured {n_cfg} filter patterns"
+            )
+            resolved = []
+            for entry in view.filter_paths:
+                if isinstance(entry, (list, tuple)):
+                    resolved.extend(entry)
+                else:
+                    resolved.append(entry)
+            empties = sum(1 for p in resolved if not p)
+            assert empties == 0, (
+                f"contact sensor '{body_name}': {empties} of {len(resolved)} "
+                "resolved filter paths are EMPTY — PhysX could not match the "
+                "filter prims one-to-one and every filtered force column will "
+                "silently read zero. Do not train reward terms on "
+                "rigid_body_ground_forces in this state."
+            )
+        self._contact_filters_validated = True
 
     def _get_simulator_object_contact_buf(
         self,

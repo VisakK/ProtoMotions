@@ -307,6 +307,31 @@ class RobotState(BaseBatchedState):
     rigid_body_ang_vel: Optional[torch.Tensor] = None
     rigid_body_contacts: Optional[torch.Tensor] = None
     rigid_body_contact_forces: Optional[torch.Tensor] = None
+    # Per-body GROUND-only contact force (the terrain column of the contact
+    # sensor's filtered force matrix). Body-body net force = contact_forces
+    # minus this. Only populated by simulators whose sensors filter against
+    # the ground; None elsewhere.
+    rigid_body_ground_forces: Optional[torch.Tensor] = None
+
+    # Measured ground-reaction summary. Only populated on *reference motions*
+    # captured with a force/pressure platform (the MOYO yoga corpus; see
+    # data/scripts/extract_moyo_pressure.py), never by a simulator.
+    #   ground_reaction[:, 0]   total vertical force, N
+    #   ground_reaction[:, 1:3] centre of pressure, world XY metres
+    # Shape: [batch_size, 3].
+    ground_reaction: Optional[torch.Tensor] = None
+    # Per-frame confidence for the two signals above, both in [0, 1]. Shape:
+    # [batch_size, 2].
+    #   [:, 0] coverage -- fraction of body weight the sensor recorded. Below 1
+    #          the capture missed load (a limb hanging off the mat), so
+    #          ground_reaction is under-reported. Gates ground_reaction.
+    #   [:, 1] coverage x the share of measured load that could be attributed to
+    #          a body near the ground. Gates rigid_body_ground_forces, which is
+    #          the weaker signal: it also fails when the reference pose has no
+    #          body where the human was actually loaded.
+    # A term reading either signal must weight by the matching column; the two
+    # differ a lot on poses the retarget gets wrong.
+    ground_reaction_valid: Optional[torch.Tensor] = None
 
     # redundant fields for caching
     local_rigid_body_rot: Optional[torch.Tensor] = None
@@ -389,6 +414,7 @@ class RobotState(BaseBatchedState):
                 "rigid_body_ang_vel": (num_bodies * 3,),
                 "rigid_body_contacts": (num_bodies,),
                 "rigid_body_contact_forces": (num_bodies * 3,),
+                "rigid_body_ground_forces": (num_bodies * 3,),
             }
         else:
             return {
@@ -401,6 +427,7 @@ class RobotState(BaseBatchedState):
                 "rigid_body_ang_vel": (num_bodies, 3),
                 "rigid_body_contacts": (num_bodies,),
                 "rigid_body_contact_forces": (num_bodies, 3),
+                "rigid_body_ground_forces": (num_bodies, 3),
             }
 
     def merge_fields_from(
@@ -436,6 +463,7 @@ class RobotState(BaseBatchedState):
         self._convert_helper(body_conv_map, "rigid_body_ang_vel")
         self._convert_helper(body_conv_map, "rigid_body_contacts")
         self._convert_helper(body_conv_map, "rigid_body_contact_forces")
+        self._convert_helper(body_conv_map, "rigid_body_ground_forces")
 
     def convert_to_common(self, conversion: DataConversionMapping) -> "RobotState":
         """

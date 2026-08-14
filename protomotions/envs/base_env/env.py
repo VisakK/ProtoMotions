@@ -1175,7 +1175,9 @@ class BaseEnv:
 
         rbs = current_state
         for k, _ in rbs.get_shape_mapping(flattened=True).items():
-            self.extras[f"raw/{k}"] = rbs.flatten_bodies(k)
+            flat = rbs.flatten_bodies(k)
+            if flat is not None:  # e.g. ground forces on sims without them
+                self.extras[f"raw/{k}"] = flat
 
         self._record_contact_diagnostics(rbs)
 

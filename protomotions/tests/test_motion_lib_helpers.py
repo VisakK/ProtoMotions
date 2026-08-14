@@ -691,3 +691,89 @@ motions:
 
     with pytest.raises(FileNotFoundError, match="Did you forget to copy"):
         _run_motion_lib_main()
+
+
+# ---------- measured ground reaction (MOYO pressure port) ----------------------
+
+
+def _with_ground_reaction(motion_lib):
+    """Attach measured-ground-reaction fields to a populated stub."""
+    total_frames, num_bodies = motion_lib.gts.shape[:2]
+    motion_lib.gnf = (
+        torch.arange(total_frames * num_bodies * 3, dtype=torch.float32).reshape(
+            total_frames, num_bodies, 3
+        )
+        + 300.0
+    )
+    motion_lib.grc = torch.arange(total_frames * 3, dtype=torch.float32).reshape(
+        total_frames, 3
+    )
+    motion_lib.grw = torch.tensor(
+        [[1.0, 0.9], [0.5, 0.2], [1.0, 1.0], [0.8, 0.8], [0.3, 0.1]],
+        dtype=torch.float32,
+    )[:total_frames]
+    return motion_lib
+
+
+def test_motion_state_exact_frame_returns_measured_ground_reaction():
+    motion_lib = _with_ground_reaction(_populated_motion_lib())
+    sample_indices = torch.tensor([2, 4])
+
+    state = motion_lib.get_motion_state_exact_frame(
+        torch.tensor([0, 1]), torch.tensor([2, 1])
+    )
+
+    assert torch.equal(state.rigid_body_ground_forces, motion_lib.gnf[sample_indices])
+    assert torch.equal(state.ground_reaction, motion_lib.grc[sample_indices])
+    assert torch.equal(state.ground_reaction_valid, motion_lib.grw[sample_indices])
+
+
+def test_motion_state_without_pressure_leaves_ground_reaction_unset():
+    """Clips with no force platform must read None, never a zero-filled tensor
+    that a reward would mistake for a measurement of no load."""
+    state = _populated_motion_lib().get_motion_state_exact_frame(
+        torch.tensor([0]), torch.tensor([0])
+    )
+
+    assert state.rigid_body_ground_forces is None
+    assert state.ground_reaction is None
+    assert state.ground_reaction_valid is None
+
+
+def test_get_motion_state_interpolates_ground_reaction_and_mins_validity():
+    motion_lib = _with_ground_reaction(_populated_motion_lib())
+
+    state = motion_lib.get_motion_state(torch.tensor([0]), torch.tensor([0.05]))
+
+    assert torch.allclose(
+        state.rigid_body_ground_forces[0], (motion_lib.gnf[0] + motion_lib.gnf[1]) / 2.0
+    )
+    assert torch.allclose(
+        state.ground_reaction[0], (motion_lib.grc[0] + motion_lib.grc[1]) / 2.0
+    )
+    # Validity is the *minimum*, so a blend spanning an under-measured frame
+    # inherits its lower confidence rather than averaging it away.
+    assert torch.equal(
+        state.ground_reaction_valid[0],
+        torch.minimum(motion_lib.grw[0], motion_lib.grw[1]),
+    )
+
+
+def test_load_motions_drops_partially_measured_ground_reaction(tmp_path, caplog):
+    """Mixing measured and unmeasured clips must drop the field, not pack zeros."""
+    import logging
+
+    measured = _motion_file_payload(3)
+    measured["ground_reaction"] = torch.ones(3, 3)
+    measured["ground_reaction_valid"] = torch.ones(3, 2)
+    measured["rigid_body_ground_forces"] = torch.ones(3, 2, 3)
+    torch.save(measured, tmp_path / "measured.motion")
+    torch.save(_motion_file_payload(3, offset=10.0), tmp_path / "plain.motion")
+
+    with caplog.at_level(logging.WARNING):
+        motion_lib = MotionLib(MotionLibConfig(motion_file=str(tmp_path)), device="cpu")
+
+    assert motion_lib.grc is None
+    assert motion_lib.grw is None
+    assert motion_lib.gnf is None
+    assert "present on only" in caplog.text

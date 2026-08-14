@@ -137,6 +137,12 @@ class MotionLib:
     )
     goal_states: Optional[torch.Tensor] = None  # per-frame binary mask for goal poses
 
+    # Measured ground reaction, present only on motions captured with a force or
+    # pressure platform (see data/scripts/add_pressure_to_motions.py).
+    gnf: Optional[torch.Tensor] = None  # rigid_body_ground_forces [N, num_bodies, 3]
+    grc: Optional[torch.Tensor] = None  # ground_reaction [N, 3] = (Fz, cop_x, cop_y)
+    grw: Optional[torch.Tensor] = None  # ground_reaction_valid [N, 2], both in [0, 1]
+
     # Get all field names defined at class level
     _fields = list(__annotations__.keys())
 
@@ -204,6 +210,9 @@ class MotionLib:
         self.motion_files = ()
         self.lrs = None
         self.goal_states = None
+        self.gnf = None
+        self.grc = None
+        self.grw = None
 
     @classmethod
     def empty(cls, device: str = "cpu"):
@@ -452,6 +461,20 @@ class MotionLib:
                     + motion_state_1.rigid_body_contacts
                 ) / 2.0
 
+        # Measured ground reaction: forces and COP interpolate linearly like any
+        # other continuous signal; validity takes the *minimum* so a blend that
+        # straddles an under-measured frame inherits its lower confidence.
+        for key in ("rigid_body_ground_forces", "ground_reaction"):
+            if motion_state_0[key] is not None:
+                motion_state_0[key] = interpolate_pos(
+                    motion_state_0[key], motion_state_1[key], blend
+                )
+        if motion_state_0.ground_reaction_valid is not None:
+            motion_state_0.ground_reaction_valid = torch.minimum(
+                motion_state_0.ground_reaction_valid,
+                motion_state_1.ground_reaction_valid,
+            )
+
         return motion_state_0
 
     def get_motion_state_exact_frame(
@@ -492,6 +515,15 @@ class MotionLib:
         motion_state.local_rigid_body_rot = local_rigid_body_rot
         motion_state.rigid_body_contacts = (
             self.contacts[fl].clone() if self.contacts is not None else None
+        )
+        motion_state.rigid_body_ground_forces = (
+            self.gnf[fl].clone() if self.gnf is not None else None
+        )
+        motion_state.ground_reaction = (
+            self.grc[fl].clone() if self.grc is not None else None
+        )
+        motion_state.ground_reaction_valid = (
+            self.grw[fl].clone() if self.grw is not None else None
         )
 
         return motion_state
@@ -589,6 +621,38 @@ class MotionLib:
                 "or remove contact-based rewards from the experiment config."
             )
             self.contacts = None
+
+        # Optionally pack the measured ground reaction. All-or-nothing: mixing
+        # clips that have it with clips that don't would silently feed zero
+        # force as if it were a measurement of no load.
+        for lib_field, motion_attr in (
+            ("gnf", "rigid_body_ground_forces"),
+            ("grc", "ground_reaction"),
+            ("grw", "ground_reaction_valid"),
+        ):
+            present = [getattr(m, motion_attr) is not None for m in motions]
+            if not any(present):
+                setattr(self, lib_field, None)
+                continue
+            if not all(present):
+                log.warning(
+                    "%s is present on only %d/%d motions in this library. Dropping it — "
+                    "a partially-measured ground reaction cannot be told apart from a "
+                    "measurement of zero load. Re-run data/scripts/add_pressure_to_motions.py "
+                    "over the whole set, or exclude the unmeasured clips.",
+                    motion_attr,
+                    sum(present),
+                    len(present),
+                )
+                setattr(self, lib_field, None)
+                continue
+            setattr(
+                self,
+                lib_field,
+                torch.cat([getattr(m, motion_attr) for m in motions], dim=0).to(
+                    dtype=torch.float32, device=self.device
+                ),
+            )
 
         # optionally pack local_rigid_body_rot if exists
         if motions[0].local_rigid_body_rot is not None:
