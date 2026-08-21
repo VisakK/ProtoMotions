@@ -99,6 +99,10 @@ class CurrentStateView:
     rigid_body_contacts: Tensor = FieldPath()
     rigid_body_contact_forces: Tensor = FieldPath()
     rigid_body_ground_forces: Tensor = FieldPath()
+    # [E, num_bodies, num_pair_bodies, 3], and None unless
+    # RobotConfig.contact_pair_bodies is set. Axis 2 indexes that list, not the
+    # body array -- see RobotState.rigid_body_pair_contact_forces.
+    rigid_body_pair_contact_forces: Tensor = FieldPath()
     dof_pos: Tensor = FieldPath()
     dof_vel: Tensor = FieldPath()
     dof_forces: Tensor = FieldPath()
@@ -139,6 +143,9 @@ class CurrentStateView:
         )
         self.rigid_body_ground_forces = getattr(
             state, "rigid_body_ground_forces", None
+        )
+        self.rigid_body_pair_contact_forces = getattr(
+            state, "rigid_body_pair_contact_forces", None
         )
         self.dof_pos = state.dof_pos
         self.dof_vel = state.dof_vel
@@ -412,6 +419,57 @@ class MaskedMimicContext:
         self.target_bodies_masks = target_bodies_masks
 
 
+class ContactGoalContext:
+    """View for contact-configuration goals.
+
+    Sits alongside :class:`MaskedMimicContext`, which carries the *pose* half of
+    the same goal.  Each of the ``num_goal_steps`` slots describes one upcoming
+    contact configuration -- which contact pairs carry load, and which way up the
+    trunk is -- taken from the contact graph built off expert rollouts.
+
+    ``contact_spec`` and ``orient_spec`` are already zeroed where ``visible`` is
+    False, so an observation kernel can concatenate them without re-masking; the
+    ``visible`` channel is what tells the policy "this slot is unspecified"
+    apart from "this slot specifies no contacts at all" (a flight phase).
+
+    All fields are FieldPath descriptors for dual class/instance access.
+    """
+
+    contact_spec: Tensor = FieldPath()
+    orient_spec: Tensor = FieldPath()
+    visible: Tensor = FieldPath()
+    time_offsets: Tensor = FieldPath()
+    node_ids: Tensor = FieldPath()
+    reached: Tensor = FieldPath()
+
+    def __init__(
+        self,
+        contact_spec: Tensor,
+        orient_spec: Tensor,
+        visible: Tensor,
+        time_offsets: Tensor,
+        node_ids: Tensor,
+        reached: Tensor,
+    ):
+        """Initialize ContactGoalContext.
+
+        Args:
+            contact_spec: Multi-hot contact pairs per goal [num_envs, steps, pairs].
+            orient_spec: One-hot trunk-orientation bin per goal [num_envs, steps, bins].
+            visible: 1.0 where the contact half of the goal is revealed [num_envs, steps].
+            time_offsets: Seconds from now to each goal's hold frame [num_envs, steps].
+            node_ids: Graph node id per goal, -1 where the slot is padding [num_envs, steps].
+            reached: 1.0 where the simulated contact set already matches the
+                nearest goal [num_envs] -- a diagnostic, never an observation.
+        """
+        self.contact_spec = contact_spec
+        self.orient_spec = orient_spec
+        self.visible = visible
+        self.time_offsets = time_offsets
+        self.node_ids = node_ids
+        self.reached = reached
+
+
 class SteeringContext:
     """View for steering control context.
 
@@ -625,6 +683,7 @@ class EnvContext:
     # Control-specific contexts (populated by controllers via populate_context)
     mimic: Optional[MimicContext] = NestedField(MimicContext)
     masked_mimic: Optional[MaskedMimicContext] = NestedField(MaskedMimicContext)
+    contact_goal: Optional[ContactGoalContext] = NestedField(ContactGoalContext)
     steering: Optional[SteeringContext] = NestedField(SteeringContext)
     path: Optional[PathContext] = NestedField(PathContext)
     target: Optional[TargetContext] = NestedField(TargetContext)
@@ -661,6 +720,7 @@ class EnvContext:
         odom_yaw_cos_sin: Optional[Tensor] = None,
         mimic: Optional[MimicContext] = None,
         masked_mimic: Optional[MaskedMimicContext] = None,
+        contact_goal: Optional[ContactGoalContext] = None,
         steering: Optional[SteeringContext] = None,
         path: Optional[PathContext] = None,
         target: Optional[TargetContext] = None,
@@ -744,6 +804,7 @@ class EnvContext:
         # Control-specific views
         self.mimic = mimic
         self.masked_mimic = masked_mimic
+        self.contact_goal = contact_goal
         self.steering = steering
         self.path = path
         self.target = target
@@ -758,6 +819,7 @@ __all__ = [
     "HistoricalView",
     "MimicContext",
     "MaskedMimicContext",
+    "ContactGoalContext",
     "SteeringContext",
     "PathContext",
     "TargetContext",

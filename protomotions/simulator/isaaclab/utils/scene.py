@@ -200,13 +200,42 @@ class SceneCfg(InteractiveSceneCfg):
             self.robot.spawn = self.robot.spawn.replace(rigid_props=new_rigid_props)
 
         if activate_contact_sensors:
+            # Filter column layout, relied on by
+            # IsaacLabSimulator._get_simulator_bodies_contact_buf:
+            #   0                      the terrain mesh
+            #   1 .. num_objects       scene objects
+            #   then                   robot bodies, if contact_pair_bodies is set
             sensing_filter = ["/World/ground/terrain/mesh"]
             for obj_idx in range(num_objects_per_scene):
                 sensing_filter.append(f"/World/envs/env_.*/Object_{obj_idx}")
+            pair_bodies = robot_config.contact_pair_bodies or []
+            if isinstance(pair_bodies, str):
+                # "all" that never went through RobotConfig's resolver. Iterating
+                # it yields 'a', 'l', 'l' and builds three nonsense filter paths,
+                # so say so instead of letting PhysX report the symptom later.
+                raise ValueError(
+                    f"contact_pair_bodies is the unresolved string "
+                    f"{pair_bodies!r}. Set it through RobotConfig.update_fields() "
+                    "so abstract names are expanded to a body list."
+                )
+            body_root = robot_config.asset.usd_bodies_root_prim_path
+            # Env-wildcarded, exactly like the Object_ filters above: each
+            # expression expands to one prim per environment and PhysX pairs it
+            # with the sensor from the same environment. (The offline
+            # `PairContactView` recorder cannot do this -- it builds ONE
+            # RigidContactView whose sensor set spans all bodies, so its filter
+            # patterns cannot resolve one-to-one for num_envs > 1. Per-body
+            # sensors do not have that problem.)
+            #
+            # Every sensor gets the SAME filter list, including a column for its
+            # own body, which always reads zero. Dropping it would make the
+            # column layout differ per sensor and the pair matrix would no
+            # longer be indexable by a single body-list position.
+            pair_filter = [f"{body_root}{name}" for name in pair_bodies]
             for body_name in robot_config.contact_bodies:
                 contact_sensor_cfg = ContactSensorCfg(
-                    prim_path=f"{robot_config.asset.usd_bodies_root_prim_path}{body_name}",
-                    filter_prim_paths_expr=sensing_filter,
+                    prim_path=f"{body_root}{body_name}",
+                    filter_prim_paths_expr=sensing_filter + pair_filter,
                     history_length=config.sim.decimation,
                 )
                 setattr(self, f"contact_sensor_{body_name}", contact_sensor_cfg)

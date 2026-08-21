@@ -55,6 +55,34 @@ class SupervisedAgentConfig(BaseAgentConfig):
             "help": "Policy used for collecting rollout actions."
         },
     )
+    prior_rollout_fraction: float = field(
+        default=0.0,
+        metadata={
+            "help": "Fraction of envs stepped with the deployable prior's action "
+            "instead of the privileged action (DAgger-style rollout mixture, so "
+            "the deployed policy's induced states receive expert labels). "
+            "0 disables and reproduces the pure privileged rollout.",
+            "min": 0.0,
+            "max": 1.0,
+        },
+    )
+    prior_rollout_start_epoch: int = field(
+        default=0,
+        metadata={
+            "help": "No envs are prior-driven before this epoch, so early "
+            "training still bootstraps on the privileged action.",
+            "min": 0,
+        },
+    )
+    prior_rollout_ramp_epochs: int = field(
+        default=0,
+        metadata={
+            "help": "Linearly ramp the prior-driven fraction from 0 to "
+            "prior_rollout_fraction over this many epochs after the start "
+            "epoch. 0 switches on at full fraction immediately.",
+            "min": 0,
+        },
+    )
     loss: SupervisionLossConfig = field(
         default_factory=SupervisionLossConfig,
         metadata={"help": "Supervised loss over model outputs and labels."},

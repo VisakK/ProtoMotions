@@ -141,7 +141,12 @@ class MotionLib:
     # pressure platform (see data/scripts/add_pressure_to_motions.py).
     gnf: Optional[torch.Tensor] = None  # rigid_body_ground_forces [N, num_bodies, 3]
     grc: Optional[torch.Tensor] = None  # ground_reaction [N, 3] = (Fz, cop_x, cop_y)
-    grw: Optional[torch.Tensor] = None  # ground_reaction_valid [N, 2], both in [0, 1]
+    # ground_reaction_valid [N, C], all in [0, 1]. C == 2 for the original port
+    # (coverage; coverage x explained); C == 3 once
+    # data/scripts/add_onmat_gate_to_motions.py appends the on-mat x explained
+    # column that gates per-body load SHARES. Consumers index columns by name,
+    # never by "the last one".
+    grw: Optional[torch.Tensor] = None
 
     # Get all field names defined at class level
     _fields = list(__annotations__.keys())

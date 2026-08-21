@@ -125,6 +125,9 @@ class IsaacLabSimulator(Simulator):
         self._robot = self._scene["robot"]
         # Build a mapping from body name to contact sensor (if it exists)
         self._contact_sensor_map = {}
+        # Overwritten by _validate_contact_sensor_filters_once from the sensors'
+        # own filter lists, which runs before the first contact-buffer read.
+        self._contact_pair_column_offset = 0
         for body_name in self._body_names:
             if f"contact_sensor_{body_name}" in self._scene.keys():
                 self._contact_sensor_map[body_name] = self._scene[
@@ -784,6 +787,17 @@ class IsaacLabSimulator(Simulator):
         rigid_body_ground_forces = torch.zeros(
             self.num_envs, num_bodies, 3, device=self.device
         )
+        # Per-body-pair force, present only when contact_pair_bodies was
+        # configured. [E, B, P, 3]: entry [e, i, j] is the force on sensed body i
+        # from pair body j. Columns start after the terrain and the scene
+        # objects, matching the filter order built in utils/scene.py.
+        pair_body_names = self.robot_config.contact_pair_bodies
+        rigid_body_pair_contact_forces = None
+        pair_offset = self._contact_pair_column_offset
+        if pair_body_names:
+            rigid_body_pair_contact_forces = torch.zeros(
+                self.num_envs, num_bodies, len(pair_body_names), 3, device=self.device
+            )
 
         # Fill in contact forces for bodies that have sensors
         for body_idx, body_name in enumerate(sim_body_names):
@@ -801,13 +815,22 @@ class IsaacLabSimulator(Simulator):
                     rigid_body_ground_forces[:, body_idx, :] = force_matrix[
                         :, 0, 0, :
                     ]
+                    if rigid_body_pair_contact_forces is not None:
+                        rigid_body_pair_contact_forces[:, body_idx, :, :] = (
+                            force_matrix[
+                                :, 0, pair_offset : pair_offset + len(pair_body_names), :
+                            ]
+                        )
 
         if env_ids is not None:
             rigid_body_contact_forces = rigid_body_contact_forces[env_ids]
             rigid_body_ground_forces = rigid_body_ground_forces[env_ids]
+            if rigid_body_pair_contact_forces is not None:
+                rigid_body_pair_contact_forces = rigid_body_pair_contact_forces[env_ids]
         return RobotState(
             rigid_body_contact_forces=rigid_body_contact_forces,
             rigid_body_ground_forces=rigid_body_ground_forces,
+            rigid_body_pair_contact_forces=rigid_body_pair_contact_forces,
             state_conversion=StateConversion.SIMULATOR,
         )
 
@@ -826,8 +849,13 @@ class IsaacLabSimulator(Simulator):
         """
         if getattr(self, "_contact_filters_validated", False):
             return
+        pair_bodies = self.robot_config.contact_pair_bodies or []
+        body_root = self.robot_config.asset.usd_bodies_root_prim_path
+        expected_tail = [f"{body_root}{name}" for name in pair_bodies]
+
         for body_name, contact_sensor in self._contact_sensor_map.items():
-            n_cfg = len(contact_sensor.cfg.filter_prim_paths_expr)
+            configured = list(contact_sensor.cfg.filter_prim_paths_expr)
+            n_cfg = len(configured)
             if n_cfg == 0:
                 continue
             view = contact_sensor.contact_physx_view
@@ -835,6 +863,19 @@ class IsaacLabSimulator(Simulator):
                 f"contact sensor '{body_name}': filter_count={view.filter_count} "
                 f"!= configured {n_cfg} filter patterns"
             )
+            # The body-body columns are the tail of the filter list (see
+            # utils/scene.py). Reading them by a computed offset would go
+            # silently wrong if anything is ever inserted in the middle, so the
+            # tail is checked against the configured expressions and the offset
+            # is derived from it rather than recomputed.
+            if expected_tail:
+                assert configured[-len(expected_tail):] == expected_tail, (
+                    f"contact sensor '{body_name}': the last "
+                    f"{len(expected_tail)} filters are not the configured "
+                    f"contact_pair_bodies. Got {configured[-len(expected_tail):]}, "
+                    f"expected {expected_tail}. rigid_body_pair_contact_forces "
+                    "would be read from the wrong columns."
+                )
             resolved = []
             for entry in view.filter_paths:
                 if isinstance(entry, (list, tuple)):
@@ -849,6 +890,8 @@ class IsaacLabSimulator(Simulator):
                 "silently read zero. Do not train reward terms on "
                 "rigid_body_ground_forces in this state."
             )
+            # First force_matrix_w column holding a body-body pair force.
+            self._contact_pair_column_offset = n_cfg - len(expected_tail)
         self._contact_filters_validated = True
 
     def _get_simulator_object_contact_buf(

@@ -13,8 +13,12 @@ from torch import nn
 from protomotions.agents.common.supervision import SupervisionLossConfig
 from protomotions.agents.base_agent import agent as base_agent_module
 from protomotions.agents.supervised import agent as supervised_agent_module
-from protomotions.agents.supervised.agent import SupervisedAgent
+from protomotions.agents.supervised.agent import (
+    SupervisedAgent,
+    compute_prior_rollout_mask,
+)
 from protomotions.agents.supervised.config import RolloutActor
+from protomotions.agents.utils.metering import TensorAverageMeterDict
 
 
 class _StudentModel(nn.Module):
@@ -614,6 +618,160 @@ def test_training_load_restores_model_weights_and_optimizer():
     assert agent.current_epoch == 4
     assert torch.equal(agent.model.weight, torch.tensor([[2.0]]))
     assert agent.supervised_optimizer.loaded_state == {"lr": 0.1}
+
+
+def _prior_mixture_agent(
+    fraction,
+    start_epoch=0,
+    ramp_epochs=0,
+    current_epoch=0,
+    num_envs=2,
+):
+    agent = _agent(RolloutActor.STUDENT)
+    agent.model = _PrivilegedStudentModel()
+    agent.model_output_keys = agent.model.out_keys
+    agent.experience_buffer = _ExperienceBufferRecorder()
+    agent.config.prior_rollout_fraction = fraction
+    agent.config.prior_rollout_start_epoch = start_epoch
+    agent.config.prior_rollout_ramp_epochs = ramp_epochs
+    agent.current_epoch = current_epoch
+    agent.num_envs = num_envs
+    return agent
+
+
+def test_compute_prior_rollout_mask_inactive_cases():
+    device = torch.device("cpu")
+    assert (
+        compute_prior_rollout_mask(0.0, 0, 0, current_epoch=10, num_envs=8, device=device)
+        is None
+    )
+    assert (
+        compute_prior_rollout_mask(0.5, 5, 0, current_epoch=4, num_envs=8, device=device)
+        is None
+    )
+    # Rounds to zero envs.
+    assert (
+        compute_prior_rollout_mask(0.05, 0, 0, current_epoch=0, num_envs=2, device=device)
+        is None
+    )
+
+
+def test_compute_prior_rollout_mask_block_and_ramp():
+    device = torch.device("cpu")
+
+    mask = compute_prior_rollout_mask(
+        0.5, 0, 0, current_epoch=0, num_envs=8, device=device
+    )
+    assert mask.dtype == torch.bool and mask.shape == (8,)
+    assert mask[:4].all() and not mask[4:].any()
+
+    # Linear ramp: fraction 0.5 over 10 epochs, 5 epochs past start -> 0.25.
+    ramped = compute_prior_rollout_mask(
+        0.5, 100, 10, current_epoch=104, num_envs=8, device=device
+    )
+    assert ramped.sum().item() == 2
+
+    # Past the ramp the full fraction applies and stays there.
+    full = compute_prior_rollout_mask(
+        0.5, 100, 10, current_epoch=500, num_envs=8, device=device
+    )
+    assert full.sum().item() == 4
+
+
+def test_collect_rollout_step_mixes_prior_action_for_masked_envs():
+    agent = _prior_mixture_agent(fraction=0.5)
+
+    output = SupervisedAgent.collect_rollout_step(agent, _obs_td(), step=0)
+
+    # Env 0 is prior-driven (obs + 1), env 1 keeps the privileged action
+    # (obs + 50); the buffer still stores the unmixed privileged action.
+    assert torch.equal(output["action"], torch.tensor([[2.0], [52.0]]))
+    assert torch.equal(
+        agent.experience_buffer.data[("privileged_action", 0)],
+        torch.tensor([[51.0], [52.0]]),
+    )
+
+
+def test_collect_rollout_step_prior_mixture_respects_start_epoch():
+    agent = _prior_mixture_agent(fraction=0.5, start_epoch=5, current_epoch=4)
+
+    output = SupervisedAgent.collect_rollout_step(agent, _obs_td(), step=0)
+
+    assert torch.equal(output["action"], torch.tensor([[51.0], [52.0]]))
+
+
+def test_record_prior_rollout_diagnostics_splits_groups():
+    agent = object.__new__(SupervisedAgent)
+    agent.device = torch.device("cpu")
+    agent.num_envs = 4
+    agent.episode_env_tensors = TensorAverageMeterDict(device=agent.device)
+    agent.current_lengths = torch.tensor([9.0, 3.0, 5.0, 7.0])
+
+    prior_mask = torch.tensor([True, True, False, False])
+    dones = torch.tensor([1.0, 0.0, 0.0, 1.0])
+    extras = {
+        "raw_r/gt_rew": torch.tensor([1.0, 0.0, 1.0, 0.0]),
+        "terminate": torch.tensor([0.0, 0.0, 1.0, 1.0]),
+    }
+
+    SupervisedAgent._record_prior_rollout_diagnostics(agent, prior_mask, dones, extras)
+
+    diag = agent.episode_env_tensors.mean_and_clear()
+    assert diag["prior_rollout/frac"] == pytest.approx(0.5)
+    assert diag["prior_rollout/gt_rew"] == pytest.approx(0.5)
+    assert diag["prior_rollout/gt_rew_ctrl"] == pytest.approx(0.5)
+    assert diag["prior_rollout/terminate"] == pytest.approx(0.0)
+    assert diag["prior_rollout/terminate_ctrl"] == pytest.approx(1.0)
+
+    # Only env 0 is a prior-driven done; its recorded length matches the +1
+    # the base record step applies afterwards.
+    lengths = agent._prior_rollout_length_meter.mean_and_clear()
+    assert lengths["episode_length"] == pytest.approx(10.0)
+
+
+def test_record_rollout_step_without_mixture_only_delegates(monkeypatch):
+    calls = []
+    monkeypatch.setattr(
+        base_agent_module.BaseAgent,
+        "record_rollout_step",
+        lambda self, *args: calls.append(args),
+    )
+
+    agent = _agent(RolloutActor.STUDENT)
+    args = (
+        TensorDict({}, batch_size=2),
+        torch.zeros(2, 1),
+        torch.zeros(2),
+        torch.zeros(2),
+        torch.zeros(2),
+        torch.tensor([], dtype=torch.long),
+        {},
+        0,
+    )
+
+    SupervisedAgent.record_rollout_step(agent, *args)
+
+    assert len(calls) == 1
+    assert not hasattr(agent, "_prior_rollout_length_meter")
+
+
+def test_post_epoch_logging_injects_prior_episode_length(monkeypatch):
+    seen = {}
+    monkeypatch.setattr(
+        base_agent_module.BaseAgent,
+        "post_epoch_logging",
+        lambda self, training_log_dict: seen.update(training_log_dict),
+    )
+
+    agent = object.__new__(SupervisedAgent)
+    agent.device = torch.device("cpu")
+    agent._prior_rollout_length_meter = TensorAverageMeterDict(device=agent.device)
+    agent._prior_rollout_length_meter.add({"episode_length": torch.tensor([250.0])})
+
+    SupervisedAgent.post_epoch_logging(agent, {"epoch": 3})
+
+    assert seen["epoch"] == 3
+    assert seen["info/prior_rollout_episode_length"] == pytest.approx(250.0)
 
 
 def test_training_load_accepts_previous_maskedmimic_optimizer_key():

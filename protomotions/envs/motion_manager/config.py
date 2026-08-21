@@ -68,3 +68,57 @@ class MimicMotionManagerConfig(MotionManagerConfig):
         default=True,
         metadata={"help": "Whether to resample motion on environment reset."}
     )
+
+
+@dataclass
+class ContactGraphMotionManagerConfig(MimicMotionManagerConfig):
+    """Mimic motion management whose start times are anchored to graph segments.
+
+    Plain reference-state initialisation samples a clip time *uniformly*, which
+    spends most episodes in the middle of whatever the clip happens to be doing.
+    The interesting states for a contact-conditioned student are the make/break
+    boundaries -- the frames just before the support set changes -- and those are
+    exactly what the contact graph enumerates.
+    """
+
+    _target_: str = (
+        "protomotions.envs.motion_manager.contact_graph_motion_manager."
+        "ContactGraphMotionManager"
+    )
+
+    graph_file: str = field(
+        default="",
+        metadata={"help": "contact_graph.pt whose segments anchor the start times."},
+    )
+    segment_start_prob: float = field(
+        default=0.6,
+        metadata={
+            "help": "Probability a reset starts at a graph segment entry rather "
+            "than at the uniformly-sampled time. Applied after init_start_prob, "
+            "so it overrides the t=0 starts as well.",
+            "min": 0.0,
+            "max": 1.0,
+        },
+    )
+    pre_roll_s: float = field(
+        default=0.5,
+        metadata={
+            "help": "Start up to this many seconds BEFORE the chosen segment "
+            "begins, sampled uniformly in [0, pre_roll_s]. A fixed offset would "
+            "put every episode at the same phase relative to the transition; the "
+            "spread covers the approach as well as the hold.",
+            "min": 0.0,
+        },
+    )
+    segment_weighting: str = field(
+        default="uniform",
+        metadata={
+            "help": "How a segment is chosen within a clip. 'uniform' gives every "
+            "make/break boundary equal weight (so transitions are over-sampled "
+            "relative to their share of clip time, which is the point). 'dwell' "
+            "weights by segment duration, recovering roughly uniform-in-time. "
+            "'rare_node' weights by 1/sqrt(corpus segment count of the node the "
+            "segment holds), which favours configurations the corpus visits least.",
+            "options": ["uniform", "dwell", "rare_node"],
+        },
+    )

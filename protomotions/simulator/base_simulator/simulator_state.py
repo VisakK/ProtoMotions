@@ -313,6 +313,20 @@ class RobotState(BaseBatchedState):
     # the ground; None elsewhere.
     rigid_body_ground_forces: Optional[torch.Tensor] = None
 
+    # Per-body-pair contact force, [batch_size, num_bodies, num_pair_bodies, 3]:
+    # entry [e, i, j] is the force on body i from pair body j. Populated only
+    # when RobotConfig.contact_pair_bodies is set, which adds one filter column
+    # per named body to every per-body contact sensor; None otherwise, which is
+    # the default and every backend's historical behaviour.
+    #
+    # AXIS ORDER, and it is not the same on both body axes. Axis 1 is a normal
+    # body axis and IS remapped by convert_to_common / convert_to_sim. Axis 2
+    # indexes RobotConfig.contact_pair_bodies, which is already resolved in
+    # kinematic (COMMON) order and is a subset rather than the full body set, so
+    # it is never remapped. Index it by name through that list, never by a body
+    # id.
+    rigid_body_pair_contact_forces: Optional[torch.Tensor] = None
+
     # Measured ground-reaction summary. Only populated on *reference motions*
     # captured with a force/pressure platform (the MOYO yoga corpus; see
     # data/scripts/extract_moyo_pressure.py), never by a simulator.
@@ -464,6 +478,9 @@ class RobotState(BaseBatchedState):
         self._convert_helper(body_conv_map, "rigid_body_contacts")
         self._convert_helper(body_conv_map, "rigid_body_contact_forces")
         self._convert_helper(body_conv_map, "rigid_body_ground_forces")
+        # Axis 1 only. Axis 2 indexes contact_pair_bodies, which is already in
+        # kinematic order and is not the body array -- see the field's comment.
+        self._convert_helper(body_conv_map, "rigid_body_pair_contact_forces")
 
     def convert_to_common(self, conversion: DataConversionMapping) -> "RobotState":
         """

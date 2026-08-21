@@ -60,6 +60,16 @@ from protomotions.envs.obs.masked_mimic import (
     compute_target_time_offsets,
 )
 
+# Contact-configuration goal compute kernels
+from protomotions.envs.obs.contact_state import (
+    compute_contact_state_obs,
+)
+from protomotions.envs.obs.contact_goal import (
+    compute_contact_goal_obs,
+    compute_contact_goal_masks,
+    compute_contact_goal_reached,
+)
+
 # Steering observation compute kernel
 from protomotions.envs.obs.steering import compute_steering_obs
 
@@ -133,6 +143,10 @@ __all__ = [
     "compute_target_poses_only",
     "compute_target_masks_only",
     "compute_target_time_offsets",
+    "compute_contact_goal_obs",
+    "compute_contact_goal_masks",
+    "compute_contact_goal_reached",
+    "compute_contact_state_obs",
     # Steering observation compute kernel
     "compute_steering_obs",
     # Path observation compute kernel

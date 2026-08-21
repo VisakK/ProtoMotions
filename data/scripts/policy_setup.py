@@ -92,6 +92,13 @@ def build(args, app_launcher_cls: Optional[Any] = None) -> Dict[str, Any]:
                 cli_overrides, env_config, simulator_config, robot_config,
                 agent_config, terrain_config, motion_lib_config, scene_lib_config,
             )
+            if any(key.startswith("robot.") for key in cli_overrides):
+                # apply_config_overrides assigns straight to the field, so an
+                # abstract body selection ("all", "all_left_foot_bodies") is left
+                # as the raw string and every consumer that iterates it gets
+                # characters. update_fields() re-runs the resolver and is
+                # idempotent on already-resolved values.
+                robot_config.update_fields()
 
     accelerator = "cpu" if args.simulator == "mujoco" else "gpu"
     fabric: Fabric = Fabric(

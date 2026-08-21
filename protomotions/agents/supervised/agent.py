@@ -15,7 +15,7 @@ import logging
 
 from protomotions.utils.config_utils import load_resolved_configs_from_checkpoint
 from protomotions.utils.hydra_replacement import get_class
-from typing import Tuple, Dict
+from typing import Tuple, Dict, Optional
 from pathlib import Path
 
 from protomotions.agents.ppo.config import PPOAgentConfig
@@ -26,9 +26,38 @@ from protomotions.agents.base_agent.agent import BaseAgent
 from protomotions.agents.base_agent.model import BaseModel
 from protomotions.agents.supervised.config import RolloutActor
 from protomotions.agents.supervised.expert_utils import get_expert_actor_in_keys
+from protomotions.agents.utils.metering import TensorAverageMeterDict
 from protomotions.agents.utils.normalization import RunningMeanStd
 
 log = logging.getLogger(__name__)
+
+
+def compute_prior_rollout_mask(
+    fraction: float,
+    start_epoch: int,
+    ramp_epochs: int,
+    current_epoch: int,
+    num_envs: int,
+    device: torch.device,
+) -> Optional[Tensor]:
+    """Boolean ``[num_envs]`` mask of envs stepped with the prior's action.
+
+    The mask is a fixed leading block so an env stays prior-driven across an
+    entire episode and its trajectory is genuinely prior-induced, and it is a
+    pure function of the epoch so every call within one epoch agrees. Returns
+    ``None`` when the mixture is inactive.
+    """
+    if fraction <= 0.0 or current_epoch < start_epoch:
+        return None
+    if ramp_epochs > 0:
+        progress = min(1.0, (current_epoch - start_epoch + 1) / ramp_epochs)
+        fraction = fraction * progress
+    num_prior = int(round(fraction * num_envs))
+    if num_prior <= 0:
+        return None
+    mask = torch.zeros(num_envs, dtype=torch.bool, device=device)
+    mask[:num_prior] = True
+    return mask
 
 
 class SupervisedAgent(BaseAgent):
@@ -52,85 +81,96 @@ class SupervisedAgent(BaseAgent):
         # and prefixed with "expert_" for use during distillation training.
         expert_model_path = self.config.expert_model_path
         if expert_model_path is not None:
-            log.info(f"Loading expert model from: {expert_model_path}")
-
-            checkpoint_path = Path(expert_model_path)
-            assert (
-                checkpoint_path.exists()
-            ), f"Could not find expert model at {checkpoint_path}"
-
-            resolved_configs = load_resolved_configs_from_checkpoint(checkpoint_path)
-
-            self.expert_env_config = resolved_configs["env"]
-            expert_agent_config: PPOAgentConfig = resolved_configs["agent"]
-
-            # Create the expert model
-            ExpertModelConfig = get_class(expert_agent_config.model._target_)
-            expert_model: BaseModel = ExpertModelConfig(
-                config=expert_agent_config.model
+            expert_model, expert_actor, expert_actor_in_keys = self._build_external_expert(
+                expert_model_path
             )
-
-            # Move model to device BEFORE materializing lazy modules
-            expert_model = expert_model.to(self.device)
-            expert_model.reset_rollout_context(
-                num_envs=self.num_envs,
-                device=self.device,
-            )
-
-            # Once model is created, we pass fabric to the RunningMeanStd modules.
-            # This allows the modules to internally handle distributed aggregation of normalization moments.
-            def pass_fabric_to_running_mean_std(module):
-                if isinstance(module, RunningMeanStd):
-                    module.fabric = self.fabric
-
-            expert_model.apply(pass_fabric_to_running_mean_std)
-
-            expert_actor = self._external_expert_module_from(expert_model)
-            expert_actor_in_keys = get_expert_actor_in_keys(expert_agent_config)
-            if not expert_actor_in_keys:
-                expert_actor_in_keys = list(getattr(expert_actor, "in_keys", []))
-
-            log.info("Materializing expert actor lazy modules...")
-            # External experts are frozen inference modules. Only the actor is
-            # needed to label actions; materializing the full actor-critic model
-            # can require critic-only observations that the distillation env does
-            # not provide.
-            expert_model.eval()
-            with torch.no_grad():
-                dummy_obs = self.env.get_obs()
-                # Build expert obs tensordict (strips "expert_" prefix from keys)
-                dummy_obs_td = self.obs_dict_to_tensordict(dummy_obs)
-                dummy_expert_obs_td = self._build_expert_obs_td(
-                    dummy_obs_td, expert_actor_in_keys
-                )
-                _ = expert_actor(dummy_expert_obs_td)
-
-            # Load weights before any distributed wrapper changes module keys.
-            pre_trained_expert = torch.load(
-                str(checkpoint_path),
-                map_location=self.device,
-                weights_only=False,
-            )
-            self._load_external_expert_state(
-                expert_model,
-                pre_trained_expert["model"],
-            )
-            for param in expert_model.parameters():
-                param.requires_grad = False
-
-            # Keep the external expert as a plain frozen module. The trainable
-            # student is wrapped by create_optimizers(); the expert only labels
-            # rollouts and does not need gradient synchronization.
             self.expert_model = expert_model
             self.expert_actor = expert_actor
             self.expert_actor_in_keys = expert_actor_in_keys
-            self.expert_model.eval()
         else:
             self.expert_model = None
             self.expert_actor = None
             self.expert_actor_in_keys = []
 
         return model
+
+    def _build_external_expert(self, expert_model_path):
+        """Load one frozen external expert actor from a checkpoint.
+
+        Factored out of :meth:`create_model` so a subclass can hold more than one
+        expert (see :mod:`protomotions.agents.supervised.multi_expert`). Returns
+        ``(expert_model, expert_actor, expert_actor_in_keys)`` with the model in
+        eval mode and every parameter frozen.
+        """
+        log.info(f"Loading expert model from: {expert_model_path}")
+
+        checkpoint_path = Path(expert_model_path)
+        assert (
+            checkpoint_path.exists()
+        ), f"Could not find expert model at {checkpoint_path}"
+
+        resolved_configs = load_resolved_configs_from_checkpoint(checkpoint_path)
+
+        self.expert_env_config = resolved_configs["env"]
+        expert_agent_config: PPOAgentConfig = resolved_configs["agent"]
+
+        # Create the expert model
+        ExpertModelConfig = get_class(expert_agent_config.model._target_)
+        expert_model: BaseModel = ExpertModelConfig(config=expert_agent_config.model)
+
+        # Move model to device BEFORE materializing lazy modules
+        expert_model = expert_model.to(self.device)
+        expert_model.reset_rollout_context(
+            num_envs=self.num_envs,
+            device=self.device,
+        )
+
+        # Once model is created, we pass fabric to the RunningMeanStd modules.
+        # This allows the modules to internally handle distributed aggregation of normalization moments.
+        def pass_fabric_to_running_mean_std(module):
+            if isinstance(module, RunningMeanStd):
+                module.fabric = self.fabric
+
+        expert_model.apply(pass_fabric_to_running_mean_std)
+
+        expert_actor = self._external_expert_module_from(expert_model)
+        expert_actor_in_keys = get_expert_actor_in_keys(expert_agent_config)
+        if not expert_actor_in_keys:
+            expert_actor_in_keys = list(getattr(expert_actor, "in_keys", []))
+
+        log.info("Materializing expert actor lazy modules...")
+        # External experts are frozen inference modules. Only the actor is
+        # needed to label actions; materializing the full actor-critic model
+        # can require critic-only observations that the distillation env does
+        # not provide.
+        expert_model.eval()
+        with torch.no_grad():
+            dummy_obs = self.env.get_obs()
+            # Build expert obs tensordict (strips "expert_" prefix from keys)
+            dummy_obs_td = self.obs_dict_to_tensordict(dummy_obs)
+            dummy_expert_obs_td = self._build_expert_obs_td(
+                dummy_obs_td, expert_actor_in_keys
+            )
+            _ = expert_actor(dummy_expert_obs_td)
+
+        # Load weights before any distributed wrapper changes module keys.
+        pre_trained_expert = torch.load(
+            str(checkpoint_path),
+            map_location=self.device,
+            weights_only=False,
+        )
+        self._load_external_expert_state(
+            expert_model,
+            pre_trained_expert["model"],
+        )
+        for param in expert_model.parameters():
+            param.requires_grad = False
+
+        # Keep the external expert as a plain frozen module. The trainable
+        # student is wrapped by create_optimizers(); the expert only labels
+        # rollouts and does not need gradient synchronization.
+        expert_model.eval()
+        return expert_model, expert_actor, expert_actor_in_keys
 
     @staticmethod
     def _external_expert_module_from(expert_model):
@@ -289,6 +329,24 @@ class SupervisedAgent(BaseAgent):
 
         return output_td
 
+    def _prior_rollout_env_mask(self) -> Optional[Tensor]:
+        """Envs stepped with the deployable prior instead of the privileged action.
+
+        ``getattr`` defaults keep resolved configs from before these fields
+        existed (and minimal test configs) on the pure privileged rollout.
+        """
+        fraction = float(getattr(self.config, "prior_rollout_fraction", 0.0) or 0.0)
+        if fraction <= 0.0:
+            return None
+        return compute_prior_rollout_mask(
+            fraction=fraction,
+            start_epoch=int(getattr(self.config, "prior_rollout_start_epoch", 0) or 0),
+            ramp_epochs=int(getattr(self.config, "prior_rollout_ramp_epochs", 0) or 0),
+            current_epoch=self.current_epoch,
+            num_envs=self.num_envs,
+            device=self.device,
+        )
+
     def collect_rollout_step(self, obs_td: TensorDict, step):
         """Collect student action and expert label for the current state."""
         output_td = self._collect_rollout_output(obs_td)
@@ -299,6 +357,14 @@ class SupervisedAgent(BaseAgent):
             action = output_td[
                 "privileged_action"
             ]  # During training, we use the privileged action
+            prior_mask = self._prior_rollout_env_mask()
+            if prior_mask is not None:
+                # DAgger-style mixture: a block of envs is stepped with the
+                # deployable prior's action, so the states the deployed policy
+                # actually induces receive expert labels.
+                action = torch.where(
+                    prior_mask.unsqueeze(-1), output_td["action"], action
+                )
         else:
             action = output_td["action"]  # During evaluation, we use the action
 
@@ -322,6 +388,74 @@ class SupervisedAgent(BaseAgent):
 
         output_td["action"] = action
         return output_td
+
+    def record_rollout_step(
+        self,
+        next_obs_td: TensorDict,
+        actions: Tensor,
+        rewards: Tensor,
+        dones: Tensor,
+        terminated: Tensor,
+        done_indices: Tensor,
+        extras: Dict,
+        step: int,
+    ):
+        prior_mask = self._prior_rollout_env_mask()
+        if prior_mask is not None:
+            self._record_prior_rollout_diagnostics(prior_mask, dones, extras)
+        super().record_rollout_step(
+            next_obs_td,
+            actions,
+            rewards,
+            dones,
+            terminated,
+            done_indices,
+            extras,
+            step,
+        )
+
+    def _record_prior_rollout_diagnostics(
+        self, prior_mask: Tensor, dones: Tensor, extras: Dict
+    ) -> None:
+        """Split rollout health metrics by rollout driver.
+
+        The imitation loss and the privileged-path rewards cannot see a
+        deployable-prior regression; the prior-driven env block can. Logged
+        under ``env/prior_rollout/*`` with ``_ctrl`` for the privileged block.
+        """
+        ctrl_mask = ~prior_mask
+        diag = {"prior_rollout/frac": prior_mask.float().mean()}
+        for extras_key, name in (("raw_r/gt_rew", "gt_rew"), ("terminate", "terminate")):
+            value = extras.get(extras_key)
+            if not isinstance(value, torch.Tensor) or value.numel() != prior_mask.numel():
+                continue
+            value = value.float().flatten()
+            diag[f"prior_rollout/{name}"] = value[prior_mask].mean()
+            if ctrl_mask.any():
+                diag[f"prior_rollout/{name}_ctrl"] = value[ctrl_mask].mean()
+        self.episode_env_tensors.add(diag)
+
+        prior_dones = dones.bool() & prior_mask
+        if prior_dones.any():
+            if not hasattr(self, "_prior_rollout_length_meter"):
+                self._prior_rollout_length_meter = TensorAverageMeterDict(
+                    device=self.device
+                )
+            # current_lengths is incremented by the base record step after this
+            # hook runs, so +1 reproduces the value the base meters will see.
+            self._prior_rollout_length_meter.add(
+                {"episode_length": (self.current_lengths + 1)[prior_dones]}
+            )
+
+    def post_epoch_logging(self, training_log_dict: Dict):
+        meter = getattr(self, "_prior_rollout_length_meter", None)
+        if meter is not None:
+            lengths = meter.mean_and_clear()
+            if "episode_length" in lengths:
+                training_log_dict["info/prior_rollout_episode_length"] = lengths[
+                    "episode_length"
+                ]
+        super().post_epoch_logging(training_log_dict)
 
     def perform_optimization_step(self, batch_dict, batch_idx) -> Dict:
         # Update model

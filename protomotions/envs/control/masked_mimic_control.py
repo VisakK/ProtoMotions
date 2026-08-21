@@ -523,11 +523,21 @@ class MaskedMimicControl(MimicControl):
         
         return visualization_markers
     
+    def _marker_motion_ids(self, env_indices: Tensor, slot_indices: Tensor) -> Tensor:
+        """Clip each env's marker pose is read from. Default: the clip it plays."""
+        return self.env.motion_manager.motion_ids
+
+    def _marker_time_to_target(
+        self, env_indices: Tensor, slot_indices: Tensor, target_times: Tensor
+    ) -> Tensor:
+        """Seconds until the marked target. Default: clip time until the target."""
+        return target_times - self.env.motion_manager.motion_times
+
     def get_markers_state(self) -> Dict[str, MarkerState]:
         """Compute marker positions colored by time-to-target.
-        
+
         Overrides parent to show only conditionable bodies with color coding.
-        
+
         Returns:
             Dictionary mapping marker names to MarkerState.
         """
@@ -538,22 +548,27 @@ class MaskedMimicControl(MimicControl):
             return {}
         
         markers_state = {}
-        
+
         # Get the first visible target pose for each env
         pose_masks = self.masked_mimic_target_poses_masks  # [num_envs, num_future_steps]
         first_valid_indices = torch.argmax(pose_masks.float(), dim=1)  # [num_envs]
-        
+
         # Get the target times for the first visible pose
         env_indices = torch.arange(self.env.num_envs, device=self.env.device)
         target_motion_times = self.target_times[env_indices, first_valid_indices]
-        
-        # Compute time to target
-        current_motion_times = self.env.motion_manager.motion_times
-        time_to_target = target_motion_times - current_motion_times  # [num_envs]
-        
+
+        # Which clip the target pose comes from, and how far off it is. Both are
+        # hooks because a subclass may serve goals from a *different* clip than
+        # the one being played (see ContactGraphControl); the defaults here are
+        # the plain masked-mimic answers and are unchanged.
+        marker_motion_ids = self._marker_motion_ids(env_indices, first_valid_indices)
+        time_to_target = self._marker_time_to_target(
+            env_indices, first_valid_indices, target_motion_times
+        )
+
         # Get reference state at target time
         ref_state = self.env.motion_lib.get_motion_state(
-            self.env.motion_manager.motion_ids, target_motion_times
+            marker_motion_ids, target_motion_times
         )
         
         target_pos = ref_state.rigid_body_pos.clone()

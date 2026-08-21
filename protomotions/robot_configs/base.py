@@ -206,6 +206,21 @@ class RobotConfig:
     ``None`` falls back to :attr:`contact_bodies`, preserving the legacy
     reward body set.
     """
+    contact_pair_bodies: Optional[Union[List[str], str]] = None
+    """Bodies each contact sensor additionally filters *itself* against.
+
+    ``None`` (the default) senses ground contact only, which is what every
+    simulator backend has always reported: the per-body sensors filter against
+    the terrain mesh, so a policy can feel its foot on the floor but not its
+    shin on its own upper arm.  Naming bodies here adds one filter column per
+    body to every sensor, which is what makes ``rigid_body_pair_contact_forces``
+    non-``None``.
+
+    This is off by default because it is not free -- each sensor goes from one
+    filter to ``1 + len(contact_pair_bodies)`` and PhysX pays for the extra
+    contact reduction every substep.  Must be a subset of
+    :attr:`contact_bodies`, since only those bodies have sensors to filter.
+    """
     trackable_bodies_subset: Union[List[str], str] = "all"
 
     non_termination_contact_bodies: Union[List[str], str] = "all"
@@ -372,11 +387,20 @@ class RobotConfig:
             self,
             field_name="contact_reward_bodies",
         )
+        # None stays None: an empty list would still be a request for body-body
+        # sensing, and it must stay distinguishable from "do not sense pairs".
+        if self.contact_pair_bodies is not None:
+            self.contact_pair_bodies = resolve_body_names_in_kinematic_order(
+                self.contact_pair_bodies,
+                self,
+                field_name="contact_pair_bodies",
+            )
 
         sensor_bodies = set(self.contact_bodies or [])
         for field_name, selected_bodies in (
             ("contact_observation_bodies", self.contact_observation_bodies),
             ("contact_reward_bodies", self.contact_reward_bodies),
+            ("contact_pair_bodies", self.contact_pair_bodies),
         ):
             missing_sensor_bodies = [
                 name for name in (selected_bodies or []) if name not in sensor_bodies
