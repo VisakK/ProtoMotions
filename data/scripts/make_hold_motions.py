@@ -96,6 +96,29 @@ def freeze_motion(motion: dict, frame: int, num_frames: int) -> dict:
     return out
 
 
+def parse_extra_holds(specs: list) -> list:
+    """``source_stem:t_hold_s[:duration_s]`` entries, validated.
+
+    Escape hatch for nodes whose longest segment is the wrong pose exemplar —
+    measured on the handstand: the longest inverted hold (10.9 s) is the
+    asymmetric straddle, which the student cannot pursue as a pose goal
+    (0 % hands-only in the v3 probes), while the short first attempt carries
+    the canonical vertical pose it pursues at 47.8 %. Duration defaults to the
+    randomized range when omitted.
+    """
+    out = []
+    for spec in specs:
+        parts = spec.split(":")
+        if len(parts) not in (2, 3):
+            raise SystemExit(
+                f"--extra-holds entry '{spec}' is not 'source_stem:t_hold[:duration]'"
+            )
+        out.append(
+            (parts[0], float(parts[1]), float(parts[2]) if len(parts) == 3 else None)
+        )
+    return out
+
+
 def select_holds(graph: dict, min_dwell_s: float, min_good: float, max_holds: int):
     """One (node, best segment) per node, richest-dwell nodes first.
 
@@ -138,6 +161,10 @@ def main() -> int:
     parser.add_argument("--max-duration-s", type=float, default=14.0)
     parser.add_argument("--seed", type=int, default=0,
                         help="durations are randomized per hold but reproducible")
+    parser.add_argument("--extra-holds", type=str, nargs="*", default=[],
+                        help="additional holds as 'source_stem:t_hold_s[:duration_s]', "
+                             "for poses whose longest segment is the wrong exemplar "
+                             "(e.g. the handstand's straddle vs its vertical attempt)")
     args = parser.parse_args()
 
     graph = json.loads((Path(args.graph_dir) / "contact_graph.json").read_text())
@@ -149,6 +176,30 @@ def main() -> int:
     )
     if not picks:
         raise SystemExit("no nodes pass the dwell/good-fraction gates")
+
+    taken_holds = {(clip, round(seg["t_hold"], 2)) for _c, _d, clip, seg in picks}
+    for stem, t_hold, _duration in parse_extra_holds(args.extra_holds):
+        clip_record = graph["clips"].get(stem)
+        if clip_record is None:
+            raise SystemExit(f"--extra-holds clip '{stem}' is not in the graph")
+        segment = next(
+            (
+                s for s in clip_record["segments"]
+                if s["trusted"] and s["t_start"] <= t_hold <= s["t_end"]
+            ),
+            None,
+        )
+        if segment is None:
+            raise SystemExit(
+                f"--extra-holds: no trusted segment of '{stem}' contains t={t_hold}"
+            )
+        if (stem, round(t_hold, 2)) in taken_holds:
+            continue
+        override = dict(segment)
+        override["t_hold"] = t_hold
+        if _duration is not None:
+            override["_hold_duration_s"] = _duration
+        picks.append((segment["config"], segment["duration_s"], stem, override))
 
     out_dir = Path(args.out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -164,7 +215,9 @@ def main() -> int:
         fps = float(motion["fps"])
         frame = int(round(seg["t_hold"] * fps))
         frame = min(max(frame, 0), motion["rigid_body_pos"].shape[0] - 1)
-        duration = float(rng.uniform(args.min_duration_s, args.max_duration_s))
+        duration = seg.get("_hold_duration_s")
+        if duration is None:
+            duration = float(rng.uniform(args.min_duration_s, args.max_duration_s))
         num_frames = int(round(duration * fps))
 
         held = freeze_motion(motion, frame, num_frames)

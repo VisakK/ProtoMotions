@@ -9,6 +9,7 @@ from typing import Optional
 
 from protomotions.agents.base_agent.config import BaseAgentConfig, BaseModelConfig
 from protomotions.agents.common.supervision import SupervisionLossConfig
+from protomotions.agents.evaluators.sequence_viz import SequenceVizConfig
 
 
 class RolloutActor(Enum):
@@ -86,4 +87,11 @@ class SupervisedAgentConfig(BaseAgentConfig):
     loss: SupervisionLossConfig = field(
         default_factory=SupervisionLossConfig,
         metadata={"help": "Supervised loss over model outputs and labels."},
+    )
+    sequence_viz: Optional[SequenceVizConfig] = field(
+        default=None,
+        metadata={
+            "help": "In-training stick-figure videos of goal sequences, "
+            "rendered with matplotlib and logged to wandb. None disables."
+        },
     )

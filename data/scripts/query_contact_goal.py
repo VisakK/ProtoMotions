@@ -167,6 +167,11 @@ def pick_motion(names, needle, what):
     if not matches:
         raise SystemExit(f"no clip matches --{what} '{needle}'")
     if len(matches) > 1:
+        # Synthetic hold clips embed their source clip's stem; prefer the
+        # original over its frozen derivatives.
+        originals = [i for i in matches if not names[i].startswith("hold_")]
+        if len(originals) == 1:
+            return originals[0]
         log("--%s '%s' matches %d clips; using %s", what, needle, len(matches),
             names[matches[0]])
     return matches[0]
@@ -276,6 +281,13 @@ def main() -> int:
     env._current_context = env._build_global_context(simulator.get_robot_state())
     env.compute_observations(context=env._current_context)
     obs = env.get_obs()
+
+    # Chunked-intent models (the FSQ student) hold their latent across steps;
+    # force a refresh so the first action pursues the goal just issued rather
+    # than whatever intent setup left held.
+    flush_intent = getattr(agent.model, "flush_held_intent", None)
+    if flush_intent is not None:
+        flush_intent()
 
     goal_pose = motion_lib.get_motion_state(
         torch.full((1,), pose_motion, dtype=torch.long, device=device),

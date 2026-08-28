@@ -441,6 +441,9 @@ class ContactGoalContext:
     time_offsets: Tensor = FieldPath()
     node_ids: Tensor = FieldPath()
     reached: Tensor = FieldPath()
+    history_features: Tensor = FieldPath()
+    history_valid: Tensor = FieldPath()
+    event_commit: Tensor = FieldPath()
 
     def __init__(
         self,
@@ -450,6 +453,9 @@ class ContactGoalContext:
         time_offsets: Tensor,
         node_ids: Tensor,
         reached: Tensor,
+        history_features: Optional[Tensor] = None,
+        history_valid: Optional[Tensor] = None,
+        event_commit: Optional[Tensor] = None,
     ):
         """Initialize ContactGoalContext.
 
@@ -461,6 +467,15 @@ class ContactGoalContext:
             node_ids: Graph node id per goal, -1 where the slot is padding [num_envs, steps].
             reached: 1.0 where the simulated contact set already matches the
                 nearest goal [num_envs] -- a diagnostic, never an observation.
+            history_features: Measured contact-event history tokens
+                [num_envs, events, features] -- slot 0 the open segment, the
+                rest the most recent completed ones (ContactEventTracker).
+                None when the tracker is disabled.
+            history_valid: 1.0 where a history token is real [num_envs, events].
+            event_commit: True on envs whose measured contact configuration
+                committed a new segment this step (ContactEventTracker's
+                debounced make/break event) [num_envs]. None when the tracker
+                is disabled.
         """
         self.contact_spec = contact_spec
         self.orient_spec = orient_spec
@@ -468,6 +483,9 @@ class ContactGoalContext:
         self.time_offsets = time_offsets
         self.node_ids = node_ids
         self.reached = reached
+        self.history_features = history_features
+        self.history_valid = history_valid
+        self.event_commit = event_commit
 
 
 class SteeringContext:

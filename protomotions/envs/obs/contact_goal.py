@@ -55,8 +55,42 @@ def compute_contact_goal_reached(reached: Tensor) -> Tensor:
     return reached
 
 
+def compute_contact_history_obs(history_features: Tensor) -> Tensor:
+    """Flatten the measured contact-event history tokens.
+
+    Args:
+        history_features: [num_envs, events, features] from ContactEventTracker —
+            binary contact/orientation channels plus [0, 1]-scaled times, invalid
+            slots already zeroed. Deliberately NOT run through a running
+            normalizer, for the same rare-pair reason as ``contact_goal_obs``.
+
+    Returns:
+        [num_envs, events * features].
+    """
+    return history_features.reshape(history_features.shape[0], -1)
+
+
+def compute_contact_history_masks(history_valid: Tensor) -> Tensor:
+    """Per-event-token validity as float [num_envs, events] (1 = attend)."""
+    return history_valid.float()
+
+
+def compute_contact_event_flag(event_commit: Tensor) -> Tensor:
+    """1.0 on envs whose contact configuration committed a change this step.
+
+    The ContactEventTracker's debounced make/break event as a per-step flag,
+    [num_envs, 1]. The FSQ student reads it as an intent-refresh trigger; it is
+    a per-step signal, not accumulated, and is 0.0 everywhere when the tracker
+    is disabled.
+    """
+    return event_commit.reshape(event_commit.shape[0], 1).float()
+
+
 __all__ = [
     "compute_contact_goal_obs",
     "compute_contact_goal_masks",
     "compute_contact_goal_reached",
+    "compute_contact_history_obs",
+    "compute_contact_history_masks",
+    "compute_contact_event_flag",
 ]

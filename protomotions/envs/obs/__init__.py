@@ -68,6 +68,9 @@ from protomotions.envs.obs.contact_goal import (
     compute_contact_goal_obs,
     compute_contact_goal_masks,
     compute_contact_goal_reached,
+    compute_contact_history_obs,
+    compute_contact_history_masks,
+    compute_contact_event_flag,
 )
 
 # Steering observation compute kernel
@@ -146,6 +149,9 @@ __all__ = [
     "compute_contact_goal_obs",
     "compute_contact_goal_masks",
     "compute_contact_goal_reached",
+    "compute_contact_history_obs",
+    "compute_contact_history_masks",
+    "compute_contact_event_flag",
     "compute_contact_state_obs",
     # Steering observation compute kernel
     "compute_steering_obs",

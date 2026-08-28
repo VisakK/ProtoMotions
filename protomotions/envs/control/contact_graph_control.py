@@ -36,12 +36,13 @@ work unchanged; ``ctx.contact_goal`` carries the contact half.
 """
 
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Optional, Tuple
 
 import torch
 from torch import Tensor
 
 from protomotions.components.contact_graph import ContactGraph
+from protomotions.envs.control.contact_event_tracker import ContactEventTracker
 from protomotions.envs.context_views import (
     ContactGoalContext,
     EnvContext,
@@ -80,6 +81,16 @@ class ContactGraphControlConfig(MaskedMimicControlConfig):
             ground contact counts as active, for the reached-goal diagnostic.
         body_contact_threshold_n: The same, for a body-body zone pair. Only used
             when ``RobotConfig.contact_pair_bodies`` makes those observable.
+        num_history_events: Contact-event history tokens exposed to the policy
+            (1 open segment + N-1 completed ones, newest first). 0 disables the
+            tracker and the history context fields carry empty tensors.
+        history_min_dwell_s: A new measured configuration must persist this long
+            before it closes the open segment — the causal counterpart of the
+            graph builder's debounce, and what keeps pair-threshold chatter from
+            committing events.
+        history_time_clip_s: Event times (age, dwell) are clamped here and
+            scaled into [0, 1], so the history block needs no running
+            normalizer and its binary channels stay binary.
     """
 
     _target_: str = "protomotions.envs.control.contact_graph_control.ContactGraphControl"
@@ -93,6 +104,9 @@ class ContactGraphControlConfig(MaskedMimicControlConfig):
     require_first_goal_specified: bool = True
     ground_contact_threshold_n: float = 20.0
     body_contact_threshold_n: float = 20.0
+    num_history_events: int = 0
+    history_min_dwell_s: float = 0.3
+    history_time_clip_s: float = 10.0
 
 
 class ContactGraphControl(MaskedMimicControl):
@@ -173,6 +187,32 @@ class ContactGraphControl(MaskedMimicControl):
             f"{int(self._scored_slots.sum())}/{self.graph.num_pairs} contact pairs "
             f"({self._contact_maps['num_body_body_slots']} of them body-body)"
         )
+
+        # Contact-event history: measured past in the goal's own vocabulary.
+        # getattr defaults keep resolved configs frozen before these fields
+        # existed loading cleanly with the tracker off.
+        num_events = int(getattr(config, "num_history_events", 0) or 0)
+        self._pelvis_body_index = list(
+            self.env.robot_config.kinematic_info.body_names
+        ).index("Pelvis")
+        if num_events > 0:
+            self._event_tracker = ContactEventTracker(
+                num_envs=num_envs,
+                num_pairs=self.graph.num_pairs,
+                num_events=num_events,
+                min_dwell_s=float(getattr(config, "history_min_dwell_s", 0.3)),
+                time_clip_s=float(getattr(config, "history_time_clip_s", 10.0)),
+                orient_margin=0.15,  # extract_contact_configs.orientation_bins
+                device=device,
+            )
+            print(
+                f"ContactGraphControl: contact-event history on — "
+                f"{num_events} tokens x {self._event_tracker.feature_size} features, "
+                f"min dwell {self._event_tracker.min_dwell_s:.2f} s"
+            )
+        else:
+            self._event_tracker = None
+        self._history_update_pending = False
         self._initialized = False
 
     # ------------------------------------------------------------------ #
@@ -333,6 +373,11 @@ class ContactGraphControl(MaskedMimicControl):
         if self._manual is None:
             return
         self._manual = None
+        # Manual goals mean an external driver (probe script, viz panel) has
+        # been steering the sim; the contact history accumulated under it does
+        # not describe whatever episode resumes now.
+        if self._event_tracker is not None:
+            self._event_tracker.reset_all()
         self._refresh_goal_indices()
         steps = self.config.num_goal_steps
         num_envs = self.env.num_envs
@@ -405,6 +450,10 @@ class ContactGraphControl(MaskedMimicControl):
     def reset(self, env_ids: Tensor):
         """Resample the whole goal specification for the given environments."""
         MimicControl.reset(self, env_ids)
+        if self._event_tracker is not None:
+            # Cleared rows re-open their first segment from the next
+            # observation build, so history is episode-local by construction.
+            self._event_tracker.reset(env_ids)
         # Unconditional: the schedule is a pure function of the motion state, and
         # a zero-length reset still has to leave the tables populated for the
         # context build that follows it.
@@ -433,6 +482,11 @@ class ContactGraphControl(MaskedMimicControl):
     def step(self):
         """Advance the goal schedule, keeping each goal's mask attached to it."""
         MimicControl.step(self)
+        # step() runs exactly once per env step (post-physics, pre-context);
+        # the flag makes the history advance exactly once even though
+        # populate_context can run again in the same step (probe drivers
+        # rebuild observations after re-issuing goals).
+        self._history_update_pending = True
         if not self._initialized:
             return
 
@@ -516,16 +570,14 @@ class ContactGraphControl(MaskedMimicControl):
         )
         return self.goal_body_masks & keep
 
-    def _contact_configuration_iou(self, ctx: EnvContext) -> Tensor:
-        """IoU between the measured contact configuration and the nearest goal's.
+    def _measured_contact_state(self, ctx: EnvContext) -> Optional[Tensor]:
+        """Binary measured contact over the graph's pair vocabulary, ``[E, P]``.
 
-        Scored over the pairs this robot can actually sense. With
-        ``RobotConfig.contact_pair_bodies`` set that is the whole vocabulary --
-        which matters, because the body-body half is what distinguishes crow
-        from firefly from eight-angle, all of which are "two hands" on the
-        ground. Without it the scored subset is the 15 ground pairs, as before.
+        ``None`` when this backend reports no contact forces at all. This is
+        the single source both the reached-goal diagnostic and the
+        contact-event history read, so they cannot disagree on what "in
+        contact" means.
         """
-        num_envs = self.env.num_envs
         ground = getattr(ctx.current, "rigid_body_ground_forces", None)
         if ground is None:
             # Backends without a terrain-filtered column: fall back to the net
@@ -533,9 +585,8 @@ class ContactGraphControl(MaskedMimicControl):
             # contact) but is the only thing available.
             ground = getattr(ctx.current, "rigid_body_contact_forces", None)
         if ground is None:
-            return torch.zeros(num_envs, device=self.env.device)
-
-        current = (
+            return None
+        return (
             compute_contact_state_obs(
                 ground_forces=ground,
                 pair_forces=getattr(
@@ -551,6 +602,50 @@ class ContactGraphControl(MaskedMimicControl):
             )
             > 0.5
         )
+
+    def _update_contact_history(
+        self, ctx: EnvContext, current: Optional[Tensor]
+    ) -> Tuple[Tensor, Tensor]:
+        """Advance the event tracker and return ``(features, valid)``.
+
+        The tracker advances exactly once per env step (the flag set by
+        :meth:`step`); any further observation rebuild within the same step —
+        probe drivers re-issue goals and recompute observations — only
+        initializes rows freshly cleared by a reset.
+        """
+        num_envs = self.env.num_envs
+        tracker = self._event_tracker
+        if tracker is None:
+            return (
+                torch.zeros(num_envs, 0, 1, device=self.env.device),
+                torch.zeros(num_envs, 0, dtype=torch.bool, device=self.env.device),
+            )
+        contact = current
+        if contact is None:
+            contact = torch.zeros(
+                num_envs, self.graph.num_pairs, dtype=torch.bool,
+                device=self.env.device,
+            )
+        pelvis_rot = ctx.current.rigid_body_rot[:, self._pelvis_body_index]
+        if self._history_update_pending:
+            self._history_update_pending = False
+            tracker.update(contact, pelvis_rot, float(self.env.dt))
+        else:
+            tracker.initialize_fresh(contact, pelvis_rot)
+        return tracker.features()
+
+    def _contact_configuration_iou(self, current: Optional[Tensor]) -> Tensor:
+        """IoU between the measured contact configuration and the nearest goal's.
+
+        Scored over the pairs this robot can actually sense. With
+        ``RobotConfig.contact_pair_bodies`` set that is the whole vocabulary --
+        which matters, because the body-body half is what distinguishes crow
+        from firefly from eight-angle, all of which are "two hands" on the
+        ground. Without it the scored subset is the 15 ground pairs, as before.
+        """
+        num_envs = self.env.num_envs
+        if current is None:
+            return torch.zeros(num_envs, device=self.env.device)
 
         goal = (self._gathered["contact"][:, 0] > 0.5) & self.goal_valid[:, 0:1]
         scored = self._scored_slots.unsqueeze(0)
@@ -616,11 +711,28 @@ class ContactGraphControl(MaskedMimicControl):
             self.goal_valid, self._gathered["node"], torch.full_like(self._gathered["node"], -1)
         )
 
+        current_contact = self._measured_contact_state(ctx)
+        history_features, history_valid = self._update_contact_history(
+            ctx, current_contact
+        )
+        # "The measured configuration just committed a change" — the tracker's
+        # per-step debounced make/break flag, exposed so a policy (the FSQ
+        # student's chunk refresh) can react to it as an event.
+        if self._event_tracker is not None:
+            event_commit = self._event_tracker.last_commit
+        else:
+            event_commit = torch.zeros(
+                num_envs, dtype=torch.bool, device=self.env.device
+            )
+
         ctx.contact_goal = ContactGoalContext(
             contact_spec=contact_spec,
             orient_spec=orient_spec,
             visible=contact_visible.float(),
             time_offsets=time_offsets,
             node_ids=node_ids,
-            reached=self._contact_configuration_iou(ctx),
+            reached=self._contact_configuration_iou(current_contact),
+            history_features=history_features,
+            history_valid=history_valid,
+            event_commit=event_commit,
         )

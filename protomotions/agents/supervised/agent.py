@@ -338,7 +338,7 @@ class SupervisedAgent(BaseAgent):
         fraction = float(getattr(self.config, "prior_rollout_fraction", 0.0) or 0.0)
         if fraction <= 0.0:
             return None
-        return compute_prior_rollout_mask(
+        mask = compute_prior_rollout_mask(
             fraction=fraction,
             start_epoch=int(getattr(self.config, "prior_rollout_start_epoch", 0) or 0),
             ramp_epochs=int(getattr(self.config, "prior_rollout_ramp_epochs", 0) or 0),
@@ -346,11 +346,20 @@ class SupervisedAgent(BaseAgent):
             num_envs=self.num_envs,
             device=self.device,
         )
+        if mask is not None and not getattr(self, "_prior_rollout_announced", False):
+            self._prior_rollout_announced = True
+            log.info(
+                "prior-DAgger rollout mixture active from epoch %d: %d/%d envs "
+                "stepped with the deployable prior's action",
+                self.current_epoch, int(mask.sum()), self.num_envs,
+            )
+        return mask
 
     def collect_rollout_step(self, obs_td: TensorDict, step):
         """Collect student action and expert label for the current state."""
         output_td = self._collect_rollout_output(obs_td)
 
+        prior_mask = None
         if self.config.rollout_actor == RolloutActor.EXPERT:
             action = output_td["action"]
         elif "privileged_action" in output_td:
@@ -367,6 +376,9 @@ class SupervisedAgent(BaseAgent):
                 )
         else:
             action = output_td["action"]  # During evaluation, we use the action
+
+        if "privileged_action" in output_td.keys() and "expert_actions" in output_td.keys():
+            self._record_action_gap_diagnostics(output_td, prior_mask)
 
         # Store model outputs
         output_keys = list(
@@ -388,6 +400,50 @@ class SupervisedAgent(BaseAgent):
 
         output_td["action"] = action
         return output_td
+
+    def _record_action_gap_diagnostics(
+        self, output_td: TensorDict, prior_mask: Optional[Tensor]
+    ) -> None:
+        """Deployable-vs-privileged action gap against the expert label.
+
+        The posterior mean is a residual on the prior mean, so the behavioural
+        gap between the deployable path and the privileged one *is* that
+        residual expressed in action space — and nothing else in the log
+        reports it (`notes/Student_v4_methodology.MD` §7.1). Logged under
+        ``env/action_gap/*``; the ``_dagger``/``_ctrl`` split separates states
+        the prior itself induced from expert-manifold states.
+        """
+        from protomotions.agents.common.latent import (
+            LATENT_MU_KEY,
+            PRIVILEGED_LATENT_MU_KEY,
+        )
+
+        meter = getattr(self, "episode_env_tensors", None)
+        if meter is None:
+            return
+
+        with torch.no_grad():
+            expert = output_td["expert_actions"]
+            prior_gap = (output_td["action"] - expert).square().mean(dim=-1)
+            privileged_gap = (
+                (output_td["privileged_action"] - expert).square().mean(dim=-1)
+            )
+            diag = {
+                "action_gap/prior_mse": prior_gap.mean(),
+                "action_gap/privileged_mse": privileged_gap.mean(),
+            }
+            latent_mu = output_td.get(LATENT_MU_KEY, None)
+            privileged_mu = output_td.get(PRIVILEGED_LATENT_MU_KEY, None)
+            if latent_mu is not None and privileged_mu is not None:
+                diag["action_gap/latent_residual_l2"] = (
+                    (privileged_mu - latent_mu).norm(dim=-1).mean()
+                )
+            if prior_mask is not None:
+                diag["action_gap/prior_mse_dagger"] = prior_gap[prior_mask].mean()
+                ctrl_mask = ~prior_mask
+                if ctrl_mask.any():
+                    diag["action_gap/prior_mse_ctrl"] = prior_gap[ctrl_mask].mean()
+        meter.add(diag)
 
     def record_rollout_step(
         self,
@@ -455,7 +511,65 @@ class SupervisedAgent(BaseAgent):
                 training_log_dict["info/prior_rollout_episode_length"] = lengths[
                     "episode_length"
                 ]
+        self._maybe_run_sequence_viz()
         super().post_epoch_logging(training_log_dict)
+
+    def _maybe_run_sequence_viz(self) -> None:
+        """Render the stick-figure sequence panel when the epoch asks for it.
+
+        Fully guarded: any failure disables the feature for the rest of the run
+        rather than killing training, and the env is snapshot/restored inside
+        the runner, so the next policy update is skipped exactly as after eval.
+        """
+        viz_config = getattr(getattr(self, "config", None), "sequence_viz", None)
+        every = int(getattr(viz_config, "viz_every", 0) or 0) if viz_config else 0
+        if (
+            every <= 0
+            or self.current_epoch == 0
+            or self.current_epoch % every != 0
+            or getattr(self, "_sequence_viz_disabled", False)
+            or self.fabric.global_rank != 0
+        ):
+            return
+        try:
+            if not hasattr(self, "_sequence_viz_runner"):
+                from protomotions.agents.evaluators.sequence_viz import (
+                    SequenceVizRunner,
+                )
+
+                self._sequence_viz_runner = SequenceVizRunner(self, viz_config)
+            # The runner disturbs every env; skip the next update even if the
+            # rollout dies partway, exactly as the evaluator path does.
+            self._skip_next_policy_update = True
+            videos, scalars = self._sequence_viz_runner.run(self.current_epoch)
+            self._log_sequence_viz(videos, scalars)
+        except Exception:
+            log.exception(
+                "sequence viz failed at epoch %d; disabling it for the rest of "
+                "the run",
+                self.current_epoch,
+            )
+            self._sequence_viz_disabled = True
+
+    def _log_sequence_viz(self, videos: Dict, scalars: Dict) -> None:
+        wandb_logger = next(
+            (
+                logger
+                for logger in getattr(self.fabric, "loggers", [])
+                if type(logger).__name__ == "WandbLogger"
+            ),
+            None,
+        )
+        if wandb_logger is None:
+            return
+        import wandb
+
+        payload: Dict = {
+            key: wandb.Video(str(path), format="mp4")
+            for key, path in videos.items()
+        }
+        payload.update(scalars)
+        wandb_logger.experiment.log(payload, step=self.current_epoch)
 
     def perform_optimization_step(self, batch_dict, batch_idx) -> Dict:
         # Update model

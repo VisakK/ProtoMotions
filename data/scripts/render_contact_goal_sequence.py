@@ -119,6 +119,13 @@ def log(fmt, *fmt_args) -> None:
 
 def resolve_clip(names: list[str], needle: str, what: str) -> int:
     matches = [i for i, n in enumerate(names) if needle.lower() in n.lower()]
+    if len(matches) > 1:
+        # Synthetic hold clips (make_hold_motions.py) embed their source clip's
+        # stem, so any plan naming a source clip is ambiguous against a corpus
+        # that carries holds; the original clip is the one a plan means.
+        originals = [i for i in matches if not names[i].startswith("hold_")]
+        if len(originals) == 1:
+            return originals[0]
     if not matches:
         raise SystemExit(f"no clip matches {what} '{needle}'")
     if len(matches) > 1:
@@ -191,6 +198,9 @@ class GoalDriver:
             elapsed += goal["reach_s"] + goal["hold_s"]
             self.ends.append(elapsed)
         self.total_s = elapsed
+        # Plan-step index of the previous issue(); None forces the first issue
+        # to count as a switch (flushes any intent held from before the plan).
+        self._last_active_index = None
 
     def active_index(self, t: float) -> int:
         for i, end in enumerate(self.ends):
@@ -235,6 +245,15 @@ class GoalDriver:
             pose_visible=pose_visible,
             contact_visible=contact_visible,
         )
+        # Chunked-intent models (the FSQ student) hold their latent for up to
+        # chunk_steps; when the plan actually advances a step — not on the
+        # periodic deadline re-arms — force a refresh so the new goal is acted
+        # on immediately rather than after the stale intent expires.
+        if start != self._last_active_index:
+            self._last_active_index = start
+            flush = getattr(self.agent.model, "flush_held_intent", None)
+            if flush is not None:
+                flush()
         return self.refresh_obs()
 
     def refresh_obs(self):

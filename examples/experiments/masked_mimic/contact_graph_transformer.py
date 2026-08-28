@@ -62,8 +62,22 @@ from protomotions.agents.supervised.multi_expert import (
 # One token per upcoming contact configuration. Kept equal to the control
 # component's num_goal_steps -- the prior reshapes the goal block by this.
 NUM_GOAL_STEPS = 5
-TOTAL_STORED_HISTORICAL_STEPS = 5
-NUM_HISTORICAL_CONDITIONED_STEPS = 5
+
+# Contact-event history (v5): the measured past in the goal's own vocabulary —
+# 1 open segment + 3 completed ones as transformer tokens. Over the corpus,
+# knowing one previous configuration removes 67 % of the next-configuration
+# entropy (1.63 -> 0.54 bits), and the dense pose history below cannot carry
+# it: a support change more than 2 s old is outside even the widened window.
+NUM_HISTORY_EVENT_TOKENS = 4
+HISTORY_EVENT_MIN_DWELL_S = 0.3
+
+# Dense pose history (v5): stored depth 2 s, conditioned on 5 strided samples
+# (t-0.03, -0.27, -0.5, -1, -2 s). The pre-v5 setup conditioned on 5
+# *consecutive* frames — a 0.17 s window, velocity context rather than memory.
+# Indices are 1-based into the stored buffer (select_step_indices convention).
+TOTAL_STORED_HISTORICAL_STEPS = 60
+HISTORICAL_STEP_INDICES = [1, 8, 15, 30, 60]
+NUM_HISTORICAL_CONDITIONED_STEPS = len(HISTORICAL_STEP_INDICES)
 
 DEFAULT_CONTACT_GRAPH = "data/smpl/yoga_contact_graph/contact_graph.pt"
 
@@ -168,6 +182,29 @@ def additional_experiment_arguments(parser: argparse.ArgumentParser):
              "reached-goal diagnostic covers the whole pair vocabulary. "
              "False restores ground-only sensing (and the old cost).",
     )
+    parser.add_argument(
+        "--viz-sequences-every",
+        type=int,
+        default=500,
+        help="Render a stick-figure video panel of scripted goal sequences "
+             "(deployable prior, matplotlib, no Isaac rendering) every N "
+             "epochs, saved under results/<exp>/viz/ and logged to wandb. "
+             "0 disables.",
+    )
+    parser.add_argument(
+        "--viz-plan-files",
+        type=str,
+        nargs="*",
+        default=[
+            "data/scripts/plans/standing_downdog.json",
+            "data/scripts/plans/handstand_chain.json",
+        ],
+        help="Goal-sequence plans included in the viz panel; the rest of the "
+             "panel is derived from the contact graph (pure holds at the "
+             "highest-dwell nodes, then the most frequent edges as round "
+             "trips). Plans that do not resolve against the run's graph are "
+             "skipped with a warning.",
+    )
 
 
 def terrain_config(args: argparse.Namespace):
@@ -269,6 +306,8 @@ def env_config(robot_cfg: RobotConfig, args: argparse.Namespace) -> EnvConfig:
         compute_contact_goal_obs,
         compute_contact_goal_masks,
         compute_contact_goal_reached,
+        compute_contact_history_obs,
+        compute_contact_history_masks,
         compute_contact_state_obs,
         to_float,
     )
@@ -287,6 +326,8 @@ def env_config(robot_cfg: RobotConfig, args: argparse.Namespace) -> EnvConfig:
             contact_visible_prob=args.goal_contact_visible_prob,
             full_pose_prob=args.goal_full_pose_prob,
             require_first_goal_specified=True,
+            num_history_events=NUM_HISTORY_EVENT_TOKENS,
+            history_min_dwell_s=HISTORY_EVENT_MIN_DWELL_S,
             # Inherited masked-mimic knobs; only used for the partial-pose case.
             force_max_conditioned_bodies_prob=0.1,
             force_small_num_conditioned_bodies_prob=0.1,
@@ -394,6 +435,24 @@ def env_config(robot_cfg: RobotConfig, args: argparse.Namespace) -> EnvConfig:
             },
             static_params=contact_state_params,
         ),
+        # --- the measured past, in the same vocabulary ------------------- #
+        # Debounced contact-configuration segments from ContactEventTracker:
+        # slot 0 the open segment (and how long it has been held), then the
+        # most recent completed ones. This is what tells apart "settled in
+        # plank for 3 s" from "passing through plank mid-transition" — the
+        # dense pose history cannot, and the goal channel does not.
+        "contact_history_obs": MdpComponent(
+            compute_func=compute_contact_history_obs,
+            dynamic_vars={
+                "history_features": EnvContext.contact_goal.history_features,
+            },
+        ),
+        "contact_history_masks": MdpComponent(
+            compute_func=compute_contact_history_masks,
+            dynamic_vars={
+                "history_valid": EnvContext.contact_goal.history_valid,
+            },
+        ),
         # --- the contact half ------------------------------------------- #
         "contact_goal_obs": MdpComponent(
             compute_func=compute_contact_goal_obs,
@@ -420,7 +479,9 @@ def env_config(robot_cfg: RobotConfig, args: argparse.Namespace) -> EnvConfig:
                 "dt": EnvContext.dt,
             },
             static_params={
-                "history_steps": TOTAL_STORED_HISTORICAL_STEPS,
+                # Strided: 5 samples spanning 2 s of the stored buffer instead
+                # of the first 5 consecutive frames (0.17 s).
+                "history_steps": HISTORICAL_STEP_INDICES,
                 "local_obs": True,
                 "root_height_obs": True,
                 "w_last": True,
@@ -583,6 +644,7 @@ def agent_config(
             "masked_mimic_target_times",
             "masked_mimic_target_poses_masks",
             "contact_goal_obs",
+            "contact_history_obs",
         ],
         out_keys=["encoder_mu", "encoder_logvar"],
         models=[
@@ -618,6 +680,10 @@ def agent_config(
                     "masked_mimic_target_times_norm",
                     "masked_mimic_target_poses_masks",
                     "contact_goal_obs",
+                    # Same measured event history the prior tokenizes, flat:
+                    # the residual should correct with awareness of the past,
+                    # not re-derive it. Binary + [0,1] times — unnormalized.
+                    "contact_history_obs",
                 ],
                 out_keys=["encoder_trunk_out"],
                 num_out=512,
@@ -659,6 +725,8 @@ def agent_config(
             "masked_mimic_target_times",
             "masked_mimic_target_poses_masks",
             "contact_goal_obs",
+            "contact_history_obs",
+            "contact_history_masks",
             "historical_pose_obs",
         ],
         out_keys=["prior_mu", "prior_logvar"],
@@ -711,6 +779,18 @@ def agent_config(
                 module_operations=[
                     ModuleOperationReshapeConfig(
                         new_shape=["batch_size", NUM_GOAL_STEPS, -1]
+                    )
+                ],
+            ),
+            # Event history: binary channels + [0,1]-scaled times, so the same
+            # no-normalizer rule applies.
+            ObsProcessorConfig(
+                in_keys=["contact_history_obs"],
+                out_keys=["contact_history_seq"],
+                normalize_obs=False,
+                module_operations=[
+                    ModuleOperationReshapeConfig(
+                        new_shape=["batch_size", NUM_HISTORY_EVENT_TOKENS, -1]
                     )
                 ],
             ),
@@ -777,18 +857,39 @@ def agent_config(
                     ModuleOperationForwardConfig(),
                 ],
             ),
+            # One token per contact event, shared MLP across the slots —
+            # mirrors the goal tokens on the past side of "now".
+            MLPWithConcatConfig(
+                in_keys=["contact_history_seq"],
+                out_keys=["contact_history_token"],
+                normalize_obs=False,
+                num_out=transformer_token_size,
+                layers=[
+                    MLPLayerConfig(units=transformer_encoder_widths, activation="relu")
+                    for _ in range(2)
+                ],
+                module_operations=[
+                    ModuleOperationReshapeConfig(
+                        new_shape=["batch_size", NUM_HISTORY_EVENT_TOKENS, -1]
+                    ),
+                    ModuleOperationForwardConfig(),
+                ],
+            ),
             TransformerConfig(
                 in_keys=[
                     "current_state_token",
                     "masked_mimic_target_poses_token",
                     "historical_pose_obs_token",
+                    "contact_history_token",
                     "masked_mimic_target_poses_masks",
+                    "contact_history_masks",
                 ],
                 out_keys=["transformer_out"],
                 transformer_token_size=transformer_token_size,
                 latent_dim=transformer_token_size,
                 input_and_mask_mapping={
-                    "masked_mimic_target_poses_token": "masked_mimic_target_poses_masks"
+                    "masked_mimic_target_poses_token": "masked_mimic_target_poses_masks",
+                    "contact_history_token": "contact_history_masks",
                 },
                 output_activation="relu",
             ),
@@ -865,6 +966,16 @@ def agent_config(
         save_predicted_motion_lib_every=None,
     )
 
+    viz_every = int(getattr(args, "viz_sequences_every", 0) or 0)
+    sequence_viz = None
+    if viz_every > 0:
+        from protomotions.agents.evaluators.sequence_viz import SequenceVizConfig
+
+        sequence_viz = SequenceVizConfig(
+            viz_every=viz_every,
+            plan_files=list(getattr(args, "viz_plan_files", []) or []),
+        )
+
     expert_paths = _expert_paths(args)
     return MultiExpertMaskedMimicAgentConfig(
         model=model_config,
@@ -879,6 +990,7 @@ def agent_config(
         expert_model_path=None,
         expert_model_paths=expert_paths,
         motion_expert_file=getattr(args, "motion_expert_file", None),
+        sequence_viz=sequence_viz,
     )
 
 
