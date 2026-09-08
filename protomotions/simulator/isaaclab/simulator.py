@@ -123,6 +123,13 @@ class IsaacLabSimulator(Simulator):
         are set. Completes scene setup and resets simulation.
         """
         self._robot = self._scene["robot"]
+        # Visualization-only ghost robot (SceneCfg spawns it only when
+        # config.ghost_robot and not headless). set_ghost_state converts a
+        # COMMON-order state with the shared data_conversion mapping, which is
+        # only valid if the ghost parses to the same joint order as the robot —
+        # same USD, so it must; asserted because a silent mismatch would draw
+        # scrambled limbs (the documented body-order trap).
+        self._ghost = self._scene["ghost"] if "ghost" in self._scene.keys() else None
         # Build a mapping from body name to contact sensor (if it exists)
         self._contact_sensor_map = {}
         # Overwritten by _validate_contact_sensor_filters_once from the sensors'
@@ -150,9 +157,19 @@ class IsaacLabSimulator(Simulator):
         for proj_idx in range(self._proj_config.num_projectiles):
             self._projectile_objects.append(self._scene[f"projectile_{proj_idx}"])
 
+        if self._ghost is not None:
+            self._disable_ghost_collisions()
         if self._visualization_markers:
             self._build_markers(self._visualization_markers)
         self._sim.reset()
+        if self._ghost is not None:
+            ghost_joints = list(self._ghost.data.joint_names)
+            robot_joints = list(self._robot.data.joint_names)
+            assert ghost_joints == robot_joints, (
+                "ghost robot parsed to a different joint order than the robot; "
+                "set_ghost_state would write scrambled limbs.\n"
+                f"robot: {robot_joints}\nghost: {ghost_joints}"
+            )
 
     def _get_scene_cfg(self) -> SceneCfg:
         """
@@ -1272,3 +1289,119 @@ class IsaacLabSimulator(Simulator):
                 orientations=markers_state_item.orientation.view(-1, 4),
                 scales=marker_dict.scale,
             )
+
+    # =====================================================
+    # Group 7: Ghost robot (visualization-only goal pose)
+    # =====================================================
+    _GHOST_HIDE_Z = -100.0
+
+    def _disable_ghost_collisions(self) -> None:
+        """Turn off every collider under the ghost, for real.
+
+        The spawn-time ``collision_props`` route silently no-ops on this asset:
+        its per-body ``collisions`` prims are *instanced*, and schema edits on
+        instance proxies are not authorable (IsaacLab logs a warning and moves
+        on — the same warning the Robot's contact-offset props trigger). So the
+        ghost is de-instanced first — a local copy of the referenced prims,
+        which only this articulation pays for — and then the collision APIs
+        are disabled prim by prim before PhysX parses the stage.
+
+        Must run before ``self._sim.reset()``; PhysX reads the flags at parse
+        time.
+        """
+        import omni.usd
+        from isaaclab.sim import schemas
+        from pxr import Usd, UsdPhysics
+
+        stage = omni.usd.get_context().get_stage()
+        for env_path in self._scene.env_prim_paths:
+            ghost_path = f"{env_path}/GhostRobot"
+            assert stage.GetPrimAtPath(ghost_path).IsValid(), (
+                f"ghost robot prim missing at {ghost_path}"
+            )
+            # De-instance so the collision flags become authorable. Collect
+            # paths first, then edit: SetInstanceable resyncs composition and
+            # mutating mid-traversal invalidates the PrimRange. One level of
+            # instancing is this asset's layout; the loop handles nesting.
+            while True:
+                instanceable = [
+                    prim.GetPath()
+                    for prim in Usd.PrimRange(stage.GetPrimAtPath(ghost_path))
+                    if prim.IsInstanceable()
+                ]
+                if not instanceable:
+                    break
+                for path in instanceable:
+                    stage.GetPrimAtPath(path).SetInstanceable(False)
+            schemas.modify_collision_properties(
+                ghost_path,
+                sim_utils.CollisionPropertiesCfg(collision_enabled=False),
+                stage,
+            )
+            # apply_nested returns None, so verify by reading the flags back
+            # rather than trusting the call.
+            live = []
+            disabled = 0
+            for prim in Usd.PrimRange(stage.GetPrimAtPath(ghost_path)):
+                if prim.HasAPI(UsdPhysics.CollisionAPI):
+                    attr = UsdPhysics.CollisionAPI(prim).GetCollisionEnabledAttr()
+                    if attr and attr.Get() is False:
+                        disabled += 1
+                    else:
+                        live.append(prim.GetPath().pathString)
+            assert disabled > 0 and not live, (
+                f"ghost colliders not fully disabled under {ghost_path} "
+                f"({disabled} off, still live: {live[:5]}) — a live collider "
+                f"would let the robot touch the ghost and poison the contact "
+                f"sensors"
+            )
+
+    @property
+    def ghost_enabled(self) -> bool:
+        return getattr(self, "_ghost", None) is not None
+
+    def set_ghost_state(
+        self,
+        reset_state: ResetState,
+        active: Optional[torch.Tensor] = None,
+    ) -> None:
+        """Pose the ghost robot from a COMMON-order root + DOF state.
+
+        The ghost is written fully static (zero root and joint velocities);
+        with gravity disabled, collisions disabled and zero-gain actuators the
+        pose holds unchanged through the decimation substeps until the next
+        call. The configured ``ghost_offset`` XY displacement is applied here,
+        so callers pass the pose at its natural (marker-aligned) position.
+
+        Args:
+            reset_state: One row per environment; mutated in place by the
+                order conversion, so pass a fresh instance.
+            active: Optional ``[num_envs]`` bool mask; False rows are parked
+                below the terrain instead of posed.
+        """
+        if self._ghost is None:
+            return
+        state = reset_state.convert_to_sim(self.data_conversion)
+
+        root_pos = state.root_pos.clone()
+        offset = getattr(self.config, "ghost_offset", (1.8, 0.0))
+        root_pos[:, 0] += float(offset[0])
+        root_pos[:, 1] += float(offset[1])
+        if active is not None:
+            hidden = torch.full_like(root_pos[:, 2], self._GHOST_HIDE_Z)
+            root_pos[:, 2] = torch.where(
+                active.to(root_pos.device).bool(), root_pos[:, 2], hidden
+            )
+
+        zeros = torch.zeros_like(root_pos)
+        self._ghost.write_root_state_to_sim(
+            torch.cat([root_pos, state.root_rot, zeros, zeros], dim=-1)
+        )
+        dof_pos = state.dof_pos
+        self._ghost.write_joint_state_to_sim(
+            dof_pos, torch.zeros_like(dof_pos), None, None
+        )
+        # The actuators are zero-gain, but parking the drive targets on the
+        # written pose keeps this correct even if someone hands the ghost
+        # non-zero gains for a stiffer look.
+        self._ghost.set_joint_position_target(dof_pos)

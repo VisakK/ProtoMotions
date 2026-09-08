@@ -88,6 +88,54 @@ class SupervisedAgentConfig(BaseAgentConfig):
         default_factory=SupervisionLossConfig,
         metadata={"help": "Supervised loss over model outputs and labels."},
     )
+    action_rate_loss_coeff: float = field(
+        default=0.0,
+        metadata={
+            "help": "Weight of a teacher-rate-matching term added to the "
+            "imitation loss: ||(a_student - a_prev) - (a_expert - "
+            "a_expert_prev)||^2. Unlike a bare ||da||^2 smoothness penalty it "
+            "costs nothing for a transition the expert also makes fast, so it "
+            "opposes jitter without taxing a legitimate kick-up; and unlike "
+            "the `action_smoothness` reward component it is actually "
+            "differentiated (rewards never are, in a supervised agent). "
+            "Requires an external expert -- it is what supplies the previous "
+            "expert action. 0 disables and reproduces the loss exactly.",
+            "min": 0.0,
+        },
+    )
+    action_rate_free_steps: int = field(
+        default=0,
+        metadata={
+            "help": "Steps at the START of each intent chunk on which the "
+            "teacher-rate term is NOT charged. 0 charges every row (v7). 1 "
+            "skips the refresh row itself -- the only row whose action "
+            "increment spans a code change, and therefore the only row where "
+            "the rate term opposes a commitment rather than jitter. Round 7_1 "
+            "§2.2 measured that suppressing the chunk-clock artifact and "
+            "suppressing commitment were the same operation; this separates "
+            "them in time. Requires the FSQ model, which is what publishes the "
+            "chunk phase.",
+            "min": 0,
+        },
+    )
+    dagger_action_loss_coeff: float = field(
+        default=0.0,
+        metadata={
+            "help": "Weight of an imitation MSE on the DEPLOYABLE (sampled) "
+            "action, restricted to the rows the prior itself drove. The trunk "
+            "is otherwise trained only through `privileged_action`, i.e. only "
+            "on codes the ENCODER produced -- so at deployment it decodes a "
+            "code it has never had a gradient for on ~97 % of refreshes "
+            "(round 7_1 §3.2, `fsq_full_match` 0.03-0.18). On a prior-driven "
+            "row the sampled action was actually applied and the expert "
+            "labelled the resulting state, which is exactly what DAgger asks "
+            "the deployable policy to match; on a privileged-driven row it "
+            "would just be pressure for every code to decode to one action. "
+            "Keep it small -- it trades code diversity for off-code "
+            "robustness. 0 disables it (every round before 9).",
+            "min": 0.0,
+        },
+    )
     sequence_viz: Optional[SequenceVizConfig] = field(
         default=None,
         metadata={

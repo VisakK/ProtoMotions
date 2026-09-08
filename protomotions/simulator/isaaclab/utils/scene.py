@@ -190,6 +190,59 @@ class SceneCfg(InteractiveSceneCfg):
             actuators=actuators,
         )
 
+        # Visualization-only ghost robot: a second copy of the asset that a
+        # driver poses kinematically (Simulator.set_ghost_state) to show the
+        # commanded goal pose next to the simulated character. It must be
+        # physically inert three ways at once: collisions disabled (so the real
+        # character can never touch it), gravity disabled and zero-gain
+        # actuators (so the written pose holds through the decimation substeps
+        # with zero velocities). The prim name must NOT contain "Robot" as a
+        # path suffix reachable by the articulation/sensor regexes above —
+        # "GhostRobot" does not match "env_.*/Robot" or any
+        # "{body_root}{body_name}" sensor pattern because the regex would need
+        # a literal "/Robot" segment after the env wildcard.
+        if getattr(config, "ghost_robot", False) and not config.headless:
+            self.ghost = ArticulationCfg(
+                prim_path="/World/envs/env_.*/GhostRobot",
+                spawn=sim_utils.UsdFileCfg(
+                    usd_path=f"{robot_config.asset.asset_root}/{robot_config.asset.usd_asset_file_name}",
+                    activate_contact_sensors=False,
+                    rigid_props=sim_utils.RigidBodyPropertiesCfg(
+                        disable_gravity=True,
+                        retain_accelerations=False,
+                    ),
+                    articulation_props=sim_utils.ArticulationRootPropertiesCfg(
+                        enabled_self_collisions=False,
+                    ),
+                    # collision_props would be the natural place to disable
+                    # collisions, but the asset's collision prims are
+                    # instanced and spawn-time schema edits silently no-op on
+                    # them (observed on the first smoke: warning + collisions
+                    # still live). IsaacLabSimulator._disable_ghost_collisions
+                    # de-instances the ghost and turns them off for real.
+                    # Opaque on purpose: the RTX real-time viewport renders
+                    # PreviewSurface fractional opacity as a cutout, so a
+                    # translucent ghost draws no body at all while still
+                    # casting a full shadow (observed on the first smoke).
+                    # The tint is what distinguishes it from the white robot.
+                    visual_material=sim_utils.PreviewSurfaceCfg(
+                        diffuse_color=(0.35, 0.75, 0.45),
+                    ),
+                ),
+                # Parked far below the terrain until the first set_ghost_state;
+                # with no gravity/collisions it simply stays there.
+                init_state=ArticulationCfg.InitialStateCfg(
+                    pos=(0.0, 0.0, -100.0),
+                    joint_pos={".*": 0.0},
+                    joint_vel={".*": 0.0},
+                ),
+                actuators={
+                    "ghost_all": ImplicitActuatorCfg(
+                        joint_names_expr=[".*"], stiffness=0.0, damping=0.0
+                    )
+                },
+            )
+
         # Apply disable_gravity setting for all robot types if specified
         if (
             hasattr(robot_config.asset, "disable_gravity")

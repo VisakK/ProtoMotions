@@ -49,7 +49,13 @@ def build(args, app_launcher_cls: Optional[Any] = None) -> Dict[str, Any]:
     from protomotions.utils.hydra_replacement import get_class
 
     checkpoint = Path(args.checkpoint)
-    resolved_path = checkpoint.parent / "resolved_configs_inference.pt"
+    # `resolved_configs_inference.pt` is what inference_agent.py uses and is the
+    # default here for exactly that reason. A tool that needs the *frozen
+    # teachers* -- they and their `expert_*` observation components are stripped
+    # by apply_inference_overrides -- can ask for the training config instead by
+    # setting `args.resolved_configs`.
+    resolved_name = getattr(args, "resolved_configs", None) or "resolved_configs_inference.pt"
+    resolved_path = checkpoint.parent / resolved_name
     assert resolved_path.exists(), f"Could not find resolved configs at {resolved_path}"
 
     log.info("Loading resolved configs from %s", resolved_path)
@@ -79,6 +85,17 @@ def build(args, app_launcher_cls: Optional[Any] = None) -> Dict[str, Any]:
     if args.motion_file is not None:
         motion_lib_config.motion_file = args.motion_file
     simulator_config.headless = args.headless
+
+    # Goal-pose ghost character (render tools set args.ghost_char; frozen
+    # configs predate the field, so it is written rather than assumed).
+    if getattr(args, "ghost_char", False):
+        simulator_config.ghost_robot = True
+        ghost_offset = getattr(args, "ghost_offset", None)
+        if ghost_offset is not None:
+            simulator_config.ghost_offset = (
+                float(ghost_offset[0]),
+                float(ghost_offset[1]),
+            )
 
     if args.overrides:
         from protomotions.utils.config_utils import (

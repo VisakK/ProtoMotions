@@ -286,6 +286,18 @@ class BaseModel(ProtoMotionsTensorDictModule):
         """Module whose parameters should be optimized by the owning agent."""
         return self
 
+    def optimizer_param_groups(self):
+        """Explicit optimizer parameter groups, or ``None`` for one flat group.
+
+        A model returns groups when some of its branches want their own
+        learning rate or weight decay under the *same* optimizer instance --
+        e.g. an autoregressive prior head that converges at a different rate
+        from the trunk it conditions. Every trainable parameter must appear in
+        exactly one group; the owning agent passes the list straight to the
+        optimizer.
+        """
+        return None
+
     def materialize_from_state_dict(self, state_dict: dict) -> None:
         """Create lazily-owned modules needed for strict state-dict loading."""
         pass

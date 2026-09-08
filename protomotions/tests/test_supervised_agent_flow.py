@@ -528,10 +528,11 @@ def test_create_optimizers_prepares_model_with_fabric_setup(monkeypatch):
         model=SimpleNamespace(optimizer=SimpleNamespace(name="sgd")),
     )
     optimizer = _OptimizerRecorder()
+    seen = {}
     monkeypatch.setattr(
         supervised_agent_module,
         "instantiate_optimizer",
-        lambda config, module: optimizer,
+        lambda config, module, params=None: seen.update(params=params) or optimizer,
     )
     setup_calls = []
     agent._setup_model_optimizer = lambda module, optimizer: (
@@ -545,6 +546,8 @@ def test_create_optimizers_prepares_model_with_fabric_setup(monkeypatch):
     assert agent.training_model.module is model
     assert setup_calls == [(model, optimizer)]
     assert agent.supervised_optimizer is optimizer
+    # A model with no parameter-group opinion gets the single flat group.
+    assert seen["params"] is None
 
 
 def test_perform_optimization_step_steps_optimizer_and_clips(monkeypatch):
@@ -592,6 +595,111 @@ def test_default_extra_loss_returns_zero_on_agent_device():
 
     assert torch.equal(loss, torch.zeros(()))
     assert log_dict == {}
+
+
+def _rate_loss_agent(coeff, action_dim=3, free_steps=0):
+    agent = object.__new__(SupervisedAgent)
+    agent.device = torch.device("cpu")
+    agent.config = SimpleNamespace(
+        action_rate_loss_coeff=coeff,
+        action_rate_free_steps=free_steps,
+        loss=SimpleNamespace(target_key="expert_actions"),
+    )
+    return agent
+
+
+def _rate_loss_batch(previous, expert, previous_expert):
+    from protomotions.agents.supervised.agent import PREVIOUS_EXPERT_ACTIONS_KEY
+
+    return {
+        "previous_actions": previous,
+        "expert_actions": expert,
+        PREVIOUS_EXPERT_ACTIONS_KEY: previous_expert,
+    }
+
+
+def test_action_rate_loss_is_zero_when_the_student_matches_the_teachers_increment():
+    """A constant offset from the expert costs nothing -- only jitter does."""
+    agent = _rate_loss_agent(coeff=1.0)
+    bias = torch.full((4, 3), 0.25)
+    expert = torch.randn(4, 3)
+    previous_expert = torch.randn(4, 3)
+    batch = _rate_loss_batch(
+        previous=previous_expert + bias,
+        expert=expert,
+        previous_expert=previous_expert,
+    )
+    loss, logs = agent.calculate_extra_loss(batch, expert + bias)
+    assert loss.abs().item() < 1e-12
+    assert logs["supervised/action_rate"].abs().item() < 1e-12
+
+
+def test_action_rate_loss_charges_a_changed_residual():
+    agent = _rate_loss_agent(coeff=2.0)
+    # Residual was 0 last step and is 0.5 per dim now: the increment differs.
+    batch = _rate_loss_batch(
+        previous=torch.zeros(1, 3),
+        expert=torch.zeros(1, 3),
+        previous_expert=torch.zeros(1, 3),
+    )
+    loss, logs = agent.calculate_extra_loss(batch, torch.full((1, 3), 0.5))
+    assert logs["supervised/action_rate"].item() == pytest.approx(0.25)
+    assert loss.item() == pytest.approx(0.5)  # the coefficient is applied
+
+
+def test_action_rate_loss_is_not_the_imitation_mse_in_disguise():
+    """Referencing both increments to `previous_actions` would collapse to MSE.
+
+    The whole point of carrying the previous *expert* action is that the term
+    stays distinct from the supervision loss; a batch where the imitation MSE
+    is exactly zero and the rate term is not proves the key is being used.
+    """
+    agent = _rate_loss_agent(coeff=1.0)
+    student = torch.tensor([[1.0, 0.0, 0.0]])
+    batch = _rate_loss_batch(
+        previous=torch.zeros(1, 3),
+        expert=torch.tensor([[1.0, 0.0, 0.0]]),  # imitation MSE is exactly 0
+        previous_expert=torch.tensor([[0.6, 0.0, 0.0]]),
+    )
+    loss, _ = agent.calculate_extra_loss(batch, student)
+    assert loss.item() == pytest.approx(0.6**2 / 3)
+
+
+def test_action_rate_loss_off_by_default_and_when_the_buffer_key_is_absent():
+    from protomotions.agents.supervised.agent import PREVIOUS_EXPERT_ACTIONS_KEY
+
+    student = torch.ones(2, 3)
+    full = _rate_loss_batch(
+        torch.zeros(2, 3), torch.zeros(2, 3), torch.zeros(2, 3)
+    )
+
+    loss, logs = _rate_loss_agent(coeff=0.0).calculate_extra_loss(full, student)
+    assert loss.item() == 0.0 and logs == {}
+
+    # Configured on, but no external expert supplied the previous action.
+    partial = {k: v for k, v in full.items() if k != PREVIOUS_EXPERT_ACTIONS_KEY}
+    loss, logs = _rate_loss_agent(coeff=1.0).calculate_extra_loss(partial, student)
+    assert loss.item() == 0.0 and logs == {}
+
+
+def test_previous_expert_action_key_is_registered_only_when_the_term_is_on():
+    for coeff, expect in ((0.0, False), (0.5, True)):
+        agent = object.__new__(SupervisedAgent)
+        agent.device = torch.device("cpu")
+        agent.num_envs = 4
+        agent.expert_model = object()
+        agent.experience_buffer = _ExperienceBufferRecorder()
+        agent.env = SimpleNamespace(
+            robot_config=SimpleNamespace(number_of_actions=3)
+        )
+        agent.config = SimpleNamespace(action_rate_loss_coeff=coeff)
+
+        agent.register_algorithm_experience_buffer_keys()
+
+        names = [key for key, _, _ in agent.experience_buffer.registered]
+        assert "expert_actions" in names
+        assert ("previous_expert_actions" in names) is expect
+        assert (agent._previous_expert_actions is not None) is expect
 
 
 def test_training_load_restores_model_weights_and_optimizer():
@@ -796,3 +904,185 @@ def test_training_load_accepts_previous_maskedmimic_optimizer_key():
     )
 
     assert agent.supervised_optimizer.loaded_state == {"lr": 0.2}
+
+
+# --------------------------------------------------------------------------- #
+# Round 8: the rate loss leaves the refresh row alone
+# --------------------------------------------------------------------------- #
+def test_action_rate_loss_skips_the_rows_at_the_start_of_a_chunk():
+    """The refresh row is the one row whose increment spans a code change.
+
+    Round 7_1 §2.2: charging it is why v7 removed the 3.75 Hz chunk-clock
+    artifact and the commitment together. Exempting it keeps the term on the
+    jitter it was added for.
+    """
+    from protomotions.agents.supervised.agent import FSQ_PHASE_INDEX_KEY
+
+    # Row 0 is a refresh (phase 0) and moves a lot; row 1 is mid-chunk and does
+    # not move at all.
+    batch = _rate_loss_batch(
+        previous=torch.zeros(2, 3),
+        expert=torch.zeros(2, 3),
+        previous_expert=torch.zeros(2, 3),
+    )
+    batch[FSQ_PHASE_INDEX_KEY] = torch.tensor([0.0, 3.0])
+    actions = torch.stack([torch.full((3,), 0.5), torch.zeros(3)])
+
+    charged = _rate_loss_agent(coeff=1.0, free_steps=0)
+    _, logs = charged.calculate_extra_loss(batch, actions)
+    assert logs["supervised/action_rate"].item() == pytest.approx(0.125)  # (0.25 + 0)/2
+    assert "supervised/action_rate_charged_frac" not in logs
+
+    exempt = _rate_loss_agent(coeff=1.0, free_steps=1)
+    _, logs = exempt.calculate_extra_loss(batch, actions)
+    assert logs["supervised/action_rate"].item() == pytest.approx(0.0)
+    assert logs["supervised/action_rate_charged_frac"].item() == pytest.approx(0.5)
+
+
+def test_action_rate_loss_still_charges_jitter_inside_a_chunk():
+    """Exempting the refresh row must not exempt the rest of the chunk."""
+    from protomotions.agents.supervised.agent import FSQ_PHASE_INDEX_KEY
+
+    batch = _rate_loss_batch(
+        previous=torch.zeros(2, 3),
+        expert=torch.zeros(2, 3),
+        previous_expert=torch.zeros(2, 3),
+    )
+    batch[FSQ_PHASE_INDEX_KEY] = torch.tensor([0.0, 5.0])
+    actions = torch.full((2, 3), 0.5)
+    _, logs = _rate_loss_agent(coeff=1.0, free_steps=1).calculate_extra_loss(
+        batch, actions
+    )
+    assert logs["supervised/action_rate"].item() == pytest.approx(0.25)
+
+
+def test_action_rate_loss_falls_back_when_the_phase_key_is_absent():
+    """Non-FSQ models publish no chunk phase; the term is charged everywhere."""
+    batch = _rate_loss_batch(
+        previous=torch.zeros(1, 3),
+        expert=torch.zeros(1, 3),
+        previous_expert=torch.zeros(1, 3),
+    )
+    _, logs = _rate_loss_agent(coeff=1.0, free_steps=1).calculate_extra_loss(
+        batch, torch.full((1, 3), 0.5)
+    )
+    assert logs["supervised/action_rate"].item() == pytest.approx(0.25)
+    assert "supervised/action_rate_charged_frac" not in logs
+
+
+def test_action_rate_loss_falls_back_when_every_row_would_be_exempt():
+    """A batch of nothing but refresh rows must not produce a NaN loss."""
+    from protomotions.agents.supervised.agent import FSQ_PHASE_INDEX_KEY
+
+    batch = _rate_loss_batch(
+        previous=torch.zeros(2, 3),
+        expert=torch.zeros(2, 3),
+        previous_expert=torch.zeros(2, 3),
+    )
+    batch[FSQ_PHASE_INDEX_KEY] = torch.zeros(2)
+    loss, logs = _rate_loss_agent(coeff=1.0, free_steps=1).calculate_extra_loss(
+        batch, torch.full((2, 3), 0.5)
+    )
+    assert torch.isfinite(loss)
+    assert logs["supervised/action_rate"].item() == pytest.approx(0.25)
+
+
+def test_chunk_phase_key_agrees_between_the_agent_and_the_fsq_model():
+    """The agent names the key locally to avoid depending on one model module."""
+    from protomotions.agents.supervised.agent import FSQ_PHASE_INDEX_KEY as agent_key
+    from protomotions.agents.supervised.fsq_masked_mimic_model import (
+        FSQ_PHASE_INDEX_KEY as model_key,
+    )
+
+    assert agent_key == model_key
+
+
+# --------------------------------------------------------------------------- #
+# Round 9: the DAgger loss on the deployable action
+# --------------------------------------------------------------------------- #
+def _dagger_agent(coeff):
+    agent = object.__new__(SupervisedAgent)
+    agent.device = torch.device("cpu")
+    agent.config = SimpleNamespace(
+        dagger_action_loss_coeff=coeff,
+        loss=SimpleNamespace(target_key="expert_actions"),
+    )
+    return agent
+
+
+def _dagger_batch(prior_action, expert, mask):
+    from protomotions.agents.supervised.agent import (
+        PRIOR_ACTION_KEY,
+        PRIOR_ROLLOUT_MASK_KEY,
+    )
+
+    return {
+        PRIOR_ACTION_KEY: prior_action,
+        "expert_actions": expert,
+        PRIOR_ROLLOUT_MASK_KEY: mask,
+    }
+
+
+def test_dagger_action_loss_scores_only_prior_driven_rows():
+    """Row 0 was prior-driven and is 0.5 off; row 1 was privileged-driven and is
+    1.0 off. Only the first may be charged -- on a privileged row the term would
+    just be pressure for every code to decode to the one expert action."""
+    agent = _dagger_agent(coeff=2.0)
+    batch = _dagger_batch(
+        prior_action=torch.stack([torch.full((3,), 0.5), torch.full((3,), 1.0)]),
+        expert=torch.zeros(2, 3),
+        mask=torch.tensor([1.0, 0.0]),
+    )
+    loss, logs = agent.calculate_dagger_action_loss(batch)
+    assert logs["supervised/dagger_action_loss"].item() == pytest.approx(0.25)
+    assert logs["supervised/dagger_action_frac"].item() == pytest.approx(0.5)
+    assert loss.item() == pytest.approx(0.5)  # the coefficient is applied
+
+
+def test_dagger_action_loss_is_inactive_before_dagger_engages():
+    """No prior-driven rows exist before `prior_rollout_start_epoch`."""
+    agent = _dagger_agent(coeff=1.0)
+    batch = _dagger_batch(
+        prior_action=torch.full((4, 3), 0.5),
+        expert=torch.zeros(4, 3),
+        mask=torch.zeros(4),
+    )
+    loss, logs = agent.calculate_dagger_action_loss(batch)
+    assert torch.equal(loss, torch.zeros(()))
+    assert logs == {}
+
+
+def test_dagger_action_loss_off_by_default_and_without_the_keys():
+    agent = _dagger_agent(coeff=0.0)
+    batch = _dagger_batch(torch.zeros(2, 3), torch.zeros(2, 3), torch.ones(2))
+    assert torch.equal(agent.calculate_dagger_action_loss(batch)[0], torch.zeros(()))
+
+    # Enabled, but the model published no prior action (non-FSQ model).
+    agent = _dagger_agent(coeff=1.0)
+    loss, logs = agent.calculate_dagger_action_loss({"expert_actions": torch.zeros(2, 3)})
+    assert torch.equal(loss, torch.zeros(()))
+    assert logs == {}
+
+
+def test_dagger_action_loss_is_not_the_privileged_imitation_loss():
+    """It must score `prior_action`, not `privileged_action` -- a batch where the
+    privileged action is perfect and the sampled one is not."""
+    agent = _dagger_agent(coeff=1.0)
+    batch = _dagger_batch(
+        prior_action=torch.full((2, 3), 0.4),
+        expert=torch.zeros(2, 3),
+        mask=torch.ones(2),
+    )
+    batch["privileged_action"] = torch.zeros(2, 3)   # perfect, and irrelevant
+    _, logs = agent.calculate_dagger_action_loss(batch)
+    assert logs["supervised/dagger_action_loss"].item() == pytest.approx(0.16)
+
+
+def test_round9_key_names_agree_between_the_agent_and_the_fsq_model():
+    from protomotions.agents.supervised import agent as agent_mod
+    from protomotions.agents.supervised import fsq_masked_mimic_model as model_mod
+
+    assert agent_mod.PRIOR_ACTION_KEY == model_mod.PRIOR_ACTION_KEY
+    assert (
+        agent_mod.FSQ_USED_PRIOR_LATENT_KEY == model_mod.FSQ_USED_PRIOR_LATENT_KEY
+    )

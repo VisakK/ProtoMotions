@@ -55,6 +55,23 @@ def compute_contact_goal_reached(reached: Tensor) -> Tensor:
     return reached
 
 
+def compute_contact_goal_pose_error(pose_error: Tensor) -> Tensor:
+    """Weight-0 diagnostic: metres to the commanded *pose* [num_envs].
+
+    The pose counterpart of ``compute_contact_goal_reached``, which scores the
+    contact half only and therefore reads 1.00 for every member of a degenerate
+    node (standing, single-leg, four-point). Mean per-body distance in the
+    student's own goal representation; see ``ContactGraphControl._goal_pose_error``
+    for the exact definition and how unmeasured rows are handled.
+    """
+    return pose_error
+
+
+def compute_contact_goal_pose_error_visible(pose_error_visible: Tensor) -> Tensor:
+    """Weight-0 diagnostic: fraction of rows the pose error was measured on."""
+    return pose_error_visible
+
+
 def compute_contact_history_obs(history_features: Tensor) -> Tensor:
     """Flatten the measured contact-event history tokens.
 
@@ -90,6 +107,8 @@ __all__ = [
     "compute_contact_goal_obs",
     "compute_contact_goal_masks",
     "compute_contact_goal_reached",
+    "compute_contact_goal_pose_error",
+    "compute_contact_goal_pose_error_visible",
     "compute_contact_history_obs",
     "compute_contact_history_masks",
     "compute_contact_event_flag",

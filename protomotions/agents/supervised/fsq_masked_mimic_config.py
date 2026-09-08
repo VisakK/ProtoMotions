@@ -81,6 +81,68 @@ class FSQIntentConfig:
             "disables event-triggered refresh (counter/reset only)."
         },
     )
+    intent_hysteresis: float = field(
+        default=0.0,
+        metadata={
+            "help": "INFERENCE ONLY. At a *timer* refresh, keep the code the "
+            "policy is already holding unless the AR prior gives it less than "
+            "this probability. 0.0 disables and reproduces every trained "
+            "round exactly. Motivation (notes/Student_v9_round9_diagnosis.MD "
+            "§5.1): the chunk clock re-draws the intent 3.75 times a second, "
+            "so a 12 s commanded hold is 45 independent nucleus draws and "
+            "survives only if none of them commits to a departure -- the "
+            "measured per-draw error is ~10x higher at an ambiguous goal "
+            "(standing) than at an unambiguous one (side plank). An event "
+            "refresh is never suppressed: a committed contact change is a "
+            "real reason to reconsider. Single-token codes only (v9's 4 "
+            "scalars x 1 token); with several tokens the held code's joint "
+            "probability is not one softmax and the term is ignored.",
+            "min": 0.0,
+            "max": 1.0,
+        },
+    )
+    latent_ema_alpha: float = field(
+        default=1.0,
+        metadata={
+            "help": "Exponential smoothing applied to the code *before* it "
+            "reaches the trunk, per stream: latent <- latent + alpha * (code - "
+            "latent). 1.0 hands the raw code straight through (v6). Lower "
+            "values ramp a newly committed intent in over ~1/alpha steps, "
+            "which is what removes the step change the round-6 measurements "
+            "found sitting at the chunk clock (30/8 = 3.75 Hz) in both the "
+            "sampled and the greedy stream — see "
+            "notes/Student_v7_improvement_investigation.MD §10.3. The smoothed "
+            "latent is declared rollout state, so the loss trains through the "
+            "ramp and replay reproduces it exactly.",
+            "min": 0.0,
+            "max": 1.0,
+        },
+    )
+    chunk_phase_to_trunk: bool = field(
+        default=False,
+        metadata={
+            "help": "Feed the trunk a one-hot of how many steps have passed "
+            "since the intent code was issued (width = chunk_steps). The trunk "
+            "otherwise has no clock, so a held code can only express a constant "
+            "offset on the action -- never a short program. Round 7_1 §6.2. "
+            "False reproduces v6/v7. Note this is the opposite call from the AR "
+            "head, which is deliberately given no phase input (v7 §1.3): the "
+            "head is only ever queried at a refresh, where the phase is "
+            "constant, while the trunk runs at every phase."
+        },
+    )
+    ce_refresh_rows_only: bool = field(
+        default=False,
+        metadata={
+            "help": "Take the token cross-entropy over refresh rows only. "
+            "Refresh states are the only ones at which the deployed prior is "
+            "ever asked to choose a code; a hold row's target is the code "
+            "issued up to chunk_steps-1 steps earlier, under a context that "
+            "has since moved on, and those rows are ~87 % of a batch at "
+            "chunk_steps=8. False reproduces v6's unmasked CE. The split "
+            "diagnostics are logged either way."
+        },
+    )
     temperature: float = field(
         default=1.0, metadata={"help": "Sampling temperature for prior tokens."}
     )
@@ -152,4 +214,38 @@ class FSQMaskedMimicModelConfig(BaseModelConfig):
     optimizer: OptimizerConfig = field(
         default_factory=lambda: OptimizerConfig(lr=2e-5),
         metadata={"help": "Optimizer settings for supervised training."},
+    )
+    ar_head_lr: Optional[float] = field(
+        default=None,
+        metadata={
+            "help": "Learning rate for the AR token prior (context encoder + "
+            "AR transformer), as its own optimizer parameter group. None "
+            "shares the single rate above, which is what v6 did — and the "
+            "in-repo GPC prior recipe uses AdamW 1e-4 for the same kind of "
+            "head against this model's 2e-5 (round 6 §9.2 named the shared "
+            "optimizer as the prime suspect for its slow convergence).",
+            "min": 0.0,
+        },
+    )
+    ar_head_weight_decay: Optional[float] = field(
+        default=None,
+        metadata={
+            "help": "Weight decay for the AR-prior parameter group. Only "
+            "meaningful with a decoupled-decay optimizer (torch.optim.AdamW); "
+            "None inherits the shared setting.",
+            "min": 0.0,
+        },
+    )
+    encoder_lr: Optional[float] = field(
+        default=None,
+        metadata={
+            "help": "Learning rate for the privileged encoder, as its own "
+            "parameter group. The straight-through gradient reaches the "
+            "encoder only on refresh rows — ~13 % of samples at chunk_steps=8, "
+            "a 7.6x cut in its learning signal versus the per-step v5 "
+            "posterior — and latent smoothing scales what does arrive by "
+            "alpha. Raising this rate is the direct offset. None shares the "
+            "rate above.",
+            "min": 0.0,
+        },
     )

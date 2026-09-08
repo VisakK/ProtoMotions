@@ -44,9 +44,19 @@ class ContactGraph:
         pair_names: Contact-pair names; index into the multi-hot node vectors.
         orientation_names: Trunk-orientation bin names.
         node_keys: Canonical configuration string per node id.
-        node_contact: ``[num_nodes, num_pairs]`` multi-hot contact vector.
+        node_contact: ``[num_nodes, num_pairs]`` multi-hot contact vector. What a
+            *manual* goal gathers (probe plans, ``query_contact_goal.py``, the
+            viz panel), and the fallback for scheduled goals on graphs written
+            before ``seg_contact`` existed.
         node_orient: ``[num_nodes]`` orientation-bin index per node.
         seg_node: ``[num_motions, max_segments]`` node id, ``-1`` where padded.
+        seg_contact: ``[num_motions, max_segments, num_pairs]`` multi-hot contact
+            target of each *scheduled* goal, or ``None`` on older graphs. Node
+            identity can be coarser than the contact set a segment actually held
+            (``--body-pair-identity none`` makes a node exactly ``(ground set,
+            orientation)``), so the goal is served per segment: the coarsening
+            buys edge consolidation without giving back the body-body goal
+            channel round 2 added.
         seg_start / seg_end / seg_hold: ``[num_motions, max_segments]`` clip times,
             ``+inf`` where padded so ``searchsorted`` runs off the end cleanly.
         seg_count: ``[num_motions]`` number of real segments per motion.
@@ -70,11 +80,21 @@ class ContactGraph:
         self.node_contact: Tensor = payload["node_contact"].to(self.device).float()
         self.node_orient: Tensor = payload["node_orient"].to(self.device).long()
         self.seg_node: Tensor = payload["seg_node"].to(self.device).long()
+        seg_contact = payload.get("seg_contact")
+        self.seg_contact: Optional[Tensor] = (
+            seg_contact.to(self.device).float() if seg_contact is not None else None
+        )
         self.seg_start: Tensor = payload["seg_start"].to(self.device).float()
         self.seg_end: Tensor = payload["seg_end"].to(self.device).float()
         self.seg_hold: Tensor = payload["seg_hold"].to(self.device).float()
         self.seg_count: Tensor = payload["seg_count"].to(self.device).long()
 
+        if self.seg_contact is not None and self.seg_contact.shape[:2] != self.seg_node.shape:
+            raise ValueError(
+                f"seg_contact is {tuple(self.seg_contact.shape)} but seg_node is "
+                f"{tuple(self.seg_node.shape)}: the graph tables disagree on the "
+                "segment layout"
+            )
         if self.seg_hold.shape[0] != len(self.motion_names):
             raise ValueError(
                 f"contact graph has {self.seg_hold.shape[0]} motion rows but "
@@ -172,12 +192,20 @@ class ContactGraph:
         """Segment data for ``[E, K]`` indices into each env's own motion row."""
         rows = motion_ids.unsqueeze(-1).expand_as(indices)
         node = self.safe_seg_node[rows, indices]
+        # Per segment where the graph provides it (see `seg_contact`), per node
+        # otherwise. The two agree exactly on every graph built with a
+        # body-body identity rule of "all" or "load_path".
+        contact = (
+            self.seg_contact[rows, indices]
+            if self.seg_contact is not None
+            else self.node_contact[node]
+        )
         return {
             "node": node,
             "t_start": self.seg_start[rows, indices],
             "t_end": self.seg_end[rows, indices],
             "t_hold": self.seg_hold[rows, indices],
-            "contact": self.node_contact[node],
+            "contact": contact,
             "orient": self.node_orient[node],
         }
 

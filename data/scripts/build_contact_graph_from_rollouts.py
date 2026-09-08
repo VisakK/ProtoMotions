@@ -185,25 +185,65 @@ def pair_forces_from_bodies(
     return out
 
 
+BODY_PAIR_IDENTITY_RULES = ("all", "load_path", "none")
+
+
 def demote_supported_pairs(
-    active: np.ndarray, decomposed: list
+    active: np.ndarray, decomposed: list, rule: str = "load_path"
 ) -> tuple[np.ndarray, np.ndarray]:
     """Split ``active`` into identity pairs and demoted (secondary) pairs.
 
-    A body-body pair is demoted on every frame where **both** of its zones have
-    their own ground contact: each member is independently supported, so the
-    mutual press is internal to the support set rather than a distinct support
-    topology. This is a topological rule, not a force floor, because force does
-    not discriminate -- measured on the student44 graph, the incidental
-    ``L_FOOT+R_FOOT`` press while standing reaches 40 % of body weight (median
-    18 %), well above genuine load paths like Eagle's hooked foot. The cases
-    that must survive all do: crow's shins on upper arms (arms not grounded),
-    tree's foot on the standing thigh (thigh not grounded), Eagle's hook (the
-    hooked foot not grounded), Tolasana's pressed thighs (neither grounded).
+    ``rule`` selects how much of the body-body half enters **node identity**
+    (i.e. is allowed to split segments and create nodes).  Demoted pairs are
+    still measured, still stored per segment, and still reach the goal vector --
+    they simply stop fragmenting the graph.
+
+    ``"all"``
+        Nothing is demoted; every body-body pair splits nodes.  The
+        pre-round-3 rule, kept for ablation.
+
+    ``"load_path"``
+        A body-body pair is demoted on every frame where **both** of its zones
+        have their own ground contact: each member is independently supported,
+        so the mutual press is internal to the support set rather than a
+        distinct support topology.  This is a topological rule, not a force
+        floor, because force does not discriminate -- measured on the student44
+        graph, the incidental ``L_FOOT+R_FOOT`` press while standing reaches
+        40 % of body weight (median 18 %), well above genuine load paths like
+        Eagle's hooked foot.  The cases that must survive all do: crow's shins
+        on upper arms (arms not grounded), tree's foot on the standing thigh
+        (thigh not grounded), Eagle's hook (the hooked foot not grounded),
+        Tolasana's pressed thighs (neither grounded).
+
+    ``"none"``
+        **No** body-body pair enters identity: a node is exactly ``(ground
+        support set, orientation bin)``.  Round 7_1's measurement is what
+        motivates it -- on the student44h graph 51 of 102 nodes are singletons
+        and 89 of the 104 pairs are body-body, so a marginal press fragments a
+        pose into nodes no transition is ever observed between.  Firefly's hold
+        is split across nodes 52/53/59 by a shank that rests on an arm for part
+        of it, and its own frozen ``hold_`` clip -- byte-identical in pose to
+        the node-52 segment, 0.00 m apart in the goal representation -- is
+        labelled node 59.  Under this rule the body-body set moves to the
+        segment, where it belongs: it describes *this* execution of the pose
+        rather than defining a separate configuration.
 
     Returns ``(identity, demoted)`` boolean arrays of ``active``'s shape;
     ``identity | demoted == active`` and the two are disjoint.
     """
+    if rule not in BODY_PAIR_IDENTITY_RULES:
+        raise ValueError(
+            f"body-pair identity rule must be one of {BODY_PAIR_IDENTITY_RULES}, "
+            f"got {rule!r}"
+        )
+    if rule == "all":
+        return active, np.zeros_like(active)
+
+    is_body_pair = np.array([b is not None for _, b in decomposed])
+    if rule == "none":
+        demoted = active & is_body_pair[None, :]
+        return active & ~demoted, demoted
+
     ground_pair_of = {
         zone_a: p for p, (zone_a, zone_b) in enumerate(decomposed) if zone_b is None
     }
@@ -377,10 +417,25 @@ def annotate_clip(
     for p in range(active.shape[1]):
         active[:, p] = clean_active(active[:, p], merge_n, dwell_n)
 
-    if getattr(args, "keep_supported_pairs", False):
-        identity, demoted = active, np.zeros_like(active)
-    else:
-        identity, demoted = demote_supported_pairs(active, decomposed)
+    rule = getattr(args, "body_pair_identity", "load_path")
+    identity, demoted = demote_supported_pairs(active, decomposed, rule=rule)
+    # What the GOAL is allowed to name, independent of the identity rule: the
+    # load-path definition, always. Coarsening identity is meant to stop a
+    # marginal press *fragmenting* a pose into singleton nodes -- it is not a
+    # decision to stop asking for firefly's thighs-on-upper-arms. Under
+    # `load_path` this is exactly `identity`, which is what makes the whole
+    # option a byte-level no-op for the graphs already trained on; under `all`
+    # the union keeps identity's own extra pairs.
+    # Body-body half only: a ground pair is identity under every rule, so the
+    # goal's ground set must be exactly the node's. Without this restriction a
+    # segment that absorbed a short neighbouring run (`absorb_short_runs`) can
+    # pick up that run's ground pair -- measured on 4 of 411 segments, and it
+    # would make the option a non-no-op for the rule the trained graphs use.
+    is_body_pair = np.array([b is not None for _, b in decomposed])
+    goal_active = (
+        identity
+        | (demote_supported_pairs(active, decomposed, "load_path")[0] & is_body_pair[None, :])
+    )
 
     pelvis = sim_body_names.index("Pelvis")
     quat_xyzw = torch.from_numpy(quat_wxyz[:, pelvis][:, [1, 2, 3, 0]].astype(np.float32))
@@ -431,8 +486,23 @@ def annotate_clip(
         # attributes: real measured contact, deliberately not node identity.
         secondary_dwell = demoted[start : end + 1].mean(axis=0)
         secondary_ids = [
-            int(p) for p in np.nonzero(secondary_dwell >= 0.5)[0] if p not in pair_ids
+            int(p) for p in np.nonzero(secondary_dwell >= args.secondary_dwell_frac)[0]
+            if p not in pair_ids
         ]
+        # What the GOAL names for this segment: the identity set, plus every
+        # goal-eligible pair this execution actually held for a majority of the
+        # segment. Node identity coarsens under --body-pair-identity none; the
+        # goal must not, or the coarsening would give back round 2's body-body
+        # goal channel.
+        goal_dwell = goal_active[start : end + 1].mean(axis=0)
+        goal_ids = sorted(
+            set(pair_ids)
+            | {
+                int(p)
+                for p in np.nonzero(goal_dwell >= args.secondary_dwell_frac)[0]
+                if is_body_pair[p]
+            }
+        )
         segments.append(
             {
                 "start_frame": start,
@@ -443,10 +513,16 @@ def annotate_clip(
                 "duration_s": float(motion_time[end] - motion_time[start] + dt),
                 "pairs": [decomposed_name(p, decomposed) for p in pair_ids],
                 "pair_ids": list(pair_ids),
+                "ground_pairs": [
+                    decomposed_name(p, decomposed) for p in pair_ids if not is_body_pair[p]
+                ],
+                "ground_pair_ids": [int(p) for p in pair_ids if not is_body_pair[p]],
                 "secondary_pairs": [
                     decomposed_name(p, decomposed) for p in secondary_ids
                 ],
                 "secondary_pair_ids": secondary_ids,
+                "goal_pairs": [decomposed_name(p, decomposed) for p in goal_ids],
+                "goal_pair_ids": goal_ids,
                 "orientation_bin": ORIENT_BINS[obin],
                 "orientation_id": int(obin),
                 "good_fraction": good_fraction,
@@ -457,7 +533,7 @@ def annotate_clip(
                     decomposed_name(p, decomposed): float(
                         forces[start : end + 1, p].mean()
                     )
-                    for p in list(pair_ids) + secondary_ids
+                    for p in sorted(set(goal_ids) | set(secondary_ids))
                 },
             }
         )
@@ -483,7 +559,39 @@ def decomposed_name(index: int, decomposed: list) -> str:
 # --------------------------------------------------------------------------- #
 # Graph assembly
 # --------------------------------------------------------------------------- #
-def build_graph(clip_records: dict[str, dict], motion_names: list[str], pair_names: list[str]):
+def node_identity_pairs(segment: dict, node_identity: str) -> tuple[list, list]:
+    """``(pair names, pair ids)`` that define this segment's NODE.
+
+    ``"segment"`` keys a node by the same set that split the segment -- what
+    every graph before round 7_1 did.  ``"ground"`` keys it by the ground
+    support set alone, so a body-body pair still splits segments (and still
+    reaches the goal through ``seg_contact``) but stops creating a node.
+
+    The distinction is the whole point: on the student44h graph, keying by the
+    full set makes 51 of 102 nodes singletons and 158 of 198 edges count-1,
+    and firefly's hold is three nodes because a shank rests on an arm for part
+    of it.  Merging the *segments* instead would be the blunt version of this
+    and costs goals -- measured, 411 -> 344 goals and the body-body half of the
+    goal vector halved (86 -> 43 goals naming one), because a pair characteristic
+    of a sub-phase falls below the majority threshold of the merged whole.
+    """
+    if node_identity == "segment":
+        return list(segment["pairs"]), list(segment["pair_ids"])
+    if node_identity == "ground":
+        return (
+            list(segment.get("ground_pairs", segment["pairs"])),
+            list(segment.get("ground_pair_ids", segment["pair_ids"])),
+        )
+    raise ValueError(f"unknown node identity {node_identity!r}")
+
+
+def build_graph(
+    clip_records: dict[str, dict],
+    motion_names: list[str],
+    pair_names: list[str],
+    node_pair_dwell_frac: float = 0.5,
+    node_identity: str = "segment",
+):
     """Assemble node/edge tables in packaged-MotionLib motion-id order."""
     node_ids: dict[str, int] = {}
     node_rows: list[dict] = []
@@ -496,19 +604,28 @@ def build_graph(clip_records: dict[str, dict], motion_names: list[str], pair_nam
             continue
         previous_node = None
         for segment in record["segments"]:
-            key = config_string(segment["pairs"], segment["orientation_bin"])
+            key_pairs, key_pair_ids = node_identity_pairs(segment, node_identity)
+            key = config_string(key_pairs, segment["orientation_bin"])
             if key not in node_ids:
                 node_ids[key] = len(node_rows)
                 node_rows.append(
                     {
                         "key": key,
-                        "pairs": sorted(segment["pairs"]),
-                        "pair_ids": sorted(segment["pair_ids"]),
+                        "pairs": sorted(key_pairs),
+                        "pair_ids": sorted(key_pair_ids),
                         "orientation_bin": segment["orientation_bin"],
                         "orientation_id": segment["orientation_id"],
                         "total_dwell_s": 0.0,
                         "num_segments": 0,
                         "motions": [],
+                        # Dwell-weighted occupancy of every pair the node's
+                        # segments name in their goal vector. Body-body pairs
+                        # can be per-segment (see --body-pair-identity), so a
+                        # node-level vector -- which is what a *manual* goal
+                        # gathers -- has to be a majority, not a union: a pair
+                        # held on one 0.5 s pass out of 30 s does not describe
+                        # the node.
+                        "goal_pair_dwell_s": {},
                     }
                 )
             node = node_ids[key]
@@ -518,6 +635,11 @@ def build_graph(clip_records: dict[str, dict], motion_names: list[str], pair_nam
                 row["num_segments"] += 1
                 if name not in row["motions"]:
                     row["motions"].append(name)
+                for pair_id in segment.get("goal_pair_ids", segment["pair_ids"]):
+                    row["goal_pair_dwell_s"][int(pair_id)] = (
+                        row["goal_pair_dwell_s"].get(int(pair_id), 0.0)
+                        + segment["duration_s"]
+                    )
             per_motion[motion_id].append({**segment, "node": node, "config": key})
 
             if not segment["trusted"]:
@@ -548,6 +670,23 @@ def build_graph(clip_records: dict[str, dict], motion_names: list[str], pair_nam
                 )
             previous_node = (node, segment["t_hold"])
 
+    for row in node_rows:
+        dwell = row["total_dwell_s"]
+        row["goal_pair_ids"] = sorted(
+            pair_id
+            for pair_id, held in row["goal_pair_dwell_s"].items()
+            if dwell <= 0.0 or held / dwell >= node_pair_dwell_frac
+        )
+        row["goal_pairs"] = [pair_names[i] for i in row["goal_pair_ids"]]
+        # The raw occupancy is what makes the majority threshold auditable
+        # later; keep it rounded rather than dropping it.
+        row["goal_pair_dwell_frac"] = {
+            pair_names[i]: round(held / dwell, 3)
+            for i, held in sorted(row["goal_pair_dwell_s"].items())
+            if dwell > 0.0
+        }
+        del row["goal_pair_dwell_s"]
+
     return node_ids, node_rows, per_motion, edges
 
 
@@ -558,7 +697,11 @@ def pack_tensors(node_rows, per_motion, pair_names, motion_names, min_lead_s):
     node_contact = torch.zeros(num_nodes, num_pairs, dtype=torch.float32)
     node_orient = torch.zeros(num_nodes, dtype=torch.long)
     for i, row in enumerate(node_rows):
+        # Identity pairs always; plus whatever body-body pairs the node holds
+        # for a majority of its dwell (build_graph). With the pre-round-7_1
+        # rules these coincide, so the table is unchanged for those graphs.
         node_contact[i, row["pair_ids"]] = 1.0
+        node_contact[i, row.get("goal_pair_ids", [])] = 1.0
         node_orient[i] = row["orientation_id"]
 
     kept = [[s for s in segments if s["trusted"]] for segments in per_motion]
@@ -571,6 +714,13 @@ def pack_tensors(node_rows, per_motion, pair_names, motion_names, min_lead_s):
     seg_end = torch.full((num_motions, max_segments), float("inf"))
     seg_hold = torch.full((num_motions, max_segments), float("inf"))
     seg_count = torch.zeros(num_motions, dtype=torch.long)
+    # The contact target of a *scheduled* goal, per segment rather than per
+    # node. Node identity may coarsen (--body-pair-identity none) so that a
+    # pose stops being fragmented into singleton nodes no edge is ever observed
+    # between; the goal must keep naming what this execution actually held, or
+    # the coarsening would silently give back round 2's body-body goal channel.
+    # ~1 MB at this corpus size (80 x 30 x 104 floats).
+    seg_contact = torch.zeros(num_motions, max_segments, num_pairs, dtype=torch.float32)
 
     for motion_id, segments in enumerate(kept):
         segments = sorted(segments, key=lambda s: s["t_hold"])
@@ -580,6 +730,7 @@ def pack_tensors(node_rows, per_motion, pair_names, motion_names, min_lead_s):
             seg_start[motion_id, k] = segment["t_start"]
             seg_end[motion_id, k] = segment["t_end"]
             seg_hold[motion_id, k] = segment["t_hold"]
+            seg_contact[motion_id, k, segment.get("goal_pair_ids", segment["pair_ids"])] = 1.0
 
     return {
         "motion_names": motion_names,
@@ -595,6 +746,7 @@ def pack_tensors(node_rows, per_motion, pair_names, motion_names, min_lead_s):
         "node_contact": node_contact,
         "node_orient": node_orient,
         "seg_node": seg_node,
+        "seg_contact": seg_contact,
         "seg_start": seg_start,
         "seg_end": seg_end,
         "seg_hold": seg_hold,
@@ -639,13 +791,37 @@ def create_parser() -> argparse.ArgumentParser:
                              "placed at 90%% of each segment instead of searched, "
                              "because a frozen clip's speed profile is exactly flat. "
                              "Pass an empty string to disable.")
+    parser.add_argument("--body-pair-identity", choices=BODY_PAIR_IDENTITY_RULES,
+                        default="load_path",
+                        help="how much of the body-body half enters NODE IDENTITY. "
+                             "'all' = every body-body pair splits nodes (pre-round-3). "
+                             "'load_path' (default) demotes only pairs whose two zones "
+                             "are both independently grounded. 'none' demotes all of "
+                             "them: a node is exactly (ground support set, orientation). "
+                             "Demoted pairs are still measured, still stored per segment, "
+                             "and still reach the goal through seg_contact -- they only "
+                             "stop fragmenting the graph.")
     parser.add_argument("--keep-supported-pairs", action="store_true",
-                        help="restore the pre-load-path identity rule: body-body pairs "
-                             "whose two zones both have their own ground contact still "
-                             "split nodes. By default such pairs are demoted to "
-                             "per-segment secondary attributes, because their press is "
-                             "internal to the support set (the standing L_FOOT+R_FOOT "
-                             "flag reaches 40%% BW, so no force floor separates it).")
+                        help="deprecated alias for --body-pair-identity all.")
+    parser.add_argument("--node-identity", choices=("segment", "ground"),
+                        default="segment",
+                        help="what defines a NODE. 'segment' (default) keys it by the "
+                             "same pair set that split the segment -- every graph before "
+                             "round 7_1. 'ground' keys it by the ground support set plus "
+                             "the orientation bin, so a body-body pair still splits "
+                             "segments and still reaches the goal, but stops creating a "
+                             "node. Prefer this over --body-pair-identity none, which "
+                             "merges the SEGMENTS too and costs goals.")
+    parser.add_argument("--secondary-dwell-frac", type=float, default=0.5,
+                        help="a demoted pair is recorded on a segment (and enters that "
+                             "segment's goal vector) when it is active for at least this "
+                             "fraction of the segment.")
+    parser.add_argument("--node-pair-dwell-frac", type=float, default=0.5,
+                        help="a pair enters the NODE-level contact vector -- what a "
+                             "manual/probe goal gathers -- when the node's segments hold "
+                             "it for at least this fraction of the node's dwell. A "
+                             "majority rather than a union, so a pair held on one short "
+                             "pass does not end up describing the whole node.")
     parser.add_argument("--track-err-tol", type=float, default=0.50,
                         help="max body tracking error (m) for a frame to be trusted")
     parser.add_argument("--min-good-fraction", type=float, default=0.60,
@@ -659,7 +835,11 @@ def create_parser() -> argparse.ArgumentParser:
 
 def main() -> int:
     args = create_parser().parse_args()
+    if args.keep_supported_pairs:
+        args.body_pair_identity = "all"
     pair_names, decomposed = pair_index()
+    print(f"body-pair segmentation rule: {args.body_pair_identity}   "
+          f"node identity: {args.node_identity}")
     print(f"{len(pair_names)} contact pairs "
           f"({len(ZONE_ORDER)} ground + {len(pair_names) - len(ZONE_ORDER)} body-body, "
           f"{len(ADJACENT)} adjacent zone pairs masked)")
@@ -704,7 +884,11 @@ def main() -> int:
         if (i + 1) % 20 == 0 or i + 1 == len(motion_names):
             print(f"  annotated {len(records)}/{len(motion_names)}")
 
-    node_ids, node_rows, per_motion, edges = build_graph(records, motion_names, pair_names)
+    node_ids, node_rows, per_motion, edges = build_graph(
+        records, motion_names, pair_names,
+        node_pair_dwell_frac=args.node_pair_dwell_frac,
+        node_identity=args.node_identity,
+    )
     tensors = pack_tensors(node_rows, per_motion, pair_names, motion_names, args.min_lead_s)
 
     out_dir = Path(args.out_dir)
@@ -721,9 +905,15 @@ def main() -> int:
                 "track_err_tol", "min_good_fraction",
             )
         },
-        "supported_pair_rule": (
-            "keep" if args.keep_supported_pairs else "demote_both_grounded"
-        ),
+        "supported_pair_rule": {
+            "all": "keep",
+            "load_path": "demote_both_grounded",
+            "none": "demote_all_body_pairs",
+        }[args.body_pair_identity],
+        "body_pair_identity": args.body_pair_identity,
+        "node_identity": args.node_identity,
+        "node_pair_dwell_frac": args.node_pair_dwell_frac,
+        "secondary_dwell_frac": args.secondary_dwell_frac,
         "pair_names": pair_names,
         "orientation_names": list(ORIENT_BINS),
         "nodes": node_rows,
@@ -739,6 +929,13 @@ def main() -> int:
         },
     }
     (out_dir / "contact_graph.json").write_text(json.dumps(graph_json, indent=1))
+
+    singletons = sum(1 for r in node_rows if r["num_segments"] == 1)
+    counts = [e["count"] for e in edges.values()]
+    once = sum(1 for c in counts if c == 1)
+    print(f"\nnode/edge shape:  {len(node_rows)} nodes ({singletons} singletons)   "
+          f"{len(edges)} edges ({once} seen once, "
+          f"{sum(1 for c in counts if c >= 6)} seen 6+ times)")
 
     trusted_counts = [int(c) for c in tensors["seg_count"]]
     recorded = [c for c in trusted_counts if c > 0]

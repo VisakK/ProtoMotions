@@ -599,6 +599,29 @@ class SimulatorConfig:
             "min": 0.0,
         }
     )
+    ghost_robot: bool = field(
+        default=False,
+        metadata={
+            "help": (
+                "Spawn a second, visualization-only copy of the robot (no gravity, "
+                "no collisions, no actuation) that a driver can pose kinematically "
+                "via set_ghost_state() — used by the probe/render tools to show the "
+                "commanded goal pose next to the simulated character. Only created "
+                "when not headless; currently IsaacLab-only."
+            )
+        },
+    )
+    ghost_offset: Tuple[float, float] = field(
+        default=(1.8, 0.0),
+        metadata={
+            "help": (
+                "World-frame XY displacement of the ghost character from the goal "
+                "pose's natural (marker-aligned) position. The default puts it to "
+                "screen-right of the default follow camera. Keep it well under "
+                "env_spacing when running more than one environment."
+            )
+        },
+    )
 
     def __post_init__(self):
         assert self._target_ is not None, "SimulatorConfig._target_ must be provided"

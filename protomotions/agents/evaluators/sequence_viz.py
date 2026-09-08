@@ -83,13 +83,76 @@ class SequenceVizConfig:
         default=20.0,
         metadata={"help": "Hard cap on any sequence's duration."},
     )
+    log_scalars: bool = field(
+        default=True,
+        metadata={
+            "help": "Also send the panel's per-sequence and per-goal scalars to "
+            "the logger. False sends only the videos, which is what early "
+            "training wants: one unseeded nucleus draw per sequence per epoch "
+            "makes every one of these a coin flip (round 7_1 §5.2 -- v7_1's "
+            "hold_probe_standing was good on 7 of 24 panels with no trend), so "
+            "the charts cost dashboard space and invite exactly the "
+            "single-draw reading round 7 §11.5 had to retract. They are still "
+            "written to viz/epoch_*/summary.json either way, so nothing is "
+            "lost for offline analysis."
+        },
+    )
     settle_steps: int = field(
         default=10,
         metadata={"help": "Policy steps after reset before the plans start."},
     )
+    max_replicas: int = field(
+        default=0,
+        metadata={
+            "help": "Cap on how many environments per sequence are SCORED. 0 = "
+            "all of them. Every env already runs one of the sequences "
+            "(`env_sequence = env_ids % num_seq`) and is already stepped, so "
+            "scoring them all is free: at 1024 envs and 28 plans that is ~36 "
+            "independent nucleus draws per plan instead of the single unseeded "
+            "one round 7_1 §5.2 had to caveat. Videos are still rendered from "
+            "replica 0 only."
+        },
+    )
+    legacy_settle: bool = field(
+        default=False,
+        metadata={
+            "help": "Reproduce the pre-fix panel protocol: settle under the "
+            "CLIP schedule, install the manual goal afterwards, and never "
+            "flush the held intent. Exists only as the control arm for that "
+            "fix -- for a hold probe the clip schedule during settle is the "
+            "very continuation the probe is testing against, and up to "
+            "chunk_steps-1 steps of an intent chosen under it survived into "
+            "the plan."
+        },
+    )
+    dump_traces: bool = field(
+        default=False,
+        metadata={"help": "Also write pose_error_traces.npz ([T, S*R] goal-pose "
+                          "error, frame times, sequence order) for offline "
+                          "survival analysis."},
+    )
+    pose_arrive_m: float = field(
+        default=0.15,
+        metadata={"help": "Goal-pose error below which a goal counts as reached."},
+    )
+    pose_depart_m: float = field(
+        default=0.30,
+        metadata={
+            "help": "Goal-pose error above which a reached goal counts as left "
+            "again; the gap to `pose_arrive_m` is the hysteresis that keeps "
+            "`time_held_s` from chattering."
+        },
+    )
     reissue_every_s: float = field(
         default=0.5,
         metadata={"help": "Seconds between re-arming the goal slots."},
+    )
+    hold_lead_mode: str = field(
+        default="clamp",
+        metadata={"help": "'clamp' = max(remaining, hold_lead_s) (shipped); "
+                          "'park' substitutes hold_lead_s only after the reach "
+                          "window expires, so a large lead does not inflate the "
+                          "reach deadlines of a multi-goal plan."},
     )
     hold_lead_s: float = field(
         default=1.2,
@@ -130,6 +193,17 @@ def strip_supported_pairs(config: str) -> str:
                 continue
         kept.append(pair)
     return "|".join(kept) + "@" + orient
+
+
+def _round(value, digits: int = 3):
+    """JSON-safe round: NaN and None both become null."""
+    if value is None:
+        return None
+    try:
+        number = float(value)
+    except (TypeError, ValueError):
+        return value
+    return None if np.isnan(number) else round(number, digits)
 
 
 def resolve_config(graph, config: str) -> Optional[int]:
@@ -210,6 +284,7 @@ def fill_goal_slots(
     slots: int,
     hold_lead_s: float,
     device: torch.device,
+    hold_lead_mode: str = "clamp",
 ) -> Dict[str, Tensor]:
     """Per-env goal-slot tensors for ``set_manual_goal`` at sequence time ``t``.
 
@@ -217,6 +292,19 @@ def fill_goal_slots(
     the ``k``-th upcoming goal, slot 0's deadline counts down to the end of its
     reach window and then parks at ``hold_lead_s`` instead of the 0.2 s floor.
     A sequence past its end keeps its final goal at ``hold_lead_s``.
+
+    ``hold_lead_mode`` decides what a large ``hold_lead_s`` does to the REACH
+    phase, and the distinction is not cosmetic — it confounded the first
+    deadline sweep:
+
+    * ``clamp`` (the shipped behaviour) is ``max(remaining, hold_lead_s)``, so
+      raising the lead also inflates every reach window shorter than it. A
+      5-goal plan with 2 s reaches then never sees a deadline below 5 s and
+      stops meeting its own waypoints.
+    * ``park`` leaves the reach countdown alone and only substitutes
+      ``hold_lead_s`` once the reach window has expired — i.e. exactly during
+      the hold. That is the arm that isolates "what does the deadline mean
+      while I am being asked to stay?".
     """
     num_seq = len(sequences)
     seq_node = torch.full((num_seq, slots), -1, dtype=torch.long)
@@ -236,7 +324,11 @@ def fill_goal_slots(
             seq_node[s, slot] = goal.node
             seq_pose_motion[s, slot] = goal.pose_motion
             seq_pose_time[s, slot] = goal.pose_time
-            seq_offset[s, slot] = max(remaining, hold_lead_s)
+            if hold_lead_mode == "clamp":
+                deadline = max(remaining, hold_lead_s)
+            else:
+                deadline = remaining if remaining > 0.0 else hold_lead_s
+            seq_offset[s, slot] = deadline
             seq_visible[s, slot] = True
 
     env_sequence = env_sequence.cpu()
@@ -677,6 +769,15 @@ class SequenceVizRunner:
         dt = float(env.dt)
         env_ids = torch.arange(env.num_envs, device=self.device)
         env_sequence = env_ids % num_seq
+        # Every env is already running one of the sequences and is already
+        # being stepped; only the *scoring* used to stop at the first num_seq
+        # rows. Keeping all of them turns each panel scalar from one unseeded
+        # nucleus draw into a rate over `replicas` draws, for free.
+        replicas = max(env.num_envs // num_seq, 1)
+        max_replicas = int(getattr(self.config, "max_replicas", 0) or 0)
+        if max_replicas:
+            replicas = min(replicas, max_replicas)
+        num_scored = num_seq * replicas
 
         snapshot = env.save_state()
         cached_motion_ids = env.motion_manager.motion_ids.clone()
@@ -710,6 +811,31 @@ class SequenceVizRunner:
             agent.pre_collect_step(0)
             obs_td = agent.obs_dict_to_tensordict(agent.add_agent_info_to_obs(obs))
 
+            total_s = min(max(s.total_s for s in sequences), self.config.max_seconds)
+            total_steps = int(round(total_s / dt))
+            reissue_every = max(int(round(self.config.reissue_every_s / dt)), 1)
+            render_every = max(int(round(1.0 / (dt * self.config.render_fps))), 1)
+
+            # The plan's own first goal is installed BEFORE the settle steps.
+            # Settling under the *clip* schedule instead was a confound with
+            # teeth: for `hold_probe_standing`, whose start is Downward Dog -a
+            # @0.2 s, that schedule is exactly the fold-into-downdog
+            # continuation the probe is testing against, and the intent chosen
+            # under it survived into the plan because nothing flushed at
+            # install (the standalone renderer does flush; the panel did not).
+            legacy = bool(getattr(self.config, "legacy_settle", False))
+            if not legacy:
+                self.control.set_manual_goal(
+                    **fill_goal_slots(
+                        sequences, env_sequence, 0.0, self.slots,
+                        self.config.hold_lead_s, self.device,
+                        getattr(self.config, "hold_lead_mode", "clamp"),
+                    )
+                )
+                if flush_intent is not None:
+                    flush_intent()
+                obs_td = self._refresh_obs()
+
             for step in range(max(self.config.settle_steps, 0)):
                 outputs = agent.model.forward_inference(obs_td)
                 action = outputs.get("mean_action", outputs.get("action"))
@@ -717,20 +843,20 @@ class SequenceVizRunner:
                 agent.pre_collect_step(step + 1)
                 obs_td = agent.obs_dict_to_tensordict(agent.add_agent_info_to_obs(obs))
 
-            total_s = min(max(s.total_s for s in sequences), self.config.max_seconds)
-            total_steps = int(round(total_s / dt))
-            reissue_every = max(int(round(self.config.reissue_every_s / dt)), 1)
-            render_every = max(int(round(1.0 / (dt * self.config.render_fps))), 1)
-
+            # Re-arm so the deadline the plan starts on is the one t=0 means,
+            # not one the settle steps have already counted down.
             self.control.set_manual_goal(
                 **fill_goal_slots(
                     sequences, env_sequence, 0.0, self.slots,
                     self.config.hold_lead_s, self.device,
+                    getattr(self.config, "hold_lead_mode", "clamp"),
                 )
             )
             obs_td = self._refresh_obs()
+            active_index = [s.active_index(0.0) for s in sequences]
 
             positions: List[Tensor] = []
+            root_rots: List[Tensor] = []
             frame_times: List[float] = []
             zones: List[Tensor] = []
             for step in range(total_steps):
@@ -740,8 +866,25 @@ class SequenceVizRunner:
                         **fill_goal_slots(
                             sequences, env_sequence, t, self.slots,
                             self.config.hold_lead_s, self.device,
+                            getattr(self.config, "hold_lead_mode", "clamp"),
                         )
                     )
+                    # Flush only where the plan actually ADVANCED a goal, not on
+                    # the periodic deadline re-arms -- the renderer's rule
+                    # (`GoalDriver.issue`), which the panel never had.
+                    now = [s.active_index(t) for s in sequences]
+                    changed = [i for i, (a, b) in enumerate(zip(active_index, now))
+                               if a != b]
+                    if changed and flush_intent is not None and not legacy:
+                        rows = torch.nonzero(
+                            torch.isin(
+                                env_sequence,
+                                torch.tensor(changed, device=self.device),
+                            ),
+                            as_tuple=True,
+                        )[0]
+                        flush_intent(rows)
+                    active_index = now
                     obs_td = self._refresh_obs()
 
                 outputs = agent.model.forward_inference(obs_td)
@@ -754,8 +897,15 @@ class SequenceVizRunner:
 
                 if step % render_every == 0:
                     state = env.simulator.get_robot_state()
-                    positions.append(state.rigid_body_pos[:num_seq].cpu().clone())
-                    zones.append(self._measured_ground_zones(state, num_seq))
+                    positions.append(state.rigid_body_pos[:num_scored].cpu().clone())
+                    # The root rotation is what heading-normalises the achieved
+                    # pose for the goal-pose-error scalar; captured here so the
+                    # metric costs nothing beyond a [S, 4] slice per frame.
+                    root_rots.append(
+                        state.rigid_body_rot[:num_scored, self.pelvis_index]
+                        .cpu().clone()
+                    )
+                    zones.append(self._measured_ground_zones(state, num_scored))
                     frame_times.append(t)
         finally:
             try:
@@ -770,26 +920,263 @@ class SequenceVizRunner:
                 if flush_intent is not None:
                     flush_intent()
 
-        return self._encode(epoch, sequences, positions, zones, frame_times, out_dir)
+        return self._encode(
+            epoch, sequences, positions, root_rots, zones, frame_times, out_dir,
+            replicas=replicas,
+        )
+
+    # ------------------------------------------------------------------ #
+    # Goal pose error
+    # ------------------------------------------------------------------ #
+    def _goal_pose_errors(
+        self,
+        sequences: List[VizSequence],
+        positions: Tensor,
+        root_rots: Tensor,
+        frame_times: List[float],
+    ) -> Optional[np.ndarray]:
+        """``[T, S]`` distance to the pose each sequence is being commanded.
+
+        ``final_goal_iou`` scores the contact half, which is identical for every
+        member of a degenerate node -- so it cannot tell Warrior III from Lord
+        of the Dance, and that substitution went unnoticed for four rounds
+        (``notes/Student_v7_improvement_investigation.MD`` §5.5). This is the
+        pose half: mean per-body distance over the conditionable bodies, each
+        pelvis-relative and heading-normalised, which is exactly what
+        ``data/scripts/score_probe_pose.py`` reports offline and what
+        ``ContactGraphControl._goal_pose_error`` logs live.
+
+        Returns ``None`` if anything about the corpus lookup does not line up;
+        the caller then simply omits the scalar rather than losing the videos.
+        """
+        from protomotions.utils.rotations import calc_heading_quat_inv, quat_rotate
+
+        body_ids = self.control.conditionable_body_ids.cpu()
+        offsets, flat = [], []
+        for sequence in sequences:
+            offsets.append(len(flat))
+            flat.extend(sequence.goals)
+        if not flat:
+            return None
+
+        reference = self.env.motion_lib.get_motion_state(
+            torch.tensor([g.pose_motion for g in flat], device=self.device),
+            torch.tensor(
+                [g.pose_time for g in flat], device=self.device, dtype=torch.float32
+            ),
+        )
+
+        def normalise(pos: Tensor, root_rot: Tensor) -> Tensor:
+            """``[N, len(body_ids), 3]`` in each row's own heading frame."""
+            local = pos[:, body_ids] - pos[:, self.pelvis_index].unsqueeze(1)
+            heading = calc_heading_quat_inv(root_rot, w_last=True)
+            n, b = local.shape[0], local.shape[1]
+            return quat_rotate(
+                heading.unsqueeze(1).expand(-1, b, -1).reshape(-1, 4),
+                local.reshape(-1, 3),
+                w_last=True,
+            ).view(n, b, 3)
+
+        goal_local = normalise(
+            reference.rigid_body_pos.cpu(),
+            reference.rigid_body_rot[:, self.pelvis_index].cpu(),
+        )
+
+        num_frames, num_cols = positions.shape[0], positions.shape[1]
+        num_seq = len(sequences)
+        errors = np.full((num_frames, num_cols), np.nan, dtype=np.float32)
+        for s, sequence in enumerate(sequences):
+            # `env_sequence = env_ids % num_seq`, so every column congruent to
+            # s is a replica of this sequence: one batched normalise for all of
+            # them, and the per-frame active goal is shared, so the whole
+            # sequence costs two tensor ops rather than T x R Python steps.
+            cols = torch.arange(s, num_cols, num_seq)
+            if cols.numel() == 0:
+                continue
+            reps = cols.numel()
+            flat = normalise(
+                positions[:, cols].reshape(num_frames * reps, *positions.shape[2:]),
+                root_rots[:, cols].reshape(num_frames * reps, 4),
+            ).view(num_frames, reps, -1, 3)
+            goals = goal_local[
+                torch.tensor(
+                    [offsets[s] + sequence.active_index(t) for t in frame_times]
+                )
+            ]  # [T, nb, 3]
+            errors[:, cols.numpy()] = (
+                (flat - goals.unsqueeze(1)).norm(dim=-1).mean(dim=-1).numpy()
+            )
+        return errors
 
     # ------------------------------------------------------------------ #
     # Encoding + scoring
     # ------------------------------------------------------------------ #
+    def _score_replica(
+        self,
+        sequence: "VizSequence",
+        measured: np.ndarray,
+        pose_err: Optional[np.ndarray],
+        frame_times: List[float],
+        node_contact,
+        goal_zone_ids,
+    ) -> Dict:
+        """Every scalar this panel reports, for ONE rollout of one sequence.
+
+        ``measured`` is ``[T, Z]`` boolean ground zones, ``pose_err`` ``[T]``
+        metres to the active goal's pose (or None).
+        """
+        # getattr with defaults: a frozen config pickled before these fields
+        # existed unpickles without them, and inference tools load exactly
+        # such a config.
+        arrive = float(getattr(self.config, "pose_arrive_m", 0.15))
+        depart = float(getattr(self.config, "pose_depart_m", 0.30))
+        wanted = {}
+        iou = np.empty(len(frame_times), dtype=np.float64)
+        for f, t in enumerate(frame_times):
+            goal = sequence.goals[sequence.active_index(t)]
+            want = wanted.get(goal.node)
+            if want is None:
+                want = (
+                    node_contact[goal.node].index_select(0, goal_zone_ids) > 0.5
+                ).numpy()
+                wanted[goal.node] = want
+            union = float(np.logical_or(measured[f], want).sum())
+            iou[f] = (
+                float(np.logical_and(measured[f], want).sum()) / union
+                if union else 1.0
+            )
+
+        final_goal = sequence.goals[-1]
+        final_want = (
+            node_contact[final_goal.node].index_select(0, goal_zone_ids) > 0.5
+        ).numpy()
+        hold_from = sequence.total_s - final_goal.hold_s
+        hold_frames = [
+            f for f, t in enumerate(frame_times)
+            if hold_from <= t < sequence.total_s
+        ]
+        if hold_frames:
+            hold_iou = float(np.mean(iou[hold_frames]))
+            reached = bool((measured[hold_frames[-1]] == final_want).all())
+        else:
+            hold_iou, reached = float("nan"), False
+
+        per_goal = []
+        for gi, goal in enumerate(sequence.goals):
+            start = sequence.ends[gi] - goal.reach_s - goal.hold_s
+            frames = [
+                f for f, t in enumerate(frame_times)
+                if start <= t < sequence.ends[gi]
+            ]
+            if not frames:
+                continue
+            hold_f = [
+                f for f, t in enumerate(frame_times)
+                if sequence.ends[gi] - goal.hold_s <= t < sequence.ends[gi]
+            ]
+            row = {
+                "goal": goal.name,
+                "best_iou": float(np.max(iou[frames])),
+                "hold_iou": float(np.mean(iou[hold_f])) if hold_f else float("nan"),
+                "best_pose_err": float("nan"),
+                # `best_pose_err` is a MINIMUM over the window, so a policy that
+                # touches the pose for one frame and leaves scores the same as
+                # one that holds it for twelve seconds -- which is why
+                # hold_probe_standing read 0.02-0.03 m at all 26 v9 panels while
+                # actually holding on 7 of them. These three cannot be
+                # saturated that way, and they are the per-goal twins of the
+                # `hold_iou` the contact half has had since round 7_1.
+                "hold_pose_err": float("nan"),
+                "end_pose_err": float("nan"),
+                "time_held_s": float("nan"),
+            }
+            if pose_err is not None:
+                window = pose_err[frames]
+                if not np.all(np.isnan(window)):
+                    row["best_pose_err"] = float(np.nanmin(window))
+                if hold_f:
+                    held = pose_err[hold_f]
+                    if not np.all(np.isnan(held)):
+                        row["hold_pose_err"] = float(np.nanmean(held))
+                        row["end_pose_err"] = float(held[-1])
+                # Longest run, inside this goal's window, that starts at
+                # `pose_arrive_m` and has not yet re-crossed `pose_depart_m`.
+                best_run = 0.0
+                run_start = None
+                for f in frames:
+                    e = pose_err[f]
+                    if np.isnan(e):
+                        continue
+                    if run_start is None:
+                        if e <= arrive:
+                            run_start = frame_times[f]
+                    elif e > depart:
+                        best_run = max(best_run, frame_times[f] - run_start)
+                        run_start = None
+                if run_start is not None:
+                    best_run = max(
+                        best_run, frame_times[frames[-1]] - run_start
+                    )
+                row["time_held_s"] = float(best_run)
+            per_goal.append(row)
+
+        out = {
+            "final_goal_iou": hold_iou,
+            "reached_exact": reached,
+            "final_goal_pose_err": float("nan"),
+            "best_pose_err": float("nan"),
+            "per_goal": per_goal,
+        }
+        if pose_err is not None and hold_frames:
+            window = pose_err[hold_frames]
+            if not np.all(np.isnan(window)):
+                out["final_goal_pose_err"] = float(np.nanmean(window))
+            if not np.all(np.isnan(pose_err)):
+                out["best_pose_err"] = float(np.nanmin(pose_err))
+        if per_goal:
+            out["max_goal_best_iou"] = max(g["best_iou"] for g in per_goal)
+            out["min_goal_best_iou"] = min(g["best_iou"] for g in per_goal)
+            scored = [g for g in per_goal if not np.isnan(g["best_pose_err"])]
+            if scored:
+                hardest = max(scored, key=lambda g: g["best_pose_err"])
+                out["worst_goal"] = hardest["goal"]
+                out["worst_goal_pose_err"] = hardest["best_pose_err"]
+            held = [g for g in per_goal if not np.isnan(g["hold_pose_err"])]
+            if held:
+                worst = max(held, key=lambda g: g["hold_pose_err"])
+                out["worst_goal_hold_pose_err"] = worst["hold_pose_err"]
+                out["worst_hold_goal"] = worst["goal"]
+        return out
+
     def _encode(
         self,
         epoch: int,
         sequences: List[VizSequence],
         positions: List[Tensor],
+        root_rots: List[Tensor],
         zones: List[Tensor],
         frame_times: List[float],
         out_dir: Optional[Path] = None,
+        replicas: int = 1,
     ) -> Tuple[Dict[str, Path], Dict[str, float]]:
         if out_dir is None:
             out_dir = Path(self.agent.root_dir) / "viz" / f"epoch_{epoch:05d}"
         out_dir.mkdir(parents=True, exist_ok=True)
 
-        stacked = torch.stack(positions).numpy()  # [T, S, B, 3]
-        zone_stack = torch.stack(zones).numpy()  # [T, S, Z]
+        position_stack = torch.stack(positions)  # [T, S*R, B, 3]
+        stacked = position_stack.numpy()
+        zone_stack = torch.stack(zones).numpy()  # [T, S*R, Z]
+
+        # Never at the cost of the videos: this scalar is an addition to the
+        # panel, not a precondition for it.
+        pose_errors = None
+        try:
+            if root_rots:
+                pose_errors = self._goal_pose_errors(
+                    sequences, position_stack, torch.stack(root_rots), frame_times
+                )
+        except Exception:
+            log.exception("sequence viz: goal pose error unavailable this epoch")
         zone_names = list(self.control._ground_zone_names)
         goal_zone_ids = self.control._ground_pair_ids.cpu()
         node_contact = self.graph.node_contact.cpu()
@@ -797,69 +1184,185 @@ class SequenceVizRunner:
         videos: Dict[str, Path] = {}
         scalars: Dict[str, float] = {}
         summary = []
+        num_seq = len(sequences)
+        num_cols = zone_stack.shape[1]
+        arrive = float(getattr(self.config, "pose_arrive_m", 0.15))
         for s, sequence in enumerate(sequences):
+            cols = list(range(s, num_cols, num_seq))
+            draws = [
+                self._score_replica(
+                    sequence, zone_stack[:, c],
+                    None if pose_errors is None else pose_errors[:, c],
+                    frame_times, node_contact, goal_zone_ids,
+                )
+                for c in cols
+            ]
+            head = draws[0]  # the replica the video shows
+
+            def agg(key, source=None):
+                vals = [
+                    d[key] for d in (source or draws)
+                    if key in d and not (
+                        isinstance(d[key], float) and np.isnan(d[key])
+                    )
+                ]
+                return np.array(vals, dtype=np.float64) if vals else None
+
+            # Per-sequence scalars keep their replica-0 meaning so a video and
+            # its numbers still describe the same rollout; the RATES beside
+            # them are what should be read as the measurement.
+            scalars[f"viz/{sequence.name}/final_goal_iou"] = head["final_goal_iou"]
+            scalars[f"viz/{sequence.name}/reached_exact"] = float(
+                head["reached_exact"]
+            )
+            for key in ("max_goal_best_iou", "min_goal_best_iou",
+                        "worst_goal_pose_err", "final_goal_pose_err",
+                        "best_pose_err", "worst_goal_hold_pose_err"):
+                if key in head and not np.isnan(head[key]):
+                    scalars[f"viz/{sequence.name}/{key}"] = head[key]
+
+            entry = {
+                "sequence": sequence.name,
+                "replicas": len(draws),
+                "final_goal_iou": _round(head["final_goal_iou"]),
+                "reached_exact": head["reached_exact"],
+                "final_goal_pose_err": _round(head["final_goal_pose_err"]),
+                "best_pose_err": _round(head["best_pose_err"]),
+                "goals": [g.name for g in sequence.goals],
+                "worst_goal": head.get("worst_goal"),
+                "worst_goal_pose_err": _round(
+                    head.get("worst_goal_pose_err", float("nan"))
+                ),
+                "per_goal": [
+                    {k: (_round(v) if isinstance(v, float) else v)
+                     for k, v in g.items()}
+                    for g in head["per_goal"]
+                ],
+            }
+
+            # Every replica's own hold-window error, so a rate at a different
+            # `pose_arrive_m` can be recomputed offline. It matters: several
+            # plans sit in a tight band just above 0.15 m (trip_lf_lh_rf_rh_upri
+            # reads p10 0.165 / p90 0.173), where a rate is a threshold
+            # artifact and the percentiles are the honest reading.
+            entry["final_goal_pose_err_by_replica"] = [
+                _round(d["final_goal_pose_err"]) for d in draws
+            ]
+            final_err = agg("final_goal_pose_err")
+            if final_err is not None:
+                entry["final_goal_pose_err_p10"] = _round(np.percentile(final_err, 10))
+                entry["final_goal_pose_err_p50"] = _round(np.median(final_err))
+                entry["final_goal_pose_err_p90"] = _round(np.percentile(final_err, 90))
+                entry["hold_success_rate"] = _round(float((final_err < arrive).mean()))
+                scalars[f"viz/{sequence.name}/hold_success_rate"] = (
+                    entry["hold_success_rate"]
+                )
+                scalars[f"viz/{sequence.name}/final_goal_pose_err_p50"] = (
+                    entry["final_goal_pose_err_p50"]
+                )
+            entry["reached_exact_rate"] = _round(
+                float(np.mean([bool(d["reached_exact"]) for d in draws]))
+            )
+            scalars[f"viz/{sequence.name}/reached_exact_rate"] = (
+                entry["reached_exact_rate"]
+            )
+            iou_all = agg("final_goal_iou")
+            if iou_all is not None:
+                entry["final_goal_iou_p50"] = _round(np.median(iou_all))
+
+            # Per-goal aggregates: the column that says WHICH goal in a plan
+            # the policy loses, over every replica rather than one draw.
+            names = [g["goal"] for g in head["per_goal"]]
+            per_goal_agg = []
+            for gi, name in enumerate(names):
+                rows = [d["per_goal"][gi] for d in draws
+                        if gi < len(d["per_goal"])]
+                def col(key):
+                    vals = [r[key] for r in rows
+                            if not (isinstance(r[key], float) and np.isnan(r[key]))]
+                    return np.array(vals) if vals else None
+                item = {"goal": name, "n": len(rows)}
+                for key in ("best_iou", "hold_iou", "best_pose_err",
+                            "hold_pose_err", "end_pose_err", "time_held_s"):
+                    v = col(key)
+                    if v is not None:
+                        item[f"{key}_p50"] = _round(float(np.median(v)))
+                v = col("hold_pose_err")
+                if v is not None:
+                    item["hold_rate"] = _round(float((v < arrive).mean()))
+                v = col("best_pose_err")
+                if v is not None:
+                    item["reach_rate"] = _round(float((v < arrive).mean()))
+                # Per-replica, so a goal's rate can be re-scored CONDITIONAL on
+                # the replica having survived the previous goal. Without it a
+                # chain's later goals read 0 whenever the policy fell at goal 1,
+                # which is a sequential confound, not a property of that goal.
+                item["hold_pose_err_by_replica"] = [
+                    _round(r["hold_pose_err"]) for r in rows
+                ]
+                # ...and how long each replica actually stayed. Arrival is not
+                # the problem on any probe measured so far (reach_rate 1.00,
+                # best error ~0.03 m); the response variable is the survival
+                # time, and it is what separates side plank (12.9 s of a 12.9 s
+                # window) from standing (4.2 s).
+                item["time_held_s_by_replica"] = [
+                    _round(r["time_held_s"]) for r in rows
+                ]
+                per_goal_agg.append(item)
+                # Replica-0 per-goal scalars, unchanged in meaning since round
+                # 7_1, plus the rate that is the point of scoring replicas.
+                key = f"viz/{sequence.name}/goal{gi}_{name}"
+                row = head["per_goal"][gi]
+                scalars[f"{key}/best_iou"] = row["best_iou"]
+                for field_name in ("hold_iou", "best_pose_err", "hold_pose_err",
+                                   "time_held_s"):
+                    if not np.isnan(row[field_name]):
+                        scalars[f"{key}/{field_name}"] = row[field_name]
+                if "hold_rate" in item:
+                    scalars[f"{key}/hold_rate"] = item["hold_rate"]
+            entry["per_goal_agg"] = per_goal_agg
+            if per_goal_agg:
+                rates = [g["hold_rate"] for g in per_goal_agg if "hold_rate" in g]
+                if rates:
+                    entry["min_goal_hold_rate"] = _round(min(rates))
+                    scalars[f"viz/{sequence.name}/min_goal_hold_rate"] = min(rates)
+
             titles = []
-            iou_per_frame = []
-            final_goal = sequence.goals[-1]
-            wanted = (
-                node_contact[final_goal.node].index_select(0, goal_zone_ids) > 0.5
-            ).numpy()
             for f, t in enumerate(frame_times):
                 index = sequence.active_index(t)
                 goal = sequence.goals[index]
-                measured = zone_stack[f, s]
                 on = " ".join(
                     _ZONE_SHORT.get(zone_names[z], zone_names[z])
-                    for z in np.nonzero(measured)[0]
+                    for z in np.nonzero(zone_stack[f, cols[0]])[0]
                 ) or "-"
-                goal_key = self.graph.node_keys[goal.node]
                 done = " (done)" if t >= sequence.total_s else ""
                 titles.append(
                     f"{sequence.name}  t={t:4.1f}s{done}\n"
-                    f"goal[{index}] {goal.name}: {short_config(goal_key)} | on: {on}"
+                    f"goal[{index}] {goal.name}: "
+                    f"{short_config(self.graph.node_keys[goal.node])} | on: {on}"
                 )
-                goal_wanted = (
-                    node_contact[goal.node].index_select(0, goal_zone_ids) > 0.5
-                ).numpy()
-                union = float(np.logical_or(measured, goal_wanted).sum())
-                iou_per_frame.append(
-                    float(np.logical_and(measured, goal_wanted).sum()) / union
-                    if union else 1.0
-                )
-
-            # Final goal's hold window score: the per-sequence trend line.
-            hold_from = sequence.total_s - final_goal.hold_s
-            hold_frames = [
-                f for f, t in enumerate(frame_times)
-                if hold_from <= t < sequence.total_s
-            ]
-            if hold_frames:
-                hold_iou = float(np.mean([iou_per_frame[f] for f in hold_frames]))
-                final_zones = zone_stack[hold_frames[-1], s]
-                reached = bool((final_zones == wanted).all())
-            else:
-                hold_iou, reached = float("nan"), False
-            scalars[f"viz/{sequence.name}/final_goal_iou"] = hold_iou
-            scalars[f"viz/{sequence.name}/reached_exact"] = float(reached)
-
             path = out_dir / f"{sequence.name}.mp4"
             render_stick_video(
-                stacked[:, s], self.bones, titles, path,
+                stacked[:, cols[0]], self.bones, titles, path,
                 self.config.render_fps, self.config.video_px,
                 pelvis_index=self.pelvis_index,
                 head_index=self.head_index,
             )
             videos[f"viz/{sequence.name}"] = path
-            summary.append(
-                {
-                    "sequence": sequence.name,
-                    "final_goal_iou": None if np.isnan(hold_iou) else round(hold_iou, 3),
-                    "reached_exact": reached,
-                    "goals": [g.name for g in sequence.goals],
-                }
-            )
-
+            summary.append(entry)
         (out_dir / "summary.json").write_text(json.dumps(summary, indent=1))
+        if getattr(self.config, "dump_traces", False) and pose_errors is not None:
+            # [T, S*R] goal-pose error and [T] frame times. Arrival is not the
+            # failure mode on any probe measured so far -- every one of them
+            # reaches its pose -- so the response variable is the survival
+            # time, and that needs the trace, not a summary statistic.
+            np.savez_compressed(
+                out_dir / "pose_error_traces.npz",
+                pose_errors=pose_errors,
+                frame_times=np.asarray(frame_times, dtype=np.float32),
+                sequences=np.asarray([s.name for s in sequences]),
+                replicas=np.int32(replicas),
+            )
         log.info(
             "sequence viz @ epoch %d: %d videos -> %s", epoch, len(videos), out_dir
         )

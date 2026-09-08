@@ -1666,6 +1666,33 @@ class Simulator(RecordingMixin, ABC):
         """
         raise NotImplementedError
 
+    @property
+    def ghost_enabled(self) -> bool:
+        """Whether a visualization-only ghost robot exists in this simulation.
+
+        Backends that support ``config.ghost_robot`` override this; everywhere
+        else the ghost silently does not exist, so drivers can call
+        :meth:`set_ghost_state` unconditionally.
+        """
+        return False
+
+    def set_ghost_state(
+        self,
+        reset_state: ResetState,
+        active: Optional[torch.Tensor] = None,
+    ) -> None:
+        """Pose the visualization-only ghost robot (no-op without one).
+
+        Args:
+            reset_state: Root pose + DOF positions in COMMON ordering, one row
+                per environment. Velocities are ignored — the ghost is always
+                written static. The state may be mutated in place (order
+                conversion), so pass a fresh instance.
+            active: Optional ``[num_envs]`` bool mask; rows that are False are
+                parked out of sight instead of posed.
+        """
+        return None
+
     def is_simulation_running(self) -> bool:
         """
         Check if the simulation is running.

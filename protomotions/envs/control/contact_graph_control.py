@@ -36,7 +36,7 @@ work unchanged; ``ctx.contact_goal`` carries the contact half.
 """
 
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Optional, Tuple
+from typing import TYPE_CHECKING, Dict, Optional, Tuple
 
 import torch
 from torch import Tensor
@@ -54,6 +54,9 @@ from protomotions.envs.control.masked_mimic_control import (
 )
 from protomotions.envs.control.mimic_control import MimicControl
 from protomotions.envs.obs.contact_state import compute_contact_state_obs
+from protomotions.simulator.base_simulator.config import MarkerState
+from protomotions.simulator.base_simulator.simulator_state import ResetState
+from protomotions.utils.rotations import calc_heading_quat_inv, quat_rotate
 
 if TYPE_CHECKING:
     from protomotions.envs.base_env.env import BaseEnv
@@ -560,6 +563,46 @@ class ContactGraphControl(MaskedMimicControl):
         """
         return self._time_offsets[env_indices, slot_indices]
 
+    def get_markers_state(self) -> Dict[str, MarkerState]:
+        """Marker states, plus the ghost-character pose where one exists.
+
+        The ghost is a visualization-only second robot the simulator can spawn
+        (``SimulatorConfig.ghost_robot``); posing it here keeps it in lockstep
+        with the goal markers — same update point, same goal slot, same spawn
+        offset — so what the viewer sees beside the character is exactly the
+        pose the sphere markers are sampled from.
+        """
+        markers_state = super().get_markers_state()
+        self._update_ghost_char()
+        return markers_state
+
+    def _update_ghost_char(self) -> None:
+        """Pose the simulator's ghost robot as the nearest goal's held pose.
+
+        Deliberately shows slot 0's pose whenever the slot carries a valid
+        goal, even when the pose half is masked from the policy (a
+        contact-only goal still *has* a defining pose in the graph, and the
+        analyst wants to see it). Whether the policy was actually shown the
+        pose is recorded by the probe tools (``pose_given``).
+        """
+        simulator = getattr(self.env, "simulator", None)
+        if simulator is None or not getattr(simulator, "ghost_enabled", False):
+            return
+        if not self._initialized:
+            return
+
+        motion_ids = self._goal_motion_ids[:, 0]
+        motion_times = self.target_times[:, 0]
+        ref_state = self.env.motion_lib.get_motion_state(motion_ids, motion_times)
+        offset = self.env.get_spawn_to_ref_pose_offset_with_terrain_height_correction(
+            ref_state.rigid_body_pos
+        )
+        reset_state = ResetState.from_robot_state(ref_state)
+        # Per-env offset: XY is shared by all bodies and Z is shared by all
+        # bodies, so any body's row carries the whole correction.
+        reset_state.root_pos = reset_state.root_pos + offset[:, 0]
+        simulator.set_ghost_state(reset_state, active=self.goal_valid[:, 0])
+
     # ------------------------------------------------------------------ #
     # Context
     # ------------------------------------------------------------------ #
@@ -656,6 +699,72 @@ class ContactGraphControl(MaskedMimicControl):
         union = (current | goal).sum(dim=-1).float()
         return torch.where(union > 0, intersection / union.clamp(min=1.0), torch.ones_like(union))
 
+    def _goal_pose_error(
+        self, ctx: EnvContext, ref_pos: Tensor, ref_rot: Tensor
+    ) -> Tuple[Tensor, Tensor]:
+        """Distance to the commanded *pose*, in the student's own goal frame.
+
+        ``_contact_configuration_iou`` scores the contact half, and at a
+        degenerate node -- standing, single-leg, four-point -- every member has
+        the same contact set, so it reads 1.00 whatever pose is being held.
+        Nothing in the project scored the other half, which is how "commanded
+        Warrior III, performs Lord of the Dance" survived four rounds of review
+        (``notes/Student_v7_improvement_investigation.MD`` §5.5).
+
+        This is the same arithmetic ``data/scripts/score_probe_pose.py`` does
+        offline, so the live number and the probe numbers are commensurable:
+        the mean over the conditionable bodies of the distance between current
+        and reference positions, each taken pelvis-relative and rotated into
+        the heading-normalised frame of its own root. Only bodies whose
+        *position* mask is set are counted, and only slot 0 -- the nearest goal
+        -- is scored.
+
+        Rows whose nearest goal has no visible pose carry no measurement. They
+        are filled with the mean over the rows that do, so the metric averages
+        to the conditional mean over commanded poses instead of being diluted
+        toward zero by rows that were never asked for a pose. The second
+        return value is 1.0 exactly on the rows that *were* measured, so the
+        log says how much of the batch the first number rests on.
+        """
+        current_pos = ctx.current.rigid_body_pos[:, self.conditionable_body_ids]
+        goal_pos = ref_pos[:, 0][:, self.conditionable_body_ids]
+        root_current = ctx.current.rigid_body_pos[:, self._pelvis_body_index]
+        root_goal = ref_pos[:, 0, self._pelvis_body_index]
+
+        heading_current = calc_heading_quat_inv(
+            ctx.current.rigid_body_rot[:, self._pelvis_body_index], w_last=True
+        )
+        # The reference frame's own heading: the goal pose is scored as a shape,
+        # not as a compass bearing, exactly as the goal observation presents it.
+        heading_goal = calc_heading_quat_inv(
+            ref_rot[:, 0, self._pelvis_body_index], w_last=True
+        )
+        num_bodies = current_pos.shape[1]
+        local_current = quat_rotate(
+            heading_current.unsqueeze(1).expand(-1, num_bodies, -1).reshape(-1, 4),
+            (current_pos - root_current.unsqueeze(1)).reshape(-1, 3),
+            w_last=True,
+        ).view(-1, num_bodies, 3)
+        local_goal = quat_rotate(
+            heading_goal.unsqueeze(1).expand(-1, num_bodies, -1).reshape(-1, 4),
+            (goal_pos - root_goal.unsqueeze(1)).reshape(-1, 3),
+            w_last=True,
+        ).view(-1, num_bodies, 3)
+
+        distance = (local_current - local_goal).norm(dim=-1)
+        # Slot 0's per-body position mask (index 0 of the [position, rotation]
+        # pair), already gated by pose visibility and slot validity.
+        body_mask = self._effective_body_masks()[:, 0, :, 0].float()
+        counted = body_mask.sum(dim=-1)
+        error = (distance * body_mask).sum(dim=-1) / counted.clamp(min=1.0)
+
+        measured = counted > 0
+        if bool(measured.any()):
+            error = torch.where(measured, error, error[measured].mean())
+        else:
+            error = torch.zeros_like(error)
+        return error, measured.float()
+
     def populate_context(self, ctx: EnvContext) -> None:
         """Populate ``ctx.mimic``, ``ctx.masked_mimic`` and ``ctx.contact_goal``."""
         MimicControl.populate_context(self, ctx)
@@ -725,6 +834,8 @@ class ContactGraphControl(MaskedMimicControl):
                 num_envs, dtype=torch.bool, device=self.env.device
             )
 
+        pose_error, pose_error_visible = self._goal_pose_error(ctx, ref_pos, ref_rot)
+
         ctx.contact_goal = ContactGoalContext(
             contact_spec=contact_spec,
             orient_spec=orient_spec,
@@ -732,6 +843,8 @@ class ContactGraphControl(MaskedMimicControl):
             time_offsets=time_offsets,
             node_ids=node_ids,
             reached=self._contact_configuration_iou(current_contact),
+            pose_error=pose_error,
+            pose_error_visible=pose_error_visible,
             history_features=history_features,
             history_valid=history_valid,
             event_commit=event_commit,

@@ -556,7 +556,7 @@ def test_supervised_agent_uses_fabric_for_setup(monkeypatch):
     monkeypatch.setattr(
         supervised_agent_module,
         "instantiate_optimizer",
-        lambda config, module: _OptimizerRecorder(lr=0.1),
+        lambda config, module, params=None: _OptimizerRecorder(lr=0.1),
     )
 
     class _Model(nn.Linear):

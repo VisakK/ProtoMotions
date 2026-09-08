@@ -205,6 +205,35 @@ def additional_experiment_arguments(parser: argparse.ArgumentParser):
              "trips). Plans that do not resolve against the run's graph are "
              "skipped with a warning.",
     )
+    parser.add_argument(
+        "--viz-num-sequences",
+        type=int,
+        default=10,
+        help="Total sequences on the viz panel. Named plans fill it first, "
+             "then graph-derived holds and edge round trips fill whatever is "
+             "left; pass at least as many as --viz-plan-files to keep the "
+             "panel entirely hand-chosen.",
+    )
+    parser.add_argument(
+        "--viz-log-scalars",
+        type=lambda v: str(v).lower() not in ("0", "false", "no"),
+        default=True,
+        help="Send the sequence panel's scalars (per-sequence and per-goal IoU "
+             "and pose error) to wandb alongside the videos. False logs only "
+             "the videos; the scalars are still written to "
+             "viz/epoch_*/summary.json. Each is one unseeded draw per epoch, so "
+             "the charts are a coin flip early in training.",
+    )
+    parser.add_argument(
+        "--viz-max-seconds",
+        type=float,
+        default=20.0,
+        help="Hard cap on a viz sequence's duration. A longer plan is "
+             "TRUNCATED FROM THE END, which silently drops the climax of a "
+             "pose chain (the scorpion chain runs 22.0 s), so raise this to "
+             "the longest plan in the panel. Every video runs for the longest "
+             "sequence's duration, so do not raise it further than needed.",
+    )
 
 
 def terrain_config(args: argparse.Namespace):
@@ -974,6 +1003,9 @@ def agent_config(
         sequence_viz = SequenceVizConfig(
             viz_every=viz_every,
             plan_files=list(getattr(args, "viz_plan_files", []) or []),
+            num_sequences=int(getattr(args, "viz_num_sequences", 10) or 10),
+            max_seconds=float(getattr(args, "viz_max_seconds", 20.0) or 20.0),
+            log_scalars=bool(getattr(args, "viz_log_scalars", True)),
         )
 
     expert_paths = _expert_paths(args)

@@ -441,6 +441,8 @@ class ContactGoalContext:
     time_offsets: Tensor = FieldPath()
     node_ids: Tensor = FieldPath()
     reached: Tensor = FieldPath()
+    pose_error: Tensor = FieldPath()
+    pose_error_visible: Tensor = FieldPath()
     history_features: Tensor = FieldPath()
     history_valid: Tensor = FieldPath()
     event_commit: Tensor = FieldPath()
@@ -453,6 +455,8 @@ class ContactGoalContext:
         time_offsets: Tensor,
         node_ids: Tensor,
         reached: Tensor,
+        pose_error: Optional[Tensor] = None,
+        pose_error_visible: Optional[Tensor] = None,
         history_features: Optional[Tensor] = None,
         history_valid: Optional[Tensor] = None,
         event_commit: Optional[Tensor] = None,
@@ -467,6 +471,16 @@ class ContactGoalContext:
             node_ids: Graph node id per goal, -1 where the slot is padding [num_envs, steps].
             reached: 1.0 where the simulated contact set already matches the
                 nearest goal [num_envs] -- a diagnostic, never an observation.
+            pose_error: Mean per-body distance, in metres, between the current
+                conditionable bodies and the nearest goal's, in the student's
+                own goal representation (heading-normalised, pelvis-relative)
+                [num_envs] -- the *pose* counterpart of ``reached``, which
+                scores contact only and is 1.00 for every member of a
+                degenerate node. A diagnostic, never an observation.
+            pose_error_visible: 1.0 on the rows ``pose_error`` was actually
+                measured on -- the nearest goal reveals a pose. Unmeasured
+                rows carry the batch mean, so this is what says how much of
+                the batch that number rests on [num_envs].
             history_features: Measured contact-event history tokens
                 [num_envs, events, features] -- slot 0 the open segment, the
                 rest the most recent completed ones (ContactEventTracker).
@@ -483,6 +497,8 @@ class ContactGoalContext:
         self.time_offsets = time_offsets
         self.node_ids = node_ids
         self.reached = reached
+        self.pose_error = pose_error
+        self.pose_error_visible = pose_error_visible
         self.history_features = history_features
         self.history_valid = history_valid
         self.event_commit = event_commit

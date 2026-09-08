@@ -638,6 +638,9 @@ def agent_config(
         sequence_viz = SequenceVizConfig(
             viz_every=viz_every,
             plan_files=list(getattr(args, "viz_plan_files", []) or []),
+            num_sequences=int(getattr(args, "viz_num_sequences", 10) or 10),
+            max_seconds=float(getattr(args, "viz_max_seconds", 20.0) or 20.0),
+            log_scalars=bool(getattr(args, "viz_log_scalars", True)),
         )
 
     expert_paths = base._expert_paths(args)

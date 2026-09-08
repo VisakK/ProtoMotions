@@ -19,6 +19,21 @@ from protomotions.envs.obs.utils import (
 )
 
 
+def _align_target_root_xy(current_body_pos: Tensor, target_body_pos: Tensor) -> Tensor:
+    """Place each target root at the current root XY, preserving pose and world Z.
+
+    The returned tensor owns its positions; reference/context tensors are never
+    modified. This removes the target trajectory's horizontal placement while
+    retaining every body's horizontal offset from its own target root.
+    """
+    target_xy = (
+        target_body_pos[..., :2]
+        - target_body_pos[:, :, :1, :2]
+        + current_body_pos[:, None, :1, :2]
+    )
+    return torch.cat((target_xy, target_body_pos[..., 2:]), dim=-1)
+
+
 def build_max_coords_target_poses_future_rel(
     current_state_body_pos: Tensor,
     current_state_body_rot: Tensor,
@@ -159,6 +174,7 @@ def build_max_coords_target_poses(
     w_last: bool,
     future_steps: Union[int, List[int]] = None,
     with_relative: bool = True,
+    root_relative_xy: bool = False,
 ):
     """Build target pose observations in root-relative coordinates.
 
@@ -179,6 +195,11 @@ def build_max_coords_target_poses(
         future_steps: Steps to select. Int N for first N consecutive steps,
             list for specific step indices (e.g., [1, 3, 5]). None = use all.
         with_relative: If True, include relative pose observations (pos_rel, rot_rel)
+        root_relative_xy: If True, align each target frame's root XY with the
+            current root before encoding positions. Removes horizontal target
+            placement, preserving target pose, root-height differences, rotations,
+            and the original world-derivative velocity differences. Defaults to
+            False for compatibility with existing location-tracking policies.
 
     Returns:
         Target pose observations [envs, features] with absolute and optionally relative pose info
@@ -192,6 +213,9 @@ def build_max_coords_target_poses(
         mimic_ref_rot = select_step_indices(mimic_ref_rot, future_steps)
         mimic_ref_vel = select_step_indices(mimic_ref_vel, future_steps)
         mimic_ref_ang_vel = select_step_indices(mimic_ref_ang_vel, future_steps)
+
+    if root_relative_xy:
+        mimic_ref_pos = _align_target_root_xy(current_state_body_pos, mimic_ref_pos)
 
     future_steps = mimic_ref_pos.shape[1]
 
@@ -541,6 +565,7 @@ def build_sparse_target_poses(
     w_last: bool,
     future_steps: Union[int, List[int]] = None,
     include_root_relative: bool = True,
+    root_relative_xy: bool = False,
 ):
     """Build target pose observations for sparse body tracking (MaskedMimic).
 
@@ -559,6 +584,11 @@ def build_sparse_target_poses(
         include_root_relative: If True (default), include both body-relative and root-relative
             poses (24 features per body). If False, only include body-relative poses
             (12 features per body: pos delta + rot delta from current to target).
+        root_relative_xy: If True, align each target frame's root XY with the
+            current root before encoding positions. Removes horizontal target
+            placement while preserving body offsets, world Z, and rotations.
+            Defaults to False for existing location-tracking policies. Independent
+            of include_root_relative, which controls the output feature layout.
 
     Returns:
         Sparse target pose observations [envs, features] for conditionable bodies only
@@ -570,6 +600,11 @@ def build_sparse_target_poses(
     if future_steps is not None:
         masked_mimic_ref_pos = select_step_indices(masked_mimic_ref_pos, future_steps)
         masked_mimic_ref_rot = select_step_indices(masked_mimic_ref_rot, future_steps)
+
+    if root_relative_xy:
+        masked_mimic_ref_pos = _align_target_root_xy(
+            current_state_body_pos, masked_mimic_ref_pos
+        )
 
     future_steps = masked_mimic_ref_pos.shape[1]
 

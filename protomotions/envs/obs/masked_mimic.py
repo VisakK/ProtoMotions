@@ -49,6 +49,7 @@ def compute_target_poses_only(
     conditionable_body_ids: Tensor,
     future_steps: Union[int, List[int]] = None,
     include_root_relative: bool = True,
+    root_relative_xy: bool = False,
 ) -> Tensor:
     """Compute masked target poses (hidden bodies zeroed out).
     
@@ -63,6 +64,9 @@ def compute_target_poses_only(
             list for specific step indices (e.g., [1, 3, 5]). None = use all.
         include_root_relative: If True, output 24 features per body (body-relative + root-relative).
             If False, output 12 features per body (body-relative only: pos delta + rot delta).
+        root_relative_xy: If True, encode each target pose with its root aligned
+            to the current root in XY. Preserves target body offsets and world Z,
+            removing a specific horizontal location from the pose command.
     
     Returns:
         Masked target pose observations [num_envs, features].
@@ -91,6 +95,7 @@ def compute_target_poses_only(
         conditionable_body_ids=conditionable_body_ids,
         w_last=True,
         include_root_relative=include_root_relative,
+        root_relative_xy=root_relative_xy,
     )
     
     # Reshape for masking: [envs, steps, bodies, types, features]

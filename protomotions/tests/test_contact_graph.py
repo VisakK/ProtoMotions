@@ -30,6 +30,7 @@ if _SCRIPTS not in sys.path:
 from build_contact_graph_from_rollouts import (  # noqa: E402
     absorb_short_runs,
     demote_supported_pairs,
+    node_identity_pairs,
     force_hysteresis,
     hold_frame,
     pair_forces_from_bodies,
@@ -457,20 +458,29 @@ def test_contact_goal_masks_are_float():
 # Control component
 # --------------------------------------------------------------------------- #
 class _StubMotionLib:
-    def __init__(self, names, lengths):
+    def __init__(self, names, lengths, reference_pose=None):
         self.motion_files = [f"dir/{n}.motion" for n in names]
         self._lengths = torch.tensor(lengths)
         self.num_bodies = len(SIM_BODY_NAMES)
+        # [1, bodies, 3] returned for every requested (motion, time), so a test
+        # can hand the goal a known pose to score against.
+        self.reference_pose = reference_pose
 
     def get_motion_length(self, motion_ids):
         return self._lengths[motion_ids]
 
     def get_motion_state(self, motion_ids, motion_times):
         n = len(motion_ids)
-        return SimpleNamespace(
-            rigid_body_pos=torch.zeros(n, self.num_bodies, 3),
-            rigid_body_rot=torch.zeros(n, self.num_bodies, 4),
-        )
+        if self.reference_pose is None:
+            pos = torch.zeros(n, self.num_bodies, 3)
+        else:
+            pos = self.reference_pose.expand(n, -1, -1).clone()
+        # Identity (w-last), not zeros: the goal pose-error metric normalises by
+        # the reference's own heading, and a zero quaternion is a 180-degree
+        # rotation rather than a no-op.
+        rot = torch.zeros(n, self.num_bodies, 4)
+        rot[..., 3] = 1.0
+        return SimpleNamespace(rigid_body_pos=pos, rigid_body_rot=rot)
 
 
 def _stub_env(num_envs=4):
@@ -492,6 +502,25 @@ def _stub_env(num_envs=4):
         get_spawn_to_ref_pose_offset_with_terrain_height_correction=(
             lambda pos: torch.zeros_like(pos)
         ),
+    )
+
+
+def _current_state(contact_forces=None, num_envs=4, body_pos=None):
+    """The slice of ``ctx.current`` the contact-goal half reads.
+
+    Body positions and rotations are here because the commanded-goal pose
+    error is scored from them every step; the rotation is a real identity
+    quaternion (w-last) rather than zeros so the heading normalisation is
+    well defined.
+    """
+    if body_pos is None:
+        body_pos = torch.zeros(num_envs, len(SIM_BODY_NAMES), 3)
+    body_rot = torch.zeros(num_envs, len(SIM_BODY_NAMES), 4)
+    body_rot[..., 3] = 1.0
+    return SimpleNamespace(
+        rigid_body_contact_forces=contact_forces,
+        rigid_body_pos=body_pos,
+        rigid_body_rot=body_rot,
     )
 
 
@@ -587,7 +616,7 @@ def test_control_context_zeroes_hidden_and_invalid_goals(tmp_path, monkeypatch):
     control.reset(torch.arange(4))
 
     ctx = EnvContext(
-        current=SimpleNamespace(rigid_body_contact_forces=None),
+        current=_current_state(),
         noisy=None,
         dt=control.env.dt,
     )
@@ -617,7 +646,7 @@ def test_control_pose_token_stays_open_when_only_contacts_are_given(tmp_path, mo
     )
     control.reset(torch.arange(4))
     ctx = EnvContext(
-        current=SimpleNamespace(rigid_body_contact_forces=None),
+        current=_current_state(),
         noisy=None,
         dt=control.env.dt,
     )
@@ -644,7 +673,7 @@ def test_control_ground_iou_scores_the_nearest_goal(tmp_path, monkeypatch):
     forces[0, SIM_BODY_NAMES.index("L_Ankle"), 2] = 400.0
     forces[0, SIM_BODY_NAMES.index("R_Ankle"), 2] = 400.0
     ctx = EnvContext(
-        current=SimpleNamespace(rigid_body_contact_forces=forces),
+        current=_current_state(forces),
         noisy=None,
         dt=control.env.dt,
     )
@@ -652,6 +681,99 @@ def test_control_ground_iou_scores_the_nearest_goal(tmp_path, monkeypatch):
     assert ctx.contact_goal.reached[0].item() == pytest.approx(1.0)
     # Env 1 has no ground contact at all against a two-zone goal.
     assert ctx.contact_goal.reached[1].item() == pytest.approx(0.0)
+
+
+def test_goal_pose_error_measures_distance_to_the_commanded_pose(
+    tmp_path, monkeypatch
+):
+    """The pose half of the goal, scored -- what ground IoU cannot see.
+
+    At a degenerate node every member has the same contact set, so ``reached``
+    is 1.00 whatever pose is held; this is the number that tells Warrior III
+    from Lord of the Dance.
+    """
+    from protomotions.envs.context_views import EnvContext
+
+    control = _make_control(
+        tmp_path, monkeypatch, pose_visible_prob=1.0, contact_visible_prob=1.0
+    )
+    # Goal pose: every body at the origin. Achieved pose: every non-pelvis body
+    # displaced 0.10 m along +z, so each conditionable body but the pelvis is
+    # exactly 0.10 m off and the pelvis (the reference point) is exact.
+    control.env.motion_lib.reference_pose = torch.zeros(
+        1, len(SIM_BODY_NAMES), 3
+    )
+    achieved = torch.zeros(4, len(SIM_BODY_NAMES), 3)
+    achieved[:, 1:, 2] = 0.10
+    control.reset(torch.arange(4))
+    # Reset samples a random body subset per env; pin it so the expected value
+    # is arithmetic rather than a draw.
+    control.goal_body_masks[:] = True
+
+    def error(body_pos):
+        ctx = EnvContext(
+            current=_current_state(body_pos=body_pos),
+            noisy=None,
+            dt=control.env.dt,
+        )
+        control.populate_context(ctx)
+        return ctx.contact_goal
+
+    goal = error(achieved)
+    num_bodies = len(control.conditionable_body_ids)
+    expected = 0.10 * (num_bodies - 1) / num_bodies  # the pelvis contributes 0
+    assert torch.allclose(
+        goal.pose_error, torch.full((4,), expected), atol=1e-5
+    )
+    assert torch.equal(goal.pose_error_visible, torch.ones(4))
+
+    # Exact pose -> zero error, so the metric is not measuring a constant.
+    assert error(torch.zeros(4, len(SIM_BODY_NAMES), 3)).pose_error.abs().max() < 1e-6
+
+    # It averages over the bodies the goal actually names, not over all of
+    # them: with only the head conditioned the error is that body's own.
+    control.goal_body_masks[:] = False
+    control.goal_body_masks[:, :, SIM_BODY_NAMES.index("Head"), 0] = True
+    assert torch.allclose(
+        error(achieved).pose_error, torch.full((4,), 0.10), atol=1e-5
+    )
+
+
+def test_goal_pose_error_reports_visibility_and_does_not_dilute(
+    tmp_path, monkeypatch
+):
+    """Rows with no commanded pose take the batch mean, not a zero."""
+    from protomotions.envs.context_views import EnvContext
+
+    control = _make_control(
+        tmp_path, monkeypatch, pose_visible_prob=1.0, contact_visible_prob=1.0
+    )
+    control.env.motion_lib.reference_pose = torch.zeros(
+        1, len(SIM_BODY_NAMES), 3
+    )
+    achieved = torch.zeros(4, len(SIM_BODY_NAMES), 3)
+    achieved[:, 1:, 2] = 0.10
+    control.reset(torch.arange(4))
+    control.goal_body_masks[:] = True
+    # Hide the nearest goal's pose on half the envs, after the reset that
+    # sampled the masks.
+    control.pose_visible[2:, 0] = False
+
+    ctx = EnvContext(
+        current=_current_state(body_pos=achieved),
+        noisy=None,
+        dt=control.env.dt,
+    )
+    control.populate_context(ctx)
+
+    assert torch.equal(
+        ctx.contact_goal.pose_error_visible, torch.tensor([1.0, 1.0, 0.0, 0.0])
+    )
+    # All four rows carry the same value, so the mean over the batch is the
+    # mean over the *measured* rows rather than being halved by the hidden ones.
+    errors = ctx.contact_goal.pose_error
+    assert torch.allclose(errors, errors[0].expand(4), atol=1e-6)
+    assert errors[0] > 0
 
 
 def test_manual_goal_overrides_the_clip_schedule(tmp_path, monkeypatch):
@@ -675,7 +797,7 @@ def test_manual_goal_overrides_the_clip_schedule(tmp_path, monkeypatch):
     )
 
     ctx = EnvContext(
-        current=SimpleNamespace(rigid_body_contact_forces=None),
+        current=_current_state(),
         noisy=None,
         dt=control.env.dt,
     )
@@ -834,6 +956,140 @@ def test_manual_goal_rejects_a_wrong_shape(tmp_path, monkeypatch):
             pose_visible=torch.ones(4, 3, dtype=torch.bool),
             contact_visible=torch.ones(4, 3, dtype=torch.bool),
         )
+
+
+# --------------------------------------------------------------------------- #
+# Ghost character (goal-pose visualization robot)
+# --------------------------------------------------------------------------- #
+class _GhostSimulator:
+    """Captures set_ghost_state calls the way the real simulator receives them."""
+
+    def __init__(self, ghost_enabled=True):
+        self.ghost_enabled = ghost_enabled
+        self.headless = True  # keeps the marker half of get_markers_state inert
+        self.calls = []
+
+    def set_ghost_state(self, reset_state, active=None):
+        self.calls.append((reset_state, active))
+
+
+def _attach_ghost_env(control, ghost_enabled=True):
+    """Wire a ghost-capable fake simulator and a pose-serving motion lib."""
+    simulator = _GhostSimulator(ghost_enabled)
+    control.env.simulator = simulator
+    num_bodies = control.env.motion_lib.num_bodies
+    num_dofs = (num_bodies - 1) * 3
+
+    def get_motion_state(motion_ids, motion_times):
+        from protomotions.simulator.base_simulator.simulator_state import (
+            StateConversion,
+        )
+
+        n = len(motion_ids)
+        body_pos = torch.zeros(n, num_bodies, 3)
+        # Make the served pose identifiable: x encodes the clip, z the time.
+        body_pos[:, :, 0] = motion_ids.float().reshape(-1, 1)
+        body_pos[:, :, 2] = motion_times.reshape(-1, 1)
+        return SimpleNamespace(
+            rigid_body_pos=body_pos,
+            rigid_body_rot=torch.zeros(n, num_bodies, 4),
+            root_pos=body_pos[:, 0],
+            root_rot=torch.zeros(n, 4),
+            root_vel=torch.ones(n, 3),  # deliberately non-zero: must be ignored
+            root_ang_vel=torch.ones(n, 3),
+            dof_pos=torch.full((n, num_dofs), 0.25),
+            dof_vel=torch.ones(n, num_dofs),
+            state_conversion=StateConversion.COMMON,
+            fps=None,
+        )
+
+    control.env.motion_lib.get_motion_state = get_motion_state
+    # A constant spawn offset, to prove it reaches the ghost's root.
+    control.env.get_spawn_to_ref_pose_offset_with_terrain_height_correction = (
+        lambda pos: torch.tensor([1.0, 2.0, 0.5]).expand_as(pos)
+    )
+    return simulator
+
+
+def test_ghost_char_poses_the_nearest_goal_with_the_spawn_offset(
+    tmp_path, monkeypatch
+):
+    control = _make_control(tmp_path, monkeypatch)
+    control.reset(torch.arange(4))
+    simulator = _attach_ghost_env(control)
+
+    control.get_markers_state()
+
+    assert len(simulator.calls) == 1
+    reset_state, active = simulator.calls[0]
+    # Slot 0 of the clip schedule: clip 0's first hold at t=1.0 (x encodes the
+    # clip, z the hold time), plus the (1.0, 2.0, 0.5) spawn offset.
+    assert torch.allclose(reset_state.root_pos[0], torch.tensor([1.0, 2.0, 1.5]))
+    assert torch.equal(active, control.goal_valid[:, 0])
+    assert active.all()
+
+
+def test_ghost_char_follows_a_manual_goal_from_another_clip(tmp_path, monkeypatch):
+    control = _make_control(tmp_path, monkeypatch)
+    control.reset(torch.arange(4))
+    simulator = _attach_ghost_env(control)
+
+    ones = torch.ones(4, 3, dtype=torch.bool)
+    control.set_manual_goal(
+        node_ids=torch.full((4, 3), 2),
+        pose_motion_ids=torch.ones(4, 3, dtype=torch.long),  # the OTHER clip
+        pose_times=torch.full((4, 3), 2.0),
+        time_offsets=torch.full((4, 3), 3.0),
+        pose_visible=ones,
+        contact_visible=ones,
+    )
+    control.get_markers_state()
+
+    reset_state, active = simulator.calls[-1]
+    # x = clip 1, z = pose time 2.0, plus the spawn offset.
+    assert torch.allclose(reset_state.root_pos[0], torch.tensor([2.0, 2.0, 2.5]))
+    assert active.all()
+
+
+def test_ghost_char_reports_invalid_slots_inactive(tmp_path, monkeypatch):
+    control = _make_control(tmp_path, monkeypatch)
+    control.reset(torch.arange(4))
+    simulator = _attach_ghost_env(control)
+
+    node = torch.full((4, 3), -1)
+    node[0, 0] = 2  # only env 0 gets a real goal
+    control.set_manual_goal(
+        node_ids=node,
+        pose_motion_ids=torch.zeros(4, 3, dtype=torch.long),
+        pose_times=torch.zeros(4, 3),
+        time_offsets=torch.ones(4, 3),
+        pose_visible=torch.ones(4, 3, dtype=torch.bool),
+        contact_visible=torch.ones(4, 3, dtype=torch.bool),
+    )
+    control.get_markers_state()
+
+    _, active = simulator.calls[-1]
+    assert active.tolist() == [True, False, False, False]
+
+
+def test_ghost_char_is_silent_without_a_ghost_robot(tmp_path, monkeypatch):
+    control = _make_control(tmp_path, monkeypatch)
+    control.reset(torch.arange(4))
+    simulator = _attach_ghost_env(control, ghost_enabled=False)
+
+    control.get_markers_state()
+
+    assert simulator.calls == []
+
+
+def test_ghost_config_defaults_are_off():
+    import dataclasses
+
+    from protomotions.simulator.base_simulator.config import SimulatorConfig
+
+    fields = {f.name: f for f in dataclasses.fields(SimulatorConfig)}
+    assert fields["ghost_robot"].default is False
+    assert tuple(fields["ghost_offset"].default) == (1.8, 0.0)
 
 
 # --------------------------------------------------------------------------- #
@@ -1032,3 +1288,100 @@ def test_experiment_builds_contact_goal_wiring_without_experts(tmp_path):
     ]
     assert consumers, "contact_state_obs reached no module"
     assert all(not getattr(m, "normalize_obs", False) for m in consumers)
+
+
+# --------------------------------------------------------------------------- #
+# Round 7_1: node identity coarser than the segment's own contact set
+# --------------------------------------------------------------------------- #
+def test_gather_prefers_the_per_segment_contact_target():
+    """A node may be coarser than the set a segment actually held.
+
+    ``--node-identity ground`` keys a node by its ground support set alone so a
+    marginal body-body press stops creating a singleton node; the *goal* must
+    still name what that segment held, or the coarsening would give back the
+    body-body goal channel round 2 added.
+    """
+    payload = _toy_graph_payload()
+    # Both of motion 0's first two segments now live in node 0, but segment 1
+    # additionally held L_HAND:G.
+    payload["seg_node"] = torch.tensor([[0, 0, 2], [2, -1, -1]])
+    payload["seg_contact"] = torch.tensor(
+        [
+            [[1.0, 1.0, 0.0], [1.0, 1.0, 1.0], [0.0, 0.0, 1.0]],
+            [[0.0, 0.0, 1.0], [0.0, 0.0, 0.0], [0.0, 0.0, 0.0]],
+        ]
+    )
+    graph = ContactGraph(payload)
+    gathered = graph.gather(torch.tensor([0]), torch.tensor([[0, 1]]))
+    assert gathered["node"].tolist() == [[0, 0]]
+    # Same node, different goal: this is the whole point of the table.
+    assert gathered["contact"][0, 0].tolist() == [1.0, 1.0, 0.0]
+    assert gathered["contact"][0, 1].tolist() == [1.0, 1.0, 1.0]
+
+
+def test_gather_falls_back_to_the_node_table_without_seg_contact():
+    """Graphs written before ``seg_contact`` keep working unchanged."""
+    payload = _toy_graph_payload()
+    assert "seg_contact" not in payload
+    graph = ContactGraph(payload)
+    assert graph.seg_contact is None
+    gathered = graph.gather(torch.tensor([0]), torch.tensor([[0, 2]]))
+    assert gathered["contact"][0, 0].tolist() == [1.0, 1.0, 0.0]
+    assert gathered["contact"][0, 1].tolist() == [0.0, 0.0, 1.0]
+
+
+def test_seg_contact_layout_must_match_seg_node():
+    payload = _toy_graph_payload()
+    payload["seg_contact"] = torch.zeros(2, 2, 3)  # one segment column short
+    with pytest.raises(ValueError, match="disagree on the segment layout"):
+        ContactGraph(payload)
+
+
+def test_body_pair_identity_none_drops_every_body_body_pair_from_identity():
+    """``none`` demotes the whole body-body half; ``load_path`` only the
+    both-grounded ones; ``all`` demotes nothing."""
+    # Every zone needs its own ``:G`` pair -- the load-path rule asks whether
+    # each member of a body-body pair is independently grounded, and the real
+    # vocabulary always carries all 15 ground zones (``pair_index``).
+    decomposed = [
+        ("L_FOOT", None), ("R_FOOT", None), ("L_SHANK", None),
+        ("L_UPPER_ARM", None),
+        ("L_FOOT", "R_FOOT"), ("L_SHANK", "L_UPPER_ARM"),
+    ]
+    # Frame 0: standing, feet touching (both grounded) and a shin on an arm
+    # (neither grounded).
+    active = np.array([[True, True, False, False, True, True]])
+
+    identity, demoted = demote_supported_pairs(active, decomposed, "all")
+    assert identity[0].tolist() == [True, True, False, False, True, True]
+    assert not demoted.any()
+
+    identity, demoted = demote_supported_pairs(active, decomposed, "load_path")
+    # L_FOOT+R_FOOT demoted (both grounded); the shin-on-arm survives.
+    assert identity[0].tolist() == [True, True, False, False, False, True]
+    assert demoted[0].tolist() == [False, False, False, False, True, False]
+
+    identity, demoted = demote_supported_pairs(active, decomposed, "none")
+    assert identity[0].tolist() == [True, True, False, False, False, False]
+    assert demoted[0].tolist() == [False, False, False, False, True, True]
+    for rule in ("all", "load_path", "none"):
+        i, d = demote_supported_pairs(active, decomposed, rule)
+        assert not (i & d).any()          # disjoint
+        assert ((i | d) == active).all()  # and a partition of `active`
+    with pytest.raises(ValueError, match="identity rule must be one of"):
+        demote_supported_pairs(active, decomposed, "nonsense")
+
+
+def test_node_identity_ground_keys_a_node_by_its_ground_set():
+    segment = {
+        "pairs": ["L_HAND:G", "R_HAND:G", "L_THIGH+L_UPPER_ARM"],
+        "pair_ids": [2, 3, 7],
+        "ground_pairs": ["L_HAND:G", "R_HAND:G"],
+        "ground_pair_ids": [2, 3],
+    }
+    assert node_identity_pairs(segment, "segment") == (
+        ["L_HAND:G", "R_HAND:G", "L_THIGH+L_UPPER_ARM"], [2, 3, 7]
+    )
+    assert node_identity_pairs(segment, "ground") == (["L_HAND:G", "R_HAND:G"], [2, 3])
+    with pytest.raises(ValueError, match="unknown node identity"):
+        node_identity_pairs(segment, "nonsense")

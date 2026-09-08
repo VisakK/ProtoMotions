@@ -43,6 +43,17 @@ failure mode of :meth:`ContactGraphControl.set_manual_goal`:
   1e6 and strips terminations; the flag only means the *start* clip ran out of
   frames, which is irrelevant to a manual goal and must not end the recording.
 
+On video runs a **ghost character** — a translucent, non-simulated second copy
+of the robot — stands ``--ghost-offset`` to the side, holding the pose of the
+nearest commanded goal (slot 0), so the video answers "what was it being asked
+to do" without decoding the contact spheres. It is driven kinematically from
+the goal's ``(pose_clip, pose_time)`` reference frame each step
+(``ContactGraphControl.get_markers_state`` -> ``Simulator.set_ghost_state``);
+it has no collisions, no gravity and no actuation, so it cannot influence the
+policy or the physics. It is shown even on ``--no-pose`` runs (the plan's pose
+still defines the goal in the graph; the JSON records ``pose_given`` for the
+analyst). ``--no-ghost`` hides it.
+
 Usage::
 
     PYTHONPATH=. python data/scripts/render_contact_goal_sequence.py \
@@ -73,6 +84,13 @@ parser.add_argument("--no-pose", action="store_true",
                     help="hide the pose half of every goal (contact set only)")
 parser.add_argument("--no-contacts", action="store_true",
                     help="hide the contact half of every goal (pose only)")
+parser.add_argument("--no-ghost", action="store_true",
+                    help="hide the ghost character that mirrors the commanded "
+                         "goal pose beside the simulated one")
+parser.add_argument("--ghost-offset", type=float, nargs=2, default=(1.8, 0.0),
+                    metavar=("X", "Y"),
+                    help="world XY displacement of the ghost from the goal "
+                         "pose's marker-aligned position")
 parser.add_argument("--reissue-every", type=float, default=0.5,
                     help="seconds between re-arming the plan")
 parser.add_argument("--hold-lead", type=float, default=1.2,
@@ -91,6 +109,10 @@ args.num_envs = 1
 # RecordingMixin.render() is gated on `not headless` and IsaacLab captures the
 # active viewport, so a headless run would compile an empty video.
 args.headless = bool(args.no_video)
+# The ghost only exists in the viewport, so it is tied to video runs. It shows
+# the *commanded* goal pose (slot 0) beside the simulated character — a
+# non-simulated reference, not a second policy.
+args.ghost_char = (not args.no_ghost) and (not args.headless)
 
 from protomotions.utils.simulator_imports import (  # noqa: E402
     import_simulator_before_torch,
@@ -315,6 +337,9 @@ def main() -> int:
             names[goal["pose_motion"]][:44], goal["pose_time"],
             goal["reach_s"], goal["hold_s"])
     log("start: %s @ %.2f s", names[start_motion], start_time)
+    if args.ghost_char:
+        log("ghost character on at offset (%.2f, %.2f); disable with --no-ghost",
+            args.ghost_offset[0], args.ghost_offset[1])
 
     # Reset first: set_manual_goal does not set _initialized, and without it the
     # countdown in step() silently never runs.
@@ -453,6 +478,7 @@ def main() -> int:
             "checkpoint": args.checkpoint,
             "pose_given": not args.no_pose,
             "contacts_given": not args.no_contacts,
+            "ghost_char": bool(args.ghost_char),
             "hold_lead_s": args.hold_lead,
             "summary": summary,
             "trace": trace,

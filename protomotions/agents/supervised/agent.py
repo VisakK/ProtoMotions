@@ -31,6 +31,25 @@ from protomotions.agents.utils.normalization import RunningMeanStd
 
 log = logging.getLogger(__name__)
 
+# Steps since the intent code was issued, published into the batch by
+# ``FSQMaskedMimicModel`` (``FSQ_PHASE_INDEX_KEY``). Named here rather than
+# imported so the generic supervised agent does not depend on one model module;
+# a test asserts the two spellings agree.
+FSQ_PHASE_INDEX_KEY = "_fsq_chunk_phase"
+# Published by ``FSQMaskedMimicModel`` (same names there; a test asserts the
+# spellings agree). The latent the sampled stream decoded, and the action the
+# model re-decodes from it on replay.
+FSQ_USED_PRIOR_LATENT_KEY = "fsq_used_prior_latent"
+PRIOR_ACTION_KEY = "prior_action"
+# Per-row flag: was this row driven by the deployable prior (the DAgger block)?
+PRIOR_ROLLOUT_MASK_KEY = "prior_rollout_mask"
+
+# The expert's action one control step ago, stored alongside its current one.
+# The rate term needs both endpoints of the teacher's own increment; the
+# `previous_actions` observation is the *applied* action, so on its own it
+# cancels out of the difference and leaves the plain imitation MSE.
+PREVIOUS_EXPERT_ACTIONS_KEY = "previous_expert_actions"
+
 
 def compute_prior_rollout_mask(
     fraction: float,
@@ -69,6 +88,8 @@ class SupervisedAgent(BaseAgent):
     """
 
     model: BaseModel
+    # Set only when the teacher-rate term is on (see PREVIOUS_EXPERT_ACTIONS_KEY).
+    _previous_expert_actions: Optional[Tensor] = None
 
     def create_model(self):
         model_cls = get_class(self.config.model._target_)
@@ -237,9 +258,14 @@ class SupervisedAgent(BaseAgent):
         return TensorDict(expert_obs, batch_size=obs_td.batch_size, device=self.device)
 
     def create_optimizers(self, model: BaseModel):
+        # A model may split its branches into parameter groups with their own
+        # learning rates (the FSQ student's AR prior and privileged encoder);
+        # None keeps the single flat group over every trainable parameter.
+        param_groups = getattr(model, "optimizer_param_groups", lambda: None)()
         optimizer = instantiate_optimizer(
             self.config.model.optimizer,
             model.optimization_module(),
+            params=param_groups,
         )
         self.training_model, self.supervised_optimizer = self._setup_model_optimizer(
             model,
@@ -251,10 +277,47 @@ class SupervisedAgent(BaseAgent):
     # -----------------------------
     def register_algorithm_experience_buffer_keys(self):
         if self.expert_model is not None:
+            num_actions = self.env.robot_config.number_of_actions
             self.experience_buffer.register_key(
                 "expert_actions",
-                shape=(self.env.robot_config.number_of_actions,),
+                shape=(num_actions,),
             )
+            if self._action_rate_loss_coeff > 0.0:
+                self.experience_buffer.register_key(
+                    PREVIOUS_EXPERT_ACTIONS_KEY,
+                    shape=(num_actions,),
+                )
+                # Zeroed on episode reset, matching what the environment does
+                # to its action history (`env.py`: "Zero actions for historical
+                # reset"), so the two endpoints of both increments agree on the
+                # first step of an episode.
+                self._previous_expert_actions = torch.zeros(
+                    self.num_envs, num_actions, device=self.device
+                )
+            if self._dagger_action_loss_coeff > 0.0:
+                # The mask is stored per row because minibatches are shuffled:
+                # `compute_prior_rollout_mask` is a function of the env index,
+                # which does not survive the shuffle.
+                self.experience_buffer.register_key(
+                    PRIOR_ROLLOUT_MASK_KEY, shape=()
+                )
+
+    @property
+    def _action_rate_loss_coeff(self) -> float:
+        # getattr twice: resolved configs written before this field existed do
+        # not carry it, and unit tests build bare agents with no config at all.
+        config = getattr(self, "config", None)
+        return float(getattr(config, "action_rate_loss_coeff", 0.0) or 0.0)
+
+    @property
+    def _action_rate_free_steps(self) -> int:
+        config = getattr(self, "config", None)
+        return int(getattr(config, "action_rate_free_steps", 0) or 0)
+
+    @property
+    def _dagger_action_loss_coeff(self) -> float:
+        config = getattr(self, "config", None)
+        return float(getattr(config, "dagger_action_loss_coeff", 0.0) or 0.0)
 
     def register_algorithm_experience_buffer_keys_from_obs(self, obs_td: TensorDict):
         target_key = self.config.loss.target_key
@@ -384,6 +447,18 @@ class SupervisedAgent(BaseAgent):
         output_keys = list(
             dict.fromkeys(list(self.model_output_keys) + [self.config.loss.target_key])
         )
+        if (
+            self._dagger_action_loss_coeff > 0.0
+            and FSQ_USED_PRIOR_LATENT_KEY in output_td.keys()
+        ):
+            # Registered lazily from the first rollout step, like the loss
+            # target itself: only the model knows the latent's width.
+            if not hasattr(self.experience_buffer, FSQ_USED_PRIOR_LATENT_KEY):
+                self.experience_buffer.register_key(
+                    FSQ_USED_PRIOR_LATENT_KEY,
+                    shape=output_td[FSQ_USED_PRIOR_LATENT_KEY].shape[1:],
+                )
+            output_keys.append(FSQ_USED_PRIOR_LATENT_KEY)
         for key in output_keys:
             if key in output_td:
                 self.experience_buffer.update_data(key, step, output_td[key])
@@ -397,6 +472,25 @@ class SupervisedAgent(BaseAgent):
             self.experience_buffer.update_data(
                 "expert_actions", step, output_td["expert_actions"]
             )
+
+        if self._dagger_action_loss_coeff > 0.0:
+            mask = prior_mask
+            if mask is None:
+                mask = torch.zeros(
+                    self.num_envs, dtype=torch.bool, device=self.device
+                )
+            self.experience_buffer.update_data(
+                PRIOR_ROLLOUT_MASK_KEY, step, mask.float()
+            )
+
+        if self._previous_expert_actions is not None:
+            # Store the *previous* step's label with this step's row, then
+            # advance -- so a row carries (a_expert(t), a_expert(t-1)) and the
+            # teacher's own increment is available in a shuffled minibatch.
+            self.experience_buffer.update_data(
+                PREVIOUS_EXPERT_ACTIONS_KEY, step, self._previous_expert_actions
+            )
+            self._previous_expert_actions = output_td["expert_actions"].detach().clone()
 
         output_td["action"] = action
         return output_td
@@ -459,6 +553,11 @@ class SupervisedAgent(BaseAgent):
         prior_mask = self._prior_rollout_env_mask()
         if prior_mask is not None:
             self._record_prior_rollout_diagnostics(prior_mask, dones, extras)
+        if self._previous_expert_actions is not None and done_indices.numel() > 0:
+            # The environment zeroes its action history on reset, so the first
+            # step of a new episode must see a zero previous expert action too
+            # or the teacher's increment would be measured across the boundary.
+            self._previous_expert_actions[done_indices] = 0.0
         super().record_rollout_step(
             next_obs_td,
             actions,
@@ -568,7 +667,12 @@ class SupervisedAgent(BaseAgent):
             key: wandb.Video(str(path), format="mp4")
             for key, path in videos.items()
         }
-        payload.update(scalars)
+        # Gated at the logger rather than at the source: the scalars are still
+        # computed and still written to viz/epoch_*/summary.json, so offline
+        # analysis is unaffected -- only the dashboard clutter goes away.
+        viz_config = getattr(getattr(self, "config", None), "sequence_viz", None)
+        if getattr(viz_config, "log_scalars", True):
+            payload.update(scalars)
         wandb_logger.experiment.log(payload, step=self.current_epoch)
 
     def perform_optimization_step(self, batch_dict, batch_idx) -> Dict:
@@ -607,6 +711,10 @@ class SupervisedAgent(BaseAgent):
 
         extra_loss, extra_log_dict = self.calculate_extra_loss(batch_td, actions)
 
+        dagger_loss, dagger_log_dict = self.calculate_dagger_action_loss(batch_td)
+        extra_loss = extra_loss + dagger_loss
+        extra_log_dict.update(dagger_log_dict)
+
         model_loss, model_log_dict = self.model.compute_model_loss(
             batch_td,
             current_epoch=self.current_epoch,
@@ -629,7 +737,115 @@ class SupervisedAgent(BaseAgent):
         return loss, log_dict
 
     def calculate_extra_loss(self, batch_dict, actions) -> Tuple[Tensor, Dict]:
-        return torch.tensor(0.0, device=self.device), {}
+        """Teacher-rate matching, when configured; zero otherwise.
+
+        ``||(a_student - a_prev) - (a_expert - a_expert_prev)||^2``. Note that
+        the two increments must be measured from *different* previous actions:
+        referencing both to the applied ``previous_actions`` cancels it and
+        leaves the plain imitation MSE, which is why the previous expert action
+        is carried in the buffer. Written out, the term is
+        ``||residual(t) - residual(t-1)||^2`` -- it costs nothing for a
+        persistent offset and everything for a residual that jitters, which is
+        the shape of the chunk-clock kick round 6 measured. It shares its
+        optimum with the imitation loss (a perfect student has both endpoints
+        right, so both terms vanish together), so it biases toward temporal
+        consistency without moving the target.
+
+        ``action_rate_free_steps`` exempts the first rows of each intent chunk.
+        Round 7_1 §2.2: the term's *only* contact with a commitment is the
+        refresh row, whose increment is the one that spans a code change --
+        everywhere else it charges jitter, which is what it is for. Charging
+        the refresh row too is why v7 removed the 3.75 Hz artifact and the
+        commitment together (code gain 0.33 -> 0.07). Exempting it separates
+        the two in time. Needs the FSQ model, which publishes the chunk phase;
+        without that key the term is charged everywhere, as before.
+        """
+        zero = (torch.tensor(0.0, device=self.device), {})
+        if self._action_rate_loss_coeff <= 0.0:
+            return zero
+        target_key = self.config.loss.target_key
+        if not {
+            PREVIOUS_EXPERT_ACTIONS_KEY,
+            target_key,
+            "previous_actions",
+        }.issubset(set(batch_dict.keys())):
+            return zero
+
+        expert = batch_dict[target_key]
+        # `previous_actions` is a flattened action history, most recent step
+        # first (`select_step_indices` is 1-indexed and `rotate_and_update`
+        # inserts at 0), so the leading action-dim block is step t-1 whatever
+        # `history_steps` the experiment asked for.
+        previous = batch_dict["previous_actions"][..., : actions.shape[-1]]
+        student_rate = actions - previous
+        expert_rate = expert - batch_dict[PREVIOUS_EXPERT_ACTIONS_KEY]
+        per_row = (student_rate - expert_rate).square().mean(dim=-1)
+
+        free_steps = self._action_rate_free_steps
+        phase = batch_dict.get(FSQ_PHASE_INDEX_KEY) if free_steps > 0 else None
+        charged = None
+        if phase is not None:
+            charged = phase.reshape(-1) >= free_steps
+            # A batch with no charged row cannot happen at chunk_steps=8 (only
+            # ~13 % of rows are refreshes) but would make the mean undefined,
+            # so fall back rather than emit a NaN into the total loss.
+            if not bool(charged.any()):
+                charged = None
+        rate_error = per_row.mean() if charged is None else per_row[charged].mean()
+        log = {"supervised/action_rate": rate_error.detach()}
+        if charged is not None:
+            log["supervised/action_rate_charged_frac"] = charged.float().mean()
+        return (self._action_rate_loss_coeff * rate_error, log)
+
+    def calculate_dagger_action_loss(self, batch_dict) -> Tuple[Tensor, Dict]:
+        """Imitation MSE on the DEPLOYABLE action, over prior-driven rows only.
+
+        The trunk is otherwise trained exclusively through ``privileged_action``
+        -- decoded from the *encoder's* code -- while at deployment it decodes a
+        code sampled from the AR prior, which agrees with the encoder's on only
+        3-18 % of refreshes. So on the overwhelming majority of deployed steps
+        the decoder is extrapolating to a code it has never received a gradient
+        for. That is textbook VQ-with-prior exposure bias and it is what forces
+        the decoder to be either over-sensitive (v6's jerk) or insensitive
+        (v7/v8's lost commitment); every knob tried so far has moved along that
+        trade rather than shifting it (``notes/Student_improvement_round7_1.MD``
+        §3.2, §7c).
+
+        Restricted to the DAgger block on purpose. There the sampled action was
+        the one actually applied and the expert labelled the *resulting* state,
+        so matching it is exactly the correction DAgger prescribes. On a
+        privileged-driven row the same term would only be pressure for every
+        code to decode to the one expert action -- i.e. mode collapse, the thing
+        the discrete head exists to avoid.
+        """
+        zero = (torch.tensor(0.0, device=self.device), {})
+        coeff = self._dagger_action_loss_coeff
+        if coeff <= 0.0:
+            return zero
+        target_key = self.config.loss.target_key
+        if not {PRIOR_ACTION_KEY, PRIOR_ROLLOUT_MASK_KEY, target_key}.issubset(
+            set(batch_dict.keys())
+        ):
+            return zero
+
+        mask = batch_dict[PRIOR_ROLLOUT_MASK_KEY].reshape(-1) > 0.5
+        if not bool(mask.any()):
+            # Before `prior_rollout_start_epoch` there are no prior-driven rows
+            # at all; the term is simply inactive rather than undefined.
+            return zero
+        error = (
+            (batch_dict[PRIOR_ACTION_KEY] - batch_dict[target_key])
+            .square()
+            .mean(dim=-1)[mask]
+            .mean()
+        )
+        return (
+            coeff * error,
+            {
+                "supervised/dagger_action_loss": error.detach(),
+                "supervised/dagger_action_frac": mask.float().mean(),
+            },
+        )
 
     # -----------------------------
     # State Saving and Restoration
