@@ -439,6 +439,7 @@ class ContactGoalContext:
     orient_spec: Tensor = FieldPath()
     visible: Tensor = FieldPath()
     time_offsets: Tensor = FieldPath()
+    dwell_features: Tensor = FieldPath()
     node_ids: Tensor = FieldPath()
     reached: Tensor = FieldPath()
     pose_error: Tensor = FieldPath()
@@ -455,6 +456,7 @@ class ContactGoalContext:
         time_offsets: Tensor,
         node_ids: Tensor,
         reached: Tensor,
+        dwell_features: Optional[Tensor] = None,
         pose_error: Optional[Tensor] = None,
         pose_error_visible: Optional[Tensor] = None,
         history_features: Optional[Tensor] = None,
@@ -469,6 +471,16 @@ class ContactGoalContext:
             visible: 1.0 where the contact half of the goal is revealed [num_envs, steps].
             time_offsets: Seconds from now to each goal's hold frame [num_envs, steps].
             node_ids: Graph node id per goal, -1 where the slot is padding [num_envs, steps].
+            dwell_features: [num_envs, steps, C] per-slot timing channels, scaled
+                to [0, 1] and zeroed on invalid slots. C = 0 when the dwell
+                channels are disabled, which keeps the observation block
+                byte-identical to pre-v10_1 runs. With them on, C = 2:
+                ``[hold_duration, dwell_remaining]`` -- how long the commanded
+                configuration lasts, and how much of it is left. The deadline
+                (``time_offsets``) says *when to be there*; these say *how long
+                to stay*, which is the quantity the command has never carried
+                (round 7_1 §6.5: hold duration p10 0.60 s / median 1.70 s /
+                p90 9.07 s).
             reached: 1.0 where the simulated contact set already matches the
                 nearest goal [num_envs] -- a diagnostic, never an observation.
             pose_error: Mean per-body distance, in metres, between the current
@@ -495,6 +507,14 @@ class ContactGoalContext:
         self.orient_spec = orient_spec
         self.visible = visible
         self.time_offsets = time_offsets
+        # An empty trailing axis rather than None: the observation kernel then
+        # concatenates nothing and the block stays byte-identical, with no
+        # branch on "is the feature enabled" anywhere downstream.
+        self.dwell_features = (
+            dwell_features
+            if dwell_features is not None
+            else visible.new_zeros((*visible.shape, 0))
+        )
         self.node_ids = node_ids
         self.reached = reached
         self.pose_error = pose_error

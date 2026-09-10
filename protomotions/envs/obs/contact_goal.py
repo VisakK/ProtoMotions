@@ -11,12 +11,29 @@ The goal block is laid out one row per goal step so the MaskedMimic prior can
 reshape it into the same token sequence as the sparse target poses and encode
 both halves of a goal in a single token:
 
-    [ contact multi-hot (P) | orientation one-hot (O) | visible (1) ]
+    [ contact multi-hot (P) | orientation one-hot (O) | visible (1) | dwell (C) ]
 
 ``visible`` is not redundant with an all-zero contact vector: a configuration
 with no active contacts is a real thing (a flight phase, a jump-back), and the
 policy has to be able to tell it apart from "this slot was not specified".
+
+``dwell`` is ``C = 0`` columns by default, which makes the block byte-identical
+to every run before v10_1; with the dwell channels enabled it is ``C = 2``,
+``[hold_duration, dwell_remaining]``, both already scaled into [0, 1] by
+``ContactGraphControl``.  Two things about it are deliberate and easy to get
+wrong later:
+
+* it is gated by **slot validity, not by contact visibility**.  How long a
+  command lasts is a property of its *timing*, like ``masked_mimic_target_times``
+  -- not of the contact half -- so masking the contact set must not delete it.
+  Everything to the left of it *is* zeroed where ``visible`` is False.
+* the whole block bypasses running normalization (``normalize_obs=False``,
+  because the contact half is multi-hot), so anything added here has to arrive
+  pre-scaled.  Raw seconds sitting next to binary flags would be a silent
+  scaling bug.
 """
+
+from typing import Optional
 
 from torch import Tensor
 import torch
@@ -26,6 +43,7 @@ def compute_contact_goal_obs(
     contact_spec: Tensor,
     orient_spec: Tensor,
     visible: Tensor,
+    dwell_features: Optional[Tensor] = None,
 ) -> Tensor:
     """Flatten the per-goal-step contact specification.
 
@@ -34,14 +52,18 @@ def compute_contact_goal_obs(
             zeroed on hidden slots.
         orient_spec: One-hot orientation bin [num_envs, steps, bins], likewise.
         visible: 1.0 where the contact half is revealed [num_envs, steps].
+        dwell_features: [num_envs, steps, C] extra per-slot timing channels,
+            already scaled to [0, 1] and zeroed on invalid slots. ``C = 0`` (or
+            None) reproduces the pre-v10_1 block exactly, which is what makes
+            the feature ablatable without a second code path.
 
     Returns:
-        [num_envs, steps * (pairs + bins + 1)].
+        [num_envs, steps * (pairs + bins + 1 + C)].
     """
-    block = torch.cat(
-        [contact_spec, orient_spec, visible.unsqueeze(-1).to(contact_spec.dtype)],
-        dim=-1,
-    )
+    parts = [contact_spec, orient_spec, visible.unsqueeze(-1).to(contact_spec.dtype)]
+    if dwell_features is not None and dwell_features.shape[-1] > 0:
+        parts.append(dwell_features.to(contact_spec.dtype))
+    block = torch.cat(parts, dim=-1)
     return block.reshape(block.shape[0], -1)
 
 

@@ -232,6 +232,9 @@ def main() -> int:
         node_ids=node_ids.to(device), pose_motion_ids=pose_motion.to(device),
         pose_times=pose_time.to(device), time_offsets=offsets.to(device),
         pose_visible=visible.to(device), contact_visible=visible.to(device),
+        # One pinned goal for the whole window; see set_manual_goal on why an
+        # omitted hold reads as "stay 0 s" once the dwell channels are on.
+        hold_seconds=(visible.float() * args.seconds).to(device),
     )
 
     # ---------------- pin the intent ---------------- #

@@ -35,6 +35,7 @@ produces, so every masked-mimic observation kernel and the whole Stage-2 model
 work unchanged; ``ctx.contact_goal`` carries the contact half.
 """
 
+import logging
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Dict, Optional, Tuple
 
@@ -55,6 +56,8 @@ from protomotions.envs.control.masked_mimic_control import (
 from protomotions.envs.control.mimic_control import MimicControl
 from protomotions.envs.obs.contact_state import compute_contact_state_obs
 from protomotions.simulator.base_simulator.config import MarkerState
+
+log = logging.getLogger(__name__)
 from protomotions.simulator.base_simulator.simulator_state import ResetState
 from protomotions.utils.rotations import calc_heading_quat_inv, quat_rotate
 
@@ -93,7 +96,35 @@ class ContactGraphControlConfig(MaskedMimicControlConfig):
             committing events.
         history_time_clip_s: Event times (age, dwell) are clamped here and
             scaled into [0, 1], so the history block needs no running
-            normalizer and its binary channels stay binary.
+            normalizer and its binary channels stay binary. Also the scale for
+            the dwell channels below, so every time channel in the contact
+            block shares one unit.
+        dwell_channels: Append ``[hold_duration, dwell_remaining]`` to each goal
+            slot of ``contact_goal_obs`` -- how long the commanded configuration
+            lasts, and how much of it is left, both clamped to
+            ``history_time_clip_s`` and scaled to [0, 1]. False keeps the block
+            byte-identical to every run before v10_1.
+
+            The command has never carried this. The *deadline*
+            (``masked_mimic_target_times``) says when to be somewhere, not how
+            long to stay, and Tier-0 §5 showed raising it makes holds
+            monotonically **worse** -- it is the wrong channel for the job. The
+            right one is duration, which spans p10 0.60 s / median 1.70 s /
+            p90 9.07 s across the corpus (round 7_1 §6.5).
+        include_current_segment: Put the segment the clip is currently inside in
+            goal slot 0 instead of always the next hold. Pairs with
+            ``dwell_channels``: "stay for X more seconds" is meaningless for a
+            goal you have not reached, and without this slot 0 is always a goal
+            you have not reached. Removes the 42.1 % of trusted dwell that today
+            is spent inside a segment while commanded to leave it (round 9 §3a).
+        far_goal_prob: Probability that an episode's forward goal window starts
+            some holds later than usual -- far-goal promotion. Nothing in
+            training has ever put a distant goal in the nearest slot, so a
+            policy asked for one at inference is off-distribution (the
+            far-handstand probe reaches its goal on 0.028 of replicas). 0.0
+            disables. Sampled per episode at reset, never mid-episode.
+        far_goal_max_skip: Upper bound of the uniform skip when promotion fires.
+            No measurement backs the default; it is a first guess.
     """
 
     _target_: str = "protomotions.envs.control.contact_graph_control.ContactGraphControl"
@@ -110,6 +141,10 @@ class ContactGraphControlConfig(MaskedMimicControlConfig):
     num_history_events: int = 0
     history_min_dwell_s: float = 0.3
     history_time_clip_s: float = 10.0
+    dwell_channels: bool = False
+    include_current_segment: bool = False
+    far_goal_prob: float = 0.0
+    far_goal_max_skip: int = 3
 
 
 class ContactGraphControl(MaskedMimicControl):
@@ -161,6 +196,13 @@ class ContactGraphControl(MaskedMimicControl):
             num_envs, steps, dtype=torch.long, device=device
         )
         self._time_offsets = torch.zeros(num_envs, steps, device=device)
+        # [E, steps, C]; C is 2 when the dwell channels are on and 0 otherwise,
+        # so the observation kernel concatenates nothing in the off case.
+        self._dwell_features = torch.zeros(
+            num_envs, steps, 2 if config.dwell_channels else 0, device=device
+        )
+        # Per-episode far-goal promotion, resampled in reset() only.
+        self._promote_k = torch.zeros(num_envs, dtype=torch.long, device=device)
         # Set by set_manual_goal() to answer an explicit query at inference.
         self._manual = None
 
@@ -264,11 +306,14 @@ class ContactGraphControl(MaskedMimicControl):
             self._refresh_manual_goals()
             return
         motion_ids = self.env.motion_manager.motion_ids
+        now = self.env.motion_manager.motion_times
         indices, valid = self.graph.next_goal_indices(
             motion_ids,
-            self.env.motion_manager.motion_times,
+            now,
             self.config.num_goal_steps,
             min_lead_s=self.config.min_lead_s,
+            include_current=self.config.include_current_segment,
+            promote_k=self._promote_k if self.config.far_goal_prob > 0.0 else None,
         )
         self.goal_index = indices
         self.goal_valid = valid
@@ -282,13 +327,56 @@ class ContactGraphControl(MaskedMimicControl):
         self.target_times = torch.where(
             torch.isfinite(target_times), target_times, motion_lengths
         ).minimum(motion_lengths)
-        offsets = self.target_times - self.env.motion_manager.motion_times.unsqueeze(-1)
+        offsets = self.target_times - now.unsqueeze(-1)
         # An exhausted schedule clamps to the last segment, whose hold is behind
         # us, so the raw offset goes negative. The transformer masks those tokens
         # out, but the privileged encoder is a plain MLP that concatenates the
         # time channel unmasked -- so zero it here rather than feed the encoder a
         # value that never occurs on a live goal.
-        self._time_offsets = torch.where(self.goal_valid, offsets, torch.zeros_like(offsets))
+        #
+        # `include_current_segment` creates a second source of negative offsets,
+        # and this one is on a *valid* slot: the segment you are inside can have
+        # its hold frame behind you. Clamp rather than zero -- 0 means "be there
+        # now", which is exactly right, whereas a negative deadline is the value
+        # round 9 §3 showed the network reads as "the command is about to
+        # change".
+        self._time_offsets = torch.where(
+            self.goal_valid, offsets.clamp(min=0.0), torch.zeros_like(offsets)
+        )
+        self._dwell_features = self._compute_dwell_features(
+            self._gathered["t_hold"], self._gathered["t_end"], now
+        )
+
+    def _compute_dwell_features(
+        self, t_hold: Tensor, t_end: Tensor, now: Tensor
+    ) -> Tensor:
+        """``[E, steps, C]`` timing channels, scaled to [0, 1] and validity-gated.
+
+        ``C == 0`` when the feature is off, which makes the observation block
+        byte-identical to pre-v10_1 runs without a second code path.
+
+        * ``hold_duration`` = ``t_end - t_hold``: how long the configuration
+          persists past the frame being commanded. Defined for every slot,
+          including ones far in the future.
+        * ``dwell_remaining`` = ``clamp(t_end - now, 0)``: how much of it is
+          left. Only non-trivial for a slot you are actually inside, which is
+          why this pairs with ``include_current_segment``.
+
+        Both are clamped to ``history_time_clip_s`` and divided by it, matching
+        how ``ContactEventTracker`` scales its own age/dwell channels, so every
+        time value in the contact block shares one unit.
+        """
+        if not self.config.dwell_channels:
+            return t_hold.new_zeros((*t_hold.shape, 0))
+        clip = float(self.config.history_time_clip_s)
+        # Padding carries +inf; nan_to_num keeps the clamp well defined before
+        # the validity gate zeroes those slots anyway.
+        end = torch.nan_to_num(t_end, posinf=0.0, neginf=0.0)
+        hold = torch.nan_to_num(t_hold, posinf=0.0, neginf=0.0)
+        duration = (end - hold).clamp(0.0, clip) / clip
+        remaining = (end - now.unsqueeze(-1)).clamp(0.0, clip) / clip
+        gate = self.goal_valid.to(duration.dtype)
+        return torch.stack([duration * gate, remaining * gate], dim=-1)
 
     # ------------------------------------------------------------------ #
     # Manual goals (inference)
@@ -301,6 +389,7 @@ class ContactGraphControl(MaskedMimicControl):
         time_offsets: Tensor,
         pose_visible: Tensor,
         contact_visible: Tensor,
+        hold_seconds: Optional[Tensor] = None,
     ) -> None:
         """Drive the goal from an explicit query instead of the clip's schedule.
 
@@ -308,6 +397,18 @@ class ContactGraphControl(MaskedMimicControl):
         configuration, holding *this* pose, within *this* long", where the pose is
         named as (clip, time) because that is the only pose representation the
         motion library can serve.  Every argument is ``[num_envs, num_goal_steps]``.
+
+        ``hold_seconds`` is ``[num_envs, num_goal_steps]`` seconds the caller
+        wants each configuration *held* once reached, and it is what feeds the
+        dwell channels. It matters more than it looks: without it the manual
+        path would report a hold duration of **zero**, because a manual goal has
+        no segment and ``t_start = t_end = t_hold``. Every pinned probe would
+        then be commanding "stay 0 seconds" -- the exact opposite of what a 12 s
+        hold probe means -- and the dwell feature would look broken when it was
+        the driver that was wrong. Pass the *remaining* hold at issue time and
+        re-issue as the plan advances; the countdown between issues is handled
+        here. None keeps the pre-v10_1 behaviour (duration 0), which is correct
+        only when the dwell channels are off.
 
         Call :meth:`clear_manual_goal` to return to the clip schedule.
 
@@ -338,6 +439,16 @@ class ContactGraphControl(MaskedMimicControl):
         ):
             if tuple(tensor.shape) != expected:
                 raise ValueError(f"{name} must be {expected}, got {tuple(tensor.shape)}")
+        if hold_seconds is not None and tuple(hold_seconds.shape) != expected:
+            raise ValueError(
+                f"hold_seconds must be {expected}, got {tuple(hold_seconds.shape)}"
+            )
+        if hold_seconds is None and self.config.dwell_channels:
+            log.warning(
+                "set_manual_goal() without hold_seconds while dwell_channels is on: "
+                "every commanded hold will read as 'stay 0 s'. Pass the remaining "
+                "hold time from the plan."
+            )
         if node_ids.numel():
             if int(node_ids.max()) >= self.graph.num_nodes or int(node_ids.min()) < -1:
                 raise ValueError(
@@ -356,6 +467,18 @@ class ContactGraphControl(MaskedMimicControl):
             "offset": time_offsets.to(device).float().clone(),
             "pose_visible": pose_visible.to(device).bool().clone(),
             "contact_visible": contact_visible.to(device).bool().clone(),
+            # `total` is what was asked for and stays put; `remaining` counts
+            # down between re-issues so the channel reads 12 -> 0 over a hold.
+            "hold_total": (
+                hold_seconds.to(device).float().clone()
+                if hold_seconds is not None
+                else torch.zeros_like(time_offsets.to(device).float())
+            ),
+            "hold_remaining": (
+                hold_seconds.to(device).float().clone()
+                if hold_seconds is not None
+                else torch.zeros_like(time_offsets.to(device).float())
+            ),
         }
         # A manual query specifies bodies explicitly: reveal all of them where
         # the pose half is on, so the goal is the pose that was asked for.
@@ -406,14 +529,32 @@ class ContactGraphControl(MaskedMimicControl):
         ).view_as(manual["pose_time"])
         self.target_times = manual["pose_time"].minimum(motion_lengths)
         self._time_offsets = manual["offset"]
+        # A manual goal has no segment, so one is synthesised: it starts at the
+        # commanded frame and lasts as long as the caller asked it to be held.
+        # With hold_seconds omitted this collapses to the pre-v10_1 zero-length
+        # segment.
         self._gathered = {
             "node": safe_node,
             "t_start": self.target_times,
-            "t_end": self.target_times,
+            "t_end": self.target_times + manual["hold_total"],
             "t_hold": self.target_times,
             "contact": self.graph.node_contact[safe_node],
             "orient": self.graph.node_orient[safe_node],
         }
+        if self.config.dwell_channels:
+            clip = float(self.config.history_time_clip_s)
+            gate = valid.to(self.target_times.dtype)
+            self._dwell_features = torch.stack(
+                [
+                    (manual["hold_total"].clamp(0.0, clip) / clip) * gate,
+                    (manual["hold_remaining"].clamp(0.0, clip) / clip) * gate,
+                ],
+                dim=-1,
+            )
+        else:
+            self._dwell_features = self.target_times.new_zeros(
+                (*self.target_times.shape, 0)
+            )
         # Cloned, not aliased: the stored query must survive any in-place write
         # to the live visibility buffers.
         self.pose_visible = manual["pose_visible"].clone()
@@ -457,6 +598,12 @@ class ContactGraphControl(MaskedMimicControl):
             # Cleared rows re-open their first segment from the next
             # observation build, so history is episode-local by construction.
             self._event_tracker.reset(env_ids)
+        # Far-goal promotion is drawn once per episode and then held. A window
+        # that jumped around mid-episode would be a different, and worse,
+        # intervention: the policy could never tell a distant command from a
+        # near one that is about to be replaced. Drawn before the refresh below
+        # so the first schedule of the episode already carries it.
+        self._resample_promotion(env_ids)
         # Unconditional: the schedule is a pure function of the motion state, and
         # a zero-length reset still has to leave the tables populated for the
         # context build that follows it.
@@ -482,6 +629,26 @@ class ContactGraphControl(MaskedMimicControl):
         self._enforce_first_goal()
         self._initialized = True
 
+    def _resample_promotion(self, env_ids: Tensor) -> None:
+        """Draw a per-episode far-goal skip for ``env_ids``.
+
+        Zero for every environment when ``far_goal_prob`` is 0, which is the
+        default and reproduces the original schedule.
+        """
+        if self.config.far_goal_prob <= 0.0 or len(env_ids) == 0:
+            if self.config.far_goal_prob <= 0.0:
+                self._promote_k.zero_()
+            return
+        device = self.env.device
+        count = len(env_ids)
+        fire = torch.rand(count, device=device) < self.config.far_goal_prob
+        skip = torch.randint(
+            1, max(int(self.config.far_goal_max_skip), 1) + 1, (count,), device=device
+        )
+        self._promote_k[env_ids] = torch.where(
+            fire, skip, torch.zeros_like(skip)
+        ).long()
+
     def step(self):
         """Advance the goal schedule, keeping each goal's mask attached to it."""
         MimicControl.step(self)
@@ -500,6 +667,12 @@ class ContactGraphControl(MaskedMimicControl):
             self._manual["offset"] = (self._manual["offset"] - self.env.dt).clamp(
                 min=self.config.min_lead_s
             )
+            # The requested dwell counts down to zero and stops; unlike the
+            # deadline it has no floor, because "0 s left" is a meaningful
+            # command and `min_lead_s` is a property of the deadline only.
+            self._manual["hold_remaining"] = (
+                self._manual["hold_remaining"] - self.env.dt
+            ).clamp(min=0.0)
             self._refresh_goal_indices()
             return
 
@@ -841,6 +1014,7 @@ class ContactGraphControl(MaskedMimicControl):
             orient_spec=orient_spec,
             visible=contact_visible.float(),
             time_offsets=time_offsets,
+            dwell_features=self._dwell_features,
             node_ids=node_ids,
             reached=self._contact_configuration_iou(current_contact),
             pose_error=pose_error,

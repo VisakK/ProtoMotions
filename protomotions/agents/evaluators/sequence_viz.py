@@ -311,6 +311,7 @@ def fill_goal_slots(
     seq_pose_motion = torch.zeros(num_seq, slots, dtype=torch.long)
     seq_pose_time = torch.zeros(num_seq, slots)
     seq_offset = torch.zeros(num_seq, slots)
+    seq_hold = torch.zeros(num_seq, slots)
     seq_visible = torch.zeros(num_seq, slots, dtype=torch.bool)
 
     for s, sequence in enumerate(sequences):
@@ -329,6 +330,12 @@ def fill_goal_slots(
             else:
                 deadline = remaining if remaining > 0.0 else hold_lead_s
             seq_offset[s, slot] = deadline
+            # Seconds of the requested hold still outstanding. The plan, not the
+            # environment, is the only thing that knows this: a manual goal has
+            # no graph segment, so without it the dwell channels would report
+            # "stay 0 s" for every probe. Re-issued on the driver's own cadence,
+            # and counted down by ContactGraphControl between issues.
+            seq_hold[s, slot] = float(min(max(ends[index] - t, 0.0), goal.hold_s))
             seq_visible[s, slot] = True
 
     env_sequence = env_sequence.cpu()
@@ -339,6 +346,7 @@ def fill_goal_slots(
         "time_offsets": seq_offset[env_sequence].to(device),
         "pose_visible": seq_visible[env_sequence].to(device),
         "contact_visible": seq_visible[env_sequence].to(device),
+        "hold_seconds": seq_hold[env_sequence].to(device),
     }
 
 

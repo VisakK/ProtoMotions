@@ -270,6 +270,10 @@ def main() -> int:
         time_offsets=column(float(args.horizon)),
         pose_visible=column(not args.no_pose, dtype=torch.bool),
         contact_visible=column(not args.no_contacts, dtype=torch.bool),
+        # This tool pins one goal for the whole rollout, so the requested dwell
+        # IS the rollout length; without it the dwell channels would command
+        # "stay 0 s" (ContactGraphControl.set_manual_goal).
+        hold_seconds=column(float(args.horizon)),
     )
     log("query: pose %s, contacts %s, horizon %.1f s (+%.1f s settle)",
         "hidden" if args.no_pose else "given",

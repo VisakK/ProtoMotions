@@ -108,6 +108,13 @@ class ContactGraph:
         # against itself, so the whole row can be checked as-is.
         if bool((self.seg_hold[:, 1:] < self.seg_hold[:, :-1]).any()):
             raise ValueError("contact graph segment hold times are not sorted per motion")
+        # `next_goal_indices(include_current=True)` searchsorts `seg_start` for
+        # the segment containing `motion_time`, which needs the same guarantee.
+        # Segments are maximal runs of one configuration so they are
+        # chronological by construction -- this asserts it rather than assuming
+        # it, because a violation would silently return the wrong segment.
+        if bool((self.seg_start[:, 1:] < self.seg_start[:, :-1]).any()):
+            raise ValueError("contact graph segment start times are not sorted per motion")
 
     # ------------------------------------------------------------------ #
     @classmethod
@@ -129,7 +136,13 @@ class ContactGraph:
 
     @property
     def goal_feature_size(self) -> int:
-        """Per-goal-step feature width: contact multi-hot + orientation + validity."""
+        """Per-goal-step feature width: contact multi-hot + orientation + validity.
+
+        NOTE: this excludes the optional dwell channels appended by
+        ``ContactGraphControlConfig.dwell_channels`` (+2), which are a property
+        of the control component rather than of the graph. Nothing in the tree
+        reads this today; it is kept as documentation of the base layout.
+        """
         return self.num_pairs + self.num_orientations + 1
 
     # ------------------------------------------------------------------ #
@@ -156,6 +169,8 @@ class ContactGraph:
         motion_times: Tensor,
         num_steps: int,
         min_lead_s: Optional[float] = None,
+        include_current: bool = False,
+        promote_k: Optional[Tensor] = None,
     ) -> Tuple[Tensor, Tensor]:
         """Segment indices of the next ``num_steps`` holds, and their validity.
 
@@ -166,6 +181,33 @@ class ContactGraph:
             min_lead_s: A hold closer than this is already being passed through
                 and is skipped, so the nearest goal is always something the
                 policy still has time to act on.
+            include_current: Put the segment the clip is *currently inside* in
+                slot 0, pushing the forward window into slots 1..K-1.  Default
+                False reproduces the original schedule exactly.
+
+                Why: with it False the student is **never** commanded the
+                segment it is in -- from ``t_hold - min_lead_s`` onward slot 0
+                is already the *next* hold, and **42.1 % of all trusted dwell**
+                is spent inside a segment while commanded to leave it
+                (``notes/V9_crucial_investigations/Student_v9_round9_diagnosis.MD``
+                §3a).  That is where "prepare to depart at a commanded pose" is
+                learned.
+
+                The change is deliberately a no-op until it matters: while the
+                current segment's own hold is still ahead, ``first`` already
+                *is* the current segment, so the emitted window is bit-identical
+                to the legacy one.  It differs only once the hold has been
+                passed -- exactly the 42.1 % case.
+            promote_k: ``[E]`` non-negative integer per environment; the
+                **forward** window starts this many holds later than it
+                otherwise would.  Far-goal promotion: nothing in training has
+                ever placed a distant goal in the nearest slot, so a policy
+                asked for one at inference is off-distribution (the far-handstand
+                probe's handstand goal has reach rate 0.028).  Clamped per
+                environment so it can never push slot 0 past the last hold and
+                invalidate a goal that would otherwise have been valid.  With
+                ``include_current`` the current segment is exempt -- promotion
+                moves the horizon, not the "you are here".
 
         Returns:
             ``(indices [E, num_steps], valid [E, num_steps])``.  Indices are
@@ -179,7 +221,35 @@ class ContactGraph:
         threshold = (motion_times + lead).unsqueeze(-1)                # [E, 1]
         first = torch.searchsorted(holds.contiguous(), threshold.contiguous())
         offsets = torch.arange(num_steps, device=motion_ids.device).unsqueeze(0)
-        raw = first + offsets                                          # [E, K]
+
+        if promote_k is not None:
+            # Never let promotion invalidate slot 0: cap the skip at whatever
+            # keeps the first goal inside this motion's segment count.
+            headroom = (counts.unsqueeze(-1) - 1 - first).clamp(min=0)
+            first = first + promote_k.reshape(-1, 1).to(first.dtype).clamp(min=0).minimum(headroom)
+
+        if include_current:
+            starts = self.seg_start.index_select(0, motion_ids)         # [E, S]
+            ends = self.seg_end.index_select(0, motion_ids)             # [E, S]
+            now = motion_times.unsqueeze(-1)                            # [E, 1]
+            # `right=True` puts a time exactly on a boundary in the segment that
+            # starts there, matching ContactGraphMotionManager's own anchoring.
+            current = (
+                torch.searchsorted(starts.contiguous(), now.contiguous(), right=True) - 1
+            ).clamp(min=0)
+            inside = (
+                (current < counts.unsqueeze(-1))
+                & (now >= starts.gather(1, current))
+                & (now <= ends.gather(1, current))
+            )
+            # The forward window never re-serves the segment now in slot 0.
+            forward = torch.maximum(first, current + 1)
+            head = torch.where(inside, current, first)
+            tail_start = torch.where(inside, forward, first + 1)
+            raw = torch.cat([head, tail_start + offsets[:, : num_steps - 1]], dim=-1)
+        else:
+            raw = first + offsets                                      # [E, K]
+
         valid = raw < counts.unsqueeze(-1)
         # Past the last hold there is nothing left to aim at; hold the final
         # segment so the pose query stays well defined and mark it invalid.

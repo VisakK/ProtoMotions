@@ -237,6 +237,7 @@ class GoalDriver:
         pose_motion = torch.zeros(n, k, dtype=torch.long, device=dev)
         pose_time = torch.zeros(n, k, device=dev)
         offset = torch.zeros(n, k, device=dev)
+        hold_seconds = torch.zeros(n, k, device=dev)
         pose_visible = torch.zeros(n, k, dtype=torch.bool, device=dev)
         contact_visible = torch.zeros(n, k, dtype=torch.bool, device=dev)
 
@@ -251,6 +252,11 @@ class GoalDriver:
             pose_motion[:, slot] = goal["pose_motion"]
             pose_time[:, slot] = goal["pose_time"]
             offset[:, slot] = deadline
+            # Outstanding seconds of the requested hold. A manual goal has no
+            # graph segment, so the plan is the only source of this; omitting it
+            # makes ContactGraphControl's dwell channels read "stay 0 s" for
+            # every probe.
+            hold_seconds[:, slot] = min(max(self.ends[index] - t, 0.0), goal["hold_s"])
             pose_visible[:, slot] = not self.args.no_pose
             contact_visible[:, slot] = not self.args.no_contacts
         if not bool(pose_visible[:, 0].any() or contact_visible[:, 0].any()):
@@ -266,6 +272,7 @@ class GoalDriver:
             time_offsets=offset,
             pose_visible=pose_visible,
             contact_visible=contact_visible,
+            hold_seconds=hold_seconds,
         )
         # Chunked-intent models (the FSQ student) hold their latent for up to
         # chunk_steps; when the plan actually advances a step — not on the

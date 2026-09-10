@@ -489,6 +489,11 @@ def env_config(robot_cfg: RobotConfig, args: argparse.Namespace) -> EnvConfig:
                 "contact_spec": EnvContext.contact_goal.contact_spec,
                 "orient_spec": EnvContext.contact_goal.orient_spec,
                 "visible": EnvContext.contact_goal.visible,
+                # [E, steps, C]. C is 0 unless ContactGraphControlConfig
+                # .dwell_channels is on, so binding it unconditionally leaves
+                # the block byte-identical for every pre-v10_1 config -- there
+                # is no second component and no flag to thread through here.
+                "dwell_features": EnvContext.contact_goal.dwell_features,
             },
         ),
         "contact_goal_masks": MdpComponent(

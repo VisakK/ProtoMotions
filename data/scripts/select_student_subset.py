@@ -207,6 +207,34 @@ SUBSETS = {
         },
         hold_manifest="data/smpl/yoga_motions_proto_yogi_holds.manifest.json",
     ),
+    "student44h_v101": Subset(
+        name="student44h_v101",
+        description=(
+            "student44h with three EXTRA frozen holds (plain standing, downdog, "
+            "Warrior II). Node 0 -- the corpus's largest, 16.1 % of commanded "
+            "frames -- has zero frozen stay-supervision today, because "
+            "select_holds takes one hold per contact configuration ranked by "
+            "dwell and node 0's winner (Eagle) re-segments into a different "
+            "node. Everything else is byte-identical to student44h, so the only "
+            "variable is the three clips."
+        ),
+        clips={
+            "easy128": STUDENT44_EASY,
+            "hard29": STUDENT44_HARD,
+            "singleleg14": STUDENT44_SINGLE_LEG,
+        },
+        # Unchanged from student44h on purpose. The holds group grows 36 -> 39
+        # clips, so its share of episodes rises ~8 % as a side effect of the
+        # count; re-weighting to hold that constant would confound the change
+        # with a sampling change.
+        group_weights={
+            "easy128": 1.0,
+            "hard29": 3.0,
+            "singleleg14": 1.0,
+            "holds": 0.5,
+        },
+        hold_manifest="data/smpl/yoga_motions_proto_yogi_holds_v101.manifest.json",
+    ),
 }
 
 
