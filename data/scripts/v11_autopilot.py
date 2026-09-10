@@ -67,16 +67,20 @@ LOGBOOK = STATE_DIR / "log.md"
 
 LAUNCHER = REPO / "data" / "scripts" / "run_student_distill_v11.py"
 
-# Stage 1 length. At v10_1's measured 5.3 GPU-hours per 1,000 epochs (the v11
-# trunk is 0.7 % wider, which is inside the noise on that number) 6,000 epochs
-# is ~1.3 days, and the v9 Tier-0 checkpoint sweep put the deployable optimum
-# at ~8,000 -- so this is long enough to read the mechanism and short enough to
-# leave seven clear days for the long arm.
+# Measured on this arm at launch: 20.8 s/epoch, i.e. 5.77 GPU-hours per 1,000
+# epochs (v10_1 ran 5.3; the ladder's wider trunk and its target shift cost
+# ~9 %). Stage 1 is therefore ~34.6 h and stage 2 ~7.7 days, 9.2 days together,
+# inside a ten-day window.
+#
+# Stage 1 length. Long enough to read the mechanism -- the v9 Tier-0 checkpoint
+# sweep put the deployable optimum at ~8,000 -- and short enough to leave the
+# week for the long arm.
 STAGE1_EPOCHS = 6000
 
-# Stage 2 length. Sized to the remaining window rather than to a convergence
-# criterion: the round has no expected result, so the instruction is to spend
-# the week and read what comes out.
+# Stage 2 length. A cap, not a deadline: checkpoints land every 500 epochs, so
+# overrunning the window costs nothing and stopping early loses nothing either.
+# The round has no expected result; the instruction is to spend the week and
+# read what comes out.
 STAGE2_EPOCHS = 32000
 
 # Gate thresholds.
