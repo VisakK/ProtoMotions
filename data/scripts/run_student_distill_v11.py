@@ -222,6 +222,11 @@ def build_command(mode: str, extra: list) -> list:
         "env.ref_respawn_offset=0.005",
         # Matches v10_xycontract exactly, which is what makes the baseline free.
         "env.motion_manager.realign_motion_with_humanoid_on_each_step=True",
+        # Round 4's lesson: v2's eval optimum at epoch 2,800 was never written
+        # because this was 2,000. Dense checkpoints are also what the paired
+        # protocol spends its power on -- 79.4 % of the estimator's variance is
+        # checkpoint-level, so K is the lever, not more probes.
+        "agent.save_epoch_checkpoint_every=500",
     ]
     command += ["--overrides", *overrides]
     if cfg["max_epochs"] is not None:
