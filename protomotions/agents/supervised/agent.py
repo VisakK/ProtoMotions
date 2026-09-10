@@ -51,6 +51,27 @@ PRIOR_ROLLOUT_MASK_KEY = "prior_rollout_mask"
 PREVIOUS_EXPERT_ACTIONS_KEY = "previous_expert_actions"
 
 
+# Mirrors ``fsq_masked_mimic_model.LADDER_PRED_KEY``. Duplicated as a literal
+# rather than imported because the model module imports agent-side helpers, and
+# a string constant is not worth a circular import.
+LADDER_PRED_KEY = "ladder_pred"
+VAE_LATENT_KEY = "vae_latent"
+
+# How often the (no-gradient) code-ablation diagnostic runs. It costs one extra
+# trunk forward, so it is a periodic probe rather than a per-batch metric.
+LADDER_ABLATION_EVERY = 25
+
+
+def ladder_target_key(offset: int) -> str:
+    """Buffer key holding the expert action ``offset`` control steps ahead."""
+    return f"ladder_target_h{offset}"
+
+
+def ladder_valid_key(offset: int) -> str:
+    """Buffer key marking rows whose horizon stays inside one episode."""
+    return f"ladder_valid_h{offset}"
+
+
 def compute_prior_rollout_mask(
     fraction: float,
     start_epoch: int,
@@ -301,6 +322,45 @@ class SupervisedAgent(BaseAgent):
                 self.experience_buffer.register_key(
                     PRIOR_ROLLOUT_MASK_KEY, shape=()
                 )
+            for offset in self._ladder_offsets[1:]:
+                # Filled in `pre_process_dataset` by shifting `expert_actions`
+                # along the time axis, which is why these are registered here
+                # and written once per rollout rather than per step.
+                self.experience_buffer.register_key(
+                    ladder_target_key(offset), shape=(num_actions,)
+                )
+                self.experience_buffer.register_key(
+                    ladder_valid_key(offset), shape=()
+                )
+
+    def _ladder_ablation_due(self) -> bool:
+        """True on the first optimisation batch of every Nth epoch."""
+        if len(self._ladder_offsets) <= 1:
+            return False
+        if int(self.current_epoch) % LADDER_ABLATION_EVERY != 0:
+            return False
+        already = getattr(self, "_ladder_ablation_epoch", None)
+        if already == int(self.current_epoch):
+            return False
+        self._ladder_ablation_epoch = int(self.current_epoch)
+        return True
+
+    @property
+    def _ladder_loss_coeff(self) -> float:
+        return float(getattr(self.config, "ladder_loss_coeff", 0.0) or 0.0)
+
+    @property
+    def _ladder_offsets(self) -> Tuple[int, ...]:
+        """Ladder rungs declared by the model, or ``(0,)`` when there are none.
+
+        Read off the model config rather than the agent's, so the trunk width,
+        the decode split and the auxiliary targets cannot disagree about how
+        many rungs exist.
+        """
+        if self._ladder_loss_coeff <= 0.0:
+            return (0,)
+        fsq = getattr(getattr(self.config, "model", None), "fsq", None)
+        return tuple(int(o) for o in getattr(fsq, "ladder_offsets", (0,)))
 
     @property
     def _action_rate_loss_coeff(self) -> float:
@@ -693,6 +753,154 @@ class SupervisedAgent(BaseAgent):
     # -----------------------------
     # Model Forward Pass and Loss Computation
     # -----------------------------
+    def pre_process_dataset(self):
+        """Build the action ladder's far-horizon targets, once per rollout.
+
+        The buffer holds ``expert_actions`` as ``[T, E, A]`` and ``make_dict``
+        flattens it with ``swap_and_flatten01`` to row = env*T + step, so a
+        target for horizon ``h`` is just the same tensor shifted ``h`` places
+        along the time axis. Two things make the shift honest:
+
+        * rows within ``h`` of the end of the rollout have no target and are
+          masked out -- the buffer is a window, not an episode;
+        * so are rows with an episode boundary inside their horizon. ``dones``
+          marks the step at which the episode ended, so the reference at
+          ``t + h`` belongs to a different episode (and a different clip) if
+          any of ``dones[t : t+h]`` fired. At the run's measured termination
+          rates this costs ~2 % of control rows and ~4 % of DAgger rows at
+          h = 24.
+
+        The far rungs are legitimate on-policy DAgger labels: the expert is
+        queried at every visited state, so ``expert_actions[t+h]`` is what the
+        teacher does h steps down the trajectory the student actually produced.
+        """
+        super().pre_process_dataset()
+        offsets = self._ladder_offsets
+        if len(offsets) <= 1 or self.expert_model is None:
+            return
+        expert = self.experience_buffer.expert_actions  # [T, E, A]
+        dones = self.experience_buffer.dones.bool()  # [T, E]
+        num_steps = expert.shape[0]
+        for offset in offsets[1:]:
+            target = torch.zeros_like(expert)
+            valid = torch.zeros(dones.shape, dtype=expert.dtype, device=expert.device)
+            usable = num_steps - offset
+            if usable > 0:
+                target[:usable] = expert[offset:]
+                # No done in [t, t+offset): a cumulative sum over the window is
+                # cheaper and clearer than a rolling any().
+                cum = torch.cumsum(dones.to(expert.dtype), dim=0)
+                # boundaries in [t, t+offset) == cum[t+offset-1] - cum[t-1]
+                upper = cum[offset - 1 : offset - 1 + usable]
+                lower = torch.cat(
+                    [torch.zeros_like(cum[:1]), cum[: usable - 1]], dim=0
+                )
+                valid[:usable] = (upper - lower <= 0).to(expert.dtype)
+            self.experience_buffer.batch_update_data(
+                ladder_target_key(offset), target
+            )
+            self.experience_buffer.batch_update_data(ladder_valid_key(offset), valid)
+
+    def calculate_ladder_loss(self, batch_dict) -> Tuple[Tensor, Dict]:
+        """Auxiliary MSE between the trunk's far rungs and the expert ahead.
+
+        Each rung is divided by its own target variance before the mean, so the
+        rungs are commensurable and an unequal valid-row count across horizons
+        cannot tilt the sum. Rung 0 is deliberately excluded -- it is already
+        the imitation loss, and adding it twice would only rescale that term.
+
+        Also logs ``code_ablation_gap_h*``: the rise in a rung's normalised MSE
+        when ``vae_latent`` is rolled across the batch. That is the pre-
+        registered mechanism metric -- a large gap at the far rungs against a
+        near-zero gap at rung 0 is the signature that the ladder engaged and
+        nothing else did.
+        """
+        zero = (torch.tensor(0.0, device=self.device), {})
+        offsets = self._ladder_offsets
+        if len(offsets) <= 1 or LADDER_PRED_KEY not in batch_dict.keys():
+            return zero
+        rungs = batch_dict[LADDER_PRED_KEY]  # [B, rungs, A]
+        total = torch.tensor(0.0, device=self.device)
+        charged = 0
+        log: Dict[str, Tensor] = {}
+        for index, offset in enumerate(offsets):
+            if index == 0:
+                continue
+            tkey, vkey = ladder_target_key(offset), ladder_valid_key(offset)
+            if tkey not in batch_dict.keys():
+                continue
+            target = batch_dict[tkey]
+            valid = batch_dict[vkey].reshape(-1) > 0.5
+            if not bool(valid.any()):
+                continue
+            pred = rungs[..., index, :]
+            scale = target[valid].var(unbiased=False).clamp(min=1e-8)
+            per_row = (pred[valid] - target[valid]).square().mean(dim=-1)
+            rung_loss = per_row.mean() / scale
+            total = total + rung_loss
+            charged += 1
+            log[f"ladder/mse_h{offset}"] = rung_loss.detach()
+            log[f"ladder/valid_frac_h{offset}"] = valid.float().mean()
+        if charged == 0:
+            return zero
+        total = total / charged
+        log["ladder/loss"] = total.detach()
+        return (self._ladder_loss_coeff * total, log)
+
+    @torch.no_grad()
+    def ladder_code_ablation(self, batch_dict) -> Dict:
+        """How much each rung actually depends on the intent code.
+
+        Re-decodes the batch with ``vae_latent`` rolled by one row and reports
+        the rise in each rung's normalised MSE. Rung 0's ceiling is 2.03e-4 of
+        target variance (the h=0 target is state-linear to R^2 = 0.999797), so
+        a near-zero gap there is expected and is the control; the far rungs
+        have 0.017-0.091 available. Diagnostic only -- no gradient.
+        """
+        offsets = self._ladder_offsets
+        if len(offsets) <= 1 or LADDER_PRED_KEY not in batch_dict.keys():
+            return {}
+        model = self.model
+        decode = getattr(model, "_decode", None)
+        latent = batch_dict.get(VAE_LATENT_KEY)
+        if decode is None or latent is None:
+            return {}
+        shuffled = TensorDict(
+            {k: v for k, v in batch_dict.items()}, batch_size=batch_dict.batch_size
+        )
+        probe_key = "_ladder_ablation_pred"
+        decode(shuffled, torch.roll(latent, 1, dims=0), False, ladder_key=probe_key)
+        if probe_key not in shuffled.keys():
+            return {}
+        rolled = shuffled[probe_key]
+        base = batch_dict[LADDER_PRED_KEY]
+        log: Dict[str, Tensor] = {}
+        for index, offset in enumerate(offsets):
+            tkey, vkey = ladder_target_key(offset), ladder_valid_key(offset)
+            if index == 0:
+                target = batch_dict.get(self.config.loss.target_key)
+                if target is None:
+                    continue
+                valid = torch.ones(
+                    target.shape[0], dtype=torch.bool, device=target.device
+                )
+            else:
+                if tkey not in batch_dict.keys():
+                    continue
+                target = batch_dict[tkey]
+                valid = batch_dict[vkey].reshape(-1) > 0.5
+            if not bool(valid.any()):
+                continue
+            scale = target[valid].var(unbiased=False).clamp(min=1e-8)
+            keep = (
+                (base[..., index, :][valid] - target[valid]).square().mean() / scale
+            )
+            drop = (
+                (rolled[..., index, :][valid] - target[valid]).square().mean() / scale
+            )
+            log[f"model/code_ablation_gap_h{offset}"] = (drop - keep).detach()
+        return log
+
     def supervised_step(self, batch_dict) -> Tuple[Tensor, Dict]:
         """Compute supervised imitation loss from a rollout batch."""
         # Convert to TensorDict and run model forward
@@ -714,6 +922,12 @@ class SupervisedAgent(BaseAgent):
         dagger_loss, dagger_log_dict = self.calculate_dagger_action_loss(batch_td)
         extra_loss = extra_loss + dagger_loss
         extra_log_dict.update(dagger_log_dict)
+
+        ladder_loss, ladder_log_dict = self.calculate_ladder_loss(batch_td)
+        extra_loss = extra_loss + ladder_loss
+        extra_log_dict.update(ladder_log_dict)
+        if self._ladder_ablation_due():
+            extra_log_dict.update(self.ladder_code_ablation(batch_td))
 
         model_loss, model_log_dict = self.model.compute_model_loss(
             batch_td,

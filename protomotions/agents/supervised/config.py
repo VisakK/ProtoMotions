@@ -136,6 +136,28 @@ class SupervisedAgentConfig(BaseAgentConfig):
             "min": 0.0,
         },
     )
+    ladder_loss_coeff: float = field(
+        default=0.0,
+        metadata={
+            "help": "Weight of the ACTION LADDER: an auxiliary MSE between the "
+            "trunk's far rungs and the expert's action that many control steps "
+            "ahead. 0 disables it and the trunk emits one action, which is "
+            "every round before 11.\n\n"
+            "The rungs themselves are declared by `model.fsq.ladder_offsets`; "
+            "this is only their weight. Each rung is normalised by its own "
+            "target variance before the mean, so an unequal valid-row count "
+            "across horizons (a row is dropped when an episode boundary falls "
+            "inside its horizon) cannot tilt the sum.\n\n"
+            "Motivation, measured: the h=0 target is state-linear to "
+            "R^2 = 0.999797, so there is 2.03e-4 of variance for the goal to "
+            "explain at the horizon the imitation loss is evaluated on -- and "
+            "at a bit-identical state the different-goal label excess at one "
+            "step is +0.0023 rad with a 95 % CI that contains zero. At 24 "
+            "steps it is +0.0633. Nothing in the goal channel can matter until "
+            "the loss looks where the goal does.",
+            "min": 0.0,
+        },
+    )
     sequence_viz: Optional[SequenceVizConfig] = field(
         default=None,
         metadata={

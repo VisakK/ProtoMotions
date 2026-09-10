@@ -112,6 +112,10 @@ FSQ_PHASE_INDEX_KEY = "_fsq_chunk_phase"
 # deployable action can carry no loss at all (round 7_1 §3.2).
 FSQ_USED_PRIOR_LATENT_KEY = "fsq_used_prior_latent"
 PRIOR_ACTION_KEY = "prior_action"
+# Full [B, rungs, A] trunk output of the PRIVILEGED decode, when the action
+# ladder is on. Written only by that one decode so the later prior/mean
+# decodes cannot overwrite the tensor the auxiliary loss reads.
+LADDER_PRED_KEY = "ladder_pred"
 
 _LATENT_OF_CODES = {
     FSQ_TEACHER_CODES_KEY: FSQ_TEACHER_LATENT_KEY,
@@ -134,6 +138,20 @@ class FSQMaskedMimicModel(BaseModel):
         self._trunk = trunk_class(config=self.config.trunk)
 
         fsq = self.config.fsq
+        # Action ladder. `ladder_offsets` is (0,) by default, which makes every
+        # branch below a no-op and the trunk a plain 69-way action head.
+        self._ladder_offsets = tuple(int(o) for o in getattr(fsq, "ladder_offsets", (0,)))
+        if self._ladder_offsets[0] != 0:
+            raise ValueError(
+                "fsq.ladder_offsets must start with 0 -- rung 0 is the action "
+                f"the simulator executes, got {self._ladder_offsets}"
+            )
+        if sorted(set(self._ladder_offsets)) != list(self._ladder_offsets):
+            raise ValueError(
+                f"fsq.ladder_offsets must be strictly increasing, got {self._ladder_offsets}"
+            )
+        self._num_rungs = len(self._ladder_offsets)
+
         self.quantizer = FiniteScalarQuantizer(
             fsq.num_fsq_levels, fsq.num_fsq_scalars
         )
@@ -311,10 +329,33 @@ class FSQMaskedMimicModel(BaseModel):
         tensordict: TensorDict,
         codes: torch.Tensor,
         log_internals: bool = False,
+        ladder_key: Optional[str] = None,
     ) -> torch.Tensor:
+        """Decode a code to the executed action, splitting the ladder rungs off.
+
+        With ``ladder_offsets == (0,)`` this is exactly the pre-v11 function.
+        With more rungs the trunk emits ``rungs * num_actions``; the returned
+        tensor is rung 0 -- byte-identically the action every caller already
+        expected -- and the full ``[B, rungs, A]`` block is published under
+        ``ladder_key`` when one is asked for. Only the privileged decode passes
+        a key, so the three later decodes in one forward cannot overwrite the
+        tensor the auxiliary loss reads.
+        """
         tensordict[VAE_LATENT_KEY] = codes
         tensordict = self._forward_module(self._trunk, tensordict, log_internals)
-        return tensordict[self._trunk.out_keys[0]]
+        out = tensordict[self._trunk.out_keys[0]]
+        if self._num_rungs == 1:
+            return out
+        if out.shape[-1] % self._num_rungs != 0:
+            raise ValueError(
+                f"trunk emits {out.shape[-1]} outputs, which is not divisible by "
+                f"{self._num_rungs} ladder rungs -- set the trunk's num_out to "
+                "len(ladder_offsets) * number_of_actions in the experiment file"
+            )
+        rungs = out.reshape(*out.shape[:-1], self._num_rungs, -1)
+        if ladder_key is not None:
+            tensordict[ladder_key] = rungs
+        return rungs[..., 0, :]
 
     def _write_chunk_phase(
         self, tensordict: TensorDict, refresh: torch.Tensor
@@ -523,7 +564,7 @@ class FSQMaskedMimicModel(BaseModel):
             tensordict, FSQ_TEACHER_CODES_KEY, teacher_codes
         )
         tensordict["privileged_action"] = self._decode(
-            tensordict, teacher_latent, log_internals
+            tensordict, teacher_latent, log_internals, ladder_key=LADDER_PRED_KEY
         )
 
         tensordict = self._forward_module(self._prior, tensordict, log_internals)

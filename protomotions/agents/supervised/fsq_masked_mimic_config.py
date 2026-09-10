@@ -164,6 +164,27 @@ class FSQIntentConfig:
         default_factory=FSQCEScheduleConfig,
         metadata={"help": "Token cross-entropy coefficient ramp."},
     )
+    ladder_offsets: tuple = field(
+        default=(0,),
+        metadata={
+            "help": "Action-ladder rungs, in control steps ahead. ``(0,)`` is "
+            "the pre-v11 behaviour exactly: the trunk emits one action and "
+            "nothing changes. With more rungs the trunk emits "
+            "``len(offsets) * num_actions``; rung 0 is still the executed "
+            "action and populates action/mean_action/privileged_action "
+            "byte-identically, while the later rungs are pure auxiliary "
+            "targets against the expert's action that many steps ahead.\n\n"
+            "Why: the single-step imitation target is a linear function of the "
+            "current state to R^2 = 0.999797 over 75,019 corpus rows, so at "
+            "h = 0 there is 2.03e-4 of variance left for the intent code to "
+            "explain and no bottleneck, code size or prior surgery can make "
+            "the goal matter there. The same map leaves 0.0167 at 8 steps and "
+            "0.0908 at 24. Measured at a bit-identical state, the "
+            "different-goal label excess is +0.0023 rad at one step (95 % CI "
+            "[-0.0004, +0.0051], contains zero) against +0.0633 at 24 steps. "
+            "The rungs put the goal's own horizon inside the loss."
+        },
+    )
 
 
 @dataclass
