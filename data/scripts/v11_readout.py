@@ -86,13 +86,25 @@ def per_goal(run: str) -> dict:
 
 
 def paired(arm: dict, base: dict, keep) -> tuple:
-    """Paired mean difference over goals, each averaged across its checkpoints."""
+    """Paired mean difference over goals, on MATCHED epochs only.
+
+    Averaging each run over whatever checkpoints it happens to have is a trap:
+    a young arm gets compared against a mature baseline's later, better
+    panels. Intersecting the epoch sets first is what makes the difference an
+    effect rather than an age gap.
+    """
+    epochs = sorted(
+        {e for goal in arm.values() for e in goal}
+        & {e for goal in base.values() for e in goal}
+    )
+    if not epochs:
+        return None
     deltas = []
     for key in sorted(set(arm) & set(base)):
         if not keep(key[0]):
             continue
-        a = list(arm[key].values())
-        b = list(base[key].values())
+        a = [arm[key][e] for e in epochs if e in arm[key]]
+        b = [base[key][e] for e in epochs if e in base[key]]
         if a and b:
             deltas.append(statistics.mean(a) - statistics.mean(b))
     if len(deltas) < 3:
@@ -168,7 +180,12 @@ def main() -> int:
             ("model/code_ablation_gap_h24", "code_ablation_gap_h24",
              "the A2 rung; ceiling 0.08-0.10"),
             ("model/code_ablation_gap_h0", "code_ablation_gap_h0",
-             "the matched control; ceiling 2.03e-4, so near-zero is CORRECT"),
+             "the matched control. NOT a ceiling comparison -- 2.03e-4 is how "
+             "much of the h=0 TARGET a linear state map leaves, while this is "
+             "how sensitive THIS trunk chose to be. A net is free to route "
+             "rung 0 through the code anyway. Read the RATIO h15/h0: above ~2 "
+             "means the far rung leans on the intent more than the executed "
+             "action does, which is the signature."),
             ("masked_mimic/mse", "imitation MSE",
              "guard: within ~1.5x of v9 at the same epoch"),
             ("model/fsq_code_perplexity", "code perplexity",
