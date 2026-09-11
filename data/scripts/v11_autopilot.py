@@ -298,17 +298,28 @@ def main() -> int:
     # ---- Stage 2 --------------------------------------------------------- #
     if not state.get("stage2_done"):
         healthy = bool(state["gate"].get("healthy", False))
-        mode = args.stage2_mode or ("a2" if healthy else "control")
-        note(
-            f"stage 2 = **{mode}** "
-            + (
+        if args.stage2_mode:
+            mode = args.stage2_mode
+            reason = (
+                "(operator override: the gate's rule could not encode "
+                "'passed the mechanism AND regressed behaviour', which A1 did. "
+                "That turned out to be a loss-balance bug -- the "
+                "variance-normalised ladder ran at 32.9x the imitation loss, "
+                "97 % of the trunk's gradient -- not a verdict on the ladder.)"
+            )
+        elif healthy:
+            mode = "a2"
+            reason = (
                 "(A1 healthy: escalate the horizon to h=24, where 0.0908 of the "
                 "target's variance is available against 0.0167 at h=15)"
-                if healthy
-                else "(A1 unhealthy: spend the week on a matched v9 baseline for "
+            )
+        else:
+            mode = "control"
+            reason = (
+                "(A1 unhealthy: spend the week on a matched v9 baseline for "
                 "this corpus rather than a second broken arm)"
             )
-        )
+        note(f"stage 2 = **{mode}** {reason}")
         state["stage2_mode"] = mode
         write_state(state)
         code = run_arm(mode, args.stage2_epochs, f"stage2_{mode}")
