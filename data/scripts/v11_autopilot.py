@@ -246,6 +246,15 @@ def main() -> int:
     parser.add_argument("--status", action="store_true", help="Print state and exit.")
     parser.add_argument("--stage1-epochs", type=int, default=STAGE1_EPOCHS)
     parser.add_argument("--stage2-epochs", type=int, default=STAGE2_EPOCHS)
+    parser.add_argument(
+        "--stage2-mode",
+        default=None,
+        help="Override the gate's choice of long arm. Used when a completed "
+             "stage 1 has already told us something the gate's rule could not "
+             "encode -- A1 passed its mechanism gate AND regressed behaviour, "
+             "which turned out to be a loss-balance bug rather than a verdict "
+             "on the ladder.",
+    )
     args = parser.parse_args()
 
     state = read_state()
@@ -289,7 +298,7 @@ def main() -> int:
     # ---- Stage 2 --------------------------------------------------------- #
     if not state.get("stage2_done"):
         healthy = bool(state["gate"].get("healthy", False))
-        mode = "a2" if healthy else "control"
+        mode = args.stage2_mode or ("a2" if healthy else "control")
         note(
             f"stage 2 = **{mode}** "
             + (

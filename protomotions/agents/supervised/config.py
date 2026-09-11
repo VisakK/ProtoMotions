@@ -158,6 +158,31 @@ class SupervisedAgentConfig(BaseAgentConfig):
             "min": 0.0,
         },
     )
+    ladder_balance_to_imitation: bool = field(
+        default=False,
+        metadata={
+            "help": "Scale the action ladder so its magnitude is "
+            "`ladder_loss_coeff` TIMES the imitation loss, rather than "
+            "`ladder_loss_coeff` in absolute terms.\n\n"
+            "Measured on the v11-A1 arm, this is not a nicety. Each rung is "
+            "divided by its own target variance to make the rungs "
+            "commensurable with each other -- but that leaves the ladder on a "
+            "completely different scale from the raw imitation MSE, which is "
+            "taken on normalised actions. At epoch 6,000 of A1 the imitation "
+            "term was 3.735e-4 and the ladder term 1.228e-2: the ladder was "
+            "**32.9x** the imitation loss, i.e. **97.05 %** of the gradient "
+            "the trunk ever saw. The trunk spent the run optimising futures it "
+            "never executes, its imitation MSE ended 1.30x v9's at the same "
+            "epoch, and commanded-goal pose error regressed 0.0395 m "
+            "(t = 2.93) against the matched baseline -- while the mechanism "
+            "itself worked (code_ablation_gap ratio h15/h0 = 3.1x).\n\n"
+            "Balancing also holds as training proceeds. A fixed coefficient "
+            "drifts toward ladder dominance on its own, because the imitation "
+            "MSE keeps descending its power law while the far rungs plateau -- "
+            "the far horizons are irreducibly harder, which is the entire "
+            "reason they were added.",
+        },
+    )
     sequence_viz: Optional[SequenceVizConfig] = field(
         default=None,
         metadata={

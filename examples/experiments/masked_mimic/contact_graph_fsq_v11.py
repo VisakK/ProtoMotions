@@ -110,6 +110,16 @@ def additional_experiment_arguments(parser: argparse.ArgumentParser):
              "A2 runs 0 8 16 24 alongside --encoder-future-steps 1 8 16 24.",
     )
     parser.add_argument(
+        "--ladder-balance",
+        type=lambda v: str(v).lower() not in ("0", "false", "no"),
+        default=False,
+        help="Interpret --ladder-loss-coeff as a MULTIPLE OF THE IMITATION "
+             "LOSS rather than an absolute weight. A1 measured why this "
+             "matters: the variance-normalised ladder ran at 32.9x the "
+             "imitation term, 97 % of the trunk's gradient. False reproduces "
+             "A1 exactly.",
+    )
+    parser.add_argument(
         "--ladder-loss-coeff",
         type=float,
         default=1.0,
@@ -164,6 +174,7 @@ def agent_config(
         return cfg
 
     cfg.ladder_loss_coeff = float(getattr(args, "ladder_loss_coeff", 1.0))
+    cfg.ladder_balance_to_imitation = bool(getattr(args, "ladder_balance", False))
     num_actions = robot_config.number_of_actions
     widened = False
     for model_cfg in cfg.model.trunk.models:

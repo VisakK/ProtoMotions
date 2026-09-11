@@ -801,7 +801,13 @@ class SupervisedAgent(BaseAgent):
             )
             self.experience_buffer.batch_update_data(ladder_valid_key(offset), valid)
 
-    def calculate_ladder_loss(self, batch_dict) -> Tuple[Tensor, Dict]:
+    @property
+    def _ladder_balance(self) -> bool:
+        return bool(getattr(self.config, "ladder_balance_to_imitation", False))
+
+    def calculate_ladder_loss(
+        self, batch_dict, imitation_loss: Optional[Tensor] = None
+    ) -> Tuple[Tensor, Dict]:
         """Auxiliary MSE between the trunk's far rungs and the expert ahead.
 
         Each rung is divided by its own target variance before the mean, so the
@@ -844,8 +850,19 @@ class SupervisedAgent(BaseAgent):
         if charged == 0:
             return zero
         total = total / charged
-        log["ladder/loss"] = total.detach()
-        return (self._ladder_loss_coeff * total, log)
+        log["ladder/mean_rung"] = total.detach()
+        if self._ladder_balance and imitation_loss is not None:
+            # Put the ladder on the imitation loss's own scale, so the
+            # coefficient means "this fraction of the imitation term" rather
+            # than an absolute number on an unrelated scale. Detached on both
+            # sides: this is a weighting, not a path for the imitation loss to
+            # be optimised through the ladder.
+            ratio = imitation_loss.detach() / total.detach().clamp(min=1e-12)
+            total = total * ratio
+            log["ladder/balance_scale"] = ratio
+        weighted = self._ladder_loss_coeff * total
+        log["ladder/loss"] = weighted.detach()
+        return (weighted, log)
 
     @torch.no_grad()
     def ladder_code_ablation(self, batch_dict) -> Dict:
@@ -923,7 +940,9 @@ class SupervisedAgent(BaseAgent):
         extra_loss = extra_loss + dagger_loss
         extra_log_dict.update(dagger_log_dict)
 
-        ladder_loss, ladder_log_dict = self.calculate_ladder_loss(batch_td)
+        ladder_loss, ladder_log_dict = self.calculate_ladder_loss(
+            batch_td, imitation_loss=supervised_loss
+        )
         extra_loss = extra_loss + ladder_loss
         extra_log_dict.update(ladder_log_dict)
         if self._ladder_ablation_due():

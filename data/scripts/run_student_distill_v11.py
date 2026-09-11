@@ -129,6 +129,7 @@ MODES = {
         experiment="smpl_yogi_v11_ladder_smoke",
         ladder_offsets=[0, 5, 10, 15],
         ladder_coeff=1.0,
+        ladder_balance=True,
         encoder_future=None,
         num_envs=64,
         batch_size=512,
@@ -140,6 +141,25 @@ MODES = {
         experiment="smpl_yogi_contact_graph_student_s2_v11_ladder",
         ladder_offsets=[0, 5, 10, 15],
         ladder_coeff=1.0,
+        encoder_future=None,
+        num_envs=1024,
+        batch_size=8192,
+        max_epochs=None,
+        viz_every=500,
+        wandb=True,
+    ),
+    # The week-long arm. A1's rungs at a BALANCED weight: measured on A1, the
+    # variance-normalised ladder ran at 32.9x the imitation loss, i.e. 97.05 %
+    # of the gradient the trunk saw, and the behaviour regressed 0.0395 m
+    # (t = 2.93) while the mechanism itself worked (gap ratio h15/h0 = 3.1x).
+    # Balancing makes the coefficient mean "this fraction of the imitation
+    # term", so 0.3 is a ladder with real influence that cannot swamp the
+    # action the simulator actually executes.
+    "a1b": dict(
+        experiment="smpl_yogi_contact_graph_student_s2_v11_ladder_balanced",
+        ladder_offsets=[0, 5, 10, 15],
+        ladder_coeff=0.3,
+        ladder_balance=True,
         encoder_future=None,
         num_envs=1024,
         batch_size=8192,
@@ -202,6 +222,7 @@ def build_command(mode: str, extra: list) -> list:
         # The one change.
         "--ladder-offsets", *[str(o) for o in cfg["ladder_offsets"]],
         "--ladder-loss-coeff", str(cfg["ladder_coeff"]),
+        "--ladder-balance", str(bool(cfg.get("ladder_balance", False))),
         "--num-envs", str(cfg["num_envs"]),
         "--batch-size", str(cfg["batch_size"]),
         "--headless", "True",
