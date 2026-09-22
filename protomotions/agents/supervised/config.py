@@ -9,7 +9,6 @@ from typing import Optional
 
 from protomotions.agents.base_agent.config import BaseAgentConfig, BaseModelConfig
 from protomotions.agents.common.supervision import SupervisionLossConfig
-from protomotions.agents.evaluators.sequence_viz import SequenceVizConfig
 
 
 class RolloutActor(Enum):
@@ -181,12 +180,5 @@ class SupervisedAgentConfig(BaseAgentConfig):
             "MSE keeps descending its power law while the far rungs plateau -- "
             "the far horizons are irreducibly harder, which is the entire "
             "reason they were added.",
-        },
-    )
-    sequence_viz: Optional[SequenceVizConfig] = field(
-        default=None,
-        metadata={
-            "help": "In-training stick-figure videos of goal sequences, "
-            "rendered with matplotlib and logged to wandb. None disables."
         },
     )

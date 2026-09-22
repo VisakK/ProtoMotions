@@ -144,6 +144,10 @@ def test_skeleton_bones_joins_by_name_across_body_orders():
 def test_short_config_compacts_zone_names():
     text = short_config("L_FOOT:G|R_FOOT:G|L_SHANK+L_UPPER_ARM@upright")
     assert "LF" in text and "RF" in text and "LS" in text and "@upri" in text
+    # Hold-graph keys lead with a name token; it is abbreviated, not allowed
+    # to push the zones out of the title.
+    named = short_config("Crane_Crow_Pose_or_Bakasana|L_HAND:G|R_HAND:G@prone")
+    assert named.startswith("Crane_Crow_Pos") and "LH RH @pron" in named
 
 
 def test_render_stick_video_writes_an_mp4(tmp_path):
@@ -210,6 +214,17 @@ def test_resolve_clip_prefers_the_original_over_derived_hold_clips():
     # A genuinely ambiguous needle (two non-hold matches) still refuses.
     runner.motion_names.append("220926_Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana_-a")
     assert runner._resolve_clip("Adho_Mukha_Svanasana_-a") is None
+
+    # Hold-extended variants (`<stem>_x3s`, `<stem>_x7s`) contain the source
+    # stem; an exact stem wins over its own derivatives.
+    runner.motion_names = [
+        "220926_Warrior_II_Pose_or_Virabhadrasana_II_-a",
+        "220926_Warrior_II_Pose_or_Virabhadrasana_II_-a_x3s",
+        "220926_Warrior_II_Pose_or_Virabhadrasana_II_-a_x7s",
+    ]
+    assert runner._resolve_clip("220926_Warrior_II_Pose_or_Virabhadrasana_II_-a") == 0
+    assert runner._resolve_clip("220926_Warrior_II_Pose_or_Virabhadrasana_II_-a_x7s") == 2
+    assert runner._resolve_clip("Warrior_II") is None
 
 
 def _viz_agent(epoch, every=500, rank=0):

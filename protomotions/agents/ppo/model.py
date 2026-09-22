@@ -160,3 +160,13 @@ class PPOModel(BaseModel):
         tensordict = self._critic(tensordict)
 
         return tensordict
+
+    def forward_inference(self, tensordict: TensorDict) -> TensorDict:
+        """Deployable inference: the actor alone.
+
+        The contract the probe and visualization drivers (``SequenceVizRunner``,
+        ``run_sequence_panel.py``) rely on: ``mean_action`` is the deterministic
+        policy, ``action`` a sample. The critic is not run -- its inputs may be
+        privileged (asymmetric actor/critic) and are not needed to act.
+        """
+        return self._actor(tensordict)

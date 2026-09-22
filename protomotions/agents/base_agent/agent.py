@@ -1033,7 +1033,77 @@ class BaseAgent:
         # Perform a single optimization step and return the log dictionary
         pass
 
+    def _maybe_run_sequence_viz(self) -> None:
+        """Render the stick-figure sequence panel when the epoch asks for it.
+
+        Agent-agnostic: the runner needs an environment whose control component
+        exposes ``set_manual_goal`` (the contact-graph control) and a model with
+        ``forward_inference`` -- both the supervised students and the PPO
+        experts qualify. Fully guarded: any failure disables the feature for
+        the rest of the run rather than killing training, and the env is
+        snapshot/restored inside the runner, so the next policy update is
+        skipped exactly as after eval.
+        """
+        viz_config = getattr(getattr(self, "config", None), "sequence_viz", None)
+        every = int(getattr(viz_config, "viz_every", 0) or 0) if viz_config else 0
+        if (
+            every <= 0
+            or self.current_epoch == 0
+            or self.current_epoch % every != 0
+            or getattr(self, "_sequence_viz_disabled", False)
+            or self.fabric.global_rank != 0
+        ):
+            return
+        try:
+            if not hasattr(self, "_sequence_viz_runner"):
+                from protomotions.agents.evaluators.sequence_viz import (
+                    SequenceVizRunner,
+                )
+
+                self._sequence_viz_runner = SequenceVizRunner(self, viz_config)
+            # The runner disturbs every env; skip the next update even if the
+            # rollout dies partway, exactly as the evaluator path does.
+            self._skip_next_policy_update = True
+            videos, scalars = self._sequence_viz_runner.run(self.current_epoch)
+            self._log_sequence_viz(videos, scalars)
+        except Exception:
+            log.exception(
+                "sequence viz failed at epoch %d; disabling it for the rest of "
+                "the run",
+                self.current_epoch,
+            )
+            self._sequence_viz_disabled = True
+
+    def _log_sequence_viz(self, videos: Dict, scalars: Dict) -> None:
+        wandb_logger = next(
+            (
+                logger
+                for logger in getattr(self.fabric, "loggers", [])
+                if type(logger).__name__ == "WandbLogger"
+            ),
+            None,
+        )
+        if wandb_logger is None:
+            return
+        import wandb
+
+        payload: Dict = {
+            key: wandb.Video(str(path), format="mp4")
+            for key, path in videos.items()
+        }
+        # Gated at the logger rather than at the source: the scalars are still
+        # computed and still written to viz/epoch_*/summary.json, so offline
+        # analysis is unaffected -- only the dashboard clutter goes away.
+        viz_config = getattr(getattr(self, "config", None), "sequence_viz", None)
+        if getattr(viz_config, "log_scalars", True):
+            payload.update(scalars)
+        wandb_logger.experiment.log(payload, step=self.current_epoch)
+
     def post_epoch_logging(self, training_log_dict: Dict):
+        # The in-training stick-figure panel (config.sequence_viz). Runs on
+        # its own epoch cadence, snapshots and restores the environment, and
+        # is fully guarded -- see _maybe_run_sequence_viz.
+        self._maybe_run_sequence_viz()
         end_time = time.time()
 
         # Get mean episode statistics and clear meters

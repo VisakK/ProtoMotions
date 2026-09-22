@@ -237,7 +237,9 @@ def short_config(config: str, max_len: int = 34) -> str:
             a, b = pair.split("+", 1)
             out.append(f"{_ZONE_SHORT.get(a, a)}·{_ZONE_SHORT.get(b, b)}")
         else:
-            out.append(pair)
+            # A hold-graph key leads with the hold's name (`NAME|PAIRS@ORIENT`);
+            # abbreviate it so the zone summary still fits the title.
+            out.append(pair[:14])
     return (" ".join(out) + " @" + orient[:4])[:max_len]
 
 
@@ -598,6 +600,12 @@ class SequenceVizRunner:
     # Sequence construction
     # ------------------------------------------------------------------ #
     def _resolve_clip(self, needle: str) -> Optional[int]:
+        # An exact stem wins outright: with hold-extended variants in the
+        # corpus (`<stem>_x3s`, `<stem>_x7s`) every source stem is a substring
+        # of two other names, and a plan naming the source means the source.
+        exact = [i for i, n in enumerate(self.motion_names) if n == needle]
+        if len(exact) == 1:
+            return exact[0]
         matches = [
             i for i, n in enumerate(self.motion_names) if needle.lower() in n.lower()
         ]

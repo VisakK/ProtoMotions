@@ -17,6 +17,7 @@ Key Classes:
 from typing import Optional, List, Tuple
 from dataclasses import dataclass, field
 from protomotions.agents.evaluators.config import EvaluatorConfig
+from protomotions.agents.evaluators.sequence_viz import SequenceVizConfig
 
 
 @dataclass
@@ -208,5 +209,15 @@ class BaseAgentConfig:
         metadata={
             "help": "EMA decay for reward normalization (None = Welford). "
             "Set to e.g. 0.99 to track non-stationary reward distributions."
+        },
+    )
+    sequence_viz: Optional[SequenceVizConfig] = field(
+        default=None,
+        metadata={
+            "help": "In-training stick-figure videos of goal sequences, rendered "
+            "with matplotlib and logged to wandb every `viz_every` epochs. Any "
+            "agent whose environment has a control component with "
+            "`set_manual_goal` (the contact-graph experts and students) can use "
+            "it; None disables."
         },
     )
