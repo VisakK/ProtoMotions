@@ -73,3 +73,52 @@ class MimicEvaluatorConfig(EvaluatorConfig):
             "max": 1.0,
         }
     )
+
+
+@dataclass
+class HoldCurriculumConfig:
+    """Uniform + performance curriculum driven by ``HoldCurriculumEvaluator``."""
+
+    uniform_fraction: float = field(
+        default=0.8,
+        metadata={"help": "Share of sampling mass spread uniformly over motions.", "min": 0.0, "max": 1.0},
+    )
+    score_ema_keep: float = field(
+        default=0.5,
+        metadata={"help": "EMA weight on the previous per-motion score (smooths single-rollout noise).",
+                  "min": 0.0, "max": 1.0},
+    )
+    priority_power: float = field(
+        default=1.0, metadata={"help": "Prioritized mass ~ (1 - score) ** power + eps."}
+    )
+    priority_eps: float = field(
+        default=1e-3, metadata={"help": "Floor added to every motion's priority."}
+    )
+    track_weight: float = field(
+        default=0.5, metadata={"help": "score = w * p_track + (1 - w) * p_hold."}
+    )
+    track_fail_m: float = field(
+        default=0.5, metadata={"help": "Max-body error counted as a tracking failure (training gate)."}
+    )
+    pose_threshold_m: float = field(
+        default=0.15, metadata={"help": "6-body best-yaw distance under which a hold frame is attained."}
+    )
+    foot_down_z: float = field(
+        default=0.08, metadata={"help": "A support zone is on the floor below this body-origin height."}
+    )
+    unloaded_ref_min_z: float = field(
+        default=0.15,
+        metadata={"help": "A zone must stay off the floor in a hold when the reference keeps it above this."},
+    )
+
+
+@dataclass
+class HoldCurriculumEvaluatorConfig(MimicEvaluatorConfig):
+    """MimicEvaluator whose sampling update is a uniform + hold-performance mixture."""
+
+    _target_: str = "protomotions.agents.evaluators.hold_curriculum_evaluator.HoldCurriculumEvaluator"
+    hold_manifest: str = field(
+        default="",
+        metadata={"help": "holds_extended.yaml of the packaged motion file (holds, families, groups)."},
+    )
+    curriculum: HoldCurriculumConfig = field(default_factory=HoldCurriculumConfig)

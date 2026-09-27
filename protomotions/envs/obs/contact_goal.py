@@ -94,6 +94,26 @@ def compute_contact_goal_pose_error_visible(pose_error_visible: Tensor) -> Tenso
     return pose_error_visible
 
 
+def compute_unwanted_support_rew(unwanted_support: Tensor) -> Tensor:
+    """Unwanted-support penalty in [0, 1] [num_envs]; bind with a NEGATIVE weight.
+
+    Ground load on zones the commanded hold keeps free, saturating at a fraction
+    of body weight -- see ``protomotions/envs/control/support_penalty.py`` and
+    ``expert_revist/contact_reward/README.MD``.
+    """
+    return unwanted_support
+
+
+def compute_unwanted_support_n(unwanted_support_n: Tensor) -> Tensor:
+    """Weight-0 diagnostic: the charged ground load in newtons [num_envs]."""
+    return unwanted_support_n
+
+
+def compute_support_gate(support_gate: Tensor) -> Tensor:
+    """Weight-0 diagnostic: 1.0 where the penalty is armed (inside a commanded hold)."""
+    return support_gate
+
+
 def compute_contact_history_obs(history_features: Tensor) -> Tensor:
     """Flatten the measured contact-event history tokens.
 

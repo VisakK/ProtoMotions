@@ -171,6 +171,7 @@ class ContactGraph:
         min_lead_s: Optional[float] = None,
         include_current: bool = False,
         promote_k: Optional[Tensor] = None,
+        interval: bool = False,
     ) -> Tuple[Tensor, Tensor]:
         """Segment indices of the next ``num_steps`` holds, and their validity.
 
@@ -208,6 +209,18 @@ class ContactGraph:
                 invalidate a goal that would otherwise have been valid.  With
                 ``include_current`` the current segment is exempt -- promotion
                 moves the horizon, not the "you are here".
+            interval: With ``include_current``, choose goals by segment
+                *intervals* instead of by hold times: slot 0 is the segment
+                the clip is inside, else the first segment that has not begun
+                yet, and the window follows in segment order.  ``min_lead_s``
+                is not used.  The legacy rule searches hold times at
+                ``now + min_lead_s``, so in the gap just before a hold whose
+                hold frame is within ``min_lead_s`` of its start it skips that
+                hold, then serves it again once the segment begins -- slot 0
+                steps *backwards* (52 events over 42 of the 180 expert60
+                variants).  This rule is monotonic in segment order by
+                construction.  Requires ``include_current``; incompatible with
+                ``promote_k``.
 
         Returns:
             ``(indices [E, num_steps], valid [E, num_steps])``.  Indices are
@@ -215,6 +228,8 @@ class ContactGraph:
             is False there and for motions with no segments at all, so callers
             can zero the goal rather than repeat a stale one.
         """
+        if interval and promote_k is not None:
+            raise ValueError("interval=True does not support far-goal promotion (promote_k)")
         lead = self.min_lead_s if min_lead_s is None else min_lead_s
         holds = self.seg_hold.index_select(0, motion_ids)              # [E, S]
         counts = self.seg_count.index_select(0, motion_ids)            # [E]
@@ -242,12 +257,23 @@ class ContactGraph:
                 & (now >= starts.gather(1, current))
                 & (now <= ends.gather(1, current))
             )
-            # The forward window never re-serves the segment now in slot 0.
-            forward = torch.maximum(first, current + 1)
-            head = torch.where(inside, current, first)
-            tail_start = torch.where(inside, forward, first + 1)
+            if interval:
+                # The first segment that has not begun: starts are sorted and
+                # padded with +inf, so this is the count of started segments.
+                upcoming = torch.searchsorted(
+                    starts.contiguous(), now.contiguous(), right=True
+                )
+                head = torch.where(inside, current, upcoming)
+                tail_start = head + 1
+            else:
+                # The forward window never re-serves the segment now in slot 0.
+                forward = torch.maximum(first, current + 1)
+                head = torch.where(inside, current, first)
+                tail_start = torch.where(inside, forward, first + 1)
             raw = torch.cat([head, tail_start + offsets[:, : num_steps - 1]], dim=-1)
         else:
+            if interval:
+                raise ValueError("interval=True requires include_current=True")
             raw = first + offsets                                      # [E, K]
 
         valid = raw < counts.unsqueeze(-1)

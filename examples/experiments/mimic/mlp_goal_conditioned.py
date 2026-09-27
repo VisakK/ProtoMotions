@@ -32,6 +32,12 @@ sparse-goal RL. Stillness in the extended holds is paid for by ``gv``/``gav``
 against a frozen reference. The goal-attainment quantities the runtime
 already computes (contact IoU against the nearest goal, 6-body pose error to
 the commanded hold) are logged at weight 0 as ``raw_r/diag_*``.
+``--support-penalty-weight`` adds the one contact term this experiment
+supports, ``unwanted_support_rew``: terrain-filtered ground load on zones the
+commanded hold keeps free, during the hold (``expert_revist/contact_reward/README.MD``).
+``--support-ema-tau`` averages that load before the saturating clamp, so a tapping foot pays
+what a resting one does (``expert_revist/ft_b_support/report.MD`` §8). The default 0 is
+ft_b's per-frame term. Without the flags the reward dict is exactly fine-tune A's.
 
 **Goals** come from ``data/scripts/build_hold_graph.py`` (nodes = named holds
 from the kinematic manifest; the transitions are the gaps between them), on
@@ -220,6 +226,58 @@ def additional_experiment_arguments(parser: argparse.ArgumentParser):
              "by default (round 8): each is one draw per sequence per epoch; "
              "they are always written to viz/epoch_*/summary.json.",
     )
+    # --- Fine-tune A (expert_revist/run1_gap_analysis.MD §3 step 2) ---------- #
+    # Every default below reproduces round 1 exactly.
+    parser.add_argument(
+        "--curriculum", type=str, default="legacy", choices=["legacy", "mixture"],
+        help="legacy: stock MimicEvaluator weights (failing clip -> 1.0, passing "
+             "clip x0.819 per eval, no floor). mixture: --uniform-fraction of the "
+             "sampling mass uniform, the rest in proportion to 1 - hold-aware "
+             "performance score (HoldCurriculumEvaluator).",
+    )
+    parser.add_argument("--uniform-fraction", type=float, default=0.8)
+    parser.add_argument(
+        "--score-ema-keep", type=float, default=0.5,
+        help="mixture: EMA weight on a motion's previous score across evaluations.",
+    )
+    parser.add_argument(
+        "--hold-manifest", type=str, default=None,
+        help="mixture: holds_extended.yaml matching --motion-file.",
+    )
+    parser.add_argument("--eval-every", type=int, default=200,
+                        help="Evaluate (and update the curriculum) every N epochs.")
+    parser.add_argument(
+        "--eval-max-steps", type=int, default=600,
+        help="Evaluation window in control steps. 600 = 20 s (round 1); the "
+             "longest expert60 clip is 73 s = 2190 steps.",
+    )
+    parser.add_argument(
+        "--interval-schedule",
+        type=lambda v: str(v).lower() not in ("0", "false", "no"),
+        default=False,
+        help="Monotonic goal schedule (ContactGraphControlConfig.interval_schedule).",
+    )
+    parser.add_argument("--save-every", type=int, default=1000,
+                        help="save_epoch_checkpoint_every.")
+    # --- Unwanted-support penalty (expert_revist/contact_reward/README.MD) ---- #
+    # Absent by default: without --support-penalty-weight the reward dict is
+    # exactly fine-tune A's.
+    parser.add_argument(
+        "--support-penalty-weight", type=float, default=None,
+        help="Weight of unwanted_support_rew (negative). Given at all -- even 0.0 -- it "
+             "also adds the weight-0 diagnostics diag_unwanted_support_n and "
+             "diag_support_gate; 0.0 is the calibration smoke.",
+    )
+    parser.add_argument("--support-clear-height", type=float, default=0.25,
+                        help="Reference joint-centre height (m) above which a label-free zone must carry no load.")
+    parser.add_argument("--support-load-ref-frac", type=float, default=0.1,
+                        help="Charged load, as a fraction of body weight, at which the penalty saturates.")
+    parser.add_argument("--support-exclude-motions", type=str, nargs="*", default=[],
+                        help="Motion-name substrings never charged (covers every hold-duration variant).")
+    parser.add_argument("--support-ema-tau", type=float, default=0.0,
+                        help="Time constant (s) of the moving average applied to the charged load "
+                             "before the clamp. 0 = the per-frame term ft_b trained with; 0.25 closes "
+                             "its duty-cycle loophole (report.MD §8).")
 
 
 def terrain_config(args: argparse.Namespace):
@@ -294,9 +352,12 @@ def env_config(robot_cfg: RobotConfig, args: argparse.Namespace) -> EnvConfig:
         compute_contact_goal_reached,
         compute_contact_state_obs,
         compute_historical_poses_with_time,
+        compute_support_gate,
         compute_target_masks_only,
         compute_target_poses_only,
         compute_target_time_offsets,
+        compute_unwanted_support_n,
+        compute_unwanted_support_rew,
         to_float,
     )
 
@@ -326,8 +387,13 @@ def env_config(robot_cfg: RobotConfig, args: argparse.Namespace) -> EnvConfig:
             # seconds" outside one (v10_1 semantics).
             dwell_channels=True,
             include_current_segment=True,
+            interval_schedule=bool(getattr(args, "interval_schedule", False)),
             force_max_conditioned_bodies_prob=0.0,
             force_small_num_conditioned_bodies_prob=0.0,
+            support_clear_height=float(getattr(args, "support_clear_height", 0.25)),
+            support_load_ref_frac=float(getattr(args, "support_load_ref_frac", 0.1)),
+            support_exclude_motions=list(getattr(args, "support_exclude_motions", None) or []),
+            support_ema_tau_s=float(getattr(args, "support_ema_tau", 0.0) or 0.0),
         ),
     }
 
@@ -478,6 +544,27 @@ def env_config(robot_cfg: RobotConfig, args: argparse.Namespace) -> EnvConfig:
             static_params={"weight": 0.0},
         ),
     }
+    support_weight = getattr(args, "support_penalty_weight", None)
+    if support_weight is not None:
+        if support_weight > 0:
+            raise ValueError("--support-penalty-weight is a penalty: give it a negative weight")
+        # One-sided, hold-gated ground-load penalty on zones the commanded hold
+        # keeps free (support_penalty.py); calibrated offline on ft_a epoch 3500.
+        reward_components["unwanted_support_rew"] = MdpComponent(
+            compute_func=compute_unwanted_support_rew,
+            dynamic_vars={"unwanted_support": EnvContext.contact_goal.unwanted_support},
+            static_params={"weight": float(support_weight), "zero_during_grace_period": True},
+        )
+        reward_components["diag_unwanted_support_n"] = MdpComponent(
+            compute_func=compute_unwanted_support_n,
+            dynamic_vars={"unwanted_support_n": EnvContext.contact_goal.unwanted_support_n},
+            static_params={"weight": 0.0},
+        )
+        reward_components["diag_support_gate"] = MdpComponent(
+            compute_func=compute_support_gate,
+            dynamic_vars={"support_gate": EnvContext.contact_goal.support_gate},
+            static_params={"weight": 0.0},
+        )
 
     return EnvConfig(
         ref_contact_smooth_window=7,
@@ -561,6 +648,43 @@ def agent_config(
             log_scalars=bool(getattr(args, "viz_log_scalars", False)),
         )
 
+    evaluation_components = {
+        "gt_error": gt_error_factory(threshold=0.5),
+        "gr_error": gr_error_factory(),
+        "max_joint_error": max_joint_error_factory(),
+    }
+    eval_every = int(getattr(args, "eval_every", 200) or 200)
+    eval_max_steps = int(getattr(args, "eval_max_steps", 600) or 600)
+    if getattr(args, "curriculum", "legacy") == "mixture":
+        from protomotions.agents.evaluators.config import (
+            HoldCurriculumConfig,
+            HoldCurriculumEvaluatorConfig,
+        )
+
+        hold_manifest = getattr(args, "hold_manifest", None)
+        if not hold_manifest:
+            raise ValueError("--curriculum mixture needs --hold-manifest")
+        evaluator = HoldCurriculumEvaluatorConfig(
+            evaluation_components=evaluation_components,
+            max_eval_steps=eval_max_steps,
+            eval_metrics_every=eval_every,
+            hold_manifest=hold_manifest,
+            curriculum=HoldCurriculumConfig(
+                uniform_fraction=float(getattr(args, "uniform_fraction", 0.8)),
+                score_ema_keep=float(getattr(args, "score_ema_keep", 0.5)),
+            ),
+        )
+    else:
+        evaluator = MimicEvaluatorConfig(
+            evaluation_components=evaluation_components,
+            max_eval_steps=eval_max_steps,
+            eval_metrics_every=eval_every,
+            motion_weights_rules=MotionWeightsRulesConfig(
+                motion_weights_update_success_discount=0.999,
+                motion_weights_update_failure_discount=0,
+            ),
+        )
+
     return PPOAgentConfig(
         sequence_viz=sequence_viz,
         model=PPOModelConfig(
@@ -573,20 +697,10 @@ def agent_config(
         ),
         batch_size=args.batch_size,
         training_max_steps=args.training_max_steps,
-        save_epoch_checkpoint_every=1000,
+        save_epoch_checkpoint_every=int(getattr(args, "save_every", 1000) or 1000),
         gradient_clip_val=50.0,
         clip_critic_loss=True,
-        evaluator=MimicEvaluatorConfig(
-            evaluation_components={
-                "gt_error": gt_error_factory(threshold=0.5),
-                "gr_error": gr_error_factory(),
-                "max_joint_error": max_joint_error_factory(),
-            },
-            motion_weights_rules=MotionWeightsRulesConfig(
-                motion_weights_update_success_discount=0.999,
-                motion_weights_update_failure_discount=0,
-            ),
-        ),
+        evaluator=evaluator,
         advantage_normalization=AdvantageNormalizationConfig(
             enabled=True, shift_mean=True, use_ema=True
         ),
@@ -609,3 +723,7 @@ def apply_inference_overrides(
     env_cfg.max_episode_length = 1000000
     env_cfg.motion_manager.resample_on_reset = True
     env_cfg.motion_manager.init_start_prob = 1.0
+    # Segment anchoring runs after the t = 0 draw and would overwrite it on 60 %
+    # of resets (audit 2026-09-21 runtime §8); inference means clip starts.
+    if hasattr(env_cfg.motion_manager, "segment_start_prob"):
+        env_cfg.motion_manager.segment_start_prob = 0.0

@@ -206,6 +206,15 @@ def create_parser():
         help="Path to checkpoint file to resume from",
     )
     parser.add_argument(
+        "--warm-start-optimization-state",
+        action="store_true",
+        default=False,
+        help="Warm start only: also restore the reward normalizer and the "
+             "algorithm's optimizer-side state (PPO: optimizers, advantage EMA) "
+             "from --checkpoint; counters and evaluator state stay fresh. Use "
+             "when fine-tuning with an unchanged reward.",
+    )
+    parser.add_argument(
         "--use-wandb",
         action="store_true",
         default=False,
@@ -818,7 +827,13 @@ def main():
 
     agent.setup()
     agent.fabric.strategy.barrier()
-    agent.load(args.checkpoint, load_training_state=(mode == "resume"))
+    if getattr(args, "warm_start_optimization_state", False) and mode == "warm_start":
+        # Fine-tuning with an unchanged reward: keep the loaded critic's value
+        # scale by restoring the reward normalizer (and optimizer/advantage
+        # state), but start counters and evaluator state fresh.
+        agent.load(args.checkpoint, load_training_state=False, load_optimization_state=True)
+    else:
+        agent.load(args.checkpoint, load_training_state=(mode == "resume"))
 
     # ===================================================================
     # 6. Save Configs (First Run Only - Warm Start or Fresh)

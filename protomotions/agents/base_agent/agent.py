@@ -279,7 +279,17 @@ class BaseAgent:
         checkpoint: Path,
         load_env: bool = True,
         load_training_state: bool = True,
+        load_optimization_state: bool = False,
     ):
+        """Load a checkpoint.
+
+        ``load_optimization_state`` (warm starts only; implied by
+        ``load_training_state``) additionally restores the reward normalizer and
+        the algorithm's optimizer-side state (PPO: optimizers, advantage EMA) but
+        not the epoch/step counters, best score or evaluator state -- the right
+        choice when fine-tuning with an unchanged reward, where a fresh reward
+        normalizer would mis-scale the loaded critic for the first epochs.
+        """
         if checkpoint is not None:
             self.fabric.call("on_load_checkpoint_start")
             path_before_resolve = Path(checkpoint)
@@ -293,6 +303,8 @@ class BaseAgent:
                 state_dict,
                 load_training_state=load_training_state,
             )
+            if load_optimization_state and not load_training_state:
+                self._load_optimization_state(state_dict)
 
             self.just_loaded_checkpoint_should_evaluate = True
 
@@ -357,6 +369,16 @@ class BaseAgent:
         if self.evaluator is not None:
             if "evaluator" in state_dict:
                 self.evaluator.load_state_dict(state_dict["evaluator"])
+
+    def _load_optimization_state(self, state_dict):
+        """Warm-start subset of the training state: the reward normalizer.
+
+        Subclasses extend this with their optimizer-side state. Counters, best
+        score and evaluator state are deliberately left fresh.
+        """
+        if self.config.normalize_rewards and "running_reward_norm" in state_dict:
+            self.running_reward_norm.load_state_dict(state_dict["running_reward_norm"])
+            print("Warm start: restored running_reward_norm from checkpoint")
 
     # -----------------------------
     # Model Saving and State Dict

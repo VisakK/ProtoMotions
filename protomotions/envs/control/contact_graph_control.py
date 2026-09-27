@@ -36,14 +36,15 @@ work unchanged; ``ctx.contact_goal`` carries the contact half.
 """
 
 import logging
-from dataclasses import dataclass
-from typing import TYPE_CHECKING, Dict, Optional, Tuple
+from dataclasses import dataclass, field
+from typing import TYPE_CHECKING, Dict, List, Optional, Tuple
 
 import torch
 from torch import Tensor
 
 from protomotions.components.contact_graph import ContactGraph
 from protomotions.envs.control.contact_event_tracker import ContactEventTracker
+from protomotions.envs.control.support_penalty import ChargedLoadEMA, unwanted_support
 from protomotions.envs.context_views import (
     ContactGoalContext,
     EnvContext,
@@ -125,6 +126,38 @@ class ContactGraphControlConfig(MaskedMimicControlConfig):
             disables. Sampled per episode at reset, never mid-episode.
         far_goal_max_skip: Upper bound of the uniform skip when promotion fires.
             No measurement backs the default; it is a first guess.
+        interval_schedule: With ``include_current_segment``, pick goals by
+            segment interval (the segment the clip is inside, else the first
+            that has not begun) instead of by hold time at ``now +
+            min_lead_s``. The legacy rule steps slot 0 backwards at 52 hold
+            entries over 42 of the 180 expert60 variants; this one is monotonic
+            by construction (``ContactGraph.next_goal_indices(interval=True)``).
+            Default False keeps every existing experiment unchanged.
+        support_clear_height: Unwanted-support penalty
+            (``protomotions/envs/control/support_penalty.py``,
+            ``expert_revist/contact_reward/README.MD``): a zone must be kept
+            unloaded only if the commanded hold's ground set leaves it out **and**
+            the reference keeps its lowest joint centre above this height (m).
+            0.25 m was the lowest clearance with no false positive on the ft_a
+            calibration (0.15 m still charged a float-biased foot).
+        support_load_ref_frac: Charged ground load, as a fraction of body weight,
+            at which the penalty saturates. 0.1 is the scale the pressure runs
+            settled on; full body weight made the same kind of term ~30x too weak
+            (``notes/Pressure_supervision_design.MD`` 8.6).
+        support_body_weight_n: Body weight (N) that fraction is taken of.
+        support_exclude_motions: Substrings of motion names never charged (all
+            hold-duration variants of a stem match its base name). For
+            references that cannot be performed with the support they label.
+        support_ema_tau_s: Time constant (s) of an exponential moving average
+            applied to the charged load *before* the saturating clamp
+            (``support_penalty.ChargedLoadEMA``). 0.0, the default, is the
+            per-frame clamp ft_b trained with, bit for bit. That clamp prices
+            how often a free zone is down, not how much it carries, and ft_b
+            learned to tap a foot at 3-4 Hz to exploit it. 0.25 s charges a
+            tapping foot what a resting one pays while a held lift stays nearly
+            free (``expert_revist/ft_b_support/report.MD`` §4, §8).
+            The context fields are computed for every run; they only reach the
+            reward when an experiment binds them to a nonzero weight.
     """
 
     _target_: str = "protomotions.envs.control.contact_graph_control.ContactGraphControl"
@@ -145,6 +178,12 @@ class ContactGraphControlConfig(MaskedMimicControlConfig):
     include_current_segment: bool = False
     far_goal_prob: float = 0.0
     far_goal_max_skip: int = 3
+    interval_schedule: bool = False
+    support_clear_height: float = 0.25
+    support_load_ref_frac: float = 0.1
+    support_body_weight_n: float = 74.0 * 9.81
+    support_exclude_motions: List[str] = field(default_factory=list)
+    support_ema_tau_s: float = 0.0
 
 
 class ContactGraphControl(MaskedMimicControl):
@@ -159,6 +198,10 @@ class ContactGraphControl(MaskedMimicControl):
                 f"num_masked_future_steps ({config.num_masked_future_steps}); the "
                 f"student's token count is built from the latter"
             )
+        if config.interval_schedule and not config.include_current_segment:
+            raise ValueError("interval_schedule requires include_current_segment=True")
+        if config.interval_schedule and config.far_goal_prob > 0.0:
+            raise ValueError("interval_schedule does not support far-goal promotion")
         super().__init__(config, env)
 
         if not config.graph_file:
@@ -210,6 +253,7 @@ class ContactGraphControl(MaskedMimicControl):
         self._ground_zone_rows = zone_rows
         self._ground_zone_cols = zone_cols
         self._ground_pair_ids = pair_ids
+        self._init_support_penalty()
 
         # Scatter maps taking simulated forces into the graph's own pair slots.
         # Body-body pairs join the diagnostic only when the robot is configured
@@ -298,6 +342,90 @@ class ContactGraphControl(MaskedMimicControl):
             torch.tensor(pair_ids, dtype=torch.long, device=device),
         )
 
+    def _init_support_penalty(self) -> None:
+        """Tables for the unwanted-support penalty (``support_penalty.py``).
+
+        Zones are the graph's own ground zones, in ``_ground_zone_names`` order, so
+        the goal's ground slots (``_ground_pair_ids``) and the pooling matrix line
+        up by construction. ``getattr`` defaults keep frozen configs written before
+        these fields existed loading with the calibrated values.
+        """
+        device = self.env.device
+        num_bodies = len(self.env.robot_config.kinematic_info.body_names)
+        matrix = torch.zeros(len(self._ground_zone_names), num_bodies, device=device)
+        matrix[self._ground_zone_rows, self._ground_zone_cols] = 1.0
+        self._support_zone_matrix = matrix
+        cfg = self.config
+        self._support_clear_height = float(getattr(cfg, "support_clear_height", 0.25))
+        self._support_load_ref_n = float(getattr(cfg, "support_load_ref_frac", 0.1)) * float(
+            getattr(cfg, "support_body_weight_n", 74.0 * 9.81)
+        )
+        patterns = list(getattr(cfg, "support_exclude_motions", None) or [])
+        files = list(self.env.motion_lib.motion_files)
+        names = [f.replace("\\", "/").split("/")[-1].removesuffix(".motion") for f in files]
+        excluded = torch.tensor(
+            [any(p in n for p in patterns) for n in names], dtype=torch.bool, device=device
+        )
+        unmatched = [p for p in patterns if not any(p in n for n in names)]
+        if unmatched:
+            raise ValueError(
+                f"support_exclude_motions entries match no motion: {unmatched}"
+            )
+        self._support_excluded_motion = excluded
+        tau = float(getattr(cfg, "support_ema_tau_s", 0.0) or 0.0)
+        # None keeps the per-frame term exactly (old frozen configs have no field).
+        self._support_ema = (
+            ChargedLoadEMA(self.env.num_envs, tau, float(self.env.dt), device) if tau > 0.0 else None
+        )
+        if tau > 0.0:
+            print(
+                f"ContactGraphControl: unwanted-support load averaged over {tau:.3f} s before "
+                f"the clamp (alpha {self._support_ema.alpha:.4f} per step)"
+            )
+        if patterns:
+            print(
+                f"ContactGraphControl: unwanted-support penalty skips "
+                f"{int(excluded.sum())}/{len(names)} motions matching {patterns}"
+            )
+
+    def _unwanted_support(self, ctx: EnvContext) -> Tuple[Tensor, Tensor, Tensor]:
+        """``(penalty [E] in [0,1], charged load [E] N, gate [E] float)``.
+
+        The gate is "inside the commanded hold segment": slot 0 valid and the clip
+        time within its ``[t_start, t_end]`` -- with ``include_current_segment``
+        that is exactly when slot 0 *is* the segment being played. Manual goals
+        (probes, the viz panel) have no clip segment, so the gate is off there.
+        """
+        num_envs = self.env.num_envs
+        if self._manual is not None or ctx.mimic is None:
+            zeros = torch.zeros(num_envs, device=self.env.device)
+            return zeros, zeros, zeros
+        now = self.env.motion_manager.motion_times
+        g = self._gathered
+        in_hold = (
+            self.goal_valid[:, 0]
+            & (now >= g["t_start"][:, 0])
+            & (now <= g["t_end"][:, 0])
+        )
+        goal_ground = g["contact"][:, 0][:, self._ground_pair_ids] > 0.5
+        excluded = self._support_excluded_motion[self.env.motion_manager.motion_ids]
+        penalty, charged = unwanted_support(
+            ground_forces=getattr(ctx.current, "rigid_body_ground_forces", None),
+            ref_body_pos=ctx.mimic.ref_state.rigid_body_pos,
+            goal_ground=goal_ground,
+            in_hold=in_hold,
+            zone_matrix=self._support_zone_matrix,
+            clear_height=self._support_clear_height,
+            load_ref_n=self._support_load_ref_n,
+            excluded=excluded,
+        )
+        gate = (in_hold & ~excluded).float()
+        if self._support_ema is not None:
+            # Same gate, same saturation; only the load is averaged first. The raw
+            # per-frame newtons stay the reported diagnostic (unwanted_support_n).
+            penalty = self._support_ema.price(charged, gate, self._support_load_ref_n)
+        return penalty, charged, gate
+
     # ------------------------------------------------------------------ #
     # Goal schedule
     # ------------------------------------------------------------------ #
@@ -314,6 +442,7 @@ class ContactGraphControl(MaskedMimicControl):
             min_lead_s=self.config.min_lead_s,
             include_current=self.config.include_current_segment,
             promote_k=self._promote_k if self.config.far_goal_prob > 0.0 else None,
+            interval=self.config.interval_schedule,
         )
         self.goal_index = indices
         self.goal_valid = valid
@@ -594,6 +723,9 @@ class ContactGraphControl(MaskedMimicControl):
     def reset(self, env_ids: Tensor):
         """Resample the whole goal specification for the given environments."""
         MimicControl.reset(self, env_ids)
+        if self._support_ema is not None:
+            # A new episode starts its load average from zero.
+            self._support_ema.reset(env_ids)
         if self._event_tracker is not None:
             # Cleared rows re-open their first segment from the next
             # observation build, so history is episode-local by construction.
@@ -657,6 +789,8 @@ class ContactGraphControl(MaskedMimicControl):
         # populate_context can run again in the same step (probe drivers
         # rebuild observations after re-issuing goals).
         self._history_update_pending = True
+        if self._support_ema is not None:
+            self._support_ema.mark_step()
         if not self._initialized:
             return
 
@@ -1008,6 +1142,7 @@ class ContactGraphControl(MaskedMimicControl):
             )
 
         pose_error, pose_error_visible = self._goal_pose_error(ctx, ref_pos, ref_rot)
+        support_penalty, support_load_n, support_gate = self._unwanted_support(ctx)
 
         ctx.contact_goal = ContactGoalContext(
             contact_spec=contact_spec,
@@ -1022,4 +1157,7 @@ class ContactGraphControl(MaskedMimicControl):
             history_features=history_features,
             history_valid=history_valid,
             event_commit=event_commit,
+            unwanted_support=support_penalty,
+            unwanted_support_n=support_load_n,
+            support_gate=support_gate,
         )

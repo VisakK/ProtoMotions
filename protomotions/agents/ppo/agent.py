@@ -195,6 +195,12 @@ class PPO(BaseAgent):
         super()._load_training_state(state_dict)
         self._load_ppo_training_state(state_dict, require_optimizers=True)
 
+    def _load_optimization_state(self, state_dict):
+        """Warm start: reward normalizer + PPO optimizers and advantage EMA."""
+        super()._load_optimization_state(state_dict)
+        self._load_ppo_training_state(state_dict, require_optimizers=False)
+        print("Warm start: restored PPO optimizer states and advantage EMA from checkpoint")
+
     def _load_ppo_training_state(self, state_dict, require_optimizers: bool):
         if require_optimizers or "actor_optimizer" in state_dict:
             self.actor_optimizer.load_state_dict(state_dict["actor_optimizer"])

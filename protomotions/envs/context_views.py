@@ -447,6 +447,9 @@ class ContactGoalContext:
     history_features: Tensor = FieldPath()
     history_valid: Tensor = FieldPath()
     event_commit: Tensor = FieldPath()
+    unwanted_support: Tensor = FieldPath()
+    unwanted_support_n: Tensor = FieldPath()
+    support_gate: Tensor = FieldPath()
 
     def __init__(
         self,
@@ -462,6 +465,9 @@ class ContactGoalContext:
         history_features: Optional[Tensor] = None,
         history_valid: Optional[Tensor] = None,
         event_commit: Optional[Tensor] = None,
+        unwanted_support: Optional[Tensor] = None,
+        unwanted_support_n: Optional[Tensor] = None,
+        support_gate: Optional[Tensor] = None,
     ):
         """Initialize ContactGoalContext.
 
@@ -502,6 +508,15 @@ class ContactGoalContext:
                 committed a new segment this step (ContactEventTracker's
                 debounced make/break event) [num_envs]. None when the tracker
                 is disabled.
+            unwanted_support: Unwanted-support penalty in [0, 1] [num_envs]:
+                terrain-filtered ground load on zones the commanded hold keeps
+                free, saturating at a fraction of body weight
+                (``protomotions/envs/control/support_penalty.py``). Zero outside
+                a commanded hold.
+            unwanted_support_n: The charged ground load itself, in newtons
+                [num_envs] -- the unsaturated diagnostic behind the penalty.
+            support_gate: 1.0 on envs inside a commanded hold segment and not
+                excluded from the penalty [num_envs].
         """
         self.contact_spec = contact_spec
         self.orient_spec = orient_spec
@@ -522,6 +537,9 @@ class ContactGoalContext:
         self.history_features = history_features
         self.history_valid = history_valid
         self.event_commit = event_commit
+        self.unwanted_support = unwanted_support
+        self.unwanted_support_n = unwanted_support_n
+        self.support_gate = support_gate
 
 
 class SteeringContext:
