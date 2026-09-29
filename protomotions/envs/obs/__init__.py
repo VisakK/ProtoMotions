@@ -62,6 +62,7 @@ from protomotions.envs.obs.masked_mimic import (
 
 # Contact-configuration goal compute kernels
 from protomotions.envs.obs.contact_state import (
+    compute_contact_slot_forces,
     compute_contact_state_obs,
 )
 from protomotions.envs.obs.contact_goal import (
@@ -73,6 +74,9 @@ from protomotions.envs.obs.contact_goal import (
     compute_unwanted_support_rew,
     compute_unwanted_support_n,
     compute_support_gate,
+    compute_swing_penalty_rew,
+    compute_lean_penalty_rew,
+    compute_physics_diag,
     compute_contact_history_obs,
     compute_contact_history_masks,
     compute_contact_event_flag,
@@ -159,6 +163,9 @@ __all__ = [
     "compute_unwanted_support_rew",
     "compute_unwanted_support_n",
     "compute_support_gate",
+    "compute_swing_penalty_rew",
+    "compute_lean_penalty_rew",
+    "compute_physics_diag",
     "compute_contact_history_obs",
     "compute_contact_history_masks",
     "compute_contact_event_flag",

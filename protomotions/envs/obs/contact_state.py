@@ -28,7 +28,7 @@ import torch
 from torch import Tensor
 
 
-def compute_contact_state_obs(
+def compute_contact_slot_forces(
     ground_forces: Optional[Tensor],
     pair_forces: Optional[Tensor],
     ground_slot: Tensor,
@@ -36,10 +36,13 @@ def compute_contact_state_obs(
     pair_slot: Tensor,
     pair_body_a: Tensor,
     pair_body_b: Tensor,
-    thresholds: Tensor,
     num_pairs: int,
 ) -> Tensor:
-    """Binary contact state over the graph's contact-pair vocabulary.
+    """Force magnitude (N) behind every slot of the graph's contact-pair vocabulary, ``[E, P]``.
+
+    The un-thresholded half of :func:`compute_contact_state_obs` (which is this, compared
+    against ``thresholds``); ``ContactGraphControl`` also reads it directly for the pair-load
+    diagnostic.
 
     Args:
         ground_forces: Per-body force against the terrain, ``[E, B, 3]``, in the
@@ -53,14 +56,10 @@ def compute_contact_state_obs(
         pair_slot: Output slot for each (zone-pair, body, body) membership.
         pair_body_a: First body index of each such membership (axis 1).
         pair_body_b: Second body index (axis 2 -- indexes ``contact_pair_bodies``).
-        thresholds: Newtons above which each slot counts as in contact, ``[P]``.
-            Per-slot rather than one scalar because the ground and body-body
-            halves are calibrated separately (the graph uses 3 % of body weight
-            for ground and 2 % for body-body).
         num_pairs: Width of the output, ``P``.
 
     Returns:
-        ``[E, P]`` float tensor of 0.0/1.0.
+        ``[E, P]`` newtons per slot.
     """
     if ground_forces is None:
         raise ValueError(
@@ -101,7 +100,41 @@ def compute_contact_state_obs(
         )
         total = total + directional.view(num_envs, num_pairs, 2).amax(dim=-1)
 
+    return total
+
+
+def compute_contact_state_obs(
+    ground_forces: Optional[Tensor],
+    pair_forces: Optional[Tensor],
+    ground_slot: Tensor,
+    ground_body: Tensor,
+    pair_slot: Tensor,
+    pair_body_a: Tensor,
+    pair_body_b: Tensor,
+    thresholds: Tensor,
+    num_pairs: int,
+) -> Tensor:
+    """Binary contact state over the graph's contact-pair vocabulary.
+
+    ``compute_contact_slot_forces(...) > thresholds``: see that function for the pooling rules
+    (ground force per zone summed over its bodies; a body-body zone pair read in both
+    directions and combined with max).
+
+    Args:
+        thresholds: Newtons above which each slot counts as in contact, ``[P]``.
+            Per-slot rather than one scalar because the ground and body-body
+            halves are calibrated separately (the graph uses 3 % of body weight
+            for ground and 2 % for body-body). The other arguments are
+            :func:`compute_contact_slot_forces`'s.
+
+    Returns:
+        ``[E, P]`` float tensor of 0.0/1.0.
+    """
+    total = compute_contact_slot_forces(
+        ground_forces, pair_forces, ground_slot, ground_body, pair_slot,
+        pair_body_a, pair_body_b, num_pairs,
+    )
     return (total > thresholds).to(ground_forces.dtype)
 
 
-__all__ = ["compute_contact_state_obs"]
+__all__ = ["compute_contact_slot_forces", "compute_contact_state_obs"]

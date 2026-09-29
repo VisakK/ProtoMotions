@@ -114,6 +114,25 @@ def compute_support_gate(support_gate: Tensor) -> Tensor:
     return support_gate
 
 
+def compute_swing_penalty_rew(swing_penalty: Tensor) -> Tensor:
+    """Swing-gated unloaded-limb penalty in [0, 1] [num_envs]; bind with a NEGATIVE weight.
+
+    Ground load on limbs the reference is swinging, outside commanded holds, averaged and
+    saturated like the unwanted-support term -- ``protomotions/envs/control/physics_terms.py``.
+    """
+    return swing_penalty
+
+
+def compute_lean_penalty_rew(lean_penalty: Tensor) -> Tensor:
+    """Commanded-support lean shortfall in [0, 1] [num_envs]; bind with a NEGATIVE weight."""
+    return lean_penalty
+
+
+def compute_physics_diag(value: Tensor) -> Tensor:
+    """Weight-0 diagnostic pass-through for the fine-tune C physics quantities."""
+    return value
+
+
 def compute_contact_history_obs(history_features: Tensor) -> Tensor:
     """Flatten the measured contact-event history tokens.
 

@@ -38,6 +38,10 @@ commanded hold keeps free, during the hold (``expert_revist/contact_reward/READM
 ``--support-ema-tau`` averages that load before the saturating clamp, so a tapping foot pays
 what a resting one does (``expert_revist/ft_b_support/report.MD`` §8). The default 0 is
 ft_b's per-frame term. Without the flags the reward dict is exactly fine-tune A's.
+``--physics-tables`` (fine-tune C, ``expert_revist/ft_c/README.MD``) enables two more terms --
+``--swing-penalty-weight``, ground load on limbs the reference is swinging outside holds, and
+``--lean-penalty-weight``, the COM's shortfall from ``--lean-min-margin`` inside the commanded
+hand support -- plus weight-0 diagnostics (slip power, lean margin and error, pair load).
 
 **Goals** come from ``data/scripts/build_hold_graph.py`` (nodes = named holds
 from the kinematic manifest; the transitions are the gaps between them), on
@@ -274,6 +278,31 @@ def additional_experiment_arguments(parser: argparse.ArgumentParser):
                         help="Charged load, as a fraction of body weight, at which the penalty saturates.")
     parser.add_argument("--support-exclude-motions", type=str, nargs="*", default=[],
                         help="Motion-name substrings never charged (covers every hold-duration variant).")
+    # --- Fine-tune C physics terms (expert_revist/ft_c/README.MD) -------------- #
+    parser.add_argument(
+        "--physics-tables", type=str, default=None,
+        help="physics_tables.pt from data/scripts/build_physics_tables.py. Given, the "
+             "swing/lean terms can be weighted and their weight-0 diagnostics are logged.",
+    )
+    parser.add_argument("--swing-penalty-weight", type=float, default=None,
+                        help="Weight of swing_penalty_rew (negative); needs --physics-tables.")
+    parser.add_argument("--swing-ema-tau", type=float, default=0.1)
+    parser.add_argument("--swing-load-ref-frac", type=float, default=0.1)
+    parser.add_argument("--lean-penalty-weight", type=float, default=None,
+                        help="Weight of lean_penalty_rew (negative); needs --physics-tables.")
+    parser.add_argument("--lean-min-margin", type=float, default=0.03)
+    parser.add_argument("--lean-scale", type=float, default=0.10)
+    parser.add_argument("--physics-exclude-motions", type=str, nargs="*", default=[],
+                        help="Motion-name substrings neither physics term charges.")
+    parser.add_argument("--event-dilate-frames", type=int, default=7,
+                        help="Evaluator: frames either side a support violation is dilated by for "
+                             "the event-aware family-hold metric (7 = 0.23 s).")
+    parser.add_argument("--report-exclude-motions", type=str, nargs="*", default=[],
+                        help="Evaluator: motions left out of the *_penalised arm-balance metrics "
+                             "and the drag aggregates.")
+    parser.add_argument("--drag-report-motions", type=str, nargs="*", default=[],
+                        help="Evaluator: motion-name substrings logged as eval/drag/<name>_J and "
+                             "pooled as eval/drag/top_J (needs --physics-tables).")
     parser.add_argument("--support-ema-tau", type=float, default=0.0,
                         help="Time constant (s) of the moving average applied to the charged load "
                              "before the clamp. 0 = the per-frame term ft_b trained with; 0.25 closes "
@@ -358,6 +387,9 @@ def env_config(robot_cfg: RobotConfig, args: argparse.Namespace) -> EnvConfig:
         compute_target_time_offsets,
         compute_unwanted_support_n,
         compute_unwanted_support_rew,
+        compute_swing_penalty_rew,
+        compute_lean_penalty_rew,
+        compute_physics_diag,
         to_float,
     )
 
@@ -394,6 +426,12 @@ def env_config(robot_cfg: RobotConfig, args: argparse.Namespace) -> EnvConfig:
             support_load_ref_frac=float(getattr(args, "support_load_ref_frac", 0.1)),
             support_exclude_motions=list(getattr(args, "support_exclude_motions", None) or []),
             support_ema_tau_s=float(getattr(args, "support_ema_tau", 0.0) or 0.0),
+            physics_tables_file=str(getattr(args, "physics_tables", None) or ""),
+            swing_ema_tau_s=float(getattr(args, "swing_ema_tau", 0.1)),
+            swing_load_ref_frac=float(getattr(args, "swing_load_ref_frac", 0.1)),
+            lean_min_margin=float(getattr(args, "lean_min_margin", 0.03)),
+            lean_scale=float(getattr(args, "lean_scale", 0.10)),
+            physics_exclude_motions=list(getattr(args, "physics_exclude_motions", None) or []),
         ),
     }
 
@@ -566,6 +604,44 @@ def env_config(robot_cfg: RobotConfig, args: argparse.Namespace) -> EnvConfig:
             static_params={"weight": 0.0},
         )
 
+    physics_tables = getattr(args, "physics_tables", None)
+    swing_weight = getattr(args, "swing_penalty_weight", None)
+    lean_weight = getattr(args, "lean_penalty_weight", None)
+    if (swing_weight is not None or lean_weight is not None) and not physics_tables:
+        raise ValueError("--swing-penalty-weight / --lean-penalty-weight need --physics-tables")
+    if physics_tables:
+        for name, weight in (("swing", swing_weight), ("lean", lean_weight)):
+            if weight is not None and weight > 0:
+                raise ValueError(f"--{name}-penalty-weight is a penalty: give it a negative weight")
+        if swing_weight is not None:
+            reward_components["swing_penalty_rew"] = MdpComponent(
+                compute_func=compute_swing_penalty_rew,
+                dynamic_vars={"swing_penalty": EnvContext.contact_goal.swing_penalty},
+                static_params={"weight": float(swing_weight), "zero_during_grace_period": True},
+            )
+        if lean_weight is not None:
+            reward_components["lean_penalty_rew"] = MdpComponent(
+                compute_func=compute_lean_penalty_rew,
+                dynamic_vars={"lean_penalty": EnvContext.contact_goal.lean_penalty},
+                static_params={"weight": float(lean_weight), "zero_during_grace_period": True},
+            )
+        # weight-0 diagnostics: raw_r/diag_* on wandb
+        for diag, path in (
+            ("diag_swing_load_n", EnvContext.contact_goal.swing_load_n),
+            ("diag_swing_gate", EnvContext.contact_goal.swing_gate),
+            ("diag_lean_margin_m", EnvContext.contact_goal.lean_margin),
+            ("diag_lean_gate", EnvContext.contact_goal.lean_gate),
+            ("diag_lean_error_m", EnvContext.contact_goal.lean_error),
+            ("diag_lean_error_valid", EnvContext.contact_goal.lean_error_valid),
+            ("diag_slip_power_w", EnvContext.contact_goal.slip_power),
+            ("diag_pair_load_n", EnvContext.contact_goal.pair_load_n),
+        ):
+            reward_components[diag] = MdpComponent(
+                compute_func=compute_physics_diag,
+                dynamic_vars={"value": path},
+                static_params={"weight": 0.0},
+            )
+
     return EnvConfig(
         ref_contact_smooth_window=7,
         max_episode_length=1000,
@@ -672,6 +748,9 @@ def agent_config(
             curriculum=HoldCurriculumConfig(
                 uniform_fraction=float(getattr(args, "uniform_fraction", 0.8)),
                 score_ema_keep=float(getattr(args, "score_ema_keep", 0.5)),
+                event_dilate_frames=int(getattr(args, "event_dilate_frames", 7)),
+                report_exclude_motions=list(getattr(args, "report_exclude_motions", None) or []),
+                drag_report_motions=list(getattr(args, "drag_report_motions", None) or []),
             ),
         )
     else:

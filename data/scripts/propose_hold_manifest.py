@@ -162,6 +162,9 @@ EXPECTED_SUPPORT = [
     ("Side_Angle", lambda g: (g & FEET)),
     ("Upward_Plank", lambda g: _both_feet(g) and HANDS <= g),
     ("Side_Plank", lambda g: (g & FEET) and (g & HANDS)),
+    # fine-tune C's replacement connectives (standing, two feet down)
+    ("reverse_warrior", _both_feet),
+    ("Intense_Side_Stretch", _both_feet),
 ]
 
 

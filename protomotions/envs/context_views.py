@@ -450,6 +450,16 @@ class ContactGoalContext:
     unwanted_support: Tensor = FieldPath()
     unwanted_support_n: Tensor = FieldPath()
     support_gate: Tensor = FieldPath()
+    swing_penalty: Tensor = FieldPath()
+    swing_load_n: Tensor = FieldPath()
+    swing_gate: Tensor = FieldPath()
+    lean_penalty: Tensor = FieldPath()
+    lean_margin: Tensor = FieldPath()
+    lean_gate: Tensor = FieldPath()
+    lean_error: Tensor = FieldPath()
+    lean_error_valid: Tensor = FieldPath()
+    slip_power: Tensor = FieldPath()
+    pair_load_n: Tensor = FieldPath()
 
     def __init__(
         self,
@@ -468,6 +478,16 @@ class ContactGoalContext:
         unwanted_support: Optional[Tensor] = None,
         unwanted_support_n: Optional[Tensor] = None,
         support_gate: Optional[Tensor] = None,
+        swing_penalty: Optional[Tensor] = None,
+        swing_load_n: Optional[Tensor] = None,
+        swing_gate: Optional[Tensor] = None,
+        lean_penalty: Optional[Tensor] = None,
+        lean_margin: Optional[Tensor] = None,
+        lean_gate: Optional[Tensor] = None,
+        lean_error: Optional[Tensor] = None,
+        lean_error_valid: Optional[Tensor] = None,
+        slip_power: Optional[Tensor] = None,
+        pair_load_n: Optional[Tensor] = None,
     ):
         """Initialize ContactGoalContext.
 
@@ -517,6 +537,22 @@ class ContactGoalContext:
                 [num_envs] -- the unsaturated diagnostic behind the penalty.
             support_gate: 1.0 on envs inside a commanded hold segment and not
                 excluded from the penalty [num_envs].
+            swing_penalty / swing_load_n / swing_gate: the swing-gated
+                unloaded-limb penalty in [0, 1], the load it charges (N), and 1.0
+                where it is armed (outside a commanded hold)
+                (``protomotions/envs/control/physics_terms.py``) [num_envs].
+            lean_penalty / lean_margin / lean_gate: the commanded-support lean
+                shortfall in [0, 1], the COM's signed margin inside the commanded
+                support polygon (m; gated rows carry the gated batch mean), and 1.0
+                where the term is armed (a commanded hand-supported hold) [num_envs].
+            lean_error / lean_error_valid: distance (m) between the policy's
+                COM-to-support offset and the human's measured COP-to-support
+                offset, where the mat measured it; unmeasured rows carry the
+                measured mean [num_envs]. Diagnostic.
+            slip_power: ground force times slowest-corner slip speed over the
+                feet and hands (W) [num_envs]. Diagnostic.
+            pair_load_n: load (N) through the commanded hold's leg-on-arm /
+                leg-on-trunk pairs, gated rows' mean elsewhere [num_envs]. Diagnostic.
         """
         self.contact_spec = contact_spec
         self.orient_spec = orient_spec
@@ -540,6 +576,16 @@ class ContactGoalContext:
         self.unwanted_support = unwanted_support
         self.unwanted_support_n = unwanted_support_n
         self.support_gate = support_gate
+        self.swing_penalty = swing_penalty
+        self.swing_load_n = swing_load_n
+        self.swing_gate = swing_gate
+        self.lean_penalty = lean_penalty
+        self.lean_margin = lean_margin
+        self.lean_gate = lean_gate
+        self.lean_error = lean_error
+        self.lean_error_valid = lean_error_valid
+        self.slip_power = slip_power
+        self.pair_load_n = pair_load_n
 
 
 class SteeringContext:

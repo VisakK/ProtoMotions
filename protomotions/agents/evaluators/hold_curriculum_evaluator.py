@@ -51,6 +51,7 @@ class HoldCurriculumEvaluator(MimicEvaluator):
         self._holds = None  # per-motion list[HoldWindow], lazily from the manifest
         self._groups = None  # per-motion group name
         self._body_ids = None
+        self._drag_tables = None  # the control's PhysicsTables, when loaded (drag metrics)
 
     # ------------------------------------------------------------------ #
     def _setup_tables(self) -> None:
@@ -79,7 +80,35 @@ class HoldCurriculumEvaluator(MimicEvaluator):
             track_fail_m=c.track_fail_m, pose_threshold_m=c.pose_threshold_m,
             foot_down_z=c.foot_down_z, unloaded_ref_min_z=c.unloaded_ref_min_z,
             track_weight=c.track_weight,
+            event_dilate_frames=int(getattr(c, "event_dilate_frames", 7)),
         )
+        patterns = list(getattr(c, "report_exclude_motions", None) or [])
+        self._report_excluded = [any(p in s for p in patterns) for s in stems]
+        self._setup_drag(stems, names)
+
+    # Feet and hands, the zones the drag audit measured (contact_balance_investigation §2).
+    _DRAG_ZONES = (("L_FOOT", ("L_Ankle", "L_Toe")), ("R_FOOT", ("R_Ankle", "R_Toe")),
+                   ("L_HAND", ("L_Wrist", "L_Hand")), ("R_HAND", ("R_Wrist", "R_Hand")))
+
+    def _setup_drag(self, stems, body_names) -> None:
+        """Drag needs the box geometry and swing labels of the control's physics tables."""
+        c = self.config.curriculum
+        self._drag_tables = None
+        ctrl = getattr(self.env, "control_manager", None)
+        comps = getattr(ctrl, "components", None) or {}
+        graph_ctrl = comps.get("contact_graph") if isinstance(comps, dict) else None
+        tables = getattr(graph_ctrl, "_physics", None)
+        needed = ("rigid_body_rot", "rigid_body_vel", "rigid_body_ang_vel", "rigid_body_ground_forces")
+        if tables is None:
+            return
+        self._drag_tables = tables
+        self._drag_needed = needed
+        self._drag_bodies = [[body_names.index(b) for b in bodies] for _, bodies in self._DRAG_ZONES]
+        self._drag_zone_cols = [tables.zone_order.index(z) for z, _ in self._DRAG_ZONES]
+        self._drag_patterns = list(getattr(c, "drag_report_motions", None) or [])
+        unmatched = [p for p in self._drag_patterns if not any(p in s for s in stems)]
+        if unmatched:
+            raise ValueError(f"drag_report_motions entries match no motion: {unmatched}")
 
     # ------------------------------------------------------------------ #
     def _score_all_motions(self) -> Dict[str, torch.Tensor]:
@@ -88,12 +117,19 @@ class HoldCurriculumEvaluator(MimicEvaluator):
         num_motions = self.motion_lib.num_motions()
         num_bodies = self.env.robot_config.kinematic_info.num_bodies
         dt = float(self.env.dt)
-        keys = ("p_track", "p_hold", "p_family", "support_violation", "track_fail_frac", "score")
-        out = {k: torch.full((num_motions,), float("nan")) for k in keys}
+        keys = ("p_track", "p_hold", "p_family", "p_family_event", "support_violation",
+                "track_fail_frac", "score")
+        drag_keys = ("drag_s", "drag_J", "drag_J_swing")
+        out = {k: torch.full((num_motions,), float("nan")) for k in keys + drag_keys}
+        drag = self._drag_tables is not None and all(k in self._metrics for k in self._drag_needed)
         for m in range(num_motions):
             frames = int(pos_metric.frame_counts[m].item())
             if frames < 2:
                 continue
+            if drag:
+                out_drag = self._drag_clip(m, frames, num_bodies, dt)
+                for k in drag_keys:
+                    out[k][m] = out_drag[k]
             sim = pos_metric.data[m, :frames].view(frames, num_bodies, 3).float()
             times = (torch.arange(frames, device=sim.device, dtype=torch.float32) + 1.0) * dt
             ids = torch.full((frames,), m, device=sim.device, dtype=torch.long)
@@ -108,6 +144,26 @@ class HoldCurriculumEvaluator(MimicEvaluator):
             for k in keys:
                 out[k][m] = s[k]
         return out
+
+    def _drag_clip(self, m: int, frames: int, num_bodies: int, dt: float) -> Dict[str, float]:
+        from protomotions.envs.control.physics_terms import clip_drag
+
+        def rec(key, width):
+            return self._metrics[key].data[m, :frames].view(frames, num_bodies, width).float()
+
+        tables = self._drag_tables
+        times = (torch.arange(frames, device=tables.swing.device, dtype=torch.float32) + 1.0) * dt
+        ids = torch.full((frames,), m, device=tables.swing.device, dtype=torch.long)
+        swing = tables.swing_at(ids, times)[:, self._drag_zone_cols]
+        c = self.config.curriculum
+        return clip_drag(
+            rec("rigid_body_pos", 3), rec("rigid_body_rot", 4), rec("rigid_body_vel", 3),
+            rec("rigid_body_ang_vel", 3), rec("rigid_body_ground_forces", 3), tables,
+            self._drag_bodies, swing.to(self._metrics["rigid_body_pos"].data.device), dt,
+            load_n=float(getattr(c, "drag_load_n", 50.0)),
+            slip_mps=float(getattr(c, "drag_slip_mps", 0.10)),
+            mu=float(getattr(c, "drag_mu", 0.75)),
+        )
 
     def _update_curriculum(self, scores: Dict[str, torch.Tensor]) -> torch.Tensor:
         c = self.config.curriculum
@@ -125,12 +181,15 @@ class HoldCurriculumEvaluator(MimicEvaluator):
         with open(path, "w", newline="") as f:
             w = csv.writer(f)
             w.writerow(["motion_id", "motion", "group", "p_track", "p_hold", "p_family",
-                        "support_violation", "score", "score_ema", "sampling_prob"])
+                        "support_violation", "score", "score_ema", "sampling_prob", "p_family_event",
+                        "drag_s", "drag_J", "drag_J_swing"])
             for m, stem in enumerate(self._stems):
                 w.writerow([m, stem, self._groups[m]]
                            + [f"{float(scores[k][m]):.4f}" for k in
                               ("p_track", "p_hold", "p_family", "support_violation", "score")]
-                           + [f"{float(self._score_ema[m]):.4f}", f"{float(probs[m]):.6f}"])
+                           + [f"{float(self._score_ema[m]):.4f}", f"{float(probs[m]):.6f}",
+                              f"{float(scores['p_family_event'][m]):.4f}"]
+                           + [f"{float(scores[k][m]):.2f}" for k in ("drag_s", "drag_J", "drag_J_swing")])
 
     @staticmethod
     def _nanmean(x: torch.Tensor) -> float:
@@ -154,6 +213,17 @@ class HoldCurriculumEvaluator(MimicEvaluator):
             idx = torch.tensor([i for i, x in enumerate(self._groups) if x == g])
             logs[f"eval/perf_group/{g}_score"] = self._nanmean(scores["score"][idx])
             logs[f"eval/perf_group/{g}_hold"] = self._nanmean(scores["p_hold"][idx])
+            logs[f"eval/perf_group/{g}_family"] = self._nanmean(scores["p_family"][idx])
+            logs[f"eval/perf_group/{g}_family_event"] = self._nanmean(scores["p_family_event"][idx])
+        # the support-term reports' "penalised arm balances": the group minus the motions the
+        # support terms do not charge (report_exclude_motions)
+        pen = [i for i, g in enumerate(self._groups)
+               if g == "arm_balance" and not self._report_excluded[i]]
+        if pen:
+            idx = torch.tensor(pen)
+            logs["eval/perf/arm_balance_family_penalised"] = self._nanmean(scores["p_family"][idx])
+            logs["eval/perf/arm_balance_family_event_penalised"] = self._nanmean(scores["p_family_event"][idx])
+        logs.update(self._drag_logs(scores))
         n = probs.numel()
         prioritized = probs - self.config.curriculum.uniform_fraction / n
         logs["eval/curriculum/ess"] = float(1.0 / (probs ** 2).sum())
@@ -162,6 +232,37 @@ class HoldCurriculumEvaluator(MimicEvaluator):
             top = torch.topk(prioritized, min(10, n)).values.sum() / prioritized.sum()
             logs["eval/curriculum/prioritized_top10_share"] = float(top)
         return {k: v for k, v in logs.items() if not math.isnan(v)}
+
+    def _drag_logs(self, scores) -> Dict[str, float]:
+        """Mean drag per rollout (J, s): corpus, per group, the gate set and each gate clip.
+
+        Motions in ``report_exclude_motions`` (the terms' exclusions) are left out everywhere.
+        """
+        if self._drag_tables is None:
+            return {}
+        kept = [i for i in range(len(self._stems)) if not self._report_excluded[i]]
+        logs = {}
+
+        def pool(prefix, ids):
+            if not ids:
+                return
+            idx = torch.tensor(ids)
+            logs[f"{prefix}_J"] = self._nanmean(scores["drag_J"][idx])
+            logs[f"{prefix}_swing_J"] = self._nanmean(scores["drag_J_swing"][idx])
+            logs[f"{prefix}_s"] = self._nanmean(scores["drag_s"][idx])
+
+        pool("eval/drag/all", kept)
+        for g in sorted(set(self._groups)):
+            pool(f"eval/drag_group/{g}", [i for i in kept if self._groups[i] == g])
+        top = []
+        for p in self._drag_patterns:
+            ids = [i for i in kept if p in self._stems[i]]
+            top += [i for i in ids if i not in top]
+            name = "".join(ch if ch.isalnum() or ch in "-_" else "_" for ch in p)
+            if ids:
+                logs[f"eval/drag/{name}_J"] = self._nanmean(scores["drag_J"][torch.tensor(ids)])
+        pool("eval/drag/top", top)
+        return logs
 
     # ------------------------------------------------------------------ #
     def process_eval_results(self) -> Tuple[Dict, Optional[float], int]:

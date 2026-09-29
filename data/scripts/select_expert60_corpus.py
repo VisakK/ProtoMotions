@@ -84,16 +84,22 @@ def family_of(stem: str) -> str:
     return body
 
 
-def build_corpus(corpus_dir: Path) -> list[dict]:
+def build_corpus(corpus_dir: Path, drop=(), add_connective=()) -> list[dict]:
     groups = [
         ("single_leg", SINGLE_LEG_BALANCES),
         ("inversion", flat(INVERSIONS)),
         ("arm_balance", [s for s in flat(ARM_BALANCES) if s not in EXCLUDED]),
-        ("connective", CONNECTIVE),
+        ("connective", list(CONNECTIVE) + list(add_connective)),
     ]
+    known = {s for _, stems in groups for s in stems}
+    unknown = [s for s in drop if s not in known]
+    if unknown:
+        raise ValueError(f"--drop names stems that are not in the corpus: {unknown}")
     entries, seen = [], set()
     for group, stems in groups:
         for stem in stems:
+            if stem in drop:
+                continue
             if stem in seen:
                 raise ValueError(f"{stem} listed twice")
             seen.add(stem)
@@ -115,12 +121,21 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
     parser.add_argument("--corpus-dir", default=CORPUS_DIR)
     parser.add_argument("--out", default="data/smpl/expert60/corpus.yaml")
+    parser.add_argument(
+        "--drop", nargs="*", default=[],
+        help="Stems to leave out (fine-tune C drops the holds whose reference fails the "
+             "physics audit, expert_revist/contact_balance_investigation/README.MD §0.7).",
+    )
+    parser.add_argument(
+        "--add-connective", nargs="*", default=[],
+        help="Extra easy-128 stems appended to the connective group.",
+    )
     args = parser.parse_args()
 
     corpus_dir = Path(args.corpus_dir)
     if not corpus_dir.is_absolute():
         corpus_dir = REPO_ROOT / corpus_dir
-    entries = build_corpus(corpus_dir)
+    entries = build_corpus(corpus_dir, drop=args.drop, add_connective=args.add_connective)
 
     counts = {}
     for entry in entries:

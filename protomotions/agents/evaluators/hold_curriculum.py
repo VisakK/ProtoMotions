@@ -50,6 +50,16 @@ class ScoreParams:
     foot_down_z: float = 0.08
     unloaded_ref_min_z: float = 0.15
     track_weight: float = 0.5
+    event_dilate_frames: int = 7
+
+
+def dilate(mask: Tensor, k: int) -> Tensor:
+    """``mask`` [T] OR-ed with its shifts by up to ``k`` frames either side."""
+    out = mask.clone()
+    for s in range(1, k + 1):
+        out[s:] |= mask[:-s]
+        out[:-s] |= mask[s:]
+    return out
 
 
 def best_yaw_distance(frames: Tensor, target: Tensor) -> Tensor:
@@ -101,7 +111,9 @@ def score_clip(
         gate), ``p_hold`` (mean over scored holds of the share of hold frames that
         reach the commanded pose *and* keep every zone the reference holds clear
         of the floor off the floor), ``p_family`` (same, family holds only; NaN if
-        none), ``support_violation`` (share of hold frames with an unwanted
+        none), ``p_family_event`` (``p_family`` with each support violation dilated
+        ``params.event_dilate_frames`` either side -- logged, never scored),
+        ``support_violation`` (share of hold frames with an unwanted
         support), ``score`` (``track_weight * p_track + (1 - track_weight) *
         p_hold``, or ``p_track`` when no hold falls in the rollout).
     """
@@ -114,6 +126,7 @@ def score_clip(
     goal = list(goal_ids)
     hold_scores: List[float] = []
     family_scores: List[float] = []
+    family_event: List[float] = []
     violations = 0
     hold_frames = 0
     for h, hold in enumerate(holds):
@@ -130,16 +143,19 @@ def score_clip(
             ids = list(ids)
             if float(r[:, ids, 2].min()) > params.unloaded_ref_min_z:
                 violation |= s[:, ids, 2].min(dim=-1).values < params.foot_down_z
+        event = attained & ~dilate(violation, params.event_dilate_frames)
         attained &= ~violation
         share = attained.float().mean().item()
         hold_scores.append(share)
         if hold.family:
             family_scores.append(share)
+            family_event.append(event.float().mean().item())
         violations += int(violation.sum())
         hold_frames += int(sel.sum())
 
     p_hold = sum(hold_scores) / len(hold_scores) if hold_scores else float("nan")
     p_family = sum(family_scores) / len(family_scores) if family_scores else float("nan")
+    p_family_event = sum(family_event) / len(family_event) if family_event else float("nan")
     if hold_scores:
         score = params.track_weight * p_track + (1.0 - params.track_weight) * p_hold
     else:
@@ -148,6 +164,7 @@ def score_clip(
         p_track=p_track,
         p_hold=p_hold,
         p_family=p_family,
+        p_family_event=p_family_event,
         support_violation=violations / hold_frames if hold_frames else float("nan"),
         track_fail_frac=1.0 - p_track,
         score=score,

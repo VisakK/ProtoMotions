@@ -3,7 +3,7 @@
 
 """Configuration classes for evaluators."""
 
-from typing import Any, Dict, Optional, Union
+from typing import List, Any, Dict, Optional, Union
 from dataclasses import dataclass, field
 
 from protomotions.envs.mdp_component import MdpComponent
@@ -109,6 +109,32 @@ class HoldCurriculumConfig:
     unloaded_ref_min_z: float = field(
         default=0.15,
         metadata={"help": "A zone must stay off the floor in a hold when the reference keeps it above this."},
+    )
+    event_dilate_frames: int = field(
+        default=7,
+        metadata={"help": "Event-aware family-hold metric (logged only): each support violation is "
+                          "dilated this many frames either side, so a limb that touches down several "
+                          "times a second never counts as lifted (expert_revist/ft_b_support/report.MD §4)."},
+    )
+    report_exclude_motions: List[str] = field(
+        default_factory=list,
+        metadata={"help": "Motion-name substrings left out of the *_penalised arm-balance metrics "
+                          "and of the drag aggregates."},
+    )
+    drag_report_motions: List[str] = field(
+        default_factory=list,
+        metadata={"help": "Motion-name substrings logged individually as eval/drag/<name>_J and "
+                          "pooled as eval/drag/top_J (the fine-tune C drag gate). Drag is computed "
+                          "only when the contact-graph control has physics tables loaded."},
+    )
+    drag_load_n: float = field(
+        default=50.0, metadata={"help": "A foot/hand zone drags above this ground load (N) ..."}
+    )
+    drag_slip_mps: float = field(
+        default=0.10, metadata={"help": "... while its slowest bottom corner slides faster than this (m/s)."}
+    )
+    drag_mu: float = field(
+        default=0.75, metadata={"help": "Friction coefficient converting load x slip into drag work (J)."}
     )
 
 

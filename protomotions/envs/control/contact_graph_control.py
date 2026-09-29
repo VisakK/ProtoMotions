@@ -45,6 +45,16 @@ from torch import Tensor
 from protomotions.components.contact_graph import ContactGraph
 from protomotions.envs.control.contact_event_tracker import ContactEventTracker
 from protomotions.envs.control.support_penalty import ChargedLoadEMA, unwanted_support
+from protomotions.envs.control.physics_terms import (
+    PhysicsTables,
+    corner_slip_speed,
+    lean_shortfall,
+    patch_points,
+    polygon_margin,
+    swing_charged_load,
+    whole_body_com,
+)
+from protomotions.envs.obs.contact_state import compute_contact_slot_forces
 from protomotions.envs.context_views import (
     ContactGoalContext,
     EnvContext,
@@ -158,6 +168,24 @@ class ContactGraphControlConfig(MaskedMimicControlConfig):
             free (``expert_revist/ft_b_support/report.MD`` §4, §8).
             The context fields are computed for every run; they only reach the
             reward when an experiment binds them to a nonzero weight.
+        physics_tables_file: ``physics_tables.pt`` from
+            ``data/scripts/build_physics_tables.py`` (keyed to the motion library and
+            this graph). Empty, the default, builds nothing and leaves every
+            physics field of ``ctx.contact_goal`` None -- runs before fine-tune C
+            are unchanged. With it, ``ctx.contact_goal`` carries the swing-gated
+            unloaded-limb penalty, the commanded-support lean penalty and three
+            diagnostics (``protomotions/envs/control/physics_terms.py``).
+        swing_ema_tau_s: Time constant of the average applied to the swing
+            term's charged load before its clamp (the support term's pricing;
+            shorter than its 0.25 s because a swing lasts 0.3-0.5 s).
+        swing_load_ref_frac: Charged swing load, as a fraction of body weight,
+            at which the swing penalty saturates.
+        lean_min_margin: How far inside the commanded support polygon the COM
+            must be before the lean penalty is zero (m).
+        lean_scale: Shortfall (m) at which the lean penalty saturates.
+        physics_exclude_motions: Substrings of motion names neither physics
+            term charges (the support term's references that cannot be
+            performed with their labelled support).
     """
 
     _target_: str = "protomotions.envs.control.contact_graph_control.ContactGraphControl"
@@ -184,6 +212,12 @@ class ContactGraphControlConfig(MaskedMimicControlConfig):
     support_body_weight_n: float = 74.0 * 9.81
     support_exclude_motions: List[str] = field(default_factory=list)
     support_ema_tau_s: float = 0.0
+    physics_tables_file: str = ""
+    swing_ema_tau_s: float = 0.1
+    swing_load_ref_frac: float = 0.1
+    lean_min_margin: float = 0.03
+    lean_scale: float = 0.10
+    physics_exclude_motions: List[str] = field(default_factory=list)
 
 
 class ContactGraphControl(MaskedMimicControl):
@@ -276,6 +310,7 @@ class ContactGraphControl(MaskedMimicControl):
             f"{int(self._scored_slots.sum())}/{self.graph.num_pairs} contact pairs "
             f"({self._contact_maps['num_body_body_slots']} of them body-body)"
         )
+        self._init_physics_terms()
 
         # Contact-event history: measured past in the goal's own vocabulary.
         # getattr defaults keep resolved configs frozen before these fields
@@ -387,6 +422,165 @@ class ContactGraphControl(MaskedMimicControl):
                 f"ContactGraphControl: unwanted-support penalty skips "
                 f"{int(excluded.sum())}/{len(names)} motions matching {patterns}"
             )
+
+    # Candidate support bodies for the lean polygon: hands, forearms and head -- the only
+    # zones a lean-gated hold's ground set may contain (build_physics_tables.LEAN_SUPPORT).
+    _LEAN_BODIES = ("L_Wrist", "L_Hand", "R_Wrist", "R_Hand", "L_Elbow", "R_Elbow", "Neck", "Head")
+    _SLIP_BODIES = (("L_Ankle", "L_Toe"), ("R_Ankle", "R_Toe"), ("L_Wrist", "L_Hand"), ("R_Wrist", "R_Hand"))
+
+    def _init_physics_terms(self) -> None:
+        """Load the fine-tune C tables (``physics_terms.PhysicsTables``) if configured.
+
+        ``getattr`` defaults keep frozen configs written before these fields existed loading
+        with the terms off.
+        """
+        cfg = self.config
+        self._physics = None
+        path = getattr(cfg, "physics_tables_file", "") or ""
+        if not path:
+            return
+        from pathlib import Path as _Path
+
+        device = self.env.device
+        body_names = list(self.env.robot_config.kinematic_info.body_names)
+        names = [_Path(f).stem for f in self.env.motion_lib.motion_files]
+        tables = PhysicsTables(path, names, body_names, device)
+        zone_order, _ = self.graph.zone_definition()
+        if list(zone_order) != tables.zone_order:
+            raise ValueError(f"physics tables zone order {tables.zone_order} != graph {zone_order}")
+        if list(tables.seg_pair_consequential.shape[1:]) != [self.graph.seg_node.shape[1], self.graph.num_pairs]:
+            raise ValueError("physics tables were built for a different graph (segment/pair shape)")
+        zm = torch.zeros(len(zone_order), len(body_names), device=device)
+        body_zone = {}
+        for z, zone in enumerate(zone_order):
+            for b in tables.zone_bodies[zone]:
+                zm[z, body_names.index(b)] = 1.0
+                body_zone[b] = z
+        self._physics = tables
+        self._physics_zone_matrix = zm
+        # -1 marks a zone this graph gives no ground slot / a body in no zone: never commanded
+        self._zone_ground_slot = torch.tensor(
+            [self.graph.pair_names.index(f"{zone}:G") if f"{zone}:G" in self.graph.pair_names else -1
+             for zone in zone_order],
+            dtype=torch.long, device=device,
+        )
+        self._lean_body_ids = [body_names.index(b) for b in self._LEAN_BODIES]
+        per_point = []
+        for b, i in zip(self._LEAN_BODIES, self._lean_body_ids):
+            n = {0: 4, 1: 2, 2: 1}[int(tables.geom_type[i])]
+            per_point += [body_zone.get(b, -1)] * n
+        self._lean_point_zone = torch.tensor(per_point, dtype=torch.long, device=device)
+        self._slip_zone_bodies = [
+            [body_names.index(b) for b in group if b in body_names] for group in self._SLIP_BODIES
+        ]
+        patterns = list(getattr(cfg, "physics_exclude_motions", None) or [])
+        unmatched = [p for p in patterns if not any(p in n for n in names)]
+        if unmatched:
+            raise ValueError(f"physics_exclude_motions entries match no motion: {unmatched}")
+        self._physics_excluded = torch.tensor(
+            [any(p in n for p in patterns) for n in names], dtype=torch.bool, device=device
+        )
+        weight_n = float(getattr(cfg, "support_body_weight_n", 74.0 * 9.81))
+        self._swing_load_ref_n = float(getattr(cfg, "swing_load_ref_frac", 0.1)) * weight_n
+        tau = float(getattr(cfg, "swing_ema_tau_s", 0.1) or 0.0)
+        self._swing_ema = (
+            ChargedLoadEMA(self.env.num_envs, tau, float(self.env.dt), device) if tau > 0.0 else None
+        )
+        self._lean_min_margin = float(getattr(cfg, "lean_min_margin", 0.03))
+        self._lean_scale = float(getattr(cfg, "lean_scale", 0.10))
+        print(
+            f"ContactGraphControl: physics terms on ({path}): swing labels "
+            f"{tuple(tables.swing.shape)}, swing tau {tau:.2f} s, lean margin "
+            f"{self._lean_min_margin:.3f} m over {len(self._lean_point_zone)} candidate points, "
+            f"{int(tables.seg_lean_gate.sum())} lean-gated segments, "
+            f"{int(self._physics_excluded.sum())}/{len(names)} motions excluded"
+        )
+
+    def _physics_terms(self, ctx: EnvContext) -> Dict[str, Optional[Tensor]]:
+        """Fine-tune C's swing and lean terms plus diagnostics (all ``[E]``), or all None."""
+        keys = ("swing_penalty", "swing_load_n", "swing_gate", "lean_penalty", "lean_margin",
+                "lean_gate", "lean_error", "lean_error_valid", "slip_power", "pair_load_n")
+        if self._physics is None:
+            return {k: None for k in keys}
+        num_envs = self.env.num_envs
+        device = self.env.device
+        zeros = torch.zeros(num_envs, device=device)
+        if self._manual is not None or ctx.mimic is None:
+            return {k: zeros for k in keys}
+        t = self._physics
+        mids = self.env.motion_manager.motion_ids
+        now = self.env.motion_manager.motion_times
+        g = self._gathered
+        in_hold = self.goal_valid[:, 0] & (now >= g["t_start"][:, 0]) & (now <= g["t_end"][:, 0])
+        excluded = self._physics_excluded[mids]
+        cur = ctx.current
+        pos, rot = cur.rigid_body_pos, cur.rigid_body_rot
+        ground = getattr(cur, "rigid_body_ground_forces", None)
+
+        # swing-gated unloaded-limb penalty
+        swing_gate = ~in_hold & ~excluded
+        charged = swing_charged_load(ground, t.swing_at(mids, now), self._physics_zone_matrix, swing_gate)
+        if self._swing_ema is not None:
+            swing_pen = self._swing_ema.price(charged, swing_gate, self._swing_load_ref_n)
+        else:
+            swing_pen = (charged / self._swing_load_ref_n).clamp(0.0, 1.0) * swing_gate.float()
+
+        # commanded-support lean
+        seg = self.goal_index[:, 0].clamp(0, t.seg_lean_gate.shape[1] - 1)
+        lean_gate = in_hold & t.seg_lean_gate[mids, seg] & ~excluded
+        slots = self._zone_ground_slot
+        goal_ground = (g["contact"][:, 0][:, slots.clamp(min=0)] > 0.5) & (slots >= 0)
+        points = patch_points(pos, rot, t, self._lean_body_ids)
+        zones = self._lean_point_zone
+        valid = goal_ground[:, zones.clamp(min=0)] & (zones >= 0)
+        com = whole_body_com(pos, rot, t.body_mass, t.body_com_local)
+        margin = polygon_margin(points[..., :2], valid, com[:, :2])
+        lean_pen = lean_shortfall(margin, lean_gate, self._lean_min_margin, self._lean_scale)
+        centroid = (points[..., :2] * valid.unsqueeze(-1)).sum(1) / valid.sum(1, keepdim=True).clamp(min=1)
+        error = (com[:, :2] - centroid - t.seg_cop_rel[mids, seg]).norm(dim=-1)
+        error_valid = lean_gate & t.seg_cop_valid[mids, seg]
+
+        # loaded slip power on feet and hands
+        slip = zeros.clone()
+        if ground is not None:
+            fz = ground[..., 2].clamp_min(0.0)
+            for bodies in self._slip_zone_bodies:
+                speed = corner_slip_speed(pos, rot, cur.rigid_body_vel, cur.rigid_body_ang_vel, t, bodies)
+                slip = slip + fz[:, bodies].sum(-1) * (speed - 0.05).clamp(min=0.0)
+
+        # load through the commanded hold's leg-on-arm / leg-on-trunk pairs
+        pair_load = zeros.clone()
+        pair_rows = torch.zeros(num_envs, dtype=torch.bool, device=device)
+        pair_forces = getattr(cur, "rigid_body_pair_contact_forces", None)
+        if ground is not None and (pair_forces is not None or self._contact_maps["pair_slot"].numel() == 0):
+            maps = self._contact_maps
+            forces = compute_contact_slot_forces(
+                ground, pair_forces, maps["ground_slot"], maps["ground_body"], maps["pair_slot"],
+                maps["pair_body_a"], maps["pair_body_b"], maps["num_pairs"],
+            )
+            cons = t.seg_pair_consequential[mids, seg] & in_hold.unsqueeze(-1)
+            pair_load = (forces * cons.float()).sum(-1)
+            pair_rows = cons.any(-1)
+
+        def fill(x, rows):
+            # diagnostics are logged as a batch mean: fill rows the quantity is not defined on
+            # with the defined rows' mean, so the logged number is that mean
+            if bool(rows.any()):
+                return torch.where(rows, x, x[rows].mean())
+            return torch.zeros_like(x)
+
+        return dict(
+            swing_penalty=swing_pen,
+            swing_load_n=charged,
+            swing_gate=swing_gate.float(),
+            lean_penalty=lean_pen,
+            lean_margin=fill(margin, lean_gate),
+            lean_gate=lean_gate.float(),
+            lean_error=fill(error, error_valid),
+            lean_error_valid=error_valid.float(),
+            slip_power=slip,
+            pair_load_n=fill(pair_load, pair_rows),
+        )
 
     def _unwanted_support(self, ctx: EnvContext) -> Tuple[Tensor, Tensor, Tensor]:
         """``(penalty [E] in [0,1], charged load [E] N, gate [E] float)``.
@@ -726,6 +920,8 @@ class ContactGraphControl(MaskedMimicControl):
         if self._support_ema is not None:
             # A new episode starts its load average from zero.
             self._support_ema.reset(env_ids)
+        if getattr(self, "_physics", None) is not None and self._swing_ema is not None:
+            self._swing_ema.reset(env_ids)
         if self._event_tracker is not None:
             # Cleared rows re-open their first segment from the next
             # observation build, so history is episode-local by construction.
@@ -791,6 +987,8 @@ class ContactGraphControl(MaskedMimicControl):
         self._history_update_pending = True
         if self._support_ema is not None:
             self._support_ema.mark_step()
+        if getattr(self, "_physics", None) is not None and self._swing_ema is not None:
+            self._swing_ema.mark_step()
         if not self._initialized:
             return
 
@@ -1143,6 +1341,7 @@ class ContactGraphControl(MaskedMimicControl):
 
         pose_error, pose_error_visible = self._goal_pose_error(ctx, ref_pos, ref_rot)
         support_penalty, support_load_n, support_gate = self._unwanted_support(ctx)
+        physics = self._physics_terms(ctx)
 
         ctx.contact_goal = ContactGoalContext(
             contact_spec=contact_spec,
@@ -1160,4 +1359,5 @@ class ContactGraphControl(MaskedMimicControl):
             unwanted_support=support_penalty,
             unwanted_support_n=support_load_n,
             support_gate=support_gate,
+            **physics,
         )
