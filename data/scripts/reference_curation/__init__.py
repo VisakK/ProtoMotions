@@ -20,4 +20,6 @@ One module per step, pure functions plus a thin ``main()``; import with
              the verdict ledger, the truth and the calibration table of each claim class
 ``review``   Step 4: the headless reviewer (``claude -p``, blind, resumable, budgeted)
              that fills the ledger
+``human_mesh`` Step 5: the performer's registered MoSh SMPL-X mesh, its floor and self
+             contacts per zone (capture store v2 = v1 + ``human_*``), and its render layer
 """
