@@ -22,4 +22,10 @@ One module per step, pure functions plus a thin ``main()``; import with
              that fills the ledger
 ``human_mesh`` Step 5: the performer's registered MoSh SMPL-X mesh, its floor and self
              contacts per zone (capture store v2 = v1 + ``human_*``), and its render layer
+``sources``  Step 6: capture store v3 (v2 + the seam-arbitrated floor contact of the limb
+             zones) and the evidence hierarchy: mesh, then markers, then the mat
+``labels``   Step 6: labels v1, reconciled deterministically from the capture (window,
+             exemplar, ground set, Tier-1 load paths, roles), with the Pass-B claims attached
+``informed`` Step 6: the informed review (Pass B): packets with the labels and measurements,
+             the contract (``prompts/pass_b.md``, ``schemas/pass_b.json``) and its calibration
 """

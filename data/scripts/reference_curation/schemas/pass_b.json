@@ -1,0 +1,1030 @@
+{
+ "title": "informed_review_pass_b",
+ "description": "Every panels field lists the tags of the panels that show the answer, for example 3b.",
+ "type": "object",
+ "additionalProperties": false,
+ "required": [
+  "pose",
+  "variant",
+  "floor",
+  "discrepancies",
+  "body_body",
+  "implausible",
+  "roles",
+  "timing",
+  "repair"
+ ],
+ "properties": {
+  "pose": {
+   "type": "object",
+   "additionalProperties": false,
+   "required": [
+    "description",
+    "candidates"
+   ],
+   "properties": {
+    "description": {
+     "type": "string",
+     "maxLength": 480,
+     "description": "At most 60 words: what touches the floor, where the head is relative to the hips, how each arm and each leg is placed."
+    },
+    "candidates": {
+     "type": "array",
+     "maxItems": 3,
+     "description": "Up to three yoga pose names, most likely first; empty if you cannot tell.",
+     "items": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+       "name",
+       "confidence"
+      ],
+      "properties": {
+       "name": {
+        "type": "string",
+        "maxLength": 80,
+        "description": "At most 8 words."
+       },
+       "confidence": {
+        "type": "string",
+        "enum": [
+         "low",
+         "medium",
+         "high"
+        ]
+       }
+      }
+     }
+    }
+   }
+  },
+  "variant": {
+   "type": "object",
+   "additionalProperties": false,
+   "required": [
+    "matches_label",
+    "note"
+   ],
+   "properties": {
+    "matches_label": {
+     "type": "string",
+     "enum": [
+      "yes",
+      "variant",
+      "no",
+      "cannot_tell"
+     ],
+     "description": "Does the performed configuration match the pose the label names?"
+    },
+    "note": {
+     "type": "string",
+     "maxLength": 160,
+     "description": "At most 20 words: how it differs; empty if it does not."
+    }
+   }
+  },
+  "floor": {
+   "type": "object",
+   "additionalProperties": false,
+   "required": [
+    "left foot",
+    "right foot",
+    "left shin",
+    "right shin",
+    "left thigh",
+    "right thigh",
+    "pelvis",
+    "torso",
+    "head",
+    "left upper arm",
+    "right upper arm",
+    "left forearm",
+    "right forearm",
+    "left hand",
+    "right hand"
+   ],
+   "description": "Every body part at the main moment. avatar: touching means the part rests on the floor, within 1 cm of it, with no drop line; off_floor means a visible gap (a drop line, or floor seen under the part). markers: touching means the part's markers rest at floor level, 1 to 4 cm above it; off_floor means clearly higher.",
+   "properties": {
+    "left foot": {
+     "type": "object",
+     "additionalProperties": false,
+     "required": [
+      "avatar",
+      "markers",
+      "panels"
+     ],
+     "properties": {
+      "avatar": {
+       "type": "string",
+       "enum": [
+        "touching",
+        "off_floor",
+        "cannot_tell"
+       ]
+      },
+      "markers": {
+       "type": "string",
+       "enum": [
+        "touching",
+        "off_floor",
+        "no_markers",
+        "cannot_tell"
+       ]
+      },
+      "panels": {
+       "type": "array",
+       "maxItems": 4,
+       "items": {
+        "type": "string",
+        "pattern": "^[1-6][a-l]$"
+       }
+      }
+     }
+    },
+    "right foot": {
+     "type": "object",
+     "additionalProperties": false,
+     "required": [
+      "avatar",
+      "markers",
+      "panels"
+     ],
+     "properties": {
+      "avatar": {
+       "type": "string",
+       "enum": [
+        "touching",
+        "off_floor",
+        "cannot_tell"
+       ]
+      },
+      "markers": {
+       "type": "string",
+       "enum": [
+        "touching",
+        "off_floor",
+        "no_markers",
+        "cannot_tell"
+       ]
+      },
+      "panels": {
+       "type": "array",
+       "maxItems": 4,
+       "items": {
+        "type": "string",
+        "pattern": "^[1-6][a-l]$"
+       }
+      }
+     }
+    },
+    "left shin": {
+     "type": "object",
+     "additionalProperties": false,
+     "required": [
+      "avatar",
+      "markers",
+      "panels"
+     ],
+     "properties": {
+      "avatar": {
+       "type": "string",
+       "enum": [
+        "touching",
+        "off_floor",
+        "cannot_tell"
+       ]
+      },
+      "markers": {
+       "type": "string",
+       "enum": [
+        "touching",
+        "off_floor",
+        "no_markers",
+        "cannot_tell"
+       ]
+      },
+      "panels": {
+       "type": "array",
+       "maxItems": 4,
+       "items": {
+        "type": "string",
+        "pattern": "^[1-6][a-l]$"
+       }
+      }
+     }
+    },
+    "right shin": {
+     "type": "object",
+     "additionalProperties": false,
+     "required": [
+      "avatar",
+      "markers",
+      "panels"
+     ],
+     "properties": {
+      "avatar": {
+       "type": "string",
+       "enum": [
+        "touching",
+        "off_floor",
+        "cannot_tell"
+       ]
+      },
+      "markers": {
+       "type": "string",
+       "enum": [
+        "touching",
+        "off_floor",
+        "no_markers",
+        "cannot_tell"
+       ]
+      },
+      "panels": {
+       "type": "array",
+       "maxItems": 4,
+       "items": {
+        "type": "string",
+        "pattern": "^[1-6][a-l]$"
+       }
+      }
+     }
+    },
+    "left thigh": {
+     "type": "object",
+     "additionalProperties": false,
+     "required": [
+      "avatar",
+      "markers",
+      "panels"
+     ],
+     "properties": {
+      "avatar": {
+       "type": "string",
+       "enum": [
+        "touching",
+        "off_floor",
+        "cannot_tell"
+       ]
+      },
+      "markers": {
+       "type": "string",
+       "enum": [
+        "touching",
+        "off_floor",
+        "no_markers",
+        "cannot_tell"
+       ]
+      },
+      "panels": {
+       "type": "array",
+       "maxItems": 4,
+       "items": {
+        "type": "string",
+        "pattern": "^[1-6][a-l]$"
+       }
+      }
+     }
+    },
+    "right thigh": {
+     "type": "object",
+     "additionalProperties": false,
+     "required": [
+      "avatar",
+      "markers",
+      "panels"
+     ],
+     "properties": {
+      "avatar": {
+       "type": "string",
+       "enum": [
+        "touching",
+        "off_floor",
+        "cannot_tell"
+       ]
+      },
+      "markers": {
+       "type": "string",
+       "enum": [
+        "touching",
+        "off_floor",
+        "no_markers",
+        "cannot_tell"
+       ]
+      },
+      "panels": {
+       "type": "array",
+       "maxItems": 4,
+       "items": {
+        "type": "string",
+        "pattern": "^[1-6][a-l]$"
+       }
+      }
+     }
+    },
+    "pelvis": {
+     "type": "object",
+     "additionalProperties": false,
+     "required": [
+      "avatar",
+      "markers",
+      "panels"
+     ],
+     "properties": {
+      "avatar": {
+       "type": "string",
+       "enum": [
+        "touching",
+        "off_floor",
+        "cannot_tell"
+       ]
+      },
+      "markers": {
+       "type": "string",
+       "enum": [
+        "touching",
+        "off_floor",
+        "no_markers",
+        "cannot_tell"
+       ]
+      },
+      "panels": {
+       "type": "array",
+       "maxItems": 4,
+       "items": {
+        "type": "string",
+        "pattern": "^[1-6][a-l]$"
+       }
+      }
+     }
+    },
+    "torso": {
+     "type": "object",
+     "additionalProperties": false,
+     "required": [
+      "avatar",
+      "markers",
+      "panels"
+     ],
+     "properties": {
+      "avatar": {
+       "type": "string",
+       "enum": [
+        "touching",
+        "off_floor",
+        "cannot_tell"
+       ]
+      },
+      "markers": {
+       "type": "string",
+       "enum": [
+        "touching",
+        "off_floor",
+        "no_markers",
+        "cannot_tell"
+       ]
+      },
+      "panels": {
+       "type": "array",
+       "maxItems": 4,
+       "items": {
+        "type": "string",
+        "pattern": "^[1-6][a-l]$"
+       }
+      }
+     }
+    },
+    "head": {
+     "type": "object",
+     "additionalProperties": false,
+     "required": [
+      "avatar",
+      "markers",
+      "panels"
+     ],
+     "properties": {
+      "avatar": {
+       "type": "string",
+       "enum": [
+        "touching",
+        "off_floor",
+        "cannot_tell"
+       ]
+      },
+      "markers": {
+       "type": "string",
+       "enum": [
+        "touching",
+        "off_floor",
+        "no_markers",
+        "cannot_tell"
+       ]
+      },
+      "panels": {
+       "type": "array",
+       "maxItems": 4,
+       "items": {
+        "type": "string",
+        "pattern": "^[1-6][a-l]$"
+       }
+      }
+     }
+    },
+    "left upper arm": {
+     "type": "object",
+     "additionalProperties": false,
+     "required": [
+      "avatar",
+      "markers",
+      "panels"
+     ],
+     "properties": {
+      "avatar": {
+       "type": "string",
+       "enum": [
+        "touching",
+        "off_floor",
+        "cannot_tell"
+       ]
+      },
+      "markers": {
+       "type": "string",
+       "enum": [
+        "touching",
+        "off_floor",
+        "no_markers",
+        "cannot_tell"
+       ]
+      },
+      "panels": {
+       "type": "array",
+       "maxItems": 4,
+       "items": {
+        "type": "string",
+        "pattern": "^[1-6][a-l]$"
+       }
+      }
+     }
+    },
+    "right upper arm": {
+     "type": "object",
+     "additionalProperties": false,
+     "required": [
+      "avatar",
+      "markers",
+      "panels"
+     ],
+     "properties": {
+      "avatar": {
+       "type": "string",
+       "enum": [
+        "touching",
+        "off_floor",
+        "cannot_tell"
+       ]
+      },
+      "markers": {
+       "type": "string",
+       "enum": [
+        "touching",
+        "off_floor",
+        "no_markers",
+        "cannot_tell"
+       ]
+      },
+      "panels": {
+       "type": "array",
+       "maxItems": 4,
+       "items": {
+        "type": "string",
+        "pattern": "^[1-6][a-l]$"
+       }
+      }
+     }
+    },
+    "left forearm": {
+     "type": "object",
+     "additionalProperties": false,
+     "required": [
+      "avatar",
+      "markers",
+      "panels"
+     ],
+     "properties": {
+      "avatar": {
+       "type": "string",
+       "enum": [
+        "touching",
+        "off_floor",
+        "cannot_tell"
+       ]
+      },
+      "markers": {
+       "type": "string",
+       "enum": [
+        "touching",
+        "off_floor",
+        "no_markers",
+        "cannot_tell"
+       ]
+      },
+      "panels": {
+       "type": "array",
+       "maxItems": 4,
+       "items": {
+        "type": "string",
+        "pattern": "^[1-6][a-l]$"
+       }
+      }
+     }
+    },
+    "right forearm": {
+     "type": "object",
+     "additionalProperties": false,
+     "required": [
+      "avatar",
+      "markers",
+      "panels"
+     ],
+     "properties": {
+      "avatar": {
+       "type": "string",
+       "enum": [
+        "touching",
+        "off_floor",
+        "cannot_tell"
+       ]
+      },
+      "markers": {
+       "type": "string",
+       "enum": [
+        "touching",
+        "off_floor",
+        "no_markers",
+        "cannot_tell"
+       ]
+      },
+      "panels": {
+       "type": "array",
+       "maxItems": 4,
+       "items": {
+        "type": "string",
+        "pattern": "^[1-6][a-l]$"
+       }
+      }
+     }
+    },
+    "left hand": {
+     "type": "object",
+     "additionalProperties": false,
+     "required": [
+      "avatar",
+      "markers",
+      "panels"
+     ],
+     "properties": {
+      "avatar": {
+       "type": "string",
+       "enum": [
+        "touching",
+        "off_floor",
+        "cannot_tell"
+       ]
+      },
+      "markers": {
+       "type": "string",
+       "enum": [
+        "touching",
+        "off_floor",
+        "no_markers",
+        "cannot_tell"
+       ]
+      },
+      "panels": {
+       "type": "array",
+       "maxItems": 4,
+       "items": {
+        "type": "string",
+        "pattern": "^[1-6][a-l]$"
+       }
+      }
+     }
+    },
+    "right hand": {
+     "type": "object",
+     "additionalProperties": false,
+     "required": [
+      "avatar",
+      "markers",
+      "panels"
+     ],
+     "properties": {
+      "avatar": {
+       "type": "string",
+       "enum": [
+        "touching",
+        "off_floor",
+        "cannot_tell"
+       ]
+      },
+      "markers": {
+       "type": "string",
+       "enum": [
+        "touching",
+        "off_floor",
+        "no_markers",
+        "cannot_tell"
+       ]
+      },
+      "panels": {
+       "type": "array",
+       "maxItems": 4,
+       "items": {
+        "type": "string",
+        "pattern": "^[1-6][a-l]$"
+       }
+      }
+     }
+    }
+   }
+  },
+  "discrepancies": {
+   "type": "array",
+   "maxItems": 8,
+   "description": "Where the avatar and the markers disagree; empty if nowhere.",
+   "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+     "part",
+     "kind",
+     "note",
+     "panels"
+    ],
+    "properties": {
+     "part": {
+      "type": "string",
+      "enum": [
+       "left foot",
+       "right foot",
+       "left shin",
+       "right shin",
+       "left thigh",
+       "right thigh",
+       "pelvis",
+       "torso",
+       "head",
+       "left upper arm",
+       "right upper arm",
+       "left forearm",
+       "right forearm",
+       "left hand",
+       "right hand"
+      ]
+     },
+     "kind": {
+      "type": "string",
+      "enum": [
+       "avatar_off_floor_markers_on_floor",
+       "avatar_on_floor_markers_off_floor",
+       "markers_away_from_avatar_part",
+       "other"
+      ]
+     },
+     "note": {
+      "type": "string",
+      "maxLength": 160,
+      "description": "At most 20 words."
+     },
+     "panels": {
+      "type": "array",
+      "maxItems": 4,
+      "items": {
+       "type": "string",
+       "pattern": "^[1-6][a-l]$"
+      }
+     }
+    }
+   }
+  },
+  "body_body": {
+   "type": "object",
+   "additionalProperties": false,
+   "required": [
+    "answer",
+    "contacts"
+   ],
+   "description": "answer listed: contacts names every pair of avatar parts that touch, and may be empty. answer cannot_tell: the views do not show it, and contacts is empty.",
+   "properties": {
+    "answer": {
+     "type": "string",
+     "enum": [
+      "listed",
+      "cannot_tell"
+     ]
+    },
+    "contacts": {
+     "type": "array",
+     "maxItems": 10,
+     "items": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+       "part_a",
+       "part_b",
+       "certainty",
+       "panels"
+      ],
+      "properties": {
+       "part_a": {
+        "type": "string",
+        "enum": [
+         "left foot",
+         "right foot",
+         "left shin",
+         "right shin",
+         "left thigh",
+         "right thigh",
+         "pelvis",
+         "torso",
+         "head",
+         "left upper arm",
+         "right upper arm",
+         "left forearm",
+         "right forearm",
+         "left hand",
+         "right hand"
+        ]
+       },
+       "part_b": {
+        "type": "string",
+        "enum": [
+         "left foot",
+         "right foot",
+         "left shin",
+         "right shin",
+         "left thigh",
+         "right thigh",
+         "pelvis",
+         "torso",
+         "head",
+         "left upper arm",
+         "right upper arm",
+         "left forearm",
+         "right forearm",
+         "left hand",
+         "right hand"
+        ]
+       },
+       "certainty": {
+        "type": "string",
+        "enum": [
+         "clear",
+         "possible"
+        ]
+       },
+       "panels": {
+        "type": "array",
+        "maxItems": 4,
+        "items": {
+         "type": "string",
+         "pattern": "^[1-6][a-l]$"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "implausible": {
+   "type": "array",
+   "maxItems": 6,
+   "description": "Physically implausible features; empty if none.",
+   "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+     "kind",
+     "parts",
+     "note",
+     "panels"
+    ],
+    "properties": {
+     "kind": {
+      "type": "string",
+      "enum": [
+       "floor_penetration",
+       "self_penetration",
+       "no_base_of_support",
+       "joint_beyond_range",
+       "other"
+      ]
+     },
+     "parts": {
+      "type": "array",
+      "maxItems": 4,
+      "items": {
+       "type": "string",
+       "enum": [
+        "left foot",
+        "right foot",
+        "left shin",
+        "right shin",
+        "left thigh",
+        "right thigh",
+        "pelvis",
+        "torso",
+        "head",
+        "left upper arm",
+        "right upper arm",
+        "left forearm",
+        "right forearm",
+        "left hand",
+        "right hand"
+       ]
+      }
+     },
+     "note": {
+      "type": "string",
+      "maxLength": 160,
+      "description": "At most 20 words."
+     },
+     "panels": {
+      "type": "array",
+      "maxItems": 4,
+      "items": {
+       "type": "string",
+       "pattern": "^[1-6][a-l]$"
+      }
+     }
+    }
+   }
+  },
+  "roles": {
+   "type": "array",
+   "maxItems": 16,
+   "description": "One entry for every pair listed in packet.json candidates, and no other.",
+   "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+     "part_a",
+     "part_b",
+     "role",
+     "note",
+     "panels"
+    ],
+    "properties": {
+     "part_a": {
+      "type": "string",
+      "enum": [
+       "left foot",
+       "right foot",
+       "left shin",
+       "right shin",
+       "left thigh",
+       "right thigh",
+       "pelvis",
+       "torso",
+       "head",
+       "left upper arm",
+       "right upper arm",
+       "left forearm",
+       "right forearm",
+       "left hand",
+       "right hand"
+      ]
+     },
+     "part_b": {
+      "type": "string",
+      "enum": [
+       "left foot",
+       "right foot",
+       "left shin",
+       "right shin",
+       "left thigh",
+       "right thigh",
+       "pelvis",
+       "torso",
+       "head",
+       "left upper arm",
+       "right upper arm",
+       "left forearm",
+       "right forearm",
+       "left hand",
+       "right hand"
+      ]
+     },
+     "role": {
+      "type": "string",
+      "enum": [
+       "required_touch",
+       "allowed",
+       "incidental",
+       "cannot_tell"
+      ]
+     },
+     "note": {
+      "type": "string",
+      "maxLength": 120,
+      "description": "At most 15 words."
+     },
+     "panels": {
+      "type": "array",
+      "maxItems": 4,
+      "items": {
+       "type": "string",
+       "pattern": "^[1-6][a-l]$"
+      }
+     }
+    }
+   }
+  },
+  "timing": {
+   "type": "object",
+   "additionalProperties": false,
+   "required": [
+    "start",
+    "end",
+    "main_moment",
+    "better_panel",
+    "note"
+   ],
+   "properties": {
+    "start": {
+     "type": "string",
+     "enum": [
+      "label",
+      "capture",
+      "neither",
+      "cannot_tell"
+     ]
+    },
+    "end": {
+     "type": "string",
+     "enum": [
+      "label",
+      "capture",
+      "neither",
+      "cannot_tell"
+     ]
+    },
+    "main_moment": {
+     "type": "string",
+     "enum": [
+      "keep",
+      "move",
+      "cannot_tell"
+     ]
+    },
+    "better_panel": {
+     "type": "string",
+     "pattern": "^([1-6][a-l])?$",
+     "description": "With main_moment move: the tag of the better time-strip panel; else empty."
+    },
+    "note": {
+     "type": "string",
+     "maxLength": 160,
+     "description": "At most 20 words."
+    }
+   }
+  },
+  "repair": {
+   "type": "object",
+   "additionalProperties": false,
+   "required": [
+    "needed",
+    "kinds",
+    "note"
+   ],
+   "properties": {
+    "needed": {
+     "type": "string",
+     "enum": [
+      "yes",
+      "no",
+      "cannot_tell"
+     ]
+    },
+    "kinds": {
+     "type": "array",
+     "maxItems": 5,
+     "items": {
+      "type": "string",
+      "enum": [
+       "float_support",
+       "head_collider",
+       "pose_mismatch",
+       "penetration",
+       "other"
+      ]
+     }
+    },
+    "note": {
+     "type": "string",
+     "maxLength": 160,
+     "description": "At most 20 words."
+    }
+   }
+  }
+ }
+}
