@@ -28,4 +28,9 @@ One module per step, pure functions plus a thin ``main()``; import with
              exemplar, ground set, Tier-1 load paths, roles), with the Pass-B claims attached
 ``informed`` Step 6: the informed review (Pass B): packets with the labels and measurements,
              the contract (``prompts/pass_b.md``, ``schemas/pass_b.json``) and its calibration
+``statics``  Step 7: the gated static LP (contacts only inside their bands, typed statuses, the
+             min/max-load necessity test, joint stops, the counterfactual closure) over every hold
+             of a labels folder, written to ``data/reference_curation/statics/``
+``witness``  Step 7: the MuJoCo statue witness: does the plant, simulated, hold the pose on the
+             contacts the gated LP balanced it on
 """
