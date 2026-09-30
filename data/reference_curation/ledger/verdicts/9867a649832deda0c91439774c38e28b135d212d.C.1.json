@@ -1,0 +1,142 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "4c",
+     "4e",
+     "2a"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "4d",
+     "4f",
+     "2b"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "4c",
+     "4e",
+     "3c"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "4d",
+     "4f",
+     "3d"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "equal",
+  "floating_parts": {
+   "A": [
+    "left foot",
+    "right hand"
+   ],
+   "B": [
+    "left foot",
+    "right hand"
+   ]
+  },
+  "more_natural": "equal",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both show the same wide-stance side bend: right hand down by the front foot, left arm straight up, both feet on the floor, and the same overall shape. No difference is visible."
+  },
+  "summary": "A and B look the same in every view. Both lift the left foot and the right hand slightly off the floor, with drop lines under each, and both roll the right foot onto its edge. Neither is closer to the grey body or more natural."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1300024,
+ "duration_s": 16.56,
+ "errors": [],
+ "frame_hold": 669,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Extended_Revolved_Triangle_Pose_or_Utthita_Trikonasana_-b@669",
+ "inputs": {},
+ "item_id": "220923_Extended_Revolved_Triangle_Pose_or_Utthita_Trikonasana_-b@669#identity",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/9867a649832deda0c91439774c38e28b135d212d",
+  "images": {
+   "img_1.png": "5fe2924f4725f944b98aab0230dfe3f400c13a0e803b87e183e1061dcdee24b5",
+   "img_2.png": "ab15e9380f3e5cd2bbe4c31fd6d46f1c8f9eeeaf8bfd72928e12daa9a79bd4a7",
+   "img_3.png": "b92812423a5c8def947196c94911b8b077c56ddb51ad2e658f3c0106c111e2a0",
+   "img_4.png": "5d3dc6aab6b0146e8690033cb0a2acea27ccbc4c25b6af3897cbe550a7018dda",
+   "img_5.png": "7a956e8d71a8b90c9a56181980d7a1f52cc0c3d7c9c4a585aa8dd3a3da191eab"
+  },
+  "packet_json_sha256": "91093528a9fb47775592e298c655e5a84f6ed3300bcb989a611963779d9e4488"
+ },
+ "packet_id": "9867a649832deda0c91439774c38e28b135d212d",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "0a1c36a0-6b12-4cd1-81f4-e1f5a0dc64af",
+ "started_utc": "2026-09-30T02:31:02+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Extended_Revolved_Triangle_Pose_or_Utthita_Trikonasana_-b",
+ "stratum": "identity",
+ "usage": {
+  "cache_creation_input_tokens": 11960,
+  "cache_read_input_tokens": 13492,
+  "input_tokens": 6,
+  "output_tokens": 1580,
+  "thinking_tokens": 488
+ },
+ "warnings": []
+}

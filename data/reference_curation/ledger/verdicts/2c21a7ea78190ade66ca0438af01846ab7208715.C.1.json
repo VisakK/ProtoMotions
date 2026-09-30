@@ -1,0 +1,155 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1a",
+     "3c",
+     "5c"
+    ],
+    "part": "left hand",
+    "severity": "major"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "2a",
+     "1c",
+     "4a"
+    ],
+    "part": "right foot",
+    "severity": "major"
+   },
+   {
+    "avatar": "A",
+    "kind": "through_body",
+    "panels": [
+     "2a"
+    ],
+    "part": "left thigh",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "jitter",
+    "panels": [
+     "5a",
+     "5c",
+     "5e"
+    ],
+    "part": "head",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "through_body",
+    "panels": [
+     "2d",
+     "1b",
+     "3b"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "through_body",
+    "panels": [
+     "4b",
+     "1d"
+    ],
+    "part": "left upper arm",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "B",
+  "floating_parts": {
+   "A": [],
+   "B": []
+  },
+  "more_natural": "B",
+  "same_pose": {
+   "answer": "no",
+   "reason": "Both balance on the hands with knees on the arms. A's hands are much wider apart and its feet hang low near the floor, while B's feet are tucked up high like the grey body's."
+  },
+  "summary": "Both avatars balance on their hands, and neither has a part floating above a floor contact. B follows the grey body closely, with narrow hands and feet tucked high. A spreads its hands wide, drops its feet low and lowers its head, which moves it away from the grey body."
+ },
+ "audit_id": null,
+ "cost_usd": 0.13577060000000002,
+ "duration_s": 23.02,
+ "errors": [],
+ "frame_hold": 2614,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Cockerel_Pose-b@2614",
+ "inputs": {},
+ "item_id": "220923_Cockerel_Pose-b@2614#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/2c21a7ea78190ade66ca0438af01846ab7208715",
+  "images": {
+   "img_1.png": "e8afd056e0d229d83d71c84e6307a9d67da7222cf00df3ba38be49ef16194dcd",
+   "img_2.png": "638f96b466ee2b896791221bc9d99a19b8240e756f3d09730a8c0d8063365306",
+   "img_3.png": "6aca0e62aaed702255b62322b1218c51060edfc77fb967fbda174961abfbe526",
+   "img_4.png": "90b8a0edd56a67988433b8b5b68f2783d4ceb590968722a50adeeb801077270b",
+   "img_5.png": "560166fa00afbde66a0f8e7903ede5893eb6269814edd96deb391b1be0d1402b"
+  },
+  "packet_json_sha256": "4d036a7691d92c1c1e2c754648d992a880459ee4286db89a8ffb3c5caf656c5b"
+ },
+ "packet_id": "2c21a7ea78190ade66ca0438af01846ab7208715",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "dcf4d9f7-0f34-4787-a6b0-ef46541a047a",
+ "started_utc": "2026-09-30T03:43:56+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Cockerel_Pose-b",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 11245,
+  "cache_read_input_tokens": 13433,
+  "input_tokens": 6,
+  "output_tokens": 2155,
+  "thinking_tokens": 916
+ },
+ "warnings": []
+}

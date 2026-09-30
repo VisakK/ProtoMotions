@@ -1,0 +1,127 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "4a",
+     "3c",
+     "1a"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "through_body",
+    "panels": [
+     "4a",
+     "3a"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1a",
+     "3c",
+     "5c"
+    ],
+    "part": "left shin",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "B",
+  "floating_parts": {
+   "A": [
+    "left foot",
+    "right foot"
+   ],
+   "B": []
+  },
+  "more_natural": "B",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both stand upright with arms held out to the sides and both feet together on the floor; A's shins angle inward more and its feet sit a little higher, but the shape is the same."
+  },
+  "summary": "It's the same standing pose with arms out. In A, the feet hover a few cm above the floor: the right foot is tilted and runs into the left foot, and the shins angle inward more than the grey body's. In B, both feet sit flat on the floor and the legs follow the grey body closely."
+ },
+ "audit_id": null,
+ "cost_usd": 0.11230399999999999,
+ "duration_s": 12.64,
+ "errors": [],
+ "frame_hold": 969,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Shoulder-Pressing_Pose_or_Bhujapidasana_-a@969",
+ "inputs": {},
+ "item_id": "220923_Shoulder-Pressing_Pose_or_Bhujapidasana_-a@969#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/e703067c96c96af255cbb00ba2133a0eb996d9f9",
+  "images": {
+   "img_1.png": "75b7d65dd38f8c2419558eff6faef6fcc9d679a332dfcbe67d252863cbe0edb1",
+   "img_2.png": "8513ac603bcfb777c146ba780dfb797c301c15ab84d36a0c645799e0539ad608",
+   "img_3.png": "9cf90f5487442c6f1ca2bc8583d16774816ed6160a2426e434a78ccd28f2a1ee",
+   "img_4.png": "e31fbf23a7907d6b4b043c7323a3103f292ee559ffd08bf02db58ba02ff0f521",
+   "img_5.png": "13f6549b1cf7dce9f7acfaf83663360e7f6379cef61421f4ce415492fd34a13b"
+  },
+  "packet_json_sha256": "3e46cc407e87e38e699fd1aa31ee998833fe32cdb7fbb118fe5fec21ca6695ac"
+ },
+ "packet_id": "e703067c96c96af255cbb00ba2133a0eb996d9f9",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "b783fbf3-1ed6-4214-ae07-47283a1b5248",
+ "started_utc": "2026-09-30T06:18:15+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Shoulder-Pressing_Pose_or_Bhujapidasana_-a",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 10572,
+  "cache_read_input_tokens": 13420,
+  "input_tokens": 6,
+  "output_tokens": 1251,
+  "thinking_tokens": 140
+ },
+ "warnings": []
+}

@@ -1,0 +1,164 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1c",
+     "4c",
+     "4e"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1c",
+     "4c",
+     "4e"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "4a",
+     "1a",
+     "3c"
+    ],
+    "part": "head",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1b",
+     "3d",
+     "4b"
+    ],
+    "part": "pelvis",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "2b",
+     "2d"
+    ],
+    "part": "right forearm",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "2a",
+     "2c"
+    ],
+    "part": "right forearm",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "B",
+  "floating_parts": {
+   "A": [
+    "head",
+    "left foot",
+    "right foot",
+    "left forearm",
+    "right forearm"
+   ],
+   "B": [
+    "right forearm"
+   ]
+  },
+  "more_natural": "B",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both rest on head, forearms and toes with hips raised, legs straight and hands raised the same way. B's hips and legs sit somewhat lower, but the shape is the same."
+  },
+  "summary": "Both avatars show the same pose. A hovers a few centimetres above the floor at the head, both feet and the forearms. B keeps its head, feet and left forearm on the floor like the grey body, though its hips and legs sit a little lower than the performer's."
+ },
+ "audit_id": null,
+ "cost_usd": 0.14333959999999998,
+ "duration_s": 23.1,
+ "errors": [],
+ "frame_hold": 601,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Plow_Pose_or_Halasana_-a@571",
+ "inputs": {},
+ "item_id": "220923_Plow_Pose_or_Halasana_-a@571#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/4fda12ee1d4317b8e78d77708098763dd0c1395b",
+  "images": {
+   "img_1.png": "6d9e9344fdb892fa50015eabaabbe3bb96ccc7e26029fc2fa8343ad0acfd36fc",
+   "img_2.png": "eb256dde7fab855735613d807ee45f04c60cf24390a69e24adc1c7d94a35bfef",
+   "img_3.png": "7523aac75d70af87bba142378ea6a8bc47cb69bd216c5dfdec02b69ac51462ef",
+   "img_4.png": "4db55ef3310b7f16fa52d91dfa373e769a58081f0983e329bcee6a2ccb23a944",
+   "img_5.png": "1baac0098dd64ca3be47297c5ba7650ef1fd92f559d38b56781cc42c909e8e1f"
+  },
+  "packet_json_sha256": "cfece7dd4e71c5b50a5d9ebb2c1a3399e799eef302f30e736abac40c7f45d9d5"
+ },
+ "packet_id": "4fda12ee1d4317b8e78d77708098763dd0c1395b",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "6dbdfb6d-a5fc-4c67-b93a-cc2fa3ba167b",
+ "started_utc": "2026-09-30T03:53:29+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Plow_Pose_or_Halasana_-a",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 11982,
+  "cache_read_input_tokens": 13498,
+  "input_tokens": 6,
+  "output_tokens": 2238,
+  "thinking_tokens": 960
+ },
+ "warnings": []
+}

@@ -1,0 +1,167 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1a",
+     "1c",
+     "2a",
+     "2c"
+    ],
+    "part": "torso",
+    "severity": "major"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1a",
+     "1c",
+     "4a",
+     "5c"
+    ],
+    "part": "left thigh",
+    "severity": "major"
+   },
+   {
+    "avatar": "A",
+    "kind": "impossible_joint",
+    "panels": [
+     "4a",
+     "4c",
+     "4e"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "through_body",
+    "panels": [
+     "1a",
+     "3c"
+    ],
+    "part": "left thigh",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "through_body",
+    "panels": [
+     "4d",
+     "1b"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "through_body",
+    "panels": [
+     "4f",
+     "3d"
+    ],
+    "part": "right thigh",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "B",
+  "floating_parts": {
+   "A": [
+    "left foot",
+    "right shin",
+    "pelvis"
+   ],
+   "B": [
+    "left shin",
+    "right shin",
+    "left foot",
+    "right foot",
+    "pelvis"
+   ]
+  },
+  "more_natural": "B",
+  "same_pose": {
+   "answer": "no",
+   "reason": "B sits upright with both legs folded flat and crossed at knee height. A's torso is sunk low and its left knee is raised to chest height with the shin near vertical."
+  },
+  "summary": "B's upright torso and flat crossed legs follow the grey body closely, though its shins and feet hover a little above the floor. A's torso is sunk low and its left knee is raised to chest height, so its pose differs from the performer's."
+ },
+ "audit_id": null,
+ "cost_usd": 0.2066624,
+ "duration_s": 43.34,
+ "errors": [],
+ "frame_hold": 1053,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Scale_Pose_or_Tolasana_-a@1068",
+ "inputs": {},
+ "item_id": "220923_Scale_Pose_or_Tolasana_-a@1068#edit",
+ "n": 1,
+ "num_turns": 9,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/347647802f7f7fc876b15cb4ff72c050b00066fc",
+  "images": {
+   "img_1.png": "dfc1bbb5f78dbfa19eb57fefb37b48faa87da7a1854ab158adae0b6f16a9ae0a",
+   "img_2.png": "4c2f8e9dd1000fc24e746343cef4eb98775bc8cfb1538f2f3bc2ca2fa3f55225",
+   "img_3.png": "6116dbf178c49d5324e259f0108636b2eab376a1782b737dfa9786af2ab3df1e",
+   "img_4.png": "6b289e112faee0181608b04c3c245af05b66c4613727d04ed2d0bbea1ab29c8c",
+   "img_5.png": "278467bc5923e6110e25c6b7f9874e2b3e1912b094232da4856f3672134de8a9"
+  },
+  "packet_json_sha256": "7781a8134275cb5906f75a699979e0b706a44c61cbf261a0d0b953a4dc49753f"
+ },
+ "packet_id": "347647802f7f7fc876b15cb4ff72c050b00066fc",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "4ee1f664-0d29-466a-97ad-ee7651a350a2",
+ "started_utc": "2026-09-30T06:16:34+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Scale_Pose_or_Tolasana_-a",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 14927,
+  "cache_read_input_tokens": 28572,
+  "input_tokens": 8,
+  "output_tokens": 4075,
+  "thinking_tokens": 2146
+ },
+ "warnings": []
+}

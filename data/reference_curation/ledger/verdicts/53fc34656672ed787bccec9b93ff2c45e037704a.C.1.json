@@ -1,0 +1,126 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "4a",
+     "1c",
+     "3c"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "through_body",
+    "panels": [
+     "4a",
+     "3c"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "4a",
+     "3c",
+     "2c"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "B",
+  "floating_parts": {
+   "A": [
+    "left foot"
+   ],
+   "B": []
+  },
+  "more_natural": "B",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both stand upright on both feet with the arms held out to the sides. Only the angle of the feet and how close they sit to the floor differ."
+  },
+  "summary": "Both show the same standing pose with the arms out to the sides. In A the feet are tilted and slightly overlap, and the left foot hovers above the floor (drop line). In B both feet sit flat on the floor, matching the grey body, so B is closer to the human and looks more natural."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1145694,
+ "duration_s": 13.99,
+ "errors": [],
+ "frame_hold": 13,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Garland_Pose_or_Malasana_-a@13",
+ "inputs": {},
+ "item_id": "220923_Garland_Pose_or_Malasana_-a@13#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/53fc34656672ed787bccec9b93ff2c45e037704a",
+  "images": {
+   "img_1.png": "66324797e1b054a9518d71ec13b089663b4ab0e2e959f7dc7f435c7be3d77e17",
+   "img_2.png": "3ef937cf88fa342b59d20a2e7940f0fb668b560a6896df63d4751780b3a73113",
+   "img_3.png": "27e15123c4282001bccd65fae17cf7a1dac741f16fbeb3bcdbc6a67000b3832d",
+   "img_4.png": "2a50b0b0c77c6c417d57fda1638cb769ff2c908ff8a34dacea2d330b9777daa3",
+   "img_5.png": "282abda35b9da9b224e09553b22badaeea67dad8d54e568ad09393157f41c1a3"
+  },
+  "packet_json_sha256": "336992b8aedaa8b966d53d7f42436593d95517fa4f0fb58036b2b4146fedc391"
+ },
+ "packet_id": "53fc34656672ed787bccec9b93ff2c45e037704a",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "57ab6aca-cdc5-4fe7-a95e-1a91c705fc8c",
+ "started_utc": "2026-09-30T03:50:50+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Garland_Pose_or_Malasana_-a",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 10553,
+  "cache_read_input_tokens": 13407,
+  "input_tokens": 6,
+  "output_tokens": 1372,
+  "thinking_tokens": 312
+ },
+ "warnings": []
+}

@@ -1,0 +1,166 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1a",
+     "3c",
+     "4a",
+     "5c"
+    ],
+    "part": "left thigh",
+    "severity": "major"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "2a",
+     "3c",
+     "4c",
+     "4e"
+    ],
+    "part": "right shin",
+    "severity": "major"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "3c",
+     "4a",
+     "4e"
+    ],
+    "part": "left hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "2a",
+     "2c",
+     "4c"
+    ],
+    "part": "right hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "impossible_joint",
+    "panels": [
+     "1a",
+     "3a",
+     "4e"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "impossible_joint",
+    "panels": [
+     "3b",
+     "1d"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "B",
+  "floating_parts": {
+   "A": [
+    "left thigh",
+    "right thigh",
+    "left shin",
+    "right shin",
+    "left hand",
+    "right hand"
+   ],
+   "B": []
+  },
+  "more_natural": "B",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both avatars have the torso upright on straight arms, the hands planted and the legs stretched back along the floor. The differences are only in height and contact."
+  },
+  "summary": "Both avatars hold the same pose. In A, both legs hover a few centimetres above the floor and both hands are tilted and lifted off it (drop lines in 3c and 4a/4c). B has its legs and flat hands on the floor, which matches the grey body. B's only flaw is a slightly twisted right foot."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1373232,
+ "duration_s": 23.67,
+ "errors": [],
+ "frame_hold": 591,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Cobra_Pose_or_Bhujangasana_-a@591",
+ "inputs": {},
+ "item_id": "220923_Cobra_Pose_or_Bhujangasana_-a@591#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/e457a604d28c6991a6874f5fe8c30ccf8d923727",
+  "images": {
+   "img_1.png": "8f1f6cf8caaa469b3557b4d637550e3403832241512d588ad1cedf9a6b332cb9",
+   "img_2.png": "d4f808d5f69bacaaee8520b1b23b68f556ff3124af505c4dfe35bf315be7eba4",
+   "img_3.png": "6e98d30694bc59213dcdbf3102811a8fbe67422bbacb2c0f8f8032d84ec1321c",
+   "img_4.png": "0435d19ef149947e467c0e8262b09c6cf92f86b8e8a149f5f0c47db469039c3a",
+   "img_5.png": "df0d505bd680bce4e987e69f4ee32eded9ab90a950c86405152caa2dfd8bb284"
+  },
+  "packet_json_sha256": "41c92c3260cb49bd2fdb26cb76e621b909f1799d64ef66e71b895cc1a9607881"
+ },
+ "packet_id": "e457a604d28c6991a6874f5fe8c30ccf8d923727",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "044f3f54-25f4-46b9-a25b-be0787993635",
+ "started_utc": "2026-09-30T03:43:07+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Cobra_Pose_or_Bhujangasana_-a",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 11980,
+  "cache_read_input_tokens": 13496,
+  "input_tokens": 6,
+  "output_tokens": 1938,
+  "thinking_tokens": 683
+ },
+ "warnings": []
+}

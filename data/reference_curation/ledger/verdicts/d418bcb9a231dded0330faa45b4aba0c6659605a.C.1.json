@@ -1,0 +1,126 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "4a",
+     "3c",
+     "1a"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "through_floor",
+    "panels": [
+     "4a",
+     "3c"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1a",
+     "3c",
+     "5c"
+    ],
+    "part": "left shin",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "B",
+  "floating_parts": {
+   "A": [
+    "left foot"
+   ],
+   "B": []
+  },
+  "more_natural": "B",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both stand upright with arms spread level at shoulder height and both feet on the floor; only A's legs angle inward and its feet tilt."
+  },
+  "summary": "It's the same standing pose with the arms spread. B's legs and flat feet match the grey body. A's knees angle inward, its right foot rolls onto its edge and dips slightly into the floor, and its left foot tilts and hovers just above the floor."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1134274,
+ "duration_s": 14.2,
+ "errors": [],
+ "frame_hold": 0,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220926_Warrior_III_Pose_or_Virabhadrasana_III_-b@0",
+ "inputs": {},
+ "item_id": "220926_Warrior_III_Pose_or_Virabhadrasana_III_-b@0#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/d418bcb9a231dded0330faa45b4aba0c6659605a",
+  "images": {
+   "img_1.png": "13d90cd84434b9aa3a85d5d2d25ad61117857a30d477ea906889b720746f0ba6",
+   "img_2.png": "2e2b54f5468d40d0268401fbc02f5a4f0e32f56b82728688c140c2c03a3fc149",
+   "img_3.png": "23ada1fcbd206a10e6516f729df716774d321009fbe9fd7e374024bbd7ee3ee5",
+   "img_4.png": "f6c551dfd4e5b93efbdea814499ffad778312af8788ddc7f123639bccbdccb81",
+   "img_5.png": "a3da40e890c833a5bc3d34134d418313205d796cfad88b4a2bdbf7cbc3a753eb"
+  },
+  "packet_json_sha256": "3c3673a3891a11ef3b5c52cabf5b57497642fb0409f888064aa29f4f68a1b5d9"
+ },
+ "packet_id": "d418bcb9a231dded0330faa45b4aba0c6659605a",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "ac71ad87-4665-4311-b82d-fc72b6fa278d",
+ "started_utc": "2026-09-30T04:04:49+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220926_Warrior_III_Pose_or_Virabhadrasana_III_-b",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 10570,
+  "cache_read_input_tokens": 13417,
+  "input_tokens": 6,
+  "output_tokens": 1308,
+  "thinking_tokens": 249
+ },
+ "warnings": []
+}

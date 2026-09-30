@@ -1,0 +1,133 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1b",
+     "1d",
+     "2b",
+     "2d",
+     "3d",
+     "5d"
+    ],
+    "part": "torso",
+    "severity": "major"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1b",
+     "1d",
+     "2d",
+     "3d",
+     "4b"
+    ],
+    "part": "head",
+    "severity": "major"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1d",
+     "2b",
+     "2d",
+     "3b"
+    ],
+    "part": "left foot",
+    "severity": "major"
+   }
+  ],
+  "closer_to_human": "A",
+  "floating_parts": {
+   "A": [],
+   "B": [
+    "left foot"
+   ]
+  },
+  "more_natural": "A",
+  "same_pose": {
+   "answer": "no",
+   "reason": "A stands on its left foot with the right foot tucked against the left leg and arms out. B is upside down: its head is near the floor, both hands are on the floor and its legs are in the air."
+  },
+  "summary": "A closely follows the grey body, standing on its left foot with the other leg tucked against it. B has fallen and is upside down: its head is near the floor, its hands are on the floor, and its left foot, which should carry the weight, hangs in the air."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1150204,
+ "duration_s": 14.96,
+ "errors": [],
+ "frame_hold": 332,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220926_Eagle_Pose_or_Garudasana_-a@332",
+ "inputs": {},
+ "item_id": "220926_Eagle_Pose_or_Garudasana_-a@332#swap",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/90a2e0523b6bb6f05b0896288e80a1a5be6849ce",
+  "images": {
+   "img_1.png": "8db71d7f9ca5f4824068b92e57dfe35b1444db57152042dc999e630146e55f93",
+   "img_2.png": "110b933ed9e4b79d1de479ff39525b93d8665def56dd582a44bbfa16b63c283d",
+   "img_3.png": "b8ecc7a95671a79709217209148ad6b1d02594f78a6961bfb74a7b8a26294c6d",
+   "img_4.png": "e4b8942af0b90b31fe0bbcb49ab8fa225970b749f3aea41f6dd58d55d2a13135",
+   "img_5.png": "859e1a2391271f85ea5f42829ac64ddf087f5a56dde88f15e04427dda0a56133"
+  },
+  "packet_json_sha256": "52a13fc517d19f79fcf041627e1d1c294074597d5db3dfaca2444279d996f78b"
+ },
+ "packet_id": "90a2e0523b6bb6f05b0896288e80a1a5be6849ce",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "4d5f6c0d-ce26-49e0-827e-d9707f654bd2",
+ "started_utc": "2026-09-30T02:34:45+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220926_Eagle_Pose_or_Garudasana_-a",
+ "stratum": "swap",
+ "usage": {
+  "cache_creation_input_tokens": 10584,
+  "cache_read_input_tokens": 13422,
+  "input_tokens": 6,
+  "output_tokens": 1382,
+  "thinking_tokens": 284
+ },
+ "warnings": []
+}

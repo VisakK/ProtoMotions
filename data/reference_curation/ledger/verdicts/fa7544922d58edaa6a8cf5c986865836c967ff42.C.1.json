@@ -1,0 +1,158 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1b",
+     "1d",
+     "2b",
+     "2d",
+     "3b",
+     "3d"
+    ],
+    "part": "torso",
+    "severity": "major"
+   },
+   {
+    "avatar": "B",
+    "kind": "through_body",
+    "panels": [
+     "1b",
+     "3d",
+     "5b",
+     "5d",
+     "5f"
+    ],
+    "part": "left forearm",
+    "severity": "major"
+   },
+   {
+    "avatar": "B",
+    "kind": "through_body",
+    "panels": [
+     "1b",
+     "3d",
+     "5d"
+    ],
+    "part": "left hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "4a",
+     "4c",
+     "4e"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "4a",
+     "4c",
+     "4e"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "A",
+  "floating_parts": {
+   "A": [
+    "left foot",
+    "right foot"
+   ],
+   "B": [
+    "left hand",
+    "right hand"
+   ]
+  },
+  "more_natural": "A",
+  "same_pose": {
+   "answer": "no",
+   "reason": "A holds the grey body's plank, with hands and feet on the floor. B stands upright on its feet with its arms held up in the air and its legs wide apart, so it is a completely different pose."
+  },
+  "summary": "A follows the grey plank closely, with only small gaps under its feet. B stands upright with its arms lifted, so its hands are off the floor, and its left arm passes into its head. A is much closer to the human and looks more natural."
+ },
+ "audit_id": null,
+ "cost_usd": 0.132803,
+ "duration_s": 18.88,
+ "errors": [],
+ "frame_hold": 541,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Plank_Pose_or_Kumbhakasana_-a@541",
+ "inputs": {},
+ "item_id": "220923_Plank_Pose_or_Kumbhakasana_-a@541#swap",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/fa7544922d58edaa6a8cf5c986865836c967ff42",
+  "images": {
+   "img_1.png": "a78e6aa56a8e68b04abb8baec65fbe69bbf6fed7c6b326daca28e336436749a4",
+   "img_2.png": "1135dde91cd047ca56a73bc5d035fe91feaeb8572e24f657df4072b87e526d3a",
+   "img_3.png": "c5a9bdb606a9edc65015d0142e07e8fe250d3238a6af1a509162b03a5088ac44",
+   "img_4.png": "f22b0a8ae84d3c76c06a9d4b12c301da2ad4ad8bdb51e27875967d74b5d0388f",
+   "img_5.png": "6442a70bd208b4cb3672e839ad909bf8ad56dffede8939251bd9303013af8413"
+  },
+  "packet_json_sha256": "7825f231c1f5fce8977b3964cad50329b071eb6de7e74c3075cd9794bbd921d0"
+ },
+ "packet_id": "fa7544922d58edaa6a8cf5c986865836c967ff42",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "394dc3f2-9303-4802-8076-fbf5bbc71570",
+ "started_utc": "2026-09-30T02:33:26+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Plank_Pose_or_Kumbhakasana_-a",
+ "stratum": "swap",
+ "usage": {
+  "cache_creation_input_tokens": 11980,
+  "cache_read_input_tokens": 13495,
+  "input_tokens": 6,
+  "output_tokens": 1712,
+  "thinking_tokens": 531
+ },
+ "warnings": []
+}

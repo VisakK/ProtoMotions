@@ -1,0 +1,143 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "4b",
+     "3d",
+     "1b",
+     "5d"
+    ],
+    "part": "left hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "4b",
+     "4d",
+     "2d"
+    ],
+    "part": "right hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "through_body",
+    "panels": [
+     "4d",
+     "2d"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "through_body",
+    "panels": [
+     "4c",
+     "2c"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "A",
+  "floating_parts": {
+   "A": [
+    "left foot",
+    "right foot"
+   ],
+   "B": [
+    "left foot",
+    "right foot",
+    "left hand",
+    "right hand"
+   ]
+  },
+  "more_natural": "A",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both show the same deep squat with arms reaching down between/beside the legs; B sits a bit higher with hands lifted a few cm off the floor, but the shape is the same."
+  },
+  "summary": "Same squat in both. A keeps both hands on the floor with only a small lift at the feet, so it matches the grey body better. B sits higher and both its hands and feet hover clearly above the floor."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1224952,
+ "duration_s": 16.02,
+ "errors": [],
+ "frame_hold": 543,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Shoulder-Pressing_Pose_or_Bhujapidasana_-a@543",
+ "inputs": {},
+ "item_id": "220923_Shoulder-Pressing_Pose_or_Bhujapidasana_-a@543#lift",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/bccf7b4588408c37eca23bc800b3d905371f7604",
+  "images": {
+   "img_1.png": "90ea4c51b4dafcb0c2de42affc434baff9d64090f0797134dc6904b7b546f281",
+   "img_2.png": "201039aa98c8a47ba2b6847146e52004d3a8995482738d9d6c809c08717f92ce",
+   "img_3.png": "d1f1ee4996a43362c2d6372a2be6e1cf3802ecd3e428b589e011168427210051",
+   "img_4.png": "933452e034563afda0d3606c3dfee746ce03db2bf388e9f8cbbb03596593ff75",
+   "img_5.png": "325acaf4c07ad99935e5376c88f91930246a5f2563f6c7c74231546a8cdf196e"
+  },
+  "packet_json_sha256": "5e5d0e1bf5e3e7061515513eb55be080a0acdb99e2e0d836dabf74bfb9f9ef4a"
+ },
+ "packet_id": "bccf7b4588408c37eca23bc800b3d905371f7604",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "e28785fc-e9a2-4b88-a1dd-185e08282d9d",
+ "started_utc": "2026-09-30T02:37:03+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Shoulder-Pressing_Pose_or_Bhujapidasana_-a",
+ "stratum": "lift",
+ "usage": {
+  "cache_creation_input_tokens": 11248,
+  "cache_read_input_tokens": 13436,
+  "input_tokens": 6,
+  "output_tokens": 1490,
+  "thinking_tokens": 379
+ },
+ "warnings": []
+}

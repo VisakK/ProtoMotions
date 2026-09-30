@@ -1,0 +1,150 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1a",
+     "3c",
+     "5c"
+    ],
+    "part": "right thigh",
+    "severity": "major"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1a",
+     "3a",
+     "3c"
+    ],
+    "part": "left shin",
+    "severity": "major"
+   },
+   {
+    "avatar": "A",
+    "kind": "jitter",
+    "panels": [
+     "5a",
+     "5c",
+     "5e"
+    ],
+    "part": "right shin",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "4f",
+     "2b"
+    ],
+    "part": "right hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "4b",
+     "4d"
+    ],
+    "part": "left hand",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "B",
+  "floating_parts": {
+   "A": [
+    "head"
+   ],
+   "B": [
+    "head",
+    "right hand"
+   ]
+  },
+  "more_natural": "B",
+  "same_pose": {
+   "answer": "no",
+   "reason": "Both are inverted on head and hands, but A's legs stretch out nearly straight and sideways. B's legs stay folded tightly above the head, as in the grey body."
+  },
+  "summary": "Both avatars balance on head and hands, but A's legs stretch out nearly straight, well outside the grey body, and change shape between rows of the time strip. B keeps the folded legs of the grey body. B's hands are slightly tilted and its right hand hovers a little."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1423142,
+ "duration_s": 24.31,
+ "errors": [],
+ "frame_hold": 2826,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Cockerel_Pose-b@2826",
+ "inputs": {},
+ "item_id": "220923_Cockerel_Pose-b@2826#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/767e689fe188d1d8552c8f5a316c79c30b827861",
+  "images": {
+   "img_1.png": "5242ae2896ea3ec5f0462d262f0becfa66d231a81fb1690ab8f0e6935231d5ff",
+   "img_2.png": "e3278c9bb5567e55295bd25224e0ac6aa9f131cd4b0ede11a7d6f11126a1001c",
+   "img_3.png": "bf193ddefb585ec608ebf4ef0a3fbf090bc1947930fd078249ad420e3ffd793d",
+   "img_4.png": "af15721ff96daab70bb001bddbb6e2a45a977e8e8554f679e4a465be2e8dd628",
+   "img_5.png": "4ce887df47e434c64d1a898910a663f4eb9e96488f5a8e23f00e057bc559c1d0"
+  },
+  "packet_json_sha256": "605ef3023384a4949a20714cd90ba47c016d8dd77720f0990b205d8b4879909a"
+ },
+ "packet_id": "767e689fe188d1d8552c8f5a316c79c30b827861",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "cb3bc3f3-e605-4e47-829a-5eea869b219a",
+ "started_utc": "2026-09-30T03:44:08+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Cockerel_Pose-b",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 11969,
+  "cache_read_input_tokens": 13491,
+  "input_tokens": 6,
+  "output_tokens": 2192,
+  "thinking_tokens": 997
+ },
+ "warnings": []
+}

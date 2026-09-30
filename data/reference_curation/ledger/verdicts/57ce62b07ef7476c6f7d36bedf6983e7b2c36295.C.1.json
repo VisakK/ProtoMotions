@@ -1,0 +1,144 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "2c",
+     "4e",
+     "3c"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "2d",
+     "4f",
+     "3d"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "through_body",
+    "panels": [
+     "4c",
+     "3a"
+    ],
+    "part": "right hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "through_body",
+    "panels": [
+     "4d",
+     "3b"
+    ],
+    "part": "right hand",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "equal",
+  "floating_parts": {
+   "A": [
+    "left foot",
+    "right foot",
+    "right forearm",
+    "left forearm"
+   ],
+   "B": [
+    "left foot",
+    "right foot",
+    "right forearm",
+    "left forearm"
+   ]
+  },
+  "more_natural": "equal",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both show the same inverted shape: head, shoulders and arms on the floor, legs stretched overhead with toes near the floor, hands clasped and raised. I found no visible difference in any view."
+  },
+  "summary": "A and B look the same in every view. Both have their feet hovering slightly above the floor where the grey toes touch it, and their forearms sit a little above the floor. Neither avatar is closer to the grey body or more natural."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1283602,
+ "duration_s": 15.06,
+ "errors": [],
+ "frame_hold": 1384,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220926_Plow_Pose_or_Halasana_-b@1384",
+ "inputs": {},
+ "item_id": "220926_Plow_Pose_or_Halasana_-b@1384#identity",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/57ce62b07ef7476c6f7d36bedf6983e7b2c36295",
+  "images": {
+   "img_1.png": "117211f56b4bbe8907646344b76291b0494f1f5d47186c096d80fa762ed085bc",
+   "img_2.png": "669438b15342348911aa64b60b0aa2ddec44fe557b75350179199d1204824f1a",
+   "img_3.png": "f38967544f742c976ca530c1254ef83892943e7c452f9cd728627d42b7e59890",
+   "img_4.png": "ed5146d5fb5200565d69e84cb6087b8ffae82c50f93edc501e41963dc9f5851b",
+   "img_5.png": "17489620979b64b6323abebe731b8163a7ff7dda60156eafa1ee00a20433d278"
+  },
+  "packet_json_sha256": "a64d557c092eb47ec3af16b78832fef78f580e70e3cb227f1fd749e988705629"
+ },
+ "packet_id": "57ce62b07ef7476c6f7d36bedf6983e7b2c36295",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "3b0b3cfa-3473-47ae-869e-4ea9b37eac35",
+ "started_utc": "2026-09-30T02:31:46+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220926_Plow_Pose_or_Halasana_-b",
+ "stratum": "identity",
+ "usage": {
+  "cache_creation_input_tokens": 11975,
+  "cache_read_input_tokens": 13481,
+  "input_tokens": 6,
+  "output_tokens": 1492,
+  "thinking_tokens": 333
+ },
+ "warnings": []
+}

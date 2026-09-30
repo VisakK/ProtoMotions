@@ -1,0 +1,142 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1a",
+     "3c",
+     "4a",
+     "4e"
+    ],
+    "part": "left foot",
+    "severity": "major"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1c",
+     "3c",
+     "4a",
+     "4c",
+     "4e"
+    ],
+    "part": "right foot",
+    "severity": "major"
+   },
+   {
+    "avatar": "B",
+    "kind": "impossible_joint",
+    "panels": [
+     "4d",
+     "4f",
+     "3d"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "impossible_joint",
+    "panels": [
+     "4b",
+     "4f",
+     "3d"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "B",
+  "floating_parts": {
+   "A": [
+    "left foot",
+    "right foot"
+   ],
+   "B": []
+  },
+  "more_natural": "B",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both show the same forward fold with straight legs and palms on the floor beside the feet. Only the height of the feet and the foot angle differ."
+  },
+  "summary": "Same pose in both. A's feet hover above the floor, with drop lines in every frame, while the grey body stands flat. B's feet touch the floor, but they are pointed steeply onto the toes, so B stays closer to the grey body and looks more natural."
+ },
+ "audit_id": null,
+ "cost_usd": 0.132364,
+ "duration_s": 17.46,
+ "errors": [],
+ "frame_hold": 375,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Scorpion_pose_or_vrischikasana-b@375",
+ "inputs": {},
+ "item_id": "220923_Scorpion_pose_or_vrischikasana-b@375#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/b9ffe8eabdfa4ddfef75b922616569270737e25b",
+  "images": {
+   "img_1.png": "8330c1f14174fa10461809e92616efd0d277792d1d72d8812ca17bd666d9463a",
+   "img_2.png": "ebcf5d397dba1227309f626c0d34f07ce10f6348963a96f73c65e320cff92c68",
+   "img_3.png": "6c7b8954bcabfd66e6fa3a56c1376d42706f15928171449496cd9c932249144c",
+   "img_4.png": "a418f1d896881bed8a713416729f37ccb710ce35e102377fe85c7bbae660140f",
+   "img_5.png": "9705b95a55890c2976b0c46aa7ce6f7841e37f08af218f2a48c02305cb4ac606"
+  },
+  "packet_json_sha256": "79d2485e8c11a5643b5bc7e3f2bcec234b89f28ccffca9bfb992568c8c7a981e"
+ },
+ "packet_id": "b9ffe8eabdfa4ddfef75b922616569270737e25b",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "c2a6f6f0-a39b-4604-8366-ec81fc9f67e9",
+ "started_utc": "2026-09-30T03:57:03+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Scorpion_pose_or_vrischikasana-b",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 11968,
+  "cache_read_input_tokens": 13480,
+  "input_tokens": 6,
+  "output_tokens": 1695,
+  "thinking_tokens": 528
+ },
+ "warnings": []
+}

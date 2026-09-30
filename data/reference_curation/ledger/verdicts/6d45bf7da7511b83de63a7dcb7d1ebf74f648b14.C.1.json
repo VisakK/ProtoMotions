@@ -1,0 +1,149 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "4a",
+     "3c",
+     "1c"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1b",
+     "2b",
+     "3b",
+     "5d"
+    ],
+    "part": "left upper arm",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1b",
+     "2b",
+     "3b",
+     "5d"
+    ],
+    "part": "right upper arm",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "pulled_apart",
+    "panels": [
+     "3b",
+     "1b"
+    ],
+    "part": "left hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "pulled_apart",
+    "panels": [
+     "3b",
+     "1b"
+    ],
+    "part": "right hand",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "B",
+  "floating_parts": {
+   "A": [
+    "right foot"
+   ],
+   "B": []
+  },
+  "more_natural": "B",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both stand on the right leg with the left foot at the inner right thigh and both arms overhead. B's arms are spread wider, with the hands apart, but the overall shape is the same."
+  },
+  "summary": "A's arms follow the grey body more closely, with the palms nearly together, but its standing right foot hovers slightly and is tilted. B's standing foot sits flat on the floor. Its arms are spread wider than the grey body's and its hands sit apart from the forearms."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1320652,
+ "duration_s": 24.01,
+ "errors": [],
+ "frame_hold": 804,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Tree_Pose_or_Vrksasana_-a@804",
+ "inputs": {},
+ "item_id": "220923_Tree_Pose_or_Vrksasana_-a@804#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/6d45bf7da7511b83de63a7dcb7d1ebf74f648b14",
+  "images": {
+   "img_1.png": "398cc5b5e00c8d40567220f6ea4967b0ea777c295b1957af55d842649be24823",
+   "img_2.png": "7e5b64073bf53f5a031bc3cf8f3805f21c2d845dc36185876589c203ce3e2f6e",
+   "img_3.png": "7d779d6d949770ff7aa39bca616c3ec45494fbdae57bb3f0fb71daf106300005",
+   "img_4.png": "86de89e412c81a4d71d23741b5b1cc21d72fa7bbedc7c75efb19b118938938f4",
+   "img_5.png": "12c4a3665009c2246f04d6fa46d328055616fed63a73f296f37aeb3a72d11a5c"
+  },
+  "packet_json_sha256": "19c826070dcca6f066fc0419e034e97710aa6748ba7c5605cd93d01fbeb06d6f"
+ },
+ "packet_id": "6d45bf7da7511b83de63a7dcb7d1ebf74f648b14",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "cfd3c750-521c-440c-99e5-cd6477611ec7",
+ "started_utc": "2026-09-30T04:01:48+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Tree_Pose_or_Vrksasana_-a",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 10592,
+  "cache_read_input_tokens": 13426,
+  "input_tokens": 6,
+  "output_tokens": 2231,
+  "thinking_tokens": 987
+ },
+ "warnings": []
+}

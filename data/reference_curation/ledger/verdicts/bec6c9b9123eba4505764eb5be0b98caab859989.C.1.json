@@ -1,0 +1,141 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "4a",
+     "4c",
+     "3c"
+    ],
+    "part": "left hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "4a",
+     "4e",
+     "3c"
+    ],
+    "part": "right hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "through_body",
+    "panels": [
+     "2b",
+     "4f"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "through_body",
+    "panels": [
+     "1a",
+     "1c",
+     "4c"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "B",
+  "floating_parts": {
+   "A": [
+    "head",
+    "left hand",
+    "right hand"
+   ],
+   "B": [
+    "head"
+   ]
+  },
+  "more_natural": "B",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both are the same inverted shape: hands and head down, legs folded up over the arms. B has its arms and knees spread wider and its feet lower, but no limb is in a clearly different place."
+  },
+  "summary": "Both avatars show the same pose. B's hands lie flat on the floor, while A's hands are tilted and partly lifted off it. In both avatars the head hovers above the floor where the grey body's head rests on it. B looks slightly more grounded and natural, though its arms are set a little wider than the grey body's."
+ },
+ "audit_id": null,
+ "cost_usd": 0.16642240000000003,
+ "duration_s": 24.16,
+ "errors": [],
+ "frame_hold": 1983,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Cockerel_Pose-b@1983",
+ "inputs": {},
+ "item_id": "220923_Cockerel_Pose-b@1983#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/bec6c9b9123eba4505764eb5be0b98caab859989",
+  "images": {
+   "img_1.png": "1caebb45749952798e592fa1e091072d605ebff104de8aaf1779665e84921721",
+   "img_2.png": "e036b43003a251fe2f1321208abd6d227f83f983b061fd717c8aec2a6eb5b6b4",
+   "img_3.png": "6edf61ba650065071e00acb8aa925da6a05a47cad359cfeb2a9e6a4bd4ad0366",
+   "img_4.png": "c770ece40603e210f6d1790edbdd2e33f1de21046c448eec8379696fbcad4111",
+   "img_5.png": "c266f52df77504dbd1dfadb9bf90f0879c65fc8ea8e6f249bbb6326b2994757f"
+  },
+  "packet_json_sha256": "d5e60774eea43f26fef37b1ed48fda8bd219c153e82c0fecbeb3aadf32ea49be"
+ },
+ "packet_id": "bec6c9b9123eba4505764eb5be0b98caab859989",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "57d08e08-11be-4239-a7a4-2e7f3bab1c64",
+ "started_utc": "2026-09-30T06:13:57+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Cockerel_Pose-b",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 15050,
+  "cache_read_input_tokens": 10392,
+  "input_tokens": 6,
+  "output_tokens": 2196,
+  "thinking_tokens": 1056
+ },
+ "warnings": []
+}

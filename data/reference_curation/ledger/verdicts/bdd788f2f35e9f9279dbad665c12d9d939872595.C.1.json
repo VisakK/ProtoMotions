@@ -1,0 +1,142 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1b",
+     "3d",
+     "4f",
+     "5d"
+    ],
+    "part": "left foot",
+    "severity": "major"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1b",
+     "3d",
+     "4b",
+     "5d"
+    ],
+    "part": "right foot",
+    "severity": "major"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "2d",
+     "4b",
+     "4d"
+    ],
+    "part": "right hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1d",
+     "3d",
+     "4b"
+    ],
+    "part": "left thigh",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "A",
+  "floating_parts": {
+   "A": [],
+   "B": [
+    "left foot",
+    "right foot",
+    "right hand"
+   ]
+  },
+  "more_natural": "A",
+  "same_pose": {
+   "answer": "no",
+   "reason": "B lifts its hips and knees higher and both feet come off the floor, with the hands tilted. In A both feet and both hands stay planted like the grey body."
+  },
+  "summary": "A follows the grey body closely, with both hands and both feet on the floor. In B the hips and legs are raised, both feet hover a few centimetres above the floor and the right hand is tilted up, so the floor contact is different."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1321,
+ "duration_s": 17.33,
+ "errors": [],
+ "frame_hold": 627,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a@680",
+ "inputs": {},
+ "item_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a@680#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/bdd788f2f35e9f9279dbad665c12d9d939872595",
+  "images": {
+   "img_1.png": "b81cafd2e9a3efec512f8231cb584afe311af43f6af4cbce1b92cb98c52a10e6",
+   "img_2.png": "e2047e97cdde7c317c2f89a4af143da94f65ad6e86f141fa08d0e2c501072351",
+   "img_3.png": "6491846308b6811e750452063bfd7ee21663e91e81e513c38ecf40191cd94cd7",
+   "img_4.png": "ed45db388a6d59cbe7d815ca72b9ce2c1db85ec499eb7fbe5ef24439c7a2c5b6",
+   "img_5.png": "7c48d6eb87f2f83be1c99955d5401a8666ffaaf49c8d47b58a3aebd09d13831b"
+  },
+  "packet_json_sha256": "226c9edf207f4aa80cdf4b8f0c415051676a6a1094e9e951f1631769bbd27f72"
+ },
+ "packet_id": "bdd788f2f35e9f9279dbad665c12d9d939872595",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "0a7c52db-213a-4cd1-b806-de9295da8088",
+ "started_utc": "2026-09-30T03:58:05+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 11982,
+  "cache_read_input_tokens": 13500,
+  "input_tokens": 6,
+  "output_tokens": 1676,
+  "thinking_tokens": 529
+ },
+ "warnings": []
+}

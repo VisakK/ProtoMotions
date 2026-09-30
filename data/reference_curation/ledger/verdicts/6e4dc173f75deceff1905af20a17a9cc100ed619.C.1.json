@@ -1,0 +1,124 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "4b",
+     "3d",
+     "1b"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "4b",
+     "3d"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1b",
+     "3d",
+     "4b"
+    ],
+    "part": "left shin",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "A",
+  "floating_parts": {
+   "A": [],
+   "B": []
+  },
+  "more_natural": "A",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both stand upright with feet together and arms held out to the sides at shoulder height. Only the feet and lower legs differ slightly."
+  },
+  "summary": "Same pose. A's feet sit flat on the floor, matching the grey body. In B both feet are rolled onto their edges and the left shin slants inward, so each foot touches the floor only along one edge. That makes A closer to the human and more natural."
+ },
+ "audit_id": null,
+ "cost_usd": 0.11469979999999999,
+ "duration_s": 14.9,
+ "errors": [],
+ "frame_hold": 896,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Standing_Forward_Bend_pose_or_Uttanasana_-a@896",
+ "inputs": {},
+ "item_id": "220923_Standing_Forward_Bend_pose_or_Uttanasana_-a@896#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/6e4dc173f75deceff1905af20a17a9cc100ed619",
+  "images": {
+   "img_1.png": "4b5e207f6378c11c391e4f2d3ab75397deb13c77ab43d8a6536761d60a7f31cd",
+   "img_2.png": "6a2e1aece827ad8fa715322ebdbfc3148f35159220d39f0b6845c143a48bb30f",
+   "img_3.png": "e620efcaf299ba14f468f64ed7dec331c0be14eec09c371e08f4b58dbb9aa17d",
+   "img_4.png": "e84f4e1ed77f88649e2105ec6201bc27be5b7e25a2079b2191b36e3901e54b23",
+   "img_5.png": "22a461e21eabb1659dc07edb46659a500a0442f239ddfac439064dea0d48e3d7"
+  },
+  "packet_json_sha256": "2aea528b277a664225ea53d9dc5b626c8a1b09973be0f61754fabd9e4df90063"
+ },
+ "packet_id": "6e4dc173f75deceff1905af20a17a9cc100ed619",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "95026f0b-558a-4b5a-b2ca-636b80dfa153",
+ "started_utc": "2026-09-30T06:20:30+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Standing_Forward_Bend_pose_or_Uttanasana_-a",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 10569,
+  "cache_read_input_tokens": 13419,
+  "input_tokens": 6,
+  "output_tokens": 1372,
+  "thinking_tokens": 302
+ },
+ "warnings": []
+}

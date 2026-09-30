@@ -1,0 +1,122 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1b",
+     "2b",
+     "3d",
+     "5d"
+    ],
+    "part": "pelvis",
+    "severity": "major"
+   },
+   {
+    "avatar": "A",
+    "kind": "through_floor",
+    "panels": [
+     "4a"
+    ],
+    "part": "left hand",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "A",
+  "floating_parts": {
+   "A": [
+    "right hand"
+   ],
+   "B": [
+    "left hand",
+    "right hand",
+    "left foot",
+    "right foot",
+    "left forearm",
+    "right forearm"
+   ]
+  },
+  "more_natural": "A",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both show the same low plank on bent arms with the legs straight and the toes tucked. B's whole body sits higher, but its shape and limb layout match A."
+  },
+  "summary": "A and B hold the same pose, but B's whole body is lifted, so its hands, forearms and feet hover clearly above the floor. A follows the grey body closely: only its right hand hovers slightly, and its left hand dips a little into the floor."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1343388,
+ "duration_s": 19.37,
+ "errors": [],
+ "frame_hold": 677,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Dolphin_Plank_Pose_or_Makara_Adho_Mukha_Svanasana_-a@677",
+ "inputs": {},
+ "item_id": "220923_Dolphin_Plank_Pose_or_Makara_Adho_Mukha_Svanasana_-a@677#lift",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/a7e77bae211e4e908749b13767521f6ad4ac75d9",
+  "images": {
+   "img_1.png": "9a69a2513f62d0ab02b746053c12497b1504d4d06bdb655b876e8ce192ba084f",
+   "img_2.png": "38767b0a72a127e0484a0cfcf8d51e6263acaa12b04cb62f5e45548e8273614e",
+   "img_3.png": "a5e0a6b965b672d15307ac4410e71d4aea2b98fbb9a5e8b6cd01caa43f00fc03",
+   "img_4.png": "bf1faf74d6ed132300b78c4a4e385d100b54cb35f6564651a2eb5b7e72d57fa8",
+   "img_5.png": "4ec052397df18256d3cb7669776e4497510903c2b978f2f275150ab37851943f"
+  },
+  "packet_json_sha256": "101461d1dd7a10049e490274a74255ccab2faffb7955cbbbcb7ce553a882f4fe"
+ },
+ "packet_id": "a7e77bae211e4e908749b13767521f6ad4ac75d9",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "a65319d9-15d1-475e-a330-8876c5cc123f",
+ "started_utc": "2026-09-30T02:35:37+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Dolphin_Plank_Pose_or_Makara_Adho_Mukha_Svanasana_-a",
+ "stratum": "lift",
+ "usage": {
+  "cache_creation_input_tokens": 11982,
+  "cache_read_input_tokens": 13494,
+  "input_tokens": 6,
+  "output_tokens": 1788,
+  "thinking_tokens": 738
+ },
+ "warnings": []
+}

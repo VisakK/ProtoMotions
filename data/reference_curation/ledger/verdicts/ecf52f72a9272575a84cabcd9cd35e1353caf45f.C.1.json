@@ -1,0 +1,147 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1b",
+     "1d",
+     "3d",
+     "5b",
+     "5d",
+     "5f"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1b",
+     "1d",
+     "3d",
+     "5d"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "4b",
+     "4f",
+     "2b"
+    ],
+    "part": "right hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "4b",
+     "4d",
+     "3d"
+    ],
+    "part": "left hand",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "A",
+  "floating_parts": {
+   "A": [
+    "head"
+   ],
+   "B": [
+    "head",
+    "left foot",
+    "right foot",
+    "right hand"
+   ]
+  },
+  "more_natural": "A",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both have the head and hands down, hips high and legs reaching back to the feet. B's knees bend a bit more and its feet and hands are slightly lifted or tilted, but the shape is the same."
+  },
+  "summary": "Both avatars hold the same pose. A matches the grey body closely, with its feet and hands flat on the floor. B's knees are more bent, both feet hover above the floor, and its hands are tilted, with the right hand lifted. In both avatars the head hovers slightly above the floor."
+ },
+ "audit_id": null,
+ "cost_usd": 0.156966,
+ "duration_s": 22.95,
+ "errors": [],
+ "frame_hold": 430,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-b@430",
+ "inputs": {},
+ "item_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-b@430#edit",
+ "n": 1,
+ "num_turns": 9,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/ecf52f72a9272575a84cabcd9cd35e1353caf45f",
+  "images": {
+   "img_1.png": "f7b03a8cb47712c1ab7c4127ba77ce4ff738feb805cc4e50f3a10a35113d277c",
+   "img_2.png": "1d9e353c868bd6b0c5a7ec756eb188d7d6af3fe2791020d69fda5b1c9a004fc7",
+   "img_3.png": "1c85059fdb78177536d3bcd6d4d7474706220f02c60538d80f811949a74cad75",
+   "img_4.png": "607980355cabd3a0be955e07edc30e4712c3364ccd66d9356d81cb3a0e11fb0d",
+   "img_5.png": "98d1bc4552aea297b9a76706f5a023b288e5ac336bd1e84f73f16d502b184b39"
+  },
+  "packet_json_sha256": "0200110bbbecccfe1e59463881ac7b162d70ee2ca38bb8414d799531eb81d79e"
+ },
+ "packet_id": "ecf52f72a9272575a84cabcd9cd35e1353caf45f",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "6a0286d9-d5eb-4be6-b6e8-0fe4ab6a6f21",
+ "started_utc": "2026-09-30T03:58:57+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-b",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 13202,
+  "cache_read_input_tokens": 28590,
+  "input_tokens": 8,
+  "output_tokens": 2280,
+  "thinking_tokens": 513
+ },
+ "warnings": []
+}

@@ -1,0 +1,141 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1a",
+     "1c",
+     "2c",
+     "3c",
+     "5c"
+    ],
+    "part": "left shin",
+    "severity": "major"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1a",
+     "2a",
+     "3a",
+     "3c"
+    ],
+    "part": "left foot",
+    "severity": "major"
+   },
+   {
+    "avatar": "B",
+    "kind": "through_body",
+    "panels": [
+     "4d",
+     "3d",
+     "2d"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "B",
+  "floating_parts": {
+   "A": [
+    "left foot",
+    "left shin",
+    "right foot",
+    "left hand",
+    "right hand",
+    "head"
+   ],
+   "B": [
+    "left foot",
+    "right foot",
+    "left hand",
+    "right hand",
+    "head"
+   ]
+  },
+  "more_natural": "B",
+  "same_pose": {
+   "answer": "no",
+   "reason": "In A the left leg is raised with the shin pointing straight up and the foot high in the air. In B the left shin comes down and the foot sits near the floor, like the grey body."
+  },
+  "summary": "A raises the left shin straight up with the foot high off the floor, which the grey body does not do. B brings the left leg down with the foot near the floor, so it matches the human better. Both avatars have hands, the right foot and the head hovering a little."
+ },
+ "audit_id": null,
+ "cost_usd": 0.12796,
+ "duration_s": 15.38,
+ "errors": [],
+ "frame_hold": 1056,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Bridge_Pose_or_Setu_Bandha_Sarvangasana_-a@1056",
+ "inputs": {},
+ "item_id": "220923_Bridge_Pose_or_Setu_Bandha_Sarvangasana_-a@1056#kink",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/4530c524e430384163313f876f87efd00e5108b8",
+  "images": {
+   "img_1.png": "624d533002462fef9ce3302cbdfa9b19141e455f7cd636922649649989816a58",
+   "img_2.png": "f8c3fe1d54cdf61571be691d09787dfa7c23a19424d55fc7a1344a736051dc40",
+   "img_3.png": "4d44480ad42632bb682a6c6876f64fd763831fae4ff72350316ea9631229c75d",
+   "img_4.png": "fbce32af9f447c9b46c67e398e5068dfa154c44845d2aa512d2596de372b66fb",
+   "img_5.png": "5ed4dbd0476771e634025d3ac7ce3673e656d297e41df101228c1cbe890b86b8"
+  },
+  "packet_json_sha256": "2937788e5c8b24ac9b45943e650b1de68b85dd99447a3e2f516bf44e7b9af39b"
+ },
+ "packet_id": "4530c524e430384163313f876f87efd00e5108b8",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "8bc620e7-c5bb-48f3-81b6-159004b3827a",
+ "started_utc": "2026-09-30T02:40:21+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Bridge_Pose_or_Setu_Bandha_Sarvangasana_-a",
+ "stratum": "kink",
+ "usage": {
+  "cache_creation_input_tokens": 11928,
+  "cache_read_input_tokens": 13460,
+  "input_tokens": 6,
+  "output_tokens": 1491,
+  "thinking_tokens": 406
+ },
+ "warnings": []
+}

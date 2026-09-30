@@ -1,0 +1,140 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1b",
+     "2b",
+     "4b",
+     "4f",
+     "5d"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "2d",
+     "4d",
+     "3d"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "3d",
+     "4f"
+    ],
+    "part": "right hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "4b",
+     "4d"
+    ],
+    "part": "left hand",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "A",
+  "floating_parts": {
+   "A": [],
+   "B": [
+    "left foot",
+    "right foot",
+    "right hand"
+   ]
+  },
+  "more_natural": "A",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both show the same inverted-V on forearms with hips high, legs straight back and forearms flat. B's feet and right hand are only lifted a few cm."
+  },
+  "summary": "Same forearm-supported inverted-V pose. A keeps its feet and hands flat on the floor, lining up with the grey body. In B both feet hover above the floor and the hands are tilted, with the right hand raised, so A is closer and looks more natural."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1304732,
+ "duration_s": 17.66,
+ "errors": [],
+ "frame_hold": 354,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Dolphin_Pose_or_Ardha_Pincha_Mayurasana_-a@354",
+ "inputs": {},
+ "item_id": "220923_Dolphin_Pose_or_Ardha_Pincha_Mayurasana_-a@354#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/1d9b504188b5b109ea1e37c03fcc29c87605271b",
+  "images": {
+   "img_1.png": "ffc3e5dd49036973f03bf94144eb41249d87253c3ad0fd2c115fe27d79a8514f",
+   "img_2.png": "8c8d6d005faad17ab613df1b3abc9807f26202a6c6d91ec739af28962782e9aa",
+   "img_3.png": "a1a76ac8174db579d30817243e2abc12958e253f5701694e02dcde57a891d128",
+   "img_4.png": "87fa4224d56dd6852206b46a47458df74d8641bfbefcd5a01f851a7a3819fdbe",
+   "img_5.png": "be99bdb44f818d3ce3051d12423e7a79a6470ca17b922d7f68d73250107e353c"
+  },
+  "packet_json_sha256": "7d114acfb706fa9da731d4e9961318ba93173bf40bceccb9486578b2444a29ac"
+ },
+ "packet_id": "1d9b504188b5b109ea1e37c03fcc29c87605271b",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "7a06e302-2aaf-454a-9cdd-601ae4eb12ad",
+ "started_utc": "2026-09-30T03:45:15+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Dolphin_Pose_or_Ardha_Pincha_Mayurasana_-a",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 11974,
+  "cache_read_input_tokens": 13486,
+  "input_tokens": 6,
+  "output_tokens": 1598,
+  "thinking_tokens": 474
+ },
+ "warnings": []
+}

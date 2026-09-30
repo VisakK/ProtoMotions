@@ -1,0 +1,142 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1b",
+     "1d",
+     "3d",
+     "4b"
+    ],
+    "part": "left foot",
+    "severity": "major"
+   },
+   {
+    "avatar": "B",
+    "kind": "through_body",
+    "panels": [
+     "1b",
+     "1d",
+     "3d",
+     "5d"
+    ],
+    "part": "right forearm",
+    "severity": "major"
+   },
+   {
+    "avatar": "B",
+    "kind": "pulled_apart",
+    "panels": [
+     "1b",
+     "2d",
+     "3b",
+     "5d"
+    ],
+    "part": "left hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1b",
+     "2d",
+     "3d",
+     "5d"
+    ],
+    "part": "torso",
+    "severity": "major"
+   }
+  ],
+  "closer_to_human": "A",
+  "floating_parts": {
+   "A": [],
+   "B": [
+    "left foot"
+   ]
+  },
+  "more_natural": "A",
+  "same_pose": {
+   "answer": "no",
+   "reason": "A stands on the left leg with torso, arms and right leg level, like the grey body. B is a collapsed, different shape: left leg angled back off the floor, right knee bent, left arm raised high."
+  },
+  "summary": "A closely follows the grey body in its one-leg balance, with the left foot planted. B has collapsed into a different shape with no support: the left foot hovers, the right arm passes through the right leg, and the left arm points upward."
+ },
+ "audit_id": null,
+ "cost_usd": 0.11794180000000001,
+ "duration_s": 16.48,
+ "errors": [],
+ "frame_hold": 947,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220926_Warrior_III_Pose_or_Virabhadrasana_III_-a@947",
+ "inputs": {},
+ "item_id": "220926_Warrior_III_Pose_or_Virabhadrasana_III_-a@947#swap",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/252700a6f68dc28ae7e9a349a6ad5d2fa54f87ef",
+  "images": {
+   "img_1.png": "01c163bfa019888b7a996f6fa5e8bdd28af359190d72c54d14c6c170f443e775",
+   "img_2.png": "7190a8fdc6a69ae0ad0731346ae335e27d3c3e15204a05f756bfb4dc6e565cce",
+   "img_3.png": "0756a27126e33c748f0932504c0acec598169fb99fda218bb934a024db5d12ee",
+   "img_4.png": "660e936d775bffaac7e6669a1d4aaf726612a6e569ff168f3d8f92c0cd4b7974",
+   "img_5.png": "32fff1ff1662502a5903bbd4a020b1b23d21ac8e12064700785b29bdb267ab90"
+  },
+  "packet_json_sha256": "1db1068c90944fd84240bdb0796b19d2c8bab5fe9f341d355d13bfd0114c6bd7"
+ },
+ "packet_id": "252700a6f68dc28ae7e9a349a6ad5d2fa54f87ef",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "64f11c45-6171-4c6e-a29c-08e28f1e2e6a",
+ "started_utc": "2026-09-30T02:35:18+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220926_Warrior_III_Pose_or_Virabhadrasana_III_-a",
+ "stratum": "swap",
+ "usage": {
+  "cache_creation_input_tokens": 10599,
+  "cache_read_input_tokens": 13429,
+  "input_tokens": 6,
+  "output_tokens": 1522,
+  "thinking_tokens": 366
+ },
+ "warnings": []
+}

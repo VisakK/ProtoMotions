@@ -1,0 +1,142 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "4b",
+     "4f",
+     "2d"
+    ],
+    "part": "right hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "impossible_joint",
+    "panels": [
+     "4b",
+     "4d",
+     "3d"
+    ],
+    "part": "left hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "4a",
+     "4c",
+     "3c"
+    ],
+    "part": "head",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "4b",
+     "4d",
+     "3d"
+    ],
+    "part": "head",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "A",
+  "floating_parts": {
+   "A": [
+    "head"
+   ],
+   "B": [
+    "head",
+    "right hand",
+    "left hand"
+   ]
+  },
+  "more_natural": "A",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both are inverted with the head down, forearms bent and hands on the floor, and legs extended out at the same angle. The only differences are in the hands and arms."
+  },
+  "summary": "Same pose. In both avatars the head hovers above the floor where the grey head rests on it. A's hands lie flat like the grey hands, while B's hands are tilted and partly lifted off the floor, so A is closer to the human and more natural."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1360518,
+ "duration_s": 20.13,
+ "errors": [],
+ "frame_hold": 578,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-b@578",
+ "inputs": {},
+ "item_id": "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-b@578#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/b4b436c63a0f9370d09c6f92cc0c3ccbecbb7744",
+  "images": {
+   "img_1.png": "bcbdcbb0dbf3e7822a36719fd6fd1309578520fef4a80661324cfb706e536678",
+   "img_2.png": "2bda16275c6b8eb6efa3f814ab73a1d2d8a6601bfb1c202d2050d6b82c246fc5",
+   "img_3.png": "b33915f94de74e29232460123b9820616aad69df6947a943d4df54e68a6abf20",
+   "img_4.png": "8715c64f229f50ad116e92a47004c5d28adb57747467194f85d62d0719085899",
+   "img_5.png": "586cd72179e6b1b48f92583748117a68e6d48ae24e653cc95b01e3d60a5d053b"
+  },
+  "packet_json_sha256": "6f75e41a4fd63b399d03b3936570bcb5cc4588204e4c3d75dcc572a5cc221af5"
+ },
+ "packet_id": "b4b436c63a0f9370d09c6f92cc0c3ccbecbb7744",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "51dfd966-a5ff-49ca-881a-20c61623dbd6",
+ "started_utc": "2026-09-30T03:55:13+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-b",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 12001,
+  "cache_read_input_tokens": 13499,
+  "input_tokens": 6,
+  "output_tokens": 1866,
+  "thinking_tokens": 722
+ },
+ "warnings": []
+}

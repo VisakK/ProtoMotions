@@ -1,0 +1,140 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1a",
+     "2a",
+     "3c",
+     "5c"
+    ],
+    "part": "torso",
+    "severity": "major"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1a",
+     "2c",
+     "3a",
+     "3c"
+    ],
+    "part": "left hand",
+    "severity": "major"
+   },
+   {
+    "avatar": "A",
+    "kind": "pulled_apart",
+    "panels": [
+     "1a",
+     "2a",
+     "3c"
+    ],
+    "part": "left hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "through_body",
+    "panels": [
+     "4b",
+     "4d",
+     "4f"
+    ],
+    "part": "head",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "B",
+  "floating_parts": {
+   "A": [
+    "left hand"
+   ],
+   "B": []
+  },
+  "more_natural": "B",
+  "same_pose": {
+   "answer": "no",
+   "reason": "B is inverted on both hands with the legs raised in a bent V like the grey body. A stands on its feet with one leg stretched back and the left arm raised, with only one hand near the floor."
+  },
+  "summary": "B closely follows the grey body's inverted pose on both hands, with the legs raised in a V. A has fallen out of the pose: it stands on its feet with one leg stretched back and the left arm raised well off the floor, while only the right hand is near the floor."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1334862,
+ "duration_s": 19.11,
+ "errors": [],
+ "frame_hold": 945,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Scorpion_pose_or_vrischikasana-b@945",
+ "inputs": {},
+ "item_id": "220923_Scorpion_pose_or_vrischikasana-b@945#swap",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/23da60ba4751c91b4f28c583243f2dc07ef57921",
+  "images": {
+   "img_1.png": "adccbf61d5ae08ac082923d2d75a253bd4d733888f3efc7c3a85e1088c03321c",
+   "img_2.png": "c60c0badd1d7db094d953d18bf71c83df7950f6df540674e3eb765c49353abac",
+   "img_3.png": "65a0f3060984d6ce527569f75a0cd11387400815c8a16d9784c12ed76a81b74c",
+   "img_4.png": "1c7f6110f13821af8d96f3e9d788b3257dfd6833c5cb1f1ac23b61404f87acb4",
+   "img_5.png": "95aba01fb048bb162db33e3bdf318ef5b53b2c2271ecd0d157f213efe06661ea"
+  },
+  "packet_json_sha256": "ed0f9325ca503d901e279411a6b051ed0f3c1ffbd72464dcd9c4331a98dcb1f2"
+ },
+ "packet_id": "23da60ba4751c91b4f28c583243f2dc07ef57921",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "34ee8e6b-be8c-4cd6-9fcd-e8464946c752",
+ "started_utc": "2026-09-30T02:34:03+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Scorpion_pose_or_vrischikasana-b",
+ "stratum": "swap",
+ "usage": {
+  "cache_creation_input_tokens": 11973,
+  "cache_read_input_tokens": 13491,
+  "input_tokens": 6,
+  "output_tokens": 1749,
+  "thinking_tokens": 589
+ },
+ "warnings": []
+}

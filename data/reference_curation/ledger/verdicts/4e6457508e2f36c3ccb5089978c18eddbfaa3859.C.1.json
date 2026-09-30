@@ -1,0 +1,126 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "4a",
+     "3c",
+     "1c"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "4a",
+     "3c"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1a",
+     "3c",
+     "5c"
+    ],
+    "part": "left shin",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "B",
+  "floating_parts": {
+   "A": [
+    "left foot"
+   ],
+   "B": []
+  },
+  "more_natural": "B",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both stand upright on both feet with arms held out to the sides at shoulder height. Only the legs and feet differ: A's legs angle inward and its feet are tilted."
+  },
+  "summary": "Both avatars show the same standing pose. B's legs are straight and its feet sit flat on the floor, matching the grey body. A's shins angle inward, both feet are tilted and pressed against each other, and the left foot hovers slightly above the floor (drop line in 4a)."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1130766,
+ "duration_s": 13.31,
+ "errors": [],
+ "frame_hold": 10,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Low_Lunge_pose_or_Anjaneyasana_-a@10",
+ "inputs": {},
+ "item_id": "220923_Low_Lunge_pose_or_Anjaneyasana_-a@10#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/4e6457508e2f36c3ccb5089978c18eddbfaa3859",
+  "images": {
+   "img_1.png": "6ad0f9e7c26b33f89ffcbac0d9e7b49b5b9fdd18027d76f7904546a4abbefbd5",
+   "img_2.png": "31787f47c091848650fa576f85d1e7fabca686dad149e1b82e87c4caa2aadb4c",
+   "img_3.png": "701e2072d6e60ca3e026468c01c5ff0cebd16a81023562a3bcac885abb0858bf",
+   "img_4.png": "074312bf1ecb125696137218e7e3109939310bc11ca7000799adfb05fb466c13",
+   "img_5.png": "5796931e9b22cf5a47f2451b4fc56136ec5152426ec4b843deb8d908a0625f06"
+  },
+  "packet_json_sha256": "90be3c41da49f3c2c78633ce3fed6e3fdf0956e7927d8f59598c92789e6b1cec"
+ },
+ "packet_id": "4e6457508e2f36c3ccb5089978c18eddbfaa3859",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "df7b2550-d4f6-46ad-b63d-b0147f2f7489",
+ "started_utc": "2026-09-30T03:52:31+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Low_Lunge_pose_or_Anjaneyasana_-a",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 10581,
+  "cache_read_input_tokens": 13423,
+  "input_tokens": 6,
+  "output_tokens": 1286,
+  "thinking_tokens": 177
+ },
+ "warnings": []
+}

@@ -1,0 +1,127 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "4b",
+     "1b",
+     "3d"
+    ],
+    "part": "head",
+    "severity": "major"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "4d",
+     "2d"
+    ],
+    "part": "left forearm",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "4f",
+     "1d"
+    ],
+    "part": "right forearm",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "A",
+  "floating_parts": {
+   "A": [],
+   "B": [
+    "head",
+    "left forearm",
+    "right forearm"
+   ]
+  },
+  "more_natural": "A",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both show the same inverted pose with legs straight up, the head and forearms as the base, and the same arm shape. B is only raised a few centimetres."
+  },
+  "summary": "Both avatars hold the same inverted pose. A's head and forearms rest on the floor where the grey body's do. B floats several centimetres too high, so its head and both forearms hover above the floor with visible drop lines, and it has no base to support its weight."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1255788,
+ "duration_s": 15.45,
+ "errors": [],
+ "frame_hold": 914,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Supported_Shoulderstand_pose_or_Salamba_Sarvangasana_-a@914",
+ "inputs": {},
+ "item_id": "220923_Supported_Shoulderstand_pose_or_Salamba_Sarvangasana_-a@914#lift",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/b7621e5489ff5dbe258a7aa1848213ac4386c178",
+  "images": {
+   "img_1.png": "e429b89c5b1824e15652d58aa2234f0d4afb73d1ce8a311ee3c48bacddba6f89",
+   "img_2.png": "70defe630842e7cae607a0538cb457afbb01c92a8272a69431ee52d519ea4e8f",
+   "img_3.png": "0421d08dea5433334b97f28754fdb8f52e383bf935dd878d48dd9ec5eb599b55",
+   "img_4.png": "a51ec84bc45c05c8a5cb88f8d71ab2a8b79dc26887822318261e2764092953ff",
+   "img_5.png": "96be38b495239bfb9486856c335c68a8d6cfec4ab41a1c76b6fb6dbf3146fc53"
+  },
+  "packet_json_sha256": "f764cbff01d49cca116981a51e038bd0d2ef7a28c1477df85ff4272353298344"
+ },
+ "packet_id": "b7621e5489ff5dbe258a7aa1848213ac4386c178",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "801c9122-018f-4608-be65-7df91424a467",
+ "started_utc": "2026-09-30T02:37:35+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Supported_Shoulderstand_pose_or_Salamba_Sarvangasana_-a",
+ "stratum": "lift",
+ "usage": {
+  "cache_creation_input_tokens": 11982,
+  "cache_read_input_tokens": 13494,
+  "input_tokens": 6,
+  "output_tokens": 1350,
+  "thinking_tokens": 256
+ },
+ "warnings": []
+}

@@ -1,0 +1,143 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "B",
+    "kind": "through_floor",
+    "panels": [
+     "2b",
+     "2d",
+     "4b",
+     "4f"
+    ],
+    "part": "right forearm",
+    "severity": "major"
+   },
+   {
+    "avatar": "B",
+    "kind": "through_floor",
+    "panels": [
+     "2b",
+     "4f",
+     "3b"
+    ],
+    "part": "right hand",
+    "severity": "major"
+   },
+   {
+    "avatar": "B",
+    "kind": "impossible_joint",
+    "panels": [
+     "1d",
+     "3b",
+     "4f"
+    ],
+    "part": "right forearm",
+    "severity": "major"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "2a",
+     "4e"
+    ],
+    "part": "right hand",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "A",
+  "floating_parts": {
+   "A": [
+    "right hand",
+    "right forearm",
+    "right upper arm",
+    "head"
+   ],
+   "B": [
+    "head"
+   ]
+  },
+  "more_natural": "A",
+  "same_pose": {
+   "answer": "no",
+   "reason": "B's right forearm is bent sharply down into the floor and its right hand has disappeared. A's right arm lies flat along the floor like the grey body. The legs, torso and left arm match."
+  },
+  "summary": "The two avatars match except for the right arm. In B the right forearm is folded down through the floor and the right hand is gone. A keeps the arm flat along the floor like the grey body, with only a small hover, so A is closer to the human and looks more natural."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1335276,
+ "duration_s": 17.24,
+ "errors": [],
+ "frame_hold": 617,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Legs-Up-the-Wall_Pose_or_Viparita_Karani_-a@617",
+ "inputs": {},
+ "item_id": "220923_Legs-Up-the-Wall_Pose_or_Viparita_Karani_-a@617#kink",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/6bc495a40c91dc834b7c7eb67d25139ae08230d9",
+  "images": {
+   "img_1.png": "bea522cf0abdf19835f7c042537dbee0d7b4cf628d71db509d9e1d06ba49f59d",
+   "img_2.png": "41a6803f4fc062c1a9e9a3f03be9eaa8293cc3b6001951e59144e0fb18037093",
+   "img_3.png": "23ac6cbd6634e5c28f7342e3009245f70de3438a05f578d943e774ef53c6608b",
+   "img_4.png": "b6bf305ccec0d5aabebca976d24dff3aabc8da1914ceeef764f3c9a79fcc59d5",
+   "img_5.png": "e3da93a134656484e9e359857285fb439dce8f60514f2dad52431364146f09aa"
+  },
+  "packet_json_sha256": "5ab027e297f36830db42722506df2485963b468b0eca73e1bf0df0123dc4f80e"
+ },
+ "packet_id": "6bc495a40c91dc834b7c7eb67d25139ae08230d9",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "1f4d292b-86ed-41ce-b2ce-dd1752357f33",
+ "started_utc": "2026-09-30T02:41:05+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Legs-Up-the-Wall_Pose_or_Viparita_Karani_-a",
+ "stratum": "kink",
+ "usage": {
+  "cache_creation_input_tokens": 11988,
+  "cache_read_input_tokens": 13498,
+  "input_tokens": 6,
+  "output_tokens": 1745,
+  "thinking_tokens": 556
+ },
+ "warnings": []
+}

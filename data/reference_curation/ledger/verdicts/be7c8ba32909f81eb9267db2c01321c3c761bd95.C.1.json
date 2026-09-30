@@ -1,0 +1,126 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "4a",
+     "3c",
+     "1a"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "4a",
+     "3c"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "impossible_joint",
+    "panels": [
+     "4a",
+     "1a",
+     "5c"
+    ],
+    "part": "left shin",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "B",
+  "floating_parts": {
+   "A": [
+    "left foot"
+   ],
+   "B": []
+  },
+  "more_natural": "B",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both stand upright with arms held out to the sides at shoulder height and both feet together on the floor. Only the knee angle and how the feet sit differ slightly."
+  },
+  "summary": "Both show the same standing pose with arms out. In A the knees turn inwards and both feet tilt onto their edges, and the left foot lifts slightly above the grey feet. B's feet rest flat on the floor and its legs follow the grey body more closely."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1143298,
+ "duration_s": 14.27,
+ "errors": [],
+ "frame_hold": 1070,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Extended_Revolved_Triangle_Pose_or_Utthita_Trikonasana_-b@1070",
+ "inputs": {},
+ "item_id": "220923_Extended_Revolved_Triangle_Pose_or_Utthita_Trikonasana_-b@1070#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/be7c8ba32909f81eb9267db2c01321c3c761bd95",
+  "images": {
+   "img_1.png": "ae0de4ae8ca5585248587997aebde3e51d3d8a3372c54d71d47af7ce94237aaa",
+   "img_2.png": "8c6c56999bad4ecfc62242d1f94e1aa49d0f87c1e44ac0d637ed4f6605e8b218",
+   "img_3.png": "682dd7ff5cb5ee72acc415216257a7c4ae2924a12f4a1944adf214384b310207",
+   "img_4.png": "b1ee2516eadcce5917757cf5db3d81f7e9dbbd32a60ccf0afbb0f248ac8c626f",
+   "img_5.png": "ed25a264b4cd8ccc031992640fbdc5108487d2137349c1b81bb2b03b0dc1da7e"
+  },
+  "packet_json_sha256": "e3495c4bd5c00d16338c934c167fb424bb3e32eab297b462596dca108757b1ad"
+ },
+ "packet_id": "be7c8ba32909f81eb9267db2c01321c3c761bd95",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "32074017-0bfa-418f-9ab3-86ace9a69a65",
+ "started_utc": "2026-09-30T03:47:22+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Extended_Revolved_Triangle_Pose_or_Utthita_Trikonasana_-b",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 10585,
+  "cache_read_input_tokens": 13429,
+  "input_tokens": 6,
+  "output_tokens": 1347,
+  "thinking_tokens": 272
+ },
+ "warnings": []
+}

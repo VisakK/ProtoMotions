@@ -1,0 +1,162 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "4a",
+     "3c",
+     "1a"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "4a",
+     "3c",
+     "1c"
+    ],
+    "part": "left hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "through_floor",
+    "panels": [
+     "4b",
+     "3d",
+     "4d"
+    ],
+    "part": "left hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "through_body",
+    "panels": [
+     "4b"
+    ],
+    "part": "left forearm",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "4a",
+     "4c",
+     "3c"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "4b",
+     "4d",
+     "3d"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "B",
+  "floating_parts": {
+   "A": [
+    "left foot",
+    "right foot"
+   ],
+   "B": [
+    "left foot",
+    "right foot"
+   ]
+  },
+  "more_natural": "B",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both are the same shape: left hand down by the right foot, right arm straight up, feet apart. B's body sits slightly lower and its hand lies flatter."
+  },
+  "summary": "Both avatars show the same pose. B lines up more closely with the grey body, and its right foot and left hand sit lower (the hand dips slightly into the floor). In A the right foot is tilted and hovers higher, and the left hand is propped up at an angle. Both feet float in both avatars."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1269938,
+ "duration_s": 18.64,
+ "errors": [],
+ "frame_hold": 770,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Extended_Revolved_Triangle_Pose_or_Utthita_Trikonasana_-a@770",
+ "inputs": {},
+ "item_id": "220923_Extended_Revolved_Triangle_Pose_or_Utthita_Trikonasana_-a@770#sink",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/b35fb4785ea145862419ee910b8b37615d26ff6d",
+  "images": {
+   "img_1.png": "abbcf1365d5b2a13f4186462acd510e5e7a5fb3769d0da0d8ff6be8510fb1e98",
+   "img_2.png": "24915131e2d266141e62ffcc1e38d73a5397b356b188b24a6c2f9e3336a2d43e",
+   "img_3.png": "75c349052499e2dae8758353bb3e1f7095c88bf15166037d826c605d04138685",
+   "img_4.png": "0004b62e9865c4a13b54824617dee00113a8c535f43d951ec6688ff486bc3c42",
+   "img_5.png": "1f3b1f502609ed600056a15509bd47c4893ed8181b8d6d81bdae1317c9143a20"
+  },
+  "packet_json_sha256": "3fa6dd235b60dac7b93b38cea6fb9d83ac393d099fca901a6c1b6f5ffc1d9542"
+ },
+ "packet_id": "b35fb4785ea145862419ee910b8b37615d26ff6d",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "d0afbd2c-752e-44ac-926a-fce591538d32",
+ "started_utc": "2026-09-30T02:38:35+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Extended_Revolved_Triangle_Pose_or_Utthita_Trikonasana_-a",
+ "stratum": "sink",
+ "usage": {
+  "cache_creation_input_tokens": 11265,
+  "cache_read_input_tokens": 13449,
+  "input_tokens": 6,
+  "output_tokens": 1708,
+  "thinking_tokens": 486
+ },
+ "warnings": []
+}

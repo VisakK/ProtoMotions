@@ -1,0 +1,169 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "B",
+    "kind": "pulled_apart",
+    "panels": [
+     "1b",
+     "1d",
+     "2b",
+     "2d",
+     "3b",
+     "5d"
+    ],
+    "part": "right hand",
+    "severity": "major"
+   },
+   {
+    "avatar": "B",
+    "kind": "pulled_apart",
+    "panels": [
+     "1b",
+     "2b",
+     "2d",
+     "3d",
+     "5d"
+    ],
+    "part": "head",
+    "severity": "major"
+   },
+   {
+    "avatar": "B",
+    "kind": "impossible_joint",
+    "panels": [
+     "1b",
+     "2b",
+     "3b",
+     "3d"
+    ],
+    "part": "torso",
+    "severity": "major"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1b",
+     "2b",
+     "3d",
+     "5d"
+    ],
+    "part": "right upper arm",
+    "severity": "major"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "4a",
+     "3c"
+    ],
+    "part": "left hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "4a",
+     "3c"
+    ],
+    "part": "right hand",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "A",
+  "floating_parts": {
+   "A": [
+    "left foot",
+    "right foot"
+   ],
+   "B": [
+    "left foot",
+    "right foot"
+   ]
+  },
+  "more_natural": "A",
+  "same_pose": {
+   "answer": "no",
+   "reason": "A is a narrow standing forward fold with both hands down by the feet. B has a wide stance, the left arm hanging to the floor, the right arm straight up and the head off to one side."
+  },
+  "summary": "A follows the grey forward fold closely; only its feet and hands hover slightly above the floor. B is a different, broken pose: wide legs, one arm straight up with the hand detached, a displaced head and both feet off the floor."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1217134,
+ "duration_s": 18.82,
+ "errors": [],
+ "frame_hold": 416,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Standing_Forward_Bend_pose_or_Uttanasana_-a@416",
+ "inputs": {},
+ "item_id": "220923_Standing_Forward_Bend_pose_or_Uttanasana_-a@416#swap",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/f9a5d1e126e2f94477610b9f1c65d23235bc749d",
+  "images": {
+   "img_1.png": "1d4268f96b0ca40aeac1fe061d18a0b660a6c2f90e974d61d3179afd7c3f6707",
+   "img_2.png": "bbd79c6cfe7c7b1995df4189068ac1fe713fda596b878ec15c9cd71ded4fe4ef",
+   "img_3.png": "deb6704bebf47d2170fb02d0508639803f1470ecca4f21cce85616783c49ac47",
+   "img_4.png": "31d943343458b5d5b2465c65e1b9f207e1fdba3571cd6dfc4bd9daa06abb42af",
+   "img_5.png": "69004ed5865f410ffbce452c03070381cc0c984c2f557791a80b9b4f36c59907"
+  },
+  "packet_json_sha256": "422d8f1507406d462aeb2e70adc9b891c0f17ff9c0e4b88d68ab61a59f3df82d"
+ },
+ "packet_id": "f9a5d1e126e2f94477610b9f1c65d23235bc749d",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "6350c6f9-a713-456f-92ef-1f5cc049bebf",
+ "started_utc": "2026-09-30T02:34:22+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Standing_Forward_Bend_pose_or_Uttanasana_-a",
+ "stratum": "swap",
+ "usage": {
+  "cache_creation_input_tokens": 10588,
+  "cache_read_input_tokens": 13427,
+  "input_tokens": 6,
+  "output_tokens": 1715,
+  "thinking_tokens": 471
+ },
+ "warnings": []
+}

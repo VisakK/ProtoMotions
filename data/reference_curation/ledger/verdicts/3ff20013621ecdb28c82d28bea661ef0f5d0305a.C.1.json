@@ -1,0 +1,133 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "through_body",
+    "panels": [
+     "1a",
+     "3c",
+     "4a"
+    ],
+    "part": "right shin",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "through_body",
+    "panels": [
+     "1b",
+     "2b"
+    ],
+    "part": "right thigh",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "4a"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "3d",
+     "4b",
+     "5d"
+    ],
+    "part": "right shin",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "A",
+  "floating_parts": {
+   "A": [],
+   "B": []
+  },
+  "more_natural": "A",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both stand on the left leg in a knee bend with the right leg crossed over it, right foot off the floor, arms the same. B's right shin and foot hang further out and aren't wrapped."
+  },
+  "summary": "Both show the same one-legged crossed-leg squat. A wraps the right shin and foot around the standing leg, as the grey body does. In B they drift out to the side, away from the grey body. A's only flaws are small: legs passing into each other and a tilted left foot."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1597132,
+ "duration_s": 28.27,
+ "errors": [],
+ "frame_hold": 434,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220926_Eagle_Pose_or_Garudasana_-a@434",
+ "inputs": {},
+ "item_id": "220926_Eagle_Pose_or_Garudasana_-a@434#edit",
+ "n": 1,
+ "num_turns": 9,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/3ff20013621ecdb28c82d28bea661ef0f5d0305a",
+  "images": {
+   "img_1.png": "cbb7314e86d0f7e17b73fe01ca021c9e40119dbed2ad8d6e323f1a4d9a05006e",
+   "img_2.png": "83a84863a57a1691356836242b5d3e8919d3a308b46106899d986cfab514caeb",
+   "img_3.png": "1f24bf4793838d03e7e02f54e3af7b48ff8b9e34774155250b174a0177756fbe",
+   "img_4.png": "8e0e69cb297dce731009ed0524cc3be429fbb6148bb350a281275852fd91e928",
+   "img_5.png": "1c5a7e115dd7391c3db2a23fff406738c79b675541c180fc488d94b44d2c3c23"
+  },
+  "packet_json_sha256": "542bf87aa5f5e974136088168b08c3956ba5fb1c65424f7ec765c03ef5d0bd9f"
+ },
+ "packet_id": "3ff20013621ecdb28c82d28bea661ef0f5d0305a",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "c202583c-a0c6-40e6-98c7-ac2f13a4a49f",
+ "started_utc": "2026-09-30T04:02:43+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220926_Eagle_Pose_or_Garudasana_-a",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 12308,
+  "cache_read_input_tokens": 27086,
+  "input_tokens": 8,
+  "output_tokens": 2790,
+  "thinking_tokens": 1073
+ },
+ "warnings": []
+}

@@ -1,0 +1,146 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1a",
+     "3c",
+     "4e",
+     "5c"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1a",
+     "3c",
+     "4e",
+     "5c"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "4a",
+     "2c"
+    ],
+    "part": "left hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "4c",
+     "2c"
+    ],
+    "part": "right hand",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "B",
+  "floating_parts": {
+   "A": [
+    "left foot",
+    "right foot",
+    "left hand",
+    "right hand",
+    "left forearm",
+    "right forearm"
+   ],
+   "B": [
+    "left forearm",
+    "right forearm"
+   ]
+  },
+  "more_natural": "B",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both are on forearms and toes with hips raised high, knees bent and head low between the arms; the limbs are in the same places, and B mainly differs in its feet and hands being grounded."
+  },
+  "summary": "Both avatars hold the same pose. In A, both feet hover above the floor instead of resting on the toes, and both hands are tilted and lifted. B keeps its feet and hands flat on the floor, so it matches the grey body better. In both avatars the elbows float slightly above the floor."
+ },
+ "audit_id": null,
+ "cost_usd": 0.13322640000000002,
+ "duration_s": 18.36,
+ "errors": [],
+ "frame_hold": 588,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-b@624",
+ "inputs": {},
+ "item_id": "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-b@624#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/493a02906b43a60a0500b7490f78ae86921453e4",
+  "images": {
+   "img_1.png": "916f6efcd6057bac5930d5587b955344c38cb98a0da510ea3d0c54900367fcd5",
+   "img_2.png": "afa768206ec8a3cc03e7d3c6b17c7ca25e069a4ac8ded19acedba2b712343a7c",
+   "img_3.png": "3d70023a88ebff6995803e3669863a6aac41678d8e7182269521e635cfd7ee8f",
+   "img_4.png": "faace368de252dbe444688d14423cb40d15acc008028e789f25d751dffee3fb1",
+   "img_5.png": "24bc3e971cec0c2f75378bb443320addb0dd05d7019a028ba2c95e326570d8f1"
+  },
+  "packet_json_sha256": "885fe69ad63bdf054c6eee316eadf24950c38b7f0afd26101681414bdfe16482"
+ },
+ "packet_id": "493a02906b43a60a0500b7490f78ae86921453e4",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "db10aabf-c745-414e-8e2c-19959788a45f",
+ "started_utc": "2026-09-30T03:48:27+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-b",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 11946,
+  "cache_read_input_tokens": 13472,
+  "input_tokens": 6,
+  "output_tokens": 1747,
+  "thinking_tokens": 598
+ },
+ "warnings": []
+}

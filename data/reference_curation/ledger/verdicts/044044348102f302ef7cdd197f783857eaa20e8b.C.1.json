@@ -1,0 +1,115 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "4b",
+     "4d",
+     "3d"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "impossible_joint",
+    "panels": [
+     "4d",
+     "3d"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "A",
+  "floating_parts": {
+   "A": [],
+   "B": [
+    "left foot"
+   ]
+  },
+  "more_natural": "A",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both show the same wide lunge: front knee bent, back leg straight, arms held out level. Only the foot placement differs slightly."
+  },
+  "summary": "The pose is the same in both. A keeps both feet flat on the floor and lined up with the grey body. In B the front foot is tipped up and hovers just above the floor (drop line), and the back foot's toe block is bent upward."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1174852,
+ "duration_s": 12.86,
+ "errors": [],
+ "frame_hold": 572,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220926_Warrior_II_Pose_or_Virabhadrasana_II_-a@572",
+ "inputs": {},
+ "item_id": "220926_Warrior_II_Pose_or_Virabhadrasana_II_-a@572#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/044044348102f302ef7cdd197f783857eaa20e8b",
+  "images": {
+   "img_1.png": "6145adf2f52d72032312da075951ce1be0544e0ef6e68b1f6688a44a62bb5784",
+   "img_2.png": "f6f37ea86f190a9b00236edfa3250b2efb025ae4f8c242266039b1e6e9950cc9",
+   "img_3.png": "485caa3e869316f1ec49d6eb63cb244f06a80a27c78ffe96ffd0958f481432f9",
+   "img_4.png": "8e35f29d6f9e95a409538e4cad18d7ec7bed31a3f6b20ba1ef612781c0970aa6",
+   "img_5.png": "c7698e07ac32eb7b1a46161aa200a35dc66ab545b818bf41f885d05e1050013a"
+  },
+  "packet_json_sha256": "c127e868d4f376344b0eab8e30cd4defd74d6107f946f88a4f927b5925621150"
+ },
+ "packet_id": "044044348102f302ef7cdd197f783857eaa20e8b",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "4f5c40d6-ca0d-4e19-97ca-e3db5cb46865",
+ "started_utc": "2026-09-30T03:19:34+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220926_Warrior_II_Pose_or_Virabhadrasana_II_-a",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 11254,
+  "cache_read_input_tokens": 13446,
+  "input_tokens": 6,
+  "output_tokens": 1237,
+  "thinking_tokens": 242
+ },
+ "warnings": []
+}

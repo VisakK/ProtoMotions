@@ -1,0 +1,137 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "impossible_joint",
+    "panels": [
+     "4a",
+     "3c",
+     "1a"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "impossible_joint",
+    "panels": [
+     "4a",
+     "3c",
+     "1a"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "through_body",
+    "panels": [
+     "4a",
+     "3a"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "3c",
+     "4a",
+     "5c"
+    ],
+    "part": "left shin",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "B",
+  "floating_parts": {
+   "A": [
+    "left foot"
+   ],
+   "B": []
+  },
+  "more_natural": "B",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both stand upright with arms stretched out to the sides and both feet together on the floor. Only the knees and feet differ: A's knees bend inward and its feet tilt onto their edges."
+  },
+  "summary": "It's the same pose in both. In A, the knees bend inward and both feet roll onto their edges and press into each other, and the left foot hovers a little above the floor. B keeps its legs straighter with both feet flat on the floor, like the grey body."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1160052,
+ "duration_s": 14.52,
+ "errors": [],
+ "frame_hold": 13,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Four-Limbed_Staff_Pose_or_Chaturanga_Dandasana_-a@13",
+ "inputs": {},
+ "item_id": "220923_Four-Limbed_Staff_Pose_or_Chaturanga_Dandasana_-a@13#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/4f35c3ca8a2c25f1704cb31f05cc99d664bfd779",
+  "images": {
+   "img_1.png": "39a4ee0d160447a9e34714ec55854ba292578738c29b7445b7d9030f1ec3322c",
+   "img_2.png": "2ef9839a7d077a8582ccaa8f2d2a20ec83290ca064baec4b240419feb0f9bd80",
+   "img_3.png": "c8d72ca7662f88086177ce8cf6bb8f8a3194894751627482c5477a8829b04226",
+   "img_4.png": "d2bdff8c1502872df202d2ea66c8e892c45547aa72d3cd0c48966230c270253d",
+   "img_5.png": "52ba0584c565bbf08becd6bb47a2c0be84938eaf98c48347545e4731ad8b2ce8"
+  },
+  "packet_json_sha256": "d483ff1e97abdeae87cf1c297eb5b02ddce7f71c35834b13dcf44b51ef785a5c"
+ },
+ "packet_id": "4f35c3ca8a2c25f1704cb31f05cc99d664bfd779",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "d4cffc56-7294-40bc-b234-da2c32de4d2f",
+ "started_utc": "2026-09-30T03:50:29+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Four-Limbed_Staff_Pose_or_Chaturanga_Dandasana_-a",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 10592,
+  "cache_read_input_tokens": 13426,
+  "input_tokens": 6,
+  "output_tokens": 1428,
+  "thinking_tokens": 248
+ },
+ "warnings": []
+}

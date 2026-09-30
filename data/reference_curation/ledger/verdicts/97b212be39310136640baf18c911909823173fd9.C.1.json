@@ -1,0 +1,170 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1b",
+     "3d",
+     "4f",
+     "5d"
+    ],
+    "part": "pelvis",
+    "severity": "major"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1b",
+     "4b",
+     "5d"
+    ],
+    "part": "left hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "2b",
+     "4d",
+     "3d"
+    ],
+    "part": "right hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "3c",
+     "4e"
+    ],
+    "part": "pelvis",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "through_body",
+    "panels": [
+     "1a",
+     "3a"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "through_body",
+    "panels": [
+     "1b",
+     "3b"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "A",
+  "floating_parts": {
+   "A": [
+    "left foot",
+    "right foot",
+    "left shin",
+    "right shin",
+    "pelvis"
+   ],
+   "B": [
+    "left foot",
+    "right foot",
+    "left shin",
+    "right shin",
+    "pelvis",
+    "left hand",
+    "right hand"
+   ]
+  },
+  "more_natural": "A",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both sit cross-legged with the arms straight down and the hands by the hips. B is the same shape lifted higher, with its hands and legs raised a few cm."
+  },
+  "summary": "Both avatars show the same seated cross-legged pose. A sits lower, with its hands on the floor and only small gaps under the legs and seat. B is lifted clearly above the grey body, so its seat, legs and both hands hover above the floor."
+ },
+ "audit_id": null,
+ "cost_usd": 0.13526559999999999,
+ "duration_s": 18.82,
+ "errors": [],
+ "frame_hold": 1053,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Scale_Pose_or_Tolasana_-a@1068",
+ "inputs": {},
+ "item_id": "220923_Scale_Pose_or_Tolasana_-a@1068#lift",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/97b212be39310136640baf18c911909823173fd9",
+  "images": {
+   "img_1.png": "4664c2ed97fd9168476d0935e4367be3f7e126ec2fc9ca05ff0d5880155661c9",
+   "img_2.png": "23ee92570892fe53320a30ffafca9a3076bfbe8d378f132527f70ed0a04511a5",
+   "img_3.png": "5b22d44d775fb2a342642fbff0a4072f7882c6f1f70ef5c73dd74ab29bd2ec4a",
+   "img_4.png": "3597a35911f558d3eb1193c10470b862465c3eaf8262018bebdade9923b47803",
+   "img_5.png": "26cffb28b017af15857e96d3f11eee16e1b5ec7be478de0f954b2f42fcddf52d"
+  },
+  "packet_json_sha256": "b09d777de1ac172631f7ef5790c8866f612fc9d295e45d8500e2b9b988cbaafd"
+ },
+ "packet_id": "97b212be39310136640baf18c911909823173fd9",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "780243a8-d495-449d-815a-46a872a46e2b",
+ "started_utc": "2026-09-30T02:36:48+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Scale_Pose_or_Tolasana_-a",
+ "stratum": "lift",
+ "usage": {
+  "cache_creation_input_tokens": 11926,
+  "cache_read_input_tokens": 13468,
+  "input_tokens": 6,
+  "output_tokens": 1857,
+  "thinking_tokens": 652
+ },
+ "warnings": []
+}

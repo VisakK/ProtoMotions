@@ -1,0 +1,150 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1b",
+     "1d",
+     "2b",
+     "3b",
+     "3d"
+    ],
+    "part": "torso",
+    "severity": "major"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1b",
+     "3d",
+     "4b"
+    ],
+    "part": "head",
+    "severity": "major"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1d",
+     "2b",
+     "2d",
+     "3b"
+    ],
+    "part": "left thigh",
+    "severity": "major"
+   },
+   {
+    "avatar": "B",
+    "kind": "through_body",
+    "panels": [
+     "1b",
+     "3d",
+     "4d"
+    ],
+    "part": "right thigh",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "4a"
+    ],
+    "part": "left hand",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "A",
+  "floating_parts": {
+   "A": [],
+   "B": [
+    "right hand"
+   ]
+  },
+  "more_natural": "A",
+  "same_pose": {
+   "answer": "no",
+   "reason": "A keeps the grey arm balance: torso level and legs stretched out to one side. In B the body is flipped upright with the head hanging near the floor and the legs splayed in other directions."
+  },
+  "summary": "A stays close to the grey body: it balances on both hands with the torso level and the legs stretched to the side. B has turned the body upright, drops the head near the floor and throws the legs out elsewhere, so it is a different and unnatural pose."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1263262,
+ "duration_s": 17.56,
+ "errors": [],
+ "frame_hold": 871,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a@871",
+ "inputs": {},
+ "item_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a@871#swap",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/6570d260c79128b50da668b7d19e0fd95981566c",
+  "images": {
+   "img_1.png": "663459fd625f32f4593c1764fba71b4876eead56c4d1296292d4ab65a2c78728",
+   "img_2.png": "2616e814cd6d5697ec49ce2d2d69507aacd69494d77e2b72ea9fedf2a0eb43b1",
+   "img_3.png": "93a25851cfccdaf52089552c7ad36ac7ef45b4e9830bdc1973ae619733fd80fd",
+   "img_4.png": "46159fe1386d9ff88543a98d47b9d542ecf41470fd98c990ba65a103c9f361c5",
+   "img_5.png": "dff1e9a5099e5c737e9691b315e5539bd9e0b4479bebbbb2b0dee2b3c4fcb1f7"
+  },
+  "packet_json_sha256": "081b8fd501029d9af453dbc98ce0dada4ce1e261ec00556560d56082c771fd39"
+ },
+ "packet_id": "6570d260c79128b50da668b7d19e0fd95981566c",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "235ec481-9e26-4aaf-b4a0-1130a718e176",
+ "started_utc": "2026-09-30T02:34:05+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+ "stratum": "swap",
+ "usage": {
+  "cache_creation_input_tokens": 11259,
+  "cache_read_input_tokens": 13451,
+  "input_tokens": 6,
+  "output_tokens": 1677,
+  "thinking_tokens": 532
+ },
+ "warnings": []
+}

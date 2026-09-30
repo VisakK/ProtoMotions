@@ -1,0 +1,166 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1a",
+     "3c",
+     "4a",
+     "4c"
+    ],
+    "part": "right foot",
+    "severity": "major"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1a",
+     "3c",
+     "4a"
+    ],
+    "part": "left foot",
+    "severity": "major"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1b",
+     "2b",
+     "2d",
+     "3d",
+     "4d"
+    ],
+    "part": "right foot",
+    "severity": "major"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1b",
+     "3d",
+     "4b"
+    ],
+    "part": "left foot",
+    "severity": "major"
+   },
+   {
+    "avatar": "A",
+    "kind": "through_body",
+    "panels": [
+     "1a",
+     "1c",
+     "3c"
+    ],
+    "part": "left thigh",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "through_body",
+    "panels": [
+     "1b",
+     "4b"
+    ],
+    "part": "left shin",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "A",
+  "floating_parts": {
+   "A": [
+    "left foot",
+    "right foot"
+   ],
+   "B": [
+    "left foot",
+    "right foot"
+   ]
+  },
+  "more_natural": "A",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both show a deep tucked crouch with hands flat on the floor, knees drawn in by the arms and both feet lifted. B's legs sit a little higher and its right foot further back; same shape."
+  },
+  "summary": "Both avatars hold the same tucked crouch with hands on the floor. In both, the feet hover 10\u201320 cm up where the performer's feet rest on the floor. A keeps its feet lower and more under the body, so it matches a little better. B's legs sit higher and its right foot sticks out past the performer."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1660124,
+ "duration_s": 28.02,
+ "errors": [],
+ "frame_hold": 543,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Shoulder-Pressing_Pose_or_Bhujapidasana_-a@543",
+ "inputs": {},
+ "item_id": "220923_Shoulder-Pressing_Pose_or_Bhujapidasana_-a@543#edit",
+ "n": 1,
+ "num_turns": 9,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/053930f77b69998930573891d4f6164f0311e295",
+  "images": {
+   "img_1.png": "8f2e2145871af7cea53547aabfea57fb6e103f91338b65c210648974292864d2",
+   "img_2.png": "238e8c332d0c373b49459c38820cf0b2e8624e859bbc4f0717213f8860a3a125",
+   "img_3.png": "f21c3472bc38e5c18b7c61718ecc2d1ee3e54020f5feb140dc18230577f88583",
+   "img_4.png": "315f926f3af68afea2d9caa32ed583731f14faffc190bb10cdb4b2c2871652fa",
+   "img_5.png": "460e8b23402c7df42476500c2e133c7134f212f8e75cd7510137db1c04c9decb"
+  },
+  "packet_json_sha256": "f1e689d208112d40a29bc85e1a687d8000f6d9ec0836a1f5ea6bd91fd9f453f6"
+ },
+ "packet_id": "053930f77b69998930573891d4f6164f0311e295",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "9b00861e-9498-44e3-b857-b9ddce5fbb5e",
+ "started_utc": "2026-09-30T06:18:04+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Shoulder-Pressing_Pose_or_Bhujapidasana_-a",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 12917,
+  "cache_read_input_tokens": 27722,
+  "input_tokens": 8,
+  "output_tokens": 2855,
+  "thinking_tokens": 869
+ },
+ "warnings": []
+}

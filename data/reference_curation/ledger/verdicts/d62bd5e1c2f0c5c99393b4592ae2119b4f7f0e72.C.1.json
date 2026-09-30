@@ -1,0 +1,140 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "impossible_joint",
+    "panels": [
+     "4a",
+     "1a",
+     "3c"
+    ],
+    "part": "left hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "4c",
+     "3c"
+    ],
+    "part": "right hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "4e",
+     "3c",
+     "1a"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "4e",
+     "2a",
+     "4c"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "B",
+  "floating_parts": {
+   "A": [
+    "left foot",
+    "right foot",
+    "left hand",
+    "right hand"
+   ],
+   "B": []
+  },
+  "more_natural": "B",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both show the same seated, hands-behind shape with knees bent, feet forward and arms straight back. A only lifts its feet and hands slightly off the floor and bends its knees a little more."
+  },
+  "summary": "Both avatars do the same pose. B keeps its feet and hands flat on the floor where the grey body touches down. A lifts both feet and its hands above the floor, and its left hand is folded upward."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1317292,
+ "duration_s": 16.89,
+ "errors": [],
+ "frame_hold": 854,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220926_Upward_Plank_Pose_or_Purvottanasana_-a@854",
+ "inputs": {},
+ "item_id": "220926_Upward_Plank_Pose_or_Purvottanasana_-a@854#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/d62bd5e1c2f0c5c99393b4592ae2119b4f7f0e72",
+  "images": {
+   "img_1.png": "cb38292bf8fec1b150111d46565a132736bf7dfe33ce8a7e907b7bdf0a729445",
+   "img_2.png": "aff79911dd3e857f591d5f9e2a164b2838efe60e2ba4a6ef6ea8b3f4ce1a5a59",
+   "img_3.png": "db9c8256bfd6cc862a36d3aa5b9e6611280074a6f2c4ccd10140ecdc384af8e1",
+   "img_4.png": "aa643924cdd38fca59e1daa512a64035b26e38bfae503639f5e6ea435ec30ca6",
+   "img_5.png": "44155bc5aa79c68db7f4c81bf3504e91665e28483e8962b40d5ef00c86916608"
+  },
+  "packet_json_sha256": "f44a66efc11e6ce1bc9e0d6b711c04ccb778aeb1e030861c4ea9371404181986"
+ },
+ "packet_id": "d62bd5e1c2f0c5c99393b4592ae2119b4f7f0e72",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "ad2bf534-7bb3-4eef-a60b-29a65075ab39",
+ "started_utc": "2026-09-30T03:19:11+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220926_Upward_Plank_Pose_or_Purvottanasana_-a",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 12030,
+  "cache_read_input_tokens": 13526,
+  "input_tokens": 6,
+  "output_tokens": 1638,
+  "thinking_tokens": 486
+ },
+ "warnings": []
+}

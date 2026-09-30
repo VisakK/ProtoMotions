@@ -1,0 +1,178 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "4b",
+     "4f",
+     "3d",
+     "1b"
+    ],
+    "part": "left shin",
+    "severity": "major"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "4d",
+     "4f",
+     "3d"
+    ],
+    "part": "right shin",
+    "severity": "major"
+   },
+   {
+    "avatar": "B",
+    "kind": "through_body",
+    "panels": [
+     "4d",
+     "2d"
+    ],
+    "part": "right shin",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "4d",
+     "2b"
+    ],
+    "part": "right hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1a",
+     "1c",
+     "2a"
+    ],
+    "part": "torso",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "jitter",
+    "panels": [
+     "5a",
+     "5c",
+     "5e"
+    ],
+    "part": "left shin",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "through_body",
+    "panels": [
+     "3a",
+     "1a"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "A",
+  "floating_parts": {
+   "A": [
+    "left shin",
+    "left foot"
+   ],
+   "B": [
+    "left thigh",
+    "right thigh",
+    "left shin",
+    "right shin",
+    "left foot",
+    "right foot",
+    "right hand"
+   ]
+  },
+  "more_natural": "A",
+  "same_pose": {
+   "answer": "no",
+   "reason": "Both sit with legs crossed and hands on the floor, but B's crossed legs are lifted well clear of the floor. In A they rest low like the grey body's, and A's torso leans further forward."
+  },
+  "summary": "A keeps its crossed legs close to the floor like the grey body, with small gaps under the left shin and foot, but its torso slumps forward. B's head and torso match the grey body better, but its legs, feet and right hand float well above the floor."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1582728,
+ "duration_s": 31.67,
+ "errors": [],
+ "frame_hold": 1152,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Scale_Pose_or_Tolasana_-a@1113",
+ "inputs": {},
+ "item_id": "220923_Scale_Pose_or_Tolasana_-a@1113#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/34a857211882055cf2719fa0cb2c35ab49ef9823",
+  "images": {
+   "img_1.png": "851a64be989252b34d5c2a6775ca409ea35022fa8129e68b7a26a0a89c96e3fa",
+   "img_2.png": "e9b448567c45f529ddb9ebfde6d7a741c4dcdafc077aa93d8be449676be310e2",
+   "img_3.png": "f99d7acee973a9ce82b3f7d4696ee2c32f86ee87305b3c80d8ff112eba7254b8",
+   "img_4.png": "28a5f6a8296aaf9d3543feb66c64da69c7bf571562e599da6cb1b6dc9c4251b6",
+   "img_5.png": "d0742bda1c39dfe91de1c03a1fa82535d94cd296c2eefa3ec8230365e2e4f4c2"
+  },
+  "packet_json_sha256": "4adf98412bd0671424b13dac9278e768f9f1322cbf128ad3dc9dd0a8de97cdc5"
+ },
+ "packet_id": "34a857211882055cf2719fa0cb2c35ab49ef9823",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "6a7d13db-6077-4c47-aa2f-b388a0e8cb7f",
+ "started_utc": "2026-09-30T03:55:40+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Scale_Pose_or_Tolasana_-a",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 11986,
+  "cache_read_input_tokens": 13504,
+  "input_tokens": 6,
+  "output_tokens": 2983,
+  "thinking_tokens": 1641
+ },
+ "warnings": []
+}

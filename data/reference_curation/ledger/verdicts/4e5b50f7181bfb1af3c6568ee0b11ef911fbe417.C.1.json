@@ -1,0 +1,145 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1b",
+     "1d",
+     "3d",
+     "4f",
+     "5d"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1b",
+     "1d",
+     "3d",
+     "4f",
+     "5d"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "3d",
+     "4d"
+    ],
+    "part": "left forearm",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "through_body",
+    "panels": [
+     "1a",
+     "3c",
+     "4a"
+    ],
+    "part": "pelvis",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "A",
+  "floating_parts": {
+   "A": [],
+   "B": [
+    "left foot",
+    "right foot",
+    "right hand",
+    "left forearm",
+    "left upper arm"
+   ]
+  },
+  "more_natural": "A",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both lie on the back with the arms flat on the floor behind them and straight legs over the head toward the floor. B has the hips and legs somewhat higher and its feet lifted off the floor."
+  },
+  "summary": "It's the same pose. A keeps the toes and arms on the floor as the grey body does, though its hips and legs sit a little low. B follows the raised legs more closely, but its feet, right hand and left arm hover above the floor."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1342464,
+ "duration_s": 17.91,
+ "errors": [],
+ "frame_hold": 1646,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220926_Plow_Pose_or_Halasana_-b@1646",
+ "inputs": {},
+ "item_id": "220926_Plow_Pose_or_Halasana_-b@1646#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/4e5b50f7181bfb1af3c6568ee0b11ef911fbe417",
+  "images": {
+   "img_1.png": "d901dc482149b14a63c818b2b605c8b6f5d334b5444e5915cf5c429598b24442",
+   "img_2.png": "f05632cf33430ff9b0cae9b32d2306ec7fa226d0913f7c76d41c77cb452adb67",
+   "img_3.png": "ae38812eeaad82ae1741e8cfc7cd02f9e316d10f57c4e4b9b082d3dd40266ab4",
+   "img_4.png": "549b0297996ea46006b196d9752cdecd09fcfe0a4b30cb2959a46b8b48238c44",
+   "img_5.png": "ee0966f165d5ae312acae5eecd5c4cd4c4498fb40ca6c59b8be2f0bf584d324a"
+  },
+  "packet_json_sha256": "90e7def40e87853f1aad98e597d8d8a7ec79e35573d8dd0770578cebe1dbd7a0"
+ },
+ "packet_id": "4e5b50f7181bfb1af3c6568ee0b11ef911fbe417",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "51d0a605-61f5-42a5-943a-9b9d34cadab7",
+ "started_utc": "2026-09-30T03:17:55+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220926_Plow_Pose_or_Halasana_-b",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 12010,
+  "cache_read_input_tokens": 13512,
+  "input_tokens": 6,
+  "output_tokens": 1772,
+  "thinking_tokens": 605
+ },
+ "warnings": []
+}

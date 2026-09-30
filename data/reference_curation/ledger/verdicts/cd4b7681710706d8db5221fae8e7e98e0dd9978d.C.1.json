@@ -1,0 +1,155 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1b",
+     "3d",
+     "4b",
+     "4f",
+     "5d"
+    ],
+    "part": "left foot",
+    "severity": "major"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1b",
+     "3d",
+     "4b",
+     "4f",
+     "5d"
+    ],
+    "part": "right foot",
+    "severity": "major"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1b",
+     "4b",
+     "5d"
+    ],
+    "part": "left hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "2d",
+     "4d"
+    ],
+    "part": "right hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "through_body",
+    "panels": [
+     "1b",
+     "3b",
+     "4b"
+    ],
+    "part": "left thigh",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "A",
+  "floating_parts": {
+   "A": [],
+   "B": [
+    "left foot",
+    "right foot",
+    "left hand",
+    "right hand"
+   ]
+  },
+  "more_natural": "A",
+  "same_pose": {
+   "answer": "no",
+   "reason": "A keeps both feet and hands planted like the grey body. B lifts its hips and legs so both feet hover clearly off the floor, putting its weight on the hands only."
+  },
+  "summary": "A matches the grey body: its hands and feet are on the floor. B raises its legs and hips so both feet hover above the floor, with its hands slightly lifted and a thigh pushed into the torso. That makes it a different, less natural pose."
+ },
+ "audit_id": null,
+ "cost_usd": 0.13015480000000001,
+ "duration_s": 16.55,
+ "errors": [],
+ "frame_hold": 627,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a@680",
+ "inputs": {},
+ "item_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a@680#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/cd4b7681710706d8db5221fae8e7e98e0dd9978d",
+  "images": {
+   "img_1.png": "196661984e0a953e55c074f2caceec2550bec9f8378968ee755afdcfcf3c0910",
+   "img_2.png": "e766cd051fb0be0963716afc343e0dc966cca6a5f70e416d4931b482698b9454",
+   "img_3.png": "4f60899d2ec5c389cac2a5407a0d5372d7ee97ddd126b97b819d65c547c8fd79",
+   "img_4.png": "7b81f97867f4c15b6662dd32eed7ef9e81e0c80c5daf7a531148cf9f12bd336e",
+   "img_5.png": "b19793c7ca16c8bdc83707869a10895fd61342355d598647c611c6b040375bfe"
+  },
+  "packet_json_sha256": "afef04c44a0acf86d1c4f78d481f573d9cb8d2f0d87f2a422cb2f7c431071568"
+ },
+ "packet_id": "cd4b7681710706d8db5221fae8e7e98e0dd9978d",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "780d6714-cc1e-483e-9ab9-2fae6c31443d",
+ "started_utc": "2026-09-30T06:18:46+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 11984,
+  "cache_read_input_tokens": 13494,
+  "input_tokens": 6,
+  "output_tokens": 1578,
+  "thinking_tokens": 393
+ },
+ "warnings": []
+}

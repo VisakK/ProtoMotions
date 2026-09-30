@@ -1,0 +1,153 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1a",
+     "2a",
+     "3c",
+     "5c"
+    ],
+    "part": "torso",
+    "severity": "major"
+   },
+   {
+    "avatar": "A",
+    "kind": "jitter",
+    "panels": [
+     "5a",
+     "5c",
+     "5e"
+    ],
+    "part": "left thigh",
+    "severity": "major"
+   },
+   {
+    "avatar": "A",
+    "kind": "through_body",
+    "panels": [
+     "4c",
+     "4e"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "through_body",
+    "panels": [
+     "4d",
+     "4f"
+    ],
+    "part": "right shin",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "4d",
+     "4f"
+    ],
+    "part": "left hand",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "B",
+  "floating_parts": {
+   "A": [
+    "right foot",
+    "right shin"
+   ],
+   "B": [
+    "left shin",
+    "right shin",
+    "left foot",
+    "right foot"
+   ]
+  },
+  "more_natural": "B",
+  "same_pose": {
+   "answer": "no",
+   "reason": "B sits upright with crossed legs like the grey body. A's torso is tipped far to one side, its right knee is raised high and its legs are splayed and arranged differently."
+  },
+  "summary": "B follows the grey body closely: it sits upright with crossed legs and hands near the floor, though its shins and feet hover slightly. A tips far sideways, splays its legs differently and jerks between the time-strip rows."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1380518,
+ "duration_s": 21.09,
+ "errors": [],
+ "frame_hold": 1053,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Scale_Pose_or_Tolasana_-a@1068",
+ "inputs": {},
+ "item_id": "220923_Scale_Pose_or_Tolasana_-a@1068#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/212e8384306195b03ae81ecccc0ddbf9be71636d",
+  "images": {
+   "img_1.png": "cbcf21704d52ba25fcd31f295bc21847914e11bc25dd6652b43bea81565d041b",
+   "img_2.png": "aacbd2c7e5461f668681e68bc93c72ef91a7c6664e114fc80d46b22b49fe93a2",
+   "img_3.png": "34d42ea26218a37bdde31ca7ea65a7659a66d0834bc5d681514e3ccf3a26dde8",
+   "img_4.png": "919462fe48eebe927b942152acf814f99b23bf3a06da7ef3ca9dc034546f7ddd",
+   "img_5.png": "b1e8718e15c6422bae447f7cd8f3b1813f7ad54e7742e205fdabf0d1fa0354d9"
+  },
+  "packet_json_sha256": "886e5ec74bd1f714595c4b23c373dcf3261edf688de3304a404b34e7f956d76a"
+ },
+ "packet_id": "212e8384306195b03ae81ecccc0ddbf9be71636d",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "08e177a1-b14e-45b4-b916-443078a0dc4b",
+ "started_utc": "2026-09-30T03:55:33+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Scale_Pose_or_Tolasana_-a",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 11981,
+  "cache_read_input_tokens": 13499,
+  "input_tokens": 6,
+  "output_tokens": 1974,
+  "thinking_tokens": 767
+ },
+ "warnings": []
+}

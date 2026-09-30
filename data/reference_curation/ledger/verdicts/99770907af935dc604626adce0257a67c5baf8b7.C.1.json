@@ -1,0 +1,115 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "4a",
+     "3c",
+     "1c"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "4a",
+     "3c"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "B",
+  "floating_parts": {
+   "A": [
+    "left foot"
+   ],
+   "B": []
+  },
+  "more_natural": "B",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both stand upright with arms straight out to the sides and both feet together on the floor. The only difference is how the feet sit on the floor and a slight bend at the knees."
+  },
+  "summary": "The pose is the same in both. B's feet sit flat on the floor, matching the grey body. A's feet are tilted: the right foot rolls onto its edge and the left foot hovers slightly above the floor (drop line in 4a), so B is closer to the human and looks more natural."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1115254,
+ "duration_s": 12.78,
+ "errors": [],
+ "frame_hold": 1274,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Half_Moon_Pose_or_Ardha_Chandrasana_-a@1274",
+ "inputs": {},
+ "item_id": "220923_Half_Moon_Pose_or_Ardha_Chandrasana_-a@1274#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/99770907af935dc604626adce0257a67c5baf8b7",
+  "images": {
+   "img_1.png": "8b868212dc6f0dbbc7f9508b77701d3266cff2842842bfbb5e4e1c969df8004e",
+   "img_2.png": "3f9dd5460b7a4e01faa99dc521c76b414f3afc2c60315de9f7b038f15ef46ca0",
+   "img_3.png": "6c2ec771fa5a8995c49079ebea53fd6b0204123f58b1038af8bcff9e15c7dd5d",
+   "img_4.png": "b35c614f89c02c0a7f5c201cc695b0fc16835d090f656e87db4a8e7a79aa859b",
+   "img_5.png": "8126f3adefa8de6d80f04443b63251c0228e5e06ef85209b794ea7f655a85617"
+  },
+  "packet_json_sha256": "99cb2a2cc20b2a4f94be7e42ba0f7250ea6f348016e23180aba188308d10f189"
+ },
+ "packet_id": "99770907af935dc604626adce0257a67c5baf8b7",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "28ee79a9-faf6-40d6-952a-1a77f64d683e",
+ "started_utc": "2026-09-30T03:51:04+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Half_Moon_Pose_or_Ardha_Chandrasana_-a",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 10545,
+  "cache_read_input_tokens": 13407,
+  "input_tokens": 6,
+  "output_tokens": 1223,
+  "thinking_tokens": 212
+ },
+ "warnings": []
+}

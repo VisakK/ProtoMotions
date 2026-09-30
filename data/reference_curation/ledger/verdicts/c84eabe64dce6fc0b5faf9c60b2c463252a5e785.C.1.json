@@ -1,0 +1,145 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "4e",
+     "2a",
+     "4a"
+    ],
+    "part": "right hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "4c",
+     "1a",
+     "4a"
+    ],
+    "part": "left hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "4c",
+     "3c",
+     "1a"
+    ],
+    "part": "left shin",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "4e",
+     "2a"
+    ],
+    "part": "right shin",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "B",
+  "floating_parts": {
+   "A": [
+    "left shin",
+    "right shin",
+    "left foot",
+    "right foot",
+    "left hand",
+    "right hand",
+    "head"
+   ],
+   "B": [
+    "head"
+   ]
+  },
+  "more_natural": "B",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both kneel with the torso folded forward, head low and both hands planted by the head; A only has the knees, shins and feet lifted a few cm off the floor."
+  },
+  "summary": "It's the same kneeling, folded-forward pose in both. In B the knees, shins and flat hands rest on the floor as in the grey body. In A the knees and feet hover and the hands are tilted up off the floor. The head hovers slightly in both, so B is closer to the human and looks more natural."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1328472,
+ "duration_s": 18.46,
+ "errors": [],
+ "frame_hold": 358,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-a@364",
+ "inputs": {},
+ "item_id": "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-a@364#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/c84eabe64dce6fc0b5faf9c60b2c463252a5e785",
+  "images": {
+   "img_1.png": "724216e9f34395d5611bbc8ae9a035d20986fc260208a87cd1a448c703085c52",
+   "img_2.png": "819309488c4764d3863d4a279c0b03b6d21b8abd2731e6b219c3ad03f09b7d34",
+   "img_3.png": "a99f572109f298ebb21bd9f00e03a6dd9a9f7b283af34c4ad0973191db6376c6",
+   "img_4.png": "81dbb26429ec8fbe2cb7e0816d298056c099bfda16af49470580494379e00045",
+   "img_5.png": "52181e33d46a9c0a509dfad4dde4c8523c8be82dafc8555d73e3ffc3c6016fea"
+  },
+  "packet_json_sha256": "c20e142e2a12b9b270957770c5f974673bf52091ebb7d76037b32032d2e019ff"
+ },
+ "packet_id": "c84eabe64dce6fc0b5faf9c60b2c463252a5e785",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "dcc6a4e5-9489-4a82-aeb1-f70e4a53992a",
+ "started_utc": "2026-09-30T03:54:10+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-a",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 11993,
+  "cache_read_input_tokens": 13496,
+  "input_tokens": 6,
+  "output_tokens": 1709,
+  "thinking_tokens": 507
+ },
+ "warnings": []
+}

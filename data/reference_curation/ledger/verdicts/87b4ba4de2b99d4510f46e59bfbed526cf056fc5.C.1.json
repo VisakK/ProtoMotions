@@ -1,0 +1,134 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1d",
+     "2b",
+     "2d",
+     "3b",
+     "4d"
+    ],
+    "part": "right forearm",
+    "severity": "major"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1d",
+     "2b",
+     "2d",
+     "3b",
+     "3d"
+    ],
+    "part": "right hand",
+    "severity": "major"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "4a",
+     "4c"
+    ],
+    "part": "right hand",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "A",
+  "floating_parts": {
+   "A": [
+    "right hand",
+    "right forearm"
+   ],
+   "B": [
+    "right forearm",
+    "right hand"
+   ]
+  },
+  "more_natural": "A",
+  "same_pose": {
+   "answer": "no",
+   "reason": "In B the right forearm is lifted and angled outward with the right hand in the air. In A and in the grey body, the right forearm and hand lie flat on the floor."
+  },
+  "summary": "A matches the grey body closely: both forearms rest on the floor, and the right hand and forearm hover only slightly. B lifts the right forearm and hand clearly off the floor, which breaks the support on that arm, so it is a different pose and less natural."
+ },
+ "audit_id": null,
+ "cost_usd": 0.12427120000000001,
+ "duration_s": 16.5,
+ "errors": [],
+ "frame_hold": 2684,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Scorpion_pose_or_vrischikasana-a@2684",
+ "inputs": {},
+ "item_id": "220923_Scorpion_pose_or_vrischikasana-a@2684#kink",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/87b4ba4de2b99d4510f46e59bfbed526cf056fc5",
+  "images": {
+   "img_1.png": "2c322ad642347db86d8d2bcb99e16132ca5548ee5e03a8cea5eeba4a6d4431b3",
+   "img_2.png": "017212d66ccb2e68d1001052a9f632752cf8f06ca5cd5679694affd7b5439127",
+   "img_3.png": "0b897d442a09984270c19ed12c27503cf89846c357dd3de184b7f010f84c004c",
+   "img_4.png": "d3f75ea644a7bad53c193a8caa2e68175be9000e33d87fd9685620c9ef069b37",
+   "img_5.png": "0055215b4d63407a9f2e274f5fa059c3ce5139016de7ea8328d8156668b945e7"
+  },
+  "packet_json_sha256": "ba0f6b7c6642bf0e86baaa2e9facea3c633561e1c14a448987d22d2761b1a633"
+ },
+ "packet_id": "87b4ba4de2b99d4510f46e59bfbed526cf056fc5",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "f62dbcb7-23ae-410f-967c-1ce38ed3a2eb",
+ "started_utc": "2026-09-30T02:41:11+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Scorpion_pose_or_vrischikasana-a",
+ "stratum": "kink",
+ "usage": {
+  "cache_creation_input_tokens": 11287,
+  "cache_read_input_tokens": 13456,
+  "input_tokens": 6,
+  "output_tokens": 1563,
+  "thinking_tokens": 427
+ },
+ "warnings": []
+}

@@ -1,0 +1,158 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "4b",
+     "4d",
+     "3d",
+     "1b"
+    ],
+    "part": "left shin",
+    "severity": "major"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "4b",
+     "4f",
+     "2b"
+    ],
+    "part": "right shin",
+    "severity": "major"
+   },
+   {
+    "avatar": "B",
+    "kind": "impossible_joint",
+    "panels": [
+     "1d",
+     "3d",
+     "4d"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "4b",
+     "4f",
+     "2d"
+    ],
+    "part": "right hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1d",
+     "3d",
+     "4f"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "A",
+  "floating_parts": {
+   "A": [
+    "head"
+   ],
+   "B": [
+    "left shin",
+    "right shin",
+    "left foot",
+    "right foot",
+    "right hand",
+    "left hand",
+    "head"
+   ]
+  },
+  "more_natural": "A",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both kneel folded forward with hands flat by the head and toes tucked; B holds the same shape but lifted, with knees, feet and hands just off the floor."
+  },
+  "summary": "Both avatars hold the same folded kneeling pose. A keeps its knees, feet and hands on the floor like the grey body. B is lifted: its knees and feet hover with visible drop lines, its hands tilt off the floor, and its feet are twisted. A is closer to the human and looks more natural."
+ },
+ "audit_id": null,
+ "cost_usd": 0.13382460000000002,
+ "duration_s": 18.34,
+ "errors": [],
+ "frame_hold": 326,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-b@343",
+ "inputs": {},
+ "item_id": "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-b@343#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/3bb85a5d876aae8f93b6dc116edff34748650c85",
+  "images": {
+   "img_1.png": "c5767dee2cc8836bf373c919ddfe5b74002bc690126aebc1494d89f121a8b484",
+   "img_2.png": "3ab255123a0ace382bf841054524883f57645f0ae8adaceec1996f5b7cae00d3",
+   "img_3.png": "10401420e5178c6ba95658fc1d14b1942668b85efce469475b14f3a123429f87",
+   "img_4.png": "e77930fb871b3ba96c5123661a0a9713601eb7629feca9b26ab50d5893fd89a9",
+   "img_5.png": "a60427599340d7bed4efbf83bd1ce1c3c4af6a652af123b14a028f30a73bd4e3"
+  },
+  "packet_json_sha256": "62b37a7d0cc0ce66fa39740598ff331fa015e04fa5815cf74a05a07864f3300f"
+ },
+ "packet_id": "3bb85a5d876aae8f93b6dc116edff34748650c85",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "cbff8d6c-5d9c-474e-9c05-b67630bcec9f",
+ "started_utc": "2026-09-30T03:55:03+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-b",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 11968,
+  "cache_read_input_tokens": 13483,
+  "input_tokens": 6,
+  "output_tokens": 1768,
+  "thinking_tokens": 518
+ },
+ "warnings": []
+}

@@ -1,0 +1,3703 @@
+{
+ "schema_version": 1,
+ "generator": {
+  "module": "reference_curation.plant",
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "sha256": "6e176e4c1c6c06855d277ca73a086176eda1ef037f36b610a77dac881190cd94"
+ },
+ "inputs": {
+  "results/Contact_Physics_analysis/220923_Chair_Pose_or_Utkatasana_-b/rollout.npz": "af1bcdb81462ca3b377e19c8862e833e46682ee6bfaa6b5057dbfd7d43f6c1f3",
+  "results/Contact_Physics_analysis/220923_Crane_Crow_Pose_or_Bakasana_-a/rollout.npz": "72b9f52aab1b84c5175584eb6e2b5742aa1f4c65be49d3f4f2e6d30c987e9210",
+  "results/Contact_Physics_analysis/220923_Handstand_pose_or_Adho_Mukha_Vrksasana_-a/rollout.npz": "4d85bfee3782fa60a4f34f494cd722274e7a1cbc1d9e69e87e0e1b2460199c7b",
+  "results/Contact_Physics_analysis/220923_Scorpion_pose_or_vrischikasana-b/rollout.npz": "d46390a7815a2ff48d379615912e82639fe4c1624f8b6c3807430d83ca86a257",
+  "results/Contact_Physics_analysis/220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a/rollout.npz": "a74eb145d7545bee050ff98503ab299f04bc85a36f725e3b0bd80382cf32817a",
+  "results/Contact_Physics_analysis/220926_Warrior_III_Pose_or_Virabhadrasana_III_-a/rollout.npz": "af5d80b3e479817837e3e028335629ef5efd52a54030ff43cf1b967c0cc4f85b",
+  "results/Contact_Physics_analysis_crow_pair/220923_Crane_Crow_Pose_or_Bakasana_-a/rollout.npz": "b1d05e6d74351093be22ac9ced44e18d66da6ad515eb0a7f711800721895df7e",
+  "results/Contact_Physics_analysis_crow_pair/220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a/rollout.npz": "16afd1da41dd917752bbb1fb84da37c9cac3221739fbc55d6e3e61b9219638ac",
+  "results/Contact_Physics_analysis_crow_pair_final/220923_Crane_Crow_Pose_or_Bakasana_-a/rollout.npz": "00c045d6799fa17f4c4a91639dfcb8648c1465d77a6675fefaa28043899a0b38",
+  "results/Contact_Physics_analysis_crow_pair_final/220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a/rollout.npz": "b000abb91cc00fec06b2ceec3c905eea4e45016cb8eb2e07956c643752781046",
+  "results/Contact_Physics_analysis_crow_pair_resumed/220923_Crane_Crow_Pose_or_Bakasana_-a/rollout.npz": "a6a55951b5a0ef05ca496a57c45c0ea691084f5dbd27557ceaccd4ef6b3bec32",
+  "results/Contact_Physics_analysis_crow_pair_resumed/220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a/rollout.npz": "864aa90c1b1baa924fcea5bf30e7fd64ad10801f1ec4bc584ee60bf04889741d",
+  "results/Contact_Physics_analysis_crow_pair_scorebased/220923_Crane_Crow_Pose_or_Bakasana_-a/rollout.npz": "8659553b6dd8cc0e3f6af977d9e8b9c92eac6867056d9b5a666b7acdbc71ed15"
+ },
+ "joint_convention": {
+  "results/Contact_Physics_analysis/220923_Chair_Pose_or_Utkatasana_-b/rollout.npz": {
+   "max_err_rotvec_rad": 6.012388962250981e-07,
+   "max_err_xyz_euler_rad": 2.8449072074511608
+  },
+  "results/Contact_Physics_analysis/220923_Crane_Crow_Pose_or_Bakasana_-a/rollout.npz": {
+   "max_err_rotvec_rad": 7.137372319832025e-07,
+   "max_err_xyz_euler_rad": 2.9684562963582555
+  },
+  "results/Contact_Physics_analysis/220923_Handstand_pose_or_Adho_Mukha_Vrksasana_-a/rollout.npz": {
+   "max_err_rotvec_rad": 6.65608787864258e-07,
+   "max_err_xyz_euler_rad": 3.2780460921695442
+  },
+  "results/Contact_Physics_analysis/220923_Scorpion_pose_or_vrischikasana-b/rollout.npz": {
+   "max_err_rotvec_rad": 8.009142662412927e-07,
+   "max_err_xyz_euler_rad": 3.459798793031857
+  },
+  "results/Contact_Physics_analysis/220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a/rollout.npz": {
+   "max_err_rotvec_rad": 7.291660284458601e-07,
+   "max_err_xyz_euler_rad": 3.3872398877209173
+  },
+  "results/Contact_Physics_analysis/220926_Warrior_III_Pose_or_Virabhadrasana_III_-a/rollout.npz": {
+   "max_err_rotvec_rad": 4.5591539521439017e-07,
+   "max_err_xyz_euler_rad": 0.730322537374639
+  },
+  "results/Contact_Physics_analysis_crow_pair/220923_Crane_Crow_Pose_or_Bakasana_-a/rollout.npz": {
+   "max_err_rotvec_rad": 7.077963428692158e-07,
+   "max_err_xyz_euler_rad": 3.42057910684487
+  },
+  "results/Contact_Physics_analysis_crow_pair/220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a/rollout.npz": {
+   "max_err_rotvec_rad": 7.306064384593469e-07,
+   "max_err_xyz_euler_rad": 3.3569734547054293
+  },
+  "results/Contact_Physics_analysis_crow_pair_final/220923_Crane_Crow_Pose_or_Bakasana_-a/rollout.npz": {
+   "max_err_rotvec_rad": 6.866486654821813e-07,
+   "max_err_xyz_euler_rad": 3.2605880620346395
+  },
+  "results/Contact_Physics_analysis_crow_pair_final/220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a/rollout.npz": {
+   "max_err_rotvec_rad": 7.236098635843291e-07,
+   "max_err_xyz_euler_rad": 3.5118396107046923
+  },
+  "results/Contact_Physics_analysis_crow_pair_resumed/220923_Crane_Crow_Pose_or_Bakasana_-a/rollout.npz": {
+   "max_err_rotvec_rad": 6.246553254651843e-07,
+   "max_err_xyz_euler_rad": 3.444264604203443
+  },
+  "results/Contact_Physics_analysis_crow_pair_resumed/220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a/rollout.npz": {
+   "max_err_rotvec_rad": 7.608897973909734e-07,
+   "max_err_xyz_euler_rad": 3.36845957951617
+  },
+  "results/Contact_Physics_analysis_crow_pair_scorebased/220923_Crane_Crow_Pose_or_Bakasana_-a/rollout.npz": {
+   "max_err_rotvec_rad": 6.145587483352699e-07,
+   "max_err_xyz_euler_rad": 3.4743876360916937
+  }
+ },
+ "limits": {
+  "results/Contact_Physics_analysis/220923_Chair_Pose_or_Utkatasana_-b/rollout.npz": {
+   "frames": 1516,
+   "max_violation_deg": 1.038,
+   "worst_joint": "L_Hip_z",
+   "worst_torque_applied_nm": 117.9,
+   "worst_torque_measured_nm": 157.6,
+   "frames_past_0.5deg": 538,
+   "frames_past_2deg": 0,
+   "joint_frames_at_stop": 613,
+   "at_stop_with_saturated_actuator": 0
+  },
+  "results/Contact_Physics_analysis/220923_Crane_Crow_Pose_or_Bakasana_-a/rollout.npz": {
+   "frames": 1940,
+   "max_violation_deg": 0.79,
+   "worst_joint": "L_Hip_z",
+   "worst_torque_applied_nm": -7.3,
+   "worst_torque_measured_nm": 81.5,
+   "frames_past_0.5deg": 32,
+   "frames_past_2deg": 0,
+   "joint_frames_at_stop": 223,
+   "at_stop_with_saturated_actuator": 81
+  },
+  "results/Contact_Physics_analysis/220923_Handstand_pose_or_Adho_Mukha_Vrksasana_-a/rollout.npz": {
+   "frames": 5872,
+   "max_violation_deg": 0.778,
+   "worst_joint": "R_Toe_y",
+   "worst_torque_applied_nm": 20.0,
+   "worst_torque_measured_nm": 42.9,
+   "frames_past_0.5deg": 84,
+   "frames_past_2deg": 0,
+   "joint_frames_at_stop": 3608,
+   "at_stop_with_saturated_actuator": 3355
+  },
+  "results/Contact_Physics_analysis/220923_Scorpion_pose_or_vrischikasana-b/rollout.npz": {
+   "frames": 3612,
+   "max_violation_deg": 1.005,
+   "worst_joint": "L_Hip_z",
+   "worst_torque_applied_nm": -133.4,
+   "worst_torque_measured_nm": 75.1,
+   "frames_past_0.5deg": 690,
+   "frames_past_2deg": 0,
+   "joint_frames_at_stop": 3797,
+   "at_stop_with_saturated_actuator": 1702
+  },
+  "results/Contact_Physics_analysis/220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a/rollout.npz": {
+   "frames": 2712,
+   "max_violation_deg": 0.326,
+   "worst_joint": "L_Elbow_x",
+   "worst_torque_applied_nm": -24.3,
+   "worst_torque_measured_nm": -40.3,
+   "frames_past_0.5deg": 0,
+   "frames_past_2deg": 0,
+   "joint_frames_at_stop": 35,
+   "at_stop_with_saturated_actuator": 0
+  },
+  "results/Contact_Physics_analysis/220926_Warrior_III_Pose_or_Virabhadrasana_III_-a/rollout.npz": {
+   "frames": 2532,
+   "max_violation_deg": 0.176,
+   "worst_joint": "L_Elbow_z",
+   "worst_torque_applied_nm": -65.1,
+   "worst_torque_measured_nm": -35.8,
+   "frames_past_0.5deg": 0,
+   "frames_past_2deg": 0,
+   "joint_frames_at_stop": 0,
+   "at_stop_with_saturated_actuator": 0
+  },
+  "results/Contact_Physics_analysis_crow_pair/220923_Crane_Crow_Pose_or_Bakasana_-a/rollout.npz": {
+   "frames": 1940,
+   "max_violation_deg": 0.49,
+   "worst_joint": "R_Elbow_x",
+   "worst_torque_applied_nm": 59.1,
+   "worst_torque_measured_nm": 46.8,
+   "frames_past_0.5deg": 0,
+   "frames_past_2deg": 0,
+   "joint_frames_at_stop": 216,
+   "at_stop_with_saturated_actuator": 64
+  },
+  "results/Contact_Physics_analysis_crow_pair/220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a/rollout.npz": {
+   "frames": 2712,
+   "max_violation_deg": 0.706,
+   "worst_joint": "L_Wrist_x",
+   "worst_torque_applied_nm": -20.0,
+   "worst_torque_measured_nm": -43.1,
+   "frames_past_0.5deg": 63,
+   "frames_past_2deg": 0,
+   "joint_frames_at_stop": 835,
+   "at_stop_with_saturated_actuator": 425
+  },
+  "results/Contact_Physics_analysis_crow_pair_final/220923_Crane_Crow_Pose_or_Bakasana_-a/rollout.npz": {
+   "frames": 1940,
+   "max_violation_deg": 0.758,
+   "worst_joint": "L_Knee_x",
+   "worst_torque_applied_nm": 200.0,
+   "worst_torque_measured_nm": 67.3,
+   "frames_past_0.5deg": 2,
+   "frames_past_2deg": 0,
+   "joint_frames_at_stop": 64,
+   "at_stop_with_saturated_actuator": 29
+  },
+  "results/Contact_Physics_analysis_crow_pair_final/220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a/rollout.npz": {
+   "frames": 2712,
+   "max_violation_deg": 0.686,
+   "worst_joint": "L_Wrist_x",
+   "worst_torque_applied_nm": 20.0,
+   "worst_torque_measured_nm": -40.7,
+   "frames_past_0.5deg": 160,
+   "frames_past_2deg": 0,
+   "joint_frames_at_stop": 826,
+   "at_stop_with_saturated_actuator": 637
+  },
+  "results/Contact_Physics_analysis_crow_pair_resumed/220923_Crane_Crow_Pose_or_Bakasana_-a/rollout.npz": {
+   "frames": 1940,
+   "max_violation_deg": 0.711,
+   "worst_joint": "L_Hip_z",
+   "worst_torque_applied_nm": 77.5,
+   "worst_torque_measured_nm": 70.7,
+   "frames_past_0.5deg": 44,
+   "frames_past_2deg": 0,
+   "joint_frames_at_stop": 564,
+   "at_stop_with_saturated_actuator": 45
+  },
+  "results/Contact_Physics_analysis_crow_pair_resumed/220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a/rollout.npz": {
+   "frames": 2712,
+   "max_violation_deg": 0.672,
+   "worst_joint": "L_Wrist_x",
+   "worst_torque_applied_nm": 8.9,
+   "worst_torque_measured_nm": -41.0,
+   "frames_past_0.5deg": 156,
+   "frames_past_2deg": 0,
+   "joint_frames_at_stop": 699,
+   "at_stop_with_saturated_actuator": 301
+  },
+  "results/Contact_Physics_analysis_crow_pair_scorebased/220923_Crane_Crow_Pose_or_Bakasana_-a/rollout.npz": {
+   "frames": 1940,
+   "max_violation_deg": 0.462,
+   "worst_joint": "R_Thorax_y",
+   "worst_torque_applied_nm": 101.5,
+   "worst_torque_measured_nm": 45.7,
+   "frames_past_0.5deg": 0,
+   "frames_past_2deg": 0,
+   "joint_frames_at_stop": 179,
+   "at_stop_with_saturated_actuator": 50
+  }
+ },
+ "references": {
+  "holds": 303,
+  "exemplars_past_range_expmap": 285,
+  "exemplars_past_range_xyz": 290,
+  "by_joint_expmap": {
+   "L_Elbow_z": 143,
+   "R_Elbow_z": 140,
+   "L_Thorax_z": 74,
+   "R_Elbow_x": 73,
+   "L_Elbow_x": 68,
+   "R_Thorax_z": 61,
+   "R_Knee_y": 59,
+   "L_Ankle_y": 52,
+   "L_Elbow_y": 38,
+   "R_Elbow_y": 29,
+   "R_Ankle_y": 26,
+   "R_Toe_x": 24
+  },
+  "worst": [
+   [
+    "220923_Cockerel_Pose-b@2614",
+    160.2,
+    "R_Knee_y"
+   ],
+   [
+    "220923_Cockerel_Pose-b@2492",
+    158.5,
+    "R_Knee_y"
+   ],
+   [
+    "220923_Cockerel_Pose-b@2355",
+    157.1,
+    "R_Knee_y"
+   ],
+   [
+    "220923_Cockerel_Pose-b@1983",
+    156.8,
+    "R_Knee_y"
+   ],
+   [
+    "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-b@420",
+    48.4,
+    "R_Elbow_x"
+   ],
+   [
+    "220923_Peacock_Pose_or_Mayurasana_-a@434",
+    47.1,
+    "R_Elbow_y"
+   ],
+   [
+    "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-a@1199",
+    45.9,
+    "R_Elbow_x"
+   ],
+   [
+    "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-c@1554",
+    45.1,
+    "R_Elbow_x"
+   ],
+   [
+    "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-d@357",
+    45.1,
+    "R_Elbow_x"
+   ],
+   [
+    "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-d@431",
+    44.5,
+    "R_Elbow_x"
+   ],
+   [
+    "220926_Intense_Side_Stretch_Pose_or_Parsvottanasana_-b@999",
+    43.7,
+    "R_Elbow_y"
+   ],
+   [
+    "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-a@1374",
+    42.8,
+    "R_Elbow_x"
+   ]
+  ],
+  "frames": 89176,
+  "frames_past_range_expmap": 75381
+ },
+ "forces": {
+  "lp": {
+   "within_limits": 7974,
+   "infeasible": 325,
+   "beyond_limits": 75
+  },
+  "contacts": {
+   "ground": {
+    "inside": 19078,
+    "outside": 937,
+    "no_interval": 518
+   },
+   "pair": {
+    "inside": 15822,
+    "no_interval": 276,
+    "outside": 179
+   }
+  },
+  "outside_examples": [
+   [
+    "220923_Chair_Pose_or_Utkatasana_-b",
+    88,
+    "L_FOOT:G",
+    429.0,
+    25.8,
+    239.9
+   ],
+   [
+    "220923_Chair_Pose_or_Utkatasana_-b",
+    88,
+    "R_FOOT:G",
+    307.6,
+    483.6,
+    697.8
+   ],
+   [
+    "220923_Chair_Pose_or_Utkatasana_-b",
+    92,
+    "L_FOOT:G",
+    456.0,
+    0.0,
+    147.4
+   ],
+   [
+    "220923_Chair_Pose_or_Utkatasana_-b",
+    92,
+    "R_FOOT:G",
+    261.1,
+    550.4,
+    697.9
+   ],
+   [
+    "220923_Chair_Pose_or_Utkatasana_-b",
+    124,
+    "L_FOOT:G",
+    350.9,
+    0.0,
+    271.7
+   ],
+   [
+    "220923_Chair_Pose_or_Utkatasana_-b",
+    124,
+    "R_FOOT:G",
+    342.9,
+    412.0,
+    683.7
+   ],
+   [
+    "220923_Chair_Pose_or_Utkatasana_-b",
+    136,
+    "L_FOOT:G",
+    309.3,
+    0.0,
+    167.7
+   ],
+   [
+    "220923_Chair_Pose_or_Utkatasana_-b",
+    136,
+    "R_FOOT:G",
+    340.8,
+    485.1,
+    652.8
+   ],
+   [
+    "220923_Chair_Pose_or_Utkatasana_-b",
+    168,
+    "L_FOOT:G",
+    348.4,
+    420.2,
+    511.8
+   ],
+   [
+    "220923_Chair_Pose_or_Utkatasana_-b",
+    204,
+    "L_FOOT:G",
+    374.8,
+    0.0,
+    322.8
+   ],
+   [
+    "220923_Chair_Pose_or_Utkatasana_-b",
+    204,
+    "R_FOOT:G",
+    274.6,
+    358.0,
+    680.7
+   ],
+   [
+    "220923_Chair_Pose_or_Utkatasana_-b",
+    220,
+    "R_FOOT:G",
+    235.9,
+    286.8,
+    749.6
+   ],
+   [
+    "220923_Chair_Pose_or_Utkatasana_-b",
+    232,
+    "R_FOOT:G",
+    256.9,
+    295.4,
+    695.2
+   ],
+   [
+    "220923_Chair_Pose_or_Utkatasana_-b",
+    236,
+    "L_FOOT:G",
+    448.3,
+    0.0,
+    337.0
+   ],
+   [
+    "220923_Chair_Pose_or_Utkatasana_-b",
+    236,
+    "R_FOOT:G",
+    251.7,
+    380.8,
+    717.8
+   ],
+   [
+    "220923_Chair_Pose_or_Utkatasana_-b",
+    244,
+    "L_FOOT:G",
+    408.4,
+    0.0,
+    339.7
+   ],
+   [
+    "220923_Chair_Pose_or_Utkatasana_-b",
+    244,
+    "R_FOOT:G",
+    289.2,
+    359.6,
+    699.2
+   ],
+   [
+    "220923_Chair_Pose_or_Utkatasana_-b",
+    268,
+    "L_FOOT:G",
+    419.3,
+    0.0,
+    263.3
+   ],
+   [
+    "220923_Chair_Pose_or_Utkatasana_-b",
+    268,
+    "R_FOOT:G",
+    291.0,
+    464.3,
+    727.6
+   ],
+   [
+    "220923_Chair_Pose_or_Utkatasana_-b",
+    308,
+    "L_FOOT:G",
+    479.4,
+    0.0,
+    400.4
+   ]
+  ]
+ },
+ "forces_by_rollout": {
+  "results/Contact_Physics_analysis/220923_Chair_Pose_or_Utkatasana_-b/rollout.npz": {
+   "lp": {
+    "within_limits": 369,
+    "infeasible": 3
+   },
+   "contacts": {
+    "ground": {
+     "inside": 675,
+     "outside": 63,
+     "no_interval": 6
+    },
+    "pair": {
+     "inside": 725,
+     "no_interval": 4
+    }
+   },
+   "outside_examples": [
+    [
+     "220923_Chair_Pose_or_Utkatasana_-b",
+     88,
+     "L_FOOT:G",
+     429.0,
+     25.8,
+     239.9
+    ],
+    [
+     "220923_Chair_Pose_or_Utkatasana_-b",
+     88,
+     "R_FOOT:G",
+     307.6,
+     483.6,
+     697.8
+    ],
+    [
+     "220923_Chair_Pose_or_Utkatasana_-b",
+     92,
+     "L_FOOT:G",
+     456.0,
+     0.0,
+     147.4
+    ],
+    [
+     "220923_Chair_Pose_or_Utkatasana_-b",
+     92,
+     "R_FOOT:G",
+     261.1,
+     550.4,
+     697.9
+    ],
+    [
+     "220923_Chair_Pose_or_Utkatasana_-b",
+     124,
+     "L_FOOT:G",
+     350.9,
+     0.0,
+     271.7
+    ],
+    [
+     "220923_Chair_Pose_or_Utkatasana_-b",
+     124,
+     "R_FOOT:G",
+     342.9,
+     412.0,
+     683.7
+    ],
+    [
+     "220923_Chair_Pose_or_Utkatasana_-b",
+     136,
+     "L_FOOT:G",
+     309.3,
+     0.0,
+     167.7
+    ],
+    [
+     "220923_Chair_Pose_or_Utkatasana_-b",
+     136,
+     "R_FOOT:G",
+     340.8,
+     485.1,
+     652.8
+    ],
+    [
+     "220923_Chair_Pose_or_Utkatasana_-b",
+     168,
+     "L_FOOT:G",
+     348.4,
+     420.2,
+     511.8
+    ],
+    [
+     "220923_Chair_Pose_or_Utkatasana_-b",
+     204,
+     "L_FOOT:G",
+     374.8,
+     0.0,
+     322.8
+    ],
+    [
+     "220923_Chair_Pose_or_Utkatasana_-b",
+     204,
+     "R_FOOT:G",
+     274.6,
+     358.0,
+     680.7
+    ],
+    [
+     "220923_Chair_Pose_or_Utkatasana_-b",
+     220,
+     "R_FOOT:G",
+     235.9,
+     286.8,
+     749.6
+    ],
+    [
+     "220923_Chair_Pose_or_Utkatasana_-b",
+     232,
+     "R_FOOT:G",
+     256.9,
+     295.4,
+     695.2
+    ],
+    [
+     "220923_Chair_Pose_or_Utkatasana_-b",
+     236,
+     "L_FOOT:G",
+     448.3,
+     0.0,
+     337.0
+    ],
+    [
+     "220923_Chair_Pose_or_Utkatasana_-b",
+     236,
+     "R_FOOT:G",
+     251.7,
+     380.8,
+     717.8
+    ],
+    [
+     "220923_Chair_Pose_or_Utkatasana_-b",
+     244,
+     "L_FOOT:G",
+     408.4,
+     0.0,
+     339.7
+    ],
+    [
+     "220923_Chair_Pose_or_Utkatasana_-b",
+     244,
+     "R_FOOT:G",
+     289.2,
+     359.6,
+     699.2
+    ],
+    [
+     "220923_Chair_Pose_or_Utkatasana_-b",
+     268,
+     "L_FOOT:G",
+     419.3,
+     0.0,
+     263.3
+    ],
+    [
+     "220923_Chair_Pose_or_Utkatasana_-b",
+     268,
+     "R_FOOT:G",
+     291.0,
+     464.3,
+     727.6
+    ],
+    [
+     "220923_Chair_Pose_or_Utkatasana_-b",
+     308,
+     "L_FOOT:G",
+     479.4,
+     0.0,
+     400.4
+    ]
+   ]
+  },
+  "results/Contact_Physics_analysis/220923_Crane_Crow_Pose_or_Bakasana_-a/rollout.npz": {
+   "lp": {
+    "within_limits": 470,
+    "infeasible": 5
+   },
+   "contacts": {
+    "ground": {
+     "inside": 1112,
+     "outside": 80,
+     "no_interval": 10
+    },
+    "pair": {
+     "inside": 1261,
+     "no_interval": 16,
+     "outside": 52
+    }
+   },
+   "outside_examples": [
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     112,
+     "L_FOOT:G",
+     407.4,
+     0.0,
+     352.2
+    ],
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     112,
+     "R_FOOT:G",
+     279.7,
+     343.7,
+     695.9
+    ],
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     136,
+     "L_FOOT:G",
+     429.5,
+     0.0,
+     194.4
+    ],
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     136,
+     "R_FOOT:G",
+     317.1,
+     537.8,
+     732.2
+    ],
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     168,
+     "L_FOOT:G",
+     446.2,
+     0.0,
+     346.7
+    ],
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     168,
+     "R_FOOT:G",
+     218.7,
+     320.5,
+     667.2
+    ],
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     216,
+     "L_FOOT:G",
+     323.8,
+     361.8,
+     739.5
+    ],
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     612,
+     "R_HAND:G",
+     217.6,
+     256.0,
+     434.9
+    ],
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     640,
+     "R_HAND:G",
+     238.0,
+     282.1,
+     469.8
+    ],
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     752,
+     "L_FOOT+R_FOOT",
+     1348.1,
+     0.0,
+     742.1
+    ],
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     768,
+     "L_FOOT+R_FOOT",
+     818.6,
+     0.0,
+     691.6
+    ],
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     996,
+     "L_HAND:G",
+     339.3,
+     176.3,
+     279.5
+    ],
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     996,
+     "R_HAND:G",
+     364.0,
+     408.3,
+     511.4
+    ],
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     1052,
+     "L_HAND:G",
+     305.7,
+     247.5,
+     250.8
+    ],
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     1052,
+     "R_HAND:G",
+     268.9,
+     362.8,
+     366.1
+    ],
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     1056,
+     "R_HAND:G",
+     466.7,
+     527.7,
+     580.3
+    ],
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     1084,
+     "R_FOOT+L_SHANK",
+     511.3,
+     0.0,
+     420.7
+    ],
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     1088,
+     "R_FOOT+L_SHANK",
+     511.7,
+     0.0,
+     433.7
+    ],
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     1100,
+     "R_FOOT+L_SHANK",
+     544.1,
+     0.0,
+     503.2
+    ],
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     1116,
+     "R_FOOT+L_SHANK",
+     558.4,
+     0.0,
+     509.0
+    ]
+   ]
+  },
+  "results/Contact_Physics_analysis/220923_Handstand_pose_or_Adho_Mukha_Vrksasana_-a/rollout.npz": {
+   "lp": {
+    "within_limits": 1367,
+    "infeasible": 43,
+    "beyond_limits": 35
+   },
+   "contacts": {
+    "ground": {
+     "inside": 3222,
+     "no_interval": 88,
+     "outside": 164
+    },
+    "pair": {
+     "inside": 244,
+     "no_interval": 31,
+     "outside": 3
+    }
+   },
+   "outside_examples": [
+    [
+     "220923_Handstand_pose_or_Adho_Mukha_Vrksasana_-a",
+     68,
+     "L_FOOT:G",
+     304.3,
+     416.1,
+     452.8
+    ],
+    [
+     "220923_Handstand_pose_or_Adho_Mukha_Vrksasana_-a",
+     68,
+     "R_FOOT:G",
+     420.4,
+     260.9,
+     297.6
+    ],
+    [
+     "220923_Handstand_pose_or_Adho_Mukha_Vrksasana_-a",
+     84,
+     "L_FOOT:G",
+     281.5,
+     94.3,
+     137.3
+    ],
+    [
+     "220923_Handstand_pose_or_Adho_Mukha_Vrksasana_-a",
+     84,
+     "R_FOOT:G",
+     360.7,
+     521.5,
+     564.5
+    ],
+    [
+     "220923_Handstand_pose_or_Adho_Mukha_Vrksasana_-a",
+     96,
+     "L_FOOT:G",
+     302.3,
+     0.0,
+     183.6
+    ],
+    [
+     "220923_Handstand_pose_or_Adho_Mukha_Vrksasana_-a",
+     96,
+     "R_FOOT:G",
+     409.1,
+     488.8,
+     672.4
+    ],
+    [
+     "220923_Handstand_pose_or_Adho_Mukha_Vrksasana_-a",
+     108,
+     "L_FOOT:G",
+     302.5,
+     0.0,
+     196.2
+    ],
+    [
+     "220923_Handstand_pose_or_Adho_Mukha_Vrksasana_-a",
+     108,
+     "R_FOOT:G",
+     403.9,
+     518.7,
+     715.0
+    ],
+    [
+     "220923_Handstand_pose_or_Adho_Mukha_Vrksasana_-a",
+     128,
+     "L_FOOT:G",
+     277.7,
+     409.0,
+     675.3
+    ],
+    [
+     "220923_Handstand_pose_or_Adho_Mukha_Vrksasana_-a",
+     128,
+     "R_FOOT:G",
+     399.5,
+     0.0,
+     266.3
+    ],
+    [
+     "220923_Handstand_pose_or_Adho_Mukha_Vrksasana_-a",
+     136,
+     "L_FOOT:G",
+     350.7,
+     536.2,
+     707.9
+    ],
+    [
+     "220923_Handstand_pose_or_Adho_Mukha_Vrksasana_-a",
+     136,
+     "R_FOOT:G",
+     359.6,
+     0.0,
+     171.7
+    ],
+    [
+     "220923_Handstand_pose_or_Adho_Mukha_Vrksasana_-a",
+     140,
+     "L_FOOT:G",
+     411.4,
+     638.7,
+     739.0
+    ],
+    [
+     "220923_Handstand_pose_or_Adho_Mukha_Vrksasana_-a",
+     140,
+     "R_FOOT:G",
+     315.6,
+     0.0,
+     100.3
+    ],
+    [
+     "220923_Handstand_pose_or_Adho_Mukha_Vrksasana_-a",
+     200,
+     "L_FOOT:G",
+     355.7,
+     0.0,
+     109.9
+    ],
+    [
+     "220923_Handstand_pose_or_Adho_Mukha_Vrksasana_-a",
+     200,
+     "R_FOOT:G",
+     286.6,
+     517.0,
+     626.9
+    ],
+    [
+     "220923_Handstand_pose_or_Adho_Mukha_Vrksasana_-a",
+     244,
+     "L_HAND:G",
+     730.5,
+     28.2,
+     235.1
+    ],
+    [
+     "220923_Handstand_pose_or_Adho_Mukha_Vrksasana_-a",
+     244,
+     "R_HAND:G",
+     275.8,
+     0.0,
+     170.0
+    ],
+    [
+     "220923_Handstand_pose_or_Adho_Mukha_Vrksasana_-a",
+     560,
+     "R_FOOT:G",
+     553.7,
+     393.1,
+     500.9
+    ],
+    [
+     "220923_Handstand_pose_or_Adho_Mukha_Vrksasana_-a",
+     588,
+     "R_FOOT:G",
+     567.2,
+     618.0,
+     728.0
+    ]
+   ]
+  },
+  "results/Contact_Physics_analysis/220923_Scorpion_pose_or_vrischikasana-b/rollout.npz": {
+   "lp": {
+    "within_limits": 836,
+    "infeasible": 27,
+    "beyond_limits": 27
+   },
+   "contacts": {
+    "ground": {
+     "inside": 1863,
+     "outside": 131,
+     "no_interval": 51
+    },
+    "pair": {
+     "inside": 357,
+     "no_interval": 12
+    }
+   },
+   "outside_examples": [
+    [
+     "220923_Scorpion_pose_or_vrischikasana-b",
+     20,
+     "L_FOOT:G",
+     389.6,
+     518.2,
+     753.5
+    ],
+    [
+     "220923_Scorpion_pose_or_vrischikasana-b",
+     20,
+     "R_FOOT:G",
+     379.4,
+     0.0,
+     235.3
+    ],
+    [
+     "220923_Scorpion_pose_or_vrischikasana-b",
+     40,
+     "L_FOOT:G",
+     333.9,
+     13.7,
+     200.0
+    ],
+    [
+     "220923_Scorpion_pose_or_vrischikasana-b",
+     40,
+     "R_FOOT:G",
+     427.3,
+     558.4,
+     744.8
+    ],
+    [
+     "220923_Scorpion_pose_or_vrischikasana-b",
+     48,
+     "L_FOOT:G",
+     300.0,
+     0.0,
+     105.8
+    ],
+    [
+     "220923_Scorpion_pose_or_vrischikasana-b",
+     48,
+     "R_FOOT:G",
+     425.4,
+     620.2,
+     725.9
+    ],
+    [
+     "220923_Scorpion_pose_or_vrischikasana-b",
+     56,
+     "L_FOOT:G",
+     295.3,
+     107.1,
+     230.4
+    ],
+    [
+     "220923_Scorpion_pose_or_vrischikasana-b",
+     56,
+     "R_FOOT:G",
+     424.3,
+     502.4,
+     625.6
+    ],
+    [
+     "220923_Scorpion_pose_or_vrischikasana-b",
+     60,
+     "L_FOOT:G",
+     291.8,
+     131.0,
+     192.7
+    ],
+    [
+     "220923_Scorpion_pose_or_vrischikasana-b",
+     60,
+     "R_FOOT:G",
+     415.3,
+     514.9,
+     576.6
+    ],
+    [
+     "220923_Scorpion_pose_or_vrischikasana-b",
+     64,
+     "L_FOOT:G",
+     291.2,
+     442.2,
+     594.0
+    ],
+    [
+     "220923_Scorpion_pose_or_vrischikasana-b",
+     64,
+     "R_FOOT:G",
+     435.5,
+     114.6,
+     266.5
+    ],
+    [
+     "220923_Scorpion_pose_or_vrischikasana-b",
+     68,
+     "L_FOOT:G",
+     295.5,
+     138.3,
+     200.9
+    ],
+    [
+     "220923_Scorpion_pose_or_vrischikasana-b",
+     68,
+     "R_FOOT:G",
+     420.1,
+     522.1,
+     584.6
+    ],
+    [
+     "220923_Scorpion_pose_or_vrischikasana-b",
+     80,
+     "L_FOOT:G",
+     288.7,
+     97.0,
+     144.4
+    ],
+    [
+     "220923_Scorpion_pose_or_vrischikasana-b",
+     80,
+     "R_FOOT:G",
+     411.9,
+     566.2,
+     613.6
+    ],
+    [
+     "220923_Scorpion_pose_or_vrischikasana-b",
+     92,
+     "L_FOOT:G",
+     266.3,
+     339.6,
+     481.6
+    ],
+    [
+     "220923_Scorpion_pose_or_vrischikasana-b",
+     96,
+     "L_FOOT:G",
+     275.6,
+     115.6,
+     173.2
+    ],
+    [
+     "220923_Scorpion_pose_or_vrischikasana-b",
+     96,
+     "R_FOOT:G",
+     430.3,
+     534.2,
+     591.8
+    ],
+    [
+     "220923_Scorpion_pose_or_vrischikasana-b",
+     104,
+     "L_FOOT:G",
+     266.6,
+     141.7,
+     211.1
+    ]
+   ]
+  },
+  "results/Contact_Physics_analysis/220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a/rollout.npz": {
+   "lp": {
+    "within_limits": 650,
+    "infeasible": 16
+   },
+   "contacts": {
+    "ground": {
+     "inside": 1869,
+     "outside": 81,
+     "no_interval": 29
+    },
+    "pair": {
+     "inside": 1811,
+     "no_interval": 9
+    }
+   },
+   "outside_examples": [
+    [
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+     28,
+     "L_FOOT:G",
+     413.7,
+     0.0,
+     246.8
+    ],
+    [
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+     28,
+     "R_FOOT:G",
+     319.4,
+     520.6,
+     767.3
+    ],
+    [
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+     32,
+     "L_FOOT:G",
+     372.1,
+     15.7,
+     301.7
+    ],
+    [
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+     32,
+     "R_FOOT:G",
+     331.2,
+     427.8,
+     713.8
+    ],
+    [
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+     36,
+     "L_FOOT:G",
+     357.6,
+     0.0,
+     291.1
+    ],
+    [
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+     36,
+     "R_FOOT:G",
+     376.5,
+     428.5,
+     719.6
+    ],
+    [
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+     40,
+     "L_FOOT:G",
+     365.4,
+     38.2,
+     270.5
+    ],
+    [
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+     40,
+     "R_FOOT:G",
+     360.2,
+     446.2,
+     678.4
+    ],
+    [
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+     44,
+     "L_FOOT:G",
+     373.3,
+     0.0,
+     243.6
+    ],
+    [
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+     44,
+     "R_FOOT:G",
+     359.4,
+     475.9,
+     719.5
+    ],
+    [
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+     56,
+     "L_FOOT:G",
+     381.4,
+     27.0,
+     339.4
+    ],
+    [
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+     56,
+     "R_FOOT:G",
+     357.4,
+     401.9,
+     714.3
+    ],
+    [
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+     60,
+     "R_FOOT:G",
+     331.8,
+     375.4,
+     707.9
+    ],
+    [
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+     64,
+     "L_FOOT:G",
+     394.8,
+     0.0,
+     277.5
+    ],
+    [
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+     64,
+     "R_FOOT:G",
+     336.4,
+     424.9,
+     702.4
+    ],
+    [
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+     76,
+     "L_FOOT:G",
+     392.3,
+     148.9,
+     217.2
+    ],
+    [
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+     76,
+     "R_FOOT:G",
+     310.0,
+     476.9,
+     545.1
+    ],
+    [
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+     112,
+     "L_FOOT:G",
+     377.3,
+     0.0,
+     325.8
+    ],
+    [
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+     112,
+     "R_FOOT:G",
+     357.6,
+     401.2,
+     727.0
+    ],
+    [
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+     116,
+     "L_FOOT:G",
+     375.9,
+     0.0,
+     225.8
+    ]
+   ]
+  },
+  "results/Contact_Physics_analysis/220926_Warrior_III_Pose_or_Virabhadrasana_III_-a/rollout.npz": {
+   "lp": {
+    "within_limits": 511,
+    "infeasible": 120
+   },
+   "contacts": {
+    "ground": {
+     "outside": 48,
+     "inside": 643,
+     "no_interval": 135
+    },
+    "pair": {
+     "inside": 269,
+     "no_interval": 34
+    }
+   },
+   "outside_examples": [
+    [
+     "220926_Warrior_III_Pose_or_Virabhadrasana_III_-a",
+     8,
+     "L_FOOT:G",
+     166.0,
+     0.0,
+     23.7
+    ],
+    [
+     "220926_Warrior_III_Pose_or_Virabhadrasana_III_-a",
+     8,
+     "R_FOOT:G",
+     162.1,
+     304.7,
+     328.4
+    ],
+    [
+     "220926_Warrior_III_Pose_or_Virabhadrasana_III_-a",
+     12,
+     "R_FOOT:G",
+     820.2,
+     190.1,
+     658.9
+    ],
+    [
+     "220926_Warrior_III_Pose_or_Virabhadrasana_III_-a",
+     20,
+     "L_FOOT:G",
+     110.3,
+     285.4,
+     691.0
+    ],
+    [
+     "220926_Warrior_III_Pose_or_Virabhadrasana_III_-a",
+     20,
+     "R_FOOT:G",
+     575.2,
+     0.0,
+     405.6
+    ],
+    [
+     "220926_Warrior_III_Pose_or_Virabhadrasana_III_-a",
+     32,
+     "L_FOOT:G",
+     128.9,
+     389.8,
+     744.4
+    ],
+    [
+     "220926_Warrior_III_Pose_or_Virabhadrasana_III_-a",
+     32,
+     "R_FOOT:G",
+     627.2,
+     0.0,
+     354.6
+    ],
+    [
+     "220926_Warrior_III_Pose_or_Virabhadrasana_III_-a",
+     48,
+     "L_FOOT:G",
+     211.4,
+     431.8,
+     602.3
+    ],
+    [
+     "220926_Warrior_III_Pose_or_Virabhadrasana_III_-a",
+     48,
+     "R_FOOT:G",
+     497.2,
+     111.9,
+     282.4
+    ],
+    [
+     "220926_Warrior_III_Pose_or_Virabhadrasana_III_-a",
+     60,
+     "R_FOOT:G",
+     506.1,
+     0.0,
+     468.5
+    ],
+    [
+     "220926_Warrior_III_Pose_or_Virabhadrasana_III_-a",
+     72,
+     "L_FOOT:G",
+     254.7,
+     291.6,
+     681.7
+    ],
+    [
+     "220926_Warrior_III_Pose_or_Virabhadrasana_III_-a",
+     72,
+     "R_FOOT:G",
+     456.9,
+     0.0,
+     390.1
+    ],
+    [
+     "220926_Warrior_III_Pose_or_Virabhadrasana_III_-a",
+     96,
+     "L_FOOT:G",
+     249.0,
+     463.3,
+     674.3
+    ],
+    [
+     "220926_Warrior_III_Pose_or_Virabhadrasana_III_-a",
+     96,
+     "R_FOOT:G",
+     413.7,
+     0.0,
+     211.0
+    ],
+    [
+     "220926_Warrior_III_Pose_or_Virabhadrasana_III_-a",
+     108,
+     "L_FOOT:G",
+     297.6,
+     459.4,
+     745.6
+    ],
+    [
+     "220926_Warrior_III_Pose_or_Virabhadrasana_III_-a",
+     108,
+     "R_FOOT:G",
+     466.8,
+     0.0,
+     286.2
+    ],
+    [
+     "220926_Warrior_III_Pose_or_Virabhadrasana_III_-a",
+     192,
+     "R_FOOT:G",
+     637.2,
+     673.7,
+     673.7
+    ],
+    [
+     "220926_Warrior_III_Pose_or_Virabhadrasana_III_-a",
+     224,
+     "R_FOOT:G",
+     943.9,
+     637.2,
+     637.2
+    ],
+    [
+     "220926_Warrior_III_Pose_or_Virabhadrasana_III_-a",
+     228,
+     "R_FOOT:G",
+     479.6,
+     571.8,
+     571.8
+    ],
+    [
+     "220926_Warrior_III_Pose_or_Virabhadrasana_III_-a",
+     248,
+     "R_FOOT:G",
+     682.2,
+     742.0,
+     742.0
+    ]
+   ]
+  },
+  "results/Contact_Physics_analysis_crow_pair/220923_Crane_Crow_Pose_or_Bakasana_-a/rollout.npz": {
+   "lp": {
+    "within_limits": 467,
+    "infeasible": 7
+   },
+   "contacts": {
+    "ground": {
+     "inside": 1213,
+     "outside": 77,
+     "no_interval": 15
+    },
+    "pair": {
+     "inside": 1134,
+     "no_interval": 7
+    }
+   },
+   "outside_examples": [
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     20,
+     "R_FOOT:G",
+     246.4,
+     299.4,
+     721.8
+    ],
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     28,
+     "L_FOOT:G",
+     471.1,
+     65.6,
+     430.8
+    ],
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     56,
+     "L_FOOT:G",
+     407.7,
+     75.2,
+     300.6
+    ],
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     56,
+     "R_FOOT:G",
+     307.3,
+     422.6,
+     648.0
+    ],
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     60,
+     "L_FOOT:G",
+     403.1,
+     0.0,
+     352.3
+    ],
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     60,
+     "R_FOOT:G",
+     306.6,
+     365.5,
+     717.7
+    ],
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     68,
+     "L_FOOT:G",
+     394.1,
+     0.0,
+     303.4
+    ],
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     68,
+     "R_FOOT:G",
+     332.7,
+     432.0,
+     735.4
+    ],
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     72,
+     "L_FOOT:G",
+     390.5,
+     0.0,
+     251.4
+    ],
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     72,
+     "R_FOOT:G",
+     309.7,
+     445.4,
+     696.8
+    ],
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     80,
+     "L_FOOT:G",
+     402.8,
+     0.0,
+     281.2
+    ],
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     80,
+     "R_FOOT:G",
+     264.1,
+     402.4,
+     683.6
+    ],
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     84,
+     "L_FOOT:G",
+     410.6,
+     476.3,
+     493.3
+    ],
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     84,
+     "R_FOOT:G",
+     219.9,
+     157.3,
+     174.3
+    ],
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     88,
+     "L_FOOT:G",
+     444.3,
+     0.0,
+     232.7
+    ],
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     88,
+     "R_FOOT:G",
+     237.3,
+     458.6,
+     691.3
+    ],
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     112,
+     "L_FOOT:G",
+     407.5,
+     0.0,
+     283.3
+    ],
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     112,
+     "R_FOOT:G",
+     299.0,
+     423.4,
+     706.7
+    ],
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     116,
+     "L_FOOT:G",
+     556.6,
+     0.0,
+     403.1
+    ],
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     116,
+     "R_FOOT:G",
+     187.1,
+     318.0,
+     721.1
+    ]
+   ]
+  },
+  "results/Contact_Physics_analysis_crow_pair/220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a/rollout.npz": {
+   "lp": {
+    "within_limits": 646,
+    "infeasible": 19,
+    "beyond_limits": 1
+   },
+   "contacts": {
+    "ground": {
+     "inside": 1638,
+     "outside": 40,
+     "no_interval": 32
+    },
+    "pair": {
+     "inside": 2012,
+     "no_interval": 15,
+     "outside": 75
+    }
+   },
+   "outside_examples": [
+    [
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+     28,
+     "R_FOOT:G",
+     291.5,
+     331.3,
+     596.9
+    ],
+    [
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+     76,
+     "L_FOOT:G",
+     364.4,
+     0.0,
+     168.6
+    ],
+    [
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+     76,
+     "R_FOOT:G",
+     292.6,
+     513.8,
+     682.5
+    ],
+    [
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+     192,
+     "L_FOOT:G",
+     323.6,
+     362.7,
+     709.3
+    ],
+    [
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+     288,
+     "L_FOOT:G",
+     183.2,
+     0.0,
+     137.3
+    ],
+    [
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+     296,
+     "L_HAND:G",
+     187.4,
+     0.0,
+     147.3
+    ],
+    [
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+     404,
+     "L_HAND:G",
+     123.8,
+     27.4,
+     71.2
+    ],
+    [
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+     404,
+     "R_FOOT:G",
+     478.6,
+     520.9,
+     709.6
+    ],
+    [
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+     420,
+     "R_FOOT:G",
+     411.9,
+     459.2,
+     500.2
+    ],
+    [
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+     428,
+     "R_FOOT:G",
+     420.2,
+     463.0,
+     488.0
+    ],
+    [
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+     452,
+     "R_HAND:G",
+     171.4,
+     210.7,
+     317.6
+    ],
+    [
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+     660,
+     "R_FOOT:G",
+     2386.0,
+     1639.0,
+     2118.2
+    ],
+    [
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+     720,
+     "R_FOOT:G",
+     3590.9,
+     2065.9,
+     2224.4
+    ],
+    [
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+     720,
+     "R_HAND:G",
+     161.9,
+     0.0,
+     57.2
+    ],
+    [
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+     744,
+     "R_FOOT:G",
+     3064.8,
+     1791.4,
+     2043.4
+    ],
+    [
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+     824,
+     "R_FOOT:G",
+     358.2,
+     615.3,
+     934.8
+    ],
+    [
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+     936,
+     "L_FOOT+R_FOOT",
+     498.3,
+     0.0,
+     436.3
+    ],
+    [
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+     940,
+     "L_FOOT+R_FOOT",
+     504.1,
+     0.0,
+     435.6
+    ],
+    [
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+     944,
+     "L_FOOT+R_FOOT",
+     541.5,
+     0.0,
+     432.8
+    ],
+    [
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+     948,
+     "L_FOOT+R_FOOT",
+     520.8,
+     0.0,
+     428.9
+    ]
+   ]
+  },
+  "results/Contact_Physics_analysis_crow_pair_final/220923_Crane_Crow_Pose_or_Bakasana_-a/rollout.npz": {
+   "lp": {
+    "within_limits": 446,
+    "infeasible": 22,
+    "beyond_limits": 5
+   },
+   "contacts": {
+    "ground": {
+     "inside": 1045,
+     "no_interval": 44,
+     "outside": 56
+    },
+    "pair": {
+     "inside": 1621,
+     "no_interval": 104,
+     "outside": 1
+    }
+   },
+   "outside_examples": [
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     92,
+     "L_FOOT:G",
+     627.4,
+     0.0,
+     334.9
+    ],
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     92,
+     "R_FOOT:G",
+     81.3,
+     348.3,
+     683.2
+    ],
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     128,
+     "L_FOOT:G",
+     416.3,
+     0.0,
+     204.9
+    ],
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     128,
+     "R_FOOT:G",
+     321.1,
+     503.5,
+     708.5
+    ],
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     132,
+     "L_FOOT:G",
+     439.4,
+     0.0,
+     178.6
+    ],
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     132,
+     "R_FOOT:G",
+     325.4,
+     550.0,
+     728.6
+    ],
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     140,
+     "L_FOOT:G",
+     352.6,
+     0.0,
+     269.2
+    ],
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     140,
+     "R_FOOT:G",
+     360.8,
+     447.8,
+     717.0
+    ],
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     188,
+     "L_FOOT:G",
+     343.3,
+     537.3,
+     538.2
+    ],
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     188,
+     "R_FOOT:G",
+     260.4,
+     47.9,
+     48.8
+    ],
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     244,
+     "L_FOOT:G",
+     469.8,
+     0.0,
+     335.8
+    ],
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     244,
+     "R_FOOT:G",
+     219.7,
+     334.2,
+     670.0
+    ],
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     252,
+     "L_FOOT:G",
+     455.4,
+     0.0,
+     313.2
+    ],
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     252,
+     "R_FOOT:G",
+     237.1,
+     388.9,
+     702.1
+    ],
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     272,
+     "L_HAND:G",
+     363.9,
+     0.0,
+     304.6
+    ],
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     300,
+     "L_HAND:G",
+     86.2,
+     0.0,
+     37.6
+    ],
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     660,
+     "L_FOOT:G",
+     196.1,
+     244.7,
+     372.4
+    ],
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     680,
+     "L_FOOT:G",
+     132.6,
+     175.8,
+     287.2
+    ],
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     680,
+     "L_HAND:G",
+     235.0,
+     43.1,
+     162.4
+    ],
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     728,
+     "L_FOOT:G",
+     85.4,
+     126.4,
+     272.4
+    ]
+   ]
+  },
+  "results/Contact_Physics_analysis_crow_pair_final/220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a/rollout.npz": {
+   "lp": {
+    "within_limits": 639,
+    "infeasible": 19,
+    "beyond_limits": 5
+   },
+   "contacts": {
+    "ground": {
+     "inside": 1677,
+     "outside": 33,
+     "no_interval": 31
+    },
+    "pair": {
+     "inside": 1924,
+     "outside": 20,
+     "no_interval": 9
+    }
+   },
+   "outside_examples": [
+    [
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+     8,
+     "R_FOOT:G",
+     486.8,
+     543.2,
+     692.9
+    ],
+    [
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+     140,
+     "L_FOOT:G",
+     304.9,
+     467.6,
+     699.1
+    ],
+    [
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+     140,
+     "R_FOOT:G",
+     395.5,
+     0.0,
+     231.4
+    ],
+    [
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+     176,
+     "R_FOOT:G",
+     431.8,
+     0.0,
+     374.2
+    ],
+    [
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+     188,
+     "L_FOOT:G",
+     297.1,
+     371.3,
+     722.2
+    ],
+    [
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+     188,
+     "R_FOOT:G",
+     421.6,
+     0.0,
+     350.9
+    ],
+    [
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+     288,
+     "L_FOOT:G",
+     167.1,
+     0.0,
+     120.3
+    ],
+    [
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+     288,
+     "R_FOOT:G",
+     534.9,
+     593.2,
+     713.5
+    ],
+    [
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+     292,
+     "L_FOOT:G",
+     162.3,
+     0.0,
+     54.1
+    ],
+    [
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+     292,
+     "R_FOOT:G",
+     561.0,
+     642.4,
+     696.5
+    ],
+    [
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+     300,
+     "R_HAND:G",
+     767.8,
+     52.8,
+     421.5
+    ],
+    [
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+     540,
+     "L_FOOT+R_FOOT",
+     392.2,
+     0.0,
+     355.8
+    ],
+    [
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+     556,
+     "L_FOOT+R_FOOT",
+     595.9,
+     0.0,
+     352.5
+    ],
+    [
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+     644,
+     "R_FOOT:G",
+     39.6,
+     99.2,
+     289.9
+    ],
+    [
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+     688,
+     "R_FOOT:G",
+     1907.6,
+     1326.6,
+     1787.0
+    ],
+    [
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+     712,
+     "R_FOOT:G",
+     2027.9,
+     944.4,
+     1142.8
+    ],
+    [
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+     712,
+     "R_HAND:G",
+     122.1,
+     0.0,
+     77.9
+    ],
+    [
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+     720,
+     "L_HAND:G",
+     216.7,
+     298.1,
+     343.8
+    ],
+    [
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+     732,
+     "L_HAND:G",
+     272.8,
+     227.2,
+     227.9
+    ],
+    [
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+     748,
+     "R_FOOT:G",
+     346.7,
+     390.6,
+     643.6
+    ]
+   ]
+  },
+  "results/Contact_Physics_analysis_crow_pair_resumed/220923_Crane_Crow_Pose_or_Bakasana_-a/rollout.npz": {
+   "lp": {
+    "within_limits": 466,
+    "infeasible": 8,
+    "beyond_limits": 1
+   },
+   "contacts": {
+    "ground": {
+     "outside": 58,
+     "inside": 1212,
+     "no_interval": 15
+    },
+    "pair": {
+     "inside": 1220,
+     "no_interval": 9
+    }
+   },
+   "outside_examples": [
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     8,
+     "L_FOOT:G",
+     270.9,
+     71.7,
+     172.1
+    ],
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     8,
+     "R_FOOT:G",
+     446.5,
+     613.9,
+     714.3
+    ],
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     40,
+     "L_FOOT:G",
+     405.4,
+     648.0,
+     700.2
+    ],
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     40,
+     "R_FOOT:G",
+     286.4,
+     0.0,
+     52.2
+    ],
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     156,
+     "L_FOOT:G",
+     314.7,
+     0.0,
+     122.8
+    ],
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     156,
+     "R_FOOT:G",
+     415.2,
+     597.2,
+     719.9
+    ],
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     200,
+     "L_FOOT:G",
+     378.4,
+     0.0,
+     155.0
+    ],
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     200,
+     "R_FOOT:G",
+     306.9,
+     543.3,
+     698.3
+    ],
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     280,
+     "R_HAND:G",
+     117.6,
+     172.1,
+     366.9
+    ],
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     300,
+     "R_HAND:G",
+     86.8,
+     129.9,
+     194.5
+    ],
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     312,
+     "L_FOOT:G",
+     902.8,
+     616.1,
+     811.9
+    ],
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     388,
+     "L_FOOT:G",
+     515.4,
+     230.3,
+     438.6
+    ],
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     420,
+     "L_FOOT:G",
+     457.6,
+     214.1,
+     420.3
+    ],
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     644,
+     "L_HAND:G",
+     263.8,
+     35.8,
+     219.8
+    ],
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     676,
+     "R_HAND:G",
+     298.8,
+     339.0,
+     497.7
+    ],
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     888,
+     "L_FOOT:G",
+     70.9,
+     108.9,
+     275.6
+    ],
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     932,
+     "L_FOOT:G",
+     68.5,
+     132.0,
+     292.4
+    ],
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     1648,
+     "R_FOOT:G",
+     416.5,
+     513.4,
+     645.4
+    ],
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     1652,
+     "L_FOOT:G",
+     111.3,
+     278.0,
+     498.8
+    ],
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     1652,
+     "R_FOOT:G",
+     575.5,
+     198.5,
+     419.3
+    ]
+   ]
+  },
+  "results/Contact_Physics_analysis_crow_pair_resumed/220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a/rollout.npz": {
+   "lp": {
+    "within_limits": 639,
+    "infeasible": 30,
+    "beyond_limits": 1
+   },
+   "contacts": {
+    "ground": {
+     "inside": 1677,
+     "outside": 44,
+     "no_interval": 50
+    },
+    "pair": {
+     "inside": 2085,
+     "no_interval": 19,
+     "outside": 26
+    }
+   },
+   "outside_examples": [
+    [
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+     116,
+     "L_FOOT:G",
+     433.1,
+     0.0,
+     335.0
+    ],
+    [
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+     116,
+     "R_FOOT:G",
+     250.1,
+     368.6,
+     703.6
+    ],
+    [
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+     144,
+     "L_FOOT:G",
+     293.5,
+     0.0,
+     244.2
+    ],
+    [
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+     144,
+     "R_FOOT:G",
+     388.8,
+     440.9,
+     685.2
+    ],
+    [
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+     184,
+     "L_FOOT:G",
+     456.7,
+     530.7,
+     699.5
+    ],
+    [
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+     184,
+     "R_FOOT:G",
+     221.2,
+     0.0,
+     168.7
+    ],
+    [
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+     196,
+     "L_FOOT:G",
+     359.4,
+     540.9,
+     663.6
+    ],
+    [
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+     196,
+     "R_FOOT:G",
+     289.8,
+     0.0,
+     122.7
+    ],
+    [
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+     204,
+     "L_FOOT:G",
+     259.4,
+     441.5,
+     648.4
+    ],
+    [
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+     204,
+     "R_FOOT:G",
+     345.9,
+     0.0,
+     206.9
+    ],
+    [
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+     208,
+     "L_FOOT:G",
+     165.3,
+     203.1,
+     747.5
+    ],
+    [
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+     292,
+     "L_FOOT:G",
+     226.2,
+     0.0,
+     157.4
+    ],
+    [
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+     292,
+     "R_FOOT:G",
+     600.5,
+     672.0,
+     829.3
+    ],
+    [
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+     296,
+     "L_FOOT:G",
+     191.9,
+     380.6,
+     384.9
+    ],
+    [
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+     296,
+     "L_HAND:G",
+     215.8,
+     58.6,
+     60.4
+    ],
+    [
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+     296,
+     "R_FOOT:G",
+     478.5,
+     677.7,
+     681.8
+    ],
+    [
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+     716,
+     "L_HAND:G",
+     221.3,
+     268.9,
+     313.2
+    ],
+    [
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+     760,
+     "L_SHANK+R_SHANK",
+     709.2,
+     0.0,
+     663.5
+    ],
+    [
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+     904,
+     "L_FOOT+R_FOOT",
+     689.3,
+     0.0,
+     460.4
+    ],
+    [
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+     1056,
+     "L_FOOT:G",
+     355.4,
+     395.1,
+     501.0
+    ]
+   ]
+  },
+  "results/Contact_Physics_analysis_crow_pair_scorebased/220923_Crane_Crow_Pose_or_Bakasana_-a/rollout.npz": {
+   "lp": {
+    "within_limits": 468,
+    "infeasible": 6
+   },
+   "contacts": {
+    "ground": {
+     "inside": 1232,
+     "no_interval": 12,
+     "outside": 62
+    },
+    "pair": {
+     "inside": 1159,
+     "no_interval": 7,
+     "outside": 2
+    }
+   },
+   "outside_examples": [
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     68,
+     "L_FOOT:G",
+     405.7,
+     0.0,
+     247.3
+    ],
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     68,
+     "R_FOOT:G",
+     310.4,
+     477.5,
+     724.9
+    ],
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     124,
+     "L_FOOT:G",
+     547.6,
+     0.0,
+     424.5
+    ],
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     124,
+     "R_FOOT:G",
+     209.3,
+     288.5,
+     713.0
+    ],
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     132,
+     "L_FOOT:G",
+     346.2,
+     0.0,
+     243.9
+    ],
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     132,
+     "R_FOOT:G",
+     355.2,
+     449.6,
+     693.6
+    ],
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     152,
+     "L_FOOT:G",
+     406.1,
+     0.0,
+     350.0
+    ],
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     152,
+     "R_FOOT:G",
+     280.2,
+     327.7,
+     677.6
+    ],
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     184,
+     "L_FOOT:G",
+     415.0,
+     512.6,
+     652.5
+    ],
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     184,
+     "R_FOOT:G",
+     242.2,
+     0.0,
+     139.9
+    ],
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     196,
+     "R_FOOT:G",
+     311.2,
+     352.1,
+     659.5
+    ],
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     208,
+     "L_FOOT:G",
+     347.5,
+     416.8,
+     693.1
+    ],
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     208,
+     "R_FOOT:G",
+     316.4,
+     0.0,
+     276.3
+    ],
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     248,
+     "L_FOOT:G",
+     396.9,
+     0.0,
+     267.9
+    ],
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     248,
+     "R_FOOT:G",
+     325.5,
+     448.7,
+     716.6
+    ],
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     316,
+     "L_FOOT:G",
+     244.3,
+     661.5,
+     1408.8
+    ],
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     332,
+     "L_FOOT:G",
+     89.6,
+     132.0,
+     268.2
+    ],
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     680,
+     "L_FOOT+R_FOOT",
+     439.9,
+     0.0,
+     340.0
+    ],
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     696,
+     "L_FOOT+R_FOOT",
+     769.5,
+     0.0,
+     602.2
+    ],
+    [
+     "220923_Crane_Crow_Pose_or_Bakasana_-a",
+     1016,
+     "R_FOOT:G",
+     195.6,
+     0.0,
+     150.2
+    ]
+   ]
+  }
+ },
+ "pair_necessity_vs_physx": [
+  {
+   "clip": "220923_Crane_Crow_Pose_or_Bakasana_-a",
+   "hold_id": "220923_Crane_Crow_Pose_or_Bakasana_-a@424",
+   "pair": "L_SHANK+L_UPPER_ARM",
+   "necessity": "useful",
+   "basis": "counterfactual",
+   "physx_loaded_fraction": 0.0,
+   "physx_median_n": 0.0
+  },
+  {
+   "clip": "220923_Crane_Crow_Pose_or_Bakasana_-a",
+   "hold_id": "220923_Crane_Crow_Pose_or_Bakasana_-a@424",
+   "pair": "R_SHANK+R_UPPER_ARM",
+   "necessity": "useful",
+   "basis": "counterfactual",
+   "physx_loaded_fraction": 1.0,
+   "physx_median_n": 492.5
+  },
+  {
+   "clip": "220923_Crane_Crow_Pose_or_Bakasana_-a",
+   "hold_id": "220923_Crane_Crow_Pose_or_Bakasana_-a@424",
+   "pair": "L_THIGH+TRUNK",
+   "necessity": "redundant",
+   "basis": "counterfactual",
+   "physx_loaded_fraction": 0.0,
+   "physx_median_n": 0.0
+  },
+  {
+   "clip": "220923_Crane_Crow_Pose_or_Bakasana_-a",
+   "hold_id": "220923_Crane_Crow_Pose_or_Bakasana_-a@424",
+   "pair": "R_THIGH+TRUNK",
+   "necessity": "useful",
+   "basis": "counterfactual",
+   "physx_loaded_fraction": 1.0,
+   "physx_median_n": 1119.2
+  },
+  {
+   "clip": "220923_Crane_Crow_Pose_or_Bakasana_-a",
+   "hold_id": "220923_Crane_Crow_Pose_or_Bakasana_-a@424",
+   "pair": "R_THIGH+R_UPPER_ARM",
+   "necessity": "useful",
+   "basis": "counterfactual",
+   "physx_loaded_fraction": 0.0,
+   "physx_median_n": 0.0
+  },
+  {
+   "clip": "220923_Crane_Crow_Pose_or_Bakasana_-a",
+   "hold_id": "220923_Crane_Crow_Pose_or_Bakasana_-a@439",
+   "pair": "L_SHANK+L_UPPER_ARM",
+   "necessity": "useful",
+   "basis": "counterfactual",
+   "physx_loaded_fraction": 0.0,
+   "physx_median_n": 0.0
+  },
+  {
+   "clip": "220923_Crane_Crow_Pose_or_Bakasana_-a",
+   "hold_id": "220923_Crane_Crow_Pose_or_Bakasana_-a@439",
+   "pair": "R_SHANK+R_UPPER_ARM",
+   "necessity": "redundant",
+   "basis": "counterfactual",
+   "physx_loaded_fraction": 1.0,
+   "physx_median_n": 515.0
+  },
+  {
+   "clip": "220923_Crane_Crow_Pose_or_Bakasana_-a",
+   "hold_id": "220923_Crane_Crow_Pose_or_Bakasana_-a@439",
+   "pair": "L_THIGH+TRUNK",
+   "necessity": "redundant",
+   "basis": "counterfactual",
+   "physx_loaded_fraction": 0.0,
+   "physx_median_n": 0.0
+  },
+  {
+   "clip": "220923_Crane_Crow_Pose_or_Bakasana_-a",
+   "hold_id": "220923_Crane_Crow_Pose_or_Bakasana_-a@439",
+   "pair": "L_THIGH+L_UPPER_ARM",
+   "necessity": "redundant",
+   "basis": "counterfactual",
+   "physx_loaded_fraction": 0.0,
+   "physx_median_n": 0.0
+  },
+  {
+   "clip": "220923_Crane_Crow_Pose_or_Bakasana_-a",
+   "hold_id": "220923_Crane_Crow_Pose_or_Bakasana_-a@439",
+   "pair": "R_THIGH+TRUNK",
+   "necessity": "redundant",
+   "basis": "counterfactual",
+   "physx_loaded_fraction": 1.0,
+   "physx_median_n": 1101.6
+  },
+  {
+   "clip": "220923_Crane_Crow_Pose_or_Bakasana_-a",
+   "hold_id": "220923_Crane_Crow_Pose_or_Bakasana_-a@439",
+   "pair": "R_THIGH+R_UPPER_ARM",
+   "necessity": "useful",
+   "basis": "counterfactual",
+   "physx_loaded_fraction": 0.0,
+   "physx_median_n": 0.0
+  },
+  {
+   "clip": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+   "hold_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a@448",
+   "pair": "L_SHANK+R_THIGH",
+   "necessity": "useful",
+   "basis": "counterfactual",
+   "physx_loaded_fraction": 0.0,
+   "physx_median_n": 0.0
+  },
+  {
+   "clip": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+   "hold_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a@448",
+   "pair": "R_SHANK+L_UPPER_ARM",
+   "necessity": "useful",
+   "basis": "counterfactual",
+   "physx_loaded_fraction": 0.355,
+   "physx_median_n": 0.0
+  },
+  {
+   "clip": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+   "hold_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a@571",
+   "pair": "L_SHANK+R_THIGH",
+   "necessity": "useful",
+   "basis": "counterfactual",
+   "physx_loaded_fraction": 0.0,
+   "physx_median_n": 0.0
+  },
+  {
+   "clip": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+   "hold_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a@571",
+   "pair": "R_SHANK+L_UPPER_ARM",
+   "necessity": "useful",
+   "basis": "counterfactual",
+   "physx_loaded_fraction": 0.29,
+   "physx_median_n": 0.0
+  },
+  {
+   "clip": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+   "hold_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a@680",
+   "pair": "L_SHANK+R_THIGH",
+   "necessity": "useful",
+   "basis": "counterfactual",
+   "physx_loaded_fraction": 0.0,
+   "physx_median_n": 0.0
+  },
+  {
+   "clip": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+   "hold_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a@680",
+   "pair": "R_SHANK+L_THIGH",
+   "necessity": "redundant",
+   "basis": "counterfactual",
+   "physx_loaded_fraction": 1.0,
+   "physx_median_n": 388.6
+  },
+  {
+   "clip": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+   "hold_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a@680",
+   "pair": "R_SHANK+L_UPPER_ARM",
+   "necessity": "redundant",
+   "basis": "counterfactual",
+   "physx_loaded_fraction": 1.0,
+   "physx_median_n": 136.2
+  },
+  {
+   "clip": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+   "hold_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a@680",
+   "pair": "R_THIGH+L_FOREARM",
+   "necessity": "useful",
+   "basis": "counterfactual",
+   "physx_loaded_fraction": 0.0,
+   "physx_median_n": 0.0
+  },
+  {
+   "clip": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+   "hold_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a@871",
+   "pair": "R_THIGH+L_UPPER_ARM",
+   "necessity": "useful",
+   "basis": "gated",
+   "physx_loaded_fraction": 0.0,
+   "physx_median_n": 0.0
+  },
+  {
+   "clip": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+   "hold_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a@871",
+   "pair": "R_THIGH+L_FOREARM",
+   "necessity": "useful",
+   "basis": "gated",
+   "physx_loaded_fraction": 0.0,
+   "physx_median_n": 0.0
+  },
+  {
+   "clip": "220923_Crane_Crow_Pose_or_Bakasana_-a",
+   "hold_id": "220923_Crane_Crow_Pose_or_Bakasana_-a@424",
+   "pair": "L_SHANK+L_UPPER_ARM",
+   "necessity": "useful",
+   "basis": "counterfactual",
+   "physx_loaded_fraction": 0.0,
+   "physx_median_n": 0.0
+  },
+  {
+   "clip": "220923_Crane_Crow_Pose_or_Bakasana_-a",
+   "hold_id": "220923_Crane_Crow_Pose_or_Bakasana_-a@424",
+   "pair": "R_SHANK+R_UPPER_ARM",
+   "necessity": "useful",
+   "basis": "counterfactual",
+   "physx_loaded_fraction": 1.0,
+   "physx_median_n": 608.1
+  },
+  {
+   "clip": "220923_Crane_Crow_Pose_or_Bakasana_-a",
+   "hold_id": "220923_Crane_Crow_Pose_or_Bakasana_-a@424",
+   "pair": "L_THIGH+TRUNK",
+   "necessity": "redundant",
+   "basis": "counterfactual",
+   "physx_loaded_fraction": 0.0,
+   "physx_median_n": 0.0
+  },
+  {
+   "clip": "220923_Crane_Crow_Pose_or_Bakasana_-a",
+   "hold_id": "220923_Crane_Crow_Pose_or_Bakasana_-a@424",
+   "pair": "R_THIGH+TRUNK",
+   "necessity": "useful",
+   "basis": "counterfactual",
+   "physx_loaded_fraction": 0.0,
+   "physx_median_n": 0.0
+  },
+  {
+   "clip": "220923_Crane_Crow_Pose_or_Bakasana_-a",
+   "hold_id": "220923_Crane_Crow_Pose_or_Bakasana_-a@424",
+   "pair": "R_THIGH+R_UPPER_ARM",
+   "necessity": "useful",
+   "basis": "counterfactual",
+   "physx_loaded_fraction": 0.0,
+   "physx_median_n": 0.0
+  },
+  {
+   "clip": "220923_Crane_Crow_Pose_or_Bakasana_-a",
+   "hold_id": "220923_Crane_Crow_Pose_or_Bakasana_-a@439",
+   "pair": "L_SHANK+L_UPPER_ARM",
+   "necessity": "useful",
+   "basis": "counterfactual",
+   "physx_loaded_fraction": 0.0,
+   "physx_median_n": 0.0
+  },
+  {
+   "clip": "220923_Crane_Crow_Pose_or_Bakasana_-a",
+   "hold_id": "220923_Crane_Crow_Pose_or_Bakasana_-a@439",
+   "pair": "R_SHANK+R_UPPER_ARM",
+   "necessity": "redundant",
+   "basis": "counterfactual",
+   "physx_loaded_fraction": 1.0,
+   "physx_median_n": 582.4
+  },
+  {
+   "clip": "220923_Crane_Crow_Pose_or_Bakasana_-a",
+   "hold_id": "220923_Crane_Crow_Pose_or_Bakasana_-a@439",
+   "pair": "L_THIGH+TRUNK",
+   "necessity": "redundant",
+   "basis": "counterfactual",
+   "physx_loaded_fraction": 0.0,
+   "physx_median_n": 0.0
+  },
+  {
+   "clip": "220923_Crane_Crow_Pose_or_Bakasana_-a",
+   "hold_id": "220923_Crane_Crow_Pose_or_Bakasana_-a@439",
+   "pair": "L_THIGH+L_UPPER_ARM",
+   "necessity": "redundant",
+   "basis": "counterfactual",
+   "physx_loaded_fraction": 0.0,
+   "physx_median_n": 0.0
+  },
+  {
+   "clip": "220923_Crane_Crow_Pose_or_Bakasana_-a",
+   "hold_id": "220923_Crane_Crow_Pose_or_Bakasana_-a@439",
+   "pair": "R_THIGH+TRUNK",
+   "necessity": "redundant",
+   "basis": "counterfactual",
+   "physx_loaded_fraction": 0.0,
+   "physx_median_n": 0.0
+  },
+  {
+   "clip": "220923_Crane_Crow_Pose_or_Bakasana_-a",
+   "hold_id": "220923_Crane_Crow_Pose_or_Bakasana_-a@439",
+   "pair": "R_THIGH+R_UPPER_ARM",
+   "necessity": "useful",
+   "basis": "counterfactual",
+   "physx_loaded_fraction": 0.0,
+   "physx_median_n": 0.0
+  },
+  {
+   "clip": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+   "hold_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a@448",
+   "pair": "L_SHANK+R_THIGH",
+   "necessity": "useful",
+   "basis": "counterfactual",
+   "physx_loaded_fraction": 0.0,
+   "physx_median_n": 0.0
+  },
+  {
+   "clip": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+   "hold_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a@448",
+   "pair": "R_SHANK+L_UPPER_ARM",
+   "necessity": "useful",
+   "basis": "counterfactual",
+   "physx_loaded_fraction": 0.032,
+   "physx_median_n": 0.0
+  },
+  {
+   "clip": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+   "hold_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a@571",
+   "pair": "L_SHANK+R_THIGH",
+   "necessity": "useful",
+   "basis": "counterfactual",
+   "physx_loaded_fraction": 0.0,
+   "physx_median_n": 0.0
+  },
+  {
+   "clip": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+   "hold_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a@571",
+   "pair": "R_SHANK+L_UPPER_ARM",
+   "necessity": "useful",
+   "basis": "counterfactual",
+   "physx_loaded_fraction": 0.0,
+   "physx_median_n": 0.0
+  },
+  {
+   "clip": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+   "hold_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a@680",
+   "pair": "L_SHANK+R_THIGH",
+   "necessity": "useful",
+   "basis": "counterfactual",
+   "physx_loaded_fraction": 0.0,
+   "physx_median_n": 0.0
+  },
+  {
+   "clip": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+   "hold_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a@680",
+   "pair": "R_SHANK+L_THIGH",
+   "necessity": "redundant",
+   "basis": "counterfactual",
+   "physx_loaded_fraction": 0.71,
+   "physx_median_n": 209.2
+  },
+  {
+   "clip": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+   "hold_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a@680",
+   "pair": "R_SHANK+L_UPPER_ARM",
+   "necessity": "redundant",
+   "basis": "counterfactual",
+   "physx_loaded_fraction": 0.0,
+   "physx_median_n": 0.0
+  },
+  {
+   "clip": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+   "hold_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a@680",
+   "pair": "R_THIGH+L_FOREARM",
+   "necessity": "useful",
+   "basis": "counterfactual",
+   "physx_loaded_fraction": 1.0,
+   "physx_median_n": 399.8
+  },
+  {
+   "clip": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+   "hold_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a@871",
+   "pair": "R_THIGH+L_UPPER_ARM",
+   "necessity": "useful",
+   "basis": "gated",
+   "physx_loaded_fraction": 1.0,
+   "physx_median_n": 318.3
+  },
+  {
+   "clip": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+   "hold_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a@871",
+   "pair": "R_THIGH+L_FOREARM",
+   "necessity": "useful",
+   "basis": "gated",
+   "physx_loaded_fraction": 0.0,
+   "physx_median_n": 0.0
+  },
+  {
+   "clip": "220923_Crane_Crow_Pose_or_Bakasana_-a",
+   "hold_id": "220923_Crane_Crow_Pose_or_Bakasana_-a@424",
+   "pair": "L_SHANK+L_UPPER_ARM",
+   "necessity": "useful",
+   "basis": "counterfactual",
+   "physx_loaded_fraction": 1.0,
+   "physx_median_n": 185.9
+  },
+  {
+   "clip": "220923_Crane_Crow_Pose_or_Bakasana_-a",
+   "hold_id": "220923_Crane_Crow_Pose_or_Bakasana_-a@424",
+   "pair": "R_SHANK+R_UPPER_ARM",
+   "necessity": "useful",
+   "basis": "counterfactual",
+   "physx_loaded_fraction": 1.0,
+   "physx_median_n": 427.8
+  },
+  {
+   "clip": "220923_Crane_Crow_Pose_or_Bakasana_-a",
+   "hold_id": "220923_Crane_Crow_Pose_or_Bakasana_-a@424",
+   "pair": "L_THIGH+TRUNK",
+   "necessity": "redundant",
+   "basis": "counterfactual",
+   "physx_loaded_fraction": 0.0,
+   "physx_median_n": 0.0
+  },
+  {
+   "clip": "220923_Crane_Crow_Pose_or_Bakasana_-a",
+   "hold_id": "220923_Crane_Crow_Pose_or_Bakasana_-a@424",
+   "pair": "R_THIGH+TRUNK",
+   "necessity": "useful",
+   "basis": "counterfactual",
+   "physx_loaded_fraction": 1.0,
+   "physx_median_n": 856.6
+  },
+  {
+   "clip": "220923_Crane_Crow_Pose_or_Bakasana_-a",
+   "hold_id": "220923_Crane_Crow_Pose_or_Bakasana_-a@424",
+   "pair": "R_THIGH+R_UPPER_ARM",
+   "necessity": "useful",
+   "basis": "counterfactual",
+   "physx_loaded_fraction": 0.0,
+   "physx_median_n": 0.0
+  },
+  {
+   "clip": "220923_Crane_Crow_Pose_or_Bakasana_-a",
+   "hold_id": "220923_Crane_Crow_Pose_or_Bakasana_-a@439",
+   "pair": "L_SHANK+L_UPPER_ARM",
+   "necessity": "useful",
+   "basis": "counterfactual",
+   "physx_loaded_fraction": 1.0,
+   "physx_median_n": 194.7
+  },
+  {
+   "clip": "220923_Crane_Crow_Pose_or_Bakasana_-a",
+   "hold_id": "220923_Crane_Crow_Pose_or_Bakasana_-a@439",
+   "pair": "R_SHANK+R_UPPER_ARM",
+   "necessity": "redundant",
+   "basis": "counterfactual",
+   "physx_loaded_fraction": 1.0,
+   "physx_median_n": 439.1
+  },
+  {
+   "clip": "220923_Crane_Crow_Pose_or_Bakasana_-a",
+   "hold_id": "220923_Crane_Crow_Pose_or_Bakasana_-a@439",
+   "pair": "L_THIGH+TRUNK",
+   "necessity": "redundant",
+   "basis": "counterfactual",
+   "physx_loaded_fraction": 0.0,
+   "physx_median_n": 0.0
+  },
+  {
+   "clip": "220923_Crane_Crow_Pose_or_Bakasana_-a",
+   "hold_id": "220923_Crane_Crow_Pose_or_Bakasana_-a@439",
+   "pair": "L_THIGH+L_UPPER_ARM",
+   "necessity": "redundant",
+   "basis": "counterfactual",
+   "physx_loaded_fraction": 1.0,
+   "physx_median_n": 112.1
+  },
+  {
+   "clip": "220923_Crane_Crow_Pose_or_Bakasana_-a",
+   "hold_id": "220923_Crane_Crow_Pose_or_Bakasana_-a@439",
+   "pair": "R_THIGH+TRUNK",
+   "necessity": "redundant",
+   "basis": "counterfactual",
+   "physx_loaded_fraction": 1.0,
+   "physx_median_n": 857.9
+  },
+  {
+   "clip": "220923_Crane_Crow_Pose_or_Bakasana_-a",
+   "hold_id": "220923_Crane_Crow_Pose_or_Bakasana_-a@439",
+   "pair": "R_THIGH+R_UPPER_ARM",
+   "necessity": "useful",
+   "basis": "counterfactual",
+   "physx_loaded_fraction": 0.0,
+   "physx_median_n": 0.0
+  },
+  {
+   "clip": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+   "hold_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a@448",
+   "pair": "L_SHANK+R_THIGH",
+   "necessity": "useful",
+   "basis": "counterfactual",
+   "physx_loaded_fraction": 0.484,
+   "physx_median_n": 0.0
+  },
+  {
+   "clip": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+   "hold_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a@448",
+   "pair": "R_SHANK+L_UPPER_ARM",
+   "necessity": "useful",
+   "basis": "counterfactual",
+   "physx_loaded_fraction": 0.129,
+   "physx_median_n": 0.0
+  },
+  {
+   "clip": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+   "hold_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a@571",
+   "pair": "L_SHANK+R_THIGH",
+   "necessity": "useful",
+   "basis": "counterfactual",
+   "physx_loaded_fraction": 0.387,
+   "physx_median_n": 0.0
+  },
+  {
+   "clip": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+   "hold_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a@571",
+   "pair": "R_SHANK+L_UPPER_ARM",
+   "necessity": "useful",
+   "basis": "counterfactual",
+   "physx_loaded_fraction": 0.0,
+   "physx_median_n": 0.0
+  },
+  {
+   "clip": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+   "hold_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a@680",
+   "pair": "L_SHANK+R_THIGH",
+   "necessity": "useful",
+   "basis": "counterfactual",
+   "physx_loaded_fraction": 0.677,
+   "physx_median_n": 169.7
+  },
+  {
+   "clip": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+   "hold_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a@680",
+   "pair": "R_SHANK+L_THIGH",
+   "necessity": "redundant",
+   "basis": "counterfactual",
+   "physx_loaded_fraction": 0.0,
+   "physx_median_n": 0.0
+  },
+  {
+   "clip": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+   "hold_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a@680",
+   "pair": "R_SHANK+L_UPPER_ARM",
+   "necessity": "redundant",
+   "basis": "counterfactual",
+   "physx_loaded_fraction": 0.0,
+   "physx_median_n": 0.0
+  },
+  {
+   "clip": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+   "hold_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a@680",
+   "pair": "R_THIGH+L_FOREARM",
+   "necessity": "useful",
+   "basis": "counterfactual",
+   "physx_loaded_fraction": 1.0,
+   "physx_median_n": 324.5
+  },
+  {
+   "clip": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+   "hold_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a@871",
+   "pair": "R_THIGH+L_UPPER_ARM",
+   "necessity": "useful",
+   "basis": "gated",
+   "physx_loaded_fraction": 1.0,
+   "physx_median_n": 516.6
+  },
+  {
+   "clip": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+   "hold_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a@871",
+   "pair": "R_THIGH+L_FOREARM",
+   "necessity": "useful",
+   "basis": "gated",
+   "physx_loaded_fraction": 0.742,
+   "physx_median_n": 169.6
+  },
+  {
+   "clip": "220923_Crane_Crow_Pose_or_Bakasana_-a",
+   "hold_id": "220923_Crane_Crow_Pose_or_Bakasana_-a@424",
+   "pair": "L_SHANK+L_UPPER_ARM",
+   "necessity": "useful",
+   "basis": "counterfactual",
+   "physx_loaded_fraction": 1.0,
+   "physx_median_n": 382.7
+  },
+  {
+   "clip": "220923_Crane_Crow_Pose_or_Bakasana_-a",
+   "hold_id": "220923_Crane_Crow_Pose_or_Bakasana_-a@424",
+   "pair": "R_SHANK+R_UPPER_ARM",
+   "necessity": "useful",
+   "basis": "counterfactual",
+   "physx_loaded_fraction": 1.0,
+   "physx_median_n": 536.8
+  },
+  {
+   "clip": "220923_Crane_Crow_Pose_or_Bakasana_-a",
+   "hold_id": "220923_Crane_Crow_Pose_or_Bakasana_-a@424",
+   "pair": "L_THIGH+TRUNK",
+   "necessity": "redundant",
+   "basis": "counterfactual",
+   "physx_loaded_fraction": 0.0,
+   "physx_median_n": 0.0
+  },
+  {
+   "clip": "220923_Crane_Crow_Pose_or_Bakasana_-a",
+   "hold_id": "220923_Crane_Crow_Pose_or_Bakasana_-a@424",
+   "pair": "R_THIGH+TRUNK",
+   "necessity": "useful",
+   "basis": "counterfactual",
+   "physx_loaded_fraction": 0.0,
+   "physx_median_n": 0.0
+  },
+  {
+   "clip": "220923_Crane_Crow_Pose_or_Bakasana_-a",
+   "hold_id": "220923_Crane_Crow_Pose_or_Bakasana_-a@424",
+   "pair": "R_THIGH+R_UPPER_ARM",
+   "necessity": "useful",
+   "basis": "counterfactual",
+   "physx_loaded_fraction": 0.0,
+   "physx_median_n": 0.0
+  },
+  {
+   "clip": "220923_Crane_Crow_Pose_or_Bakasana_-a",
+   "hold_id": "220923_Crane_Crow_Pose_or_Bakasana_-a@439",
+   "pair": "L_SHANK+L_UPPER_ARM",
+   "necessity": "useful",
+   "basis": "counterfactual",
+   "physx_loaded_fraction": 1.0,
+   "physx_median_n": 380.3
+  },
+  {
+   "clip": "220923_Crane_Crow_Pose_or_Bakasana_-a",
+   "hold_id": "220923_Crane_Crow_Pose_or_Bakasana_-a@439",
+   "pair": "R_SHANK+R_UPPER_ARM",
+   "necessity": "redundant",
+   "basis": "counterfactual",
+   "physx_loaded_fraction": 1.0,
+   "physx_median_n": 536.2
+  },
+  {
+   "clip": "220923_Crane_Crow_Pose_or_Bakasana_-a",
+   "hold_id": "220923_Crane_Crow_Pose_or_Bakasana_-a@439",
+   "pair": "L_THIGH+TRUNK",
+   "necessity": "redundant",
+   "basis": "counterfactual",
+   "physx_loaded_fraction": 0.0,
+   "physx_median_n": 0.0
+  },
+  {
+   "clip": "220923_Crane_Crow_Pose_or_Bakasana_-a",
+   "hold_id": "220923_Crane_Crow_Pose_or_Bakasana_-a@439",
+   "pair": "L_THIGH+L_UPPER_ARM",
+   "necessity": "redundant",
+   "basis": "counterfactual",
+   "physx_loaded_fraction": 0.0,
+   "physx_median_n": 0.0
+  },
+  {
+   "clip": "220923_Crane_Crow_Pose_or_Bakasana_-a",
+   "hold_id": "220923_Crane_Crow_Pose_or_Bakasana_-a@439",
+   "pair": "R_THIGH+TRUNK",
+   "necessity": "redundant",
+   "basis": "counterfactual",
+   "physx_loaded_fraction": 0.0,
+   "physx_median_n": 0.0
+  },
+  {
+   "clip": "220923_Crane_Crow_Pose_or_Bakasana_-a",
+   "hold_id": "220923_Crane_Crow_Pose_or_Bakasana_-a@439",
+   "pair": "R_THIGH+R_UPPER_ARM",
+   "necessity": "useful",
+   "basis": "counterfactual",
+   "physx_loaded_fraction": 0.0,
+   "physx_median_n": 0.0
+  },
+  {
+   "clip": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+   "hold_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a@448",
+   "pair": "L_SHANK+R_THIGH",
+   "necessity": "useful",
+   "basis": "counterfactual",
+   "physx_loaded_fraction": 0.677,
+   "physx_median_n": 54.1
+  },
+  {
+   "clip": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+   "hold_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a@448",
+   "pair": "R_SHANK+L_UPPER_ARM",
+   "necessity": "useful",
+   "basis": "counterfactual",
+   "physx_loaded_fraction": 0.129,
+   "physx_median_n": 0.0
+  },
+  {
+   "clip": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+   "hold_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a@571",
+   "pair": "L_SHANK+R_THIGH",
+   "necessity": "useful",
+   "basis": "counterfactual",
+   "physx_loaded_fraction": 0.419,
+   "physx_median_n": 0.0
+  },
+  {
+   "clip": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+   "hold_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a@571",
+   "pair": "R_SHANK+L_UPPER_ARM",
+   "necessity": "useful",
+   "basis": "counterfactual",
+   "physx_loaded_fraction": 0.0,
+   "physx_median_n": 0.0
+  },
+  {
+   "clip": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+   "hold_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a@680",
+   "pair": "L_SHANK+R_THIGH",
+   "necessity": "useful",
+   "basis": "counterfactual",
+   "physx_loaded_fraction": 0.0,
+   "physx_median_n": 0.0
+  },
+  {
+   "clip": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+   "hold_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a@680",
+   "pair": "R_SHANK+L_THIGH",
+   "necessity": "redundant",
+   "basis": "counterfactual",
+   "physx_loaded_fraction": 0.0,
+   "physx_median_n": 0.0
+  },
+  {
+   "clip": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+   "hold_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a@680",
+   "pair": "R_SHANK+L_UPPER_ARM",
+   "necessity": "redundant",
+   "basis": "counterfactual",
+   "physx_loaded_fraction": 0.0,
+   "physx_median_n": 0.0
+  },
+  {
+   "clip": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+   "hold_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a@680",
+   "pair": "R_THIGH+L_FOREARM",
+   "necessity": "useful",
+   "basis": "counterfactual",
+   "physx_loaded_fraction": 0.677,
+   "physx_median_n": 107.6
+  },
+  {
+   "clip": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+   "hold_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a@871",
+   "pair": "R_THIGH+L_UPPER_ARM",
+   "necessity": "useful",
+   "basis": "gated",
+   "physx_loaded_fraction": 1.0,
+   "physx_median_n": 276.5
+  },
+  {
+   "clip": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+   "hold_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a@871",
+   "pair": "R_THIGH+L_FOREARM",
+   "necessity": "useful",
+   "basis": "gated",
+   "physx_loaded_fraction": 0.0,
+   "physx_median_n": 0.0
+  },
+  {
+   "clip": "220923_Crane_Crow_Pose_or_Bakasana_-a",
+   "hold_id": "220923_Crane_Crow_Pose_or_Bakasana_-a@424",
+   "pair": "L_SHANK+L_UPPER_ARM",
+   "necessity": "useful",
+   "basis": "counterfactual",
+   "physx_loaded_fraction": 0.0,
+   "physx_median_n": 0.0
+  },
+  {
+   "clip": "220923_Crane_Crow_Pose_or_Bakasana_-a",
+   "hold_id": "220923_Crane_Crow_Pose_or_Bakasana_-a@424",
+   "pair": "R_SHANK+R_UPPER_ARM",
+   "necessity": "useful",
+   "basis": "counterfactual",
+   "physx_loaded_fraction": 1.0,
+   "physx_median_n": 586.5
+  },
+  {
+   "clip": "220923_Crane_Crow_Pose_or_Bakasana_-a",
+   "hold_id": "220923_Crane_Crow_Pose_or_Bakasana_-a@424",
+   "pair": "L_THIGH+TRUNK",
+   "necessity": "redundant",
+   "basis": "counterfactual",
+   "physx_loaded_fraction": 0.0,
+   "physx_median_n": 0.0
+  },
+  {
+   "clip": "220923_Crane_Crow_Pose_or_Bakasana_-a",
+   "hold_id": "220923_Crane_Crow_Pose_or_Bakasana_-a@424",
+   "pair": "R_THIGH+TRUNK",
+   "necessity": "useful",
+   "basis": "counterfactual",
+   "physx_loaded_fraction": 0.0,
+   "physx_median_n": 0.0
+  },
+  {
+   "clip": "220923_Crane_Crow_Pose_or_Bakasana_-a",
+   "hold_id": "220923_Crane_Crow_Pose_or_Bakasana_-a@424",
+   "pair": "R_THIGH+R_UPPER_ARM",
+   "necessity": "useful",
+   "basis": "counterfactual",
+   "physx_loaded_fraction": 0.0,
+   "physx_median_n": 0.0
+  },
+  {
+   "clip": "220923_Crane_Crow_Pose_or_Bakasana_-a",
+   "hold_id": "220923_Crane_Crow_Pose_or_Bakasana_-a@439",
+   "pair": "L_SHANK+L_UPPER_ARM",
+   "necessity": "useful",
+   "basis": "counterfactual",
+   "physx_loaded_fraction": 0.0,
+   "physx_median_n": 0.0
+  },
+  {
+   "clip": "220923_Crane_Crow_Pose_or_Bakasana_-a",
+   "hold_id": "220923_Crane_Crow_Pose_or_Bakasana_-a@439",
+   "pair": "R_SHANK+R_UPPER_ARM",
+   "necessity": "redundant",
+   "basis": "counterfactual",
+   "physx_loaded_fraction": 1.0,
+   "physx_median_n": 564.2
+  },
+  {
+   "clip": "220923_Crane_Crow_Pose_or_Bakasana_-a",
+   "hold_id": "220923_Crane_Crow_Pose_or_Bakasana_-a@439",
+   "pair": "L_THIGH+TRUNK",
+   "necessity": "redundant",
+   "basis": "counterfactual",
+   "physx_loaded_fraction": 0.0,
+   "physx_median_n": 0.0
+  },
+  {
+   "clip": "220923_Crane_Crow_Pose_or_Bakasana_-a",
+   "hold_id": "220923_Crane_Crow_Pose_or_Bakasana_-a@439",
+   "pair": "L_THIGH+L_UPPER_ARM",
+   "necessity": "redundant",
+   "basis": "counterfactual",
+   "physx_loaded_fraction": 0.0,
+   "physx_median_n": 0.0
+  },
+  {
+   "clip": "220923_Crane_Crow_Pose_or_Bakasana_-a",
+   "hold_id": "220923_Crane_Crow_Pose_or_Bakasana_-a@439",
+   "pair": "R_THIGH+TRUNK",
+   "necessity": "redundant",
+   "basis": "counterfactual",
+   "physx_loaded_fraction": 0.0,
+   "physx_median_n": 0.0
+  },
+  {
+   "clip": "220923_Crane_Crow_Pose_or_Bakasana_-a",
+   "hold_id": "220923_Crane_Crow_Pose_or_Bakasana_-a@439",
+   "pair": "R_THIGH+R_UPPER_ARM",
+   "necessity": "useful",
+   "basis": "counterfactual",
+   "physx_loaded_fraction": 0.0,
+   "physx_median_n": 0.0
+  }
+ ],
+ "labels_id": "holds_repaired_ftC_posefix.labels_v1.249a920cea",
+ "statics_id": "holds_repaired_ftC_posefix.labels_v1.249a920cea.statics_v1.be7cdb20a7",
+ "rollouts": [
+  "results/Contact_Physics_analysis/220923_Chair_Pose_or_Utkatasana_-b/rollout.npz",
+  "results/Contact_Physics_analysis/220923_Crane_Crow_Pose_or_Bakasana_-a/rollout.npz",
+  "results/Contact_Physics_analysis/220923_Handstand_pose_or_Adho_Mukha_Vrksasana_-a/rollout.npz",
+  "results/Contact_Physics_analysis/220923_Scorpion_pose_or_vrischikasana-b/rollout.npz",
+  "results/Contact_Physics_analysis/220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a/rollout.npz",
+  "results/Contact_Physics_analysis/220926_Warrior_III_Pose_or_Virabhadrasana_III_-a/rollout.npz",
+  "results/Contact_Physics_analysis_crow_pair/220923_Crane_Crow_Pose_or_Bakasana_-a/rollout.npz",
+  "results/Contact_Physics_analysis_crow_pair/220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a/rollout.npz",
+  "results/Contact_Physics_analysis_crow_pair_final/220923_Crane_Crow_Pose_or_Bakasana_-a/rollout.npz",
+  "results/Contact_Physics_analysis_crow_pair_final/220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a/rollout.npz",
+  "results/Contact_Physics_analysis_crow_pair_resumed/220923_Crane_Crow_Pose_or_Bakasana_-a/rollout.npz",
+  "results/Contact_Physics_analysis_crow_pair_resumed/220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a/rollout.npz",
+  "results/Contact_Physics_analysis_crow_pair_scorebased/220923_Crane_Crow_Pose_or_Bakasana_-a/rollout.npz"
+ ]
+}

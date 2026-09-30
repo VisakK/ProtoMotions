@@ -1,0 +1,124 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "2c",
+     "3c",
+     "4a",
+     "4c"
+    ],
+    "part": "left hand",
+    "severity": "major"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "2c",
+     "3c",
+     "4a",
+     "4c"
+    ],
+    "part": "right hand",
+    "severity": "major"
+   }
+  ],
+  "closer_to_human": "B",
+  "floating_parts": {
+   "A": [
+    "left hand",
+    "right hand",
+    "left foot",
+    "right foot"
+   ],
+   "B": [
+    "left foot",
+    "right foot"
+   ]
+  },
+  "more_natural": "B",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both show the same straight-arm plank on hands and toes with the same limb layout. A sits a few cm higher overall, with its hands and feet lifted off the floor."
+  },
+  "summary": "Same plank in both. A's whole body is raised, so both hands hover several cm above the floor, which means it gets no support from them, and its feet hover too. B's hands rest flat on the floor and its body follows the grey figure closely; only its toes show a small gap."
+ },
+ "audit_id": null,
+ "cost_usd": 0.12884079999999998,
+ "duration_s": 16.34,
+ "errors": [],
+ "frame_hold": 541,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Plank_Pose_or_Kumbhakasana_-a@541",
+ "inputs": {},
+ "item_id": "220923_Plank_Pose_or_Kumbhakasana_-a@541#lift",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/cea6790689926be5a2f5e2ef62b4d1a5b88c02d6",
+  "images": {
+   "img_1.png": "327a071a373e8b59f6949d8ba1dc10c262347bd5cf643f8748cdc0970966f879",
+   "img_2.png": "eab4b2cea613cd410446cb785462b0a4bbd12811a5798cb1ece3b2b766694efc",
+   "img_3.png": "3ec78dff75b519222f8206faed108603544ca53ff0d2ee5de0e87150d79561ee",
+   "img_4.png": "f01f46fad89ff769eafbdbdb2e2ca4b898250c83a722844ef036eee7118e8f8b",
+   "img_5.png": "4021f011e5cb70efe97ea1b3c2a21d6609729caa29bd074b6c3afa5ae4360c9f"
+  },
+  "packet_json_sha256": "5238fa1ab4f5c3d320581a2bdd3d206d992ac1da63d393c69746afc3ca2ec21b"
+ },
+ "packet_id": "cea6790689926be5a2f5e2ef62b4d1a5b88c02d6",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "349d44ca-ea77-4b09-8f6b-287a4a80e5c3",
+ "started_utc": "2026-09-30T02:36:47+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Plank_Pose_or_Kumbhakasana_-a",
+ "stratum": "lift",
+ "usage": {
+  "cache_creation_input_tokens": 12002,
+  "cache_read_input_tokens": 13504,
+  "input_tokens": 6,
+  "output_tokens": 1505,
+  "thinking_tokens": 406
+ },
+ "warnings": []
+}

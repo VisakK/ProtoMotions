@@ -1,0 +1,166 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1b",
+     "3d",
+     "4b",
+     "4f"
+    ],
+    "part": "left shin",
+    "severity": "major"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1b",
+     "3d",
+     "4f",
+     "5d"
+    ],
+    "part": "right shin",
+    "severity": "major"
+   },
+   {
+    "avatar": "B",
+    "kind": "through_body",
+    "panels": [
+     "4f",
+     "3d"
+    ],
+    "part": "left thigh",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "through_body",
+    "panels": [
+     "4e",
+     "1a"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1a",
+     "1c",
+     "3c"
+    ],
+    "part": "torso",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "jitter",
+    "panels": [
+     "5a",
+     "5c",
+     "5e"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "A",
+  "floating_parts": {
+   "A": [
+    "right foot"
+   ],
+   "B": [
+    "left foot",
+    "right foot",
+    "left shin",
+    "right shin",
+    "pelvis"
+   ]
+  },
+  "more_natural": "A",
+  "same_pose": {
+   "answer": "no",
+   "reason": "A sits with both crossed legs low on the floor like the grey body. B has both legs lifted into a raised knot, with the knees high and the feet and shins well off the floor."
+  },
+  "summary": "A keeps the crossed legs low on the floor like the grey body, though its torso sits slumped a little low. B lifts both legs, and both feet and shins hover well above the floor, so B is a different, less natural pose."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1365732,
+ "duration_s": 20.37,
+ "errors": [],
+ "frame_hold": 1152,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Scale_Pose_or_Tolasana_-a@1113",
+ "inputs": {},
+ "item_id": "220923_Scale_Pose_or_Tolasana_-a@1113#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/6e15331c0081405da5f699f6de6b1b9a84161ad1",
+  "images": {
+   "img_1.png": "f300d04a06bbbe2ccac8792eb32671c967b8a5fb812e62f38b6a1f8cd49cd141",
+   "img_2.png": "df76c2b8ad2c9c466df8133b901baa6475e46003375244990302f5a402901fe0",
+   "img_3.png": "c942db39dd178d07970f1504299740e274bec1f12f9e0775c8f3dd9dd5eb7312",
+   "img_4.png": "45c15985272c54928962be1f8f612da1efdda441e86676823c877a612c1fe07c",
+   "img_5.png": "c9a819df4b3d0e01edebaf8ced1220842978c9e83e6f4d0c6abf7cd58015985f"
+  },
+  "packet_json_sha256": "687ee9bd5cff5762a8a37b19306cdf4a0955969184fc76c98e4b9e9308e6ec40"
+ },
+ "packet_id": "6e15331c0081405da5f699f6de6b1b9a84161ad1",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "b8c73290-f691-412f-b9da-535d7443aeaf",
+ "started_utc": "2026-09-30T06:16:34+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Scale_Pose_or_Tolasana_-a",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 11974,
+  "cache_read_input_tokens": 13486,
+  "input_tokens": 6,
+  "output_tokens": 1903,
+  "thinking_tokens": 683
+ },
+ "warnings": []
+}

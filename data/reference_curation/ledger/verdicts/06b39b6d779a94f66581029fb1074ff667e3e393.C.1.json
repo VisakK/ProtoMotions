@@ -1,0 +1,123 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "4b",
+     "3d"
+    ],
+    "part": "left hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "4d",
+     "3d"
+    ],
+    "part": "right hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1a",
+     "4a",
+     "5c"
+    ],
+    "part": "left forearm",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "B",
+  "floating_parts": {
+   "A": [],
+   "B": []
+  },
+  "more_natural": "A",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both are the same inverted pose on the hands: legs split and bent the same way overhead, head down between the arms. The main difference is how the hands are set on the floor."
+  },
+  "summary": "Same pose in both. B's arms and torso sit more closely inside the grey body, but its hands are tipped with the wrist end raised. A's hands lie flat like the grey hands, although its left arm is shifted a little outside the grey arm."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1363398,
+ "duration_s": 24.35,
+ "errors": [],
+ "frame_hold": 945,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Scorpion_pose_or_vrischikasana-b@945",
+ "inputs": {},
+ "item_id": "220923_Scorpion_pose_or_vrischikasana-b@945#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/06b39b6d779a94f66581029fb1074ff667e3e393",
+  "images": {
+   "img_1.png": "408ad19a35d8990a2950a7153018b84d4eb0b23e01460a3c84707ad656a2b55e",
+   "img_2.png": "1b307f454be8187366786e3cec01ba478f55c9eb3507b8248c9c24b1cc91a987",
+   "img_3.png": "fff279e777e6915ef5df712d35979aef134b74e8f837af704c755ecd7b88f085",
+   "img_4.png": "f749a3910764a2a3a0274f5cd4ef0d02162ee7e218d48a657da9e08c05068816",
+   "img_5.png": "35d92d0a0aeb861f80f8210aa86c66b3398b5dac16fe3d9805613dde689739c2"
+  },
+  "packet_json_sha256": "f45a4e676e9b9683c3c4e077f14f201b2cd26a3ef7c93224d0ecec4d70eef167"
+ },
+ "packet_id": "06b39b6d779a94f66581029fb1074ff667e3e393",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "46aa06a7-31e2-41d3-b4fc-469c3a87d1d7",
+ "started_utc": "2026-09-30T06:17:51+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Scorpion_pose_or_vrischikasana-b",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 11251,
+  "cache_read_input_tokens": 13439,
+  "input_tokens": 6,
+  "output_tokens": 2181,
+  "thinking_tokens": 1133
+ },
+ "warnings": []
+}

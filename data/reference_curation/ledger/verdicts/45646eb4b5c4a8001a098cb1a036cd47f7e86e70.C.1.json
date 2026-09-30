@@ -1,0 +1,115 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "3d",
+     "4d",
+     "1b",
+     "2d"
+    ],
+    "part": "right foot",
+    "severity": "major"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "4b"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "A",
+  "floating_parts": {
+   "A": [],
+   "B": [
+    "right foot"
+   ]
+  },
+  "more_natural": "A",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both show the same deep squat with palms together at the chest and elbows on the knees. B's right foot is tipped up off the floor and its right knee sits higher, but the overall shape is unchanged."
+  },
+  "summary": "Both show the same squat. A keeps both feet flat on the floor and matches the grey body. In B, the right foot is tipped up with its toes clearly off the floor where the grey foot is flat, the right knee is raised, and the left foot is slightly tilted."
+ },
+ "audit_id": null,
+ "cost_usd": 0.12319279999999999,
+ "duration_s": 16.28,
+ "errors": [],
+ "frame_hold": 334,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Garland_Pose_or_Malasana_-a@334",
+ "inputs": {},
+ "item_id": "220923_Garland_Pose_or_Malasana_-a@334#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/45646eb4b5c4a8001a098cb1a036cd47f7e86e70",
+  "images": {
+   "img_1.png": "e307f34c5d0fe6480d1c33f8b0a6cd2625817b4a4c8c7add769abb3febe23254",
+   "img_2.png": "c86fd437f16034cf6b6b9fdb5575d751d77802358e25c9aa537cd3fcc59f2325",
+   "img_3.png": "e90f97a464f5afe94bbc32ebcf4883ff0fe00a8f4b5aad0e157637e22a78fae0",
+   "img_4.png": "2d3d06310757f1c48634c213d14383287d7856f5c54b0766503b63f63c4f84fc",
+   "img_5.png": "28daacedbf262d3273a705798e17275f7a7314fd0be25447fff718beb8da7ee0"
+  },
+  "packet_json_sha256": "55e4a4d18e046ce30f23c8f47319ead51f5f24b67c5784c694f8d939ab2c2cdc"
+ },
+ "packet_id": "45646eb4b5c4a8001a098cb1a036cd47f7e86e70",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "d05b9962-13bf-42f8-8c4d-0cf5c4cef50e",
+ "started_utc": "2026-09-30T03:50:50+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Garland_Pose_or_Malasana_-a",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 11292,
+  "cache_read_input_tokens": 13464,
+  "input_tokens": 6,
+  "output_tokens": 1507,
+  "thinking_tokens": 457
+ },
+ "warnings": []
+}

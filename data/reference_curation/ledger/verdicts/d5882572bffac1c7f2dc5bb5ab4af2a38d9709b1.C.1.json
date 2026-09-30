@@ -1,0 +1,127 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "4a",
+     "4c",
+     "3c",
+     "1a"
+    ],
+    "part": "left hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "4a",
+     "4c",
+     "2a",
+     "2c"
+    ],
+    "part": "right hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1b",
+     "2d",
+     "3d"
+    ],
+    "part": "head",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "B",
+  "floating_parts": {
+   "A": [],
+   "B": []
+  },
+  "more_natural": "B",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both show the same arm balance: hands on the floor, knees on the upper arms, feet raised, head forward. The only real difference is how the hands sit, flat in B and tilted in A."
+  },
+  "summary": "Both show the same pose. B's hands lie flat on the floor like the grey body's hands. A's hands are tilted at the wrist, with the wrist ends lifted off the floor. B's head sits a little lower than the grey head. Neither avatar has parts through the floor or visible jitter."
+ },
+ "audit_id": null,
+ "cost_usd": 0.12499420000000001,
+ "duration_s": 16.95,
+ "errors": [],
+ "frame_hold": 651,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Crane_Crow_Pose_or_Bakasana_-a@439",
+ "inputs": {},
+ "item_id": "220923_Crane_Crow_Pose_or_Bakasana_-a@439#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/d5882572bffac1c7f2dc5bb5ab4af2a38d9709b1",
+  "images": {
+   "img_1.png": "e5bf2f4a358872eb38cf38155767830134b797ef089657f70c7cc152eebf7b0f",
+   "img_2.png": "f541dace4ca215b2ebc73b8127803b3b1d0e185a44f3eaf2c8a3745aa62998f7",
+   "img_3.png": "4e15145b4d760c0888b582024f240cad70b21fdfc6a6530c1015cf3226b9a627",
+   "img_4.png": "434d84cf58996710e391db683ea217ce0da2c9f7cc16c927cacc9eaad471e417",
+   "img_5.png": "8d8616ad93ef8622a3932b265bae1b6493d7e2bbdf9c897cb692d28e8c8b136a"
+  },
+  "packet_json_sha256": "d78a2f7a8f3efe58574c4820448dceaa9e1e3b90970562e3579c9464121fd1aa"
+ },
+ "packet_id": "d5882572bffac1c7f2dc5bb5ab4af2a38d9709b1",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "ebc7f19f-36ef-4661-b898-d8b90e56229a",
+ "started_utc": "2026-09-30T03:14:59+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Crane_Crow_Pose_or_Bakasana_-a",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 11307,
+  "cache_read_input_tokens": 13471,
+  "input_tokens": 6,
+  "output_tokens": 1591,
+  "thinking_tokens": 474
+ },
+ "warnings": []
+}

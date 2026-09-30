@@ -1,0 +1,157 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1a",
+     "1c",
+     "2a",
+     "3c",
+     "4a",
+     "5c"
+    ],
+    "part": "left hand",
+    "severity": "major"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1a",
+     "3c",
+     "4e"
+    ],
+    "part": "left foot",
+    "severity": "major"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1a",
+     "3c",
+     "4e"
+    ],
+    "part": "right foot",
+    "severity": "major"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1b",
+     "3d",
+     "4f"
+    ],
+    "part": "left foot",
+    "severity": "major"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1b",
+     "3d",
+     "4f"
+    ],
+    "part": "right foot",
+    "severity": "major"
+   }
+  ],
+  "closer_to_human": "B",
+  "floating_parts": {
+   "A": [
+    "left hand",
+    "left foot",
+    "right foot"
+   ],
+   "B": [
+    "left foot",
+    "right foot"
+   ]
+  },
+  "more_natural": "B",
+  "same_pose": {
+   "answer": "no",
+   "reason": "A's left elbow is bent and the forearm is held level, so the left hand hangs well above the floor. In B the left arm hangs straight and the hand is on the floor, as in the grey body."
+  },
+  "summary": "Both avatars hold their crossed legs in the air, with the feet well above the floor. A also keeps its left hand raised on a bent arm, while B puts the left hand on the floor like the grey body, so B is closer and looks more natural."
+ },
+ "audit_id": null,
+ "cost_usd": 0.135499,
+ "duration_s": 19.57,
+ "errors": [],
+ "frame_hold": 1053,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Scale_Pose_or_Tolasana_-a@1068",
+ "inputs": {},
+ "item_id": "220923_Scale_Pose_or_Tolasana_-a@1068#kink",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/43a6165c33d062d20e475eb06b8e96c0c5d58bdf",
+  "images": {
+   "img_1.png": "7f2eb8766e845088534742bb1435444b7269d5718e54cae905443f376b8f55fa",
+   "img_2.png": "31458c008f62b61cd1693ef1570c8a7bc790ccc0dc376f36b524206d4ad7791d",
+   "img_3.png": "c0685b93ea63ce2e7278ef91a5a0412d2b3662454a7915e6601b442e854967ed",
+   "img_4.png": "645713709a71620e3c0fd2f71f13e429e5fdd810df91c68f59d2a272dd4c1fe2",
+   "img_5.png": "04ad4cb64e677c2734e23c518976ca5e482ff54e507dfbb714954d96b4c88665"
+  },
+  "packet_json_sha256": "2b8fb5ddcd6df657b0ee3ac39db2758275450227639de7054db492594b66efa9"
+ },
+ "packet_id": "43a6165c33d062d20e475eb06b8e96c0c5d58bdf",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "0caadfb2-7664-4f19-81be-616a22995abd",
+ "started_utc": "2026-09-30T02:41:06+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Scale_Pose_or_Tolasana_-a",
+ "stratum": "kink",
+ "usage": {
+  "cache_creation_input_tokens": 11992,
+  "cache_read_input_tokens": 13495,
+  "input_tokens": 6,
+  "output_tokens": 1842,
+  "thinking_tokens": 647
+ },
+ "warnings": []
+}

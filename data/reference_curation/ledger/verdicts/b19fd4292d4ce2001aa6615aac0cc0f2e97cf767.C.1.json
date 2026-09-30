@@ -1,0 +1,155 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "4a",
+     "4c",
+     "4e",
+     "3c"
+    ],
+    "part": "head",
+    "severity": "major"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "4c",
+     "4e",
+     "3c"
+    ],
+    "part": "left hand",
+    "severity": "major"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "4a",
+     "4c",
+     "4e",
+     "3c"
+    ],
+    "part": "right hand",
+    "severity": "major"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "4b",
+     "4d",
+     "4f"
+    ],
+    "part": "head",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "through_floor",
+    "panels": [
+     "4d",
+     "4f"
+    ],
+    "part": "left hand",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "B",
+  "floating_parts": {
+   "A": [
+    "head",
+    "left hand",
+    "right hand"
+   ],
+   "B": [
+    "head",
+    "right hand"
+   ]
+  },
+  "more_natural": "B",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both are the same inverted pose: legs straight up, forearms/hands planted, head down. A sits a few centimetres higher overall; the limb layout is the same."
+  },
+  "summary": "Same pose. A is lifted clear of the floor, so its head and both hands hover several centimetres above the grey body's contacts. B sits lower and nearly matches: its left hand is planted and only small gaps remain under the head and right hand, so B is closer to the human and more natural."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1298976,
+ "duration_s": 15.53,
+ "errors": [],
+ "frame_hold": 1093,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Supported_Headstand_pose_or_Salamba_Sirsasana_-b@1093",
+ "inputs": {},
+ "item_id": "220923_Supported_Headstand_pose_or_Salamba_Sirsasana_-b@1093#lift",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/b19fd4292d4ce2001aa6615aac0cc0f2e97cf767",
+  "images": {
+   "img_1.png": "bbfb8a8e872c569f83d59c65896f749785de014065fb9775be5c11860c0df739",
+   "img_2.png": "4beb3110eb095b88a77fd4c06fcce9c9374a8cc8fcb61a5251e7204d63aba499",
+   "img_3.png": "59df446176f80f98d6ab621f37620bef25eda3fae6595b21dc3e0a6ccb60531a",
+   "img_4.png": "d8e83c4c1bce7ed148e5d2f4853a81f3cb6dc43169479637ff27b25312f0ca43",
+   "img_5.png": "8f0610ec435ee37b5bf6557764dff0e784f94b5aa3047499bcbe9e60cc0edbb8"
+  },
+  "packet_json_sha256": "e7595e2293a70d4da87c22e50233d88288ec9b2e8e3ed0fc88740bb75c820963"
+ },
+ "packet_id": "b19fd4292d4ce2001aa6615aac0cc0f2e97cf767",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "8d381d98-093a-4c81-9651-fff07523860f",
+ "started_utc": "2026-09-30T02:37:22+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Supported_Headstand_pose_or_Salamba_Sirsasana_-b",
+ "stratum": "lift",
+ "usage": {
+  "cache_creation_input_tokens": 12009,
+  "cache_read_input_tokens": 13508,
+  "input_tokens": 6,
+  "output_tokens": 1555,
+  "thinking_tokens": 356
+ },
+ "warnings": []
+}

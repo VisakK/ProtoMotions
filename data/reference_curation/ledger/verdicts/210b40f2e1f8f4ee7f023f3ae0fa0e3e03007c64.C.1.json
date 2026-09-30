@@ -1,0 +1,128 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1b",
+     "2b",
+     "2d",
+     "3b",
+     "3d",
+     "4d"
+    ],
+    "part": "right hand",
+    "severity": "major"
+   },
+   {
+    "avatar": "B",
+    "kind": "impossible_joint",
+    "panels": [
+     "2d",
+     "4d"
+    ],
+    "part": "right forearm",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "through_body",
+    "panels": [
+     "4d"
+    ],
+    "part": "right hand",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "A",
+  "floating_parts": {
+   "A": [],
+   "B": [
+    "right hand",
+    "right forearm"
+   ]
+  },
+  "more_natural": "A",
+  "same_pose": {
+   "answer": "no",
+   "reason": "A keeps the right hand planted on the floor like the grey body. B lifts the right arm off the floor with the forearm bent up, so the pose is supported on one hand instead of two."
+  },
+  "summary": "A matches the grey body: both hands are planted and the legs rest on the arms. B lifts the right arm off the floor, with the elbow sharply bent and the hand hovering high above the floor. This changes the support, so A is closer to the human and more natural."
+ },
+ "audit_id": null,
+ "cost_usd": 0.12278320000000001,
+ "duration_s": 15.42,
+ "errors": [],
+ "frame_hold": 871,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a@871",
+ "inputs": {},
+ "item_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a@871#kink",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/210b40f2e1f8f4ee7f023f3ae0fa0e3e03007c64",
+  "images": {
+   "img_1.png": "d60e0d8d0246fb1f293e9922bf020700021f6180e835ee5ef5bf87cce9e78853",
+   "img_2.png": "f80fc1eac6bf846ff460bc21142e8686b36cac6df89ba9a5e53b74e5a2e72d91",
+   "img_3.png": "2b27742b63cb1a16629a54c02cc7ec86ca23821522815e1cfd4ab121291ca384",
+   "img_4.png": "8c3654614a4ea4765cf63fe6ae78a990c79b8b931af007568fda523552e8a7f7",
+   "img_5.png": "4411fc5de295350133df7d03bfababb6aec7560a50946e066526fc8ca724dde9"
+  },
+  "packet_json_sha256": "8f39b245ccc89ae2e64258d55ac42a03c07bf62b9887aaeac93d73c8be76d4fa"
+ },
+ "packet_id": "210b40f2e1f8f4ee7f023f3ae0fa0e3e03007c64",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "c1039f1d-66da-4a20-b7bb-118d33df7687",
+ "started_utc": "2026-09-30T02:41:26+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+ "stratum": "kink",
+ "usage": {
+  "cache_creation_input_tokens": 11318,
+  "cache_read_input_tokens": 13476,
+  "input_tokens": 6,
+  "output_tokens": 1476,
+  "thinking_tokens": 357
+ },
+ "warnings": []
+}

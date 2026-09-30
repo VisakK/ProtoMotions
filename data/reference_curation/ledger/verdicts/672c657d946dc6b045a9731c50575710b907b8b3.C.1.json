@@ -1,0 +1,126 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "B",
+    "kind": "through_body",
+    "panels": [
+     "4b",
+     "3d",
+     "1b"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "4b",
+     "3d"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "impossible_joint",
+    "panels": [
+     "1b",
+     "3d",
+     "4b"
+    ],
+    "part": "left shin",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "A",
+  "floating_parts": {
+   "A": [],
+   "B": [
+    "left foot"
+   ]
+  },
+  "more_natural": "A",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both stand upright on two feet with arms out to the sides at shoulder height. B's legs come together more at the feet, but the overall shape is the same."
+  },
+  "summary": "Same pose. A's feet sit flat where the grey feet are. B's shins angle inward and its tilted feet press into each other, the left one hovering above the floor. Panel 5e (A) shows the whole scene upside down, likely a camera problem, not an avatar defect."
+ },
+ "audit_id": null,
+ "cost_usd": 0.13543639999999998,
+ "duration_s": 23.75,
+ "errors": [],
+ "frame_hold": 1077,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Legs-Up-the-Wall_Pose_or_Viparita_Karani_-a@1077",
+ "inputs": {},
+ "item_id": "220923_Legs-Up-the-Wall_Pose_or_Viparita_Karani_-a@1077#edit",
+ "n": 1,
+ "num_turns": 9,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/672c657d946dc6b045a9731c50575710b907b8b3",
+  "images": {
+   "img_1.png": "bdb66fc604eb1e2b0ed56e2c6d7a7c967a338d1ee0fb157708da5f9b724a4cdf",
+   "img_2.png": "6f3431e38f74da458ca9a3b7f7be5545168540c818bc3e4483eff2b86107ea4b",
+   "img_3.png": "7d354976099eb5b86bf8f1a6096231d125538f43e7fdc3011f9e59258d10967c",
+   "img_4.png": "d3be8de3968240df5b02aeba2c8fbbf3e4d8a0e4885c8f7b96ace4296ab20811",
+   "img_5.png": "391bfd677d1a91c5e1981e488f6c78a115f76cdda7a1a11532aab83b8e45723f"
+  },
+  "packet_json_sha256": "95e1a50e1f47239e38f15a60278fc4ff0d60469b02a6ab4edc6a23fe2f8b584f"
+ },
+ "packet_id": "672c657d946dc6b045a9731c50575710b907b8b3",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "3414a8b9-e2c0-4571-83e4-901b6204a93a",
+ "started_utc": "2026-09-30T03:52:08+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Legs-Up-the-Wall_Pose_or_Viparita_Karani_-a",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 11489,
+  "cache_read_input_tokens": 27062,
+  "input_tokens": 8,
+  "output_tokens": 1904,
+  "thinking_tokens": 315
+ },
+ "warnings": []
+}

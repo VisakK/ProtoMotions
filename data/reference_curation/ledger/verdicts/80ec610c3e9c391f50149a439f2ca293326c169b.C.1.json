@@ -1,0 +1,136 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1a",
+     "3c",
+     "4a",
+     "4c"
+    ],
+    "part": "pelvis",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1a",
+     "3c",
+     "5c"
+    ],
+    "part": "right thigh",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1b",
+     "4b"
+    ],
+    "part": "left hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "4d"
+    ],
+    "part": "right hand",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "B",
+  "floating_parts": {
+   "A": [],
+   "B": [
+    "left hand"
+   ]
+  },
+  "more_natural": "B",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both balance on flat hands with the legs spread wide and lifted off the floor. B holds the pelvis and legs somewhat higher, but the shape is the same."
+  },
+  "summary": "Same arm-balance shape. A's pelvis and legs sit too low and its right knee drops toward the floor. B follows the grey legs and trunk more closely, though its hands are slightly tilted and the left hand lifts a little."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1277818,
+ "duration_s": 18.52,
+ "errors": [],
+ "frame_hold": 639,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Firefly_Pose_or_Tittibhasana_-b@639",
+ "inputs": {},
+ "item_id": "220923_Firefly_Pose_or_Tittibhasana_-b@639#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/80ec610c3e9c391f50149a439f2ca293326c169b",
+  "images": {
+   "img_1.png": "d1544300348befc78f8cd95d55fffd2294dc324e656fc079fc6e70e144e3bd36",
+   "img_2.png": "524fa2e7eb3573af280bf836cd5808027293789f5921fe209592a5ed0b52a648",
+   "img_3.png": "2d1d7d01fa501d5b3ad219edd42cc62f57269c40c8db76b0fa98f776457addb8",
+   "img_4.png": "4a21aa8203bdba052fb0d04fe0f975847e682fec97d1cbbd497b42f8dc8b31fa",
+   "img_5.png": "90fa9674dd45d5d9b8b890938b8a38ae9cd7c5b84de0db20329f0ecb130f1972"
+  },
+  "packet_json_sha256": "46aa1b013bfffeafee5935fa3288b7e014e62b51c639a30137d774d807a9b43c"
+ },
+ "packet_id": "80ec610c3e9c391f50149a439f2ca293326c169b",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "88a366ba-9d49-41c2-a2b9-2fcf19950c4f",
+ "started_utc": "2026-09-30T06:16:28+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Firefly_Pose_or_Tittibhasana_-b",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 11261,
+  "cache_read_input_tokens": 13449,
+  "input_tokens": 6,
+  "output_tokens": 1749,
+  "thinking_tokens": 623
+ },
+ "warnings": []
+}

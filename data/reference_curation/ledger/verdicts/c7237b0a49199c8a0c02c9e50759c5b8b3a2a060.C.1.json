@@ -1,0 +1,159 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1a",
+     "3c",
+     "4a",
+     "4e"
+    ],
+    "part": "left foot",
+    "severity": "major"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1a",
+     "2a",
+     "3c",
+     "5c"
+    ],
+    "part": "left upper arm",
+    "severity": "major"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1a",
+     "2a",
+     "3a",
+     "3c"
+    ],
+    "part": "right thigh",
+    "severity": "major"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1a",
+     "3c",
+     "4a",
+     "4c"
+    ],
+    "part": "head",
+    "severity": "major"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "4b",
+     "4d",
+     "4f"
+    ],
+    "part": "right hand",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "B",
+  "floating_parts": {
+   "A": [
+    "head",
+    "left forearm",
+    "left hand",
+    "right forearm",
+    "right hand"
+   ],
+   "B": [
+    "right hand"
+   ]
+  },
+  "more_natural": "B",
+  "same_pose": {
+   "answer": "no",
+   "reason": "B is inverted on its head and forearms with both legs raised. A stands on its left foot with the left arm raised, the right leg held horizontal and the head and forearms off the floor."
+  },
+  "summary": "B closely follows the grey body, inverted on its head and forearms with both legs raised; only its right hand hovers slightly. A is a different pose: it stands on its left foot with one arm raised and one leg held horizontal, and its head and forearms hover above the floor."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1319562,
+ "duration_s": 18.61,
+ "errors": [],
+ "frame_hold": 1213,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-d@1213",
+ "inputs": {},
+ "item_id": "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-d@1213#swap",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/c7237b0a49199c8a0c02c9e50759c5b8b3a2a060",
+  "images": {
+   "img_1.png": "a6fbbd486a9cd780cc7356da67c6d4189afe4b4e4a7a34ed474a030fea8adcd8",
+   "img_2.png": "6472af01553c85bbf77097b11794b7730aaea5cc517767536d5b03a9046f56a1",
+   "img_3.png": "b80f3908324e9ef269f8b3020b69ab5490cd60d6912f5880f57cff5955fcf8e0",
+   "img_4.png": "ceffe7a50bb7d99d357da4b478eff55fe9c2f832d0af547117d5374361ab3a9b",
+   "img_5.png": "df62383c6e833d568c9edae20b6703296da19124d44d2aba78b125c294377d63"
+  },
+  "packet_json_sha256": "a961370a36d59329d84ef201c6cc6abacd5424b9889d564a9f5c5c7286d79709"
+ },
+ "packet_id": "c7237b0a49199c8a0c02c9e50759c5b8b3a2a060",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "6ebd3b1a-145a-4fb5-a7a8-dbefc6ab4f87",
+ "started_utc": "2026-09-30T02:32:51+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-d",
+ "stratum": "swap",
+ "usage": {
+  "cache_creation_input_tokens": 11999,
+  "cache_read_input_tokens": 13501,
+  "input_tokens": 6,
+  "output_tokens": 1662,
+  "thinking_tokens": 447
+ },
+ "warnings": []
+}

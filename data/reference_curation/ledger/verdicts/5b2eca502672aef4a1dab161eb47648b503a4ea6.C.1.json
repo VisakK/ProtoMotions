@@ -1,0 +1,148 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "impossible_joint",
+    "panels": [
+     "1a",
+     "3a",
+     "3c",
+     "5c"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1a",
+     "3c",
+     "5c"
+    ],
+    "part": "left thigh",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "through_body",
+    "panels": [
+     "3b",
+     "3d"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "4b",
+     "4d"
+    ],
+    "part": "left hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "4f"
+    ],
+    "part": "right hand",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "B",
+  "floating_parts": {
+   "A": [
+    "head"
+   ],
+   "B": [
+    "head"
+   ]
+  },
+  "more_natural": "B",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both are inverted on head and hands with the same bent-arm base and folded legs overhead. A's legs are angled higher and its right foot sticks up, but the overall shape is the same."
+  },
+  "summary": "Same pose: both sit inverted on head and hands, and both heads hover above the floor. B's folded legs follow the grey body more closely. A's legs point upward at an angle, with the right foot sticking up out of the body. B has small hand tilts and its right foot tucked into the other leg."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1355388,
+ "duration_s": 20.73,
+ "errors": [],
+ "frame_hold": 1318,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Cockerel_Pose-b@1318",
+ "inputs": {},
+ "item_id": "220923_Cockerel_Pose-b@1318#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/5b2eca502672aef4a1dab161eb47648b503a4ea6",
+  "images": {
+   "img_1.png": "4bc7fd5d25550f40ba534dd071cbc921afa7bbcc92afe98bad793e4c2ef55917",
+   "img_2.png": "01f92f0023ffea36fb4218f3a63fff39f096341c6bf9e3ec139c3351e62f51fd",
+   "img_3.png": "7388f34042b0d830668557185571a5d84ae7496b48a7e0091064ebf6965684e6",
+   "img_4.png": "f596d61f63ca88ee276a6b63a869e5217fab2899eb9b31d3b12b8464f724bc4a",
+   "img_5.png": "530152351a0deaa34f9dd9b101aa9ebaee767e2a8da4dbd27fae280c894bde5e"
+  },
+  "packet_json_sha256": "7bdd2bce40e6c5f6c7230125dd3f477d85626768e07d940f7a449918563e0322"
+ },
+ "packet_id": "5b2eca502672aef4a1dab161eb47648b503a4ea6",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "09f6340e-c951-4c0f-a666-d7ce25512a44",
+ "started_utc": "2026-09-30T03:43:20+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Cockerel_Pose-b",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 11982,
+  "cache_read_input_tokens": 13494,
+  "input_tokens": 6,
+  "output_tokens": 1848,
+  "thinking_tokens": 670
+ },
+ "warnings": []
+}

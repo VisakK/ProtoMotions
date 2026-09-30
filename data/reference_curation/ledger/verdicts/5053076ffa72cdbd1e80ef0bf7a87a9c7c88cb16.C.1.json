@@ -1,0 +1,125 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "B",
+    "kind": "pulled_apart",
+    "panels": [
+     "4b",
+     "3d"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "impossible_joint",
+    "panels": [
+     "4b",
+     "3d"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1b",
+     "3d",
+     "5d"
+    ],
+    "part": "left shin",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "A",
+  "floating_parts": {
+   "A": [],
+   "B": [
+    "left foot"
+   ]
+  },
+  "more_natural": "A",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both stand upright on both feet with arms held out to the sides. B only differs in knock-kneed legs and tilted, lifted feet."
+  },
+  "summary": "A follows the grey body closely, with both feet flat on the floor. B has the same pose, but its knees turn in, its shins converge, the left foot hovers above the floor (drop line) and the right foot rolls sharply on its edge."
+ },
+ "audit_id": null,
+ "cost_usd": 0.11396900000000001,
+ "duration_s": 13.81,
+ "errors": [],
+ "frame_hold": 1772,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Bridge_Pose_or_Setu_Bandha_Sarvangasana_-a@1772",
+ "inputs": {},
+ "item_id": "220923_Bridge_Pose_or_Setu_Bandha_Sarvangasana_-a@1772#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/5053076ffa72cdbd1e80ef0bf7a87a9c7c88cb16",
+  "images": {
+   "img_1.png": "aaa0e890d065bb4dac1bdf8cacb757f6ccd62cecdcf70fb1579c50f28fcb903e",
+   "img_2.png": "40db1c8dae32072a4397f952b7f3a5e62bce298ed99314add5492cb4be44cae7",
+   "img_3.png": "29c64fc17733711b296428af125f50ccbf6e19dbd83c02a2d1b2a1dd02ed93e8",
+   "img_4.png": "b540714cf6b03ccd6fe98a7d85acddbc3ec4c52315682073f72c698da58d0461",
+   "img_5.png": "79fb5ba0e63902ab8343ee469b52725fa848976d46642e05fcc2a75d60aedcec"
+  },
+  "packet_json_sha256": "edd8e4d59e4eaec6f8a4b92a654a2b56fcaa87598acdf36b4030ac82aa4777d1"
+ },
+ "packet_id": "5053076ffa72cdbd1e80ef0bf7a87a9c7c88cb16",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "4e7e9971-17bd-4cd9-b878-cb0688818735",
+ "started_utc": "2026-09-30T03:14:14+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Bridge_Pose_or_Setu_Bandha_Sarvangasana_-a",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 10617,
+  "cache_read_input_tokens": 13445,
+  "input_tokens": 6,
+  "output_tokens": 1316,
+  "thinking_tokens": 223
+ },
+ "warnings": []
+}

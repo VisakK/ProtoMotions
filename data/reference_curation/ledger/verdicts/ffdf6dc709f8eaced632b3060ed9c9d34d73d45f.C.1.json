@@ -1,0 +1,192 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "B",
+    "kind": "impossible_joint",
+    "panels": [
+     "1b",
+     "2b",
+     "3d",
+     "4f",
+     "5d"
+    ],
+    "part": "head",
+    "severity": "major"
+   },
+   {
+    "avatar": "B",
+    "kind": "through_body",
+    "panels": [
+     "1d",
+     "3b",
+     "4b",
+     "4d"
+    ],
+    "part": "torso",
+    "severity": "major"
+   },
+   {
+    "avatar": "B",
+    "kind": "impossible_joint",
+    "panels": [
+     "1b",
+     "3b",
+     "3d",
+     "4b"
+    ],
+    "part": "right forearm",
+    "severity": "major"
+   },
+   {
+    "avatar": "B",
+    "kind": "impossible_joint",
+    "panels": [
+     "1d",
+     "4d",
+     "2b"
+    ],
+    "part": "left hand",
+    "severity": "major"
+   },
+   {
+    "avatar": "B",
+    "kind": "impossible_joint",
+    "panels": [
+     "1d",
+     "4b",
+     "4d"
+    ],
+    "part": "right hand",
+    "severity": "major"
+   },
+   {
+    "avatar": "B",
+    "kind": "impossible_joint",
+    "panels": [
+     "2d",
+     "4f",
+     "3d"
+    ],
+    "part": "left foot",
+    "severity": "major"
+   },
+   {
+    "avatar": "B",
+    "kind": "impossible_joint",
+    "panels": [
+     "2d",
+     "4f",
+     "3d"
+    ],
+    "part": "right foot",
+    "severity": "major"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "4a",
+     "1a"
+    ],
+    "part": "left hand",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "A",
+  "floating_parts": {
+   "A": [
+    "left foot",
+    "right foot",
+    "left hand"
+   ],
+   "B": [
+    "left hand",
+    "right hand",
+    "left foot",
+    "right foot"
+   ]
+  },
+  "more_natural": "A",
+  "same_pose": {
+   "answer": "no",
+   "reason": "A matches the grey body: arms straight, hands and heels on the floor, chest lifted. B has collapsed, with the head down by the pelvis, arms folded along the floor and hands and feet lifted."
+  },
+  "summary": "A follows the grey body closely, with only small gaps under the feet and the left hand. B has collapsed into a different shape: its head lies on the floor by the pelvis, its arms are folded, and its hands and upright feet hover above the floor."
+ },
+ "audit_id": null,
+ "cost_usd": 0.13327719999999998,
+ "duration_s": 22.05,
+ "errors": [],
+ "frame_hold": 854,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220926_Upward_Plank_Pose_or_Purvottanasana_-a@854",
+ "inputs": {},
+ "item_id": "220926_Upward_Plank_Pose_or_Purvottanasana_-a@854#swap",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/ffdf6dc709f8eaced632b3060ed9c9d34d73d45f",
+  "images": {
+   "img_1.png": "336735780383691aad681d9f0767c0007f35cbb444a47cb3e6dba4d1bbcfb175",
+   "img_2.png": "c209169e9027dd07b3e489f229bc4eb1513d0ba1b1e6b395f2ed69d83a9c1be8",
+   "img_3.png": "62a42bf2da0916a04bcdee4225252cf284434c31a8b6f8947e0188d194cdee9e",
+   "img_4.png": "bf264c632f0a29752403529f7b90b88ad6d0d6625bcabe29cf22767b7ad56d27",
+   "img_5.png": "4b4145d6c5322df83db621db2d9d6854a8454ab8ca86ea0d350a058a264f9459"
+  },
+  "packet_json_sha256": "dfb6747457fa6be0be7d3c14dcc5f57a070940516caf68bacbb223db1e0933b3"
+ },
+ "packet_id": "ffdf6dc709f8eaced632b3060ed9c9d34d73d45f",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "dc6b0e25-a20f-40b1-ba65-7a0f577ade8f",
+ "started_utc": "2026-09-30T02:35:00+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220926_Upward_Plank_Pose_or_Purvottanasana_-a",
+ "stratum": "swap",
+ "usage": {
+  "cache_creation_input_tokens": 12004,
+  "cache_read_input_tokens": 13506,
+  "input_tokens": 6,
+  "output_tokens": 1726,
+  "thinking_tokens": 351
+ },
+ "warnings": []
+}

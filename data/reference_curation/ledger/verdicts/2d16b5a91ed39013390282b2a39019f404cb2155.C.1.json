@@ -1,0 +1,127 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "4b",
+     "3d",
+     "1d"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "4b",
+     "3d"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1b",
+     "3d",
+     "4b",
+     "5d"
+    ],
+    "part": "left shin",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "A",
+  "floating_parts": {
+   "A": [],
+   "B": [
+    "left foot"
+   ]
+  },
+  "more_natural": "A",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both stand upright on both feet with arms held straight out to the sides; only B's lower legs and feet are angled differently."
+  },
+  "summary": "It's the same standing pose with arms out to the sides in both. A's feet sit flat on the floor and its legs follow the grey body closely. In B, both feet are tilted onto their edges, the left foot hovers slightly above the floor (it has a drop line), and the lower legs angle inward, away from the grey legs."
+ },
+ "audit_id": null,
+ "cost_usd": 0.114854,
+ "duration_s": 15.21,
+ "errors": [],
+ "frame_hold": 0,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Side_Plank_Pose_or_Vasisthasana_-a@0",
+ "inputs": {},
+ "item_id": "220923_Side_Plank_Pose_or_Vasisthasana_-a@0#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/2d16b5a91ed39013390282b2a39019f404cb2155",
+  "images": {
+   "img_1.png": "4b083cfa9fd63f139089369bf3b0064a4a7ae0026ba260512570662cfd865d40",
+   "img_2.png": "cc7850f4d0d4bfea66ee89855f559a87d801c6fdde2ecc2dc7be0d0525c34023",
+   "img_3.png": "083b7ae0b509d819208ab9a4221d523b931e347e4f47be260d53bcbd2188532e",
+   "img_4.png": "d4dfdbe76cf26030a4ddec3a4859d581a7f1feba9094b06c044748d40fff5622",
+   "img_5.png": "abdc79f742b11f0b707d6e86435e048a7c2d425b81c722a5ef1e3d7fc8cae397"
+  },
+  "packet_json_sha256": "2d25fa2166bf1d3786889579b4d74c0eff179b217d49c587d7c5fd15611dddf3"
+ },
+ "packet_id": "2d16b5a91ed39013390282b2a39019f404cb2155",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "badcf007-7aeb-4f64-ae36-8a693a281acb",
+ "started_utc": "2026-09-30T06:20:01+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Side_Plank_Pose_or_Vasisthasana_-a",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 10556,
+  "cache_read_input_tokens": 13410,
+  "input_tokens": 6,
+  "output_tokens": 1385,
+  "thinking_tokens": 292
+ },
+ "warnings": []
+}

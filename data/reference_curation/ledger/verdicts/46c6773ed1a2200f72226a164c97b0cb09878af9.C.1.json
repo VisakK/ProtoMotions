@@ -1,0 +1,127 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "B",
+    "kind": "impossible_joint",
+    "panels": [
+     "4b",
+     "3d",
+     "1b"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "impossible_joint",
+    "panels": [
+     "4b",
+     "3d"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1b",
+     "3d",
+     "5d",
+     "4b"
+    ],
+    "part": "left shin",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "A",
+  "floating_parts": {
+   "A": [],
+   "B": [
+    "left foot"
+   ]
+  },
+  "more_natural": "A",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both stand upright with arms straight out to the sides and both feet together on the floor. B's knees turn inward and its feet tilt, but the overall shape is the same."
+  },
+  "summary": "A matches the grey body closely: its legs are straight and both feet sit flat on the floor. B does the same pose, but its knees turn inward, both feet roll onto their edges and the left foot hovers slightly above the floor."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1138788,
+ "duration_s": 13.84,
+ "errors": [],
+ "frame_hold": 8,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Supported_Shoulderstand_pose_or_Salamba_Sarvangasana_-a@8",
+ "inputs": {},
+ "item_id": "220923_Supported_Shoulderstand_pose_or_Salamba_Sarvangasana_-a@8#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/46c6773ed1a2200f72226a164c97b0cb09878af9",
+  "images": {
+   "img_1.png": "0acfe05ce4bc9c4fcd56e271129191ae02d4d62424e19e336e041820ca05a9d6",
+   "img_2.png": "25a2617554fdd19e3469a6d374ca162f19c6d7238d91504b7bc7a343e6eda270",
+   "img_3.png": "105d1c725fe327310618b0f9ca283b50f610d0ae89bcef5d5c06274b0c465f68",
+   "img_4.png": "e03486f794b1d8de9a96042beeec782c852c311ce1838afb963f1e541bdf40b7",
+   "img_5.png": "2c3d5353e571048a7cffa00b741216258ff48f10c9d2fefaf4c6edab715bd21d"
+  },
+  "packet_json_sha256": "a5c564999c4c9b1bd2760bf592342e37037a88e2e4815a0f49bb902a9ef60d07"
+ },
+ "packet_id": "46c6773ed1a2200f72226a164c97b0cb09878af9",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "4622839a-e44e-4c76-84c7-143c38d5c2e7",
+ "started_utc": "2026-09-30T04:01:17+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Supported_Shoulderstand_pose_or_Salamba_Sarvangasana_-a",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 10564,
+  "cache_read_input_tokens": 13414,
+  "input_tokens": 6,
+  "output_tokens": 1333,
+  "thinking_tokens": 265
+ },
+ "warnings": []
+}

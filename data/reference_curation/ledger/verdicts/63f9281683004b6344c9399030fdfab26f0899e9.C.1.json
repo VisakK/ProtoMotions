@@ -1,0 +1,165 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1a",
+     "3c",
+     "5c"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1c",
+     "2a",
+     "3c"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "4e",
+     "2c"
+    ],
+    "part": "right hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "4c",
+     "2c",
+     "3c"
+    ],
+    "part": "left hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1a",
+     "4a",
+     "3c"
+    ],
+    "part": "left forearm",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1b",
+     "4b"
+    ],
+    "part": "left forearm",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "B",
+  "floating_parts": {
+   "A": [
+    "left foot",
+    "right foot",
+    "right hand",
+    "left forearm",
+    "right forearm"
+   ],
+   "B": [
+    "left forearm",
+    "right forearm"
+   ]
+  },
+  "more_natural": "B",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both have forearms and hands on the floor, hips raised high and legs extended back to the feet. A's feet are lifted and its hands tilted, but the pose shape is the same."
+  },
+  "summary": "Both show the same pose: forearms on the floor and hips raised. B sits closer to the grey body, with flat feet and hands on the floor. A's feet and right hand hover above the floor, its hands are tilted, and its forearms have larger gaps."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1337802,
+ "duration_s": 18.36,
+ "errors": [],
+ "frame_hold": 565,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Dolphin_Pose_or_Ardha_Pincha_Mayurasana_-a@565",
+ "inputs": {},
+ "item_id": "220923_Dolphin_Pose_or_Ardha_Pincha_Mayurasana_-a@565#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/63f9281683004b6344c9399030fdfab26f0899e9",
+  "images": {
+   "img_1.png": "cb945d3a0499ffe8a23253a40e67479e8334ef57cd905a3748af3e773d946a05",
+   "img_2.png": "77715e5e8b18cd1d5705a850776c11ee6c562c60ce0f0f674d039234cbbe39af",
+   "img_3.png": "affa49a56813c64ada9328be98b705eef4f67166c452fdc63fa49fc68a6bd05a",
+   "img_4.png": "0989d889fe54c77a307304bed8142c58310862b7e992fd2c053a8b8d1ae1e265",
+   "img_5.png": "f68557ffaeffbe851b9a668968ffe11d6b4b5ec8bd079d0f92b64e89a01a0cb1"
+  },
+  "packet_json_sha256": "202b2621cad7964b0581b36c2bb6413886ff5e98c302f8949bf6eb8b7781d196"
+ },
+ "packet_id": "63f9281683004b6344c9399030fdfab26f0899e9",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "7338240c-2b83-4457-bd97-8ffd1678edf3",
+ "started_utc": "2026-09-30T03:45:22+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Dolphin_Pose_or_Ardha_Pincha_Mayurasana_-a",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 11955,
+  "cache_read_input_tokens": 13481,
+  "input_tokens": 6,
+  "output_tokens": 1771,
+  "thinking_tokens": 556
+ },
+ "warnings": []
+}

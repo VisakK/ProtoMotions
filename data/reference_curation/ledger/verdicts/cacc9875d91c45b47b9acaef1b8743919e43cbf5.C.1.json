@@ -1,0 +1,149 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1a",
+     "1c",
+     "2c",
+     "3c"
+    ],
+    "part": "torso",
+    "severity": "major"
+   },
+   {
+    "avatar": "B",
+    "kind": "through_body",
+    "panels": [
+     "1d",
+     "4d",
+     "3d"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "4b",
+     "3d",
+     "4f"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1d",
+     "4d",
+     "3d"
+    ],
+    "part": "left hand",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "B",
+  "floating_parts": {
+   "A": [
+    "head",
+    "left hand",
+    "right hand",
+    "left forearm",
+    "right forearm"
+   ],
+   "B": [
+    "left foot",
+    "right foot",
+    "head",
+    "left hand",
+    "right hand"
+   ]
+  },
+  "more_natural": "B",
+  "same_pose": {
+   "answer": "no",
+   "reason": "A stands upright in a wide stance with its arms held out sideways. B is folded down with its head and arms near the floor, matching the grey body."
+  },
+  "summary": "B follows the grey body's folded pose, but its feet, hands and head hover slightly above the floor, and its left foot passes into its left hand. A stands upright with its arms out, which is a different pose from the human's."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1385174,
+ "duration_s": 21.36,
+ "errors": [],
+ "frame_hold": 1056,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Bridge_Pose_or_Setu_Bandha_Sarvangasana_-a@1056",
+ "inputs": {},
+ "item_id": "220923_Bridge_Pose_or_Setu_Bandha_Sarvangasana_-a@1056#swap",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/cacc9875d91c45b47b9acaef1b8743919e43cbf5",
+  "images": {
+   "img_1.png": "895c005b2bf3cefae459d42721cca958815465bce60615d0fe0888b0e6f34d6f",
+   "img_2.png": "cec3a221ee4a26636e88c15e982c1394086a6dd8419246fc361da5cfdba8723b",
+   "img_3.png": "f44cd4a18c00e5cbf1da13d4757d0625b079520720a08c2437a3ba7b99702424",
+   "img_4.png": "8bf6d0de8220719166d977df3e2289262544f012102b8b04528e1b0dfd6246a2",
+   "img_5.png": "248f265c913ae029e10f0dabc65cf9865941776cff823928cd69e81d444d2976"
+  },
+  "packet_json_sha256": "452efc74ca965374ae4b41648e00219795d599c6b378e773706eda5bfcd193e6"
+ },
+ "packet_id": "cacc9875d91c45b47b9acaef1b8743919e43cbf5",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "8694b766-6576-4425-a16f-fd6cf2443d3d",
+ "started_utc": "2026-09-30T02:32:01+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Bridge_Pose_or_Setu_Bandha_Sarvangasana_-a",
+ "stratum": "swap",
+ "usage": {
+  "cache_creation_input_tokens": 11977,
+  "cache_read_input_tokens": 13487,
+  "input_tokens": 6,
+  "output_tokens": 1999,
+  "thinking_tokens": 861
+ },
+ "warnings": []
+}

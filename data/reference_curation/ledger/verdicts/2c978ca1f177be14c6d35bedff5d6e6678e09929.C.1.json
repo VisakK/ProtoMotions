@@ -1,0 +1,126 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "4a",
+     "3c",
+     "1a"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "4a",
+     "3c"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "impossible_joint",
+    "panels": [
+     "1a",
+     "3c",
+     "5c"
+    ],
+    "part": "left shin",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "B",
+  "floating_parts": {
+   "A": [
+    "left foot"
+   ],
+   "B": []
+  },
+  "more_natural": "B",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both stand upright on both feet with arms held out to the sides. A differs only in knock-kneed legs and tilted feet."
+  },
+  "summary": "Same standing pose with arms out to the sides. B's feet sit flat on the floor, matching the grey body. In A the knees turn inward and both feet tilt on edge, and a drop line shows the left foot lifting off the floor."
+ },
+ "audit_id": null,
+ "cost_usd": 0.11270759999999999,
+ "duration_s": 14.39,
+ "errors": [],
+ "frame_hold": 1078,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Firefly_Pose_or_Tittibhasana_-b@1078",
+ "inputs": {},
+ "item_id": "220923_Firefly_Pose_or_Tittibhasana_-b@1078#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/2c978ca1f177be14c6d35bedff5d6e6678e09929",
+  "images": {
+   "img_1.png": "9f27cd3cce5ed999e44ada3ff0a80c64e0c09ad62e8d505f1f844c66c156680d",
+   "img_2.png": "407abd306a643ea9fd2a4bb84e010727911d901c642d16ff0af618af8fb1f01e",
+   "img_3.png": "b449ceb4194251740e6194fd40b2fdc2d9a4f97bf3cb50f21f31554e48ceca72",
+   "img_4.png": "af494cab149d657c190af72ed1339c2a15b510e5f8dfc93c8c00eb2bf0bb5487",
+   "img_5.png": "2065c401c774191e070d687922ed4a9d56de1160a0586b897accd3fa01bdabb9"
+  },
+  "packet_json_sha256": "f4356c68f8d55b184f97bb4393f82465ca01015083f8e8f83c5c809ed9e0d607"
+ },
+ "packet_id": "2c978ca1f177be14c6d35bedff5d6e6678e09929",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "7fefabfa-6bf3-4def-81c8-7f222f7ab7f2",
+ "started_utc": "2026-09-30T06:16:19+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Firefly_Pose_or_Tittibhasana_-b",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 10570,
+  "cache_read_input_tokens": 13418,
+  "input_tokens": 6,
+  "output_tokens": 1272,
+  "thinking_tokens": 215
+ },
+ "warnings": []
+}

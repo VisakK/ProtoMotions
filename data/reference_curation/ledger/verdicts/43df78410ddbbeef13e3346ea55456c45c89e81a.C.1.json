@@ -1,0 +1,139 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "4b",
+     "3d",
+     "1b"
+    ],
+    "part": "right forearm",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "4b",
+     "3d",
+     "2b"
+    ],
+    "part": "right hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "4a"
+    ],
+    "part": "head",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "4b"
+    ],
+    "part": "head",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "A",
+  "floating_parts": {
+   "A": [
+    "head"
+   ],
+   "B": [
+    "head",
+    "right forearm",
+    "right hand",
+    "left forearm"
+   ]
+  },
+  "more_natural": "A",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both are the same inverted pose, balanced on the head and forearms with legs straight up. In B the right forearm and hand are raised a few centimetres off the floor."
+  },
+  "summary": "Both avatars show the same inverted pose on the head and forearms. A keeps its forearms and hands on the floor like the grey body. In B the right forearm and hand hover above the floor, and in both avatars the head sits slightly above it."
+ },
+ "audit_id": null,
+ "cost_usd": 0.11654740000000001,
+ "duration_s": 14.74,
+ "errors": [],
+ "frame_hold": 1051,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220926_Supported_Headstand_pose_or_Salamba_Sirsasana_-a@1051",
+ "inputs": {},
+ "item_id": "220926_Supported_Headstand_pose_or_Salamba_Sirsasana_-a@1051#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/43df78410ddbbeef13e3346ea55456c45c89e81a",
+  "images": {
+   "img_1.png": "807217f09b0a93b116297a3f8e48e5fbfb83c1c58c2381fce34e7e041f94e3c0",
+   "img_2.png": "612edbcaea7735e3e98c4fe8fac345badea7ba467de038fc1318211460fc05db",
+   "img_3.png": "05a2c5a023238b8fc0deaaa65a10cf81ea341e6146167d0d5fceb345193cb76c",
+   "img_4.png": "c72bffbdadc62ebe7037e13e97e403fb030855c2f2835a608e893bdad53ac1c4",
+   "img_5.png": "4eabeef8b35732ee64dc74c6b217c029767fc34e2828ed44d9ef03ed5998b234"
+  },
+  "packet_json_sha256": "8f4d9399b88925014ea2ecaf259e4587777d68c18109779e6c477e1e4121b841"
+ },
+ "packet_id": "43df78410ddbbeef13e3346ea55456c45c89e81a",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "35ad31de-ea45-4072-87dd-318932cb4024",
+ "started_utc": "2026-09-30T03:18:10+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220926_Supported_Headstand_pose_or_Salamba_Sirsasana_-a",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 10570,
+  "cache_read_input_tokens": 13417,
+  "input_tokens": 6,
+  "output_tokens": 1464,
+  "thinking_tokens": 359
+ },
+ "warnings": []
+}

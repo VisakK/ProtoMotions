@@ -1,0 +1,146 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "3c",
+     "4a",
+     "4c",
+     "1c"
+    ],
+    "part": "head",
+    "severity": "major"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "4a",
+     "4c",
+     "3c"
+    ],
+    "part": "left hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "4a",
+     "4c",
+     "2a"
+    ],
+    "part": "right hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "4b",
+     "4d"
+    ],
+    "part": "right hand",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "B",
+  "floating_parts": {
+   "A": [
+    "head",
+    "left forearm",
+    "right forearm",
+    "left hand",
+    "right hand"
+   ],
+   "B": [
+    "head",
+    "right forearm",
+    "right hand"
+   ]
+  },
+  "more_natural": "B",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both show the same inverted pose: head and forearms as the base, hips stacked, knees bent and shins angled back. They differ mainly in height, with A sitting higher off the floor."
+  },
+  "summary": "Both avatars show the same pose. In A the whole base is lifted: the head, both forearms and both hands hover clearly above the floor while the grey body rests on them. B sits lower, with only small gaps under the head and the right arm and hand, so B is closer to the performer and looks more natural."
+ },
+ "audit_id": null,
+ "cost_usd": 0.12674459999999999,
+ "duration_s": 17.7,
+ "errors": [],
+ "frame_hold": 1554,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-c@1554",
+ "inputs": {},
+ "item_id": "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-c@1554#lift",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/dc6deac80b84174ff6ba3a7387e219dbe3604f1c",
+  "images": {
+   "img_1.png": "3bcad8cee3c2cdc660d1d9634f529b1eadd4c714f20087caacbb32992a603756",
+   "img_2.png": "132ade3fd3935891c31eb7c1a3bf51c176d41c0f723f8be849934b7ce6c4da34",
+   "img_3.png": "d3a53be0e2a2861d938ef01a1af4820e17a90e1a0ad567cad9b6c582303f7483",
+   "img_4.png": "ea095a437f0bacc0a032896699e4e9f7569c86b9299e2526eff89ceffcbdbffa",
+   "img_5.png": "6f20f66784ff0a0c063c9726432a445c9d2921b9e151ab06acb27529c9e80583"
+  },
+  "packet_json_sha256": "62f73ab98a91964455002a2a910ab587bdfc6a9d52b93e30d75c99e0c56adcd0"
+ },
+ "packet_id": "dc6deac80b84174ff6ba3a7387e219dbe3604f1c",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "cb3f09e8-8448-4263-a61d-2b3090d4abb5",
+ "started_utc": "2026-09-30T02:36:06+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-c",
+ "stratum": "lift",
+ "usage": {
+  "cache_creation_input_tokens": 11291,
+  "cache_read_input_tokens": 13463,
+  "input_tokens": 6,
+  "output_tokens": 1685,
+  "thinking_tokens": 514
+ },
+ "warnings": []
+}

@@ -1,0 +1,143 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "4a",
+     "4e",
+     "2a"
+    ],
+    "part": "right hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "4c",
+     "1a",
+     "3c"
+    ],
+    "part": "left hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "jitter",
+    "panels": [
+     "5a",
+     "5c",
+     "5e"
+    ],
+    "part": "left hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1a",
+     "3c",
+     "1c"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "B",
+  "floating_parts": {
+   "A": [
+    "left shin",
+    "right shin",
+    "left foot",
+    "right foot",
+    "left hand",
+    "right hand"
+   ],
+   "B": []
+  },
+  "more_natural": "B",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both kneel with the head tucked low, forearms upright and hands on the floor either side of the head, and the same leg shape. A sits a few cm higher, and its hands and feet are tilted up."
+  },
+  "summary": "Both avatars hold the same kneeling pose with the head tucked low. A hovers a little: its knees, feet and tilted hands have drop lines. B sets its knees, hands and feet on the floor like the grey body, so B is closer to the human and looks more natural."
+ },
+ "audit_id": null,
+ "cost_usd": 0.13042959999999998,
+ "duration_s": 16.74,
+ "errors": [],
+ "frame_hold": 352,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Supported_Headstand_pose_or_Salamba_Sirsasana_-b@329",
+ "inputs": {},
+ "item_id": "220923_Supported_Headstand_pose_or_Salamba_Sirsasana_-b@329#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/696b2ab6b6186bb7c1965c0de5d876e803b9d637",
+  "images": {
+   "img_1.png": "b51e793126e8d0139919d26689b3d1cb7d3ec61aa1dfa15e10003b4e2b1a3989",
+   "img_2.png": "17d5f5c56eb7c5bfb71d00045b489966796ad874da61e6edfdd1f0dca100d56a",
+   "img_3.png": "764eb4e24574a9f19f1d06d6e7c10b167114f22ba846daf9995811b9a9e48691",
+   "img_4.png": "24e8cbee49b80ded26c8073cf9f2ee947028f32c3b38f25a5b31cc4e97961dae",
+   "img_5.png": "09bd2e35f5570ad4943dd58777d54b5aaf847cc5294245f6abfd9d90cec7a545"
+  },
+  "packet_json_sha256": "f0998eea220abcd499846a5ebc1010782801ee63c125964040d460e4ba948d0d"
+ },
+ "packet_id": "696b2ab6b6186bb7c1965c0de5d876e803b9d637",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "ded005eb-f347-4757-b6b9-313dc3c1233a",
+ "started_utc": "2026-09-30T03:16:58+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Supported_Headstand_pose_or_Salamba_Sirsasana_-b",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 11998,
+  "cache_read_input_tokens": 13508,
+  "input_tokens": 6,
+  "output_tokens": 1586,
+  "thinking_tokens": 389
+ },
+ "warnings": []
+}

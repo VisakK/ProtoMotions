@@ -1,0 +1,126 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "through_body",
+    "panels": [
+     "4a",
+     "3c",
+     "1a"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "4a",
+     "3c"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "impossible_joint",
+    "panels": [
+     "1a",
+     "3c",
+     "4a"
+    ],
+    "part": "right shin",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "B",
+  "floating_parts": {
+   "A": [
+    "left foot"
+   ],
+   "B": []
+  },
+  "more_natural": "B",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both stand upright on both feet with arms out to the sides. Only the feet and lower legs differ: A's feet are tilted and its knees turn inward, while B's feet are flat."
+  },
+  "summary": "Both avatars show the same standing pose with the arms out. B's feet sit flat on the floor inside the grey feet. A's knees turn inward and its tilted feet press into each other, and its left foot hovers slightly above the floor."
+ },
+ "audit_id": null,
+ "cost_usd": 0.113701,
+ "duration_s": 13.21,
+ "errors": [],
+ "frame_hold": 0,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Dolphin_Pose_or_Ardha_Pincha_Mayurasana_-a@0",
+ "inputs": {},
+ "item_id": "220923_Dolphin_Pose_or_Ardha_Pincha_Mayurasana_-a@0#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/b7612f2c5ab8593f27b7b70d8b698ec6757ec48d",
+  "images": {
+   "img_1.png": "ab7d9ea45ad9c2bb1b0471a59721043097f10bc0322dc64d2fe260f4ecd0506d",
+   "img_2.png": "eda0cc7e2e1a717c4b6b4a8288bef2cf90fd9750acbebfeda9a8d100c8c40709",
+   "img_3.png": "47d292eec864955f3d24d3f88528cdda74f4ddef503734d5fa7a491f3eb2e9e1",
+   "img_4.png": "de7337c2b126c09767a9d8139057344a54580aa2283d30ac7db2e7ddeb5a8a0b",
+   "img_5.png": "10a77f62eecfc58a37c01fbb97d56f0d1269c7a287cdfd0c2e6848079f9b79d8"
+  },
+  "packet_json_sha256": "e876b4f1274832d48c56825603ab0961452bd05eda9968c4dd265efde6ab6fdb"
+ },
+ "packet_id": "b7612f2c5ab8593f27b7b70d8b698ec6757ec48d",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "84c53bd1-e541-49f0-a66a-fb780aa3f900",
+ "started_utc": "2026-09-30T03:45:09+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Dolphin_Pose_or_Ardha_Pincha_Mayurasana_-a",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 10611,
+  "cache_read_input_tokens": 13445,
+  "input_tokens": 6,
+  "output_tokens": 1305,
+  "thinking_tokens": 187
+ },
+ "warnings": []
+}

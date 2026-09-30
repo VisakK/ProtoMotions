@@ -1,0 +1,153 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1a",
+     "3c",
+     "4a",
+     "4e",
+     "5c"
+    ],
+    "part": "left foot",
+    "severity": "major"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1c",
+     "3c",
+     "4a",
+     "4c",
+     "4e"
+    ],
+    "part": "right foot",
+    "severity": "major"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "3c",
+     "4a"
+    ],
+    "part": "left hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "impossible_joint",
+    "panels": [
+     "1b",
+     "5d",
+     "5f"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1b",
+     "3d",
+     "5d"
+    ],
+    "part": "left shin",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "B",
+  "floating_parts": {
+   "A": [
+    "left foot",
+    "right foot"
+   ],
+   "B": []
+  },
+  "more_natural": "B",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both show the same folded-forward shape: hands and feet on the floor, hips high, head hanging between the arms. Only foot contact and knee bend differ slightly."
+  },
+  "summary": "Both avatars hold the same pose. A matches the grey body's legs above the floor, but both of its feet hover on raised toes, as the drop lines show. B keeps both feet planted where the grey feet touch the floor, though its knees bend a little more and its right foot is turned at an odd angle."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1354306,
+ "duration_s": 20.12,
+ "errors": [],
+ "frame_hold": 375,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Scorpion_pose_or_vrischikasana-b@375",
+ "inputs": {},
+ "item_id": "220923_Scorpion_pose_or_vrischikasana-b@375#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/706c46fb4993d35046f08fc3adcbdea7b18c969d",
+  "images": {
+   "img_1.png": "b22c46a847bea6b04eb6150e00e5b18c4f37e6d1aced717ba7854ceea56f4f72",
+   "img_2.png": "30f25df82630697fb37730120a8dc0f11da1f2770d9ba4a446d2cb2244f06735",
+   "img_3.png": "5c9fca34642abc5d0f4a499efb2b5538260e5f08dce87d64a0c7209038bb21c3",
+   "img_4.png": "af647e599d66048db68b7a25d7aea7151745192d88c2ab6a3d0c3061de5868d3",
+   "img_5.png": "5e2929ccac531cb2ac64c7665f915917d61852d9f8b5d80e1a1785d949ea3000"
+  },
+  "packet_json_sha256": "b0a4b00675a560adb057af63b147e0b4ef87212ca8fe3aa524e98ff332ef46d0"
+ },
+ "packet_id": "706c46fb4993d35046f08fc3adcbdea7b18c969d",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "5c7cf0c7-c9e6-496f-ae5f-bb2b26220bcf",
+ "started_utc": "2026-09-30T06:17:44+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Scorpion_pose_or_vrischikasana-b",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 11981,
+  "cache_read_input_tokens": 13493,
+  "input_tokens": 6,
+  "output_tokens": 1843,
+  "thinking_tokens": 651
+ },
+ "warnings": []
+}

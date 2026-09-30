@@ -1,0 +1,133 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "through_floor",
+    "panels": [
+     "4a",
+     "3c"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "through_body",
+    "panels": [
+     "4a",
+     "1a"
+    ],
+    "part": "right thigh",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "through_body",
+    "panels": [
+     "4b",
+     "3d"
+    ],
+    "part": "right thigh",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "4b",
+     "1b",
+     "3d"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "A",
+  "floating_parts": {
+   "A": [],
+   "B": []
+  },
+  "more_natural": "A",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both balance on the left foot with the right leg crossed over the left and the arms raised in front of the face. They differ only in the right foot tuck and small arm details."
+  },
+  "summary": "Same one-legged pose with crossed legs. A's right foot hooks behind the left calf the way the grey body's does, but A's left toe dips down into the floor. In B the right foot hangs straight down, off the calf. Both show some leg-into-leg overlap."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1243822,
+ "duration_s": 19.6,
+ "errors": [],
+ "frame_hold": 800,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220926_Eagle_Pose_or_Garudasana_-a@800",
+ "inputs": {},
+ "item_id": "220926_Eagle_Pose_or_Garudasana_-a@800#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/56aa15666d6a2534833e827d4873935f35a9ff22",
+  "images": {
+   "img_1.png": "5999fd050e3d6e24d33ad1db7f3570d5750ec4b3604e38a947e454c85df1f4ed",
+   "img_2.png": "7e5eaa4873399dc6646b4d531077565d9fea08c2d672e089456c395f4c4faca0",
+   "img_3.png": "29cdc39365566cda7bea0b3d1b3e323d3f375a877fa824b8de51c097e4731c9f",
+   "img_4.png": "766877f5815e9e2bf334ed59bc2f735cd5631450a1cb7a31c174fc370ec245cf",
+   "img_5.png": "8f146ec32c1aeb9a684c0c4aac7a216df88ed986141cefc1cd933b53d8da1991"
+  },
+  "packet_json_sha256": "f34c3e26f473b3a27ea5b4de0902636153272fb421d63b1a8af1f199f307ce10"
+ },
+ "packet_id": "56aa15666d6a2534833e827d4873935f35a9ff22",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "8874eb02-ecd0-4aa5-b070-2a316910a66b",
+ "started_utc": "2026-09-30T04:03:02+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220926_Eagle_Pose_or_Garudasana_-a",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 10557,
+  "cache_read_input_tokens": 13411,
+  "input_tokens": 6,
+  "output_tokens": 1861,
+  "thinking_tokens": 757
+ },
+ "warnings": []
+}

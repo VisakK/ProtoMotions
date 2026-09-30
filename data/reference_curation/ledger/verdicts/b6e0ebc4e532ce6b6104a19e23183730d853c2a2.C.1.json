@@ -1,0 +1,137 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "4b",
+     "3d",
+     "2b"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "4b",
+     "3d"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "through_body",
+    "panels": [
+     "4b",
+     "3b"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1b",
+     "5d",
+     "4b"
+    ],
+    "part": "left shin",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "A",
+  "floating_parts": {
+   "A": [],
+   "B": [
+    "left foot",
+    "right foot"
+   ]
+  },
+  "more_natural": "A",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both avatars stand upright with arms out to the sides and both feet together. B's legs angle inward and its feet sit a few centimetres higher and tilted, but the pose is the same."
+  },
+  "summary": "Both avatars show the same standing pose with arms spread. A's feet sit flat on the floor, matching the grey body. B's feet hover above the floor and are tilted and jammed together, and its shins angle inward toward each other."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1153768,
+ "duration_s": 15.35,
+ "errors": [],
+ "frame_hold": 1753,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Scale_Pose_or_Tolasana_-a@1753",
+ "inputs": {},
+ "item_id": "220923_Scale_Pose_or_Tolasana_-a@1753#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/b6e0ebc4e532ce6b6104a19e23183730d853c2a2",
+  "images": {
+   "img_1.png": "51a9ebd812cba8bbd027b525f075c040da61667bca8b1775b49f3197df779dec",
+   "img_2.png": "c89e77dcea687325a84f188622e04504d3bfd8c222c287de7f43b0408666766b",
+   "img_3.png": "8e25c175101721f67a69aa21e5c2311ac6f92280d51168f0ce0679f72d710b4d",
+   "img_4.png": "daba4e1fcc04b4e6cabfd940bdd137d0af2f38a0b0a381fdb13e2852366bb5c2",
+   "img_5.png": "9a2e13caa1376901a669975c8b55c2fedbaf6f1b7eb88e8776f92d7a239ce53b"
+  },
+  "packet_json_sha256": "20baf43c139a13ec24bdf3a6e704f010c4a3dba719de6899352b25029c5a81a7"
+ },
+ "packet_id": "b6e0ebc4e532ce6b6104a19e23183730d853c2a2",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "12a4cd6f-2154-4312-aa06-ec3e2f7029c3",
+ "started_utc": "2026-09-30T06:16:55+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Scale_Pose_or_Tolasana_-a",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 10586,
+  "cache_read_input_tokens": 13424,
+  "input_tokens": 6,
+  "output_tokens": 1399,
+  "thinking_tokens": 240
+ },
+ "warnings": []
+}

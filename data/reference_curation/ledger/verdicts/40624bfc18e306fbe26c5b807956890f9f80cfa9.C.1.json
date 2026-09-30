@@ -1,0 +1,147 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "impossible_joint",
+    "panels": [
+     "4a",
+     "3c",
+     "1a"
+    ],
+    "part": "left foot",
+    "severity": "major"
+   },
+   {
+    "avatar": "A",
+    "kind": "impossible_joint",
+    "panels": [
+     "4a",
+     "3c",
+     "1a"
+    ],
+    "part": "right foot",
+    "severity": "major"
+   },
+   {
+    "avatar": "A",
+    "kind": "through_body",
+    "panels": [
+     "4a",
+     "3c"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1a",
+     "3c",
+     "5c"
+    ],
+    "part": "left shin",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "5e"
+    ],
+    "part": "torso",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "B",
+  "floating_parts": {
+   "A": [
+    "left foot",
+    "right foot"
+   ],
+   "B": []
+  },
+  "more_natural": "B",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both stand upright on both feet with arms held out level to the sides. A's knees angle inward and its feet are tilted, but the overall shape is the same."
+  },
+  "summary": "Both show the same standing pose with the arms out. B follows the grey body closely, with straight legs and both feet flat on the floor. A's knees turn inward, its feet roll onto their edges and bump into each other, and its left foot hovers above the floor. Panel 5e for A is rendered upside down."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1181984,
+ "duration_s": 16.32,
+ "errors": [],
+ "frame_hold": 971,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Crane_Crow_Pose_or_Bakasana_-a@971",
+ "inputs": {},
+ "item_id": "220923_Crane_Crow_Pose_or_Bakasana_-a@971#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/40624bfc18e306fbe26c5b807956890f9f80cfa9",
+  "images": {
+   "img_1.png": "0074934b9160d61d4fe9614c78cb1a8d52ee4be9841b00e8e4d02de4aca1ee1c",
+   "img_2.png": "0bfa58196ccdab6f496498143b9204ff6660d93aa008aeb5ce657efde47545e0",
+   "img_3.png": "607ea6f04fef7776372ef4ed58247fe79601ad37267ea14380782aa4552c0818",
+   "img_4.png": "86399e08a6081b640a3ee606681b9177e5d1227241aa23b297d880ab7a49b65f",
+   "img_5.png": "8b61f3b1bf85e6e3d9b5783260d757b440ec68bce7db008902b9549150bc6183"
+  },
+  "packet_json_sha256": "f6c4b7225024a7ea48d95f1b14ef4290e2756d83b67d3d1e70754b85b8bfa49c"
+ },
+ "packet_id": "40624bfc18e306fbe26c5b807956890f9f80cfa9",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "37e95c50-7d32-4337-823d-653294cf9aad",
+ "started_utc": "2026-09-30T03:15:05+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Crane_Crow_Pose_or_Bakasana_-a",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 10564,
+  "cache_read_input_tokens": 13412,
+  "input_tokens": 6,
+  "output_tokens": 1549,
+  "thinking_tokens": 334
+ },
+ "warnings": []
+}

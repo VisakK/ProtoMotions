@@ -1,0 +1,126 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "4a",
+     "3c",
+     "1a"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "impossible_joint",
+    "panels": [
+     "4a",
+     "3c"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1a",
+     "3c",
+     "4a"
+    ],
+    "part": "left shin",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "B",
+  "floating_parts": {
+   "A": [
+    "left foot"
+   ],
+   "B": []
+  },
+  "more_natural": "B",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both stand upright on both feet with arms held out to the sides. Only the leg and foot alignment differs: A's knees angle inward and its feet are tilted."
+  },
+  "summary": "Both avatars show the same pose. B's legs are straight and its feet rest flat on the floor where the grey body's feet are. A's knees angle inward, and its feet tilt onto their edges above the grey feet, with the left foot hovering above the floor."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1141544,
+ "duration_s": 14.21,
+ "errors": [],
+ "frame_hold": 36,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana_-a@36",
+ "inputs": {},
+ "item_id": "220923_Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana_-a@36#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/e29e9f9d7fbdc48a2ca311b33c6633ac578b56a2",
+  "images": {
+   "img_1.png": "ade9e255dfa88b82bd5ac07b99c2ec48a92d7ba6ed4f2020ea978c9872a4acde",
+   "img_2.png": "fd6ce07b7c07c4ae2ee77c153a7814c8f94820bf458088e4ac7e7afb17dd1902",
+   "img_3.png": "45f831c9b6a0d7b0a27e5ee710a5e419300325d7fe47e0ccc1a50b19f9e9cb19",
+   "img_4.png": "31a7550e0ff1cf3983263d20c389bd29ffad6db2a1a36cad18ddcf96a6f1a0ef",
+   "img_5.png": "f342d0853d824fccca5252c999a1996ebff6e7ba5d555c99e60b532aa6732d56"
+  },
+  "packet_json_sha256": "638da33239ab330236c7ce3015a518d4586f0001474493dd26555997fc67f1b1"
+ },
+ "packet_id": "e29e9f9d7fbdc48a2ca311b33c6633ac578b56a2",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "50b74a3a-0da5-405b-9c04-66a65e784dcf",
+ "started_utc": "2026-09-30T03:45:32+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana_-a",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 10625,
+  "cache_read_input_tokens": 13452,
+  "input_tokens": 6,
+  "output_tokens": 1322,
+  "thinking_tokens": 200
+ },
+ "warnings": []
+}

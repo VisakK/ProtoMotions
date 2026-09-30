@@ -1,0 +1,114 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "through_floor",
+    "panels": [
+     "4a",
+     "3c",
+     "1a"
+    ],
+    "part": "left foot",
+    "severity": "major"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "4b",
+     "1b",
+     "3d"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "B",
+  "floating_parts": {
+   "A": [],
+   "B": []
+  },
+  "more_natural": "B",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both stand on the left leg with the torso level, the right leg raised straight back and both arms reaching forward; only the standing foot's contact differs."
+  },
+  "summary": "The pose is the same. A's standing left foot is tipped toes-down and mostly sunk into the floor. B's left foot rests on the floor, with the heel raised a little and the foot set slightly forward of the grey foot. That makes B the cleaner and more plausible version of the two."
+ },
+ "audit_id": null,
+ "cost_usd": 0.124463,
+ "duration_s": 22.87,
+ "errors": [],
+ "frame_hold": 947,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220926_Warrior_III_Pose_or_Virabhadrasana_III_-a@947",
+ "inputs": {},
+ "item_id": "220926_Warrior_III_Pose_or_Virabhadrasana_III_-a@947#sink",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/8d890e6b9453b6b26117618530310232b89db1fc",
+  "images": {
+   "img_1.png": "02c28d935b33d6f81512fd34339fbc9ccba4d6a81c76c1a68e2dd876aa3e3242",
+   "img_2.png": "5db5def048cc79900e785c33db088d4b5e3b2a833bff5d553c5db3cd5a9f4b19",
+   "img_3.png": "8d0e0c6ce5ff29a9a1de90e25289bdce11d2722e68e9b86c02c4f392da7aedf4",
+   "img_4.png": "ecc2e35b38ffadb3359e7b6b525eaaba53653296b16552a9ef13388ff215454a",
+   "img_5.png": "c7ff685c01ca67cadf55e610be3539323eaba3fcdf23fe1866dbd77b41b8973a"
+  },
+  "packet_json_sha256": "54f1998702f794bc8e4174abc980d33fc8bf2a5a9c964283f6d906158145cc23"
+ },
+ "packet_id": "8d890e6b9453b6b26117618530310232b89db1fc",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "4462e826-9d9e-465e-b24a-5a7357dd9dc9",
+ "started_utc": "2026-09-30T02:40:08+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220926_Warrior_III_Pose_or_Virabhadrasana_III_-a",
+ "stratum": "sink",
+ "usage": {
+  "cache_creation_input_tokens": 10557,
+  "cache_read_input_tokens": 13415,
+  "input_tokens": 6,
+  "output_tokens": 1865,
+  "thinking_tokens": 852
+ },
+ "warnings": []
+}

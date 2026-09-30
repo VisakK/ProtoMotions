@@ -1,0 +1,113 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "impossible_joint",
+    "panels": [
+     "4a",
+     "3c"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1d",
+     "2d",
+     "3b"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "B",
+  "floating_parts": {
+   "A": [],
+   "B": []
+  },
+  "more_natural": "B",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both stand on the right leg, left knee bent and lifted behind, arms overhead. They differ only by a few centimetres in the left foot and in how the stance foot sits."
+  },
+  "summary": "Same pose in both. B's stance foot lies flat on the floor like the grey foot, while A's toe block is kinked at an angle. A's lifted left foot follows the grey body a little more closely, and B's left foot sticks slightly out of the grey outline."
+ },
+ "audit_id": null,
+ "cost_usd": 0.149918,
+ "duration_s": 26.43,
+ "errors": [],
+ "frame_hold": 1443,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220926_Lord_of_the_Dance_Pose_or_Natarajasana_-c@1443",
+ "inputs": {},
+ "item_id": "220926_Lord_of_the_Dance_Pose_or_Natarajasana_-c@1443#edit",
+ "n": 1,
+ "num_turns": 9,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/f2229e5d0a7cbfbf0a161a5e7f28d8d0f4efa885",
+  "images": {
+   "img_1.png": "72a849ad0273a8b0a131e44b3b54fad931c0189486b053993b3b4ef73e82c8f8",
+   "img_2.png": "a9081e95ca3ba61eeba153f2621f5a2f866cc9615ff21b5a8444e06e1826db40",
+   "img_3.png": "c0c23d4df04a9cb82bf23da57526f704a83c9e2acd3ddff7684695c457d67964",
+   "img_4.png": "294532499f559c35a654bf07e5dfb95102ce7b26a32a085bfdc903482ebb2e51",
+   "img_5.png": "57070c5cd7ef5519fb163122c30241f29802196ace26b6121ec74143c07d0b3b"
+  },
+  "packet_json_sha256": "2eae56efb6ea2166046a9b698766f2973ae5e2227885a9a2be8426be51ef96bc"
+ },
+ "packet_id": "f2229e5d0a7cbfbf0a161a5e7f28d8d0f4efa885",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "e4c10305-a6c4-45b6-9f17-bcbe95725f44",
+ "started_utc": "2026-09-30T04:04:04+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220926_Lord_of_the_Dance_Pose_or_Natarajasana_-c",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 12052,
+  "cache_read_input_tokens": 27150,
+  "input_tokens": 8,
+  "output_tokens": 2402,
+  "thinking_tokens": 885
+ },
+ "warnings": []
+}

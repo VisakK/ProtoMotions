@@ -1,0 +1,140 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1a",
+     "3c",
+     "4c",
+     "4e"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "4c",
+     "3a"
+    ],
+    "part": "right hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "4a",
+     "3c"
+    ],
+    "part": "left hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "through_body",
+    "panels": [
+     "4f"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "B",
+  "floating_parts": {
+   "A": [
+    "right foot",
+    "right hand",
+    "right forearm"
+   ],
+   "B": [
+    "left forearm",
+    "right forearm"
+   ]
+  },
+  "more_natural": "B",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both have forearms and hands on the floor, the head low between the arms, the left leg raised straight up and the right foot back on the floor. The only differences are at the floor contacts."
+  },
+  "summary": "Same pose. In A the right foot is tilted and hovers above the floor, and the hands are tipped, with the right hand lifted. B puts the right foot and both hands flat on the floor. That makes B closer to the grey body at the floor and more natural. Only small forearm gaps remain in both avatars."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1373788,
+ "duration_s": 21.94,
+ "errors": [],
+ "frame_hold": 569,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-a@569",
+ "inputs": {},
+ "item_id": "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-a@569#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/981e9927b1e08660af300c0aace8d89d3df0dfaa",
+  "images": {
+   "img_1.png": "3458e42d5375993ab1e9a9ed6f31ce1e5a72670945f71deb362085eec9ff4c22",
+   "img_2.png": "d22599483d4480f5a7545ac13f04b902c1d2c9439d34c200ef1ad5518da572f2",
+   "img_3.png": "422422bfb12a392d31df06a7520d57307e6085570c2e7bfa00681ea7f05833ca",
+   "img_4.png": "2c5268625c0120da1d22cf7d3faff6fd2ef2c61489ee8aa437425ea1841b03d2",
+   "img_5.png": "9288c169c3c04b1093e46a07943b9dbaff14e8eec1dc059378d7c02131fd1b8b"
+  },
+  "packet_json_sha256": "b1c37e6fdfd0e95cd3c5e3fb361c60cea866b7bf011008cc648f9c86e52dff79"
+ },
+ "packet_id": "981e9927b1e08660af300c0aace8d89d3df0dfaa",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "3710968a-181b-49e9-aaf1-78a07672b12c",
+ "started_utc": "2026-09-30T03:47:50+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-a",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 11982,
+  "cache_read_input_tokens": 13494,
+  "input_tokens": 6,
+  "output_tokens": 1940,
+  "thinking_tokens": 791
+ },
+ "warnings": []
+}

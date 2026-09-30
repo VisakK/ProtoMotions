@@ -1,0 +1,117 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1b",
+     "2b",
+     "3d",
+     "4b",
+     "5d"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "4d"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "A",
+  "floating_parts": {
+   "A": [],
+   "B": [
+    "left foot",
+    "right foot"
+   ]
+  },
+  "more_natural": "A",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both show the same wide-legged forward fold, head hanging low, hands raised behind the back, both feet on the floor; only B's left foot is tilted up slightly."
+  },
+  "summary": "Both avatars show the same pose. A keeps both feet flat on the floor like the grey body. In B the left foot is tilted and hovers a few centimetres above the floor, and the right foot lifts slightly, so A is closer to the human and looks more natural."
+ },
+ "audit_id": null,
+ "cost_usd": 0.12035,
+ "duration_s": 15.12,
+ "errors": [],
+ "frame_hold": 999,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220926_Intense_Side_Stretch_Pose_or_Parsvottanasana_-b@999",
+ "inputs": {},
+ "item_id": "220926_Intense_Side_Stretch_Pose_or_Parsvottanasana_-b@999#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/811606e08d2c2e926247e8154dcf6cecad62d841",
+  "images": {
+   "img_1.png": "d38e08ecd4729ab80964984c6c02738439e3b7c03f7ed3783804457a90cb989a",
+   "img_2.png": "9dd1be40dc52bfdd14aa43e58151be90c9817d69ac67f0eafa4dc3cbd9461c23",
+   "img_3.png": "d4f80629ab140cfb6876966ceb897cb9d39cdcddd08511c73182a6a915258655",
+   "img_4.png": "1c0600d3d191217fec5f8f6e771df87736e9b0bc11f76bd61ab64572b8f6b786",
+   "img_5.png": "255f57e7609fcb6a02a8f783e2fe7ff57131ce5f2ba31b88796ad949337b7dab"
+  },
+  "packet_json_sha256": "7c95c9870d0ab5e97d96f46b3a346daa9eed343e556e3e3caef2f85896a04704"
+ },
+ "packet_id": "811606e08d2c2e926247e8154dcf6cecad62d841",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "5458204c-756d-4a82-aec4-23833b94b248",
+ "started_utc": "2026-09-30T04:03:35+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220926_Intense_Side_Stretch_Pose_or_Parsvottanasana_-b",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 11262,
+  "cache_read_input_tokens": 13450,
+  "input_tokens": 6,
+  "output_tokens": 1377,
+  "thinking_tokens": 353
+ },
+ "warnings": []
+}

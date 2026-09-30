@@ -1,0 +1,141 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1c",
+     "4a",
+     "4c",
+     "4e"
+    ],
+    "part": "left foot",
+    "severity": "major"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1a",
+     "4a",
+     "4e"
+    ],
+    "part": "left hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1a",
+     "3c",
+     "4a"
+    ],
+    "part": "right shin",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "4b",
+     "3d"
+    ],
+    "part": "left hand",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "B",
+  "floating_parts": {
+   "A": [
+    "left foot",
+    "left hand",
+    "right shin",
+    "right foot"
+   ],
+   "B": []
+  },
+  "more_natural": "B",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Same kneeling lunge shape: front left foot planted between the hands, right knee and shin down behind, both hands at the floor, torso bent forward. Differences are only a few cm of height."
+  },
+  "summary": "Both avatars hold the same kneeling lunge. In A, the front left foot hovers and is tilted, and the left hand, right knee/shin and back foot sit slightly above the floor. B keeps the foot flat and its contacts on the floor, so it is closer to the grey body and looks more natural."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1284004,
+ "duration_s": 15.56,
+ "errors": [],
+ "frame_hold": 441,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Low_Lunge_pose_or_Anjaneyasana_-a@425",
+ "inputs": {},
+ "item_id": "220923_Low_Lunge_pose_or_Anjaneyasana_-a@425#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/6f95921b3b383095ee6ffb4317d1aa774f139807",
+  "images": {
+   "img_1.png": "586ec3210108639567fc0fbdb58436a05a9fc2fff89932e9abf2e14ed49f04ca",
+   "img_2.png": "0f822d90e6fc902d69fd02222e1427beb129eed2e6039d458a2102681494e189",
+   "img_3.png": "76e7dbdf3ba5cb3ecc77ec3f64db614db36dd1cb65c0d3e33b3f513adfec3df4",
+   "img_4.png": "2122b32308ad542b5d4eded8c3cd6ac290fd3e0e53f7dd9c1dec06870e9c927c",
+   "img_5.png": "c4ab0e2162c7017d54bc27a5f71ad2acc73bdc5acf615781750a29297b1f12d9"
+  },
+  "packet_json_sha256": "6b4174e7b869316a2407b894b0912dbdd344361d67111edbaa567f3613f43094"
+ },
+ "packet_id": "6f95921b3b383095ee6ffb4317d1aa774f139807",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "c03b7107-4a7b-4259-b87c-96608d2a0815",
+ "started_utc": "2026-09-30T03:52:45+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Low_Lunge_pose_or_Anjaneyasana_-a",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 11987,
+  "cache_read_input_tokens": 13502,
+  "input_tokens": 6,
+  "output_tokens": 1489,
+  "thinking_tokens": 343
+ },
+ "warnings": []
+}

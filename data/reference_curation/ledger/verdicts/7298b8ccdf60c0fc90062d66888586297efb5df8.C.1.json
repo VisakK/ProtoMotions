@@ -1,0 +1,115 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "4a",
+     "1c",
+     "3c"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "impossible_joint",
+    "panels": [
+     "4a",
+     "3c"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "B",
+  "floating_parts": {
+   "A": [
+    "left foot"
+   ],
+   "B": []
+  },
+  "more_natural": "B",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both stand upright on both feet with arms held out to the sides at shoulder height; only the lower legs and feet differ a little (A's feet are tilted and angled inward)."
+  },
+  "summary": "Both avatars show the same standing pose with the arms out. B's feet sit flat on the floor, in line with the grey body's feet. In A, both feet roll onto their edges, the legs angle inward and the left foot hovers slightly above the floor (a drop line shows the gap)."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1131274,
+ "duration_s": 14.43,
+ "errors": [],
+ "frame_hold": 39,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Peacock_Pose_or_Mayurasana_-a@39",
+ "inputs": {},
+ "item_id": "220923_Peacock_Pose_or_Mayurasana_-a@39#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/7298b8ccdf60c0fc90062d66888586297efb5df8",
+  "images": {
+   "img_1.png": "a7c3255da9960b83f7f8604ed2973aa0ec9d91ef4afd39f4d9f38020016ac89e",
+   "img_2.png": "1d89181b1ab365b4fb1675170b57be4e32237e1e491eb933ce66a6549c95524c",
+   "img_3.png": "616dbabb6341bba47e1f4b69cd85c757e62d31a32ed746643f16c8d4aa427bd8",
+   "img_4.png": "5116263cfdeaf198355c640e8ab91b11e348018770bf0e4588eed5c5a8a7a18a",
+   "img_5.png": "d7c5f7b80a36696242084f78671d5818099baffbbd4785486ee8f1acfa666c35"
+  },
+  "packet_json_sha256": "88350ea6c6428e44335208b5dd17b2007127f7214c418cacf63e1461b98ca3c1"
+ },
+ "packet_id": "7298b8ccdf60c0fc90062d66888586297efb5df8",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "795b083e-b971-4f69-adba-7fab62394dce",
+ "started_utc": "2026-09-30T03:15:21+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Peacock_Pose_or_Mayurasana_-a",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 10570,
+  "cache_read_input_tokens": 13417,
+  "input_tokens": 6,
+  "output_tokens": 1293,
+  "thinking_tokens": 256
+ },
+ "warnings": []
+}

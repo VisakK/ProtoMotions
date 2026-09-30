@@ -1,0 +1,165 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1a",
+     "3c",
+     "4a",
+     "5c"
+    ],
+    "part": "left foot",
+    "severity": "major"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1a",
+     "3c",
+     "4e",
+     "5c"
+    ],
+    "part": "right foot",
+    "severity": "major"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1a",
+     "3c",
+     "4a"
+    ],
+    "part": "left hand",
+    "severity": "major"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1a",
+     "2a",
+     "3c"
+    ],
+    "part": "right shin",
+    "severity": "major"
+   },
+   {
+    "avatar": "B",
+    "kind": "through_body",
+    "panels": [
+     "1b",
+     "2b",
+     "3d"
+    ],
+    "part": "left forearm",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "4d",
+     "1d"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "B",
+  "floating_parts": {
+   "A": [
+    "left foot",
+    "right foot",
+    "right shin"
+   ],
+   "B": [
+    "right shin"
+   ]
+  },
+  "more_natural": "B",
+  "same_pose": {
+   "answer": "no",
+   "reason": "B is a low lunge with the arms raised overhead like the grey body. A has both legs stretched back off the floor, a bent-forward torso and both hands down at the floor."
+  },
+  "summary": "B follows the grey lunge with the arms overhead closely, with only a small gap under the rear shin. A shows a different pose: both legs stretched back with the feet hovering, the torso bent forward and the hands down at the floor."
+ },
+ "audit_id": null,
+ "cost_usd": 0.13275499999999998,
+ "duration_s": 17.78,
+ "errors": [],
+ "frame_hold": 959,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Low_Lunge_pose_or_Anjaneyasana_-a@959",
+ "inputs": {},
+ "item_id": "220923_Low_Lunge_pose_or_Anjaneyasana_-a@959#swap",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/907ffcdb828725826e98b22544e87695327cb4a5",
+  "images": {
+   "img_1.png": "95610f0b102ca246a301d64256d9fc49e9a8e28de388d24eb663e017ba3bd05e",
+   "img_2.png": "80236fdb44acc6b2a0eb1abd07d1d3d3abe9c63f9ef407b48efb2630bc47453b",
+   "img_3.png": "dd4ebdbf47c61ba8f5cc8e740128ecacbbad78e4a1b43c36efc52f81acabd9f9",
+   "img_4.png": "23bdf14c8bab1b9df5add35f51cc5f4f367eda4a56d9a1808e934e81c9aaafde",
+   "img_5.png": "3e070f41ed87e9f7966b15a393ce1ec9533653f599f33c6739b6adca2ce5ed41"
+  },
+  "packet_json_sha256": "f7ddec345c699455089abf7fe01df788fa33a506bbf038643a63a2368aec530a"
+ },
+ "packet_id": "907ffcdb828725826e98b22544e87695327cb4a5",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "59f3ad08-a019-493f-a049-3d32d91f3449",
+ "started_utc": "2026-09-30T02:33:21+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Low_Lunge_pose_or_Anjaneyasana_-a",
+ "stratum": "swap",
+ "usage": {
+  "cache_creation_input_tokens": 11969,
+  "cache_read_input_tokens": 13495,
+  "input_tokens": 6,
+  "output_tokens": 1714,
+  "thinking_tokens": 520
+ },
+ "warnings": []
+}

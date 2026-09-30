@@ -1,0 +1,120 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1b",
+     "1d",
+     "3d",
+     "4b",
+     "4d",
+     "4f"
+    ],
+    "part": "right foot",
+    "severity": "major"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "4b",
+     "4d",
+     "3d"
+    ],
+    "part": "left hand",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "A",
+  "floating_parts": {
+   "A": [],
+   "B": [
+    "right foot",
+    "left hand"
+   ]
+  },
+  "more_natural": "A",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both show the same forward fold on the right leg with both hands on the floor and the left leg raised high behind; only floor contact of the standing foot and left hand differs."
+  },
+  "summary": "Both avatars show the same pose. A keeps the standing right foot and both hands flat on the floor, as the grey body does. In B the standing right foot hovers with its heel lifted and the left hand is tilted slightly off the floor, so A is closer to the grey body and looks more natural."
+ },
+ "audit_id": null,
+ "cost_usd": 0.12573099999999998,
+ "duration_s": 14.62,
+ "errors": [],
+ "frame_hold": 392,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Handstand_pose_or_Adho_Mukha_Vrksasana_-a@392",
+ "inputs": {},
+ "item_id": "220923_Handstand_pose_or_Adho_Mukha_Vrksasana_-a@392#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/d0c18886f2ee7c16174fe4970049e6d23d4489af",
+  "images": {
+   "img_1.png": "84fc701e54bf90cbadeb901a415723511f5a6a26d41f41596aa79ad4178a6e8b",
+   "img_2.png": "2865f067edf81c238937b84a885b1671054476eb57f7e8146decef11144c325d",
+   "img_3.png": "c24178278578f832011ab3d5032c5a8db0c6a0ca6404ba98a24952d858cfa872",
+   "img_4.png": "90db30f88ec003e727080d1c87658fd64805ef7117f7ac831e488476cc9437de",
+   "img_5.png": "8db0527a3a096b2027faae6685f2a6483c120b36a25c671a42aec4f741b91041"
+  },
+  "packet_json_sha256": "a60ab4ee2a124ba3ae8ad815c1b30ff32730ee3deed2a8df365a304bf14fed63"
+ },
+ "packet_id": "d0c18886f2ee7c16174fe4970049e6d23d4489af",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "47dc18d6-c7ef-4707-bf2b-15522f266254",
+ "started_utc": "2026-09-30T03:52:00+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Handstand_pose_or_Adho_Mukha_Vrksasana_-a",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 11959,
+  "cache_read_input_tokens": 13475,
+  "input_tokens": 6,
+  "output_tokens": 1367,
+  "thinking_tokens": 316
+ },
+ "warnings": []
+}

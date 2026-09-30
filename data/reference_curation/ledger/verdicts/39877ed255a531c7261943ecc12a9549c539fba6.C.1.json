@@ -1,0 +1,125 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1a",
+     "2c",
+     "3a",
+     "3c",
+     "5c"
+    ],
+    "part": "right upper arm",
+    "severity": "major"
+   },
+   {
+    "avatar": "A",
+    "kind": "through_body",
+    "panels": [
+     "1c",
+     "3a"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "through_body",
+    "panels": [
+     "1d",
+     "3b"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "B",
+  "floating_parts": {
+   "A": [],
+   "B": []
+  },
+  "more_natural": "B",
+  "same_pose": {
+   "answer": "no",
+   "reason": "Legs, torso and left arm match, but A holds the right arm raised out to the side near shoulder height, while B's right arm hangs down beside the body."
+  },
+  "summary": "Both avatars stand on the right foot, and in both the left leg is raised and matches the grey body. A holds the right arm out to the side, far from the human's lowered arm. B keeps that arm down like the human, so B is closer and looks more natural."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1149036,
+ "duration_s": 15.48,
+ "errors": [],
+ "frame_hold": 621,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Tree_Pose_or_Vrksasana_-b@621",
+ "inputs": {},
+ "item_id": "220923_Tree_Pose_or_Vrksasana_-b@621#kink",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/39877ed255a531c7261943ecc12a9549c539fba6",
+  "images": {
+   "img_1.png": "5ba710fc801162b52fd9f4d61a696035b114ca2f678663f40ff433e36da534b4",
+   "img_2.png": "328bec2d110a09b39aa9e8870196746a529858467484064bdcf2bf4728834c19",
+   "img_3.png": "d39f204de0e27beedc09c0abb2ea816626e777ab4acea2ab996fd72588ab9cd2",
+   "img_4.png": "eaa09b51d3eb528d07ce3db839bfb1bd4131fd0611a53bd5e108b398b5f63c06",
+   "img_5.png": "d2f2365cd98373be8fe38a8bab3a3a8ff317423543399027733051cef0bf9c41"
+  },
+  "packet_json_sha256": "11ce3ed8d711449f843b0a84a82cde420f5602aa0fac0cfaa5a7e9107ce88bd3"
+ },
+ "packet_id": "39877ed255a531c7261943ecc12a9549c539fba6",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "7b0585fa-f82c-47b5-a7a2-2a3afe1e6ea6",
+ "started_utc": "2026-09-30T02:41:47+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Tree_Pose_or_Vrksasana_-b",
+ "stratum": "kink",
+ "usage": {
+  "cache_creation_input_tokens": 10540,
+  "cache_read_input_tokens": 13398,
+  "input_tokens": 6,
+  "output_tokens": 1394,
+  "thinking_tokens": 345
+ },
+ "warnings": []
+}

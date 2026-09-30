@@ -1,0 +1,144 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1a",
+     "4a",
+     "4c",
+     "3c"
+    ],
+    "part": "left hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "4a",
+     "4c",
+     "2c"
+    ],
+    "part": "right hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1c",
+     "3c",
+     "4e"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1c",
+     "3c",
+     "4e"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "B",
+  "floating_parts": {
+   "A": [
+    "left foot",
+    "right foot",
+    "left shin",
+    "right shin",
+    "left hand",
+    "right hand"
+   ],
+   "B": []
+  },
+  "more_natural": "B",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both are on hands and knees with the same arm, leg and torso shape. B sits slightly lower, with its hands, knees and feet down on the floor."
+  },
+  "summary": "Both show the same pose. A's knees, feet and tilted hands float a few centimetres above the floor, with visible drop lines. B keeps its hands flat and its knees and feet on the floor, which matches the grey body's floor contacts better, though B's head and torso sit a little low."
+ },
+ "audit_id": null,
+ "cost_usd": 0.12779780000000002,
+ "duration_s": 14.82,
+ "errors": [],
+ "frame_hold": 434,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Peacock_Pose_or_Mayurasana_-a@434",
+ "inputs": {},
+ "item_id": "220923_Peacock_Pose_or_Mayurasana_-a@434#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/9ff020ddc94abd23dcd309cd50ccdfeb0facd4dd",
+  "images": {
+   "img_1.png": "5d28d98953797490fb5009723d3c09c0e27d09b7c902fca32c5f8384755b0803",
+   "img_2.png": "649bc509fcbdcc97a55beaa8f6c98f65aba283858786ca654e04ef4aa8847a64",
+   "img_3.png": "7ab313f5b3af99407547a299888e749e41e7af1083f871c9166c2dfefd18ed6f",
+   "img_4.png": "f26cb59583ff00d4650cc0d8b5ae44b965a18a2048b86577ee793bf2617ac417",
+   "img_5.png": "9e26c5457613554ac0799a7d1a6fff09a3b60911a8b6b7a4c1e3edd073ebf02e"
+  },
+  "packet_json_sha256": "41627f1dbc578b1d6625542f5eabf2fd7c228169e7a03fd612074f73744e1bae"
+ },
+ "packet_id": "9ff020ddc94abd23dcd309cd50ccdfeb0facd4dd",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "84a0906e-8cb3-41b5-a13b-8038006a691e",
+ "started_utc": "2026-09-30T03:15:32+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Peacock_Pose_or_Mayurasana_-a",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 12014,
+  "cache_read_input_tokens": 13509,
+  "input_tokens": 6,
+  "output_tokens": 1448,
+  "thinking_tokens": 278
+ },
+ "warnings": []
+}

@@ -1,0 +1,151 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "4b",
+     "4d",
+     "3d"
+    ],
+    "part": "left hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "4f",
+     "3d"
+    ],
+    "part": "right hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1b",
+     "3d",
+     "5d"
+    ],
+    "part": "right thigh",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "through_body",
+    "panels": [
+     "1a",
+     "3c",
+     "5c"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "jitter",
+    "panels": [
+     "5a",
+     "5c"
+    ],
+    "part": "left thigh",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "A",
+  "floating_parts": {
+   "A": [
+    "head"
+   ],
+   "B": [
+    "head",
+    "left hand",
+    "right hand"
+   ]
+  },
+  "more_natural": "A",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both are inverted on head and hands with elbows bent and legs folded above; B's right leg is folded higher and more upright, but the overall shape and floor contacts are the same."
+  },
+  "summary": "Both avatars hold the same inverted pose on head and hands. A is closer to the grey body: its hands lie flat, and its folded legs follow the grey outline. B's hands are tilted and partly lifted, and its right leg sits higher than the grey leg. In both avatars the head hovers slightly above the floor."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1450048,
+ "duration_s": 25.44,
+ "errors": [],
+ "frame_hold": 2856,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Cockerel_Pose-b@2856",
+ "inputs": {},
+ "item_id": "220923_Cockerel_Pose-b@2856#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/bdaaf236b67956e26ef5f95ef8af636157bdec19",
+  "images": {
+   "img_1.png": "9f55e842169c9823e3d1a3224598c57f4936bd26f53da971df11ae1109c508a8",
+   "img_2.png": "f936dedfdacbab2c7c0e79d23743be68400a4cda76e88c5be86292863a2705de",
+   "img_3.png": "a4da23fe2e88d049f5c99c5cf090ca19f7750908cd4971b8c457a429c69e0ee3",
+   "img_4.png": "36ff707e0a74414de6796342b6de82791579df0eecafdba17be411d2dde6a098",
+   "img_5.png": "6a18e88f0876d39db9fe80c716cad0cbdf1943d06299c1698f3634ee53c16f32"
+  },
+  "packet_json_sha256": "3195676e462640c126828e785df08bd4cf35c11a788992f291c86c098cde1261"
+ },
+ "packet_id": "bdaaf236b67956e26ef5f95ef8af636157bdec19",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "74d4ef99-93b8-49b7-9bab-a13415b39df3",
+ "started_utc": "2026-09-30T06:14:53+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Cockerel_Pose-b",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 11968,
+  "cache_read_input_tokens": 13484,
+  "input_tokens": 6,
+  "output_tokens": 2327,
+  "thinking_tokens": 1134
+ },
+ "warnings": []
+}

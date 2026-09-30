@@ -1,0 +1,149 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1a",
+     "3c",
+     "2a"
+    ],
+    "part": "left hand",
+    "severity": "major"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1a",
+     "3c",
+     "2a"
+    ],
+    "part": "right hand",
+    "severity": "major"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1a",
+     "3c",
+     "5c"
+    ],
+    "part": "left thigh",
+    "severity": "major"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "4b",
+     "4d"
+    ],
+    "part": "left hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "through_body",
+    "panels": [
+     "2b",
+     "3b"
+    ],
+    "part": "right thigh",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "B",
+  "floating_parts": {
+   "A": [
+    "head"
+   ],
+   "B": [
+    "head"
+   ]
+  },
+  "more_natural": "B",
+  "same_pose": {
+   "answer": "no",
+   "reason": "A places its hands far outside the grey hands and spreads its thighs out sideways. B keeps its hands under the shoulders and its legs raised upright over the torso."
+  },
+  "summary": "The two avatars don't show the same pose. A's hands land far outside the grey hands and its legs splay out sideways. B follows the grey hand placement and raised legs more closely. The head hovers above the floor in both, while the grey head rests on it."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1356114,
+ "duration_s": 23.24,
+ "errors": [],
+ "frame_hold": 1797,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Cockerel_Pose-b@1797",
+ "inputs": {},
+ "item_id": "220923_Cockerel_Pose-b@1797#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/b22efe25ade75d40df9982d62c5af85fbd213fa4",
+  "images": {
+   "img_1.png": "ba09af735bad8338affdf991c0c230ddb8e26639e1ff675c4bbecb9939d9d5f6",
+   "img_2.png": "ef7fe2cb312b72b81ee5568aa89101de615f92d58467a09042ec06adcf43cb27",
+   "img_3.png": "9c3ed54db392b1f6177f51ebdc1f84a14b64b5d8f11d436e30264ed317b155a9",
+   "img_4.png": "66ccc6038abbbc04afec6744c68e7cd8840a97bf0ec82e01df8484c15dbbbf7d",
+   "img_5.png": "5fbe151fcb7076412a545b316d5e3a9d44d05a0394236792d77720b2bae8df06"
+  },
+  "packet_json_sha256": "54c87448282d3cb15802d7a8555a6e4269ba88efe316aa8821bebc4d8f4bab1e"
+ },
+ "packet_id": "b22efe25ade75d40df9982d62c5af85fbd213fa4",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "6daffc61-2ea9-4f2d-83fe-aabdc8d8f637",
+ "started_utc": "2026-09-30T03:43:20+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Cockerel_Pose-b",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 11981,
+  "cache_read_input_tokens": 13497,
+  "input_tokens": 6,
+  "output_tokens": 1852,
+  "thinking_tokens": 659
+ },
+ "warnings": []
+}

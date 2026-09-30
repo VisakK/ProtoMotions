@@ -1,0 +1,157 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1b",
+     "2b",
+     "3d",
+     "4b"
+    ],
+    "part": "pelvis",
+    "severity": "major"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1d",
+     "4d"
+    ],
+    "part": "left hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1d",
+     "4f"
+    ],
+    "part": "right hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1c",
+     "4c"
+    ],
+    "part": "left hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1c",
+     "4e"
+    ],
+    "part": "right hand",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "A",
+  "floating_parts": {
+   "A": [
+    "left hand",
+    "right hand",
+    "left foot",
+    "right foot"
+   ],
+   "B": [
+    "head",
+    "left forearm",
+    "right forearm",
+    "left hand",
+    "right hand",
+    "left foot",
+    "right foot"
+   ]
+  },
+  "more_natural": "A",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Same folded shape: forearms and head down, hips high, knees bent over the back. B is the same pose lifted higher off the floor."
+  },
+  "summary": "Both avatars show the same pose. A stays close to the grey body, with only small gaps under the hands and feet. B is raised as a whole, so its head, forearms, hands and feet hover above the floor on long drop lines. In both avatars the hands stand upright instead of lying flat."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1305864,
+ "duration_s": 16.79,
+ "errors": [],
+ "frame_hold": 848,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Bridge_Pose_or_Setu_Bandha_Sarvangasana_-a@848",
+ "inputs": {},
+ "item_id": "220923_Bridge_Pose_or_Setu_Bandha_Sarvangasana_-a@848#lift",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/1e75af5e564e5aecfc008d5c0726a9e6ba62d43a",
+  "images": {
+   "img_1.png": "d06099d4d1b25295147ab2aa78045d79e609209e9b9026b11450866916b40bd3",
+   "img_2.png": "fad8eb9bc63b6a6510e26c5dd1f1c650bda5bbb1ce65bcb1350862bc6371830e",
+   "img_3.png": "5b5663b6989fa761253215a3ac9ca993a323ba6b811d0f6d038817c547fcaaf1",
+   "img_4.png": "8e8f03e8f2cae7ce1c278190d689e5daf0a600f4f6465ddefc4125f708e911a4",
+   "img_5.png": "b39ffe95d31565bd6669d695dcf8cd0445b0c25cdefbc782364e1a9dbb89acdf"
+  },
+  "packet_json_sha256": "ac395f9d2750eb463d47d819a0d209f481e76d8302bf719f65bc223930d37b7e"
+ },
+ "packet_id": "1e75af5e564e5aecfc008d5c0726a9e6ba62d43a",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "94182c52-d9cc-4771-a4cf-b1deefe5122c",
+ "started_utc": "2026-09-30T02:35:24+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Bridge_Pose_or_Setu_Bandha_Sarvangasana_-a",
+ "stratum": "lift",
+ "usage": {
+  "cache_creation_input_tokens": 12010,
+  "cache_read_input_tokens": 13512,
+  "input_tokens": 6,
+  "output_tokens": 1589,
+  "thinking_tokens": 379
+ },
+ "warnings": []
+}

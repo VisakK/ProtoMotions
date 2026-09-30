@@ -1,0 +1,136 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "3a",
+     "1a",
+     "3c"
+    ],
+    "part": "left thigh",
+    "severity": "major"
+   },
+   {
+    "avatar": "A",
+    "kind": "through_body",
+    "panels": [
+     "1a",
+     "3c"
+    ],
+    "part": "right thigh",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1a",
+     "3c",
+     "2a"
+    ],
+    "part": "head",
+    "severity": "major"
+   },
+   {
+    "avatar": "B",
+    "kind": "through_body",
+    "panels": [
+     "4f",
+     "2d"
+    ],
+    "part": "left thigh",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "B",
+  "floating_parts": {
+   "A": [
+    "right hand"
+   ],
+   "B": []
+  },
+  "more_natural": "B",
+  "same_pose": {
+   "answer": "no",
+   "reason": "In A both legs lie parallel, stretched back to one side, and the head juts far forward. In B the legs split in different directions like the grey body's, with the left leg raised high."
+  },
+  "summary": "B matches the grey body's arm balance: the legs split in different directions and the torso is tucked. A puts both legs parallel and trailing to one side and pushes its head far forward, so it is a different shape. In both, the hands sit at or near the floor."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1364072,
+ "duration_s": 22.69,
+ "errors": [],
+ "frame_hold": 1221,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-a@1199",
+ "inputs": {},
+ "item_id": "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-a@1199#swap",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/7b1605e93560010378545f671c8e7c48454c0891",
+  "images": {
+   "img_1.png": "579a4dea73c58c4dafedb5c7a1515dd3e5a7ca222ce2dc8eb56ab7f6d03806c3",
+   "img_2.png": "87141dee71780e2304305425498882e9c54470681a978f5f4b5203bddf934e25",
+   "img_3.png": "74e1f58764cad462a5e1dd4c8c12ca7fa93659b1183aac3fb0252781a2e15891",
+   "img_4.png": "79213596ba8b250679f0b9841d383d0e990fe3ba48efdb690071cb88ae513baf",
+   "img_5.png": "57a8db121d9cc944b81fe6698c98b7ee366b561dd4cc5e6401ee16f28428cca2"
+  },
+  "packet_json_sha256": "e8e0dbe9f4b41a23e0dbc6b68e4441b316dcb12916b0adb22944788c4aa4ed57"
+ },
+ "packet_id": "7b1605e93560010378545f671c8e7c48454c0891",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "f7260185-8656-4efa-8198-f8826f36100a",
+ "started_utc": "2026-09-30T02:33:41+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-a",
+ "stratum": "swap",
+ "usage": {
+  "cache_creation_input_tokens": 11946,
+  "cache_read_input_tokens": 13476,
+  "input_tokens": 6,
+  "output_tokens": 1906,
+  "thinking_tokens": 816
+ },
+ "warnings": []
+}

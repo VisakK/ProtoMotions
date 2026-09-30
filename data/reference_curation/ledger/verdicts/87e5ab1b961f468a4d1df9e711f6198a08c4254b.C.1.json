@@ -1,0 +1,150 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1a",
+     "2c",
+     "3c",
+     "4e"
+    ],
+    "part": "left foot",
+    "severity": "major"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1a",
+     "2c",
+     "3c",
+     "4e"
+    ],
+    "part": "right foot",
+    "severity": "major"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "4c",
+     "1c"
+    ],
+    "part": "right hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "4a",
+     "1a"
+    ],
+    "part": "left hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "through_body",
+    "panels": [
+     "4b",
+     "4d"
+    ],
+    "part": "left shin",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "B",
+  "floating_parts": {
+   "A": [
+    "left foot",
+    "right foot",
+    "right hand"
+   ],
+   "B": []
+  },
+  "more_natural": "B",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both show the same shape: hands on the floor, arms straight, legs extended back to the feet, hips raised. A's legs sit a bit higher, with the feet lifted off the floor."
+  },
+  "summary": "Same pose in both. A's legs ride above the grey legs, its tilted feet hover over the floor, and its right hand is slightly lifted. B's legs follow the grey legs and its feet and hands rest on the floor, so B is closer to the human and more natural."
+ },
+ "audit_id": null,
+ "cost_usd": 0.128743,
+ "duration_s": 15.33,
+ "errors": [],
+ "frame_hold": 1409,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220926_Upward_Plank_Pose_or_Purvottanasana_-a@1409",
+ "inputs": {},
+ "item_id": "220926_Upward_Plank_Pose_or_Purvottanasana_-a@1409#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/87e5ab1b961f468a4d1df9e711f6198a08c4254b",
+  "images": {
+   "img_1.png": "985ba8d6795705b538765d365dd6c4ef7ac3b4e24061a47ed7c7ab1032591508",
+   "img_2.png": "a4479a4edecc4b38f4157571e0ba43510b018fc31b344b1e461060c05754d3f4",
+   "img_3.png": "0b46b8fd59ae1b585c9c7b5cf0ebbb8068e1d6f176694715307673b0486e5523",
+   "img_4.png": "f208fed1c2874b8baabc88e7714ea20994555f4fbed69199baf709b742d2d41a",
+   "img_5.png": "d958f900acaf4b7882d59c3668740cce06b46a720dc7298e088c877c73072ee7"
+  },
+  "packet_json_sha256": "8d540362c826e73fa96e5057156b221dd716067990fe6eed5678e696abc16f9d"
+ },
+ "packet_id": "87e5ab1b961f468a4d1df9e711f6198a08c4254b",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "132248d6-d120-4dde-b72c-03f850a6836d",
+ "started_utc": "2026-09-30T03:18:51+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220926_Upward_Plank_Pose_or_Purvottanasana_-a",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 11985,
+  "cache_read_input_tokens": 13495,
+  "input_tokens": 6,
+  "output_tokens": 1507,
+  "thinking_tokens": 324
+ },
+ "warnings": []
+}

@@ -1,0 +1,153 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1a",
+     "1c",
+     "3c",
+     "5c"
+    ],
+    "part": "torso",
+    "severity": "major"
+   },
+   {
+    "avatar": "A",
+    "kind": "through_body",
+    "panels": [
+     "1a",
+     "3c",
+     "4a",
+     "4c"
+    ],
+    "part": "head",
+    "severity": "major"
+   },
+   {
+    "avatar": "A",
+    "kind": "through_body",
+    "panels": [
+     "1a",
+     "1c",
+     "3c",
+     "4c"
+    ],
+    "part": "right forearm",
+    "severity": "major"
+   },
+   {
+    "avatar": "A",
+    "kind": "through_body",
+    "panels": [
+     "1c",
+     "2a",
+     "2c",
+     "4c"
+    ],
+    "part": "left forearm",
+    "severity": "major"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1a",
+     "2a",
+     "3c"
+    ],
+    "part": "right thigh",
+    "severity": "major"
+   }
+  ],
+  "closer_to_human": "B",
+  "floating_parts": {
+   "A": [
+    "left foot"
+   ],
+   "B": []
+  },
+  "more_natural": "B",
+  "same_pose": {
+   "answer": "no",
+   "reason": "B stands upright in a wide lunge with arms straight out to the sides. A's torso is folded down with the head at knee height, the arms bent in against the body, and the stance is narrower."
+  },
+  "summary": "B matches the grey body: a wide lunge with the arms straight out and both feet on the floor. A has collapsed, with the torso folded down, the head at knee height, the arms tucked in, a narrower stance and a slightly raised left foot, so it is not the same pose."
+ },
+ "audit_id": null,
+ "cost_usd": 0.121704,
+ "duration_s": 15.76,
+ "errors": [],
+ "frame_hold": 572,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220926_Warrior_II_Pose_or_Virabhadrasana_II_-a@572",
+ "inputs": {},
+ "item_id": "220926_Warrior_II_Pose_or_Virabhadrasana_II_-a@572#swap",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/335059dca5a58185c879e57df432db8317eda6a8",
+  "images": {
+   "img_1.png": "acb6c48254265c463cb15b8dc38538c15ca717eca798aa9ce9d36f8212412a82",
+   "img_2.png": "c16d43049cf2641a6596394e833fa6ce13238823716fefd93388355ed0ef040f",
+   "img_3.png": "8a869ba1975be4f59434714fc86efbd8bbc37497f5c3d21f4979e2d6a4ea30f1",
+   "img_4.png": "6e2277082e4b9a8c8c57c703e20cafd22a8c35a48aed4b235aa5eef1ad5cf143",
+   "img_5.png": "98b8a542a852758c442e5b71cefd3a7992e20cb72862ff361e9dcd6f9d59257f"
+  },
+  "packet_json_sha256": "d6bf64fc8e6f08d512a554cfe870f7a4a93a176697150bf8e8652b39be8d5254"
+ },
+ "packet_id": "335059dca5a58185c879e57df432db8317eda6a8",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "6de79eda-9544-48d1-a63f-eb89be31181e",
+ "started_utc": "2026-09-30T02:35:22+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220926_Warrior_II_Pose_or_Virabhadrasana_II_-a",
+ "stratum": "swap",
+ "usage": {
+  "cache_creation_input_tokens": 11244,
+  "cache_read_input_tokens": 13440,
+  "input_tokens": 6,
+  "output_tokens": 1452,
+  "thinking_tokens": 291
+ },
+ "warnings": []
+}

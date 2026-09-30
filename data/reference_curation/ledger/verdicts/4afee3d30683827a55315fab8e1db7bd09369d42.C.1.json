@@ -1,0 +1,131 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "through_body",
+    "panels": [
+     "1a",
+     "3c",
+     "5c"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "4f",
+     "1d",
+     "3d"
+    ],
+    "part": "right hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "4d",
+     "1b",
+     "3d"
+    ],
+    "part": "left hand",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "A",
+  "floating_parts": {
+   "A": [
+    "head"
+   ],
+   "B": [
+    "head",
+    "right hand",
+    "left hand"
+   ]
+  },
+  "more_natural": "A",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both are inverted with the head down, both hands on the floor either side and legs folded and crossed above. A's knees sit lower and more folded than B's, which is only a small change."
+  },
+  "summary": "Same folded-leg inverted pose. Both heads hover above the floor. A's hands lie flat on the floor, but B's are tilted and partly raised, so A matches the floor contacts better. B's folded legs follow the grey outline a bit more closely."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1682024,
+ "duration_s": 25.14,
+ "errors": [],
+ "frame_hold": 1797,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Cockerel_Pose-b@1797",
+ "inputs": {},
+ "item_id": "220923_Cockerel_Pose-b@1797#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/4afee3d30683827a55315fab8e1db7bd09369d42",
+  "images": {
+   "img_1.png": "d7b8448be494036687bba34de77a6469be9e883662adb053a69694aa82140504",
+   "img_2.png": "bf1b7db7dabbd27d6da4284938bbf0b751eda310405d800c9348f6eb08cbbd60",
+   "img_3.png": "4a154a4bdfd9e093a85328e9b8b2548377b39091e5c392d90af94f5fd04e441c",
+   "img_4.png": "f76f135786625b6a6355b8716af268040fd12cb86e5422f11c926b9aa62c52c5",
+   "img_5.png": "1c8bd6f544cfc2824b24357c33a9a70cf45e3c09dd8d9562980970a5fc60cad7"
+  },
+  "packet_json_sha256": "97566202e199fceec9d6d3b3d10459f9ecfeaa144ab45cdceccd418dc20526d9"
+ },
+ "packet_id": "4afee3d30683827a55315fab8e1db7bd09369d42",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "6d1228e3-1a98-4f6c-96c4-c20ba79b2f05",
+ "started_utc": "2026-09-30T06:13:57+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Cockerel_Pose-b",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 15050,
+  "cache_read_input_tokens": 10392,
+  "input_tokens": 6,
+  "output_tokens": 2285,
+  "thinking_tokens": 1207
+ },
+ "warnings": []
+}

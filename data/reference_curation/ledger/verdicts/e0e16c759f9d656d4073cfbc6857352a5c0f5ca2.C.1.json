@@ -1,0 +1,125 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "impossible_joint",
+    "panels": [
+     "4a",
+     "3c",
+     "1a"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "impossible_joint",
+    "panels": [
+     "4a",
+     "3c"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "through_body",
+    "panels": [
+     "4a",
+     "3c"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "B",
+  "floating_parts": {
+   "A": [
+    "left foot"
+   ],
+   "B": []
+  },
+  "more_natural": "B",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both stand upright on both feet with the arms held out to the sides. Only the legs and feet differ: A has knock knees and tilted feet, while B has straighter legs and flat feet."
+  },
+  "summary": "Both show the same pose: standing with the arms out to the sides. A's knees knock inward, both feet roll onto their edges and press into each other, and the left foot hovers just above the floor. B's feet rest flat on the floor, like the grey body's, so B is closer to the performer and looks more natural."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1163862,
+ "duration_s": 15.43,
+ "errors": [],
+ "frame_hold": 21,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Scale_Pose_or_Tolasana_-a@21",
+ "inputs": {},
+ "item_id": "220923_Scale_Pose_or_Tolasana_-a@21#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/e0e16c759f9d656d4073cfbc6857352a5c0f5ca2",
+  "images": {
+   "img_1.png": "e3b803277c504f49fa9d64d85bcad513ff99f8a9e4043bcb77c8b9d8e208f64a",
+   "img_2.png": "ed052b8b9a28c5aef38286c66ec45be3e97c818f4397f13e528173e36d1ba227",
+   "img_3.png": "a3199702b4d203886837b7cd0757a8b486ada499914876e0c3a3d0ba566d67dd",
+   "img_4.png": "3f1a6dccb6171810e973a8000881bb7a3345dab811a039b2f40fbff47c80c9de",
+   "img_5.png": "f42d34e166b3d64b90b87e2b8800b2d87dbfa6acea9e8db885ca46569c616b8a"
+  },
+  "packet_json_sha256": "bfb037844cd7d62bb3f709ce8caa918a305fc51a8a1bcca96c6551dda8c35c2e"
+ },
+ "packet_id": "e0e16c759f9d656d4073cfbc6857352a5c0f5ca2",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "5e934d7b-ce36-437e-bc84-c47dd52345af",
+ "started_utc": "2026-09-30T06:17:10+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Scale_Pose_or_Tolasana_-a",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 10597,
+  "cache_read_input_tokens": 13431,
+  "input_tokens": 6,
+  "output_tokens": 1445,
+  "thinking_tokens": 326
+ },
+ "warnings": []
+}

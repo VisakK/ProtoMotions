@@ -1,0 +1,147 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "B",
+    "kind": "through_floor",
+    "panels": [
+     "1b",
+     "2b",
+     "3b",
+     "4b",
+     "5d"
+    ],
+    "part": "left hand",
+    "severity": "major"
+   },
+   {
+    "avatar": "B",
+    "kind": "through_floor",
+    "panels": [
+     "1d",
+     "2b",
+     "4d",
+     "5d"
+    ],
+    "part": "right hand",
+    "severity": "major"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1a",
+     "3c",
+     "4a",
+     "4c"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1a",
+     "3c",
+     "4a",
+     "4c"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "A",
+  "floating_parts": {
+   "A": [
+    "left foot",
+    "right foot"
+   ],
+   "B": [
+    "left foot",
+    "right foot"
+   ]
+  },
+  "more_natural": "A",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Same low crouch in both, with hands forward on the floor and the same limb layout. B sits a few cm lower and its hands have sunk into the floor."
+  },
+  "summary": "Same crouch. A's hands rest on the floor like the grey body's, but its feet hover about 5\u20137 cm up. B sits lower and its feet hover less, but both hands are buried below the floor, so A matches the performer better and looks more natural."
+ },
+ "audit_id": null,
+ "cost_usd": 0.134294,
+ "duration_s": 21.74,
+ "errors": [],
+ "frame_hold": 543,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Shoulder-Pressing_Pose_or_Bhujapidasana_-a@543",
+ "inputs": {},
+ "item_id": "220923_Shoulder-Pressing_Pose_or_Bhujapidasana_-a@543#sink",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/9a8cb9fade304c53df35a2f55d9eadd46e68b5f1",
+  "images": {
+   "img_1.png": "3ef227b03d416b74b6f9ed0d2a6ee6b99921fc6bbe8944aab64aa5fad921ffb6",
+   "img_2.png": "d4e8828bc145597f9a84f54f9df0103e6481205b9f49ca15c809a738e1a564b2",
+   "img_3.png": "b3cdcec0ae9292e473601e020491f7ff2f9069d9f46191ec23cf65a719471dc0",
+   "img_4.png": "dc78b622eb890fd03662c1e1610d890aece95238e9da286b157cc435bac3f3ef",
+   "img_5.png": "1655956d7c3478f7280e70e46c0cf1ed004e98e2b3d138a09c6132337671d8bb"
+  },
+  "packet_json_sha256": "e0dba44e80ebc11fec1d844e504b72f1dfc918b1439a367024c4bc70bbd64c4a"
+ },
+ "packet_id": "9a8cb9fade304c53df35a2f55d9eadd46e68b5f1",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "2f265ba4-be79-41e3-b567-94801c98e3ac",
+ "started_utc": "2026-09-30T02:39:12+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Shoulder-Pressing_Pose_or_Bhujapidasana_-a",
+ "stratum": "sink",
+ "usage": {
+  "cache_creation_input_tokens": 11302,
+  "cache_read_input_tokens": 13470,
+  "input_tokens": 6,
+  "output_tokens": 2058,
+  "thinking_tokens": 897
+ },
+ "warnings": []
+}

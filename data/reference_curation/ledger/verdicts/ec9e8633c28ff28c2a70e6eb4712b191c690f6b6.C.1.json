@@ -1,0 +1,147 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1a",
+     "1c",
+     "3c",
+     "4a"
+    ],
+    "part": "head",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1a",
+     "3c",
+     "5c"
+    ],
+    "part": "left hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1c",
+     "2a",
+     "4a"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "through_body",
+    "panels": [
+     "1d",
+     "3b",
+     "4b"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "through_floor",
+    "panels": [
+     "3d",
+     "4b"
+    ],
+    "part": "left hand",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "B",
+  "floating_parts": {
+   "A": [],
+   "B": []
+  },
+  "more_natural": "B",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both show the same arm balance: hands on the floor, knees resting on the upper arms, feet off the floor. A's hands are set wider and its feet hang lower, but the overall shape is the same."
+  },
+  "summary": "Both avatars do the same arm balance with both hands planted. B's hands, head and tucked-up feet stay close to the grey body. A's hands sit wider than the grey body's, and its head and feet hang lower. Neither avatar has a floating part."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1345448,
+ "duration_s": 23.19,
+ "errors": [],
+ "frame_hold": 2355,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Cockerel_Pose-b@2355",
+ "inputs": {},
+ "item_id": "220923_Cockerel_Pose-b@2355#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/ec9e8633c28ff28c2a70e6eb4712b191c690f6b6",
+  "images": {
+   "img_1.png": "81ba6cdf3373bcd36c9ea1098d3825a526e413f75e77b5626d58eb7870797780",
+   "img_2.png": "7567c37612ef2550c3fd7e102e902e3d8469a8becdd4c726ea865f3cee793d14",
+   "img_3.png": "afaeac43a57a5e1f94df2892e783859dbdcae7ffe9b3855fc0884b783d9f5075",
+   "img_4.png": "20d0200a0103a62cf7af5e9952f0006d69e59313ad6365e22928b921914d860c",
+   "img_5.png": "467fc9c264f17cfdfbe58935cdfa007a3ce2d803b347e2942902e2c028f3d15b"
+  },
+  "packet_json_sha256": "53eefbdaa2862998991737c2c91ef2df56ff81a96604c0db818c7ccb50e2530d"
+ },
+ "packet_id": "ec9e8633c28ff28c2a70e6eb4712b191c690f6b6",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "de5ff7b4-790f-4183-ba37-e283dc5babd0",
+ "started_utc": "2026-09-30T06:14:20+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Cockerel_Pose-b",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 11296,
+  "cache_read_input_tokens": 13464,
+  "input_tokens": 6,
+  "output_tokens": 2073,
+  "thinking_tokens": 885
+ },
+ "warnings": []
+}

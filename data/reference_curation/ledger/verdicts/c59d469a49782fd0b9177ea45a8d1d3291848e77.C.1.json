@@ -1,0 +1,127 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "4b",
+     "4f",
+     "2d"
+    ],
+    "part": "right hand",
+    "severity": "major"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "4b",
+     "4d",
+     "2d"
+    ],
+    "part": "left hand",
+    "severity": "major"
+   },
+   {
+    "avatar": "B",
+    "kind": "impossible_joint",
+    "panels": [
+     "4b",
+     "4f"
+    ],
+    "part": "right hand",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "A",
+  "floating_parts": {
+   "A": [],
+   "B": [
+    "left hand",
+    "right hand"
+   ]
+  },
+  "more_natural": "A",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both show the same low plank with bent elbows, straight legs on the toes and the hands under the shoulders. Only the hand placement differs."
+  },
+  "summary": "Both avatars hold the same low plank. In A the hands lie flat on the floor like the grey body. In B both hands are tilted and hover above the floor, with drop lines under them, so they carry no weight. A is closer to the performer and looks more natural."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1262706,
+ "duration_s": 15.01,
+ "errors": [],
+ "frame_hold": 485,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Four-Limbed_Staff_Pose_or_Chaturanga_Dandasana_-a@485",
+ "inputs": {},
+ "item_id": "220923_Four-Limbed_Staff_Pose_or_Chaturanga_Dandasana_-a@485#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/c59d469a49782fd0b9177ea45a8d1d3291848e77",
+  "images": {
+   "img_1.png": "81569718cc980851aa55eb824c17298b0a55246cc60e048ffd07e8d40c7b9a81",
+   "img_2.png": "3a9b5d355838cf4ef224daff074c6794c4e6a1c83ea9095d483b8a82a6809eaa",
+   "img_3.png": "b40a8c62c1ed3c8a5827a72b3f6269406f57cc6689d801f219b0bd16671b4303",
+   "img_4.png": "9160d88560ac85e35748cee002d94f164615009a224178dc8dd60d6a551610d2",
+   "img_5.png": "a0edd22c1a52e9aaad3505438b8383ba9ab1a3cbaef29bdf8300a30a19ef014a"
+  },
+  "packet_json_sha256": "60c23a9747bc76b334740824b7bbe1935f6fbbeb8bcc4e72b29f0dd8b8df3fb0"
+ },
+ "packet_id": "c59d469a49782fd0b9177ea45a8d1d3291848e77",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "b56a3ad0-931d-4a57-b08a-1e90c63e8252",
+ "started_utc": "2026-09-30T03:50:35+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Four-Limbed_Staff_Pose_or_Chaturanga_Dandasana_-a",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 11981,
+  "cache_read_input_tokens": 13493,
+  "input_tokens": 6,
+  "output_tokens": 1385,
+  "thinking_tokens": 316
+ },
+ "warnings": []
+}

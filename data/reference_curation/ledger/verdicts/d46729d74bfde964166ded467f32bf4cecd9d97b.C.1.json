@@ -1,0 +1,118 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1b",
+     "3d",
+     "5d"
+    ],
+    "part": "pelvis",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "3d",
+     "4b"
+    ],
+    "part": "right hand",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "A",
+  "floating_parts": {
+   "A": [
+    "right foot"
+   ],
+   "B": [
+    "right hand",
+    "right foot"
+   ]
+  },
+  "more_natural": "A",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both avatars hold the same shape: right hand and right foot on the floor, left leg and left arm raised and meeting overhead. B sits higher, but the pose and limb placement are the same."
+  },
+  "summary": "The pose is the same in both. B's whole body sits higher than the grey body, so its right hand and right foot hover well above the floor (long drop lines in 4b and 4d). A matches the grey body closely, and only its right foot hovers slightly."
+ },
+ "audit_id": null,
+ "cost_usd": 0.120404,
+ "duration_s": 14.83,
+ "errors": [],
+ "frame_hold": 956,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Side_Plank_Pose_or_Vasisthasana_-b@956",
+ "inputs": {},
+ "item_id": "220923_Side_Plank_Pose_or_Vasisthasana_-b@956#lift",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/d46729d74bfde964166ded467f32bf4cecd9d97b",
+  "images": {
+   "img_1.png": "1f6f2308d5e3b92d578e30fdcea70d9eb7ded55ca34604267d25ea4d48054a50",
+   "img_2.png": "3729f93d08fdcd201cabbee4891c22018cb6d12697013204c8aad954df001513",
+   "img_3.png": "f4441bdfd0ff9926e42d0f58023fdd1607d427c2bc8a975d33a7286d79d061d8",
+   "img_4.png": "5b3d7d4b8afb549a4daf2c7a6089d7364045f0930222abbcad4eb35ec3a1ebda",
+   "img_5.png": "d075d852122aab42a36c8ff6cdf8009cc5610daa77e05c58e3cd36e2e43f13ec"
+  },
+  "packet_json_sha256": "2dc14b88ff60d5f90cf151b624c8d441b5d551b342c3aca9a1fcbb0d633cb1b1"
+ },
+ "packet_id": "d46729d74bfde964166ded467f32bf4cecd9d97b",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "a663016c-1383-41ac-969e-ad244c902470",
+ "started_utc": "2026-09-30T02:37:07+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Side_Plank_Pose_or_Vasisthasana_-b",
+ "stratum": "lift",
+ "usage": {
+  "cache_creation_input_tokens": 11276,
+  "cache_read_input_tokens": 13460,
+  "input_tokens": 6,
+  "output_tokens": 1374,
+  "thinking_tokens": 339
+ },
+ "warnings": []
+}

@@ -1,0 +1,140 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1a",
+     "3c",
+     "4c"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1b",
+     "3d",
+     "4d"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1a",
+     "4a"
+    ],
+    "part": "right hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1b",
+     "4b"
+    ],
+    "part": "right hand",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "equal",
+  "floating_parts": {
+   "A": [
+    "right foot",
+    "right hand"
+   ],
+   "B": [
+    "right foot",
+    "right hand"
+   ]
+  },
+  "more_natural": "equal",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both show the same shape: right hand and right foot on the floor, left leg raised high to meet the raised left hand, with the torso turned sideways. Limb placement matches in every view."
+  },
+  "summary": "A and B look practically identical. In both, the right foot box is tilted and sits above the grey foot, which is flat on the floor, so a drop line shows. The right hand also hovers slightly above the floor. There is no jitter across the time strip, and I found no difference that matters."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1244644,
+ "duration_s": 17.01,
+ "errors": [],
+ "frame_hold": 956,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Side_Plank_Pose_or_Vasisthasana_-b@956",
+ "inputs": {},
+ "item_id": "220923_Side_Plank_Pose_or_Vasisthasana_-b@956#identity",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/4f250e30183ae9514078ff4aeabb16368d2af271",
+  "images": {
+   "img_1.png": "cb57c43b8122575b2523906d61c703139f9b1b84869107738e59173b8294bb17",
+   "img_2.png": "a7120a06a36fb4f4963132a0368b702c45f5612a4cb0f6a957bcedba12f8da07",
+   "img_3.png": "d6e8e5f44a69ccb8e67cc287c3217a23d1fd6f21f323d7ef344d51e37b06e2b8",
+   "img_4.png": "cbab668f4ad13ba646c712ca08157906ffe489573216cc3a3bf47e6721c011d6",
+   "img_5.png": "996dd1ccd385f1905738122275a1efb877799603c16a3c944d8d13aff17b4b34"
+  },
+  "packet_json_sha256": "dac5e10317d79b92e20e978c6a350878dfc07426e926859ad426cd86fdd7115d"
+ },
+ "packet_id": "4f250e30183ae9514078ff4aeabb16368d2af271",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "6345ae2c-52d0-4977-b479-fb6d2063019e",
+ "started_utc": "2026-09-30T02:31:33+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Side_Plank_Pose_or_Vasisthasana_-b",
+ "stratum": "identity",
+ "usage": {
+  "cache_creation_input_tokens": 11254,
+  "cache_read_input_tokens": 13442,
+  "input_tokens": 6,
+  "output_tokens": 1586,
+  "thinking_tokens": 428
+ },
+ "warnings": []
+}

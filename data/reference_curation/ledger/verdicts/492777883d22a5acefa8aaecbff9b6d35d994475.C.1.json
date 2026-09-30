@@ -1,0 +1,106 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "B",
+    "kind": "impossible_joint",
+    "panels": [
+     "1b",
+     "1d",
+     "2b",
+     "2d",
+     "3d",
+     "5d"
+    ],
+    "part": "left shin",
+    "severity": "major"
+   }
+  ],
+  "closer_to_human": "A",
+  "floating_parts": {
+   "A": [],
+   "B": []
+  },
+  "more_natural": "A",
+  "same_pose": {
+   "answer": "no",
+   "reason": "In A the left leg reaches forward nearly straight, as in the grey body. In B the left knee is sharply bent and the left shin and foot point straight up into the air."
+  },
+  "summary": "A follows the grey body closely: both hands are on the floor and both legs reach forward. B matches everywhere except the left leg, whose shin is bent to point straight up, which is not the human pose and looks like an impossible bend at the knee. Both avatars keep their hands on the floor."
+ },
+ "audit_id": null,
+ "cost_usd": 0.12334339999999999,
+ "duration_s": 16.7,
+ "errors": [],
+ "frame_hold": 776,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Firefly_Pose_or_Tittibhasana_-a@776",
+ "inputs": {},
+ "item_id": "220923_Firefly_Pose_or_Tittibhasana_-a@776#kink",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/492777883d22a5acefa8aaecbff9b6d35d994475",
+  "images": {
+   "img_1.png": "7c3bd81862f9d0994dd70bebcbc1de337de0bf298e08f662754917135989efd8",
+   "img_2.png": "da8b5fcbb56547be62292349e872d6a1a7bef7f6eeb6f7a54930b5d84b5d9e46",
+   "img_3.png": "9d8d701398ae25650d675a37e781701800701ebba6c72478396f60053cc80be8",
+   "img_4.png": "370e773080b25fb3741b195f97031ac631c6288d17a0f6297281b3a4bc6b7f87",
+   "img_5.png": "f98fb00889bb11a62fff600797d5eb1d68d57fc0120908b6078c055541fa392f"
+  },
+  "packet_json_sha256": "2474cf4b685d366e8cb411daff41b9c6eddcf74b22aac7bd98dd4bbf7ba1f3b0"
+ },
+ "packet_id": "492777883d22a5acefa8aaecbff9b6d35d994475",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "c22b472a-bb0f-4a8a-9ed8-137991294315",
+ "started_utc": "2026-09-30T02:40:50+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Firefly_Pose_or_Tittibhasana_-a",
+ "stratum": "kink",
+ "usage": {
+  "cache_creation_input_tokens": 11249,
+  "cache_read_input_tokens": 13437,
+  "input_tokens": 6,
+  "output_tokens": 1532,
+  "thinking_tokens": 541
+ },
+ "warnings": []
+}

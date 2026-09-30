@@ -1,0 +1,31 @@
+{
+ "schema_version": 1,
+ "generator": {
+  "module": "reference_curation.roles",
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "sha256": "4fcc2594a4a6b3c25b90c73dfc0630d78d01beb44a341de130353b941d0cc649"
+ },
+ "inputs": {
+  "data/reference_curation/labels/holds_repaired_ftC_posefix.labels_v1.249a920cea/holds.yaml": "312c74a24f696559988e919a2afc0cf5376cc3a8ec7ed42b8d5fe061bd5a69fe",
+  "data/reference_curation/labels/holds_repaired_ftC_posefix.labels_v1.249a920cea/annotations.jsonl": "3a40b7243265cae13714084c5dba135a811f1743efc25d5ea6053260afca8725",
+  "data/reference_curation/statics/holds_repaired_ftC_posefix.labels_v1.249a920cea.statics_v1.7d3b9e15b4/holds.jsonl": "ddc3487d5f3f706ea8e59734e4ce4b7a811c997d0ce2bcb183e66b8598929f9b",
+  "data/reference_curation/statics/holds_repaired_ftC_posefix.labels_v1.249a920cea.statics_v1.7d3b9e15b4/contacts.jsonl": "19964b3f1ac16839e3d78dec55686e95ea757754cc32062e162d03cc23960162",
+  "data/reference_curation/retarget/holds_repaired_ftC_posefix.labels_v1.249a920cea.retarget_v1.22c19e569d/retarget.json": "7e68ec19bdae36aa7611dd47bacc074d15c9af3972ae6ffdd731fcac1a43819c"
+ },
+ "labels_id": "holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828",
+ "base_labels_id": "holds_repaired_ftC_posefix.labels_v1.249a920cea",
+ "statics_id": "holds_repaired_ftC_posefix.labels_v1.249a920cea.statics_v1.7d3b9e15b4",
+ "retarget_id": "holds_repaired_ftC_posefix.labels_v1.249a920cea.retarget_v1.22c19e569d",
+ "changes": {
+  "ground:required": 420,
+  "required_touch->required_support": 63,
+  "ground:useful": 266,
+  "pair:redundant": 63,
+  "pair:useful": 78,
+  "ground:undecided": 102,
+  "pair:open": 35,
+  "pair:undecided": 22,
+  "ground:redundant": 108,
+  "ground:not_realised": 28
+ }
+}

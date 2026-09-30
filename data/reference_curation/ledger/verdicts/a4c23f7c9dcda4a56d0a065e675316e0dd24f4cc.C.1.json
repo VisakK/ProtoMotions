@@ -1,0 +1,154 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "4a",
+     "2c",
+     "3c"
+    ],
+    "part": "left hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "4c",
+     "2c"
+    ],
+    "part": "right hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1c",
+     "4e"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1c",
+     "4e"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "4a",
+     "3c"
+    ],
+    "part": "left forearm",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "B",
+  "floating_parts": {
+   "A": [
+    "left hand",
+    "right hand",
+    "left forearm",
+    "right forearm",
+    "left foot",
+    "right foot",
+    "left shin",
+    "right shin"
+   ],
+   "B": [
+    "left forearm"
+   ]
+  },
+  "more_natural": "B",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both are on forearms and knees with toes tucked, hips high, head low. A just sits a few cm higher, so its contacts hover."
+  },
+  "summary": "A and B show the same pose, but A floats a few cm above the floor: its hands, forearms, knees and feet all have drop lines. B sits on the floor like the grey body, and only its left elbow has a slight gap."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1332892,
+ "duration_s": 17.86,
+ "errors": [],
+ "frame_hold": 383,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-d@357",
+ "inputs": {},
+ "item_id": "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-d@357#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/a4c23f7c9dcda4a56d0a065e675316e0dd24f4cc",
+  "images": {
+   "img_1.png": "4906b1085a4456efb37783816457f33fba3b56681bc84a464dce5f2679f83e43",
+   "img_2.png": "7c33ac805c9dff6bd26be404625967f22838a9886a3dbff51923d5372673ad4a",
+   "img_3.png": "e069ccf7914ff0c6349f70f55efb76583a32d79a08f84794a00e49dd7cb2979b",
+   "img_4.png": "aca1e28eb21238acc4abda94f7f5b3dcfa4479fe0a9826ea0bf9f6197baaa1ba",
+   "img_5.png": "47547a637f0d9e12892b4db406242ee4b82840e11e37d66af4927a0a9acfaba3"
+  },
+  "packet_json_sha256": "ed709fecd027acd45c435dcb6eacd6c112b6515bd054ddbdac3394a49c6c9c9e"
+ },
+ "packet_id": "a4c23f7c9dcda4a56d0a065e675316e0dd24f4cc",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "37cfa6d2-e58a-4ae8-a4d5-3ae7c7e37e2f",
+ "started_utc": "2026-09-30T03:49:22+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-d",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 12008,
+  "cache_read_input_tokens": 13506,
+  "input_tokens": 6,
+  "output_tokens": 1725,
+  "thinking_tokens": 536
+ },
+ "warnings": []
+}

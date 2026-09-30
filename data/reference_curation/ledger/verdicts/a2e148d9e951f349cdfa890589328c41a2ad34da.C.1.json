@@ -1,0 +1,121 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "4a",
+     "3c"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "4a",
+     "3c"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "through_floor",
+    "panels": [
+     "4a"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "B",
+  "floating_parts": {
+   "A": [],
+   "B": []
+  },
+  "more_natural": "B",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both stand upright with arms spread wide and both feet on the floor; only the foot tilt and leg angles differ slightly."
+  },
+  "summary": "Both show the same standing pose with arms spread. B's feet sit flat on the floor like the grey body's. A's feet are tilted on their edges, and A's right foot corner dips slightly into the floor."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1143952,
+ "duration_s": 14.3,
+ "errors": [],
+ "frame_hold": 1855,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220926_Supported_Headstand_pose_or_Salamba_Sirsasana_-a@1855",
+ "inputs": {},
+ "item_id": "220926_Supported_Headstand_pose_or_Salamba_Sirsasana_-a@1855#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/a2e148d9e951f349cdfa890589328c41a2ad34da",
+  "images": {
+   "img_1.png": "cd7311b3d2d363b0d5fe8412cbc45438b07225b48f67337be01c6a86904b8ab7",
+   "img_2.png": "049b1c9459f6472277ce3a39c370ffdeb239cdf9eaca13cda38007fa9833b914",
+   "img_3.png": "73f3687c2c8be495f75a10818498454319ea20c374fcd8f00c9c0bcd23e19835",
+   "img_4.png": "249255d6bec3a042ae2817b7da796c9a42edebd74b4eca8850f8bd7a3261cf61",
+   "img_5.png": "4c0f6d0890db3f586a395ff2c7c6b358b014c166f220c1c21f40fa50678e6049"
+  },
+  "packet_json_sha256": "6dda33bef50ecb6ca5d004313df32ef3b434124eb2e7e9257ddcfd37285b4839"
+ },
+ "packet_id": "a2e148d9e951f349cdfa890589328c41a2ad34da",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "3a26d027-d2b6-4d4d-a272-92de00381247",
+ "started_utc": "2026-09-30T06:21:08+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220926_Supported_Headstand_pose_or_Salamba_Sirsasana_-a",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 10566,
+  "cache_read_input_tokens": 13416,
+  "input_tokens": 6,
+  "output_tokens": 1358,
+  "thinking_tokens": 331
+ },
+ "warnings": []
+}

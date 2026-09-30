@@ -1,0 +1,145 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "4b",
+     "4d",
+     "4f",
+     "3d"
+    ],
+    "part": "left foot",
+    "severity": "major"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "4b",
+     "4f",
+     "3d",
+     "1b"
+    ],
+    "part": "right foot",
+    "severity": "major"
+   },
+   {
+    "avatar": "B",
+    "kind": "through_body",
+    "panels": [
+     "1b",
+     "3d",
+     "5b",
+     "5d",
+     "5f"
+    ],
+    "part": "right thigh",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "4d",
+     "4f",
+     "2d"
+    ],
+    "part": "right hand",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "A",
+  "floating_parts": {
+   "A": [],
+   "B": [
+    "left foot",
+    "right foot",
+    "left hand",
+    "right hand"
+   ]
+  },
+  "more_natural": "A",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both show the same deep forward fold with bent knees, hands down by the feet and the head tucked low. B is the same shape lifted a few centimetres, with its feet and hands tilted off the floor."
+  },
+  "summary": "Both avatars hold the same forward fold. A has both feet flat on the floor and both hands down, matching the grey body. B is lifted: its feet are tilted and hover above the floor, both hands float, and the right thigh passes into the torso."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1322544,
+ "duration_s": 17.91,
+ "errors": [],
+ "frame_hold": 270,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Firefly_Pose_or_Tittibhasana_-a@270",
+ "inputs": {},
+ "item_id": "220923_Firefly_Pose_or_Tittibhasana_-a@270#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/dcbd3478d99a2de86c56c9686426e912c39b3189",
+  "images": {
+   "img_1.png": "4d6383ac86314a355e3af19ce980336b120137ce7142dd8b8b872d42cca29d64",
+   "img_2.png": "c8ea09b5d6075417afeca6d3acd8869466168c6f1f3fcd3550bd666321fe80ef",
+   "img_3.png": "94505d0889579bd21310adf338c33cc3e74768774ca7d430246021c8ea28d955",
+   "img_4.png": "3ae1a0c62cd544b14cb08c4b51317fe4b014ea5eb46468f428b4f0d6aefd820b",
+   "img_5.png": "27bbb56b3243b4d4d64cc1b8dce9371794bd335d02b0f2fc6c1f24375814460c"
+  },
+  "packet_json_sha256": "281a3de8d956170c91fe3fc84e26ebf7482a9ef73166e7dcae72f8210228a259"
+ },
+ "packet_id": "dcbd3478d99a2de86c56c9686426e912c39b3189",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "426bf7ed-09c1-421f-89c8-a9fdc8bdafbc",
+ "started_utc": "2026-09-30T03:49:59+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Firefly_Pose_or_Tittibhasana_-a",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 11974,
+  "cache_read_input_tokens": 13492,
+  "input_tokens": 6,
+  "output_tokens": 1687,
+  "thinking_tokens": 503
+ },
+ "warnings": []
+}

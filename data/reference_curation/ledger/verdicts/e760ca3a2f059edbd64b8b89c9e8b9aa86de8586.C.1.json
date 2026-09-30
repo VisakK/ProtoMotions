@@ -1,0 +1,100 @@
+{
+ "answer": {
+  "artefacts": [],
+  "closer_to_human": "B",
+  "floating_parts": {
+   "A": [
+    "left hand",
+    "right hand",
+    "left foot",
+    "right foot"
+   ],
+   "B": [
+    "right hand",
+    "left foot",
+    "right foot"
+   ]
+  },
+  "more_natural": "B",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both hold the same shape: arms straight and vertical with hands under the shoulders, legs extended back and feet on toes. A sits a few cm higher overall."
+  },
+  "summary": "Same pose in both. A floats above the grey body: both hands and both feet hover, with clear drop lines. B sits lower. Its left hand is on the floor and its right hand and feet hover only slightly, so it matches the grey body's floor contacts better. Neither avatar shows a clear penetration or joint defect."
+ },
+ "audit_id": null,
+ "cost_usd": 0.12736999999999998,
+ "duration_s": 15.07,
+ "errors": [],
+ "frame_hold": 1409,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220926_Upward_Plank_Pose_or_Purvottanasana_-a@1409",
+ "inputs": {},
+ "item_id": "220926_Upward_Plank_Pose_or_Purvottanasana_-a@1409#lift",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/e760ca3a2f059edbd64b8b89c9e8b9aa86de8586",
+  "images": {
+   "img_1.png": "18adcdeded5a1ff59913ec9b4b5aa0854828d03b3ceadecdceee1d41b8903f4f",
+   "img_2.png": "6757294a4b9f7344b0fe055c9ba433e9d8051cfa5a87911d02f25cacec0eeef7",
+   "img_3.png": "61734efa3d162ae3ee68205bf5481fc9ba423cccc3c80158333e9c5b2c5599d8",
+   "img_4.png": "2d848e861220f010a736ad4986dd370848ec3c2e643ab496c232eabf6ad951e1",
+   "img_5.png": "de45c7fd6deb1024968f82a70e1427e81bfa956cc10316c0fbaa2e83f67564aa"
+  },
+  "packet_json_sha256": "18d3b2efcdf1edf0d91f976ecb3edcbfb7bf02ab5f3b2a4862c997262c6ab73e"
+ },
+ "packet_id": "e760ca3a2f059edbd64b8b89c9e8b9aa86de8586",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "2460b7b2-687b-4419-abc8-020b1b9d6e94",
+ "started_utc": "2026-09-30T02:37:50+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220926_Upward_Plank_Pose_or_Purvottanasana_-a",
+ "stratum": "lift",
+ "usage": {
+  "cache_creation_input_tokens": 12008,
+  "cache_read_input_tokens": 13510,
+  "input_tokens": 6,
+  "output_tokens": 1429,
+  "thinking_tokens": 418
+ },
+ "warnings": []
+}

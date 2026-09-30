@@ -1,0 +1,163 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "impossible_joint",
+    "panels": [
+     "1a",
+     "3c",
+     "4c",
+     "5c"
+    ],
+    "part": "left hand",
+    "severity": "major"
+   },
+   {
+    "avatar": "A",
+    "kind": "impossible_joint",
+    "panels": [
+     "2a",
+     "4e"
+    ],
+    "part": "right hand",
+    "severity": "major"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "4b",
+     "4f",
+     "2b"
+    ],
+    "part": "right hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "4b",
+     "4d",
+     "3d"
+    ],
+    "part": "left hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "3c",
+     "4a",
+     "4c"
+    ],
+    "part": "head",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "3d",
+     "4b",
+     "4d"
+    ],
+    "part": "head",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "B",
+  "floating_parts": {
+   "A": [
+    "head"
+   ],
+   "B": [
+    "head",
+    "right hand"
+   ]
+  },
+  "more_natural": "B",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both show the same inverted shape: head down, legs piked up together with feet in the air, elbows bent and hands on the floor. Only the hand placement and arm angle differ slightly."
+  },
+  "summary": "It's the same inverted pike pose in both. A's hands lie flat but are turned backwards, pointing toward the head rather than the way the grey hands point. B's hands follow the grey hands but tilt up off the floor. In both, the head floats above the floor where the grey head rests on it."
+ },
+ "audit_id": null,
+ "cost_usd": 0.14342680000000002,
+ "duration_s": 24.0,
+ "errors": [],
+ "frame_hold": 931,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-b@931",
+ "inputs": {},
+ "item_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-b@931#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/9dd4bd86657b7c174b5e3f7d4d004a147aed2544",
+  "images": {
+   "img_1.png": "fa07c9bb099286f8f9d738ac54a4b03c574bb3b1d76adedfd4353c0f79f181a5",
+   "img_2.png": "1c11ac476e3ef7e1f6521b6314a4963db2a39457efee1983825138066dd696e0",
+   "img_3.png": "32402f37f11a357383a9026f1ed434824e4ce87066f10021caad6b1093d7c824",
+   "img_4.png": "c925fb9b4e2dc459d68a4363431391e29b55b1ad46d0678b966bf6dfac946e79",
+   "img_5.png": "449c334161768a8128b48ca204540eb6d6b04c5e6233a5261171bb2cb06ba618"
+  },
+  "packet_json_sha256": "e9ab82e12eb0074ed2689f67e925ce6149e8c89fe1c3df0f0e177b838ee6c42c"
+ },
+ "packet_id": "9dd4bd86657b7c174b5e3f7d4d004a147aed2544",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "ca0b674f-f306-4d4a-8b97-dec8b3fac17a",
+ "started_utc": "2026-09-30T06:19:47+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-b",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 11988,
+  "cache_read_input_tokens": 13494,
+  "input_tokens": 6,
+  "output_tokens": 2240,
+  "thinking_tokens": 947
+ },
+ "warnings": []
+}

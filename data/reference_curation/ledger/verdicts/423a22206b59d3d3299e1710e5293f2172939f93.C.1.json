@@ -1,0 +1,142 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1b",
+     "1d",
+     "3d",
+     "5d",
+     "5f"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1b",
+     "1d",
+     "3d",
+     "5d",
+     "5f"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "4f",
+     "2d"
+    ],
+    "part": "right hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "through_floor",
+    "panels": [
+     "4b",
+     "4d"
+    ],
+    "part": "left hand",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "A",
+  "floating_parts": {
+   "A": [],
+   "B": [
+    "left foot",
+    "right foot",
+    "right hand"
+   ]
+  },
+  "more_natural": "A",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both kneel on bent legs with hips raised and forearms and hands on the floor. B's shins and feet sit a few centimetres higher, but the overall shape and the floor contacts are the same."
+  },
+  "summary": "Both show the same kneeling pose on the forearms. A follows the grey body closely, with its feet and hands flat on the floor. In B the lower legs are raised, both feet hover above the floor, the right hand floats at a tilt and the left hand dips into the floor."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1377032,
+ "duration_s": 22.84,
+ "errors": [],
+ "frame_hold": 488,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-c@504",
+ "inputs": {},
+ "item_id": "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-c@504#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/423a22206b59d3d3299e1710e5293f2172939f93",
+  "images": {
+   "img_1.png": "2f709b7af4707f11ee0adeb6a2cc6a5a67a2e753e0a78be9a7cffc714981b5f3",
+   "img_2.png": "b6701465b7f04c9ec2f4ca2b8c2b7506ad9b449816ee5936a6ff463aaf2b1b1f",
+   "img_3.png": "541c5bc0e9cd4cf3e5452492d1b1a063ae6f459daad90c2474cf551aac832448",
+   "img_4.png": "d1005b9578de894dcb24b9be8fc834b1cbdc5642985bea5b427d9823d31316e7",
+   "img_5.png": "07580c1a23216f2f59da8c3ffa8cb16564c254f46262c7b69fb4bfde0f7b26e5"
+  },
+  "packet_json_sha256": "18ec72eb6637ac461d4fcbd9360ee4f05f192ec7fe7c862777d55ea0d9227eab"
+ },
+ "packet_id": "423a22206b59d3d3299e1710e5293f2172939f93",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "fa75d53f-5b8e-406b-9433-e995d7666289",
+ "started_utc": "2026-09-30T06:15:33+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-c",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 11970,
+  "cache_read_input_tokens": 13496,
+  "input_tokens": 6,
+  "output_tokens": 1961,
+  "thinking_tokens": 793
+ },
+ "warnings": []
+}

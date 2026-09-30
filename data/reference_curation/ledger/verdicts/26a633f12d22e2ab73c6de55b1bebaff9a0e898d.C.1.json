@@ -1,0 +1,136 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "3d",
+     "4b",
+     "1d"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1b",
+     "4b",
+     "5d"
+    ],
+    "part": "left shin",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "through_body",
+    "panels": [
+     "1c",
+     "2a"
+    ],
+    "part": "left hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "through_body",
+    "panels": [
+     "1d",
+     "2b"
+    ],
+    "part": "left hand",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "A",
+  "floating_parts": {
+   "A": [],
+   "B": [
+    "left foot"
+   ]
+  },
+  "more_natural": "A",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both stand in the same split stance with both feet flat on the floor and hands held at the chest. B stands a bit taller, with its left leg reaching slightly further out."
+  },
+  "summary": "Same pose in both. A matches the grey body closely, with both feet flat on the floor. In B the left foot is tilted and lifted slightly off the floor (a drop line shows the gap), and the left leg drifts outside the grey body."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1213354,
+ "duration_s": 27.07,
+ "errors": [],
+ "frame_hold": 546,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220926_Intense_Side_Stretch_Pose_or_Parsvottanasana_-b@546",
+ "inputs": {},
+ "item_id": "220926_Intense_Side_Stretch_Pose_or_Parsvottanasana_-b@546#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/26a633f12d22e2ab73c6de55b1bebaff9a0e898d",
+  "images": {
+   "img_1.png": "0e4d6a38bf833290c75677779667a32d1f759d46799347411fa588549a9f0472",
+   "img_2.png": "c690c60d2b7056d1252a97f6ac5a6ae4a0da4a194fcbe1650523b5e15d06c393",
+   "img_3.png": "6395aed7ced9288ce93b132c52ff68f613db183f7b3a5c3a62062b4e8afeac76",
+   "img_4.png": "27fb3f6a27ea058a54c488b598688a22faaf1bfa2b6b14cd97633150a748d97c",
+   "img_5.png": "e1fd1f50cd32522bf27de9bca599ea1985c0e8faa416939035d3518475398479"
+  },
+  "packet_json_sha256": "1aaf86e2a8c0fdafc81850272a2ae931dee4a3c2319069e095036dbc6bfbc391"
+ },
+ "packet_id": "26a633f12d22e2ab73c6de55b1bebaff9a0e898d",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "c9122eba-a211-40d2-bebf-7d811f72e1e3",
+ "started_utc": "2026-09-30T04:03:31+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220926_Intense_Side_Stretch_Pose_or_Parsvottanasana_-b",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 11285,
+  "cache_read_input_tokens": 13457,
+  "input_tokens": 6,
+  "output_tokens": 1417,
+  "thinking_tokens": 295
+ },
+ "warnings": []
+}

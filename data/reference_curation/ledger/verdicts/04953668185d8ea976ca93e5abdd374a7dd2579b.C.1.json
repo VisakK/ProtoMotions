@@ -1,0 +1,145 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "B",
+    "kind": "through_body",
+    "panels": [
+     "2d",
+     "5b",
+     "5d",
+     "3b"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "through_body",
+    "panels": [
+     "4b",
+     "1d",
+     "5d"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "4d",
+     "3d"
+    ],
+    "part": "right hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "4b",
+     "3d"
+    ],
+    "part": "left hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "through_body",
+    "panels": [
+     "2a",
+     "4a"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "B",
+  "floating_parts": {
+   "A": [],
+   "B": []
+  },
+  "more_natural": "A",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both balance on flat hands with knees on bent arms, head low and feet lifted; B's feet are tucked higher and its hands a little narrower, but the shape is the same."
+  },
+  "summary": "Both show the same hands-on-floor arm balance with the feet lifted. B's hands sit closer to where the grey hands meet the floor, but they are tilted and its feet are tucked up onto the back. A's hands are flat but set wider than the grey hands."
+ },
+ "audit_id": null,
+ "cost_usd": 0.14816859999999998,
+ "duration_s": 30.54,
+ "errors": [],
+ "frame_hold": 2614,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Cockerel_Pose-b@2614",
+ "inputs": {},
+ "item_id": "220923_Cockerel_Pose-b@2614#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/04953668185d8ea976ca93e5abdd374a7dd2579b",
+  "images": {
+   "img_1.png": "89bdc23deb30d3c56d88ccfc263ce009d81aff18297e59e022cc6cc8b6935c49",
+   "img_2.png": "3e99bf360c6414b9f3778e22bb89fc1d129f8e88c5746b501932e1ca4a275bef",
+   "img_3.png": "3948c7c954a8651ad9b9896d2bf102f6bbdb7a588f5965d51647d70be68a2027",
+   "img_4.png": "767252d3a0d706ef735e6dc02b651e1cfcbb85c9d3873e7660ffd830e2cb0d70",
+   "img_5.png": "c5b48661711fe488e0a6c8e4dcaa4bab0435230246baaef1882f0eef9fa91f9d"
+  },
+  "packet_json_sha256": "abddb0a6f19da9af6bb53e3e392a927ba36230d34b8e690fdf3dd18197af7009"
+ },
+ "packet_id": "04953668185d8ea976ca93e5abdd374a7dd2579b",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "9859cc15-ec69-48ec-a876-4bbfb3885792",
+ "started_utc": "2026-09-30T06:14:22+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Cockerel_Pose-b",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 11279,
+  "cache_read_input_tokens": 13463,
+  "input_tokens": 6,
+  "output_tokens": 2761,
+  "thinking_tokens": 1567
+ },
+ "warnings": []
+}

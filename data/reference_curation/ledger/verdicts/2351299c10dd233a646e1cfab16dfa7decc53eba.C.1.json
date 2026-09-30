@@ -1,0 +1,154 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "3d",
+     "4d",
+     "4f",
+     "1b"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "impossible_joint",
+    "panels": [
+     "4b",
+     "4d",
+     "3d"
+    ],
+    "part": "right hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "impossible_joint",
+    "panels": [
+     "1b",
+     "4f",
+     "5d"
+    ],
+    "part": "left hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "3c",
+     "4a",
+     "4e"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "3d",
+     "4b",
+     "4f"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "A",
+  "floating_parts": {
+   "A": [
+    "left foot"
+   ],
+   "B": [
+    "left foot",
+    "right foot",
+    "right hand"
+   ]
+  },
+  "more_natural": "A",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both show the same crouched shape: both hands planted, knees bent high and the torso folded over. In B the right foot and right hand are only a few centimetres higher."
+  },
+  "summary": "Both avatars show the same pose. A matches the grey body at the floor more closely: its hands lie flat and its right foot is down. In B the right foot hovers, the right hand is raised and folded, and the left hand is crumpled. In both avatars the left foot floats."
+ },
+ "audit_id": null,
+ "cost_usd": 0.13435539999999999,
+ "duration_s": 18.66,
+ "errors": [],
+ "frame_hold": 371,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-c@371",
+ "inputs": {},
+ "item_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-c@371#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/2351299c10dd233a646e1cfab16dfa7decc53eba",
+  "images": {
+   "img_1.png": "ee018476a0a3781b8b0c97bcfd630dd1e16ef868a34088bc467350cae146e6c7",
+   "img_2.png": "064abd0183614d9ba0f466e4dcc0c3179f5fe2bee47317cbdbf2c5c7498d6c25",
+   "img_3.png": "12a3a3080ced7835167be2c0a7c87d2266275ca48592e58a9fc1ff3a8ed0e2ad",
+   "img_4.png": "cf1c888819c7cf8987d349016faae79fdbbb357404ee3058908505b79b81bf9b",
+   "img_5.png": "48d111687d7ad03a690176aa41259ed01b778eb4458da0b6a6886ba90483c4b4"
+  },
+  "packet_json_sha256": "de8958392af2490011aa7735ba7200df8d29327ed2c878e58a20034cf46ffc34"
+ },
+ "packet_id": "2351299c10dd233a646e1cfab16dfa7decc53eba",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "33cdadc4-fa5b-48b8-80b5-4c3eb69e0e8f",
+ "started_utc": "2026-09-30T03:16:18+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-c",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 11979,
+  "cache_read_input_tokens": 13497,
+  "input_tokens": 6,
+  "output_tokens": 1790,
+  "thinking_tokens": 561
+ },
+ "warnings": []
+}

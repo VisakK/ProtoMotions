@@ -1,0 +1,115 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "4b",
+     "3d",
+     "1d"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "4b",
+     "3d"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "A",
+  "floating_parts": {
+   "A": [],
+   "B": [
+    "left foot"
+   ]
+  },
+  "more_natural": "A",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both stand upright on both feet with arms spread out to the sides at shoulder height. B only sits slightly higher, with its feet tilted off the floor."
+  },
+  "summary": "Same standing pose with the arms spread. A's feet sit flat on the floor, matching the grey body. In B the whole body is raised a little and both feet are tilted. B's left foot hovers above the floor (drop line in 4b)."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1126342,
+ "duration_s": 13.38,
+ "errors": [],
+ "frame_hold": 9,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Cockerel_Pose-b@9",
+ "inputs": {},
+ "item_id": "220923_Cockerel_Pose-b@9#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/83adb4ca5916723d2de455fd0e136fcf3b181219",
+  "images": {
+   "img_1.png": "3fd5e0ace8b7d56fdc8afba0f05355eccff83d8c1d6326fe225b419c6a990d95",
+   "img_2.png": "7bced73bad8160a6454846ded54a30f71f1e4e0179129d61bd4fdc93f9054740",
+   "img_3.png": "45424b68fe0908a106e131d77acc0bcc9a49313bf3dd453998f4624a567b2ae3",
+   "img_4.png": "35bc254b8f70af5b3e4225d377d369925db8045220ed77100aca1fb3af687f09",
+   "img_5.png": "658ec513b296d8f9da7761f2f858e071eecef4529ed994432bc0bd3a70dad524"
+  },
+  "packet_json_sha256": "4b1eb014151fd0a3af11b7120c3c13888b46eb1e80bc4e1131b645a64510fd4f"
+ },
+ "packet_id": "83adb4ca5916723d2de455fd0e136fcf3b181219",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "93ea083c-82a2-4778-95ec-aed23d6073ad",
+ "started_utc": "2026-09-30T03:44:32+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Cockerel_Pose-b",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 10561,
+  "cache_read_input_tokens": 13411,
+  "input_tokens": 6,
+  "output_tokens": 1272,
+  "thinking_tokens": 245
+ },
+ "warnings": []
+}

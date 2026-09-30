@@ -1,0 +1,119 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1b",
+     "1d",
+     "4b",
+     "5d"
+    ],
+    "part": "left hand",
+    "severity": "major"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1b",
+     "2d",
+     "4d",
+     "5d"
+    ],
+    "part": "right hand",
+    "severity": "major"
+   }
+  ],
+  "closer_to_human": "A",
+  "floating_parts": {
+   "A": [],
+   "B": [
+    "left hand",
+    "right hand"
+   ]
+  },
+  "more_natural": "A",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both show the same arm-balance shape: hands planted under the shoulders, knees on the upper arms, feet off the floor, head forward. B sits a few centimetres higher."
+  },
+  "summary": "Both avatars show the same arm balance. A's hands rest on the floor where the grey body's hands are. B's whole body sits higher, so both of its hands hover about 5\u20138 cm above the floor, which means nothing is holding it up. A is closer to the human and looks more natural."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1187468,
+ "duration_s": 15.44,
+ "errors": [],
+ "frame_hold": 2614,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Cockerel_Pose-b@2614",
+ "inputs": {},
+ "item_id": "220923_Cockerel_Pose-b@2614#lift",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/215318da5b73141592e1dff2429b8f655b1a637f",
+  "images": {
+   "img_1.png": "3c3982ee6d54b142d8254941b33b23cb5965a242efc05abb0be086e11fe44df4",
+   "img_2.png": "1181490ba3e5fee8ad313b701704c56a4a31c1504550eb73b84304464139e6cc",
+   "img_3.png": "f261a757acdf9cc3b6eb6f38b5756925577fc92fb859b457a0060982f51bdb78",
+   "img_4.png": "daeb53e12c544f6e1ed4de14eede01d282cd9f9c33de700415b079c24e350c49",
+   "img_5.png": "01c47441331c6cb473977daad9edc4700eed2b0f6f0858b08efe0f6e84151c94"
+  },
+  "packet_json_sha256": "235686b8dfd71a4d1f726c678aab68d315366135bb6fa5adb1ff99e8bfccde89"
+ },
+ "packet_id": "215318da5b73141592e1dff2429b8f655b1a637f",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "518adfcb-3e09-4a9f-beaa-942d3600bd72",
+ "started_utc": "2026-09-30T02:35:35+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Cockerel_Pose-b",
+ "stratum": "lift",
+ "usage": {
+  "cache_creation_input_tokens": 11242,
+  "cache_read_input_tokens": 13434,
+  "input_tokens": 6,
+  "output_tokens": 1305,
+  "thinking_tokens": 273
+ },
+ "warnings": []
+}

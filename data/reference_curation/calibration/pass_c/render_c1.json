@@ -1,0 +1,288 @@
+{
+ "schema_version": 1,
+ "generator": {
+  "module": "reference_curation.edits",
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "sha256": "8316452ea07deb46cb67ecaae34dee654186e10f62369bee5a28b80045ee45e2"
+ },
+ "inputs": {
+  "data/scripts/reference_curation/prompts/pass_c.md": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e",
+  "data/scripts/reference_curation/schemas/pass_c.json": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "render_v": "render_c1",
+ "contract": "pass_c.v1",
+ "rule": {
+  "precision_min": 0.9,
+  "answered_rate_min": 0.5,
+  "items_min": 30,
+  "claims_min": 30
+ },
+ "classes": {
+  "pose_change": {
+   "items": 94,
+   "answered_rate": 1.0,
+   "claims": 32,
+   "precision": 1.0,
+   "precision_low": 0.8928,
+   "recall": 1.0,
+   "evidence": true
+  },
+  "artefact": {
+   "items": 82,
+   "answered_rate": 1.0,
+   "claims": 15,
+   "precision": 1.0,
+   "precision_low": 0.7961,
+   "recall": 0.375,
+   "evidence": false
+  },
+  "closer": {
+   "items": 42,
+   "answered_rate": 1.0,
+   "claims": 42,
+   "precision": 1.0,
+   "precision_low": 0.9162,
+   "recall": null,
+   "evidence": true
+  }
+ },
+ "by_kind": {
+  "sink": {
+   "pose_change:False": 20,
+   "artefact:True": 9,
+   "artefact:False": 11
+  },
+  "swap": {
+   "pose_change:True": 32
+  },
+  "lift": {
+   "pose_change:False": 30,
+   "artefact:False": 30,
+   "closer:A": 21,
+   "closer:B": 9
+  },
+  "identity": {
+   "pose_change:False": 12,
+   "artefact:False": 12,
+   "closer:equal": 12
+  },
+  "kink": {
+   "artefact:False": 14,
+   "artefact:True": 6
+  }
+ },
+ "edits": {
+  "reviewed": 300,
+  "accepted": 279,
+  "same_pose_no": 3,
+  "closer": {
+   "edited": 281,
+   "shipped": 19
+  },
+  "more_natural": {
+   "edited": 287,
+   "shipped": 13
+  },
+  "rejected": [
+   {
+    "item_id": "220923_Cockerel_Pose-b@2614#edit",
+    "hold_id": "220923_Cockerel_Pose-b@2614",
+    "accepted": false,
+    "same_pose": "yes",
+    "new_major_artefacts": [],
+    "closer": "shipped",
+    "more_natural": "edited"
+   },
+   {
+    "item_id": "220926_Eagle_Pose_or_Garudasana_-a@700#edit",
+    "hold_id": "220926_Eagle_Pose_or_Garudasana_-a@700",
+    "accepted": false,
+    "same_pose": "yes",
+    "new_major_artefacts": [],
+    "closer": "shipped",
+    "more_natural": "shipped"
+   },
+   {
+    "item_id": "220923_Shoulder-Pressing_Pose_or_Bhujapidasana_-a@543#edit",
+    "hold_id": "220923_Shoulder-Pressing_Pose_or_Bhujapidasana_-a@543",
+    "accepted": false,
+    "same_pose": "yes",
+    "new_major_artefacts": [],
+    "closer": "shipped",
+    "more_natural": "shipped"
+   },
+   {
+    "item_id": "220923_Scorpion_pose_or_vrischikasana-b@945#edit",
+    "hold_id": "220923_Scorpion_pose_or_vrischikasana-b@945",
+    "accepted": false,
+    "same_pose": "yes",
+    "new_major_artefacts": [],
+    "closer": "shipped",
+    "more_natural": "edited"
+   },
+   {
+    "item_id": "220923_Cockerel_Pose-b@2492#edit",
+    "hold_id": "220923_Cockerel_Pose-b@2492",
+    "accepted": false,
+    "same_pose": "yes",
+    "new_major_artefacts": [],
+    "closer": "shipped",
+    "more_natural": "shipped"
+   },
+   {
+    "item_id": "220923_Tree_Pose_or_Vrksasana_-a@1#edit",
+    "hold_id": "220923_Tree_Pose_or_Vrksasana_-a@1",
+    "accepted": false,
+    "same_pose": "yes",
+    "new_major_artefacts": [],
+    "closer": "shipped",
+    "more_natural": "edited"
+   },
+   {
+    "item_id": "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-a@494#edit",
+    "hold_id": "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-a@494",
+    "accepted": false,
+    "same_pose": "yes",
+    "new_major_artefacts": [],
+    "closer": "shipped",
+    "more_natural": "edited"
+   },
+   {
+    "item_id": "220923_Scale_Pose_or_Tolasana_-a@1068#edit",
+    "hold_id": "220923_Scale_Pose_or_Tolasana_-a@1068",
+    "accepted": false,
+    "same_pose": "no",
+    "new_major_artefacts": [],
+    "closer": "shipped",
+    "more_natural": "shipped"
+   },
+   {
+    "item_id": "220926_Eagle_Pose_or_Garudasana_-a@434#edit",
+    "hold_id": "220926_Eagle_Pose_or_Garudasana_-a@434",
+    "accepted": false,
+    "same_pose": "yes",
+    "new_major_artefacts": [],
+    "closer": "shipped",
+    "more_natural": "shipped"
+   },
+   {
+    "item_id": "220926_Eagle_Pose_or_Garudasana_-a@800#edit",
+    "hold_id": "220926_Eagle_Pose_or_Garudasana_-a@800",
+    "accepted": false,
+    "same_pose": "yes",
+    "new_major_artefacts": [],
+    "closer": "shipped",
+    "more_natural": "shipped"
+   },
+   {
+    "item_id": "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-a@920#edit",
+    "hold_id": "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-a@920",
+    "accepted": false,
+    "same_pose": "yes",
+    "new_major_artefacts": [],
+    "closer": "shipped",
+    "more_natural": "shipped"
+   },
+   {
+    "item_id": "220923_Cockerel_Pose-b@2826#edit",
+    "hold_id": "220923_Cockerel_Pose-b@2826",
+    "accepted": false,
+    "same_pose": "yes",
+    "new_major_artefacts": [],
+    "closer": "shipped",
+    "more_natural": "shipped"
+   },
+   {
+    "item_id": "220923_Scale_Pose_or_Tolasana_-a@1113#edit",
+    "hold_id": "220923_Scale_Pose_or_Tolasana_-a@1113",
+    "accepted": false,
+    "same_pose": "no",
+    "new_major_artefacts": [],
+    "closer": "edited",
+    "more_natural": "edited"
+   },
+   {
+    "item_id": "220923_Peacock_Pose_or_Mayurasana_-a@788#edit",
+    "hold_id": "220923_Peacock_Pose_or_Mayurasana_-a@788",
+    "accepted": false,
+    "same_pose": "yes",
+    "new_major_artefacts": [],
+    "closer": "shipped",
+    "more_natural": "shipped"
+   },
+   {
+    "item_id": "220923_Firefly_Pose_or_Tittibhasana_-b@639#edit",
+    "hold_id": "220923_Firefly_Pose_or_Tittibhasana_-b@639",
+    "accepted": false,
+    "same_pose": "yes",
+    "new_major_artefacts": [],
+    "closer": "shipped",
+    "more_natural": "shipped"
+   },
+   {
+    "item_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-b@931#edit",
+    "hold_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-b@931",
+    "accepted": false,
+    "same_pose": "yes",
+    "new_major_artefacts": [
+     [
+      "impossible_joint",
+      "left hand"
+     ],
+     [
+      "impossible_joint",
+      "right hand"
+     ]
+    ],
+    "closer": "shipped",
+    "more_natural": "shipped"
+   },
+   {
+    "item_id": "220926_Plow_Pose_or_Halasana_-b@1384#edit",
+    "hold_id": "220926_Plow_Pose_or_Halasana_-b@1384",
+    "accepted": false,
+    "same_pose": "yes",
+    "new_major_artefacts": [],
+    "closer": "shipped",
+    "more_natural": "edited"
+   },
+   {
+    "item_id": "220923_Cockerel_Pose-b@1318#edit",
+    "hold_id": "220923_Cockerel_Pose-b@1318",
+    "accepted": false,
+    "same_pose": "yes",
+    "new_major_artefacts": [],
+    "closer": "shipped",
+    "more_natural": "shipped"
+   },
+   {
+    "item_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a@680#edit",
+    "hold_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a@680",
+    "accepted": false,
+    "same_pose": "no",
+    "new_major_artefacts": [],
+    "closer": "edited",
+    "more_natural": "edited"
+   },
+   {
+    "item_id": "220923_Cockerel_Pose-b@2355#edit",
+    "hold_id": "220923_Cockerel_Pose-b@2355",
+    "accepted": false,
+    "same_pose": "yes",
+    "new_major_artefacts": [],
+    "closer": "shipped",
+    "more_natural": "shipped"
+   },
+   {
+    "item_id": "220923_Tree_Pose_or_Vrksasana_-a@1188#edit",
+    "hold_id": "220923_Tree_Pose_or_Vrksasana_-a@1188",
+    "accepted": false,
+    "same_pose": "yes",
+    "new_major_artefacts": [],
+    "closer": "shipped",
+    "more_natural": "edited"
+   }
+  ]
+ },
+ "verdicts": 414
+}

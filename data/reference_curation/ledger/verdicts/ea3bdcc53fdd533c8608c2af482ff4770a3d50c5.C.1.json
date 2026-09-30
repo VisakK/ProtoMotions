@@ -1,0 +1,142 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1a",
+     "1c",
+     "2a",
+     "3c",
+     "5c"
+    ],
+    "part": "torso",
+    "severity": "major"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1a",
+     "2a",
+     "3c",
+     "4e"
+    ],
+    "part": "right foot",
+    "severity": "major"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1a",
+     "3c",
+     "4a",
+     "4c"
+    ],
+    "part": "head",
+    "severity": "major"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1b",
+     "3d",
+     "4f"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "B",
+  "floating_parts": {
+   "A": [
+    "right foot"
+   ],
+   "B": []
+  },
+  "more_natural": "B",
+  "same_pose": {
+   "answer": "no",
+   "reason": "B stands on the right foot, left knee bent out, hands at the chest, like the grey body. A has collapsed onto its hands with its legs stretched back in the air."
+  },
+  "summary": "B follows the grey body closely: it stands on a flat right foot with the left leg bent and the hands at the chest. A has fallen into a crouch on its hands, with both feet in the air, so its standing right foot is off the floor."
+ },
+ "audit_id": null,
+ "cost_usd": 0.15139080000000002,
+ "duration_s": 20.37,
+ "errors": [],
+ "frame_hold": 542,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Tree_Pose_or_Vrksasana_-b@542",
+ "inputs": {},
+ "item_id": "220923_Tree_Pose_or_Vrksasana_-b@542#swap",
+ "n": 1,
+ "num_turns": 9,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/ea3bdcc53fdd533c8608c2af482ff4770a3d50c5",
+  "images": {
+   "img_1.png": "d85a08a1e96d0453b85dc6e692a8457ac57883a9a0935b983061a43b09eba61c",
+   "img_2.png": "2e4b552a6bf1b5e8d59a963270d82ea847a726c2d43a43b04c85bdad11d8c48e",
+   "img_3.png": "33740a9fad54a67e20e6eeee228df03eeef12d04c25c752b850c44c99730061d",
+   "img_4.png": "f86cf4c0e2c3ae63ea65a9c084c73077dce3580e5a2a4e6f29ff4f7b00e7c8a6",
+   "img_5.png": "3675900a0b85ddb665fdc3e2027d6d307e96fd5138f9c3754fe2f382180b8885"
+  },
+  "packet_json_sha256": "148e77a507e142db19cb2bef4d727e78521e5de25150f63c599d1e31f4a7304c"
+ },
+ "packet_id": "ea3bdcc53fdd533c8608c2af482ff4770a3d50c5",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "15de42e6-a6b7-4de0-ba1e-437447a0fd36",
+ "started_utc": "2026-09-30T02:34:41+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Tree_Pose_or_Vrksasana_-b",
+ "stratum": "swap",
+ "usage": {
+  "cache_creation_input_tokens": 13062,
+  "cache_read_input_tokens": 28614,
+  "input_tokens": 8,
+  "output_tokens": 2057,
+  "thinking_tokens": 361
+ },
+ "warnings": []
+}

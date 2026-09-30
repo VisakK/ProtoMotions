@@ -1,0 +1,136 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "impossible_joint",
+    "panels": [
+     "4a",
+     "3c",
+     "1a"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "impossible_joint",
+    "panels": [
+     "4a",
+     "3c"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "through_body",
+    "panels": [
+     "4a",
+     "3c"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1a",
+     "3c",
+     "5c"
+    ],
+    "part": "left shin",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "B",
+  "floating_parts": {
+   "A": [
+    "left foot"
+   ],
+   "B": []
+  },
+  "more_natural": "B",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both stand upright on both feet with the arms held out to the sides. The only differences are foot placement and knee angle."
+  },
+  "summary": "Same standing pose with arms out. In A, both feet roll onto their edges and press into each other, the left foot hovers (drop line in 4a) and the knees bend inward. B's feet sit flat on the floor under the grey feet and its legs are straighter."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1147644,
+ "duration_s": 13.79,
+ "errors": [],
+ "frame_hold": 18,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Plow_Pose_or_Halasana_-a@18",
+ "inputs": {},
+ "item_id": "220923_Plow_Pose_or_Halasana_-a@18#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/1d7c6a1d201302a10619302c118e0ca4ec1bd05c",
+  "images": {
+   "img_1.png": "ba8c44385eed7bffb7a5b69f9b2667e2a0f047f32323ed600032ef18848c6392",
+   "img_2.png": "cc1b0ab65b1427d1d8c6bd6c6eeec72e8eea5c797eea44490deee47663615ff3",
+   "img_3.png": "1abbf98657308fea070f7f7b27fe4bc60ecbcc525c20f7898ce0f38ec3cc8d0c",
+   "img_4.png": "fbbebb5e559238f2b46576ab7ff6c1c6efe7436ecb2a978c3ff7b29c17538d8e",
+   "img_5.png": "9d9ac73d697a7271ff04e8064c8ff2ffbbf06eaa4132cf165b1d752e33c20104"
+  },
+  "packet_json_sha256": "4daec4f361d0f0a5c112415c3ac508e68f07d442d0a7bfdb1a5a1cef5f6fc220"
+ },
+ "packet_id": "1d7c6a1d201302a10619302c118e0ca4ec1bd05c",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "9042c6e3-6726-4ca7-a290-5328ca36d127",
+ "started_utc": "2026-09-30T03:53:18+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Plow_Pose_or_Halasana_-a",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 10604,
+  "cache_read_input_tokens": 13442,
+  "input_tokens": 6,
+  "output_tokens": 1361,
+  "thinking_tokens": 210
+ },
+ "warnings": []
+}

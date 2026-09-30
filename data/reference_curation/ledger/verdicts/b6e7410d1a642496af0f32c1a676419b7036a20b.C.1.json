@@ -1,0 +1,141 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "4b",
+     "4d",
+     "3d"
+    ],
+    "part": "left hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "4d",
+     "3d",
+     "2b"
+    ],
+    "part": "right hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "4b",
+     "4d",
+     "3d"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "4a",
+     "4c"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "A",
+  "floating_parts": {
+   "A": [
+    "left foot"
+   ],
+   "B": [
+    "left hand",
+    "right hand",
+    "left foot"
+   ]
+  },
+  "more_natural": "A",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both show the same shape: both hands and the left foot down, the right leg raised straight up and the head hanging low. B is the same shape shifted a few cm higher."
+  },
+  "summary": "Both avatars hold the same pose. A's hands sit on the floor and its left foot hovers slightly. B is raised as a whole, so both hands and the left foot float visibly above the floor. That makes A closer to the grey body and more believable."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1258948,
+ "duration_s": 17.57,
+ "errors": [],
+ "frame_hold": 540,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Standing_Split_pose_or_Urdhva_Prasarita_Eka_Padasana_-a@540",
+ "inputs": {},
+ "item_id": "220923_Standing_Split_pose_or_Urdhva_Prasarita_Eka_Padasana_-a@540#lift",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/b6e7410d1a642496af0f32c1a676419b7036a20b",
+  "images": {
+   "img_1.png": "b3b2d80ebbb380d15e8f4bd3bae7cf557f8c338455c97f6962ba4b286aab4330",
+   "img_2.png": "5d2bf50de6a6895df5a3f7195e437b1a50673e7a28b99e3c234b5faa333ab3d9",
+   "img_3.png": "a5af912607e98bb004d3c07c7360c2800c5062b970b445b201d12a82e618dfd3",
+   "img_4.png": "783ba4e89100cfd00f758ffc162674a4320aad8a84568453d2a82018724b44bf",
+   "img_5.png": "ca22c30054be559b16b74dfe6da5c1376daf6db13491d3b32ff874fc2b40388e"
+  },
+  "packet_json_sha256": "df87840183e9466630ba9c48d07abddfeb063e116eefde1a4032738bd62622b1"
+ },
+ "packet_id": "b6e7410d1a642496af0f32c1a676419b7036a20b",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "63ba5ae1-8a07-4468-a2ca-8bee8402ea35",
+ "started_utc": "2026-09-30T02:37:17+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Standing_Split_pose_or_Urdhva_Prasarita_Eka_Padasana_-a",
+ "stratum": "lift",
+ "usage": {
+  "cache_creation_input_tokens": 11270,
+  "cache_read_input_tokens": 13454,
+  "input_tokens": 6,
+  "output_tokens": 1651,
+  "thinking_tokens": 535
+ },
+ "warnings": []
+}

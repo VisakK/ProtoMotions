@@ -1,0 +1,166 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "3c",
+     "4c",
+     "5c"
+    ],
+    "part": "left shin",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "2a",
+     "4e"
+    ],
+    "part": "right shin",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1c",
+     "3c",
+     "5c"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1c",
+     "3c"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "impossible_joint",
+    "panels": [
+     "4a",
+     "4c",
+     "5c"
+    ],
+    "part": "left hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "impossible_joint",
+    "panels": [
+     "4a",
+     "4e",
+     "2c"
+    ],
+    "part": "right hand",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "B",
+  "floating_parts": {
+   "A": [
+    "left shin",
+    "right shin",
+    "left foot",
+    "right foot",
+    "left hand",
+    "right hand",
+    "head"
+   ],
+   "B": [
+    "head"
+   ]
+  },
+  "more_natural": "B",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both kneel folded forward with the head down, forearms vertical, hands on the floor and legs folded the same way; B only sets shins, feet and hands down onto the floor."
+  },
+  "summary": "Same kneeling forward-fold pose. B's shins, feet and hands lie flat on the floor like the grey body. A's knees, shins and feet hover above the floor, and its hands are tipped up at the wrist with gaps under them."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1332572,
+ "duration_s": 18.62,
+ "errors": [],
+ "frame_hold": 343,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-b@346",
+ "inputs": {},
+ "item_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-b@346#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/ea2d0c73e91c72ad87f7413f2fa675ea226b03ee",
+  "images": {
+   "img_1.png": "b81ba1b6939952b0e2e5aeddb513545d24302e4700715a6fd21b7d0c77a73719",
+   "img_2.png": "6067e563cf202d47899c72aa2b74f935e952ef0eb9b5c757ef466ecf8b6b66af",
+   "img_3.png": "902913e3854c31688e45b85421bac4ec43e8ae5c6dc95115784919cd2dea39e5",
+   "img_4.png": "0b543ee48b54e475e288d423c6edee250b670f55a15dcd33aadf4d092e82ea9f",
+   "img_5.png": "d1fb4f2614217e8ff0a6c1013104ad2bc0345854411e56ba6cfa44dd59bee931"
+  },
+  "packet_json_sha256": "665319ee51a37b77293c5201d18c3ab305a55e2758e81b2317b1c9eb1301b13a"
+ },
+ "packet_id": "ea2d0c73e91c72ad87f7413f2fa675ea226b03ee",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "cfe21841-a184-4720-91f9-6e2d6d14d63d",
+ "started_utc": "2026-09-30T06:19:29+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-b",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 12004,
+  "cache_read_input_tokens": 13506,
+  "input_tokens": 6,
+  "output_tokens": 1725,
+  "thinking_tokens": 475
+ },
+ "warnings": []
+}

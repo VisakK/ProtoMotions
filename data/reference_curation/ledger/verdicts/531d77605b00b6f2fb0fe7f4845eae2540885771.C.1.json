@@ -1,0 +1,160 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "3c",
+     "4a",
+     "4e"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "impossible_joint",
+    "panels": [
+     "1c",
+     "4a",
+     "4e"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "through_body",
+    "panels": [
+     "4a",
+     "4e"
+    ],
+    "part": "left hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1a",
+     "4c"
+    ],
+    "part": "right hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "through_body",
+    "panels": [
+     "3b",
+     "4f"
+    ],
+    "part": "left hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1d",
+     "4f"
+    ],
+    "part": "left hand",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "B",
+  "floating_parts": {
+   "A": [
+    "left foot",
+    "right foot",
+    "right hand"
+   ],
+   "B": [
+    "left hand"
+   ]
+  },
+  "more_natural": "B",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both show the same inverted-V shape: feet planted, right arm reaching forward to the floor, left hand down by the feet. Only the foot and hand contact differs."
+  },
+  "summary": "It's the same pose. B's feet sit flat on the floor like the grey body. In A both feet hover and the right foot is tilted, and A's right hand is lifted off the floor. B's only problem is its left hand, which hovers slightly and presses into the right foot. B is closer to the grey body and looks more natural."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1383918,
+ "duration_s": 20.59,
+ "errors": [],
+ "frame_hold": 594,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana_-b@594",
+ "inputs": {},
+ "item_id": "220923_Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana_-b@594#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/531d77605b00b6f2fb0fe7f4845eae2540885771",
+  "images": {
+   "img_1.png": "1e12c7354b9a6607e1e5a80cc9429f82eb330bae4bac9eca116098ec69f4453a",
+   "img_2.png": "d385df56d06c48c1cc06e44546b1d5244bad2ba700addf3fdaf5630e8353d194",
+   "img_3.png": "7947f9c2e20834e9a7c925809e0c0ce0c65e11d11b4b11d318b2fea76c421ce0",
+   "img_4.png": "fbd2f38870355d1fbc1ea9e7cae7a7df46f4e463f01e6409d964e90591d914f2",
+   "img_5.png": "28c6772f2f931457c69c668fe23d4ac591794aa0684452ba082f3ee65e1cc4f6"
+  },
+  "packet_json_sha256": "dd016baec43ac574dd9ff5a3b4efde257a78416b5f389d085d978b2bf2900907"
+ },
+ "packet_id": "531d77605b00b6f2fb0fe7f4845eae2540885771",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "61df61ca-48a0-49cc-ac1c-b0f70cac1bd5",
+ "started_utc": "2026-09-30T03:46:01+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana_-b",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 11981,
+  "cache_read_input_tokens": 13499,
+  "input_tokens": 6,
+  "output_tokens": 1991,
+  "thinking_tokens": 762
+ },
+ "warnings": []
+}

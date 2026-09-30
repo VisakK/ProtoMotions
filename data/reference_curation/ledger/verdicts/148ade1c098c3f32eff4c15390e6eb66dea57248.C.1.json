@@ -1,0 +1,162 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "impossible_joint",
+    "panels": [
+     "1a",
+     "1c",
+     "3c",
+     "5c"
+    ],
+    "part": "left thigh",
+    "severity": "major"
+   },
+   {
+    "avatar": "A",
+    "kind": "impossible_joint",
+    "panels": [
+     "1a",
+     "1c",
+     "2a",
+     "3a"
+    ],
+    "part": "right thigh",
+    "severity": "major"
+   },
+   {
+    "avatar": "A",
+    "kind": "through_body",
+    "panels": [
+     "1c",
+     "2a",
+     "3c"
+    ],
+    "part": "right thigh",
+    "severity": "major"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1a",
+     "3c",
+     "4c"
+    ],
+    "part": "left forearm",
+    "severity": "major"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1c",
+     "2a",
+     "4c"
+    ],
+    "part": "right forearm",
+    "severity": "major"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "4d"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "B",
+  "floating_parts": {
+   "A": [
+    "left foot",
+    "right foot",
+    "right hand"
+   ],
+   "B": []
+  },
+  "more_natural": "B",
+  "same_pose": {
+   "answer": "no",
+   "reason": "B has hands and feet on the floor with the hips high, like the grey body. A has its legs swung up into the air, its feet off the floor and its arms bent flat along the floor."
+  },
+  "summary": "B follows the grey body closely, with hands and feet planted and the hips high. A's legs fold up into the air over the torso with its feet far off the floor, and its arms are bent flat, so it is a broken, different pose."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1269158,
+ "duration_s": 17.62,
+ "errors": [],
+ "frame_hold": 281,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana_-b@281",
+ "inputs": {},
+ "item_id": "220923_Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana_-b@281#swap",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/148ade1c098c3f32eff4c15390e6eb66dea57248",
+  "images": {
+   "img_1.png": "a009d9cfac3bd12bc799513dd5ca90e9a0b2497b806669d4f33aaba3ed00d9d7",
+   "img_2.png": "3395cf2b516616858d517c677c68faf3bbb67f6b93918fb39a5257baa80ff696",
+   "img_3.png": "d7a2937a8c67245e8798cd820986a3b7be5567d523950c7427d5f25b8c8e5d30",
+   "img_4.png": "12c72d225c9210cd297c95ccce82900b04bdf7913ea4192fdf63095df6e9c849",
+   "img_5.png": "e85baba46066ef3dd6bfdc9fb5e2353e8ecca1ba39abeed9309ca83eba5d6326"
+  },
+  "packet_json_sha256": "b18316772e5e4b0d016b376487d3b6fbb3b773b71316ea2a4d031e997139eee7"
+ },
+ "packet_id": "148ade1c098c3f32eff4c15390e6eb66dea57248",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "6377f52c-d685-4ee2-b82f-7df678302aff",
+ "started_utc": "2026-09-30T02:32:27+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana_-b",
+ "stratum": "swap",
+ "usage": {
+  "cache_creation_input_tokens": 11275,
+  "cache_read_input_tokens": 13459,
+  "input_tokens": 6,
+  "output_tokens": 1700,
+  "thinking_tokens": 490
+ },
+ "warnings": []
+}

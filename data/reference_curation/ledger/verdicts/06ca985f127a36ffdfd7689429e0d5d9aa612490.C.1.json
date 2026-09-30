@@ -1,0 +1,135 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "B",
+    "kind": "through_body",
+    "panels": [
+     "1b",
+     "3d",
+     "5d"
+    ],
+    "part": "head",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1b",
+     "2b",
+     "3d",
+     "5d"
+    ],
+    "part": "torso",
+    "severity": "major"
+   },
+   {
+    "avatar": "B",
+    "kind": "impossible_joint",
+    "panels": [
+     "3d",
+     "2b"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "through_body",
+    "panels": [
+     "1c",
+     "4a"
+    ],
+    "part": "left upper arm",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "A",
+  "floating_parts": {
+   "A": [],
+   "B": []
+  },
+  "more_natural": "A",
+  "same_pose": {
+   "answer": "no",
+   "reason": "A keeps its knees on its upper arms with its torso high and feet raised. B splays its legs wide, drops its torso and head low between wide arms, and lets its feet hang down."
+  },
+  "summary": "A closely follows the grey body: hands flat on the floor, knees resting on its upper arms, feet lifted. B drops its torso and head low, splays its arms and legs wide and lets its feet hang down, so it is a different and less natural shape."
+ },
+ "audit_id": null,
+ "cost_usd": 0.15508,
+ "duration_s": 24.42,
+ "errors": [],
+ "frame_hold": 2492,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Cockerel_Pose-b@2492",
+ "inputs": {},
+ "item_id": "220923_Cockerel_Pose-b@2492#edit",
+ "n": 1,
+ "num_turns": 9,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/06ca985f127a36ffdfd7689429e0d5d9aa612490",
+  "images": {
+   "img_1.png": "16f28037b94b492601eab234253b7781748173b93e4858916f011d1bc569256c",
+   "img_2.png": "7034c81e96baa3188bdbdf3d0d71bcc4cd8dc9ff36bf9b53840b3b8c650c291a",
+   "img_3.png": "fe1e6ed15557354bd14ea7f91406994316a706f660b95b843511c0bb9b525489",
+   "img_4.png": "9745bd7c5ae9c4671b3b56dcc0a5bb266a376a46bde400ed4d7caad9ccc21ad8",
+   "img_5.png": "33f9db994049bb4ddb72f5cc6b394a40a433799ac4efaf0d414db06920e1c667"
+  },
+  "packet_json_sha256": "7ae3201a6310fbf7ea0536f39786f219132adedbf01c9aa1dc8c81e84fa5f6a6"
+ },
+ "packet_id": "06ca985f127a36ffdfd7689429e0d5d9aa612490",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "ff17661f-496a-4b39-aa17-9a51fe50d6a3",
+ "started_utc": "2026-09-30T03:43:43+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Cockerel_Pose-b",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 12663,
+  "cache_read_input_tokens": 27820,
+  "input_tokens": 8,
+  "output_tokens": 2409,
+  "thinking_tokens": 729
+ },
+ "warnings": []
+}

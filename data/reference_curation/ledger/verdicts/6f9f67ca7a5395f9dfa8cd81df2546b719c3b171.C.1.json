@@ -1,0 +1,146 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "4a",
+     "4c",
+     "3c"
+    ],
+    "part": "left forearm",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "4b",
+     "4d",
+     "3d"
+    ],
+    "part": "left forearm",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1c",
+     "3c"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1d",
+     "3d"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "equal",
+  "floating_parts": {
+   "A": [
+    "left forearm",
+    "right forearm",
+    "left foot",
+    "right foot",
+    "right hand"
+   ],
+   "B": [
+    "left forearm",
+    "right forearm",
+    "left foot",
+    "right foot",
+    "right hand"
+   ]
+  },
+  "more_natural": "equal",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both show the same inverted-V shape, with forearms and feet as the supports, hips high and head between the arms. Limb placement looks the same in every view."
+  },
+  "summary": "A and B look almost identical and follow the grey body equally well. In both, the forearms, feet and right hand hover a little above the floor where the grey body touches it, as the drop lines show. I could not see any difference that makes one of them better."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1288634,
+ "duration_s": 15.9,
+ "errors": [],
+ "frame_hold": 565,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Dolphin_Pose_or_Ardha_Pincha_Mayurasana_-a@565",
+ "inputs": {},
+ "item_id": "220923_Dolphin_Pose_or_Ardha_Pincha_Mayurasana_-a@565#identity",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/6f9f67ca7a5395f9dfa8cd81df2546b719c3b171",
+  "images": {
+   "img_1.png": "aaf6ae8da36116f939c0bf988b4533d3fec8a49b6b1033d9d7f2bc28607ca0b8",
+   "img_2.png": "a36086aded5213ef76b917f8d3b3f27f3aa1a291de413161b577634d55bfd322",
+   "img_3.png": "509901a04fda5e10069b626b240e68232b668315dd953e0ec5ea21e253ce93fe",
+   "img_4.png": "886bf812a16479616ef59c3048ca7ad41e188c75e7790904feda7df06c634162",
+   "img_5.png": "415361054c7f9cecf300f10fb2aeb9beee9f11a8bc041e17d0734af94a504d26"
+  },
+  "packet_json_sha256": "d0d806205d3022914e1ce14b77472f675c68043106f67f6c430e28341e737edf"
+ },
+ "packet_id": "6f9f67ca7a5395f9dfa8cd81df2546b719c3b171",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "6ab976df-5c21-4677-b861-72fd535af867",
+ "started_utc": "2026-09-30T02:31:02+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Dolphin_Pose_or_Ardha_Pincha_Mayurasana_-a",
+ "stratum": "identity",
+ "usage": {
+  "cache_creation_input_tokens": 11995,
+  "cache_read_input_tokens": 13497,
+  "input_tokens": 6,
+  "output_tokens": 1509,
+  "thinking_tokens": 307
+ },
+ "warnings": []
+}

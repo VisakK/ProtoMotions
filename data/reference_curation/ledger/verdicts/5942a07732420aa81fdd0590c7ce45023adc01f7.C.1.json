@@ -1,0 +1,97 @@
+{
+ "answer": {
+  "artefacts": [],
+  "closer_to_human": "A",
+  "floating_parts": {
+   "A": [],
+   "B": [
+    "head",
+    "left upper arm",
+    "right upper arm",
+    "left foot",
+    "right foot"
+   ]
+  },
+  "more_natural": "A",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both show the same shape: head and upper arms on the floor, legs extended over the head with the feet near the floor behind it, and the forearms raised. B is just lifted slightly."
+  },
+  "summary": "Same pose in both. A keeps the head, upper arms and feet on the floor like the grey body. B's whole body sits slightly raised, so drop lines show its head, upper arms and feet hovering just above the floor."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1346446,
+ "duration_s": 20.31,
+ "errors": [],
+ "frame_hold": 982,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220926_Plow_Pose_or_Halasana_-b@980",
+ "inputs": {},
+ "item_id": "220926_Plow_Pose_or_Halasana_-b@980#sink",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/5942a07732420aa81fdd0590c7ce45023adc01f7",
+  "images": {
+   "img_1.png": "3af7374339d996f709ab3c63981f65f2525d812e6b63cf6429d7205ae64d9c5f",
+   "img_2.png": "40974af9c85c7f498982eef342a3082764ce5c3bd47d7faed03e82563bde5bcf",
+   "img_3.png": "1e5f2586499666356652d8d823a5a672ff5dd17a3a0c60d3373cc8fb46170684",
+   "img_4.png": "6a6772fd61b25acf4decbb16e114ecfce349abfb6120619997c4b0b246494222",
+   "img_5.png": "870e8d45462f4ec5f983aebb607bc93f7c590c954eb90a4c74662d217991f835"
+  },
+  "packet_json_sha256": "d6a40cd7ef90917f5e09571cba8a63eb64756837b03f9aa8b9f9f7805ec76565"
+ },
+ "packet_id": "5942a07732420aa81fdd0590c7ce45023adc01f7",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "31a60bd2-c80e-4f17-b8e2-7043beacbc59",
+ "started_utc": "2026-09-30T02:39:56+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220926_Plow_Pose_or_Halasana_-b",
+ "stratum": "sink",
+ "usage": {
+  "cache_creation_input_tokens": 11968,
+  "cache_read_input_tokens": 13483,
+  "input_tokens": 6,
+  "output_tokens": 1809,
+  "thinking_tokens": 863
+ },
+ "warnings": []
+}

@@ -1,0 +1,130 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1a",
+     "1c",
+     "2a",
+     "2c",
+     "3a",
+     "3c"
+    ],
+    "part": "right shin",
+    "severity": "major"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1a",
+     "1c",
+     "2c",
+     "3c",
+     "5c"
+    ],
+    "part": "right foot",
+    "severity": "major"
+   },
+   {
+    "avatar": "B",
+    "kind": "through_body",
+    "panels": [
+     "1d",
+     "2b",
+     "2d"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "B",
+  "floating_parts": {
+   "A": [],
+   "B": []
+  },
+  "more_natural": "B",
+  "same_pose": {
+   "answer": "no",
+   "reason": "In B the bent right leg is tucked in with the foot against the standing left leg, as in the grey body. In A the right shin and foot swing up and out to the side, far from the standing leg."
+  },
+  "summary": "Only the left foot is on the floor in both. B tracks the grey body closely, with the right leg tucked against the left leg; its right foot sinks slightly into the left shin (minor). A throws the right shin and foot up and out, away from the grey leg (major)."
+ },
+ "audit_id": null,
+ "cost_usd": 0.12295020000000001,
+ "duration_s": 18.9,
+ "errors": [],
+ "frame_hold": 332,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220926_Eagle_Pose_or_Garudasana_-a@332",
+ "inputs": {},
+ "item_id": "220926_Eagle_Pose_or_Garudasana_-a@332#kink",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/e3954ab8c72f7431f10173b2879ab6865d0b8e0a",
+  "images": {
+   "img_1.png": "5ea82e709d438627cc948337be82060ae9b9e461adecd62260ae837564d050f9",
+   "img_2.png": "9844bf98f6197fe7542b2e4335d06a6523eba53e6e618ff22db7994b6920c50e",
+   "img_3.png": "7fafad02f37ddc51c047c95eaaeb1f1406b782465b466b96d812f646e834a525",
+   "img_4.png": "90949723f595c2be300e85c5a26f9c09205589c81296fd942e3d3b25f677608c",
+   "img_5.png": "40806a1534ff3c06eeb6d6c2544d36ad3952add98d893c65902badbaaca2d8c5"
+  },
+  "packet_json_sha256": "a03646d613bb4191ecfaf6d6d5fa00e2f1b481f7e525577eb82b321d6e4f9da0"
+ },
+ "packet_id": "e3954ab8c72f7431f10173b2879ab6865d0b8e0a",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "e84ac587-3198-4d04-85c3-ab525c3e02f2",
+ "started_utc": "2026-09-30T02:41:53+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220926_Eagle_Pose_or_Garudasana_-a",
+ "stratum": "kink",
+ "usage": {
+  "cache_creation_input_tokens": 10573,
+  "cache_read_input_tokens": 13411,
+  "input_tokens": 6,
+  "output_tokens": 1783,
+  "thinking_tokens": 652
+ },
+ "warnings": []
+}

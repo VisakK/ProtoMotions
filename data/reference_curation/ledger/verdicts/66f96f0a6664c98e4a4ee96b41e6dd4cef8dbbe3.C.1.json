@@ -1,0 +1,135 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "through_body",
+    "panels": [
+     "4a",
+     "1a",
+     "3c"
+    ],
+    "part": "right foot",
+    "severity": "major"
+   },
+   {
+    "avatar": "A",
+    "kind": "impossible_joint",
+    "panels": [
+     "4a",
+     "3c"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1a",
+     "3c",
+     "5c"
+    ],
+    "part": "left shin",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "5e"
+    ],
+    "part": "torso",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "B",
+  "floating_parts": {
+   "A": [
+    "left foot"
+   ],
+   "B": []
+  },
+  "more_natural": "B",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both stand upright on both feet with arms spread level; A's knees cross inward and its feet tilt, but the overall shape and floor contacts are the same."
+  },
+  "summary": "Both show the same standing pose with arms spread. B follows the grey body closely, with parallel legs and both feet flat on the floor. A's shins cross inward, its feet tilt and overlap each other, and its left foot hovers just above the floor. Panel 5e for A is also rendered upside down."
+ },
+ "audit_id": null,
+ "cost_usd": 0.11737900000000001,
+ "duration_s": 14.87,
+ "errors": [],
+ "frame_hold": 2937,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Handstand_pose_or_Adho_Mukha_Vrksasana_-a@2937",
+ "inputs": {},
+ "item_id": "220923_Handstand_pose_or_Adho_Mukha_Vrksasana_-a@2937#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/66f96f0a6664c98e4a4ee96b41e6dd4cef8dbbe3",
+  "images": {
+   "img_1.png": "c0e0c40cc35e7c3d3c6294e99e986e6c7bfc1186e56ab064bec4b84efcea2e59",
+   "img_2.png": "d5f38d88bbcb34df4afd7c6161c618e94586f8c94d8a375b8e07341e4688a8e6",
+   "img_3.png": "e6884cbe430c8b45caefc43eec0ee89639d0b2b3d457cd197347d84e83a274bd",
+   "img_4.png": "943523aee364a6182054b3f1fd0eeb105b2525bc055bcc2aa385724fde3511ac",
+   "img_5.png": "dd07afe440e7c4fb39f3c5c8ab2a3ba9c993b5628b217017e6a4b4270291da7a"
+  },
+  "packet_json_sha256": "ca57295c93524fde570e3815770603e322f8d8e0617e30170e3a2c25956f196c"
+ },
+ "packet_id": "66f96f0a6664c98e4a4ee96b41e6dd4cef8dbbe3",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "af37eaa9-b5cb-4557-a57a-2ba7704687ca",
+ "started_utc": "2026-09-30T03:51:53+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Handstand_pose_or_Adho_Mukha_Vrksasana_-a",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 10633,
+  "cache_read_input_tokens": 13455,
+  "input_tokens": 6,
+  "output_tokens": 1480,
+  "thinking_tokens": 319
+ },
+ "warnings": []
+}

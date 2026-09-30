@@ -1,0 +1,140 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1b",
+     "3d",
+     "5d"
+    ],
+    "part": "left shin",
+    "severity": "major"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1b",
+     "2b",
+     "4b"
+    ],
+    "part": "right foot",
+    "severity": "major"
+   },
+   {
+    "avatar": "B",
+    "kind": "through_body",
+    "panels": [
+     "1b",
+     "3d"
+    ],
+    "part": "right thigh",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "4a",
+     "5c"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "A",
+  "floating_parts": {
+   "A": [
+    "right foot"
+   ],
+   "B": [
+    "left shin",
+    "left thigh",
+    "right foot"
+   ]
+  },
+  "more_natural": "A",
+  "same_pose": {
+   "answer": "no",
+   "reason": "B lifts its left leg off the floor with the foot pointed, and raises its right foot to chest height. A keeps the left leg flat on the floor and the right foot low beside the thigh, like the grey body."
+  },
+  "summary": "A follows the grey body closely: the left leg lies flat on the floor with the foot upright, and the right foot sits low, hovering only slightly. In B the left leg is lifted off the floor with the foot pointed, and the right foot is raised to chest height, so the pose is done differently."
+ },
+ "audit_id": null,
+ "cost_usd": 0.136107,
+ "duration_s": 22.76,
+ "errors": [],
+ "frame_hold": 393,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Scale_Pose_or_Tolasana_-a@389",
+ "inputs": {},
+ "item_id": "220923_Scale_Pose_or_Tolasana_-a@389#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/c04f6b468c2c2b352bb7f9298edcc51840838fe1",
+  "images": {
+   "img_1.png": "9534d9a85862b34ae9be71c633202426d2a8859249ea818774959fee07a8a52a",
+   "img_2.png": "b58bd25740754fa26228afc828b56215f87c2e825b9e7c871d338873fef32bb8",
+   "img_3.png": "30ca2e0efabde0f0974e19e12fb19b35ed90d1a713a11ddae1ec5cfbab4c7088",
+   "img_4.png": "bb8bddbcb02ec75b59b75bf71efd605a148342e18f88781d3bacb020c07692cd",
+   "img_5.png": "6769af8b08f817aa8628d88914efdbdf1e23b8f339b25780793ef321baf54c46"
+  },
+  "packet_json_sha256": "d9655242755fb1d73410d0e6ad02d6aae44905aa25856af6586eda7dbb042a73"
+ },
+ "packet_id": "c04f6b468c2c2b352bb7f9298edcc51840838fe1",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "e9737b2e-bd43-4830-9613-05aab6722e1b",
+ "started_utc": "2026-09-30T03:56:12+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Scale_Pose_or_Tolasana_-a",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 11279,
+  "cache_read_input_tokens": 13455,
+  "input_tokens": 6,
+  "output_tokens": 2158,
+  "thinking_tokens": 1005
+ },
+ "warnings": []
+}

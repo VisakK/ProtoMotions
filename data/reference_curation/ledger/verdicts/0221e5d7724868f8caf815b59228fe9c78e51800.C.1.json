@@ -1,0 +1,106 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "4a",
+     "1c",
+     "2c",
+     "3c"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "B",
+  "floating_parts": {
+   "A": [
+    "right foot"
+   ],
+   "B": []
+  },
+  "more_natural": "B",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both stand on the right leg with the left leg bent out to the side at hip height, left hand near the left knee and right arm hanging down; only the standing foot's height differs."
+  },
+  "summary": "A and B show the same one-legged pose. In A, the standing right foot hovers a few centimetres above the grey foot and the floor. In B, that foot rests flat on the floor where the grey foot is, so B matches the human more closely and looks more natural."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1160842,
+ "duration_s": 15.77,
+ "errors": [],
+ "frame_hold": 621,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Tree_Pose_or_Vrksasana_-b@621",
+ "inputs": {},
+ "item_id": "220923_Tree_Pose_or_Vrksasana_-b@621#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/0221e5d7724868f8caf815b59228fe9c78e51800",
+  "images": {
+   "img_1.png": "c9105b5eb2650fd66b98552869272973afe1424d1247281eeb3a116596013eb9",
+   "img_2.png": "42717a731d22c09e3aeb294fd45c5f9aea2c420387ac6707665fca8d46de4e93",
+   "img_3.png": "852a874cbf85daa61476181de5c0826a5cce059c947e3a446f611e0c2e1fe7e4",
+   "img_4.png": "11fd076ecb73a3de8632db305f74a868bab034177b94613b056ab6b5f417af8f",
+   "img_5.png": "29de6ad178aec2bc249b92e0134f0049bcd7aedce3f11c5dcf5d126e46e223d3"
+  },
+  "packet_json_sha256": "979ced2eea84348a778a26947a4b2b86914b3fa7c12f647e4c01b5ea5e33d855"
+ },
+ "packet_id": "0221e5d7724868f8caf815b59228fe9c78e51800",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "09fa1563-fd05-43e1-8f78-b1f2de593f3e",
+ "started_utc": "2026-09-30T04:02:21+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Tree_Pose_or_Vrksasana_-b",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 10550,
+  "cache_read_input_tokens": 13401,
+  "input_tokens": 6,
+  "output_tokens": 1449,
+  "thinking_tokens": 463
+ },
+ "warnings": []
+}

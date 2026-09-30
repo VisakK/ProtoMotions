@@ -1,0 +1,91 @@
+{
+ "answer": {
+  "artefacts": [],
+  "closer_to_human": "equal",
+  "floating_parts": {
+   "A": [],
+   "B": []
+  },
+  "more_natural": "equal",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both show the same inverted pose: head down, both hands flat on the floor, left leg extended upward, right knee bent with the foot raised. Limb placement matches in every view."
+  },
+  "summary": "A and B look practically the same. Both hands sit on the floor as they do in the grey body, and both avatars follow the grey body closely. Only the head and wrists show short drop lines, and the grey body's head and wrists are also off the floor. I found no clear defects, and no jitter across the time strip."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1165532,
+ "duration_s": 13.95,
+ "errors": [],
+ "frame_hold": 1193,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Handstand_pose_or_Adho_Mukha_Vrksasana_-a@1193",
+ "inputs": {},
+ "item_id": "220923_Handstand_pose_or_Adho_Mukha_Vrksasana_-a@1193#identity",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/8baab968114463264835aa9c1a163c1860703219",
+  "images": {
+   "img_1.png": "2ac7cfb2ab7050e40d47dbd2f4f9a1b90c3b51d559ca8d4e6212e6ef4e72bac6",
+   "img_2.png": "f8ecd8def21efb8942b66b70b66ded3301c5730275b2285dfa317d221bacfe96",
+   "img_3.png": "a4255140ab23276ee990cc96b4fe3e601bee5a63bad75ed20e2fb583e8c1f483",
+   "img_4.png": "6749167f748cbc659d12443bc55ba88bec16f5e1357fcdfe3942c8ed2caaf1f1",
+   "img_5.png": "972b3fb5a8bb3b8482b599883a53e9352a7bd52f90d41ccf15293b67efa9f7e7"
+  },
+  "packet_json_sha256": "b9a400b636e2d139276cb1fb382ce826e2ab4f0f586c54dacfb7a79c96466109"
+ },
+ "packet_id": "8baab968114463264835aa9c1a163c1860703219",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "6ffc88de-ce1c-436d-a0d4-b4d5b29b7009",
+ "started_utc": "2026-09-30T02:31:19+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Handstand_pose_or_Adho_Mukha_Vrksasana_-a",
+ "stratum": "identity",
+ "usage": {
+  "cache_creation_input_tokens": 11245,
+  "cache_read_input_tokens": 13446,
+  "input_tokens": 6,
+  "output_tokens": 1194,
+  "thinking_tokens": 274
+ },
+ "warnings": []
+}

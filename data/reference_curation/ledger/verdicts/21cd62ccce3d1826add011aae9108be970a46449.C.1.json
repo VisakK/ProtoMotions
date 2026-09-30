@@ -1,0 +1,119 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "4b",
+     "1d",
+     "3d",
+     "5d"
+    ],
+    "part": "left hand",
+    "severity": "major"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "4d",
+     "2d",
+     "3d",
+     "5d"
+    ],
+    "part": "right hand",
+    "severity": "major"
+   }
+  ],
+  "closer_to_human": "A",
+  "floating_parts": {
+   "A": [],
+   "B": [
+    "left hand",
+    "right hand"
+   ]
+  },
+  "more_natural": "A",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both balance on the two hands with the legs spread wide and raised, and the body shape matches. B just sits higher, so its hands are off the floor."
+  },
+  "summary": "The pose is the same in both. A's hands are planted on the floor like the grey body's. B's whole body sits higher, so both hands hover several centimetres above the floor and nothing holds it up, which makes A the closer match and the more natural one."
+ },
+ "audit_id": null,
+ "cost_usd": 0.119087,
+ "duration_s": 16.69,
+ "errors": [],
+ "frame_hold": 639,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Firefly_Pose_or_Tittibhasana_-b@639",
+ "inputs": {},
+ "item_id": "220923_Firefly_Pose_or_Tittibhasana_-b@639#lift",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/21cd62ccce3d1826add011aae9108be970a46449",
+  "images": {
+   "img_1.png": "7e990497776e7eedbb7c17895312a52ea303b84dbf34b1f203b41058dc4e6763",
+   "img_2.png": "5c10e64cb774eae837e0b6b8809820ff74ce40215c3c0950ab500e77b74908b5",
+   "img_3.png": "9a31fd6a90c92054a2d8c945c9cb289a53baf90df5bb87aa7a60638966527d96",
+   "img_4.png": "6c15d798bcbaa6693ded5f0c2516418ac04e2ca8b4a17959ae9af035bf881076",
+   "img_5.png": "58a856f977205bbf2dd172adc7778d98a1480e3498c66f204436bea06ac3eed5"
+  },
+  "packet_json_sha256": "3f1c6428a70cf25c076796f75e427d72a1ea85d76319012a4a97c29c6bdb611a"
+ },
+ "packet_id": "21cd62ccce3d1826add011aae9108be970a46449",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "7ecc6bb3-fdd6-4389-873b-33a6da05f4f3",
+ "started_utc": "2026-09-30T02:36:12+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Firefly_Pose_or_Tittibhasana_-b",
+ "stratum": "lift",
+ "usage": {
+  "cache_creation_input_tokens": 11242,
+  "cache_read_input_tokens": 13435,
+  "input_tokens": 6,
+  "output_tokens": 1322,
+  "thinking_tokens": 319
+ },
+ "warnings": []
+}

@@ -1,0 +1,157 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1a",
+     "1c",
+     "2a",
+     "2c",
+     "3a",
+     "3c"
+    ],
+    "part": "torso",
+    "severity": "major"
+   },
+   {
+    "avatar": "A",
+    "kind": "impossible_joint",
+    "panels": [
+     "1a",
+     "1c",
+     "3c",
+     "4c"
+    ],
+    "part": "left hand",
+    "severity": "major"
+   },
+   {
+    "avatar": "A",
+    "kind": "impossible_joint",
+    "panels": [
+     "1a",
+     "1c",
+     "3c",
+     "4c"
+    ],
+    "part": "right hand",
+    "severity": "major"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1a",
+     "3c",
+     "4a",
+     "4e"
+    ],
+    "part": "head",
+    "severity": "major"
+   },
+   {
+    "avatar": "B",
+    "kind": "through_body",
+    "panels": [
+     "1b",
+     "2b",
+     "3b",
+     "3d"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "B",
+  "floating_parts": {
+   "A": [
+    "left hand",
+    "right hand"
+   ],
+   "B": []
+  },
+  "more_natural": "B",
+  "same_pose": {
+   "answer": "no",
+   "reason": "B balances on its hands with the legs folded up against the arms, like the grey body. A is flipped upside down: head and arms on the floor, hands raised, legs stretched up and back."
+  },
+  "summary": "B closely follows the grey body: it balances on both hands with the legs tucked against the upper arms. A is flipped upside down, with its head and arms on the floor, its hands in the air and its legs stretched out behind. A does not match the grey body at all."
+ },
+ "audit_id": null,
+ "cost_usd": 0.16066760000000002,
+ "duration_s": 23.85,
+ "errors": [],
+ "frame_hold": 2355,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Cockerel_Pose-b@2355",
+ "inputs": {},
+ "item_id": "220923_Cockerel_Pose-b@2355#swap",
+ "n": 1,
+ "num_turns": 9,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/8f8b3e63948f310d642591598a1d7a178bf2618b",
+  "images": {
+   "img_1.png": "a9eaf96bf8a568b823359dece6de68bc49c9e3255ad83a9e39dc7e99a8ede2c8",
+   "img_2.png": "8094eeb027b2d311847b1367917d0791484bcab4e4902926d8b52468b0829d44",
+   "img_3.png": "9a3d9da860fc4d61253904933ed59a9b3c47f7fc36fd0061b8f00906a0def713",
+   "img_4.png": "4fbaeb363565195cea408d07b64913a3e8147b5b0d0d1a19ca68fd4913519436",
+   "img_5.png": "4e747c42338d0c4f33ff9689111e0c98d40f0603a0abb7056f1aee5bf70238b0"
+  },
+  "packet_json_sha256": "9c437b0efa277d22a6a3d240f5d4749928a5fdbdfaff49f83240aada46a7dd4c"
+ },
+ "packet_id": "8f8b3e63948f310d642591598a1d7a178bf2618b",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "0a627c12-5767-4d03-afe7-be542c2f0ef2",
+ "started_utc": "2026-09-30T02:32:09+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Cockerel_Pose-b",
+ "stratum": "swap",
+ "usage": {
+  "cache_creation_input_tokens": 13273,
+  "cache_read_input_tokens": 28558,
+  "input_tokens": 8,
+  "output_tokens": 2437,
+  "thinking_tokens": 561
+ },
+ "warnings": []
+}

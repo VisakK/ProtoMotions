@@ -1,0 +1,117 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "4b",
+     "4d",
+     "3d",
+     "2b"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "4b",
+     "4d",
+     "3d"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "A",
+  "floating_parts": {
+   "A": [],
+   "B": [
+    "right foot"
+   ]
+  },
+  "more_natural": "A",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both show the same deep lunge with the front knee bent, back leg straight, top arm reaching up and over, and the lower hand by the front thigh. Only foot contact differs."
+  },
+  "summary": "Both avatars hold the same pose. A keeps both feet flat on the floor where the grey body's feet are. B's back (right) foot hovers above the floor with a drop line, and its front (left) foot is tilted off flat, so A matches the human better."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1233452,
+ "duration_s": 16.21,
+ "errors": [],
+ "frame_hold": 622,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Extended_Revolved_Side_Angle_Pose_or_Utthita_Parsvakonasana_-b@622",
+ "inputs": {},
+ "item_id": "220923_Extended_Revolved_Side_Angle_Pose_or_Utthita_Parsvakonasana_-b@622#sink",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/54f57a656572b0a3527e88d8669b21879caa5155",
+  "images": {
+   "img_1.png": "11ada41f5b52b4dc716fa6e33868a2e4f4a93e0e9d3bd594cd356dff8c15d139",
+   "img_2.png": "468ff28262022a49aaf99c0caca409d780f8a4fb45f6fe51eca07c57336141dc",
+   "img_3.png": "ec5c3ffa6664471711f2e1f5975bfd904441093447957841abecbf1ea25f3a9a",
+   "img_4.png": "4d788763ba879de88b0e7e25c9b18f42e7bc8f5080bffccf24d2526e5c17a325",
+   "img_5.png": "02e04573c4b6878a5e17ffd69aa45ea26978b6289866266f6d68f39ff74b08fc"
+  },
+  "packet_json_sha256": "2b8bcf3f8f03d97667f9b0e55a761c37c7923dc1ce0d0f78ae815dd51951626f"
+ },
+ "packet_id": "54f57a656572b0a3527e88d8669b21879caa5155",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "4b676904-6235-4f26-8077-cf8a684abb46",
+ "started_utc": "2026-09-30T02:38:21+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Extended_Revolved_Side_Angle_Pose_or_Utthita_Parsvakonasana_-b",
+ "stratum": "sink",
+ "usage": {
+  "cache_creation_input_tokens": 11254,
+  "cache_read_input_tokens": 13446,
+  "input_tokens": 6,
+  "output_tokens": 1530,
+  "thinking_tokens": 494
+ },
+ "warnings": []
+}

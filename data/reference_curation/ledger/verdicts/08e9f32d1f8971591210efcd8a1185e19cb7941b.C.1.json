@@ -1,0 +1,160 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1b",
+     "2b",
+     "2d",
+     "3d"
+    ],
+    "part": "right foot",
+    "severity": "major"
+   },
+   {
+    "avatar": "B",
+    "kind": "pulled_apart",
+    "panels": [
+     "1b",
+     "1d",
+     "2b",
+     "3d",
+     "5d"
+    ],
+    "part": "head",
+    "severity": "major"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1b",
+     "1d",
+     "3d"
+    ],
+    "part": "torso",
+    "severity": "major"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1b",
+     "2d",
+     "3d"
+    ],
+    "part": "left forearm",
+    "severity": "major"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1b",
+     "3d",
+     "5d"
+    ],
+    "part": "right upper arm",
+    "severity": "major"
+   },
+   {
+    "avatar": "A",
+    "kind": "through_floor",
+    "panels": [
+     "4a",
+     "3c"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "A",
+  "floating_parts": {
+   "A": [],
+   "B": []
+  },
+  "more_natural": "A",
+  "same_pose": {
+   "answer": "no",
+   "reason": "A stands on the left leg with the right leg raised and held, arms spread. B has collapsed into a crouched lunge with the right foot back on the floor and the head and arms out of place."
+  },
+  "summary": "A follows the grey body closely: it stands on the left foot, the right leg is raised and held, and the arms are spread. Its left foot dips slightly into the floor. B has collapsed into a crouching lunge with the right foot on the floor, the head pulled down beside the torso and the arms out of place."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1445404,
+ "duration_s": 21.52,
+ "errors": [],
+ "frame_hold": 950,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Standing_big_toe_hold_pose_or_Utthita_Padangusthasana-a@950",
+ "inputs": {},
+ "item_id": "220923_Standing_big_toe_hold_pose_or_Utthita_Padangusthasana-a@950#swap",
+ "n": 1,
+ "num_turns": 9,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/08e9f32d1f8971591210efcd8a1185e19cb7941b",
+  "images": {
+   "img_1.png": "a16f1582d7c0053663e25ed1234aba7553df7d1a221c1c9a1d7349179d6a9868",
+   "img_2.png": "ac369ca60657fa44d4e53793c6d87049586a62d3e8adb32f454969f09708e2f6",
+   "img_3.png": "f8494fc4c93f25e084d92edf2a9672fee7d07afbd9f4819b50019a0b43aa6fc3",
+   "img_4.png": "d65e5dad1997f8cc5d9f06c57b3257c3526a38da3cfff0b5c2300f8c7cbc02c5",
+   "img_5.png": "ea2a166ab03f3657bbcbe32e4672b4e09b20c5a3458cf2d86e0131465dc6ae8e"
+  },
+  "packet_json_sha256": "939aaeb36ea69b1eabb0c533c9be13a923984dae052ad4dc8766eb23bda0810c"
+ },
+ "packet_id": "08e9f32d1f8971591210efcd8a1185e19cb7941b",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "55f80f0b-aab7-4fc7-a49d-fe9934923b4a",
+ "started_utc": "2026-09-30T02:34:23+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Standing_big_toe_hold_pose_or_Utthita_Padangusthasana-a",
+ "stratum": "swap",
+ "usage": {
+  "cache_creation_input_tokens": 11716,
+  "cache_read_input_tokens": 27102,
+  "input_tokens": 8,
+  "output_tokens": 2268,
+  "thinking_tokens": 355
+ },
+ "warnings": []
+}

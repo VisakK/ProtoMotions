@@ -1,0 +1,121 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1b",
+     "1d",
+     "2d",
+     "3b",
+     "3d",
+     "4b"
+    ],
+    "part": "left hand",
+    "severity": "major"
+   },
+   {
+    "avatar": "B",
+    "kind": "impossible_joint",
+    "panels": [
+     "1b",
+     "3d",
+     "5b",
+     "5d",
+     "5f"
+    ],
+    "part": "left forearm",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "A",
+  "floating_parts": {
+   "A": [],
+   "B": [
+    "left hand"
+   ]
+  },
+  "more_natural": "A",
+  "same_pose": {
+   "answer": "no",
+   "reason": "A's left arm reaches down with the left hand flat on the floor like the grey body. B's left elbow is sharply bent, the forearm points sideways and the left hand is held high."
+  },
+  "summary": "A follows the grey body closely, with both hands planted on the floor. B lifts its left arm off the floor into a bent, sideways position, so the left hand hovers well above the floor where the grey hand is planted. This changes how the pose is done."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1404472,
+ "duration_s": 18.63,
+ "errors": [],
+ "frame_hold": 1349,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-c@1296",
+ "inputs": {},
+ "item_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-c@1296#kink",
+ "n": 1,
+ "num_turns": 9,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/54595d81fccff36ee33a731d952fc0459cb0937e",
+  "images": {
+   "img_1.png": "bf01aabd83aca8c857082a753332c6914c4e869fbbce64efbaa395f6d2d01560",
+   "img_2.png": "3b7e6939a340c7b1160ce4e130c150c819746321de5a75b2ff1b2893adf8dc7f",
+   "img_3.png": "6985d662e618ba0687ea45a1e4d16dcdf6e702005dac70d55fca4924ac6e2812",
+   "img_4.png": "5c7f3adcd19cf22973dc0f7518760296e95935cdf643a23e84738d57adf7032d",
+   "img_5.png": "cadc3f7e12fc0c308ce29f20815027f9c615ce1d2c84e3de35875ab0fd6db034"
+  },
+  "packet_json_sha256": "b465d02940e7d6b9aa6cb02a385e7b7e1f484d72dbc7683f92a58af8418cc41f"
+ },
+ "packet_id": "54595d81fccff36ee33a731d952fc0459cb0937e",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "5dcf7ce8-2594-405a-bed1-ac9b96535e12",
+ "started_utc": "2026-09-30T02:41:28+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-c",
+ "stratum": "kink",
+ "usage": {
+  "cache_creation_input_tokens": 12172,
+  "cache_read_input_tokens": 27796,
+  "input_tokens": 8,
+  "output_tokens": 1874,
+  "thinking_tokens": 345
+ },
+ "warnings": []
+}

@@ -33,4 +33,17 @@ One module per step, pure functions plus a thin ``main()``; import with
              of a labels folder, written to ``data/reference_curation/statics/``
 ``witness``  Step 7: the MuJoCo statue witness: does the plant, simulated, hold the pose on the
              contacts the gated LP balanced it on
+``plant``    Step 8 (Step 7's open checks): the training plant from recorded PhysX rollouts: its
+             exp-map joint coordinates, hard limits, the references outside them, and the gated
+             LP against PhysX's measured contact forces
+``retarget`` Step 8: the contact-constrained retarget: every frame of a clip re-solved on the
+             plant's own coordinates so the human's supports rest flat in the floor band, the
+             human's body-body contacts close, nothing the plant collides overlaps and every
+             joint stays in its box; all ``.motion`` fields regenerated, with lineage
+``edits``    Step 8: Pass C, the reviewer's blind before/after check of the retarget's edits
+             over the performer's mesh, with its machine-truth controls and calibration
+``roles``    Step 8: labels v1.1 = labels v1 with the statics of the retargeted references
+             merged in (``required_touch`` ground supports statics requires -> ``required_support``)
+``isaac_statue`` Step 8 (Step 7's open checks): the statue test in IsaacLab (a script, run as its
+             own process; not a usable witness yet, see the card)
 """

@@ -1,0 +1,137 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "4a",
+     "2a",
+     "1c"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "4a",
+     "3c",
+     "1a"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "through_body",
+    "panels": [
+     "4a",
+     "3a"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "4b",
+     "3d",
+     "1b"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "B",
+  "floating_parts": {
+   "A": [
+    "left foot"
+   ],
+   "B": []
+  },
+  "more_natural": "B",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both stand upright with arms held out to the sides and legs nearly together. The only differences are at the feet: how wide apart they are and how they sit on the floor."
+  },
+  "summary": "Both avatars show the same standing pose. In A, both feet are tilted and pressed against each other, and the left foot hovers above the floor (it has a drop line). In B, both feet are flat on the floor, though they sit slightly wider apart than the human's feet."
+ },
+ "audit_id": null,
+ "cost_usd": 0.11626500000000001,
+ "duration_s": 18.79,
+ "errors": [],
+ "frame_hold": 3528,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Cockerel_Pose-b@3528",
+ "inputs": {},
+ "item_id": "220923_Cockerel_Pose-b@3528#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/e2af6bd94febe0fc9ee0520d0fc76120edcbb856",
+  "images": {
+   "img_1.png": "ca450b4e5395ca61fd7c1e2ff0503824360005e87f3066158024da526c940f21",
+   "img_2.png": "92f91a50badb3d1a0437ef3d0d14d8420d0d3a323be763c04eb6a2fe97bed744",
+   "img_3.png": "594adc9d1a013daaf04c2f2e582d043d4d3189d870374bee39d4ee1ebffae11f",
+   "img_4.png": "1509c89342e9acf5a448255bdb5b9fe6d7b0698bbf6e1e800aac94e1043732ca",
+   "img_5.png": "3d3835638c57dbd6c26737f450f9bc756422efeab923ebd738f242a6f64eb8ac"
+  },
+  "packet_json_sha256": "223aed19a86fe8b14744d7a7e84fdd368e9c58d1a2b3a3ad12e4f079d000bf26"
+ },
+ "packet_id": "e2af6bd94febe0fc9ee0520d0fc76120edcbb856",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "029e367f-e814-4e15-beb0-68000e5e8c46",
+ "started_utc": "2026-09-30T03:44:19+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Cockerel_Pose-b",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 10587,
+  "cache_read_input_tokens": 13425,
+  "input_tokens": 6,
+  "output_tokens": 1443,
+  "thinking_tokens": 314
+ },
+ "warnings": []
+}

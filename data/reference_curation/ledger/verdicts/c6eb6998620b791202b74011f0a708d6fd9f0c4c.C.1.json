@@ -1,0 +1,135 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "impossible_joint",
+    "panels": [
+     "4a",
+     "3c",
+     "1a"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "through_body",
+    "panels": [
+     "4a",
+     "3c"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1a",
+     "3c",
+     "5c"
+    ],
+    "part": "right shin",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "4a"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "B",
+  "floating_parts": {
+   "A": [
+    "left foot"
+   ],
+   "B": []
+  },
+  "more_natural": "B",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both stand upright on both feet with the arms held out to the sides. Only the lower legs and feet differ: A's shins angle inward and its feet are tilted."
+  },
+  "summary": "Both show the same standing pose with the arms out. B's legs are straight and its feet sit flat on the floor, matching the grey body. A's shins angle inward, its right foot is tilted and pushes into the left foot, and its left foot hovers just above the floor."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1158042,
+ "duration_s": 14.4,
+ "errors": [],
+ "frame_hold": 1396,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Plow_Pose_or_Halasana_-a@1396",
+ "inputs": {},
+ "item_id": "220923_Plow_Pose_or_Halasana_-a@1396#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/c6eb6998620b791202b74011f0a708d6fd9f0c4c",
+  "images": {
+   "img_1.png": "ae27f6b3b4d543b1576af5fe0a145291a05e6141ff0f98f0a54501a2c57d8a39",
+   "img_2.png": "77905aa3fc773db3745842a47a58b2acb276af9649fa588e0ab3ac104b2df365",
+   "img_3.png": "8d0fe2e50ba90e1c3f43a8f090cb54402c9a30a4327b23ade68d5b51361cc478",
+   "img_4.png": "d64ab5d4eb8bd2ecd323dddc60ece2136c889eccddc985c44cfcd2bdc0fcd6b4",
+   "img_5.png": "482fbdd51f15144e3a8d175b3e62b6d05ef227fe8a07a4b9ab6cf20a26e58a68"
+  },
+  "packet_json_sha256": "4ffda4ee86a121afcc7d4d7388dae7ca8ac24d25d8047d4978bfc3a1cfc1a2dc"
+ },
+ "packet_id": "c6eb6998620b791202b74011f0a708d6fd9f0c4c",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "918efed6-be96-4e3d-8896-f6955f821676",
+ "started_utc": "2026-09-30T03:53:15+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Plow_Pose_or_Halasana_-a",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 10599,
+  "cache_read_input_tokens": 13441,
+  "input_tokens": 6,
+  "output_tokens": 1415,
+  "thinking_tokens": 292
+ },
+ "warnings": []
+}

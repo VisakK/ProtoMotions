@@ -1,0 +1,150 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1b",
+     "1d",
+     "2b",
+     "2d",
+     "3d",
+     "5d"
+    ],
+    "part": "pelvis",
+    "severity": "major"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1b",
+     "2b",
+     "3b",
+     "3d"
+    ],
+    "part": "left foot",
+    "severity": "major"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1b",
+     "2b",
+     "3b",
+     "3d"
+    ],
+    "part": "right foot",
+    "severity": "major"
+   },
+   {
+    "avatar": "A",
+    "kind": "through_body",
+    "panels": [
+     "4c",
+     "4e"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "A",
+  "floating_parts": {
+   "A": [
+    "left foot",
+    "right foot",
+    "head"
+   ],
+   "B": [
+    "left foot",
+    "right foot",
+    "left shin",
+    "right shin",
+    "head"
+   ]
+  },
+  "more_natural": "A",
+  "same_pose": {
+   "answer": "no",
+   "reason": "A follows the grey body: feet wide apart on the floor, hands down, head low. B is upside down on its head and forearms with both legs bent high in the air, far from the floor."
+  },
+  "summary": "A stays close to the grey body, with only small floor gaps under its feet and head. B turns the pose into an inverted balance with both legs lifted high, so the feet that should be on the floor are far above it."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1343052,
+ "duration_s": 20.45,
+ "errors": [],
+ "frame_hold": 888,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-b@873",
+ "inputs": {},
+ "item_id": "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-b@873#swap",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/5270c1e95a2f2daef17a887da34fab46e70fc859",
+  "images": {
+   "img_1.png": "eccd1b3288a6006619c6f7d680411e8f8742676b02f3f5f842abf1b120152131",
+   "img_2.png": "8062b268fe54a2ec3c5a97cebdec190caf54e187318045243a820a19239d8f1a",
+   "img_3.png": "6c284a6d64883a2f6b00650a304c6e634545d0fb8b1a58835eaa5b07d1853d36",
+   "img_4.png": "d6982ef6b6040163bafae94d0cc596128604a3707f5db9f62bae0ab52834a604",
+   "img_5.png": "9325008219ff09ba4dfd3a5eb82524fc808cb04b9f83eb756624777bc7a3378a"
+  },
+  "packet_json_sha256": "d9e6fe86ea69cf25d05c62cf5f60a31bec5151ded8973b7e5feaa577f46252d5"
+ },
+ "packet_id": "5270c1e95a2f2daef17a887da34fab46e70fc859",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "c1da7a0d-9b5c-4ff4-a7d2-0866cf56ad7a",
+ "started_utc": "2026-09-30T02:33:45+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-b",
+ "stratum": "swap",
+ "usage": {
+  "cache_creation_input_tokens": 11968,
+  "cache_read_input_tokens": 13486,
+  "input_tokens": 6,
+  "output_tokens": 1792,
+  "thinking_tokens": 660
+ },
+ "warnings": []
+}

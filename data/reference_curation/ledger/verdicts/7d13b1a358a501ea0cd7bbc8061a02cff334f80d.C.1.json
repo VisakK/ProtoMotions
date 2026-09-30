@@ -1,0 +1,153 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "4e",
+     "4c",
+     "3c"
+    ],
+    "part": "right hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "4c",
+     "3c"
+    ],
+    "part": "left hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "4a",
+     "1a",
+     "3c"
+    ],
+    "part": "head",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "4b",
+     "1b",
+     "3d"
+    ],
+    "part": "head",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "jitter",
+    "panels": [
+     "5b",
+     "5d"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "B",
+  "floating_parts": {
+   "A": [
+    "head",
+    "right hand",
+    "left foot",
+    "right foot"
+   ],
+   "B": [
+    "head",
+    "right foot"
+   ]
+  },
+  "more_natural": "B",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both show head and both hands down, pelvis high, legs bent and reaching back toward the feet. B's left leg sits a little lower and the hands lie flatter, but the shape is the same."
+  },
+  "summary": "The pose is the same in both. B matches the grey body better where it meets the floor: its hands are flat and its left foot touches down. In A the right hand is tilted and hovering, and both feet float. The head hovers in both."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1471878,
+ "duration_s": 30.59,
+ "errors": [],
+ "frame_hold": 1046,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-b@1045",
+ "inputs": {},
+ "item_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-b@1045#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/7d13b1a358a501ea0cd7bbc8061a02cff334f80d",
+  "images": {
+   "img_1.png": "1eb7696d54ac127b343ce71703cc344c3eca746264363722c69aeddc3d4d70cb",
+   "img_2.png": "285f1b00028277d453b1b49d92eb5305e104b672139936e4c08de7a4c6c56960",
+   "img_3.png": "01e9a60ad187381e668cd4a66267f7570dc0d79c58d751ed1b08b74cd5c5101a",
+   "img_4.png": "f213834c1ec4137b50b41cb884ac92c9e0ad3f4b56d57906d7de4c9440fa95d6",
+   "img_5.png": "42f57aaff104cc04dc3999b17dda8dc1aa5741878ef291b64397d4a2232945d6"
+  },
+  "packet_json_sha256": "42b8bb72319e6c88a7c92c80bd5723749e81649e6353af38fb49e45cdc25993f"
+ },
+ "packet_id": "7d13b1a358a501ea0cd7bbc8061a02cff334f80d",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "ca4b7561-608d-4ce5-a5b6-a4ae756c63dd",
+ "started_utc": "2026-09-30T03:58:22+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-b",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 11993,
+  "cache_read_input_tokens": 13499,
+  "input_tokens": 6,
+  "output_tokens": 2426,
+  "thinking_tokens": 1204
+ },
+ "warnings": []
+}

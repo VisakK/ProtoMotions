@@ -1,0 +1,142 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1b",
+     "2b",
+     "3d",
+     "4d",
+     "5d"
+    ],
+    "part": "right foot",
+    "severity": "major"
+   },
+   {
+    "avatar": "B",
+    "kind": "through_body",
+    "panels": [
+     "2b",
+     "2d"
+    ],
+    "part": "right thigh",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "through_body",
+    "panels": [
+     "1a",
+     "3c",
+     "4a"
+    ],
+    "part": "left thigh",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "through_body",
+    "panels": [
+     "1b",
+     "4b"
+    ],
+    "part": "left thigh",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "A",
+  "floating_parts": {
+   "A": [
+    "left foot",
+    "right foot"
+   ],
+   "B": [
+    "left foot",
+    "right foot"
+   ]
+  },
+  "more_natural": "A",
+  "same_pose": {
+   "answer": "no",
+   "reason": "Both crouch on hands and feet, but B's right leg sticks out forward with the foot about 30 cm off the floor. A keeps both feet tucked under the body close to the floor."
+  },
+  "summary": "Both avatars keep their hands on the floor and their feet off it. A's feet hover a little under the body, close to the grey body. B's right leg is thrown forward with the foot high off the floor, which changes the pose, so A is closer to the human and looks more natural."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1253996,
+ "duration_s": 16.72,
+ "errors": [],
+ "frame_hold": 543,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Shoulder-Pressing_Pose_or_Bhujapidasana_-a@543",
+ "inputs": {},
+ "item_id": "220923_Shoulder-Pressing_Pose_or_Bhujapidasana_-a@543#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/f08d3ac05bd66716b8267461850c247047a9e662",
+  "images": {
+   "img_1.png": "f9b1d432255dfe81b390875a274af23d6722a778d5773500da89d21576b72231",
+   "img_2.png": "aa26f01632b54485e83014ede120fba3d681a7695bcfb18da3cbe09a3bfe6b20",
+   "img_3.png": "c7d69fd8d47c7b08f328f9a695b0a2318e2065643bd8a402013f015fc656b88c",
+   "img_4.png": "8f8503081274b9706e070a26feddc7b8c5f67910cf1a55886916b18825ae86e7",
+   "img_5.png": "14fe50819974879f85b5e4c8bfe977389c59e6bb6ebbd25e877bb5cd70fbbdbf"
+  },
+  "packet_json_sha256": "565d7159499b5f1c927edd2498ddbabb15b7ce04052cef0bd9b247b9604fa02b"
+ },
+ "packet_id": "f08d3ac05bd66716b8267461850c247047a9e662",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "38c0404b-7b1e-436e-98af-936fde1037bc",
+ "started_utc": "2026-09-30T03:57:32+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Shoulder-Pressing_Pose_or_Bhujapidasana_-a",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 11246,
+  "cache_read_input_tokens": 13438,
+  "input_tokens": 6,
+  "output_tokens": 1636,
+  "thinking_tokens": 509
+ },
+ "warnings": []
+}

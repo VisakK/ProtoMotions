@@ -1,0 +1,167 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1b",
+     "1d",
+     "3d",
+     "5d"
+    ],
+    "part": "left foot",
+    "severity": "major"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1b",
+     "1d",
+     "3d",
+     "5d"
+    ],
+    "part": "right foot",
+    "severity": "major"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "4b",
+     "4f",
+     "2b"
+    ],
+    "part": "right hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "4d",
+     "3d"
+    ],
+    "part": "left hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "3c",
+     "4c",
+     "4e"
+    ],
+    "part": "head",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "3d",
+     "4d",
+     "4f"
+    ],
+    "part": "head",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "A",
+  "floating_parts": {
+   "A": [
+    "head"
+   ],
+   "B": [
+    "head",
+    "left foot",
+    "right foot",
+    "left hand",
+    "right hand"
+   ]
+  },
+  "more_natural": "A",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both are the same inverted, bent-leg shape with head, hands and feet as the supports. B's knees sit higher and its feet and hands are lifted slightly off the floor."
+  },
+  "summary": "Both avatars show the same pose, but A sits closer to the grey body: its feet and hands are flat on the floor. B's feet hang above the floor, its hands are tilted up off the floor and its knees are raised. In both avatars the head floats above the floor."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1335574,
+ "duration_s": 18.21,
+ "errors": [],
+ "frame_hold": 429,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-b@430",
+ "inputs": {},
+ "item_id": "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-b@430#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/c4495771177170575dd79a65559ebbeb19d7fbdf",
+  "images": {
+   "img_1.png": "30bf2927efceb7c5f3c5080834b663afaf90f9e274b3e60477defab69841a808",
+   "img_2.png": "ab398957f3ab0604a2957d718e2799b9ef949d9db7e82f06e58d696c8e5c5f54",
+   "img_3.png": "565367ee47650ac515b908a3c36f5c7e83c3eb2c06f0077f2ae2a67052cd6a12",
+   "img_4.png": "6ea29a797b35c8228d0f920752a75969546d614a5e3200747520eed84123c9a5",
+   "img_5.png": "53715eb68b2e39ac88cff442eaabd86860db96a826f8ccd6734e74ec6007e08d"
+  },
+  "packet_json_sha256": "adadbe69575dc0c49e4702cd884c4dca844a5ccc30d7e94ff2e15e7b8a5a68a6"
+ },
+ "packet_id": "c4495771177170575dd79a65559ebbeb19d7fbdf",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "50f8b12c-a558-48bc-8432-6651ae594692",
+ "started_utc": "2026-09-30T03:55:07+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-b",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 11972,
+  "cache_read_input_tokens": 13487,
+  "input_tokens": 6,
+  "output_tokens": 1753,
+  "thinking_tokens": 535
+ },
+ "warnings": []
+}

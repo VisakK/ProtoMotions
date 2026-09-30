@@ -1,0 +1,125 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "4b",
+     "3d"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "4b",
+     "3d"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1b",
+     "3d",
+     "5d"
+    ],
+    "part": "left shin",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "A",
+  "floating_parts": {
+   "A": [],
+   "B": [
+    "left foot"
+   ]
+  },
+  "more_natural": "A",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both stand upright with arms stretched out to the sides and both feet on the floor; B only has its knees drawn inward and its feet tilted, which is a small difference."
+  },
+  "summary": "Both avatars show the same standing pose with arms stretched out. A's feet sit flat inside the grey feet. B's shins angle inward, both of its feet tilt off the floor, and a drop line shows its left foot hovering slightly, so A is closer to the human and looks more natural."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1138146,
+ "duration_s": 13.68,
+ "errors": [],
+ "frame_hold": 20,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Standing_big_toe_hold_pose_or_Utthita_Padangusthasana-b@20",
+ "inputs": {},
+ "item_id": "220923_Standing_big_toe_hold_pose_or_Utthita_Padangusthasana-b@20#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/b9797cc29ff59b4eafa15b52ad50ad1d1d8002d6",
+  "images": {
+   "img_1.png": "a35411462faa4ebc6e44ff3b9c255957bcd6c2bdeb6c59b7e728a7cd618c9a9b",
+   "img_2.png": "c94ef42c1468e748d042f99dcebf14e0e3792924db3113dbc940dc1336b83a24",
+   "img_3.png": "e15f3b6da1d5fbe0706c6c9d566be246edc708420324119b31554ff1e65686eb",
+   "img_4.png": "cb0863e28e919d4277ff4b6184256a9b6084c2175ec370f44452cda06db06028",
+   "img_5.png": "82405f9a4f2f2e504c259b15d2c1941570b3469a3f99fceef30bd5cf017df1f7"
+  },
+  "packet_json_sha256": "ca607a6c3c6857c55e8202d19a7ad7d61d96d697b389dc02c3f498b99e6d2538"
+ },
+ "packet_id": "b9797cc29ff59b4eafa15b52ad50ad1d1d8002d6",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "49097eba-9c45-439f-8c17-94938c10a226",
+ "started_utc": "2026-09-30T04:01:03+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Standing_big_toe_hold_pose_or_Utthita_Padangusthasana-b",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 10603,
+  "cache_read_input_tokens": 13433,
+  "input_tokens": 6,
+  "output_tokens": 1314,
+  "thinking_tokens": 212
+ },
+ "warnings": []
+}

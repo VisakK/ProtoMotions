@@ -1,0 +1,149 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1b",
+     "1d",
+     "3d",
+     "2b"
+    ],
+    "part": "torso",
+    "severity": "major"
+   },
+   {
+    "avatar": "B",
+    "kind": "jitter",
+    "panels": [
+     "5b",
+     "5d",
+     "5f"
+    ],
+    "part": "left foot",
+    "severity": "major"
+   },
+   {
+    "avatar": "B",
+    "kind": "through_body",
+    "panels": [
+     "1b",
+     "3b"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "through_body",
+    "panels": [
+     "1a",
+     "3a"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "4b",
+     "4d",
+     "1b"
+    ],
+    "part": "left thigh",
+    "severity": "major"
+   }
+  ],
+  "closer_to_human": "A",
+  "floating_parts": {
+   "A": [
+    "pelvis",
+    "right shin"
+   ],
+   "B": []
+  },
+  "more_natural": "A",
+  "same_pose": {
+   "answer": "no",
+   "reason": "A holds the left foot up near the right hand with the knees raised, as the grey body does. B has the left foot flat on the floor, the legs lower and the whole torso sunk well below the grey body."
+  },
+  "summary": "A tracks the grey body closely but its pelvis and right shin hover a few cm above the floor. B's torso sits far below the grey body, its left foot and leg lie flat on the floor instead of raised, and its legs jump between time-strip rows."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1461568,
+ "duration_s": 29.23,
+ "errors": [],
+ "frame_hold": 1233,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Scale_Pose_or_Tolasana_-a@1220",
+ "inputs": {},
+ "item_id": "220923_Scale_Pose_or_Tolasana_-a@1220#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/1e6e4905e8118dba69273999db0697ec10ad06fe",
+  "images": {
+   "img_1.png": "c36700bd832a809d97bcb6297162f09e73a10f05392f0f662c2e957dfea56512",
+   "img_2.png": "f0b041ac88e9211025b0e9f75c2358fe64a805f9f9971f1a38e5c72939c43264",
+   "img_3.png": "2c53741d06c7fa71f1bd3808ede6d8f776b31b19a9fdfa99746b89b823fbc0f2",
+   "img_4.png": "cb1578bbf91290a49d1f09d8db4f1d5826c0ebc7648da34bbeb691a18f5e711c",
+   "img_5.png": "e3bb6be40d2763f5a757d7c4b05d86aaeaf9da3ea0ffd72270f96d3a660fe392"
+  },
+  "packet_json_sha256": "73fd8fbdd39a157e334b81364bd1a068b0cf403a7748f71010ea3f9ff81fb6ff"
+ },
+ "packet_id": "1e6e4905e8118dba69273999db0697ec10ad06fe",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "3a3674dc-45c2-4cb0-9cde-0fb396669180",
+ "started_utc": "2026-09-30T03:55:43+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Scale_Pose_or_Tolasana_-a",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 11280,
+  "cache_read_input_tokens": 13464,
+  "input_tokens": 6,
+  "output_tokens": 2660,
+  "thinking_tokens": 1453
+ },
+ "warnings": []
+}

@@ -1,0 +1,125 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "B",
+    "kind": "through_body",
+    "panels": [
+     "4b",
+     "3d"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "4b",
+     "3d"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1b",
+     "3d",
+     "4b"
+    ],
+    "part": "left shin",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "A",
+  "floating_parts": {
+   "A": [],
+   "B": [
+    "left foot"
+   ]
+  },
+  "more_natural": "A",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both stand upright with the arms held out to the sides and both feet on the floor. Only the knees and feet differ a little: B's are drawn inward and tilted."
+  },
+  "summary": "The pose is the same in both. A's feet sit flat on the floor, where the grey body's feet are. In B the shins angle inward, the feet tilt and knock into each other, and the left foot hovers a little above the floor, so A is closer to the grey body and looks more natural."
+ },
+ "audit_id": null,
+ "cost_usd": 0.112131,
+ "duration_s": 13.68,
+ "errors": [],
+ "frame_hold": 0,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Scorpion_pose_or_vrischikasana-b@0",
+ "inputs": {},
+ "item_id": "220923_Scorpion_pose_or_vrischikasana-b@0#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/ddcc32b6028993db67ec59785d0d82f092d0b3b6",
+  "images": {
+   "img_1.png": "e0393a11c4d17227a48f2e053b7ae4a05f0c386c9b99087e6dce4cf8b5cb70eb",
+   "img_2.png": "8fe03180e62de6decc53753e769a59c5ad742c77ce317975b8c6e7429e81be29",
+   "img_3.png": "f58cfc4d09df55b8b4894bb30825c42cae60735eec3b456d79795e7ae551e4d1",
+   "img_4.png": "24c62f724a747f5b963c09616614147498ed16652136de6f400fdeb59ad0ea85",
+   "img_5.png": "ff278e27495650038d289b87662436b190a33e6eed94845e353a832625a4b22d"
+  },
+  "packet_json_sha256": "366cc025e46dac3ffee230873eaf5ebea6393eaf882a253cffe21c805577f0e6"
+ },
+ "packet_id": "ddcc32b6028993db67ec59785d0d82f092d0b3b6",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "240f3e5a-714f-47b7-9d5c-a8c67daababd",
+ "started_utc": "2026-09-30T06:17:17+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Scorpion_pose_or_vrischikasana-b",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 10573,
+  "cache_read_input_tokens": 13415,
+  "input_tokens": 6,
+  "output_tokens": 1242,
+  "thinking_tokens": 161
+ },
+ "warnings": []
+}

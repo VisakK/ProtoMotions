@@ -1,0 +1,154 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1b",
+     "2b",
+     "3d",
+     "4b"
+    ],
+    "part": "head",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "impossible_joint",
+    "panels": [
+     "1b",
+     "3d",
+     "4d",
+     "5f"
+    ],
+    "part": "left hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "impossible_joint",
+    "panels": [
+     "2b",
+     "4f"
+    ],
+    "part": "right hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "2b",
+     "4f"
+    ],
+    "part": "right upper arm",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1b",
+     "3d",
+     "4d"
+    ],
+    "part": "left upper arm",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "A",
+  "floating_parts": {
+   "A": [],
+   "B": [
+    "head",
+    "left upper arm",
+    "right upper arm",
+    "right forearm",
+    "right hand",
+    "left hand"
+   ]
+  },
+  "more_natural": "A",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both avatars lie on their backs with both legs straight up and the arms along the sides. B just has its head and arms lifted a little off the floor."
+  },
+  "summary": "Both show the same pose: lying on the back with the legs vertical. A lies flat and matches the grey body closely. B's head, upper arms and hands hover above the floor, with the hands tilted at odd angles."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1298358,
+ "duration_s": 15.47,
+ "errors": [],
+ "frame_hold": 617,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Legs-Up-the-Wall_Pose_or_Viparita_Karani_-a@617",
+ "inputs": {},
+ "item_id": "220923_Legs-Up-the-Wall_Pose_or_Viparita_Karani_-a@617#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/207306b0d1ab1a4dedc0dc700023c31cc9b49919",
+  "images": {
+   "img_1.png": "9e801daeb1c74ed4f392becde221f4801ceb20296ec2785bf8c54a97e25bcebc",
+   "img_2.png": "20ba77ecfedb748c2205907455538483bb1e9dfbd439371a07d1b2a82112cbce",
+   "img_3.png": "c9541846599450dccd9a32c4b69cf450fa78a729d303bdd97aea5245f1a270f0",
+   "img_4.png": "f843a9b77dbf93967dd54c5d1f5c1bbddb73afa4d9c95cb83a6f99619b63a28c",
+   "img_5.png": "78986e22938be57a449bd325818a2ebb40587fa6eddac94f0ddfff91f508efab"
+  },
+  "packet_json_sha256": "a05e45514be337ee25df745fddee43aa4676cb798c4f5dd18d06ff7da25a0c66"
+ },
+ "packet_id": "207306b0d1ab1a4dedc0dc700023c31cc9b49919",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "611f07fc-5e96-4c02-a620-e7da334eaf6b",
+ "started_utc": "2026-09-30T03:52:15+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Legs-Up-the-Wall_Pose_or_Viparita_Karani_-a",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 11989,
+  "cache_read_input_tokens": 13499,
+  "input_tokens": 6,
+  "output_tokens": 1560,
+  "thinking_tokens": 332
+ },
+ "warnings": []
+}

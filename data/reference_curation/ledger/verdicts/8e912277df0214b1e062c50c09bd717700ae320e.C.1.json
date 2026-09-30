@@ -1,0 +1,140 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1b",
+     "2b",
+     "3d",
+     "5b",
+     "5d",
+     "5f"
+    ],
+    "part": "right foot",
+    "severity": "major"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "4d",
+     "4f",
+     "2b"
+    ],
+    "part": "right hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "through_body",
+    "panels": [
+     "4b",
+     "4d"
+    ],
+    "part": "left hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1b",
+     "3d"
+    ],
+    "part": "right shin",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "A",
+  "floating_parts": {
+   "A": [],
+   "B": [
+    "right foot",
+    "right hand"
+   ]
+  },
+  "more_natural": "A",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both show the same shape: forearms on the floor, head down, left leg raised high and right foot planted behind. B's right foot is lifted a few cm and its right knee is bent a little more."
+  },
+  "summary": "Both avatars do the same pose. A matches the grey body closely, with both hands and the right foot flat on the floor. In B the right foot hovers above the floor with its knee bent more, the right hand is lifted, and the left hand is tilted into the left forearm."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1292684,
+ "duration_s": 16.17,
+ "errors": [],
+ "frame_hold": 734,
+ "generator": {
+  "git_rev": "3bf0ed71a585ad551ec2b758cd1ecbd57c9c0583",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Scorpion_pose_or_vrischikasana-a@734",
+ "inputs": {},
+ "item_id": "220923_Scorpion_pose_or_vrischikasana-a@734#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c1/8e912277df0214b1e062c50c09bd717700ae320e",
+  "images": {
+   "img_1.png": "b385a3da00ff862cfaf2facc31c5db24032ec340d70e4bccaddfb15fb6a0a66b",
+   "img_2.png": "94efb10f5a1eaa431e4ce0fdce3f3895a9f22c8da1894328bd319ad04a164949",
+   "img_3.png": "497f8f0e0fb9dd92cbef2a8342b90997147a46d258f312ecb9332f541d7fde20",
+   "img_4.png": "16ff9f8e611923f18544339d531efab441fd5429a6e6902c758463c0207d1b1a",
+   "img_5.png": "6fb802ed08decbda52d0bd961b94cd76ee6e2809500fecbc539c1eae7f9926ad"
+  },
+  "packet_json_sha256": "12373d9d43a4bc06554bae2ab1b1a9f94b80dd40ae247ac56b713252fe426e52"
+ },
+ "packet_id": "8e912277df0214b1e062c50c09bd717700ae320e",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c",
+ "render_v": "render_c1",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "e2c7ca78-0465-4fbf-9c63-ce230cea58e0",
+ "started_utc": "2026-09-30T03:56:47+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Scorpion_pose_or_vrischikasana-a",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 11956,
+  "cache_read_input_tokens": 13482,
+  "input_tokens": 6,
+  "output_tokens": 1545,
+  "thinking_tokens": 393
+ },
+ "warnings": []
+}
