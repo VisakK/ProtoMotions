@@ -57,7 +57,9 @@ from examples.experiments.mimic.pair_contact_terms import (  # noqa: E402
     _pair_surface_gap,
 )
 
-MJCF = "data/assets/smpl/smpl_yogi03596_lowtorque.xml"
+from protomotions.utils import plant_identity  # noqa: E402
+
+MJCF = plant_identity.default_mjcf()   # REFERENCE_PLANT (v1 default)
 
 HARD_FAILURES: list[str] = []
 

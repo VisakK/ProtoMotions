@@ -53,12 +53,15 @@ import numpy as np
 import torch
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(1, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 from add_onmat_gate_to_motions import BODY_NAMES, lowest_geom_per_body  # noqa: E402
 from contact_geometry import parse_typed_geoms  # noqa: E402
 from pressure_policy_report import ZID, ZK  # noqa: E402
 
 GATED_DIR = "data/smpl/yoga_motions_proto_yogi_pressure_gated"
-MJCF = "data/assets/smpl/smpl_yogi03596_lowtorque.xml"
+from protomotions.utils import plant_identity  # noqa: E402
+
+MJCF = plant_identity.default_mjcf()   # REFERENCE_PLANT (v1 default)
 GATE = 0.90
 MIN_TOTAL_N = 30.0
 SIGMAS_CM = (1.0, 2.0, 3.0, 5.0, 8.0)

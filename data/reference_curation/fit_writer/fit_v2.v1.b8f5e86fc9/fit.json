@@ -1,0 +1,1161 @@
+{
+ "schema_version": 1,
+ "generator": {
+  "module": "reference_curation.fit_writer",
+  "git_rev": "c2a51c40830d9244f55711d615df87bceb900525",
+  "sha256": "e4dd6b968562f3c0a877175cc66c680e4a8a3f91d039b36c49e1175c1db75581"
+ },
+ "inputs": {
+  "data/assets/smpl/smpl_yogi03596_v2.xml": "aa541c77bcc1526905777c425e5ab072f21cae7bcadad9f71e3b1eb531f98f91",
+  "/home/visakii/Documents/moyo_toolkit/data/body_models/smplx/SMPLX_FEMALE.npz": "2312f6dd2df506c9ce68b66294e2e122d39edfe04dcaac507ef33b5b522c51ee"
+ },
+ "fit_id": "fit_v2.v1.b8f5e86fc9",
+ "plant": {
+  "plant": "v2",
+  "mjcf": "data/assets/smpl/smpl_yogi03596_v2.xml",
+  "plant_sha256": "aa541c77bcc1526905777c425e5ab072f21cae7bcadad9f71e3b1eb531f98f91"
+ },
+ "hand": "fingers",
+ "out_dir": "output/reference_curation/fit_writer/fit_v2.v1.b8f5e86fc9",
+ "generators": {
+  "data/scripts/reference_curation/fit_writer.py": "e4dd6b968562f3c0a877175cc66c680e4a8a3f91d039b36c49e1175c1db75581",
+  "data/scripts/reference_curation/mosh_replay.py": "1f9703344d6a24e10b2a901f14812344c6047144eab8a50bbe544d5c362b04d4",
+  "data/scripts/reference_curation/human_mesh.py": "399ec32098fc847ffd0b97220180a84d16575a84b339e9bc4ddd0fe66d614401",
+  "protomotions/components/pose_lib.py": "a1c2622ca40d3d7fa0d04032bbb5cc032d56927e9c903b4e14080a098e844f81"
+ },
+ "dropped": {
+  "220923_Standing_big_toe_hold_pose_or_Utthita_Padangusthasana-c": "no readable MoSh fit (TODO B2)",
+  "220923_Cockerel_Pose-b": "lotus: the plant's knee range cannot fold a lotus (TODO B1)",
+  "220923_Firefly_Pose_or_Tittibhasana_-b": "past the plant's joint box: the trunk folds 24.9 deg past Torso_y's 90 deg stop with the thighs wedged into the upper arms; every retarget jerked or kept 14-22 new overlaps (BodyFix Step 3; the user's decision, 2026-09-30)",
+  "220923_Scale_Pose_or_Tolasana_-a": "lotus: the plant's knee range cannot fold a lotus (TODO B1)"
+ },
+ "clips": {
+  "220923_Half_Moon_Pose_or_Ardha_Chandrasana_-a": {
+   "stem": "220923_Half_Moon_Pose_or_Ardha_Chandrasana_-a",
+   "frames": 1276,
+   "fps": 60,
+   "sha256": "bdc1b4fed723ddb8eb22d16f702a2125293dc669879d3c16bdc9774fde83aace",
+   "fit": "/home/visakii/Documents/moyo_toolkit/data/mosh/train/220923_yogi_body_hands_03596_Half_Moon_Pose_or_Ardha_Chandrasana_-a_stageii.pkl",
+   "frames_past_box_1deg": 379,
+   "frames_past_box_2deg": 362,
+   "box_excess_max_deg": 10.06,
+   "lowest_min_cm": -1.9,
+   "lowest_p50_cm": -0.03,
+   "round_trip": {
+    "pos_m": 4.044103336653393e-07,
+    "rot": 7.176621612189904e-07,
+    "local": 4.885887878725015e-07,
+    "finite": true,
+    "plant": true
+   },
+   "seconds": 0.5
+  },
+  "220923_Half_Moon_Pose_or_Ardha_Chandrasana_-b": {
+   "stem": "220923_Half_Moon_Pose_or_Ardha_Chandrasana_-b",
+   "frames": 1444,
+   "fps": 60,
+   "sha256": "572003761d5199292e5dfce73bf24b60acf7c25e0616d67496db04caad526fa6",
+   "fit": "/home/visakii/Documents/moyo_toolkit/data/mosh/train/220923_yogi_body_hands_03596_Half_Moon_Pose_or_Ardha_Chandrasana_-b_stageii.pkl",
+   "frames_past_box_1deg": 293,
+   "frames_past_box_2deg": 265,
+   "box_excess_max_deg": 10.25,
+   "lowest_min_cm": -3.22,
+   "lowest_p50_cm": -2.19,
+   "round_trip": {
+    "pos_m": 3.9027024015952927e-07,
+    "rot": 6.583716236630011e-07,
+    "local": 3.702309251396585e-07,
+    "finite": true,
+    "plant": true
+   },
+   "seconds": 0.5
+  },
+  "220923_Standing_Split_pose_or_Urdhva_Prasarita_Eka_Padasana_-a": {
+   "stem": "220923_Standing_Split_pose_or_Urdhva_Prasarita_Eka_Padasana_-a",
+   "frames": 1036,
+   "fps": 60,
+   "sha256": "6e7afa7094a61f4d24c2240de55cc65fcc81120cb9a815dc92bfc8280b1115ec",
+   "fit": "/home/visakii/Documents/moyo_toolkit/data/mosh/train/220923_yogi_body_hands_03596_Standing_Split_pose_or_Urdhva_Prasarita_Eka_Padasana_-a_stageii.pkl",
+   "frames_past_box_1deg": 501,
+   "frames_past_box_2deg": 482,
+   "box_excess_max_deg": 17.64,
+   "lowest_min_cm": -2.53,
+   "lowest_p50_cm": -0.56,
+   "round_trip": {
+    "pos_m": 3.6678823251562465e-07,
+    "rot": 6.14932732970197e-07,
+    "local": 5.205658488716125e-07,
+    "finite": true,
+    "plant": true
+   },
+   "seconds": 0.4
+  },
+  "220923_Standing_Split_pose_or_Urdhva_Prasarita_Eka_Padasana_-b": {
+   "stem": "220923_Standing_Split_pose_or_Urdhva_Prasarita_Eka_Padasana_-b",
+   "frames": 988,
+   "fps": 60,
+   "sha256": "a27794dd1591479923c5190f8a71d788483d0150fd2acee54ee6bbeae2a0d167",
+   "fit": "/home/visakii/Documents/moyo_toolkit/data/mosh/train/220923_yogi_body_hands_03596_Standing_Split_pose_or_Urdhva_Prasarita_Eka_Padasana_-b_stageii.pkl",
+   "frames_past_box_1deg": 446,
+   "frames_past_box_2deg": 435,
+   "box_excess_max_deg": 12.7,
+   "lowest_min_cm": -4.54,
+   "lowest_p50_cm": -2.73,
+   "round_trip": {
+    "pos_m": 4.426395574519404e-07,
+    "rot": 6.586527164370581e-07,
+    "local": 4.963263661172945e-07,
+    "finite": true,
+    "plant": true
+   },
+   "seconds": 0.4
+  },
+  "220923_Standing_big_toe_hold_pose_or_Utthita_Padangusthasana-a": {
+   "stem": "220923_Standing_big_toe_hold_pose_or_Utthita_Padangusthasana-a",
+   "frames": 1434,
+   "fps": 60,
+   "sha256": "392b5055ba24c017c53c48434e3120e050b9db3e26e1b20f1fe1b27b0414a17b",
+   "fit": "/home/visakii/Documents/moyo_toolkit/data/mosh/train/220923_yogi_body_hands_03596_Standing_big_toe_hold_pose_or_Utthita_Padangusthasana-a_stageii.pkl",
+   "frames_past_box_1deg": 50,
+   "frames_past_box_2deg": 25,
+   "box_excess_max_deg": 3.22,
+   "lowest_min_cm": -2.22,
+   "lowest_p50_cm": -0.58,
+   "round_trip": {
+    "pos_m": 4.1888035640091914e-07,
+    "rot": 5.915622111895853e-07,
+    "local": 4.5516927460464984e-07,
+    "finite": true,
+    "plant": true
+   },
+   "seconds": 0.5
+  },
+  "220923_Standing_big_toe_hold_pose_or_Utthita_Padangusthasana-b": {
+   "stem": "220923_Standing_big_toe_hold_pose_or_Utthita_Padangusthasana-b",
+   "frames": 1224,
+   "fps": 60,
+   "sha256": "217e492333f99dfe8522f5d719a720e55084936e4d6bce34fa254d2b0d91bbaf",
+   "fit": "/home/visakii/Documents/moyo_toolkit/data/mosh/train/220923_yogi_body_hands_03596_Standing_big_toe_hold_pose_or_Utthita_Padangusthasana-b_stageii.pkl",
+   "frames_past_box_1deg": 0,
+   "frames_past_box_2deg": 0,
+   "box_excess_max_deg": 0.0,
+   "lowest_min_cm": -1.99,
+   "lowest_p50_cm": -0.92,
+   "round_trip": {
+    "pos_m": 4.779998217241399e-07,
+    "rot": 5.445382748742178e-07,
+    "local": 4.3698945617620666e-07,
+    "finite": true,
+    "plant": true
+   },
+   "seconds": 0.5
+  },
+  "220923_Tree_Pose_or_Vrksasana_-a": {
+   "stem": "220923_Tree_Pose_or_Vrksasana_-a",
+   "frames": 1212,
+   "fps": 60,
+   "sha256": "b4ed6e6414fcc1453fad89cec383de29cf7583a36012c0149bd8b24ea2aa6146",
+   "fit": "/home/visakii/Documents/moyo_toolkit/data/mosh/val/220923_yogi_body_hands_03596_Tree_Pose_or_Vrksasana_-a_stageii.pkl",
+   "frames_past_box_1deg": 138,
+   "frames_past_box_2deg": 122,
+   "box_excess_max_deg": 19.48,
+   "lowest_min_cm": -2.29,
+   "lowest_p50_cm": -1.34,
+   "round_trip": {
+    "pos_m": 4.442771688317748e-07,
+    "rot": 5.890665978891541e-07,
+    "local": 3.967796666781709e-07,
+    "finite": true,
+    "plant": true
+   },
+   "seconds": 0.6
+  },
+  "220923_Tree_Pose_or_Vrksasana_-b": {
+   "stem": "220923_Tree_Pose_or_Vrksasana_-b",
+   "frames": 856,
+   "fps": 60,
+   "sha256": "672d59762a4fc189bdb9039733ce13bdc22001c5dee8b8399ee91dba62ce979e",
+   "fit": "/home/visakii/Documents/moyo_toolkit/data/mosh/val/220923_yogi_body_hands_03596_Tree_Pose_or_Vrksasana_-b_stageii.pkl",
+   "frames_past_box_1deg": 114,
+   "frames_past_box_2deg": 106,
+   "box_excess_max_deg": 15.35,
+   "lowest_min_cm": -2.17,
+   "lowest_p50_cm": -1.89,
+   "round_trip": {
+    "pos_m": 3.363225347108312e-07,
+    "rot": 5.924513303834367e-07,
+    "local": 3.6839328432236584e-07,
+    "finite": true,
+    "plant": true
+   },
+   "seconds": 0.2
+  },
+  "220926_Eagle_Pose_or_Garudasana_-a": {
+   "stem": "220926_Eagle_Pose_or_Garudasana_-a",
+   "frames": 1174,
+   "fps": 60,
+   "sha256": "73514515ecc78755ee366520ffc453ae708961e072b402436641d04bc78649f4",
+   "fit": "/home/visakii/Documents/moyo_toolkit/data/mosh/train/220926_yogi_body_hands_03596_Eagle_Pose_or_Garudasana_-a_stageii.pkl",
+   "frames_past_box_1deg": 32,
+   "frames_past_box_2deg": 0,
+   "box_excess_max_deg": 1.21,
+   "lowest_min_cm": -1.0,
+   "lowest_p50_cm": -0.17,
+   "round_trip": {
+    "pos_m": 3.358006090969923e-07,
+    "rot": 5.894110204074376e-07,
+    "local": 4.5976717777396203e-07,
+    "finite": true,
+    "plant": true
+   },
+   "seconds": 0.3
+  },
+  "220926_Lord_of_the_Dance_Pose_or_Natarajasana_-a": {
+   "stem": "220926_Lord_of_the_Dance_Pose_or_Natarajasana_-a",
+   "frames": 1346,
+   "fps": 60,
+   "sha256": "50b038402d8d14b71b20e2c709feab190622236b8e8df33d3cb39f4fe5510d0b",
+   "fit": "/home/visakii/Documents/moyo_toolkit/data/mosh/train/220926_yogi_body_hands_03596_Lord_of_the_Dance_Pose_or_Natarajasana_-a_stageii.pkl",
+   "frames_past_box_1deg": 0,
+   "frames_past_box_2deg": 0,
+   "box_excess_max_deg": 0.0,
+   "lowest_min_cm": -1.82,
+   "lowest_p50_cm": 0.61,
+   "round_trip": {
+    "pos_m": 4.6998716229929016e-07,
+    "rot": 5.759142411299045e-07,
+    "local": 4.205599084539102e-07,
+    "finite": true,
+    "plant": true
+   },
+   "seconds": 1.0
+  },
+  "220926_Lord_of_the_Dance_Pose_or_Natarajasana_-c": {
+   "stem": "220926_Lord_of_the_Dance_Pose_or_Natarajasana_-c",
+   "frames": 1912,
+   "fps": 60,
+   "sha256": "7794c3b659ade8b76a756b65bcab63537e5f91408bcf4821ce1d3583a3eaa83d",
+   "fit": "/home/visakii/Documents/moyo_toolkit/data/mosh/train/220926_yogi_body_hands_03596_Lord_of_the_Dance_Pose_or_Natarajasana_-c_stageii.pkl",
+   "frames_past_box_1deg": 473,
+   "frames_past_box_2deg": 427,
+   "box_excess_max_deg": 18.55,
+   "lowest_min_cm": -0.66,
+   "lowest_p50_cm": 0.03,
+   "round_trip": {
+    "pos_m": 3.94058093933225e-07,
+    "rot": 6.704828969805732e-07,
+    "local": 5.040440196335538e-07,
+    "finite": true,
+    "plant": true
+   },
+   "seconds": 0.4
+  },
+  "220926_Warrior_III_Pose_or_Virabhadrasana_III_-a": {
+   "stem": "220926_Warrior_III_Pose_or_Virabhadrasana_III_-a",
+   "frames": 1268,
+   "fps": 60,
+   "sha256": "05c367969e175988a83d0b70957c09f474ee896179ead3a0836178f6614413de",
+   "fit": "/home/visakii/Documents/moyo_toolkit/data/mosh/val/220926_yogi_body_hands_03596_Warrior_III_Pose_or_Virabhadrasana_III_-a_stageii.pkl",
+   "frames_past_box_1deg": 58,
+   "frames_past_box_2deg": 0,
+   "box_excess_max_deg": 1.67,
+   "lowest_min_cm": -0.44,
+   "lowest_p50_cm": 0.64,
+   "round_trip": {
+    "pos_m": 5.037341554992025e-07,
+    "rot": 6.003643429203231e-07,
+    "local": 4.900601531243609e-07,
+    "finite": true,
+    "plant": true
+   },
+   "seconds": 1.0
+  },
+  "220926_Warrior_III_Pose_or_Virabhadrasana_III_-b": {
+   "stem": "220926_Warrior_III_Pose_or_Virabhadrasana_III_-b",
+   "frames": 1174,
+   "fps": 60,
+   "sha256": "dfbb5dc2680c34c9cb66a12b6a53d60184ce516f39767b9895090f1e6f0b1285",
+   "fit": "/home/visakii/Documents/moyo_toolkit/data/mosh/val/220926_yogi_body_hands_03596_Warrior_III_Pose_or_Virabhadrasana_III_-b_stageii.pkl",
+   "frames_past_box_1deg": 328,
+   "frames_past_box_2deg": 271,
+   "box_excess_max_deg": 4.66,
+   "lowest_min_cm": -0.25,
+   "lowest_p50_cm": 0.33,
+   "round_trip": {
+    "pos_m": 3.545508382440943e-07,
+    "rot": 6.173917845853083e-07,
+    "local": 4.389114136582606e-07,
+    "finite": true,
+    "plant": true
+   },
+   "seconds": 0.2
+  },
+  "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-a": {
+   "stem": "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-a",
+   "frames": 2144,
+   "fps": 60,
+   "sha256": "1391b15db77d79a6b07ac0b7ea4759a5b68cee6dc6a683d3c28d5b95e139722f",
+   "fit": "/home/visakii/Documents/moyo_toolkit/data/mosh/train/220923_yogi_body_hands_03596_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-a_stageii.pkl",
+   "frames_past_box_1deg": 1402,
+   "frames_past_box_2deg": 1363,
+   "box_excess_max_deg": 30.08,
+   "lowest_min_cm": -2.26,
+   "lowest_p50_cm": -0.93,
+   "round_trip": {
+    "pos_m": 5.063428080154253e-07,
+    "rot": 6.488140322780112e-07,
+    "local": 5.234169236922881e-07,
+    "finite": true,
+    "plant": true
+   },
+   "seconds": 1.4
+  },
+  "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-b": {
+   "stem": "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-b",
+   "frames": 2228,
+   "fps": 60,
+   "sha256": "c0af0e4e5cb829911b1b0982cead490f03bdf24a695920b03e335bc835b31f97",
+   "fit": "/home/visakii/Documents/moyo_toolkit/data/mosh/train/220923_yogi_body_hands_03596_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-b_stageii.pkl",
+   "frames_past_box_1deg": 545,
+   "frames_past_box_2deg": 427,
+   "box_excess_max_deg": 14.12,
+   "lowest_min_cm": -2.87,
+   "lowest_p50_cm": -1.09,
+   "round_trip": {
+    "pos_m": 4.3809836336450303e-07,
+    "rot": 7.324862547064548e-07,
+    "local": 5.125788345994309e-07,
+    "finite": true,
+    "plant": true
+   },
+   "seconds": 0.4
+  },
+  "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-c": {
+   "stem": "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-c",
+   "frames": 2404,
+   "fps": 60,
+   "sha256": "46d48989de3ab4848abe02c906ff52f18b1331692977fe88298e04ac8fbf5d15",
+   "fit": "/home/visakii/Documents/moyo_toolkit/data/mosh/train/220923_yogi_body_hands_03596_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-c_stageii.pkl",
+   "frames_past_box_1deg": 981,
+   "frames_past_box_2deg": 898,
+   "box_excess_max_deg": 30.41,
+   "lowest_min_cm": -2.1,
+   "lowest_p50_cm": -0.7,
+   "round_trip": {
+    "pos_m": 4.2180246317968795e-07,
+    "rot": 6.561932630599898e-07,
+    "local": 4.667034948502291e-07,
+    "finite": true,
+    "plant": true
+   },
+   "seconds": 0.5
+  },
+  "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-d": {
+   "stem": "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-d",
+   "frames": 1984,
+   "fps": 60,
+   "sha256": "7cbd8914cf0d8ca4fdbb8d87c6171b2b19315e8d38ff867486430a6c709ce8ff",
+   "fit": "/home/visakii/Documents/moyo_toolkit/data/mosh/train/220923_yogi_body_hands_03596_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-d_stageii.pkl",
+   "frames_past_box_1deg": 1269,
+   "frames_past_box_2deg": 1245,
+   "box_excess_max_deg": 27.95,
+   "lowest_min_cm": -2.24,
+   "lowest_p50_cm": -0.92,
+   "round_trip": {
+    "pos_m": 3.9660707473743173e-07,
+    "rot": 6.720063580566149e-07,
+    "local": 5.192818941512911e-07,
+    "finite": true,
+    "plant": true
+   },
+   "seconds": 1.3
+  },
+  "220923_Handstand_pose_or_Adho_Mukha_Vrksasana_-a": {
+   "stem": "220923_Handstand_pose_or_Adho_Mukha_Vrksasana_-a",
+   "frames": 2938,
+   "fps": 60,
+   "sha256": "01f2de14cf38344e894bb64825af01d95d756ceac0b429ec3985ce8730db873d",
+   "fit": "/home/visakii/Documents/moyo_toolkit/data/mosh/train/220923_yogi_body_hands_03596_Handstand_pose_or_Adho_Mukha_Vrksasana_-a_stageii.pkl",
+   "frames_past_box_1deg": 670,
+   "frames_past_box_2deg": 541,
+   "box_excess_max_deg": 11.38,
+   "lowest_min_cm": -3.46,
+   "lowest_p50_cm": -2.57,
+   "round_trip": {
+    "pos_m": 4.922430743153905e-07,
+    "rot": 6.28489902218532e-07,
+    "local": 4.995606223134885e-07,
+    "finite": true,
+    "plant": true
+   },
+   "seconds": 0.6
+  },
+  "220923_Legs-Up-the-Wall_Pose_or_Viparita_Karani_-a": {
+   "stem": "220923_Legs-Up-the-Wall_Pose_or_Viparita_Karani_-a",
+   "frames": 1078,
+   "fps": 60,
+   "sha256": "128d50ee6f925b96cb2c87bcd282cf96466a01c0d0dd01de551325a83592c77e",
+   "fit": "/home/visakii/Documents/moyo_toolkit/data/mosh/train/220923_yogi_body_hands_03596_Legs-Up-the-Wall_Pose_or_Viparita_Karani_-a_stageii.pkl",
+   "frames_past_box_1deg": 531,
+   "frames_past_box_2deg": 492,
+   "box_excess_max_deg": 11.49,
+   "lowest_min_cm": -3.29,
+   "lowest_p50_cm": -1.65,
+   "round_trip": {
+    "pos_m": 3.8468112906198115e-07,
+    "rot": 7.410287289066897e-07,
+    "local": 4.998270938250116e-07,
+    "finite": true,
+    "plant": true
+   },
+   "seconds": 0.9
+  },
+  "220923_Plow_Pose_or_Halasana_-a": {
+   "stem": "220923_Plow_Pose_or_Halasana_-a",
+   "frames": 1404,
+   "fps": 60,
+   "sha256": "df215fc0a79cf73d18c4e32124555e7dc953140f3e5053b9c69092f400b6f507",
+   "fit": "/home/visakii/Documents/moyo_toolkit/data/mosh/train/220923_yogi_body_hands_03596_Plow_Pose_or_Halasana_-a_stageii.pkl",
+   "frames_past_box_1deg": 845,
+   "frames_past_box_2deg": 762,
+   "box_excess_max_deg": 28.39,
+   "lowest_min_cm": -3.49,
+   "lowest_p50_cm": -0.25,
+   "round_trip": {
+    "pos_m": 3.612002517083823e-07,
+    "rot": 5.738086261697362e-07,
+    "local": 4.732817797670208e-07,
+    "finite": true,
+    "plant": true
+   },
+   "seconds": 0.3
+  },
+  "220926_Plow_Pose_or_Halasana_-b": {
+   "stem": "220926_Plow_Pose_or_Halasana_-b",
+   "frames": 2412,
+   "fps": 60,
+   "sha256": "9a08303c8af455f3b69d9557bf6be5fd6ead5982326a5d029b8e5c9a1500a39f",
+   "fit": "/home/visakii/Documents/moyo_toolkit/data/mosh/train/220926_yogi_body_hands_03596_Plow_Pose_or_Halasana_-b_stageii.pkl",
+   "frames_past_box_1deg": 513,
+   "frames_past_box_2deg": 472,
+   "box_excess_max_deg": 25.57,
+   "lowest_min_cm": -2.09,
+   "lowest_p50_cm": -0.38,
+   "round_trip": {
+    "pos_m": 3.276339056723643e-07,
+    "rot": 8.107837643489546e-07,
+    "local": 4.659967888231975e-07,
+    "finite": true,
+    "plant": true
+   },
+   "seconds": 0.5
+  },
+  "220923_Scorpion_pose_or_vrischikasana-a": {
+   "stem": "220923_Scorpion_pose_or_vrischikasana-a",
+   "frames": 3270,
+   "fps": 60,
+   "sha256": "f5a891ac5f2e864488a62bd1f55e76a951bd99ae202de49128b4247a19e96f92",
+   "fit": "/home/visakii/Documents/moyo_toolkit/data/mosh/train/220923_yogi_body_hands_03596_Scorpion_pose_or_vrischikasana-a_stageii.pkl",
+   "frames_past_box_1deg": 2618,
+   "frames_past_box_2deg": 2517,
+   "box_excess_max_deg": 28.49,
+   "lowest_min_cm": -2.96,
+   "lowest_p50_cm": -0.98,
+   "round_trip": {
+    "pos_m": 3.9507552851425487e-07,
+    "rot": 6.758164547426837e-07,
+    "local": 5.115669036159787e-07,
+    "finite": true,
+    "plant": true
+   },
+   "seconds": 1.5
+  },
+  "220923_Scorpion_pose_or_vrischikasana-b": {
+   "stem": "220923_Scorpion_pose_or_vrischikasana-b",
+   "frames": 1808,
+   "fps": 60,
+   "sha256": "838364b9c72d40b62757a41c5fd68e35145c6dbb401b03e4a9adf61d31ab60b7",
+   "fit": "/home/visakii/Documents/moyo_toolkit/data/mosh/train/220923_yogi_body_hands_03596_Scorpion_pose_or_vrischikasana-b_stageii.pkl",
+   "frames_past_box_1deg": 860,
+   "frames_past_box_2deg": 830,
+   "box_excess_max_deg": 10.86,
+   "lowest_min_cm": -3.29,
+   "lowest_p50_cm": -2.31,
+   "round_trip": {
+    "pos_m": 5.448704825106176e-07,
+    "rot": 6.648030619893497e-07,
+    "local": 5.140497697508906e-07,
+    "finite": true,
+    "plant": true
+   },
+   "seconds": 1.2
+  },
+  "220923_Supported_Headstand_pose_or_Salamba_Sirsasana_-b": {
+   "stem": "220923_Supported_Headstand_pose_or_Salamba_Sirsasana_-b",
+   "frames": 1790,
+   "fps": 60,
+   "sha256": "629b40f4655355c9d7f0135bcd30a5a75e9e3e16f6670582c19fad886bfa372b",
+   "fit": "/home/visakii/Documents/moyo_toolkit/data/mosh/train/220923_yogi_body_hands_03596_Supported_Headstand_pose_or_Salamba_Sirsasana_-b_stageii.pkl",
+   "frames_past_box_1deg": 207,
+   "frames_past_box_2deg": 190,
+   "box_excess_max_deg": 6.83,
+   "lowest_min_cm": -2.23,
+   "lowest_p50_cm": -1.72,
+   "round_trip": {
+    "pos_m": 3.6545526382880666e-07,
+    "rot": 6.745699259874671e-07,
+    "local": 6.268970816902808e-07,
+    "finite": true,
+    "plant": true
+   },
+   "seconds": 0.4
+  },
+  "220926_Supported_Headstand_pose_or_Salamba_Sirsasana_-a": {
+   "stem": "220926_Supported_Headstand_pose_or_Salamba_Sirsasana_-a",
+   "frames": 1888,
+   "fps": 60,
+   "sha256": "d0f9077552fe0c163dec1f7b9e97957d80bd483a9521ea7cec3107a80e6a8eae",
+   "fit": "/home/visakii/Documents/moyo_toolkit/data/mosh/val/220926_yogi_body_hands_03596_Supported_Headstand_pose_or_Salamba_Sirsasana_-a_stageii.pkl",
+   "frames_past_box_1deg": 1256,
+   "frames_past_box_2deg": 1254,
+   "box_excess_max_deg": 32.86,
+   "lowest_min_cm": -3.13,
+   "lowest_p50_cm": -2.59,
+   "round_trip": {
+    "pos_m": 3.6194580788073694e-07,
+    "rot": 7.474582945088404e-07,
+    "local": 4.3928483661748174e-07,
+    "finite": true,
+    "plant": true
+   },
+   "seconds": 1.2
+  },
+  "220923_Supported_Shoulderstand_pose_or_Salamba_Sarvangasana_-a": {
+   "stem": "220923_Supported_Shoulderstand_pose_or_Salamba_Sarvangasana_-a",
+   "frames": 1608,
+   "fps": 60,
+   "sha256": "f24c64c47b5a136f010264bf8a91ee29ca0a094c8f573908c1cb7cf8449e4281",
+   "fit": "/home/visakii/Documents/moyo_toolkit/data/mosh/train/220923_yogi_body_hands_03596_Supported_Shoulderstand_pose_or_Salamba_Sarvangasana_-a_stageii.pkl",
+   "frames_past_box_1deg": 323,
+   "frames_past_box_2deg": 253,
+   "box_excess_max_deg": 10.22,
+   "lowest_min_cm": -3.17,
+   "lowest_p50_cm": -0.81,
+   "round_trip": {
+    "pos_m": 4.13992243153416e-07,
+    "rot": 5.817024864435139e-07,
+    "local": 4.1465963829256935e-07,
+    "finite": true,
+    "plant": true
+   },
+   "seconds": 0.3
+  },
+  "220923_Crane_Crow_Pose_or_Bakasana_-a": {
+   "stem": "220923_Crane_Crow_Pose_or_Bakasana_-a",
+   "frames": 972,
+   "fps": 60,
+   "sha256": "a6e8f24b21d366c51e3f17a616c7f447c05eb57252dd7a8db455bfdb1a4feecb",
+   "fit": "/home/visakii/Documents/moyo_toolkit/data/mosh/train/220923_yogi_body_hands_03596_Crane_(Crow)_Pose_or_Bakasana_-a_stageii.pkl",
+   "frames_past_box_1deg": 178,
+   "frames_past_box_2deg": 163,
+   "box_excess_max_deg": 10.22,
+   "lowest_min_cm": -2.43,
+   "lowest_p50_cm": -1.62,
+   "round_trip": {
+    "pos_m": 4.421045537369994e-07,
+    "rot": 6.264221713569995e-07,
+    "local": 4.659871485346301e-07,
+    "finite": true,
+    "plant": true
+   },
+   "seconds": 0.2
+  },
+  "220923_Firefly_Pose_or_Tittibhasana_-a": {
+   "stem": "220923_Firefly_Pose_or_Tittibhasana_-a",
+   "frames": 1218,
+   "fps": 60,
+   "sha256": "3651731168ce9ec7f224531265f294a0f1bfef5fd185c8a25f9c5584754bcea6",
+   "fit": "/home/visakii/Documents/moyo_toolkit/data/mosh/train/220923_yogi_body_hands_03596_Firefly_Pose_or_Tittibhasana_-a_stageii.pkl",
+   "frames_past_box_1deg": 446,
+   "frames_past_box_2deg": 392,
+   "box_excess_max_deg": 7.59,
+   "lowest_min_cm": -3.67,
+   "lowest_p50_cm": -2.41,
+   "round_trip": {
+    "pos_m": 3.607223466595144e-07,
+    "rot": 6.002506813679309e-07,
+    "local": 5.426878125769363e-07,
+    "finite": true,
+    "plant": true
+   },
+   "seconds": 1.0
+  },
+  "220923_Peacock_Pose_or_Mayurasana_-a": {
+   "stem": "220923_Peacock_Pose_or_Mayurasana_-a",
+   "frames": 1790,
+   "fps": 60,
+   "sha256": "9828acc236faa67e0e069cc473b5d27788b7b05ce6cf3832cc0da0d439171ba2",
+   "fit": "/home/visakii/Documents/moyo_toolkit/data/mosh/train/220923_yogi_body_hands_03596_Peacock_Pose_or_Mayurasana_-a_stageii.pkl",
+   "frames_past_box_1deg": 1357,
+   "frames_past_box_2deg": 1282,
+   "box_excess_max_deg": 23.8,
+   "lowest_min_cm": -3.36,
+   "lowest_p50_cm": -1.75,
+   "round_trip": {
+    "pos_m": 4.393055657025968e-07,
+    "rot": 7.029152503112979e-07,
+    "local": 5.578752632073858e-07,
+    "finite": true,
+    "plant": true
+   },
+   "seconds": 0.3
+  },
+  "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-a": {
+   "stem": "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-a",
+   "frames": 1848,
+   "fps": 60,
+   "sha256": "1286e7afd649eeb70aa279cb834a445d05752766d06d1a3ef419354795d3bacd",
+   "fit": "/home/visakii/Documents/moyo_toolkit/data/mosh/train/220923_yogi_body_hands_03596_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-a_stageii.pkl",
+   "frames_past_box_1deg": 403,
+   "frames_past_box_2deg": 385,
+   "box_excess_max_deg": 13.45,
+   "lowest_min_cm": -2.18,
+   "lowest_p50_cm": -1.61,
+   "round_trip": {
+    "pos_m": 4.0476831442148864e-07,
+    "rot": 6.271877350805255e-07,
+    "local": 5.423404734195003e-07,
+    "finite": true,
+    "plant": true
+   },
+   "seconds": 0.3
+  },
+  "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-b": {
+   "stem": "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-b",
+   "frames": 1602,
+   "fps": 60,
+   "sha256": "2d88b1c213071b49b98e82e0d91f9efb3ac28fb6be0b42896b099bf66c4ac826",
+   "fit": "/home/visakii/Documents/moyo_toolkit/data/mosh/train/220923_yogi_body_hands_03596_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-b_stageii.pkl",
+   "frames_past_box_1deg": 570,
+   "frames_past_box_2deg": 504,
+   "box_excess_max_deg": 14.29,
+   "lowest_min_cm": -2.37,
+   "lowest_p50_cm": -1.7,
+   "round_trip": {
+    "pos_m": 4.598515292997263e-07,
+    "rot": 6.498347730702486e-07,
+    "local": 5.814662110692481e-07,
+    "finite": true,
+    "plant": true
+   },
+   "seconds": 0.3
+  },
+  "220923_Shoulder-Pressing_Pose_or_Bhujapidasana_-a": {
+   "stem": "220923_Shoulder-Pressing_Pose_or_Bhujapidasana_-a",
+   "frames": 970,
+   "fps": 60,
+   "sha256": "2029d8758834d04dc74fbaa57f91347759f0af7cfb73f66108ca75023af4757b",
+   "fit": "/home/visakii/Documents/moyo_toolkit/data/mosh/train/220923_yogi_body_hands_03596_Shoulder-Pressing_Pose_or_Bhujapidasana_-a_stageii.pkl",
+   "frames_past_box_1deg": 590,
+   "frames_past_box_2deg": 522,
+   "box_excess_max_deg": 13.75,
+   "lowest_min_cm": -3.69,
+   "lowest_p50_cm": -2.18,
+   "round_trip": {
+    "pos_m": 3.687228212756466e-07,
+    "rot": 5.07605391053545e-07,
+    "local": 4.678261097401659e-07,
+    "finite": true,
+    "plant": true
+   },
+   "seconds": 0.2
+  },
+  "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a": {
+   "stem": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+   "frames": 1358,
+   "fps": 60,
+   "sha256": "ed36f4b013280bdf43375605ae37a0ea3cb97f5a5224f546e61e768620ac10e1",
+   "fit": "/home/visakii/Documents/moyo_toolkit/data/mosh/train/220923_yogi_body_hands_03596_Side_Crane_(Crow)_Pose_or_Parsva_Bakasana_-a_stageii.pkl",
+   "frames_past_box_1deg": 376,
+   "frames_past_box_2deg": 337,
+   "box_excess_max_deg": 12.4,
+   "lowest_min_cm": -2.86,
+   "lowest_p50_cm": -1.63,
+   "round_trip": {
+    "pos_m": 3.5658485075806823e-07,
+    "rot": 5.664220731893543e-07,
+    "local": 4.3924181281074226e-07,
+    "finite": true,
+    "plant": true
+   },
+   "seconds": 0.3
+  },
+  "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-b": {
+   "stem": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-b",
+   "frames": 2038,
+   "fps": 60,
+   "sha256": "06ee9a93eb80b52c86e4d56e333b33fef7ab6929bc966a179bbb53a3e5d65e35",
+   "fit": "/home/visakii/Documents/moyo_toolkit/data/mosh/train/220923_yogi_body_hands_03596_Side_Crane_(Crow)_Pose_or_Parsva_Bakasana_-b_stageii.pkl",
+   "frames_past_box_1deg": 711,
+   "frames_past_box_2deg": 576,
+   "box_excess_max_deg": 14.85,
+   "lowest_min_cm": -2.58,
+   "lowest_p50_cm": -1.94,
+   "round_trip": {
+    "pos_m": 4.175983964183061e-07,
+    "rot": 6.458269686537843e-07,
+    "local": 5.037267328811268e-07,
+    "finite": true,
+    "plant": true
+   },
+   "seconds": 0.4
+  },
+  "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-c": {
+   "stem": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-c",
+   "frames": 2056,
+   "fps": 60,
+   "sha256": "d56650ba2c4b4c9e6a8d95dcca2a1904490e2a4a76d3ae9c3896dcaea4fafbfd",
+   "fit": "/home/visakii/Documents/moyo_toolkit/data/mosh/train/220923_yogi_body_hands_03596_Side_Crane_(Crow)_Pose_or_Parsva_Bakasana_-c_stageii.pkl",
+   "frames_past_box_1deg": 216,
+   "frames_past_box_2deg": 174,
+   "box_excess_max_deg": 14.69,
+   "lowest_min_cm": -2.39,
+   "lowest_p50_cm": -1.87,
+   "round_trip": {
+    "pos_m": 4.137464314490913e-07,
+    "rot": 5.887986894714814e-07,
+    "local": 5.411484589323834e-07,
+    "finite": true,
+    "plant": true
+   },
+   "seconds": 0.4
+  },
+  "220923_Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana_-a": {
+   "stem": "220923_Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana_-a",
+   "frames": 806,
+   "fps": 60,
+   "sha256": "d96f5aaeaba4c83aade1eabd1b6d330d11488027e6eeb9a762d42c7f5f10f6dc",
+   "fit": "/home/visakii/Documents/moyo_toolkit/data/mosh/train/220923_yogi_body_hands_03596_Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana_-a_stageii.pkl",
+   "frames_past_box_1deg": 421,
+   "frames_past_box_2deg": 332,
+   "box_excess_max_deg": 17.97,
+   "lowest_min_cm": -2.46,
+   "lowest_p50_cm": -1.07,
+   "round_trip": {
+    "pos_m": 4.4503555424180163e-07,
+    "rot": 6.59502567945669e-07,
+    "local": 4.1447623166934733e-07,
+    "finite": true,
+    "plant": true
+   },
+   "seconds": 0.1
+  },
+  "220923_Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana_-b": {
+   "stem": "220923_Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana_-b",
+   "frames": 974,
+   "fps": 60,
+   "sha256": "a47c8864b6473ea097b3c50b72d7c031bd31e351b1467ffa24fd7aee1eb75056",
+   "fit": "/home/visakii/Documents/moyo_toolkit/data/mosh/train/220923_yogi_body_hands_03596_Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana_-b_stageii.pkl",
+   "frames_past_box_1deg": 542,
+   "frames_past_box_2deg": 477,
+   "box_excess_max_deg": 18.94,
+   "lowest_min_cm": -2.02,
+   "lowest_p50_cm": -1.3,
+   "round_trip": {
+    "pos_m": 4.858206104838003e-07,
+    "rot": 5.696335518695639e-07,
+    "local": 5.128893192374306e-07,
+    "finite": true,
+    "plant": true
+   },
+   "seconds": 0.2
+  },
+  "220923_Plank_Pose_or_Kumbhakasana_-a": {
+   "stem": "220923_Plank_Pose_or_Kumbhakasana_-a",
+   "frames": 930,
+   "fps": 60,
+   "sha256": "e9c3519a42113cf93be1d2a43082e801f0bd9b3310d2ddbe5303179ebfd18b73",
+   "fit": "/home/visakii/Documents/moyo_toolkit/data/mosh/train/220923_yogi_body_hands_03596_Plank_Pose_or_Kumbhakasana_-a_stageii.pkl",
+   "frames_past_box_1deg": 76,
+   "frames_past_box_2deg": 75,
+   "box_excess_max_deg": 11.89,
+   "lowest_min_cm": -3.17,
+   "lowest_p50_cm": -1.91,
+   "round_trip": {
+    "pos_m": 4.193539382968403e-07,
+    "rot": 6.008826882730745e-07,
+    "local": 4.199213150535286e-07,
+    "finite": true,
+    "plant": true
+   },
+   "seconds": 0.2
+  },
+  "220923_Four-Limbed_Staff_Pose_or_Chaturanga_Dandasana_-a": {
+   "stem": "220923_Four-Limbed_Staff_Pose_or_Chaturanga_Dandasana_-a",
+   "frames": 894,
+   "fps": 60,
+   "sha256": "79f39447f76a0d6e829c53024c4c87936c09836d1d252ae3db9aa6016739f1b3",
+   "fit": "/home/visakii/Documents/moyo_toolkit/data/mosh/train/220923_yogi_body_hands_03596_Four-Limbed_Staff_Pose_or_Chaturanga_Dandasana_-a_stageii.pkl",
+   "frames_past_box_1deg": 362,
+   "frames_past_box_2deg": 350,
+   "box_excess_max_deg": 16.73,
+   "lowest_min_cm": -2.65,
+   "lowest_p50_cm": -1.51,
+   "round_trip": {
+    "pos_m": 4.1991810112440575e-07,
+    "rot": 5.957526897359955e-07,
+    "local": 4.5122260383667623e-07,
+    "finite": true,
+    "plant": true
+   },
+   "seconds": 0.2
+  },
+  "220923_Cobra_Pose_or_Bhujangasana_-a": {
+   "stem": "220923_Cobra_Pose_or_Bhujangasana_-a",
+   "frames": 1126,
+   "fps": 60,
+   "sha256": "660a47f954f23d8c80e242be391a834c39f58238146d5785a761c7ba2474727a",
+   "fit": "/home/visakii/Documents/moyo_toolkit/data/mosh/train/220923_yogi_body_hands_03596_Cobra_Pose_or_Bhujangasana_-a_stageii.pkl",
+   "frames_past_box_1deg": 563,
+   "frames_past_box_2deg": 545,
+   "box_excess_max_deg": 28.3,
+   "lowest_min_cm": -3.72,
+   "lowest_p50_cm": -2.12,
+   "round_trip": {
+    "pos_m": 4.036723026679123e-07,
+    "rot": 5.920891315257248e-07,
+    "local": 5.005714915906623e-07,
+    "finite": true,
+    "plant": true
+   },
+   "seconds": 0.2
+  },
+  "220923_Side_Plank_Pose_or_Vasisthasana_-a": {
+   "stem": "220923_Side_Plank_Pose_or_Vasisthasana_-a",
+   "frames": 1326,
+   "fps": 60,
+   "sha256": "6ba90c7894f28671d6261561158bf90d0b1034a0b4c1edda84f656d75a61f72e",
+   "fit": "/home/visakii/Documents/moyo_toolkit/data/mosh/train/220923_yogi_body_hands_03596_Side_Plank_Pose_or_Vasisthasana_-a_stageii.pkl",
+   "frames_past_box_1deg": 935,
+   "frames_past_box_2deg": 921,
+   "box_excess_max_deg": 24.34,
+   "lowest_min_cm": -2.79,
+   "lowest_p50_cm": -2.11,
+   "round_trip": {
+    "pos_m": 4.6175220949629114e-07,
+    "rot": 5.241331794691995e-07,
+    "local": 3.950832569987739e-07,
+    "finite": true,
+    "plant": true
+   },
+   "seconds": 0.3
+  },
+  "220923_Side_Plank_Pose_or_Vasisthasana_-b": {
+   "stem": "220923_Side_Plank_Pose_or_Vasisthasana_-b",
+   "frames": 1436,
+   "fps": 60,
+   "sha256": "e675fa00b8cd704035ce54bae810f8e8bc2bbc767ecabe91f29a63e8afc8feda",
+   "fit": "/home/visakii/Documents/moyo_toolkit/data/mosh/train/220923_yogi_body_hands_03596_Side_Plank_Pose_or_Vasisthasana_-b_stageii.pkl",
+   "frames_past_box_1deg": 326,
+   "frames_past_box_2deg": 310,
+   "box_excess_max_deg": 31.81,
+   "lowest_min_cm": -4.1,
+   "lowest_p50_cm": -2.74,
+   "round_trip": {
+    "pos_m": 4.836794995632943e-07,
+    "rot": 7.024428720636688e-07,
+    "local": 3.9949353858315106e-07,
+    "finite": true,
+    "plant": true
+   },
+   "seconds": 0.5
+  },
+  "220923_Dolphin_Plank_Pose_or_Makara_Adho_Mukha_Svanasana_-a": {
+   "stem": "220923_Dolphin_Plank_Pose_or_Makara_Adho_Mukha_Svanasana_-a",
+   "frames": 1110,
+   "fps": 60,
+   "sha256": "8c9ee4cbde0d24393c55cbaa9cbde34f5128552c3f177dccaf9c36a0cebeda0e",
+   "fit": "/home/visakii/Documents/moyo_toolkit/data/mosh/train/220923_yogi_body_hands_03596_Dolphin_Plank_Pose_or_Makara_Adho_Mukha_Svanasana_-a_stageii.pkl",
+   "frames_past_box_1deg": 158,
+   "frames_past_box_2deg": 146,
+   "box_excess_max_deg": 12.51,
+   "lowest_min_cm": -1.87,
+   "lowest_p50_cm": -0.75,
+   "round_trip": {
+    "pos_m": 4.393407622149681e-07,
+    "rot": 7.344421293353776e-07,
+    "local": 4.74137356931692e-07,
+    "finite": true,
+    "plant": true
+   },
+   "seconds": 0.4
+  },
+  "220923_Dolphin_Pose_or_Ardha_Pincha_Mayurasana_-a": {
+   "stem": "220923_Dolphin_Pose_or_Ardha_Pincha_Mayurasana_-a",
+   "frames": 1006,
+   "fps": 60,
+   "sha256": "9d5786b0e4bfa6977571f566fb01c6420cf6fef10ef39215e697aac76c530aff",
+   "fit": "/home/visakii/Documents/moyo_toolkit/data/mosh/train/220923_yogi_body_hands_03596_Dolphin_Pose_or_Ardha_Pincha_Mayurasana_-a_stageii.pkl",
+   "frames_past_box_1deg": 89,
+   "frames_past_box_2deg": 65,
+   "box_excess_max_deg": 6.94,
+   "lowest_min_cm": -2.35,
+   "lowest_p50_cm": -1.07,
+   "round_trip": {
+    "pos_m": 5.305255237966766e-07,
+    "rot": 6.738669606209946e-07,
+    "local": 4.2535792155184993e-07,
+    "finite": true,
+    "plant": true
+   },
+   "seconds": 0.5
+  },
+  "220923_Standing_Forward_Bend_pose_or_Uttanasana_-a": {
+   "stem": "220923_Standing_Forward_Bend_pose_or_Uttanasana_-a",
+   "frames": 982,
+   "fps": 60,
+   "sha256": "e8d79df2df0aeeca11457f6815a93a3459a96c27a8786116a7849edceaa35d5a",
+   "fit": "/home/visakii/Documents/moyo_toolkit/data/mosh/train/220923_yogi_body_hands_03596_Standing_Forward_Bend_pose_or_Uttanasana_-a_stageii.pkl",
+   "frames_past_box_1deg": 400,
+   "frames_past_box_2deg": 392,
+   "box_excess_max_deg": 18.23,
+   "lowest_min_cm": -0.72,
+   "lowest_p50_cm": -0.06,
+   "round_trip": {
+    "pos_m": 4.404589637463374e-07,
+    "rot": 5.950370514096193e-07,
+    "local": 4.052885824723518e-07,
+    "finite": true,
+    "plant": true
+   },
+   "seconds": 0.2
+  },
+  "220923_Garland_Pose_or_Malasana_-a": {
+   "stem": "220923_Garland_Pose_or_Malasana_-a",
+   "frames": 668,
+   "fps": 60,
+   "sha256": "735673f3389b109ce9f7355da6e109b99fb568cfc1c20212f928d73ab591aa93",
+   "fit": "/home/visakii/Documents/moyo_toolkit/data/mosh/train/220923_yogi_body_hands_03596_Garland_Pose_or_Malasana_-a_stageii.pkl",
+   "frames_past_box_1deg": 274,
+   "frames_past_box_2deg": 269,
+   "box_excess_max_deg": 25.09,
+   "lowest_min_cm": -4.66,
+   "lowest_p50_cm": -1.88,
+   "round_trip": {
+    "pos_m": 3.1156965052403507e-07,
+    "rot": 6.448829325822469e-07,
+    "local": 4.168460235876026e-07,
+    "finite": true,
+    "plant": true
+   },
+   "seconds": 0.1
+  },
+  "220923_Low_Lunge_pose_or_Anjaneyasana_-a": {
+   "stem": "220923_Low_Lunge_pose_or_Anjaneyasana_-a",
+   "frames": 1716,
+   "fps": 60,
+   "sha256": "4285a07e1ea8276607d45b293800fc9ff06894dfbc2b8b4fb741f665be2facac",
+   "fit": "/home/visakii/Documents/moyo_toolkit/data/mosh/train/220923_yogi_body_hands_03596_Low_Lunge_pose_or_Anjaneyasana_-a_stageii.pkl",
+   "frames_past_box_1deg": 926,
+   "frames_past_box_2deg": 904,
+   "box_excess_max_deg": 11.78,
+   "lowest_min_cm": -3.26,
+   "lowest_p50_cm": -2.55,
+   "round_trip": {
+    "pos_m": 3.886211253911753e-07,
+    "rot": 5.766349605029752e-07,
+    "local": 3.903318809284073e-07,
+    "finite": true,
+    "plant": true
+   },
+   "seconds": 0.4
+  },
+  "220926_Warrior_II_Pose_or_Virabhadrasana_II_-a": {
+   "stem": "220926_Warrior_II_Pose_or_Virabhadrasana_II_-a",
+   "frames": 912,
+   "fps": 60,
+   "sha256": "5806ed4424a5cb76be4b41cfa0233a359c9d33c5ad6918cfc58e83f39b92edc8",
+   "fit": "/home/visakii/Documents/moyo_toolkit/data/mosh/val/220926_yogi_body_hands_03596_Warrior_II_Pose_or_Virabhadrasana_II_-a_stageii.pkl",
+   "frames_past_box_1deg": 15,
+   "frames_past_box_2deg": 13,
+   "box_excess_max_deg": 6.46,
+   "lowest_min_cm": -1.48,
+   "lowest_p50_cm": -0.19,
+   "round_trip": {
+    "pos_m": 3.8430787485665974e-07,
+    "rot": 4.8842912958591e-07,
+    "local": 4.989053516979425e-07,
+    "finite": true,
+    "plant": true
+   },
+   "seconds": 0.2
+  },
+  "220923_Extended_Revolved_Triangle_Pose_or_Utthita_Trikonasana_-a": {
+   "stem": "220923_Extended_Revolved_Triangle_Pose_or_Utthita_Trikonasana_-a",
+   "frames": 1150,
+   "fps": 60,
+   "sha256": "6a6710848980f4dd29804635fde8a345f1188d970632b9d1010a2b3f47458ea4",
+   "fit": "/home/visakii/Documents/moyo_toolkit/data/mosh/train/220923_yogi_body_hands_03596_Extended_Revolved_Triangle_Pose_or_Utthita_Trikonasana_-a_stageii.pkl",
+   "frames_past_box_1deg": 83,
+   "frames_past_box_2deg": 76,
+   "box_excess_max_deg": 6.24,
+   "lowest_min_cm": -4.23,
+   "lowest_p50_cm": -1.44,
+   "round_trip": {
+    "pos_m": 3.1421000745712746e-07,
+    "rot": 5.683691726154905e-07,
+    "local": 4.3836930152529874e-07,
+    "finite": true,
+    "plant": true
+   },
+   "seconds": 0.2
+  },
+  "220923_Extended_Revolved_Side_Angle_Pose_or_Utthita_Parsvakonasana_-a": {
+   "stem": "220923_Extended_Revolved_Side_Angle_Pose_or_Utthita_Parsvakonasana_-a",
+   "frames": 944,
+   "fps": 60,
+   "sha256": "dcf8c3a58a727ad93b13c9501677c9c576da1d027a65b2e998f9f8058493b21f",
+   "fit": "/home/visakii/Documents/moyo_toolkit/data/mosh/train/220923_yogi_body_hands_03596_Extended_Revolved_Side_Angle_Pose_or_Utthita_Parsvakonasana_-a_stageii.pkl",
+   "frames_past_box_1deg": 303,
+   "frames_past_box_2deg": 262,
+   "box_excess_max_deg": 8.93,
+   "lowest_min_cm": -4.56,
+   "lowest_p50_cm": -1.7,
+   "round_trip": {
+    "pos_m": 4.150433718930202e-07,
+    "rot": 5.596343399250081e-07,
+    "local": 4.5669474924014963e-07,
+    "finite": true,
+    "plant": true
+   },
+   "seconds": 0.2
+  },
+  "220926_Upward_Plank_Pose_or_Purvottanasana_-a": {
+   "stem": "220926_Upward_Plank_Pose_or_Purvottanasana_-a",
+   "frames": 1848,
+   "fps": 60,
+   "sha256": "a2f532b1a79c37dd2ac09313f54ba8debb0e665e677349019adde559c792a0ef",
+   "fit": "/home/visakii/Documents/moyo_toolkit/data/mosh/val/220926_yogi_body_hands_03596_Upward_Plank_Pose_or_Purvottanasana_-a_stageii.pkl",
+   "frames_past_box_1deg": 423,
+   "frames_past_box_2deg": 311,
+   "box_excess_max_deg": 14.27,
+   "lowest_min_cm": -3.36,
+   "lowest_p50_cm": -1.48,
+   "round_trip": {
+    "pos_m": 4.4050756287106196e-07,
+    "rot": 5.884835279079681e-07,
+    "local": 5.55318368178348e-07,
+    "finite": true,
+    "plant": true
+   },
+   "seconds": 0.4
+  },
+  "220923_Bridge_Pose_or_Setu_Bandha_Sarvangasana_-a": {
+   "stem": "220923_Bridge_Pose_or_Setu_Bandha_Sarvangasana_-a",
+   "frames": 1806,
+   "fps": 60,
+   "sha256": "542a8c629b455413975e9cc2b77926d540680c293a0d2a75f107be63f58edbcb",
+   "fit": "/home/visakii/Documents/moyo_toolkit/data/mosh/train/220923_yogi_body_hands_03596_Bridge_Pose_or_Setu_Bandha_Sarvangasana_-a_stageii.pkl",
+   "frames_past_box_1deg": 502,
+   "frames_past_box_2deg": 458,
+   "box_excess_max_deg": 8.17,
+   "lowest_min_cm": -3.75,
+   "lowest_p50_cm": -1.64,
+   "round_trip": {
+    "pos_m": 3.449498549024099e-07,
+    "rot": 6.572845887564682e-07,
+    "local": 4.174018847225014e-07,
+    "finite": true,
+    "plant": true
+   },
+   "seconds": 0.3
+  },
+  "220923_Extended_Revolved_Side_Angle_Pose_or_Utthita_Parsvakonasana_-b": {
+   "stem": "220923_Extended_Revolved_Side_Angle_Pose_or_Utthita_Parsvakonasana_-b",
+   "frames": 1050,
+   "fps": 60,
+   "sha256": "e95920a5b328d64bd39c978c9cdcf8dd2c2af06d323feddaa096609ab5721085",
+   "fit": "/home/visakii/Documents/moyo_toolkit/data/mosh/train/220923_yogi_body_hands_03596_Extended_Revolved_Side_Angle_Pose_or_Utthita_Parsvakonasana_-b_stageii.pkl",
+   "frames_past_box_1deg": 0,
+   "frames_past_box_2deg": 0,
+   "box_excess_max_deg": 0.0,
+   "lowest_min_cm": -2.77,
+   "lowest_p50_cm": -1.02,
+   "round_trip": {
+    "pos_m": 3.795451379851045e-07,
+    "rot": 5.083590595700294e-07,
+    "local": 4.7583133344630824e-07,
+    "finite": true,
+    "plant": true
+   },
+   "seconds": 0.2
+  },
+  "220923_Extended_Revolved_Triangle_Pose_or_Utthita_Trikonasana_-b": {
+   "stem": "220923_Extended_Revolved_Triangle_Pose_or_Utthita_Trikonasana_-b",
+   "frames": 1072,
+   "fps": 60,
+   "sha256": "112aaa69f30d435a4fd9ceb6faeca5e0224f5f28080d922cb8b6df52960a0813",
+   "fit": "/home/visakii/Documents/moyo_toolkit/data/mosh/train/220923_yogi_body_hands_03596_Extended_Revolved_Triangle_Pose_or_Utthita_Trikonasana_-b_stageii.pkl",
+   "frames_past_box_1deg": 63,
+   "frames_past_box_2deg": 35,
+   "box_excess_max_deg": 2.42,
+   "lowest_min_cm": -2.13,
+   "lowest_p50_cm": -1.36,
+   "round_trip": {
+    "pos_m": 3.4411832428027367e-07,
+    "rot": 5.60775733349228e-07,
+    "local": 4.6432817057961984e-07,
+    "finite": true,
+    "plant": true
+   },
+   "seconds": 0.2
+  },
+  "220926_viparita_virabhadrasana_or_reverse_warrior_pose-a": {
+   "stem": "220926_viparita_virabhadrasana_or_reverse_warrior_pose-a",
+   "frames": 1180,
+   "fps": 60,
+   "sha256": "8b2937a0d6947f2ccd1ae74ebd05c5ec74da5a6df1daa79536a3c608e9632252",
+   "fit": "/home/visakii/Documents/moyo_toolkit/data/mosh/val/220926_yogi_body_hands_03596_viparita_virabhadrasana_or_reverse_warrior_pose-a_stageii.pkl",
+   "frames_past_box_1deg": 242,
+   "frames_past_box_2deg": 215,
+   "box_excess_max_deg": 5.21,
+   "lowest_min_cm": -1.31,
+   "lowest_p50_cm": -0.71,
+   "round_trip": {
+    "pos_m": 4.201460235275789e-07,
+    "rot": 5.610230573438457e-07,
+    "local": 4.416239083315787e-07,
+    "finite": true,
+    "plant": true
+   },
+   "seconds": 0.2
+  },
+  "220926_Intense_Side_Stretch_Pose_or_Parsvottanasana_-b": {
+   "stem": "220926_Intense_Side_Stretch_Pose_or_Parsvottanasana_-b",
+   "frames": 1424,
+   "fps": 60,
+   "sha256": "c502ec130c2f1725993bbd57f8fd0f7517c44f4956cbd2d1087aecd8151ed021",
+   "fit": "/home/visakii/Documents/moyo_toolkit/data/mosh/train/220926_yogi_body_hands_03596_Intense_Side_Stretch_Pose_or_Parsvottanasana_-b_stageii.pkl",
+   "frames_past_box_1deg": 150,
+   "frames_past_box_2deg": 87,
+   "box_excess_max_deg": 16.86,
+   "lowest_min_cm": -0.81,
+   "lowest_p50_cm": -0.11,
+   "round_trip": {
+    "pos_m": 4.1180176263422297e-07,
+    "rot": 7.487754257740065e-07,
+    "local": 4.0031438441889833e-07,
+    "finite": true,
+    "plant": true
+   },
+   "seconds": 0.3
+  }
+ },
+ "totals": {
+  "clips": 56,
+  "frames": 81512,
+  "frames_past_box_1deg": 26532,
+  "frames_past_box_2deg": 24317
+ },
+ "seconds": 3.9
+}

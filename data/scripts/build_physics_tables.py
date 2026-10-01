@@ -66,9 +66,10 @@ sys.path.insert(0, str(REPO))
 from contact_geometry import parse_typed_geoms  # noqa: E402
 from extract_contact_configs import ZONE_ORDER, ZONES, mjcf_body_names  # noqa: E402
 from make_hold_extended_clips import insertion_plan, splice_index  # noqa: E402
+from protomotions.utils import plant_identity  # noqa: E402
 from protomotions.utils.rotations import quat_rotate, quat_rotate_inverse  # noqa: E402
 
-MJCF = REPO / "data/assets/smpl/smpl_yogi03596_lowtorque.xml"
+MJCF = plant_identity.mjcf_path()      # REFERENCE_PLANT (v1 default); --mjcf overrides
 PRESSURE = REPO / "data/smpl/yoga_motions_proto_yogi_pressure"
 PRESSURE_GATED = REPO / "data/smpl/yoga_motions_proto_yogi_pressure_gated"
 LEG = {"L_FOOT", "R_FOOT", "L_SHANK", "R_SHANK", "L_THIGH", "R_THIGH"}
@@ -88,8 +89,8 @@ def consequential(pair: str) -> bool:
 # --------------------------------------------------------------------------- #
 # Body constants
 # --------------------------------------------------------------------------- #
-def body_constants(body_names):
-    typed = parse_typed_geoms(str(MJCF), body_names)
+def body_constants(body_names, mjcf=MJCF):
+    typed = parse_typed_geoms(str(mjcf), body_names)
     B = len(body_names)
     c = dict(
         body_names=list(body_names),
@@ -187,9 +188,9 @@ def median_filter(x: np.ndarray, k: int) -> np.ndarray:
     return np.median(np.lib.stride_tricks.sliding_window_view(xp, k), axis=-1)
 
 
-def load_pressure(stem, original_pos):
+def load_pressure(stem, original_pos, pressure_dir=PRESSURE, gated_dir=PRESSURE_GATED):
     """(per-zone load [T, Z] N, valid [T] per-body gate, cop [T, 2], cop_valid [T]) or None."""
-    for path, extra_col in ((PRESSURE_GATED / f"{stem}.motion", 2), (PRESSURE / f"{stem}.motion", None)):
+    for path, extra_col in ((Path(gated_dir) / f"{stem}.motion", 2), (Path(pressure_dir) / f"{stem}.motion", None)):
         if not path.exists():
             continue
         pm = torch.load(str(path), map_location="cpu", weights_only=False)
@@ -226,10 +227,18 @@ def main() -> int:
     ap.add_argument("--unloaded-n", type=float, default=14.0, help="~2 %% of the 700 N subject")
     ap.add_argument("--loaded-n", type=float, default=70.0, help="~10 %% of the subject: veto")
     ap.add_argument("--near-floor-m", type=float, default=0.10)
+    ap.add_argument("--pressure-dir", default=str(PRESSURE),
+                    help="the MOYO pressure port on these clips' kinematics (add_pressure_to_motions.py)")
+    ap.add_argument("--pressure-gated-dir", default=str(PRESSURE_GATED),
+                    help="... with the on-mat gate column (add_onmat_gate_to_motions.py); read first")
+    ap.add_argument("--mjcf", default=str(MJCF),
+                    help="the plant the tables are for (default: REFERENCE_PLANT); its sha256 is written into the "
+                         "tables and must match every motion's recorded plant")
     args = ap.parse_args()
 
-    body_names = mjcf_body_names(str(MJCF))
-    consts = body_constants(body_names)
+    plant = plant_identity.identity(args.mjcf)
+    body_names = mjcf_body_names(str(plant_identity.mjcf_path(args.mjcf)))
+    consts = body_constants(body_names, plant_identity.mjcf_path(args.mjcf))
     zone_bodies = {z: [body_names.index(b) for b in ZONES[z]] for z in ZONE_ORDER}
     graph = torch.load(args.graph, map_location="cpu", weights_only=False)
     names = list(graph["motion_names"])
@@ -259,6 +268,7 @@ def main() -> int:
         e = ext[stem]
         s = src[e["source_stem"]]
         motion = torch.load(str(Path(args.motion_dir) / f"{stem}.motion"), map_location="cpu", weights_only=False)
+        plant_identity.require(motion.get(plant_identity.KEY), args.mjcf, f"{stem}.motion")
         fps = int(motion["fps"])
         pos, rot = motion["rigid_body_pos"].float(), motion["rigid_body_rot"].float()
         T = pos.shape[0]
@@ -269,7 +279,8 @@ def main() -> int:
         insert = int(round(float(e["variant_s"]) * fps))
         index = splice_index(int(original["rigid_body_pos"].shape[0]), insertion_plan(s["holds"], insert))
         assert len(index) == T, f"{stem}: splice index {len(index)} != {T} frames"
-        pressure = load_pressure(e["source_stem"], original["rigid_body_pos"])
+        pressure = load_pressure(e["source_stem"], original["rigid_body_pos"], args.pressure_dir,
+                                 args.pressure_gated_dir)
         if pressure is not None:
             stats["pressure_clips"] += 1
         swing = torch.zeros(T, Z, dtype=torch.bool)
@@ -349,6 +360,7 @@ def main() -> int:
         swing_all[m, : sw.shape[0]] = sw
     payload = dict(
         version=1, motion_names=names, fps=60, zone_order=list(ZONE_ORDER),
+        plant=plant, plant_sha256=plant[plant_identity.KEY],
         zone_bodies={z: list(ZONES[z]) for z in ZONE_ORDER},
         swing=swing_all, swing_len=torch.tensor(lengths),
         seg_cop_rel=seg_cop_rel, seg_cop_valid=seg_cop_valid, seg_com_rel=seg_com_rel,

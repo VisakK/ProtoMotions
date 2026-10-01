@@ -70,7 +70,9 @@ import numpy as np
 import torch
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(1, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 from contact_geometry import geom_ground_distance, geom_to_world, parse_typed_geoms  # noqa: E402
+from protomotions.utils import plant_identity  # noqa: E402
 
 BODY_NAMES = [
     "Pelvis", "L_Hip", "L_Knee", "L_Ankle", "L_Toe", "R_Hip", "R_Knee", "R_Ankle",
@@ -127,7 +129,8 @@ def main() -> None:
     ap.add_argument("--in-dir", default="data/smpl/yoga_motions_proto_yogi_pressure")
     ap.add_argument("--archive-dir", default="data/smpl/yoga_pressure")
     ap.add_argument("--out-dir", required=True)
-    ap.add_argument("--mjcf", default="data/assets/smpl/smpl_yogi03596_lowtorque.xml")
+    ap.add_argument("--mjcf", default=str(plant_identity.mjcf_path()),
+                    help="the plant the motions were built on (default: REFERENCE_PLANT); every motion must record it")
     ap.add_argument("--near-ground", type=float, default=0.15,
                     help="A body this close to the floor could be carrying load.")
     ap.add_argument("--mat-margin", type=float, default=0.02,
@@ -138,7 +141,7 @@ def main() -> None:
 
     in_dir, out_dir = Path(args.in_dir), Path(args.out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
-    geoms = parse_typed_geoms(args.mjcf, BODY_NAMES)
+    geoms = parse_typed_geoms(str(plant_identity.mjcf_path(args.mjcf)), BODY_NAMES)
 
     if args.clips_yaml:
         import yaml
@@ -158,6 +161,7 @@ def main() -> None:
         if not src.is_file():
             skipped.append((name, "no .motion")); continue
         d = torch.load(src, map_location="cpu", weights_only=False)
+        plant_identity.require(d.get(plant_identity.KEY), args.mjcf, f"{name}.motion")
         if d.get("ground_reaction_valid") is None:
             skipped.append((name, "no pressure")); continue
         if not arch.is_file():

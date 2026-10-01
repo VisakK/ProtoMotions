@@ -41,6 +41,7 @@ from matplotlib.colors import LinearSegmentedColormap  # noqa: E402
 from matplotlib.patches import Polygon as MplPolygon  # noqa: E402
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(1, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 from contact_physics_support import (  # noqa: E402
     GRAVITY,
     GROUP_TITLES,
@@ -77,7 +78,9 @@ plt.rcParams.update({
     "legend.frameon": False, "lines.linewidth": 1.4, "figure.dpi": 130,
 })
 
-DEFAULT_MJCF = "data/assets/smpl/smpl_yogi03596_lowtorque.xml"
+from protomotions.utils import plant_identity  # noqa: E402
+
+DEFAULT_MJCF = plant_identity.default_mjcf()   # REFERENCE_PLANT (v1 default)
 
 
 def style(ax):

@@ -8,6 +8,8 @@ and simulator objects from their configs, reducing boilerplate in entry scripts.
 """
 
 from typing import Optional, Dict
+import os
+
 import torch
 from protomotions.utils.hydra_replacement import get_class
 
@@ -121,6 +123,23 @@ def build_simulator_from_config(
     )
 
 
+def require_motion_plant(motion_lib, motion_lib_config, robot_config) -> None:
+    """Refuse a motion library built for another plant than the robot's (``plant_identity``).
+
+    MotionLib serves the stored ``rigid_body_pos``, not the robot's FK, so clips built on another skeleton load
+    silently wrong (plant v1 clips start 5-6.6 cm inside the floor on plant v2). A library without an identity
+    predates plant v2 and is accepted only on plant v1 or on robots outside the plant registry.
+    """
+    from protomotions.utils import plant_identity
+
+    if not motion_lib_config.motion_file or not len(getattr(motion_lib, "motion_files", ())):
+        return
+    mjcf = plant_identity.robot_mjcf(robot_config)
+    if mjcf and (os.path.isfile(mjcf) or os.path.isfile(plant_identity.REPO / mjcf)):
+        plant_identity.require(getattr(motion_lib, "plant_sha256", None), mjcf,
+                               f"motion library {motion_lib_config.motion_file}")
+
+
 def build_all_components(
     terrain_config,
     scene_lib_config,
@@ -169,6 +188,7 @@ def build_all_components(
 
     # Create motion_lib (always created, empty if motion_file is None)
     motion_lib = build_motion_lib_from_config(motion_lib_config, device)
+    require_motion_plant(motion_lib, motion_lib_config, robot_config)
 
     # Create simulator shell
     simulator = build_simulator_from_config(

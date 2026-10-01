@@ -43,12 +43,22 @@ import re
 import subprocess
 from pathlib import Path
 
+import sys
+
 import numpy as np
 import yaml
 
 REPO = Path(__file__).resolve().parents[3]
+if str(REPO) not in sys.path:
+    sys.path.insert(0, str(REPO))
+from protomotions.utils import plant_identity  # noqa: E402
+
 MOYO_DATA = Path(os.environ.get("MOYO_DATA", REPO.parents[1] / "moyo_toolkit" / "data"))
-MJCF = REPO / "data/assets/smpl/smpl_yogi03596_lowtorque.xml"
+# The plant (simulated body) the avatar-side measurements use: ``REFERENCE_PLANT`` (v1 default, the shipped
+# smpl_yogi03596_lowtorque every finished record was built on; v2 the performer's own body, BodyFix).
+PLANT = plant_identity.selected()
+MJCF = plant_identity.mjcf_path(PLANT)
+MJCF_FLAT = plant_identity.flat_path(PLANT)
 DEFAULT_MANIFEST = REPO / "data/smpl/expert60/holds_repaired_ftC_posefix.yaml"
 SHIPPED_DIR = REPO / "data/smpl/yoga_motions_proto_yogi_expert60_ftC"
 EXTENDED_MANIFEST = SHIPPED_DIR / "holds_extended.yaml"
@@ -207,6 +217,17 @@ def git_rev() -> str | None:
 def display_path(path: Path | str) -> str:
     path = Path(path).resolve()
     return str(path.relative_to(REPO)) if path.is_relative_to(REPO) else str(path)
+
+
+def plant_of(record) -> str | None:
+    """The plant sha256 a record (or a meta / motion dict) was built on; None for legacy (v1) data."""
+    return plant_identity.recorded_sha(record)
+
+
+def require_plant(record, what: str, mjcf: Path | str | None = None) -> str | None:
+    """Raise ``plant_identity.PlantMismatchError`` unless ``record`` was built on the plant in use (``mjcf``,
+    default ``MJCF``: ``REFERENCE_PLANT`` or an in-process ``mosh_replay.use_plant``). Returns its name."""
+    return plant_identity.require(plant_of(record), MJCF if mjcf is None else mjcf, what)
 
 
 def provenance(schema_version: int, module: str, module_file: str, inputs) -> dict:

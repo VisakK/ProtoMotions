@@ -32,8 +32,11 @@ sys.path.insert(0, str(REPO))
 from contact_geometry import parse_typed_geoms, geom_to_world, geom_pair_distance, _box_corners_world  # noqa
 from extract_contact_configs import mjcf_body_names, ZONES  # noqa
 
-FLAT = REPO / "data/assets/smpl/smpl_yogi03596_lowtorque_flat.xml"
-MJCF = REPO / "data/assets/smpl/smpl_yogi03596_lowtorque.xml"
+from protomotions.utils import plant_identity  # noqa: E402
+
+# The plant: REFERENCE_PLANT (v1 default, the shipped smpl_yogi03596_lowtorque; v2 the performer's own body).
+FLAT = plant_identity.flat_path()
+MJCF = plant_identity.mjcf_path()
 M = mujoco.MjModel.from_xml_path(str(FLAT))
 D = mujoco.MjData(M)
 BODY = [M.body(i).name for i in range(1, M.nbody)]

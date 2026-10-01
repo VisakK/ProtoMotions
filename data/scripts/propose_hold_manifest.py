@@ -86,6 +86,7 @@ import yaml
 
 REPO_ROOT = Path(__file__).resolve().parent.parent.parent
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+sys.path.insert(1, str(Path(__file__).resolve().parents[2]))
 
 from extract_contact_configs import (  # noqa: E402
     DEFAULT_THRESHOLDS,
@@ -93,7 +94,9 @@ from extract_contact_configs import (  # noqa: E402
     compute_active_pairs,
 )
 
-DEFAULT_MJCF = "data/assets/smpl/smpl_yogi03596_lowtorque.xml"
+from protomotions.utils import plant_identity  # noqa: E402
+
+DEFAULT_MJCF = plant_identity.default_mjcf()   # REFERENCE_PLANT (v1 default)
 STANDING_PAIRS = frozenset({"L_FOOT:G", "R_FOOT:G"})
 LEG_ZONES = frozenset({"L_FOOT", "L_SHANK", "L_THIGH", "R_FOOT", "R_SHANK", "R_THIGH"})
 FEET = frozenset({"L_FOOT", "R_FOOT"})

@@ -28,6 +28,7 @@ from pathlib import Path
 import torch
 import yaml
 
+from protomotions.utils import plant_identity
 from protomotions.simulator.base_simulator.simulator_state import (
     RobotState,
     StateConversion,
@@ -148,6 +149,11 @@ class MotionLib:
     # never by "the last one".
     grw: Optional[torch.Tensor] = None
 
+    # The sha256 of the MJCF the motions were built on (protomotions.utils.plant_identity): the stored
+    # rigid_body_pos are that plant's FK, so a library is only valid on it. None: built before plant identities
+    # existed (plant v1). Every .motion of a library must agree.
+    plant_sha256: Optional[str] = None
+
     # Get all field names defined at class level
     _fields = list(__annotations__.keys())
 
@@ -213,6 +219,7 @@ class MotionLib:
         self.motion_weights = torch.empty(0, device=self.device)
         self.contacts = torch.empty(0, 0, device=self.device)
         self.motion_files = ()
+        self.plant_sha256 = None
         self.lrs = None
         self.goal_states = None
         self.gnf = None
@@ -549,6 +556,7 @@ class MotionLib:
         if self.config.max_seconds is not None:
             clip_rng = random.Random(self.config.clip_seed)
 
+        plants = []
         for f in range(num_motion_files):
             curr_file = motion_files[f]
             print(curr_file)
@@ -559,6 +567,7 @@ class MotionLib:
             )
 
             curr_motion = torch.load(curr_file, weights_only=False)
+            plants.append(curr_motion.pop(plant_identity.KEY, None))
             curr_motion = RobotState.from_dict(
                 curr_motion, state_conversion=StateConversion.COMMON
             )
@@ -685,6 +694,12 @@ class MotionLib:
         )
 
         self.motion_files = tuple(motion_files)  # for saving to packed pt file
+        if len(set(plants)) > 1:
+            raise plant_identity.PlantMismatchError(
+                "motions built for different plants (or with and without a plant identity) in one library: "
+                + str(sorted({str(p)[:12] for p in plants}))
+            )
+        self.plant_sha256 = plants[0] if plants else None
 
         num_motions = len(motions)
         total_len = sum(motion_lengths)

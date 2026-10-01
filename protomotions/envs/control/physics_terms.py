@@ -45,10 +45,20 @@ _BOX_SIGNS = torch.tensor(
 # Tables
 # --------------------------------------------------------------------------- #
 class PhysicsTables:
-    """The offline tables, validated against the environment's motion library and body order."""
+    """The offline tables, validated against the environment's motion library, body order and plant.
 
-    def __init__(self, path: str, motion_names: List[str], body_names: List[str], device):
+    ``plant_mjcf`` is the robot's MJCF: the tables' recorded plant (``plant_identity``; tables built before it
+    existed were built on plant v1) must be it, or ``plant_identity.PlantMismatchError`` is raised -- their
+    masses, COMs and colliders are that plant's.
+    """
+
+    def __init__(self, path: str, motion_names: List[str], body_names: List[str], device,
+                 plant_mjcf: Optional[str] = None):
         payload = torch.load(str(path), map_location="cpu", weights_only=False)
+        if plant_mjcf is not None:
+            from protomotions.utils import plant_identity
+
+            plant_identity.require(payload.get(plant_identity.KEY), plant_mjcf, f"physics tables {path}")
         if list(payload["motion_names"]) != list(motion_names):
             raise ValueError(
                 f"{path} was built for a different motion library "

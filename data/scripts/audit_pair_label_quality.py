@@ -59,7 +59,9 @@ from extract_contact_configs import (  # noqa: E402
 )
 from package_pair_targets import ENCOURAGE_PAIRS, FORBID_PAIRS  # noqa: E402
 
-MJCF = REPO / "data/assets/smpl/smpl_yogi03596_lowtorque.xml"
+from protomotions.utils import plant_identity  # noqa: E402
+
+MJCF = plant_identity.mjcf_path()      # REFERENCE_PLANT (v1 default)
 CLIP_DIR = REPO / "data/smpl/yoga_yogi_crow_pair_v3_contacts"
 STRICT_CM = DEFAULT_THRESHOLDS["body_make"] * 100
 LOOSE_CM = DEFAULT_THRESHOLDS["body_loose_make"] * 100

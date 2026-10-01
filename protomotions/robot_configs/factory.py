@@ -8,7 +8,7 @@ def robot_config(robot_name: str, **updates) -> RobotConfig:
     """Factory function to create robot configuration based on robot type.
 
     Args:
-        robot_name: Name of the robot type (smpl, smplx, amp, g1, h1_2, soma23, rigv1)
+        robot_name: Name of the robot type (smpl, smpl_yogi, smpl_yogi_v2, smplx, amp, g1, h1_2, soma23, rigv1)
         **updates: Optional field updates to apply to the robot config
 
     Returns:
@@ -25,6 +25,10 @@ def robot_config(robot_name: str, **updates) -> RobotConfig:
         from protomotions.robot_configs.smpl_yogi import SmplYogiRobotConfig
 
         config = SmplYogiRobotConfig()
+    elif robot_name == "smpl_yogi_v2":
+        from protomotions.robot_configs.smpl_yogi_v2 import SmplYogiV2RobotConfig
+
+        config = SmplYogiV2RobotConfig()
     elif robot_name == "smplx":
         from protomotions.robot_configs.smplx import SMPLXRobotConfig
 

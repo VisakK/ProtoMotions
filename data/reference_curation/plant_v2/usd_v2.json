@@ -1,0 +1,422 @@
+{
+ "schema_version": 1,
+ "generator": {
+  "module": "build_plant_v2_usd",
+  "git_rev": "c2a51c40830d9244f55711d615df87bceb900525",
+  "sha256": "c89167d5ddf6cde87f4fa51a7c10c0c2668c9c641a4a25d19292fe0bd468b2c4"
+ },
+ "inputs": {
+  "data/assets/smpl/smpl_yogi03596_v2.xml": "aa541c77bcc1526905777c425e5ab072f21cae7bcadad9f71e3b1eb531f98f91",
+  "data/assets/smpl/smpl_yogi03596_v2_flat.xml": "968f7e94ffce0011d6c43a8fb30d55a21885ba733207dd07bc1aa3fd1a110e17",
+  "usd_convert/convert_robot_mjcf_to_usda.py": "33b82feb362a50a72f8fc2e4ca9d7360f85e44c07e8281420fb1dc1ff5b15a72",
+  "usd_convert/convert_mjcf_to_usd.py": "c20431b5ee6a6130909f1edb402935b2fc2b7762a8aa7d2032b28373922f1e0a"
+ },
+ "package": "data/assets/smpl/smpl_yogi03596_v2_usd",
+ "usda": "data/assets/smpl/smpl_yogi03596_v2_usd/smpl_yogi03596_v2_flat.usda",
+ "layer_sha256": {
+  "usda": "18ad9fce652c0b3285dd2990b346f6c44bb989ad87f40e611b65068d9af39529",
+  "base": "3a14152bb01baf5822f5f86df87abed09522a806fb79c89f66977da1e10578fa",
+  "physics": "b2e7cf8a1558a200fa83990c78b28499f4d9279f1d8e1a0664e5648befc7e84f",
+  "robot": "f479e7364313a05ee346ce1b355669699f721d1da76acfaa9181e5dd6720d5aa",
+  "sensor": "34628eed18a835641c8a66a83febc4c76d7340830e5f675b9e62c5b1bb3b07a4"
+ },
+ "flatten": {
+  "flattened_main_vs_flat": [],
+  "main_vs_flat": [
+   "actuator_ctrllimited: 69/69 diffs (dtype=bool)",
+   "actuator_ctrlrange: 138/138 diffs, max_err=1.00e+00"
+  ],
+  "main_vs_flat_beyond_motor_ctrlrange": []
+ },
+ "roots": {
+  "layer": {
+   "roots_before": [
+    "/smpl_yogi03596_v2_flat_cleaned/Pelvis/Pelvis"
+   ],
+   "removed": [],
+   "roots_after": [
+    "/smpl_yogi03596_v2_flat_cleaned/Pelvis/Pelvis"
+   ]
+  },
+  "composed": {
+   "default_prim": "/smpl_yogi03596_v2_flat",
+   "active_articulation_roots": [
+    "/smpl_yogi03596_v2_flat/Pelvis/Pelvis"
+   ],
+   "usda_has_worldbody_override": true,
+   "usda_has_cleaned_suffix": false,
+   "worldbody_active": false
+  }
+ },
+ "physics_layer": {
+  "bodies": 24,
+  "missing_bodies": [],
+  "extra_bodies": [],
+  "density_max_rel_err": 5.115683196119123e-08,
+  "authored_masses": [],
+  "mjcf_total_mass_kg": 73.99999867752896,
+  "body_rest_pos_max_err_mm": 5.064745371035327e-05,
+  "body_rest_rot_max_err_deg": 0.0,
+  "collider_errors": [],
+  "collider_pos_max_err_mm": 8.182291071943672e-06,
+  "collider_rot_max_err_deg": 4.597711793052988e-06,
+  "collider_size_max_err_mm": 1.5649768481118542e-05,
+  "joints": 23,
+  "joint_errors": [],
+  "joint_frame_max_err_mm": 2.6392211915915453e-05,
+  "limit_max_err_deg": 7.105427357601002e-15,
+  "drive_max_force_max_err": 0.0,
+  "per_body_density": {
+   "Pelvis": {
+    "usd_density": 4517.248046875,
+    "mjcf_density": 4517.248064,
+    "usd_mass_attr": 0.0,
+    "rel_err": 3.791024999696941e-09
+   },
+   "L_Hip": {
+    "usd_density": 2400.55126953125,
+    "mjcf_density": 2400.55122,
+    "usd_mass_attr": 0.0,
+    "rel_err": 2.0633281955058994e-08
+   },
+   "L_Knee": {
+    "usd_density": 1019.0276489257812,
+    "mjcf_density": 1019.027635,
+    "usd_mass_attr": 0.0,
+    "rel_err": 1.3665754234377958e-08
+   },
+   "L_Ankle": {
+    "usd_density": 916.2939453125,
+    "mjcf_density": 916.293943,
+    "usd_mass_attr": 0.0,
+    "rel_err": 2.5237534360260106e-09
+   },
+   "L_Toe": {
+    "usd_density": 1016.0838012695312,
+    "mjcf_density": 1016.083805,
+    "usd_mass_attr": 0.0,
+    "rel_err": 3.6714183569928406e-09
+   },
+   "R_Hip": {
+    "usd_density": 2351.44677734375,
+    "mjcf_density": 2351.446719,
+    "usd_mass_attr": 0.0,
+    "rel_err": 2.481185284723253e-08
+   },
+   "R_Knee": {
+    "usd_density": 1017.376708984375,
+    "mjcf_density": 1017.376698,
+    "usd_mass_attr": 0.0,
+    "rel_err": 1.0796762879011848e-08
+   },
+   "R_Ankle": {
+    "usd_density": 942.2511596679688,
+    "mjcf_density": 942.25117,
+    "usd_mass_attr": 0.0,
+    "rel_err": 1.0965262321607677e-08
+   },
+   "R_Toe": {
+    "usd_density": 1002.5564575195312,
+    "mjcf_density": 1002.55644,
+    "usd_mass_attr": 0.0,
+    "rel_err": 1.7474857872035517e-08
+   },
+   "Torso": {
+    "usd_density": 3644.51220703125,
+    "mjcf_density": 3644.51209,
+    "usd_mass_attr": 0.0,
+    "rel_err": 3.2111637151646674e-08
+   },
+   "Spine": {
+    "usd_density": 1607.142822265625,
+    "mjcf_density": 1607.142806,
+    "usd_mass_attr": 0.0,
+    "rel_err": 1.0120833615479348e-08
+   },
+   "Chest": {
+    "usd_density": 2143.416748046875,
+    "mjcf_density": 2143.41664,
+    "usd_mass_attr": 0.0,
+    "rel_err": 5.0408713391464386e-08
+   },
+   "Neck": {
+    "usd_density": 2204.61767578125,
+    "mjcf_density": 2204.617563,
+    "usd_mass_attr": 0.0,
+    "rel_err": 5.115683196119123e-08
+   },
+   "Head": {
+    "usd_density": 1184.3045654296875,
+    "mjcf_density": 1184.304577,
+    "usd_mass_attr": 0.0,
+    "rel_err": 9.769710286660003e-09
+   },
+   "L_Thorax": {
+    "usd_density": 1086.5927734375,
+    "mjcf_density": 1086.59278,
+    "usd_mass_attr": 0.0,
+    "rel_err": 6.039521031884773e-09
+   },
+   "L_Shoulder": {
+    "usd_density": 1539.9173583984375,
+    "mjcf_density": 1539.917418,
+    "usd_mass_attr": 0.0,
+    "rel_err": 3.870438882057396e-08
+   },
+   "L_Elbow": {
+    "usd_density": 906.0203857421875,
+    "mjcf_density": 906.020415,
+    "usd_mass_attr": 0.0,
+    "rel_err": 3.229266357890774e-08
+   },
+   "L_Wrist": {
+    "usd_density": 3900.2314453125,
+    "mjcf_density": 3900.231538,
+    "usd_mass_attr": 0.0,
+    "rel_err": 2.3764614766433812e-08
+   },
+   "L_Hand": {
+    "usd_density": 695.1974487304688,
+    "mjcf_density": 695.197451,
+    "usd_mass_attr": 0.0,
+    "rel_err": 3.2645851155908837e-09
+   },
+   "R_Thorax": {
+    "usd_density": 1374.3243408203125,
+    "mjcf_density": 1374.324399,
+    "usd_mass_attr": 0.0,
+    "rel_err": 4.2333300367262834e-08
+   },
+   "R_Shoulder": {
+    "usd_density": 1521.314697265625,
+    "mjcf_density": 1521.314735,
+    "usd_mass_attr": 0.0,
+    "rel_err": 2.4803792443266186e-08
+   },
+   "R_Elbow": {
+    "usd_density": 922.3560180664062,
+    "mjcf_density": 922.356045,
+    "usd_mass_attr": 0.0,
+    "rel_err": 2.9200864341509024e-08
+   },
+   "R_Wrist": {
+    "usd_density": 3861.946533203125,
+    "mjcf_density": 3861.94654,
+    "usd_mass_attr": 0.0,
+    "rel_err": 1.7599609013649432e-09
+   },
+   "R_Hand": {
+    "usd_density": 699.2994384765625,
+    "mjcf_density": 699.299415,
+    "usd_mass_attr": 0.0,
+    "rel_err": 3.357154609720446e-08
+   }
+  },
+  "colliders": [
+   {
+    "body": "Pelvis",
+    "type": "Sphere",
+    "pos_err_mm": 0.0,
+    "rot_err_deg": 0.0,
+    "size_err_mm": 3.5762786898541066e-06
+   },
+   {
+    "body": "L_Hip",
+    "type": "Capsule",
+    "pos_err_mm": 1.0393383574253588e-07,
+    "rot_err_deg": 0.0,
+    "size_err_mm": 1.5649768481118542e-05
+   },
+   {
+    "body": "L_Knee",
+    "type": "Capsule",
+    "pos_err_mm": 2.518585470655081e-06,
+    "rot_err_deg": 4.353408482428142e-06,
+    "size_err_mm": 4.463557162770471e-06
+   },
+   {
+    "body": "L_Ankle",
+    "type": "Cube",
+    "pos_err_mm": 8.781237387622686e-07,
+    "rot_err_deg": 0.0,
+    "size_err_mm": 1.7881393449270533e-06
+   },
+   {
+    "body": "L_Toe",
+    "type": "Cube",
+    "pos_err_mm": 8.004618306972052e-07,
+    "rot_err_deg": 0.0,
+    "size_err_mm": 1.7881393449270533e-06
+   },
+   {
+    "body": "R_Hip",
+    "type": "Capsule",
+    "pos_err_mm": 1.0538824168538794e-06,
+    "rot_err_deg": 8.537736462515939e-07,
+    "size_err_mm": 6.902627941451911e-06
+   },
+   {
+    "body": "R_Knee",
+    "type": "Capsule",
+    "pos_err_mm": 8.182291071943672e-06,
+    "rot_err_deg": 4.597711793052988e-06,
+    "size_err_mm": 5.600504504599257e-06
+   },
+   {
+    "body": "R_Ankle",
+    "type": "Cube",
+    "pos_err_mm": 1.0061135370959266e-06,
+    "rot_err_deg": 0.0,
+    "size_err_mm": 1.7881393449270533e-06
+   },
+   {
+    "body": "R_Toe",
+    "type": "Cube",
+    "pos_err_mm": 1.9850928619328826e-07,
+    "rot_err_deg": 0.0,
+    "size_err_mm": 1.7881393449270533e-06
+   },
+   {
+    "body": "Torso",
+    "type": "Sphere",
+    "pos_err_mm": 4.2886663558108485e-07,
+    "rot_err_deg": 0.0,
+    "size_err_mm": 2.98023217215615e-07
+   },
+   {
+    "body": "Spine",
+    "type": "Sphere",
+    "pos_err_mm": 0.0,
+    "rot_err_deg": 0.0,
+    "size_err_mm": 2.980232241545089e-06
+   },
+   {
+    "body": "Chest",
+    "type": "Sphere",
+    "pos_err_mm": 9.714654309057943e-07,
+    "rot_err_deg": 0.0,
+    "size_err_mm": 5.960464483090178e-07
+   },
+   {
+    "body": "Neck",
+    "type": "Sphere",
+    "pos_err_mm": 9.92218299811415e-07,
+    "rot_err_deg": 0.0,
+    "size_err_mm": 1.7881393449270533e-06
+   },
+   {
+    "body": "Head",
+    "type": "Sphere",
+    "pos_err_mm": 1.8309426466489012e-06,
+    "rot_err_deg": 0.0,
+    "size_err_mm": 1.1920928966180355e-06
+   },
+   {
+    "body": "L_Thorax",
+    "type": "Sphere",
+    "pos_err_mm": 9.459057115691083e-07,
+    "rot_err_deg": 0.0,
+    "size_err_mm": 2.980232241545089e-07
+   },
+   {
+    "body": "L_Shoulder",
+    "type": "Capsule",
+    "pos_err_mm": 6.498031165875067e-06,
+    "rot_err_deg": 3.078324659199975e-06,
+    "size_err_mm": 5.8639273298188854e-06
+   },
+   {
+    "body": "L_Elbow",
+    "type": "Capsule",
+    "pos_err_mm": 1.6766188824085658e-06,
+    "rot_err_deg": 0.0,
+    "size_err_mm": 1.758407114360594e-06
+   },
+   {
+    "body": "L_Wrist",
+    "type": "Cube",
+    "pos_err_mm": 1.7479845033808286e-06,
+    "rot_err_deg": 0.0,
+    "size_err_mm": 7.748603807200549e-07
+   },
+   {
+    "body": "L_Hand",
+    "type": "Cube",
+    "pos_err_mm": 1.319993850141671e-07,
+    "rot_err_deg": 1.2074182697257333e-06,
+    "size_err_mm": 8.940696724635266e-07
+   },
+   {
+    "body": "R_Thorax",
+    "type": "Sphere",
+    "pos_err_mm": 5.212728841659282e-07,
+    "rot_err_deg": 0.0,
+    "size_err_mm": 2.980232241545089e-07
+   },
+   {
+    "body": "R_Shoulder",
+    "type": "Capsule",
+    "pos_err_mm": 4.774489862314026e-06,
+    "rot_err_deg": 1.4787793334710982e-06,
+    "size_err_mm": 3.2261851662385155e-06
+   },
+   {
+    "body": "R_Elbow",
+    "type": "Capsule",
+    "pos_err_mm": 5.016146342603077e-06,
+    "rot_err_deg": 0.0,
+    "size_err_mm": 2.2739001792615454e-06
+   },
+   {
+    "body": "R_Wrist",
+    "type": "Cube",
+    "pos_err_mm": 1.5240352737136558e-06,
+    "rot_err_deg": 0.0,
+    "size_err_mm": 7.748603807200549e-07
+   },
+   {
+    "body": "R_Hand",
+    "type": "Cube",
+    "pos_err_mm": 1.6555559974098668e-07,
+    "rot_err_deg": 0.0,
+    "size_err_mm": 8.940696724635266e-07
+   }
+  ]
+ },
+ "adoption_collider_check": {
+  "script": "output/reference_curation/subject_body_check/adoption_risks/usd_collider_check.py",
+  "script_sha256": "44d1080a65edeb2dd47917a4b0ceeac2d03cd28e452dd9b464fec3aa9779d6f3",
+  "substituted": [
+   "data/assets/smpl/smpl_yogi03596_v2_usd/configuration/smpl_yogi03596_v2_flat_physics.usd",
+   "data/assets/smpl/smpl_yogi03596_v2_flat.xml"
+  ],
+  "returncode": 0,
+  "worst": {
+   "pos_err_mm": 8.182291071943672e-06,
+   "box_rot_err_deg": 1.2074182697257333e-06,
+   "capsule_axis_err_deg": 4.597711793052988e-06,
+   "box_extent_err_mm": 0.0,
+   "radius_err_mm": 3.5762786898541066e-06
+  },
+  "stderr_tail": ""
+ },
+ "seconds": 0.5,
+ "convert": {
+  "log": "output/reference_curation/plant_v2/usd_convert.log",
+  "flat_issues": [],
+  "stripped": [],
+  "importer": {
+   "returncode": -9,
+   "exit": "killed: hung on exit after writing",
+   "reported_output": true,
+   "seconds_to_output": 16.0,
+   "seconds": 76.4
+  },
+  "visual_mesh_patch": "not needed: the MJCF has no mesh geoms",
+  "masses_returncode": 0,
+  "returncode": 0,
+  "cleaned_xml_left_behind": false,
+  "seconds": 76.6
+ },
+ "failures": []
+}

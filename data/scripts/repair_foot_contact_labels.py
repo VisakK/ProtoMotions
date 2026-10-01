@@ -55,6 +55,8 @@ import numpy as np
 import torch
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+sys.path.insert(1, str(Path(__file__).resolve().parents[2]))
+from protomotions.utils import plant_identity  # noqa: E402
 
 from extract_contact_configs import (  # noqa: E402
     DEFAULT_THRESHOLDS,
@@ -137,13 +139,8 @@ def main() -> None:
     ap.add_argument("--in-dir", required=True)
     ap.add_argument("--clips", nargs="+", required=True, help="Clip stems (no extension).")
     ap.add_argument("--out-dir", required=True)
-    ap.add_argument(
-        "--mjcf",
-        default=str(
-            Path(__file__).resolve().parents[2]
-            / "data/assets/smpl/smpl_yogi03596_lowtorque.xml"
-        ),
-    )
+    ap.add_argument("--mjcf", default=str(plant_identity.mjcf_path()),
+                    help="the plant (default: REFERENCE_PLANT, v1 unless set)")
     ap.add_argument("--gap-max", type=float, default=GAP_MAX)
     ap.add_argument("--report", default=None, help="Optional JSON stats path.")
     a = ap.parse_args()

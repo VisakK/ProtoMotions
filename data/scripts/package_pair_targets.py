@@ -62,7 +62,9 @@ sys.path.insert(0, str(REPO))
 from contact_geometry import geom_pair_distance, geom_to_world, parse_typed_geoms  # noqa: E402
 from extract_contact_configs import compute_active_pairs, mjcf_body_names  # noqa: E402
 
-MJCF = REPO / "data/assets/smpl/smpl_yogi03596_lowtorque.xml"
+from protomotions.utils import plant_identity  # noqa: E402
+
+MJCF = plant_identity.mjcf_path()      # REFERENCE_PLANT (v1 default)
 CLIP_DIR = REPO / "data/smpl/yoga_yogi_balance_subset_v2_contacts"
 JSON_DIR = REPO / "data/smpl/yoga_contact_configs"
 YAML_PATH = REPO / "data/smpl/yoga_yogi_crow_pair_v2_contacts.yaml"

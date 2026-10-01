@@ -444,7 +444,10 @@ class ContactGraphControl(MaskedMimicControl):
         device = self.env.device
         body_names = list(self.env.robot_config.kinematic_info.body_names)
         names = [_Path(f).stem for f in self.env.motion_lib.motion_files]
-        tables = PhysicsTables(path, names, body_names, device)
+        from protomotions.utils import plant_identity
+
+        tables = PhysicsTables(path, names, body_names, device,
+                               plant_mjcf=plant_identity.robot_mjcf(self.env.robot_config))
         zone_order, _ = self.graph.zone_definition()
         if list(zone_order) != tables.zone_order:
             raise ValueError(f"physics tables zone order {tables.zone_order} != graph {zone_order}")
