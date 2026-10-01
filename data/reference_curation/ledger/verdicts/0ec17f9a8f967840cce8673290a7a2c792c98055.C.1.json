@@ -1,0 +1,115 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "impossible_joint",
+    "panels": [
+     "4a",
+     "4c",
+     "4e",
+     "3c"
+    ],
+    "part": "left hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "impossible_joint",
+    "panels": [
+     "4a",
+     "4c",
+     "4e"
+    ],
+    "part": "right hand",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "B",
+  "floating_parts": {
+   "A": [],
+   "B": []
+  },
+  "more_natural": "B",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both have head and both hands on the floor, bent arms, hips over head and legs angled up and back. Only the hand and wrist details differ."
+  },
+  "summary": "Both avatars show the same pose: head and both hands on the floor, legs raised and angled back. A's hands are bent sharply at the finger joints and tilted off the floor. B's hands lie flat like the grey hands, so B is closer to the grey body and looks more natural."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1252158,
+ "duration_s": 14.61,
+ "errors": [],
+ "frame_hold": 517,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-a@494",
+ "inputs": {},
+ "item_id": "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-a@494#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c2/0ec17f9a8f967840cce8673290a7a2c792c98055",
+  "images": {
+   "img_1.png": "bcfcd38404183f580f8e1898c9a3f306687fa9f2d86799cb5af2f9f87f83f343",
+   "img_2.png": "47db523ea57ed4b562240846046735820f1498fe1e1bd391b6d1e1100444e9be",
+   "img_3.png": "c21c2e605d68eddc2884a1346acec99525689d895b81cec5c61544ca23cce228",
+   "img_4.png": "6aea069b5fd118df25e66304be6ae593143cdb9008b92e79c34b398ea8c4068f",
+   "img_5.png": "7770019f751e16371d91af376ff9d7ca9e555e8bf8407cd870f9735334ec1aa4"
+  },
+  "packet_json_sha256": "dfcdf2211c1e1d71c24641b669bbec4f0653152a83201998916e63ee58ea5b42"
+ },
+ "packet_id": "0ec17f9a8f967840cce8673290a7a2c792c98055",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c2",
+ "render_v": "render_c2",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "c91e78ee-f5d7-478c-9370-87ce3417ba4a",
+ "started_utc": "2026-10-01T17:26:30+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-a",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 12084,
+  "cache_read_input_tokens": 13599,
+  "input_tokens": 6,
+  "output_tokens": 1290,
+  "thinking_tokens": 259
+ },
+ "warnings": []
+}

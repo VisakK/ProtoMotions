@@ -1,0 +1,112 @@
+{
+ "schema_version": 1,
+ "generator": {
+  "module": "reference_curation.gate_v2",
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "sha256": "1448d952cfd6637257361bc4ee12a0190feba87b12109a3d66ae28464fc0c0e9"
+ },
+ "inputs": {
+  "data/reference_curation/labels/holds_repaired_ftC_posefix.labels_v2.e03994ad3c/holds.yaml": "9967020d4b5f5e7462cc4b46506e75b14c4bf073b26461fc7b6460d00e0e3444",
+  "data/reference_curation/labels/holds_repaired_ftC_posefix.labels_v2.e03994ad3c/annotations.jsonl": "50329f510557da1780f3028293e48462ed98c3c770bcf3e086683cd1c2dd7221",
+  "data/reference_curation/statics_v2/holds_repaired_ftC_posefix.labels_v2.46024365fa.statics_v2.aab60189f4/holds.jsonl": "0eca067b6ba34782e6d08c8f363355786b468f613953e6a26d692f0e6d2a1530",
+  "data/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/retarget.json": "374cb786a4df4f7d30fd24a935f07963b7ce1a2d50c38b389ea1e604a3ecbfa1",
+  "output/reference_curation/packets/render_c2/_index_edits.jsonl": "d0e5671cec9ef2b3bde9f12faf02d81c07e1b43ad850bc2d2a1085ce18ac6ecb",
+  "data/reference_curation/calibration/pass_c/render_c2.json": "1e57ae3329bf7c4254feb8405988742dded95f29d841f4b952473fca6598ed03",
+  "data/assets/smpl/smpl_yogi03596_v2.xml": "aa541c77bcc1526905777c425e5ab072f21cae7bcadad9f71e3b1eb531f98f91",
+  "data/assets/smpl/smpl_yogi03596_v2_flat.xml": "968f7e94ffce0011d6c43a8fb30d55a21885ba733207dd07bc1aa3fd1a110e17"
+ },
+ "gate_id": "holds_repaired_ftC_posefix.gate_v2.b2f76f2606",
+ "labels_id": "holds_repaired_ftC_posefix.labels_v2.e03994ad3c",
+ "statics_id": "holds_repaired_ftC_posefix.labels_v2.46024365fa.statics_v2.aab60189f4",
+ "retarget_id": "holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02",
+ "fit_id": "fit_v2.v1.b8f5e86fc9",
+ "pass_c_render_v": "render_c2",
+ "plant": {
+  "plant": "v2",
+  "mjcf": "data/assets/smpl/smpl_yogi03596_v2.xml",
+  "plant_sha256": "aa541c77bcc1526905777c425e5ab072f21cae7bcadad9f71e3b1eb531f98f91"
+ },
+ "rules": {
+  "exclude": [
+   "transition",
+   "not_same_pose",
+   "statics_beyond_plant",
+   "statics_infeasible",
+   "unholdable_without_<support>",
+   "joint_box",
+   "floor_contract",
+   "new_overlap"
+  ],
+  "mask": [
+   "unrealisable_<support>",
+   "not_realised_<pair>"
+  ],
+  "flag": [
+   "fit_closer",
+   "critical_not_realised",
+   "critical_partly_realised",
+   "statue_moved_single_leg",
+   "pose_preparation",
+   "jerk_in_window",
+   "over_edit_budget",
+   "not_same_pose_unadmitted"
+  ]
+ },
+ "thresholds": {
+  "box_tol_deg": 1.0,
+  "floor_contract_m": -0.01,
+  "deep_overlap_m": 0.01,
+  "spike_acc": 100.0,
+  "edit_mean_p95_m": 0.1,
+  "edit_body_max_m": 0.25
+ },
+ "counts": {
+  "holds": 280,
+  "decisions": {
+   "pass": 204,
+   "mask": 1,
+   "flag": 65,
+   "exclude": 10
+  },
+  "family_decisions": {
+   "pass": 41,
+   "mask": 1,
+   "flag": 22,
+   "exclude": 1
+  },
+  "reasons": {
+   "critical_partly_realised": 1,
+   "fit_closer": 24,
+   "pose_preparation": 35,
+   "statics_beyond_plant": 2,
+   "statue_moved_single_leg": 17,
+   "transition": 8,
+   "unrealisable_R_HAND:G": 1
+  },
+  "reason_kinds": {
+   "critical_partly_realised": 1,
+   "fit_closer": 24,
+   "pose_preparation": 35,
+   "statics_beyond_plant": 2,
+   "statue_moved_single_leg": 17,
+   "transition": 8,
+   "unrealisable_<support>": 1
+  },
+  "masks": {
+   "R_HAND:G": 1
+  },
+  "clips_all_excluded": [],
+  "transition_jerk_frames": 0,
+  "transition_new_overlap_pair_frames": 0,
+  "pass_c_stale": 0,
+  "pass_c_missing": 0
+ },
+ "pass_c_admitted": {
+  "pose_change": true,
+  "artefact": false,
+  "closer": true
+ },
+ "pass_c_stale": [],
+ "pass_c_missing": [],
+ "a4_check": []
+}

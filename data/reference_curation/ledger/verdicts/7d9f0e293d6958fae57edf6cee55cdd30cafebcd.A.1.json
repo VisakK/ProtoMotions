@@ -1,0 +1,282 @@
+{
+ "answer": {
+  "body_body": {
+   "answer": "listed",
+   "contacts": [
+    {
+     "certainty": "possible",
+     "panels": [
+      "3a",
+      "1c"
+     ],
+     "part_a": "head",
+     "part_b": "left shin"
+    },
+    {
+     "certainty": "possible",
+     "panels": [
+      "3b",
+      "1b"
+     ],
+     "part_a": "head",
+     "part_b": "right upper arm"
+    }
+   ]
+  },
+  "discrepancies": [
+   {
+    "kind": "avatar_off_floor_markers_on_floor",
+    "note": "Avatar foot is tilted, with a drop line under it; its markers sit at floor level.",
+    "panels": [
+     "3a",
+     "2b",
+     "1c"
+    ],
+    "part": "left foot"
+   },
+   {
+    "kind": "avatar_off_floor_markers_on_floor",
+    "note": "Hand box hovers, with a drop line under it; its markers sit at floor level below it.",
+    "panels": [
+     "3a",
+     "3b"
+    ],
+    "part": "left hand"
+   },
+   {
+    "kind": "avatar_off_floor_markers_on_floor",
+    "note": "Hand box hovers, with drop lines under it; its markers lie near the floor.",
+    "panels": [
+     "3b",
+     "1c"
+    ],
+    "part": "right hand"
+   }
+  ],
+  "floor": {
+   "head": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3a",
+     "3b",
+     "2b"
+    ]
+   },
+   "left foot": {
+    "avatar": "off_floor",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "2b",
+     "1c"
+    ]
+   },
+   "left forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3a",
+     "2b"
+    ]
+   },
+   "left hand": {
+    "avatar": "off_floor",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "3b",
+     "1c"
+    ]
+   },
+   "left shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "3a"
+    ]
+   },
+   "left thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b"
+    ]
+   },
+   "left upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3a",
+     "2b"
+    ]
+   },
+   "pelvis": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b"
+    ]
+   },
+   "right foot": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "right forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3b",
+     "2b"
+    ]
+   },
+   "right hand": {
+    "avatar": "off_floor",
+    "markers": "touching",
+    "panels": [
+     "3b",
+     "1c"
+    ]
+   },
+   "right shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b"
+    ]
+   },
+   "right thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b"
+    ]
+   },
+   "right upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3b",
+     "2b"
+    ]
+   },
+   "torso": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b"
+    ]
+   }
+  },
+  "implausible": [
+   {
+    "kind": "no_base_of_support",
+    "note": "No avatar part touches the floor; the foot and both hands hover with drop lines.",
+    "panels": [
+     "3a",
+     "3b",
+     "2b"
+    ],
+    "parts": [
+     "left foot",
+     "left hand",
+     "right hand"
+    ]
+   }
+  ],
+  "pose": {
+   "candidates": [
+    {
+     "confidence": "high",
+     "name": "Standing split (Urdhva Prasarita Eka Padasana)"
+    },
+    {
+     "confidence": "low",
+     "name": "Standing forward bend with leg raised"
+    }
+   ],
+   "description": "Standing forward fold on the left leg, which is straight and vertical. The right leg is raised straight up behind, close to vertical. The torso hangs down, so the head is far below the hips, near the left shin. Both arms reach down with the hands placed on either side of the left foot. The avatar's left foot and both hands hover just above the floor."
+  }
+ },
+ "audit_id": "holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.audit_v2.calibrated.9278736bb1",
+ "cost_usd": 0.12679279999999998,
+ "duration_s": 27.96,
+ "errors": [],
+ "frame_hold": 540,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Standing_Split_pose_or_Urdhva_Prasarita_Eka_Padasana_-a@540",
+ "inputs": {},
+ "item_id": "220923_Standing_Split_pose_or_Urdhva_Prasarita_Eka_Padasana_-a@540#A4:lift6",
+ "n": 1,
+ "num_turns": 7,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_v4/7d9f0e293d6958fae57edf6cee55cdd30cafebcd",
+  "images": {
+   "img_1.png": "2f60dab8492a6b5a691af5d0ae6421f0904933985c93e9731f52e4ee59819497",
+   "img_2.png": "c1bf54b5a2270b261bd5f14ff3d08a5cff6f749412225627fba0f4654232e8c0",
+   "img_3.png": "72459f8793f774634c6fb5c5cab536a39f34112be23fbc88aa5ce7dd2d449e5a",
+   "img_4.png": "fe0805381ba9d2297b1deccecb32d15f741fd299b727cdf578fb2d2195e01a42"
+  },
+  "packet_json_sha256": "6d1802dfab3a4ebef664f3c60a9db2be912e7f874b7d10e39ee2da67e91ccf5a"
+ },
+ "packet_id": "7d9f0e293d6958fae57edf6cee55cdd30cafebcd",
+ "pass": "A",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_a.md",
+  "sha256": "bae5cfe8420cee596fc188c14966536b354df29210c1e9a94384c925aab70510"
+ },
+ "purpose": "calibration",
+ "render_v": "render_v4",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "5de359f0431719d8",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_a.json",
+  "sha256": "5a05ec7b10cce5f545b813c390820a81bbbde96259cc00318df7ec618475ff9d"
+ },
+ "schema_version": 1,
+ "session_id": "452c0ad3-6a8c-497f-871d-0b9f8ad32598",
+ "started_utc": "2026-10-01T16:18:51+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Standing_Split_pose_or_Urdhva_Prasarita_Eka_Padasana_-a",
+ "stratum": "other",
+ "usage": {
+  "cache_creation_input_tokens": 8202,
+  "cache_read_input_tokens": 26064,
+  "input_tokens": 6,
+  "output_tokens": 2797,
+  "thinking_tokens": 993
+ },
+ "warnings": [
+  "body_body: head + right upper arm are joined; not scored"
+ ]
+}

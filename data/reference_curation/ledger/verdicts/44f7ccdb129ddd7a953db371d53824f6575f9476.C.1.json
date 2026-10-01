@@ -1,0 +1,127 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1a",
+     "2a",
+     "3c"
+    ],
+    "part": "pelvis",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "impossible_joint",
+    "panels": [
+     "1c",
+     "4e"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "2b",
+     "3d"
+    ],
+    "part": "right thigh",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "B",
+  "floating_parts": {
+   "A": [
+    "right thigh"
+   ],
+   "B": [
+    "right thigh"
+   ]
+  },
+  "more_natural": "B",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both lie prone with straight arms propping an arched chest, legs extended behind. A carries the hips and thighs somewhat higher, which is only a change in height."
+  },
+  "summary": "Both avatars show the same prone pose with an arched back and straight arms. B is closer to the human: its pelvis and thighs sit low near the floor. A raises its hips, leaves a clear gap under its thighs and twists its right foot."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1328328,
+ "duration_s": 17.18,
+ "errors": [],
+ "frame_hold": 591,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Cobra_Pose_or_Bhujangasana_-a@591",
+ "inputs": {},
+ "item_id": "220923_Cobra_Pose_or_Bhujangasana_-a@591#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c2/44f7ccdb129ddd7a953db371d53824f6575f9476",
+  "images": {
+   "img_1.png": "9fa6409a7476f9ee59366024926bec196953741d4a6d1688d667261ec82a7f9e",
+   "img_2.png": "b6f17491decaf02ef116cbe0cd248e5ae772e0c68997cfee5e80ecceb1df871f",
+   "img_3.png": "35946de28fef1154dd1ecbd494873c579977bda3a428da8fb0d96d96e1e377ea",
+   "img_4.png": "bb997535e81aa236d7ddbdd42cc66760a07a9004284fde99f56e3e05a342a914",
+   "img_5.png": "ece1da6e6747a84af372f42ca65bf6eac4afd865e6f1d1da603e55975e8012ac"
+  },
+  "packet_json_sha256": "9b2bc06162f911d7613c8fdba7f220f70258f1c9153735c4ec4d983d8e371246"
+ },
+ "packet_id": "44f7ccdb129ddd7a953db371d53824f6575f9476",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c2",
+ "render_v": "render_c2",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "e10c71b7-555e-4947-ad0c-ce334cbc0c5b",
+ "started_utc": "2026-10-01T17:16:49+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Cobra_Pose_or_Bhujangasana_-a",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 12086,
+  "cache_read_input_tokens": 13604,
+  "input_tokens": 6,
+  "output_tokens": 1670,
+  "thinking_tokens": 601
+ },
+ "warnings": []
+}

@@ -1,0 +1,387 @@
+{
+ "answer": {
+  "body_body": {
+   "answer": "listed",
+   "contacts": [
+    {
+     "certainty": "clear",
+     "panels": [
+      "3d",
+      "1b"
+     ],
+     "part_a": "left foot",
+     "part_b": "right foot"
+    },
+    {
+     "certainty": "possible",
+     "panels": [
+      "1b",
+      "3d"
+     ],
+     "part_a": "left foot",
+     "part_b": "right shin"
+    },
+    {
+     "certainty": "clear",
+     "panels": [
+      "1a",
+      "2a"
+     ],
+     "part_a": "left shin",
+     "part_b": "right shin"
+    },
+    {
+     "certainty": "clear",
+     "panels": [
+      "2a",
+      "1b"
+     ],
+     "part_a": "left thigh",
+     "part_b": "right thigh"
+    }
+   ]
+  },
+  "discrepancies": [
+   {
+    "kind": "other",
+    "note": "Label ground omits the head, yet avatar, markers and skin all show the head resting on the floor.",
+    "panels": [
+     "3a",
+     "2b"
+    ],
+    "part": "head"
+   },
+   {
+    "kind": "other",
+    "note": "Labelled left foot\u2013right shin contact: avatar touches, but human skin is about 4 cm apart.",
+    "panels": [
+     "3d",
+     "1b"
+    ],
+    "part": "left foot"
+   },
+   {
+    "kind": "other",
+    "note": "Labelled right foot\u2013left shin contact: neither avatar nor human skin touches.",
+    "panels": [
+     "3d",
+     "1b"
+    ],
+    "part": "right foot"
+   },
+   {
+    "kind": "other",
+    "note": "Human thigh skin touches the torso; avatar thighs stay several cm from the torso.",
+    "panels": [
+     "1a",
+     "2b"
+    ],
+    "part": "left thigh"
+   }
+  ],
+  "floor": {
+   "head": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "2b"
+    ]
+   },
+   "left foot": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3d",
+     "2b",
+     "1b"
+    ]
+   },
+   "left forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "3b"
+    ]
+   },
+   "left hand": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3b",
+     "2b"
+    ]
+   },
+   "left shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "left thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "left upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "3b"
+    ]
+   },
+   "pelvis": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "right foot": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3d",
+     "2b",
+     "1b"
+    ]
+   },
+   "right forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3c",
+     "1c"
+    ]
+   },
+   "right hand": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3c",
+     "3a"
+    ]
+   },
+   "right shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "right thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "1c"
+    ]
+   },
+   "right upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3c",
+     "1c"
+    ]
+   },
+   "torso": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   }
+  },
+  "implausible": [],
+  "pose": {
+   "candidates": [
+    {
+     "confidence": "high",
+     "name": "Tripod headstand pike (Sirsasana II prep)"
+    },
+    {
+     "confidence": "medium",
+     "name": "Salamba Sirsasana II"
+    },
+    {
+     "confidence": "low",
+     "name": "Side crow with head down"
+    }
+   ],
+   "description": "Head and both hands on the floor in a tripod; forearms vertical, upper arms horizontal. Hips high above the head, torso inverted. Both legs together, piked diagonally down from the hips with knees nearly straight; both feet hang off the floor, the right foot higher than the left."
+  },
+  "repair": {
+   "kinds": [],
+   "needed": "no",
+   "note": "Avatar floor contacts match the human; only the thigh\u2013torso closeness differs slightly."
+  },
+  "roles": [
+   {
+    "note": "Legs held together in the pike; feet touch on skin and avatar.",
+    "panels": [
+     "3d",
+     "1b"
+    ],
+    "part_a": "left foot",
+    "part_b": "right foot",
+    "role": "allowed"
+   },
+   {
+    "note": "Avatar-only contact; human skin about 4 cm apart.",
+    "panels": [
+     "1b",
+     "3d"
+    ],
+    "part_a": "left foot",
+    "part_b": "right shin",
+    "role": "incidental"
+   },
+   {
+    "note": "Not touching on avatar or skin; label is wrong here.",
+    "panels": [
+     "1b",
+     "3d"
+    ],
+    "part_a": "right foot",
+    "part_b": "left shin",
+    "role": "incidental"
+   },
+   {
+    "note": "Legs squeezed together; the pose allows it but does not require it.",
+    "panels": [
+     "1a",
+     "2a"
+    ],
+    "part_a": "left shin",
+    "part_b": "right shin",
+    "role": "allowed"
+   },
+   {
+    "note": "Thighs held together; the pose allows it but does not require it.",
+    "panels": [
+     "2a",
+     "1b"
+    ],
+    "part_a": "left thigh",
+    "part_b": "right thigh",
+    "role": "allowed"
+   },
+   {
+    "note": "Deep pike brings the thigh to the torso on skin; avatar leaves a gap.",
+    "panels": [
+     "1a",
+     "2b"
+    ],
+    "part_a": "left thigh",
+    "part_b": "torso",
+    "role": "allowed"
+   },
+   {
+    "note": "Deep pike skin contact; avatar leaves a gap.",
+    "panels": [
+     "1a",
+     "1c"
+    ],
+    "part_a": "right thigh",
+    "part_b": "torso",
+    "role": "allowed"
+   }
+  ],
+  "timing": {
+   "better_panel": "",
+   "end": "label",
+   "main_moment": "keep",
+   "note": "Label and capture windows are identical; main moment shows a settled tripod with feet lifted.",
+   "start": "label"
+  },
+  "variant": {
+   "matches_label": "no",
+   "note": "Tripod headstand pike: head on floor, legs together and straight, not twisted onto one arm, no knee-arm contact."
+  }
+ },
+ "audit_id": "holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.audit_v2.calibrated.9278736bb1",
+ "cost_usd": 0.2388924,
+ "duration_s": 38.12,
+ "errors": [],
+ "frame_hold": 931,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-b@931",
+ "inputs": {},
+ "item_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-b@931#B4",
+ "n": 1,
+ "num_turns": 7,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_v4/a68bf5d6c6b118465cae8d6802d0351700868d89",
+  "images": {
+   "img_1.png": "f2923d5e37bd9b3f0cdb986ad16585680fcd52921bf134edcd28592f0d05a13f",
+   "img_2.png": "d4973279498c0535a4e8b2f32521e38dcb24402fb2c767c794ce875672756f1d",
+   "img_3.png": "dc7d6a878b1bf1adfb08adf5f03fb375e4048cc83576fbd6d8fe7dabc52970aa",
+   "img_4.png": "3f62bb40c3991d2628f606d13a28de275559d2443d852bda3ee6a946fc1a72b5"
+  },
+  "packet_json_sha256": "a4370f07511b90efdfe778efdaff3d459dbba9ca45f60b8c7fee5101d36d9729"
+ },
+ "packet_id": "a68bf5d6c6b118465cae8d6802d0351700868d89",
+ "pass": "B",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_b.md",
+  "sha256": "077dd51bd3c86104e2579843cb3162adaf5e3892192e7634aa4712e2274df649"
+ },
+ "purpose": "b6",
+ "render_v": "render_v4",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "5f537c5cd7b2019f",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_b.json",
+  "sha256": "0c8ebcc47c25a92ae60dea2083cdea7b465230a6702cd4fc11c2b7b6bb6eae8d"
+ },
+ "schema_version": 1,
+ "session_id": "c6aacdee-c0af-440b-9e6e-187189dc3c55",
+ "started_utc": "2026-10-01T16:47:50+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-b",
+ "stratum": null,
+ "usage": {
+  "cache_creation_input_tokens": 18816,
+  "cache_read_input_tokens": 45002,
+  "input_tokens": 6,
+  "output_tokens": 3967,
+  "thinking_tokens": 1437
+ },
+ "warnings": []
+}

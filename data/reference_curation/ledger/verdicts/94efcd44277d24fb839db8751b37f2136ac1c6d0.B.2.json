@@ -1,0 +1,340 @@
+{
+ "answer": {
+  "body_body": {
+   "answer": "listed",
+   "contacts": [
+    {
+     "certainty": "clear",
+     "panels": [
+      "1b",
+      "1a",
+      "3c"
+     ],
+     "part_a": "right thigh",
+     "part_b": "right upper arm"
+    }
+   ]
+  },
+  "discrepancies": [
+   {
+    "kind": "avatar_on_floor_markers_off_floor",
+    "note": "Avatar right foot flat on floor; markers about 6 cm up, skin 2.6 cm, mat shows no load there.",
+    "panels": [
+     "3e",
+     "3c",
+     "4c"
+    ],
+    "part": "right foot"
+   },
+   {
+    "kind": "other",
+    "note": "Label ground lists only hands; head and both feet clearly rest on the floor.",
+    "panels": [
+     "3a",
+     "3d",
+     "2b"
+    ],
+    "part": "head"
+   },
+   {
+    "kind": "other",
+    "note": "Labelled right thigh\u2013right forearm contact absent: skin and avatar gaps near 6 cm.",
+    "panels": [
+     "1b",
+     "3a"
+    ],
+    "part": "right thigh"
+   },
+   {
+    "kind": "other",
+    "note": "Human right thigh touches torso (skin ~2 cm); avatar gap about 9 cm, less hip flexion.",
+    "panels": [
+     "1a",
+     "2b"
+    ],
+    "part": "right thigh"
+   }
+  ],
+  "floor": {
+   "head": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "1b",
+     "2b"
+    ]
+   },
+   "left foot": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3d",
+     "1c",
+     "2b"
+    ]
+   },
+   "left forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3b",
+     "1c"
+    ]
+   },
+   "left hand": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3b",
+     "1c"
+    ]
+   },
+   "left shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "1c",
+     "2b"
+    ]
+   },
+   "left thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "left upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3b",
+     "1c"
+    ]
+   },
+   "pelvis": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "right foot": {
+    "avatar": "touching",
+    "markers": "off_floor",
+    "panels": [
+     "3e",
+     "3c",
+     "1a"
+    ]
+   },
+   "right forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3a",
+     "1b"
+    ]
+   },
+   "right hand": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3c",
+     "1b"
+    ]
+   },
+   "right shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1b",
+     "2b",
+     "3c"
+    ]
+   },
+   "right thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "right upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3a",
+     "1b"
+    ]
+   },
+   "torso": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "3a"
+    ]
+   }
+  },
+  "implausible": [],
+  "pose": {
+   "candidates": [
+    {
+     "confidence": "high",
+     "name": "Eka Pada Koundinyasana II preparation (tripod)"
+    },
+    {
+     "confidence": "medium",
+     "name": "Eka Pada Koundinyasana II"
+    },
+    {
+     "confidence": "low",
+     "name": "Tripod headstand knee-to-arm prep"
+    }
+   ],
+   "description": "Prone, hips high. Head (crown) on floor below and ahead of hips with both hands, tripod-like. Left leg extended back, left foot on floor. Right knee drawn forward, right thigh resting on back of right upper arm, right foot near the head, lightly down. Both elbows bent, forearms vertical over hands."
+  },
+  "repair": {
+   "kinds": [
+    "pose_mismatch"
+   ],
+   "needed": "yes",
+   "note": "Avatar right hip flexes less than human's (thigh\u2013torso gap); right foot flat where human's lifts."
+  },
+  "roles": [
+   {
+    "note": "Knee region may rest on upper arm; skin near-touch, avatar gap ~5 cm.",
+    "panels": [
+     "1b",
+     "3a"
+    ],
+    "part_a": "right shin",
+    "part_b": "right upper arm",
+    "role": "allowed"
+   },
+   {
+    "note": "Right thigh shelved on back of right upper arm defines the pose.",
+    "panels": [
+     "1b",
+     "1a"
+    ],
+    "part_a": "right thigh",
+    "part_b": "right upper arm",
+    "role": "required_touch"
+   },
+   {
+    "note": "Not made here (gap ~6 cm); permitted but not needed.",
+    "panels": [
+     "1b",
+     "3a"
+    ],
+    "part_a": "right thigh",
+    "part_b": "right forearm",
+    "role": "allowed"
+   },
+   {
+    "note": "Deep hip flexion presses thigh to torso in human; avatar gap ~9 cm.",
+    "panels": [
+     "1a",
+     "2b"
+    ],
+    "part_a": "right thigh",
+    "part_b": "torso",
+    "role": "allowed"
+   }
+  ],
+  "timing": {
+   "better_panel": "",
+   "end": "label",
+   "main_moment": "keep",
+   "note": "Label and capture windows coincide; right foot begins lifting near frame 917, late in window.",
+   "start": "label"
+  },
+  "variant": {
+   "matches_label": "no",
+   "note": "Entry stage: head and both feet stay on the floor; arm balance with hands as sole support not reached."
+  }
+ },
+ "audit_id": "holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.audit_v2.calibrated.9278736bb1",
+ "cost_usd": 0.23167919999999997,
+ "duration_s": 41.55,
+ "errors": [],
+ "frame_hold": 888,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-b@873",
+ "inputs": {},
+ "item_id": "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-b@873#B4",
+ "n": 2,
+ "num_turns": 7,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_v4/94efcd44277d24fb839db8751b37f2136ac1c6d0",
+  "images": {
+   "img_1.png": "9e5f0e5f84ee36abc37e3f749300a655c3aaa127f0a956d574c0ea8cdc38c3b7",
+   "img_2.png": "22745f145eaafd50590dfbbfae7d524f7dc01b02df1ccd3cd6c7dfcfb40a666d",
+   "img_3.png": "bb3bd700652db6e51f3050cf7e6ea27e1f0ef19effb7b805e6aedc2e9edf9b98",
+   "img_4.png": "7b0118ab1f9bc8f8456de053e39cf9665feea096ba50408fb78e7b9b222952ad"
+  },
+  "packet_json_sha256": "aa18be0dffb7e1da7877ba4514d23eef96dadf720bedc2f40fd5a957358859ea"
+ },
+ "packet_id": "94efcd44277d24fb839db8751b37f2136ac1c6d0",
+ "pass": "B",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_b.md",
+  "sha256": "077dd51bd3c86104e2579843cb3162adaf5e3892192e7634aa4712e2274df649"
+ },
+ "purpose": "b6",
+ "render_v": "render_v4",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "5f537c5cd7b2019f",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_b.json",
+  "sha256": "0c8ebcc47c25a92ae60dea2083cdea7b465230a6702cd4fc11c2b7b6bb6eae8d"
+ },
+ "schema_version": 1,
+ "session_id": "1c80fc9d-8341-40f9-b812-6cd8289f4d6c",
+ "started_utc": "2026-10-01T16:41:26+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-b",
+ "stratum": null,
+ "usage": {
+  "cache_creation_input_tokens": 17223,
+  "cache_read_input_tokens": 43856,
+  "input_tokens": 6,
+  "output_tokens": 4255,
+  "thinking_tokens": 1925
+ },
+ "warnings": [
+  "load word 'load'"
+ ]
+}

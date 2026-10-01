@@ -1,0 +1,91 @@
+{
+ "answer": {
+  "artefacts": [],
+  "closer_to_human": "equal",
+  "floating_parts": {
+   "A": [],
+   "B": []
+  },
+  "more_natural": "equal",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both show the same straight-arm plank: hands flat under the shoulders, body in a straight line, toes tucked on the floor. The limb placement matches in every view."
+  },
+  "summary": "A and B look the same in every view. Both match the grey body, with hands and toes on the floor and no drop lines. I found no clear defects and no jitter in the time strip, so neither one is closer to the human or more natural."
+ },
+ "audit_id": null,
+ "cost_usd": 0.11508159999999999,
+ "duration_s": 12.31,
+ "errors": [],
+ "frame_hold": 541,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Plank_Pose_or_Kumbhakasana_-a@541",
+ "inputs": {},
+ "item_id": "220923_Plank_Pose_or_Kumbhakasana_-a@541#identity",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c2/02768fa7221130b16484d7207e07ce8db19d22bb",
+  "images": {
+   "img_1.png": "7e17ede1f12933d7a92b353c3a2a4adba9ab8a36bcf79cce5ca16c7f061fcce7",
+   "img_2.png": "46ded134b5b949beb80aa606cc7e406c8c38d143e14b1964964fc6c0d1174b0c",
+   "img_3.png": "4cb632a332ad7366a7e54bbcd4525d8a18ef8772aadc81499b631488089f3dbf",
+   "img_4.png": "fa16281d86e5576e19245590ebd3a22b5dc11569f56fc3691a7a123a7aa541ab",
+   "img_5.png": "b99ceca57eb73d117d746a68f6922d6a94c1062eed21bb3f6372af5d462b212f"
+  },
+  "packet_json_sha256": "e72c4109280f403e946ca98906f856d156175c3a5ce09788bf84a6fe9907334c"
+ },
+ "packet_id": "02768fa7221130b16484d7207e07ce8db19d22bb",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c2",
+ "render_v": "render_c2",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "8b1c26db-cdab-4f52-87c2-a13f60a3e97d",
+ "started_utc": "2026-10-01T17:05:07+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Plank_Pose_or_Kumbhakasana_-a",
+ "stratum": "identity",
+ "usage": {
+  "cache_creation_input_tokens": 11383,
+  "cache_read_input_tokens": 13568,
+  "input_tokens": 6,
+  "output_tokens": 1064,
+  "thinking_tokens": 149
+ },
+ "warnings": []
+}

@@ -1,0 +1,327 @@
+{
+ "answer": {
+  "body_body": {
+   "answer": "listed",
+   "contacts": [
+    {
+     "certainty": "possible",
+     "panels": [
+      "3b",
+      "1d"
+     ],
+     "part_a": "left hand",
+     "part_b": "left shin"
+    },
+    {
+     "certainty": "possible",
+     "panels": [
+      "3c",
+      "1d"
+     ],
+     "part_a": "right hand",
+     "part_b": "right shin"
+    }
+   ]
+  },
+  "discrepancies": [
+   {
+    "kind": "avatar_off_floor_markers_on_floor",
+    "note": "Dark blue drop lines under the avatar foot; its markers sit at floor level.",
+    "panels": [
+     "3b",
+     "1a"
+    ],
+    "part": "left foot"
+   },
+   {
+    "kind": "avatar_off_floor_markers_on_floor",
+    "note": "Light blue drop line under the avatar foot; its markers sit at floor level.",
+    "panels": [
+     "3c"
+    ],
+    "part": "right foot"
+   },
+   {
+    "kind": "avatar_off_floor_markers_on_floor",
+    "note": "Dark red drop line under the hand; its markers sit near the floor.",
+    "panels": [
+     "3b",
+     "2b"
+    ],
+    "part": "left hand"
+   },
+   {
+    "kind": "avatar_off_floor_markers_on_floor",
+    "note": "Light red drop line under the hand; its markers sit near the floor.",
+    "panels": [
+     "3c"
+    ],
+    "part": "right hand"
+   },
+   {
+    "kind": "avatar_off_floor_markers_on_floor",
+    "note": "Orange drop lines under the forearm; its markers sit on the floor.",
+    "panels": [
+     "3b",
+     "2b"
+    ],
+    "part": "left forearm"
+   },
+   {
+    "kind": "avatar_off_floor_markers_on_floor",
+    "note": "Light orange drop lines under the forearm; its markers sit on the floor.",
+    "panels": [
+     "3c",
+     "3d"
+    ],
+    "part": "right forearm"
+   },
+   {
+    "kind": "avatar_off_floor_markers_on_floor",
+    "note": "Dark purple drop lines under the upper arm; its markers sit at floor level.",
+    "panels": [
+     "3a",
+     "2b"
+    ],
+    "part": "left upper arm"
+   },
+   {
+    "kind": "avatar_off_floor_markers_on_floor",
+    "note": "Magenta drop line under the head; the lowest head markers sit near floor level.",
+    "panels": [
+     "2b",
+     "3a"
+    ],
+    "part": "head"
+   }
+  ],
+  "floor": {
+   "head": {
+    "avatar": "off_floor",
+    "markers": "touching",
+    "panels": [
+     "2b",
+     "3a"
+    ]
+   },
+   "left foot": {
+    "avatar": "off_floor",
+    "markers": "touching",
+    "panels": [
+     "3b",
+     "2b",
+     "1a"
+    ]
+   },
+   "left forearm": {
+    "avatar": "off_floor",
+    "markers": "touching",
+    "panels": [
+     "3b",
+     "2b"
+    ]
+   },
+   "left hand": {
+    "avatar": "off_floor",
+    "markers": "touching",
+    "panels": [
+     "3b",
+     "2b"
+    ]
+   },
+   "left shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "3b"
+    ]
+   },
+   "left thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "left upper arm": {
+    "avatar": "off_floor",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "2b"
+    ]
+   },
+   "pelvis": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "right foot": {
+    "avatar": "off_floor",
+    "markers": "touching",
+    "panels": [
+     "3c",
+     "1c"
+    ]
+   },
+   "right forearm": {
+    "avatar": "off_floor",
+    "markers": "touching",
+    "panels": [
+     "3c",
+     "3d"
+    ]
+   },
+   "right hand": {
+    "avatar": "off_floor",
+    "markers": "touching",
+    "panels": [
+     "3c",
+     "1c"
+    ]
+   },
+   "right shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "3c"
+    ]
+   },
+   "right thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1d"
+    ]
+   },
+   "right upper arm": {
+    "avatar": "off_floor",
+    "markers": "touching",
+    "panels": [
+     "3d",
+     "1c"
+    ]
+   },
+   "torso": {
+    "avatar": "off_floor",
+    "markers": "cannot_tell",
+    "panels": [
+     "3a",
+     "2b"
+    ]
+   }
+  },
+  "implausible": [
+   {
+    "kind": "no_base_of_support",
+    "note": "Every avatar part has a drop line; the whole body hovers above the floor with nothing touching.",
+    "panels": [
+     "2b",
+     "3b",
+     "3c",
+     "3d"
+    ],
+    "parts": [
+     "left foot",
+     "right foot",
+     "left hand",
+     "right hand"
+    ]
+   }
+  ],
+  "pose": {
+   "candidates": [
+    {
+     "confidence": "low",
+     "name": "Tortoise pose (Kurmasana) variant"
+    },
+    {
+     "confidence": "low",
+     "name": "Garland pose forward fold, hands to heels"
+    }
+   ],
+   "description": "Folded forward: hips and knees high, knees above hips, shins down to feet behind. Torso slopes down from pelvis; head is beyond the shoulders, low near the floor. Both arms lie straight and flat along the floor, reaching back from the shoulders so the hands sit beside the feet. Every avatar part hovers just above the floor."
+  }
+ },
+ "audit_id": "holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.audit_v2.calibrated.9278736bb1",
+ "cost_usd": 0.1859266,
+ "duration_s": 56.4,
+ "errors": [],
+ "frame_hold": 1056,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Bridge_Pose_or_Setu_Bandha_Sarvangasana_-a@1056",
+ "inputs": {},
+ "item_id": "220923_Bridge_Pose_or_Setu_Bandha_Sarvangasana_-a@1056#A4:lift2.5",
+ "n": 1,
+ "num_turns": 7,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_v4/7c351c21ce0cefe0eeac80c0ed9fefff4e201469",
+  "images": {
+   "img_1.png": "d0ed80b1c27096f4963c03ec545b6ad6a01e3f75f3f8d0ba1daf877b1462225a",
+   "img_2.png": "d3b89793ec126dcec1bd19319b9e5c4941d260f73ac34d67b9c58cdfd4464f9b",
+   "img_3.png": "3f6cb657a27604e7aceddef037fb0deaa8371ffa0e0c04735fa198b47da6f245",
+   "img_4.png": "1b998345d6f88c46d732aa6698a4327fddf1b4f24c402e600eb6aa82aef3a0ca"
+  },
+  "packet_json_sha256": "400d858a3a5c538e011feb558e719daf52c08e6c20e2b3ee522f0b66716c9738"
+ },
+ "packet_id": "7c351c21ce0cefe0eeac80c0ed9fefff4e201469",
+ "pass": "A",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_a.md",
+  "sha256": "bae5cfe8420cee596fc188c14966536b354df29210c1e9a94384c925aab70510"
+ },
+ "purpose": "calibration",
+ "render_v": "render_v4",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "5de359f0431719d8",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_a.json",
+  "sha256": "5a05ec7b10cce5f545b813c390820a81bbbde96259cc00318df7ec618475ff9d"
+ },
+ "schema_version": 1,
+ "session_id": "5c10b368-4794-4476-af9e-a726d6d6155a",
+ "started_utc": "2026-10-01T16:16:14+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Bridge_Pose_or_Setu_Bandha_Sarvangasana_-a",
+ "stratum": "other",
+ "usage": {
+  "cache_creation_input_tokens": 8937,
+  "cache_read_input_tokens": 26133,
+  "input_tokens": 6,
+  "output_tokens": 5459,
+  "thinking_tokens": 3309
+ },
+ "warnings": []
+}

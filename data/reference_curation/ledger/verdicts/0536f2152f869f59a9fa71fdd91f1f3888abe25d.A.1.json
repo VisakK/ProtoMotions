@@ -1,0 +1,229 @@
+{
+ "answer": {
+  "body_body": {
+   "answer": "listed",
+   "contacts": [
+    {
+     "certainty": "possible",
+     "panels": [
+      "3a",
+      "2a"
+     ],
+     "part_a": "left foot",
+     "part_b": "right foot"
+    }
+   ]
+  },
+  "discrepancies": [],
+  "floor": {
+   "head": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "left foot": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "2b"
+    ]
+   },
+   "left forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "left hand": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "left shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3a",
+     "2b"
+    ]
+   },
+   "left thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "left upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "pelvis": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "right foot": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "2b"
+    ]
+   },
+   "right forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "right hand": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "right shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3a",
+     "2b"
+    ]
+   },
+   "right thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "right upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "torso": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   }
+  },
+  "implausible": [],
+  "pose": {
+   "candidates": [
+    {
+     "confidence": "medium",
+     "name": "Tadasana with arms extended sideways"
+    },
+    {
+     "confidence": "low",
+     "name": "Utthita Tadasana (arms-out mountain)"
+    }
+   ],
+   "description": "Upright standing. Only both feet touch the floor, flat, side by side and close together. Head is directly above the hips. Both legs are straight and nearly vertical. Both arms are straight, raised sideways to shoulder height (T-shape), palms facing down."
+  }
+ },
+ "audit_id": "holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.audit_v2.calibrated.9278736bb1",
+ "cost_usd": 0.11543400000000001,
+ "duration_s": 20.28,
+ "errors": [],
+ "frame_hold": 1136,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Extended_Revolved_Triangle_Pose_or_Utthita_Trikonasana_-a@1136",
+ "inputs": {},
+ "item_id": "220923_Extended_Revolved_Triangle_Pose_or_Utthita_Trikonasana_-a@1136#A4:reference",
+ "n": 1,
+ "num_turns": 7,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_v4/0536f2152f869f59a9fa71fdd91f1f3888abe25d",
+  "images": {
+   "img_1.png": "29bdbe4dc518719f5a0a28139fdcc9d74ac1764a34f08a768f96343003453b2a",
+   "img_2.png": "31e370ae2ec28af874773fce18940fcf29de121909116b72a95f19f1c1b8f203",
+   "img_3.png": "cce437eb49a252b35b51cdaef1b47beb4c57f16b4491116e710f904e91b67118",
+   "img_4.png": "c9c423f166f8f4bbe9c9386c6567093de399e7456c9311fabfe14add5e501347"
+  },
+  "packet_json_sha256": "0f6528f4f44806465ebd1ccf6725b3f634ebec476d396adb46587100d5f19f91"
+ },
+ "packet_id": "0536f2152f869f59a9fa71fdd91f1f3888abe25d",
+ "pass": "A",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_a.md",
+  "sha256": "bae5cfe8420cee596fc188c14966536b354df29210c1e9a94384c925aab70510"
+ },
+ "purpose": "calibration",
+ "render_v": "render_v4",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "5de359f0431719d8",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_a.json",
+  "sha256": "5a05ec7b10cce5f545b813c390820a81bbbde96259cc00318df7ec618475ff9d"
+ },
+ "schema_version": 1,
+ "session_id": "41266fd7-7e8b-482b-946c-730f1d6f753b",
+ "started_utc": "2026-10-01T16:06:31+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Extended_Revolved_Triangle_Pose_or_Utthita_Trikonasana_-a",
+ "stratum": "other",
+ "usage": {
+  "cache_creation_input_tokens": 8828,
+  "cache_read_input_tokens": 26030,
+  "input_tokens": 6,
+  "output_tokens": 1979,
+  "thinking_tokens": 542
+ },
+ "warnings": []
+}

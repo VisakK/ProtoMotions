@@ -1,0 +1,374 @@
+{
+ "answer": {
+  "body_body": {
+   "answer": "listed",
+   "contacts": [
+    {
+     "certainty": "clear",
+     "panels": [
+      "2a"
+     ],
+     "part_a": "right thigh",
+     "part_b": "left upper arm"
+    },
+    {
+     "certainty": "clear",
+     "panels": [
+      "3a"
+     ],
+     "part_a": "right shin",
+     "part_b": "left forearm"
+    },
+    {
+     "certainty": "possible",
+     "panels": [
+      "2a"
+     ],
+     "part_a": "right shin",
+     "part_b": "left upper arm"
+    },
+    {
+     "certainty": "possible",
+     "panels": [
+      "3a"
+     ],
+     "part_a": "right thigh",
+     "part_b": "left forearm"
+    }
+   ]
+  },
+  "discrepancies": [
+   {
+    "kind": "other",
+    "note": "Label omits right foot from ground; markers, skin and mat show it on floor.",
+    "panels": [
+     "3c"
+    ],
+    "part": "right foot"
+   },
+   {
+    "kind": "other",
+    "note": "Avatar thigh-torso gap much wider than skin gap.",
+    "panels": [
+     "1c"
+    ],
+    "part": "right thigh"
+   }
+  ],
+  "floor": {
+   "head": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a"
+    ]
+   },
+   "left foot": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3c"
+    ]
+   },
+   "left forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3a"
+    ]
+   },
+   "left hand": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3a"
+    ]
+   },
+   "left shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b"
+    ]
+   },
+   "left thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b"
+    ]
+   },
+   "left upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b"
+    ]
+   },
+   "pelvis": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b"
+    ]
+   },
+   "right foot": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3c"
+    ]
+   },
+   "right forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3b"
+    ]
+   },
+   "right hand": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3b"
+    ]
+   },
+   "right shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b"
+    ]
+   },
+   "right thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b"
+    ]
+   },
+   "right upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b"
+    ]
+   },
+   "torso": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b"
+    ]
+   }
+  },
+  "implausible": [
+   {
+    "kind": "self_penetration",
+    "note": "Slight overlap of thigh into upper arm.",
+    "panels": [
+     "2a"
+    ],
+    "parts": [
+     "right thigh",
+     "left upper arm"
+    ]
+   }
+  ],
+  "pose": {
+   "candidates": [
+    {
+     "confidence": "high",
+     "name": "Side Crow preparation"
+    },
+    {
+     "confidence": "medium",
+     "name": "Parsva Bakasana"
+    }
+   ],
+   "description": "Hands and feet on the floor in a deep squat twisted left. The head is in front of and below the hips. The arms are bent, and the right thigh rests on the left upper arm. The knees are stacked and the feet are still down."
+  },
+  "repair": {
+   "kinds": [],
+   "needed": "no",
+   "note": "The avatar's floor contacts match the human's; the gaps come from capsule shapes."
+  },
+  "roles": [
+   {
+    "note": "Stacked legs.",
+    "panels": [
+     "1b"
+    ],
+    "part_a": "left shin",
+    "part_b": "right thigh",
+    "role": "allowed"
+   },
+   {
+    "note": "Knee near arm shelf.",
+    "panels": [
+     "2a"
+    ],
+    "part_a": "right shin",
+    "part_b": "left upper arm",
+    "role": "allowed"
+   },
+   {
+    "note": "Knee on forearm.",
+    "panels": [
+     "3a"
+    ],
+    "part_a": "right shin",
+    "part_b": "left forearm",
+    "role": "allowed"
+   },
+   {
+    "note": "Outer thigh on arm shelf defines side crow.",
+    "panels": [
+     "2a"
+    ],
+    "part_a": "right thigh",
+    "part_b": "left upper arm",
+    "role": "required_touch"
+   },
+   {
+    "note": "Feet together.",
+    "panels": [
+     "3c"
+    ],
+    "part_a": "left foot",
+    "part_b": "right foot",
+    "role": "allowed"
+   },
+   {
+    "note": "Legs together.",
+    "panels": [
+     "1b"
+    ],
+    "part_a": "left shin",
+    "part_b": "right shin",
+    "role": "allowed"
+   },
+   {
+    "note": "Legs stacked.",
+    "panels": [
+     "1b"
+    ],
+    "part_a": "right shin",
+    "part_b": "left thigh",
+    "role": "allowed"
+   },
+   {
+    "note": "Knees together.",
+    "panels": [
+     "1b"
+    ],
+    "part_a": "left thigh",
+    "part_b": "right thigh",
+    "role": "allowed"
+   },
+   {
+    "note": "Deep twist fold.",
+    "panels": [
+     "1c"
+    ],
+    "part_a": "right thigh",
+    "part_b": "torso",
+    "role": "allowed"
+   },
+   {
+    "note": "Arm shelf.",
+    "panels": [
+     "3a"
+    ],
+    "part_a": "right thigh",
+    "part_b": "left forearm",
+    "role": "allowed"
+   }
+  ],
+  "timing": {
+   "better_panel": "4e",
+   "end": "label",
+   "main_moment": "move",
+   "note": "The two windows are the same. The feet start lifting only at 4e.",
+   "start": "label"
+  },
+  "variant": {
+   "matches_label": "variant",
+   "note": "The feet still rest on the floor; this is the set-up, not the balance."
+  }
+ },
+ "audit_id": "holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.audit_v2.calibrated.9278736bb1",
+ "cost_usd": 0.5707144000000001,
+ "duration_s": 113.52,
+ "errors": [],
+ "frame_hold": 571,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a@571",
+ "inputs": {},
+ "item_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a@571#B4",
+ "n": 2,
+ "num_turns": 11,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_v4/02dea6bd8fdece715682bd61aac5f231ca68534b",
+  "images": {
+   "img_1.png": "84027f8fdf3e9fd1550cfbdc624ce7d9e799cb11a4d16d1939e8e9d88d3254d3",
+   "img_2.png": "35eb7e6e7ea2c1cd3867a67987935489dbeb7fd2c45ed77a4e5acedaf5c932be",
+   "img_3.png": "06825128d51649b415470fff00977a709a3ce13ca9789e72eb601b922c9e84b8",
+   "img_4.png": "2141610b5d6849af27e9dac7f366e8e8b3e0ac31cdefc921ba9ee130e31a1bb5"
+  },
+  "packet_json_sha256": "8a1032f835e8c3bc98f367cc962fcba26e389e363c6017907b0ce8facdf857b0"
+ },
+ "packet_id": "02dea6bd8fdece715682bd61aac5f231ca68534b",
+ "pass": "B",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_b.md",
+  "sha256": "077dd51bd3c86104e2579843cb3162adaf5e3892192e7634aa4712e2274df649"
+ },
+ "purpose": "b6",
+ "render_v": "render_v4",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "5f537c5cd7b2019f",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_b.json",
+  "sha256": "0c8ebcc47c25a92ae60dea2083cdea7b465230a6702cd4fc11c2b7b6bb6eae8d"
+ },
+ "schema_version": 1,
+ "session_id": "c1069720-d338-48da-942e-fc614037aa35",
+ "started_utc": "2026-10-01T16:43:21+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+ "stratum": null,
+ "usage": {
+  "cache_creation_input_tokens": 30384,
+  "cache_read_input_tokens": 179232,
+  "input_tokens": 14,
+  "output_tokens": 14587,
+  "thinking_tokens": 1979
+ },
+ "warnings": []
+}

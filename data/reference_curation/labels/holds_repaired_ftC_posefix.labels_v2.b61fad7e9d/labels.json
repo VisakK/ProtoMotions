@@ -1,0 +1,306 @@
+{
+ "schema_version": 1,
+ "generator": {
+  "module": "reference_curation.labels_v2",
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "sha256": "feb9aeb71fcac0d2347bae17dcf8eb579aabe0ed469e3f68ac2f750ecca3ad22"
+ },
+ "inputs": {
+  "data/reference_curation/labels/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828/holds.yaml": "7fffebecee6bceffa4d1dd609e9bd0d7a7f1f65462e69667f630b0baffe10272",
+  "data/reference_curation/labels/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828/annotations.jsonl": "cb87c0ef9033b3109245c4e82f2b320e19094d4027e5321391c3b2025385ade0",
+  "data/assets/smpl/smpl_yogi03596_v2.xml": "aa541c77bcc1526905777c425e5ab072f21cae7bcadad9f71e3b1eb531f98f91",
+  "data/assets/smpl/smpl_yogi03596_v2_flat.xml": "968f7e94ffce0011d6c43a8fb30d55a21885ba733207dd07bc1aa3fd1a110e17"
+ },
+ "labels_id": "holds_repaired_ftC_posefix.labels_v2.b61fad7e9d",
+ "base_labels_id": "holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828",
+ "audit_id": "holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.audit_v2.calibrated.9278736bb1",
+ "statics_id": "holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.statics_v2.f57d85d3fa",
+ "retarget_id": "holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02",
+ "plant": {
+  "plant": "v2",
+  "mjcf": "data/assets/smpl/smpl_yogi03596_v2.xml",
+  "plant_sha256": "aa541c77bcc1526905777c425e5ab072f21cae7bcadad9f71e3b1eb531f98f91"
+ },
+ "config": {
+  "support_load_n": 50.0,
+  "float_cm": 2.0,
+  "pair_realised_cm": 1.0,
+  "stable_s": 0.5,
+  "coverage_gate_col0": 0.9,
+  "min_valid": 0.5,
+  "window": "the run around the exemplar, inside labels v1.1's window, where the ground set and every demanded pair hold (any_of: any member; undecided agrees)",
+  "any_of": "pairwise: two configured pairs sharing one zone, the other zones adjacent segments of one limb",
+  "transition": "labels v1.1 'unresolved': no frame of the window stable within +-stable_s",
+  "pose_role": "_h holds: reviewer majority over every valid Pass-B sample + the ground set against the clip's family holds"
+ },
+ "metrics": {
+  "all": {
+   "holds": 280,
+   "status": {
+    "kept": 205,
+    "moved": 11,
+    "transition": 8,
+    "relabelled": 56
+   },
+   "pose_role": {
+    "family": 72,
+    "standing": 112,
+    "preparation": 35,
+    "variant": 53,
+    "undecided": 8
+   },
+   "windows_trimmed_for_pairs": 10,
+   "orientation_changed": 2,
+   "ground_roles": {
+    "required_support": 523,
+    "required_touch": 341,
+    "forbidden_support": 18
+   },
+   "ground_roles_v1_1": {
+    "required_support": 473,
+    "required_touch": 391,
+    "forbidden_support": 18
+   },
+   "ground_role_from": {
+    "mat": 455,
+    "statics": 65
+   },
+   "ground_role_changes": {
+    "required_support->required_touch": 10,
+    "required_touch->required_support": 60
+   },
+   "supports_configured": 864,
+   "supports_not_realised": 1,
+   "pair_roles": {
+    "allowed": 292,
+    "incidental": 203,
+    "unspecified": 163,
+    "unresolved": 79,
+    "required_touch": 59
+   },
+   "pairs_configured": 59,
+   "pairs_configured_not_realised": 0,
+   "pairs_configured_window_fraction_lt_0_9": 0,
+   "any_of_groups": 0,
+   "critical_pairs": 59
+  },
+  "family": {
+   "holds": 65,
+   "status": {
+    "kept": 48,
+    "relabelled": 14,
+    "moved": 3
+   },
+   "pose_role": {
+    "family": 65
+   },
+   "windows_trimmed_for_pairs": 8,
+   "orientation_changed": 0,
+   "ground_roles": {
+    "required_support": 125,
+    "required_touch": 83,
+    "forbidden_support": 7
+   },
+   "ground_roles_v1_1": {
+    "required_support": 116,
+    "required_touch": 92,
+    "forbidden_support": 7
+   },
+   "ground_role_from": {
+    "mat": 105,
+    "statics": 20
+   },
+   "ground_role_changes": {
+    "required_support->required_touch": 5,
+    "required_touch->required_support": 14
+   },
+   "supports_configured": 208,
+   "supports_not_realised": 1,
+   "pair_roles": {
+    "allowed": 142,
+    "unspecified": 66,
+    "required_touch": 29,
+    "unresolved": 22,
+    "incidental": 39
+   },
+   "pairs_configured": 29,
+   "pairs_configured_not_realised": 0,
+   "pairs_configured_window_fraction_lt_0_9": 0,
+   "any_of_groups": 0,
+   "critical_pairs": 29
+  }
+ },
+ "critical": {
+  "pairs": 59
+ },
+ "notes": {
+  "220923_Standing_big_toe_hold_pose_or_Utthita_Padangusthasana-b@742": {
+   "window_trimmed_for_pairs": {
+    "from": [
+     207,
+     917
+    ],
+    "to": [
+     230,
+     917
+    ]
+   }
+  },
+  "220923_Tree_Pose_or_Vrksasana_-a@388": {
+   "window_trimmed_for_pairs": {
+    "from": [
+     155,
+     542
+    ],
+    "to": [
+     265,
+     542
+    ]
+   }
+  },
+  "220923_Tree_Pose_or_Vrksasana_-a@993": {
+   "window_trimmed_for_pairs": {
+    "from": [
+     976,
+     1052
+    ],
+    "to": [
+     976,
+     1042
+    ]
+   }
+  },
+  "220923_Tree_Pose_or_Vrksasana_-b@302": {
+   "window_trimmed_for_pairs": {
+    "from": [
+     149,
+     340
+    ],
+    "to": [
+     233,
+     340
+    ]
+   }
+  },
+  "220923_Tree_Pose_or_Vrksasana_-b@621": {
+   "window_trimmed_for_pairs": {
+    "from": [
+     611,
+     683
+    ],
+    "to": [
+     611,
+     678
+    ]
+   }
+  },
+  "220926_Eagle_Pose_or_Garudasana_-a@332": {
+   "window_trimmed_for_pairs": {
+    "from": [
+     157,
+     364
+    ],
+    "to": [
+     170,
+     364
+    ]
+   }
+  },
+  "220926_Warrior_III_Pose_or_Virabhadrasana_III_-a@406": {
+   "transition": {
+    "longest_constant_support_s": 0.817,
+    "at": 388
+   }
+  },
+  "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-c@504": {
+   "transition": {
+    "longest_constant_support_s": 0.9,
+    "at": 460
+   }
+  },
+  "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-d@505": {
+   "transition": {
+    "longest_constant_support_s": 0.683,
+    "at": 476
+   }
+  },
+  "220923_Plow_Pose_or_Halasana_-a@571": {
+   "transition": {
+    "longest_constant_support_s": 0.483,
+    "at": 573
+   }
+  },
+  "220923_Supported_Headstand_pose_or_Salamba_Sirsasana_-b@329": {
+   "transition": {
+    "longest_constant_support_s": 0.767,
+    "at": 329
+   }
+  },
+  "220926_Supported_Headstand_pose_or_Salamba_Sirsasana_-a@338": {
+   "window_trimmed_for_pairs": {
+    "from": [
+     303,
+     347
+    ],
+    "to": [
+     307,
+     347
+    ]
+   }
+  },
+  "220926_Supported_Headstand_pose_or_Salamba_Sirsasana_-a@1414": {
+   "transition": {
+    "longest_constant_support_s": 0.2,
+    "at": 1436
+   }
+  },
+  "220923_Supported_Shoulderstand_pose_or_Salamba_Sarvangasana_-a@914": {
+   "window_trimmed_for_pairs": {
+    "from": [
+     468,
+     979
+    ],
+    "to": [
+     570,
+     979
+    ]
+   }
+  },
+  "220923_Shoulder-Pressing_Pose_or_Bhujapidasana_-a@543": {
+   "window_trimmed_for_pairs": {
+    "from": [
+     469,
+     676
+    ],
+    "to": [
+     469,
+     651
+    ]
+   }
+  },
+  "220923_Side_Plank_Pose_or_Vasisthasana_-b@956": {
+   "window_trimmed_for_pairs": {
+    "from": [
+     484,
+     1057
+    ],
+    "to": [
+     564,
+     1032
+    ]
+   }
+  },
+  "220923_Low_Lunge_pose_or_Anjaneyasana_-a@420": {
+   "transition": {
+    "longest_constant_support_s": 0.7,
+    "at": 354
+   }
+  },
+  "220923_Bridge_Pose_or_Setu_Bandha_Sarvangasana_-a@372": {
+   "transition": {
+    "longest_constant_support_s": 0.617,
+    "at": 358
+   }
+  }
+ }
+}

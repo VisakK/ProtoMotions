@@ -1,0 +1,176 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "B",
+    "kind": "pulled_apart",
+    "panels": [
+     "1b",
+     "2b",
+     "3d",
+     "5d"
+    ],
+    "part": "head",
+    "severity": "major"
+   },
+   {
+    "avatar": "B",
+    "kind": "pulled_apart",
+    "panels": [
+     "1b",
+     "2d",
+     "3d",
+     "5d"
+    ],
+    "part": "left hand",
+    "severity": "major"
+   },
+   {
+    "avatar": "B",
+    "kind": "pulled_apart",
+    "panels": [
+     "1b",
+     "2b",
+     "2d",
+     "3d"
+    ],
+    "part": "right hand",
+    "severity": "major"
+   },
+   {
+    "avatar": "B",
+    "kind": "pulled_apart",
+    "panels": [
+     "1b",
+     "1d",
+     "2b",
+     "3d"
+    ],
+    "part": "right foot",
+    "severity": "major"
+   },
+   {
+    "avatar": "B",
+    "kind": "impossible_joint",
+    "panels": [
+     "1b",
+     "2b",
+     "3d"
+    ],
+    "part": "pelvis",
+    "severity": "major"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1b",
+     "2b",
+     "3b",
+     "3d"
+    ],
+    "part": "torso",
+    "severity": "major"
+   }
+  ],
+  "closer_to_human": "A",
+  "floating_parts": {
+   "A": [
+    "left foot",
+    "right foot",
+    "head"
+   ],
+   "B": [
+    "right foot",
+    "right shin",
+    "head",
+    "torso",
+    "left upper arm",
+    "left forearm",
+    "left hand",
+    "right upper arm"
+   ]
+  },
+  "more_natural": "A",
+  "same_pose": {
+   "answer": "no",
+   "reason": "A is folded over with its back curled, feet on the floor behind the head and arms on the floor. B has its torso high in the air, its right leg raised and its arms pointing up and down."
+  },
+  "summary": "A follows the grey body closely; only its feet and head hover a few centimetres above the floor. B is a broken, different pose: its torso hangs in the air and its right leg is raised, with the head, hands and right foot detached."
+ },
+ "audit_id": null,
+ "cost_usd": 0.13389020000000001,
+ "duration_s": 18.0,
+ "errors": [],
+ "frame_hold": 876,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Plow_Pose_or_Halasana_-a@876",
+ "inputs": {},
+ "item_id": "220923_Plow_Pose_or_Halasana_-a@876#swap",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c2/f426c999d117a69be119e3efe87034301f45a92a",
+  "images": {
+   "img_1.png": "a4ab418acf312795861af1f2fec5045e3f480395c8d06370d957d29fc01aaf6a",
+   "img_2.png": "33d84d563c5bed880e1738a70da0cdd635e55f25009c81b48c27503686471d3f",
+   "img_3.png": "efbd366eb8266d93e749b037e7efb71e51f0ffa92a5be0e2f30792a593d8d30f",
+   "img_4.png": "1e69390bfbaafc9eed701b53cf7db5d50d79227140fe5eb005018d670f5217f3",
+   "img_5.png": "07402cd40e381a5bbefc75565e1538ec62339b9c8aa1cb72ab7f57bb5893fd4d"
+  },
+  "packet_json_sha256": "0a7a319b172ba6d5a878ee8904d9bd1bfbaa9de08bcac5e227bb0db477ebf40a"
+ },
+ "packet_id": "f426c999d117a69be119e3efe87034301f45a92a",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c2",
+ "render_v": "render_c2",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "c3e8fc17-e318-4bc3-8919-8839d4f38b97",
+ "started_utc": "2026-10-01T17:07:15+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Plow_Pose_or_Halasana_-a",
+ "stratum": "swap",
+ "usage": {
+  "cache_creation_input_tokens": 12061,
+  "cache_read_input_tokens": 13591,
+  "input_tokens": 6,
+  "output_tokens": 1733,
+  "thinking_tokens": 487
+ },
+ "warnings": []
+}

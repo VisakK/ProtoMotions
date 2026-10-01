@@ -1,0 +1,409 @@
+{
+ "answer": {
+  "body_body": {
+   "answer": "listed",
+   "contacts": [
+    {
+     "certainty": "clear",
+     "panels": [
+      "3a",
+      "1c"
+     ],
+     "part_a": "head",
+     "part_b": "left hand"
+    },
+    {
+     "certainty": "clear",
+     "panels": [
+      "3a",
+      "1c"
+     ],
+     "part_a": "head",
+     "part_b": "right hand"
+    },
+    {
+     "certainty": "clear",
+     "panels": [
+      "3a",
+      "1c"
+     ],
+     "part_a": "left hand",
+     "part_b": "right hand"
+    },
+    {
+     "certainty": "clear",
+     "panels": [
+      "1a",
+      "1c"
+     ],
+     "part_a": "left foot",
+     "part_b": "right foot"
+    },
+    {
+     "certainty": "possible",
+     "panels": [
+      "3a",
+      "1d"
+     ],
+     "part_a": "head",
+     "part_b": "left forearm"
+    }
+   ]
+  },
+  "discrepancies": [
+   {
+    "kind": "other",
+    "note": "Labelled left foot + right shin contact: the avatar and skin are both several cm apart. The label is wrong.",
+    "panels": [
+     "1a",
+     "1c"
+    ],
+    "part": "left foot"
+   },
+   {
+    "kind": "other",
+    "note": "Labelled right foot + left shin contact: the avatar and skin are both several cm apart. The label is wrong.",
+    "panels": [
+     "1a",
+     "1c"
+    ],
+    "part": "right foot"
+   },
+   {
+    "kind": "other",
+    "note": "Labelled shin + shin contact: the skin gap is about 3.5 cm and the avatar gap about 4.7 cm. They do not touch.",
+    "panels": [
+     "1a",
+     "2b"
+    ],
+    "part": "left shin"
+   },
+   {
+    "kind": "other",
+    "note": "Human thigh skin touches but is unlabelled. The avatar's thighs stay about 3.5 cm apart.",
+    "panels": [
+     "1a",
+     "2b"
+    ],
+    "part": "left thigh"
+   }
+  ],
+  "floor": {
+   "head": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "2b"
+    ]
+   },
+   "left foot": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "left forearm": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "2b"
+    ]
+   },
+   "left hand": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "1c"
+    ]
+   },
+   "left shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "left thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "left upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3a",
+     "2b"
+    ]
+   },
+   "pelvis": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "right foot": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "right forearm": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "2b"
+    ]
+   },
+   "right hand": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "1c"
+    ]
+   },
+   "right shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "right thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "right upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3a",
+     "2b"
+    ]
+   },
+   "torso": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   }
+  },
+  "implausible": [],
+  "pose": {
+   "candidates": [
+    {
+     "confidence": "high",
+     "name": "Salamba Sirsasana I (supported headstand)"
+    },
+    {
+     "confidence": "medium",
+     "name": "Headstand with interlaced fingers"
+    }
+   ],
+   "description": "Inverted. The crown of the head, both forearms and the clasped hands rest on the floor. The hips are stacked straight above the head. The forearms make a tripod with the fingers interlaced behind the head, and the upper arms angle up to the shoulders. Both legs are straight, vertical and together, with the feet touching at the top."
+  },
+  "repair": {
+   "kinds": [],
+   "needed": "no",
+   "note": "The avatar's floor contacts match the human's. Its thighs are slightly apart where the skin touches, which is minor."
+  },
+  "roles": [
+   {
+    "note": "Feet together at the top is typical, but the pose does not define it.",
+    "panels": [
+     "1a",
+     "1c"
+    ],
+    "part_a": "left foot",
+    "part_b": "right foot",
+    "role": "allowed"
+   },
+   {
+    "note": "Not made by the human or the avatar, and not part of the pose.",
+    "panels": [
+     "1a",
+     "1c"
+    ],
+    "part_a": "left foot",
+    "part_b": "right shin",
+    "role": "incidental"
+   },
+   {
+    "note": "Not made by the human or the avatar, and not part of the pose.",
+    "panels": [
+     "1a",
+     "1c"
+    ],
+    "part_a": "right foot",
+    "part_b": "left shin",
+    "role": "incidental"
+   },
+   {
+    "note": "Legs held together is permitted; here the shins stay a few cm apart.",
+    "panels": [
+     "1a",
+     "2b"
+    ],
+    "part_a": "left shin",
+    "part_b": "right shin",
+    "role": "allowed"
+   },
+   {
+    "note": "Thighs pressed together is common; the skin touches but the avatar's thighs do not.",
+    "panels": [
+     "1a",
+     "2b"
+    ],
+    "part_a": "left thigh",
+    "part_b": "right thigh",
+    "role": "allowed"
+   },
+   {
+    "note": "The forearm lies close beside the head in the tripod.",
+    "panels": [
+     "3a"
+    ],
+    "part_a": "head",
+    "part_b": "left forearm",
+    "role": "allowed"
+   },
+   {
+    "note": "In Sirsasana I, the clasped hands cradle the back of the head.",
+    "panels": [
+     "3a",
+     "1c"
+    ],
+    "part_a": "head",
+    "part_b": "right hand",
+    "role": "required_touch"
+   },
+   {
+    "note": "In Sirsasana I, the clasped hands cradle the back of the head.",
+    "panels": [
+     "3a",
+     "1c"
+    ],
+    "part_a": "head",
+    "part_b": "left hand",
+    "role": "required_touch"
+   },
+   {
+    "note": "The interlaced fingers define the supported headstand base.",
+    "panels": [
+     "3a",
+     "1c"
+    ],
+    "part_a": "left hand",
+    "part_b": "right hand",
+    "role": "required_touch"
+   }
+  ],
+  "timing": {
+   "better_panel": "",
+   "end": "capture",
+   "main_moment": "keep",
+   "note": "The windows differ by one start frame. At the main moment the headstand is fully formed and the contacts are settled.",
+   "start": "capture"
+  },
+  "variant": {
+   "matches_label": "yes",
+   "note": ""
+  }
+ },
+ "audit_id": "holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.audit_v2.calibrated.9278736bb1",
+ "cost_usd": 0.24595760000000003,
+ "duration_s": 32.66,
+ "errors": [],
+ "frame_hold": 1051,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220926_Supported_Headstand_pose_or_Salamba_Sirsasana_-a@1051",
+ "inputs": {},
+ "item_id": "220926_Supported_Headstand_pose_or_Salamba_Sirsasana_-a@1051#B4",
+ "n": 2,
+ "num_turns": 7,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_v4/9930c563471fe620bdadd74191515e4c3862c122",
+  "images": {
+   "img_1.png": "98c1fe622c2e396427d08fac1017949494337971e91196c60aa65e4aa798641c",
+   "img_2.png": "c5ab83b5a6fc64a020a164dd82ee4fe6ab65436b3d9688653a040c516ce43a03",
+   "img_3.png": "54347c37bff1c1645afbd295453aab7cbf9cda6306315ad955aebaab16262b3b",
+   "img_4.png": "ca14ff855431acbc708ced21c7896009c826751564cfa8a1382b5a3c0abc5df2"
+  },
+  "packet_json_sha256": "8ba494eb38fa00d24e68167d821653293f2ec1957e2651dcf42a7b344b90e487"
+ },
+ "packet_id": "9930c563471fe620bdadd74191515e4c3862c122",
+ "pass": "B",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_b.md",
+  "sha256": "077dd51bd3c86104e2579843cb3162adaf5e3892192e7634aa4712e2274df649"
+ },
+ "purpose": "b6",
+ "render_v": "render_v4",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "5f537c5cd7b2019f",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_b.json",
+  "sha256": "0c8ebcc47c25a92ae60dea2083cdea7b465230a6702cd4fc11c2b7b6bb6eae8d"
+ },
+ "schema_version": 1,
+ "session_id": "a7f53272-c945-4909-a917-5e74356be389",
+ "started_utc": "2026-10-01T17:01:12+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220926_Supported_Headstand_pose_or_Salamba_Sirsasana_-a",
+ "stratum": null,
+ "usage": {
+  "cache_creation_input_tokens": 20885,
+  "cache_read_input_tokens": 47068,
+  "input_tokens": 6,
+  "output_tokens": 3472,
+  "thinking_tokens": 809
+ },
+ "warnings": []
+}

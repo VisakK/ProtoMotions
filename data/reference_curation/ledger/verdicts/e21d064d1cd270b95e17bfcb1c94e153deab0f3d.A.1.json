@@ -1,0 +1,255 @@
+{
+ "answer": {
+  "body_body": {
+   "answer": "listed",
+   "contacts": []
+  },
+  "discrepancies": [
+   {
+    "kind": "avatar_off_floor_markers_on_floor",
+    "note": "Avatar foot hovers about 4 cm up with a drop line; its markers sit at floor level.",
+    "panels": [
+     "3a",
+     "2b",
+     "1b"
+    ],
+    "part": "left foot"
+   },
+   {
+    "kind": "avatar_off_floor_markers_on_floor",
+    "note": "Avatar foot hovers about 4 cm up with a drop line; its markers sit at floor level.",
+    "panels": [
+     "3a",
+     "2b",
+     "1d"
+    ],
+    "part": "right foot"
+   }
+  ],
+  "floor": {
+   "head": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "left foot": {
+    "avatar": "off_floor",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "2b",
+     "1b"
+    ]
+   },
+   "left forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "left hand": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "left shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3a",
+     "2b"
+    ]
+   },
+   "left thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "left upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "pelvis": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "right foot": {
+    "avatar": "off_floor",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "2b",
+     "1d"
+    ]
+   },
+   "right forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "right hand": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "right shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3a",
+     "2b"
+    ]
+   },
+   "right thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "right upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "torso": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   }
+  },
+  "implausible": [
+   {
+    "kind": "no_base_of_support",
+    "note": "Standing avatar floats: both feet are above the floor with drop lines and no part touches it.",
+    "panels": [
+     "3a",
+     "2b"
+    ],
+    "parts": [
+     "left foot",
+     "right foot"
+    ]
+   }
+  ],
+  "pose": {
+   "candidates": [
+    {
+     "confidence": "medium",
+     "name": "Tadasana with arms extended sideways (T-pose)"
+    },
+    {
+     "confidence": "low",
+     "name": "Utthita Tadasana"
+    }
+   ],
+   "description": "Upright standing T-pose. Head directly above hips. Both arms straight out to the sides at shoulder height, palms down. Legs straight and parallel, feet hip-width apart. Neither avatar foot actually touches the floor: both hover about 4 cm up with drop lines, while the foot markers sit at floor level."
+  }
+ },
+ "audit_id": "holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.audit_v2.calibrated.9278736bb1",
+ "cost_usd": 0.1179482,
+ "duration_s": 21.11,
+ "errors": [],
+ "frame_hold": 719,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Standing_Forward_Bend_pose_or_Uttanasana_-a@719",
+ "inputs": {},
+ "item_id": "220923_Standing_Forward_Bend_pose_or_Uttanasana_-a@719#A4:lift4",
+ "n": 1,
+ "num_turns": 7,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_v4/e21d064d1cd270b95e17bfcb1c94e153deab0f3d",
+  "images": {
+   "img_1.png": "0d43d6e4c915959f67e2f4531f5eb0b65c3715c5c203a0fe2256c8e0d165964c",
+   "img_2.png": "d9387a9271b19474db5be7d110bd9c563cd622174205eff9fdf8c326b659414b",
+   "img_3.png": "fc4d31148981dadbd06ad3a198824df4cfcbe7d37ad03611e32b93172df9469c",
+   "img_4.png": "997d0d6447941837ced18c272aa4155fc47cd702b75eafacce96fc92f4daf587"
+  },
+  "packet_json_sha256": "9e50bc4def9ac36949537fc4f2f08d89b4a6930314f22cd040604a4e64ee7422"
+ },
+ "packet_id": "e21d064d1cd270b95e17bfcb1c94e153deab0f3d",
+ "pass": "A",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_a.md",
+  "sha256": "bae5cfe8420cee596fc188c14966536b354df29210c1e9a94384c925aab70510"
+ },
+ "purpose": "calibration",
+ "render_v": "render_v4",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "5de359f0431719d8",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_a.json",
+  "sha256": "5a05ec7b10cce5f545b813c390820a81bbbde96259cc00318df7ec618475ff9d"
+ },
+ "schema_version": 1,
+ "session_id": "cd99e7b6-f9f5-4f7d-a221-6bff027a860b",
+ "started_utc": "2026-10-01T16:18:43+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Standing_Forward_Bend_pose_or_Uttanasana_-a",
+ "stratum": "other",
+ "usage": {
+  "cache_creation_input_tokens": 8842,
+  "cache_read_input_tokens": 26041,
+  "input_tokens": 6,
+  "output_tokens": 2099,
+  "thinking_tokens": 434
+ },
+ "warnings": []
+}

@@ -1,0 +1,130 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1a",
+     "1c",
+     "2c",
+     "3a",
+     "3c",
+     "4a"
+    ],
+    "part": "left hand",
+    "severity": "major"
+   },
+   {
+    "avatar": "A",
+    "kind": "impossible_joint",
+    "panels": [
+     "1c",
+     "2c",
+     "4a",
+     "4c"
+    ],
+    "part": "left forearm",
+    "severity": "major"
+   },
+   {
+    "avatar": "B",
+    "kind": "through_floor",
+    "panels": [
+     "4b",
+     "4d"
+    ],
+    "part": "left hand",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "B",
+  "floating_parts": {
+   "A": [
+    "left hand"
+   ],
+   "B": []
+  },
+  "more_natural": "B",
+  "same_pose": {
+   "answer": "no",
+   "reason": "In A the left forearm is folded back up and the left hand hangs high in the air; in B the left hand is planted on the floor like the grey body's. The rest of the body matches."
+  },
+  "summary": "A lifts its left hand far off the floor: the forearm is folded up and twisted to the side, while the grey body keeps that hand planted. B matches the grey body, with both hands down. Its only flaw is a left hand that sinks slightly into the floor."
+ },
+ "audit_id": null,
+ "cost_usd": 0.12239359999999999,
+ "duration_s": 15.6,
+ "errors": [],
+ "frame_hold": 651,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Crane_Crow_Pose_or_Bakasana_-a@439",
+ "inputs": {},
+ "item_id": "220923_Crane_Crow_Pose_or_Bakasana_-a@439#kink",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c2/e14ab50f7801ff754c4fdf44d26a844c08138a5c",
+  "images": {
+   "img_1.png": "71069ae7b740a2e932651eedd74677fa0242211c51491eeb420841551c13289e",
+   "img_2.png": "eda70f020cdf3d29498f312ce36300ec3d3d8b3ee652abd5fe34e29d5ba201db",
+   "img_3.png": "c434cdc8df11d2e41a3950729e3b19443e0aaccb262b988de58f435f4f001dc4",
+   "img_4.png": "bf07361f0f6d9abee77fc7b20c2a804f181154a98367e8720190ce1f9409347c",
+   "img_5.png": "15621ddfc4a44856f88480c8fa7762021348989f51f70422141d35a4cb962aeb"
+  },
+  "packet_json_sha256": "d3b2a3faad072096037193703a51633356fe6c7eceb7778aed98cf4cc5dc65e4"
+ },
+ "packet_id": "e14ab50f7801ff754c4fdf44d26a844c08138a5c",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c2",
+ "render_v": "render_c2",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "99e9203f-e46c-454f-a456-5c8d5d1b4766",
+ "started_utc": "2026-10-01T17:13:38+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Crane_Crow_Pose_or_Bakasana_-a",
+ "stratum": "kink",
+ "usage": {
+  "cache_creation_input_tokens": 11392,
+  "cache_read_input_tokens": 13568,
+  "input_tokens": 6,
+  "output_tokens": 1426,
+  "thinking_tokens": 329
+ },
+ "warnings": []
+}

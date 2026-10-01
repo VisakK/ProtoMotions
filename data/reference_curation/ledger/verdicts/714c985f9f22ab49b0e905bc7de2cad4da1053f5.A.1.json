@@ -1,0 +1,238 @@
+{
+ "answer": {
+  "body_body": {
+   "answer": "listed",
+   "contacts": []
+  },
+  "discrepancies": [
+   {
+    "kind": "markers_away_from_avatar_part",
+    "note": "Several grey markers float well above and beside the avatar's raised hips.",
+    "panels": [
+     "1a",
+     "2b",
+     "3a",
+     "1c"
+    ],
+    "part": "pelvis"
+   }
+  ],
+  "floor": {
+   "head": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "2b",
+     "3a",
+     "1c"
+    ]
+   },
+   "left foot": {
+    "avatar": "touching",
+    "markers": "cannot_tell",
+    "panels": [
+     "2b",
+     "3c",
+     "1b"
+    ]
+   },
+   "left forearm": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "2b",
+     "3a",
+     "3b"
+    ]
+   },
+   "left hand": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "2b",
+     "3b",
+     "1d"
+    ]
+   },
+   "left shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b",
+     "2a"
+    ]
+   },
+   "left thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "left upper arm": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "2b",
+     "3a"
+    ]
+   },
+   "pelvis": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b",
+     "3a"
+    ]
+   },
+   "right foot": {
+    "avatar": "touching",
+    "markers": "cannot_tell",
+    "panels": [
+     "2b",
+     "3c",
+     "1b"
+    ]
+   },
+   "right forearm": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "1c",
+     "3b"
+    ]
+   },
+   "right hand": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3b",
+     "1d"
+    ]
+   },
+   "right shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1c",
+     "2b"
+    ]
+   },
+   "right thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1c",
+     "2b"
+    ]
+   },
+   "right upper arm": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "1c",
+     "3b"
+    ]
+   },
+   "torso": {
+    "avatar": "touching",
+    "markers": "cannot_tell",
+    "panels": [
+     "2b",
+     "3a"
+    ]
+   }
+  },
+  "implausible": [],
+  "pose": {
+   "candidates": [
+    {
+     "confidence": "high",
+     "name": "Halasana (Plow pose)"
+    },
+    {
+     "confidence": "low",
+     "name": "Karnapidasana (Ear pressure pose)"
+    }
+   ],
+   "description": "Plow-like inversion: shoulders/upper back, head, both whole arms and toes on floor. Torso near vertical, hips high above shoulders; head on floor on the leg side of the shoulders. Both arms straight, extended along the floor away from the legs. Both legs fairly straight, angled down past the head, toes on floor, shins slightly raised."
+  }
+ },
+ "audit_id": "holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.audit_v2.calibrated.9278736bb1",
+ "cost_usd": 0.1617158,
+ "duration_s": 49.83,
+ "errors": [],
+ "frame_hold": 1487,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220926_Plow_Pose_or_Halasana_-b@1487",
+ "inputs": {},
+ "item_id": "220926_Plow_Pose_or_Halasana_-b@1487#A4:reference",
+ "n": 1,
+ "num_turns": 7,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_v4/714c985f9f22ab49b0e905bc7de2cad4da1053f5",
+  "images": {
+   "img_1.png": "ffd1ad851823476ac61befbd35beb7105454c323d13d0868aa3c3c66f23924cb",
+   "img_2.png": "ef7f0dc5368a1694a754c86797f098b8e23818fb40843cf80db5dcf3320842a3",
+   "img_3.png": "93edc3cc35c94ffdadd47dd21402966682f3250db4421f6beca1f4eed65c7174",
+   "img_4.png": "a6121c20d817e7a31d0a156282d72dd29fa0a82a3fd2d689a0bebb3c91530853"
+  },
+  "packet_json_sha256": "8aa8c0ec684923937ae99b6508fe25b7df0bce7de8cb9d87688b61c289379d47"
+ },
+ "packet_id": "714c985f9f22ab49b0e905bc7de2cad4da1053f5",
+ "pass": "A",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_a.md",
+  "sha256": "bae5cfe8420cee596fc188c14966536b354df29210c1e9a94384c925aab70510"
+ },
+ "purpose": "calibration",
+ "render_v": "render_v4",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "5de359f0431719d8",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_a.json",
+  "sha256": "5a05ec7b10cce5f545b813c390820a81bbbde96259cc00318df7ec618475ff9d"
+ },
+ "schema_version": 1,
+ "session_id": "e9c69aeb-2006-4375-a522-dedc4756f5b8",
+ "started_utc": "2026-10-01T16:10:10+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220926_Plow_Pose_or_Halasana_-b",
+ "stratum": "inversion",
+ "usage": {
+  "cache_creation_input_tokens": 8009,
+  "cache_read_input_tokens": 26099,
+  "input_tokens": 6,
+  "output_tokens": 4620,
+  "thinking_tokens": 3123
+ },
+ "warnings": []
+}

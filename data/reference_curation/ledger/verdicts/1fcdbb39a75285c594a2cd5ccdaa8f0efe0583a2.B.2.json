@@ -1,0 +1,244 @@
+{
+ "answer": {
+  "body_body": {
+   "answer": "listed",
+   "contacts": []
+  },
+  "discrepancies": [],
+  "floor": {
+   "head": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b",
+     "3a"
+    ]
+   },
+   "left foot": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "left forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3a",
+     "3b"
+    ]
+   },
+   "left hand": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "3b",
+     "2b"
+    ]
+   },
+   "left shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "left thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "left upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "3a"
+    ]
+   },
+   "pelvis": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "right foot": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3c",
+     "2b",
+     "1a"
+    ]
+   },
+   "right forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3a",
+     "3b"
+    ]
+   },
+   "right hand": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3b",
+     "3a",
+     "2b"
+    ]
+   },
+   "right shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "3c"
+    ]
+   },
+   "right thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "right upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "3b"
+    ]
+   },
+   "torso": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   }
+  },
+  "implausible": [],
+  "pose": {
+   "candidates": [
+    {
+     "confidence": "high",
+     "name": "Handstand preparation (one-leg kick-up)"
+    },
+    {
+     "confidence": "medium",
+     "name": "Three-legged downward dog (Eka Pada Adho Mukha Svanasana)"
+    },
+    {
+     "confidence": "low",
+     "name": "Standing split (Urdhva Prasarita Eka Padasana)"
+    }
+   ],
+   "description": "Both hands flat on the floor with the arms straight, shoulder-width apart. The head hangs between the arms, well below the hips. The right leg stands on the ball of the right foot with the heel lifted and the knee slightly bent. The left leg is lifted high behind, almost straight, above the hips: a kick-up preparation for handstand."
+  },
+  "repair": {
+   "kinds": [],
+   "needed": "no",
+   "note": "The avatar's floor contacts and pose match the markers and the skin mesh."
+  },
+  "roles": [],
+  "timing": {
+   "better_panel": "",
+   "end": "label",
+   "main_moment": "keep",
+   "note": "The label and capture windows are the same. Hands and right foot stay settled on the floor throughout, and the left leg is lifted.",
+   "start": "label"
+  },
+  "variant": {
+   "matches_label": "variant",
+   "note": "Preparation for handstand: the right foot is still on the floor and the left leg is lifted. It is not a full inversion on the hands."
+  }
+ },
+ "audit_id": "holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.audit_v2.calibrated.9278736bb1",
+ "cost_usd": 0.1696914,
+ "duration_s": 22.18,
+ "errors": [],
+ "frame_hold": 1632,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Handstand_pose_or_Adho_Mukha_Vrksasana_-a@1632",
+ "inputs": {},
+ "item_id": "220923_Handstand_pose_or_Adho_Mukha_Vrksasana_-a@1632#B4",
+ "n": 2,
+ "num_turns": 7,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_v4/1fcdbb39a75285c594a2cd5ccdaa8f0efe0583a2",
+  "images": {
+   "img_1.png": "a4697c657d3a8a31f9f6cb9550fba180bef8e44519051980dd209bbdf07dc478",
+   "img_2.png": "fe8ad4c175382623cf5d2d3c746ac05b6eb101adbf8db11d765a91687a3d37f0",
+   "img_3.png": "443c66edc6f30092c248ab8f4bb82d21ef3306c01086c485d529d0211d0faf98",
+   "img_4.png": "b460710374ffda8dc9be570a6b86a3d533721a1e6090f1adb3e0f286fc5d2275"
+  },
+  "packet_json_sha256": "563b68a5a6131c95841ee009673348b642e08f1b58ee5843c6c3c8e1641f7045"
+ },
+ "packet_id": "1fcdbb39a75285c594a2cd5ccdaa8f0efe0583a2",
+ "pass": "B",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_b.md",
+  "sha256": "077dd51bd3c86104e2579843cb3162adaf5e3892192e7634aa4712e2274df649"
+ },
+ "purpose": "pose_role",
+ "render_v": "render_v4",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "5f537c5cd7b2019f",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_b.json",
+  "sha256": "0c8ebcc47c25a92ae60dea2083cdea7b465230a6702cd4fc11c2b7b6bb6eae8d"
+ },
+ "schema_version": 1,
+ "session_id": "a6c323d7-3f37-4c72-b879-c9ef883d6501",
+ "started_utc": "2026-10-01T16:33:52+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Handstand_pose_or_Adho_Mukha_Vrksasana_-a",
+ "stratum": null,
+ "usage": {
+  "cache_creation_input_tokens": 14455,
+  "cache_read_input_tokens": 41537,
+  "input_tokens": 6,
+  "output_tokens": 2286,
+  "thinking_tokens": 524
+ },
+ "warnings": []
+}

@@ -1,0 +1,222 @@
+{
+ "answer": {
+  "body_body": {
+   "answer": "listed",
+   "contacts": []
+  },
+  "discrepancies": [],
+  "floor": {
+   "head": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a",
+     "1d"
+    ]
+   },
+   "left foot": {
+    "avatar": "touching",
+    "markers": "cannot_tell",
+    "panels": [
+     "3c",
+     "2b",
+     "1b"
+    ]
+   },
+   "left forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "3a"
+    ]
+   },
+   "left hand": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "2b"
+    ]
+   },
+   "left shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "left thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "left upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "pelvis": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "right foot": {
+    "avatar": "touching",
+    "markers": "cannot_tell",
+    "panels": [
+     "3c",
+     "2b",
+     "1b"
+    ]
+   },
+   "right forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3b",
+     "1c"
+    ]
+   },
+   "right hand": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3b",
+     "3a"
+    ]
+   },
+   "right shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1c"
+    ]
+   },
+   "right thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1c"
+    ]
+   },
+   "right upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1c",
+     "3b"
+    ]
+   },
+   "torso": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   }
+  },
+  "implausible": [],
+  "pose": {
+   "candidates": [
+    {
+     "confidence": "high",
+     "name": "Downward-Facing Dog (Adho Mukha Svanasana)"
+    },
+    {
+     "confidence": "low",
+     "name": "Dolphin-free inverted V transition"
+    }
+   ],
+   "description": "Inverted V. Both hands lie flat on the floor, shoulder-width apart. Both feet rest on the toes with the heels raised. The hips are the highest point and the head hangs low between the upper arms, well above the floor. Both arms are straight and both legs are nearly straight, angled back toward the feet."
+  }
+ },
+ "audit_id": "holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.audit_v2.calibrated.9278736bb1",
+ "cost_usd": 0.1148898,
+ "duration_s": 23.47,
+ "errors": [],
+ "frame_hold": 455,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Scorpion_pose_or_vrischikasana-b@455",
+ "inputs": {},
+ "item_id": "220923_Scorpion_pose_or_vrischikasana-b@455#A4:reference",
+ "n": 1,
+ "num_turns": 7,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_v4/0c17cb2ff5c9c245d50d0e2a5ece233e932a19fb",
+  "images": {
+   "img_1.png": "abf049fe61869433741f182fecb490ea6f673e634187c8ec3777651ef011e2b9",
+   "img_2.png": "4536b7ff1a07ddf0a066e05e972865eee61a0eb25bfbb23643182a095d67ce57",
+   "img_3.png": "b2dc02eec1ed01c445a02fec0e8a24655c3d80eaa70e273153d9c1de4cc3967a",
+   "img_4.png": "8e5263dd4152e5eaedec111696b36168d7f8ab939ac12c9cb7fe5b15652ff5ed"
+  },
+  "packet_json_sha256": "ae58292aebdc46db33b786c1f7cb6b08371474b1345423d88cf01abd5f0481b1"
+ },
+ "packet_id": "0c17cb2ff5c9c245d50d0e2a5ece233e932a19fb",
+ "pass": "A",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_a.md",
+  "sha256": "bae5cfe8420cee596fc188c14966536b354df29210c1e9a94384c925aab70510"
+ },
+ "purpose": "calibration",
+ "render_v": "render_v4",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "5de359f0431719d8",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_a.json",
+  "sha256": "5a05ec7b10cce5f545b813c390820a81bbbde96259cc00318df7ec618475ff9d"
+ },
+ "schema_version": 1,
+ "session_id": "81c7dad0-31b4-4ec9-9bee-2211a4734096",
+ "started_utc": "2026-10-01T16:08:23+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Scorpion_pose_or_vrischikasana-b",
+ "stratum": "inversion",
+ "usage": {
+  "cache_creation_input_tokens": 8006,
+  "cache_read_input_tokens": 26089,
+  "input_tokens": 6,
+  "output_tokens": 2280,
+  "thinking_tokens": 756
+ },
+ "warnings": []
+}

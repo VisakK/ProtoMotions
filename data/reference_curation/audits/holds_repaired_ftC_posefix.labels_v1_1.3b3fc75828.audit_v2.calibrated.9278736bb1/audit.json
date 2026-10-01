@@ -1,0 +1,476 @@
+{
+ "schema_version": 1,
+ "generator": {
+  "module": "reference_curation.audit_v2",
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "sha256": "c37f50ed76d5e26adf9ed4488744a52a233102435f1cb34a71cbe4c758ec332f"
+ },
+ "inputs": {
+  "data/reference_curation/labels/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828/holds.yaml": "7fffebecee6bceffa4d1dd609e9bd0d7a7f1f65462e69667f630b0baffe10272",
+  "data/reference_curation/calibration/capture_v1.json": "d3c50acca7d9da277b45aa6f353db0c6979e2a5d0513aae298f1221ab5df476d",
+  "data/reference_curation/calibration/capture_v2.json": "b380f6077e9056865feaf89d2b2fb0d77e02d8942667875b9a46f0d0b46ba850",
+  "output/reference_curation/capture/v4/220923_Half_Moon_Pose_or_Ardha_Chandrasana_-a.json": "04effd60c3d0fe8abf6452597227c7d2703c36e93bbe57ae8ac8a7cd7c8d4ec9",
+  "output/reference_curation/capture/v4/220923_Half_Moon_Pose_or_Ardha_Chandrasana_-b.json": "3ac394592c8d18cd60afbef573f16dd543e255a20debfb4f673c419ac41ad01e",
+  "output/reference_curation/capture/v4/220923_Standing_Split_pose_or_Urdhva_Prasarita_Eka_Padasana_-a.json": "c0a54ac7aafa7a21c245d40f8ed5a48d5a805fc2c8e61f4fc57da9ca04613eec",
+  "output/reference_curation/capture/v4/220923_Standing_Split_pose_or_Urdhva_Prasarita_Eka_Padasana_-b.json": "e58c24d560b7a47215b9019493c1895c42d0700cfc8db8d86e192052fa5960b8",
+  "output/reference_curation/capture/v4/220923_Standing_big_toe_hold_pose_or_Utthita_Padangusthasana-a.json": "c2b97acea5aa68c1dba49aa959086938de212e022235a08567ed2ea4b45930d0",
+  "output/reference_curation/capture/v4/220923_Standing_big_toe_hold_pose_or_Utthita_Padangusthasana-b.json": "caba2729a98e607125683ce768ed082b1a60bda3f29721474fccdf5f236c5394",
+  "output/reference_curation/capture/v4/220923_Tree_Pose_or_Vrksasana_-a.json": "c0bad1280c012f704c0aea944a4e27619ccd4fe80f9fee6d87136caea9117120",
+  "output/reference_curation/capture/v4/220923_Tree_Pose_or_Vrksasana_-b.json": "59a9872de08c252b76901fb9cfcf779d09bace968e6051f5b18d2710b43670ae",
+  "output/reference_curation/capture/v4/220926_Eagle_Pose_or_Garudasana_-a.json": "dc4d27fdff4a5fd09f048eca944187f250c7b22ec0c62311e46fa12843564f76",
+  "output/reference_curation/capture/v4/220926_Lord_of_the_Dance_Pose_or_Natarajasana_-a.json": "8a0a61e41a2c4db18e2fd8e9f4fc28407a00886c4a6a1a58668f7610cfa35ef2",
+  "output/reference_curation/capture/v4/220926_Lord_of_the_Dance_Pose_or_Natarajasana_-c.json": "2dca13d8df2e30d2698bbef768c0690e3ede6e9bd68371bcfde603e59581c989",
+  "output/reference_curation/capture/v4/220926_Warrior_III_Pose_or_Virabhadrasana_III_-a.json": "f36cdd313233f8dd0225a2703084480d1923dcbf091763f24e06a50d4c9a1518",
+  "output/reference_curation/capture/v4/220926_Warrior_III_Pose_or_Virabhadrasana_III_-b.json": "5454227d7991ea945fa5ffb363feace24a7023e313eabcef77b0f5f8db1948ef",
+  "output/reference_curation/capture/v4/220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-a.json": "6ecf3733f4e5cf64dbb9f74bd29cf3ed86bc7ab039e59a500c03942b99f0428a",
+  "output/reference_curation/capture/v4/220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-b.json": "4f5134d1d96b0efd4a7f39354e0193b042137123b64e2a75a60a961f60829427",
+  "output/reference_curation/capture/v4/220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-c.json": "bb19a88209516debc40d3fed0c875b32775d7119f32e70c3c9b0374e862c2f4c",
+  "output/reference_curation/capture/v4/220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-d.json": "aa48b33663362a714e977f84618ee6c118f97fabec04b9624f8b392adb47105a",
+  "output/reference_curation/capture/v4/220923_Handstand_pose_or_Adho_Mukha_Vrksasana_-a.json": "df9af760021dbe2a43b1aaefaed4b24f40f239e3221475769813abc8c562e2ad",
+  "output/reference_curation/capture/v4/220923_Legs-Up-the-Wall_Pose_or_Viparita_Karani_-a.json": "aebe0362455a1250b4998d39c19e7eccb1aee1e501718011bfb9678dd712c47d",
+  "output/reference_curation/capture/v4/220923_Plow_Pose_or_Halasana_-a.json": "dabb5ce9ffb04a2b55c362dc82836f8f07da5deb49ce27c0d96e0f64fda2adb5",
+  "output/reference_curation/capture/v4/220926_Plow_Pose_or_Halasana_-b.json": "e93204b5e7658570294adacf02c31523c992e02ef7af967983c23b465688401a",
+  "output/reference_curation/capture/v4/220923_Scorpion_pose_or_vrischikasana-a.json": "c4a618ebf256cea7f596fd4bc52d9bcb32aab92f4ced9cbce68a1a451fbe548b",
+  "output/reference_curation/capture/v4/220923_Scorpion_pose_or_vrischikasana-b.json": "078d5072f958f2b24892084b5a2d5be4279588548c2cfbcc39b8f2ad3ace013d",
+  "output/reference_curation/capture/v4/220923_Supported_Headstand_pose_or_Salamba_Sirsasana_-b.json": "f22014aba49b7d9798f1fae9105f6118cea419a6972ebd1f1a0f35352466a225",
+  "output/reference_curation/capture/v4/220926_Supported_Headstand_pose_or_Salamba_Sirsasana_-a.json": "8d79a900b37ee0fe432e829d6ef350a46c6f8463c5646bbe8b19918d35392e5c",
+  "output/reference_curation/capture/v4/220923_Supported_Shoulderstand_pose_or_Salamba_Sarvangasana_-a.json": "b041801f6a1981bf2ddf37374ee1bd0b843dbb841aaaec9b8420309b79c2d156",
+  "output/reference_curation/capture/v4/220923_Crane_Crow_Pose_or_Bakasana_-a.json": "9d272279e2faa6387f76f586323a9fc0158170ebd1879e946e9ac51cc2cd73b0",
+  "output/reference_curation/capture/v4/220923_Firefly_Pose_or_Tittibhasana_-a.json": "d6e1c2e411bb1a0e97a2c42dc8c29d80c0c74b98bdf8817c1964ad8d8e3dd213",
+  "output/reference_curation/capture/v4/220923_Peacock_Pose_or_Mayurasana_-a.json": "876186165aec6fb8946a8fb980fda3057e544b903d10d2833a84883dba383ad5",
+  "output/reference_curation/capture/v4/220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-a.json": "ef19dac41827f9b9ad956de26a6e87208968a44c2440697213c9f8b62ad2154b",
+  "output/reference_curation/capture/v4/220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-b.json": "91657b041de8b9da747d58531e7927b277a53e4853ce2499347f6e839dfaefd6",
+  "output/reference_curation/capture/v4/220923_Shoulder-Pressing_Pose_or_Bhujapidasana_-a.json": "698579c02b300e437c9c8ca26cc16654ecb4ec101490ceaa4b4f721c7b385c41",
+  "output/reference_curation/capture/v4/220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a.json": "5c4d1d18cb9d4d0f48b6b8d8c34a81995e18dd9ad7b40b66ecf0241608351fb5",
+  "output/reference_curation/capture/v4/220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-b.json": "17b00ed92635b87079429acb8aa144104e8dcd531678462fe9d88690c604aebb",
+  "output/reference_curation/capture/v4/220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-c.json": "3eba68bc22c2e30746f45e538770758ed53f010f1f8497265d0a01ac8fbb179f",
+  "output/reference_curation/capture/v4/220923_Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana_-a.json": "da7cb8e2a34cc6cb1acbf230ac0be8aa865f6e9edff7a7badbfb093968bc4845",
+  "output/reference_curation/capture/v4/220923_Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana_-b.json": "76a3d5a0f9709317e2e594505d3b1e813c36260f3f3ab6039fecbfbedf437a5d",
+  "output/reference_curation/capture/v4/220923_Plank_Pose_or_Kumbhakasana_-a.json": "17c7fe52575bae77fce43379fd41c5d8b24befdf8d218e49f51ee1d292721156",
+  "output/reference_curation/capture/v4/220923_Four-Limbed_Staff_Pose_or_Chaturanga_Dandasana_-a.json": "256484afecea119a32839c0e65828f3bd412c311ef44746bb4ecccc1d31bc90b",
+  "output/reference_curation/capture/v4/220923_Cobra_Pose_or_Bhujangasana_-a.json": "d6e840bdcb61259a5eb4d0fde46d804f76992f4689af358b9115b1d6aa3da9e4",
+  "output/reference_curation/capture/v4/220923_Side_Plank_Pose_or_Vasisthasana_-a.json": "19f33e2437d896553f8da73e4651d383e16fa2fff432d87b8bc7d478c8fa7b8a",
+  "output/reference_curation/capture/v4/220923_Side_Plank_Pose_or_Vasisthasana_-b.json": "211e4215b160fcc9b4dace191d0787258afa6ac3930c006c5b682d5dad838d1c",
+  "output/reference_curation/capture/v4/220923_Dolphin_Plank_Pose_or_Makara_Adho_Mukha_Svanasana_-a.json": "c9fff5e689974a307323041e160f7da8405f80bf8261eae679e8c341d7763089",
+  "output/reference_curation/capture/v4/220923_Dolphin_Pose_or_Ardha_Pincha_Mayurasana_-a.json": "d0785ab8e199fb1dfaf77246b044ef1ad0f15235b679f4d3bcec73d1d577f805",
+  "output/reference_curation/capture/v4/220923_Standing_Forward_Bend_pose_or_Uttanasana_-a.json": "c691f03229483222c8b083d64ef9538bc4f00b31acc8f4cd7b00f106cdd6e1c8",
+  "output/reference_curation/capture/v4/220923_Garland_Pose_or_Malasana_-a.json": "942faf39ae36538a0838945c6e0f3dcdbf9e3274dce5d8935f4b39eb787bd016",
+  "output/reference_curation/capture/v4/220923_Low_Lunge_pose_or_Anjaneyasana_-a.json": "7f3d2f0ffa83e3d9ffabb840fc2cdf87e021d94f768d3ea106f0ac2fe5a8e5fe",
+  "output/reference_curation/capture/v4/220926_Warrior_II_Pose_or_Virabhadrasana_II_-a.json": "f8661c5395038a371029b3747430ec6496ebbcbcae13b2c9edc5e98fba8b5e91",
+  "output/reference_curation/capture/v4/220923_Extended_Revolved_Triangle_Pose_or_Utthita_Trikonasana_-a.json": "76829763e67816d8b1eed5e186ee2b5d0dc9edcdd45225f9a54784f786e55ef5",
+  "output/reference_curation/capture/v4/220923_Extended_Revolved_Side_Angle_Pose_or_Utthita_Parsvakonasana_-a.json": "945c050dc1b2152b7ff05c6ae02730f744fbc40a0f9244308fee522fbf5d1585",
+  "output/reference_curation/capture/v4/220926_Upward_Plank_Pose_or_Purvottanasana_-a.json": "8f17d107fccb131bd92a14522d95b7efb00d44832a0131fffd0f677c73ee8fbe",
+  "output/reference_curation/capture/v4/220923_Bridge_Pose_or_Setu_Bandha_Sarvangasana_-a.json": "56cb2421899093f12b0951b0f5043076ac21a58f322578401800e2de5cc419c2",
+  "output/reference_curation/capture/v4/220923_Extended_Revolved_Side_Angle_Pose_or_Utthita_Parsvakonasana_-b.json": "8d2ef7e8cfeda28f2ea3f175e8eb7636c1359fe7900b29a3f6e87eaad5810c72",
+  "output/reference_curation/capture/v4/220923_Extended_Revolved_Triangle_Pose_or_Utthita_Trikonasana_-b.json": "7645fa2d321a3da7d0169fa5dd7036638a93086c04bd03370801bf47fd8827da",
+  "output/reference_curation/capture/v4/220926_viparita_virabhadrasana_or_reverse_warrior_pose-a.json": "83bd3ae92a62fd9190e50aea801eab5267483c290cdb9eac3fb714a2ac84176b",
+  "output/reference_curation/capture/v4/220926_Intense_Side_Stretch_Pose_or_Parsvottanasana_-b.json": "28255742cfbcf82b8ed427705abcb31a8b587c5c117738089ac1429c59902af0"
+ },
+ "audit_id": "holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.audit_v2.calibrated.9278736bb1",
+ "manifest": "data/reference_curation/labels/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828/holds.yaml",
+ "labels_id": "holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828",
+ "rule": "calibrated",
+ "rule_config": {
+  "calibration_id": "0cd49ee6587a3bd1bb1e46d8a6dcaad7ac583a10e55d480d6cc5c4f45e0c5a39",
+  "bands_m": {
+   "L_FOOT": [
+    0.04322648394852876,
+    0.06822648394852876
+   ],
+   "R_FOOT": [
+    0.04234317589551209,
+    0.06734317589551209
+   ],
+   "HEAD": [
+    0.03653814002871513,
+    0.06153814002871513
+   ],
+   "L_HAND": [
+    0.025078376028686768,
+    0.05007837602868677
+   ],
+   "R_HAND": [
+    0.024666841551661496,
+    0.0496668415516615
+   ]
+  }
+ },
+ "store": "capture/v4",
+ "retarget_id": "holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02",
+ "plant": {
+  "plant": "v2",
+  "mjcf": "data/assets/smpl/smpl_yogi03596_v2.xml",
+  "plant_sha256": "aa541c77bcc1526905777c425e5ab072f21cae7bcadad9f71e3b1eb531f98f91"
+ },
+ "config": {
+  "hover_m": 0.02,
+  "hover_severe_m": 0.05,
+  "float_max_m": 0.15,
+  "stable_s": 0.5,
+  "boundary_tol_s": 0.25,
+  "unexplained_n": 100.0,
+  "coverage_gate_col0": 0.9,
+  "min_valid": 0.5,
+  "control_fraction": 0.15
+ },
+ "metrics": {
+  "all": {
+   "holds": 280,
+   "holds_with_capture": 280,
+   "labelled_supports": 864,
+   "hover_gt_cm": {
+    "1": 3,
+    "2": 1,
+    "3": 0,
+    "5": 0
+   },
+   "missed_touch": {
+    "holds": 1,
+    "zones": 1
+   },
+   "phantom_support": {
+    "holds": 1,
+    "zones": 1
+   },
+   "no_capture_match": {
+    "holds": 1,
+    "zones": 0
+   },
+   "boundary_start": {
+    "holds": 1,
+    "zones": 0
+   },
+   "boundary_end": {
+    "holds": 0,
+    "zones": 0
+   },
+   "exemplar_unstable": {
+    "holds": 14,
+    "zones": 0
+   },
+   "hover": {
+    "holds": 1,
+    "zones": 1
+   },
+   "unexplained_load": {
+    "holds": 0,
+    "zones": 0
+   },
+   "capture_unavailable": {
+    "holds": 0,
+    "zones": 0
+   },
+   "severity": {
+    "none": 264,
+    "low": 11,
+    "medium": 5,
+    "high": 0
+   }
+  },
+  "family": {
+   "holds": 65,
+   "holds_with_capture": 65,
+   "labelled_supports": 208,
+   "hover_gt_cm": {
+    "1": 3,
+    "2": 1,
+    "3": 0,
+    "5": 0
+   },
+   "missed_touch": {
+    "holds": 0,
+    "zones": 0
+   },
+   "phantom_support": {
+    "holds": 0,
+    "zones": 0
+   },
+   "no_capture_match": {
+    "holds": 0,
+    "zones": 0
+   },
+   "boundary_start": {
+    "holds": 0,
+    "zones": 0
+   },
+   "boundary_end": {
+    "holds": 0,
+    "zones": 0
+   },
+   "exemplar_unstable": {
+    "holds": 3,
+    "zones": 0
+   },
+   "hover": {
+    "holds": 1,
+    "zones": 1
+   },
+   "unexplained_load": {
+    "holds": 0,
+    "zones": 0
+   },
+   "capture_unavailable": {
+    "holds": 0,
+    "zones": 0
+   },
+   "severity": {
+    "none": 61,
+    "low": 1,
+    "medium": 3,
+    "high": 0
+   }
+  },
+  "labelled_hover_gt_2cm_by_zone": {
+   "L_FOOT": {
+    "labelled": 221,
+    "hover": 0
+   },
+   "R_FOOT": {
+    "labelled": 227,
+    "hover": 0
+   },
+   "L_SHANK": {
+    "labelled": 14,
+    "hover": 0
+   },
+   "R_SHANK": {
+    "labelled": 19,
+    "hover": 0
+   },
+   "L_THIGH": {
+    "labelled": 1,
+    "hover": 0
+   },
+   "R_THIGH": {
+    "labelled": 1,
+    "hover": 0
+   },
+   "PELVIS": {
+    "labelled": 3,
+    "hover": 0
+   },
+   "TRUNK": {
+    "labelled": 17,
+    "hover": 0
+   },
+   "HEAD": {
+    "labelled": 39,
+    "hover": 0
+   },
+   "L_UPPER_ARM": {
+    "labelled": 17,
+    "hover": 0
+   },
+   "R_UPPER_ARM": {
+    "labelled": 17,
+    "hover": 0
+   },
+   "L_FOREARM": {
+    "labelled": 36,
+    "hover": 0
+   },
+   "R_FOREARM": {
+    "labelled": 36,
+    "hover": 0
+   },
+   "L_HAND": {
+    "labelled": 103,
+    "hover": 0
+   },
+   "R_HAND": {
+    "labelled": 113,
+    "hover": 1
+   }
+  }
+ },
+ "baseline_v1": {
+  "store": "capture/v1",
+  "metrics": {
+   "all": {
+    "holds": 280,
+    "holds_with_capture": 280,
+    "labelled_supports": 864,
+    "hover_gt_cm": {
+     "1": 522,
+     "2": 434,
+     "3": 308,
+     "5": 183
+    },
+    "missed_touch": {
+     "holds": 1,
+     "zones": 1
+    },
+    "phantom_support": {
+     "holds": 1,
+     "zones": 1
+    },
+    "no_capture_match": {
+     "holds": 1,
+     "zones": 0
+    },
+    "boundary_start": {
+     "holds": 1,
+     "zones": 0
+    },
+    "boundary_end": {
+     "holds": 0,
+     "zones": 0
+    },
+    "exemplar_unstable": {
+     "holds": 14,
+     "zones": 0
+    },
+    "hover": {
+     "holds": 210,
+     "zones": 433
+    },
+    "unexplained_load": {
+     "holds": 33,
+     "zones": 52
+    },
+    "capture_unavailable": {
+     "holds": 0,
+     "zones": 0
+    },
+    "severity": {
+     "none": 66,
+     "low": 185,
+     "medium": 29,
+     "high": 0
+    }
+   },
+   "family": {
+    "holds": 65,
+    "holds_with_capture": 65,
+    "labelled_supports": 208,
+    "hover_gt_cm": {
+     "1": 124,
+     "2": 98,
+     "3": 74,
+     "5": 43
+    },
+    "missed_touch": {
+     "holds": 0,
+     "zones": 0
+    },
+    "phantom_support": {
+     "holds": 0,
+     "zones": 0
+    },
+    "no_capture_match": {
+     "holds": 0,
+     "zones": 0
+    },
+    "boundary_start": {
+     "holds": 0,
+     "zones": 0
+    },
+    "boundary_end": {
+     "holds": 0,
+     "zones": 0
+    },
+    "exemplar_unstable": {
+     "holds": 3,
+     "zones": 0
+    },
+    "hover": {
+     "holds": 42,
+     "zones": 98
+    },
+    "unexplained_load": {
+     "holds": 12,
+     "zones": 17
+    },
+    "capture_unavailable": {
+     "holds": 0,
+     "zones": 0
+    },
+    "severity": {
+     "none": 21,
+     "low": 17,
+     "medium": 27,
+     "high": 0
+    }
+   },
+   "labelled_hover_gt_2cm_by_zone": {
+    "L_FOOT": {
+     "labelled": 221,
+     "hover": 169
+    },
+    "R_FOOT": {
+     "labelled": 227,
+     "hover": 79
+    },
+    "L_SHANK": {
+     "labelled": 14,
+     "hover": 14
+    },
+    "R_SHANK": {
+     "labelled": 19,
+     "hover": 19
+    },
+    "L_THIGH": {
+     "labelled": 1,
+     "hover": 1
+    },
+    "R_THIGH": {
+     "labelled": 1,
+     "hover": 1
+    },
+    "PELVIS": {
+     "labelled": 3,
+     "hover": 3
+    },
+    "TRUNK": {
+     "labelled": 17,
+     "hover": 17
+    },
+    "HEAD": {
+     "labelled": 39,
+     "hover": 31
+    },
+    "L_UPPER_ARM": {
+     "labelled": 17,
+     "hover": 0
+    },
+    "R_UPPER_ARM": {
+     "labelled": 17,
+     "hover": 2
+    },
+    "L_FOREARM": {
+     "labelled": 36,
+     "hover": 0
+    },
+    "R_FOREARM": {
+     "labelled": 36,
+     "hover": 31
+    },
+    "L_HAND": {
+     "labelled": 103,
+     "hover": 6
+    },
+    "R_HAND": {
+     "labelled": 113,
+     "hover": 61
+    }
+   }
+  }
+ },
+ "compare_v1": {
+  "hover:absent": 70,
+  "hover:fixed": 209,
+  "hover:kept": 1,
+  "unexplained_load:absent": 247,
+  "unexplained_load:fixed": 33
+ },
+ "dropped": [
+  "220923_Cockerel_Pose-b",
+  "220923_Firefly_Pose_or_Tittibhasana_-b",
+  "220923_Scale_Pose_or_Tolasana_-a",
+  "220923_Standing_big_toe_hold_pose_or_Utthita_Padangusthasana-c"
+ ],
+ "queue": {
+  "A": 258,
+  "B": 55
+ }
+}

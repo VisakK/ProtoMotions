@@ -179,6 +179,13 @@ grounded to +0.5 cm (the fair comparison) over 59 clips:
   - The full list with line numbers is in the adoption verifier's report (`adoption_risks/`).
 - **§2 convention of BUILD_PLAN still holds:** extend a finished module with a new module or store version;
   don't edit it. `capture.py` and `audit.py` are hashed into the audit id, which the Pass A calibration replay pins.
+  Since Step 4 the same holds for `labels_v2.py`, whose sha256 is evidence in every labels v2 folder, and for
+  `b6.py`, whose sha256 is part of the B6 id.
+- **Records of plant v2 go in new folders.** Step 1–8 tests read the newest folder under `gate/` (`test_gate`),
+  the first three folders under `statics/` (`test_plant_v2_step2`), and every `calibration/render_v*.json`
+  (`test_verdicts`). So Step 4 writes `gate_v2/`, `statics_v2/` and `calibration/pass_*/`.
+- **Run the reference_curation tests single-threaded:** `OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1
+  MKL_NUM_THREADS=1`. With BLAS threads, `test_retarget` hangs (Step 3's 1000× `solveh_banded` slowdown).
 - **Disk:** 120 GB free now (BUILD_PLAN §1's 3.8 GB is stale).
 - **The PhysX rollouts `plant.py` used are gone** (`results/Contact_Physics_analysis*`). Force validation needs new
   rollouts from a policy on the new plant.
@@ -724,10 +731,257 @@ sets, windows, exemplars, Tier-1 load paths).
 - Every hold's commanded ground set equals labels v2's configured supports minus the gate's masks (TODO A4).
 - Gate counts reported; every exclusion has a reason.
 
+**What Step 4 found (2026-10-01).** Built; all five acceptance tests met.
+- Labels v2 is `holds_repaired_ftC_posefix.labels_v2.e03994ad3c` (280 holds, 56 clips).
+- Gate v2 is `holds_repaired_ftC_posefix.gate_v2.b2f76f2606`: 270 of 280 holds released (204 pass, 65 flagged,
+  1 masked) and 10 excluded.
+- Reviewer spend $106.94 against the plan's ~$90, on 673 calls, all valid:
+  - Pass A $13.83 (101 packets), against ~$7 planned: the float and left/right material added packets;
+  - B6 $45.53 (93 holds × 2 samples), against $25–40 planned;
+  - Pass C $47.58 (114 controls $14.46, 272 edits $33.12), within plan.
+
+- **Records, in build order.** Each record names its inputs by id. Nothing reads "the newest folder".
+
+  | Item | Module (`reference_curation/`) | Record (under `data/reference_curation/` unless noted) |
+  |---|---|---|
+  | 1 mat attribution on v2 | `pressure_v2` | `pressure_v2/<rid>/pressure.json`; ports in `output/reference_curation/pressure_v2/<rid>/` |
+  | 1 capture store v4 | `capture_v4` | `output/reference_curation/capture/v4/`; `calibration/capture_v4_crosscheck.json` |
+  | 2 audit v2 | `audit_v2` | `audits/…labels_v1_1.3b3fc75828.audit_v2.calibrated.9278736bb1` (marker rule), `….sources.dafada25ad` (the labels' own rule) |
+  | 3 render v4, Pass A | `render_v4`, `packets_v4`, `calibrate_v4` | `calibration/pass_a_v4/render_v4.json` |
+  | 4 statics, statue | `statics_v2`, `witness_v2` | `statics_v2/`, one folder per configuration: labels v1.1's `f57d85d3fa`, B6's critical-only `fb432fa15d`, the final `aab60189f4` |
+  | 5–6 labels v2 | `labels_v2`, `b6`, `labels_v2_restore` | `labels/…labels_v2.*`: draft `74a61979cf` (B6's base), pass 1 `b61fad7e9d` (B6's critical pairs), pass 2 `46024365fa` (plus the restoration), **final `e03994ad3c`** |
+  | 6 B6 | `b6` | `b6/…labels_v2.74a61979cf.b6.590f05ccca/`; Pass B table `calibration/pass_b/render_v4.json` |
+  | 7 Pass C | `edits_v2` | `calibration/pass_c/render_c2.json`; packets in `output/reference_curation/packets/render_c2/` |
+  | 8 gate v2 | `gate_v2` | `gate_v2/holds_repaired_ftC_posefix.gate_v2.b2f76f2606/` (`release_holds.yaml`, `holds.jsonl`, `summary.md`) |
+
+  Tests: 59 in `test_step4_{evidence,rules,review,final}.py` (~30 s). Run them with `OMP_NUM_THREADS=1`.
+- **Rebuild, in order.** Each command is `PYTHONPATH=.:data/scripts OMP_NUM_THREADS=1 ../env_isaaclab/bin/python -m
+  reference_curation.<module> …`. Never set `REFERENCE_PLANT=v2`.
+  - The machine steps are deterministic and reproduce the ids above.
+  - The review steps replay the ledger: a packet with a verdict on file is never sent again.
+
+  1. `pressure_v2`, then `capture_v4 --all` (it also writes the crosscheck), then `audit_v2` and
+     `audit_v2 --rule sources`.
+  2. `statics_v2` (labels v1.1's configuration), then `labels_v2` (the draft).
+  3. `calibrate_v4 --build`, then `--review --max-cost 15`, then `--calibrate` (Pass A).
+  4. `b6 --labels <draft> --build`, then `--review`, then `--decide`, then `--calibrate` (the Pass B table). Pass
+     `--labels` every time, because the default is the oldest labels v2 folder by mtime.
+  5. Pass 1: `labels_v2 --critical <b6.json> --votes <b6.json>`, then `statics_v2 --labels <pass 1>`.
+  6. Pass 2: `labels_v2_restore --critical <b6.json> --votes <b6.json> --critical-statics <pass 1's statics>
+     --statics <pass 1's statics>`, then `statics_v2 --labels <pass 2>`.
+  7. The final labels: the same `labels_v2_restore` command with `--statics <pass 2's statics>`.
+  8. `edits_v2 --labels <final> --build-controls 30`, then `--build-edits`, then
+     `--review --kind identity swap lift sink kink --max-cost 16`, then `--review --kind edit --max-cost 40`, then
+     `--calibrate`.
+  9. `gate_v2 --labels <final>`.
+- **Acceptance.**
+
+  | Test | Result | |
+  |---|---|---|
+  | 0 body–ground disagreement with the capture | 0 on 280 holds, at every exemplar and on every window frame | met |
+  | Every annotation cites evidence ids that verify by sha256 | 1,678 annotations, 613 evidence rows, 0 failures | met |
+  | Calibration replay for every new table | Pass A v4, Pass B v4, B6 and render_c2 rebuilt from the ledger equal the stored tables | met |
+  | A4: commanded ground set = configured supports − masks | 0 problems on the 270 released holds; the 10 excluded holds are absent | met |
+  | Gate counts reported; every exclusion has a reason | the table below; every reason names a rule | met |
+- **The plant-v2 evidence (items 1–4).**
+  - **Mat attribution.** The chain was re-run on the Step 3 motions.
+    - The reference explains ≥ 90 % of the measured load on 99.9 % of 81,140 loaded frames. ftR's reference did
+      so on 89.5 %, the shipped port's pose on 71.2 %.
+    - COP residual p90 is 0.16 cm (ftR 3.14, shipped 29.5).
+    - All 56 clips now carry the on-mat gate column, and usable frames rose from 76 % to 89 %.
+  - **Capture store v4.**
+    - The plant-free mat fields equal capture v1's exactly (difference 0.0). `attr_visible` changed on 134,945
+      zone-frames.
+    - Re-derived on the new attribution, every human-side touch threshold moves < 0.1 cm: feet 4.36 / 4.26 cm,
+      hands 2.43 / 2.47 cm, head 3.64 cm, mesh 2.25 cm.
+    - **The head's marker test no longer passes its admission rule.** With the crowns realised, 2,379 frames of
+      10 clips confirm it (v1: 911 frames of 3 clips). Their spread (p99 − p50 2.1 cm) exceeds the rule's 1 cm.
+      The threshold itself holds. The committed calibration is human-side, so no label moves.
+  - **Audit v2 on labels v1.1.**
+    - Labelled supports floating > 2 cm: 434 → 1 of 864 (Triangle -b@669's right hand, 2.9 cm).
+    - Holds with unexplained mat load: 33 → 0.
+    - Under the labels' own evidence rule: 0 missed touches and 0 phantom supports.
+    - Under the marker rule: the same 1 + 1 as on v1 (Bridge -a@652's right hand, Peacock -a@1183's head). These
+      are human-side disagreements, not plant ones.
+    - The 8 `exemplar_unstable` holds are the 8 transitions (below).
+  - **Statics v2 and the statue.** Statics is the gated LP on the reference with plant v2's torques. The statue
+    (`witness_v2`) runs at plant v2's training gains: neck 1158 / 116, wrists 30 N·m, hands 15 N·m.
+    - On labels v1.1's configuration, 276 of 280 holds are holdable. For comparison: Step 8 on plant v1, 270 of
+      300; the shipped references, 38.
+    - 3 are beyond the plant: Scorpion -b's wrists (two holds), and Peacock -a@1183's spine, whose configured
+      PELVIS braces are not realised.
+    - 1 is `support_not_realised`: Triangle -b@669's right hand cannot reach the floor. The hold is held without it
+      (s* 0.27), so the gate masks the support.
+    - **D4** requires only the zones the LP loads to stay down. Under it, the statue passes 194 of 276 holds
+      against 180 under Step 7's rule. The 14 it adds are forearm poses whose unloaded hands rise. 231 of 276 stay
+      still (settle < 5 cm, drift < 2 cm).
+    - On the final configuration: 277 of 280 holdable, only Scorpion -b@945 and @1163 beyond the plant; the statue
+      passes 198 of 277 (183 under the strict rule, 231 still).
+    - **Step 3's predictions hold.** No Plow, Bridge, Shoulderstand, Legs-up or Upward Plank hold is
+      `support_not_realised` any more. No crown mask or exclusion survives; gate v1 had 9 and 17.
+- **Render v4 and Pass A (item 3).**
+  - Every segment has its own shade: upper arm purple, forearm orange, hand red, thigh yellow, shin green, foot
+    blue, head magenta. Neighbouring segments differ by > 20° of hue. Torso and pelvis share one grey.
+  - 101 packets at high effort, $13.83.
+  - Admitted as evidence:
+    - floor contact, avatar (0.997);
+    - floor clearance (1.0);
+    - floor contact, human (1.0);
+    - float (1.0 on 95 claims, recall 1.0);
+    - left / right (1.0).
+  - Advisory: body–body (1.0 on 12 claims, recall 0.11) and pose identity (0.525).
+  - **Floats are rare on v2** (1 of 864 supports), so the float class needed new material:
+    - 24 packets of the reference lifted 2.5–12 cm;
+    - 17 of her unedited fit's natural 2–3 cm floats.
+
+    Recall is 51/51 at 2–5 cm, 43/43 at 5–15 cm and 27/27 on the fit.
+  - Left/right needed 12 side-asymmetric packets; before them it had only 25 claims.
+- **Pass B v4 and B6 (item 6).**
+  - **The run.**
+    - 93 holds: 78 with a candidate critical pair and 15 with an undecided pose role, two independent samples each.
+    - The Pass B table admits floor contact, floor clearance, human floor, body–body (1.0 on 162 claims, recall
+      0.84) and left/right.
+    - Float stays advisory because nothing floats to claim. Pose identity (0.81) and the roles stay advisory.
+  - **Self-consistency, the Step 4 rule.**
+    - Another sample repeats 126 of 135 `required_touch` claims (0.933; 95 % low 0.878) and 842 of 851 other
+      claims (0.989), over 493 items, all answered. **Admitted.**
+    - Across takes (mirrored sides, or the same pose in another clip), a `required_touch` consensus is repeated
+      6 of 7 times.
+    - render_v3's single sample agrees with the v4 consensus on 289 of 311 roles.
+  - **The configured body–body pairs are now the critical ones: 59 in 44 holds** (labels v1.1 configured 138).
+    They are the contacts the poses are named for:
+    - Crow's and Side Crow's shins and thighs on the upper arms;
+    - Firefly's and Koundinya's thigh braces;
+    - Tree's sole on the thigh, and Eagle's wrap;
+    - the headstand's interlaced hands, the shoulderstand's hands on the back;
+    - Peacock's forearms in the belly.
+  - **Step 3's 60 `geometry_incompatible` pairs:**
+    - 48 unrealised and 6 realised pairs are demoted (not critical);
+    - 3 were never configured;
+    - 1 is critical and realised at the exemplar (Shoulderstand -a@914, TRUNK+L_HAND);
+    - 2 come back through the restoration below.
+
+    **No configured pair is unrealised (0 of 63), so the gate masks no pair.**
+  - **Caveat:** reproducibility is reliability, not validity. A reviewer can repeat a wrong judgement, and by design
+    no human truth set exists.
+- **The statics restoration (`labels_v2_restore`, new).**
+  - **The problem.** Statics on B6's critical-only configuration found one hold newly beyond the plant:
+    Peacock -a@788 (s* 0.147 → 1.192, its spine at 119 %).
+    - Both samples say the forearms carry her. One places them on TRUNK, the other on PELVIS.
+    - **render_v4 draws torso and pelvis in one grey**, so the zone is a guess. Neither pair reproduces, and all
+      four were demoted. This is the only such split among the 93 holds.
+    - A single-pair necessity test cannot see it either: each brace alone is only `useful`.
+  - **The rule.** A hold's demoted pairs come back when both of these hold:
+    - statics on the critical-only configuration finds the hold beyond the plant;
+    - statics on labels v1.1's configuration finds it holdable.
+
+    Both records are checked to request exactly those configurations at the hold.
+  - **The result.** It restores Peacock -a@788's four braces and nothing else.
+    - Statics on the restored configuration reproduces the hold's v1.1 row exactly (feasible, 0.1467).
+    - It leaves the other 279 rows unchanged.
+    - The restored pairs are configured `required_touch`, but not critical.
+  - **Why a new module.** `labels_v2.py` is not edited, because its sha256 is the `rule:` evidence of the draft and
+    pass 1. The new module wraps `labels_v2.build` instead.
+- **The other label decisions (items 5–6), on 280 holds.**
+  - **Transitions.** Labels v1.1's 8 unresolved holds change their support set every 0.3–0.9 s and never keep one
+    for 1 s. Their status is `transition`, and the gate excludes them.
+  - **Windows are where the configuration holds.** 10 are trimmed; Tree's sole lands on the thigh up to 1.8 s after
+    the foot leaves the floor. Configured pairs held on < 90 % of their window: 11 → 0.
+  - **`any_of` groups are pairwise.** Two configured pairs form a group when they share a zone and their other
+    zones are adjacent segments of one limb; there are no union-find chains. The draft had 49 groups; the critical
+    configuration has none.
+  - **Ground roles on the plant-v2 mat.**
+    - `required_support` 473 → 522 and `required_touch` 391 → 342 (59 touch → support, 10 support → touch).
+    - 455 come from the mat (≥ 50 N) and 64 from statics (labels v1.1: 63, from Step 8's statics).
+  - **Pose roles of the 103 `_h` holds.**
+    - variant 53, preparation 35, undecided 8, family 7.
+    - The role is the majority of every valid Pass B sample (1–3 per hold). `preparation` also needs a ground set
+      that no family hold of the clip has.
+    - Of the 30 holds that render_v3's single sample called "not the labelled pose", 26 are preparations.
+    - The names are kept, because they are node identity downstream.
+  - **Orientation bins**, recomputed on the reference: 2 change (Plow -a@756, Plow -b@1644).
+- **Pass C on the Step 3 edits (item 7).** render_c2 draws drop lines only under zones the human touches (D2).
+  - **Controls first:** 114 (identity 12, swap 32, lift 30, sink 20, kink 20).
+    - `pose_change` is admitted: 0.970 on 33 claims, recall 1.0. The one false call is a sink control
+      (Shoulder-Pressing -a@543).
+    - `closer` is admitted (1.0 on 42 claims). Artefacts stay advisory (recall 0.53).
+  - **Then all 272 non-transition holds.** None was called a different pose, and 248 were accepted.
+  - **The 24 rejected edits** are all "the same pose, her unedited fit closer, no new artefact". They fall where
+    Step 3 had to edit:
+    - soft supports: Bridge ×3, Plow ×2, Upward Plank;
+    - pressed body–body contacts: Tree ×3, Eagle ×3, Side Crow ×2, Koundinya;
+    - forearm and side supports: Feathered Peacock ×3, Dolphin Plank, Side Plank ×2;
+    - also Warrior III, Lord of the Dance and Revolved Side Angle.
+
+    As the card asked, they are a flag (`fit_closer`), not an exclusion.
+- **Gate v2 (item 8).**
+  - Its inputs are pinned by id: the labels name the statics, the retarget and the fit.
+  - A Pass C verdict counts only if its packet's sha256 of the before and after equal the motions in use; 0 are
+    stale and 0 missing.
+  - A Pass C claim decides only if its class is admitted.
+
+  | Decision | Holds | Reasons |
+  |---|---|---|
+  | exclude | 10 | the 8 transitions; Scorpion -b@945 and @1163, beyond the plant (wrists) |
+  | mask | 1 | Triangle -b@669: the right hand cannot reach the floor; the hold is held without it (s* 0.27) |
+  | flag | 65 | `pose_preparation` 35, `fit_closer` 24, `statue_moved_single_leg` 17, `critical_partly_realised` 1 |
+  | pass | 204 | |
+
+  - **The plant's contract holds in every window.** No hold breaks the joint box, the floor contract, the
+    new-overlap scan or the jerk test inside its window:
+    - 0° past the box;
+    - floor ≥ −0.50 cm;
+    - 0 new overlap pair-frames;
+    - 0 jerk frames, and also 0 outside the windows.
+
+    The largest window edit is 16.6 cm for one body (budget 25) and 5.8 cm mean p95 (budget 10).
+  - **`statue_moved_single_leg`** flags 17 of the 24 single-leg holds: without a policy their statues fall, like
+    Step 3's Tree.
+  - **`critical_partly_realised`:** Shoulderstand -a@914's TRUNK+L_HAND is realised on only 47 % of the frames where
+    she makes it. This needs Step 5's per-frame masks.
+  - No clip loses all its holds.
+- **Traps.**
+  - **Statics runs once per configuration, and the labels cite the statics of their own configuration.** So every
+    configuration change takes two builds (labels → statics → labels).
+    - The chain here: pass 1 → statics `fb432fa15d`; pass 2 → statics `aab60189f4`; the final cites `aab60189f4`.
+    - A test checks that the final's configuration equals pass 2's.
+  - **Don't edit a module whose sha256 is evidence.** `labels_v2.py` is the `rule:` row of three labels folders,
+    and `b6.py`'s sha256 is in the B6 id. Extend with a new module instead.
+  - **render_v4 cannot separate torso from pelvis** (one grey), so a contact at that boundary does not reproduce by
+    zone.
+  - **A single-pair necessity test misses jointly required contacts**, such as Peacock's four braces, each only
+    `useful`.
+  - **Two Step 1–8 tests read "the newest folder".** `test_gate` reads under `gate/`, and `test_plant_v2_step2`
+    reads the first three folders under `statics/`. So Step 4 writes `gate_v2/` and `statics_v2/`.
+  - `test_verdicts` globs `calibration/render_v*.json`, so the new tables live in `pass_a_v4/`, `pass_b/` and
+    `pass_c/`.
+  - **`b6.py --labels` defaults to the oldest labels v2 folder by mtime** (today the draft); always pass it.
+    `edits_v2 --labels` is now required.
+  - **Three plant-v1 bindings survive `use_plant`.** `render_v4`, `witness_v2` and `statics_v2` each work around one:
+    - `render._body_geoms` is lru-cached on `ids.MJCF`, and the cache survives `use_plant`;
+    - `witness.control_info` hard-codes plant v1's robot config;
+    - `statics.CONFIG` binds the plant at import.
+  - **Run the tests with `OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1`**; otherwise `test_retarget`
+    hangs.
+  - The Pass C legend's leak guard rejects corpus tokens: "holds" contains "hold".
+- **For Step 5.**
+  - **Read `gate_v2/holds_repaired_ftC_posefix.gate_v2.b2f76f2606/release_holds.yaml`.** It is labels v2's manifest
+    without the 10 excluded holds. Per hold:
+    - `pairs` and `pairs_ground` are the commanded contacts;
+    - `pairs_configured` holds the configured ones;
+    - `gate` carries the decision, the masks and the flags.
+  - **The contact-target sidecar (C1).**
+    - 63 configured pairs (59 critical + 4 restored), all realised at the exemplar.
+    - 1 masked support.
+    - The `critical_partly_realised` hold needs a per-frame mask.
+  - **Node identity.** The 8 transitions are gone, and 2 Plow holds changed orientation bin. `_h` names are kept;
+    `pose_role` says what each shows, and the 35 preparations are flagged.
+  - **The 17 single-leg statue flags** mark holds a policy must balance actively. They are not a release decision.
+
 ### Step 5 — Build the release on plant v2 and prepare training (BUILD_PLAN Steps 9–10)
 
-**Goal.** A training-ready, immutable release built only from labels v2, the Step 3 motions and plant v2. Then
-train from scratch.
+**Goal.** A training-ready, immutable release built from three things only: gate v2's release manifest (labels v2
+minus the gate's exclusions and masks), the Step 3 motions and plant v2. Then train from scratch.
 
 **Do.**
 - **Corpus chain** (the `build_expert60_ftR.sh` pattern, pointed at v2 everywhere): hold-extended variants
@@ -735,14 +989,73 @@ train from scratch.
   hold_id), pressure port and on-mat gate, and physics tables with the plant sha.
 - **Identity checks.** Port `check_expert60_ftR.py` to the new release. Package, graph, tables and manifest must
   agree on hashes, motion order, fps, body order, `pair_names` and plant sha, and fail loudly otherwise (TODO C5).
-- **Contact-target sidecar** from labels v2: roles, masks and flags (TODO C1). Re-check the swing term's
-  calibration on the new tables (TODO C3).
+- **Contact-target sidecar** (TODO C1): the commanded contacts, masks and flags from the release manifest, and the
+  roles from labels v2's annotations. Re-check the swing term's calibration on the new tables (TODO C3).
 - **Smoke run:** 256 envs, 4 epochs, weight 0 on the new terms (BUILD_PLAN Step 9 exit).
 - **Train fresh** under a new experiment identity with fresh normaliser statistics. Old checkpoints are not reused.
 - **Evaluate** with the full-clip evaluator (2,250 steps) plus the realisability metrics: drag, slide, support
   violation, float, and COM vs COP.
 - Then Pass D: review policy rollouts with the same packet machinery. Record new PhysX rollouts so `plant.py`'s
   force validation can be re-run.
+
+**Carried in from Step 4** (details, numbers and the rebuild commands in "What Step 4 found"):
+- **The input is gate v2's release manifest, by id. Never read the newest folder.** It is
+  `data/reference_curation/gate_v2/holds_repaired_ftC_posefix.gate_v2.b2f76f2606/release_holds.yaml`.
+  - **What it contains.** Labels v2's manifest (`…labels_v2.e03994ad3c`) without the 10 excluded holds: 270 holds
+    on 56 clips, all at 60 fps. Its `mjcf` is plant v2's and its `plant_sha256` is v2's.
+  - **The motions.** Each clip's `source` is its Step 3 reference (`…retarget_v2.e4278ada02/<stem>.motion`). Each
+    reference carries plant v2's sha, and its frame count equals the manifest's (all 56 verified).
+  - **The contacts of a hold.**
+    - `pairs` and `pairs_ground` are the *commanded* contacts: configured minus the gate's masks.
+    - `pairs_configured` holds the configured ones.
+    - `gate` holds the decision, the masks and the flags.
+    - `labels` holds the status, roles, `any_of`, `not_realised`, `pose_role` and the statics block.
+  - **The frames of a hold.**
+    - `hold_id` names the source exemplar; `frame_hold` is the corrected exemplar.
+    - `frame_start` and `frame_end` are labels v2's window. 10 windows are trimmed to where the demanded pairs hold.
+    - Time and frame fields agree on all 270 holds.
+  - **Per-contact detail** is in `labels/…labels_v2.e03994ad3c/annotations.jsonl`: `target_role`, `role_from`, a
+    `critical` (B6) or `restored` (statics) block, and the avatar, mat and statics evidence. The gate's per-hold
+    evidence is in `gate_v2/…/holds.jsonl`.
+- **What the contact-target sidecar (C1) gets.**
+  - Ground roles: `required_support` 522 (455 from the mat at ≥ 50 N, 64 from statics), `required_touch` 342,
+    `forbidden_support` 18.
+  - Body–body: 63 configured pairs, all closed at the exemplar.
+    - 59 are critical: the reviewer's self-consistency was admitted for them.
+    - 4 are Peacock -a@788's forearm braces, restored by statics.
+    - Pairs outside the configuration are `allowed` or `incidental`. No `any_of` group remains.
+  - One mask: Triangle -b@669's `R_HAND:G`. The plant's hand cannot reach the floor, and the hold stands without it.
+    A masked contact leaves every contact target.
+  - **Flags are not release decisions:**
+    - `pose_preparation` 35, `fit_closer` 24, `statue_moved_single_leg` 17;
+    - `critical_partly_realised` 1: Shoulderstand -a@914's TRUNK+L_HAND is closed on only 47 % of the frames where
+      she makes it, so it needs a per-frame mask.
+- **What changes for the hold graph** (node identity = name, ground set, orientation).
+  - The 10 excluded holds are gone: 8 transitions, and Scorpion -b@945 and @1163, beyond the plant's wrists.
+  - 2 Plow holds changed orientation bin on the new references (Plow -a@756, Plow -b@1644).
+  - `_h` names are kept. `pose_role` says what each hold shows: family 72, standing 112, variant 53,
+    preparation 35, undecided 8.
+  - The ground sets are labels v1.1's human-side sets, unchanged.
+- **Pressure.** Step 4 ran the attribution chain on the Step 3 references (`pressure_v2`). The gated ports, with all
+  three validity columns, are in `output/reference_curation/pressure_v2/<rid>/gated/`, and `pressure_v2.check`
+  verifies them. The hold-extended variants are new motions and need the chain run on their own frames.
+- **Statics of the final configuration** is
+  `data/reference_curation/statics_v2/…labels_v2.46024365fa.statics_v2.aab60189f4/`. It holds per-hold LP loads and
+  per-contact necessity: 277 of 280 holds are holdable. The statue at training gains, under D4, passes 198 of 277.
+- **If a label must change.**
+  - Every configuration change takes labels → statics → labels.
+  - Don't edit `labels_v2.py` or `b6.py`: their sha256 is evidence in the labels folders and part of the B6 id.
+    Wrap them instead, as `labels_v2_restore` does.
+- **Traps.**
+  - Run the reference_curation tests with `OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1`: 263 pass in
+    ~10 min. Otherwise `test_retarget` hangs.
+  - Step 1–8 tests read the newest folder under `gate/`, the first three under `statics/`, and every
+    `calibration/render_v*.json`. Put new records in new folders.
+  - Never run a Step 1–8 CLI with `REFERENCE_PLANT=v2`. Load the capture stores outside `on_plant()`.
+- **Still open.**
+  - D3, the IsaacLab statue.
+  - `plant.py`'s PhysX force validation, which needs new rollouts (Pass D).
+  - The head's marker admission fails on the v4 evidence. This is recorded, not applied.
 
 **Acceptance.** BUILD_PLAN Step 9's exit tests on the new release, and a first expert whose single-leg and
 headstand clips do not regress against the ftC-era numbers (probe: single-leg 0.998, inversion 0.998 on ftC).
@@ -757,7 +1070,7 @@ headstand clips do not regress against the ftC-era numbers (probe: single-leg 0.
 | 1: plant v2 MJCF | done | 2026-09-30 | `smpl_yogi03596_v2{,_flat}.xml` + `_v2_limits.json`; builder `data/scripts/build_subject_plant_v2.py`, acceptance `reference_curation.plant_v2`, replay `reference_curation.mosh_replay`, record `data/reference_curation/plant_v2/plant_v2.json`, 20 tests (`test_plant_v2.py`, ~1 min). 74.000 kg; rest FK 1.6e-8 m; 0 rest overlaps (min gap 2.9 cm); overlaps 79,943 vs C1 80,058 (human-separated 1,962 vs 7,746); crowns 27/27; grounded floats 254/919 (≤ 261, target 200 missed); LP-holdable 95 / 164 at +0.5 / 0 cm (her root: 251; shipped 41); COM–COP p50 1.0 cm. 23 ranges widened; wrist / hand torque +50 % (30 / 15 N·m, the user's Step 2 decision, re-measured); neck gains ×2.3 for Step 2. See "What Step 1 found". |
 | 2: USD, robot config, plant identity | done | 2026-09-30 | USD `smpl_yogi03596_v2_usd/` (`build_plant_v2_usd.py`, record `usd_v2.json`); robot `smpl_yogi_v2`; PhysX sanity `reference_curation.plant_v2_physx` (`physx_smpl_yogi_v2.json`, v1 baseline `physx_smpl_yogi.json`); `protomotions/utils/plant_identity.py`; 22 tests. One articulation root (Pelvis); colliders ≤ 8e-6 mm / 5e-6°; PhysX 74.000 kg, every body ≤ 2.6e-7; limits ≤ 8e-8 rad; wrist / hand 30 / 15 N·m; neck 1158 / 116; FK 418 frames ≤ 1.4e-6 m; default and 136 standing resets: no launch; v1 / legacy / mixed data raises `PlantMismatchError`. Capture / statics loader checks go to Step 4's new store versions. See "What Step 2 found". |
 | 3: references on plant v2 | done; 9 of 10 acceptance tests met (open: worst-body p50) | 2026-09-30 | Writer `reference_curation/fit_writer.py` (`fit_v2.v1.b8f5e86fc9`, 56 clips; Cockerel -b, Scale -a, big toe hold -c and, by the user's decision after the first run, Firefly -b dropped); retarget `reference_curation/retarget_v2.py` (`…labels_v1_1.3b3fc75828.retarget_v2.e4278ada02`, 14 min on 16 workers; the other 56 motions are byte-identical to the 57-clip run's); PhysX `retarget_v2_physx.py`; 11 tests (`test_retarget_v2.py`). Fit → retarget: frames past the box 26,532 → 0; labelled floats 48 → 1 of 864; crowns 21/21; touch penetration 43.0 % → 0.01 % (skin 15.3 %); slide p90 2.96 → 2.99 cm/s, > 5 cm/s 6.7 → 6.9 %; new jerk frames 0; overlaps > 1 cm 63,201 → 604, 0 new; mean displacement p50 1.37 cm (Step 8 3.61), **worst body p50 10.6 cm (Step 8 15.5; soft supports, poses past the box, palm loading)**; COM–COP p50 1.10 cm. PhysX: library loads on v2, v1 refused, FK 1.2e-6 m on 701 frames, 0/701 resets launch (control 3/3). See "What Step 3 found". |
-| 4: reviewer re-run, labels v2, gate v2 | todo | | |
+| 4: reviewer re-run, labels v2, gate v2 | done; all 5 acceptance tests met | 2026-10-01 | Modules `reference_curation/{pressure_v2, capture_v4, audit_v2, witness_v2, statics_v2, render_v4, packets_v4, calibrate_v4, b6, labels_v2, labels_v2_restore, edits_v2, gate_v2}.py`; 59 tests (`test_step4_{evidence,rules,review,final}.py`). Labels v2 `…labels_v2.e03994ad3c` (statics `…labels_v2.46024365fa.statics_v2.aab60189f4`); gate v2 `…gate_v2.b2f76f2606`: 270 / 280 holds released (204 pass, 65 flagged, 1 masked), 10 excluded (8 transitions, 2 Scorpion -b beyond the plant). Mat explained ≥ 90 % on 99.9 % of loaded frames; labelled floats 434 → 1 / 864; unexplained-load holds 33 → 0; LP-holdable 277 / 280; statue (D4) 198 / 277. Pass A v4 admits float, floor and left/right. B6 admitted (0.933 on 135 claims): 59 critical pairs in 44 holds, plus 4 restored by statics (Peacock -a@788); 0 configured pairs unrealised. Pass C: 0 / 272 called a different pose, 24 `fit_closer`. Reviewer $106.94 (plan ~$90). See "What Step 4 found". |
 | 5: release and fresh training | todo | | |
 
 **How this relates to the existing plan.**
@@ -765,49 +1078,49 @@ headstand clips do not regress against the ftC-era numbers (probe: single-leg 0.
   - A1: slide clip p90 2.99 cm/s, against the fit's 2.96;
   - A2: balance on every quasi-static frame with a stable support set; COM outside the supports 3,026 → 40 frames;
   - A3: no new jerk frames.
-- A4 and A5 are replaced by Steps 4–5 (A5's fine-tune of ft_c is moot, because ft_c is discarded).
+- A4 is done in Step 4: gate v2's `a4_check` passes on all 270 released holds. A5 is replaced by Step 5 (its
+  fine-tune of ft_c is moot, because ft_c is discarded).
 - B1 and B2 are decided: the lotus clips and Standing big toe hold -c are dropped. So is Firefly -b, after Step 3.
 - B3 is done: the head collider was re-centred in Step 1, and all 21 crowns are realised in Step 3.
 - B4 and B5 are moot as written (they judged gate v1 on plant v1). Gate v2 re-decides them.
-- B6 carries into Step 4, with Step 3's 60 `geometry_incompatible` pairs as its list.
+- B6 is done in Step 4.
+  - The reviewer's self-consistency is admitted, and its 59 critical pairs are the configured body–body contacts.
+  - Peacock -a@788's four braces are restored by statics.
+  - None of Step 3's 60 `geometry_incompatible` pairs is left configured and unrealised.
 - C1–C6 carry into Step 5. C4 ("`rigid_body_contacts` now means something else") holds for the Step 3 motions
   too: they are geometric (≤ 1 cm).
 - D:
   - D1 is closed: with Firefly -b dropped, Step 3 adds no new overlap.
+  - D2 is done in Step 4: render_c2 draws drop lines only under zones the human touches.
   - D3 is still open (the IsaacLab statue).
+  - D4 is done in Step 4: the statue's contact rule covers only LP-loaded zones (194 vs 180 of 276 pass).
   - D5 is mostly closed: legs and head now fit her. The box hands still need a palm correction of ~16°, and a
     fixed rotation would absorb only ~10° of it.
   - D6 is done: the Step 8 retarget's motions (pilot and corpus, 223 MB) are deleted. Its lineage stays, because
     `plant_v2.py` reads `head_blocked` from it.
-- E1 is done: Steps 1–3 are committed (`387665f`). The v2 MJCF/USD and labels v1, which `plant_v2.py` reads,
-  follow in the next commit.
+- E1 is done:
+  - Steps 1–3 are committed (`387665f`).
+  - The v2 MJCF/USD and labels v1, which `plant_v2.py` reads, are in `77d7517`.
+  - Step 4 is committed together with this text.
 - BUILD_PLAN Steps 9–10 run after Step 4 here, on labels v2, plant v2 and the Step 3 references. Their cards' inputs
   ("labels v1.1", "the retargeted references", ftR) are superseded.
 
-**Next, in order** (2026-09-30):
-1. **Before Step 4.**
-   - Done: Firefly -b is dropped, the v1 retarget's motions are deleted, and Steps 1–3 are committed (`387665f`,
-     E1), so Step 4's records stamp a git rev that contains them.
-   - ftR and the probe rollouts are still on disk and disposable; delete them only on the user's word.
-2. **Step 4a, machine evidence** (no reviewer cost):
-   - capture store v4: the avatar side on v2, the pressure attribution re-run on the Step 3 motions;
-   - audit v2;
-   - statics v2 and the statue, with D4's loaded-zone contact rule;
-   - a labels v2 draft: labels v1.1's human-side decisions, v2 evidence, the statics promotions re-derived.
-3. **Step 4b, review and gate** (about $90 of reviewer calls):
-   - render v4 and the Pass A recalibration (~$7);
-   - B6 by self-consistency (~$25–40), and the other label fixes (the 9 unresolved, the `_h` holds, `any_of`,
-     demanded pairs over the window);
-   - Pass C controls (~$15) and edits (~$40);
-   - gate v2: pinned ids; joint box, floor contract, new-overlap scan, Pass C, and the statue flag on single-leg
-     holds.
-4. **Step 5 = BUILD_PLAN Step 9.**
+**Next, in order** (2026-10-01):
+1. **Step 4 is done and committed together with this text** (staged 2026-10-01 for the user's commit), so Step 5's
+   records stamp a git rev that contains it, as E1 did for Steps 1–3. The commit contains:
+   - the 13 modules and 4 test files under `data/scripts/reference_curation/`;
+   - its records under `data/reference_curation/`: `pressure_v2/`, `audits/`, `statics_v2/`, the labels v2 folders,
+     `b6/`, `calibration/`, `gate_v2/` and the ledger's new verdicts.
+
+   Labels v2 is `e03994ad3c` and gate v2 is `b2f76f2606`; see "What Step 4 found". ftR and the probe rollouts are
+   still on disk and disposable; delete them only on the user's word.
+2. **Step 5 = BUILD_PLAN Step 9**, from gate v2's `release_holds.yaml` (never from the labels folder directly).
    - The corpus chain on v2, using `build_expert60_ftR.sh` as the template: hold extension v2, package, graph v2
      keyed on `hold_id`, pressure port and on-mat gate, physics tables v2 carrying the plant sha.
    - The contact-target sidecar from labels v2 (C1); the identity checks (C5, porting `check_expert60_ftR.py`);
      the swing recalibration (C3).
    - Exit: a package round trip, a runtime load on `smpl_yogi_v2`, and a weight-0 smoke run (256 envs, 4 epochs).
-5. **BUILD_PLAN Step 10.**
+3. **BUILD_PLAN Step 10.**
    - Compile the immutable release, validate it and train fresh on `smpl_yogi_v2`.
    - Evaluate with the full-clip evaluator plus the realisability metrics, against single-leg 0.998 and
      inversion 0.998 (ftC).

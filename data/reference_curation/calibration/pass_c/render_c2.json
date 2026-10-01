@@ -1,0 +1,311 @@
+{
+ "schema_version": 1,
+ "generator": {
+  "module": "reference_curation.edits_v2",
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "sha256": "3f7cd96172c583d762c5b230085928732faf5c1e05ff9c78087ac4b556dd14f0"
+ },
+ "inputs": {
+  "data/scripts/reference_curation/prompts/pass_c.md": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e",
+  "data/scripts/reference_curation/schemas/pass_c.json": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "render_v": "render_c2",
+ "contract": "pass_c.v1",
+ "rule": {
+  "precision_min": 0.9,
+  "answered_rate_min": 0.5,
+  "items_min": 30,
+  "claims_min": 30
+ },
+ "before": "fit_writer fit_v2.v1.b8f5e86fc9",
+ "after": "holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02",
+ "classes": {
+  "pose_change": {
+   "items": 94,
+   "answered_rate": 1.0,
+   "claims": 33,
+   "precision": 0.9697,
+   "precision_low": 0.8468,
+   "recall": 1.0,
+   "evidence": true
+  },
+  "artefact": {
+   "items": 82,
+   "answered_rate": 1.0,
+   "claims": 21,
+   "precision": 1.0,
+   "precision_low": 0.8454,
+   "recall": 0.525,
+   "evidence": false
+  },
+  "closer": {
+   "items": 42,
+   "answered_rate": 1.0,
+   "claims": 42,
+   "precision": 1.0,
+   "precision_low": 0.9162,
+   "recall": null,
+   "evidence": true
+  }
+ },
+ "by_kind": {
+  "kink": {
+   "artefact:False": 12,
+   "artefact:True": 8
+  },
+  "identity": {
+   "pose_change:False": 12,
+   "artefact:False": 12,
+   "closer:equal": 12
+  },
+  "sink": {
+   "pose_change:False": 19,
+   "artefact:True": 13,
+   "artefact:False": 7,
+   "pose_change:True": 1
+  },
+  "lift": {
+   "pose_change:False": 30,
+   "artefact:False": 30,
+   "closer:B": 10,
+   "closer:A": 20
+  },
+  "swap": {
+   "pose_change:True": 32
+  }
+ },
+ "edits": {
+  "reviewed": 272,
+  "accepted": 248,
+  "same_pose_no": 0,
+  "closer": {
+   "edited": 244,
+   "fit": 24,
+   "equal": 4
+  },
+  "more_natural": {
+   "edited": 244,
+   "fit": 14,
+   "equal": 14
+  },
+  "rejected": [
+   {
+    "item_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a@871#edit",
+    "hold_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a@871",
+    "accepted": false,
+    "same_pose": "yes",
+    "new_major_artefacts": [],
+    "closer": "fit",
+    "more_natural": "fit"
+   },
+   {
+    "item_id": "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-b@873#edit",
+    "hold_id": "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-b@873",
+    "accepted": false,
+    "same_pose": "yes",
+    "new_major_artefacts": [],
+    "closer": "fit",
+    "more_natural": "fit"
+   },
+   {
+    "item_id": "220923_Dolphin_Plank_Pose_or_Makara_Adho_Mukha_Svanasana_-a@490#edit",
+    "hold_id": "220923_Dolphin_Plank_Pose_or_Makara_Adho_Mukha_Svanasana_-a@490",
+    "accepted": false,
+    "same_pose": "yes",
+    "new_major_artefacts": [],
+    "closer": "fit",
+    "more_natural": "equal"
+   },
+   {
+    "item_id": "220923_Tree_Pose_or_Vrksasana_-b@542#edit",
+    "hold_id": "220923_Tree_Pose_or_Vrksasana_-b@542",
+    "accepted": false,
+    "same_pose": "yes",
+    "new_major_artefacts": [],
+    "closer": "fit",
+    "more_natural": "fit"
+   },
+   {
+    "item_id": "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-c@1554#edit",
+    "hold_id": "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-c@1554",
+    "accepted": false,
+    "same_pose": "yes",
+    "new_major_artefacts": [],
+    "closer": "fit",
+    "more_natural": "equal"
+   },
+   {
+    "item_id": "220926_Plow_Pose_or_Halasana_-b@1646#edit",
+    "hold_id": "220926_Plow_Pose_or_Halasana_-b@1646",
+    "accepted": false,
+    "same_pose": "yes",
+    "new_major_artefacts": [],
+    "closer": "fit",
+    "more_natural": "fit"
+   },
+   {
+    "item_id": "220926_Eagle_Pose_or_Garudasana_-a@700#edit",
+    "hold_id": "220926_Eagle_Pose_or_Garudasana_-a@700",
+    "accepted": false,
+    "same_pose": "yes",
+    "new_major_artefacts": [],
+    "closer": "fit",
+    "more_natural": "fit"
+   },
+   {
+    "item_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-b@1230#edit",
+    "hold_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-b@1230",
+    "accepted": false,
+    "same_pose": "yes",
+    "new_major_artefacts": [],
+    "closer": "fit",
+    "more_natural": "equal"
+   },
+   {
+    "item_id": "220926_Eagle_Pose_or_Garudasana_-a@434#edit",
+    "hold_id": "220926_Eagle_Pose_or_Garudasana_-a@434",
+    "accepted": false,
+    "same_pose": "yes",
+    "new_major_artefacts": [],
+    "closer": "fit",
+    "more_natural": "fit"
+   },
+   {
+    "item_id": "220926_Lord_of_the_Dance_Pose_or_Natarajasana_-a@962#edit",
+    "hold_id": "220926_Lord_of_the_Dance_Pose_or_Natarajasana_-a@962",
+    "accepted": false,
+    "same_pose": "yes",
+    "new_major_artefacts": [],
+    "closer": "fit",
+    "more_natural": "fit"
+   },
+   {
+    "item_id": "220923_Tree_Pose_or_Vrksasana_-a@804#edit",
+    "hold_id": "220923_Tree_Pose_or_Vrksasana_-a@804",
+    "accepted": false,
+    "same_pose": "yes",
+    "new_major_artefacts": [],
+    "closer": "fit",
+    "more_natural": "fit"
+   },
+   {
+    "item_id": "220926_Eagle_Pose_or_Garudasana_-a@800#edit",
+    "hold_id": "220926_Eagle_Pose_or_Garudasana_-a@800",
+    "accepted": false,
+    "same_pose": "yes",
+    "new_major_artefacts": [],
+    "closer": "fit",
+    "more_natural": "fit"
+   },
+   {
+    "item_id": "220923_Tree_Pose_or_Vrksasana_-a@993#edit",
+    "hold_id": "220923_Tree_Pose_or_Vrksasana_-a@993",
+    "accepted": false,
+    "same_pose": "yes",
+    "new_major_artefacts": [],
+    "closer": "fit",
+    "more_natural": "edited"
+   },
+   {
+    "item_id": "220923_Side_Plank_Pose_or_Vasisthasana_-b@956#edit",
+    "hold_id": "220923_Side_Plank_Pose_or_Vasisthasana_-b@956",
+    "accepted": false,
+    "same_pose": "yes",
+    "new_major_artefacts": [],
+    "closer": "fit",
+    "more_natural": "fit"
+   },
+   {
+    "item_id": "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-b@1045#edit",
+    "hold_id": "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-b@1045",
+    "accepted": false,
+    "same_pose": "yes",
+    "new_major_artefacts": [],
+    "closer": "fit",
+    "more_natural": "equal"
+   },
+   {
+    "item_id": "220926_Warrior_III_Pose_or_Virabhadrasana_III_-a@947#edit",
+    "hold_id": "220926_Warrior_III_Pose_or_Virabhadrasana_III_-a@947",
+    "accepted": false,
+    "same_pose": "yes",
+    "new_major_artefacts": [],
+    "closer": "fit",
+    "more_natural": "equal"
+   },
+   {
+    "item_id": "220923_Bridge_Pose_or_Setu_Bandha_Sarvangasana_-a@848#edit",
+    "hold_id": "220923_Bridge_Pose_or_Setu_Bandha_Sarvangasana_-a@848",
+    "accepted": false,
+    "same_pose": "yes",
+    "new_major_artefacts": [],
+    "closer": "fit",
+    "more_natural": "fit"
+   },
+   {
+    "item_id": "220923_Bridge_Pose_or_Setu_Bandha_Sarvangasana_-a@652#edit",
+    "hold_id": "220923_Bridge_Pose_or_Setu_Bandha_Sarvangasana_-a@652",
+    "accepted": false,
+    "same_pose": "yes",
+    "new_major_artefacts": [],
+    "closer": "fit",
+    "more_natural": "equal"
+   },
+   {
+    "item_id": "220926_Upward_Plank_Pose_or_Purvottanasana_-a@679#edit",
+    "hold_id": "220926_Upward_Plank_Pose_or_Purvottanasana_-a@679",
+    "accepted": false,
+    "same_pose": "yes",
+    "new_major_artefacts": [],
+    "closer": "fit",
+    "more_natural": "equal"
+   },
+   {
+    "item_id": "220923_Side_Plank_Pose_or_Vasisthasana_-a@879#edit",
+    "hold_id": "220923_Side_Plank_Pose_or_Vasisthasana_-a@879",
+    "accepted": false,
+    "same_pose": "yes",
+    "new_major_artefacts": [],
+    "closer": "fit",
+    "more_natural": "fit"
+   },
+   {
+    "item_id": "220926_Plow_Pose_or_Halasana_-b@1644#edit",
+    "hold_id": "220926_Plow_Pose_or_Halasana_-b@1644",
+    "accepted": false,
+    "same_pose": "yes",
+    "new_major_artefacts": [],
+    "closer": "fit",
+    "more_natural": "fit"
+   },
+   {
+    "item_id": "220923_Extended_Revolved_Side_Angle_Pose_or_Utthita_Parsvakonasana_-a@570#edit",
+    "hold_id": "220923_Extended_Revolved_Side_Angle_Pose_or_Utthita_Parsvakonasana_-a@570",
+    "accepted": false,
+    "same_pose": "yes",
+    "new_major_artefacts": [],
+    "closer": "fit",
+    "more_natural": "edited"
+   },
+   {
+    "item_id": "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-d@1213#edit",
+    "hold_id": "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-d@1213",
+    "accepted": false,
+    "same_pose": "yes",
+    "new_major_artefacts": [],
+    "closer": "fit",
+    "more_natural": "equal"
+   },
+   {
+    "item_id": "220923_Bridge_Pose_or_Setu_Bandha_Sarvangasana_-a@1056#edit",
+    "hold_id": "220923_Bridge_Pose_or_Setu_Bandha_Sarvangasana_-a@1056",
+    "accepted": false,
+    "same_pose": "yes",
+    "new_major_artefacts": [],
+    "closer": "fit",
+    "more_natural": "fit"
+   }
+  ]
+ },
+ "verdicts": 386
+}

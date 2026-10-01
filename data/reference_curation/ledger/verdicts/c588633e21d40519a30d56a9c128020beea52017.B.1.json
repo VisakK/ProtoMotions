@@ -1,0 +1,363 @@
+{
+ "answer": {
+  "body_body": {
+   "answer": "listed",
+   "contacts": [
+    {
+     "certainty": "clear",
+     "panels": [
+      "1b",
+      "1d",
+      "2a"
+     ],
+     "part_a": "left foot",
+     "part_b": "right foot"
+    },
+    {
+     "certainty": "clear",
+     "panels": [
+      "1b",
+      "1d"
+     ],
+     "part_a": "left shin",
+     "part_b": "right shin"
+    },
+    {
+     "certainty": "clear",
+     "panels": [
+      "1b",
+      "1d"
+     ],
+     "part_a": "left thigh",
+     "part_b": "right thigh"
+    },
+    {
+     "certainty": "possible",
+     "panels": [
+      "1a",
+      "1c"
+     ],
+     "part_a": "left foot",
+     "part_b": "right shin"
+    }
+   ]
+  },
+  "discrepancies": [
+   {
+    "kind": "other",
+    "note": "Label lists left foot + right shin; the human's skin is about 5 cm apart. Only the avatar touches.",
+    "panels": [
+     "1a",
+     "1c"
+    ],
+    "part": "left foot"
+   },
+   {
+    "kind": "other",
+    "note": "Label lists right foot + left shin, but the skin and the avatar are both about 4 cm apart.",
+    "panels": [
+     "1a",
+     "1c"
+    ],
+    "part": "right foot"
+   },
+   {
+    "kind": "other",
+    "note": "The thighs touch in the skin and the avatar, but the label leaves this pair out.",
+    "panels": [
+     "1b",
+     "1d"
+    ],
+    "part": "left thigh"
+   },
+   {
+    "kind": "other",
+    "note": "Label names Parsva Bakasana; the performed pose is a tripod headstand.",
+    "panels": [
+     "1a",
+     "4c"
+    ],
+    "part": "head"
+   }
+  ],
+  "floor": {
+   "head": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "2b",
+     "1a"
+    ]
+   },
+   "left foot": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "left forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3b",
+     "2b"
+    ]
+   },
+   "left hand": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3b",
+     "2b"
+    ]
+   },
+   "left shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "1b"
+    ]
+   },
+   "left thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "1b"
+    ]
+   },
+   "left upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "3b"
+    ]
+   },
+   "pelvis": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "right foot": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "right forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3c",
+     "3a"
+    ]
+   },
+   "right hand": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3c",
+     "3a"
+    ]
+   },
+   "right shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "1b"
+    ]
+   },
+   "right thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1b",
+     "1d"
+    ]
+   },
+   "right upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3c",
+     "3a"
+    ]
+   },
+   "torso": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "3a"
+    ]
+   }
+  },
+  "implausible": [],
+  "pose": {
+   "candidates": [
+    {
+     "confidence": "high",
+     "name": "Tripod Headstand (Salamba Sirsasana II)"
+    },
+    {
+     "confidence": "low",
+     "name": "Headstand transition from Parsva Bakasana"
+    }
+   ],
+   "description": "Inverted on head and both hands in a tripod. Head on the floor ahead of the hands; hips stacked high above the head. Forearms vertical, upper arms roughly horizontal, elbows bent about 90 degrees. Both legs extended upward together, slightly tilted off vertical, feet together at the top."
+  },
+  "repair": {
+   "kinds": [],
+   "needed": "no",
+   "note": "Avatar floor contacts match the human. The foot-shin brush is minor and only in the avatar."
+  },
+  "roles": [
+   {
+    "note": "Feet together is usual in a headstand but not required.",
+    "panels": [
+     "1b",
+     "2a"
+    ],
+    "part_a": "left foot",
+    "part_b": "right foot",
+    "role": "allowed"
+   },
+   {
+    "note": "Only the avatar touches; the human's skin is apart.",
+    "panels": [
+     "1a",
+     "1c"
+    ],
+    "part_a": "left foot",
+    "part_b": "right shin",
+    "role": "incidental"
+   },
+   {
+    "note": "Neither the human nor the avatar touches.",
+    "panels": [
+     "1a",
+     "1c"
+    ],
+    "part_a": "right foot",
+    "part_b": "left shin",
+    "role": "incidental"
+   },
+   {
+    "note": "Legs held together; the pose permits this but does not need it.",
+    "panels": [
+     "1b",
+     "1d"
+    ],
+    "part_a": "left shin",
+    "part_b": "right shin",
+    "role": "allowed"
+   },
+   {
+    "note": "Legs held together; the pose permits this but does not need it.",
+    "panels": [
+     "1b",
+     "1d"
+    ],
+    "part_a": "left thigh",
+    "part_b": "right thigh",
+    "role": "allowed"
+   }
+  ],
+  "timing": {
+   "better_panel": "",
+   "end": "label",
+   "main_moment": "keep",
+   "note": "Label and capture windows are identical. In 4c the legs are fully up and head and hands are settled.",
+   "start": "label"
+  },
+  "variant": {
+   "matches_label": "no",
+   "note": "This is a tripod headstand with straight legs up. There is no twisted knees-on-arm side crow balance, and the head is on the floor."
+  }
+ },
+ "audit_id": "holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.audit_v2.calibrated.9278736bb1",
+ "cost_usd": 0.2168872,
+ "duration_s": 34.28,
+ "errors": [],
+ "frame_hold": 702,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-b@702",
+ "inputs": {},
+ "item_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-b@702#B4",
+ "n": 1,
+ "num_turns": 7,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_v4/c588633e21d40519a30d56a9c128020beea52017",
+  "images": {
+   "img_1.png": "14ebd0607bb9f56e87a9b4b08cd04a9f7ef107fc4945fbb11f94dcc25d399993",
+   "img_2.png": "fda5a340df6629299a0c4a79dac7fafac7fecbcb2797cc975a0e68e41823113e",
+   "img_3.png": "3748d7375deb769e4b67900be6ad28cfd13b9a0038a6b36b44d38d8ead671665",
+   "img_4.png": "5f9b4bd45e1e58ca02ba81c79ed1dc629e13af2f58f13b7f92e1ff2d811c3b59"
+  },
+  "packet_json_sha256": "707967800ce98f1bd54d0b89383b71336de772890f3d4d74138aa3495289d7fc"
+ },
+ "packet_id": "c588633e21d40519a30d56a9c128020beea52017",
+ "pass": "B",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_b.md",
+  "sha256": "077dd51bd3c86104e2579843cb3162adaf5e3892192e7634aa4712e2274df649"
+ },
+ "purpose": "pose_role",
+ "render_v": "render_v4",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "5f537c5cd7b2019f",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_b.json",
+  "sha256": "0c8ebcc47c25a92ae60dea2083cdea7b465230a6702cd4fc11c2b7b6bb6eae8d"
+ },
+ "schema_version": 1,
+ "session_id": "883c0f65-f78a-42fa-aeaf-d665caf116b7",
+ "started_utc": "2026-10-01T16:47:15+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-b",
+ "stratum": null,
+ "usage": {
+  "cache_creation_input_tokens": 16884,
+  "cache_read_input_tokens": 43956,
+  "input_tokens": 6,
+  "output_tokens": 3650,
+  "thinking_tokens": 1292
+ },
+ "warnings": []
+}

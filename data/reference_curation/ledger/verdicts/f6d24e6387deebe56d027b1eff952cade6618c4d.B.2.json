@@ -1,0 +1,356 @@
+{
+ "answer": {
+  "body_body": {
+   "answer": "listed",
+   "contacts": [
+    {
+     "certainty": "clear",
+     "panels": [
+      "3c",
+      "1b",
+      "2a"
+     ],
+     "part_a": "right thigh",
+     "part_b": "right upper arm"
+    },
+    {
+     "certainty": "possible",
+     "panels": [
+      "3c",
+      "1b"
+     ],
+     "part_a": "right thigh",
+     "part_b": "right forearm"
+    }
+   ]
+  },
+  "discrepancies": [
+   {
+    "kind": "other",
+    "note": "Label puts head on ground, but the head is clearly off the floor in avatar, markers and skin.",
+    "panels": [
+     "3a",
+     "1b",
+     "2b"
+    ],
+    "part": "head"
+   },
+   {
+    "kind": "other",
+    "note": "Human's left forearm touches torso and pelvis; the avatar's left arm is about 6 cm away.",
+    "panels": [
+     "3b",
+     "1c"
+    ],
+    "part": "left forearm"
+   },
+   {
+    "kind": "other",
+    "note": "Human's left upper arm touches the pelvis; the avatar leaves a gap of about 7 cm.",
+    "panels": [
+     "3b",
+     "1c"
+    ],
+    "part": "left upper arm"
+   }
+  ],
+  "floor": {
+   "head": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3a",
+     "1b",
+     "2b"
+    ]
+   },
+   "left foot": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "1d",
+     "2b"
+    ]
+   },
+   "left forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3b",
+     "1c"
+    ]
+   },
+   "left hand": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3b",
+     "1c"
+    ]
+   },
+   "left shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "left thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "left upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3b",
+     "1c"
+    ]
+   },
+   "pelvis": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "3b"
+    ]
+   },
+   "right foot": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b",
+     "3d"
+    ]
+   },
+   "right forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3c",
+     "1b"
+    ]
+   },
+   "right hand": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3c",
+     "1b"
+    ]
+   },
+   "right shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "right thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b",
+     "3c"
+    ]
+   },
+   "right upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3c",
+     "1b"
+    ]
+   },
+   "torso": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "3a",
+     "3b"
+    ]
+   }
+  },
+  "implausible": [
+   {
+    "kind": "self_penetration",
+    "note": "Avatar's right thigh slightly overlaps the right upper arm, a minor overlap of a few millimetres.",
+    "panels": [
+     "3c"
+    ],
+    "parts": [
+     "right thigh",
+     "right upper arm"
+    ]
+   }
+  ],
+  "pose": {
+   "candidates": [
+    {
+     "confidence": "high",
+     "name": "Eka Pada Koundinyasana II"
+    },
+    {
+     "confidence": "low",
+     "name": "Eka Pada Koundinyasana I"
+    },
+    {
+     "confidence": "low",
+     "name": "Eka Pada Bakasana II"
+    }
+   ],
+   "description": "Only both hands touch the floor, bent elbows under the trunk. Head is forward of and lower than the hips, held off the floor. The right leg reaches forward and out to the side, with the right thigh resting on the right upper arm. The left leg extends straight back and is lifted, the left foot well off the floor."
+  },
+  "repair": {
+   "kinds": [
+    "pose_mismatch"
+   ],
+   "needed": "yes",
+   "note": "Bring the avatar's left arm in so it touches the torso and pelvis, as the human's does. The floor contacts already match."
+  },
+  "roles": [
+   {
+    "note": "Front thigh resting on the same-side upper arm defines Koundinyasana II.",
+    "panels": [
+     "3c",
+     "2a"
+    ],
+    "part_a": "right thigh",
+    "part_b": "right upper arm",
+    "role": "required_touch"
+   },
+   {
+    "note": "Thigh also brushes the forearm near the elbow; the pose permits it.",
+    "panels": [
+     "3c"
+    ],
+    "part_a": "right thigh",
+    "part_b": "right forearm",
+    "role": "allowed"
+   },
+   {
+    "note": "Human rests the hip on the left elbow shelf; the avatar has a gap.",
+    "panels": [
+     "3b"
+    ],
+    "part_a": "pelvis",
+    "part_b": "left upper arm",
+    "role": "allowed"
+   },
+   {
+    "note": "Human's left elbow shelf supports the hip; the avatar has a gap.",
+    "panels": [
+     "3b"
+    ],
+    "part_a": "pelvis",
+    "part_b": "left forearm",
+    "role": "allowed"
+   },
+   {
+    "note": "Human's torso rests on the left elbow; the avatar does not touch.",
+    "panels": [
+     "3b",
+     "1c"
+    ],
+    "part_a": "torso",
+    "part_b": "left forearm",
+    "role": "allowed"
+   }
+  ],
+  "timing": {
+   "better_panel": "",
+   "end": "capture",
+   "main_moment": "keep",
+   "note": "At the label's start (994) the left foot is still down; the capture starts at 998. The ends match. 4b is fully formed.",
+   "start": "capture"
+  },
+  "variant": {
+   "matches_label": "yes",
+   "note": ""
+  }
+ },
+ "audit_id": "holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.audit_v2.calibrated.9278736bb1",
+ "cost_usd": 0.2232946,
+ "duration_s": 32.04,
+ "errors": [],
+ "frame_hold": 1060,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-b@1060",
+ "inputs": {},
+ "item_id": "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-b@1060#B4",
+ "n": 2,
+ "num_turns": 7,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_v4/f6d24e6387deebe56d027b1eff952cade6618c4d",
+  "images": {
+   "img_1.png": "d3a9ea481e51b3fde1f275ef37a57265da0bb3c7009446b6f5ae252506ccef50",
+   "img_2.png": "967cf058c39448b125ed3f1753b65534aa4ddd59cfbc469138375b31a4d827ec",
+   "img_3.png": "1edf035be7e2ffe1adb30c94c4d0ce42f03bca1bda3b76e081029bf690b778fd",
+   "img_4.png": "aa117b06e990cbfbfc7d97b7c801b409461aea47b4a534901015762c555ae50f"
+  },
+  "packet_json_sha256": "535f6b8e89f767f1f8e5774bf43f332945cdc19a16832e1a375a16e5c856d341"
+ },
+ "packet_id": "f6d24e6387deebe56d027b1eff952cade6618c4d",
+ "pass": "B",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_b.md",
+  "sha256": "077dd51bd3c86104e2579843cb3162adaf5e3892192e7634aa4712e2274df649"
+ },
+ "purpose": "b6",
+ "render_v": "render_v4",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "5f537c5cd7b2019f",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_b.json",
+  "sha256": "0c8ebcc47c25a92ae60dea2083cdea7b465230a6702cd4fc11c2b7b6bb6eae8d"
+ },
+ "schema_version": 1,
+ "session_id": "b09a0d8c-dc05-4503-9401-914609e5b9d2",
+ "started_utc": "2026-10-01T16:39:18+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-b",
+ "stratum": null,
+ "usage": {
+  "cache_creation_input_tokens": 17987,
+  "cache_read_input_tokens": 44173,
+  "input_tokens": 6,
+  "output_tokens": 3527,
+  "thinking_tokens": 1140
+ },
+ "warnings": []
+}

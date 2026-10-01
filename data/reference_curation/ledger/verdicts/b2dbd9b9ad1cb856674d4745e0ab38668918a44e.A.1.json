@@ -1,0 +1,306 @@
+{
+ "answer": {
+  "body_body": {
+   "answer": "listed",
+   "contacts": [
+    {
+     "certainty": "possible",
+     "panels": [
+      "3c",
+      "1d"
+     ],
+     "part_a": "left hand",
+     "part_b": "torso"
+    },
+    {
+     "certainty": "possible",
+     "panels": [
+      "3d",
+      "1d"
+     ],
+     "part_a": "right hand",
+     "part_b": "torso"
+    },
+    {
+     "certainty": "possible",
+     "panels": [
+      "1b",
+      "3b"
+     ],
+     "part_a": "left foot",
+     "part_b": "right foot"
+    }
+   ]
+  },
+  "discrepancies": [
+   {
+    "kind": "avatar_off_floor_markers_on_floor",
+    "note": "Avatar head has a short drop line; lowest head markers sit at floor level.",
+    "panels": [
+     "3a",
+     "2b"
+    ],
+    "part": "head"
+   },
+   {
+    "kind": "avatar_off_floor_markers_on_floor",
+    "note": "Grey drop line under the upper back; torso markers lie at floor level.",
+    "panels": [
+     "3a",
+     "3c",
+     "1d"
+    ],
+    "part": "torso"
+   },
+   {
+    "kind": "avatar_off_floor_markers_on_floor",
+    "note": "Foot box has a short drop line; toe markers are at floor level.",
+    "panels": [
+     "3b",
+     "1b"
+    ],
+    "part": "left foot"
+   },
+   {
+    "kind": "avatar_off_floor_markers_on_floor",
+    "note": "Foot box has a short drop line; toe markers are at floor level.",
+    "panels": [
+     "3b",
+     "1b"
+    ],
+    "part": "right foot"
+   },
+   {
+    "kind": "avatar_off_floor_markers_on_floor",
+    "note": "Light orange drop line under the elbow end; elbow markers sit near the floor.",
+    "panels": [
+     "3d",
+     "1d"
+    ],
+    "part": "right forearm"
+   }
+  ],
+  "floor": {
+   "head": {
+    "avatar": "off_floor",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "2b"
+    ]
+   },
+   "left foot": {
+    "avatar": "off_floor",
+    "markers": "touching",
+    "panels": [
+     "3b",
+     "1b",
+     "2b"
+    ]
+   },
+   "left forearm": {
+    "avatar": "cannot_tell",
+    "markers": "touching",
+    "panels": [
+     "3c",
+     "1d"
+    ]
+   },
+   "left hand": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3c",
+     "1d",
+     "2b"
+    ]
+   },
+   "left shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b",
+     "3c"
+    ]
+   },
+   "left thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "left upper arm": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3c",
+     "3a",
+     "2b"
+    ]
+   },
+   "pelvis": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "right foot": {
+    "avatar": "off_floor",
+    "markers": "touching",
+    "panels": [
+     "3b",
+     "1b",
+     "2b"
+    ]
+   },
+   "right forearm": {
+    "avatar": "off_floor",
+    "markers": "touching",
+    "panels": [
+     "3d",
+     "1d",
+     "3c"
+    ]
+   },
+   "right hand": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3d",
+     "1d"
+    ]
+   },
+   "right shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1c",
+     "2b",
+     "3d"
+    ]
+   },
+   "right thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1c",
+     "2b"
+    ]
+   },
+   "right upper arm": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3d",
+     "1c"
+    ]
+   },
+   "torso": {
+    "avatar": "off_floor",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "3c",
+     "1d"
+    ]
+   }
+  },
+  "implausible": [],
+  "pose": {
+   "candidates": [
+    {
+     "confidence": "high",
+     "name": "Halasana (Plow pose)"
+    },
+    {
+     "confidence": "low",
+     "name": "Salamba Sarvangasana transition"
+    },
+    {
+     "confidence": "low",
+     "name": "Karnapidasana"
+    }
+   ],
+   "description": "Inverted: upper arms lie flat on the floor, elbows bent with forearms vertical and hands up supporting the back. Upper back and head are at or near the floor; the pelvis is high above the shoulders, so the head is below the hips. Both legs are straight and reach over the head, with the toes of both feet down beyond the head."
+  }
+ },
+ "audit_id": "holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.audit_v2.calibrated.9278736bb1",
+ "cost_usd": 0.21616880000000002,
+ "duration_s": 72.06,
+ "errors": [],
+ "frame_hold": 601,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Plow_Pose_or_Halasana_-a@571",
+ "inputs": {},
+ "item_id": "220923_Plow_Pose_or_Halasana_-a@571#A4:fit",
+ "n": 1,
+ "num_turns": 7,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_v4/b2dbd9b9ad1cb856674d4745e0ab38668918a44e",
+  "images": {
+   "img_1.png": "3617176db5f5cea3bc65dc0a15392835e6529f723d98fd419a59c0805d1fbff0",
+   "img_2.png": "d0750a3adb01a4bfe0d8cb96e03e633946fd6d30f2a46e481036f8f8a11f427a",
+   "img_3.png": "1d7f355205c8b74130eb7b7349d56508161414f4385e8a8e295567ad7423d92e",
+   "img_4.png": "599be7861e92b322047cf8ab8d2305d162c6ad0ed59865a26476dd5da5c949fe"
+  },
+  "packet_json_sha256": "2e64e58cbc8cf4e4eb392410c0878666b6d64a52098445996d0065bff933e18c"
+ },
+ "packet_id": "b2dbd9b9ad1cb856674d4745e0ab38668918a44e",
+ "pass": "A",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_a.md",
+  "sha256": "bae5cfe8420cee596fc188c14966536b354df29210c1e9a94384c925aab70510"
+ },
+ "purpose": "calibration",
+ "render_v": "render_v4",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "5de359f0431719d8",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_a.json",
+  "sha256": "5a05ec7b10cce5f545b813c390820a81bbbde96259cc00318df7ec618475ff9d"
+ },
+ "schema_version": 1,
+ "session_id": "1c58911f-d34e-4093-92dd-27b9d86ae09c",
+ "started_utc": "2026-10-01T16:13:46+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Plow_Pose_or_Halasana_-a",
+ "stratum": "inversion",
+ "usage": {
+  "cache_creation_input_tokens": 8908,
+  "cache_read_input_tokens": 26104,
+  "input_tokens": 6,
+  "output_tokens": 6983,
+  "thinking_tokens": 5066
+ },
+ "warnings": []
+}

@@ -1,0 +1,267 @@
+{
+ "answer": {
+  "body_body": {
+   "answer": "listed",
+   "contacts": [
+    {
+     "certainty": "clear",
+     "panels": [
+      "1a",
+      "1c",
+      "2b",
+      "3a"
+     ],
+     "part_a": "left thigh",
+     "part_b": "left forearm"
+    }
+   ]
+  },
+  "discrepancies": [],
+  "floor": {
+   "head": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "left foot": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "2b",
+     "1a"
+    ]
+   },
+   "left forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "1c"
+    ]
+   },
+   "left hand": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "3a",
+     "2b"
+    ]
+   },
+   "left shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3a",
+     "1c"
+    ]
+   },
+   "left thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1c",
+     "2b"
+    ]
+   },
+   "left upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "1c"
+    ]
+   },
+   "pelvis": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "right foot": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3b",
+     "2b",
+     "1d"
+    ]
+   },
+   "right forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "right hand": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "1c"
+    ]
+   },
+   "right shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3b",
+     "2b"
+    ]
+   },
+   "right thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "right upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "torso": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   }
+  },
+  "implausible": [],
+  "pose": {
+   "candidates": [
+    {
+     "confidence": "high",
+     "name": "Utthita Parsvakonasana, forearm on thigh"
+    },
+    {
+     "confidence": "high",
+     "name": "Extended Side Angle Pose"
+    },
+    {
+     "confidence": "low",
+     "name": "Warrior II transition to side angle"
+    }
+   ],
+   "description": "Wide lunge: only both feet on the floor. Left knee bent with the left foot flat in front; right leg straight behind, right foot down. Torso leans forward over the left thigh, head above and ahead of the hips. Left forearm rests on the left thigh with the hand hanging; right arm reaches forward and up past the head."
+  },
+  "repair": {
+   "kinds": [],
+   "needed": "no",
+   "note": "Avatar feet and the forearm-thigh contact match the human skin and markers."
+  },
+  "roles": [
+   {
+    "note": "Common forearm-on-thigh modification; the classic pose puts the hand on the floor.",
+    "panels": [
+     "1a",
+     "1c",
+     "2b"
+    ],
+    "part_a": "left thigh",
+    "part_b": "left forearm",
+    "role": "allowed"
+   }
+  ],
+  "timing": {
+   "better_panel": "",
+   "end": "label",
+   "main_moment": "keep",
+   "note": "Label and capture windows match. At the start the forearm is not yet on the thigh; the main moment shows the pose fully formed.",
+   "start": "label"
+  },
+  "variant": {
+   "matches_label": "variant",
+   "note": "Forearm rests on the bent-knee thigh instead of the hand on the floor; this is not the revolved form."
+  }
+ },
+ "audit_id": "holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.audit_v2.calibrated.9278736bb1",
+ "cost_usd": 0.1912186,
+ "duration_s": 28.49,
+ "errors": [],
+ "frame_hold": 376,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Extended_Revolved_Side_Angle_Pose_or_Utthita_Parsvakonasana_-b@376",
+ "inputs": {},
+ "item_id": "220923_Extended_Revolved_Side_Angle_Pose_or_Utthita_Parsvakonasana_-b@376#B4",
+ "n": 2,
+ "num_turns": 7,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_v4/571ebbfb659e97522c900c3b0238659cb2072e86",
+  "images": {
+   "img_1.png": "6bf971f7617d1b2289be1e9d87925b2b12746b29d6ad157bd6c11820f2ecefd9",
+   "img_2.png": "d2b22749d397b8a5a53a9d7daf6c5598938aec73852ab22c63ba971f716e91e5",
+   "img_3.png": "c9cb14577f1c25127c74e1d9751f7d4b2ab7d79c9f20ef4cf1505e186c4986f1",
+   "img_4.png": "b374194e7ccc134b30e47e8e98ef08c8d7e650e945a050a751f197b28c2ee630"
+  },
+  "packet_json_sha256": "819c64283ff94fee2e4979672e9f7a92707eab59cb0a9791c9f619fa4c3e109e"
+ },
+ "packet_id": "571ebbfb659e97522c900c3b0238659cb2072e86",
+ "pass": "B",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_b.md",
+  "sha256": "077dd51bd3c86104e2579843cb3162adaf5e3892192e7634aa4712e2274df649"
+ },
+ "purpose": "b6",
+ "render_v": "render_v4",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "5f537c5cd7b2019f",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_b.json",
+  "sha256": "0c8ebcc47c25a92ae60dea2083cdea7b465230a6702cd4fc11c2b7b6bb6eae8d"
+ },
+ "schema_version": 1,
+ "session_id": "7b801c08-376a-4575-922a-6e17c30b250f",
+ "started_utc": "2026-10-01T16:29:55+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Extended_Revolved_Side_Angle_Pose_or_Utthita_Parsvakonasana_-b",
+ "stratum": null,
+ "usage": {
+  "cache_creation_input_tokens": 15142,
+  "cache_read_input_tokens": 41993,
+  "input_tokens": 6,
+  "output_tokens": 3083,
+  "thinking_tokens": 1267
+ },
+ "warnings": []
+}

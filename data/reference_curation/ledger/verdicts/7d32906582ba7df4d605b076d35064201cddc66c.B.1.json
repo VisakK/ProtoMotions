@@ -1,0 +1,317 @@
+{
+ "answer": {
+  "body_body": {
+   "answer": "listed",
+   "contacts": [
+    {
+     "certainty": "clear",
+     "panels": [
+      "3a",
+      "2a"
+     ],
+     "part_a": "right foot",
+     "part_b": "left hand"
+    },
+    {
+     "certainty": "possible",
+     "panels": [
+      "3a"
+     ],
+     "part_a": "right foot",
+     "part_b": "left forearm"
+    },
+    {
+     "certainty": "possible",
+     "panels": [
+      "3a",
+      "1b"
+     ],
+     "part_a": "right shin",
+     "part_b": "left forearm"
+    }
+   ]
+  },
+  "discrepancies": [
+   {
+    "kind": "other",
+    "note": "label_ground leaves out the right foot. Avatar, markers, skin and mat all show it on the floor.",
+    "panels": [
+     "2b",
+     "3a"
+    ],
+    "part": "right foot"
+   },
+   {
+    "kind": "other",
+    "note": "Label lists right shin\u2013left forearm contact, but the human's skin gap is about 4 cm, so not touching.",
+    "panels": [
+     "3a"
+    ],
+    "part": "right shin"
+   }
+  ],
+  "floor": {
+   "head": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a",
+     "3a"
+    ]
+   },
+   "left foot": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "2b",
+     "3b",
+     "1a"
+    ]
+   },
+   "left forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "3a"
+    ]
+   },
+   "left hand": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "2b"
+    ]
+   },
+   "left shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "3b"
+    ]
+   },
+   "left thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b"
+    ]
+   },
+   "left upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "3a"
+    ]
+   },
+   "pelvis": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "right foot": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "2b",
+     "3a"
+    ]
+   },
+   "right forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "right hand": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "right shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "3a"
+    ]
+   },
+   "right thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b"
+    ]
+   },
+   "right upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "torso": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   }
+  },
+  "implausible": [],
+  "pose": {
+   "candidates": [
+    {
+     "confidence": "high",
+     "name": "Revolved Triangle Pose (Parivrtta Trikonasana)"
+    },
+    {
+     "confidence": "low",
+     "name": "Extended Triangle Pose (Utthita Trikonasana)"
+    },
+    {
+     "confidence": "low",
+     "name": "Revolved Side Angle Pose"
+    }
+   ],
+   "description": "Both feet and the left hand rest on the floor. Legs straight and wide apart, right foot forward, left foot back. Torso folds forward to horizontal and twists; head forward of the hips, slightly lower. Left hand is planted beside the right foot. The right arm points straight up."
+  },
+  "repair": {
+   "kinds": [],
+   "needed": "no",
+   "note": "Avatar's floor contacts and pose match the human. Only the labels need fixing."
+  },
+  "roles": [
+   {
+    "note": "Wrist end near the foot, skin about 2.5 cm apart; not part of the pose.",
+    "panels": [
+     "3a"
+    ],
+    "part_a": "right foot",
+    "part_b": "left forearm",
+    "role": "incidental"
+   },
+   {
+    "note": "Hand planted right next to the front foot; the pose allows touching but doesn't need it.",
+    "panels": [
+     "3a",
+     "2a"
+    ],
+    "part_a": "right foot",
+    "part_b": "left hand",
+    "role": "allowed"
+   },
+   {
+    "note": "Human skin not touching (about 4 cm gap); avatar nearly touches. Not required.",
+    "panels": [
+     "3a"
+    ],
+    "part_a": "right shin",
+    "part_b": "left forearm",
+    "role": "incidental"
+   }
+  ],
+  "timing": {
+   "better_panel": "",
+   "end": "capture",
+   "main_moment": "keep",
+   "note": "At 4a the hand barely bears load and the arm is still rising. Label and capture ends agree. 4d is fully formed.",
+   "start": "capture"
+  },
+  "variant": {
+   "matches_label": "yes",
+   "note": "Revolved triangle: left hand by the front right foot, right arm vertical. The label name fits that revolved form."
+  }
+ },
+ "audit_id": "holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.audit_v2.calibrated.9278736bb1",
+ "cost_usd": 0.21954479999999998,
+ "duration_s": 28.65,
+ "errors": [],
+ "frame_hold": 770,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Extended_Revolved_Triangle_Pose_or_Utthita_Trikonasana_-a@770",
+ "inputs": {},
+ "item_id": "220923_Extended_Revolved_Triangle_Pose_or_Utthita_Trikonasana_-a@770#B4",
+ "n": 1,
+ "num_turns": 7,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_v4/7d32906582ba7df4d605b076d35064201cddc66c",
+  "images": {
+   "img_1.png": "15101c35f668d9e3134c6fe52e51bcd170de043a941ac9cbbf3d0f08158bbfda",
+   "img_2.png": "f936d9ef1c1da4ef3ba7eb9843a9d2b9a77652dc296b7e2979c06a4a3b93b197",
+   "img_3.png": "f67956de17d029fc1a529a57e87118cfadb8852b7f538fb40f74aba23dbd31f1",
+   "img_4.png": "d4a32ed6a20aad5072482fdc3b2b7e15ad517fe1f45daab5c7cf4e80d82c288c"
+  },
+  "packet_json_sha256": "92718c5a18bf9ba7f652298f50c6f9e3b50fce600e6cf4b2665117f4eab91d32"
+ },
+ "packet_id": "7d32906582ba7df4d605b076d35064201cddc66c",
+ "pass": "B",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_b.md",
+  "sha256": "077dd51bd3c86104e2579843cb3162adaf5e3892192e7634aa4712e2274df649"
+ },
+ "purpose": "b6",
+ "render_v": "render_v4",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "5f537c5cd7b2019f",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_b.json",
+  "sha256": "0c8ebcc47c25a92ae60dea2083cdea7b465230a6702cd4fc11c2b7b6bb6eae8d"
+ },
+ "schema_version": 1,
+ "session_id": "cb03f3a0-62c1-4411-9b6b-a5e1fb317b1c",
+ "started_utc": "2026-10-01T16:30:24+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Extended_Revolved_Triangle_Pose_or_Utthita_Trikonasana_-a",
+ "stratum": null,
+ "usage": {
+  "cache_creation_input_tokens": 18850,
+  "cache_read_input_tokens": 40404,
+  "input_tokens": 6,
+  "output_tokens": 3032,
+  "thinking_tokens": 892
+ },
+ "warnings": [
+  "load word 'bears'",
+  "load word 'load'"
+ ]
+}

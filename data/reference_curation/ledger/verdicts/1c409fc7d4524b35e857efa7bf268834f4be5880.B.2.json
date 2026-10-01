@@ -1,0 +1,369 @@
+{
+ "answer": {
+  "body_body": {
+   "answer": "listed",
+   "contacts": [
+    {
+     "certainty": "clear",
+     "panels": [
+      "3a"
+     ],
+     "part_a": "left foot",
+     "part_b": "left hand"
+    },
+    {
+     "certainty": "clear",
+     "panels": [
+      "3a"
+     ],
+     "part_a": "left shin",
+     "part_b": "left hand"
+    },
+    {
+     "certainty": "clear",
+     "panels": [
+      "3a",
+      "1a"
+     ],
+     "part_a": "left shin",
+     "part_b": "left forearm"
+    },
+    {
+     "certainty": "possible",
+     "panels": [
+      "3a",
+      "1c"
+     ],
+     "part_a": "left shin",
+     "part_b": "left upper arm"
+    },
+    {
+     "certainty": "possible",
+     "panels": [
+      "3a",
+      "1c"
+     ],
+     "part_a": "left shin",
+     "part_b": "head"
+    }
+   ]
+  },
+  "discrepancies": [
+   {
+    "kind": "other",
+    "note": "Human torso touches the left thigh; the avatar's fold leaves a gap of about 5 cm.",
+    "panels": [
+     "1c",
+     "2b"
+    ],
+    "part": "left thigh"
+   },
+   {
+    "kind": "other",
+    "note": "Human head touches the left shin; the avatar's head sits about 2 cm away.",
+    "panels": [
+     "3a",
+     "1c"
+    ],
+    "part": "head"
+   },
+   {
+    "kind": "other",
+    "note": "Label lists left shin and left upper arm touching, but the skin shows a 3 cm gap.",
+    "panels": [
+     "3a",
+     "1a"
+    ],
+    "part": "left upper arm"
+   }
+  ],
+  "floor": {
+   "head": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3a",
+     "3b"
+    ]
+   },
+   "left foot": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "2b"
+    ]
+   },
+   "left forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3a",
+     "2b"
+    ]
+   },
+   "left hand": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3a",
+     "2b"
+    ]
+   },
+   "left shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3a",
+     "2b"
+    ]
+   },
+   "left thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "left upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3a",
+     "2b"
+    ]
+   },
+   "pelvis": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "right foot": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "right forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3b",
+     "2b"
+    ]
+   },
+   "right hand": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3b",
+     "2b"
+    ]
+   },
+   "right shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "right thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "right upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3b",
+     "2b"
+    ]
+   },
+   "torso": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   }
+  },
+  "implausible": [],
+  "pose": {
+   "candidates": [
+    {
+     "confidence": "high",
+     "name": "Standing Split (Urdhva Prasarita Eka Padasana)"
+    },
+    {
+     "confidence": "low",
+     "name": "Standing forward bend, one leg raised"
+    }
+   ],
+   "description": "Left foot and right hand on the floor. Deep forward fold with the head far below the hips, beside the left shin. Left standing leg straight; right leg raised almost vertical. Left hand grips the left ankle, just off the floor, with the forearm along the shin. Right arm reaches down; the right hand is flat on the floor in front."
+  },
+  "repair": {
+   "kinds": [
+    "pose_mismatch"
+   ],
+   "needed": "yes",
+   "note": "Avatar's fold is too shallow: torso and thigh, and head and shin, have gaps where the skin touches."
+  },
+  "roles": [
+   {
+    "note": "Hand grips the standing ankle; a common way to do the pose.",
+    "panels": [
+     "3a"
+    ],
+    "part_a": "left foot",
+    "part_b": "left hand",
+    "role": "allowed"
+   },
+   {
+    "note": "Head toward the standing shin in a deep fold; skin touches.",
+    "panels": [
+     "3a",
+     "1c"
+    ],
+    "part_a": "left shin",
+    "part_b": "head",
+    "role": "allowed"
+   },
+   {
+    "note": "The human did not touch here (3 cm skin gap); this is not part of the pose.",
+    "panels": [
+     "3a",
+     "1c"
+    ],
+    "part_a": "left shin",
+    "part_b": "left upper arm",
+    "role": "incidental"
+   },
+   {
+    "note": "Forearm lies along the shin while the hand grips the ankle.",
+    "panels": [
+     "3a",
+     "1a"
+    ],
+    "part_a": "left shin",
+    "part_b": "left forearm",
+    "role": "allowed"
+   },
+   {
+    "note": "Hand holds the lower shin or ankle; a permitted variation.",
+    "panels": [
+     "3a"
+    ],
+    "part_a": "left shin",
+    "part_b": "left hand",
+    "role": "allowed"
+   },
+   {
+    "note": "Torso folded against the standing thigh; skin touches, avatar has a gap.",
+    "panels": [
+     "1c",
+     "2b"
+    ],
+    "part_a": "left thigh",
+    "part_b": "torso",
+    "role": "allowed"
+   }
+  ],
+  "timing": {
+   "better_panel": "",
+   "end": "label",
+   "main_moment": "keep",
+   "note": "Pose is formed at 4b (capture start) and still held at 4d (label end); 4a is still the entry.",
+   "start": "capture"
+  },
+  "variant": {
+   "matches_label": "yes",
+   "note": ""
+  }
+ },
+ "audit_id": "holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.audit_v2.calibrated.9278736bb1",
+ "cost_usd": 0.22665159999999998,
+ "duration_s": 35.44,
+ "errors": [],
+ "frame_hold": 583,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Standing_Split_pose_or_Urdhva_Prasarita_Eka_Padasana_-b@583",
+ "inputs": {},
+ "item_id": "220923_Standing_Split_pose_or_Urdhva_Prasarita_Eka_Padasana_-b@583#B4",
+ "n": 2,
+ "num_turns": 7,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_v4/1c409fc7d4524b35e857efa7bf268834f4be5880",
+  "images": {
+   "img_1.png": "641a1d9acfa2d60f0a38a335ab502d6c73d4f5314912f21b842b5bc06383ab60",
+   "img_2.png": "e13c0f74b89a3c130fbcfd25dd34b1509b4ccbd547fb71367c81a6e404f81965",
+   "img_3.png": "472718734afda75d305b9b36aa9560fe0ed15c71d25c74ad78074ed7624486cd",
+   "img_4.png": "afca3a10fb329bbe89d8fb8ef499f6640cc17ba804e3e756f11000e0544d292f"
+  },
+  "packet_json_sha256": "fdb63d8ffe13debcbb2b5a0d7d1b2a5684b5fa88e3d658626a557844aadd5bcf"
+ },
+ "packet_id": "1c409fc7d4524b35e857efa7bf268834f4be5880",
+ "pass": "B",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_b.md",
+  "sha256": "077dd51bd3c86104e2579843cb3162adaf5e3892192e7634aa4712e2274df649"
+ },
+ "purpose": "b6",
+ "render_v": "render_v4",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "5f537c5cd7b2019f",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_b.json",
+  "sha256": "0c8ebcc47c25a92ae60dea2083cdea7b465230a6702cd4fc11c2b7b6bb6eae8d"
+ },
+ "schema_version": 1,
+ "session_id": "011f1074-ace2-45c9-aba6-bff1ac9df2e7",
+ "started_utc": "2026-10-01T16:52:51+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Standing_Split_pose_or_Urdhva_Prasarita_Eka_Padasana_-b",
+ "stratum": null,
+ "usage": {
+  "cache_creation_input_tokens": 17646,
+  "cache_read_input_tokens": 44498,
+  "input_tokens": 6,
+  "output_tokens": 3828,
+  "thinking_tokens": 1409
+ },
+ "warnings": []
+}

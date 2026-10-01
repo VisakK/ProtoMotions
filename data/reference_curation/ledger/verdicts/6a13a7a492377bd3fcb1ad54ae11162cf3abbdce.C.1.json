@@ -1,0 +1,118 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "4b",
+     "3d",
+     "2b",
+     "2d"
+    ],
+    "part": "left foot",
+    "severity": "major"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "4d",
+     "3d",
+     "2b"
+    ],
+    "part": "right foot",
+    "severity": "major"
+   }
+  ],
+  "closer_to_human": "A",
+  "floating_parts": {
+   "A": [],
+   "B": [
+    "left foot",
+    "right foot"
+   ]
+  },
+  "more_natural": "A",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Same wide lunge with both feet on the floor, the torso bent over the front leg, and one arm reaching up and back. B is just the same shape lifted slightly off the floor."
+  },
+  "summary": "Both avatars hold the same lunge. A keeps both feet flat on the floor in line with the grey body. B's whole body sits several centimetres too high, so both feet hover with drop lines showing. This makes A closer to the human and more natural."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1188842,
+ "duration_s": 13.33,
+ "errors": [],
+ "frame_hold": 759,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220926_viparita_virabhadrasana_or_reverse_warrior_pose-a@759",
+ "inputs": {},
+ "item_id": "220926_viparita_virabhadrasana_or_reverse_warrior_pose-a@759#lift",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c2/6a13a7a492377bd3fcb1ad54ae11162cf3abbdce",
+  "images": {
+   "img_1.png": "6219a9a0c9cac8715d626c9ac3fda8343de473b4622d8df619cca823addac4d7",
+   "img_2.png": "4535b1fb60b1d38b676be29af63a2d4a3a51b4afb2d365aeb68f8748c29d8464",
+   "img_3.png": "1153fe87a68c40ec909d5ecece235a4a5a1a08b182b71fc09410e2f4d9eeffea",
+   "img_4.png": "e836bc09259519d83fae1acd1d748e27e2732114738efee2fda7ca8367acf642",
+   "img_5.png": "69250b9559ccbe1a64aff88f9d7df655afce734096e58a3b71b3a01d71d8a94e"
+  },
+  "packet_json_sha256": "6e8e1c0349c24f64646328f9072c69390afdb5cb901720533e3c750131676ece"
+ },
+ "packet_id": "6a13a7a492377bd3fcb1ad54ae11162cf3abbdce",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c2",
+ "render_v": "render_c2",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "240effae-81f7-4f47-84b5-dc255fc4d822",
+ "started_utc": "2026-10-01T17:11:29+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220926_viparita_virabhadrasana_or_reverse_warrior_pose-a",
+ "stratum": "lift",
+ "usage": {
+  "cache_creation_input_tokens": 11413,
+  "cache_read_input_tokens": 13581,
+  "input_tokens": 6,
+  "output_tokens": 1242,
+  "thinking_tokens": 189
+ },
+ "warnings": []
+}

@@ -1,0 +1,124 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1a",
+     "2a",
+     "3c",
+     "5c"
+    ],
+    "part": "torso",
+    "severity": "major"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "3c",
+     "1a"
+    ],
+    "part": "pelvis",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "4f",
+     "2d"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "B",
+  "floating_parts": {
+   "A": [],
+   "B": []
+  },
+  "more_natural": "B",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both kneel-arch on feet, forearms and head on the floor, with knees bent up high. A's back sits much lower and is more curled, but the floor contacts and limb layout are the same."
+  },
+  "summary": "The two avatars show the same pose. B follows the grey body's high arched back closely. A's torso and pelvis sag well below the grey back into a collapsed, tightly curled spine. Neither avatar has floor-contact gaps, and the only other difference is a slightly tilted right foot in B."
+ },
+ "audit_id": null,
+ "cost_usd": 0.133288,
+ "duration_s": 23.81,
+ "errors": [],
+ "frame_hold": 848,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Bridge_Pose_or_Setu_Bandha_Sarvangasana_-a@848",
+ "inputs": {},
+ "item_id": "220923_Bridge_Pose_or_Setu_Bandha_Sarvangasana_-a@848#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c2/e6925a1e66958a52ac307c81efddf5b53fa2c24e",
+  "images": {
+   "img_1.png": "86c024620ac52a2eee183d20951c44d5a19d29cfa6282786568b034d52e5bff8",
+   "img_2.png": "d20a63cbacd7db38996e6b98bc4a2f4ca8658613ffdf2527fd939d18580dbbe4",
+   "img_3.png": "32f0f53dd5b3fd75faca7a1046f9290899b302bad7532acde2fa0435b2fac8e8",
+   "img_4.png": "9d7bac2ffff29273126c8866449a6197762385bfe6d1b9ae4a64f7e6a9a6a980",
+   "img_5.png": "e07a1e81500d03bead790eaa7f4f9e2bdf4c867a75daece6e212965046eb757d"
+  },
+  "packet_json_sha256": "67baf73d0553532cf65c9f692da78fa7a662848db7517d22230978cd365bad1f"
+ },
+ "packet_id": "e6925a1e66958a52ac307c81efddf5b53fa2c24e",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c2",
+ "render_v": "render_c2",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "00501ac1-f8fb-4fbd-a13a-163b4cb2a90b",
+ "started_utc": "2026-10-01T17:16:29+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Bridge_Pose_or_Setu_Bandha_Sarvangasana_-a",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 12110,
+  "cache_read_input_tokens": 13620,
+  "input_tokens": 6,
+  "output_tokens": 1683,
+  "thinking_tokens": 590
+ },
+ "warnings": []
+}

@@ -1,0 +1,300 @@
+{
+ "answer": {
+  "body_body": {
+   "answer": "listed",
+   "contacts": []
+  },
+  "discrepancies": [
+   {
+    "kind": "other",
+    "note": "Human's head skin touches the left shin; the avatar's head stays about 2 cm from it.",
+    "panels": [
+     "1a",
+     "3a"
+    ],
+    "part": "head"
+   },
+   {
+    "kind": "other",
+    "note": "Human's torso skin touches the left thigh; the avatar leaves a gap of about 6 cm.",
+    "panels": [
+     "1a",
+     "1b"
+    ],
+    "part": "torso"
+   },
+   {
+    "kind": "other",
+    "note": "The human mesh marks head and left upper arm as touching; the avatar leaves a gap of about 4 cm.",
+    "panels": [
+     "3a",
+     "1c"
+    ],
+    "part": "left upper arm"
+   }
+  ],
+  "floor": {
+   "head": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3a",
+     "3b",
+     "2b"
+    ]
+   },
+   "left foot": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "2b"
+    ]
+   },
+   "left forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3a",
+     "2b"
+    ]
+   },
+   "left hand": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "1c",
+     "1d"
+    ]
+   },
+   "left shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3a",
+     "2b"
+    ]
+   },
+   "left thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "left upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3a",
+     "2b"
+    ]
+   },
+   "pelvis": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "right foot": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b",
+     "4c"
+    ]
+   },
+   "right forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3b",
+     "2b"
+    ]
+   },
+   "right hand": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3b",
+     "1c"
+    ]
+   },
+   "right shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "right thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "right upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3b",
+     "2b"
+    ]
+   },
+   "torso": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   }
+  },
+  "implausible": [],
+  "pose": {
+   "candidates": [
+    {
+     "confidence": "high",
+     "name": "Standing Split (Urdhva Prasarita Eka Padasana)"
+    },
+    {
+     "confidence": "low",
+     "name": "Standing forward fold with leg raised"
+    }
+   ],
+   "description": "Standing on the left foot with the left leg straight. The torso folds down so the head hangs below the hips, beside the left shin. Both hands are flat on the floor on either side of the standing foot, with the arms straight down. The right leg is raised almost vertical behind and above the body."
+  },
+  "repair": {
+   "kinds": [
+    "pose_mismatch"
+   ],
+   "needed": "yes",
+   "note": "The avatar's fold is slightly shallower than the human's: the head\u2013shin and torso\u2013thigh skin contacts are missing. Floor contacts match."
+  },
+  "roles": [
+   {
+    "note": "A deep fold brings the head to the shin; the pose does not need it.",
+    "panels": [
+     "1a",
+     "3a"
+    ],
+    "part_a": "left shin",
+    "part_b": "head",
+    "role": "allowed"
+   },
+   {
+    "note": "The chest rests on the thigh in a deep fold; the pose does not need it.",
+    "panels": [
+     "1a",
+     "1b"
+    ],
+    "part_a": "left thigh",
+    "part_b": "torso",
+    "role": "allowed"
+   },
+   {
+    "note": "The head brushes the arm next to it while the hands are down.",
+    "panels": [
+     "3a",
+     "1c"
+    ],
+    "part_a": "head",
+    "part_b": "left upper arm",
+    "role": "incidental"
+   }
+  ],
+  "timing": {
+   "better_panel": "",
+   "end": "label",
+   "main_moment": "keep",
+   "note": "The label and capture windows are the same. Panel 4c shows the leg at its highest with the contacts settled.",
+   "start": "label"
+  },
+  "variant": {
+   "matches_label": "yes",
+   "note": ""
+  }
+ },
+ "audit_id": "holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.audit_v2.calibrated.9278736bb1",
+ "cost_usd": 0.19941560000000003,
+ "duration_s": 28.06,
+ "errors": [],
+ "frame_hold": 540,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Standing_Split_pose_or_Urdhva_Prasarita_Eka_Padasana_-a@540",
+ "inputs": {},
+ "item_id": "220923_Standing_Split_pose_or_Urdhva_Prasarita_Eka_Padasana_-a@540#B4",
+ "n": 2,
+ "num_turns": 7,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_v4/4d63c6ad282e45376582af876970ad61af5c8c2a",
+  "images": {
+   "img_1.png": "c0407429fd5271984936449babc9a6d48a26469f0f64ee43ab39378be0f36a06",
+   "img_2.png": "bbd1f4fd44f911bb98118ca8eec4384befb06925328dd9465d9b2caab44445e5",
+   "img_3.png": "d972393d9fa1723e2d1339eddd1794efe42b10568391a76d48df9fa10819753a",
+   "img_4.png": "69fe92f243cfebdb300be0c74310b2262d5a503411bbba29069dbaacfd30d776"
+  },
+  "packet_json_sha256": "5137d10ff3f2c1863bdd447350c93360b3fa752fa98bb567454392b30f228a10"
+ },
+ "packet_id": "4d63c6ad282e45376582af876970ad61af5c8c2a",
+ "pass": "B",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_b.md",
+  "sha256": "077dd51bd3c86104e2579843cb3162adaf5e3892192e7634aa4712e2274df649"
+ },
+ "purpose": "b6",
+ "render_v": "render_v4",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "5f537c5cd7b2019f",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_b.json",
+  "sha256": "0c8ebcc47c25a92ae60dea2083cdea7b465230a6702cd4fc11c2b7b6bb6eae8d"
+ },
+ "schema_version": 1,
+ "session_id": "15a9583f-ced2-4651-98cc-b840852c9f8a",
+ "started_utc": "2026-10-01T16:52:37+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Standing_Split_pose_or_Urdhva_Prasarita_Eka_Padasana_-a",
+ "stratum": null,
+ "usage": {
+  "cache_creation_input_tokens": 16166,
+  "cache_read_input_tokens": 43018,
+  "input_tokens": 6,
+  "output_tokens": 3073,
+  "thinking_tokens": 920
+ },
+ "warnings": []
+}

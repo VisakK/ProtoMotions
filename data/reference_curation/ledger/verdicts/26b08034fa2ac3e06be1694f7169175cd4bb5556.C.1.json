@@ -1,0 +1,91 @@
+{
+ "answer": {
+  "artefacts": [],
+  "closer_to_human": "equal",
+  "floating_parts": {
+   "A": [],
+   "B": []
+  },
+  "more_natural": "equal",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both are inverted on head and forearms with clasped hands, legs straight up together; only tiny differences in leg spread and head position."
+  },
+  "summary": "A and B show the same pose and are almost identical. Both rest the head, forearms and hands on the floor and keep the legs straight up within the grey body. There are no drop lines and no clear defects, and the time strip is steady."
+ },
+ "audit_id": null,
+ "cost_usd": 0.11734699999999999,
+ "duration_s": 16.18,
+ "errors": [],
+ "frame_hold": 1051,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220926_Supported_Headstand_pose_or_Salamba_Sirsasana_-a@1051",
+ "inputs": {},
+ "item_id": "220926_Supported_Headstand_pose_or_Salamba_Sirsasana_-a@1051#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c2/26b08034fa2ac3e06be1694f7169175cd4bb5556",
+  "images": {
+   "img_1.png": "c9e57af0c7bb7f4bafadd03c4a52d34bce9979ea470b9915971fb4be18be941a",
+   "img_2.png": "c50f81bd493330e696c399a849242344cd1ad67c1acf8d792c75d031e7aa0673",
+   "img_3.png": "b22fafc3c04e432f98df10d4b3d11e9fab265469d94c60d15d0fcbe11851edb7",
+   "img_4.png": "c6139d6ebce6262eeefc1a030cb4b5c84659622bc1e9fd183bb5e6830c0b0f46",
+   "img_5.png": "d663c4a4f902520a839ab89ff5cac4973b08710316487bfb161159e97ea5d4a0"
+  },
+  "packet_json_sha256": "2999c019688eb5e84632ecbc10a2d7eb5b627b300cbdbd76196e8d0fcd2ed55d"
+ },
+ "packet_id": "26b08034fa2ac3e06be1694f7169175cd4bb5556",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c2",
+ "render_v": "render_c2",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "05f2dcb3-0d49-4d96-b9f2-e56c77e26a8b",
+ "started_utc": "2026-10-01T17:37:08+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220926_Supported_Headstand_pose_or_Salamba_Sirsasana_-a",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 10687,
+  "cache_read_input_tokens": 13535,
+  "input_tokens": 6,
+  "output_tokens": 1456,
+  "thinking_tokens": 538
+ },
+ "warnings": []
+}

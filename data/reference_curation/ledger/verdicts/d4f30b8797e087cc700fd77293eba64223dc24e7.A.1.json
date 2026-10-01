@@ -1,0 +1,253 @@
+{
+ "answer": {
+  "body_body": {
+   "answer": "listed",
+   "contacts": []
+  },
+  "discrepancies": [
+   {
+    "kind": "avatar_off_floor_markers_on_floor",
+    "note": "Avatar foot has a drop line with a small gap, but its lowest markers sit at floor level.",
+    "panels": [
+     "3a",
+     "3b"
+    ],
+    "part": "left foot"
+   },
+   {
+    "kind": "avatar_off_floor_markers_on_floor",
+    "note": "Avatar foot has a drop line with a small gap, but its lowest markers sit at floor level.",
+    "panels": [
+     "3a",
+     "3b"
+    ],
+    "part": "right foot"
+   }
+  ],
+  "floor": {
+   "head": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "2b",
+     "3a",
+     "3b"
+    ]
+   },
+   "left foot": {
+    "avatar": "off_floor",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "3b",
+     "1b",
+     "2b"
+    ]
+   },
+   "left forearm": {
+    "avatar": "off_floor",
+    "markers": "cannot_tell",
+    "panels": [
+     "3d",
+     "1a",
+     "2b"
+    ]
+   },
+   "left hand": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3d",
+     "1a",
+     "2b"
+    ]
+   },
+   "left shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a",
+     "3a"
+    ]
+   },
+   "left thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "left upper arm": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "2b",
+     "3d",
+     "3c"
+    ]
+   },
+   "pelvis": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "right foot": {
+    "avatar": "off_floor",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "3b",
+     "1b",
+     "2b"
+    ]
+   },
+   "right forearm": {
+    "avatar": "off_floor",
+    "markers": "cannot_tell",
+    "panels": [
+     "3c",
+     "1c"
+    ]
+   },
+   "right hand": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3c",
+     "1c"
+    ]
+   },
+   "right shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1c",
+     "3a"
+    ]
+   },
+   "right thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1c"
+    ]
+   },
+   "right upper arm": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3c",
+     "1c"
+    ]
+   },
+   "torso": {
+    "avatar": "off_floor",
+    "markers": "cannot_tell",
+    "panels": [
+     "2b",
+     "3a",
+     "3c"
+    ]
+   }
+  },
+  "implausible": [],
+  "pose": {
+   "candidates": [
+    {
+     "confidence": "medium",
+     "name": "Salamba Sirsasana preparation (headstand setup)"
+    },
+    {
+     "confidence": "low",
+     "name": "Dolphin pose (Ardha Pincha Mayurasana)"
+    },
+    {
+     "confidence": "low",
+     "name": "Downward dog with head down"
+    }
+   ],
+   "description": "Inverted V: crown of head and both upper arms rest on the floor. Hips are high above the head. Both forearms point straight up from the elbows, with hands raised and off the floor. Legs are straight and slightly apart, angled down to the feet, which hover just above the floor. In the next strip panel the forearms are lowered onto the floor."
+  }
+ },
+ "audit_id": "holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.audit_v2.calibrated.9278736bb1",
+ "cost_usd": 0.165294,
+ "duration_s": 46.18,
+ "errors": [],
+ "frame_hold": 1270,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220926_Plow_Pose_or_Halasana_-b@1270",
+ "inputs": {},
+ "item_id": "220926_Plow_Pose_or_Halasana_-b@1270#A4:fit",
+ "n": 1,
+ "num_turns": 7,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_v4/d4f30b8797e087cc700fd77293eba64223dc24e7",
+  "images": {
+   "img_1.png": "850f67241f6d2a8a122eec1f10729008713589e8414dcbfc788167afed9bd194",
+   "img_2.png": "0cfe9a3e609e31796c145c397e2a7eefd4e64fe3227347503e37902a96503d74",
+   "img_3.png": "9aa7daaf36eb41ff060e175445ede5f1512faa50cb3c499d3218b9f75910f8fd",
+   "img_4.png": "393d661c0cc1102f1b54fb7fc4edcd94dc25c01f7cd010ea9f45527a0e0be6a5"
+  },
+  "packet_json_sha256": "ef8fa3123dcf1884f553d79488411585e89018622b16ea51edb4b957e68ba401"
+ },
+ "packet_id": "d4f30b8797e087cc700fd77293eba64223dc24e7",
+ "pass": "A",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_a.md",
+  "sha256": "bae5cfe8420cee596fc188c14966536b354df29210c1e9a94384c925aab70510"
+ },
+ "purpose": "calibration",
+ "render_v": "render_v4",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "5de359f0431719d8",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_a.json",
+  "sha256": "5a05ec7b10cce5f545b813c390820a81bbbde96259cc00318df7ec618475ff9d"
+ },
+ "schema_version": 1,
+ "session_id": "0eccea12-658e-4d1f-9e49-d832dc4804d3",
+ "started_utc": "2026-10-01T16:15:28+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220926_Plow_Pose_or_Halasana_-b",
+ "stratum": "inversion",
+ "usage": {
+  "cache_creation_input_tokens": 8884,
+  "cache_read_input_tokens": 26090,
+  "input_tokens": 6,
+  "output_tokens": 4449,
+  "thinking_tokens": 2817
+ },
+ "warnings": []
+}

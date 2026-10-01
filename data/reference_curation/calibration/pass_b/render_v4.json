@@ -1,0 +1,350 @@
+{
+ "schema_version": 1,
+ "generator": {
+  "module": "reference_curation.b6",
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "sha256": "a6cbcb31a7d632b969a4d7e18a827d2f433edeb82bbb8abfbe796254d25314e1"
+ },
+ "inputs": {
+  "data/scripts/reference_curation/b6.py": "a6cbcb31a7d632b969a4d7e18a827d2f433edeb82bbb8abfbe796254d25314e1",
+  "data/scripts/reference_curation/prompts/pass_b.md": "077dd51bd3c86104e2579843cb3162adaf5e3892192e7634aa4712e2274df649",
+  "data/scripts/reference_curation/schemas/pass_b.json": "0c8ebcc47c25a92ae60dea2083cdea7b465230a6702cd4fc11c2b7b6bb6eae8d",
+  "output/reference_curation/packets/render_v4/_index_informed.jsonl": "5cbdd4d7805339dd975431acd122728d690816d824df87f1bf613eca8881b91e"
+ },
+ "render_v": "render_v4",
+ "pass": "B",
+ "contract": "pass_b.v1",
+ "rule": {
+  "precision_min": 0.9,
+  "answered_rate_min": 0.5,
+  "items_min": 30,
+  "claims_min": 30
+ },
+ "truth": {
+  "avatar_touch_max_cm": 1.0,
+  "avatar_off_min_cm": 2.0,
+  "near_floor_max_cm": 15.0,
+  "pair_touch_max_cm": 1.0,
+  "pair_apart_min_cm": 3.0,
+  "human": "capture ground_state, decisive and stable +-0.5 s",
+  "frame": "the packet's main moment (labels v2's exemplar)",
+  "avatar": "the reference on plant v2"
+ },
+ "note": "pose_identity is informed here (the label names the pose); roles have no truth set (b6.py)",
+ "packets": 93,
+ "reviewers": [
+  {
+   "key": "5f537c5cd7b2019f",
+   "model": "claude-opus-5-5",
+   "effort": "high",
+   "packets": 93,
+   "calls": {
+    "valid": 186
+   },
+   "cost_usd": {
+    "n": 186,
+    "total": 45.5312,
+    "median": 0.2387,
+    "max": 0.5707
+   },
+   "classes": {
+    "floor_avatar": {
+     "items": 551,
+     "answered": 551,
+     "answered_rate": 1.0,
+     "correct": 551,
+     "accuracy": 1.0,
+     "by_value": {
+      "touching": {
+       "claims": 279,
+       "correct": 279,
+       "precision": 1.0,
+       "precision_lo95": 0.9864,
+       "truth_items": 279,
+       "recall": 1.0
+      },
+      "off_floor": {
+       "claims": 272,
+       "correct": 272,
+       "precision": 1.0,
+       "precision_lo95": 0.9861,
+       "truth_items": 272,
+       "recall": 1.0
+      }
+     },
+     "precision": 1.0,
+     "precision_lo95": 0.9864,
+     "support": 272,
+     "evidence": true,
+     "by_stratum": {
+      "arm_balance": {
+       "items": 236,
+       "answered": 236,
+       "correct": 236
+      },
+      "float_2_5": {
+       "items": 11,
+       "answered": 11,
+       "correct": 11
+      },
+      "inversion": {
+       "items": 65,
+       "answered": 65,
+       "correct": 65
+      },
+      "other": {
+       "items": 239,
+       "answered": 239,
+       "correct": 239
+      }
+     }
+    },
+    "floor_avatar_far": {
+     "items": 841,
+     "answered": 841,
+     "answered_rate": 1.0,
+     "correct": 841,
+     "accuracy": 1.0,
+     "by_value": {
+      "touching": {
+       "claims": 0,
+       "correct": 0,
+       "precision": null,
+       "precision_lo95": null,
+       "truth_items": 0,
+       "recall": null
+      },
+      "off_floor": {
+       "claims": 841,
+       "correct": 841,
+       "precision": 1.0,
+       "precision_lo95": 0.9955,
+       "truth_items": 841,
+       "recall": 1.0
+      }
+     },
+     "precision": 1.0,
+     "precision_lo95": 0.9955,
+     "support": 841,
+     "evidence": true,
+     "by_stratum": {
+      "arm_balance": {
+       "items": 304,
+       "answered": 304,
+       "correct": 304
+      },
+      "float_2_5": {
+       "items": 3,
+       "answered": 3,
+       "correct": 3
+      },
+      "inversion": {
+       "items": 55,
+       "answered": 55,
+       "correct": 55
+      },
+      "other": {
+       "items": 479,
+       "answered": 479,
+       "correct": 479
+      }
+     }
+    },
+    "floor_human": {
+     "items": 451,
+     "answered": 451,
+     "answered_rate": 1.0,
+     "correct": 451,
+     "accuracy": 1.0,
+     "by_value": {
+      "touching": {
+       "claims": 239,
+       "correct": 239,
+       "precision": 1.0,
+       "precision_lo95": 0.9842,
+       "truth_items": 239,
+       "recall": 1.0
+      },
+      "off_floor": {
+       "claims": 212,
+       "correct": 212,
+       "precision": 1.0,
+       "precision_lo95": 0.9822,
+       "truth_items": 212,
+       "recall": 1.0
+      }
+     },
+     "precision": 1.0,
+     "precision_lo95": 0.9842,
+     "support": 212,
+     "evidence": true,
+     "by_stratum": {
+      "arm_balance": {
+       "items": 173,
+       "answered": 173,
+       "correct": 173
+      },
+      "float_2_5": {
+       "items": 4,
+       "answered": 4,
+       "correct": 4
+      },
+      "inversion": {
+       "items": 40,
+       "answered": 40,
+       "correct": 40
+      },
+      "other": {
+       "items": 234,
+       "answered": 234,
+       "correct": 234
+      }
+     }
+    },
+    "float": {
+     "items": 239,
+     "answered": 239,
+     "answered_rate": 1.0,
+     "correct": 239,
+     "claims": 0,
+     "precision": null,
+     "precision_lo95": null,
+     "positives": 0,
+     "recall": null,
+     "npv": 1.0,
+     "support": 0,
+     "evidence": false,
+     "by_stratum": {
+      "arm_balance": {
+       "items": 109,
+       "answered": 109,
+       "correct": 109
+      },
+      "float_2_5": {
+       "items": 3,
+       "answered": 3,
+       "correct": 3
+      },
+      "inversion": {
+       "items": 25,
+       "answered": 25,
+       "correct": 25
+      },
+      "other": {
+       "items": 102,
+       "answered": 102,
+       "correct": 102
+      }
+     }
+    },
+    "body_body": {
+     "items": 200,
+     "answered": 165,
+     "answered_rate": 0.825,
+     "correct": 162,
+     "claims": 162,
+     "precision": 1.0,
+     "precision_lo95": 0.9768,
+     "positives": 194,
+     "recall": 0.8351,
+     "npv": 0.0,
+     "support": 162,
+     "evidence": true,
+     "by_stratum": {
+      "arm_balance": {
+       "items": 91,
+       "answered": 77,
+       "correct": 76
+      },
+      "float_2_5": {
+       "items": 4,
+       "answered": 4,
+       "correct": 4
+      },
+      "inversion": {
+       "items": 20,
+       "answered": 16,
+       "correct": 15
+      },
+      "other": {
+       "items": 85,
+       "answered": 68,
+       "correct": 67
+      }
+     }
+    },
+    "pose_identity": {
+     "items": 93,
+     "answered": 93,
+     "answered_rate": 1.0,
+     "correct": 75,
+     "precision": 0.8065,
+     "precision_lo95": 0.7147,
+     "support": 93,
+     "evidence": false,
+     "by_stratum": {
+      "arm_balance": {
+       "items": 36,
+       "answered": 36,
+       "correct": 25
+      },
+      "float_2_5": {
+       "items": 1,
+       "answered": 1,
+       "correct": 1
+      },
+      "inversion": {
+       "items": 8,
+       "answered": 8,
+       "correct": 7
+      },
+      "other": {
+       "items": 48,
+       "answered": 48,
+       "correct": 42
+      }
+     }
+    },
+    "left_right": {
+     "items": 72,
+     "answered": 72,
+     "answered_rate": 1.0,
+     "correct": 72,
+     "precision": 1.0,
+     "precision_lo95": 0.9493,
+     "support": 72,
+     "evidence": true,
+     "by_stratum": {
+      "arm_balance": {
+       "items": 12,
+       "answered": 12,
+       "correct": 12
+      },
+      "inversion": {
+       "items": 4,
+       "answered": 4,
+       "correct": 4
+      },
+      "other": {
+       "items": 56,
+       "answered": 56,
+       "correct": 56
+      }
+     }
+    }
+   },
+   "evidence": [
+    "floor_avatar",
+    "floor_avatar_far",
+    "floor_human",
+    "body_body",
+    "left_right"
+   ],
+   "advisory": [
+    "float",
+    "pose_identity",
+    "roles"
+   ]
+  }
+ ]
+}

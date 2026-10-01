@@ -1,0 +1,132 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "4b",
+     "3d",
+     "1b"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "4b",
+     "3d",
+     "1b"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "through_body",
+    "panels": [
+     "4b"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "through_floor",
+    "panels": [
+     "4b"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "A",
+  "floating_parts": {
+   "A": [],
+   "B": []
+  },
+  "more_natural": "A",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both stand upright with the feet together and the arms held out to the sides at shoulder height. Only the feet and lower shins differ slightly."
+  },
+  "summary": "Both avatars hold the same pose. A's feet sit flat and level on the floor under the grey body. In B the shins slant inward, so both feet roll onto their inner edges and press into each other, with an edge dipping slightly into the floor."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1149772,
+ "duration_s": 13.99,
+ "errors": [],
+ "frame_hold": 1,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-c@1",
+ "inputs": {},
+ "item_id": "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-c@1#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c2/3397d8f58dbd2207edbfec9f8e9b435c4523cf22",
+  "images": {
+   "img_1.png": "c4fcb4dd6e0ef5a447e176c6317b6150663113603ec24f1fbc70ad039b3e1e96",
+   "img_2.png": "30e7df523c7ed5c62296c0f021a84f26a813fbfe7ce82e692318041e147a424b",
+   "img_3.png": "aacaf05c5f1b65c8966f5deea3d63649e17cfc77d132a4850875e7d20961bd7f",
+   "img_4.png": "9f439d9beaf84489c9674e3a3d0b333f7701545d29ca3302435ec3140ab9d020",
+   "img_5.png": "0767f90f0f3d8a1c23448a7a3c6674366b2aa6fa02ebca896beb62bbd520a62e"
+  },
+  "packet_json_sha256": "423473993e2553bd46027509f438c8f9a7b4739e44f75835b25c06c11f3108c7"
+ },
+ "packet_id": "3397d8f58dbd2207edbfec9f8e9b435c4523cf22",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c2",
+ "render_v": "render_c2",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "373e9e71-178e-468c-8e5c-abb0bf972048",
+ "started_utc": "2026-10-01T17:21:14+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-c",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 10708,
+  "cache_read_input_tokens": 13546,
+  "input_tokens": 6,
+  "output_tokens": 1329,
+  "thinking_tokens": 196
+ },
+ "warnings": []
+}

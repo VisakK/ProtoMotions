@@ -1,0 +1,314 @@
+{
+ "answer": {
+  "body_body": {
+   "answer": "listed",
+   "contacts": []
+  },
+  "discrepancies": [
+   {
+    "kind": "other",
+    "note": "Human skin touches torso and pelvis; avatar left forearm stays about 8 cm away from the trunk.",
+    "panels": [
+     "1d",
+     "3a"
+    ],
+    "part": "left forearm"
+   },
+   {
+    "kind": "other",
+    "note": "Human skin touches torso and pelvis; avatar right forearm stays about 8-9 cm away.",
+    "panels": [
+     "1d",
+     "3b"
+    ],
+    "part": "right forearm"
+   },
+   {
+    "kind": "other",
+    "note": "Thigh markers sit about 7-8 cm up and capture is undecided, but the skin rests on floor.",
+    "panels": [
+     "3d"
+    ],
+    "part": "left thigh"
+   },
+   {
+    "kind": "other",
+    "note": "Thigh markers sit about 7 cm up and capture is undecided, but the skin rests on floor.",
+    "panels": [
+     "3e"
+    ],
+    "part": "right thigh"
+   }
+  ],
+  "floor": {
+   "head": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b",
+     "3c"
+    ]
+   },
+   "left foot": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3c",
+     "2b"
+    ]
+   },
+   "left forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3a",
+     "1d"
+    ]
+   },
+   "left hand": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "1d"
+    ]
+   },
+   "left shin": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3c",
+     "3d",
+     "2b"
+    ]
+   },
+   "left thigh": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3d",
+     "2b"
+    ]
+   },
+   "left upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "3a"
+    ]
+   },
+   "pelvis": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b",
+     "3d"
+    ]
+   },
+   "right foot": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3c",
+     "2b"
+    ]
+   },
+   "right forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3b",
+     "1d"
+    ]
+   },
+   "right hand": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3b",
+     "1d"
+    ]
+   },
+   "right shin": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3c",
+     "3e"
+    ]
+   },
+   "right thigh": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3e"
+    ]
+   },
+   "right upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1c",
+     "3b"
+    ]
+   },
+   "torso": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   }
+  },
+  "implausible": [],
+  "pose": {
+   "candidates": [
+    {
+     "confidence": "high",
+     "name": "Cobra Pose (Bhujangasana), full/high"
+    },
+    {
+     "confidence": "low",
+     "name": "Upward-Facing Dog (Urdhva Mukha Svanasana)"
+    }
+   ],
+   "description": "Prone. Both hands flat under the shoulders with arms straight and forearms alongside the ribs; torso lifted near-vertical, head well above hips, gaze forward. Both legs extended back, fronts of thighs, shins and tops of feet resting on the floor; pelvis lifted a few centimetres."
+  },
+  "repair": {
+   "kinds": [],
+   "needed": "no",
+   "note": "Floor contacts match. Optional: bring avatar forearms closer to the trunk, where the human's skin touches."
+  },
+  "roles": [
+   {
+    "note": "Skin touches as the arms hug the body; cobra does not require it.",
+    "panels": [
+     "1d",
+     "3a"
+    ],
+    "part_a": "pelvis",
+    "part_b": "left forearm",
+    "role": "allowed"
+   },
+   {
+    "note": "Skin touches as the arms hug the body; cobra does not require it.",
+    "panels": [
+     "1d",
+     "3b"
+    ],
+    "part_a": "pelvis",
+    "part_b": "right forearm",
+    "role": "allowed"
+   },
+   {
+    "note": "Elbows tucked to the ribs is a cue, not a defining contact.",
+    "panels": [
+     "1d",
+     "3a"
+    ],
+    "part_a": "torso",
+    "part_b": "left forearm",
+    "role": "allowed"
+   },
+   {
+    "note": "Elbows tucked to the ribs is a cue, not a defining contact.",
+    "panels": [
+     "1d",
+     "3b"
+    ],
+    "part_a": "torso",
+    "part_b": "right forearm",
+    "role": "allowed"
+   }
+  ],
+  "timing": {
+   "better_panel": "",
+   "end": "label",
+   "main_moment": "keep",
+   "note": "Pose is formed by 4b (capture start); both windows end at 4d. 4c is fully settled.",
+   "start": "capture"
+  },
+  "variant": {
+   "matches_label": "variant",
+   "note": "High cobra: arms fully straight and pelvis slightly lifted off the floor, while thighs stay down."
+  }
+ },
+ "audit_id": "holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.audit_v2.calibrated.9278736bb1",
+ "cost_usd": 0.24720180000000003,
+ "duration_s": 30.87,
+ "errors": [],
+ "frame_hold": 591,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Cobra_Pose_or_Bhujangasana_-a@591",
+ "inputs": {},
+ "item_id": "220923_Cobra_Pose_or_Bhujangasana_-a@591#B4",
+ "n": 1,
+ "num_turns": 7,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_v4/1b83ab32f2233574a6dfc601d8efbfa5159c26ed",
+  "images": {
+   "img_1.png": "2e09fe0ae8968bd257586138aa7cf433a30d2495f63662f6d0c63f6f43d54841",
+   "img_2.png": "068d8bf35c82ba7954d828f3fc7dfb55638e068265424587bbccb02be75b646c",
+   "img_3.png": "f0b910a2b43a021aec88e04d5cbb544056d34c89166b0c8997afea1aac4ab767",
+   "img_4.png": "e3612b4dac3bd187f87de0a3d23acc31487e016f79caa11a856c72f3a566ef77"
+  },
+  "packet_json_sha256": "943cb813c787dc11533da6c8f5c723319d6adcd297b09b513d73f50d3f9f5ca8"
+ },
+ "packet_id": "1b83ab32f2233574a6dfc601d8efbfa5159c26ed",
+ "pass": "B",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_b.md",
+  "sha256": "077dd51bd3c86104e2579843cb3162adaf5e3892192e7634aa4712e2274df649"
+ },
+ "purpose": "b6",
+ "render_v": "render_v4",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "5f537c5cd7b2019f",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_b.json",
+  "sha256": "0c8ebcc47c25a92ae60dea2083cdea7b465230a6702cd4fc11c2b7b6bb6eae8d"
+ },
+ "schema_version": 1,
+ "session_id": "338eb2dd-0f41-4cae-8591-13bf58aced57",
+ "started_utc": "2026-10-01T16:26:52+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Cobra_Pose_or_Bhujangasana_-a",
+ "stratum": null,
+ "usage": {
+  "cache_creation_input_tokens": 21792,
+  "cache_read_input_tokens": 43109,
+  "input_tokens": 6,
+  "output_tokens": 3211,
+  "thinking_tokens": 1011
+ },
+ "warnings": []
+}

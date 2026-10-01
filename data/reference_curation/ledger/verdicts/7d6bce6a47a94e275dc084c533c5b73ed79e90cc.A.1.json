@@ -1,0 +1,242 @@
+{
+ "answer": {
+  "body_body": {
+   "answer": "listed",
+   "contacts": []
+  },
+  "discrepancies": [
+   {
+    "kind": "avatar_off_floor_markers_on_floor",
+    "note": "Avatar left foot hovers about 6 cm up with a drop line; its markers sit just above the floor.",
+    "panels": [
+     "3a",
+     "2b"
+    ],
+    "part": "left foot"
+   }
+  ],
+  "floor": {
+   "head": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b"
+    ]
+   },
+   "left foot": {
+    "avatar": "off_floor",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "2b",
+     "1a"
+    ]
+   },
+   "left forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1b"
+    ]
+   },
+   "left hand": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1b"
+    ]
+   },
+   "left shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3a",
+     "2b"
+    ]
+   },
+   "left thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b"
+    ]
+   },
+   "left upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1b"
+    ]
+   },
+   "pelvis": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b"
+    ]
+   },
+   "right foot": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1c"
+    ]
+   },
+   "right forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1b"
+    ]
+   },
+   "right hand": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1b"
+    ]
+   },
+   "right shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1c"
+    ]
+   },
+   "right thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1c"
+    ]
+   },
+   "right upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1b"
+    ]
+   },
+   "torso": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b"
+    ]
+   }
+  },
+  "implausible": [
+   {
+    "kind": "no_base_of_support",
+    "note": "No avatar part touches the floor; the only support foot floats above it.",
+    "panels": [
+     "3a",
+     "2b"
+    ],
+    "parts": [
+     "left foot"
+    ]
+   }
+  ],
+  "pose": {
+   "candidates": [
+    {
+     "confidence": "medium",
+     "name": "Airplane pose (Warrior III, arms out)"
+    },
+    {
+     "confidence": "medium",
+     "name": "Virabhadrasana III"
+    },
+    {
+     "confidence": "low",
+     "name": "Standing balance / Tuladandasana transition"
+    }
+   ],
+   "description": "Standing on the left leg alone, nearly straight. The torso tips forward well past 45\u00b0 but the head stays above hip height. The right leg reaches straight back, about horizontal, with the right foot well off the floor. Both arms stretch out sideways in a T. In the avatar, no part touches the floor: the left foot hovers a few cm above it."
+  }
+ },
+ "audit_id": "holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.audit_v2.calibrated.9278736bb1",
+ "cost_usd": 0.12404659999999999,
+ "duration_s": 23.42,
+ "errors": [],
+ "frame_hold": 527,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220926_Warrior_III_Pose_or_Virabhadrasana_III_-a@527",
+ "inputs": {},
+ "item_id": "220926_Warrior_III_Pose_or_Virabhadrasana_III_-a@527#A4:lift6",
+ "n": 1,
+ "num_turns": 7,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_v4/7d6bce6a47a94e275dc084c533c5b73ed79e90cc",
+  "images": {
+   "img_1.png": "76d22d587be0697010bd65305a71f3357d75998d68770e7913f0d97ee7d33823",
+   "img_2.png": "7f8e8c9e024edb625ab2c49d62770947585eaa1ff11eec2e1a0a269ac498b699",
+   "img_3.png": "0bdb51e338474ef28c6fef66022f45031feb81a314549802588a0b96e1b1e0be",
+   "img_4.png": "1071cdfc5844741da4eb15802b7503060b9d7122c6debebd4657c42ca37435f6"
+  },
+  "packet_json_sha256": "71ae7cdf5ca99ca4920ac9c3ea15d51e12fec0161093f1da814cf1b079fa474c"
+ },
+ "packet_id": "7d6bce6a47a94e275dc084c533c5b73ed79e90cc",
+ "pass": "A",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_a.md",
+  "sha256": "bae5cfe8420cee596fc188c14966536b354df29210c1e9a94384c925aab70510"
+ },
+ "purpose": "calibration",
+ "render_v": "render_v4",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "5de359f0431719d8",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_a.json",
+  "sha256": "5a05ec7b10cce5f545b813c390820a81bbbde96259cc00318df7ec618475ff9d"
+ },
+ "schema_version": 1,
+ "session_id": "499f3c3f-8983-4cc5-b484-554e7f48c4e6",
+ "started_utc": "2026-10-01T16:21:03+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220926_Warrior_III_Pose_or_Virabhadrasana_III_-a",
+ "stratum": "other",
+ "usage": {
+  "cache_creation_input_tokens": 8837,
+  "cache_read_input_tokens": 26033,
+  "input_tokens": 6,
+  "output_tokens": 2406,
+  "thinking_tokens": 727
+ },
+ "warnings": []
+}

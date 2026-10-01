@@ -1,0 +1,296 @@
+{
+ "answer": {
+  "body_body": {
+   "answer": "listed",
+   "contacts": []
+  },
+  "discrepancies": [
+   {
+    "kind": "markers_away_from_avatar_part",
+    "note": "The human's hands touch behind the back (skin gap about 0.2 cm), but the avatar's hands are about 6 cm apart.",
+    "panels": [
+     "1c",
+     "1b",
+     "1d"
+    ],
+    "part": "left hand"
+   },
+   {
+    "kind": "other",
+    "note": "The labelled pose name does not fit: this moment is standing preparation, not Parsvottanasana.",
+    "panels": [
+     "1a",
+     "4c"
+    ],
+    "part": "right hand"
+   },
+   {
+    "kind": "other",
+    "note": "The skin mesh says the thighs touch (about 2 cm gap), but the avatar's thighs are about 3.4 cm apart. Minor.",
+    "panels": [
+     "1a",
+     "1c"
+    ],
+    "part": "left thigh"
+   }
+  ],
+  "floor": {
+   "head": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "left foot": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "2b",
+     "1a"
+    ]
+   },
+   "left forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "left hand": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1c"
+    ]
+   },
+   "left shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3a",
+     "2b"
+    ]
+   },
+   "left thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "left upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "pelvis": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "right foot": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "2b",
+     "1a"
+    ]
+   },
+   "right forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "right hand": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1c"
+    ]
+   },
+   "right shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3a",
+     "2b"
+    ]
+   },
+   "right thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "right upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "torso": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   }
+  },
+  "implausible": [],
+  "pose": {
+   "candidates": [
+    {
+     "confidence": "medium",
+     "name": "Tadasana with hands behind back"
+    },
+    {
+     "confidence": "medium",
+     "name": "Parsvottanasana preparation (reverse prayer setup)"
+    },
+    {
+     "confidence": "low",
+     "name": "Samasthiti"
+    }
+   ],
+   "description": "Standing upright with only both feet on the floor, side by side and close together, legs straight. Head well above the hips, torso vertical. Both arms bent with elbows out, hands brought behind the lower back at waist level, meeting or nearly meeting. This looks like the preparation for the pose: there is no staggered stance and no forward fold."
+  },
+  "repair": {
+   "kinds": [
+    "pose_mismatch"
+   ],
+   "needed": "yes",
+   "note": "Bring the avatar's hands together behind the back to match the human's touching hands. Optionally close the thigh gap too."
+  },
+  "roles": [
+   {
+    "note": "Reverse-prayer hands are the classic arm position. Variants put the hands on the floor instead.",
+    "panels": [
+     "1c",
+     "1b",
+     "1d"
+    ],
+    "part_a": "left hand",
+    "part_b": "right hand",
+    "role": "allowed"
+   },
+   {
+    "note": "This only happens because the feet are together. The staggered stance of the pose separates the thighs.",
+    "panels": [
+     "1a",
+     "1c",
+     "3a"
+    ],
+    "part_a": "left thigh",
+    "part_b": "right thigh",
+    "role": "incidental"
+   }
+  ],
+  "timing": {
+   "better_panel": "",
+   "end": "neither",
+   "main_moment": "keep",
+   "note": "Both windows match each other but cover only feet-together preparation. The left foot lifts at the end to step into the pose.",
+   "start": "neither"
+  },
+  "variant": {
+   "matches_label": "no",
+   "note": "Feet are together and the torso is upright. Parsvottanasana needs a staggered stance with a forward fold over the front leg."
+  }
+ },
+ "audit_id": "holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.audit_v2.calibrated.9278736bb1",
+ "cost_usd": 0.2119846,
+ "duration_s": 35.61,
+ "errors": [],
+ "frame_hold": 126,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220926_Intense_Side_Stretch_Pose_or_Parsvottanasana_-b@126",
+ "inputs": {},
+ "item_id": "220926_Intense_Side_Stretch_Pose_or_Parsvottanasana_-b@126#B4",
+ "n": 2,
+ "num_turns": 7,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_v4/d7421780c3f649e97f2df1c932488ca4952e4269",
+  "images": {
+   "img_1.png": "eb8bb3c6a562645dafc62a3ceb38f7791cea0c91b918ae0d2481aab1dd8cc898",
+   "img_2.png": "c79a3ab3936309f34086c68a8252a3ab34084bbeb7ed272ec28d318af0e96a18",
+   "img_3.png": "4dca77841041665d975214fb32a1b1ca7c458015007a032c28c7d3b2fb1dfac0",
+   "img_4.png": "95737eba82fe92ab11ad50b6e0b8af130b5bfbdbe0bb8abda4a317d1b7d9e2bb"
+  },
+  "packet_json_sha256": "8bef61688f2c865d31b962176e162ef9599eb07d6cad2003cfd0241e304cf9d9"
+ },
+ "packet_id": "d7421780c3f649e97f2df1c932488ca4952e4269",
+ "pass": "B",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_b.md",
+  "sha256": "077dd51bd3c86104e2579843cb3162adaf5e3892192e7634aa4712e2274df649"
+ },
+ "purpose": "pose_role",
+ "render_v": "render_v4",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "5f537c5cd7b2019f",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_b.json",
+  "sha256": "0c8ebcc47c25a92ae60dea2083cdea7b465230a6702cd4fc11c2b7b6bb6eae8d"
+ },
+ "schema_version": 1,
+ "session_id": "38fdd43f-246a-46d9-b8b7-b23e2d48e56d",
+ "started_utc": "2026-10-01T16:59:27+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220926_Intense_Side_Stretch_Pose_or_Parsvottanasana_-b",
+ "stratum": null,
+ "usage": {
+  "cache_creation_input_tokens": 16198,
+  "cache_read_input_tokens": 42383,
+  "input_tokens": 6,
+  "output_tokens": 3695,
+  "thinking_tokens": 1477
+ },
+ "warnings": []
+}

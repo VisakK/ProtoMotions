@@ -1,0 +1,230 @@
+{
+ "answer": {
+  "body_body": {
+   "answer": "listed",
+   "contacts": []
+  },
+  "discrepancies": [],
+  "floor": {
+   "head": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a",
+     "1d"
+    ]
+   },
+   "left foot": {
+    "avatar": "off_floor",
+    "markers": "cannot_tell",
+    "panels": [
+     "1b",
+     "3b",
+     "2b"
+    ]
+   },
+   "left forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "3a"
+    ]
+   },
+   "left hand": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "2b",
+     "1d"
+    ]
+   },
+   "left shin": {
+    "avatar": "off_floor",
+    "markers": "cannot_tell",
+    "panels": [
+     "3c",
+     "1a",
+     "2b"
+    ]
+   },
+   "left thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "left upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1d"
+    ]
+   },
+   "pelvis": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "right foot": {
+    "avatar": "off_floor",
+    "markers": "cannot_tell",
+    "panels": [
+     "1b",
+     "3b",
+     "2b"
+    ]
+   },
+   "right forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "3a"
+    ]
+   },
+   "right hand": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "2b",
+     "1d"
+    ]
+   },
+   "right shin": {
+    "avatar": "off_floor",
+    "markers": "cannot_tell",
+    "panels": [
+     "3c",
+     "3d",
+     "1c"
+    ]
+   },
+   "right thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1c"
+    ]
+   },
+   "right upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1d"
+    ]
+   },
+   "torso": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   }
+  },
+  "implausible": [],
+  "pose": {
+   "candidates": [
+    {
+     "confidence": "medium",
+     "name": "Cat pose (Marjaryasana)"
+    },
+    {
+     "confidence": "medium",
+     "name": "Tabletop pose (Bharmanasana)"
+    },
+    {
+     "confidence": "low",
+     "name": "Knees-chest-chin transition (Ashtanga Namaskara)"
+    }
+   ],
+   "description": "All fours: both hands flat on floor under the shoulders, arms nearly straight and vertical. Knees and shins lie along the floor behind, thighs angled forward from vertical, feet upright with toes tucked. Spine rounded upward; head hangs forward of the shoulders at roughly shoulder height, well forward of and level with or above the hips."
+  }
+ },
+ "audit_id": "holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.audit_v2.calibrated.9278736bb1",
+ "cost_usd": 0.1339784,
+ "duration_s": 30.11,
+ "errors": [],
+ "frame_hold": 434,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Peacock_Pose_or_Mayurasana_-a@434",
+ "inputs": {},
+ "item_id": "220923_Peacock_Pose_or_Mayurasana_-a@434#A4:fit",
+ "n": 1,
+ "num_turns": 7,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_v4/0e009725b479b4aad4620df18dd5df80e8c2c766",
+  "images": {
+   "img_1.png": "94b42a5182617c68068e63a792fbc6dca41fc38ef14eece98dcdc62f174fdac7",
+   "img_2.png": "aa8ae5493796423e5a4c1ec180e234d34ead49a93e42d709ee4438ec62d0b150",
+   "img_3.png": "ffa129221c52abaed7ccbd8b1b82fd77e0484476202d15cd00a8aa6e4c2206b1",
+   "img_4.png": "0c677e6ccb82a832ea399f05a892a45d643e2e8c968b2080dde2c00bb8e80370"
+  },
+  "packet_json_sha256": "ef1f2db38adbaefba5839cb0078aea4cdf0ade8647110713f3eea9e9f6fda514"
+ },
+ "packet_id": "0e009725b479b4aad4620df18dd5df80e8c2c766",
+ "pass": "A",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_a.md",
+  "sha256": "bae5cfe8420cee596fc188c14966536b354df29210c1e9a94384c925aab70510"
+ },
+ "purpose": "calibration",
+ "render_v": "render_v4",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "5de359f0431719d8",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_a.json",
+  "sha256": "5a05ec7b10cce5f545b813c390820a81bbbde96259cc00318df7ec618475ff9d"
+ },
+ "schema_version": 1,
+ "session_id": "d8045996-77e1-4698-99b1-8ef83e1a18fb",
+ "started_utc": "2026-10-01T16:13:25+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Peacock_Pose_or_Mayurasana_-a",
+ "stratum": "arm_balance",
+ "usage": {
+  "cache_creation_input_tokens": 8882,
+  "cache_read_input_tokens": 26092,
+  "input_tokens": 6,
+  "output_tokens": 2884,
+  "thinking_tokens": 1313
+ },
+ "warnings": []
+}

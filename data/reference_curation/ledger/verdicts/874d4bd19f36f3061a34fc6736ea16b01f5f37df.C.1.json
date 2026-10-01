@@ -1,0 +1,124 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "4a",
+     "1c",
+     "3c"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "through_floor",
+    "panels": [
+     "4a"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1b",
+     "2b",
+     "3b",
+     "5d"
+    ],
+    "part": "left thigh",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "A",
+  "floating_parts": {
+   "A": [],
+   "B": []
+  },
+  "more_natural": "B",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both stand on the right foot with the left leg bent and lifted across the front, left arm down at the raised knee and right arm reaching out to the side; the overall shape is the same."
+  },
+  "summary": "The pose is the same in both. A follows the grey body more closely, but its standing right foot is rolled with the toe raised and its heel edge slightly into the floor. B's standing foot is flat on the floor, but its body is slightly offset from the grey body and its raised left knee sticks out past the grey knee."
+ },
+ "audit_id": null,
+ "cost_usd": 0.12114520000000001,
+ "duration_s": 16.97,
+ "errors": [],
+ "frame_hold": 993,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Tree_Pose_or_Vrksasana_-a@993",
+ "inputs": {},
+ "item_id": "220923_Tree_Pose_or_Vrksasana_-a@993#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c2/874d4bd19f36f3061a34fc6736ea16b01f5f37df",
+  "images": {
+   "img_1.png": "6ad45cea1b1f6437b0ec56a436ffa63da27e807a2196920d44c7b40bd61aa1ed",
+   "img_2.png": "a8032050655b91543192c0a7fc247a67c92961ebc8c922ab5845d35e5d61738a",
+   "img_3.png": "480312c4a8f7518b01d9c92c6d949d80bc24b88ada6cd3da1a6ab94f412e0d75",
+   "img_4.png": "0dc76bba89a263b7deb765a51fd18cec50d75a130d37ab0590b88b5e61fd9c7f",
+   "img_5.png": "22f98609e93ab074559a2cf7b57f8ab61d5ab0024c86432a1cedd649af551a02"
+  },
+  "packet_json_sha256": "9a143463a6a0ade1969873059a0569d01f356a6418efe6dc7f5f10cd41305706"
+ },
+ "packet_id": "874d4bd19f36f3061a34fc6736ea16b01f5f37df",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c2",
+ "render_v": "render_c2",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "83b891a2-ad9a-46c2-99b0-82ed9e2f682b",
+ "started_utc": "2026-10-01T17:34:07+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Tree_Pose_or_Vrksasana_-a",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 10704,
+  "cache_read_input_tokens": 13546,
+  "input_tokens": 6,
+  "output_tokens": 1639,
+  "thinking_tokens": 543
+ },
+ "warnings": []
+}

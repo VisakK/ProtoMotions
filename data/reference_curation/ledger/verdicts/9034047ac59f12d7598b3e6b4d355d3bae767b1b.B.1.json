@@ -1,0 +1,497 @@
+{
+ "answer": {
+  "body_body": {
+   "answer": "listed",
+   "contacts": [
+    {
+     "certainty": "clear",
+     "panels": [
+      "1a",
+      "2b",
+      "3b"
+     ],
+     "part_a": "left foot",
+     "part_b": "right foot"
+    },
+    {
+     "certainty": "clear",
+     "panels": [
+      "1a",
+      "2b"
+     ],
+     "part_a": "left shin",
+     "part_b": "left upper arm"
+    },
+    {
+     "certainty": "clear",
+     "panels": [
+      "1d",
+      "3b"
+     ],
+     "part_a": "right shin",
+     "part_b": "right upper arm"
+    },
+    {
+     "certainty": "clear",
+     "panels": [
+      "1b",
+      "2b"
+     ],
+     "part_a": "left thigh",
+     "part_b": "left upper arm"
+    },
+    {
+     "certainty": "clear",
+     "panels": [
+      "1c",
+      "3b"
+     ],
+     "part_a": "right thigh",
+     "part_b": "right upper arm"
+    },
+    {
+     "certainty": "clear",
+     "panels": [
+      "1b",
+      "3a"
+     ],
+     "part_a": "left thigh",
+     "part_b": "left forearm"
+    },
+    {
+     "certainty": "clear",
+     "panels": [
+      "1c",
+      "3b"
+     ],
+     "part_a": "right thigh",
+     "part_b": "right forearm"
+    },
+    {
+     "certainty": "possible",
+     "panels": [
+      "1d",
+      "3b"
+     ],
+     "part_a": "left foot",
+     "part_b": "right shin"
+    }
+   ]
+  },
+  "discrepancies": [
+   {
+    "kind": "other",
+    "note": "Human thigh skin touches torso; avatar thigh stays about 9 cm from torso. Labelled pair not reproduced.",
+    "panels": [
+     "1b",
+     "2b"
+    ],
+    "part": "left thigh"
+   },
+   {
+    "kind": "other",
+    "note": "Human thigh skin touches torso; avatar thigh stays about 8.5 cm from torso. Labelled pair not reproduced.",
+    "panels": [
+     "1c",
+     "2b"
+    ],
+    "part": "right thigh"
+   },
+   {
+    "kind": "other",
+    "note": "Label lists left shin + torso, but neither skin nor avatar touch (skin gap near 4 cm).",
+    "panels": [
+     "1b",
+     "2b"
+    ],
+    "part": "left shin"
+   },
+   {
+    "kind": "other",
+    "note": "Human left foot touches left hand and right shin by skin; avatar foot stays apart from left hand.",
+    "panels": [
+     "3a",
+     "1a"
+    ],
+    "part": "left foot"
+   },
+   {
+    "kind": "other",
+    "note": "Human right foot skin touches left shin; avatar right foot hangs several cm away.",
+    "panels": [
+     "3b",
+     "1d"
+    ],
+    "part": "right foot"
+   }
+  ],
+  "floor": {
+   "head": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "left foot": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3a",
+     "2b",
+     "1a"
+    ]
+   },
+   "left forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3a",
+     "2b"
+    ]
+   },
+   "left hand": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "3b",
+     "2b"
+    ]
+   },
+   "left shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "3a"
+    ]
+   },
+   "left thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1b"
+    ]
+   },
+   "left upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "pelvis": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "right foot": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3b",
+     "2b",
+     "1d"
+    ]
+   },
+   "right forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3b",
+     "1c"
+    ]
+   },
+   "right hand": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "3b",
+     "2b"
+    ]
+   },
+   "right shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "3b"
+    ]
+   },
+   "right thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1c"
+    ]
+   },
+   "right upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1c"
+    ]
+   },
+   "torso": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   }
+  },
+  "implausible": [],
+  "pose": {
+   "candidates": [
+    {
+     "confidence": "high",
+     "name": "Bhujapidasana (Shoulder-Pressing Pose)"
+    },
+    {
+     "confidence": "low",
+     "name": "Tittibhasana entry"
+    },
+    {
+     "confidence": "low",
+     "name": "Bakasana (Crow)"
+    }
+   ],
+   "description": "Only both hands are on the floor, shoulder-width apart. The hips hang low behind the hands and the head sits well forward and above the hips. Both thighs wrap high over the upper arms, the shins rest on the upper arms, and the ankles cross in front between the arms with both feet off the floor. The elbows are bent."
+  },
+  "repair": {
+   "kinds": [
+    "pose_mismatch"
+   ],
+   "needed": "yes",
+   "note": "Avatar thighs sit about 8 cm off the torso, and the right foot hangs apart from the left shin. Floor contacts match."
+  },
+  "roles": [
+   {
+    "note": "Crossed ankles are a defining feature of Bhujapidasana.",
+    "panels": [
+     "1a",
+     "3b"
+    ],
+    "part_a": "left foot",
+    "part_b": "right foot",
+    "role": "required_touch"
+   },
+   {
+    "note": "Neither human nor avatar makes this contact; the pose does not need it.",
+    "panels": [
+     "1b",
+     "2b"
+    ],
+    "part_a": "left shin",
+    "part_b": "torso",
+    "role": "incidental"
+   },
+   {
+    "note": "Legs grip the arms; the shin rests on the upper arm near the knee.",
+    "panels": [
+     "1a",
+     "2b"
+    ],
+    "part_a": "left shin",
+    "part_b": "left upper arm",
+    "role": "allowed"
+   },
+   {
+    "note": "Legs grip the arms; the shin rests on the upper arm near the knee.",
+    "panels": [
+     "1d",
+     "3b"
+    ],
+    "part_a": "right shin",
+    "part_b": "right upper arm",
+    "role": "allowed"
+   },
+   {
+    "note": "Compact fold; human skin touches, but the avatar leaves a gap.",
+    "panels": [
+     "1b",
+     "2b"
+    ],
+    "part_a": "left thigh",
+    "part_b": "torso",
+    "role": "allowed"
+   },
+   {
+    "note": "Thigh pressing on the upper arm defines the shoulder-pressing pose.",
+    "panels": [
+     "1b",
+     "2b"
+    ],
+    "part_a": "left thigh",
+    "part_b": "left upper arm",
+    "role": "required_touch"
+   },
+   {
+    "note": "Back of the thigh rests on the bent forearm.",
+    "panels": [
+     "1b",
+     "3a"
+    ],
+    "part_a": "left thigh",
+    "part_b": "left forearm",
+    "role": "allowed"
+   },
+   {
+    "note": "Compact fold; human skin touches, but the avatar leaves a gap.",
+    "panels": [
+     "1c",
+     "2b"
+    ],
+    "part_a": "right thigh",
+    "part_b": "torso",
+    "role": "allowed"
+   },
+   {
+    "note": "Thigh pressing on the upper arm defines the shoulder-pressing pose.",
+    "panels": [
+     "1c",
+     "3b"
+    ],
+    "part_a": "right thigh",
+    "part_b": "right upper arm",
+    "role": "required_touch"
+   },
+   {
+    "note": "Back of the thigh rests on the bent forearm.",
+    "panels": [
+     "1c",
+     "3b"
+    ],
+    "part_a": "right thigh",
+    "part_b": "right forearm",
+    "role": "allowed"
+   },
+   {
+    "note": "Follows from crossing the ankles.",
+    "panels": [
+     "1d",
+     "3b"
+    ],
+    "part_a": "left foot",
+    "part_b": "right shin",
+    "role": "allowed"
+   },
+   {
+    "note": "Human foot brushes the hand; not part of the pose.",
+    "panels": [
+     "3a",
+     "1a"
+    ],
+    "part_a": "left foot",
+    "part_b": "left hand",
+    "role": "incidental"
+   },
+   {
+    "note": "Follows from crossing the ankles; human only.",
+    "panels": [
+     "3b",
+     "1d"
+    ],
+    "part_a": "right foot",
+    "part_b": "left shin",
+    "role": "allowed"
+   }
+  ],
+  "timing": {
+   "better_panel": "",
+   "end": "capture",
+   "main_moment": "keep",
+   "note": "Label window starts long before the entry and ends after the feet land; 4b shows the hold settled.",
+   "start": "capture"
+  },
+  "variant": {
+   "matches_label": "yes",
+   "note": ""
+  }
+ },
+ "audit_id": "holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.audit_v2.calibrated.9278736bb1",
+ "cost_usd": 0.29911940000000004,
+ "duration_s": 43.31,
+ "errors": [],
+ "frame_hold": 543,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Shoulder-Pressing_Pose_or_Bhujapidasana_-a@543",
+ "inputs": {},
+ "item_id": "220923_Shoulder-Pressing_Pose_or_Bhujapidasana_-a@543#B4",
+ "n": 1,
+ "num_turns": 7,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_v4/9034047ac59f12d7598b3e6b4d355d3bae767b1b",
+  "images": {
+   "img_1.png": "2b0504703a85edd63c353b970c4299e9fea66e849ea3c6075a00efb950745f52",
+   "img_2.png": "c1f0f088ce751993500414faaafb4aeec4aa43e66d8e3f4b7ac9bcc2d8e575b7",
+   "img_3.png": "4eebfac5ac6248c6f0c70162fd568e58c02559664a9fed0e44eb2ed4395b4c43",
+   "img_4.png": "d72aa6e1125b914c88263cee3fb51def5cd1c042b28369d459dbae530218ed43"
+  },
+  "packet_json_sha256": "9503991ee2087a8befcfb224ef2d08259f059bd9e149aaf858f70c54a3d5cb00"
+ },
+ "packet_id": "9034047ac59f12d7598b3e6b4d355d3bae767b1b",
+ "pass": "B",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_b.md",
+  "sha256": "077dd51bd3c86104e2579843cb3162adaf5e3892192e7634aa4712e2274df649"
+ },
+ "purpose": "b6",
+ "render_v": "render_v4",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "5f537c5cd7b2019f",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_b.json",
+  "sha256": "0c8ebcc47c25a92ae60dea2083cdea7b465230a6702cd4fc11c2b7b6bb6eae8d"
+ },
+ "schema_version": 1,
+ "session_id": "feaca70b-9743-47d4-b4ed-b3904304ee1f",
+ "started_utc": "2026-10-01T16:41:50+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Shoulder-Pressing_Pose_or_Bhujapidasana_-a",
+ "stratum": null,
+ "usage": {
+  "cache_creation_input_tokens": 24035,
+  "cache_read_input_tokens": 45577,
+  "input_tokens": 6,
+  "output_tokens": 4885,
+  "thinking_tokens": 1669
+ },
+ "warnings": []
+}

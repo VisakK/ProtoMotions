@@ -1,0 +1,457 @@
+{
+ "answer": {
+  "body_body": {
+   "answer": "listed",
+   "contacts": [
+    {
+     "certainty": "clear",
+     "panels": [
+      "2a",
+      "1a",
+      "3a"
+     ],
+     "part_a": "right thigh",
+     "part_b": "left upper arm"
+    },
+    {
+     "certainty": "clear",
+     "panels": [
+      "1a",
+      "2b",
+      "3a"
+     ],
+     "part_a": "right shin",
+     "part_b": "left forearm"
+    },
+    {
+     "certainty": "possible",
+     "panels": [
+      "1a",
+      "2a"
+     ],
+     "part_a": "right thigh",
+     "part_b": "left forearm"
+    },
+    {
+     "certainty": "possible",
+     "panels": [
+      "1a",
+      "2b"
+     ],
+     "part_a": "right shin",
+     "part_b": "left upper arm"
+    },
+    {
+     "certainty": "possible",
+     "panels": [
+      "2a",
+      "1b"
+     ],
+     "part_a": "left shin",
+     "part_b": "right shin"
+    },
+    {
+     "certainty": "possible",
+     "panels": [
+      "2a",
+      "1b"
+     ],
+     "part_a": "left shin",
+     "part_b": "right thigh"
+    }
+   ]
+  },
+  "discrepancies": [
+   {
+    "kind": "other",
+    "note": "Skin of the right shin touches the left thigh (labelled); the avatar leaves a gap of about 5 cm.",
+    "panels": [
+     "1b",
+     "3c"
+    ],
+    "part": "right shin"
+   },
+   {
+    "kind": "other",
+    "note": "Skin of the right thigh touches the torso; the avatar thigh stays about 8 cm from the torso.",
+    "panels": [
+     "1c",
+     "2a"
+    ],
+    "part": "right thigh"
+   },
+   {
+    "kind": "other",
+    "note": "Feet skin touches; the avatar feet are about 3.6 cm apart.",
+    "panels": [
+     "3c",
+     "1b"
+    ],
+    "part": "left foot"
+   }
+  ],
+  "floor": {
+   "head": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b",
+     "3b"
+    ]
+   },
+   "left foot": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3c",
+     "2b",
+     "1b"
+    ]
+   },
+   "left forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "3a",
+     "1a"
+    ]
+   },
+   "left hand": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "2b",
+     "1a"
+    ]
+   },
+   "left shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1b"
+    ]
+   },
+   "left thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1b"
+    ]
+   },
+   "left upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "pelvis": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1c"
+    ]
+   },
+   "right foot": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3c",
+     "2b",
+     "1c"
+    ]
+   },
+   "right forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "3b",
+     "1c"
+    ]
+   },
+   "right hand": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3b",
+     "2b",
+     "1c"
+    ]
+   },
+   "right shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1b"
+    ]
+   },
+   "right thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1b"
+    ]
+   },
+   "right upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1c"
+    ]
+   },
+   "torso": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1c"
+    ]
+   }
+  },
+  "implausible": [
+   {
+    "kind": "self_penetration",
+    "note": "Avatar right thigh sinks slightly (about 1.4 cm) into the left upper arm.",
+    "panels": [
+     "2a",
+     "1a"
+    ],
+    "parts": [
+     "right thigh",
+     "left upper arm"
+    ]
+   }
+  ],
+  "pose": {
+   "candidates": [
+    {
+     "confidence": "high",
+     "name": "Parsva Bakasana preparation (feet down)"
+    },
+    {
+     "confidence": "medium",
+     "name": "Side Crane / Side Crow Pose"
+    },
+    {
+     "confidence": "low",
+     "name": "Revolved squat (Parivrtta Malasana)"
+    }
+   ],
+   "description": "Deep squat with the knees twisted to the right. Both feet and both hands are on the floor and the head is in front of and below the hips. The left arm crosses outside the right thigh, which rests on the left upper arm and forearm. The right arm is bent and planted. The legs are stacked together and the feet have not lifted yet."
+  },
+  "repair": {
+   "kinds": [
+    "pose_mismatch"
+   ],
+   "needed": "yes",
+   "note": "Floor contacts match. The avatar misses some leg-stack and thigh-torso skin contacts; the stacked legs should be closed slightly."
+  },
+  "roles": [
+   {
+    "note": "Outer thigh resting on the opposite upper arm defines side crow.",
+    "panels": [
+     "2a",
+     "1a"
+    ],
+    "part_a": "right thigh",
+    "part_b": "left upper arm",
+    "role": "required_touch"
+   },
+   {
+    "note": "Thigh shelf extends onto the forearm; permitted support.",
+    "panels": [
+     "1a",
+     "2a"
+    ],
+    "part_a": "right thigh",
+    "part_b": "left forearm",
+    "role": "allowed"
+   },
+   {
+    "note": "Knee region against the upper arm; common, not required.",
+    "panels": [
+     "1a",
+     "2b"
+    ],
+    "part_a": "right shin",
+    "part_b": "left upper arm",
+    "role": "allowed"
+   },
+   {
+    "note": "Shin against the hooking forearm; permitted.",
+    "panels": [
+     "1a",
+     "3a"
+    ],
+    "part_a": "right shin",
+    "part_b": "left forearm",
+    "role": "allowed"
+   },
+   {
+    "note": "Legs stacked together, typical of side crow.",
+    "panels": [
+     "2a",
+     "1b"
+    ],
+    "part_a": "left shin",
+    "part_b": "right shin",
+    "role": "allowed"
+   },
+   {
+    "note": "Stacked legs press together; permitted.",
+    "panels": [
+     "2a",
+     "1b"
+    ],
+    "part_a": "left shin",
+    "part_b": "right thigh",
+    "role": "allowed"
+   },
+   {
+    "note": "Stacked-leg contact; the skin touches, the avatar leaves a gap.",
+    "panels": [
+     "1b",
+     "3c"
+    ],
+    "part_a": "right shin",
+    "part_b": "left thigh",
+    "role": "allowed"
+   },
+   {
+    "note": "Feet together in the stack; the avatar feet are slightly apart.",
+    "panels": [
+     "3c",
+     "1b"
+    ],
+    "part_a": "left foot",
+    "part_b": "right foot",
+    "role": "allowed"
+   },
+   {
+    "note": "Thighs pressed together in the twist.",
+    "panels": [
+     "1b",
+     "2a"
+    ],
+    "part_a": "left thigh",
+    "part_b": "right thigh",
+    "role": "allowed"
+   },
+   {
+    "note": "Deep-squat compression; the skin is near but not clearly pressed.",
+    "panels": [
+     "1c"
+    ],
+    "part_a": "left thigh",
+    "part_b": "torso",
+    "role": "incidental"
+   },
+   {
+    "note": "Deep fold of the twist; the skin touches, the avatar does not.",
+    "panels": [
+     "1c",
+     "2a"
+    ],
+    "part_a": "right thigh",
+    "part_b": "torso",
+    "role": "allowed"
+   }
+  ],
+  "timing": {
+   "better_panel": "",
+   "end": "label",
+   "main_moment": "keep",
+   "note": "The label and capture windows are identical. Feet and hands are settled at the main moment; the feet lift only after the window.",
+   "start": "label"
+  },
+  "variant": {
+   "matches_label": "variant",
+   "note": "Entry stage of side crow: the hooked arm and thigh shelf are set, but the feet stay on the floor; they lift only later (4e)."
+  }
+ },
+ "audit_id": "holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.audit_v2.calibrated.9278736bb1",
+ "cost_usd": 0.28344539999999996,
+ "duration_s": 42.45,
+ "errors": [],
+ "frame_hold": 627,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a@680",
+ "inputs": {},
+ "item_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a@680#B4",
+ "n": 1,
+ "num_turns": 7,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_v4/fd2e965afcdbdaa6375847281f70f987261e53f3",
+  "images": {
+   "img_1.png": "0ddc0094f78a583d25e2ae183dd81a089ab29944ecbfd6451d25ecfb6c2d859d",
+   "img_2.png": "18b376d0f169d8ed6f7d08f5e718f2a46ee6dec6be9ffd045c409f0f217000e9",
+   "img_3.png": "7c9996dbe05c342480785e26edd5f26c1f0c8021b4c8922fc0b09e28da4d67de",
+   "img_4.png": "b4937b780c25bf5a3f56cb5f1f79320b3be96e1a17f8e251bd201e11d2050ddf"
+  },
+  "packet_json_sha256": "9a5a5834e7f52fb653fca4294b0e584d56f1b0dbe1bd9c8d08e5b4e2c0151d72"
+ },
+ "packet_id": "fd2e965afcdbdaa6375847281f70f987261e53f3",
+ "pass": "B",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_b.md",
+  "sha256": "077dd51bd3c86104e2579843cb3162adaf5e3892192e7634aa4712e2274df649"
+ },
+ "purpose": "b6",
+ "render_v": "render_v4",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "5f537c5cd7b2019f",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_b.json",
+  "sha256": "0c8ebcc47c25a92ae60dea2083cdea7b465230a6702cd4fc11c2b7b6bb6eae8d"
+ },
+ "schema_version": 1,
+ "session_id": "63ecf250-b36e-492f-a64d-18b16e715f3d",
+ "started_utc": "2026-10-01T16:43:32+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+ "stratum": null,
+ "usage": {
+  "cache_creation_input_tokens": 22935,
+  "cache_read_input_tokens": 44707,
+  "input_tokens": 6,
+  "output_tokens": 4550,
+  "thinking_tokens": 1587
+ },
+ "warnings": []
+}

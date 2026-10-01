@@ -1,0 +1,140 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1a",
+     "1c",
+     "2c",
+     "3c"
+    ],
+    "part": "right thigh",
+    "severity": "major"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1a",
+     "3a",
+     "3c",
+     "5c"
+    ],
+    "part": "right forearm",
+    "severity": "major"
+   },
+   {
+    "avatar": "A",
+    "kind": "through_body",
+    "panels": [
+     "1a",
+     "3c",
+     "5c"
+    ],
+    "part": "left forearm",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "4a",
+     "4c",
+     "3c"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "B",
+  "floating_parts": {
+   "A": [
+    "left foot"
+   ],
+   "B": []
+  },
+  "more_natural": "B",
+  "same_pose": {
+   "answer": "no",
+   "reason": "B follows the low lunge: back leg stretched along the floor, arms overhead. A is in a squat with both feet under the body and both arms folded in front of the chest."
+  },
+  "summary": "B closely follows the grey body: lunge, back leg lying along the floor, arms overhead, front foot flat on the floor. A has collapsed into an upright squat with its arms folded in front, its right foot tipped on edge and its left foot hovering. It is a different pose."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1265034,
+ "duration_s": 16.94,
+ "errors": [],
+ "frame_hold": 959,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Low_Lunge_pose_or_Anjaneyasana_-a@959",
+ "inputs": {},
+ "item_id": "220923_Low_Lunge_pose_or_Anjaneyasana_-a@959#swap",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c2/8f7120fcb02353f6692438530dc36c52963c3a7f",
+  "images": {
+   "img_1.png": "c117f34d79a7303fc1059e76be4b54f1aac65be9f3ae4b22a3b1f91dd659e82c",
+   "img_2.png": "59f62c260d07b04b6ae5ddb640124bff8d0b2712d476c2745b4848c895ced90d",
+   "img_3.png": "ab3087cdd853f6f0293759c2c3c21a0d86ce9bea3ff2805db3ee08be1035be68",
+   "img_4.png": "4ede93dbd10490ccd04d9aba04f06c142cc0d6a331418d8522001b07355a4ffa",
+   "img_5.png": "6d02e8b60e414253def45d9304f36dd44814e30c8a86a1e2ef07ba0db66af5f0"
+  },
+  "packet_json_sha256": "2ac09ce12508dd2d39a76a3e1e89e306e40c384b136d1fefa59ff3b77420f512"
+ },
+ "packet_id": "8f7120fcb02353f6692438530dc36c52963c3a7f",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c2",
+ "render_v": "render_c2",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "e6a8c370-5e69-44a3-86b3-4c642360bfe6",
+ "started_utc": "2026-10-01T17:07:08+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Low_Lunge_pose_or_Anjaneyasana_-a",
+ "stratum": "swap",
+ "usage": {
+  "cache_creation_input_tokens": 11393,
+  "cache_read_input_tokens": 13577,
+  "input_tokens": 6,
+  "output_tokens": 1631,
+  "thinking_tokens": 471
+ },
+ "warnings": []
+}

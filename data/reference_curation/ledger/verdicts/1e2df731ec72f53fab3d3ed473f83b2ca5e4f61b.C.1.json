@@ -1,0 +1,133 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1b",
+     "2b",
+     "3d",
+     "4b"
+    ],
+    "part": "head",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1b",
+     "3d",
+     "4d"
+    ],
+    "part": "left upper arm",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "2b",
+     "4f"
+    ],
+    "part": "right forearm",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "A",
+  "floating_parts": {
+   "A": [],
+   "B": [
+    "head",
+    "left hand",
+    "right hand",
+    "left forearm",
+    "right forearm",
+    "left upper arm",
+    "right upper arm"
+   ]
+  },
+  "more_natural": "A",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both lie supine with both legs raised vertically and arms along the sides; B is the same shape lifted a few cm off the floor."
+  },
+  "summary": "The pose is the same: lying on the back with both legs raised straight up. A rests on the floor where the grey body does. B is raised a few cm, so its head, arms and hands hover above the floor (drop lines in 1b, 3d, 4b, 4d, 4f)."
+ },
+ "audit_id": null,
+ "cost_usd": 0.13079980000000002,
+ "duration_s": 16.42,
+ "errors": [],
+ "frame_hold": 617,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Legs-Up-the-Wall_Pose_or_Viparita_Karani_-a@617",
+ "inputs": {},
+ "item_id": "220923_Legs-Up-the-Wall_Pose_or_Viparita_Karani_-a@617#lift",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c2/1e2df731ec72f53fab3d3ed473f83b2ca5e4f61b",
+  "images": {
+   "img_1.png": "470a3ce538e9b344a20bf9a060eda342de623832e21b6ac34bc14fba9f69fe93",
+   "img_2.png": "ae25fe7234daf5a468deeb701056b8415fb3ae7d179dcbc022946c762f081911",
+   "img_3.png": "01bae546add77dcc9821609448e2df8336308441aa683dadd78e39648b9c74ac",
+   "img_4.png": "56ad6c48a797b71d7a32e64067d1f0a433435cc600c50647cf6c33de46be4a40",
+   "img_5.png": "4d57f7b3d5ef7dae80da7e12adcf77c2ad5c05875edfad301de4ae5ad50cc986"
+  },
+  "packet_json_sha256": "d879d095ecec763ffcbbc6f23d0f6ff7eb008772c91b12fb6720a2d7a186a01c"
+ },
+ "packet_id": "1e2df731ec72f53fab3d3ed473f83b2ca5e4f61b",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c2",
+ "render_v": "render_c2",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "c1c3a7c1-e928-464d-ace9-ceababfcc47c",
+ "started_utc": "2026-10-01T17:10:03+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Legs-Up-the-Wall_Pose_or_Viparita_Karani_-a",
+ "stratum": "lift",
+ "usage": {
+  "cache_creation_input_tokens": 12124,
+  "cache_read_input_tokens": 13619,
+  "input_tokens": 6,
+  "output_tokens": 1553,
+  "thinking_tokens": 401
+ },
+ "warnings": []
+}

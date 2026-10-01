@@ -1,0 +1,124 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1d",
+     "4f"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "impossible_joint",
+    "panels": [
+     "1d",
+     "4f"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "impossible_joint",
+    "panels": [
+     "4d",
+     "4b"
+    ],
+    "part": "left hand",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "A",
+  "floating_parts": {
+   "A": [],
+   "B": [
+    "right foot"
+   ]
+  },
+  "more_natural": "A",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both hold the same low plank on hands and toes with bent elbows, straight legs and the same floor contacts; only the hand and foot details differ."
+  },
+  "summary": "Both avatars hold the same low plank. A matches the grey body closely, with its hands and toes flat on the floor. In B, the right foot hovers above the floor (drop line visible), the left toes are twisted, and the left hand is bent up at the wrist."
+ },
+ "audit_id": null,
+ "cost_usd": 0.12602,
+ "duration_s": 13.42,
+ "errors": [],
+ "frame_hold": 619,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Peacock_Pose_or_Mayurasana_-a@619",
+ "inputs": {},
+ "item_id": "220923_Peacock_Pose_or_Mayurasana_-a@619#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c2/59d94f95426d38430ffef6613c3c90ef4fed63bb",
+  "images": {
+   "img_1.png": "9d638b101097e3eea07a1bf90edc3da6a6e19d6b53ab638e593e5f968470361a",
+   "img_2.png": "e7365ba91fc9ae99db03d6fef7399aaa4ed22de5a1a3835cae2e80099ed27304",
+   "img_3.png": "5b4b3c98bb5636afe7ea292319e026b5d7aebfc42c9b132edc9a6d41f4f7bf66",
+   "img_4.png": "093cf2ceae3fa11fb536ec1ec2140c7214160021099bfddf238a17a6e49c33c8",
+   "img_5.png": "c78eaac9129c70e9d25f2deaf730ae09d5a72f7c83c792ca4dec01ec2bee14e4"
+  },
+  "packet_json_sha256": "462481994b9a208ed96f71218e939fbdb8519af804ad7e44dcdc2c128bf62937"
+ },
+ "packet_id": "59d94f95426d38430ffef6613c3c90ef4fed63bb",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c2",
+ "render_v": "render_c2",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "a1eedf83-bce1-4ee4-bef6-69a9a19285ea",
+ "started_utc": "2026-10-01T17:25:10+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Peacock_Pose_or_Mayurasana_-a",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 12104,
+  "cache_read_input_tokens": 13620,
+  "input_tokens": 6,
+  "output_tokens": 1322,
+  "thinking_tokens": 252
+ },
+ "warnings": []
+}

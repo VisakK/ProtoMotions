@@ -1,0 +1,277 @@
+{
+ "answer": {
+  "body_body": {
+   "answer": "listed",
+   "contacts": []
+  },
+  "discrepancies": [
+   {
+    "kind": "markers_away_from_avatar_part",
+    "note": "Human left hand skin touches left thigh; avatar hand sits about 7 cm away and slightly higher.",
+    "panels": [
+     "1a",
+     "1c",
+     "2b"
+    ],
+    "part": "left hand"
+   },
+   {
+    "kind": "other",
+    "note": "Label names Warrior III, but performer stands upright on both feet with arms down.",
+    "panels": [
+     "4c",
+     "1a",
+     "2b"
+    ],
+    "part": "torso"
+   }
+  ],
+  "floor": {
+   "head": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "left foot": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "2b",
+     "1a"
+    ]
+   },
+   "left forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "left hand": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "1c",
+     "2b"
+    ]
+   },
+   "left shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3a",
+     "2b"
+    ]
+   },
+   "left thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "left upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "pelvis": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "right foot": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "2b",
+     "1a"
+    ]
+   },
+   "right forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "right hand": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "1c",
+     "2b"
+    ]
+   },
+   "right shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3a",
+     "2b"
+    ]
+   },
+   "right thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "right upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "torso": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   }
+  },
+  "implausible": [],
+  "pose": {
+   "candidates": [
+    {
+     "confidence": "medium",
+     "name": "Mountain Pose (Tadasana), transition"
+    },
+    {
+     "confidence": "medium",
+     "name": "Standing preparation for Warrior III"
+    },
+    {
+     "confidence": "low",
+     "name": "Samasthiti"
+    }
+   ],
+   "description": "Standing upright on both feet, feet hip-width apart and flat on the floor. Head is directly above the hips. Both arms hang down by the sides, having just come down from a T-position; the left hand is beside the left thigh. Both legs straight and vertical. No other part touches the floor."
+  },
+  "repair": {
+   "kinds": [],
+   "needed": "no",
+   "note": "Feet contacts match; only an incidental hand-thigh gap differs, which is minor."
+  },
+  "roles": [
+   {
+    "note": "Hanging hand brushes thigh while standing; not part of Warrior III.",
+    "panels": [
+     "1a",
+     "1c",
+     "2b"
+    ],
+    "part_a": "left thigh",
+    "part_b": "left hand",
+    "role": "incidental"
+   }
+  ],
+  "timing": {
+   "better_panel": "",
+   "end": "capture",
+   "main_moment": "keep",
+   "note": "Starts agree; left foot begins lifting after frame 135, so label end 149 is too late.",
+   "start": "capture"
+  },
+  "variant": {
+   "matches_label": "no",
+   "note": "Upright two-footed stance with arms down; Warrior III needs a horizontal torso and one leg lifted back."
+  }
+ },
+ "audit_id": "holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.audit_v2.calibrated.9278736bb1",
+ "cost_usd": 0.19245980000000001,
+ "duration_s": 27.39,
+ "errors": [],
+ "frame_hold": 94,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220926_Warrior_III_Pose_or_Virabhadrasana_III_-b@118",
+ "inputs": {},
+ "item_id": "220926_Warrior_III_Pose_or_Virabhadrasana_III_-b@118#B4",
+ "n": 2,
+ "num_turns": 7,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_v4/e0e0bfe719b131f1281996106a8eb14e63efc151",
+  "images": {
+   "img_1.png": "afe7552b6e7296a2bbd4312623147b2c638af2fcd8115a0746cba82b1fe0a7f2",
+   "img_2.png": "fb6486bfb64a02b3a6ef77eb43a495237d5ca2834b22e1bc98a22752d17e075b",
+   "img_3.png": "8ee62b643066a305a6efa59f80a28cc0e8ddc22d458e6592d747d61e32e0b479",
+   "img_4.png": "7e63aa26cd8dcf87495902565899768034cb077430a878a27baf85480d4bf434"
+  },
+  "packet_json_sha256": "02b4e5981eb4f9aa81ac8cd91d93e332177ade2ba31959c71c7980d4dfc4ba9f"
+ },
+ "packet_id": "e0e0bfe719b131f1281996106a8eb14e63efc151",
+ "pass": "B",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_b.md",
+  "sha256": "077dd51bd3c86104e2579843cb3162adaf5e3892192e7634aa4712e2274df649"
+ },
+ "purpose": "pose_role",
+ "render_v": "render_v4",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "5f537c5cd7b2019f",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_b.json",
+  "sha256": "0c8ebcc47c25a92ae60dea2083cdea7b465230a6702cd4fc11c2b7b6bb6eae8d"
+ },
+ "schema_version": 1,
+ "session_id": "356c740c-f89b-4b53-a925-1270ecb27469",
+ "started_utc": "2026-10-01T17:02:27+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220926_Warrior_III_Pose_or_Virabhadrasana_III_-b",
+ "stratum": null,
+ "usage": {
+  "cache_creation_input_tokens": 15775,
+  "cache_read_input_tokens": 41879,
+  "input_tokens": 6,
+  "output_tokens": 2893,
+  "thinking_tokens": 1008
+ },
+ "warnings": []
+}

@@ -1,0 +1,131 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "impossible_joint",
+    "panels": [
+     "4a",
+     "3c"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "impossible_joint",
+    "panels": [
+     "4a",
+     "3c"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "through_body",
+    "panels": [
+     "4a"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "through_body",
+    "panels": [
+     "4b",
+     "3d"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "B",
+  "floating_parts": {
+   "A": [],
+   "B": []
+  },
+  "more_natural": "B",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both stand upright with feet together and arms out to the sides; the only change is how the feet sit: rolled inward in A, flat on the floor in B."
+  },
+  "summary": "Both avatars show the same standing pose. B's feet lie flat on the floor, like the grey body's, while A's feet roll inward onto their edges and press into each other. In B the feet overlap slightly. Neither avatar has floating parts."
+ },
+ "audit_id": null,
+ "cost_usd": 0.11611740000000001,
+ "duration_s": 14.57,
+ "errors": [],
+ "frame_hold": 18,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Plow_Pose_or_Halasana_-a@18",
+ "inputs": {},
+ "item_id": "220923_Plow_Pose_or_Halasana_-a@18#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c2/0fb81a2385ef94140205142c9143de6307c3adb8",
+  "images": {
+   "img_1.png": "031a6ff4862ba870446057017331f2456e903384ee1adf3d1ff629ed2c1c272d",
+   "img_2.png": "6929f2fb639affbf18f0e631596feeb224ee804f491d2d0b4c3063b4a76949aa",
+   "img_3.png": "54778a51ef6190a6daa81dbb5307517b1fb550c2d981953e6cf76de5d9a1b687",
+   "img_4.png": "e93a4136c40250be3d64b5a0e184e8c971726bcc6c07fb579b5d394cf4bae9f4",
+   "img_5.png": "f3029bebc9622cd25d582c0f7a0998fefa64bef4800fc7e81c58a1ab7eff25f7"
+  },
+  "packet_json_sha256": "c5d3110d5207fd0ed729a22368884cecdeb7b3449016f8ae17bab3449dc70796"
+ },
+ "packet_id": "0fb81a2385ef94140205142c9143de6307c3adb8",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c2",
+ "render_v": "render_c2",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "75c74b99-e6f3-41dc-b92a-872241eaaa3e",
+ "started_utc": "2026-10-01T17:25:39+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Plow_Pose_or_Halasana_-a",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 10676,
+  "cache_read_input_tokens": 13527,
+  "input_tokens": 6,
+  "output_tokens": 1399,
+  "thinking_tokens": 307
+ },
+ "warnings": []
+}

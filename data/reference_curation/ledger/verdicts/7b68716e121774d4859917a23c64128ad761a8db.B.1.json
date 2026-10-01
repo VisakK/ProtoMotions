@@ -1,0 +1,527 @@
+{
+ "answer": {
+  "body_body": {
+   "answer": "listed",
+   "contacts": [
+    {
+     "certainty": "clear",
+     "panels": [
+      "3a",
+      "2b"
+     ],
+     "part_a": "left shin",
+     "part_b": "head"
+    },
+    {
+     "certainty": "clear",
+     "panels": [
+      "1d",
+      "1c"
+     ],
+     "part_a": "right shin",
+     "part_b": "head"
+    },
+    {
+     "certainty": "clear",
+     "panels": [
+      "3a",
+      "1b"
+     ],
+     "part_a": "left shin",
+     "part_b": "left hand"
+    },
+    {
+     "certainty": "clear",
+     "panels": [
+      "1c",
+      "1b"
+     ],
+     "part_a": "right shin",
+     "part_b": "right hand"
+    },
+    {
+     "certainty": "clear",
+     "panels": [
+      "2b",
+      "1a"
+     ],
+     "part_a": "left shin",
+     "part_b": "left forearm"
+    },
+    {
+     "certainty": "clear",
+     "panels": [
+      "2b",
+      "1a"
+     ],
+     "part_a": "left shin",
+     "part_b": "left upper arm"
+    },
+    {
+     "certainty": "clear",
+     "panels": [
+      "1a",
+      "2b"
+     ],
+     "part_a": "left thigh",
+     "part_b": "left upper arm"
+    },
+    {
+     "certainty": "possible",
+     "panels": [
+      "1b",
+      "1d"
+     ],
+     "part_a": "left shin",
+     "part_b": "right shin"
+    }
+   ]
+  },
+  "discrepancies": [
+   {
+    "kind": "other",
+    "note": "Human torso skin touches the thighs. Avatar torso sits several cm off the left thigh, less off the right.",
+    "panels": [
+     "1a",
+     "2b"
+    ],
+    "part": "left thigh"
+   },
+   {
+    "kind": "other",
+    "note": "Human hands touch the feet. The avatar hands sit several cm above the feet.",
+    "panels": [
+     "3a",
+     "1b"
+    ],
+    "part": "left hand"
+   },
+   {
+    "kind": "other",
+    "note": "Human right forearm touches the right shin. Avatar forearm is a few cm away.",
+    "panels": [
+     "1b",
+     "1c"
+    ],
+    "part": "right forearm"
+   },
+   {
+    "kind": "other",
+    "note": "Avatar left upper arm touches the left thigh. Human skin is several cm apart.",
+    "panels": [
+     "1a",
+     "2b"
+    ],
+    "part": "left upper arm"
+   },
+   {
+    "kind": "other",
+    "note": "Labelled foot to opposite-shin contacts (both sides) do not occur. Avatar and skin are several cm apart.",
+    "panels": [
+     "3a"
+    ],
+    "part": "left foot"
+   },
+   {
+    "kind": "other",
+    "note": "Labelled right shin to right upper arm contact not made by the skin or the avatar. Labels R_THIGH+HEAD and R_THIGH+R_UPPER_ARM are unsupported.",
+    "panels": [
+     "1c",
+     "1b"
+    ],
+    "part": "right upper arm"
+   }
+  ],
+  "floor": {
+   "head": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "3a"
+    ]
+   },
+   "left foot": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "2b",
+     "3a"
+    ]
+   },
+   "left forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "3a"
+    ]
+   },
+   "left hand": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3a",
+     "2b"
+    ]
+   },
+   "left shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3a",
+     "2b"
+    ]
+   },
+   "left thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "left upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "pelvis": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "right foot": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "2b",
+     "3a"
+    ]
+   },
+   "right forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1b",
+     "1c"
+    ]
+   },
+   "right hand": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3a",
+     "1b"
+    ]
+   },
+   "right shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3a",
+     "2b"
+    ]
+   },
+   "right thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "1b"
+    ]
+   },
+   "right upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1c",
+     "1b"
+    ]
+   },
+   "torso": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   }
+  },
+  "implausible": [],
+  "pose": {
+   "candidates": [
+    {
+     "confidence": "high",
+     "name": "Standing Forward Bend (Uttanasana), ankle grip"
+    },
+    {
+     "confidence": "medium",
+     "name": "Padahastasana (Hand to Foot)"
+    },
+    {
+     "confidence": "low",
+     "name": "Ragdoll forward fold"
+    }
+   ],
+   "description": "Only both feet touch the floor. Legs straight and close together. Torso folded deeply forward against the thighs. Head hangs below the hips, about a quarter metre up, between the shins. Both arms wrap behind the legs, and the hands hold the lower shins and ankles just above the feet. Hands are off the floor."
+  },
+  "repair": {
+   "kinds": [
+    "pose_mismatch"
+   ],
+   "needed": "yes",
+   "note": "Avatar fold is too shallow: torso is off the thighs and hands are off the feet and right forearm. Floor contacts are correct."
+  },
+  "roles": [
+   {
+    "note": "Not touching. Feet are only placed close together.",
+    "panels": [
+     "3a"
+    ],
+    "part_a": "left foot",
+    "part_b": "right shin",
+    "role": "incidental"
+   },
+   {
+    "note": "Hand holds the ankle near the foot. Human touches; avatar does not.",
+    "panels": [
+     "3a",
+     "1b"
+    ],
+    "part_a": "left foot",
+    "part_b": "left hand",
+    "role": "allowed"
+   },
+   {
+    "note": "Not touching. Legs only held close together.",
+    "panels": [
+     "3a"
+    ],
+    "part_a": "right foot",
+    "part_b": "left shin",
+    "role": "incidental"
+   },
+   {
+    "note": "Hand grips ankle near foot. Human touches; avatar does not.",
+    "panels": [
+     "1b",
+     "1c"
+    ],
+    "part_a": "right foot",
+    "part_b": "right hand",
+    "role": "allowed"
+   },
+   {
+    "note": "Legs held together, so the shins brush.",
+    "panels": [
+     "1b",
+     "1d"
+    ],
+    "part_a": "left shin",
+    "part_b": "right shin",
+    "role": "incidental"
+   },
+   {
+    "note": "Deep fold brings the head in to the shins.",
+    "panels": [
+     "3a",
+     "2b"
+    ],
+    "part_a": "left shin",
+    "part_b": "head",
+    "role": "allowed"
+   },
+   {
+    "note": "Arm wraps behind the leg and brushes the shin.",
+    "panels": [
+     "2b",
+     "1a"
+    ],
+    "part_a": "left shin",
+    "part_b": "left upper arm",
+    "role": "incidental"
+   },
+   {
+    "note": "Forearm lies along the back of the calf in the grip.",
+    "panels": [
+     "2b",
+     "3a"
+    ],
+    "part_a": "left shin",
+    "part_b": "left forearm",
+    "role": "allowed"
+   },
+   {
+    "note": "Hand grasps the lower shin. A grip variant of the fold.",
+    "panels": [
+     "3a",
+     "1b"
+    ],
+    "part_a": "left shin",
+    "part_b": "left hand",
+    "role": "allowed"
+   },
+   {
+    "note": "Head drawn in to the shins in a deep fold.",
+    "panels": [
+     "1d",
+     "1c"
+    ],
+    "part_a": "right shin",
+    "part_b": "head",
+    "role": "allowed"
+   },
+   {
+    "note": "Not touching. The arm only passes near the shin.",
+    "panels": [
+     "1c"
+    ],
+    "part_a": "right shin",
+    "part_b": "right upper arm",
+    "role": "incidental"
+   },
+   {
+    "note": "Forearm along the calf in the grip. Human touches; avatar does not.",
+    "panels": [
+     "1b",
+     "1c"
+    ],
+    "part_a": "right shin",
+    "part_b": "right forearm",
+    "role": "allowed"
+   },
+   {
+    "note": "Hand grasps the lower shin in the grip variant.",
+    "panels": [
+     "1c",
+     "1b"
+    ],
+    "part_a": "right shin",
+    "part_b": "right hand",
+    "role": "allowed"
+   },
+   {
+    "note": "Torso folds onto the thighs. Human touches; avatar leaves a gap.",
+    "panels": [
+     "1a",
+     "2b"
+    ],
+    "part_a": "left thigh",
+    "part_b": "torso",
+    "role": "allowed"
+   },
+   {
+    "note": "Only the avatar's arm touches the thigh. Human skin is apart.",
+    "panels": [
+     "1a",
+     "2b"
+    ],
+    "part_a": "left thigh",
+    "part_b": "left upper arm",
+    "role": "incidental"
+   },
+   {
+    "note": "Torso against the thighs. Human touches; the avatar has a small gap.",
+    "panels": [
+     "1c",
+     "1b"
+    ],
+    "part_a": "right thigh",
+    "part_b": "torso",
+    "role": "allowed"
+   }
+  ],
+  "timing": {
+   "better_panel": "",
+   "end": "label",
+   "main_moment": "keep",
+   "note": "At 4b the body is still folding down. At 4d the fold and grip still hold. 4c is fully formed.",
+   "start": "capture"
+  },
+  "variant": {
+   "matches_label": "variant",
+   "note": "The hands hold the backs of the ankles and shins instead of resting on the floor. Head is drawn in to the shins."
+  }
+ },
+ "audit_id": "holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.audit_v2.calibrated.9278736bb1",
+ "cost_usd": 0.3244862,
+ "duration_s": 44.73,
+ "errors": [],
+ "frame_hold": 416,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Standing_Forward_Bend_pose_or_Uttanasana_-a@416",
+ "inputs": {},
+ "item_id": "220923_Standing_Forward_Bend_pose_or_Uttanasana_-a@416#B4",
+ "n": 1,
+ "num_turns": 7,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_v4/7b68716e121774d4859917a23c64128ad761a8db",
+  "images": {
+   "img_1.png": "10572ca8c64be3e89d5e25dd3341a3864a7e8cb5563754b539a34c4fef417ba5",
+   "img_2.png": "979a2c3a59a517f26586823fffdcc27b4a5d695d9eb2b3741599e6d97f0d2737",
+   "img_3.png": "c74b2855b6c85f051d6611a438bf87433b097a7df9bdf27b73fa233f940f29b4",
+   "img_4.png": "c9134b00ea998b06ff733804b0145adf435c6a69cebbdb5ef79b4310da2dbe97"
+  },
+  "packet_json_sha256": "554e478a7785cb2e9c3e19968a6c032b4bef4b15780f205db535937c649be0de"
+ },
+ "packet_id": "7b68716e121774d4859917a23c64128ad761a8db",
+ "pass": "B",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_b.md",
+  "sha256": "077dd51bd3c86104e2579843cb3162adaf5e3892192e7634aa4712e2274df649"
+ },
+ "purpose": "b6",
+ "render_v": "render_v4",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "5f537c5cd7b2019f",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_b.json",
+  "sha256": "0c8ebcc47c25a92ae60dea2083cdea7b465230a6702cd4fc11c2b7b6bb6eae8d"
+ },
+ "schema_version": 1,
+ "session_id": "774abf18-eac4-4c38-aebf-867715301c1a",
+ "started_utc": "2026-10-01T16:51:59+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Standing_Forward_Bend_pose_or_Uttanasana_-a",
+ "stratum": null,
+ "usage": {
+  "cache_creation_input_tokens": 26203,
+  "cache_read_input_tokens": 47091,
+  "input_tokens": 6,
+  "output_tokens": 5271,
+  "thinking_tokens": 1563
+ },
+ "warnings": []
+}

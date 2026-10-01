@@ -1,0 +1,343 @@
+{
+ "answer": {
+  "body_body": {
+   "answer": "listed",
+   "contacts": [
+    {
+     "certainty": "clear",
+     "panels": [
+      "1a",
+      "1b",
+      "2a"
+     ],
+     "part_a": "right thigh",
+     "part_b": "right upper arm"
+    }
+   ]
+  },
+  "discrepancies": [
+   {
+    "kind": "avatar_on_floor_markers_off_floor",
+    "note": "Avatar foot rests flat; markers sit about 6 cm up and the mat shows no load under the right foot.",
+    "panels": [
+     "3e",
+     "3c"
+    ],
+    "part": "right foot"
+   },
+   {
+    "kind": "other",
+    "note": "label_ground lists only the hands, but the head rests on the floor in both the capture and the avatar.",
+    "panels": [
+     "3a",
+     "2b"
+    ],
+    "part": "head"
+   },
+   {
+    "kind": "other",
+    "note": "label_ground omits the feet; the capture shows both feet on the floor and load under the left foot.",
+    "panels": [
+     "3d",
+     "2b"
+    ],
+    "part": "left foot"
+   },
+   {
+    "kind": "other",
+    "note": "Skin shows the right thigh touching the torso; the avatar leaves a gap of about 9 cm.",
+    "panels": [
+     "1a",
+     "2a"
+    ],
+    "part": "right thigh"
+   },
+   {
+    "kind": "other",
+    "note": "Label pair right thigh + right forearm is not touching at the main moment, either on the skin or the avatar.",
+    "panels": [
+     "1a",
+     "3c"
+    ],
+    "part": "right forearm"
+   }
+  ],
+  "floor": {
+   "head": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "2b"
+    ]
+   },
+   "left foot": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3d",
+     "1c",
+     "2b"
+    ]
+   },
+   "left forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3b",
+     "2b"
+    ]
+   },
+   "left hand": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3b",
+     "2b"
+    ]
+   },
+   "left shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "1c",
+     "2b"
+    ]
+   },
+   "left thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1c"
+    ]
+   },
+   "left upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3b",
+     "2b"
+    ]
+   },
+   "pelvis": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "right foot": {
+    "avatar": "touching",
+    "markers": "off_floor",
+    "panels": [
+     "3e",
+     "3c",
+     "2b"
+    ]
+   },
+   "right forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3c",
+     "2b"
+    ]
+   },
+   "right hand": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3c",
+     "2b"
+    ]
+   },
+   "right shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "3e"
+    ]
+   },
+   "right thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "right upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3c",
+     "2b"
+    ]
+   },
+   "torso": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "3a"
+    ]
+   }
+  },
+  "implausible": [],
+  "pose": {
+   "candidates": [
+    {
+     "confidence": "medium",
+     "name": "Eka Pada Koundinyasana II, head-down prep"
+    },
+    {
+     "confidence": "low",
+     "name": "Eka Pada Koundinyasana II"
+    },
+    {
+     "confidence": "low",
+     "name": "Tripod headstand split-leg prep"
+    }
+   ],
+   "description": "Head, both hands and both feet on the floor; head lies below and in front of raised hips. Hands are planted under the shoulders with elbows bent. Left leg extends back, resting on the toes. Right knee is bent forward, with the right thigh against the back of the right upper arm and the right foot near the hands."
+  },
+  "repair": {
+   "kinds": [],
+   "needed": "no",
+   "note": "The avatar matches the contacts; only small gaps differ, at the right foot and right thigh-torso."
+  },
+  "roles": [
+   {
+    "note": "Skin touches near the knee; the pose needs the thigh contact, not the shin.",
+    "panels": [
+     "1a",
+     "3c"
+    ],
+    "part_a": "right shin",
+    "part_b": "right upper arm",
+    "role": "allowed"
+   },
+   {
+    "note": "Front thigh resting on the back of the upper arm defines Koundinyasana II.",
+    "panels": [
+     "1a",
+     "2a"
+    ],
+    "part_a": "right thigh",
+    "part_b": "right upper arm",
+    "role": "required_touch"
+   },
+   {
+    "note": "No touch at the main moment; touches only briefly near the end.",
+    "panels": [
+     "1a",
+     "4e"
+    ],
+    "part_a": "right thigh",
+    "part_b": "right forearm",
+    "role": "incidental"
+   },
+   {
+    "note": "Skin touches in this compact entry; the avatar shows a gap.",
+    "panels": [
+     "1a",
+     "2a"
+    ],
+    "part_a": "right thigh",
+    "part_b": "torso",
+    "role": "allowed"
+   }
+  ],
+  "timing": {
+   "better_panel": "",
+   "end": "label",
+   "main_moment": "keep",
+   "note": "Label and capture windows are identical; the head, hand and left foot contacts stay settled across the strip.",
+   "start": "label"
+  },
+  "variant": {
+   "matches_label": "variant",
+   "note": "Head and both feet stay on the floor, so this is the supported entry stage, not the arm balance."
+  }
+ },
+ "audit_id": "holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.audit_v2.calibrated.9278736bb1",
+ "cost_usd": 0.251165,
+ "duration_s": 41.85,
+ "errors": [],
+ "frame_hold": 888,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-b@873",
+ "inputs": {},
+ "item_id": "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-b@873#B4",
+ "n": 1,
+ "num_turns": 7,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_v4/94efcd44277d24fb839db8751b37f2136ac1c6d0",
+  "images": {
+   "img_1.png": "9e5f0e5f84ee36abc37e3f749300a655c3aaa127f0a956d574c0ea8cdc38c3b7",
+   "img_2.png": "22745f145eaafd50590dfbbfae7d524f7dc01b02df1ccd3cd6c7dfcfb40a666d",
+   "img_3.png": "bb3bd700652db6e51f3050cf7e6ea27e1f0ef19effb7b805e6aedc2e9edf9b98",
+   "img_4.png": "7b0118ab1f9bc8f8456de053e39cf9665feea096ba50408fb78e7b9b222952ad"
+  },
+  "packet_json_sha256": "aa18be0dffb7e1da7877ba4514d23eef96dadf720bedc2f40fd5a957358859ea"
+ },
+ "packet_id": "94efcd44277d24fb839db8751b37f2136ac1c6d0",
+ "pass": "B",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_b.md",
+  "sha256": "077dd51bd3c86104e2579843cb3162adaf5e3892192e7634aa4712e2274df649"
+ },
+ "purpose": "b6",
+ "render_v": "render_v4",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "5f537c5cd7b2019f",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_b.json",
+  "sha256": "0c8ebcc47c25a92ae60dea2083cdea7b465230a6702cd4fc11c2b7b6bb6eae8d"
+ },
+ "schema_version": 1,
+ "session_id": "0d42261a-55c0-4204-aab2-1689c52b38a8",
+ "started_utc": "2026-10-01T16:40:59+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-b",
+ "stratum": null,
+ "usage": {
+  "cache_creation_input_tokens": 19885,
+  "cache_read_input_tokens": 41205,
+  "input_tokens": 6,
+  "output_tokens": 4191,
+  "thinking_tokens": 1851
+ },
+ "warnings": [
+  "load word 'load'"
+ ]
+}

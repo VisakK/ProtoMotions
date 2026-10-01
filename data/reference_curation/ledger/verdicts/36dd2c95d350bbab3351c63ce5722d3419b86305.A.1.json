@@ -1,0 +1,228 @@
+{
+ "answer": {
+  "body_body": {
+   "answer": "listed",
+   "contacts": []
+  },
+  "discrepancies": [],
+  "floor": {
+   "head": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "2b",
+     "3a",
+     "3c"
+    ]
+   },
+   "left foot": {
+    "avatar": "off_floor",
+    "markers": "cannot_tell",
+    "panels": [
+     "3b",
+     "1b",
+     "2b"
+    ]
+   },
+   "left forearm": {
+    "avatar": "off_floor",
+    "markers": "cannot_tell",
+    "panels": [
+     "3d",
+     "1a"
+    ]
+   },
+   "left hand": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "3d",
+     "1d"
+    ]
+   },
+   "left shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "left thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "left upper arm": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3d",
+     "2b"
+    ]
+   },
+   "pelvis": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "right foot": {
+    "avatar": "off_floor",
+    "markers": "cannot_tell",
+    "panels": [
+     "3b",
+     "1b",
+     "2b"
+    ]
+   },
+   "right forearm": {
+    "avatar": "off_floor",
+    "markers": "cannot_tell",
+    "panels": [
+     "3c",
+     "1c"
+    ]
+   },
+   "right hand": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1c",
+     "1d",
+     "3c"
+    ]
+   },
+   "right shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1c"
+    ]
+   },
+   "right thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1c"
+    ]
+   },
+   "right upper arm": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3c",
+     "1c"
+    ]
+   },
+   "torso": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "3c"
+    ]
+   }
+  },
+  "implausible": [],
+  "pose": {
+   "candidates": [
+    {
+     "confidence": "low",
+     "name": "Dolphin pose transition to headstand prep"
+    },
+    {
+     "confidence": "low",
+     "name": "Supported headstand (Sirsasana) preparation"
+    },
+    {
+     "confidence": "low",
+     "name": "Tripod headstand preparation"
+    }
+   ],
+   "description": "Inverted V: head rests on the floor, hips high above and behind it. Both upper arms lie on the floor beside the head. Both forearms point straight up from the elbows, and the hands are raised in the air. Both legs are straight and spread a little. The feet are on their toes, just above the floor. In the time strip the forearms later come down to the floor."
+  }
+ },
+ "audit_id": "holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.audit_v2.calibrated.9278736bb1",
+ "cost_usd": 0.15196099999999998,
+ "duration_s": 39.67,
+ "errors": [],
+ "frame_hold": 1090,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220926_Plow_Pose_or_Halasana_-b@1090",
+ "inputs": {},
+ "item_id": "220926_Plow_Pose_or_Halasana_-b@1090#A4:fit",
+ "n": 1,
+ "num_turns": 7,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_v4/36dd2c95d350bbab3351c63ce5722d3419b86305",
+  "images": {
+   "img_1.png": "d3f59db0403a8414e374c19d72706e9707bee3e9c67d717f77fd8989408a0c1b",
+   "img_2.png": "693f1eee953468484623f34f2b03cc347558ed5952c8dd2c0f3339314715b4b1",
+   "img_3.png": "e1c11098f1f9eda4b26033d7f505a71bf6a1716884a7ef2aa14caf1609945422",
+   "img_4.png": "1b666842572877d07fd0146aff05f3b0c9789c8296f1d265304c8f6375ffb38d"
+  },
+  "packet_json_sha256": "0a51f6f3bfb7d949a9e61fe6dda71275bd53c765e136ce3879b3bdd096c5da1a"
+ },
+ "packet_id": "36dd2c95d350bbab3351c63ce5722d3419b86305",
+ "pass": "A",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_a.md",
+  "sha256": "bae5cfe8420cee596fc188c14966536b354df29210c1e9a94384c925aab70510"
+ },
+ "purpose": "calibration",
+ "render_v": "render_v4",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "5de359f0431719d8",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_a.json",
+  "sha256": "5a05ec7b10cce5f545b813c390820a81bbbde96259cc00318df7ec618475ff9d"
+ },
+ "schema_version": 1,
+ "session_id": "8eb73400-b150-4424-84c6-80ddf3011bc6",
+ "started_utc": "2026-10-01T16:15:21+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220926_Plow_Pose_or_Halasana_-b",
+ "stratum": "inversion",
+ "usage": {
+  "cache_creation_input_tokens": 8875,
+  "cache_read_input_tokens": 26085,
+  "input_tokens": 6,
+  "output_tokens": 3786,
+  "thinking_tokens": 2328
+ },
+ "warnings": []
+}

@@ -1,0 +1,143 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "through_floor",
+    "panels": [
+     "4a",
+     "3c"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "through_floor",
+    "panels": [
+     "4a"
+    ],
+    "part": "right hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "4c",
+     "1c"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "jitter",
+    "panels": [
+     "5a",
+     "5c"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "jitter",
+    "panels": [
+     "5a",
+     "5c"
+    ],
+    "part": "right hand",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "B",
+  "floating_parts": {
+   "A": [
+    "right hand"
+   ],
+   "B": []
+  },
+  "more_natural": "B",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Same wide-legged forward bend: right hand and right foot down together, left leg extended back, left arm raised. Only small differences in foot and hand placement."
+  },
+  "summary": "A and B show the same pose. B's right foot, right hand and left foot sit flat on the floor and match the grey body. A's right foot and right hand are tilted and dip into the floor, its left foot box is misaligned, and its right hand hovers in the earliest strip row (5a)."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1462596,
+ "duration_s": 20.33,
+ "errors": [],
+ "frame_hold": 306,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Extended_Revolved_Side_Angle_Pose_or_Utthita_Parsvakonasana_-a@301",
+ "inputs": {},
+ "item_id": "220923_Extended_Revolved_Side_Angle_Pose_or_Utthita_Parsvakonasana_-a@301#edit",
+ "n": 1,
+ "num_turns": 9,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c2/64d05fba760982355728332d207a4e8784949615",
+  "images": {
+   "img_1.png": "25d11dd4e835d07146041725b28bb641d036d511a3fb5e515993967b2abfd359",
+   "img_2.png": "05ce89b87fdfdfac507416947231822ad8825c07049240bbe7176790fdfed789",
+   "img_3.png": "8c28e6d27f5d8707fe5d78d2decf1a4686844b0fd375483f3c05875445a999da",
+   "img_4.png": "4cd49d7ee9e027656c1121a335a171a1733973d07a8ed7b71e28026d096415a4",
+   "img_5.png": "ac4ab57483204400beab3747df922ed7eed6da3c3da43700867fa866ec643394"
+  },
+  "packet_json_sha256": "bf758ebb4e60e4c68668571698fbbb7fb4cf91a0c79e9bd4bc10474efbbf8ac5"
+ },
+ "packet_id": "64d05fba760982355728332d207a4e8784949615",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c2",
+ "render_v": "render_c2",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "190bf5da-ed96-41ae-af6a-171c5443c378",
+ "started_utc": "2026-10-01T17:18:50+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Extended_Revolved_Side_Angle_Pose_or_Utthita_Parsvakonasana_-a",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 12380,
+  "cache_read_input_tokens": 27938,
+  "input_tokens": 8,
+  "output_tokens": 2080,
+  "thinking_tokens": 367
+ },
+ "warnings": []
+}

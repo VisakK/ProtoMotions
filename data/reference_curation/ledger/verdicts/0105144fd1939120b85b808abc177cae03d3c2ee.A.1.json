@@ -1,0 +1,335 @@
+{
+ "answer": {
+  "body_body": {
+   "answer": "listed",
+   "contacts": []
+  },
+  "discrepancies": [
+   {
+    "kind": "avatar_off_floor_markers_on_floor",
+    "note": "Avatar hand hovers above the floor with a drop line; its markers lie at floor level.",
+    "panels": [
+     "3b",
+     "1d"
+    ],
+    "part": "left hand"
+   },
+   {
+    "kind": "avatar_off_floor_markers_on_floor",
+    "note": "Avatar hand hovers above the floor with a drop line; its markers lie at floor level.",
+    "panels": [
+     "3b",
+     "1d"
+    ],
+    "part": "right hand"
+   },
+   {
+    "kind": "avatar_off_floor_markers_on_floor",
+    "note": "Both forearms have drop lines; their orange markers are near the floor.",
+    "panels": [
+     "3a",
+     "3b",
+     "2b",
+     "1c"
+    ],
+    "part": "left forearm"
+   },
+   {
+    "kind": "avatar_off_floor_markers_on_floor",
+    "note": "Upper arm floats with a drop line; its purple markers are at floor level.",
+    "panels": [
+     "3a"
+    ],
+    "part": "left upper arm"
+   },
+   {
+    "kind": "avatar_off_floor_markers_on_floor",
+    "note": "Upper arm floats with a drop line; its markers are at floor level.",
+    "panels": [
+     "3a",
+     "1c"
+    ],
+    "part": "right upper arm"
+   },
+   {
+    "kind": "avatar_off_floor_markers_on_floor",
+    "note": "Avatar head sphere is well above the floor; head markers are at floor level, offset toward the feet.",
+    "panels": [
+     "2b",
+     "1a",
+     "2a"
+    ],
+    "part": "head"
+   },
+   {
+    "kind": "avatar_off_floor_markers_on_floor",
+    "note": "Foot box is raised with a long drop line; its markers are close to the floor.",
+    "panels": [
+     "1b",
+     "3c"
+    ],
+    "part": "left foot"
+   },
+   {
+    "kind": "avatar_off_floor_markers_on_floor",
+    "note": "Foot box is raised with a drop line; its markers are near the floor.",
+    "panels": [
+     "1b",
+     "3c"
+    ],
+    "part": "right foot"
+   }
+  ],
+  "floor": {
+   "head": {
+    "avatar": "off_floor",
+    "markers": "touching",
+    "panels": [
+     "2b",
+     "3a",
+     "1a"
+    ]
+   },
+   "left foot": {
+    "avatar": "off_floor",
+    "markers": "touching",
+    "panels": [
+     "1b",
+     "3c",
+     "2b"
+    ]
+   },
+   "left forearm": {
+    "avatar": "off_floor",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "3b",
+     "2b"
+    ]
+   },
+   "left hand": {
+    "avatar": "off_floor",
+    "markers": "touching",
+    "panels": [
+     "3b",
+     "1d",
+     "2b"
+    ]
+   },
+   "left shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "left thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "left upper arm": {
+    "avatar": "off_floor",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "2b"
+    ]
+   },
+   "pelvis": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "right foot": {
+    "avatar": "off_floor",
+    "markers": "touching",
+    "panels": [
+     "1b",
+     "3c",
+     "2b"
+    ]
+   },
+   "right forearm": {
+    "avatar": "off_floor",
+    "markers": "touching",
+    "panels": [
+     "3b",
+     "1c",
+     "2b"
+    ]
+   },
+   "right hand": {
+    "avatar": "off_floor",
+    "markers": "touching",
+    "panels": [
+     "3b",
+     "1d",
+     "2b"
+    ]
+   },
+   "right shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1c"
+    ]
+   },
+   "right thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1c"
+    ]
+   },
+   "right upper arm": {
+    "avatar": "off_floor",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "1c"
+    ]
+   },
+   "torso": {
+    "avatar": "off_floor",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "1a",
+     "2b"
+    ]
+   }
+  },
+  "implausible": [
+   {
+    "kind": "no_base_of_support",
+    "note": "No avatar part touches the floor; the whole body hovers with drop lines under every part.",
+    "panels": [
+     "2b",
+     "3a",
+     "3b",
+     "3c"
+    ],
+    "parts": [
+     "left hand",
+     "right hand",
+     "left foot",
+     "right foot"
+    ]
+   },
+   {
+    "kind": "other",
+    "note": "Head hangs below and behind the shoulders, toward the hips, which is an unusual neck placement.",
+    "panels": [
+     "1a",
+     "2b"
+    ],
+    "parts": [
+     "head",
+     "torso"
+    ]
+   }
+  ],
+  "pose": {
+   "candidates": [
+    {
+     "confidence": "low",
+     "name": "Extended puppy pose with straight legs"
+    },
+    {
+     "confidence": "low",
+     "name": "Dolphin pose"
+    },
+    {
+     "confidence": "low",
+     "name": "Downward-facing dog"
+    }
+   ],
+   "description": "Avatar: no part touches the floor; the whole body floats a few cm up. Hips are highest and the head hangs low, below and behind the shoulders. Both arms reach forward almost flat and parallel just above the floor, with the hands in front. Both legs are straight and slope down from the hips to the feet. The markers put the hands, forearms, upper arms, head, chest and feet near the floor."
+  }
+ },
+ "audit_id": "holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.audit_v2.calibrated.9278736bb1",
+ "cost_usd": 0.2583972,
+ "duration_s": 68.32,
+ "errors": [],
+ "frame_hold": 1644,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220926_Plow_Pose_or_Halasana_-b@1644",
+ "inputs": {},
+ "item_id": "220926_Plow_Pose_or_Halasana_-b@1644#A4:lift12",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_v4/0105144fd1939120b85b808abc177cae03d3c2ee",
+  "images": {
+   "img_1.png": "7d08381f4aed86cfa2f9685775468931ed3c57fa4fb35181e572a21594899503",
+   "img_2.png": "5916724311229a9febc0e99ed88cbdc7a60759eaac2ab95a601f19795cc54550",
+   "img_3.png": "e7ecd169cdbf139fd8c152bec697daf74ddd887cbecad71386c936778029798d",
+   "img_4.png": "96763d65e37f72cfb5fa40fda8c5933e0b628d90ed9d1c1a2b25566f8454b42b"
+  },
+  "packet_json_sha256": "e7193cfe9d224b1b7d429b17024f96c80b3e74719cec1d05895bae48ee189091"
+ },
+ "packet_id": "0105144fd1939120b85b808abc177cae03d3c2ee",
+ "pass": "A",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_a.md",
+  "sha256": "bae5cfe8420cee596fc188c14966536b354df29210c1e9a94384c925aab70510"
+ },
+ "purpose": "calibration",
+ "render_v": "render_v4",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "5de359f0431719d8",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_a.json",
+  "sha256": "5a05ec7b10cce5f545b813c390820a81bbbde96259cc00318df7ec618475ff9d"
+ },
+ "schema_version": 1,
+ "session_id": "67dbb859-9fc0-43ba-9f89-27af8c5e7400",
+ "started_utc": "2026-10-01T16:19:42+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220926_Plow_Pose_or_Halasana_-b",
+ "stratum": "inversion",
+ "usage": {
+  "cache_creation_input_tokens": 13091,
+  "cache_read_input_tokens": 40786,
+  "input_tokens": 8,
+  "output_tokens": 7274,
+  "thinking_tokens": 3194
+ },
+ "warnings": []
+}

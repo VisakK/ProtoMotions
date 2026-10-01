@@ -1,0 +1,119 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1a",
+     "1c",
+     "2a",
+     "3c",
+     "4c",
+     "5c"
+    ],
+    "part": "right forearm",
+    "severity": "major"
+   },
+   {
+    "avatar": "A",
+    "kind": "impossible_joint",
+    "panels": [
+     "1c",
+     "4c",
+     "3c"
+    ],
+    "part": "right hand",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "B",
+  "floating_parts": {
+   "A": [
+    "right hand"
+   ],
+   "B": []
+  },
+  "more_natural": "B",
+  "same_pose": {
+   "answer": "no",
+   "reason": "In A the right forearm sticks forward roughly level and the right hand hangs well above the floor. In B, as in the grey body, the right arm is straight and the hand is planted."
+  },
+  "summary": "B matches the grey body, with both hands and both feet on the floor. In A the right elbow is bent so the forearm points forward and the right hand hangs about 20\u201330 cm above the floor (drop line). That changes the support and the pose."
+ },
+ "audit_id": null,
+ "cost_usd": 0.12519560000000002,
+ "duration_s": 13.28,
+ "errors": [],
+ "frame_hold": 1409,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220926_Upward_Plank_Pose_or_Purvottanasana_-a@1409",
+ "inputs": {},
+ "item_id": "220926_Upward_Plank_Pose_or_Purvottanasana_-a@1409#kink",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c2/76f5d73ce0f6dd84cea1291bc0dbd66e2c5c60d0",
+  "images": {
+   "img_1.png": "b62f07ea0bbd7913dce2bf83c24561d3fc82ec50cd6ddaf94fc707dbe3a87b3c",
+   "img_2.png": "5d4625a5830fb4e6365d4ee833f050dd899a6975ad49a685332b088a273a7f61",
+   "img_3.png": "b161c09365fc72d305eec7776d7233a3dadbe0d5cbc8f16aae0fb73338548440",
+   "img_4.png": "92cf189f24a53dfcf8fa81cddf65f4cda485426c0439af47b4630bf182f81847",
+   "img_5.png": "77576a0643569de65b5991e7cd0115f0fede367ae70d9cc76bb616ba026a62a8"
+  },
+  "packet_json_sha256": "bde2a9827c0a0cb1061e157895110b5b6fd6c5285595399b5b69e82760665f98"
+ },
+ "packet_id": "76f5d73ce0f6dd84cea1291bc0dbd66e2c5c60d0",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c2",
+ "render_v": "render_c2",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "e0424bd6-245e-4df8-95df-c1b840d7e489",
+ "started_utc": "2026-10-01T17:15:03+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220926_Upward_Plank_Pose_or_Purvottanasana_-a",
+ "stratum": "kink",
+ "usage": {
+  "cache_creation_input_tokens": 12148,
+  "cache_read_input_tokens": 13638,
+  "input_tokens": 6,
+  "output_tokens": 1263,
+  "thinking_tokens": 188
+ },
+ "warnings": []
+}

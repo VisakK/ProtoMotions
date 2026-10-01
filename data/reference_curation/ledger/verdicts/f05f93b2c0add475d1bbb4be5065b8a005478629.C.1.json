@@ -1,0 +1,145 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1a",
+     "3c",
+     "5c"
+    ],
+    "part": "head",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "through_body",
+    "panels": [
+     "1a",
+     "3c",
+     "5c"
+    ],
+    "part": "right thigh",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "through_floor",
+    "panels": [
+     "4a",
+     "1a"
+    ],
+    "part": "right hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "impossible_joint",
+    "panels": [
+     "1b",
+     "3b",
+     "3d",
+     "4d"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "through_floor",
+    "panels": [
+     "4b"
+    ],
+    "part": "right hand",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "B",
+  "floating_parts": {
+   "A": [],
+   "B": []
+  },
+  "more_natural": "B",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both have the right hand and right foot on the floor, the left leg and left arm raised and joined overhead, and the same arched open shape; only small differences at the head and the contacts."
+  },
+  "summary": "Both avatars hold the same pose with the right hand and right foot on the floor. In B the head and right leg follow the grey body more closely. A's head hangs outside the grey head, its right knee overlaps itself, and its right hand sinks into the floor. B's right foot is tipped onto its edge."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1312778,
+ "duration_s": 20.79,
+ "errors": [],
+ "frame_hold": 956,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Side_Plank_Pose_or_Vasisthasana_-b@956",
+ "inputs": {},
+ "item_id": "220923_Side_Plank_Pose_or_Vasisthasana_-b@956#sink",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c2/f05f93b2c0add475d1bbb4be5065b8a005478629",
+  "images": {
+   "img_1.png": "602f3968c48221545ec68550f79ca9751681be2d026025b580fdbe493d7d88a8",
+   "img_2.png": "03f20a147431d0ebe080bb1cdb909839fd4ed08ed07d6e1629c5519b5f39069a",
+   "img_3.png": "290c0fc53d4820448c0fb77da1373a703d2af2a2af75fe551e485a13cc2a62c1",
+   "img_4.png": "f9ad3efb17f890162c4ecb01c01e7d522a666709ce87b992ed432f827d11acee",
+   "img_5.png": "57e1de78e3e8f42e932c5e6b0963a07a4d417321a97b59a3c4228b354fcf8d3d"
+  },
+  "packet_json_sha256": "88a2545acda26802d2e0eb7361af4263a6b4f4ea9e17ed929a7ab1f269dd706b"
+ },
+ "packet_id": "f05f93b2c0add475d1bbb4be5065b8a005478629",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c2",
+ "render_v": "render_c2",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "0de2d422-f29d-4e63-87c2-f5a755b884ae",
+ "started_utc": "2026-10-01T17:12:43+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Side_Plank_Pose_or_Vasisthasana_-b",
+ "stratum": "sink",
+ "usage": {
+  "cache_creation_input_tokens": 11385,
+  "cache_read_input_tokens": 13569,
+  "input_tokens": 6,
+  "output_tokens": 1873,
+  "thinking_tokens": 698
+ },
+ "warnings": []
+}

@@ -1,0 +1,117 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "3c",
+     "4a",
+     "4c",
+     "1c"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "3c",
+     "4c",
+     "1a"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "B",
+  "floating_parts": {
+   "A": [
+    "left foot"
+   ],
+   "B": []
+  },
+  "more_natural": "B",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both show the same wide standing straddle: both feet on the floor, torso leaning slightly forward, arms hanging down and out. The only differences are small changes to foot placement and height."
+  },
+  "summary": "Same wide-stance pose in both. In A the left foot is tilted and hovers above the floor (drop lines), and the right foot is angled with only its toe touching. In B both feet lie flat on the floor, so B follows the grey body's floor contact more closely."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1209134,
+ "duration_s": 15.06,
+ "errors": [],
+ "frame_hold": 266,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220926_Warrior_II_Pose_or_Virabhadrasana_II_-a@266",
+ "inputs": {},
+ "item_id": "220926_Warrior_II_Pose_or_Virabhadrasana_II_-a@266#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c2/063c65640e1a08886aede2e199eeaa4531823b50",
+  "images": {
+   "img_1.png": "51665ab970aea60551f2609f8f431865045d74f42f6c8c74760f3358455a364b",
+   "img_2.png": "198688ed2669cc1ffcb0326bc694ebb921660d4b980f2e16540a8808e4403277",
+   "img_3.png": "a1186f6fab70cf0bc8740054c7563e3bcfb0ba9e984854f914941a3c8448c7c3",
+   "img_4.png": "bbade360150a7e7035312be853e64c9565ff2c1f1f796a62545cc1d774b40a19",
+   "img_5.png": "79596b9ab49abc667fe43fd1395050d07b87405e90838b3be7f54520de5d3e51"
+  },
+  "packet_json_sha256": "1b00d77a8c1ed735c85aa980eb4da7dad55e6c7d5a509cf988909907b6c1eea6"
+ },
+ "packet_id": "063c65640e1a08886aede2e199eeaa4531823b50",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c2",
+ "render_v": "render_c2",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "18706aaa-39c9-44bc-b8d5-0f9e660b26ce",
+ "started_utc": "2026-10-01T17:38:59+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220926_Warrior_II_Pose_or_Virabhadrasana_II_-a",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 11355,
+  "cache_read_input_tokens": 13547,
+  "input_tokens": 6,
+  "output_tokens": 1367,
+  "thinking_tokens": 328
+ },
+ "warnings": []
+}

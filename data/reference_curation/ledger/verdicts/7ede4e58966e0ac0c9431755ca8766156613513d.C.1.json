@@ -1,0 +1,126 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1d",
+     "4d",
+     "4f"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "2d",
+     "4b"
+    ],
+    "part": "left hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "2d",
+     "4b"
+    ],
+    "part": "right hand",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "A",
+  "floating_parts": {
+   "A": [],
+   "B": [
+    "left foot",
+    "left shin"
+   ]
+  },
+  "more_natural": "A",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both kneel with shins on the floor, the torso folded forward, the head down and the forearms and hands on the floor in front. The overall shape is the same."
+  },
+  "summary": "Both show the same kneeling forward fold. A's shins, feet and hands sit flat on the floor in line with the grey body. In B the left foot is tilted and the left shin and foot hover slightly (drop lines), and the hand blocks are twisted."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1260916,
+ "duration_s": 14.91,
+ "errors": [],
+ "frame_hold": 466,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220926_Supported_Headstand_pose_or_Salamba_Sirsasana_-a@466",
+ "inputs": {},
+ "item_id": "220926_Supported_Headstand_pose_or_Salamba_Sirsasana_-a@466#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c2/7ede4e58966e0ac0c9431755ca8766156613513d",
+  "images": {
+   "img_1.png": "358114200fd175098ee7a1ecb91d4a7285819ff4127f97e3c139a2727e85ce61",
+   "img_2.png": "179da64feefdcf011e91496463c4ae2bbf2727501492eb67d949ec8984e8efd1",
+   "img_3.png": "5090eb5580650fa46bb77666360fb9e2460a7550426efceb1fb6eb52beb902d2",
+   "img_4.png": "6d126b30a020a6fa5d47bdbaf5f845df6b0698b6f253863555bd8cea5042e7f2",
+   "img_5.png": "ac64c0edf10e5f4697e24e9831aae4f195df9c92fa9cd80eef71165126b01ae7"
+  },
+  "packet_json_sha256": "f82d7048e652dd04acc3c3371772801fa7a66e224825dd1d45824aedea6ef271"
+ },
+ "packet_id": "7ede4e58966e0ac0c9431755ca8766156613513d",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c2",
+ "render_v": "render_c2",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "bace4b6a-ce72-4d0c-bcf6-e49a3b2a96fe",
+ "started_utc": "2026-10-01T17:37:24+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220926_Supported_Headstand_pose_or_Salamba_Sirsasana_-a",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 12076,
+  "cache_read_input_tokens": 13598,
+  "input_tokens": 6,
+  "output_tokens": 1337,
+  "thinking_tokens": 281
+ },
+ "warnings": []
+}

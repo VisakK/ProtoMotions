@@ -1,0 +1,292 @@
+{
+ "answer": {
+  "body_body": {
+   "answer": "listed",
+   "contacts": []
+  },
+  "discrepancies": [
+   {
+    "kind": "other",
+    "note": "Human skin marks the feet as touching each other; the avatar's feet are slightly apart.",
+    "panels": [
+     "3a",
+     "2b"
+    ],
+    "part": "left foot"
+   },
+   {
+    "kind": "other",
+    "note": "Human skin marks the thighs as touching; the avatar's thighs are a few cm apart.",
+    "panels": [
+     "2b",
+     "1a"
+    ],
+    "part": "left thigh"
+   },
+   {
+    "kind": "other",
+    "note": "The label names big toe hold, but the whole window shows two-foot standing with no leg lifted.",
+    "panels": [
+     "4b",
+     "4c",
+     "4d"
+    ],
+    "part": "right foot"
+   }
+  ],
+  "floor": {
+   "head": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "left foot": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "2b",
+     "1a"
+    ]
+   },
+   "left forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "left hand": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "left shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3a",
+     "2b"
+    ]
+   },
+   "left thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "left upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "pelvis": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "right foot": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "2b",
+     "1a"
+    ]
+   },
+   "right forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "right hand": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "right shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3a",
+     "2b"
+    ]
+   },
+   "right thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "right upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "torso": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   }
+  },
+  "implausible": [],
+  "pose": {
+   "candidates": [
+    {
+     "confidence": "medium",
+     "name": "Mountain pose (Tadasana), preparation"
+    },
+    {
+     "confidence": "medium",
+     "name": "Standing transition before Utthita Padangusthasana"
+    },
+    {
+     "confidence": "low",
+     "name": "Samasthiti"
+    }
+   ],
+   "description": "Standing upright on both feet, feet together and flat on the floor. Head is high above the hips. Both legs are straight and vertical, thighs nearly together. Arms hang low: the right arm hangs by the side, the left elbow is bent with the left hand near the left hip. No leg is lifted and no hand holds a toe."
+  },
+  "repair": {
+   "kinds": [],
+   "needed": "no",
+   "note": "Avatar matches the human: both feet on the floor, upright standing pose reproduced."
+  },
+  "roles": [
+   {
+    "note": "Feet together while standing; the labelled pose lifts one leg.",
+    "panels": [
+     "3a",
+     "2b"
+    ],
+    "part_a": "left foot",
+    "part_b": "right foot",
+    "role": "incidental"
+   },
+   {
+    "note": "Thighs close in two-foot standing; not part of a one-leg hold.",
+    "panels": [
+     "2b",
+     "1a"
+    ],
+    "part_a": "left thigh",
+    "part_b": "right thigh",
+    "role": "incidental"
+   }
+  ],
+  "timing": {
+   "better_panel": "",
+   "end": "label",
+   "main_moment": "keep",
+   "note": "Label and capture windows match; no strip moment shows the leg lifted, only two-foot standing.",
+   "start": "label"
+  },
+  "variant": {
+   "matches_label": "no",
+   "note": "Both feet stay on the floor; no leg is raised and no hand holds the big toe. This is upright standing."
+  }
+ },
+ "audit_id": "holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.audit_v2.calibrated.9278736bb1",
+ "cost_usd": 0.2212022,
+ "duration_s": 30.45,
+ "errors": [],
+ "frame_hold": 106,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Standing_big_toe_hold_pose_or_Utthita_Padangusthasana-b@106",
+ "inputs": {},
+ "item_id": "220923_Standing_big_toe_hold_pose_or_Utthita_Padangusthasana-b@106#B4",
+ "n": 1,
+ "num_turns": 7,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_v4/1e88c54aff54bf5174e522b00c28a914f8ada641",
+  "images": {
+   "img_1.png": "dbef229dadc2113495fb7c5234eb0be77cc8de3bb22f62c3d12d89b5abd59a5b",
+   "img_2.png": "549a1511580802cca37c5e5da2cdb0f4cb147437c2e954d2a43720abd964257d",
+   "img_3.png": "e18634885510f2715b6024a9395fea29112e150542e6895366743896ff0bc3b3",
+   "img_4.png": "0e5644ef7f069c35a75687fe0f6c8f501abe6a6673075920db79b9690926e81b"
+  },
+  "packet_json_sha256": "0b76d11dc574b123516cae25a90cc8e68be1f8215ebfaf4de9c46f549486c68d"
+ },
+ "packet_id": "1e88c54aff54bf5174e522b00c28a914f8ada641",
+ "pass": "B",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_b.md",
+  "sha256": "077dd51bd3c86104e2579843cb3162adaf5e3892192e7634aa4712e2274df649"
+ },
+ "purpose": "pose_role",
+ "render_v": "render_v4",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "5f537c5cd7b2019f",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_b.json",
+  "sha256": "0c8ebcc47c25a92ae60dea2083cdea7b465230a6702cd4fc11c2b7b6bb6eae8d"
+ },
+ "schema_version": 1,
+ "session_id": "5098ae3c-ce91-4877-9b89-2d43225f70bc",
+ "started_utc": "2026-10-01T16:53:45+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Standing_big_toe_hold_pose_or_Utthita_Padangusthasana-b",
+ "stratum": null,
+ "usage": {
+  "cache_creation_input_tokens": 18899,
+  "cache_read_input_tokens": 39731,
+  "input_tokens": 6,
+  "output_tokens": 3102,
+  "thinking_tokens": 1100
+ },
+ "warnings": []
+}

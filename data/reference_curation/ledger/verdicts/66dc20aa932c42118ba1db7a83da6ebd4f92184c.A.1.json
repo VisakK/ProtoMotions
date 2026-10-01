@@ -1,0 +1,247 @@
+{
+ "answer": {
+  "body_body": {
+   "answer": "listed",
+   "contacts": [
+    {
+     "certainty": "possible",
+     "panels": [
+      "1a",
+      "1b"
+     ],
+     "part_a": "left thigh",
+     "part_b": "right thigh"
+    },
+    {
+     "certainty": "possible",
+     "panels": [
+      "1a",
+      "1c"
+     ],
+     "part_a": "left shin",
+     "part_b": "right shin"
+    },
+    {
+     "certainty": "possible",
+     "panels": [
+      "1b",
+      "2a"
+     ],
+     "part_a": "left foot",
+     "part_b": "right foot"
+    }
+   ]
+  },
+  "discrepancies": [],
+  "floor": {
+   "head": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "2b"
+    ]
+   },
+   "left foot": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "left forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3b",
+     "3c"
+    ]
+   },
+   "left hand": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3b",
+     "3c"
+    ]
+   },
+   "left shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "left thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "left upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3b",
+     "2b"
+    ]
+   },
+   "pelvis": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "right foot": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "right forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3b",
+     "3c"
+    ]
+   },
+   "right hand": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3b",
+     "3c"
+    ]
+   },
+   "right shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "right thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "right upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3c",
+     "2b"
+    ]
+   },
+   "torso": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "3a"
+    ]
+   }
+  },
+  "implausible": [],
+  "pose": {
+   "candidates": [
+    {
+     "confidence": "high",
+     "name": "Tripod headstand (Salamba Sirsasana II)"
+    },
+    {
+     "confidence": "low",
+     "name": "Supported headstand"
+    }
+   ],
+   "description": "Inverted: crown of head and both palms on the floor in a tripod, hips stacked high above the head. Upper arms roughly horizontal, forearms vertical, hands flat beside/behind the head. Both legs straight and together, pointing vertically up, feet highest. Strip shows legs lifting from a piked position into the vertical."
+  }
+ },
+ "audit_id": "holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.audit_v2.calibrated.9278736bb1",
+ "cost_usd": 0.11383080000000001,
+ "duration_s": 21.17,
+ "errors": [],
+ "frame_hold": 1093,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Supported_Headstand_pose_or_Salamba_Sirsasana_-b@1093",
+ "inputs": {},
+ "item_id": "220923_Supported_Headstand_pose_or_Salamba_Sirsasana_-b@1093#A4:reference",
+ "n": 1,
+ "num_turns": 7,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_v4/66dc20aa932c42118ba1db7a83da6ebd4f92184c",
+  "images": {
+   "img_1.png": "6cdad16bfdd081c1ad92f3b3c9e687d38fe92cdb193ef7b7a19b7d9024360b6d",
+   "img_2.png": "518a240db67d49d06a2751c004b333e28864c3c8565b6c19656a73ec7e62b444",
+   "img_3.png": "43c9bd048d7404fdf3c8212ed690bad3cb987dfac183c914a1a2cc154f760ff0",
+   "img_4.png": "380ab33cb192e1a97ec39afa4c1a06f037cc2ea5eddc10136146eaa2906792d2"
+  },
+  "packet_json_sha256": "0dc303e3c8c6c4bca31fd4eeea6e387dd425c2d0faec3cd6453fca1dcb57f601"
+ },
+ "packet_id": "66dc20aa932c42118ba1db7a83da6ebd4f92184c",
+ "pass": "A",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_a.md",
+  "sha256": "bae5cfe8420cee596fc188c14966536b354df29210c1e9a94384c925aab70510"
+ },
+ "purpose": "calibration",
+ "render_v": "render_v4",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "5de359f0431719d8",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_a.json",
+  "sha256": "5a05ec7b10cce5f545b813c390820a81bbbde96259cc00318df7ec618475ff9d"
+ },
+ "schema_version": 1,
+ "session_id": "7d63d663-84f6-4f08-9213-1944c7b3dd3e",
+ "started_utc": "2026-10-01T16:09:23+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Supported_Headstand_pose_or_Salamba_Sirsasana_-b",
+ "stratum": "inversion",
+ "usage": {
+  "cache_creation_input_tokens": 7984,
+  "cache_read_input_tokens": 26074,
+  "input_tokens": 6,
+  "output_tokens": 2236,
+  "thinking_tokens": 702
+ },
+ "warnings": []
+}

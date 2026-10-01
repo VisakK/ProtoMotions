@@ -1,0 +1,345 @@
+{
+ "answer": {
+  "body_body": {
+   "answer": "listed",
+   "contacts": [
+    {
+     "certainty": "clear",
+     "panels": [
+      "1a",
+      "3b",
+      "2b"
+     ],
+     "part_a": "head",
+     "part_b": "left upper arm"
+    }
+   ]
+  },
+  "discrepancies": [
+   {
+    "kind": "other",
+    "note": "label_ground omits right foot, yet avatar, markers and skin all show it resting on the floor.",
+    "panels": [
+     "3d",
+     "1b",
+     "2b"
+    ],
+    "part": "right foot"
+   },
+   {
+    "kind": "other",
+    "note": "Labelled foot-foot and foot-shin contacts absent: avatar and skin gaps all exceed 1.8 cm.",
+    "panels": [
+     "3d",
+     "1b"
+    ],
+    "part": "left foot"
+   },
+   {
+    "kind": "other",
+    "note": "Labelled shin-shin contact absent: shins clearly apart in avatar and skin.",
+    "panels": [
+     "1b",
+     "3d"
+    ],
+    "part": "left shin"
+   },
+   {
+    "kind": "other",
+    "note": "Head touches left upper arm in avatar and skin, but this pair is not labelled.",
+    "panels": [
+     "1a",
+     "3b"
+    ],
+    "part": "head"
+   }
+  ],
+  "floor": {
+   "head": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "3a",
+     "3b",
+     "2b"
+    ]
+   },
+   "left foot": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3d",
+     "2b",
+     "1b"
+    ]
+   },
+   "left forearm": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3b",
+     "2b",
+     "1a"
+    ]
+   },
+   "left hand": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3b",
+     "1d"
+    ]
+   },
+   "left shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "left thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "left upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "3b",
+     "2b"
+    ]
+   },
+   "pelvis": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "right foot": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3d",
+     "2b",
+     "1b"
+    ]
+   },
+   "right forearm": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "1c"
+    ]
+   },
+   "right hand": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3c",
+     "3a",
+     "1d"
+    ]
+   },
+   "right shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1c",
+     "2b"
+    ]
+   },
+   "right thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1c",
+     "2b"
+    ]
+   },
+   "right upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1c",
+     "3a"
+    ]
+   },
+   "torso": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   }
+  },
+  "implausible": [],
+  "pose": {
+   "candidates": [
+    {
+     "confidence": "high",
+     "name": "Dolphin Pose (Ardha Pincha Mayurasana)"
+    },
+    {
+     "confidence": "medium",
+     "name": "Forearm Downward Dog"
+    }
+   ],
+   "description": "Prone inverted V. Both forearms lie flat on the floor, hands on the floor in front. Both feet are on the floor, legs nearly straight and hip-width apart. Hips are the highest point; the head hangs below the hips between the upper arms, a few cm off the floor. Upper arms are near vertical."
+  },
+  "repair": {
+   "kinds": [],
+   "needed": "no",
+   "note": "Avatar matches the human's floor contacts and pose; only the labels need correcting."
+  },
+  "roles": [
+   {
+    "note": "Not touching here; feet together is a permitted dolphin variation.",
+    "panels": [
+     "3d",
+     "1b"
+    ],
+    "part_a": "left foot",
+    "part_b": "right foot",
+    "role": "allowed"
+   },
+   {
+    "note": "Not touching; foot-on-shin contact is not part of dolphin.",
+    "panels": [
+     "1b",
+     "3d"
+    ],
+    "part_a": "left foot",
+    "part_b": "right shin",
+    "role": "incidental"
+   },
+   {
+    "note": "Not touching; foot-on-shin contact is not part of dolphin.",
+    "panels": [
+     "1b",
+     "3d"
+    ],
+    "part_a": "right foot",
+    "part_b": "left shin",
+    "role": "incidental"
+   },
+   {
+    "note": "Not touching; shins apart in avatar and skin.",
+    "panels": [
+     "1b",
+     "3d"
+    ],
+    "part_a": "left shin",
+    "part_b": "right shin",
+    "role": "incidental"
+   },
+   {
+    "note": "Head hangs between upper arms; brushing an arm is permitted.",
+    "panels": [
+     "1a",
+     "3b"
+    ],
+    "part_a": "head",
+    "part_b": "left upper arm",
+    "role": "allowed"
+   }
+  ],
+  "timing": {
+   "better_panel": "",
+   "end": "label",
+   "main_moment": "keep",
+   "note": "Label and capture windows coincide; 4c shows forearms, hands and feet settled on the floor.",
+   "start": "label"
+  },
+  "variant": {
+   "matches_label": "yes",
+   "note": ""
+  }
+ },
+ "audit_id": "holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.audit_v2.calibrated.9278736bb1",
+ "cost_usd": 0.2480282,
+ "duration_s": 29.94,
+ "errors": [],
+ "frame_hold": 565,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Dolphin_Pose_or_Ardha_Pincha_Mayurasana_-a@565",
+ "inputs": {},
+ "item_id": "220923_Dolphin_Pose_or_Ardha_Pincha_Mayurasana_-a@565#B4",
+ "n": 1,
+ "num_turns": 7,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_v4/f453e026209284d1c28f85f64cf62e52118a4673",
+  "images": {
+   "img_1.png": "d5f775c14315c14d43cf84090210700ed6d2f54dc192e964cc237c1062f41567",
+   "img_2.png": "b1b1fab6896aff0d1c8458e86d7884f3db4fe66c193e5c089b18f90288f58894",
+   "img_3.png": "023a4b2b54fa79dbff59619547c502af8e1ed1a31dbf588162097e96a5efbef5",
+   "img_4.png": "b0a33c693b3b2f86c04451b4042e68e7c2451b222b05afb25340658a6ba3493c"
+  },
+  "packet_json_sha256": "76f2b4d506630544de1d6518c9a05834f9dbb44a6489ee2f2c0522e13deb7659"
+ },
+ "packet_id": "f453e026209284d1c28f85f64cf62e52118a4673",
+ "pass": "B",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_b.md",
+  "sha256": "077dd51bd3c86104e2579843cb3162adaf5e3892192e7634aa4712e2274df649"
+ },
+ "purpose": "b6",
+ "render_v": "render_v4",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "5f537c5cd7b2019f",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_b.json",
+  "sha256": "0c8ebcc47c25a92ae60dea2083cdea7b465230a6702cd4fc11c2b7b6bb6eae8d"
+ },
+ "schema_version": 1,
+ "session_id": "c0496f91-4239-4532-9705-2ce64c765256",
+ "started_utc": "2026-10-01T16:28:02+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Dolphin_Pose_or_Ardha_Pincha_Mayurasana_-a",
+ "stratum": null,
+ "usage": {
+  "cache_creation_input_tokens": 21713,
+  "cache_read_input_tokens": 42601,
+  "input_tokens": 6,
+  "output_tokens": 3289,
+  "thinking_tokens": 1057
+ },
+ "warnings": [
+  "body_body: head + left upper arm are joined; not scored"
+ ]
+}

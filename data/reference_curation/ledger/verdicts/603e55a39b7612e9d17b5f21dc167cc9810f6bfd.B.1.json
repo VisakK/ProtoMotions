@@ -1,0 +1,331 @@
+{
+ "answer": {
+  "body_body": {
+   "answer": "listed",
+   "contacts": [
+    {
+     "certainty": "clear",
+     "panels": [
+      "3b",
+      "2b"
+     ],
+     "part_a": "right thigh",
+     "part_b": "left upper arm"
+    },
+    {
+     "certainty": "clear",
+     "panels": [
+      "3b",
+      "1a"
+     ],
+     "part_a": "right thigh",
+     "part_b": "left forearm"
+    }
+   ]
+  },
+  "discrepancies": [
+   {
+    "kind": "other",
+    "note": "The human's right shin skin touches the left upper arm; the avatar's shin is about 10 cm away.",
+    "panels": [
+     "3b",
+     "1a"
+    ],
+    "part": "right shin"
+   },
+   {
+    "kind": "other",
+    "note": "The human's right thigh skin touches the torso; the avatar's thigh is about 8.5 cm from the torso.",
+    "panels": [
+     "3d",
+     "1a"
+    ],
+    "part": "right thigh"
+   }
+  ],
+  "floor": {
+   "head": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3a",
+     "2b"
+    ]
+   },
+   "left foot": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "left forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3b",
+     "2b"
+    ]
+   },
+   "left hand": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3b",
+     "2b"
+    ]
+   },
+   "left shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "left thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "left upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3b",
+     "2b"
+    ]
+   },
+   "pelvis": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "right foot": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "3d"
+    ]
+   },
+   "right forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3c",
+     "2b"
+    ]
+   },
+   "right hand": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3c",
+     "2b"
+    ]
+   },
+   "right shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "3d"
+    ]
+   },
+   "right thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "3d"
+    ]
+   },
+   "right upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3c",
+     "2b"
+    ]
+   },
+   "torso": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   }
+  },
+  "implausible": [],
+  "pose": {
+   "candidates": [
+    {
+     "confidence": "high",
+     "name": "Eka Pada Koundinyasana I"
+    },
+    {
+     "confidence": "low",
+     "name": "Eka Pada Koundinyasana II"
+    },
+    {
+     "confidence": "low",
+     "name": "Parsva Bakasana (side crow)"
+    }
+   ],
+   "description": "Only both hands are on the floor. The arms are bent and the head is forward and below hip level, about 10 cm off the floor. The torso is twisted. The right thigh rests across the back of the left upper arm, and the right shin reaches forward and sideways. The left leg extends back, straight and lifted. Both feet are in the air."
+  },
+  "repair": {
+   "kinds": [
+    "pose_mismatch"
+   ],
+   "needed": "yes",
+   "note": "The avatar's right leg sits too far from the left upper arm and the torso; it should tuck in to touch them, as the human's does."
+  },
+  "roles": [
+   {
+    "note": "Human skin touches here; the avatar leaves a gap. The knee resting further down the arm is common.",
+    "panels": [
+     "3b",
+     "1a"
+    ],
+    "part_a": "right shin",
+    "part_b": "left upper arm",
+    "role": "allowed"
+   },
+   {
+    "note": "The thigh resting on the opposite upper arm defines this twisted arm balance.",
+    "panels": [
+     "3b",
+     "2b"
+    ],
+    "part_a": "right thigh",
+    "part_b": "left upper arm",
+    "role": "required_touch"
+   },
+   {
+    "note": "The thigh also rests near the elbow and forearm, which the shelf allows.",
+    "panels": [
+     "3b",
+     "1a"
+    ],
+    "part_a": "right thigh",
+    "part_b": "left forearm",
+    "role": "allowed"
+   },
+   {
+    "note": "Thighs brush near the hips; the skin separates later in the hold.",
+    "panels": [
+     "2b",
+     "1c"
+    ],
+    "part_a": "left thigh",
+    "part_b": "right thigh",
+    "role": "incidental"
+   },
+   {
+    "note": "The deep twist folds the thigh against the torso; the avatar leaves a gap.",
+    "panels": [
+     "3d",
+     "1a"
+    ],
+    "part_a": "right thigh",
+    "part_b": "torso",
+    "role": "allowed"
+   }
+  ],
+  "timing": {
+   "better_panel": "4c",
+   "end": "capture",
+   "main_moment": "move",
+   "note": "The head is still on the floor near 1190, so the label start is too early. Both windows end at the same frame. 4c is more settled.",
+   "start": "capture"
+  },
+  "variant": {
+   "matches_label": "yes",
+   "note": ""
+  }
+ },
+ "audit_id": "holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.audit_v2.calibrated.9278736bb1",
+ "cost_usd": 0.2510456,
+ "duration_s": 38.14,
+ "errors": [],
+ "frame_hold": 1221,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-a@1199",
+ "inputs": {},
+ "item_id": "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-a@1199#B4",
+ "n": 1,
+ "num_turns": 7,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_v4/603e55a39b7612e9d17b5f21dc167cc9810f6bfd",
+  "images": {
+   "img_1.png": "f2fc67ed773dd4159b84ff485c3647a12d9a279d9077a92971f54065effbf4c1",
+   "img_2.png": "d61033e0331ea3f833119ae56f5713bcb42834704bd0e2bdc2de77aebc7444ad",
+   "img_3.png": "24ee00d872da0b54f462b52ed785113a61d7feeaf5763a0a68c8b9c504df3cd0",
+   "img_4.png": "4ecebe8dfdee06476f18edf3ce84740ed1b0219fb41ed69872879ddabc84050c"
+  },
+  "packet_json_sha256": "67b7902118553e2183bdfbf979c29c6789322591006e8d1fb01b2ac22ce87f67"
+ },
+ "packet_id": "603e55a39b7612e9d17b5f21dc167cc9810f6bfd",
+ "pass": "B",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_b.md",
+  "sha256": "077dd51bd3c86104e2579843cb3162adaf5e3892192e7634aa4712e2274df649"
+ },
+ "purpose": "b6",
+ "render_v": "render_v4",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "5f537c5cd7b2019f",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_b.json",
+  "sha256": "0c8ebcc47c25a92ae60dea2083cdea7b465230a6702cd4fc11c2b7b6bb6eae8d"
+ },
+ "schema_version": 1,
+ "session_id": "2c9ce745-f3d3-4353-b4c8-98c38defcff1",
+ "started_utc": "2026-10-01T16:37:52+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-a",
+ "stratum": null,
+ "usage": {
+  "cache_creation_input_tokens": 20635,
+  "cache_read_input_tokens": 41508,
+  "input_tokens": 6,
+  "output_tokens": 3882,
+  "thinking_tokens": 1614
+ },
+ "warnings": []
+}

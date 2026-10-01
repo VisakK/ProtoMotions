@@ -1,0 +1,412 @@
+{
+ "answer": {
+  "body_body": {
+   "answer": "listed",
+   "contacts": [
+    {
+     "certainty": "clear",
+     "panels": [
+      "3a",
+      "1a"
+     ],
+     "part_a": "right foot",
+     "part_b": "left shin"
+    },
+    {
+     "certainty": "clear",
+     "panels": [
+      "1a",
+      "2b"
+     ],
+     "part_a": "left thigh",
+     "part_b": "right thigh"
+    },
+    {
+     "certainty": "clear",
+     "panels": [
+      "1c",
+      "2b"
+     ],
+     "part_a": "right shin",
+     "part_b": "left thigh"
+    },
+    {
+     "certainty": "possible",
+     "panels": [
+      "3a",
+      "1d"
+     ],
+     "part_a": "left shin",
+     "part_b": "right shin"
+    },
+    {
+     "certainty": "clear",
+     "panels": [
+      "1a",
+      "1c"
+     ],
+     "part_a": "left upper arm",
+     "part_b": "right upper arm"
+    },
+    {
+     "certainty": "clear",
+     "panels": [
+      "1c",
+      "1d"
+     ],
+     "part_a": "left upper arm",
+     "part_b": "right forearm"
+    },
+    {
+     "certainty": "clear",
+     "panels": [
+      "1c",
+      "1d"
+     ],
+     "part_a": "left forearm",
+     "part_b": "right hand"
+    },
+    {
+     "certainty": "possible",
+     "panels": [
+      "1d",
+      "2a"
+     ],
+     "part_a": "left hand",
+     "part_b": "right hand"
+    }
+   ]
+  },
+  "discrepancies": [
+   {
+    "kind": "other",
+    "note": "The human's forearms touch skin to skin; the avatar's left and right forearms have a gap of about 2 cm.",
+    "panels": [
+     "1d",
+     "1a"
+    ],
+    "part": "left forearm"
+   }
+  ],
+  "floor": {
+   "head": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "left foot": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "2b",
+     "3a",
+     "1a"
+    ]
+   },
+   "left forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1c"
+    ]
+   },
+   "left hand": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1c"
+    ]
+   },
+   "left shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3a",
+     "2b"
+    ]
+   },
+   "left thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "left upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1c"
+    ]
+   },
+   "pelvis": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "right foot": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3a",
+     "2b",
+     "1b"
+    ]
+   },
+   "right forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1c"
+    ]
+   },
+   "right hand": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1c"
+    ]
+   },
+   "right shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "right thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "right upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1c"
+    ]
+   },
+   "torso": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   }
+  },
+  "implausible": [],
+  "pose": {
+   "candidates": [
+    {
+     "confidence": "high",
+     "name": "Eagle Pose (Garudasana)"
+    },
+    {
+     "confidence": "medium",
+     "name": "Eagle Pose with raised arms"
+    }
+   ],
+   "description": "Standing on the left foot only, left knee bent, hips flexed with the torso leaning forward; head is above the hips. Right thigh crosses over the left thigh, right shin wraps the left shin and the right foot hooks behind the left calf. Arms are wrapped, upper arms crossed forward near shoulder height, forearms raised vertically with the hands touching high above the head."
+  },
+  "repair": {
+   "kinds": [],
+   "needed": "no",
+   "note": "Floor contacts match. The only difference is a small 2 cm gap between the avatar's forearms, which is not worth editing."
+  },
+  "roles": [
+   {
+    "note": "The right foot hooks behind the left calf, which defines the full Eagle leg wrap.",
+    "panels": [
+     "3a",
+     "1a"
+    ],
+    "part_a": "right foot",
+    "part_b": "left shin",
+    "role": "required_touch"
+   },
+   {
+    "note": "The shins touch as part of the wrap; tightness varies.",
+    "panels": [
+     "3a",
+     "1d"
+    ],
+    "part_a": "left shin",
+    "part_b": "right shin",
+    "role": "allowed"
+   },
+   {
+    "note": "The right shin rests near the left knee and thigh during the wrap.",
+    "panels": [
+     "1c",
+     "2b"
+    ],
+    "part_a": "right shin",
+    "part_b": "left thigh",
+    "role": "allowed"
+   },
+   {
+    "note": "Crossing one thigh over the other is the core of the Eagle legs.",
+    "panels": [
+     "1a",
+     "2b"
+    ],
+    "part_a": "left thigh",
+    "part_b": "right thigh",
+    "role": "required_touch"
+   },
+   {
+    "note": "Crossed upper arms at the elbows define the Eagle arms.",
+    "panels": [
+     "1a",
+     "1c"
+    ],
+    "part_a": "left upper arm",
+    "part_b": "right upper arm",
+    "role": "required_touch"
+   },
+   {
+    "note": "Comes from the arm wrap near the elbow crease.",
+    "panels": [
+     "1c",
+     "1d"
+    ],
+    "part_a": "left upper arm",
+    "part_b": "right forearm",
+    "role": "allowed"
+   },
+   {
+    "note": "Forearms wrap around each other; the human touches but the avatar has a small gap.",
+    "panels": [
+     "1d",
+     "1a"
+    ],
+    "part_a": "left forearm",
+    "part_b": "right forearm",
+    "role": "allowed"
+   },
+   {
+    "note": "The right hand rests against the left forearm in the wrap.",
+    "panels": [
+     "1c",
+     "1d"
+    ],
+    "part_a": "left forearm",
+    "part_b": "right hand",
+    "role": "allowed"
+   },
+   {
+    "note": "Palms pressed together in the full arm wrap; optional.",
+    "panels": [
+     "1d",
+     "2a"
+    ],
+    "part_a": "left hand",
+    "part_b": "right hand",
+    "role": "allowed"
+   }
+  ],
+  "timing": {
+   "better_panel": "",
+   "end": "label",
+   "main_moment": "keep",
+   "note": "The label and capture windows are identical. At the main moment the wrap is fully formed, the arms are raised, and the stance is settled.",
+   "start": "label"
+  },
+  "variant": {
+   "matches_label": "yes",
+   "note": "The wrapped arms are lifted high above the head and the torso leans well forward. This is within normal Eagle Pose."
+  }
+ },
+ "audit_id": "holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.audit_v2.calibrated.9278736bb1",
+ "cost_usd": 0.2623688,
+ "duration_s": 33.37,
+ "errors": [],
+ "frame_hold": 700,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220926_Eagle_Pose_or_Garudasana_-a@700",
+ "inputs": {},
+ "item_id": "220926_Eagle_Pose_or_Garudasana_-a@700#B4",
+ "n": 1,
+ "num_turns": 7,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_v4/686b8e455c81b90154cb653021b871e24602db7e",
+  "images": {
+   "img_1.png": "f8b8bbc8e3cb725c69763f0fccf1090178c91a0f001a6c1981010584c111879b",
+   "img_2.png": "acbd5db513bf2c075cba1e1278470dfcb302e0d3ff8a043ef026681906d64f2c",
+   "img_3.png": "b687dbb913111b560791c6655516088bb3649369ae0511d4d79a3c65a359c380",
+   "img_4.png": "e9d97e001993730ecdf650cef204a0fe504e6df6bd974ac1685f4557a8c40cdb"
+  },
+  "packet_json_sha256": "909454813553a4c21d57adae6a191dac7bad27407cc55eefdb93c4393677878c"
+ },
+ "packet_id": "686b8e455c81b90154cb653021b871e24602db7e",
+ "pass": "B",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_b.md",
+  "sha256": "077dd51bd3c86104e2579843cb3162adaf5e3892192e7634aa4712e2274df649"
+ },
+ "purpose": "b6",
+ "render_v": "render_v4",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "5f537c5cd7b2019f",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_b.json",
+  "sha256": "0c8ebcc47c25a92ae60dea2083cdea7b465230a6702cd4fc11c2b7b6bb6eae8d"
+ },
+ "schema_version": 1,
+ "session_id": "066b66db-eaf4-402d-bd61-b13439cedd5f",
+ "started_utc": "2026-10-01T16:58:11+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220926_Eagle_Pose_or_Garudasana_-a",
+ "stratum": null,
+ "usage": {
+  "cache_creation_input_tokens": 22396,
+  "cache_read_input_tokens": 43284,
+  "input_tokens": 6,
+  "output_tokens": 3726,
+  "thinking_tokens": 1041
+ },
+ "warnings": []
+}

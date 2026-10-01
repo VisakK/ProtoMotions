@@ -1,0 +1,337 @@
+{
+ "answer": {
+  "body_body": {
+   "answer": "listed",
+   "contacts": []
+  },
+  "discrepancies": [
+   {
+    "kind": "other",
+    "note": "Human skin of left hand touches left thigh; avatar hand sits about 7 cm away.",
+    "panels": [
+     "1a",
+     "1b",
+     "2b"
+    ],
+    "part": "left hand"
+   },
+   {
+    "kind": "other",
+    "note": "Human skin of right hand touches right thigh; avatar hand sits about 7 cm away.",
+    "panels": [
+     "1c",
+     "1d"
+    ],
+    "part": "right hand"
+   },
+   {
+    "kind": "other",
+    "note": "Human forearms touch pelvis and thighs; avatar forearms keep 8 to 10 cm gaps.",
+    "panels": [
+     "1b",
+     "1d"
+    ],
+    "part": "pelvis"
+   },
+   {
+    "kind": "other",
+    "note": "Label window and main moment show the entry; full Warrior III is formed later (4c, 4d).",
+    "panels": [
+     "4b",
+     "4c",
+     "4d"
+    ],
+    "part": "torso"
+   }
+  ],
+  "floor": {
+   "head": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "left foot": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b",
+     "4b"
+    ]
+   },
+   "left forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b"
+    ]
+   },
+   "left hand": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "left shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "left thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "left upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b"
+    ]
+   },
+   "pelvis": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b"
+    ]
+   },
+   "right foot": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "2b",
+     "1a"
+    ]
+   },
+   "right forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1c"
+    ]
+   },
+   "right hand": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1c",
+     "2b"
+    ]
+   },
+   "right shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3a",
+     "2b"
+    ]
+   },
+   "right thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b"
+    ]
+   },
+   "right upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1c"
+    ]
+   },
+   "torso": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b"
+    ]
+   }
+  },
+  "implausible": [],
+  "pose": {
+   "candidates": [
+    {
+     "confidence": "high",
+     "name": "Warrior III (entry, hands at hips)"
+    },
+    {
+     "confidence": "low",
+     "name": "Standing Half Forward Bend to Warrior III"
+    },
+    {
+     "confidence": "low",
+     "name": "Standing Split (entry)"
+    }
+   ],
+   "description": "Only the right foot is on the floor; right leg straight and vertical. Torso hinged forward about 45\u00b0, head higher than hips but lowering. Left leg straight, lifting behind to about knee height. Both arms hang along the body with hands resting at the front of the thighs. This is the entry into a standing balance."
+  },
+  "repair": {
+   "kinds": [
+    "pose_mismatch"
+   ],
+   "needed": "yes",
+   "note": "Avatar hands and forearms sit 7-10 cm off thighs and hips where the human's rest on them."
+  },
+  "roles": [
+   {
+    "note": "Forearm brushes thigh because arm hangs along body; not part of pose.",
+    "panels": [
+     "1a",
+     "2b"
+    ],
+    "part_a": "left thigh",
+    "part_b": "left forearm",
+    "role": "incidental"
+   },
+   {
+    "note": "Hand rests on front of thigh/hip; a permitted arm variation.",
+    "panels": [
+     "1a",
+     "2b"
+    ],
+    "part_a": "left thigh",
+    "part_b": "left hand",
+    "role": "allowed"
+   },
+   {
+    "note": "Forearm brushes thigh because arm hangs along body.",
+    "panels": [
+     "1c",
+     "1d"
+    ],
+    "part_a": "right thigh",
+    "part_b": "right forearm",
+    "role": "incidental"
+   },
+   {
+    "note": "Hand rests on front of thigh/hip; a permitted arm variation.",
+    "panels": [
+     "1c",
+     "1d"
+    ],
+    "part_a": "right thigh",
+    "part_b": "right hand",
+    "role": "allowed"
+   },
+   {
+    "note": "Forearm against hip in hands-at-hips arm variation.",
+    "panels": [
+     "1b",
+     "2b"
+    ],
+    "part_a": "pelvis",
+    "part_b": "left forearm",
+    "role": "allowed"
+   },
+   {
+    "note": "Forearm against hip in hands-at-hips arm variation.",
+    "panels": [
+     "1b",
+     "1d"
+    ],
+    "part_a": "pelvis",
+    "part_b": "right forearm",
+    "role": "allowed"
+   }
+  ],
+  "timing": {
+   "better_panel": "4c",
+   "end": "neither",
+   "main_moment": "move",
+   "note": "Window 2.5-4.1 s is the entry; horizontal Warrior III is held around 4c-4d, right foot down throughout.",
+   "start": "neither"
+  },
+  "variant": {
+   "matches_label": "variant",
+   "note": "Transition into Warrior III: torso and lifted leg not yet horizontal; hands on thighs rather than arms reaching forward."
+  }
+ },
+ "audit_id": "holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.audit_v2.calibrated.9278736bb1",
+ "cost_usd": 0.242054,
+ "duration_s": 32.7,
+ "errors": [],
+ "frame_hold": 247,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220926_Warrior_III_Pose_or_Virabhadrasana_III_-b@247",
+ "inputs": {},
+ "item_id": "220926_Warrior_III_Pose_or_Virabhadrasana_III_-b@247#B4",
+ "n": 1,
+ "num_turns": 7,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_v4/8b7cc58767978f6b7b44ea020a90481aec61a0ac",
+  "images": {
+   "img_1.png": "596028e536ca0153a2c197028eab65bad6c5b6deb144dc0fb0c9d7fc4bd2b34c",
+   "img_2.png": "75004190f1f9922dae4f5310ca82a3e91b45fc65cda7ce1c58b95adf126cfee8",
+   "img_3.png": "1d701181f6f87f2a6d577540a8259ad34ddfc0ebdca4147a8af0c4c73a20fee6",
+   "img_4.png": "fe0fe39ffe34d70491f6c463abdc213fc77d4e7e8d8f1497120585c3e689bb0f"
+  },
+  "packet_json_sha256": "2afe43970efb7afc2fbacbcd7f22e21175f8c158f7db3545300827be87bc105a"
+ },
+ "packet_id": "8b7cc58767978f6b7b44ea020a90481aec61a0ac",
+ "pass": "B",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_b.md",
+  "sha256": "077dd51bd3c86104e2579843cb3162adaf5e3892192e7634aa4712e2274df649"
+ },
+ "purpose": "b6",
+ "render_v": "render_v4",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "5f537c5cd7b2019f",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_b.json",
+  "sha256": "0c8ebcc47c25a92ae60dea2083cdea7b465230a6702cd4fc11c2b7b6bb6eae8d"
+ },
+ "schema_version": 1,
+ "session_id": "86f69ba8-b18d-4aba-8c2b-571fe2488382",
+ "started_utc": "2026-10-01T17:02:33+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220926_Warrior_III_Pose_or_Virabhadrasana_III_-b",
+ "stratum": null,
+ "usage": {
+  "cache_creation_input_tokens": 20780,
+  "cache_read_input_tokens": 41550,
+  "input_tokens": 6,
+  "output_tokens": 3374,
+  "thinking_tokens": 1005
+ },
+ "warnings": []
+}

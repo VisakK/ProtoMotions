@@ -1,0 +1,387 @@
+{
+ "answer": {
+  "body_body": {
+   "answer": "listed",
+   "contacts": [
+    {
+     "certainty": "clear",
+     "panels": [
+      "3b",
+      "1b"
+     ],
+     "part_a": "left foot",
+     "part_b": "right foot"
+    }
+   ]
+  },
+  "discrepancies": [
+   {
+    "kind": "other",
+    "note": "Label ground omits both feet, yet avatar and human feet rest on the floor.",
+    "panels": [
+     "3b",
+     "2b"
+    ],
+    "part": "left foot"
+   },
+   {
+    "kind": "other",
+    "note": "Labelled shin-shin and foot-shin contacts absent: avatar and skin gaps are several centimetres.",
+    "panels": [
+     "3b",
+     "1b"
+    ],
+    "part": "left shin"
+   },
+   {
+    "kind": "markers_away_from_avatar_part",
+    "note": "Human hands touch back and pelvis; avatar hands sit a few centimetres off the torso.",
+    "panels": [
+     "1d",
+     "2a"
+    ],
+    "part": "left hand"
+   },
+   {
+    "kind": "markers_away_from_avatar_part",
+    "note": "Right hand skin touches torso and pelvis; avatar right hand stands clear of them.",
+    "panels": [
+     "1d",
+     "3c"
+    ],
+    "part": "right hand"
+   },
+   {
+    "kind": "other",
+    "note": "Label orientation says prone; the performer is inverted on the upper back.",
+    "panels": [
+     "1a"
+    ],
+    "part": "torso"
+   }
+  ],
+  "floor": {
+   "head": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "2b",
+     "1a"
+    ]
+   },
+   "left foot": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3b",
+     "2b",
+     "1b"
+    ]
+   },
+   "left forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "3a"
+    ]
+   },
+   "left hand": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1d",
+     "2a"
+    ]
+   },
+   "left shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "left thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "left upper arm": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "2b"
+    ]
+   },
+   "pelvis": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "right foot": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3b",
+     "2b",
+     "1b"
+    ]
+   },
+   "right forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1c",
+     "3c"
+    ]
+   },
+   "right hand": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1d",
+     "3c"
+    ]
+   },
+   "right shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1c",
+     "2b"
+    ]
+   },
+   "right thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1c"
+    ]
+   },
+   "right upper arm": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3c",
+     "1c"
+    ]
+   },
+   "torso": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "2b"
+    ]
+   }
+  },
+  "implausible": [],
+  "pose": {
+   "candidates": [
+    {
+     "confidence": "high",
+     "name": "Plow Pose (Halasana), hands supporting back"
+    },
+    {
+     "confidence": "high",
+     "name": "Halasana"
+    },
+    {
+     "confidence": "low",
+     "name": "Karnapidasana"
+    }
+   ],
+   "description": "Inverted on the upper back: head, upper back and both upper arms on the floor, hips stacked high over the shoulders. Legs nearly straight and together, reaching overhead so both feet rest on the toes behind the head. Forearms upright from elbows on the floor, hands pressing into the back and pelvis."
+  },
+  "repair": {
+   "kinds": [
+    "pose_mismatch"
+   ],
+   "needed": "yes",
+   "note": "Bring avatar hands onto the back and pelvis as the human's are; floor contacts already match."
+  },
+  "roles": [
+   {
+    "note": "Feet together is typical in plow but not defining.",
+    "panels": [
+     "3b",
+     "1b"
+    ],
+    "part_a": "left foot",
+    "part_b": "right foot",
+    "role": "allowed"
+   },
+   {
+    "note": "Not made by human or avatar; not part of the pose.",
+    "panels": [
+     "1b"
+    ],
+    "part_a": "left foot",
+    "part_b": "right shin",
+    "role": "incidental"
+   },
+   {
+    "note": "Not made by human or avatar; not part of the pose.",
+    "panels": [
+     "1b"
+    ],
+    "part_a": "right foot",
+    "part_b": "left shin",
+    "role": "incidental"
+   },
+   {
+    "note": "Legs together permitted; here shins are a few centimetres apart.",
+    "panels": [
+     "1b",
+     "3b"
+    ],
+    "part_a": "left shin",
+    "part_b": "right shin",
+    "role": "allowed"
+   },
+   {
+    "note": "Hands supporting the back is a recognised variation; human makes it.",
+    "panels": [
+     "1d",
+     "2a"
+    ],
+    "part_a": "pelvis",
+    "part_b": "left hand",
+    "role": "allowed"
+   },
+   {
+    "note": "Hands supporting the back is a recognised variation; human makes it.",
+    "panels": [
+     "1d",
+     "3c"
+    ],
+    "part_a": "pelvis",
+    "part_b": "right hand",
+    "role": "allowed"
+   },
+   {
+    "note": "Hand braces the back; human skin touches, avatar slightly apart.",
+    "panels": [
+     "1d",
+     "2a"
+    ],
+    "part_a": "torso",
+    "part_b": "left hand",
+    "role": "allowed"
+   },
+   {
+    "note": "Hand braces the back; human skin touches, avatar apart.",
+    "panels": [
+     "1d",
+     "3c"
+    ],
+    "part_a": "torso",
+    "part_b": "right hand",
+    "role": "allowed"
+   },
+   {
+    "note": "Fingertips meet on the back by chance.",
+    "panels": [
+     "1d"
+    ],
+    "part_a": "left hand",
+    "part_b": "right hand",
+    "role": "incidental"
+   }
+  ],
+  "timing": {
+   "better_panel": "",
+   "end": "capture",
+   "main_moment": "keep",
+   "note": "Starts agree at 670; capture ends at 734, label extends past it. Main moment is settled.",
+   "start": "label"
+  },
+  "variant": {
+   "matches_label": "variant",
+   "note": "Hands support the back with elbows bent, rather than arms extended along the floor with hands clasped."
+  }
+ },
+ "audit_id": "holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.audit_v2.calibrated.9278736bb1",
+ "cost_usd": 0.2741928,
+ "duration_s": 36.97,
+ "errors": [],
+ "frame_hold": 704,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Plow_Pose_or_Halasana_-a@756",
+ "inputs": {},
+ "item_id": "220923_Plow_Pose_or_Halasana_-a@756#B4",
+ "n": 1,
+ "num_turns": 7,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_v4/45c131435d741dd2227714e62ff9f77b9051b6e1",
+  "images": {
+   "img_1.png": "bfac5000d9b16e213f79e546dee7c8f557f77189aa7903ecba30760c8d63f180",
+   "img_2.png": "6e77fbdc8cfa48b312387d63a992565c401fc029c84f96ecc0be0a864fd5646b",
+   "img_3.png": "e6c69e53569a34708984dc64cfecc8103e2bde552f698067293a48808eeab2e6",
+   "img_4.png": "ddb27b1c3bc6b65a8ca24e8c56aca076c0ce2178c5f77b22c0fb6e67d6258f88"
+  },
+  "packet_json_sha256": "1cd771a3aa8e274888eaf2d12b43ebe8fde764b69e42003bdfcbb6645fb85e06"
+ },
+ "packet_id": "45c131435d741dd2227714e62ff9f77b9051b6e1",
+ "pass": "B",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_b.md",
+  "sha256": "077dd51bd3c86104e2579843cb3162adaf5e3892192e7634aa4712e2274df649"
+ },
+ "purpose": "b6",
+ "render_v": "render_v4",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "5f537c5cd7b2019f",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_b.json",
+  "sha256": "0c8ebcc47c25a92ae60dea2083cdea7b465230a6702cd4fc11c2b7b6bb6eae8d"
+ },
+ "schema_version": 1,
+ "session_id": "e8753e14-bda6-4fe4-b958-fe3580bf8304",
+ "started_utc": "2026-10-01T16:36:48+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Plow_Pose_or_Halasana_-a",
+ "stratum": null,
+ "usage": {
+  "cache_creation_input_tokens": 23092,
+  "cache_read_input_tokens": 44864,
+  "input_tokens": 6,
+  "output_tokens": 4023,
+  "thinking_tokens": 1458
+ },
+ "warnings": []
+}

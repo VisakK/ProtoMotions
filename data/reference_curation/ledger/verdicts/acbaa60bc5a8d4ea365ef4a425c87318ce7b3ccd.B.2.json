@@ -1,0 +1,325 @@
+{
+ "answer": {
+  "body_body": {
+   "answer": "listed",
+   "contacts": [
+    {
+     "certainty": "clear",
+     "panels": [
+      "1a",
+      "1d",
+      "2b"
+     ],
+     "part_a": "left thigh",
+     "part_b": "right thigh"
+    },
+    {
+     "certainty": "clear",
+     "panels": [
+      "3a",
+      "1b"
+     ],
+     "part_a": "left shin",
+     "part_b": "right shin"
+    },
+    {
+     "certainty": "clear",
+     "panels": [
+      "1b",
+      "1d"
+     ],
+     "part_a": "right shin",
+     "part_b": "left thigh"
+    },
+    {
+     "certainty": "clear",
+     "panels": [
+      "3a",
+      "1b"
+     ],
+     "part_a": "right foot",
+     "part_b": "left shin"
+    }
+   ]
+  },
+  "discrepancies": [
+   {
+    "kind": "other",
+    "note": "Right foot hooks the left shin (skin and avatar both touch), but label_pairs omits R_FOOT+L_SHANK.",
+    "panels": [
+     "3a",
+     "1b"
+    ],
+    "part": "right foot"
+   }
+  ],
+  "floor": {
+   "head": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "left foot": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "2b"
+    ]
+   },
+   "left forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "left hand": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "left shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3a",
+     "2b"
+    ]
+   },
+   "left thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "left upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "pelvis": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "right foot": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3a",
+     "2b"
+    ]
+   },
+   "right forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "right hand": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "right shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1b"
+    ]
+   },
+   "right thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "right upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "torso": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   }
+  },
+  "implausible": [],
+  "pose": {
+   "candidates": [
+    {
+     "confidence": "high",
+     "name": "Eagle Pose (Garudasana), legs only"
+    },
+    {
+     "confidence": "medium",
+     "name": "Eagle Pose entry / transition"
+    }
+   ],
+   "description": "Standing upright on the left foot only, head well above the hips. The left knee is slightly bent. The right thigh crosses over the left thigh and the right shin wraps behind the left shin, with the right foot off the floor. Both arms hang down and out to the sides; they are not yet wrapped."
+  },
+  "repair": {
+   "kinds": [],
+   "needed": "no",
+   "note": "The avatar matches the human's floor contacts and leg wrap; only negligible overlap between avatar parts."
+  },
+  "roles": [
+   {
+    "note": "The right shin wraps behind the left shin; this defines the eagle leg wrap.",
+    "panels": [
+     "3a",
+     "1b"
+    ],
+    "part_a": "left shin",
+    "part_b": "right shin",
+    "role": "required_touch"
+   },
+   {
+    "note": "Contact near the left knee that comes with a tight wrap; the pose does not need it.",
+    "panels": [
+     "1b",
+     "1d"
+    ],
+    "part_a": "right shin",
+    "part_b": "left thigh",
+    "role": "allowed"
+   },
+   {
+    "note": "The right thigh crossing over the left thigh is the core of Garudasana.",
+    "panels": [
+     "1a",
+     "1d",
+     "2b"
+    ],
+    "part_a": "left thigh",
+    "part_b": "right thigh",
+    "role": "required_touch"
+   },
+   {
+    "note": "The full wrap hooks the foot behind the calf; easier variants skip it.",
+    "panels": [
+     "3a"
+    ],
+    "part_a": "right foot",
+    "part_b": "left shin",
+    "role": "allowed"
+   }
+  ],
+  "timing": {
+   "better_panel": "4d",
+   "end": "label",
+   "main_moment": "move",
+   "note": "At the label start the right foot still touches the floor. The arms are wrapped only in 4d; the end boundaries agree.",
+   "start": "capture"
+  },
+  "variant": {
+   "matches_label": "variant",
+   "note": "The leg wrap is complete, but the arms hang at the sides instead of wrapping. The arm wrap only appears later, in 4d."
+  }
+ },
+ "audit_id": "holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.audit_v2.calibrated.9278736bb1",
+ "cost_usd": 0.2116434,
+ "duration_s": 31.23,
+ "errors": [],
+ "frame_hold": 332,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220926_Eagle_Pose_or_Garudasana_-a@332",
+ "inputs": {},
+ "item_id": "220926_Eagle_Pose_or_Garudasana_-a@332#B4",
+ "n": 2,
+ "num_turns": 7,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_v4/acbaa60bc5a8d4ea365ef4a425c87318ce7b3ccd",
+  "images": {
+   "img_1.png": "b8fb3fdd44b5a14c65adcdbe15c5d77cb6ff7fa2c501988cdc3afcf0dfbf932a",
+   "img_2.png": "5acb18dcc8f6560a1575da849780ddaf2bc7e36b5ffc6245f66e459dee6f028a",
+   "img_3.png": "389c958ad9534540e2097e415f277bfefaa5b3d44e7c765b7bdf9b520df7d0cd",
+   "img_4.png": "a5461da077b5fae00658b117a5443f4e13797513795dcda7d0dbde3fd0175dfb"
+  },
+  "packet_json_sha256": "7ca0e3e9935433e3d8e57d907693859b9458d9e908b1607e83d1f646214733b7"
+ },
+ "packet_id": "acbaa60bc5a8d4ea365ef4a425c87318ce7b3ccd",
+ "pass": "B",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_b.md",
+  "sha256": "077dd51bd3c86104e2579843cb3162adaf5e3892192e7634aa4712e2274df649"
+ },
+ "purpose": "b6",
+ "render_v": "render_v4",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "5f537c5cd7b2019f",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_b.json",
+  "sha256": "0c8ebcc47c25a92ae60dea2083cdea7b465230a6702cd4fc11c2b7b6bb6eae8d"
+ },
+ "schema_version": 1,
+ "session_id": "679b7cdf-c6c8-4cf4-b483-ab0e82275e5c",
+ "started_utc": "2026-10-01T16:57:40+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220926_Eagle_Pose_or_Garudasana_-a",
+ "stratum": null,
+ "usage": {
+  "cache_creation_input_tokens": 17083,
+  "cache_read_input_tokens": 43277,
+  "input_tokens": 6,
+  "output_tokens": 3315,
+  "thinking_tokens": 953
+ },
+ "warnings": []
+}

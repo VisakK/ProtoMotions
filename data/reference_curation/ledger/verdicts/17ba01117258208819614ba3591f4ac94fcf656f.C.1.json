@@ -1,0 +1,125 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "B",
+    "kind": "through_body",
+    "panels": [
+     "4b",
+     "1b",
+     "3d",
+     "5d"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "through_floor",
+    "panels": [
+     "4b",
+     "3d"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "4b",
+     "1b",
+     "2b"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "A",
+  "floating_parts": {
+   "A": [],
+   "B": []
+  },
+  "more_natural": "A",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both stand upright with both feet on the floor, arms held out to the sides and the torso straight. Only the feet and shins differ a little."
+  },
+  "summary": "Both avatars show the same standing pose with the arms held out. A's feet sit flat and side by side, matching the grey body. B's shins angle inward, and its feet are tilted and pushed into each other, with a corner dipping slightly into the floor."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1139384,
+ "duration_s": 14.07,
+ "errors": [],
+ "frame_hold": 1356,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a@1356",
+ "inputs": {},
+ "item_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a@1356#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c2/17ba01117258208819614ba3591f4ac94fcf656f",
+  "images": {
+   "img_1.png": "10f34609abc6d517db0ddaa32b356c94309896f2589810809e1e9046472550ea",
+   "img_2.png": "f8d05984a9899967f70150bd564b7cecdd2f9fc6cfeed0543525f9ef7585d561",
+   "img_3.png": "72f2fff9399dd14eb1f5f066062a2d4555420ec80c29b7eb173e0225e1b83bc7",
+   "img_4.png": "c6a92f7505071c0a80bd791d101ee8186d37c85c142decefcd83b3e00992025b",
+   "img_5.png": "d2ffe0204a7ead98256023106d224e26c53a993180b1e524b79a3ff03e19601b"
+  },
+  "packet_json_sha256": "d04560b7b09655649a8685412658e27a20bba33cbcd633063cf190f522b23ef1"
+ },
+ "packet_id": "17ba01117258208819614ba3591f4ac94fcf656f",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c2",
+ "render_v": "render_c2",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "f3d3fa87-2d51-4236-b057-847ec92760e5",
+ "started_utc": "2026-10-01T17:28:47+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 10654,
+  "cache_read_input_tokens": 13512,
+  "input_tokens": 6,
+  "output_tokens": 1299,
+  "thinking_tokens": 230
+ },
+ "warnings": []
+}

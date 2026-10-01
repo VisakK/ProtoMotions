@@ -1,0 +1,227 @@
+{
+ "schema_version": 1,
+ "generator": {
+  "module": "reference_curation.statics_v2",
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "sha256": "f6ffcaa279b49b47fa92cabdf4dfd9f6767228ccb03385b8b7140d608043f092"
+ },
+ "inputs": {
+  "data/reference_curation/labels/holds_repaired_ftC_posefix.labels_v2.b61fad7e9d/holds.yaml": "49729d4d4284deac989c7f96384f8d2a3ba2bc5b14a8bfd756559d6b0d31c75d",
+  "data/reference_curation/labels/holds_repaired_ftC_posefix.labels_v2.b61fad7e9d/annotations.jsonl": "abda241dd76e32f20bcf8f4bf9f389cda45d5f20c7c0b9a67633b88a746d4f00",
+  "data/assets/smpl/smpl_yogi03596_v2.xml": "aa541c77bcc1526905777c425e5ab072f21cae7bcadad9f71e3b1eb531f98f91",
+  "data/assets/smpl/smpl_yogi03596_v2_flat.xml": "968f7e94ffce0011d6c43a8fb30d55a21885ba733207dd07bc1aa3fd1a110e17",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220923_Bridge_Pose_or_Setu_Bandha_Sarvangasana_-a.motion": "bd05761c980ea59e337cd0ad0618d06a1bd2922fa344560b587f9201939fd5a0",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220923_Cobra_Pose_or_Bhujangasana_-a.motion": "df96839b85cebc15fd446313adbbd11f3dff6c7e55ec30912730a95099c23d39",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220923_Crane_Crow_Pose_or_Bakasana_-a.motion": "94e56bd237ce5a9499e0cf619737b728a8f00c41c2807fae4fb376d8cea4fa40",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220923_Dolphin_Plank_Pose_or_Makara_Adho_Mukha_Svanasana_-a.motion": "4e2b8e5e47346838ae69d0539aef1ca49596ede92bb20b1b4228dd2adfd9ca27",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220923_Dolphin_Pose_or_Ardha_Pincha_Mayurasana_-a.motion": "730168120a6fde968a741b32b3d2b89c83dd495aa9c83d752a9963ec396b7b53",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220923_Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana_-a.motion": "d15c8f395c805602fc0394fe7431fe06d7c300b5db449d3adbbf17519d35391c",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220923_Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana_-b.motion": "4632a3f170a8c727e9e7e4f3ba7440b3a47269066bddf26db6424b7e0b7f6a1a",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220923_Extended_Revolved_Side_Angle_Pose_or_Utthita_Parsvakonasana_-a.motion": "b7faf810223708e1b8e5585d48e5fcae3314c12bd1d80385b067f8dd982a4572",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220923_Extended_Revolved_Side_Angle_Pose_or_Utthita_Parsvakonasana_-b.motion": "54e0aee0db7f7c49206636a8814ace3dbd39d85349558a946e30f6ef67d3e7f2",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220923_Extended_Revolved_Triangle_Pose_or_Utthita_Trikonasana_-a.motion": "f5a2160d51046035555848a0beb5a1f4b8e4d52e04dde0b78866b48b53e07ca4",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220923_Extended_Revolved_Triangle_Pose_or_Utthita_Trikonasana_-b.motion": "53f05212c0157a291a2317819b032a06ad584543434e84cec183f4a107a1a23d",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-a.motion": "973ef8f6011a194fdcfc6a167e2d0980dd5b1e06e04b8efa1be1e9832860e97d",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-b.motion": "72925fa6e2ee40a8e3cd6b95a82cdcff3087feaa2f8dbd7bfe9753a13e11ff01",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-c.motion": "9fd3b39c71aa27dc03a5c1c1ba225382a4a1febf1e4e8fe7021d5064e0790d44",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-d.motion": "d9bd7a2b59a9dedd32e5f91431bbf6e9adf31ff6ccfcd6884633d0e45e76b4f5",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220923_Firefly_Pose_or_Tittibhasana_-a.motion": "3de517b06b8aa5ee8a2b5bf6c372a8923dde714870292e410da67528ff9fb4b6",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220923_Four-Limbed_Staff_Pose_or_Chaturanga_Dandasana_-a.motion": "8e64f8dbf6ce432dac417086048367e3138339fe42ddccf14440db3155b48d89",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220923_Garland_Pose_or_Malasana_-a.motion": "e8b89b3a9bdf13f1ff25b86f44b9701e2673dd3272c8c8277808a51ec51dc0d6",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220923_Half_Moon_Pose_or_Ardha_Chandrasana_-a.motion": "78f7ff3614f521a31ab635a00747f07586cca7b4aced11029b6f31ec29648974",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220923_Half_Moon_Pose_or_Ardha_Chandrasana_-b.motion": "15b1e9c65a341174a6443507b771e86b0325aa1cea352a29fc50ea0c07c36b93",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220923_Handstand_pose_or_Adho_Mukha_Vrksasana_-a.motion": "ac66ced008a8992d505d06f1e14f520168864255d0bb0b8af28da5cff643f830",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220923_Legs-Up-the-Wall_Pose_or_Viparita_Karani_-a.motion": "f61cda31e0b75b1d8036276bb8e220a96bc58f7554bdfdfb17ee80ca6c7253e5",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220923_Low_Lunge_pose_or_Anjaneyasana_-a.motion": "0dcc1bd2c18d02e97f54f48b12fefc67f5e9989c51c749a04c783fbb99fbc52d",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220923_Peacock_Pose_or_Mayurasana_-a.motion": "1f637bb901c48146ca7254a12e5031af3b6c98be3114bcc21e1290c5eedc03e8",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220923_Plank_Pose_or_Kumbhakasana_-a.motion": "d48ae4dac08d055d9814d6fb6db59caa4c73c1afc34b535345f3064e93e8ff16",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220923_Plow_Pose_or_Halasana_-a.motion": "81b8a13aa3e3b7551bdccaac1e0345b8b8380e98ff73b11ca45a0066188ce422",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-a.motion": "41cddbf2aa69b1e6764c63578889e92c94fa08ed38c59d5d19dd033cfa1ad4b3",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-b.motion": "7c84964cfca7de658a3a93eff82209726b49262e2c1cf5af9a7e2a6827bf0219",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220923_Scorpion_pose_or_vrischikasana-a.motion": "58f633f9d0d9e4928321d0119d057d9f80faea0b1afec4b223e0b78fa52343d4",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220923_Scorpion_pose_or_vrischikasana-b.motion": "6d1ffc3702fc07aa208937ec79576723b40f998909331b954d63f5a9638c96c4",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220923_Shoulder-Pressing_Pose_or_Bhujapidasana_-a.motion": "5c3a6e09666791b64743caabd734e90e762aeb428754f96323b19311d619902b",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a.motion": "ac32dcf3a244d95f217d36b490d437449fe4a00249d22b1d3feba3b087843fa1",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-b.motion": "61cfba99f015086d2709d935dc0e27e91428daf0cc701f1d68b67b6a34f12971",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-c.motion": "822152df1034e2753dbeb872d52ce1c04420fed2f12ac5bc2c0db9bc2f62be09",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220923_Side_Plank_Pose_or_Vasisthasana_-a.motion": "892fb19f23594254a3726a11c7a26b3848710aee0daa91ac6d491ee1a3c4f826",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220923_Side_Plank_Pose_or_Vasisthasana_-b.motion": "7fa4abab5807b7687309156f654c76af330425a1644acb2d15d6c81ef661373d",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220923_Standing_Forward_Bend_pose_or_Uttanasana_-a.motion": "1548d0fdac823d9bf8347b9ae41027066af6317eaa825f247f7f48468e5e17a4",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220923_Standing_Split_pose_or_Urdhva_Prasarita_Eka_Padasana_-a.motion": "c100836294c008a303187e255c4047980f173fa19aecad6a95c94022dc4e2f03",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220923_Standing_Split_pose_or_Urdhva_Prasarita_Eka_Padasana_-b.motion": "54906510f18f2e8359541c11851871393daf38d35737315bf6a2c923b38dc75b",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220923_Standing_big_toe_hold_pose_or_Utthita_Padangusthasana-a.motion": "f43adff1aa894f8841c968f7b6267793e361920128c335a73a4e90bab6003799",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220923_Standing_big_toe_hold_pose_or_Utthita_Padangusthasana-b.motion": "25b91a4d2fd7b92f54394cb222b9de2871288ec1dcd5eb308aa48ff5b0b2097f",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220923_Supported_Headstand_pose_or_Salamba_Sirsasana_-b.motion": "18c320d1ce48c3afbea91afc8fb0549b229e0f44fcbc918c6c836d77f163d350",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220923_Supported_Shoulderstand_pose_or_Salamba_Sarvangasana_-a.motion": "763017efea81627929039c2571941766ba547cf6577a7fb67cf93cec037c1e5d",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220923_Tree_Pose_or_Vrksasana_-a.motion": "6f75b9bf77fef169c46c416c9be0562435f185f87ae352ac6d725cc76d4df28b",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220923_Tree_Pose_or_Vrksasana_-b.motion": "15f674e309b0a3240e26a0d12d095d8ee26c33ef4267f864303f495c14ae0bf1",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220926_Eagle_Pose_or_Garudasana_-a.motion": "e5cf0a3168cce8b1166288f7715aec351e6925956dd0722240aa5a4fac1ddd4c",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220926_Intense_Side_Stretch_Pose_or_Parsvottanasana_-b.motion": "ed90ec6074d0e23f8cbc8484463db25029c7f97d4fd9b42ae00dfa5fe2a4a045",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220926_Lord_of_the_Dance_Pose_or_Natarajasana_-a.motion": "d5e074374e87e04018d08a4de8ae62f5d7f92a33137c767152b1c2d51a2efbdb",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220926_Lord_of_the_Dance_Pose_or_Natarajasana_-c.motion": "ba961fa952bf690ea4f145ca8d92c92ef65021e44597e817b8ac6758f12ee468",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220926_Plow_Pose_or_Halasana_-b.motion": "91622e8d773e7d0d4546289a814854b85961abe401ec817fb0c8ebb9dc950037",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220926_Supported_Headstand_pose_or_Salamba_Sirsasana_-a.motion": "702a944067f63493fbf80f7ac3eca95966b663717d20f69e207316263d5f08bf",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220926_Upward_Plank_Pose_or_Purvottanasana_-a.motion": "36a9bc715c621251ef953df76693264fa8dab284359cf2eeb4180dcb7bc4ffe6",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220926_Warrior_III_Pose_or_Virabhadrasana_III_-a.motion": "d11a4d675449de4690dce64e937092153193a0121df269203364c104a91cfd3f",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220926_Warrior_III_Pose_or_Virabhadrasana_III_-b.motion": "0409c587448053b74b5756a3287e250d8995519166e98954a89f6ee647887f16",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220926_Warrior_II_Pose_or_Virabhadrasana_II_-a.motion": "676ffc1f3038f5ca5671f67df5b00c9143a1740c4e062bb45c5ebe262523a31b",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220926_viparita_virabhadrasana_or_reverse_warrior_pose-a.motion": "b11d9ac8d22c32b7de48c5424a49be772713f95f814d2a72b4757d568b6618c4"
+ },
+ "statics_id": "holds_repaired_ftC_posefix.labels_v2.b61fad7e9d.statics_v2.fb432fa15d",
+ "labels_id": "holds_repaired_ftC_posefix.labels_v2.b61fad7e9d",
+ "plant": {
+  "plant": "v2",
+  "mjcf": "data/assets/smpl/smpl_yogi03596_v2.xml",
+  "plant_sha256": "aa541c77bcc1526905777c425e5ab072f21cae7bcadad9f71e3b1eb531f98f91"
+ },
+ "retarget_id": "holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02",
+ "motion_dir": "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02",
+ "config": {
+  "ground_band_m": 0.02,
+  "pair_band_m": 0.01,
+  "s_cap": 1.0,
+  "relief_min": 0.02,
+  "load_eps_n": 1.0,
+  "peak_slack": 0.001,
+  "stop_tol_deg": 2.0,
+  "mu_ground": 0.75,
+  "mu_body": 0.5,
+  "pyramid_rays": 4,
+  "plant": "data/assets/smpl/smpl_yogi03596_v2_flat.xml",
+  "mass_kg": 74.0
+ },
+ "witness": {
+  "duration_s": 3.0,
+  "dt": 0.001,
+  "integrator": "implicitfast",
+  "stiffness_scale": 10.0,
+  "damping_scale": 3.1622776601683795,
+  "drift_m": 0.02,
+  "settle_s": 0.5,
+  "settle_m": 0.05,
+  "touch_m": 0.01,
+  "contact_n": 1.0,
+  "tail_s": 0.1,
+  "mu_ground": 0.75,
+  "mu_body": 0.5,
+  "condim": 3,
+  "joint_limits": false,
+  "self_collision": true,
+  "action_range": "build_pd_action_offset_scale(action_scale=1)",
+  "gains": "SmplYogiV2RobotConfig",
+  "plant": "v2",
+  "contact_rule": "a zone touching the floor in the pose (<= touch_m) that the gated LP loads (> load_eps_n) must stay down (TODO D4); Step 7's rule (every touching zone) is reported as passed_strict",
+  "load_eps_n": 1.0
+ },
+ "generators": {
+  "data/scripts/reference_curation/statics_v2.py": "f6ffcaa279b49b47fa92cabdf4dfd9f6767228ccb03385b8b7140d608043f092",
+  "data/scripts/reference_curation/statics.py": "6c32a7cb7c73a4d326b972a1d8f3e503bb2d5896ef9152525839461368ce21ce",
+  "data/scripts/reference_curation/witness.py": "995f93d9549f919a24c5c1576fa3299bd9f45ad711df90b555208c4f14e65a33",
+  "data/scripts/reference_curation/witness_v2.py": "21cb2925f4771defdd75c3e3ff44342ab0207d15ee24c75ffc2fd5ec6ca01977",
+  "data/scripts/static_hold_lp.py": "19de743d3e7f20ddfc2d2fee5b25801449d876a6ecb342cb46ce098fcd764b0c",
+  "protomotions/robot_configs/smpl_yogi_v2.py": "aa467478786a992a92d11dc4c397082f356667f768c1b2883e1cd21ee780db18",
+  "data/scripts/reference_curation/retarget_v2.py": "8431859fe0e2828d28a1f5d58e8dd375d3accf85a1fa343ea03341fb4df68a7e",
+  "data/assets/smpl/smpl_yogi03596_v2.xml": "aa541c77bcc1526905777c425e5ab072f21cae7bcadad9f71e3b1eb531f98f91",
+  "data/assets/smpl/smpl_yogi03596_v2_flat.xml": "968f7e94ffce0011d6c43a8fb30d55a21885ba733207dd07bc1aa3fd1a110e17"
+ },
+ "metrics": {
+  "all": {
+   "holds": 280,
+   "verdict": {
+    "feasible": 78,
+    "held": 198,
+    "beyond_plant": 3,
+    "support_not_realised": 1
+   },
+   "counterfactual": {
+    "optimal_beyond_plant": 1,
+    "optimal": 1
+   },
+   "witness_run": 276,
+   "witness_passed": 198,
+   "pairs_by_role": {
+    "required_touch": {
+     "redundant:gated": 15,
+     "useful:gated": 44
+    }
+   },
+   "ground_by_role": {
+    "required_support": {
+     "required:gated": 355,
+     "useful:gated": 158,
+     "redundant:gated": 8,
+     "required:counterfactual": 1,
+     "useful:counterfactual": 1
+    },
+    "required_touch": {
+     "useful:gated": 244,
+     "redundant:gated": 96,
+     "useful:counterfactual": 1
+    }
+   },
+   "stops_relief_ge_0.02": 9,
+   "stops_evaluated": 279,
+   "limit_violations_holds": 126
+  },
+  "family": {
+   "holds": 65,
+   "verdict": {
+    "feasible": 38,
+    "held": 25,
+    "beyond_plant": 1,
+    "support_not_realised": 1
+   },
+   "counterfactual": {
+    "optimal": 1
+   },
+   "witness_run": 63,
+   "witness_passed": 25,
+   "pairs_by_role": {
+    "required_touch": {
+     "redundant:gated": 8,
+     "useful:gated": 21
+    }
+   },
+   "ground_by_role": {
+    "required_support": {
+     "required:gated": 84,
+     "useful:gated": 38,
+     "redundant:gated": 1,
+     "required:counterfactual": 1,
+     "useful:counterfactual": 1
+    },
+    "required_touch": {
+     "useful:gated": 54,
+     "redundant:gated": 28,
+     "useful:counterfactual": 1
+    }
+   },
+   "stops_relief_ge_0.02": 8,
+   "stops_evaluated": 64,
+   "limit_violations_holds": 53
+  }
+ },
+ "witness_metrics": {
+  "run": 276,
+  "passed": 198,
+  "passed_strict": 183,
+  "still": 231,
+  "passed_only_with_d4": [
+   "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-a@569",
+   "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-a@867",
+   "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-b@420",
+   "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-b@624",
+   "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-c@504",
+   "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-c@670",
+   "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-d@357",
+   "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-d@431",
+   "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-d@505",
+   "220923_Scorpion_pose_or_vrischikasana-a@359",
+   "220923_Dolphin_Plank_Pose_or_Makara_Adho_Mukha_Svanasana_-a@490",
+   "220923_Dolphin_Pose_or_Ardha_Pincha_Mayurasana_-a@354",
+   "220923_Dolphin_Pose_or_Ardha_Pincha_Mayurasana_-a@565",
+   "220923_Low_Lunge_pose_or_Anjaneyasana_-a@425",
+   "220923_Low_Lunge_pose_or_Anjaneyasana_-a@580"
+  ]
+ }
+}

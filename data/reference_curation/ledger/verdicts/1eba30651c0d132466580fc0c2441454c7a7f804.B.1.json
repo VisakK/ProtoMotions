@@ -1,0 +1,386 @@
+{
+ "answer": {
+  "body_body": {
+   "answer": "listed",
+   "contacts": [
+    {
+     "certainty": "clear",
+     "panels": [
+      "1a",
+      "2b",
+      "3a"
+     ],
+     "part_a": "left shin",
+     "part_b": "left upper arm"
+    },
+    {
+     "certainty": "clear",
+     "panels": [
+      "1c",
+      "2a"
+     ],
+     "part_a": "right shin",
+     "part_b": "right upper arm"
+    }
+   ]
+  },
+  "discrepancies": [
+   {
+    "kind": "other",
+    "note": "Skin of left thigh touches torso and left upper arm; avatar capsules leave 4-6 cm gaps.",
+    "panels": [
+     "1a",
+     "2b"
+    ],
+    "part": "left thigh"
+   },
+   {
+    "kind": "other",
+    "note": "Skin of right thigh touches torso and right upper arm; avatar gaps about 2-4 cm.",
+    "panels": [
+     "1c",
+     "2a"
+    ],
+    "part": "right thigh"
+   },
+   {
+    "kind": "other",
+    "note": "Label pair L_FOOT+R_FOOT claims feet touch; skin and avatar show about 10 cm apart.",
+    "panels": [
+     "1b",
+     "2a"
+    ],
+    "part": "left foot"
+   },
+   {
+    "kind": "other",
+    "note": "Skin marks left shin-forearm touching (2 cm gap); unlabelled, avatar gap about 3 cm.",
+    "panels": [
+     "3a",
+     "2b"
+    ],
+    "part": "left shin"
+   }
+  ],
+  "floor": {
+   "head": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a",
+     "1d"
+    ]
+   },
+   "left foot": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3c",
+     "2b",
+     "1b"
+    ]
+   },
+   "left forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3b",
+     "2b"
+    ]
+   },
+   "left hand": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3b",
+     "2b",
+     "1a"
+    ]
+   },
+   "left shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "left thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "left upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "3a"
+    ]
+   },
+   "pelvis": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "right foot": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "3c",
+     "1c"
+    ]
+   },
+   "right forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3a",
+     "1c"
+    ]
+   },
+   "right hand": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "1c",
+     "1d"
+    ]
+   },
+   "right shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1c"
+    ]
+   },
+   "right thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1c"
+    ]
+   },
+   "right upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "3a"
+    ]
+   },
+   "torso": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   }
+  },
+  "implausible": [],
+  "pose": {
+   "candidates": [
+    {
+     "confidence": "high",
+     "name": "Crow pose entry, one foot down"
+    },
+    {
+     "confidence": "medium",
+     "name": "Bakasana (Crow/Crane)"
+    },
+    {
+     "confidence": "low",
+     "name": "Eka Pada Bakasana preparation"
+    }
+   ],
+   "description": "Both hands flat on floor shoulder-width; left foot on tiptoe still on floor with light load; right foot lifted behind. Hips high, head forward of hands and well below hips, off floor. Elbows bent, shins pressed onto the backs of the upper arms, knees tucked toward armpits, thighs folded against torso."
+  },
+  "repair": {
+   "kinds": [],
+   "needed": "no",
+   "note": "Floor contacts and shin-arm contacts reproduced; only thigh-torso capsule gaps, a geometry limitation."
+  },
+  "roles": [
+   {
+    "note": "Feet may touch in crow, but here 10 cm apart; label wrong.",
+    "panels": [
+     "1b",
+     "2a"
+    ],
+    "part_a": "left foot",
+    "part_b": "right foot",
+    "role": "allowed"
+   },
+   {
+    "note": "Shin/knee resting on upper arm defines crow.",
+    "panels": [
+     "1a",
+     "2b",
+     "3a"
+    ],
+    "part_a": "left shin",
+    "part_b": "left upper arm",
+    "role": "required_touch"
+   },
+   {
+    "note": "Shin/knee resting on upper arm defines crow.",
+    "panels": [
+     "1c",
+     "2a"
+    ],
+    "part_a": "right shin",
+    "part_b": "right upper arm",
+    "role": "required_touch"
+   },
+   {
+    "note": "Deep hip fold presses thigh to torso; skin touches.",
+    "panels": [
+     "1a",
+     "2b"
+    ],
+    "part_a": "left thigh",
+    "part_b": "torso",
+    "role": "allowed"
+   },
+   {
+    "note": "Knee tucked high on arm; skin touches, avatar gap.",
+    "panels": [
+     "1a",
+     "2b"
+    ],
+    "part_a": "left thigh",
+    "part_b": "left upper arm",
+    "role": "allowed"
+   },
+   {
+    "note": "Deep hip fold presses thigh to torso; skin touches.",
+    "panels": [
+     "1c",
+     "2a"
+    ],
+    "part_a": "right thigh",
+    "part_b": "torso",
+    "role": "allowed"
+   },
+   {
+    "note": "Knee tucked high on arm; skin nearly touches.",
+    "panels": [
+     "1c",
+     "2a"
+    ],
+    "part_a": "right thigh",
+    "part_b": "right upper arm",
+    "role": "allowed"
+   },
+   {
+    "note": "Near-touch from elbow bend; not part of the pose.",
+    "panels": [
+     "3a",
+     "2b"
+    ],
+    "part_a": "left shin",
+    "part_b": "left forearm",
+    "role": "incidental"
+   }
+  ],
+  "timing": {
+   "better_panel": "",
+   "end": "capture",
+   "main_moment": "keep",
+   "note": "Label start earlier while right foot still down; ends agree. Main moment shows settled one-foot-down contacts.",
+   "start": "capture"
+  },
+  "variant": {
+   "matches_label": "variant",
+   "note": "Transitional crow: left foot still on floor carrying light load, only right foot lifted; full crow has both feet up."
+  }
+ },
+ "audit_id": "holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.audit_v2.calibrated.9278736bb1",
+ "cost_usd": 0.26515500000000003,
+ "duration_s": 42.59,
+ "errors": [],
+ "frame_hold": 424,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Crane_Crow_Pose_or_Bakasana_-a@424",
+ "inputs": {},
+ "item_id": "220923_Crane_Crow_Pose_or_Bakasana_-a@424#B4",
+ "n": 1,
+ "num_turns": 7,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_v4/1eba30651c0d132466580fc0c2441454c7a7f804",
+  "images": {
+   "img_1.png": "a14c4fc6a3b48b719cb5de500398a44437689cb8f40e99b025b875fbe8408435",
+   "img_2.png": "2c3adcc088ae1a778ded7a3edeeed82de653b65b1c6e7fbf5c37cbbf3f0a24f1",
+   "img_3.png": "a6207543b861e8826fc65aea8b261ab4106645b7f1cb6a06d8e05699d6cfffbd",
+   "img_4.png": "0adb9c9ce305b6dd8bbbddd51a4fda3ffed9fc7e2860a76f1c7fc225333c0b00"
+  },
+  "packet_json_sha256": "01b5eab89c415c7c5ed4ff173b8c85ac24a93bb4019ed19c37c730a861378b67"
+ },
+ "packet_id": "1eba30651c0d132466580fc0c2441454c7a7f804",
+ "pass": "B",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_b.md",
+  "sha256": "077dd51bd3c86104e2579843cb3162adaf5e3892192e7634aa4712e2274df649"
+ },
+ "purpose": "b6",
+ "render_v": "render_v4",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "5f537c5cd7b2019f",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_b.json",
+  "sha256": "0c8ebcc47c25a92ae60dea2083cdea7b465230a6702cd4fc11c2b7b6bb6eae8d"
+ },
+ "schema_version": 1,
+ "session_id": "3e567cd8-9c00-463c-9a21-9d85314803c4",
+ "started_utc": "2026-10-01T16:26:57+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Crane_Crow_Pose_or_Bakasana_-a",
+ "stratum": null,
+ "usage": {
+  "cache_creation_input_tokens": 21285,
+  "cache_read_input_tokens": 43055,
+  "input_tokens": 6,
+  "output_tokens": 4312,
+  "thinking_tokens": 1715
+ },
+ "warnings": [
+  "load word 'load'"
+ ]
+}

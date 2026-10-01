@@ -1,0 +1,162 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "impossible_joint",
+    "panels": [
+     "1a",
+     "1c",
+     "3a",
+     "3c",
+     "5c"
+    ],
+    "part": "head",
+    "severity": "major"
+   },
+   {
+    "avatar": "A",
+    "kind": "through_body",
+    "panels": [
+     "1a",
+     "3c",
+     "4a"
+    ],
+    "part": "torso",
+    "severity": "major"
+   },
+   {
+    "avatar": "A",
+    "kind": "through_body",
+    "panels": [
+     "1c",
+     "2c",
+     "3a",
+     "3c"
+    ],
+    "part": "right upper arm",
+    "severity": "major"
+   },
+   {
+    "avatar": "A",
+    "kind": "through_body",
+    "panels": [
+     "4a",
+     "4c"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1a",
+     "2a",
+     "3c"
+    ],
+    "part": "pelvis",
+    "severity": "major"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1b",
+     "3d",
+     "5d"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "B",
+  "floating_parts": {
+   "A": [
+    "left foot"
+   ],
+   "B": []
+  },
+  "more_natural": "B",
+  "same_pose": {
+   "answer": "no",
+   "reason": "B holds the wide lunge with arms out level and head up. A has collapsed: torso folded down, head hanging by the shins, arms tangled at the hips, feet drawn close together."
+  },
+  "summary": "B follows the grey body closely, with both feet planted wide and arms level; only its back foot is tipped onto an edge. A has collapsed: head down at its shins, arms tangled into the torso, feet pulled together, and the left foot slightly off the floor."
+ },
+ "audit_id": null,
+ "cost_usd": 0.12471940000000001,
+ "duration_s": 16.64,
+ "errors": [],
+ "frame_hold": 572,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220926_Warrior_II_Pose_or_Virabhadrasana_II_-a@572",
+ "inputs": {},
+ "item_id": "220926_Warrior_II_Pose_or_Virabhadrasana_II_-a@572#swap",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c2/9560b9f84c34a94c9357190d9e40387a48ba9f97",
+  "images": {
+   "img_1.png": "5f718b899146a434925f476c7c7b8980f1b79f1b41cca5b08285d98bc0ae8aed",
+   "img_2.png": "8fd562eeebe13df46458ef9104827e511e94fa685aab6a0e84b110f9360e4a08",
+   "img_3.png": "f0d4ef07dcdca3d1af325c02bd27b462048ed14ba66d769241ac43948e61ed5d",
+   "img_4.png": "d35b9f7c0998eb00e6d16854ffa1e01b9d6b3940b87e419ab959df38ef6b421f",
+   "img_5.png": "c5a4ed0fcac639804d057178e6dd2ed572c2b5f60b5385b8e9a3b843252a8e35"
+  },
+  "packet_json_sha256": "fc1f597333f2b0cafa5403b763c85376ca9565261ccb2f6d47ce827328eb1f2b"
+ },
+ "packet_id": "9560b9f84c34a94c9357190d9e40387a48ba9f97",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c2",
+ "render_v": "render_c2",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "b66e24af-b0ec-45cb-948c-40e453ed0cf1",
+ "started_utc": "2026-10-01T17:09:01+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220926_Warrior_II_Pose_or_Virabhadrasana_II_-a",
+ "stratum": "swap",
+ "usage": {
+  "cache_creation_input_tokens": 11395,
+  "cache_read_input_tokens": 13577,
+  "input_tokens": 6,
+  "output_tokens": 1541,
+  "thinking_tokens": 316
+ },
+ "warnings": []
+}

@@ -1,0 +1,139 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "4a",
+     "3c",
+     "2c"
+    ],
+    "part": "left hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "4a",
+     "3c",
+     "2c"
+    ],
+    "part": "right hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "impossible_joint",
+    "panels": [
+     "4a",
+     "2c"
+    ],
+    "part": "left hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "impossible_joint",
+    "panels": [
+     "4a",
+     "2c"
+    ],
+    "part": "right hand",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "B",
+  "floating_parts": {
+   "A": [
+    "left hand",
+    "right hand",
+    "left foot",
+    "right foot"
+   ],
+   "B": []
+  },
+  "more_natural": "B",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both are the same straight-arm plank on hands and toes with the same shape; A is just lifted a few centimetres, so its hands and feet hover above the floor."
+  },
+  "summary": "Both show the same plank. B follows the grey body closely, with its hands and toes on the floor. A sits a few centimetres too high: its hands are tilted up off the floor and its feet hover, as the drop lines show."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1198526,
+ "duration_s": 13.26,
+ "errors": [],
+ "frame_hold": 541,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Plank_Pose_or_Kumbhakasana_-a@541",
+ "inputs": {},
+ "item_id": "220923_Plank_Pose_or_Kumbhakasana_-a@541#lift",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c2/71ac7284d3a1f3edc7caa2b6ed359cdb27a93e39",
+  "images": {
+   "img_1.png": "6119bff81d425b43de3533938b58be235e14356194e27b0bbb007f2c3df08721",
+   "img_2.png": "5542d04a0f901a1a53ca4302403a736d2a75fdbefa34fbd84fb1a79731741a55",
+   "img_3.png": "f585b526e5d02927fd0f8e741548322df09876f2682a97e7e3b79edebccda74f",
+   "img_4.png": "7ce29d3b712132fd7ccb9d9a1ac973f2493d8ea21ec9b03aff257105f9de3ac5",
+   "img_5.png": "43de7ff7b1baf3fa4978b40ad448f5ef11930afc6b8489930d71df2797bcd892"
+  },
+  "packet_json_sha256": "6967b81e624b196af74971e2ef7c5f35a46ba85031140cbc7361f4940b1ce19c"
+ },
+ "packet_id": "71ac7284d3a1f3edc7caa2b6ed359cdb27a93e39",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c2",
+ "render_v": "render_c2",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "269b1cce-ccf5-4f36-84b8-c234df024d5d",
+ "started_utc": "2026-10-01T17:10:19+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Plank_Pose_or_Kumbhakasana_-a",
+ "stratum": "lift",
+ "usage": {
+  "cache_creation_input_tokens": 11419,
+  "cache_read_input_tokens": 13583,
+  "input_tokens": 6,
+  "output_tokens": 1288,
+  "thinking_tokens": 143
+ },
+ "warnings": []
+}

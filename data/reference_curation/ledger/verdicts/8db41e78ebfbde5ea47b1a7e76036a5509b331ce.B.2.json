@@ -1,0 +1,363 @@
+{
+ "answer": {
+  "body_body": {
+   "answer": "listed",
+   "contacts": [
+    {
+     "certainty": "clear",
+     "panels": [
+      "1a",
+      "1b",
+      "2b"
+     ],
+     "part_a": "left foot",
+     "part_b": "right thigh"
+    },
+    {
+     "certainty": "clear",
+     "panels": [
+      "1a",
+      "1b",
+      "2a"
+     ],
+     "part_a": "left hand",
+     "part_b": "right hand"
+    }
+   ]
+  },
+  "discrepancies": [
+   {
+    "kind": "other",
+    "note": "Human left shin skin touches right thigh; avatar shin stays several cm away from thigh.",
+    "panels": [
+     "1a",
+     "1c",
+     "2b"
+    ],
+    "part": "left shin"
+   },
+   {
+    "kind": "other",
+    "note": "Human prayer hands touch the chest; avatar hands sit a few cm in front of torso.",
+    "panels": [
+     "1a",
+     "1b",
+     "2a"
+    ],
+    "part": "right hand"
+   },
+   {
+    "kind": "other",
+    "note": "Human forearms and left hand touch torso; unlabelled, and the avatar leaves small gaps.",
+    "panels": [
+     "1a",
+     "1c",
+     "2a"
+    ],
+    "part": "torso"
+   }
+  ],
+  "floor": {
+   "head": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "left foot": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b",
+     "1c"
+    ]
+   },
+   "left forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "left hand": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2a"
+    ]
+   },
+   "left shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "left thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "left upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "pelvis": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "right foot": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "2b",
+     "1a"
+    ]
+   },
+   "right forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "right hand": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2a"
+    ]
+   },
+   "right shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3a",
+     "2b"
+    ]
+   },
+   "right thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "right upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "torso": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   }
+  },
+  "implausible": [],
+  "pose": {
+   "candidates": [
+    {
+     "confidence": "high",
+     "name": "Tree Pose (Vrksasana)"
+    },
+    {
+     "confidence": "low",
+     "name": "Half Lotus Tree variation"
+    }
+   ],
+   "description": "Upright, standing only on the right foot with the right leg straight. The left knee bends out to the side, with the left sole pressed on the inner right thigh. Head is directly above the hips. Both hands are joined in prayer in front of the chest, elbows bent out to the sides."
+  },
+  "repair": {
+   "kinds": [],
+   "needed": "no",
+   "note": "Floor contacts match. Only small avatar gaps remain at shin\u2013thigh and hands\u2013chest."
+  },
+  "roles": [
+   {
+    "note": "Sole pressed on standing thigh defines Tree Pose.",
+    "panels": [
+     "1a",
+     "1b",
+     "2b"
+    ],
+    "part_a": "left foot",
+    "part_b": "right thigh",
+    "role": "required_touch"
+   },
+   {
+    "note": "Ankle and lower shin brush thigh near the foot; pose doesn't need it.",
+    "panels": [
+     "1a",
+     "1c"
+    ],
+    "part_a": "left shin",
+    "part_b": "right thigh",
+    "role": "allowed"
+   },
+   {
+    "note": "Prayer hands rest at sternum; common but optional arm placement.",
+    "panels": [
+     "1a",
+     "2a"
+    ],
+    "part_a": "torso",
+    "part_b": "right hand",
+    "role": "allowed"
+   },
+   {
+    "note": "Forearm brushes chest from the prayer arm position.",
+    "panels": [
+     "1a",
+     "1c"
+    ],
+    "part_a": "torso",
+    "part_b": "left forearm",
+    "role": "incidental"
+   },
+   {
+    "note": "Forearm brushes chest from the prayer arm position.",
+    "panels": [
+     "1a",
+     "1c"
+    ],
+    "part_a": "torso",
+    "part_b": "right forearm",
+    "role": "incidental"
+   },
+   {
+    "note": "Prayer hands rest at sternum; optional arm placement.",
+    "panels": [
+     "1a",
+     "2a"
+    ],
+    "part_a": "torso",
+    "part_b": "left hand",
+    "role": "allowed"
+   },
+   {
+    "note": "Palms joined in prayer, a standard but optional arm variation.",
+    "panels": [
+     "1a",
+     "1b",
+     "2a"
+    ],
+    "part_a": "left hand",
+    "part_b": "right hand",
+    "role": "allowed"
+   }
+  ],
+  "timing": {
+   "better_panel": "",
+   "end": "capture",
+   "main_moment": "keep",
+   "note": "At 4b the foot is already on the thigh on one leg; 4d still holds the pose.",
+   "start": "label"
+  },
+  "variant": {
+   "matches_label": "yes",
+   "note": ""
+  }
+ },
+ "audit_id": "holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.audit_v2.calibrated.9278736bb1",
+ "cost_usd": 0.23436220000000002,
+ "duration_s": 35.77,
+ "errors": [],
+ "frame_hold": 542,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Tree_Pose_or_Vrksasana_-b@542",
+ "inputs": {},
+ "item_id": "220923_Tree_Pose_or_Vrksasana_-b@542#B4",
+ "n": 2,
+ "num_turns": 7,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_v4/8db41e78ebfbde5ea47b1a7e76036a5509b331ce",
+  "images": {
+   "img_1.png": "fbbd513b68a97d0f2a04ad225c78ad357518aedd5c77e2b0ade7cdda5c00c363",
+   "img_2.png": "d68b35e570f9e5692f7814e58bb595068712f26ff7b61f17968cdaf44363eefc",
+   "img_3.png": "507b61ad1a1f94dc1e7b2766e80c654b9b4ea9ceaf2d1639d1cf123d69b10b65",
+   "img_4.png": "e53fd0ff951a81e633d35471b1f3a87bdc6edabff18b30dd27cb8c4c0f9172da"
+  },
+  "packet_json_sha256": "11d9a29ebc2ea29011af3e1b96e2bf2ffa19078fac8dbccd49b7f160b6266047"
+ },
+ "packet_id": "8db41e78ebfbde5ea47b1a7e76036a5509b331ce",
+ "pass": "B",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_b.md",
+  "sha256": "077dd51bd3c86104e2579843cb3162adaf5e3892192e7634aa4712e2274df649"
+ },
+ "purpose": "b6",
+ "render_v": "render_v4",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "5f537c5cd7b2019f",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_b.json",
+  "sha256": "0c8ebcc47c25a92ae60dea2083cdea7b465230a6702cd4fc11c2b7b6bb6eae8d"
+ },
+ "schema_version": 1,
+ "session_id": "9ea14439-3dbc-47de-ad93-525a99ebd2fa",
+ "started_utc": "2026-10-01T16:56:38+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Tree_Pose_or_Vrksasana_-b",
+ "stratum": null,
+ "usage": {
+  "cache_creation_input_tokens": 18505,
+  "cache_read_input_tokens": 44691,
+  "input_tokens": 6,
+  "output_tokens": 3868,
+  "thinking_tokens": 1336
+ },
+ "warnings": []
+}

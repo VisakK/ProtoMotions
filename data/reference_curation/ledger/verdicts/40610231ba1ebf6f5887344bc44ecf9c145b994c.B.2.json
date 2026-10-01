@@ -1,0 +1,267 @@
+{
+ "answer": {
+  "body_body": {
+   "answer": "listed",
+   "contacts": []
+  },
+  "discrepancies": [
+   {
+    "kind": "other",
+    "note": "The human's left hand skin touches the pelvis, but the avatar's left hand sits about 10 cm from the pelvis.",
+    "panels": [
+     "1a",
+     "2b",
+     "1c"
+    ],
+    "part": "left hand"
+   }
+  ],
+  "floor": {
+   "head": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "left foot": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "left forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "left hand": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "left shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "left thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "left upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "pelvis": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "right foot": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3b",
+     "2b",
+     "1a"
+    ]
+   },
+   "right forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "3a"
+    ]
+   },
+   "right hand": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "2b",
+     "1a"
+    ]
+   },
+   "right shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "3b"
+    ]
+   },
+   "right thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "right upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "torso": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   }
+  },
+  "implausible": [],
+  "pose": {
+   "candidates": [
+    {
+     "confidence": "high",
+     "name": "Half Moon Pose (Ardha Chandrasana), hand on hip"
+    },
+    {
+     "confidence": "high",
+     "name": "Half Moon Pose (Ardha Chandrasana)"
+    },
+    {
+     "confidence": "low",
+     "name": "Warrior III (Virabhadrasana III)"
+    }
+   ],
+   "description": "Only the right foot and the right fingertips touch the floor; the right hand is beside the right shin. The right leg is straight and standing. The left leg is lifted straight back and above hip height. The torso is horizontal and faces sideways, with the head at about hip height, slightly lower, and out to the side. The left hand rests on the hip."
+  },
+  "repair": {
+   "kinds": [
+    "pose_mismatch"
+   ],
+   "needed": "yes",
+   "note": "Bring the avatar's left hand onto the hip/pelvis, where the human's skin touches it. The floor contacts already match."
+  },
+  "roles": [
+   {
+    "note": "Hand on hip is a permitted Half Moon variation, not a defining contact.",
+    "panels": [
+     "1a",
+     "2b",
+     "4c"
+    ],
+    "part_a": "pelvis",
+    "part_b": "left hand",
+    "role": "allowed"
+   }
+  ],
+  "timing": {
+   "better_panel": "",
+   "end": "label",
+   "main_moment": "keep",
+   "note": "The label and capture windows are identical. The main moment shows the floor contacts settled and the leg fully lifted.",
+   "start": "label"
+  },
+  "variant": {
+   "matches_label": "variant",
+   "note": "The left hand rests on the hip rather than reaching up. The lifted left leg is higher than horizontal."
+  }
+ },
+ "audit_id": "holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.audit_v2.calibrated.9278736bb1",
+ "cost_usd": 0.1885614,
+ "duration_s": 28.98,
+ "errors": [],
+ "frame_hold": 415,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Half_Moon_Pose_or_Ardha_Chandrasana_-a@415",
+ "inputs": {},
+ "item_id": "220923_Half_Moon_Pose_or_Ardha_Chandrasana_-a@415#B4",
+ "n": 2,
+ "num_turns": 7,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_v4/40610231ba1ebf6f5887344bc44ecf9c145b994c",
+  "images": {
+   "img_1.png": "28c7af315563e6c25cc8de304651f51179f8a567d5d7352f3f56b6fb43a98ef1",
+   "img_2.png": "1b33b4189a757b9541306893b62c0cd1fe3bc77bdf42853f4d8d1203de10e6b8",
+   "img_3.png": "5e2dca491264600acebb0fc5e6f3a16819753813a8f4936ac806712a78bccc71",
+   "img_4.png": "7ba6703f034e26dccdb2b9b7b73bea44823c3db5f2d40d385c1acd654e26dd5f"
+  },
+  "packet_json_sha256": "e76fea4f8a4201c5c2704d21d6207e47e5b6d41093b59a2c9ed87f5fec000ae6"
+ },
+ "packet_id": "40610231ba1ebf6f5887344bc44ecf9c145b994c",
+ "pass": "B",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_b.md",
+  "sha256": "077dd51bd3c86104e2579843cb3162adaf5e3892192e7634aa4712e2274df649"
+ },
+ "purpose": "b6",
+ "render_v": "render_v4",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "5f537c5cd7b2019f",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_b.json",
+  "sha256": "0c8ebcc47c25a92ae60dea2083cdea7b465230a6702cd4fc11c2b7b6bb6eae8d"
+ },
+ "schema_version": 1,
+ "session_id": "0cdfe84f-6940-468d-ad43-5d9ec435789b",
+ "started_utc": "2026-10-01T16:33:23+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Half_Moon_Pose_or_Ardha_Chandrasana_-a",
+ "stratum": null,
+ "usage": {
+  "cache_creation_input_tokens": 15139,
+  "cache_read_input_tokens": 41927,
+  "input_tokens": 6,
+  "output_tokens": 2952,
+  "thinking_tokens": 1069
+ },
+ "warnings": []
+}

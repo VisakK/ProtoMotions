@@ -1,0 +1,112 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "through_body",
+    "panels": [
+     "4a",
+     "3c"
+    ],
+    "part": "right hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "through_body",
+    "panels": [
+     "4b",
+     "3d"
+    ],
+    "part": "right hand",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "equal",
+  "floating_parts": {
+   "A": [],
+   "B": []
+  },
+  "more_natural": "equal",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Identical shape: right foot and right hand on the floor, left leg extended back with the left foot down, left arm raised overhead. No visible difference in any view."
+  },
+  "summary": "A and B look the same in every view, and both follow the grey body closely. Both feet and the right hand are on the floor, with no drop lines. The only flaw is in both avatars: the right hand slightly overlaps the right foot."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1433786,
+ "duration_s": 14.02,
+ "errors": [],
+ "frame_hold": 570,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Extended_Revolved_Side_Angle_Pose_or_Utthita_Parsvakonasana_-a@570",
+ "inputs": {},
+ "item_id": "220923_Extended_Revolved_Side_Angle_Pose_or_Utthita_Parsvakonasana_-a@570#identity",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c2/a5546871c0c247094e8ad0c56bbd35d4e695ccae",
+  "images": {
+   "img_1.png": "e7b2a666c6eef09c588b1b9cd5938fa1c26b25e7e2000df9cea6b599c57d13b4",
+   "img_2.png": "3c5339fbb5a84b69674c3ef891e1935a977c9ee55966c03e0f9f5314ff19ac68",
+   "img_3.png": "f6c945b259c904464ff74f0d13a3ecae73eb30e07760b8b6f137dcc0ebe0f51c",
+   "img_4.png": "00820ceb7489ac469662f28b18fc508db192c388fa85366092fec60c9968cccb",
+   "img_5.png": "d320608c9a70ea842cfb3e3b210d6545c70c3f68f9d5f127da3b6e037b7ea3ab"
+  },
+  "packet_json_sha256": "7e0b9ef106d24385d0a1dca7ff0116f6f36875ff6ba92f992ce9b8229a5c5ee7"
+ },
+ "packet_id": "a5546871c0c247094e8ad0c56bbd35d4e695ccae",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c2",
+ "render_v": "render_c2",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "534086ef-98a5-4ecc-a516-b7b8285e04ae",
+ "started_utc": "2026-10-01T17:04:50+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Extended_Revolved_Side_Angle_Pose_or_Utthita_Parsvakonasana_-a",
+ "stratum": "identity",
+ "usage": {
+  "cache_creation_input_tokens": 14497,
+  "cache_read_input_tokens": 10493,
+  "input_tokens": 6,
+  "output_tokens": 1264,
+  "thinking_tokens": 232
+ },
+ "warnings": []
+}

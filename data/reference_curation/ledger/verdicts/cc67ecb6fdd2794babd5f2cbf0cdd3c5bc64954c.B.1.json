@@ -1,0 +1,329 @@
+{
+ "answer": {
+  "body_body": {
+   "answer": "listed",
+   "contacts": []
+  },
+  "discrepancies": [
+   {
+    "kind": "other",
+    "note": "label_ground omits right foot; avatar, markers, skin and mat all show it bearing load on the floor.",
+    "panels": [
+     "3a",
+     "2b"
+    ],
+    "part": "right foot"
+   },
+   {
+    "kind": "other",
+    "note": "Human skin of right thigh touches torso; avatar thigh and torso are several cm apart.",
+    "panels": [
+     "1a",
+     "2b"
+    ],
+    "part": "right thigh"
+   },
+   {
+    "kind": "other",
+    "note": "Labelled right-arm/right-leg contacts are not made: skin and avatar gaps are 3-7 cm at main moment.",
+    "panels": [
+     "3a",
+     "1d"
+    ],
+    "part": "right upper arm"
+   }
+  ],
+  "floor": {
+   "head": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "left foot": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3b",
+     "2b",
+     "1b"
+    ]
+   },
+   "left forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "1d"
+    ]
+   },
+   "left hand": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "1d"
+    ]
+   },
+   "left shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3b",
+     "2b"
+    ]
+   },
+   "left thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "left upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "1d"
+    ]
+   },
+   "pelvis": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "right foot": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "2b"
+    ]
+   },
+   "right forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3a",
+     "2b"
+    ]
+   },
+   "right hand": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "2b"
+    ]
+   },
+   "right shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3a",
+     "2b"
+    ]
+   },
+   "right thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "right upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3a",
+     "2b"
+    ]
+   },
+   "torso": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   }
+  },
+  "implausible": [],
+  "pose": {
+   "candidates": [
+    {
+     "confidence": "high",
+     "name": "Extended Side Angle Pose (Utthita Parsvakonasana)"
+    },
+    {
+     "confidence": "low",
+     "name": "Revolved Side Angle Pose"
+    }
+   ],
+   "description": "Both feet and the right hand on the floor. Right knee deeply bent over the right foot; left leg straight back with its foot flat. Torso leans forward-right over the right thigh, head level with the hips. Right hand on the floor beside the right foot, upper arm along the inner knee; left arm extended overhead along the body line."
+  },
+  "repair": {
+   "kinds": [],
+   "needed": "no",
+   "note": "Avatar floor contacts match the human; only a small thigh-torso gap differs, which is minor."
+  },
+  "roles": [
+   {
+    "note": "Not touching; forearm stands near the foot only by proximity.",
+    "panels": [
+     "3a",
+     "1d"
+    ],
+    "part_a": "right foot",
+    "part_b": "right forearm",
+    "role": "incidental"
+   },
+   {
+    "note": "Hand placed beside the foot, not touching it; pose does not need contact.",
+    "panels": [
+     "3a",
+     "2b"
+    ],
+    "part_a": "right foot",
+    "part_b": "right hand",
+    "role": "incidental"
+   },
+   {
+    "note": "Arm against inner knee is common but not required; gap ~3 cm here.",
+    "panels": [
+     "3a",
+     "1d"
+    ],
+    "part_a": "right shin",
+    "part_b": "right upper arm",
+    "role": "allowed"
+   },
+   {
+    "note": "Forearm lies near shin, not touching; not part of the pose.",
+    "panels": [
+     "3a",
+     "1d"
+    ],
+    "part_a": "right shin",
+    "part_b": "right forearm",
+    "role": "incidental"
+   },
+   {
+    "note": "Upper arm may press inner thigh; not touching at main moment.",
+    "panels": [
+     "3a",
+     "1a"
+    ],
+    "part_a": "right thigh",
+    "part_b": "right upper arm",
+    "role": "allowed"
+   },
+   {
+    "note": "Skin touches as side torso lowers onto thigh; avatar leaves a gap.",
+    "panels": [
+     "1a",
+     "2b"
+    ],
+    "part_a": "right thigh",
+    "part_b": "torso",
+    "role": "allowed"
+   }
+  ],
+  "timing": {
+   "better_panel": "",
+   "end": "label",
+   "main_moment": "keep",
+   "note": "Label and capture windows coincide; 4c shows the pose fully formed with left arm overhead.",
+   "start": "label"
+  },
+  "variant": {
+   "matches_label": "yes",
+   "note": "Non-revolved Utthita Parsvakonasana, hand on floor beside front foot; the label name's 'Revolved' does not apply."
+  }
+ },
+ "audit_id": "holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.audit_v2.calibrated.9278736bb1",
+ "cost_usd": 0.2409228,
+ "duration_s": 32.16,
+ "errors": [],
+ "frame_hold": 570,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Extended_Revolved_Side_Angle_Pose_or_Utthita_Parsvakonasana_-a@570",
+ "inputs": {},
+ "item_id": "220923_Extended_Revolved_Side_Angle_Pose_or_Utthita_Parsvakonasana_-a@570#B4",
+ "n": 1,
+ "num_turns": 7,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_v4/cc67ecb6fdd2794babd5f2cbf0cdd3c5bc64954c",
+  "images": {
+   "img_1.png": "ada6efd1b37da2bafeb25d9f5d6237f28e0ba8ca20c04834e3d1f28dbcd0192c",
+   "img_2.png": "88e35dedd70e4b61645dd5e4822ce21c2949abc2a447034367aa8b7e87818a15",
+   "img_3.png": "7104de7e7b934c6e664851eb4fe378fd7c4aa1a1b46e1c3d373981b4752bfd11",
+   "img_4.png": "72c6efc95781be1440c0d42c219a691fd40adadd980aaebe22d0606aad153fc9"
+  },
+  "packet_json_sha256": "51003d4e03823fa88302ab4e8cf64573d71a4391c9a442cb555802aa0bde876f"
+ },
+ "packet_id": "cc67ecb6fdd2794babd5f2cbf0cdd3c5bc64954c",
+ "pass": "B",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_b.md",
+  "sha256": "077dd51bd3c86104e2579843cb3162adaf5e3892192e7634aa4712e2274df649"
+ },
+ "purpose": "b6",
+ "render_v": "render_v4",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "5f537c5cd7b2019f",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_b.json",
+  "sha256": "0c8ebcc47c25a92ae60dea2083cdea7b465230a6702cd4fc11c2b7b6bb6eae8d"
+ },
+ "schema_version": 1,
+ "session_id": "9c17d673-3e70-46b4-b3d2-e5d4d0f3f565",
+ "started_utc": "2026-10-01T16:29:23+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Extended_Revolved_Side_Angle_Pose_or_Utthita_Parsvakonasana_-a",
+ "stratum": null,
+ "usage": {
+  "cache_creation_input_tokens": 20487,
+  "cache_read_input_tokens": 42014,
+  "input_tokens": 6,
+  "output_tokens": 3430,
+  "thinking_tokens": 1117
+ },
+ "warnings": [
+  "load word 'bearing'",
+  "load word 'load'"
+ ]
+}

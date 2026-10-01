@@ -1,0 +1,165 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1a",
+     "1c",
+     "3a",
+     "3c"
+    ],
+    "part": "torso",
+    "severity": "major"
+   },
+   {
+    "avatar": "A",
+    "kind": "through_body",
+    "panels": [
+     "1c",
+     "4a",
+     "4c"
+    ],
+    "part": "head",
+    "severity": "major"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1c",
+     "4a",
+     "3c"
+    ],
+    "part": "left foot",
+    "severity": "major"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "2c",
+     "4e"
+    ],
+    "part": "right hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "through_body",
+    "panels": [
+     "1b",
+     "1d",
+     "4b"
+    ],
+    "part": "right hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "through_body",
+    "panels": [
+     "1d",
+     "4b",
+     "4f"
+    ],
+    "part": "left hand",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "B",
+  "floating_parts": {
+   "A": [
+    "left foot",
+    "right foot",
+    "left forearm",
+    "pelvis"
+   ],
+   "B": [
+    "pelvis"
+   ]
+  },
+  "more_natural": "B",
+  "same_pose": {
+   "answer": "no",
+   "reason": "B: head on floor, back arched, knees high, feet flat, like the grey body. A: legs stretched back and up on its toes, head tucked under the hips. A different shape."
+  },
+  "summary": "B closely matches the grey body: head on the floor, back arched, knees high and feet flat on the floor. A has a different, impossible shape: legs stretched back on raised toes, head tucked under the pelvis, and its feet and left forearm hover above the floor."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1766168,
+ "duration_s": 29.64,
+ "errors": [],
+ "frame_hold": 1056,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Bridge_Pose_or_Setu_Bandha_Sarvangasana_-a@1056",
+ "inputs": {},
+ "item_id": "220923_Bridge_Pose_or_Setu_Bandha_Sarvangasana_-a@1056#swap",
+ "n": 1,
+ "num_turns": 9,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c2/5f67464fc842d627fa94eee861aca42ee58669fc",
+  "images": {
+   "img_1.png": "0df8e9ae3f53c23618ebb7489f81b9e05b63a7c6421b404ef3911150d0e0c4f1",
+   "img_2.png": "0799653dc289ea41e49461674b4802c2bc97be3719b45e9b2ba6cb3721b7b5bf",
+   "img_3.png": "f4abe9e48549cc839481f8f22032a9c47eeb688ca2ec70ae0d0a4d0578f61e58",
+   "img_4.png": "c185da1fa8f3adb1e51c9baee4469d3b41d1308b28d0eb1c7937aa9699ef5915",
+   "img_5.png": "bf22faac9829ed9e833712080baeef42c0d4a7114d309c984131f11c6df78547"
+  },
+  "packet_json_sha256": "1903ba7b48199111f68417908e1cf49893190ead52dc0607f139d618f76af4b6"
+ },
+ "packet_id": "5f67464fc842d627fa94eee861aca42ee58669fc",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c2",
+ "render_v": "render_c2",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "d2f52779-251b-47e8-b7d4-a8f2b895d006",
+ "started_utc": "2026-10-01T17:05:49+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Bridge_Pose_or_Setu_Bandha_Sarvangasana_-a",
+ "stratum": "swap",
+ "usage": {
+  "cache_creation_input_tokens": 13936,
+  "cache_read_input_tokens": 28784,
+  "input_tokens": 8,
+  "output_tokens": 2967,
+  "thinking_tokens": 1063
+ },
+ "warnings": []
+}

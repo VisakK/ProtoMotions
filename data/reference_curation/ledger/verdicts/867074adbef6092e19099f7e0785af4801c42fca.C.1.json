@@ -1,0 +1,113 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "4b",
+     "1d",
+     "2d"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "through_body",
+    "panels": [
+     "4b",
+     "3b"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "A",
+  "floating_parts": {
+   "A": [],
+   "B": []
+  },
+  "more_natural": "A",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both stand in the same slightly crouched, forward-leaning stance with feet close together, arms hanging and the same limb placement; only the feet differ slightly."
+  },
+  "summary": "Same pose in both. A's feet sit flat on the floor and match the grey feet. B's right foot is tilted onto its edge, and its feet press into each other, so A is closer to the grey body and looks slightly more natural."
+ },
+ "audit_id": null,
+ "cost_usd": 0.11242479999999999,
+ "duration_s": 12.55,
+ "errors": [],
+ "frame_hold": 97,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220926_Eagle_Pose_or_Garudasana_-a@97",
+ "inputs": {},
+ "item_id": "220926_Eagle_Pose_or_Garudasana_-a@97#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c2/867074adbef6092e19099f7e0785af4801c42fca",
+  "images": {
+   "img_1.png": "6f8f67ace90cbe653ca5dffb29de41f9d93f3b0eb7305ce13dfb264803965dd3",
+   "img_2.png": "3d28da5aa998b9780a38d344fdfce30cbf9a2e99ab9799cfe7eda8aee80732e2",
+   "img_3.png": "2d571d153f1ff6459f2b194f5e2f41f55c58b48ea7b4766d853b9ef8442550b4",
+   "img_4.png": "2f096b36d5036a9f1b4591403529f5e3e61f937b092b5f68d48c2db59feb2dd8",
+   "img_5.png": "850ded49f5797f667658f404c3f64864d77482e5bd0ca83a72608abacb8abd1d"
+  },
+  "packet_json_sha256": "2b663c8c5ad7608af9d63723500d81f43eb57e008ea7085a4122e98a9736fdf7"
+ },
+ "packet_id": "867074adbef6092e19099f7e0785af4801c42fca",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c2",
+ "render_v": "render_c2",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "db858aa6-172d-4fdd-9346-87067975ee15",
+ "started_utc": "2026-10-01T17:35:14+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220926_Eagle_Pose_or_Garudasana_-a",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 10662,
+  "cache_read_input_tokens": 13524,
+  "input_tokens": 6,
+  "output_tokens": 1220,
+  "thinking_tokens": 230
+ },
+ "warnings": []
+}

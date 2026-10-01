@@ -1,0 +1,154 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1b",
+     "1d",
+     "2b",
+     "2d",
+     "3b",
+     "3d"
+    ],
+    "part": "torso",
+    "severity": "major"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1d",
+     "2d",
+     "3b",
+     "3d"
+    ],
+    "part": "head",
+    "severity": "major"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1d",
+     "2b",
+     "2d",
+     "4b"
+    ],
+    "part": "left foot",
+    "severity": "major"
+   },
+   {
+    "avatar": "B",
+    "kind": "through_body",
+    "panels": [
+     "1d",
+     "2d",
+     "3b"
+    ],
+    "part": "right thigh",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1b",
+     "3d",
+     "4b"
+    ],
+    "part": "right hand",
+    "severity": "major"
+   }
+  ],
+  "closer_to_human": "A",
+  "floating_parts": {
+   "A": [],
+   "B": [
+    "left foot"
+   ]
+  },
+  "more_natural": "A",
+  "same_pose": {
+   "answer": "no",
+   "reason": "A stands on one leg with the torso level, arms forward and the other leg raised behind, like the grey body. B has collapsed into a folded heap with hands on the floor and the head low."
+  },
+  "summary": "A closely follows the grey body: it stands on the left foot with the torso level, arms reaching forward and the right leg raised behind. B has collapsed into a folded heap with its head low and hands on the floor, and its standing foot hovers above the floor."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1221282,
+ "duration_s": 18.3,
+ "errors": [],
+ "frame_hold": 947,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220926_Warrior_III_Pose_or_Virabhadrasana_III_-a@947",
+ "inputs": {},
+ "item_id": "220926_Warrior_III_Pose_or_Virabhadrasana_III_-a@947#swap",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c2/c00c64ef72a8daf0f9e2c7e313be1c0237c08c33",
+  "images": {
+   "img_1.png": "e35bd2cec986af162563482f90b7f7c0b12ed7efb020b0eb5211dd67298ac97e",
+   "img_2.png": "e7542792a99faef44525d43001779994ae7345cb233eb3b6b448b4155bae7ba0",
+   "img_3.png": "a7a312f942a84ddf7d196b95811d9def0cc500b4008ae0a9e476c88f967fe574",
+   "img_4.png": "480e2e6728b7ab0ad3acd3bef6eb35e6a04f20a3ea102b548130de30b609183b",
+   "img_5.png": "07e508f5f61c29ab6b9dfa628ee44c01159f63123c93ae67f980652d464c6f37"
+  },
+  "packet_json_sha256": "23503811d43366590ed201c3fab3aed060d4596c9ac9266a2cb0e10fe48e8e35"
+ },
+ "packet_id": "c00c64ef72a8daf0f9e2c7e313be1c0237c08c33",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c2",
+ "render_v": "render_c2",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "09464238-b1ae-48d6-b6fe-f2e03d9a94e1",
+ "started_utc": "2026-10-01T17:08:46+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220926_Warrior_III_Pose_or_Virabhadrasana_III_-a",
+ "stratum": "swap",
+ "usage": {
+  "cache_creation_input_tokens": 10707,
+  "cache_read_input_tokens": 13541,
+  "input_tokens": 6,
+  "output_tokens": 1687,
+  "thinking_tokens": 494
+ },
+ "warnings": []
+}

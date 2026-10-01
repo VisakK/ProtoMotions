@@ -1,0 +1,143 @@
+{
+ "schema_version": 1,
+ "generator": {
+  "module": "reference_curation.capture_v4",
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "sha256": "011d52fe5baae9f11c946ceefaad9583b49e3e0c0120535d29a2ae0b6e74e487"
+ },
+ "inputs": {
+  "data/reference_curation/calibration/capture_v1.json": "d3c50acca7d9da277b45aa6f353db0c6979e2a5d0513aae298f1221ab5df476d",
+  "data/reference_curation/calibration/capture_v2.json": "b380f6077e9056865feaf89d2b2fb0d77e02d8942667875b9a46f0d0b46ba850"
+ },
+ "store": "capture/v4",
+ "retarget_id": "holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02",
+ "rule": "capture.calibrate and human_mesh.calibrate, unchanged, on the plant-v2 attribution's mat-confirmed frames; reported only, the committed thresholds stay in force",
+ "markers": {
+  "L_FOOT": {
+   "admitted_v1": true,
+   "admitted_v4": true,
+   "n_frames_v1": 31814,
+   "n_frames_v4": 38776,
+   "touch_cm_v1": 4.323,
+   "touch_cm_v4": 4.362
+  },
+  "R_FOOT": {
+   "admitted_v1": true,
+   "admitted_v4": true,
+   "n_frames_v1": 32432,
+   "n_frames_v4": 38099,
+   "touch_cm_v1": 4.234,
+   "touch_cm_v4": 4.261
+  },
+  "L_SHANK": {
+   "admitted_v1": false,
+   "admitted_v4": false,
+   "n_frames_v1": 367,
+   "n_frames_v4": 815,
+   "touch_cm_v1": 8.502,
+   "touch_cm_v4": 8.304
+  },
+  "R_SHANK": {
+   "admitted_v1": false,
+   "admitted_v4": false,
+   "n_frames_v1": 585,
+   "n_frames_v4": 1523,
+   "touch_cm_v1": 7.311,
+   "touch_cm_v4": 7.893
+  },
+  "L_THIGH": {
+   "admitted_v1": false,
+   "admitted_v4": false,
+   "n_frames_v1": 594,
+   "n_frames_v4": 340,
+   "touch_cm_v1": 29.324,
+   "touch_cm_v4": 31.614
+  },
+  "R_THIGH": {
+   "admitted_v1": false,
+   "admitted_v4": false,
+   "n_frames_v1": 387,
+   "n_frames_v4": 1053,
+   "touch_cm_v1": 26.204,
+   "touch_cm_v4": 23.506
+  },
+  "PELVIS": {
+   "admitted_v1": false,
+   "admitted_v4": false,
+   "n_frames_v1": 1019,
+   "n_frames_v4": 1260,
+   "touch_cm_v1": 10.356,
+   "touch_cm_v4": 13.337
+  },
+  "TRUNK": {
+   "admitted_v1": false,
+   "admitted_v4": false,
+   "n_frames_v1": 700,
+   "n_frames_v4": 1349,
+   "touch_cm_v1": 1.661,
+   "touch_cm_v4": 2.203
+  },
+  "HEAD": {
+   "admitted_v1": true,
+   "admitted_v4": false,
+   "n_frames_v1": 911,
+   "n_frames_v4": 2379,
+   "touch_cm_v1": 3.654,
+   "touch_cm_v4": 3.638
+  },
+  "L_UPPER_ARM": {
+   "admitted_v1": false,
+   "admitted_v4": false,
+   "n_frames_v1": 916,
+   "n_frames_v4": 1156,
+   "touch_cm_v1": 4.75,
+   "touch_cm_v4": 4.687
+  },
+  "R_UPPER_ARM": {
+   "admitted_v1": false,
+   "admitted_v4": false,
+   "n_frames_v1": 924,
+   "n_frames_v4": 1160,
+   "touch_cm_v1": 4.042,
+   "touch_cm_v4": 4.028
+  },
+  "L_FOREARM": {
+   "admitted_v1": false,
+   "admitted_v4": false,
+   "n_frames_v1": 264,
+   "n_frames_v4": 1916,
+   "touch_cm_v1": 4.08,
+   "touch_cm_v4": 4.873
+  },
+  "R_FOREARM": {
+   "admitted_v1": false,
+   "admitted_v4": false,
+   "n_frames_v1": 247,
+   "n_frames_v4": 1799,
+   "touch_cm_v1": 5.462,
+   "touch_cm_v4": 5.391
+  },
+  "L_HAND": {
+   "admitted_v1": true,
+   "admitted_v4": true,
+   "n_frames_v1": 5530,
+   "n_frames_v4": 11452,
+   "touch_cm_v1": 2.508,
+   "touch_cm_v4": 2.426
+  },
+  "R_HAND": {
+   "admitted_v1": true,
+   "admitted_v4": true,
+   "n_frames_v1": 6717,
+   "n_frames_v4": 14062,
+   "touch_cm_v1": 2.467,
+   "touch_cm_v4": 2.469
+  }
+ },
+ "mesh": {
+  "touch_cm_committed": 2.272,
+  "touch_cm_v4": 2.248,
+  "n_frames_v4": 104768,
+  "n_frames_committed": 77404
+ }
+}

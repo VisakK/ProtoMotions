@@ -1,0 +1,225 @@
+{
+ "answer": {
+  "body_body": {
+   "answer": "listed",
+   "contacts": []
+  },
+  "discrepancies": [],
+  "floor": {
+   "head": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b",
+     "1d"
+    ]
+   },
+   "left foot": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3c",
+     "2b",
+     "1b"
+    ]
+   },
+   "left forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3a",
+     "1a"
+    ]
+   },
+   "left hand": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "1d",
+     "2b"
+    ]
+   },
+   "left shin": {
+    "avatar": "touching",
+    "markers": "cannot_tell",
+    "panels": [
+     "2b",
+     "3d",
+     "3c"
+    ]
+   },
+   "left thigh": {
+    "avatar": "off_floor",
+    "markers": "cannot_tell",
+    "panels": [
+     "2b",
+     "3d",
+     "1a"
+    ]
+   },
+   "left upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "3a"
+    ]
+   },
+   "pelvis": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "right foot": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3c",
+     "1b"
+    ]
+   },
+   "right forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3b",
+     "1c"
+    ]
+   },
+   "right hand": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3b",
+     "1d"
+    ]
+   },
+   "right shin": {
+    "avatar": "touching",
+    "markers": "cannot_tell",
+    "panels": [
+     "3e",
+     "1c",
+     "3c"
+    ]
+   },
+   "right thigh": {
+    "avatar": "off_floor",
+    "markers": "cannot_tell",
+    "panels": [
+     "1c",
+     "3e"
+    ]
+   },
+   "right upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1c",
+     "3b"
+    ]
+   },
+   "torso": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   }
+  },
+  "implausible": [],
+  "pose": {
+   "candidates": [
+    {
+     "confidence": "high",
+     "name": "Upward-Facing Dog (Urdhva Mukha Svanasana)"
+    },
+    {
+     "confidence": "medium",
+     "name": "Cobra (Bhujangasana)"
+    }
+   ],
+   "description": "Prone backbend with arms straight. Both hands are flat on the floor under the shoulders, elbows straight, and the torso is upright with the head high above the hips. The legs reach straight back with the shins and the tops of the feet on the floor. The thighs sit just above the floor and the pelvis is low but lifted."
+  }
+ },
+ "audit_id": "holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.audit_v2.calibrated.9278736bb1",
+ "cost_usd": 0.1873696,
+ "duration_s": 32.5,
+ "errors": [],
+ "frame_hold": 591,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Cobra_Pose_or_Bhujangasana_-a@591",
+ "inputs": {},
+ "item_id": "220923_Cobra_Pose_or_Bhujangasana_-a@591#A4:reference",
+ "n": 1,
+ "num_turns": 7,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_v4/45b0f098c08538fecdb27326754629e154225382",
+  "images": {
+   "img_1.png": "2e09fe0ae8968bd257586138aa7cf433a30d2495f63662f6d0c63f6f43d54841",
+   "img_2.png": "068d8bf35c82ba7954d828f3fc7dfb55638e068265424587bbccb02be75b646c",
+   "img_3.png": "f0b910a2b43a021aec88e04d5cbb544056d34c89166b0c8997afea1aac4ab767",
+   "img_4.png": "e3612b4dac3bd187f87de0a3d23acc31487e016f79caa11a856c72f3a566ef77"
+  },
+  "packet_json_sha256": "9985df8c9ec63bcdd9a13b966599f4b4d767c850ed95ec660043e09dc874aa24"
+ },
+ "packet_id": "45b0f098c08538fecdb27326754629e154225382",
+ "pass": "A",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_a.md",
+  "sha256": "bae5cfe8420cee596fc188c14966536b354df29210c1e9a94384c925aab70510"
+ },
+ "purpose": "calibration",
+ "render_v": "render_v4",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "5de359f0431719d8",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_a.json",
+  "sha256": "5a05ec7b10cce5f545b813c390820a81bbbde96259cc00318df7ec618475ff9d"
+ },
+ "schema_version": 1,
+ "session_id": "a26dadc4-c188-4818-9904-30f80373d65a",
+ "started_utc": "2026-10-01T16:05:02+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Cobra_Pose_or_Bhujangasana_-a",
+ "stratum": "other",
+ "usage": {
+  "cache_creation_input_tokens": 15139,
+  "cache_read_input_tokens": 19368,
+  "input_tokens": 6,
+  "output_tokens": 3118,
+  "thinking_tokens": 1716
+ },
+ "warnings": []
+}

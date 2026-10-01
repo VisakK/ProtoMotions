@@ -1,0 +1,161 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1a",
+     "1c",
+     "3c",
+     "5c"
+    ],
+    "part": "torso",
+    "severity": "major"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1a",
+     "3a",
+     "3c",
+     "5c"
+    ],
+    "part": "left thigh",
+    "severity": "major"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1a",
+     "3c",
+     "5c"
+    ],
+    "part": "right thigh",
+    "severity": "major"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1a",
+     "2c",
+     "3c"
+    ],
+    "part": "head",
+    "severity": "major"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "3c",
+     "4c"
+    ],
+    "part": "right hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "through_body",
+    "panels": [
+     "1b",
+     "2b",
+     "4b"
+    ],
+    "part": "head",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "B",
+  "floating_parts": {
+   "A": [
+    "right hand"
+   ],
+   "B": []
+  },
+  "more_natural": "B",
+  "same_pose": {
+   "answer": "no",
+   "reason": "B is upside down on its hands with the legs raised in a split, like the grey body. A has collapsed into a crouch, with its torso low and its legs sticking out sideways, roughly level with the floor."
+  },
+  "summary": "B closely follows the grey body: it is upside down on both hands with the legs in a split. A has fallen out of the pose into a crouch with its legs held out sideways, its head well outside the grey body and its right hand hovering above the floor."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1217304,
+ "duration_s": 17.15,
+ "errors": [],
+ "frame_hold": 945,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Scorpion_pose_or_vrischikasana-b@945",
+ "inputs": {},
+ "item_id": "220923_Scorpion_pose_or_vrischikasana-b@945#swap",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c2/dba9476bdd84e2c8722e17cad0dde7c777f7e637",
+  "images": {
+   "img_1.png": "5f68bbfa8213dc08ecefcc736e26206fcf9131ce7bce73d5a5703242171b12b2",
+   "img_2.png": "e9ea16314f888332ead9ee7cd29003e706e7fc7c72ef24f2c84d511e62af4a3e",
+   "img_3.png": "493b6e61ff22a49aba7967173a06a7ef614a2ce5611ea9a0b1db0aa5d3f3d494",
+   "img_4.png": "fdd4d3c9304f91910b98f6236298e994cb0486b5afc50065ecdcdb85489d91ca",
+   "img_5.png": "3dac0e537a3cda1c3beb96c440214dbd8fe33362e0b8a27cb05992ae4fbc5d0e"
+  },
+  "packet_json_sha256": "931bbffec1336f0dfd1acaafbe4390a0331231894404e611c3034de27c32574a"
+ },
+ "packet_id": "dba9476bdd84e2c8722e17cad0dde7c777f7e637",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c2",
+ "render_v": "render_c2",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "bcec71fe-6c1c-4260-ade9-35475871b3ca",
+ "started_utc": "2026-10-01T17:07:33+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Scorpion_pose_or_vrischikasana-b",
+ "stratum": "swap",
+ "usage": {
+  "cache_creation_input_tokens": 11416,
+  "cache_read_input_tokens": 13592,
+  "input_tokens": 6,
+  "output_tokens": 1383,
+  "thinking_tokens": 170
+ },
+ "warnings": []
+}

@@ -1,0 +1,280 @@
+{
+ "answer": {
+  "body_body": {
+   "answer": "listed",
+   "contacts": [
+    {
+     "certainty": "clear",
+     "panels": [
+      "3a",
+      "1d"
+     ],
+     "part_a": "head",
+     "part_b": "left upper arm"
+    },
+    {
+     "certainty": "clear",
+     "panels": [
+      "3a",
+      "1d"
+     ],
+     "part_a": "head",
+     "part_b": "right upper arm"
+    }
+   ]
+  },
+  "discrepancies": [],
+  "floor": {
+   "head": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3a",
+     "1a",
+     "2b"
+    ]
+   },
+   "left foot": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3d",
+     "2b"
+    ]
+   },
+   "left forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "3b"
+    ]
+   },
+   "left hand": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3b",
+     "2b"
+    ]
+   },
+   "left shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "left thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "left upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "3b"
+    ]
+   },
+   "pelvis": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "right foot": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3d",
+     "2b"
+    ]
+   },
+   "right forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1c",
+     "3c"
+    ]
+   },
+   "right hand": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3c",
+     "2b"
+    ]
+   },
+   "right shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1c",
+     "2b"
+    ]
+   },
+   "right thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1c",
+     "2b"
+    ]
+   },
+   "right upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1c",
+     "3c"
+    ]
+   },
+   "torso": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   }
+  },
+  "implausible": [],
+  "pose": {
+   "candidates": [
+    {
+     "confidence": "high",
+     "name": "Downward-Facing Dog (Adho Mukha Svanasana)"
+    },
+    {
+     "confidence": "low",
+     "name": "Dolphin-free inverted V / Pyramid hold"
+    }
+   ],
+   "description": "Inverted V. Both hands and both feet are on the floor, and nothing else touches it. The hips are the highest point, and the head hangs well below the hips, between the upper arms. Both arms are straight and reach forward and down to the hands. Both legs are nearly straight, with the heels down on the floor."
+  },
+  "repair": {
+   "kinds": [],
+   "needed": "no",
+   "note": "The avatar's floor contacts and pose match the human's markers and skin."
+  },
+  "roles": [
+   {
+    "note": "Head between the arms is typical in this pose, but not what defines it. Skin touches.",
+    "panels": [
+     "3a",
+     "1d"
+    ],
+    "part_a": "head",
+    "part_b": "left upper arm",
+    "role": "allowed"
+   },
+   {
+    "note": "Head between the arms is permitted. The skin is close; the avatar touches.",
+    "panels": [
+     "3a",
+     "1d"
+    ],
+    "part_a": "head",
+    "part_b": "right upper arm",
+    "role": "allowed"
+   }
+  ],
+  "timing": {
+   "better_panel": "",
+   "end": "label",
+   "main_moment": "keep",
+   "note": "The label and capture windows are identical. The main moment shows the pose fully formed, with all four supports settled.",
+   "start": "label"
+  },
+  "variant": {
+   "matches_label": "yes",
+   "note": ""
+  }
+ },
+ "audit_id": "holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.audit_v2.calibrated.9278736bb1",
+ "cost_usd": 0.2066974,
+ "duration_s": 20.67,
+ "errors": [],
+ "frame_hold": 281,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana_-b@281",
+ "inputs": {},
+ "item_id": "220923_Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana_-b@281#B4",
+ "n": 1,
+ "num_turns": 7,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_v4/56be0f1347ee7fe4febe7f103fcb477f6a6d538e",
+  "images": {
+   "img_1.png": "776814690925ef60c9670e3c79283f4eeabaab84cafc4c943da2fe0b57062463",
+   "img_2.png": "26b3cc3e85d4376b6f761ee9d1d2fe57a63839ab1a2739ef0be8b1ddd45ea8a6",
+   "img_3.png": "381200626d75cb5c151fef3624945757a653ae1016fce557ad4c44e91d4cc657",
+   "img_4.png": "bf0ce0df5bdbb00c4ea628562c889d904d73025cb29c2a12a428a2664c4e1700"
+  },
+  "packet_json_sha256": "e5a470d601cbbb58ed8d61e454ef4ea447f32600bf3a9e430afbd56cd6714845"
+ },
+ "packet_id": "56be0f1347ee7fe4febe7f103fcb477f6a6d538e",
+ "pass": "B",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_b.md",
+  "sha256": "077dd51bd3c86104e2579843cb3162adaf5e3892192e7634aa4712e2274df649"
+ },
+ "purpose": "b6",
+ "render_v": "render_v4",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "5f537c5cd7b2019f",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_b.json",
+  "sha256": "0c8ebcc47c25a92ae60dea2083cdea7b465230a6702cd4fc11c2b7b6bb6eae8d"
+ },
+ "schema_version": 1,
+ "session_id": "7fa85143-5799-4d9c-bac2-ad851817aea2",
+ "started_utc": "2026-10-01T16:28:33+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana_-b",
+ "stratum": null,
+ "usage": {
+  "cache_creation_input_tokens": 19234,
+  "cache_read_input_tokens": 40107,
+  "input_tokens": 6,
+  "output_tokens": 2239,
+  "thinking_tokens": 392
+ },
+ "warnings": [
+  "body_body: head + left upper arm are joined; not scored",
+  "body_body: head + right upper arm are joined; not scored"
+ ]
+}

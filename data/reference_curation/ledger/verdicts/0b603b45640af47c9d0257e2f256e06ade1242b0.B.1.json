@@ -1,0 +1,485 @@
+{
+ "answer": {
+  "body_body": {
+   "answer": "listed",
+   "contacts": [
+    {
+     "certainty": "clear",
+     "panels": [
+      "2b",
+      "3b",
+      "1a"
+     ],
+     "part_a": "left thigh",
+     "part_b": "right upper arm"
+    },
+    {
+     "certainty": "possible",
+     "panels": [
+      "3b",
+      "2b"
+     ],
+     "part_a": "left thigh",
+     "part_b": "right forearm"
+    },
+    {
+     "certainty": "clear",
+     "panels": [
+      "1c",
+      "2b"
+     ],
+     "part_a": "left thigh",
+     "part_b": "right thigh"
+    },
+    {
+     "certainty": "clear",
+     "panels": [
+      "1c",
+      "1a"
+     ],
+     "part_a": "left shin",
+     "part_b": "right shin"
+    },
+    {
+     "certainty": "clear",
+     "panels": [
+      "1d",
+      "1a"
+     ],
+     "part_a": "left foot",
+     "part_b": "right foot"
+    }
+   ]
+  },
+  "discrepancies": [
+   {
+    "kind": "other",
+    "note": "Human's left shin touches right upper arm; the avatar's has a clear gap there.",
+    "panels": [
+     "1c",
+     "2b"
+    ],
+    "part": "left shin"
+   },
+   {
+    "kind": "other",
+    "note": "Human's left thigh touches the torso; the avatar's thigh stays well away from the torso.",
+    "panels": [
+     "1b",
+     "2a"
+    ],
+    "part": "left thigh"
+   },
+   {
+    "kind": "other",
+    "note": "Human's left arm and forearm touch pelvis and torso; avatar's left arm is clearly apart from them.",
+    "panels": [
+     "1b",
+     "3a"
+    ],
+    "part": "left upper arm"
+   },
+   {
+    "kind": "other",
+    "note": "Human's left shin touches right thigh; the avatar shows a small gap.",
+    "panels": [
+     "1c"
+    ],
+    "part": "left shin"
+   },
+   {
+    "kind": "other",
+    "note": "Labelled R_THIGH+R_UPPER_ARM contact is absent on the skin and the avatar at the main moment.",
+    "panels": [
+     "2b",
+     "3b"
+    ],
+    "part": "right thigh"
+   },
+   {
+    "kind": "other",
+    "note": "Labelled L_SHANK+R_FOREARM, L_FOOT+R_SHANK and R_FOOT+L_SHANK are not touching in skin or avatar.",
+    "panels": [
+     "1c",
+     "2a"
+    ],
+    "part": "left shin"
+   }
+  ],
+  "floor": {
+   "head": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a",
+     "1d"
+    ]
+   },
+   "left foot": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1d",
+     "1a"
+    ]
+   },
+   "left forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3a",
+     "2b"
+    ]
+   },
+   "left hand": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "2b"
+    ]
+   },
+   "left shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1c"
+    ]
+   },
+   "left thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1c"
+    ]
+   },
+   "left upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "3a"
+    ]
+   },
+   "pelvis": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1b"
+    ]
+   },
+   "right foot": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1d",
+     "1a"
+    ]
+   },
+   "right forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3b",
+     "2b"
+    ]
+   },
+   "right hand": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3b",
+     "2b"
+    ]
+   },
+   "right shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1c"
+    ]
+   },
+   "right thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1c"
+    ]
+   },
+   "right upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "3b"
+    ]
+   },
+   "torso": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1b"
+    ]
+   }
+  },
+  "implausible": [],
+  "pose": {
+   "candidates": [
+    {
+     "confidence": "high",
+     "name": "Dwi Pada Koundinyasana (straight-leg side crow)"
+    },
+    {
+     "confidence": "medium",
+     "name": "Parsva Bakasana (side crow)"
+    },
+    {
+     "confidence": "low",
+     "name": "Eka Pada Koundinyasana I"
+    }
+   ],
+   "description": "Only both hands on the floor, under the shoulders, arms bent. Torso roughly horizontal with the head forward of the hands, about level with the hips. Both legs held straight, together and stacked, extended sideways off the right arm. The left thigh rests on the right upper arm and forearm. Feet are well off the floor."
+  },
+  "repair": {
+   "kinds": [
+    "pose_mismatch"
+   ],
+   "needed": "yes",
+   "note": "Floor contacts match. The avatar's legs and left arm sit farther from the arm, torso and pelvis than the human's."
+  },
+  "roles": [
+   {
+    "note": "Straight legs held together; feet touch.",
+    "panels": [
+     "1d"
+    ],
+    "part_a": "left foot",
+    "part_b": "right foot",
+    "role": "allowed"
+   },
+   {
+    "note": "Not touching on skin or avatar; not part of pose.",
+    "panels": [
+     "1d"
+    ],
+    "part_a": "left foot",
+    "part_b": "right shin",
+    "role": "incidental"
+   },
+   {
+    "note": "Not touching on skin or avatar; not part of pose.",
+    "panels": [
+     "1d"
+    ],
+    "part_a": "right foot",
+    "part_b": "left shin",
+    "role": "incidental"
+   },
+   {
+    "note": "Legs stacked together; shins touch.",
+    "panels": [
+     "1c"
+    ],
+    "part_a": "left shin",
+    "part_b": "right shin",
+    "role": "allowed"
+   },
+   {
+    "note": "Skin touch from leg stacking; the pose does not need it.",
+    "panels": [
+     "1c"
+    ],
+    "part_a": "left shin",
+    "part_b": "right thigh",
+    "role": "incidental"
+   },
+   {
+    "note": "Human's knee region rests near the arm shelf; avatar has a gap.",
+    "panels": [
+     "2b",
+     "3b"
+    ],
+    "part_a": "left shin",
+    "part_b": "right upper arm",
+    "role": "allowed"
+   },
+   {
+    "note": "Not touching at main moment.",
+    "panels": [
+     "3b"
+    ],
+    "part_a": "left shin",
+    "part_b": "right forearm",
+    "role": "incidental"
+   },
+   {
+    "note": "Legs held together.",
+    "panels": [
+     "1c"
+    ],
+    "part_a": "left thigh",
+    "part_b": "right thigh",
+    "role": "allowed"
+   },
+   {
+    "note": "The leg rests on the supporting arm, which defines the pose.",
+    "panels": [
+     "2b",
+     "3b"
+    ],
+    "part_a": "left thigh",
+    "part_b": "right upper arm",
+    "role": "required_touch"
+   },
+   {
+    "note": "Part of the arm shelf under the thigh.",
+    "panels": [
+     "3b"
+    ],
+    "part_a": "left thigh",
+    "part_b": "right forearm",
+    "role": "allowed"
+   },
+   {
+    "note": "Not touching; here the left thigh carries the shelf contact.",
+    "panels": [
+     "2b"
+    ],
+    "part_a": "right thigh",
+    "part_b": "right upper arm",
+    "role": "incidental"
+   },
+   {
+    "note": "Deep hip flexion presses thigh to belly; avatar shows a gap.",
+    "panels": [
+     "1b"
+    ],
+    "part_a": "left thigh",
+    "part_b": "torso",
+    "role": "allowed"
+   },
+   {
+    "note": "Hip may brace on the other arm; avatar is apart.",
+    "panels": [
+     "1b",
+     "3a"
+    ],
+    "part_a": "pelvis",
+    "part_b": "left upper arm",
+    "role": "allowed"
+   },
+   {
+    "note": "Hip may brace on the other arm; avatar is apart.",
+    "panels": [
+     "3a"
+    ],
+    "part_a": "pelvis",
+    "part_b": "left forearm",
+    "role": "allowed"
+   },
+   {
+    "note": "Trunk may brace on left arm; avatar is apart.",
+    "panels": [
+     "3a"
+    ],
+    "part_a": "torso",
+    "part_b": "left forearm",
+    "role": "allowed"
+   }
+  ],
+  "timing": {
+   "better_panel": "",
+   "end": "capture",
+   "main_moment": "keep",
+   "note": "The label starts earlier, with the head near the floor. The end boundaries agree. 4c shows the settled hold.",
+   "start": "capture"
+  },
+  "variant": {
+   "matches_label": "variant",
+   "note": "Side crow with both legs extended straight instead of knees bent and stacked; left thigh rests on the right arm."
+  }
+ },
+ "audit_id": "holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.audit_v2.calibrated.9278736bb1",
+ "cost_usd": 0.3199394,
+ "duration_s": 49.04,
+ "errors": [],
+ "frame_hold": 1493,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-b@1493",
+ "inputs": {},
+ "item_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-b@1493#B4",
+ "n": 1,
+ "num_turns": 7,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_v4/0b603b45640af47c9d0257e2f256e06ade1242b0",
+  "images": {
+   "img_1.png": "d2263c1925f3f87e3187d8ab6e368585580f4c5c7fabbf57ca2553ff35c56a51",
+   "img_2.png": "8efa4d19e94550010509ac49715af924eafffe21b7b9feea9ed38a8d4c6d4b77",
+   "img_3.png": "6fbe2a8dcb1fd007effbd4753d1d3f750c85f15f1938cb95bec25711eb5e2b11",
+   "img_4.png": "fcbbdfc91d7224184c57529d7c11e8bb87506767f86c053b6ec4da7a42ce0b1a"
+  },
+  "packet_json_sha256": "b95b11b082e5bfef88e545859e3b842b5e271ec155f328b699691f9d82892360"
+ },
+ "packet_id": "0b603b45640af47c9d0257e2f256e06ade1242b0",
+ "pass": "B",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_b.md",
+  "sha256": "077dd51bd3c86104e2579843cb3162adaf5e3892192e7634aa4712e2274df649"
+ },
+ "purpose": "b6",
+ "render_v": "render_v4",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "5f537c5cd7b2019f",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_b.json",
+  "sha256": "0c8ebcc47c25a92ae60dea2083cdea7b465230a6702cd4fc11c2b7b6bb6eae8d"
+ },
+ "schema_version": 1,
+ "session_id": "30f4812e-cd94-48a7-aa22-cd8794e04f17",
+ "started_utc": "2026-10-01T16:46:26+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-b",
+ "stratum": null,
+ "usage": {
+  "cache_creation_input_tokens": 25091,
+  "cache_read_input_tokens": 46637,
+  "input_tokens": 6,
+  "output_tokens": 5493,
+  "thinking_tokens": 2266
+ },
+ "warnings": []
+}

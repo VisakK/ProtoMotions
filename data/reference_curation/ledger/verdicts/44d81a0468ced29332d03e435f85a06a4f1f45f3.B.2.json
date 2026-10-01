@@ -1,0 +1,326 @@
+{
+ "answer": {
+  "body_body": {
+   "answer": "listed",
+   "contacts": [
+    {
+     "certainty": "clear",
+     "panels": [
+      "3a",
+      "1d"
+     ],
+     "part_a": "left forearm",
+     "part_b": "right forearm"
+    }
+   ]
+  },
+  "discrepancies": [
+   {
+    "kind": "other",
+    "note": "Label ground omits feet, but avatar, markers, skin and capture all show both feet on floor.",
+    "panels": [
+     "3b",
+     "2b"
+    ],
+    "part": "left foot"
+   },
+   {
+    "kind": "other",
+    "note": "Label ground omits right foot; it rests on the floor in avatar, markers and skin.",
+    "panels": [
+     "3b"
+    ],
+    "part": "right foot"
+   },
+   {
+    "kind": "other",
+    "note": "Human hands and wrists touch each other (skin gap under 1 cm); avatar hands about 3 cm apart.",
+    "panels": [
+     "3a",
+     "1d"
+    ],
+    "part": "left hand"
+   },
+   {
+    "kind": "other",
+    "note": "Shin markers sit about 5-6 cm up, capture undecided; skin and mat show shins resting on floor.",
+    "panels": [
+     "3c",
+     "3d"
+    ],
+    "part": "left shin"
+   }
+  ],
+  "floor": {
+   "head": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b",
+     "1d"
+    ]
+   },
+   "left foot": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3b",
+     "2b"
+    ]
+   },
+   "left forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3a",
+     "3c"
+    ]
+   },
+   "left hand": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "2b"
+    ]
+   },
+   "left shin": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3c",
+     "2b"
+    ]
+   },
+   "left thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "left upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "3a"
+    ]
+   },
+   "pelvis": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "right foot": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3b",
+     "2b"
+    ]
+   },
+   "right forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3a",
+     "3d"
+    ]
+   },
+   "right hand": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "3d"
+    ]
+   },
+   "right shin": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3d",
+     "2b"
+    ]
+   },
+   "right thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1c",
+     "3d"
+    ]
+   },
+   "right upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1c",
+     "3a"
+    ]
+   },
+   "torso": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   }
+  },
+  "implausible": [],
+  "pose": {
+   "candidates": [
+    {
+     "confidence": "high",
+     "name": "Kneeling Peacock Pose preparation"
+    },
+    {
+     "confidence": "medium",
+     "name": "Peacock Pose (Mayurasana)"
+    },
+    {
+     "confidence": "low",
+     "name": "Hamsasana (Swan Pose) preparation"
+    }
+   ],
+   "description": "Kneeling on both shins with toes tucked and feet on the floor; hands flat on the floor side by side, forearms vertical and pressed together; torso rounded forward over the forearms, hips lifted, head forward beyond the hands and higher than the hips. Thighs angled up from the knees."
+  },
+  "repair": {
+   "kinds": [],
+   "needed": "no",
+   "note": "Floor contacts match the human; hands only slightly wider apart than the human's, which is minor."
+  },
+  "roles": [
+   {
+    "note": "Elbows and forearms drawn together under the belly, typical of Mayurasana setup.",
+    "panels": [
+     "3a",
+     "1d"
+    ],
+    "part_a": "left forearm",
+    "part_b": "right forearm",
+    "role": "allowed"
+   },
+   {
+    "note": "Wrists close together; human skin touches, avatar does not.",
+    "panels": [
+     "3a"
+    ],
+    "part_a": "left forearm",
+    "part_b": "right hand",
+    "role": "incidental"
+   },
+   {
+    "note": "Wrists close together; human skin touches, avatar does not.",
+    "panels": [
+     "3a"
+    ],
+    "part_a": "right forearm",
+    "part_b": "left hand",
+    "role": "incidental"
+   },
+   {
+    "note": "Hands placed side by side; human touches, avatar hands about 3 cm apart.",
+    "panels": [
+     "3a",
+     "1d"
+    ],
+    "part_a": "left hand",
+    "part_b": "right hand",
+    "role": "allowed"
+   }
+  ],
+  "timing": {
+   "better_panel": "",
+   "end": "label",
+   "main_moment": "keep",
+   "note": "Label and capture windows are identical and match the kneeling hold; the lifted peacock comes later, near 4e.",
+   "start": "label"
+  },
+  "variant": {
+   "matches_label": "variant",
+   "note": "Kneeling preparatory stage: knees, shins and feet still on floor; the body is not lifted horizontally onto the hands."
+  }
+ },
+ "audit_id": "holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.audit_v2.calibrated.9278736bb1",
+ "cost_usd": 0.24192639999999999,
+ "duration_s": 41.53,
+ "errors": [],
+ "frame_hold": 434,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Peacock_Pose_or_Mayurasana_-a@434",
+ "inputs": {},
+ "item_id": "220923_Peacock_Pose_or_Mayurasana_-a@434#B4",
+ "n": 2,
+ "num_turns": 7,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_v4/44d81a0468ced29332d03e435f85a06a4f1f45f3",
+  "images": {
+   "img_1.png": "4b3f3ed4f3000886953d72e96aee86008b910fdf957836695eb04843c4daab29",
+   "img_2.png": "b3b6a6dd16850432c9f0314abbee95700798cdac4af838823f9869316afe72df",
+   "img_3.png": "8f57305df3c22e061a5f518fda35e5d564232d5bd291a0473319aa1430973842",
+   "img_4.png": "2fee7c42b56243fffe21d36b09a284d459d82e9ec43b3f0f7e00f0ed1fd4f43e"
+  },
+  "packet_json_sha256": "eb66514a62465d08704d98f0cc7280082e914f998591c27f4e8cad6883504d1c"
+ },
+ "packet_id": "44d81a0468ced29332d03e435f85a06a4f1f45f3",
+ "pass": "B",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_b.md",
+  "sha256": "077dd51bd3c86104e2579843cb3162adaf5e3892192e7634aa4712e2274df649"
+ },
+ "purpose": "b6",
+ "render_v": "render_v4",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "5f537c5cd7b2019f",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_b.json",
+  "sha256": "0c8ebcc47c25a92ae60dea2083cdea7b465230a6702cd4fc11c2b7b6bb6eae8d"
+ },
+ "schema_version": 1,
+ "session_id": "c0a9cf6b-0601-4c20-81fe-f1746e1f8e88",
+ "started_utc": "2026-10-01T16:36:03+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Peacock_Pose_or_Mayurasana_-a",
+ "stratum": null,
+ "usage": {
+  "cache_creation_input_tokens": 18347,
+  "cache_read_input_tokens": 44532,
+  "input_tokens": 6,
+  "output_tokens": 4311,
+  "thinking_tokens": 1929
+ },
+ "warnings": []
+}

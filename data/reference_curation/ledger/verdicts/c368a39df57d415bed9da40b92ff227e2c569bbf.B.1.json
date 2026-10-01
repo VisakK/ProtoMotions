@@ -1,0 +1,322 @@
+{
+ "answer": {
+  "body_body": {
+   "answer": "listed",
+   "contacts": [
+    {
+     "certainty": "clear",
+     "panels": [
+      "3a",
+      "1a",
+      "2b"
+     ],
+     "part_a": "left shin",
+     "part_b": "left upper arm"
+    }
+   ]
+  },
+  "discrepancies": [
+   {
+    "kind": "other",
+    "note": "Human left thigh skin touches torso; avatar thigh stays about 8 cm from the torso.",
+    "panels": [
+     "1a",
+     "2b"
+    ],
+    "part": "left thigh"
+   },
+   {
+    "kind": "other",
+    "note": "Human left thigh skin touches left upper arm; avatar gap about 3 cm.",
+    "panels": [
+     "3a",
+     "1a"
+    ],
+    "part": "left thigh"
+   },
+   {
+    "kind": "other",
+    "note": "Human left shin skin nearly touches left forearm; avatar gap about 5 cm.",
+    "panels": [
+     "3a",
+     "2b"
+    ],
+    "part": "left shin"
+   }
+  ],
+  "floor": {
+   "head": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b",
+     "1d"
+    ]
+   },
+   "left foot": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "left forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3a",
+     "2b"
+    ]
+   },
+   "left hand": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "2b"
+    ]
+   },
+   "left shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "left thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "left upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "3a"
+    ]
+   },
+   "pelvis": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "right foot": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "right forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3b",
+     "2b"
+    ]
+   },
+   "right hand": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3b",
+     "2b"
+    ]
+   },
+   "right shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1c"
+    ]
+   },
+   "right thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1c"
+    ]
+   },
+   "right upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "3b"
+    ]
+   },
+   "torso": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   }
+  },
+  "implausible": [],
+  "pose": {
+   "candidates": [
+    {
+     "confidence": "medium",
+     "name": "Eka Pada Galavasana (flying pigeon) entry"
+    },
+    {
+     "confidence": "low",
+     "name": "Parsva Bakasana (side crow) variation"
+    },
+    {
+     "confidence": "low",
+     "name": "Eka Pada Bakasana (one-legged crow)"
+    }
+   ],
+   "description": "Only both hands on the floor, arms bent. Head low and forward (about 25-30 cm up), hips high above it. Left thigh hangs down with knee bent; left shin lies horizontally across the back of the left upper arm, foot in the air. Right thigh hangs down, right knee bent with the foot raised behind, lifting higher in later moments."
+  },
+  "repair": {
+   "kinds": [],
+   "needed": "no",
+   "note": "Floor contacts and the shin-on-arm contact match; only small leg-to-body gaps differ."
+  },
+  "roles": [
+   {
+    "note": "Left shin resting on upper arm carries the legs; defines the arm balance.",
+    "panels": [
+     "3a",
+     "1a",
+     "2b"
+    ],
+    "part_a": "left shin",
+    "part_b": "left upper arm",
+    "role": "required_touch"
+   },
+   {
+    "note": "Shin rests near the elbow and brushes the forearm; not needed.",
+    "panels": [
+     "3a",
+     "2b"
+    ],
+    "part_a": "left shin",
+    "part_b": "left forearm",
+    "role": "allowed"
+   },
+   {
+    "note": "Deep hip flexion presses thigh to torso; permitted, not defining.",
+    "panels": [
+     "1a",
+     "2b"
+    ],
+    "part_a": "left thigh",
+    "part_b": "torso",
+    "role": "allowed"
+   },
+   {
+    "note": "Thigh near knee also rests on the arm; supports but not defining.",
+    "panels": [
+     "3a",
+     "1a"
+    ],
+    "part_a": "left thigh",
+    "part_b": "left upper arm",
+    "role": "allowed"
+   }
+  ],
+  "timing": {
+   "better_panel": "",
+   "end": "label",
+   "main_moment": "keep",
+   "note": "Right foot still near floor at label start; capture start fits. Both ends agree at 808.",
+   "start": "capture"
+  },
+  "variant": {
+   "matches_label": "variant",
+   "note": "Not stacked knees with a twist: only the left shin rests on the same-side upper arm, right leg lifts behind."
+  }
+ },
+ "audit_id": "holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.audit_v2.calibrated.9278736bb1",
+ "cost_usd": 0.267281,
+ "duration_s": 52.3,
+ "errors": [],
+ "frame_hold": 606,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-c@606",
+ "inputs": {},
+ "item_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-c@606#B4",
+ "n": 1,
+ "num_turns": 7,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_v4/c368a39df57d415bed9da40b92ff227e2c569bbf",
+  "images": {
+   "img_1.png": "a8645fc6ed80049629e2af54d05073e7c5b1dbbaceb285cf0b6f62224558740a",
+   "img_2.png": "5eb2b7ee2c6646bfa3a3773740806ad7fc7ed8e3e81de0b43d7a2b1c5364f9eb",
+   "img_3.png": "5f068f3c950278c21acad6968517e7e21778054783f9b8f5f858ade4edfee14e",
+   "img_4.png": "93610ad649933c7ef72ca8072226350f595859d59ced8ed75c7b62288965f785"
+  },
+  "packet_json_sha256": "d0505f6027bc24315b5aa696cdff6d2b4b4d9423f3ee5615b269936cd654082f"
+ },
+ "packet_id": "c368a39df57d415bed9da40b92ff227e2c569bbf",
+ "pass": "B",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_b.md",
+  "sha256": "077dd51bd3c86104e2579843cb3162adaf5e3892192e7634aa4712e2274df649"
+ },
+ "purpose": "b6",
+ "render_v": "render_v4",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "5f537c5cd7b2019f",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_b.json",
+  "sha256": "0c8ebcc47c25a92ae60dea2083cdea7b465230a6702cd4fc11c2b7b6bb6eae8d"
+ },
+ "schema_version": 1,
+ "session_id": "68837e6d-8bb5-4c33-9ff8-0ccae2682b40",
+ "started_utc": "2026-10-01T16:50:39+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-c",
+ "stratum": null,
+ "usage": {
+  "cache_creation_input_tokens": 19235,
+  "cache_read_input_tokens": 40785,
+  "input_tokens": 6,
+  "output_tokens": 5261,
+  "thinking_tokens": 3044
+ },
+ "warnings": []
+}

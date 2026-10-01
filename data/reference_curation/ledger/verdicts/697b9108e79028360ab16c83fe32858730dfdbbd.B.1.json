@@ -1,0 +1,383 @@
+{
+ "answer": {
+  "body_body": {
+   "answer": "listed",
+   "contacts": [
+    {
+     "certainty": "clear",
+     "panels": [
+      "3a",
+      "1d"
+     ],
+     "part_a": "left hand",
+     "part_b": "right hand"
+    },
+    {
+     "certainty": "clear",
+     "panels": [
+      "3a",
+      "1d"
+     ],
+     "part_a": "head",
+     "part_b": "left hand"
+    },
+    {
+     "certainty": "clear",
+     "panels": [
+      "3a",
+      "1d"
+     ],
+     "part_a": "head",
+     "part_b": "right hand"
+    },
+    {
+     "certainty": "possible",
+     "panels": [
+      "3a",
+      "2b"
+     ],
+     "part_a": "head",
+     "part_b": "left forearm"
+    }
+   ]
+  },
+  "discrepancies": [
+   {
+    "kind": "other",
+    "note": "label_ground omits head, but avatar, markers and skin all show head on the floor.",
+    "panels": [
+     "3a",
+     "2b"
+    ],
+    "part": "head"
+   },
+   {
+    "kind": "other",
+    "note": "label_ground omits left foot; avatar, markers and skin show it resting on floor.",
+    "panels": [
+     "3b"
+    ],
+    "part": "left foot"
+   },
+   {
+    "kind": "other",
+    "note": "label_ground omits right foot; avatar, markers and skin show it resting on floor.",
+    "panels": [
+     "3b"
+    ],
+    "part": "right foot"
+   },
+   {
+    "kind": "other",
+    "note": "Labelled foot-foot and foot-shin contacts absent: skin and avatar gaps of several cm.",
+    "panels": [
+     "3b",
+     "2a"
+    ],
+    "part": "left foot"
+   }
+  ],
+  "floor": {
+   "head": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "2b"
+    ]
+   },
+   "left foot": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3b",
+     "2b"
+    ]
+   },
+   "left forearm": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "2b"
+    ]
+   },
+   "left hand": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "1d"
+    ]
+   },
+   "left shin": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3c",
+     "2b"
+    ]
+   },
+   "left thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "left upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "pelvis": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "right foot": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3b",
+     "2b"
+    ]
+   },
+   "right forearm": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "1c"
+    ]
+   },
+   "right hand": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "1d"
+    ]
+   },
+   "right shin": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3c",
+     "2b"
+    ]
+   },
+   "right thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1c",
+     "2b"
+    ]
+   },
+   "right upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1c",
+     "3a"
+    ]
+   },
+   "torso": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   }
+  },
+  "implausible": [],
+  "pose": {
+   "candidates": [
+    {
+     "confidence": "high",
+     "name": "Supported Headstand preparation, knees down"
+    },
+    {
+     "confidence": "medium",
+     "name": "Salamba Sirsasana I entry"
+    },
+    {
+     "confidence": "low",
+     "name": "Dolphin pose kneeling variation"
+    }
+   ],
+   "description": "Kneeling headstand set-up: crown of head, both forearms and clasped hands on the floor, hands cupping the head. Hips high above the head, thighs near vertical, knees bent about square, both shins and feet resting on the floor behind. Legs not yet lifted."
+  },
+  "repair": {
+   "kinds": [],
+   "needed": "no",
+   "note": "Avatar contacts and pose match the human; only labels need correcting."
+  },
+  "roles": [
+   {
+    "note": "Feet may be together; here skin gap of a few cm, no touch.",
+    "panels": [
+     "3b",
+     "2a"
+    ],
+    "part_a": "left foot",
+    "part_b": "right foot",
+    "role": "allowed"
+   },
+   {
+    "note": "Not touching in skin or avatar; label is wrong.",
+    "panels": [
+     "3b",
+     "2a"
+    ],
+    "part_a": "left foot",
+    "part_b": "right shin",
+    "role": "incidental"
+   },
+   {
+    "note": "Not touching in skin or avatar; label is wrong.",
+    "panels": [
+     "3b",
+     "2a"
+    ],
+    "part_a": "right foot",
+    "part_b": "left shin",
+    "role": "incidental"
+   },
+   {
+    "note": "Forearm frames head near wrist; permitted, not defining.",
+    "panels": [
+     "3a",
+     "2b"
+    ],
+    "part_a": "head",
+    "part_b": "left forearm",
+    "role": "allowed"
+   },
+   {
+    "note": "Clasped hands cradle back of head; typical, real here.",
+    "panels": [
+     "3a",
+     "1d"
+    ],
+    "part_a": "head",
+    "part_b": "left hand",
+    "role": "allowed"
+   },
+   {
+    "note": "Clasped hands cradle back of head; typical, real here.",
+    "panels": [
+     "3a",
+     "1d"
+    ],
+    "part_a": "head",
+    "part_b": "right hand",
+    "role": "allowed"
+   },
+   {
+    "note": "Interlaced fingers form the supported headstand base.",
+    "panels": [
+     "3a",
+     "1d"
+    ],
+    "part_a": "left hand",
+    "part_b": "right hand",
+    "role": "required_touch"
+   }
+  ],
+  "timing": {
+   "better_panel": "",
+   "end": "label",
+   "main_moment": "keep",
+   "note": "Label and capture windows coincide; head lands by 4b, legs lift after 4d.",
+   "start": "label"
+  },
+  "variant": {
+   "matches_label": "variant",
+   "note": "Preparatory stage: head and forearm base set, but shins and feet stay on floor; legs not inverted."
+  }
+ },
+ "audit_id": "holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.audit_v2.calibrated.9278736bb1",
+ "cost_usd": 0.26851500000000006,
+ "duration_s": 37.07,
+ "errors": [],
+ "frame_hold": 466,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220926_Supported_Headstand_pose_or_Salamba_Sirsasana_-a@466",
+ "inputs": {},
+ "item_id": "220926_Supported_Headstand_pose_or_Salamba_Sirsasana_-a@466#B4",
+ "n": 1,
+ "num_turns": 7,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_v4/697b9108e79028360ab16c83fe32858730dfdbbd",
+  "images": {
+   "img_1.png": "5155a78fede0343618ad25c5560b9a4f83af774bbf9d949aba016ce5394b6351",
+   "img_2.png": "e041e27d851f5567a212168bdbe06df025031a4f363734d4ebe76cf4afc3371a",
+   "img_3.png": "cc29a2e2a4b5bf6f802a044d45d20c90a4aedc6a15bf5bcbaf685c2ea8693bbd",
+   "img_4.png": "253b3d190c057245855e35603f992e9c52c635f30a2c280d19d966a524a1843d"
+  },
+  "packet_json_sha256": "2e666c0dace6884077fce63379a2f9960bae99a0ae76cef954509c2a4615f1d5"
+ },
+ "packet_id": "697b9108e79028360ab16c83fe32858730dfdbbd",
+ "pass": "B",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_b.md",
+  "sha256": "077dd51bd3c86104e2579843cb3162adaf5e3892192e7634aa4712e2274df649"
+ },
+ "purpose": "b6",
+ "render_v": "render_v4",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "5f537c5cd7b2019f",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_b.json",
+  "sha256": "0c8ebcc47c25a92ae60dea2083cdea7b465230a6702cd4fc11c2b7b6bb6eae8d"
+ },
+ "schema_version": 1,
+ "session_id": "375b0a91-dd2f-43b9-a2b7-ae1efd413ac7",
+ "started_utc": "2026-10-01T17:01:45+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220926_Supported_Headstand_pose_or_Salamba_Sirsasana_-a",
+ "stratum": null,
+ "usage": {
+  "cache_creation_input_tokens": 22785,
+  "cache_read_input_tokens": 44555,
+  "input_tokens": 6,
+  "output_tokens": 3865,
+  "thinking_tokens": 1430
+ },
+ "warnings": []
+}

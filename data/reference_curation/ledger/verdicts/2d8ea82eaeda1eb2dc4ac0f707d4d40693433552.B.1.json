@@ -1,0 +1,392 @@
+{
+ "answer": {
+  "body_body": {
+   "answer": "listed",
+   "contacts": [
+    {
+     "certainty": "clear",
+     "panels": [
+      "1b",
+      "2b",
+      "1a"
+     ],
+     "part_a": "left thigh",
+     "part_b": "left upper arm"
+    },
+    {
+     "certainty": "clear",
+     "panels": [
+      "1d",
+      "2b",
+      "1a"
+     ],
+     "part_a": "right thigh",
+     "part_b": "right upper arm"
+    },
+    {
+     "certainty": "possible",
+     "panels": [
+      "1b",
+      "2b"
+     ],
+     "part_a": "left shin",
+     "part_b": "left upper arm"
+    },
+    {
+     "certainty": "possible",
+     "panels": [
+      "1d",
+      "2b"
+     ],
+     "part_a": "right shin",
+     "part_b": "right upper arm"
+    },
+    {
+     "certainty": "clear",
+     "panels": [
+      "1a",
+      "1b",
+      "1d"
+     ],
+     "part_a": "left hand",
+     "part_b": "right hand"
+    }
+   ]
+  },
+  "discrepancies": [
+   {
+    "kind": "other",
+    "note": "Human skin of the thigh touches the torso; the avatar's thigh stays about 7 cm from the torso.",
+    "panels": [
+     "1c",
+     "2b"
+    ],
+    "part": "left thigh"
+   },
+   {
+    "kind": "other",
+    "note": "Human skin of the thigh touches the torso; the avatar's thigh stays about 6 cm from the torso.",
+    "panels": [
+     "1c",
+     "2b"
+    ],
+    "part": "right thigh"
+   },
+   {
+    "kind": "other",
+    "note": "Hands touch in prayer for both human and avatar, but the labels omit this contact.",
+    "panels": [
+     "1a",
+     "1b",
+     "2b"
+    ],
+    "part": "left hand"
+   }
+  ],
+  "floor": {
+   "head": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "left foot": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "2b",
+     "1c"
+    ]
+   },
+   "left forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "left hand": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b",
+     "1b"
+    ]
+   },
+   "left shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "3a"
+    ]
+   },
+   "left thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1c",
+     "2b",
+     "3a"
+    ]
+   },
+   "left upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1b"
+    ]
+   },
+   "pelvis": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1c",
+     "2b"
+    ]
+   },
+   "right foot": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3b",
+     "2b",
+     "1c"
+    ]
+   },
+   "right forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "right hand": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b",
+     "1d"
+    ]
+   },
+   "right shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "3b"
+    ]
+   },
+   "right thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1c",
+     "2b",
+     "3b"
+    ]
+   },
+   "right upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1d"
+    ]
+   },
+   "torso": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1c"
+    ]
+   }
+  },
+  "implausible": [],
+  "pose": {
+   "candidates": [
+    {
+     "confidence": "high",
+     "name": "Garland Pose (Malasana)"
+    },
+    {
+     "confidence": "medium",
+     "name": "Yogi squat with prayer hands"
+    }
+   ],
+   "description": "Deep squat on both feet, which are flat and turned out with the knees wide. The pelvis hangs a few cm above the floor, below the knees. The torso leans slightly forward between the thighs, with the head well above the hips. The hands are pressed together in prayer at the chest, and the upper arms and elbows press against the inner knees."
+  },
+  "repair": {
+   "kinds": [],
+   "needed": "no",
+   "note": "Floor contacts match the human. The avatar's thigh-torso gap is a minor collider-shape difference."
+  },
+  "roles": [
+   {
+    "note": "Elbow presses at the inner knee and grazes the upper shin; the pose permits this.",
+    "panels": [
+     "1b",
+     "2b"
+    ],
+    "part_a": "left shin",
+    "part_b": "left upper arm",
+    "role": "allowed"
+   },
+   {
+    "note": "Elbow presses at the inner knee and grazes the upper shin; the pose permits this.",
+    "panels": [
+     "1d",
+     "2b"
+    ],
+    "part_a": "right shin",
+    "part_b": "right upper arm",
+    "role": "allowed"
+   },
+   {
+    "note": "Elbow pressing out against the inner knee is the canonical Malasana arm action.",
+    "panels": [
+     "1b",
+     "2b"
+    ],
+    "part_a": "left thigh",
+    "part_b": "left upper arm",
+    "role": "required_touch"
+   },
+   {
+    "note": "Elbow pressing out against the inner knee is the canonical Malasana arm action.",
+    "panels": [
+     "1d",
+     "2b"
+    ],
+    "part_a": "right thigh",
+    "part_b": "right upper arm",
+    "role": "required_touch"
+   },
+   {
+    "note": "Human's torso rests between the thighs; the avatar leaves a gap.",
+    "panels": [
+     "1c",
+     "2b"
+    ],
+    "part_a": "left thigh",
+    "part_b": "torso",
+    "role": "allowed"
+   },
+   {
+    "note": "Human's torso rests between the thighs; the avatar leaves a gap.",
+    "panels": [
+     "1c",
+     "2b"
+    ],
+    "part_a": "right thigh",
+    "part_b": "torso",
+    "role": "allowed"
+   },
+   {
+    "note": "Prayer hands are the usual arm form but not strictly needed.",
+    "panels": [
+     "1a",
+     "1b",
+     "2b"
+    ],
+    "part_a": "left hand",
+    "part_b": "right hand",
+    "role": "allowed"
+   }
+  ],
+  "timing": {
+   "better_panel": "",
+   "end": "label",
+   "main_moment": "keep",
+   "note": "The ends match (frame 395). At frame 194 the elbows do not yet touch the knees, so the capture start is better.",
+   "start": "capture"
+  },
+  "variant": {
+   "matches_label": "yes",
+   "note": ""
+  }
+ },
+ "audit_id": "holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.audit_v2.calibrated.9278736bb1",
+ "cost_usd": 0.2548066,
+ "duration_s": 37.39,
+ "errors": [],
+ "frame_hold": 334,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Garland_Pose_or_Malasana_-a@334",
+ "inputs": {},
+ "item_id": "220923_Garland_Pose_or_Malasana_-a@334#B4",
+ "n": 1,
+ "num_turns": 7,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_v4/2d8ea82eaeda1eb2dc4ac0f707d4d40693433552",
+  "images": {
+   "img_1.png": "6917d9dc322152a145983c2374517b6499ebd5ed30c28c871e581b06cdb99125",
+   "img_2.png": "d4ce9fa6ab467ea930c09d8eaf2885d8fd7faeb181eb870f7eec0b197abc89a0",
+   "img_3.png": "fe29f0f297c7ce4f8d6d85a31283d8a97f0c448fbefcf7bd6753754c8436c607",
+   "img_4.png": "39623df95996e63bfeedc9e53fe2ded7fb04ec0d204b571ac37c1d7b755b37c5"
+  },
+  "packet_json_sha256": "01898e5f3421724e56b367b2b3ee49d080a75d3b3a77660dc54d6b7875fde6b0"
+ },
+ "packet_id": "2d8ea82eaeda1eb2dc4ac0f707d4d40693433552",
+ "pass": "B",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_b.md",
+  "sha256": "077dd51bd3c86104e2579843cb3162adaf5e3892192e7634aa4712e2274df649"
+ },
+ "purpose": "b6",
+ "render_v": "render_v4",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "5f537c5cd7b2019f",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_b.json",
+  "sha256": "0c8ebcc47c25a92ae60dea2083cdea7b465230a6702cd4fc11c2b7b6bb6eae8d"
+ },
+ "schema_version": 1,
+ "session_id": "7a419d5b-cac7-4120-a79b-7166d073e23c",
+ "started_utc": "2026-10-01T16:32:46+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Garland_Pose_or_Malasana_-a",
+ "stratum": null,
+ "usage": {
+  "cache_creation_input_tokens": 20797,
+  "cache_read_input_tokens": 42333,
+  "input_tokens": 6,
+  "output_tokens": 3997,
+  "thinking_tokens": 1416
+ },
+ "warnings": []
+}

@@ -1,0 +1,268 @@
+{
+ "answer": {
+  "body_body": {
+   "answer": "listed",
+   "contacts": [
+    {
+     "certainty": "possible",
+     "panels": [
+      "1b",
+      "3b",
+      "2a"
+     ],
+     "part_a": "left hand",
+     "part_b": "right hand"
+    }
+   ]
+  },
+  "discrepancies": [
+   {
+    "kind": "avatar_off_floor_markers_on_floor",
+    "note": "Avatar foot has a short drop line; toe markers sit at floor level.",
+    "panels": [
+     "3c",
+     "1d",
+     "2b"
+    ],
+    "part": "left foot"
+   },
+   {
+    "kind": "avatar_off_floor_markers_on_floor",
+    "note": "Avatar foot has a short drop line; toe markers sit at floor level.",
+    "panels": [
+     "3c",
+     "1d",
+     "2b"
+    ],
+    "part": "right foot"
+   },
+   {
+    "kind": "avatar_off_floor_markers_on_floor",
+    "note": "Grey drop line under the upper torso; some grey markers near the neck sit at floor level.",
+    "panels": [
+     "3a",
+     "2b"
+    ],
+    "part": "torso"
+   }
+  ],
+  "floor": {
+   "head": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "2b"
+    ]
+   },
+   "left foot": {
+    "avatar": "off_floor",
+    "markers": "touching",
+    "panels": [
+     "1d",
+     "3c",
+     "2b"
+    ]
+   },
+   "left forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1b",
+     "3d"
+    ]
+   },
+   "left hand": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1b",
+     "3b"
+    ]
+   },
+   "left shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1c",
+     "2b",
+     "3c"
+    ]
+   },
+   "left thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "left upper arm": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3d",
+     "1c"
+    ]
+   },
+   "pelvis": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "right foot": {
+    "avatar": "off_floor",
+    "markers": "touching",
+    "panels": [
+     "1d",
+     "3c",
+     "2b"
+    ]
+   },
+   "right forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1b",
+     "1a",
+     "3e"
+    ]
+   },
+   "right hand": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1b",
+     "3b"
+    ]
+   },
+   "right shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "right thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "right upper arm": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3e",
+     "2b"
+    ]
+   },
+   "torso": {
+    "avatar": "off_floor",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "2b"
+    ]
+   }
+  },
+  "implausible": [],
+  "pose": {
+   "candidates": [
+    {
+     "confidence": "low",
+     "name": "Headstand preparation (Sirsasana entry)"
+    },
+    {
+     "confidence": "low",
+     "name": "Dolphin pose variation"
+    },
+    {
+     "confidence": "low",
+     "name": "Downward dog with head down"
+    }
+   ],
+   "description": "Inverted pike: legs straight and together, hips highest, toes near floor. Head below hips, crown on floor between shoulders and feet. Both upper arms lie on the floor reaching away from the feet. Forearms angle up from the elbows, and both hands are raised off the floor, close together. The strip shows the hands lowering toward the floor."
+  }
+ },
+ "audit_id": "holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.audit_v2.calibrated.9278736bb1",
+ "cost_usd": 0.17528959999999996,
+ "duration_s": 53.81,
+ "errors": [],
+ "frame_hold": 1384,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220926_Plow_Pose_or_Halasana_-b@1384",
+ "inputs": {},
+ "item_id": "220926_Plow_Pose_or_Halasana_-b@1384#A4:fit",
+ "n": 1,
+ "num_turns": 7,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_v4/97070b1afec848c1eaf16fbaf567c186bada2292",
+  "images": {
+   "img_1.png": "6573a7354a3a8f32a17d7ebdff4f703481597143ec2e2b1e83d378dd31d7163a",
+   "img_2.png": "577d2d77c139fe71ac434a40eac84186fd42edff55b1827b6807db7e1d5916f2",
+   "img_3.png": "4a03b5d1e168ed965e3661f8b124b129f6aa01d27c9e17749868909994fe3b05",
+   "img_4.png": "a1cfdc2e46690160b755b825beb16f86b40d5f4f3807af7dc595d8c14a4b6768"
+  },
+  "packet_json_sha256": "cae2b4ad86fe78975e4dc4fee3000299a2f6d40d3e2cddb93cb557c0f810e7ad"
+ },
+ "packet_id": "97070b1afec848c1eaf16fbaf567c186bada2292",
+ "pass": "A",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_a.md",
+  "sha256": "bae5cfe8420cee596fc188c14966536b354df29210c1e9a94384c925aab70510"
+ },
+ "purpose": "calibration",
+ "render_v": "render_v4",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "5de359f0431719d8",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_a.json",
+  "sha256": "5a05ec7b10cce5f545b813c390820a81bbbde96259cc00318df7ec618475ff9d"
+ },
+ "schema_version": 1,
+ "session_id": "7270a9a2-68cc-4e20-ad52-9e2a03f97e6f",
+ "started_utc": "2026-10-01T16:15:54+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220926_Plow_Pose_or_Halasana_-b",
+ "stratum": "inversion",
+ "usage": {
+  "cache_creation_input_tokens": 8453,
+  "cache_read_input_tokens": 26108,
+  "input_tokens": 6,
+  "output_tokens": 5121,
+  "thinking_tokens": 3430
+ },
+ "warnings": []
+}

@@ -1,0 +1,60 @@
+{
+ "module": "reference_curation.labels_v2_restore",
+ "rule": {
+  "restore_from": [
+   "beyond_plant",
+   "infeasible"
+  ],
+  "restore_to": [
+   "held",
+   "feasible"
+  ],
+  "reasons": [
+   "not_critical",
+   "statics_required_jointly"
+  ]
+ },
+ "holds": {
+  "220923_Peacock_Pose_or_Mayurasana_-a@788": {
+   "pairs": [
+    "PELVIS+L_FOREARM",
+    "PELVIS+R_FOREARM",
+    "TRUNK+L_FOREARM",
+    "TRUNK+R_FOREARM"
+   ],
+   "statics_now": {
+    "statics_id": "holds_repaired_ftC_posefix.labels_v2.46024365fa.statics_v2.aab60189f4",
+    "verdict": "feasible",
+    "s_star": 0.1467
+   },
+   "critical_only": {
+    "statics_id": "holds_repaired_ftC_posefix.labels_v2.b61fad7e9d.statics_v2.fb432fa15d",
+    "verdict": "beyond_plant",
+    "s_star": 1.1923,
+    "top_joints": [
+     [
+      "Chest_y",
+      1.194,
+      -179.0
+     ],
+     [
+      "Spine_y",
+      0.801,
+      -160.2
+     ],
+     [
+      "R_Shoulder_z",
+      0.545,
+      81.7
+     ]
+    ]
+   },
+   "v1_1_configuration": {
+    "statics_id": "holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.statics_v2.f57d85d3fa",
+    "verdict": "feasible",
+    "s_star": 0.1467
+   }
+  }
+ },
+ "pairs": 4
+}

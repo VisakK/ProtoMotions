@@ -1,0 +1,150 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "pulled_apart",
+    "panels": [
+     "1a",
+     "2a",
+     "3a",
+     "3c",
+     "5c"
+    ],
+    "part": "head",
+    "severity": "major"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1a",
+     "2a",
+     "3c",
+     "5c"
+    ],
+    "part": "right thigh",
+    "severity": "major"
+   },
+   {
+    "avatar": "A",
+    "kind": "impossible_joint",
+    "panels": [
+     "1a",
+     "2a",
+     "3c"
+    ],
+    "part": "torso",
+    "severity": "major"
+   },
+   {
+    "avatar": "A",
+    "kind": "pulled_apart",
+    "panels": [
+     "1a",
+     "3c",
+     "5c"
+    ],
+    "part": "right hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "through_body",
+    "panels": [
+     "1a",
+     "3c",
+     "4a"
+    ],
+    "part": "left hand",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "B",
+  "floating_parts": {
+   "A": [],
+   "B": []
+  },
+  "more_natural": "B",
+  "same_pose": {
+   "answer": "no",
+   "reason": "B stands on the left leg and holds the raised right foot with the right hand, like the grey body. A has both feet planted wide in a lunge, its right leg is down and its torso and head are collapsed."
+  },
+  "summary": "B follows the grey body closely: it balances on the left foot and holds the raised right foot. A has broken down into a wide two-footed lunge, with the head detached at the shoulder, a collapsed torso, and the right leg on the floor instead of raised."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1258198,
+ "duration_s": 16.95,
+ "errors": [],
+ "frame_hold": 742,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Standing_big_toe_hold_pose_or_Utthita_Padangusthasana-b@742",
+ "inputs": {},
+ "item_id": "220923_Standing_big_toe_hold_pose_or_Utthita_Padangusthasana-b@742#swap",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c2/55d1661d0ed37a7c5cefc577d9ca0bbc7d259a07",
+  "images": {
+   "img_1.png": "cf3a9aaa6680f02f39a2fbef06077d957baa1e23ce9f40e59cf84d7e6c657636",
+   "img_2.png": "669a9f9bd480679c14302efde272abbf09a22d061ada7acfeb921ae0d8f54313",
+   "img_3.png": "e9e4f181b63de7f4e79700d94d026173b1128d68dfc884142bee003c79450a9d",
+   "img_4.png": "9899d5d32b091f07a9a49f45c2c845073b0b07dc480de4e2a8344f62d08a2043",
+   "img_5.png": "e6311cc342087badad64a57c54b8189503f82e206af14a7e91cf7413763a2046"
+  },
+  "packet_json_sha256": "c95aae2a4c49f60701560b182e16d74659835dbc5cc782e14f432ea558c9fee4"
+ },
+ "packet_id": "55d1661d0ed37a7c5cefc577d9ca0bbc7d259a07",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c2",
+ "render_v": "render_c2",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "b4a27fa4-5f2a-4ca5-a570-74bafec75ba9",
+ "started_utc": "2026-10-01T17:08:07+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Standing_big_toe_hold_pose_or_Utthita_Padangusthasana-b",
+ "stratum": "swap",
+ "usage": {
+  "cache_creation_input_tokens": 11415,
+  "cache_read_input_tokens": 13579,
+  "input_tokens": 6,
+  "output_tokens": 1588,
+  "thinking_tokens": 377
+ },
+ "warnings": []
+}

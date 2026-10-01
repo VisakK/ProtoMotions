@@ -1,0 +1,124 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "through_body",
+    "panels": [
+     "4a",
+     "3c",
+     "1a"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "4a",
+     "3a"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "4a",
+     "1a",
+     "3c"
+    ],
+    "part": "right shin",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "B",
+  "floating_parts": {
+   "A": [],
+   "B": []
+  },
+  "more_natural": "B",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both stand upright with arms held out to the sides and both feet on the floor. Only the placement of the feet and shins differs slightly."
+  },
+  "summary": "Both avatars show the same standing pose with arms out to the sides. In A, the shins angle inwards and the right foot is tilted and overlaps the left foot. B's feet sit flat and side by side, matching the grey body more closely."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1127058,
+ "duration_s": 12.72,
+ "errors": [],
+ "frame_hold": 1016,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Standing_Split_pose_or_Urdhva_Prasarita_Eka_Padasana_-a@1016",
+ "inputs": {},
+ "item_id": "220923_Standing_Split_pose_or_Urdhva_Prasarita_Eka_Padasana_-a@1016#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c2/bd720c2a38d13fa1c588a58c60ef168765ab96ed",
+  "images": {
+   "img_1.png": "cbc52d2d1961270039f8efdbeb18014d0fead4c6531b181fdfe2360033a9f6e6",
+   "img_2.png": "640a8d8242f3f79770435fca1fc0e5bb6973346582b8419b02dab286146081e7",
+   "img_3.png": "002b390ba6860a087aaac658845c64fa71524da0985115a1e23836f86d1584bb",
+   "img_4.png": "4873313817fa97214f7414cadc2e4dab8bd507a3b547999e1f1c3ad688bcd1f5",
+   "img_5.png": "e8dc979edf964d618a17db2d5899ffb143489298ec1aff90067161dda66eb329"
+  },
+  "packet_json_sha256": "52f7edab2425536b4286f83903410aaee9fb49d685d2be92d11594a198b213b6"
+ },
+ "packet_id": "bd720c2a38d13fa1c588a58c60ef168765ab96ed",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c2",
+ "render_v": "render_c2",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "910c5589-df10-4b3b-adb2-fbceb2f1e76c",
+ "started_utc": "2026-10-01T17:31:56+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Standing_Split_pose_or_Urdhva_Prasarita_Eka_Padasana_-a",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 10687,
+  "cache_read_input_tokens": 13529,
+  "input_tokens": 6,
+  "output_tokens": 1224,
+  "thinking_tokens": 144
+ },
+ "warnings": []
+}

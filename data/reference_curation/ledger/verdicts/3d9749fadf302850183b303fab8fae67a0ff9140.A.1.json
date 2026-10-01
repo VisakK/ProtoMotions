@@ -1,0 +1,288 @@
+{
+ "answer": {
+  "body_body": {
+   "answer": "listed",
+   "contacts": []
+  },
+  "discrepancies": [
+   {
+    "kind": "avatar_off_floor_markers_on_floor",
+    "note": "Avatar left hand floats with drop line; its markers lie on the floor.",
+    "panels": [
+     "3a",
+     "2b"
+    ],
+    "part": "left hand"
+   },
+   {
+    "kind": "avatar_off_floor_markers_on_floor",
+    "note": "Avatar right hand floats with drop line; its markers lie on the floor.",
+    "panels": [
+     "3b",
+     "2b"
+    ],
+    "part": "right hand"
+   },
+   {
+    "kind": "avatar_off_floor_markers_on_floor",
+    "note": "Avatar left forearm raised with drop line; markers at floor level.",
+    "panels": [
+     "3a",
+     "2b"
+    ],
+    "part": "left forearm"
+   },
+   {
+    "kind": "avatar_off_floor_markers_on_floor",
+    "note": "Avatar right forearm raised with drop line; markers at floor level.",
+    "panels": [
+     "3b",
+     "3a"
+    ],
+    "part": "right forearm"
+   },
+   {
+    "kind": "avatar_off_floor_markers_on_floor",
+    "note": "Avatar right foot hovers with drop line; its markers rest near the floor.",
+    "panels": [
+     "3c",
+     "2b"
+    ],
+    "part": "right foot"
+   }
+  ],
+  "floor": {
+   "head": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3a",
+     "3b",
+     "2b"
+    ]
+   },
+   "left foot": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "left forearm": {
+    "avatar": "off_floor",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "2b"
+    ]
+   },
+   "left hand": {
+    "avatar": "off_floor",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "2b"
+    ]
+   },
+   "left shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "left thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "left upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3a",
+     "2b"
+    ]
+   },
+   "pelvis": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "right foot": {
+    "avatar": "off_floor",
+    "markers": "touching",
+    "panels": [
+     "3c",
+     "2b",
+     "3a"
+    ]
+   },
+   "right forearm": {
+    "avatar": "off_floor",
+    "markers": "touching",
+    "panels": [
+     "3b",
+     "3a"
+    ]
+   },
+   "right hand": {
+    "avatar": "off_floor",
+    "markers": "touching",
+    "panels": [
+     "3b",
+     "2b"
+    ]
+   },
+   "right shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "right thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "right upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3b",
+     "2b"
+    ]
+   },
+   "torso": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   }
+  },
+  "implausible": [
+   {
+    "kind": "no_base_of_support",
+    "note": "Every avatar part is above the floor with drop lines; nothing supports the body.",
+    "panels": [
+     "2b",
+     "3a",
+     "3b",
+     "3c"
+    ],
+    "parts": [
+     "left forearm",
+     "right forearm",
+     "right foot",
+     "left hand"
+    ]
+   }
+  ],
+  "pose": {
+   "candidates": [
+    {
+     "confidence": "high",
+     "name": "One-legged dolphin pose"
+    },
+    {
+     "confidence": "medium",
+     "name": "Forearm stand (Pincha Mayurasana) entry"
+    },
+    {
+     "confidence": "low",
+     "name": "Three-legged downward dog"
+    }
+   ],
+   "description": "Inverted one-legged pose. Forearms parallel on the floor with hands forward, upper arms vertical, head hanging between the arms below the hips, near but off the floor. Hips high. Right leg straight, angled down to the right foot on the floor behind. Left leg straight, raised high in line with the torso, sole facing up."
+  }
+ },
+ "audit_id": "holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.audit_v2.calibrated.9278736bb1",
+ "cost_usd": 0.1254942,
+ "duration_s": 26.09,
+ "errors": [],
+ "frame_hold": 670,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-c@670",
+ "inputs": {},
+ "item_id": "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-c@670#A4:lift12",
+ "n": 1,
+ "num_turns": 7,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_v4/3d9749fadf302850183b303fab8fae67a0ff9140",
+  "images": {
+   "img_1.png": "a0a2bff007c67530e9efdcd31e33fdebe97462d532a2517256c7c45f3681afb4",
+   "img_2.png": "97b4f0189611122ddda0581c549b7da0a3c4677751225699d8b5caa55ea45544",
+   "img_3.png": "6fe96b3165960c21a19bbe1e7d92d2b3caa143e4c1aa3e50615001bf0953d50c",
+   "img_4.png": "f794594c7c8bd8e1c43c4c36eb8e79ae13f66eb32752052dcd3340977e4fa23b"
+  },
+  "packet_json_sha256": "94f8ea699eadbb170a691406da1b061575e1680817c26619e31eb21c6e21b8d4"
+ },
+ "packet_id": "3d9749fadf302850183b303fab8fae67a0ff9140",
+ "pass": "A",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_a.md",
+  "sha256": "bae5cfe8420cee596fc188c14966536b354df29210c1e9a94384c925aab70510"
+ },
+ "purpose": "calibration",
+ "render_v": "render_v4",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "5de359f0431719d8",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_a.json",
+  "sha256": "5a05ec7b10cce5f545b813c390820a81bbbde96259cc00318df7ec618475ff9d"
+ },
+ "schema_version": 1,
+ "session_id": "78693706-5caa-4d73-8def-c9eea2caac8a",
+ "started_utc": "2026-10-01T16:17:33+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-c",
+ "stratum": "inversion",
+ "usage": {
+  "cache_creation_input_tokens": 7972,
+  "cache_read_input_tokens": 26071,
+  "input_tokens": 6,
+  "output_tokens": 2824,
+  "thinking_tokens": 959
+ },
+ "warnings": []
+}

@@ -1,0 +1,240 @@
+{
+ "answer": {
+  "body_body": {
+   "answer": "listed",
+   "contacts": []
+  },
+  "discrepancies": [],
+  "floor": {
+   "head": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "left foot": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "2b"
+    ]
+   },
+   "left forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "left hand": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "left shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "3a"
+    ]
+   },
+   "left thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "left upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "pelvis": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "right foot": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3b",
+     "2b"
+    ]
+   },
+   "right forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "right hand": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "right shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "3b"
+    ]
+   },
+   "right thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "right upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "torso": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   }
+  },
+  "implausible": [],
+  "pose": {
+   "candidates": [
+    {
+     "confidence": "medium",
+     "name": "Warrior II preparation, arms lowered"
+    },
+    {
+     "confidence": "low",
+     "name": "Wide-legged standing stance (transition)"
+    },
+    {
+     "confidence": "low",
+     "name": "Warrior II Pose"
+    }
+   ],
+   "description": "Upright wide stance with only both feet on the floor. Head is well above the hips; trunk is vertical. Both knees are slightly bent, legs spread wide, the right foot turned out. Both arms hang down beside the body, hands near hip height and away from the thighs; they are not raised to shoulder height."
+  },
+  "repair": {
+   "kinds": [],
+   "needed": "no",
+   "note": "Avatar feet rest on the floor like the human's; the pose matches the markers."
+  },
+  "roles": [],
+  "timing": {
+   "better_panel": "",
+   "end": "label",
+   "main_moment": "keep",
+   "note": "Label and capture windows coincide; stance is steady from 4b through 4d, so 4c is representative.",
+   "start": "label"
+  },
+  "variant": {
+   "matches_label": "no",
+   "note": "Arms hang at the sides instead of reaching out at shoulder height; front knee only slightly bent, a shallow transitional stance."
+  }
+ },
+ "audit_id": "holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.audit_v2.calibrated.9278736bb1",
+ "cost_usd": 0.19657360000000001,
+ "duration_s": 25.78,
+ "errors": [],
+ "frame_hold": 266,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220926_Warrior_II_Pose_or_Virabhadrasana_II_-a@266",
+ "inputs": {},
+ "item_id": "220926_Warrior_II_Pose_or_Virabhadrasana_II_-a@266#B4",
+ "n": 1,
+ "num_turns": 7,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_v4/b95acb534b50292a8c438375d99fb7f6bef432a3",
+  "images": {
+   "img_1.png": "5307a4a65a9262e43418c5b139e486b22bee9c69d1925d6bd348006a1e74fd46",
+   "img_2.png": "e6450ffb5db865a914d21c856ce8815fcb176ea8aa6530815cf3247746693752",
+   "img_3.png": "b0d537b2bc2f5ce2a1c60206045c2dbed6475bbdd8a904ca225c70d20026bb8c",
+   "img_4.png": "62ae73643920d42f806939f675b84e348654a568a61f8fce1364d4c304b5cebe"
+  },
+  "packet_json_sha256": "cb01dd1a37c4a56095e542f7a65ee2dc2b44a461b7a9ee338f619231f428f43e"
+ },
+ "packet_id": "b95acb534b50292a8c438375d99fb7f6bef432a3",
+ "pass": "B",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_b.md",
+  "sha256": "077dd51bd3c86104e2579843cb3162adaf5e3892192e7634aa4712e2274df649"
+ },
+ "purpose": "pose_role",
+ "render_v": "render_v4",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "5f537c5cd7b2019f",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_b.json",
+  "sha256": "0c8ebcc47c25a92ae60dea2083cdea7b465230a6702cd4fc11c2b7b6bb6eae8d"
+ },
+ "schema_version": 1,
+ "session_id": "ab2bb2c4-c133-4c38-b0d1-304ff8a75459",
+ "started_utc": "2026-10-01T17:03:20+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220926_Warrior_II_Pose_or_Virabhadrasana_II_-a",
+ "stratum": null,
+ "usage": {
+  "cache_creation_input_tokens": 17222,
+  "cache_read_input_tokens": 38768,
+  "input_tokens": 6,
+  "output_tokens": 2551,
+  "thinking_tokens": 791
+ },
+ "warnings": []
+}

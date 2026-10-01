@@ -1,0 +1,122 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "B",
+    "kind": "through_body",
+    "panels": [
+     "4b",
+     "3d",
+     "1b"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "impossible_joint",
+    "panels": [
+     "4b",
+     "3d"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "through_floor",
+    "panels": [
+     "4b"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "A",
+  "floating_parts": {
+   "A": [],
+   "B": []
+  },
+  "more_natural": "A",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both stand upright on both feet with arms held straight out to the sides. Only B's lower legs and feet differ: the shins lean inward and the feet are tilted."
+  },
+  "summary": "Same standing pose with arms out to the sides. A's legs are straight and its feet sit flat and apart, matching the grey body. B's shins lean inward, its right foot is twisted and pushes into the left foot, and the left foot dips slightly into the floor."
+ },
+ "audit_id": null,
+ "cost_usd": 0.113717,
+ "duration_s": 13.85,
+ "errors": [],
+ "frame_hold": 1846,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-a@1846",
+ "inputs": {},
+ "item_id": "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-a@1846#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c2/9e719476a1ac2703f5fc77936307d2031d20de22",
+  "images": {
+   "img_1.png": "cf11bab37df1e114f773242e62b79f452ec134c8606d30d0bd65ab55b9912380",
+   "img_2.png": "65f0a9a6491d04410af7dc1f0b457d393bc0cab91092ea27adb219f32fb204ff",
+   "img_3.png": "94d71c118873efc73cdd1c8d72b62839553666e00a094e6d04da0ee649c493ce",
+   "img_4.png": "110a4b3b87c1a5b65bfdcb12141b89d6f7d58b9471d1c8377c42456eb12196fc",
+   "img_5.png": "5ae4eadb66f86ddea07e9cfce609b4c4c70241f150d171eb1a36fca7a7967c11"
+  },
+  "packet_json_sha256": "13ffe51e762c5eea09c886053a551107f5194ac5eaef2d10bfd5139c869549d5"
+ },
+ "packet_id": "9e719476a1ac2703f5fc77936307d2031d20de22",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c2",
+ "render_v": "render_c2",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "8bb25380-4a3b-4fbd-a4e7-b6b266696103",
+ "started_utc": "2026-10-01T17:26:16+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-a",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 10671,
+  "cache_read_input_tokens": 13525,
+  "input_tokens": 6,
+  "output_tokens": 1281,
+  "thinking_tokens": 200
+ },
+ "warnings": []
+}

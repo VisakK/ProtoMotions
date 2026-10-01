@@ -1,0 +1,228 @@
+{
+ "answer": {
+  "body_body": {
+   "answer": "listed",
+   "contacts": []
+  },
+  "discrepancies": [],
+  "floor": {
+   "head": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "3a",
+     "3b"
+    ]
+   },
+   "left foot": {
+    "avatar": "off_floor",
+    "markers": "cannot_tell",
+    "panels": [
+     "1b",
+     "3c",
+     "3d"
+    ]
+   },
+   "left forearm": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "2b"
+    ]
+   },
+   "left hand": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "2b"
+    ]
+   },
+   "left shin": {
+    "avatar": "off_floor",
+    "markers": "cannot_tell",
+    "panels": [
+     "1a",
+     "2b",
+     "3d"
+    ]
+   },
+   "left thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "left upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "3a"
+    ]
+   },
+   "pelvis": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "right foot": {
+    "avatar": "off_floor",
+    "markers": "cannot_tell",
+    "panels": [
+     "1b",
+     "3c",
+     "3d"
+    ]
+   },
+   "right forearm": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3b",
+     "1c"
+    ]
+   },
+   "right hand": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3b",
+     "1d"
+    ]
+   },
+   "right shin": {
+    "avatar": "off_floor",
+    "markers": "cannot_tell",
+    "panels": [
+     "1c",
+     "2b",
+     "3d"
+    ]
+   },
+   "right thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1c"
+    ]
+   },
+   "right upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3b",
+     "1c"
+    ]
+   },
+   "torso": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   }
+  },
+  "implausible": [],
+  "pose": {
+   "candidates": [
+    {
+     "confidence": "medium",
+     "name": "Dolphin pose, knees down"
+    },
+    {
+     "confidence": "low",
+     "name": "Forearm plank on knees"
+    },
+    {
+     "confidence": "low",
+     "name": "Dolphin pose transition"
+    }
+   ],
+   "description": "Both forearms and hands lie flat on the floor, upper arms near vertical under the shoulders. Hips are high above the head. Knees are just above the floor, thighs angled back, shins slope up to the feet, which stand upright with toes tucked and no floor contact. The head is in front, lower than the hips, off the floor. This is a transition from downward dog toward dolphin."
+  }
+ },
+ "audit_id": "holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.audit_v2.calibrated.9278736bb1",
+ "cost_usd": 0.1342414,
+ "duration_s": 30.24,
+ "errors": [],
+ "frame_hold": 420,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-b@420",
+ "inputs": {},
+ "item_id": "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-b@420#A4:fit",
+ "n": 1,
+ "num_turns": 7,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_v4/436c48e991e515d0ae6bfe3f733b7849f2af0557",
+  "images": {
+   "img_1.png": "2beca24094b1a7214a4c2efb42ef1ebb446462a20d32ff46affd3f4530d745fd",
+   "img_2.png": "fcdb223e1f291740990aa3960711ae3188cf542fba4ef83e5a83c2e2f49dc9ac",
+   "img_3.png": "4803a8dd9b1b7ecc8a665e7edd5125832ee841e5b71d7f12d5370bb4807f9125",
+   "img_4.png": "0beae00660e2b3b34eb4b9db6c78d00638b7b701afd89698c0619e1744085e63"
+  },
+  "packet_json_sha256": "975f7017ea05475d625c8258f9567d16c3f1d7fca01e615548f5642b1849e869"
+ },
+ "packet_id": "436c48e991e515d0ae6bfe3f733b7849f2af0557",
+ "pass": "A",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_a.md",
+  "sha256": "bae5cfe8420cee596fc188c14966536b354df29210c1e9a94384c925aab70510"
+ },
+ "purpose": "calibration",
+ "render_v": "render_v4",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "5de359f0431719d8",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_a.json",
+  "sha256": "5a05ec7b10cce5f545b813c390820a81bbbde96259cc00318df7ec618475ff9d"
+ },
+ "schema_version": 1,
+ "session_id": "f9c73115-de6c-457d-a0de-2dbdaeeae148",
+ "started_utc": "2026-10-01T16:12:50+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-b",
+ "stratum": "inversion",
+ "usage": {
+  "cache_creation_input_tokens": 8902,
+  "cache_read_input_tokens": 26107,
+  "input_tokens": 6,
+  "output_tokens": 2889,
+  "thinking_tokens": 1432
+ },
+ "warnings": []
+}

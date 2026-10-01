@@ -1,0 +1,141 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1d",
+     "4f",
+     "3d"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1d",
+     "4f",
+     "3d"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "4b",
+     "5d",
+     "3d"
+    ],
+    "part": "left shin",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "4b",
+     "1b",
+     "3d"
+    ],
+    "part": "left hand",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "A",
+  "floating_parts": {
+   "A": [],
+   "B": [
+    "left foot",
+    "right foot",
+    "left shin",
+    "right shin"
+   ]
+  },
+  "more_natural": "A",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both are on hands and knees with the forearms flat, the shins on the floor and the toes tucked. B just sits a little higher and its left hand is tilted."
+  },
+  "summary": "Same pose in both. A keeps its shins, toes and forearms on the floor like the grey body. B is raised slightly, with drop lines under both feet and shins, and its left hand is tilted up off the floor."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1296768,
+ "duration_s": 18.94,
+ "errors": [],
+ "frame_hold": 349,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Dolphin_Plank_Pose_or_Makara_Adho_Mukha_Svanasana_-a@351",
+ "inputs": {},
+ "item_id": "220923_Dolphin_Plank_Pose_or_Makara_Adho_Mukha_Svanasana_-a@351#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c2/4aef7d4c9949c2c72cc5b1d778dc6a9fa6ba56fd",
+  "images": {
+   "img_1.png": "2a0c2986292e4970fad9583eef8c77fdf9a2dc9817817940183f6d5aaa7b1637",
+   "img_2.png": "af53111ed5e0c663f2b9a3baf984e4d9b6e6eaebc8787bd8663093ff1e1c83ab",
+   "img_3.png": "21bba0d023f8669acf3ff9b1dd99a33d3a23b951ddaa9ac805350471681205c1",
+   "img_4.png": "9498475ccc46fbf43586f91ebd0229886f76b0560a82c3ece017c7b7408d3d70",
+   "img_5.png": "7d48c1e6453e52663df6506877b31632f9497b46b2d6ec9e9cc5725b23d9ff66"
+  },
+  "packet_json_sha256": "6db51a5bf0e8798f9e349e60365536cabfb946b492537ad0e2f244100bf047ab"
+ },
+ "packet_id": "4aef7d4c9949c2c72cc5b1d778dc6a9fa6ba56fd",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c2",
+ "render_v": "render_c2",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "c41249f9-9f32-4b03-aa35-b6012eebdab4",
+ "started_utc": "2026-10-01T17:17:22+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Dolphin_Plank_Pose_or_Makara_Adho_Mukha_Svanasana_-a",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 12158,
+  "cache_read_input_tokens": 13644,
+  "input_tokens": 6,
+  "output_tokens": 1483,
+  "thinking_tokens": 327
+ },
+ "warnings": []
+}

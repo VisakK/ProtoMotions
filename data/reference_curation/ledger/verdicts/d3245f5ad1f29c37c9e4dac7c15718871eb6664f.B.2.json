@@ -1,0 +1,379 @@
+{
+ "answer": {
+  "body_body": {
+   "answer": "listed",
+   "contacts": [
+    {
+     "certainty": "clear",
+     "panels": [
+      "1a",
+      "1c",
+      "2b"
+     ],
+     "part_a": "left foot",
+     "part_b": "right thigh"
+    },
+    {
+     "certainty": "clear",
+     "panels": [
+      "1a",
+      "1c",
+      "2b"
+     ],
+     "part_a": "head",
+     "part_b": "left upper arm"
+    },
+    {
+     "certainty": "clear",
+     "panels": [
+      "1a",
+      "1c",
+      "2b"
+     ],
+     "part_a": "head",
+     "part_b": "right upper arm"
+    }
+   ]
+  },
+  "discrepancies": [
+   {
+    "kind": "other",
+    "note": "Human palms touch overhead (skin gap near zero); avatar hands about 3 cm apart.",
+    "panels": [
+     "1a",
+     "1c",
+     "2a"
+    ],
+    "part": "left hand"
+   },
+   {
+    "kind": "other",
+    "note": "Human left shin touches right thigh; avatar shin about 7 cm away from it.",
+    "panels": [
+     "1a",
+     "1c",
+     "2b"
+    ],
+    "part": "left shin"
+   },
+   {
+    "kind": "other",
+    "note": "Label L_FOOT+L_THIGH wrong: neither skin nor avatar shows left foot touching left thigh.",
+    "panels": [
+     "1a",
+     "1c",
+     "2b"
+    ],
+    "part": "left foot"
+   },
+   {
+    "kind": "other",
+    "note": "Head touches both upper arms in skin and avatar, but these pairs are unlabelled.",
+    "panels": [
+     "1a",
+     "1c",
+     "2b"
+    ],
+    "part": "head"
+   }
+  ],
+  "floor": {
+   "head": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "left foot": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b",
+     "3a"
+    ]
+   },
+   "left forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "left hand": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "left shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "left thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "left upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "pelvis": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "right foot": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "2b"
+    ]
+   },
+   "right forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "right hand": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "right shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3a",
+     "2b"
+    ]
+   },
+   "right thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "right upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "torso": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   }
+  },
+  "implausible": [],
+  "pose": {
+   "candidates": [
+    {
+     "confidence": "high",
+     "name": "Tree Pose (Vrksasana), arms overhead"
+    },
+    {
+     "confidence": "low",
+     "name": "Half Lotus Tree Pose"
+    }
+   ],
+   "description": "Standing upright on the right foot only, head well above hips. Left knee bent out to the side, left sole pressed against the inner right thigh. Both arms raised overhead beside the head, elbows slightly bent, hands joined above the head."
+  },
+  "repair": {
+   "kinds": [
+    "pose_mismatch"
+   ],
+   "needed": "yes",
+   "note": "Minor: close avatar hands overhead and bring left shin to right thigh as in skin."
+  },
+  "roles": [
+   {
+    "note": "Not made by human or avatar; not part of tree pose; label wrong.",
+    "panels": [
+     "1a",
+     "1c",
+     "2b"
+    ],
+    "part_a": "left foot",
+    "part_b": "left thigh",
+    "role": "incidental"
+   },
+   {
+    "note": "Lifted sole pressed to inner standing thigh defines tree pose.",
+    "panels": [
+     "1a",
+     "1c",
+     "2b"
+    ],
+    "part_a": "left foot",
+    "part_b": "right thigh",
+    "role": "required_touch"
+   },
+   {
+    "note": "Shin near knee brushes standing thigh; permitted, not needed.",
+    "panels": [
+     "1a",
+     "1c",
+     "2b"
+    ],
+    "part_a": "left shin",
+    "part_b": "right thigh",
+    "role": "allowed"
+   },
+   {
+    "note": "Palms joined overhead is a common arm variant, not defining.",
+    "panels": [
+     "1a",
+     "1c",
+     "2a"
+    ],
+    "part_a": "left hand",
+    "part_b": "right hand",
+    "role": "allowed"
+   },
+   {
+    "note": "Arms overhead squeeze near ears; consequence of arm placement.",
+    "panels": [
+     "1a",
+     "1c"
+    ],
+    "part_a": "head",
+    "part_b": "left upper arm",
+    "role": "incidental"
+   },
+   {
+    "note": "Arms overhead squeeze near ears; consequence of arm placement.",
+    "panels": [
+     "1a",
+     "1c"
+    ],
+    "part_a": "head",
+    "part_b": "right upper arm",
+    "role": "incidental"
+   }
+  ],
+  "timing": {
+   "better_panel": "",
+   "end": "label",
+   "main_moment": "keep",
+   "note": "Label and capture windows coincide; main moment shows the full pose with hands joined overhead.",
+   "start": "label"
+  },
+  "variant": {
+   "matches_label": "yes",
+   "note": ""
+  }
+ },
+ "audit_id": "holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.audit_v2.calibrated.9278736bb1",
+ "cost_usd": 0.2470164,
+ "duration_s": 32.19,
+ "errors": [],
+ "frame_hold": 804,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Tree_Pose_or_Vrksasana_-a@804",
+ "inputs": {},
+ "item_id": "220923_Tree_Pose_or_Vrksasana_-a@804#B4",
+ "n": 2,
+ "num_turns": 7,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_v4/d3245f5ad1f29c37c9e4dac7c15718871eb6664f",
+  "images": {
+   "img_1.png": "9e83d12d60b3c404a2da818bf4a25f1da03ff6860d81229efa56d5b02022fe7d",
+   "img_2.png": "2b34fb013d22c035d0ca8f5df5db568740c55c5532f4fa5b52e83ade0b73756e",
+   "img_3.png": "3a95a4dd8379dbd6df18dec1cd2c88b64d8c2274a81181051bc810b0ca8a46e0",
+   "img_4.png": "3f0fc9130ff0da7bce41399d5f365df27c9ea752016a2effb0f934a06d5e7144"
+  },
+  "packet_json_sha256": "c2b9a9b97a5979bf1b962fcd61f5ea7c60a2eccf06afda77733c5a23cff312a5"
+ },
+ "packet_id": "d3245f5ad1f29c37c9e4dac7c15718871eb6664f",
+ "pass": "B",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_b.md",
+  "sha256": "077dd51bd3c86104e2579843cb3162adaf5e3892192e7634aa4712e2274df649"
+ },
+ "purpose": "b6",
+ "render_v": "render_v4",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "5f537c5cd7b2019f",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_b.json",
+  "sha256": "0c8ebcc47c25a92ae60dea2083cdea7b465230a6702cd4fc11c2b7b6bb6eae8d"
+ },
+ "schema_version": 1,
+ "session_id": "0aa11b21-2759-467b-adda-310e2db699fb",
+ "started_utc": "2026-10-01T16:55:23+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Tree_Pose_or_Vrksasana_-a",
+ "stratum": null,
+ "usage": {
+  "cache_creation_input_tokens": 20729,
+  "cache_read_input_tokens": 41602,
+  "input_tokens": 6,
+  "output_tokens": 3642,
+  "thinking_tokens": 1041
+ },
+ "warnings": [
+  "body_body: head + left upper arm are joined; not scored",
+  "body_body: head + right upper arm are joined; not scored"
+ ]
+}

@@ -1,0 +1,386 @@
+{
+ "answer": {
+  "body_body": {
+   "answer": "listed",
+   "contacts": [
+    {
+     "certainty": "clear",
+     "panels": [
+      "1d",
+      "2b",
+      "3c"
+     ],
+     "part_a": "right shin",
+     "part_b": "right upper arm"
+    },
+    {
+     "certainty": "clear",
+     "panels": [
+      "1d",
+      "2b"
+     ],
+     "part_a": "right thigh",
+     "part_b": "right upper arm"
+    }
+   ]
+  },
+  "discrepancies": [
+   {
+    "kind": "other",
+    "note": "Human skin touches left upper arm; avatar left shin stays about 5 cm away.",
+    "panels": [
+     "1c",
+     "3b"
+    ],
+    "part": "left shin"
+   },
+   {
+    "kind": "other",
+    "note": "Human left shin skin touches torso; avatar gap about 9 cm.",
+    "panels": [
+     "1c",
+     "2b"
+    ],
+    "part": "left shin"
+   },
+   {
+    "kind": "other",
+    "note": "Human left thigh touches torso; avatar gap about 5 cm.",
+    "panels": [
+     "1c",
+     "2a"
+    ],
+    "part": "left thigh"
+   },
+   {
+    "kind": "other",
+    "note": "Label lists left thigh\u2013left upper arm, but skin is 2.4 cm apart and avatar gap larger.",
+    "panels": [
+     "1c",
+     "3b"
+    ],
+    "part": "left thigh"
+   },
+   {
+    "kind": "other",
+    "note": "Right thigh\u2013torso skin contact exists but is not labelled; avatar gap 3 cm.",
+    "panels": [
+     "1d",
+     "2a"
+    ],
+    "part": "right thigh"
+   }
+  ],
+  "floor": {
+   "head": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "3a",
+     "1a"
+    ]
+   },
+   "left foot": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "2b",
+     "3b",
+     "1c"
+    ]
+   },
+   "left forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3b",
+     "1c"
+    ]
+   },
+   "left hand": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3b",
+     "1c",
+     "3a"
+    ]
+   },
+   "left shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "3b"
+    ]
+   },
+   "left thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1c",
+     "2b"
+    ]
+   },
+   "left upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1c"
+    ]
+   },
+   "pelvis": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "right foot": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "2b",
+     "3c",
+     "3a"
+    ]
+   },
+   "right forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3c",
+     "1d"
+    ]
+   },
+   "right hand": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3c",
+     "2b"
+    ]
+   },
+   "right shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "3c"
+    ]
+   },
+   "right thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1d",
+     "2b"
+    ]
+   },
+   "right upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1d"
+    ]
+   },
+   "torso": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   }
+  },
+  "implausible": [],
+  "pose": {
+   "candidates": [
+    {
+     "confidence": "high",
+     "name": "Firefly preparation (shoulders under thighs)"
+    },
+    {
+     "confidence": "medium",
+     "name": "Tittibhasana entry from forward fold"
+    },
+    {
+     "confidence": "low",
+     "name": "Malasana-style squat fold, hands down"
+    }
+   ],
+   "description": "Both feet and both hands on the floor; deep forward fold with knees bent and hips high, head hanging low between the legs well below the hips. Arms reach down between/behind the legs, upper arms tucked under the thighs and knees. Legs apart, knees bent, shins near-vertical. This is a Firefly set-up, feet not yet lifted."
+  },
+  "repair": {
+   "kinds": [
+    "pose_mismatch"
+   ],
+   "needed": "yes",
+   "note": "Avatar left leg sits too far from left arm and torso; human's skin touches both."
+  },
+  "roles": [
+   {
+    "note": "Deep fold brings shin near trunk; skin touches, avatar does not.",
+    "panels": [
+     "1c",
+     "2b"
+    ],
+    "part_a": "left shin",
+    "part_b": "torso",
+    "role": "allowed"
+   },
+   {
+    "note": "Back of knee against arm in set-up; skin touches, avatar gap.",
+    "panels": [
+     "1c",
+     "3b"
+    ],
+    "part_a": "left shin",
+    "part_b": "left upper arm",
+    "role": "allowed"
+   },
+   {
+    "note": "Knee region pressed on upper arm; both skin and avatar touch.",
+    "panels": [
+     "1d",
+     "3c"
+    ],
+    "part_a": "right shin",
+    "part_b": "right upper arm",
+    "role": "allowed"
+   },
+   {
+    "note": "Forward fold compresses thigh to trunk; skin touches, avatar gap.",
+    "panels": [
+     "1c",
+     "2a"
+    ],
+    "part_a": "left thigh",
+    "part_b": "torso",
+    "role": "allowed"
+   },
+   {
+    "note": "Firefly rests thighs on upper arms; human not touching here yet.",
+    "panels": [
+     "1c",
+     "3b"
+    ],
+    "part_a": "left thigh",
+    "part_b": "left upper arm",
+    "role": "required_touch"
+   },
+   {
+    "note": "Thigh resting on upper arm defines Firefly support; touches.",
+    "panels": [
+     "1d",
+     "2b"
+    ],
+    "part_a": "right thigh",
+    "part_b": "right upper arm",
+    "role": "required_touch"
+   },
+   {
+    "note": "Deep fold contact; skin touches, unlabelled, avatar 3 cm away.",
+    "panels": [
+     "1d",
+     "2a"
+    ],
+    "part_a": "right thigh",
+    "part_b": "torso",
+    "role": "allowed"
+   }
+  ],
+  "timing": {
+   "better_panel": "",
+   "end": "label",
+   "main_moment": "keep",
+   "note": "Label and capture windows match; the four-point set-up stays stable through 4b\u20134d.",
+   "start": "label"
+  },
+  "variant": {
+   "matches_label": "variant",
+   "note": "Firefly set-up: both feet still bear weight on the floor, legs bent, not lifted and extended."
+  }
+ },
+ "audit_id": "holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.audit_v2.calibrated.9278736bb1",
+ "cost_usd": 0.2358484,
+ "duration_s": 40.01,
+ "errors": [],
+ "frame_hold": 270,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Firefly_Pose_or_Tittibhasana_-a@270",
+ "inputs": {},
+ "item_id": "220923_Firefly_Pose_or_Tittibhasana_-a@270#B4",
+ "n": 2,
+ "num_turns": 7,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_v4/70a6b397378ee7187c1852876c3d4866680ec59c",
+  "images": {
+   "img_1.png": "4edf06f28ec1d88a1f56a68b271ae5ed06790b3a1f5b48d175c9f8bacf1a9bd4",
+   "img_2.png": "c8fd60e560387e5566277d6164b94c05e3072452017a57511210acb1493ec24b",
+   "img_3.png": "2102bc8b30c66fdfb54f1dc8a42f7f66cd78e5b993f2bc69097865c0df3bba37",
+   "img_4.png": "0840ac7bb96398e5b18a87264beeb00f3fa7517e0fbc530960f53874acc2694e"
+  },
+  "packet_json_sha256": "5926a5d3a1f72779147132b327a5138ea178d0246654bb8c2549e3a0956be314"
+ },
+ "packet_id": "70a6b397378ee7187c1852876c3d4866680ec59c",
+ "pass": "B",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_b.md",
+  "sha256": "077dd51bd3c86104e2579843cb3162adaf5e3892192e7634aa4712e2274df649"
+ },
+ "purpose": "b6",
+ "render_v": "render_v4",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "5f537c5cd7b2019f",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_b.json",
+  "sha256": "0c8ebcc47c25a92ae60dea2083cdea7b465230a6702cd4fc11c2b7b6bb6eae8d"
+ },
+ "schema_version": 1,
+ "session_id": "2050aeeb-8d8c-4bec-a05a-867c9c9f6fd8",
+ "started_utc": "2026-10-01T16:31:03+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Firefly_Pose_or_Tittibhasana_-a",
+ "stratum": null,
+ "usage": {
+  "cache_creation_input_tokens": 18189,
+  "cache_read_input_tokens": 45262,
+  "input_tokens": 6,
+  "output_tokens": 4063,
+  "thinking_tokens": 1494
+ },
+ "warnings": [
+  "load word 'bear'",
+  "load word 'weight'"
+ ]
+}

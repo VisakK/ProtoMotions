@@ -1,0 +1,288 @@
+{
+ "answer": {
+  "body_body": {
+   "answer": "listed",
+   "contacts": []
+  },
+  "discrepancies": [
+   {
+    "kind": "other",
+    "note": "Label lists head on floor, but avatar head and human head are both well above the floor.",
+    "panels": [
+     "3a",
+     "1d",
+     "2b"
+    ],
+    "part": "head"
+   },
+   {
+    "kind": "other",
+    "note": "Human skin of the left forearm touches the torso; the avatar forearm is about 7\u20138 cm from it.",
+    "panels": [
+     "3b",
+     "2a"
+    ],
+    "part": "left forearm"
+   },
+   {
+    "kind": "other",
+    "note": "Human skin of the right forearm touches the torso; the avatar forearm is about 7 cm from it.",
+    "panels": [
+     "3c",
+     "2a"
+    ],
+    "part": "right forearm"
+   }
+  ],
+  "floor": {
+   "head": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3a",
+     "1d",
+     "2b"
+    ]
+   },
+   "left foot": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3d",
+     "2b"
+    ]
+   },
+   "left forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3b",
+     "3a"
+    ]
+   },
+   "left hand": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3b",
+     "1d"
+    ]
+   },
+   "left shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "left thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "left upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3b",
+     "1a"
+    ]
+   },
+   "pelvis": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "3b"
+    ]
+   },
+   "right foot": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3d",
+     "2b"
+    ]
+   },
+   "right forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3c",
+     "3a"
+    ]
+   },
+   "right hand": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3c",
+     "1d"
+    ]
+   },
+   "right shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1c"
+    ]
+   },
+   "right thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1c"
+    ]
+   },
+   "right upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3c",
+     "1c"
+    ]
+   },
+   "torso": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3b",
+     "3c",
+     "2b"
+    ]
+   }
+  },
+  "implausible": [],
+  "pose": {
+   "candidates": [
+    {
+     "confidence": "high",
+     "name": "Chaturanga Dandasana (Four-Limbed Staff)"
+    },
+    {
+     "confidence": "medium",
+     "name": "Low plank"
+    }
+   ],
+   "description": "Prone, low plank. Only both hands and the toes of both feet touch the floor. Body straight and horizontal about 10\u201315 cm above the floor; head forward of the hips at the same height, off the floor. Both elbows bent about 90\u00b0, forearms vertical under the shoulders, upper arms roughly horizontal. Legs straight and parallel, feet upright on the toes."
+  },
+  "repair": {
+   "kinds": [],
+   "needed": "no",
+   "note": "Floor contacts match. The avatar's forearms sit a few cm off the torso, which is minor."
+  },
+  "roles": [
+   {
+    "note": "Elbows hugging the ribs is typical but not required; human touches, avatar does not.",
+    "panels": [
+     "3b",
+     "2a"
+    ],
+    "part_a": "torso",
+    "part_b": "left forearm",
+    "role": "allowed"
+   },
+   {
+    "note": "Elbows hugging the ribs is typical but not required; human touches, avatar does not.",
+    "panels": [
+     "3c",
+     "2a"
+    ],
+    "part_a": "torso",
+    "part_b": "right forearm",
+    "role": "allowed"
+   }
+  ],
+  "timing": {
+   "better_panel": "",
+   "end": "label",
+   "main_moment": "keep",
+   "note": "Label window matches capture window; 4c shows the low plank held with hands and toes settled.",
+   "start": "label"
+  },
+  "variant": {
+   "matches_label": "yes",
+   "note": ""
+  }
+ },
+ "audit_id": "holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.audit_v2.calibrated.9278736bb1",
+ "cost_usd": 0.19316699999999998,
+ "duration_s": 25.61,
+ "errors": [],
+ "frame_hold": 485,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Four-Limbed_Staff_Pose_or_Chaturanga_Dandasana_-a@485",
+ "inputs": {},
+ "item_id": "220923_Four-Limbed_Staff_Pose_or_Chaturanga_Dandasana_-a@485#B4",
+ "n": 2,
+ "num_turns": 7,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_v4/ff274b0740b8e097610a846ada5aea8af748b9e9",
+  "images": {
+   "img_1.png": "627ea5e440354ebc0cb66bd40ff2e72a59f3da583a2f9f57bb7ea56619ec3241",
+   "img_2.png": "9a1d0d61089ef9aca8b1ebb3172c7f825f2a6ef8ba144e49fef1e199b2f80167",
+   "img_3.png": "ab37401b8a251990984013569674122f09786408c3019ebe05c0189d7763976f",
+   "img_4.png": "0e7cd72c7354041411943c7883268195d7bd5721ba2bc28812c4b10273c55979"
+  },
+  "packet_json_sha256": "7794a5c9a085e807bbe7532bfe7363b70024bc4867d1e8bcd9b19a1601be21e7"
+ },
+ "packet_id": "ff274b0740b8e097610a846ada5aea8af748b9e9",
+ "pass": "B",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_b.md",
+  "sha256": "077dd51bd3c86104e2579843cb3162adaf5e3892192e7634aa4712e2274df649"
+ },
+ "purpose": "b6",
+ "render_v": "render_v4",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "5f537c5cd7b2019f",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_b.json",
+  "sha256": "0c8ebcc47c25a92ae60dea2083cdea7b465230a6702cd4fc11c2b7b6bb6eae8d"
+ },
+ "schema_version": 1,
+ "session_id": "60e68047-dba3-4500-9894-9cd1e5f63b70",
+ "started_utc": "2026-10-01T16:32:30+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Four-Limbed_Staff_Pose_or_Chaturanga_Dandasana_-a",
+ "stratum": null,
+ "usage": {
+  "cache_creation_input_tokens": 16552,
+  "cache_read_input_tokens": 42735,
+  "input_tokens": 6,
+  "output_tokens": 2609,
+  "thinking_tokens": 646
+ },
+ "warnings": []
+}

@@ -1,0 +1,262 @@
+{
+ "answer": {
+  "body_body": {
+   "answer": "listed",
+   "contacts": [
+    {
+     "certainty": "possible",
+     "panels": [
+      "3b",
+      "1b"
+     ],
+     "part_a": "left forearm",
+     "part_b": "left thigh"
+    },
+    {
+     "certainty": "possible",
+     "panels": [
+      "3c",
+      "1d"
+     ],
+     "part_a": "right forearm",
+     "part_b": "right thigh"
+    },
+    {
+     "certainty": "possible",
+     "panels": [
+      "3d",
+      "1b"
+     ],
+     "part_a": "left foot",
+     "part_b": "right foot"
+    },
+    {
+     "certainty": "possible",
+     "panels": [
+      "1b",
+      "3d"
+     ],
+     "part_a": "left thigh",
+     "part_b": "right thigh"
+    }
+   ]
+  },
+  "discrepancies": [],
+  "floor": {
+   "head": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "2b"
+    ]
+   },
+   "left foot": {
+    "avatar": "off_floor",
+    "markers": "cannot_tell",
+    "panels": [
+     "1b",
+     "3d",
+     "2b"
+    ]
+   },
+   "left forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3b",
+     "2b"
+    ]
+   },
+   "left hand": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3b",
+     "3a"
+    ]
+   },
+   "left shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3b",
+     "2b"
+    ]
+   },
+   "left thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1b"
+    ]
+   },
+   "left upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "3b"
+    ]
+   },
+   "pelvis": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "right foot": {
+    "avatar": "off_floor",
+    "markers": "cannot_tell",
+    "panels": [
+     "1b",
+     "3d",
+     "2b"
+    ]
+   },
+   "right forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3c",
+     "1c"
+    ]
+   },
+   "right hand": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3c",
+     "3a"
+    ]
+   },
+   "right shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3c",
+     "2b"
+    ]
+   },
+   "right thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1b"
+    ]
+   },
+   "right upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3c",
+     "1c"
+    ]
+   },
+   "torso": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   }
+  },
+  "implausible": [],
+  "pose": {
+   "candidates": [
+    {
+     "confidence": "medium",
+     "name": "Tripod headstand preparation (Sirsasana II)"
+    },
+    {
+     "confidence": "low",
+     "name": "Salamba Sirsasana entry"
+    },
+    {
+     "confidence": "low",
+     "name": "Crow-to-headstand transition"
+    }
+   ],
+   "description": "Head (crown) and both hands rest on the floor forming a tripod; hips are high above and behind the head. Upper arms horizontal, forearms vertical with hands flat on the floor. Thighs hang down nearly vertical from the hips; knees bent just above the floor, shins slope up backward to lifted feet. Strip shows legs then lifting."
+  }
+ },
+ "audit_id": "holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.audit_v2.calibrated.9278736bb1",
+ "cost_usd": 0.1623708,
+ "duration_s": 43.7,
+ "errors": [],
+ "frame_hold": 343,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-b@346",
+ "inputs": {},
+ "item_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-b@346#A4:fit",
+ "n": 1,
+ "num_turns": 7,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_v4/f0d36469ddd6fe4362f4c976f7d25148ae6a533a",
+  "images": {
+   "img_1.png": "ec6cbd4225019cd981e3281bc4e6016d8ca17181f286d7cc5cf5275acec146bc",
+   "img_2.png": "20dfd4b5fddb7c4ea8f21b31cba64a92e55124102f13cc7cfb5e51f42f7039f5",
+   "img_3.png": "e8fe7ad4b701e72a040134a128a3559ff91a8f6602a8a372ead26ee9483990f8",
+   "img_4.png": "d1bfb6dd7a0a022e1161129e9c070c121dff33153f24eb77bd44afac60e9aae6"
+  },
+  "packet_json_sha256": "7720f9dc9d9fda383adb175097735e8d710109f82c6fdd8464cd4bb9199515c0"
+ },
+ "packet_id": "f0d36469ddd6fe4362f4c976f7d25148ae6a533a",
+ "pass": "A",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_a.md",
+  "sha256": "bae5cfe8420cee596fc188c14966536b354df29210c1e9a94384c925aab70510"
+ },
+ "purpose": "calibration",
+ "render_v": "render_v4",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "5de359f0431719d8",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_a.json",
+  "sha256": "5a05ec7b10cce5f545b813c390820a81bbbde96259cc00318df7ec618475ff9d"
+ },
+ "schema_version": 1,
+ "session_id": "71bdd2c7-a2a8-4aae-bcba-fe74ee69598e",
+ "started_utc": "2026-10-01T16:15:10+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-b",
+ "stratum": "arm_balance",
+ "usage": {
+  "cache_creation_input_tokens": 8918,
+  "cache_read_input_tokens": 26114,
+  "input_tokens": 6,
+  "output_tokens": 4289,
+  "thinking_tokens": 2659
+ },
+ "warnings": []
+}

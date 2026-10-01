@@ -1,0 +1,156 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1b",
+     "1d",
+     "2d",
+     "3b",
+     "3d",
+     "5d"
+    ],
+    "part": "left thigh",
+    "severity": "major"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1b",
+     "2b",
+     "3d",
+     "5d"
+    ],
+    "part": "torso",
+    "severity": "major"
+   },
+   {
+    "avatar": "B",
+    "kind": "through_body",
+    "panels": [
+     "1b",
+     "2d",
+     "3d",
+     "4d"
+    ],
+    "part": "right thigh",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "through_body",
+    "panels": [
+     "1b",
+     "3b",
+     "3d",
+     "5d"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "3c",
+     "4c"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "A",
+  "floating_parts": {
+   "A": [
+    "right hand"
+   ],
+   "B": [
+    "right foot"
+   ]
+  },
+  "more_natural": "A",
+  "same_pose": {
+   "answer": "no",
+   "reason": "A stands on its right leg with the left leg raised high behind and its right hand down, as the grey body does. B has collapsed into a low crouch with both legs stretched back along the floor."
+  },
+  "summary": "A follows the grey body closely: it stands on one leg with the other leg raised behind, and only its right hand hovers slightly above the floor. B has collapsed into a low crouch with both legs along the floor, away from the grey body's support points, and its legs and feet overlap."
+ },
+ "audit_id": null,
+ "cost_usd": 0.127858,
+ "duration_s": 17.97,
+ "errors": [],
+ "frame_hold": 415,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Half_Moon_Pose_or_Ardha_Chandrasana_-a@415",
+ "inputs": {},
+ "item_id": "220923_Half_Moon_Pose_or_Ardha_Chandrasana_-a@415#swap",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c2/d1e7d02e1be6fd4217ae28c0931a505a2b833ee8",
+  "images": {
+   "img_1.png": "cf60b2871e724a3537254dc33e0141f761a1f2d4c7cb01a2e69241f0676ec33e",
+   "img_2.png": "a52ea856c29e74151c2dae3d2a4d5083fc4faec16fb2fff4792109f98670f064",
+   "img_3.png": "a23ba782f31af4233b9a52c56dee4f54ff521de9e632a5d8ba66105a345cd33a",
+   "img_4.png": "586dfb9d2006552198e2e2322168ab8c65ba9ecfd842066a2edf914445ca31df",
+   "img_5.png": "3b5d28a30b3d6eb2b07bea91ff1b861af67e93d52ea4ee7cd39dc9d8b4007d2d"
+  },
+  "packet_json_sha256": "c8156bb12b8c4a211845b0cb7d9f1ae1d935b73db1fa146b7d11d46949b991b8"
+ },
+ "packet_id": "d1e7d02e1be6fd4217ae28c0931a505a2b833ee8",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c2",
+ "render_v": "render_c2",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "d6225c17-6b7e-4733-9054-e504a055a67e",
+ "started_utc": "2026-10-01T17:06:38+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Half_Moon_Pose_or_Ardha_Chandrasana_-a",
+ "stratum": "swap",
+ "usage": {
+  "cache_creation_input_tokens": 11422,
+  "cache_read_input_tokens": 13590,
+  "input_tokens": 6,
+  "output_tokens": 1687,
+  "thinking_tokens": 476
+ },
+ "warnings": []
+}

@@ -1,0 +1,257 @@
+{
+ "answer": {
+  "body_body": {
+   "answer": "listed",
+   "contacts": []
+  },
+  "discrepancies": [
+   {
+    "kind": "other",
+    "note": "The label names a handstand, but the right foot is still on the floor in a one-legged down-dog entry.",
+    "panels": [
+     "1a",
+     "2b",
+     "3c",
+     "4c"
+    ],
+    "part": "right foot"
+   }
+  ],
+  "floor": {
+   "head": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b",
+     "3a"
+    ]
+   },
+   "left foot": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b",
+     "4c"
+    ]
+   },
+   "left forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3a",
+     "3b"
+    ]
+   },
+   "left hand": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "3b",
+     "2b"
+    ]
+   },
+   "left shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "left thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "left upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3a",
+     "2b"
+    ]
+   },
+   "pelvis": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "right foot": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3c",
+     "2b",
+     "1a"
+    ]
+   },
+   "right forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3a",
+     "3b"
+    ]
+   },
+   "right hand": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "3b",
+     "3c"
+    ]
+   },
+   "right shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3c",
+     "2b"
+    ]
+   },
+   "right thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "right upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3b",
+     "2b"
+    ]
+   },
+   "torso": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   }
+  },
+  "implausible": [],
+  "pose": {
+   "candidates": [
+    {
+     "confidence": "high",
+     "name": "Three-legged downward dog (Eka Pada Adho Mukha Svanasana)"
+    },
+    {
+     "confidence": "medium",
+     "name": "Handstand preparation / hop-up entry"
+    },
+    {
+     "confidence": "low",
+     "name": "Standing split (Urdhva Prasarita Eka Padasana)"
+    }
+   ],
+   "description": "Both hands flat on the floor with straight arms; the right foot stands on the ball of the foot with the right knee slightly bent. The left leg is lifted high and nearly straight, behind and above the hips. The head hangs between the arms, well below the hips; the hips are high, so the body forms an inverted V with one leg raised."
+  },
+  "repair": {
+   "kinds": [],
+   "needed": "no",
+   "note": "The avatar's floor contacts and overall pose match the markers and skin."
+  },
+  "roles": [],
+  "timing": {
+   "better_panel": "",
+   "end": "label",
+   "main_moment": "keep",
+   "note": "The label and capture windows are identical. The floor contacts stay the same through 4b\u20134d; 4c is representative.",
+   "start": "label"
+  },
+  "variant": {
+   "matches_label": "no",
+   "note": "Not a handstand: the right foot is still on the floor and the hips are not stacked over the hands. It is a one-legged entry stage."
+  }
+ },
+ "audit_id": "holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.audit_v2.calibrated.9278736bb1",
+ "cost_usd": 0.1936666,
+ "duration_s": 24.32,
+ "errors": [],
+ "frame_hold": 1632,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Handstand_pose_or_Adho_Mukha_Vrksasana_-a@1632",
+ "inputs": {},
+ "item_id": "220923_Handstand_pose_or_Adho_Mukha_Vrksasana_-a@1632#B4",
+ "n": 1,
+ "num_turns": 7,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_v4/1fcdbb39a75285c594a2cd5ccdaa8f0efe0583a2",
+  "images": {
+   "img_1.png": "a4697c657d3a8a31f9f6cb9550fba180bef8e44519051980dd209bbdf07dc478",
+   "img_2.png": "fe8ad4c175382623cf5d2d3c746ac05b6eb101adbf8db11d765a91687a3d37f0",
+   "img_3.png": "443c66edc6f30092c248ab8f4bb82d21ef3306c01086c485d529d0211d0faf98",
+   "img_4.png": "b460710374ffda8dc9be570a6b86a3d533721a1e6090f1adb3e0f286fc5d2275"
+  },
+  "packet_json_sha256": "563b68a5a6131c95841ee009673348b642e08f1b58ee5843c6c3c8e1641f7045"
+ },
+ "packet_id": "1fcdbb39a75285c594a2cd5ccdaa8f0efe0583a2",
+ "pass": "B",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_b.md",
+  "sha256": "077dd51bd3c86104e2579843cb3162adaf5e3892192e7634aa4712e2274df649"
+ },
+ "purpose": "pose_role",
+ "render_v": "render_v4",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "5f537c5cd7b2019f",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_b.json",
+  "sha256": "0c8ebcc47c25a92ae60dea2083cdea7b465230a6702cd4fc11c2b7b6bb6eae8d"
+ },
+ "schema_version": 1,
+ "session_id": "ff031921-b6b4-40c4-9ef5-196396c08185",
+ "started_utc": "2026-10-01T16:33:31+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Handstand_pose_or_Adho_Mukha_Vrksasana_-a",
+ "stratum": null,
+ "usage": {
+  "cache_creation_input_tokens": 17121,
+  "cache_read_input_tokens": 38873,
+  "input_tokens": 6,
+  "output_tokens": 2445,
+  "thinking_tokens": 625
+ },
+ "warnings": []
+}

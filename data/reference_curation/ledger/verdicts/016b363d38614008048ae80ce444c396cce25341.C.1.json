@@ -1,0 +1,113 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "impossible_joint",
+    "panels": [
+     "4e",
+     "2c",
+     "1a"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "4c",
+     "4a"
+    ],
+    "part": "right hand",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "B",
+  "floating_parts": {
+   "A": [],
+   "B": []
+  },
+  "more_natural": "B",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both have the same shape: hands on the floor, elbows bent, body low and level, left toes tucked on the floor, right leg raised behind. Only the left foot and hand details differ."
+  },
+  "summary": "Same pose. In A, the toe part of the left foot is twisted sideways and the right hand is tilted off the grey hand. In B, the left toes and both hands lie flat on the floor, matching the grey body more closely."
+ },
+ "audit_id": null,
+ "cost_usd": 0.12544719999999998,
+ "duration_s": 14.27,
+ "errors": [],
+ "frame_hold": 788,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Peacock_Pose_or_Mayurasana_-a@788",
+ "inputs": {},
+ "item_id": "220923_Peacock_Pose_or_Mayurasana_-a@788#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c2/016b363d38614008048ae80ce444c396cce25341",
+  "images": {
+   "img_1.png": "f8fd8f1f862ebd7b29b734369f68c39a1e835eb5da0c659a78bb84b581d087a3",
+   "img_2.png": "2e290e796feb7049bac2e5ecc472b19c00b9825b750c9d3b57d441582c3ef198",
+   "img_3.png": "98f0ebf1f3b44ccd8b3ff7b133bbfd5dbbd54c967a71e42113f7039b7cf8352a",
+   "img_4.png": "1b015d2644b40f6f411cd0084a6ddecd9713a7a3d3360bf67b213b10b4e4a63e",
+   "img_5.png": "7ff1f1fb20ffe3418520fd04d29adf05e9d0229875da655434fbe4695459dc72"
+  },
+  "packet_json_sha256": "f5093722a26804730babe1c9866f83ebcdf11773863379c5827f5326f490f306"
+ },
+ "packet_id": "016b363d38614008048ae80ce444c396cce25341",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c2",
+ "render_v": "render_c2",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "61bc59a6-0850-4676-b6c2-1322728bd758",
+ "started_utc": "2026-10-01T17:25:10+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Peacock_Pose_or_Mayurasana_-a",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 12058,
+  "cache_read_input_tokens": 13596,
+  "input_tokens": 6,
+  "output_tokens": 1312,
+  "thinking_tokens": 325
+ },
+ "warnings": []
+}

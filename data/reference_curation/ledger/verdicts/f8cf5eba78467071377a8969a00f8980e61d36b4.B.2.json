@@ -1,0 +1,272 @@
+{
+ "answer": {
+  "body_body": {
+   "answer": "listed",
+   "contacts": []
+  },
+  "discrepancies": [
+   {
+    "kind": "other",
+    "note": "The human's right thigh skin touches the torso; the avatar's right thigh stays about 8 cm from the torso.",
+    "panels": [
+     "1a",
+     "2b"
+    ],
+    "part": "right thigh"
+   },
+   {
+    "kind": "other",
+    "note": "The label names Koundinyanasana, but the main moment is a headstand split with the head down.",
+    "panels": [
+     "4c",
+     "2b"
+    ],
+    "part": "head"
+   }
+  ],
+  "floor": {
+   "head": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "2b",
+     "3d"
+    ]
+   },
+   "left foot": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "left forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3b",
+     "3c"
+    ]
+   },
+   "left hand": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3b",
+     "3c"
+    ]
+   },
+   "left shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "left thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "left upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3a",
+     "3b"
+    ]
+   },
+   "pelvis": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "right foot": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3d",
+     "2b",
+     "1a"
+    ]
+   },
+   "right forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3a",
+     "3c"
+    ]
+   },
+   "right hand": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3c",
+     "3a"
+    ]
+   },
+   "right shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "right thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "right upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3a",
+     "3c"
+    ]
+   },
+   "torso": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "3a"
+    ]
+   }
+  },
+  "implausible": [],
+  "pose": {
+   "candidates": [
+    {
+     "confidence": "medium",
+     "name": "Tripod headstand split (Eka Pada Sirsasana II)"
+    },
+    {
+     "confidence": "medium",
+     "name": "Salamba Sirsasana II, leg lowering"
+    },
+    {
+     "confidence": "low",
+     "name": "Eka Pada Koundinyanasana entry from headstand"
+    }
+   ],
+   "description": "Tripod headstand: head and both hands on the floor, hips stacked high over the head. Upper arms are horizontal with forearms vertical, hands planted behind the head. The left leg points straight up. The right leg is lowered forward and down from the hip in a split, knee nearly straight, foot hovering about 20 cm above the floor."
+  },
+  "repair": {
+   "kinds": [],
+   "needed": "no",
+   "note": "Avatar floor contacts match the human's; the right thigh\u2013torso gap comes from the capsule shapes."
+  },
+  "roles": [
+   {
+    "note": "Comes from deep right-hip flexion in the split; the pose permits it but does not need it.",
+    "panels": [
+     "1a",
+     "2b"
+    ],
+    "part_a": "right thigh",
+    "part_b": "torso",
+    "role": "allowed"
+   }
+  ],
+  "timing": {
+   "better_panel": "",
+   "end": "label",
+   "main_moment": "keep",
+   "note": "The label and capture windows coincide. Head and hand contacts are settled at 4c with the headstand split fully formed.",
+   "start": "label"
+  },
+  "variant": {
+   "matches_label": "no",
+   "note": "Head is on the floor in a headstand split. The arm balance has the head lifted and a leg resting on the arm."
+  }
+ },
+ "audit_id": "holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.audit_v2.calibrated.9278736bb1",
+ "cost_usd": 0.20537619999999998,
+ "duration_s": 52.66,
+ "errors": [],
+ "frame_hold": 920,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-a@920",
+ "inputs": {},
+ "item_id": "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-a@920#B4",
+ "n": 2,
+ "num_turns": 7,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_v4/f8cf5eba78467071377a8969a00f8980e61d36b4",
+  "images": {
+   "img_1.png": "f6c0fe9d9a8d99ea247f7193f89205a6b7c802a75f06d41d77bad27aa30e92f0",
+   "img_2.png": "a18e2fb125866b222a181cd2cac1d154dbdb97cb9f83383524c445b03cd84c5a",
+   "img_3.png": "3234feaf781a88e6e5ccd349b7fb2fd6fb7d84c2c347e615c631059758ea2101",
+   "img_4.png": "af0f99afcf03b8c9e8ba338af2cf4c28b1f55da535947f2a0c804ad7c841379a"
+  },
+  "packet_json_sha256": "ee1c53d5b3c26440e0b38849be6e5212c2c8852ed4f179d1a05cfaf84cb007d4"
+ },
+ "packet_id": "f8cf5eba78467071377a8969a00f8980e61d36b4",
+ "pass": "B",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_b.md",
+  "sha256": "077dd51bd3c86104e2579843cb3162adaf5e3892192e7634aa4712e2274df649"
+ },
+ "purpose": "pose_role",
+ "render_v": "render_v4",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "5f537c5cd7b2019f",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_b.json",
+  "sha256": "0c8ebcc47c25a92ae60dea2083cdea7b465230a6702cd4fc11c2b7b6bb6eae8d"
+ },
+ "schema_version": 1,
+ "session_id": "efb8fcbd-3cd2-4153-b305-307a2d4b05cd",
+ "started_utc": "2026-10-01T16:38:50+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-a",
+ "stratum": null,
+ "usage": {
+  "cache_creation_input_tokens": 15958,
+  "cache_read_input_tokens": 42141,
+  "input_tokens": 6,
+  "output_tokens": 3463,
+  "thinking_tokens": 1443
+ },
+ "warnings": []
+}

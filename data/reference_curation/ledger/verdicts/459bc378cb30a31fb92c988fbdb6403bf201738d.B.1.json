@@ -1,0 +1,372 @@
+{
+ "answer": {
+  "body_body": {
+   "answer": "listed",
+   "contacts": [
+    {
+     "certainty": "clear",
+     "panels": [
+      "3b",
+      "2a"
+     ],
+     "part_a": "left hand",
+     "part_b": "left foot"
+    },
+    {
+     "certainty": "clear",
+     "panels": [
+      "3b",
+      "1d"
+     ],
+     "part_a": "left hand",
+     "part_b": "left shin"
+    },
+    {
+     "certainty": "clear",
+     "panels": [
+      "3c",
+      "1d"
+     ],
+     "part_a": "right hand",
+     "part_b": "right foot"
+    },
+    {
+     "certainty": "clear",
+     "panels": [
+      "3c",
+      "1c"
+     ],
+     "part_a": "right hand",
+     "part_b": "right shin"
+    }
+   ]
+  },
+  "discrepancies": [
+   {
+    "kind": "other",
+    "note": "Capture marks the right hand touching, but its skin and markers sit 4-5 cm up while it grips the ankle.",
+    "panels": [
+     "3c",
+     "1c"
+    ],
+    "part": "right hand"
+   },
+   {
+    "kind": "other",
+    "note": "The label puts the left hand on the floor, but it grips the ankle off the floor in both avatar and skin.",
+    "panels": [
+     "3b",
+     "1a"
+    ],
+    "part": "left hand"
+   },
+   {
+    "kind": "avatar_off_floor_markers_on_floor",
+    "note": "The avatar's forearm hovers about 1 cm up and shows a drop line. The skin rests on the floor.",
+    "panels": [
+     "3d",
+     "3c"
+    ],
+    "part": "right forearm"
+   },
+   {
+    "kind": "other",
+    "note": "The label leaves out the feet, head and torso on the floor, though both avatar and skin rest them there.",
+    "panels": [
+     "3a",
+     "3b",
+     "3c"
+    ],
+    "part": "left foot"
+   },
+   {
+    "kind": "other",
+    "note": "The labelled right foot and right forearm contact is absent: the gap is about 4 cm in both skin and avatar.",
+    "panels": [
+     "1c",
+     "3c"
+    ],
+    "part": "right foot"
+   }
+  ],
+  "floor": {
+   "head": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "2b"
+    ]
+   },
+   "left foot": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3b",
+     "2b"
+    ]
+   },
+   "left forearm": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3b",
+     "2b"
+    ]
+   },
+   "left hand": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3b",
+     "1a"
+    ]
+   },
+   "left shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "3b"
+    ]
+   },
+   "left thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "left upper arm": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "2b"
+    ]
+   },
+   "pelvis": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b",
+     "3a"
+    ]
+   },
+   "right foot": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3c",
+     "1c"
+    ]
+   },
+   "right forearm": {
+    "avatar": "off_floor",
+    "markers": "touching",
+    "panels": [
+     "3d",
+     "3c"
+    ]
+   },
+   "right hand": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3c",
+     "1c"
+    ]
+   },
+   "right shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1c",
+     "3c"
+    ]
+   },
+   "right thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1c",
+     "1d"
+    ]
+   },
+   "right upper arm": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3d",
+     "1c"
+    ]
+   },
+   "torso": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "2b"
+    ]
+   }
+  },
+  "implausible": [],
+  "pose": {
+   "candidates": [
+    {
+     "confidence": "high",
+     "name": "Bridge Pose (Setu Bandha Sarvangasana)"
+    },
+    {
+     "confidence": "medium",
+     "name": "Bridge pose holding ankles"
+    }
+   ],
+   "description": "Supine low bridge. Both feet flat on the floor, knees bent and pointing up, pelvis lifted about 15 cm. Upper back, shoulders, head, both upper arms and both forearms lie on the floor. The head is below and beyond the hips. Each hand grips its own ankle or heel, just above the floor."
+  },
+  "repair": {
+   "kinds": [],
+   "needed": "no",
+   "note": "The avatar matches the human. The right forearm's 1 cm hover is negligible. The labels need fixing, not the avatar."
+  },
+  "roles": [
+   {
+    "note": "The hand grips the ankle, a common bridge variation that the pose does not need.",
+    "panels": [
+     "3b",
+     "2a"
+    ],
+    "part_a": "left foot",
+    "part_b": "left hand",
+    "role": "allowed"
+   },
+   {
+    "note": "Not touching in skin or avatar (about 4 cm apart). The label is wrong.",
+    "panels": [
+     "1c",
+     "3c"
+    ],
+    "part_a": "right foot",
+    "part_b": "right forearm",
+    "role": "incidental"
+   },
+   {
+    "note": "The hand grips the right ankle. The pose permits this but does not need it.",
+    "panels": [
+     "3c",
+     "1d"
+    ],
+    "part_a": "right foot",
+    "part_b": "right hand",
+    "role": "allowed"
+   },
+   {
+    "note": "The grip wraps around the lower shin, part of holding the ankle.",
+    "panels": [
+     "3c",
+     "1c"
+    ],
+    "part_a": "right shin",
+    "part_b": "right hand",
+    "role": "allowed"
+   },
+   {
+    "note": "A real contact that is not labelled: the grip wraps the lower shin.",
+    "panels": [
+     "3b",
+     "1d"
+    ],
+    "part_a": "left shin",
+    "part_b": "left hand",
+    "role": "allowed"
+   }
+  ],
+  "timing": {
+   "better_panel": "",
+   "end": "neither",
+   "main_moment": "keep",
+   "note": "The pose is already formed at 4a. Bridge and floor contacts persist through 4d (17 s), so the end at 735 is too early.",
+   "start": "label"
+  },
+  "variant": {
+   "matches_label": "variant",
+   "note": "Hands grip the ankles instead of resting flat or interlaced, and the pelvis is lifted only low."
+  }
+ },
+ "audit_id": "holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.audit_v2.calibrated.9278736bb1",
+ "cost_usd": 0.3434526,
+ "duration_s": 41.33,
+ "errors": [],
+ "frame_hold": 716,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Bridge_Pose_or_Setu_Bandha_Sarvangasana_-a@652",
+ "inputs": {},
+ "item_id": "220923_Bridge_Pose_or_Setu_Bandha_Sarvangasana_-a@652#B4",
+ "n": 1,
+ "num_turns": 7,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_v4/459bc378cb30a31fb92c988fbdb6403bf201738d",
+  "images": {
+   "img_1.png": "d82014e6b54c352a8365af3fc2f79664bc0a29adc20e40b1c437f36d6ae68165",
+   "img_2.png": "c05899eb0cb05221dc5014fcc0fa35e72dcf2ee039da8ea4387a36872966415d",
+   "img_3.png": "1fca1c6581b7ebd1e1ed032ae1a641fb3cb6ffcb8e5f1160f1a41c02071ef700",
+   "img_4.png": "7be3ed58177a1dd3d2046b5745ee44ded7d7421c8579bd07797f09a57894d41c"
+  },
+  "packet_json_sha256": "a02dcac28f78d7c2e8e7a2fa45edecca50e6ceacbb657feb3b8bde0af5748409"
+ },
+ "packet_id": "459bc378cb30a31fb92c988fbdb6403bf201738d",
+ "pass": "B",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_b.md",
+  "sha256": "077dd51bd3c86104e2579843cb3162adaf5e3892192e7634aa4712e2274df649"
+ },
+ "purpose": "b6",
+ "render_v": "render_v4",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "5f537c5cd7b2019f",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_b.json",
+  "sha256": "0c8ebcc47c25a92ae60dea2083cdea7b465230a6702cd4fc11c2b7b6bb6eae8d"
+ },
+ "schema_version": 1,
+ "session_id": "f97f3f99-fe68-41e7-95b6-d2bdb6396956",
+ "started_utc": "2026-10-01T16:25:45+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Bridge_Pose_or_Setu_Bandha_Sarvangasana_-a",
+ "stratum": null,
+ "usage": {
+  "cache_creation_input_tokens": 31080,
+  "cache_read_input_tokens": 36443,
+  "input_tokens": 6,
+  "output_tokens": 4375,
+  "thinking_tokens": 1861
+ },
+ "warnings": []
+}

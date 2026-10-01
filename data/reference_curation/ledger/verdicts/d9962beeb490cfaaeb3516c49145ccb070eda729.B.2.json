@@ -1,0 +1,295 @@
+{
+ "answer": {
+  "body_body": {
+   "answer": "listed",
+   "contacts": [
+    {
+     "certainty": "clear",
+     "panels": [
+      "1a",
+      "1c",
+      "2a",
+      "2b"
+     ],
+     "part_a": "right foot",
+     "part_b": "right hand"
+    }
+   ]
+  },
+  "discrepancies": [
+   {
+    "kind": "markers_away_from_avatar_part",
+    "note": "Human's left hand skin touches the pelvis (hand on hip); the avatar hand is about 6.5 cm off it.",
+    "panels": [
+     "1a",
+     "2b",
+     "2a"
+    ],
+    "part": "left hand"
+   },
+   {
+    "kind": "other",
+    "note": "Labels omit the human's left hand on hip contact (PELVIS+L_HAND), which the skin shows throughout the window.",
+    "panels": [
+     "1a",
+     "2b"
+    ],
+    "part": "left hand"
+   }
+  ],
+  "floor": {
+   "head": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "left foot": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "2b",
+     "1a"
+    ]
+   },
+   "left forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "left hand": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "left shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3a",
+     "2b"
+    ]
+   },
+   "left thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "left upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "pelvis": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "right foot": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b",
+     "1c"
+    ]
+   },
+   "right forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "right hand": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "right shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "right thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "right upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "torso": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   }
+  },
+  "implausible": [],
+  "pose": {
+   "candidates": [
+    {
+     "confidence": "high",
+     "name": "Utthita Hasta Padangusthasana"
+    },
+    {
+     "confidence": "medium",
+     "name": "Extended hand-to-big-toe pose, forward"
+    }
+   ],
+   "description": "Only the left foot is on the floor; the left leg is straight and upright. The head is well above the hips; the trunk is upright. The right leg is lifted forward to about hip height, knee nearly straight. The right arm reaches forward and the right hand holds the right foot. The left hand rests on the left hip."
+  },
+  "repair": {
+   "kinds": [
+    "pose_mismatch"
+   ],
+   "needed": "yes",
+   "note": "Bring the avatar's left hand onto the left hip/pelvis, where the human's hand rests; floor contacts already match."
+  },
+  "roles": [
+   {
+    "note": "Hand holding the lifted foot's big toe defines the pose; skin and avatar touch.",
+    "panels": [
+     "1a",
+     "1c",
+     "2b"
+    ],
+    "part_a": "right foot",
+    "part_b": "right hand",
+    "role": "required_touch"
+   },
+   {
+    "note": "Free hand on hip is customary but not required; human touches, avatar does not.",
+    "panels": [
+     "1a",
+     "2b",
+     "2a"
+    ],
+    "part_a": "pelvis",
+    "part_b": "left hand",
+    "role": "allowed"
+   }
+  ],
+  "timing": {
+   "better_panel": "",
+   "end": "label",
+   "main_moment": "keep",
+   "note": "Label and capture windows coincide. The foot grip releases by 4d, at the window's end.",
+   "start": "label"
+  },
+  "variant": {
+   "matches_label": "yes",
+   "note": ""
+  }
+ },
+ "audit_id": "holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.audit_v2.calibrated.9278736bb1",
+ "cost_usd": 0.19333279999999997,
+ "duration_s": 26.87,
+ "errors": [],
+ "frame_hold": 1143,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Standing_big_toe_hold_pose_or_Utthita_Padangusthasana-a@1143",
+ "inputs": {},
+ "item_id": "220923_Standing_big_toe_hold_pose_or_Utthita_Padangusthasana-a@1143#B4",
+ "n": 2,
+ "num_turns": 7,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_v4/d9962beeb490cfaaeb3516c49145ccb070eda729",
+  "images": {
+   "img_1.png": "5f7ced6c60fa4c443ab6aebb2e87d73c316c5347cf7d489e1b7c3aef4d34348f",
+   "img_2.png": "b5928f13810b979ce4f77dadc653cb9f1a40edfb39c33515d27840155a97f7f4",
+   "img_3.png": "ae762ce3884173411d8f7d9ce88cbf687cb52e176fce18c06f3407f6b2059175",
+   "img_4.png": "75f14637ac0628f5a523b7eb3630f203713c4cc47560d162f34f64ad0cfe2674"
+  },
+  "packet_json_sha256": "73967642a0ecebd072811ebb43fe26eacf95c34ecc7d543b79caf43301e99e25"
+ },
+ "packet_id": "d9962beeb490cfaaeb3516c49145ccb070eda729",
+ "pass": "B",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_b.md",
+  "sha256": "077dd51bd3c86104e2579843cb3162adaf5e3892192e7634aa4712e2274df649"
+ },
+ "purpose": "b6",
+ "render_v": "render_v4",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "5f537c5cd7b2019f",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_b.json",
+  "sha256": "0c8ebcc47c25a92ae60dea2083cdea7b465230a6702cd4fc11c2b7b6bb6eae8d"
+ },
+ "schema_version": 1,
+ "session_id": "2d62d25d-7dee-42df-809b-5761d86b31c8",
+ "started_utc": "2026-10-01T16:53:18+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Standing_big_toe_hold_pose_or_Utthita_Padangusthasana-a",
+ "stratum": null,
+ "usage": {
+  "cache_creation_input_tokens": 16121,
+  "cache_read_input_tokens": 42304,
+  "input_tokens": 6,
+  "output_tokens": 2794,
+  "thinking_tokens": 678
+ },
+ "warnings": []
+}

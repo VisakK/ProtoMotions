@@ -1,0 +1,239 @@
+{
+ "answer": {
+  "body_body": {
+   "answer": "listed",
+   "contacts": [
+    {
+     "certainty": "possible",
+     "panels": [
+      "1c",
+      "2a",
+      "3a"
+     ],
+     "part_a": "right foot",
+     "part_b": "left shin"
+    }
+   ]
+  },
+  "discrepancies": [
+   {
+    "kind": "avatar_off_floor_markers_on_floor",
+    "note": "Avatar left foot hovers a few cm up with a drop line; its markers sit just above the floor.",
+    "panels": [
+     "3a",
+     "2b"
+    ],
+    "part": "left foot"
+   }
+  ],
+  "floor": {
+   "head": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b"
+    ]
+   },
+   "left foot": {
+    "avatar": "off_floor",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "2b"
+    ]
+   },
+   "left forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b"
+    ]
+   },
+   "left hand": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b"
+    ]
+   },
+   "left shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "3a"
+    ]
+   },
+   "left thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b"
+    ]
+   },
+   "left upper arm": {
+    "avatar": "off_floor",
+    "markers": "no_markers",
+    "panels": [
+     "2b"
+    ]
+   },
+   "pelvis": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b"
+    ]
+   },
+   "right foot": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3a",
+     "2b",
+     "1c"
+    ]
+   },
+   "right forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b"
+    ]
+   },
+   "right hand": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b"
+    ]
+   },
+   "right shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1b"
+    ]
+   },
+   "right thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b"
+    ]
+   },
+   "right upper arm": {
+    "avatar": "off_floor",
+    "markers": "no_markers",
+    "panels": [
+     "2b"
+    ]
+   },
+   "torso": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b"
+    ]
+   }
+  },
+  "implausible": [
+   {
+    "kind": "no_base_of_support",
+    "note": "No avatar part touches the floor; the standing left foot hovers above it.",
+    "panels": [
+     "2b",
+     "3a"
+    ],
+    "parts": [
+     "left foot",
+     "right foot"
+    ]
+   }
+  ],
+  "pose": {
+   "candidates": [
+    {
+     "confidence": "low",
+     "name": "Tree pose variant (foot at calf)"
+    }
+   ],
+   "description": "Upright, head above hips. Left leg nearly straight beneath the body. Right knee is bent forward, with the right foot tucked behind the left shin. Both arms hang down and slightly out to the sides. In the avatar nothing touches the floor: the left foot hovers a few cm up. The left-foot markers sit at floor level."
+  }
+ },
+ "audit_id": "holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.audit_v2.calibrated.9278736bb1",
+ "cost_usd": 0.1297706,
+ "duration_s": 26.81,
+ "errors": [],
+ "frame_hold": 332,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220926_Eagle_Pose_or_Garudasana_-a@332",
+ "inputs": {},
+ "item_id": "220926_Eagle_Pose_or_Garudasana_-a@332#A4:lift4",
+ "n": 1,
+ "num_turns": 7,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_v4/b842c69ec5277cd010e6e24a28ccca6b9b9bae8f",
+  "images": {
+   "img_1.png": "2c82f426180f48b45c9f89ac8772e74f6bbbaacead77580e486316da3879e30f",
+   "img_2.png": "f52b8979397c86ea95fa112a3a9498c126dc7883aa6bb4af905f9add2a3c1b18",
+   "img_3.png": "ea5e50a7935816d3ca55e4dbea24c309c5a6d0f04d0a360dbc0cc8f5b5f57e68",
+   "img_4.png": "df66f428bc599020868ac95ddd154b8ede1b19db276ab9c07c1a8a49dcffdb67"
+  },
+  "packet_json_sha256": "b1f6263ee3944b80fe07722469ee4014edb1a7732e2d00fb9ac0b73eb50ccb9c"
+ },
+ "packet_id": "b842c69ec5277cd010e6e24a28ccca6b9b9bae8f",
+ "pass": "A",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_a.md",
+  "sha256": "bae5cfe8420cee596fc188c14966536b354df29210c1e9a94384c925aab70510"
+ },
+ "purpose": "calibration",
+ "render_v": "render_v4",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "5de359f0431719d8",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_a.json",
+  "sha256": "5a05ec7b10cce5f545b813c390820a81bbbde96259cc00318df7ec618475ff9d"
+ },
+ "schema_version": 1,
+ "session_id": "05cd8974-ed0b-4636-b48a-37bec378cee3",
+ "started_utc": "2026-10-01T16:19:04+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220926_Eagle_Pose_or_Garudasana_-a",
+ "stratum": "other",
+ "usage": {
+  "cache_creation_input_tokens": 8857,
+  "cache_read_input_tokens": 26053,
+  "input_tokens": 6,
+  "output_tokens": 2684,
+  "thinking_tokens": 1121
+ },
+ "warnings": []
+}

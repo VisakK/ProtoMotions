@@ -1,0 +1,268 @@
+{
+ "answer": {
+  "body_body": {
+   "answer": "listed",
+   "contacts": [
+    {
+     "certainty": "clear",
+     "panels": [
+      "1d",
+      "3b",
+      "2a"
+     ],
+     "part_a": "left hand",
+     "part_b": "right hand"
+    },
+    {
+     "certainty": "possible",
+     "panels": [
+      "1b",
+      "3c"
+     ],
+     "part_a": "left foot",
+     "part_b": "right foot"
+    }
+   ]
+  },
+  "discrepancies": [
+   {
+    "kind": "avatar_off_floor_markers_on_floor",
+    "note": "Dark orange drop line shows small avatar gap while forearm markers sit at floor level.",
+    "panels": [
+     "3e",
+     "3b",
+     "1a"
+    ],
+    "part": "left forearm"
+   },
+   {
+    "kind": "avatar_off_floor_markers_on_floor",
+    "note": "Dark purple drop line shows small avatar gap while upper arm markers sit at floor level.",
+    "panels": [
+     "3e",
+     "1a"
+    ],
+    "part": "left upper arm"
+   }
+  ],
+  "floor": {
+   "head": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "2b",
+     "3d"
+    ]
+   },
+   "left foot": {
+    "avatar": "touching",
+    "markers": "cannot_tell",
+    "panels": [
+     "3c",
+     "1b",
+     "2b"
+    ]
+   },
+   "left forearm": {
+    "avatar": "off_floor",
+    "markers": "touching",
+    "panels": [
+     "3e",
+     "3b",
+     "1a"
+    ]
+   },
+   "left hand": {
+    "avatar": "cannot_tell",
+    "markers": "touching",
+    "panels": [
+     "3b",
+     "1d"
+    ]
+   },
+   "left shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "left thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "left upper arm": {
+    "avatar": "off_floor",
+    "markers": "touching",
+    "panels": [
+     "3e",
+     "1a"
+    ]
+   },
+   "pelvis": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "right foot": {
+    "avatar": "off_floor",
+    "markers": "cannot_tell",
+    "panels": [
+     "1b",
+     "3c"
+    ]
+   },
+   "right forearm": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3b",
+     "3d",
+     "1c"
+    ]
+   },
+   "right hand": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3b",
+     "2b"
+    ]
+   },
+   "right shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1c"
+    ]
+   },
+   "right thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1c"
+    ]
+   },
+   "right upper arm": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3d",
+     "1c"
+    ]
+   },
+   "torso": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "3d",
+     "3e"
+    ]
+   }
+  },
+  "implausible": [],
+  "pose": {
+   "candidates": [
+    {
+     "confidence": "medium",
+     "name": "Dolphin pose (Ardha Pincha Mayurasana)"
+    },
+    {
+     "confidence": "low",
+     "name": "Headstand preparation (Sirsasana prep)"
+    },
+    {
+     "confidence": "low",
+     "name": "Downward-facing dog variation"
+    }
+   ],
+   "description": "Inverted V: arms extended forward overhead, upper arms and forearms lying along the floor, hands clasped together on the floor. Torso rises steeply from shoulders near the floor to raised hips. Head is low, below the hips, tucked just behind the shoulders toward the feet, resting on the floor. Both legs straight and together, angled down to the feet, which stand on the toes."
+  }
+ },
+ "audit_id": "holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.audit_v2.calibrated.9278736bb1",
+ "cost_usd": 0.1731454,
+ "duration_s": 53.17,
+ "errors": [],
+ "frame_hold": 1487,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220926_Plow_Pose_or_Halasana_-b@1487",
+ "inputs": {},
+ "item_id": "220926_Plow_Pose_or_Halasana_-b@1487#A4:fit",
+ "n": 1,
+ "num_turns": 7,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_v4/8910075894593288bcbad3c94d11d3562cbcc9a9",
+  "images": {
+   "img_1.png": "cd6a2f761bc62a3860c9d1320c0fba8c82014ae013d3abbedfbe9d5ff187cf37",
+   "img_2.png": "291235e6f8469837edbe041cbe29d7e541f70dadeaf22753be9b38cd267ff9c8",
+   "img_3.png": "cacc45f72942f4564274705eb784a01cf8aee884f8a3851003e88a8671240c20",
+   "img_4.png": "0c21fd9ece3f1ebb72ab0f2d31fd4faaf0454b367dc87d0f470a94f5109ad97b"
+  },
+  "packet_json_sha256": "08618f3f5280538f1542db2401aeae38b36275aa5990e441230edab744e9935d"
+ },
+ "packet_id": "8910075894593288bcbad3c94d11d3562cbcc9a9",
+ "pass": "A",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_a.md",
+  "sha256": "bae5cfe8420cee596fc188c14966536b354df29210c1e9a94384c925aab70510"
+ },
+ "purpose": "calibration",
+ "render_v": "render_v4",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "5de359f0431719d8",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_a.json",
+  "sha256": "5a05ec7b10cce5f545b813c390820a81bbbde96259cc00318df7ec618475ff9d"
+ },
+ "schema_version": 1,
+ "session_id": "3967ddb6-b4b9-467d-95e9-0ab7f558ef4c",
+ "started_utc": "2026-10-01T16:16:00+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220926_Plow_Pose_or_Halasana_-b",
+ "stratum": "inversion",
+ "usage": {
+  "cache_creation_input_tokens": 8477,
+  "cache_read_input_tokens": 26127,
+  "input_tokens": 6,
+  "output_tokens": 5004,
+  "thinking_tokens": 3298
+ },
+ "warnings": []
+}

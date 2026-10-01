@@ -1,0 +1,123 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "through_body",
+    "panels": [
+     "4a",
+     "3c",
+     "1a"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "4a",
+     "3a",
+     "5c"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "through_floor",
+    "panels": [
+     "4a"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "B",
+  "floating_parts": {
+   "A": [],
+   "B": []
+  },
+  "more_natural": "B",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both stand upright on both feet with arms held out horizontally; only the feet and lower legs differ slightly (A's shins converge and the right foot is tilted)."
+  },
+  "summary": "Both avatars show the same pose: standing with arms held out to the sides. In A the shins angle inward and the right foot is tilted on its edge and pushes into the left foot. B's feet sit flat and parallel, and its shins line up better with the grey body, so B is closer to the performer and looks more natural."
+ },
+ "audit_id": null,
+ "cost_usd": 0.11767639999999999,
+ "duration_s": 15.42,
+ "errors": [],
+ "frame_hold": 1109,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Cobra_Pose_or_Bhujangasana_-a@1109",
+ "inputs": {},
+ "item_id": "220923_Cobra_Pose_or_Bhujangasana_-a@1109#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c2/4b5fc58d97a564831ea1c2fb15ba00c619bc7a46",
+  "images": {
+   "img_1.png": "6992e784523fda32fd54778eee6de6d3f9ee69c5fe40fcb35000c8e28648994e",
+   "img_2.png": "2a04183020a3c3e612b302c09b150232e0e3c75aee8f9f9873eb0cc00f2a45ee",
+   "img_3.png": "7a327a74c42e99591e991b40df53152a751a18649433e5dc3f760d0faca7a2ec",
+   "img_4.png": "192868467d77d278eb0e8184845f42ffe5d128c8e5acc4d80e7e99a0999c54b2",
+   "img_5.png": "ce9e237fbc12a5818e06595ac0fbcf049207e240b806f89a2b378e8d00267905"
+  },
+  "packet_json_sha256": "3c895a1395916bd6286564348a308fc60db3375d014d88cbef87fbc15acedd51"
+ },
+ "packet_id": "4b5fc58d97a564831ea1c2fb15ba00c619bc7a46",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c2",
+ "render_v": "render_c2",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "39a81256-e6e5-4a07-88a2-e54cc34fc789",
+ "started_utc": "2026-10-01T17:16:34+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Cobra_Pose_or_Bhujangasana_-a",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 10708,
+  "cache_read_input_tokens": 13542,
+  "input_tokens": 6,
+  "output_tokens": 1464,
+  "thinking_tokens": 361
+ },
+ "warnings": []
+}

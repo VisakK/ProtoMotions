@@ -1,0 +1,300 @@
+{
+ "answer": {
+  "body_body": {
+   "answer": "listed",
+   "contacts": [
+    {
+     "certainty": "clear",
+     "panels": [
+      "3b",
+      "3d",
+      "1b"
+     ],
+     "part_a": "left hand",
+     "part_b": "right shin"
+    }
+   ]
+  },
+  "discrepancies": [
+   {
+    "kind": "other",
+    "note": "Labelled pairs right foot+left forearm and right foot+left hand do not touch; the skin gaps are about 10 and 7 cm.",
+    "panels": [
+     "3b",
+     "3d",
+     "1b"
+    ],
+    "part": "right foot"
+   }
+  ],
+  "floor": {
+   "head": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3a",
+     "2b",
+     "1a"
+    ]
+   },
+   "left foot": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3d",
+     "2b",
+     "1b"
+    ]
+   },
+   "left forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b",
+     "3d"
+    ]
+   },
+   "left hand": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3b",
+     "1b",
+     "2b"
+    ]
+   },
+   "left shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3d",
+     "2b"
+    ]
+   },
+   "left thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "left upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "pelvis": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "right foot": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3b",
+     "3d",
+     "2b"
+    ]
+   },
+   "right forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "right hand": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3c",
+     "1d",
+     "2b"
+    ]
+   },
+   "right shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3b",
+     "2b"
+    ]
+   },
+   "right thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "right upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "torso": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   }
+  },
+  "implausible": [],
+  "pose": {
+   "candidates": [
+    {
+     "confidence": "high",
+     "name": "Twisted Downward-Facing Dog"
+    },
+    {
+     "confidence": "medium",
+     "name": "Downward-Facing Dog, hand to opposite ankle"
+    },
+    {
+     "confidence": "low",
+     "name": "Downward-Facing Dog"
+    }
+   ],
+   "description": "Inverted V: both feet and right hand on the floor, hips highest, head well below hips between the arms. Right arm straight to the floor. Left arm reaches back under the body and the left hand grips the right shin just above the ankle. Legs straight, feet hip-width apart."
+  },
+  "repair": {
+   "kinds": [],
+   "needed": "no",
+   "note": "The avatar matches the human's floor contacts and the hand-on-shin contact."
+  },
+  "roles": [
+   {
+    "note": "Not touching in the skin or the avatar; not part of the pose.",
+    "panels": [
+     "3b",
+     "3d"
+    ],
+    "part_a": "right foot",
+    "part_b": "left forearm",
+    "role": "incidental"
+   },
+   {
+    "note": "Hand could hold the foot instead; here it grips the shin, about 7 cm from the foot.",
+    "panels": [
+     "3b",
+     "1b"
+    ],
+    "part_a": "right foot",
+    "part_b": "left hand",
+    "role": "allowed"
+   },
+   {
+    "note": "The twist is defined by the left hand gripping the right shin; touching in skin and avatar.",
+    "panels": [
+     "3b",
+     "3d",
+     "1b"
+    ],
+    "part_a": "right shin",
+    "part_b": "left hand",
+    "role": "required_touch"
+   }
+  ],
+  "timing": {
+   "better_panel": "",
+   "end": "label",
+   "main_moment": "keep",
+   "note": "The label and capture windows are the same; the hand-on-shin grip holds from 4b to 4d.",
+   "start": "label"
+  },
+  "variant": {
+   "matches_label": "variant",
+   "note": "Twisted variation: the left hand leaves the floor and grips the right shin, so there are three floor supports."
+  }
+ },
+ "audit_id": "holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.audit_v2.calibrated.9278736bb1",
+ "cost_usd": 0.22021839999999998,
+ "duration_s": 25.56,
+ "errors": [],
+ "frame_hold": 407,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana_-b@407",
+ "inputs": {},
+ "item_id": "220923_Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana_-b@407#B4",
+ "n": 1,
+ "num_turns": 7,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_v4/4860859b32fcc612c82009b085b5efd30cfae554",
+  "images": {
+   "img_1.png": "f8ca997dc0f012942db2f4861f88381cb38fc6a6df8aaa0ce5c141a58e6d3663",
+   "img_2.png": "84bf129a37837ef424edb1f480269448b147cffd14a64e4c109c200ee5214206",
+   "img_3.png": "8eec6de3aecf2c22ce464b22712846449a05ee54c82f5f14084a3f6723b7c68b",
+   "img_4.png": "c3faac6cfc8ae94792ed9626be554efa6a0d0e8698e9025cfa7681e216026fde"
+  },
+  "packet_json_sha256": "72acf36928e9597f85a72198d7087f771df9a69c0b81e169b3645f2efe5011a4"
+ },
+ "packet_id": "4860859b32fcc612c82009b085b5efd30cfae554",
+ "pass": "B",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_b.md",
+  "sha256": "077dd51bd3c86104e2579843cb3162adaf5e3892192e7634aa4712e2274df649"
+ },
+ "purpose": "b6",
+ "render_v": "render_v4",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "5f537c5cd7b2019f",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_b.json",
+  "sha256": "0c8ebcc47c25a92ae60dea2083cdea7b465230a6702cd4fc11c2b7b6bb6eae8d"
+ },
+ "schema_version": 1,
+ "session_id": "886fa2f9-031b-421a-85fd-8405060bf41b",
+ "started_utc": "2026-10-01T16:28:53+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana_-b",
+ "stratum": null,
+ "usage": {
+  "cache_creation_input_tokens": 19607,
+  "cache_read_input_tokens": 40492,
+  "input_tokens": 6,
+  "output_tokens": 2762,
+  "thinking_tokens": 757
+ },
+ "warnings": []
+}

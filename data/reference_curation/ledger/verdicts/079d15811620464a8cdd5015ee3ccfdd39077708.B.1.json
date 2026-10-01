@@ -1,0 +1,253 @@
+{
+ "answer": {
+  "body_body": {
+   "answer": "listed",
+   "contacts": []
+  },
+  "discrepancies": [
+   {
+    "kind": "other",
+    "note": "Label names triangle pose, but the main moment shows the upright arms-out setup; the fold comes later (4e).",
+    "panels": [
+     "4c",
+     "4e",
+     "1a"
+    ],
+    "part": "torso"
+   }
+  ],
+  "floor": {
+   "head": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "left foot": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "2b",
+     "1a"
+    ]
+   },
+   "left forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "left hand": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "left shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "3a"
+    ]
+   },
+   "left thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "left upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "pelvis": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "right foot": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3b",
+     "2b",
+     "1a"
+    ]
+   },
+   "right forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "right hand": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "right shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "3b"
+    ]
+   },
+   "right thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "right upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "torso": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   }
+  },
+  "implausible": [],
+  "pose": {
+   "candidates": [
+    {
+     "confidence": "medium",
+     "name": "Triangle pose preparation, wide stance arms out"
+    },
+    {
+     "confidence": "medium",
+     "name": "Five-Pointed Star (Utthita Tadasana)"
+    },
+    {
+     "confidence": "low",
+     "name": "Warrior II setup, straight front knee"
+    }
+   ],
+   "description": "Upright, wide-legged stance with only both feet on the floor. Both legs are straight and spread about a leg-length apart; the left foot is turned out, the right foot points forward. Head is well above the hips and the trunk is vertical. Both arms are extended horizontally out to the sides at shoulder height, palms down."
+  },
+  "repair": {
+   "kinds": [],
+   "needed": "no",
+   "note": "Avatar feet rest on the floor like the human's; the pose matches the markers."
+  },
+  "roles": [],
+  "timing": {
+   "better_panel": "4e",
+   "end": "label",
+   "main_moment": "move",
+   "note": "Windows agree. Main moment is the setup; 4e shows the trunk folded, right hand toward the right foot.",
+   "start": "label"
+  },
+  "variant": {
+   "matches_label": "no",
+   "note": "Trunk is upright with arms level; no side fold toward the leg or hand to shin. This is the setup, not triangle."
+  }
+ },
+ "audit_id": "holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.audit_v2.calibrated.9278736bb1",
+ "cost_usd": 0.1969862,
+ "duration_s": 26.56,
+ "errors": [],
+ "frame_hold": 265,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Extended_Revolved_Triangle_Pose_or_Utthita_Trikonasana_-b@265",
+ "inputs": {},
+ "item_id": "220923_Extended_Revolved_Triangle_Pose_or_Utthita_Trikonasana_-b@265#B4",
+ "n": 1,
+ "num_turns": 7,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_v4/079d15811620464a8cdd5015ee3ccfdd39077708",
+  "images": {
+   "img_1.png": "2a074b0303e9741e04f72d31eea4195ab332702f4d9d9b8c50c78a6c44d85df3",
+   "img_2.png": "39fe81db0f59938ade82c82a8325a154bf93fe84442f68710e1e0726d54abc4b",
+   "img_3.png": "061f96c79b1b6a3b5a853130c1e573e344769c9509ed988f02aea6cd272b498c",
+   "img_4.png": "2e7e59b8236c0db7c753ad54c2eec0ee09eed2ef05f9fe5f03cc8b835549840f"
+  },
+  "packet_json_sha256": "665316437721d26fce0daeaaab8ada9663f62f24fe872fe920c5f3bee5635c51"
+ },
+ "packet_id": "079d15811620464a8cdd5015ee3ccfdd39077708",
+ "pass": "B",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_b.md",
+  "sha256": "077dd51bd3c86104e2579843cb3162adaf5e3892192e7634aa4712e2274df649"
+ },
+ "purpose": "pose_role",
+ "render_v": "render_v4",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "5f537c5cd7b2019f",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_b.json",
+  "sha256": "0c8ebcc47c25a92ae60dea2083cdea7b465230a6702cd4fc11c2b7b6bb6eae8d"
+ },
+ "schema_version": 1,
+ "session_id": "6764edc6-0456-469a-a141-4cdaf0ae8135",
+ "started_utc": "2026-10-01T16:30:37+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Extended_Revolved_Triangle_Pose_or_Utthita_Trikonasana_-b",
+ "stratum": null,
+ "usage": {
+  "cache_creation_input_tokens": 17260,
+  "cache_read_input_tokens": 38811,
+  "input_tokens": 6,
+  "output_tokens": 2556,
+  "thinking_tokens": 792
+ },
+ "warnings": []
+}

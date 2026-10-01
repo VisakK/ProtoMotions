@@ -1,0 +1,358 @@
+{
+ "answer": {
+  "body_body": {
+   "answer": "listed",
+   "contacts": [
+    {
+     "certainty": "clear",
+     "panels": [
+      "1b",
+      "2a"
+     ],
+     "part_a": "left thigh",
+     "part_b": "left upper arm"
+    },
+    {
+     "certainty": "clear",
+     "panels": [
+      "1d",
+      "3b"
+     ],
+     "part_a": "right thigh",
+     "part_b": "right upper arm"
+    },
+    {
+     "certainty": "clear",
+     "panels": [
+      "1b",
+      "3a"
+     ],
+     "part_a": "left shin",
+     "part_b": "left upper arm"
+    },
+    {
+     "certainty": "possible",
+     "panels": [
+      "1d",
+      "3b"
+     ],
+     "part_a": "right shin",
+     "part_b": "right upper arm"
+    },
+    {
+     "certainty": "clear",
+     "panels": [
+      "2b",
+      "1a"
+     ],
+     "part_a": "left hand",
+     "part_b": "right hand"
+    }
+   ]
+  },
+  "discrepancies": [
+   {
+    "kind": "other",
+    "note": "Human thigh skin touches torso; avatar thigh about 7 cm from torso.",
+    "panels": [
+     "1c"
+    ],
+    "part": "left thigh"
+   },
+   {
+    "kind": "other",
+    "note": "Human thigh skin touches torso; avatar thigh about 6 cm from torso.",
+    "panels": [
+     "1c"
+    ],
+    "part": "right thigh"
+   }
+  ],
+  "floor": {
+   "head": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b"
+    ]
+   },
+   "left foot": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "2b"
+    ]
+   },
+   "left forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b"
+    ]
+   },
+   "left hand": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1b"
+    ]
+   },
+   "left shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b"
+    ]
+   },
+   "left thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1c"
+    ]
+   },
+   "left upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b"
+    ]
+   },
+   "pelvis": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1c"
+    ]
+   },
+   "right foot": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3b",
+     "2b"
+    ]
+   },
+   "right forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b"
+    ]
+   },
+   "right hand": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1d"
+    ]
+   },
+   "right shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b"
+    ]
+   },
+   "right thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1c"
+    ]
+   },
+   "right upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b"
+    ]
+   },
+   "torso": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b"
+    ]
+   }
+  },
+  "implausible": [],
+  "pose": {
+   "candidates": [
+    {
+     "confidence": "high",
+     "name": "Garland Pose (Malasana)"
+    }
+   ],
+   "description": "Deep squat on both flat feet, knees wide, pelvis just above the floor. Head well above hips, torso upright. Upper arms press inside the knees; hands meet palm to palm before the chest."
+  },
+  "repair": {
+   "kinds": [
+    "pose_mismatch"
+   ],
+   "needed": "yes",
+   "note": "Fold avatar hips deeper so thighs meet torso as the human's skin does; feet fine."
+  },
+  "roles": [
+   {
+    "note": "Elbow presses inner knee; classic cue, arms-forward Malasana also valid.",
+    "panels": [
+     "1b",
+     "3a"
+    ],
+    "part_a": "left shin",
+    "part_b": "left upper arm",
+    "role": "allowed"
+   },
+   {
+    "note": "Elbow presses inner knee; classic cue, not defining.",
+    "panels": [
+     "1d",
+     "3b"
+    ],
+    "part_a": "right shin",
+    "part_b": "right upper arm",
+    "role": "allowed"
+   },
+   {
+    "note": "Upper arm wedged inside thigh; typical but not defining.",
+    "panels": [
+     "1b",
+     "2a"
+    ],
+    "part_a": "left thigh",
+    "part_b": "left upper arm",
+    "role": "allowed"
+   },
+   {
+    "note": "Upper arm wedged inside thigh; typical but not defining.",
+    "panels": [
+     "1d",
+     "3b"
+    ],
+    "part_a": "right thigh",
+    "part_b": "right upper arm",
+    "role": "allowed"
+   },
+   {
+    "note": "Deep squat folds thigh onto torso; avatar leaves a gap.",
+    "panels": [
+     "1c"
+    ],
+    "part_a": "left thigh",
+    "part_b": "torso",
+    "role": "allowed"
+   },
+   {
+    "note": "Deep squat folds thigh onto torso; avatar leaves a gap.",
+    "panels": [
+     "1c"
+    ],
+    "part_a": "right thigh",
+    "part_b": "torso",
+    "role": "allowed"
+   },
+   {
+    "note": "Prayer hands, common in Malasana but optional.",
+    "panels": [
+     "2b",
+     "1a"
+    ],
+    "part_a": "left hand",
+    "part_b": "right hand",
+    "role": "allowed"
+   }
+  ],
+  "timing": {
+   "better_panel": "",
+   "end": "label",
+   "main_moment": "keep",
+   "note": "Both ends 395; at 194 arms not yet settled on knees, capture start 197 slightly better.",
+   "start": "capture"
+  },
+  "variant": {
+   "matches_label": "yes",
+   "note": ""
+  }
+ },
+ "audit_id": "holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.audit_v2.calibrated.9278736bb1",
+ "cost_usd": 0.4850424,
+ "duration_s": 96.79,
+ "errors": [],
+ "frame_hold": 334,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Garland_Pose_or_Malasana_-a@334",
+ "inputs": {},
+ "item_id": "220923_Garland_Pose_or_Malasana_-a@334#B4",
+ "n": 2,
+ "num_turns": 11,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_v4/2d8ea82eaeda1eb2dc4ac0f707d4d40693433552",
+  "images": {
+   "img_1.png": "6917d9dc322152a145983c2374517b6499ebd5ed30c28c871e581b06cdb99125",
+   "img_2.png": "d4ce9fa6ab467ea930c09d8eaf2885d8fd7faeb181eb870f7eec0b197abc89a0",
+   "img_3.png": "fe29f0f297c7ce4f8d6d85a31283d8a97f0c448fbefcf7bd6753754c8436c607",
+   "img_4.png": "39623df95996e63bfeedc9e53fe2ded7fb04ec0d204b571ac37c1d7b755b37c5"
+  },
+  "packet_json_sha256": "01898e5f3421724e56b367b2b3ee49d080a75d3b3a77660dc54d6b7875fde6b0"
+ },
+ "packet_id": "2d8ea82eaeda1eb2dc4ac0f707d4d40693433552",
+ "pass": "B",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_b.md",
+  "sha256": "077dd51bd3c86104e2579843cb3162adaf5e3892192e7634aa4712e2274df649"
+ },
+ "purpose": "b6",
+ "render_v": "render_v4",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "5f537c5cd7b2019f",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_b.json",
+  "sha256": "0c8ebcc47c25a92ae60dea2083cdea7b465230a6702cd4fc11c2b7b6bb6eae8d"
+ },
+ "schema_version": 1,
+ "session_id": "3373c339-6553-477e-ac3f-deac7e70072d",
+ "started_utc": "2026-10-01T16:32:49+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Garland_Pose_or_Malasana_-a",
+ "stratum": null,
+ "usage": {
+  "cache_creation_input_tokens": 25652,
+  "cache_read_input_tokens": 171952,
+  "input_tokens": 14,
+  "output_tokens": 12269,
+  "thinking_tokens": 1227
+ },
+ "warnings": []
+}

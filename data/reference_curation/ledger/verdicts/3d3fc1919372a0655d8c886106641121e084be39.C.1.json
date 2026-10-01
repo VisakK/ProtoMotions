@@ -1,0 +1,119 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1b",
+     "2b",
+     "3d",
+     "4b",
+     "5d"
+    ],
+    "part": "pelvis",
+    "severity": "major"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "1b",
+     "2d",
+     "3d"
+    ],
+    "part": "head",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "A",
+  "floating_parts": {
+   "A": [],
+   "B": [
+    "left hand",
+    "right hand"
+   ]
+  },
+  "more_natural": "A",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both show the same crouched arm balance: hands planted, knees against the upper arms, feet lifted. B is the same shape shifted upward by several centimetres."
+  },
+  "summary": "Both avatars hold the same pose. A plants both hands on the floor and fits the grey body closely. B's whole body sits higher than the grey body, so both hands float several centimetres above the floor and nothing supports it."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1159772,
+ "duration_s": 15.48,
+ "errors": [],
+ "frame_hold": 543,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Shoulder-Pressing_Pose_or_Bhujapidasana_-a@543",
+ "inputs": {},
+ "item_id": "220923_Shoulder-Pressing_Pose_or_Bhujapidasana_-a@543#lift",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c2/3d3fc1919372a0655d8c886106641121e084be39",
+  "images": {
+   "img_1.png": "9292094573c84b4ac3ea140a2ebe27306381a15625340eed94011fb5e2bb141b",
+   "img_2.png": "3392882b48a39820432d695eb7a6872e0c0ed33ed9908919309f975cfa401cea",
+   "img_3.png": "1a88fc5f235efb9f4cb01145d98dfde8842a09c5511724df5854976367ec1edb",
+   "img_4.png": "333a2cae6b234fa268629d43008e03769c39a961d54333a84e5d65c75420e8cf",
+   "img_5.png": "6e0fb6eacb6f19277cd25ac00c53efde54d686741ba8941b6dcdd82ba2127214"
+  },
+  "packet_json_sha256": "7da6f43453f6cd9e188d2c43a612c00e094599d2c2f6ec6c1304274b40aa161a"
+ },
+ "packet_id": "3d3fc1919372a0655d8c886106641121e084be39",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c2",
+ "render_v": "render_c2",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "72ecfb4c-86f0-4194-a462-9931970ee7c8",
+ "started_utc": "2026-10-01T17:10:32+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Shoulder-Pressing_Pose_or_Bhujapidasana_-a",
+ "stratum": "lift",
+ "usage": {
+  "cache_creation_input_tokens": 10644,
+  "cache_read_input_tokens": 13506,
+  "input_tokens": 6,
+  "output_tokens": 1405,
+  "thinking_tokens": 384
+ },
+ "warnings": []
+}

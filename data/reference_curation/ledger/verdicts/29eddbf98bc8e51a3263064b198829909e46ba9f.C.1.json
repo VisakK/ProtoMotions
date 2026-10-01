@@ -1,0 +1,165 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "B",
+    "kind": "impossible_joint",
+    "panels": [
+     "1b",
+     "1d",
+     "3d",
+     "5d"
+    ],
+    "part": "left thigh",
+    "severity": "major"
+   },
+   {
+    "avatar": "B",
+    "kind": "impossible_joint",
+    "panels": [
+     "1b",
+     "1d",
+     "3d",
+     "5d"
+    ],
+    "part": "right thigh",
+    "severity": "major"
+   },
+   {
+    "avatar": "B",
+    "kind": "through_body",
+    "panels": [
+     "1b",
+     "2d",
+     "4b",
+     "4f"
+    ],
+    "part": "left shin",
+    "severity": "major"
+   },
+   {
+    "avatar": "B",
+    "kind": "through_body",
+    "panels": [
+     "1b",
+     "1d",
+     "3d"
+    ],
+    "part": "right shin",
+    "severity": "major"
+   },
+   {
+    "avatar": "B",
+    "kind": "impossible_joint",
+    "panels": [
+     "1b",
+     "2b",
+     "4f",
+     "5d"
+    ],
+    "part": "head",
+    "severity": "major"
+   },
+   {
+    "avatar": "B",
+    "kind": "through_body",
+    "panels": [
+     "2d",
+     "4d",
+     "4f"
+    ],
+    "part": "left upper arm",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "A",
+  "floating_parts": {
+   "A": [],
+   "B": [
+    "left foot",
+    "right foot"
+   ]
+  },
+  "more_natural": "A",
+  "same_pose": {
+   "answer": "no",
+   "reason": "A sits with legs stretched forward, feet on the floor and arms propping behind. B's legs are folded up over the torso, both feet in the air and the head dropped low: a collapsed, different shape."
+  },
+  "summary": "A follows the grey body closely: hands and feet are on the floor and there are no visible defects. B has collapsed. Its legs are folded up through the torso, both feet hover high above the floor and the head is dropped, so it does not match the pose."
+ },
+ "audit_id": null,
+ "cost_usd": 0.12917119999999999,
+ "duration_s": 15.53,
+ "errors": [],
+ "frame_hold": 990,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220926_Upward_Plank_Pose_or_Purvottanasana_-a@990",
+ "inputs": {},
+ "item_id": "220926_Upward_Plank_Pose_or_Purvottanasana_-a@990#swap",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c2/29eddbf98bc8e51a3263064b198829909e46ba9f",
+  "images": {
+   "img_1.png": "621e130d7c659e16449cd743a4a643bd3edfa3664971f6ad50a1fdc2fd46fd62",
+   "img_2.png": "7e52c67f5aee84798349514a7c5e8c7431e00f7cc5172b1c83fc08e5ed6613db",
+   "img_3.png": "b0d91919a41f37921f0dfb7b482343c5a4c8e6d7de764352621aafb905c2aa26",
+   "img_4.png": "e3e2ce544a0cf77011120d75537f7c34bc5341d69bb1426832fcf651c7b3186c",
+   "img_5.png": "ed03bc80396ce4f8d69e4a7816c0d53e86487a42c860b86aeb65cf2e31577ac7"
+  },
+  "packet_json_sha256": "cc70b8f05f5eb93aacc571a6be569f87e584b0522e8150efd7a9cdd12737f5c6"
+ },
+ "packet_id": "29eddbf98bc8e51a3263064b198829909e46ba9f",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c2",
+ "render_v": "render_c2",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "27ff1f4b-42cb-48a7-bfc9-c2f92ef505f5",
+ "started_utc": "2026-10-01T17:08:45+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220926_Upward_Plank_Pose_or_Purvottanasana_-a",
+ "stratum": "swap",
+ "usage": {
+  "cache_creation_input_tokens": 12098,
+  "cache_read_input_tokens": 13616,
+  "input_tokens": 6,
+  "output_tokens": 1482,
+  "thinking_tokens": 243
+ },
+ "warnings": []
+}

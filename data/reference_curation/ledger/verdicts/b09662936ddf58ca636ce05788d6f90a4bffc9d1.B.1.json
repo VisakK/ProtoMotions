@@ -1,0 +1,292 @@
+{
+ "answer": {
+  "body_body": {
+   "answer": "listed",
+   "contacts": [
+    {
+     "certainty": "possible",
+     "panels": [
+      "3a",
+      "2b",
+      "1a"
+     ],
+     "part_a": "left hand",
+     "part_b": "left thigh"
+    }
+   ]
+  },
+  "discrepancies": [
+   {
+    "kind": "other",
+    "note": "Human left hand skin touches left shin near knee; avatar hand stays several cm from the shin.",
+    "panels": [
+     "3a",
+     "2b",
+     "1a"
+    ],
+    "part": "left hand"
+   },
+   {
+    "kind": "markers_away_from_avatar_part",
+    "note": "Left hand markers sit a few cm below the avatar hand, nearer the knee.",
+    "panels": [
+     "3a",
+     "2b"
+    ],
+    "part": "left hand"
+   }
+  ],
+  "floor": {
+   "head": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "left foot": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "2b",
+     "1a"
+    ]
+   },
+   "left forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "left hand": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "3a",
+     "1a"
+    ]
+   },
+   "left shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3a",
+     "2b"
+    ]
+   },
+   "left thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "left upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "pelvis": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "right foot": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3b",
+     "2b",
+     "1a"
+    ]
+   },
+   "right forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "right hand": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "right shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3b",
+     "2b"
+    ]
+   },
+   "right thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "right upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "torso": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   }
+  },
+  "implausible": [],
+  "pose": {
+   "candidates": [
+    {
+     "confidence": "high",
+     "name": "Viparita Virabhadrasana (Reverse Warrior)"
+    },
+    {
+     "confidence": "low",
+     "name": "Virabhadrasana II transition"
+    }
+   ],
+   "description": "Standing lunge with only both feet on the floor. Right knee bent forward over the right foot; left leg straight, extended back. Torso arches back toward the left leg, head above hips. Right arm reaches up and back overhead; left arm hangs down the back leg with the left hand near the left knee."
+  },
+  "repair": {
+   "kinds": [],
+   "needed": "no",
+   "note": "Floor contacts match; the hand-to-shin gap is small and the hand still meets the thigh."
+  },
+  "roles": [
+   {
+    "note": "Back hand may rest on back leg near knee; human touches, avatar does not.",
+    "panels": [
+     "3a",
+     "2b"
+    ],
+    "part_a": "left shin",
+    "part_b": "left hand",
+    "role": "allowed"
+   },
+   {
+    "note": "Back hand resting on back thigh is permitted, not defining.",
+    "panels": [
+     "3a",
+     "2b",
+     "1a"
+    ],
+    "part_a": "left thigh",
+    "part_b": "left hand",
+    "role": "allowed"
+   }
+  ],
+  "timing": {
+   "better_panel": "",
+   "end": "label",
+   "main_moment": "keep",
+   "note": "Label and capture windows coincide; main moment shows the reverse warrior fully formed on both feet.",
+   "start": "label"
+  },
+  "variant": {
+   "matches_label": "yes",
+   "note": ""
+  }
+ },
+ "audit_id": "holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.audit_v2.calibrated.9278736bb1",
+ "cost_usd": 0.2082822,
+ "duration_s": 25.78,
+ "errors": [],
+ "frame_hold": 759,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220926_viparita_virabhadrasana_or_reverse_warrior_pose-a@759",
+ "inputs": {},
+ "item_id": "220926_viparita_virabhadrasana_or_reverse_warrior_pose-a@759#B4",
+ "n": 1,
+ "num_turns": 7,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_v4/b09662936ddf58ca636ce05788d6f90a4bffc9d1",
+  "images": {
+   "img_1.png": "b97df56910a64b3761c85c17704e04f2657dbd4040ce403f5bb2973dac599754",
+   "img_2.png": "a7f9c65951acc4cace033503f4f6439a5576c17a1b8c411403454af8cfe8b134",
+   "img_3.png": "a55c5471d6768eef1cdad6054d2748ecde661ed7e93ca711c4250db503d08419",
+   "img_4.png": "499c6e479d3b201a35fe2fa55e8e12afe2a194dac81d46c74925d86772aeb8d6"
+  },
+  "packet_json_sha256": "088fb480dcca243a51184c4adbf88b74e9a4691e7bbdcebaff39efcddf209561"
+ },
+ "packet_id": "b09662936ddf58ca636ce05788d6f90a4bffc9d1",
+ "pass": "B",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_b.md",
+  "sha256": "077dd51bd3c86104e2579843cb3162adaf5e3892192e7634aa4712e2274df649"
+ },
+ "purpose": "b6",
+ "render_v": "render_v4",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "5f537c5cd7b2019f",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_b.json",
+  "sha256": "0c8ebcc47c25a92ae60dea2083cdea7b465230a6702cd4fc11c2b7b6bb6eae8d"
+ },
+ "schema_version": 1,
+ "session_id": "96c6195a-0e33-4868-8d2a-69d297c9de86",
+ "started_utc": "2026-10-01T17:03:50+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220926_viparita_virabhadrasana_or_reverse_warrior_pose-a",
+ "stratum": null,
+ "usage": {
+  "cache_creation_input_tokens": 18189,
+  "cache_read_input_tokens": 39731,
+  "input_tokens": 6,
+  "output_tokens": 2740,
+  "thinking_tokens": 793
+ },
+ "warnings": []
+}

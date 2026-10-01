@@ -1,0 +1,132 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "B",
+    "kind": "impossible_joint",
+    "panels": [
+     "4b",
+     "3d",
+     "2d"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "through_floor",
+    "panels": [
+     "4b"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "impossible_joint",
+    "panels": [
+     "4b",
+     "3d"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "through_body",
+    "panels": [
+     "4b",
+     "3b"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "A",
+  "floating_parts": {
+   "A": [],
+   "B": []
+  },
+  "more_natural": "A",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both stand upright on both feet with arms out to the sides at shoulder height. Only the feet differ: in B they are tilted and twisted rather than flat."
+  },
+  "summary": "The pose is the same: standing with arms out to the sides. A's feet sit flat and match the grey body. B's feet are twisted and tilted, with the right foot's edge below the floor and pressed against the left foot, so A is closer to the human and more natural."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1147242,
+ "duration_s": 14.14,
+ "errors": [],
+ "frame_hold": 3264,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Scorpion_pose_or_vrischikasana-a@3264",
+ "inputs": {},
+ "item_id": "220923_Scorpion_pose_or_vrischikasana-a@3264#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c2/ae40f8bd1cc30d83ee9d14436a31964be45fee28",
+  "images": {
+   "img_1.png": "03ae45c73be89eb556c8c5aa4e2686134d2a3824cc9e42aec4ee88da340e6216",
+   "img_2.png": "eeaf7499df57fd9898c863917f3019dbf554abc3fbc53033e6ab223668b214f7",
+   "img_3.png": "2f5a44b170574801730e5e2132da2765aa7fcdf5f5070f33b37f8b2bcc4d794c",
+   "img_4.png": "ad5a2a8221d038fa2721f4e07d99e053cd9a69b272207a543b1ae26d77f5c56a",
+   "img_5.png": "65584a76b37969068bed191c7157d6ad028cbb92d9b76d1a1daef104fe068930"
+  },
+  "packet_json_sha256": "ef07af4927c9dfea5e75db083195e777b1f4f9eba90e26b157c4babbd26c8753"
+ },
+ "packet_id": "ae40f8bd1cc30d83ee9d14436a31964be45fee28",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c2",
+ "render_v": "render_c2",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "e7de90d0-c649-4683-afae-80a1ee546351",
+ "started_utc": "2026-10-01T17:27:48+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Scorpion_pose_or_vrischikasana-a",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 10699,
+  "cache_read_input_tokens": 13541,
+  "input_tokens": 6,
+  "output_tokens": 1320,
+  "thinking_tokens": 199
+ },
+ "warnings": []
+}

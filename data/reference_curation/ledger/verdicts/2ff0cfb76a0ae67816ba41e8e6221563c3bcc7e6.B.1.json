@@ -1,0 +1,442 @@
+{
+ "answer": {
+  "body_body": {
+   "answer": "listed",
+   "contacts": [
+    {
+     "certainty": "clear",
+     "panels": [
+      "1b",
+      "1d"
+     ],
+     "part_a": "left foot",
+     "part_b": "right foot"
+    },
+    {
+     "certainty": "clear",
+     "panels": [
+      "3a",
+      "1d"
+     ],
+     "part_a": "torso",
+     "part_b": "left hand"
+    },
+    {
+     "certainty": "clear",
+     "panels": [
+      "3b",
+      "1d"
+     ],
+     "part_a": "torso",
+     "part_b": "right hand"
+    },
+    {
+     "certainty": "clear",
+     "panels": [
+      "3b",
+      "1d"
+     ],
+     "part_a": "pelvis",
+     "part_b": "right hand"
+    },
+    {
+     "certainty": "possible",
+     "panels": [
+      "3a",
+      "1d"
+     ],
+     "part_a": "pelvis",
+     "part_b": "left hand"
+    }
+   ]
+  },
+  "discrepancies": [
+   {
+    "kind": "other",
+    "note": "Avatar feet about 10 cm lower than foot markers; legs/trunk slightly less vertical than human.",
+    "panels": [
+     "1b",
+     "1d"
+    ],
+    "part": "left foot"
+   },
+   {
+    "kind": "other",
+    "note": "Labelled shin-shin and foot-shin contacts absent in both avatar and human skin.",
+    "panels": [
+     "1b",
+     "1d"
+    ],
+    "part": "left shin"
+   },
+   {
+    "kind": "other",
+    "note": "Hands-on-back contacts (torso, pelvis) are real for avatar and human but unlabelled.",
+    "panels": [
+     "3a",
+     "3b",
+     "1d"
+    ],
+    "part": "left hand"
+   },
+   {
+    "kind": "other",
+    "note": "Human thigh skin reads touching; avatar thighs a few cm apart.",
+    "panels": [
+     "1b",
+     "1d"
+    ],
+    "part": "left thigh"
+   }
+  ],
+  "floor": {
+   "head": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "2b",
+     "3a",
+     "3b"
+    ]
+   },
+   "left foot": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1b",
+     "1d"
+    ]
+   },
+   "left forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3a",
+     "1d"
+    ]
+   },
+   "left hand": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3a",
+     "1d"
+    ]
+   },
+   "left shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1b",
+     "1d"
+    ]
+   },
+   "left thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "1b"
+    ]
+   },
+   "left upper arm": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "2b"
+    ]
+   },
+   "pelvis": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "right foot": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1b",
+     "1d"
+    ]
+   },
+   "right forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3b",
+     "1d"
+    ]
+   },
+   "right hand": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3b",
+     "1d"
+    ]
+   },
+   "right shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1b",
+     "1d"
+    ]
+   },
+   "right thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1b",
+     "1c"
+    ]
+   },
+   "right upper arm": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3b",
+     "1c"
+    ]
+   },
+   "torso": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "2b",
+     "3a",
+     "3b"
+    ]
+   }
+  },
+  "implausible": [],
+  "pose": {
+   "candidates": [
+    {
+     "confidence": "high",
+     "name": "Supported Shoulderstand (Salamba Sarvangasana)"
+    },
+    {
+     "confidence": "low",
+     "name": "Viparita Karani with hand support"
+    }
+   ],
+   "description": "Inverted on the shoulders: upper back, back of head/neck and both upper arms rest on the floor. Hips stacked high above the head, legs straight and vertical, feet together. Elbows bent, forearms rising, both hands pressed on the back of the torso near the pelvis supporting it."
+  },
+  "repair": {
+   "kinds": [],
+   "needed": "no",
+   "note": "Avatar floor contacts and hand support match the human; feet slightly lower is minor."
+  },
+  "roles": [
+   {
+    "note": "Feet together is the usual leg alignment, not defining.",
+    "panels": [
+     "1b",
+     "1d"
+    ],
+    "part_a": "left foot",
+    "part_b": "right foot",
+    "role": "allowed"
+   },
+   {
+    "note": "No contact in avatar or human; label is wrong.",
+    "panels": [
+     "1b",
+     "1d"
+    ],
+    "part_a": "left foot",
+    "part_b": "right shin",
+    "role": "incidental"
+   },
+   {
+    "note": "No contact in avatar or human; label is wrong.",
+    "panels": [
+     "1b",
+     "1d"
+    ],
+    "part_a": "right foot",
+    "part_b": "left shin",
+    "role": "incidental"
+   },
+   {
+    "note": "Legs together permitted; shins a few cm apart here.",
+    "panels": [
+     "1b",
+     "1d"
+    ],
+    "part_a": "left shin",
+    "part_b": "right shin",
+    "role": "allowed"
+   },
+   {
+    "note": "Human thighs touch; legs together is permitted, not required.",
+    "panels": [
+     "1b",
+     "1d"
+    ],
+    "part_a": "left thigh",
+    "part_b": "right thigh",
+    "role": "allowed"
+   },
+   {
+    "note": "Hand support may sit on pelvis or back.",
+    "panels": [
+     "3a",
+     "1d"
+    ],
+    "part_a": "pelvis",
+    "part_b": "left hand",
+    "role": "allowed"
+   },
+   {
+    "note": "Hand support may sit on pelvis or back.",
+    "panels": [
+     "3b",
+     "1d"
+    ],
+    "part_a": "pelvis",
+    "part_b": "right hand",
+    "role": "allowed"
+   },
+   {
+    "note": "Forearm brushing back near skin; avatar a few cm apart.",
+    "panels": [
+     "3a",
+     "1d"
+    ],
+    "part_a": "torso",
+    "part_b": "left forearm",
+    "role": "incidental"
+   },
+   {
+    "note": "Forearm brushing back near skin; avatar a few cm apart.",
+    "panels": [
+     "3b",
+     "1d"
+    ],
+    "part_a": "torso",
+    "part_b": "right forearm",
+    "role": "incidental"
+   },
+   {
+    "note": "Hands supporting the back define the supported shoulderstand.",
+    "panels": [
+     "3a",
+     "1d"
+    ],
+    "part_a": "torso",
+    "part_b": "left hand",
+    "role": "required_touch"
+   },
+   {
+    "note": "Hands supporting the back define the supported shoulderstand.",
+    "panels": [
+     "3b",
+     "1d"
+    ],
+    "part_a": "torso",
+    "part_b": "right hand",
+    "role": "required_touch"
+   },
+   {
+    "note": "Hands close on the back by chance; not part of pose.",
+    "panels": [
+     "1d"
+    ],
+    "part_a": "left hand",
+    "part_b": "right hand",
+    "role": "incidental"
+   }
+  ],
+  "timing": {
+   "better_panel": "",
+   "end": "label",
+   "main_moment": "keep",
+   "note": "Label and capture windows coincide; floor contacts constant throughout. Main moment shows legs vertical, fully formed.",
+   "start": "label"
+  },
+  "variant": {
+   "matches_label": "yes",
+   "note": ""
+  }
+ },
+ "audit_id": "holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.audit_v2.calibrated.9278736bb1",
+ "cost_usd": 0.29557960000000005,
+ "duration_s": 41.13,
+ "errors": [],
+ "frame_hold": 914,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Supported_Shoulderstand_pose_or_Salamba_Sarvangasana_-a@914",
+ "inputs": {},
+ "item_id": "220923_Supported_Shoulderstand_pose_or_Salamba_Sarvangasana_-a@914#B4",
+ "n": 1,
+ "num_turns": 7,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_v4/2ff0cfb76a0ae67816ba41e8e6221563c3bcc7e6",
+  "images": {
+   "img_1.png": "4e6653380560e521c8ecce7327005561fa9765a70775747ff427a2f17ebd0d90",
+   "img_2.png": "b6a6269fab00457d15c1b8e0168ac0818e117ff1574a548059b11f95b092ae46",
+   "img_3.png": "b70993a296de0b9577ed53d2365b31eece5b6a9f6d7e8b03b7a855d056c21b4d",
+   "img_4.png": "ff9536b59d41f132a56bf40ec27b47c88e7e6a2fb3ba81d2eed50b03e076a57e"
+  },
+  "packet_json_sha256": "5c850892c29efdbd0427fe8750dfafa4feff99d08dd027e5b23682f86759b8c6"
+ },
+ "packet_id": "2ff0cfb76a0ae67816ba41e8e6221563c3bcc7e6",
+ "pass": "B",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_b.md",
+  "sha256": "077dd51bd3c86104e2579843cb3162adaf5e3892192e7634aa4712e2274df649"
+ },
+ "purpose": "b6",
+ "render_v": "render_v4",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "5f537c5cd7b2019f",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_b.json",
+  "sha256": "0c8ebcc47c25a92ae60dea2083cdea7b465230a6702cd4fc11c2b7b6bb6eae8d"
+ },
+ "schema_version": 1,
+ "session_id": "7dd64bd6-ce76-4874-a997-b3f8b17c91d4",
+ "started_utc": "2026-10-01T16:54:32+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Supported_Shoulderstand_pose_or_Salamba_Sarvangasana_-a",
+ "stratum": null,
+ "usage": {
+  "cache_creation_input_tokens": 24811,
+  "cache_read_input_tokens": 46338,
+  "input_tokens": 6,
+  "output_tokens": 4390,
+  "thinking_tokens": 1556
+ },
+ "warnings": []
+}

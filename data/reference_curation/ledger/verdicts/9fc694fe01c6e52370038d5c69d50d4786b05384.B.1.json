@@ -1,0 +1,301 @@
+{
+ "answer": {
+  "body_body": {
+   "answer": "listed",
+   "contacts": []
+  },
+  "discrepancies": [
+   {
+    "kind": "other",
+    "note": "Label ground omits the left foot, but the avatar, markers and skin all show it on the floor.",
+    "panels": [
+     "3d",
+     "2b"
+    ],
+    "part": "left foot"
+   },
+   {
+    "kind": "other",
+    "note": "Label ground omits the right foot, but the avatar, markers and skin all show it on the floor.",
+    "panels": [
+     "3d",
+     "1b"
+    ],
+    "part": "right foot"
+   },
+   {
+    "kind": "other",
+    "note": "Human thigh skin touches the torso; the avatar's thigh stays about 8 cm away.",
+    "panels": [
+     "1a",
+     "2b"
+    ],
+    "part": "left thigh"
+   },
+   {
+    "kind": "other",
+    "note": "Human thigh skin touches the torso; the avatar's thigh stays about 9 cm away.",
+    "panels": [
+     "1c",
+     "1d"
+    ],
+    "part": "right thigh"
+   }
+  ],
+  "floor": {
+   "head": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "2b"
+    ]
+   },
+   "left foot": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3d",
+     "2b"
+    ]
+   },
+   "left forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3b",
+     "2b"
+    ]
+   },
+   "left hand": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3b",
+     "2b"
+    ]
+   },
+   "left shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "left thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "left upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "3b"
+    ]
+   },
+   "pelvis": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "right foot": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3d",
+     "1b"
+    ]
+   },
+   "right forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3c",
+     "1c"
+    ]
+   },
+   "right hand": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3c",
+     "1c"
+    ]
+   },
+   "right shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1c",
+     "2b"
+    ]
+   },
+   "right thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1c",
+     "2b"
+    ]
+   },
+   "right upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3c",
+     "1c"
+    ]
+   },
+   "torso": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   }
+  },
+  "implausible": [],
+  "pose": {
+   "candidates": [
+    {
+     "confidence": "medium",
+     "name": "Tripod headstand preparation (Sirsasana II prep)"
+    },
+    {
+     "confidence": "low",
+     "name": "Eka Pada Koundinyasana entry from tripod headstand"
+    },
+    {
+     "confidence": "low",
+     "name": "Head-down tuck transition"
+    }
+   ],
+   "description": "Crown of head, both hands and both feet on the floor. Hips high, well above the head, with the torso folded down. Hands are behind the head in a tripod, forearms vertical and upper arms horizontal. Knees are bent and lifted off the floor, shins slope down to the feet, and the thighs fold toward the torso. Not an arm balance: the feet still bear weight."
+  },
+  "repair": {
+   "kinds": [],
+   "needed": "no",
+   "note": "Avatar floor contacts match the human. Only the thigh-torso gap differs, which is a minor, allowed contact."
+  },
+  "roles": [
+   {
+    "note": "The tuck folds the thighs toward the torso; human skin touches, the avatar's does not.",
+    "panels": [
+     "1a",
+     "2b"
+    ],
+    "part_a": "left thigh",
+    "part_b": "torso",
+    "role": "allowed"
+   },
+   {
+    "note": "The tuck folds the thighs toward the torso; human skin touches, the avatar's does not.",
+    "panels": [
+     "1c",
+     "1d"
+    ],
+    "part_a": "right thigh",
+    "part_b": "torso",
+    "role": "allowed"
+   }
+  ],
+  "timing": {
+   "better_panel": "",
+   "end": "capture",
+   "main_moment": "keep",
+   "note": "Both windows start at frame 400. The label's end (471) runs past the contact change at frame 469.",
+   "start": "capture"
+  },
+  "variant": {
+   "matches_label": "no",
+   "note": "Both feet stay on the floor with knees bent and the head down; no leg is extended and the body is not balanced on the arms."
+  }
+ },
+ "audit_id": "holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.audit_v2.calibrated.9278736bb1",
+ "cost_usd": 0.2411342,
+ "duration_s": 38.55,
+ "errors": [],
+ "frame_hold": 429,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-b@430",
+ "inputs": {},
+ "item_id": "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-b@430#B4",
+ "n": 1,
+ "num_turns": 7,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_v4/9fc694fe01c6e52370038d5c69d50d4786b05384",
+  "images": {
+   "img_1.png": "2e8d52e5e32232aacd259c454f182917ffa1fe0cff8e1e6a57d5a58c1c57ca8f",
+   "img_2.png": "d006b273ac2335fc94085b0282b70b9c8da88ddb3a4b5e9a23282d5daeb5503f",
+   "img_3.png": "6f1d66e06e54b78a5e54c539ccdf933f5306680b748ccd00952e285e0f04d98b",
+   "img_4.png": "047bf6fe35878ba9d55df33d69475df0e47a994ff33a27cb353060a6397a3f8e"
+  },
+  "packet_json_sha256": "8960d1059e9f1728cd06c7a4f5676d75b6c15859dc0d9f098ea8b3fb09bf7823"
+ },
+ "packet_id": "9fc694fe01c6e52370038d5c69d50d4786b05384",
+ "pass": "B",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_b.md",
+  "sha256": "077dd51bd3c86104e2579843cb3162adaf5e3892192e7634aa4712e2274df649"
+ },
+ "purpose": "b6",
+ "render_v": "render_v4",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "5f537c5cd7b2019f",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_b.json",
+  "sha256": "0c8ebcc47c25a92ae60dea2083cdea7b465230a6702cd4fc11c2b7b6bb6eae8d"
+ },
+ "schema_version": 1,
+ "session_id": "fb47ef90-51f8-4cca-aed4-78773a0d3ec2",
+ "started_utc": "2026-10-01T16:39:50+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-b",
+ "stratum": null,
+ "usage": {
+  "cache_creation_input_tokens": 19187,
+  "cache_read_input_tokens": 40071,
+  "input_tokens": 6,
+  "output_tokens": 3980,
+  "thinking_tokens": 1754
+ },
+ "warnings": [
+  "load word 'bear'",
+  "load word 'weight'"
+ ]
+}

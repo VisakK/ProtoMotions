@@ -1,0 +1,408 @@
+{
+ "answer": {
+  "body_body": {
+   "answer": "listed",
+   "contacts": [
+    {
+     "certainty": "clear",
+     "panels": [
+      "3a",
+      "1b"
+     ],
+     "part_a": "left forearm",
+     "part_b": "right forearm"
+    },
+    {
+     "certainty": "clear",
+     "panels": [
+      "3b",
+      "2a"
+     ],
+     "part_a": "pelvis",
+     "part_b": "left forearm"
+    },
+    {
+     "certainty": "possible",
+     "panels": [
+      "1c",
+      "3a"
+     ],
+     "part_a": "pelvis",
+     "part_b": "right forearm"
+    },
+    {
+     "certainty": "clear",
+     "panels": [
+      "3b",
+      "2a"
+     ],
+     "part_a": "torso",
+     "part_b": "left forearm"
+    },
+    {
+     "certainty": "clear",
+     "panels": [
+      "1c",
+      "3a"
+     ],
+     "part_a": "torso",
+     "part_b": "right forearm"
+    },
+    {
+     "certainty": "possible",
+     "panels": [
+      "3b",
+      "3a"
+     ],
+     "part_a": "left hand",
+     "part_b": "right hand"
+    }
+   ]
+  },
+  "discrepancies": [
+   {
+    "kind": "other",
+    "note": "Label ground lists only hands, but avatar and human left foot rest on the floor.",
+    "panels": [
+     "3c",
+     "2b"
+    ],
+    "part": "left foot"
+   },
+   {
+    "kind": "other",
+    "note": "Label ground lists only hands, but avatar and human right foot rest on the floor.",
+    "panels": [
+     "3d",
+     "2b"
+    ],
+    "part": "right foot"
+   }
+  ],
+  "floor": {
+   "head": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3a",
+     "1d",
+     "2b"
+    ]
+   },
+   "left foot": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3c",
+     "2b",
+     "1b"
+    ]
+   },
+   "left forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3b",
+     "2b"
+    ]
+   },
+   "left hand": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3b",
+     "3a"
+    ]
+   },
+   "left shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "3d",
+     "1a"
+    ]
+   },
+   "left thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "3d",
+     "1a"
+    ]
+   },
+   "left upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "3b"
+    ]
+   },
+   "pelvis": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "right foot": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3d",
+     "2b",
+     "1b"
+    ]
+   },
+   "right forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3a",
+     "1c"
+    ]
+   },
+   "right hand": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3b",
+     "3a"
+    ]
+   },
+   "right shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "right thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "right upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1c",
+     "3a"
+    ]
+   },
+   "torso": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   }
+  },
+  "implausible": [],
+  "pose": {
+   "candidates": [
+    {
+     "confidence": "high",
+     "name": "Mayurasana preparation, toes on floor"
+    },
+    {
+     "confidence": "medium",
+     "name": "Peacock Pose (Mayurasana)"
+    },
+    {
+     "confidence": "low",
+     "name": "Chaturanga Dandasana"
+    }
+   ],
+   "description": "Prone, body nearly horizontal on two hands and the toes. Palms flat side by side on the floor under the belly, forearms vertical with elbows pressed into the abdomen. Head forward and slightly lower than the hips, well clear of the floor. Legs straight and together behind, toes on the floor, shins and thighs lifted."
+  },
+  "repair": {
+   "kinds": [],
+   "needed": "no",
+   "note": "Avatar floor contacts and pose match the human; only negligible forearm-pelvis overlap."
+  },
+  "roles": [
+   {
+    "note": "Elbows drawn together under belly; typical but not defining.",
+    "panels": [
+     "3a",
+     "1b"
+    ],
+    "part_a": "left forearm",
+    "part_b": "right forearm",
+    "role": "allowed"
+   },
+   {
+    "note": "Upper arm brushing hip near the elbow; skin close, avatar apart.",
+    "panels": [
+     "3b",
+     "2b"
+    ],
+    "part_a": "pelvis",
+    "part_b": "left upper arm",
+    "role": "incidental"
+   },
+   {
+    "note": "Elbow into lower abdomen near pelvis; acceptable placement of support.",
+    "panels": [
+     "3b",
+     "2a"
+    ],
+    "part_a": "pelvis",
+    "part_b": "left forearm",
+    "role": "allowed"
+   },
+   {
+    "note": "Elbow into lower abdomen near pelvis; acceptable placement of support.",
+    "panels": [
+     "1c",
+     "3a"
+    ],
+    "part_a": "pelvis",
+    "part_b": "right forearm",
+    "role": "allowed"
+   },
+   {
+    "note": "Elbow supporting the abdomen defines Mayurasana.",
+    "panels": [
+     "3b",
+     "2a"
+    ],
+    "part_a": "torso",
+    "part_b": "left forearm",
+    "role": "required_touch"
+   },
+   {
+    "note": "Elbow supporting the abdomen defines Mayurasana.",
+    "panels": [
+     "1c",
+     "3a"
+    ],
+    "part_a": "torso",
+    "part_b": "right forearm",
+    "role": "required_touch"
+   },
+   {
+    "note": "Skin near wrist from close hand placement; avatar apart.",
+    "panels": [
+     "3b"
+    ],
+    "part_a": "left forearm",
+    "part_b": "right hand",
+    "role": "incidental"
+   },
+   {
+    "note": "Skin near wrist from close hand placement; avatar apart.",
+    "panels": [
+     "3b"
+    ],
+    "part_a": "right forearm",
+    "part_b": "left hand",
+    "role": "incidental"
+   },
+   {
+    "note": "Hands placed side by side, as the pose commonly does.",
+    "panels": [
+     "3b",
+     "3a"
+    ],
+    "part_a": "left hand",
+    "part_b": "right hand",
+    "role": "allowed"
+   }
+  ],
+  "timing": {
+   "better_panel": "",
+   "end": "label",
+   "main_moment": "keep",
+   "note": "At 9.0 s the body is still lowering; elbows meet the trunk by 9.3 s. Both windows end at 10.317 s.",
+   "start": "capture"
+  },
+  "variant": {
+   "matches_label": "variant",
+   "note": "Toes still rest on the floor; full Mayurasana lifts the legs so only the hands touch the floor."
+  }
+ },
+ "audit_id": "holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.audit_v2.calibrated.9278736bb1",
+ "cost_usd": 0.2486758,
+ "duration_s": 35.86,
+ "errors": [],
+ "frame_hold": 619,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Peacock_Pose_or_Mayurasana_-a@619",
+ "inputs": {},
+ "item_id": "220923_Peacock_Pose_or_Mayurasana_-a@619#B4",
+ "n": 2,
+ "num_turns": 7,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_v4/d2f7484102da5abc35958edd961be3873cc6a8e6",
+  "images": {
+   "img_1.png": "762637ce8eafff7dba7842092f1d2ffa33b4cfe1fb2c7b8a04c9473b74b5a9d2",
+   "img_2.png": "50f6748c9edc703b9c2458c2ad932c5e8692c51337057c0ab35114f864dfe5f5",
+   "img_3.png": "6c61a7ef289df28c9db7f88a4b471d910d8b8f8fff559343fabecc6f906e3eb2",
+   "img_4.png": "9738e2ed9cc8201f21665c60e77a13f7ae61c851d302cf30f2976f8568c94484"
+  },
+  "packet_json_sha256": "569fae308c3b48de2003abc2106d36da88a724bb036ae85544227c39d84930f4"
+ },
+ "packet_id": "d2f7484102da5abc35958edd961be3873cc6a8e6",
+ "pass": "B",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_b.md",
+  "sha256": "077dd51bd3c86104e2579843cb3162adaf5e3892192e7634aa4712e2274df649"
+ },
+ "purpose": "b6",
+ "render_v": "render_v4",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "5f537c5cd7b2019f",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_b.json",
+  "sha256": "0c8ebcc47c25a92ae60dea2083cdea7b465230a6702cd4fc11c2b7b6bb6eae8d"
+ },
+ "schema_version": 1,
+ "session_id": "832f76b9-2928-422b-92e1-cd7f6c75f0cc",
+ "started_utc": "2026-10-01T16:36:12+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Peacock_Pose_or_Mayurasana_-a",
+ "stratum": null,
+ "usage": {
+  "cache_creation_input_tokens": 19853,
+  "cache_read_input_tokens": 46039,
+  "input_tokens": 6,
+  "output_tokens": 4031,
+  "thinking_tokens": 1174
+ },
+ "warnings": []
+}

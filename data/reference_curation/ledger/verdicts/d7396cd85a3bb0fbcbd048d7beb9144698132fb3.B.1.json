@@ -1,0 +1,330 @@
+{
+ "answer": {
+  "body_body": {
+   "answer": "listed",
+   "contacts": [
+    {
+     "certainty": "clear",
+     "panels": [
+      "3b",
+      "1b",
+      "2a"
+     ],
+     "part_a": "left foot",
+     "part_b": "right foot"
+    }
+   ]
+  },
+  "discrepancies": [
+   {
+    "kind": "other",
+    "note": "Labelled on the floor, but it rests on the right foot about 5-7 cm up. Drop line visible.",
+    "panels": [
+     "3b",
+     "2b"
+    ],
+    "part": "left foot"
+   },
+   {
+    "kind": "other",
+    "note": "Labelled on the floor, but the shin's lowest skin point is about 4.6 cm up. Only the foot touches.",
+    "panels": [
+     "2b",
+     "3b"
+    ],
+    "part": "right shin"
+   },
+   {
+    "kind": "other",
+    "note": "Labelled pairs with the left shin (left/right shins, right foot/left shin) are not touching on the skin or the avatar.",
+    "panels": [
+     "3b",
+     "2b"
+    ],
+    "part": "left shin"
+   },
+   {
+    "kind": "other",
+    "note": "The left-foot/right-foot touch is missing from the labels, though skin and avatar both touch.",
+    "panels": [
+     "3b",
+     "1b"
+    ],
+    "part": "left foot"
+   },
+   {
+    "kind": "other",
+    "note": "The skin of the two thighs touches; the avatar thighs have a gap of about 3 cm. Unlabelled.",
+    "panels": [
+     "1b",
+     "2a"
+    ],
+    "part": "left thigh"
+   }
+  ],
+  "floor": {
+   "head": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "left foot": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3b",
+     "2b"
+    ]
+   },
+   "left forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "left hand": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "left shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "left thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b"
+    ]
+   },
+   "left upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "pelvis": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b"
+    ]
+   },
+   "right foot": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3b",
+     "2b"
+    ]
+   },
+   "right forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3a",
+     "2b"
+    ]
+   },
+   "right hand": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "2b"
+    ]
+   },
+   "right shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "3b"
+    ]
+   },
+   "right thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b"
+    ]
+   },
+   "right upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "3a"
+    ]
+   },
+   "torso": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b"
+    ]
+   }
+  },
+  "implausible": [],
+  "pose": {
+   "candidates": [
+    {
+     "confidence": "high",
+     "name": "Side Plank (Vasisthasana)"
+    },
+    {
+     "confidence": "medium",
+     "name": "Side plank, stacked feet"
+    }
+   ],
+   "description": "Only the right hand and right foot touch the floor. The body forms a straight sideways line, with the head level with the hips and slightly above them. The right arm is straight and holds the body up. The left arm points straight up. The legs are straight, and the left foot rests on top of the right foot."
+  },
+  "repair": {
+   "kinds": [],
+   "needed": "no",
+   "note": "The avatar matches the human's floor contacts and pose. The only difference is a small thigh gap."
+  },
+  "roles": [
+   {
+    "note": "Not touching. The left shin only passes near the stacked right foot.",
+    "panels": [
+     "3b",
+     "1b"
+    ],
+    "part_a": "right foot",
+    "part_b": "left shin",
+    "role": "incidental"
+   },
+   {
+    "note": "Stacked legs permit this, but the skin here is about 4 cm apart.",
+    "panels": [
+     "1b",
+     "2a"
+    ],
+    "part_a": "left shin",
+    "part_b": "right shin",
+    "role": "allowed"
+   },
+   {
+    "note": "Stacked feet as in the classic form. A staggered-feet variant exists.",
+    "panels": [
+     "3b",
+     "1b"
+    ],
+    "part_a": "left foot",
+    "part_b": "right foot",
+    "role": "allowed"
+   },
+   {
+    "note": "Skin touches with the legs stacked; the avatar shows a 3 cm gap.",
+    "panels": [
+     "1b",
+     "2a"
+    ],
+    "part_a": "left thigh",
+    "part_b": "right thigh",
+    "role": "allowed"
+   }
+  ],
+  "timing": {
+   "better_panel": "",
+   "end": "label",
+   "main_moment": "keep",
+   "note": "The label and capture windows are identical. In 4c the pose is fully formed, with the left arm vertical.",
+   "start": "label"
+  },
+  "variant": {
+   "matches_label": "yes",
+   "note": ""
+  }
+ },
+ "audit_id": "holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.audit_v2.calibrated.9278736bb1",
+ "cost_usd": 0.2287004,
+ "duration_s": 30.53,
+ "errors": [],
+ "frame_hold": 879,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Side_Plank_Pose_or_Vasisthasana_-a@879",
+ "inputs": {},
+ "item_id": "220923_Side_Plank_Pose_or_Vasisthasana_-a@879#B4",
+ "n": 1,
+ "num_turns": 7,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_v4/d7396cd85a3bb0fbcbd048d7beb9144698132fb3",
+  "images": {
+   "img_1.png": "6a2f65ace0267c90dff9f26dce785f538044e44041077bfbde04fb189f2f7cf6",
+   "img_2.png": "1ddb73c3382ad372d79093fe96db14cff42d573090a5af519a1a2a14740f3177",
+   "img_3.png": "4cacafc4ba0b7ddafcf4206d6f63c6252920c508b2e68f4ffdf2a2361816cb39",
+   "img_4.png": "2139df6b27e2e80d9f5ace7acc8e48b4fae5e5e939266470cc08b44e7873c85b"
+  },
+  "packet_json_sha256": "e5c1ce1fb25fdd069c8b39e72c4c5c041cc23890dbbc1ab1269cf2f67cbe6d55"
+ },
+ "packet_id": "d7396cd85a3bb0fbcbd048d7beb9144698132fb3",
+ "pass": "B",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_b.md",
+  "sha256": "077dd51bd3c86104e2579843cb3162adaf5e3892192e7634aa4712e2274df649"
+ },
+ "purpose": "b6",
+ "render_v": "render_v4",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "5f537c5cd7b2019f",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_b.json",
+  "sha256": "0c8ebcc47c25a92ae60dea2083cdea7b465230a6702cd4fc11c2b7b6bb6eae8d"
+ },
+ "schema_version": 1,
+ "session_id": "49f2840d-7b22-4a8f-8039-eb23eaf1e00b",
+ "started_utc": "2026-10-01T16:51:16+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Side_Plank_Pose_or_Vasisthasana_-a",
+ "stratum": null,
+ "usage": {
+  "cache_creation_input_tokens": 19223,
+  "cache_read_input_tokens": 40762,
+  "input_tokens": 6,
+  "output_tokens": 3337,
+  "thinking_tokens": 1077
+ },
+ "warnings": []
+}

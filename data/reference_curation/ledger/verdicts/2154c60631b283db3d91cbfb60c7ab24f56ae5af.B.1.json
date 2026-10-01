@@ -1,0 +1,422 @@
+{
+ "answer": {
+  "body_body": {
+   "answer": "listed",
+   "contacts": [
+    {
+     "certainty": "clear",
+     "panels": [
+      "3a",
+      "1a"
+     ],
+     "part_a": "right foot",
+     "part_b": "left shin"
+    },
+    {
+     "certainty": "possible",
+     "panels": [
+      "3a",
+      "1c"
+     ],
+     "part_a": "left shin",
+     "part_b": "right shin"
+    },
+    {
+     "certainty": "clear",
+     "panels": [
+      "1a",
+      "2b"
+     ],
+     "part_a": "right shin",
+     "part_b": "left thigh"
+    },
+    {
+     "certainty": "clear",
+     "panels": [
+      "1a",
+      "1c",
+      "2a"
+     ],
+     "part_a": "left thigh",
+     "part_b": "right thigh"
+    },
+    {
+     "certainty": "clear",
+     "panels": [
+      "1a",
+      "1c"
+     ],
+     "part_a": "left upper arm",
+     "part_b": "right upper arm"
+    },
+    {
+     "certainty": "clear",
+     "panels": [
+      "1a",
+      "1d"
+     ],
+     "part_a": "left upper arm",
+     "part_b": "right forearm"
+    },
+    {
+     "certainty": "clear",
+     "panels": [
+      "1c",
+      "1d"
+     ],
+     "part_a": "left forearm",
+     "part_b": "right hand"
+    },
+    {
+     "certainty": "possible",
+     "panels": [
+      "1b",
+      "1d"
+     ],
+     "part_a": "left hand",
+     "part_b": "right hand"
+    }
+   ]
+  },
+  "discrepancies": [
+   {
+    "kind": "other",
+    "note": "Human forearms touch each other; avatar forearms leave a gap of about 2 cm.",
+    "panels": [
+     "1d",
+     "1c"
+    ],
+    "part": "left forearm"
+   },
+   {
+    "kind": "other",
+    "note": "Human hands touch; avatar hands sit about 1 cm apart.",
+    "panels": [
+     "1b",
+     "1d"
+    ],
+    "part": "left hand"
+   }
+  ],
+  "floor": {
+   "head": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "left foot": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "2b",
+     "1a"
+    ]
+   },
+   "left forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1c"
+    ]
+   },
+   "left hand": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "left shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3a",
+     "2b"
+    ]
+   },
+   "left thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "left upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "pelvis": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "right foot": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3a",
+     "2b",
+     "1c"
+    ]
+   },
+   "right forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "right hand": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "right shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3a",
+     "2b"
+    ]
+   },
+   "right thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "right upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "torso": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   }
+  },
+  "implausible": [],
+  "pose": {
+   "candidates": [
+    {
+     "confidence": "high",
+     "name": "Eagle Pose (Garudasana)"
+    },
+    {
+     "confidence": "low",
+     "name": "Chair Pose with eagle arms"
+    }
+   ],
+   "description": "Standing on the left foot only, left knee bent in a squat; hips back, torso leaning forward, head above the hips. Right thigh crosses over the left thigh, right shin wraps the left shin, right foot hooked behind the left calf off the floor. Arms raised in front of the face, entwined: elbows crossed, forearms wrapped, hands together above the head."
+  },
+  "repair": {
+   "kinds": [],
+   "needed": "no",
+   "note": "Floor contacts match; only small forearm and hand gaps, which are minor."
+  },
+  "roles": [
+   {
+    "note": "Foot hooked behind the standing calf: full-wrap form, not essential.",
+    "panels": [
+     "3a",
+     "1a"
+    ],
+    "part_a": "right foot",
+    "part_b": "left shin",
+    "role": "allowed"
+   },
+   {
+    "note": "Shins wrap together as part of the leg twist.",
+    "panels": [
+     "3a",
+     "1c"
+    ],
+    "part_a": "left shin",
+    "part_b": "right shin",
+    "role": "allowed"
+   },
+   {
+    "note": "Wrapping shin rests against the standing thigh near the knee.",
+    "panels": [
+     "1a",
+     "2b"
+    ],
+    "part_a": "right shin",
+    "part_b": "left thigh",
+    "role": "allowed"
+   },
+   {
+    "note": "Thigh crossed over thigh defines the eagle legs.",
+    "panels": [
+     "1a",
+     "2a"
+    ],
+    "part_a": "left thigh",
+    "part_b": "right thigh",
+    "role": "required_touch"
+   },
+   {
+    "note": "Crossed elbows define eagle arms.",
+    "panels": [
+     "1a",
+     "1c"
+    ],
+    "part_a": "left upper arm",
+    "part_b": "right upper arm",
+    "role": "required_touch"
+   },
+   {
+    "note": "Forearm wraps against the crossing upper arm.",
+    "panels": [
+     "1a",
+     "1d"
+    ],
+    "part_a": "left upper arm",
+    "part_b": "right forearm",
+    "role": "allowed"
+   },
+   {
+    "note": "Forearms entwined; human touches, avatar leaves small gap.",
+    "panels": [
+     "1d",
+     "1c"
+    ],
+    "part_a": "left forearm",
+    "part_b": "right forearm",
+    "role": "allowed"
+   },
+   {
+    "note": "Hand meets the other forearm during the wrap.",
+    "panels": [
+     "1c",
+     "1d"
+    ],
+    "part_a": "left forearm",
+    "part_b": "right hand",
+    "role": "allowed"
+   },
+   {
+    "note": "Palms together is the full arm wrap, optional.",
+    "panels": [
+     "1b",
+     "1d"
+    ],
+    "part_a": "left hand",
+    "part_b": "right hand",
+    "role": "allowed"
+   }
+  ],
+  "timing": {
+   "better_panel": "",
+   "end": "label",
+   "main_moment": "keep",
+   "note": "Label and capture windows coincide; 4c shows the wrap fully formed on the left foot.",
+   "start": "label"
+  },
+  "variant": {
+   "matches_label": "yes",
+   "note": ""
+  }
+ },
+ "audit_id": "holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.audit_v2.calibrated.9278736bb1",
+ "cost_usd": 0.2614512,
+ "duration_s": 31.98,
+ "errors": [],
+ "frame_hold": 800,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220926_Eagle_Pose_or_Garudasana_-a@800",
+ "inputs": {},
+ "item_id": "220926_Eagle_Pose_or_Garudasana_-a@800#B4",
+ "n": 1,
+ "num_turns": 7,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_v4/2154c60631b283db3d91cbfb60c7ab24f56ae5af",
+  "images": {
+   "img_1.png": "ab021a03fcfaf26ec577a45ee85933bdb2df1c9a7f1ea3ecd4427f154b7f17f6",
+   "img_2.png": "2928cf1740196c00af0527ad771eec48b78822ebbcddb73a54989b7b1c9d265e",
+   "img_3.png": "1bbd8f57e213bfa0a57b417d1aafc172e3a190fe493ec0f8a72157f47d4d2c8e",
+   "img_4.png": "f02e7ae744c17736d406bc8867c2e176a38fdf8b8ec14de977da89838bc42b86"
+  },
+  "packet_json_sha256": "c1f178f9b647d39460bda99b312080e73e92da467085502f0dbae160bb87e49e"
+ },
+ "packet_id": "2154c60631b283db3d91cbfb60c7ab24f56ae5af",
+ "pass": "B",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_b.md",
+  "sha256": "077dd51bd3c86104e2579843cb3162adaf5e3892192e7634aa4712e2274df649"
+ },
+ "purpose": "b6",
+ "render_v": "render_v4",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "5f537c5cd7b2019f",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_b.json",
+  "sha256": "0c8ebcc47c25a92ae60dea2083cdea7b465230a6702cd4fc11c2b7b6bb6eae8d"
+ },
+ "schema_version": 1,
+ "session_id": "929366f3-7ec3-4715-ab29-012b415ca5e8",
+ "started_utc": "2026-10-01T16:58:31+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220926_Eagle_Pose_or_Garudasana_-a",
+ "stratum": null,
+ "usage": {
+  "cache_creation_input_tokens": 22443,
+  "cache_read_input_tokens": 43316,
+  "input_tokens": 6,
+  "output_tokens": 3661,
+  "thinking_tokens": 1000
+ },
+ "warnings": []
+}

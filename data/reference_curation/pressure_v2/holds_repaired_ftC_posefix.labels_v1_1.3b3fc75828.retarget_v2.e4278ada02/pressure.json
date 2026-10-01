@@ -1,0 +1,2205 @@
+{
+ "schema_version": 1,
+ "generator": {
+  "module": "reference_curation.pressure_v2",
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "sha256": "a3a580c68f93357f7ee4e59dc53d270a59de7e5f9036b772399b6f9aa8c3f0fc"
+ },
+ "inputs": {
+  "data/assets/smpl/smpl_yogi03596_v2.xml": "aa541c77bcc1526905777c425e5ab072f21cae7bcadad9f71e3b1eb531f98f91",
+  "data/scripts/attribute_pressure_to_bodies.py": "2c12569c1ed1143d333e57b0a95d7c09239451c3670514e60d692c91b54a9d80",
+  "data/scripts/add_pressure_to_motions.py": "d3d3ebee97601dec82f3fe7b6eb13dc2a08d4ce012c51b2e71624e64921a8d02",
+  "data/scripts/add_onmat_gate_to_motions.py": "ab416ba9f1676a7a8622670737be88954685a7ae6f54c4bc6e798d78db068eff",
+  "data/scripts/pressure_bodies.py": "ccb5a834bf3fe0a5f44cb8135517530818e773417ac836ca786cfb5db7adabe2",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220923_Half_Moon_Pose_or_Ardha_Chandrasana_-a.motion": "78f7ff3614f521a31ab635a00747f07586cca7b4aced11029b6f31ec29648974",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220923_Half_Moon_Pose_or_Ardha_Chandrasana_-b.motion": "15b1e9c65a341174a6443507b771e86b0325aa1cea352a29fc50ea0c07c36b93",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220923_Standing_Split_pose_or_Urdhva_Prasarita_Eka_Padasana_-a.motion": "c100836294c008a303187e255c4047980f173fa19aecad6a95c94022dc4e2f03",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220923_Standing_Split_pose_or_Urdhva_Prasarita_Eka_Padasana_-b.motion": "54906510f18f2e8359541c11851871393daf38d35737315bf6a2c923b38dc75b",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220923_Standing_big_toe_hold_pose_or_Utthita_Padangusthasana-a.motion": "f43adff1aa894f8841c968f7b6267793e361920128c335a73a4e90bab6003799",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220923_Standing_big_toe_hold_pose_or_Utthita_Padangusthasana-b.motion": "25b91a4d2fd7b92f54394cb222b9de2871288ec1dcd5eb308aa48ff5b0b2097f",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220923_Tree_Pose_or_Vrksasana_-a.motion": "6f75b9bf77fef169c46c416c9be0562435f185f87ae352ac6d725cc76d4df28b",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220923_Tree_Pose_or_Vrksasana_-b.motion": "15f674e309b0a3240e26a0d12d095d8ee26c33ef4267f864303f495c14ae0bf1",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220926_Eagle_Pose_or_Garudasana_-a.motion": "e5cf0a3168cce8b1166288f7715aec351e6925956dd0722240aa5a4fac1ddd4c",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220926_Lord_of_the_Dance_Pose_or_Natarajasana_-a.motion": "d5e074374e87e04018d08a4de8ae62f5d7f92a33137c767152b1c2d51a2efbdb",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220926_Lord_of_the_Dance_Pose_or_Natarajasana_-c.motion": "ba961fa952bf690ea4f145ca8d92c92ef65021e44597e817b8ac6758f12ee468",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220926_Warrior_III_Pose_or_Virabhadrasana_III_-a.motion": "d11a4d675449de4690dce64e937092153193a0121df269203364c104a91cfd3f",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220926_Warrior_III_Pose_or_Virabhadrasana_III_-b.motion": "0409c587448053b74b5756a3287e250d8995519166e98954a89f6ee647887f16",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-a.motion": "973ef8f6011a194fdcfc6a167e2d0980dd5b1e06e04b8efa1be1e9832860e97d",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-b.motion": "72925fa6e2ee40a8e3cd6b95a82cdcff3087feaa2f8dbd7bfe9753a13e11ff01",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-c.motion": "9fd3b39c71aa27dc03a5c1c1ba225382a4a1febf1e4e8fe7021d5064e0790d44",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-d.motion": "d9bd7a2b59a9dedd32e5f91431bbf6e9adf31ff6ccfcd6884633d0e45e76b4f5",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220923_Handstand_pose_or_Adho_Mukha_Vrksasana_-a.motion": "ac66ced008a8992d505d06f1e14f520168864255d0bb0b8af28da5cff643f830",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220923_Legs-Up-the-Wall_Pose_or_Viparita_Karani_-a.motion": "f61cda31e0b75b1d8036276bb8e220a96bc58f7554bdfdfb17ee80ca6c7253e5",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220923_Plow_Pose_or_Halasana_-a.motion": "81b8a13aa3e3b7551bdccaac1e0345b8b8380e98ff73b11ca45a0066188ce422",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220926_Plow_Pose_or_Halasana_-b.motion": "91622e8d773e7d0d4546289a814854b85961abe401ec817fb0c8ebb9dc950037",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220923_Scorpion_pose_or_vrischikasana-a.motion": "58f633f9d0d9e4928321d0119d057d9f80faea0b1afec4b223e0b78fa52343d4",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220923_Scorpion_pose_or_vrischikasana-b.motion": "6d1ffc3702fc07aa208937ec79576723b40f998909331b954d63f5a9638c96c4",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220923_Supported_Headstand_pose_or_Salamba_Sirsasana_-b.motion": "18c320d1ce48c3afbea91afc8fb0549b229e0f44fcbc918c6c836d77f163d350",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220926_Supported_Headstand_pose_or_Salamba_Sirsasana_-a.motion": "702a944067f63493fbf80f7ac3eca95966b663717d20f69e207316263d5f08bf",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220923_Supported_Shoulderstand_pose_or_Salamba_Sarvangasana_-a.motion": "763017efea81627929039c2571941766ba547cf6577a7fb67cf93cec037c1e5d",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220923_Crane_Crow_Pose_or_Bakasana_-a.motion": "94e56bd237ce5a9499e0cf619737b728a8f00c41c2807fae4fb376d8cea4fa40",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220923_Firefly_Pose_or_Tittibhasana_-a.motion": "3de517b06b8aa5ee8a2b5bf6c372a8923dde714870292e410da67528ff9fb4b6",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220923_Peacock_Pose_or_Mayurasana_-a.motion": "1f637bb901c48146ca7254a12e5031af3b6c98be3114bcc21e1290c5eedc03e8",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-a.motion": "41cddbf2aa69b1e6764c63578889e92c94fa08ed38c59d5d19dd033cfa1ad4b3",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-b.motion": "7c84964cfca7de658a3a93eff82209726b49262e2c1cf5af9a7e2a6827bf0219",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220923_Shoulder-Pressing_Pose_or_Bhujapidasana_-a.motion": "5c3a6e09666791b64743caabd734e90e762aeb428754f96323b19311d619902b",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a.motion": "ac32dcf3a244d95f217d36b490d437449fe4a00249d22b1d3feba3b087843fa1",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-b.motion": "61cfba99f015086d2709d935dc0e27e91428daf0cc701f1d68b67b6a34f12971",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-c.motion": "822152df1034e2753dbeb872d52ce1c04420fed2f12ac5bc2c0db9bc2f62be09",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220923_Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana_-a.motion": "d15c8f395c805602fc0394fe7431fe06d7c300b5db449d3adbbf17519d35391c",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220923_Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana_-b.motion": "4632a3f170a8c727e9e7e4f3ba7440b3a47269066bddf26db6424b7e0b7f6a1a",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220923_Plank_Pose_or_Kumbhakasana_-a.motion": "d48ae4dac08d055d9814d6fb6db59caa4c73c1afc34b535345f3064e93e8ff16",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220923_Four-Limbed_Staff_Pose_or_Chaturanga_Dandasana_-a.motion": "8e64f8dbf6ce432dac417086048367e3138339fe42ddccf14440db3155b48d89",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220923_Cobra_Pose_or_Bhujangasana_-a.motion": "df96839b85cebc15fd446313adbbd11f3dff6c7e55ec30912730a95099c23d39",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220923_Side_Plank_Pose_or_Vasisthasana_-a.motion": "892fb19f23594254a3726a11c7a26b3848710aee0daa91ac6d491ee1a3c4f826",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220923_Side_Plank_Pose_or_Vasisthasana_-b.motion": "7fa4abab5807b7687309156f654c76af330425a1644acb2d15d6c81ef661373d",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220923_Dolphin_Plank_Pose_or_Makara_Adho_Mukha_Svanasana_-a.motion": "4e2b8e5e47346838ae69d0539aef1ca49596ede92bb20b1b4228dd2adfd9ca27",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220923_Dolphin_Pose_or_Ardha_Pincha_Mayurasana_-a.motion": "730168120a6fde968a741b32b3d2b89c83dd495aa9c83d752a9963ec396b7b53",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220923_Standing_Forward_Bend_pose_or_Uttanasana_-a.motion": "1548d0fdac823d9bf8347b9ae41027066af6317eaa825f247f7f48468e5e17a4",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220923_Garland_Pose_or_Malasana_-a.motion": "e8b89b3a9bdf13f1ff25b86f44b9701e2673dd3272c8c8277808a51ec51dc0d6",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220923_Low_Lunge_pose_or_Anjaneyasana_-a.motion": "0dcc1bd2c18d02e97f54f48b12fefc67f5e9989c51c749a04c783fbb99fbc52d",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220926_Warrior_II_Pose_or_Virabhadrasana_II_-a.motion": "676ffc1f3038f5ca5671f67df5b00c9143a1740c4e062bb45c5ebe262523a31b",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220923_Extended_Revolved_Triangle_Pose_or_Utthita_Trikonasana_-a.motion": "f5a2160d51046035555848a0beb5a1f4b8e4d52e04dde0b78866b48b53e07ca4",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220923_Extended_Revolved_Side_Angle_Pose_or_Utthita_Parsvakonasana_-a.motion": "b7faf810223708e1b8e5585d48e5fcae3314c12bd1d80385b067f8dd982a4572",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220926_Upward_Plank_Pose_or_Purvottanasana_-a.motion": "36a9bc715c621251ef953df76693264fa8dab284359cf2eeb4180dcb7bc4ffe6",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220923_Bridge_Pose_or_Setu_Bandha_Sarvangasana_-a.motion": "bd05761c980ea59e337cd0ad0618d06a1bd2922fa344560b587f9201939fd5a0",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220923_Extended_Revolved_Side_Angle_Pose_or_Utthita_Parsvakonasana_-b.motion": "54e0aee0db7f7c49206636a8814ace3dbd39d85349558a946e30f6ef67d3e7f2",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220923_Extended_Revolved_Triangle_Pose_or_Utthita_Trikonasana_-b.motion": "53f05212c0157a291a2317819b032a06ad584543434e84cec183f4a107a1a23d",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220926_viparita_virabhadrasana_or_reverse_warrior_pose-a.motion": "b11d9ac8d22c32b7de48c5424a49be772713f95f814d2a72b4757d568b6618c4",
+  "output/reference_curation/retarget_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02/220926_Intense_Side_Stretch_Pose_or_Parsvottanasana_-b.motion": "ed90ec6074d0e23f8cbc8484463db25029c7f97d4fd9b42ae00dfa5fe2a4a045",
+  "data/smpl/yoga_pressure/220923_Half_Moon_Pose_or_Ardha_Chandrasana_-a.npz": "c9876b003ecac70361c207ea403cb758a5a2a628dfb2e56dcde33da32f2e3b41",
+  "data/smpl/yoga_pressure/220923_Half_Moon_Pose_or_Ardha_Chandrasana_-b.npz": "cd88e745295cac2684d44f7766f36792b5b2c6995a3943fc4f1ee4344f9909fd",
+  "data/smpl/yoga_pressure/220923_Standing_Split_pose_or_Urdhva_Prasarita_Eka_Padasana_-a.npz": "00ac6ac854830d933d56fe32ffd34b18b487cb3bc39de9f5d4995ed27f5d6999",
+  "data/smpl/yoga_pressure/220923_Standing_Split_pose_or_Urdhva_Prasarita_Eka_Padasana_-b.npz": "2528b635b2201876c5e73e473f2109bba594d7a0c6b02e0d864324b368638f09",
+  "data/smpl/yoga_pressure/220923_Standing_big_toe_hold_pose_or_Utthita_Padangusthasana-a.npz": "bcae6af149efb4757be74c3cd37a54471078a746a0897d7e573ac2b898c04fac",
+  "data/smpl/yoga_pressure/220923_Standing_big_toe_hold_pose_or_Utthita_Padangusthasana-b.npz": "f70436227a9ce992718bf0c1654c67982b231327b918b8f1f72ff09512a0000b",
+  "data/smpl/yoga_pressure/220923_Tree_Pose_or_Vrksasana_-a.npz": "6b59e41f6d5f9242da60a9db4776e3ff40e766924141493fabc17a305123acee",
+  "data/smpl/yoga_pressure/220923_Tree_Pose_or_Vrksasana_-b.npz": "9c958be5614e5121204d9fb8bbd4a3a9a98f4d8365f43ead37c3ed9d87327529",
+  "data/smpl/yoga_pressure/220926_Eagle_Pose_or_Garudasana_-a.npz": "a85962f2c6f8c2f8c7ccf7319541ec0f38c339af79f2ce029c062efbbcdf89f4",
+  "data/smpl/yoga_pressure/220926_Lord_of_the_Dance_Pose_or_Natarajasana_-a.npz": "d86ee761dfffb5aef310b7d8f9ae06249230c722439edf7517dc4cd3f678f649",
+  "data/smpl/yoga_pressure/220926_Lord_of_the_Dance_Pose_or_Natarajasana_-c.npz": "c53f2710b2ca47606395b683e403777b0d6239866378388acc76763fd08faf80",
+  "data/smpl/yoga_pressure/220926_Warrior_III_Pose_or_Virabhadrasana_III_-a.npz": "04f3ececd06603e4bb1aea3ca899fe60952172ed370a45f735243c90760ae971",
+  "data/smpl/yoga_pressure/220926_Warrior_III_Pose_or_Virabhadrasana_III_-b.npz": "594c8fcd2ba5eb24415d3e88c861e6cb69c3a2f24d3dc861605140bdf7371d0e",
+  "data/smpl/yoga_pressure/220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-a.npz": "840f75d4fb31b81f55e7048fafae3bc524a694103dd706da2f453e8aff7c23b8",
+  "data/smpl/yoga_pressure/220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-b.npz": "953533e0f73486c7a5efb11e427348a483cd94fa10d5c0d0053a07b46699a9b5",
+  "data/smpl/yoga_pressure/220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-c.npz": "abe45c5c003f21a4916bfdd3120c80091c96d63d16de8a31fcc4afb36c1472b7",
+  "data/smpl/yoga_pressure/220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-d.npz": "406493472d9d1c4217be2e9d27191500f6675843eb65e6c741ef318e2cb97fde",
+  "data/smpl/yoga_pressure/220923_Handstand_pose_or_Adho_Mukha_Vrksasana_-a.npz": "b1e30a338eb6b759af53d8ed02239c83657dffe011433138bbae7747caab9db8",
+  "data/smpl/yoga_pressure/220923_Legs-Up-the-Wall_Pose_or_Viparita_Karani_-a.npz": "c213cbaa9edcffe24cee19acdc8bbcfc993eeb4c231d17b97588d3b28207c2aa",
+  "data/smpl/yoga_pressure/220923_Plow_Pose_or_Halasana_-a.npz": "eb7827349d7a9b791763b9116b82f151d5a2591be9d0fe547b708badaf47d5b0",
+  "data/smpl/yoga_pressure/220926_Plow_Pose_or_Halasana_-b.npz": "91f620bd9ddac24ce88ca5242dcada46a598dff4e7ac4baf65eee180afdd6486",
+  "data/smpl/yoga_pressure/220923_Scorpion_pose_or_vrischikasana-a.npz": "8700e6b00ef761a657d6083244413e2a2146da3fad56259d2f5c42b4c389d046",
+  "data/smpl/yoga_pressure/220923_Scorpion_pose_or_vrischikasana-b.npz": "e779395385fcd951690a3007fa7946660659ebae835c9ad1dbb59deb746a60c0",
+  "data/smpl/yoga_pressure/220923_Supported_Headstand_pose_or_Salamba_Sirsasana_-b.npz": "627e978ad772e6caa7f039ccc728b6793c114e9eba78c2e2387e4b57993c5f52",
+  "data/smpl/yoga_pressure/220926_Supported_Headstand_pose_or_Salamba_Sirsasana_-a.npz": "72d011ccd085b413dded743e228d8ac3cb833b90ffceca74ccd58c29f575d1fb",
+  "data/smpl/yoga_pressure/220923_Supported_Shoulderstand_pose_or_Salamba_Sarvangasana_-a.npz": "2b8189e57a00ef5d9a0cc8f261e48789939f1a929a9ab49fde588ed57be6ddeb",
+  "data/smpl/yoga_pressure/220923_Crane_Crow_Pose_or_Bakasana_-a.npz": "5e43543fc3864c77e2808c96b5f662bdddb60467adcaf2e91a1680881166abb0",
+  "data/smpl/yoga_pressure/220923_Firefly_Pose_or_Tittibhasana_-a.npz": "1bd6fd0b32bfd3b7fb84a65472d591cd2fa12f17efebef91e0c945a6b28e88cb",
+  "data/smpl/yoga_pressure/220923_Peacock_Pose_or_Mayurasana_-a.npz": "9866f1f0f1bc762f46c362a59ebc2611d06d3ae134d366a721498e63180fa095",
+  "data/smpl/yoga_pressure/220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-a.npz": "8704128b3f45b3e8f9951b01a0cbc6e4b792511389f3a7391b19bc6974b060d7",
+  "data/smpl/yoga_pressure/220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-b.npz": "101011351755a0155ab2e4022712a5014ee7ddd17163c43aac06b564b055203b",
+  "data/smpl/yoga_pressure/220923_Shoulder-Pressing_Pose_or_Bhujapidasana_-a.npz": "683d78795b61f77f5ea7c2e60abe97607888d33329042d78c9ecbe97bc58dda1",
+  "data/smpl/yoga_pressure/220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a.npz": "ab6638070bdbaecdb3dad60f5b32be86312154c66f67d0f1147b425606fb4579",
+  "data/smpl/yoga_pressure/220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-b.npz": "0418d3a3c9ead6ead7ac0c9fda181d0384e81d89424c79986b95bf5ccaf75e0a",
+  "data/smpl/yoga_pressure/220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-c.npz": "bcca4377aba09f7ead701f9dda6192aff0d709f9800d10cb6769a6daddb65726",
+  "data/smpl/yoga_pressure/220923_Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana_-a.npz": "091412c934795af16b5503753b9e156fad09d8d402b93a5c355b29872542524f",
+  "data/smpl/yoga_pressure/220923_Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana_-b.npz": "bd289ffbd3462115ed64d2f5a1d1d8a7d1a0195dd7633236ca9697e763e4a4ac",
+  "data/smpl/yoga_pressure/220923_Plank_Pose_or_Kumbhakasana_-a.npz": "d0fa0d79607c968e00a319b0755fb5900f6ceee3eaf7c8bd82a13a840cfaa50f",
+  "data/smpl/yoga_pressure/220923_Four-Limbed_Staff_Pose_or_Chaturanga_Dandasana_-a.npz": "afc8638548d3fd1aa0d9feb52b6b9e570ee97372e9c9849d357bcd293c161596",
+  "data/smpl/yoga_pressure/220923_Cobra_Pose_or_Bhujangasana_-a.npz": "2f53c01007b95c6fa7259e9b2dff4a44900ac78832a0c09b2363536ac7b4702b",
+  "data/smpl/yoga_pressure/220923_Side_Plank_Pose_or_Vasisthasana_-a.npz": "c37b41ec2e2076fdaf38c95a5433d524cf866e4365692a97a8ea93123330bc52",
+  "data/smpl/yoga_pressure/220923_Side_Plank_Pose_or_Vasisthasana_-b.npz": "990e357fbb5a8440e66ec59d165625f866062b9be245b460502a4d50406ff1a3",
+  "data/smpl/yoga_pressure/220923_Dolphin_Plank_Pose_or_Makara_Adho_Mukha_Svanasana_-a.npz": "a9261ad475b146f605414aa64cb5b036b058522543f5d61262b7d3981506a285",
+  "data/smpl/yoga_pressure/220923_Dolphin_Pose_or_Ardha_Pincha_Mayurasana_-a.npz": "ed3b3040a4995cee9f89907ff4fa560055d79bc4b0036c9a7306d13fbab10dcb",
+  "data/smpl/yoga_pressure/220923_Standing_Forward_Bend_pose_or_Uttanasana_-a.npz": "2aae4e0481ec9feb22147db9c89b156a3c0ac4f52f48a39cbd99726b9fd5b513",
+  "data/smpl/yoga_pressure/220923_Garland_Pose_or_Malasana_-a.npz": "daa59e8574e6eb86f59d0fd9590a2bf44321d7f916b8cb138fd7fac431f66e60",
+  "data/smpl/yoga_pressure/220923_Low_Lunge_pose_or_Anjaneyasana_-a.npz": "609583e5c76ce2909038d39bc96ad0778bdf5a476c2ab4a1bfcc06c9fb5d625b",
+  "data/smpl/yoga_pressure/220926_Warrior_II_Pose_or_Virabhadrasana_II_-a.npz": "3fa55f1c7503404b5b6c96fd7b11dbb39833a115fe24c20fea6350b5bfc1d538",
+  "data/smpl/yoga_pressure/220923_Extended_Revolved_Triangle_Pose_or_Utthita_Trikonasana_-a.npz": "023da064ade26e4301c48ae14cf612d6045810962370a3a8836cc9960c167c6e",
+  "data/smpl/yoga_pressure/220923_Extended_Revolved_Side_Angle_Pose_or_Utthita_Parsvakonasana_-a.npz": "06d95a17221d04e975007721e79ca9b8a24028330cd3d02474338c09cbfc749e",
+  "data/smpl/yoga_pressure/220926_Upward_Plank_Pose_or_Purvottanasana_-a.npz": "e53441a929a869cc737cd7caf3b106d9f6a715b3a86cf2672ff14fd485b3aeef",
+  "data/smpl/yoga_pressure/220923_Bridge_Pose_or_Setu_Bandha_Sarvangasana_-a.npz": "0956422d7b1a12db1718a38116c986d9b314fa796111304dbe1bbf5f084cf894",
+  "data/smpl/yoga_pressure/220923_Extended_Revolved_Side_Angle_Pose_or_Utthita_Parsvakonasana_-b.npz": "84942e1575b9fbf38ff4ee78cdd42e3ada874f6668aca49ece585095292c6dd9",
+  "data/smpl/yoga_pressure/220923_Extended_Revolved_Triangle_Pose_or_Utthita_Trikonasana_-b.npz": "5c91dac8536a546e93777df5e6d0b1d7eeefadac06c33f8145235e15b966cf8a",
+  "data/smpl/yoga_pressure/220926_viparita_virabhadrasana_or_reverse_warrior_pose-a.npz": "4d53a46a1eb09c39757319a9c45d61496439aecbd75308a178f2450305dbf034",
+  "data/smpl/yoga_pressure/220926_Intense_Side_Stretch_Pose_or_Parsvottanasana_-b.npz": "19bfc05f04307b6a8201493fab529b95c89a5bb2a0b4716b45c388a7da859372"
+ },
+ "retarget_id": "holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02",
+ "plant": {
+  "plant": "v2",
+  "mjcf": "data/assets/smpl/smpl_yogi03596_v2.xml",
+  "plant_sha256": "aa541c77bcc1526905777c425e5ab072f21cae7bcadad9f71e3b1eb531f98f91"
+ },
+ "out_dir": "output/reference_curation/pressure_v2/holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02",
+ "stems": [
+  "220923_Half_Moon_Pose_or_Ardha_Chandrasana_-a",
+  "220923_Half_Moon_Pose_or_Ardha_Chandrasana_-b",
+  "220923_Standing_Split_pose_or_Urdhva_Prasarita_Eka_Padasana_-a",
+  "220923_Standing_Split_pose_or_Urdhva_Prasarita_Eka_Padasana_-b",
+  "220923_Standing_big_toe_hold_pose_or_Utthita_Padangusthasana-a",
+  "220923_Standing_big_toe_hold_pose_or_Utthita_Padangusthasana-b",
+  "220923_Tree_Pose_or_Vrksasana_-a",
+  "220923_Tree_Pose_or_Vrksasana_-b",
+  "220926_Eagle_Pose_or_Garudasana_-a",
+  "220926_Lord_of_the_Dance_Pose_or_Natarajasana_-a",
+  "220926_Lord_of_the_Dance_Pose_or_Natarajasana_-c",
+  "220926_Warrior_III_Pose_or_Virabhadrasana_III_-a",
+  "220926_Warrior_III_Pose_or_Virabhadrasana_III_-b",
+  "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-a",
+  "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-b",
+  "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-c",
+  "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-d",
+  "220923_Handstand_pose_or_Adho_Mukha_Vrksasana_-a",
+  "220923_Legs-Up-the-Wall_Pose_or_Viparita_Karani_-a",
+  "220923_Plow_Pose_or_Halasana_-a",
+  "220926_Plow_Pose_or_Halasana_-b",
+  "220923_Scorpion_pose_or_vrischikasana-a",
+  "220923_Scorpion_pose_or_vrischikasana-b",
+  "220923_Supported_Headstand_pose_or_Salamba_Sirsasana_-b",
+  "220926_Supported_Headstand_pose_or_Salamba_Sirsasana_-a",
+  "220923_Supported_Shoulderstand_pose_or_Salamba_Sarvangasana_-a",
+  "220923_Crane_Crow_Pose_or_Bakasana_-a",
+  "220923_Firefly_Pose_or_Tittibhasana_-a",
+  "220923_Peacock_Pose_or_Mayurasana_-a",
+  "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-a",
+  "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-b",
+  "220923_Shoulder-Pressing_Pose_or_Bhujapidasana_-a",
+  "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+  "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-b",
+  "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-c",
+  "220923_Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana_-a",
+  "220923_Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana_-b",
+  "220923_Plank_Pose_or_Kumbhakasana_-a",
+  "220923_Four-Limbed_Staff_Pose_or_Chaturanga_Dandasana_-a",
+  "220923_Cobra_Pose_or_Bhujangasana_-a",
+  "220923_Side_Plank_Pose_or_Vasisthasana_-a",
+  "220923_Side_Plank_Pose_or_Vasisthasana_-b",
+  "220923_Dolphin_Plank_Pose_or_Makara_Adho_Mukha_Svanasana_-a",
+  "220923_Dolphin_Pose_or_Ardha_Pincha_Mayurasana_-a",
+  "220923_Standing_Forward_Bend_pose_or_Uttanasana_-a",
+  "220923_Garland_Pose_or_Malasana_-a",
+  "220923_Low_Lunge_pose_or_Anjaneyasana_-a",
+  "220926_Warrior_II_Pose_or_Virabhadrasana_II_-a",
+  "220923_Extended_Revolved_Triangle_Pose_or_Utthita_Trikonasana_-a",
+  "220923_Extended_Revolved_Side_Angle_Pose_or_Utthita_Parsvakonasana_-a",
+  "220926_Upward_Plank_Pose_or_Purvottanasana_-a",
+  "220923_Bridge_Pose_or_Setu_Bandha_Sarvangasana_-a",
+  "220923_Extended_Revolved_Side_Angle_Pose_or_Utthita_Parsvakonasana_-b",
+  "220923_Extended_Revolved_Triangle_Pose_or_Utthita_Trikonasana_-b",
+  "220926_viparita_virabhadrasana_or_reverse_warrior_pose-a",
+  "220926_Intense_Side_Stretch_Pose_or_Parsvottanasana_-b"
+ ],
+ "dropped": {
+  "220923_Standing_big_toe_hold_pose_or_Utthita_Padangusthasana-c": "no readable MoSh fit (TODO B2)",
+  "220923_Cockerel_Pose-b": "lotus: the plant's knee range cannot fold a lotus (TODO B1)",
+  "220923_Firefly_Pose_or_Tittibhasana_-b": "past the plant's joint box: the trunk folds 24.9 deg past Torso_y's 90 deg stop with the thighs wedged into the upper arms; every retarget jerked or kept 14-22 new overlaps (BodyFix Step 3; the user's decision, 2026-09-30)",
+  "220923_Scale_Pose_or_Tolasana_-a": "lotus: the plant's knee range cannot fold a lotus (TODO B1)"
+ },
+ "chain": [
+  "attribute_pressure_to_bodies.py",
+  "add_pressure_to_motions.py",
+  "add_onmat_gate_to_motions.py"
+ ],
+ "kernel": {
+  "sigma_m": 0.02,
+  "sigma_z_m": 0.02,
+  "z_thresh_m": 0.06,
+  "max_dist_m": 0.06,
+  "min_force_n": 20.0,
+  "near_ground_m": 0.15,
+  "mat_margin_m": 0.02
+ },
+ "outputs": {
+  "bodies/220923_Bridge_Pose_or_Setu_Bandha_Sarvangasana_-a.npz": "b0732dc842c61ebdecb134b2e7572bf4eafdc11542fd38d1ca0092443a24d03e",
+  "bodies/220923_Cobra_Pose_or_Bhujangasana_-a.npz": "4272209492ee8f5838b8cc9dbd4359a69a9894a9b5f4b4f4d39ce042ed80d8bc",
+  "bodies/220923_Crane_Crow_Pose_or_Bakasana_-a.npz": "b7f9e0e7bf40c1dc7c769ed02c9c47a32b873183023d97499c0f623e6833f5a3",
+  "bodies/220923_Dolphin_Plank_Pose_or_Makara_Adho_Mukha_Svanasana_-a.npz": "539fd467f8e11abb30458df99b04c0d3c85464fb51a26e7095e7159790f7b4d0",
+  "bodies/220923_Dolphin_Pose_or_Ardha_Pincha_Mayurasana_-a.npz": "a10d1cd7b5222930554509f8e58b0e26f7fe4245d386357a7646e2fbddea3519",
+  "bodies/220923_Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana_-a.npz": "e73cdde6d7da6d35d7a01efddbf30e4a7d7b89bdb1a8fa11343a3096080fd6b9",
+  "bodies/220923_Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana_-b.npz": "a35dc6bc5c74a906bd641c7e22b8f12c236b1c8ded3a71c0cdd9fc057e061ce3",
+  "bodies/220923_Extended_Revolved_Side_Angle_Pose_or_Utthita_Parsvakonasana_-a.npz": "eb88f783e4a40bb739fe16a296575f3b451735389513dc6e91f90ee0565d85af",
+  "bodies/220923_Extended_Revolved_Side_Angle_Pose_or_Utthita_Parsvakonasana_-b.npz": "8f42f8debe37bf198cafc678ebbbb20afb43ed6426f9c566002c0d222e19d553",
+  "bodies/220923_Extended_Revolved_Triangle_Pose_or_Utthita_Trikonasana_-a.npz": "5a88b84bc5cb541a15bbee8cbd67b9e7ffbd1d9889defe4832d18120f2f9b38d",
+  "bodies/220923_Extended_Revolved_Triangle_Pose_or_Utthita_Trikonasana_-b.npz": "06bc9f0663149de9ff46eba6bf2a217d2595b9b6e7bfb7b3ce08c3934d7af750",
+  "bodies/220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-a.npz": "453ea54c6a7403d2033c04a3174de624fbc87b9d3f4d9df6849363b91779ce93",
+  "bodies/220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-b.npz": "7ecf4e938070e26759455540df115f75a644d3f9ec2e4e49bb8acaa6d9f93588",
+  "bodies/220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-c.npz": "bc9bae9693f9a6229521e0f75a94296d6049578c174e71c7f65c7af143641c97",
+  "bodies/220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-d.npz": "5edee33a5d4c9d9a7abcd97cd9d41ca4ce49e198609886dbe40e9b0fd117c9e0",
+  "bodies/220923_Firefly_Pose_or_Tittibhasana_-a.npz": "99018c4213e63190f0c4fd62e6bf9a6fa0327b1aad229782a036bcb425a697c5",
+  "bodies/220923_Four-Limbed_Staff_Pose_or_Chaturanga_Dandasana_-a.npz": "10ef42cb5bf8c40e26d3536de82d208378419b5ef545db891d82dd48ceddb88a",
+  "bodies/220923_Garland_Pose_or_Malasana_-a.npz": "106c630d50e92cb2a269b1ca51f98262f8ade3bd790fe1cecb0f2f7b2b36a708",
+  "bodies/220923_Half_Moon_Pose_or_Ardha_Chandrasana_-a.npz": "5ac18c77e492ef6dd337768dda2251da36f9ee0f2f01ad142b289199546dc48e",
+  "bodies/220923_Half_Moon_Pose_or_Ardha_Chandrasana_-b.npz": "8c7ad5713258ce45cb03afe530469739e1915d365a9aaca8cf89a40e7672151e",
+  "bodies/220923_Handstand_pose_or_Adho_Mukha_Vrksasana_-a.npz": "2dba9f52db1433d04cb734d38c6c28955dd80333355beccf7f0d43ffe3a8e123",
+  "bodies/220923_Legs-Up-the-Wall_Pose_or_Viparita_Karani_-a.npz": "d985472510bab5c9965b6f6e474051aa5fe325e0bcbf7d407bdcd232151ff309",
+  "bodies/220923_Low_Lunge_pose_or_Anjaneyasana_-a.npz": "4abb2c83e600fa47ad2bad6a0f6dfab0c2bd2b5f6aa168141812dfdbd509c2ee",
+  "bodies/220923_Peacock_Pose_or_Mayurasana_-a.npz": "8fcf1324b4404fa04030a7807bfb8bdbc5b2c6730f158d725f23b57a33c884a1",
+  "bodies/220923_Plank_Pose_or_Kumbhakasana_-a.npz": "f0dfc012315967374effd25a8e2be92a79212bc64234d1f75e1394fab2cb9b1a",
+  "bodies/220923_Plow_Pose_or_Halasana_-a.npz": "4a0af419ac5f6b54ff584f3fd3e72df45a820e90ed0aa359ac67681836348b5b",
+  "bodies/220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-a.npz": "f6b8a0fc5658e10e0f006018c772da61dd2e6eb089c89e2d28e27f3c0ad5167e",
+  "bodies/220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-b.npz": "953832633438a600e2a2f80d30df946e28509f8ef9959f55576939810dd6fb89",
+  "bodies/220923_Scorpion_pose_or_vrischikasana-a.npz": "371634e051b6c16b3ffc13b6aa27a459fac424bc8dd0b60ea9f374c2c4fd737a",
+  "bodies/220923_Scorpion_pose_or_vrischikasana-b.npz": "0ace11b25418715bc52c1916ac978ed653f531f2fbded872ed6ab9061c1a3ffc",
+  "bodies/220923_Shoulder-Pressing_Pose_or_Bhujapidasana_-a.npz": "e487017606e5e8889f44a574ea1ca6b36665a98b27ed80f0a1a42ebb3ecf9734",
+  "bodies/220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a.npz": "3f3e4ab1de1b501501c648e1dce1a55abafe840477e0ed32e75980a7a2bda3f1",
+  "bodies/220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-b.npz": "d59045c28a99a9d6009ff2c220fb93846cf1355582593f7ba99e2eccbd934c9f",
+  "bodies/220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-c.npz": "078e50c8f733d4088a89842a5003be0243a42e00aa5c3b4bbbc69cc1e8ee005f",
+  "bodies/220923_Side_Plank_Pose_or_Vasisthasana_-a.npz": "e29648ea54203030d34ddddd1c8961505ba87ae5438baae267375f6a43d5db51",
+  "bodies/220923_Side_Plank_Pose_or_Vasisthasana_-b.npz": "1c4c5ced2a1714b0db2316083bdfd31d858b1f921208ec61330e6b62a1c4a223",
+  "bodies/220923_Standing_Forward_Bend_pose_or_Uttanasana_-a.npz": "bdca7e5b910e1ec34ebc507588363db526161cfe369257744537f03dc1ed6cd2",
+  "bodies/220923_Standing_Split_pose_or_Urdhva_Prasarita_Eka_Padasana_-a.npz": "6fe4d46cb8a861b3a00c2d2844c271da924b59c39457381cefd43dfbd74ecd0b",
+  "bodies/220923_Standing_Split_pose_or_Urdhva_Prasarita_Eka_Padasana_-b.npz": "829d398c507b4563b984e924091012baaf9d93cf5bc551d9fa6cb82de8fa8769",
+  "bodies/220923_Standing_big_toe_hold_pose_or_Utthita_Padangusthasana-a.npz": "4f252f52f1a442691b99e5085d92477e71fcc461d4746c9f05d9655f4e3654c6",
+  "bodies/220923_Standing_big_toe_hold_pose_or_Utthita_Padangusthasana-b.npz": "3c79f0a3323cdf74ba60245ca1694fbf9d72df8a96b939d1585dc7047521a7d8",
+  "bodies/220923_Supported_Headstand_pose_or_Salamba_Sirsasana_-b.npz": "beadd43dd3763b7cb77a8f84eac5e73fe7d7dc20db52a2e0c1f5e6af5a4611ce",
+  "bodies/220923_Supported_Shoulderstand_pose_or_Salamba_Sarvangasana_-a.npz": "8ddf9a558a8f96b12f4efef99d87e699c7d3a02988d1e104196b0abc6dd658c8",
+  "bodies/220923_Tree_Pose_or_Vrksasana_-a.npz": "dfede52f345ce95804b4781f72789d91fa62ed224ca079c96a2d12f62becf658",
+  "bodies/220923_Tree_Pose_or_Vrksasana_-b.npz": "2c762ea2d012ce82a05e0cb0bdc5929d79fe903825d4941846b67c5c642424d8",
+  "bodies/220926_Eagle_Pose_or_Garudasana_-a.npz": "8dfb0eeba7e671c1ec40e39b9d8f833b483cee25555781a2d1bd4a8ce0a94f69",
+  "bodies/220926_Intense_Side_Stretch_Pose_or_Parsvottanasana_-b.npz": "2c3362d6e7118d853c2e4775d4aeb5c296ffbf0502105b3b5fde94eac6a78e68",
+  "bodies/220926_Lord_of_the_Dance_Pose_or_Natarajasana_-a.npz": "2bf51197c1eff91b14f204626263e8bab0a80c5de42af49cab491040c6175961",
+  "bodies/220926_Lord_of_the_Dance_Pose_or_Natarajasana_-c.npz": "0025b8e6f93ece665e1793bd7a4607009489df5bf5d384c9ef7c9bb07ad900da",
+  "bodies/220926_Plow_Pose_or_Halasana_-b.npz": "147d68533d9279340a28b9cdf005cfe95b4dfce538944115ff24666a64ee9806",
+  "bodies/220926_Supported_Headstand_pose_or_Salamba_Sirsasana_-a.npz": "ca20b3c31c4362fb8fb1cec7172de9dd41f9451f3189f5fe83ed3c57eb464bbe",
+  "bodies/220926_Upward_Plank_Pose_or_Purvottanasana_-a.npz": "6b628dc68e222af15f355694eb9384864a23334f4e0776624cf4c3cb6dab14d7",
+  "bodies/220926_Warrior_III_Pose_or_Virabhadrasana_III_-a.npz": "bd06f6fee11576208241c65103b1804864e70efebe5113e76a7ebb8e06973103",
+  "bodies/220926_Warrior_III_Pose_or_Virabhadrasana_III_-b.npz": "05325503bd25d5d8d52003876864bce0043dc96e235bbc70998fdd0afd13488d",
+  "bodies/220926_Warrior_II_Pose_or_Virabhadrasana_II_-a.npz": "36979f9a2b84fccd98a186f6f3e9a73f4a51205a82dd0800ecea56f9231df728",
+  "bodies/220926_viparita_virabhadrasana_or_reverse_warrior_pose-a.npz": "fe8e8aaed86d405129776fcb1640403b1a912e9751533838cf1636d435dfc07b",
+  "gated/220923_Bridge_Pose_or_Setu_Bandha_Sarvangasana_-a.motion": "4bcfaa29eff8c3bca9365cf60ff10ef9a60cbf6660a93cb70cb934e3fc49760f",
+  "gated/220923_Cobra_Pose_or_Bhujangasana_-a.motion": "73afe56cde05a1382b603a43b134d69a13ef515973d9283785977160d0a234ba",
+  "gated/220923_Crane_Crow_Pose_or_Bakasana_-a.motion": "3aeb86142afc942be9b79704709f67325b6d6818a761b0a3ab27f4392e369488",
+  "gated/220923_Dolphin_Plank_Pose_or_Makara_Adho_Mukha_Svanasana_-a.motion": "929872f7b5da85e1f9b170b4f237b835255589f3075ac38d27632ce355f725cb",
+  "gated/220923_Dolphin_Pose_or_Ardha_Pincha_Mayurasana_-a.motion": "6a542e8b09c1083e9ae212fdc23fd2b20e5bb014e62c2919c5d0b223c14fb9d4",
+  "gated/220923_Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana_-a.motion": "298d63e12c5f008180946a0c2f487099f23276b945c728b9765129429d7a7cc2",
+  "gated/220923_Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana_-b.motion": "270e211e4847943d07448196cdac0381ef4cbc497bf5ab7ad9eee3ee97a39364",
+  "gated/220923_Extended_Revolved_Side_Angle_Pose_or_Utthita_Parsvakonasana_-a.motion": "83f53732d4a47e32d1118468cd382de705f3a55cf740d53ac5cab024d8529055",
+  "gated/220923_Extended_Revolved_Side_Angle_Pose_or_Utthita_Parsvakonasana_-b.motion": "d1e73fccc45b2c0561fe7aba08d5d5ddf1b6a56554d5b9ff6ef6be8a7b88109a",
+  "gated/220923_Extended_Revolved_Triangle_Pose_or_Utthita_Trikonasana_-a.motion": "90fb0f91c6b52a53c54dcded39d99a7342570596182d01991620e1d8ecd65132",
+  "gated/220923_Extended_Revolved_Triangle_Pose_or_Utthita_Trikonasana_-b.motion": "cbf04f4921f50ea7bc1076a86242e904ce59a4168e6625829d11190c3975c3d0",
+  "gated/220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-a.motion": "611b0332a91ce1e902f065873f00691bff4cd36f21a6fca86cfb11abc191618d",
+  "gated/220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-b.motion": "0547770abd680dde2c1d1192b05d0d2528eef31232d93bcd273218f733a16935",
+  "gated/220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-c.motion": "87b5a3d9e37e31776d75d08c588814bbf53f0a88238dac7277f7721b61ba0daa",
+  "gated/220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-d.motion": "22ceb5e3c41622846f28cbf255822c0c25f5afe1c71bff04346939a05b05baf6",
+  "gated/220923_Firefly_Pose_or_Tittibhasana_-a.motion": "450a904c6cab681fa03328ea1835b50e25ad49b2beaffdaf65195d19f87db730",
+  "gated/220923_Four-Limbed_Staff_Pose_or_Chaturanga_Dandasana_-a.motion": "e658a28f304ad93988842758ca6990c2e9c9ec1ebf7beb998c5a01753262c12f",
+  "gated/220923_Garland_Pose_or_Malasana_-a.motion": "c161e481ee14bb8154a8b7b9122d13f497acf41a675f0d9b53905ce5bffd176b",
+  "gated/220923_Half_Moon_Pose_or_Ardha_Chandrasana_-a.motion": "a9a0ebbe1c0f97adb1b3cd7f8b46699df8508421b2dae9fb2c749bde095c745c",
+  "gated/220923_Half_Moon_Pose_or_Ardha_Chandrasana_-b.motion": "234ad1f9dfeb227a688b432e94f8d9c7745f9f02d92cac66eb64b5c6e13c343e",
+  "gated/220923_Handstand_pose_or_Adho_Mukha_Vrksasana_-a.motion": "106c21cc22b84516cd49b1928fc30dbbe0c4a22f0146be9669a08d05c2f202d7",
+  "gated/220923_Legs-Up-the-Wall_Pose_or_Viparita_Karani_-a.motion": "4355e53632275e14f1c508ca27d6aaff2e428a9e71cd5f340611385902ddd93e",
+  "gated/220923_Low_Lunge_pose_or_Anjaneyasana_-a.motion": "6e102f4f7c496571d133b76c0cf7a2a91a3528d8446fc41afb6e3f64f43c4eb9",
+  "gated/220923_Peacock_Pose_or_Mayurasana_-a.motion": "48f05cfba7f1025d3de50ed76f87fdb218e085fa83fb7e9842e46f5b7f2aa409",
+  "gated/220923_Plank_Pose_or_Kumbhakasana_-a.motion": "8738ee7c22c652332b5fcd19af7df271aad12c4b573909cd418877611382d20d",
+  "gated/220923_Plow_Pose_or_Halasana_-a.motion": "cfb5d1b75e21bd2ee5cc5184a817ae094d8e24a86a039ffdad2cdd7b6e94fbc4",
+  "gated/220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-a.motion": "664cf3c3bd09cdc3eab6047295ba82304b993190467590d8b2f4dc61c81c57c9",
+  "gated/220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-b.motion": "747e7d2ec7275d2824ee30f4de3691109e1fce291e5353b1cb50c4d6f7616ac8",
+  "gated/220923_Scorpion_pose_or_vrischikasana-a.motion": "e3a064340d5a2aae2b60e434373936a65ebcda34385c60e3eeb87285b85d6ffc",
+  "gated/220923_Scorpion_pose_or_vrischikasana-b.motion": "0ea48042735a03a8cca6f0ef0a483704b8bced34bfee3dd2af9b1b273d97ee86",
+  "gated/220923_Shoulder-Pressing_Pose_or_Bhujapidasana_-a.motion": "408984f7b40be79e479c627413e56bfef70d3bf987b524e47c02cf5addd6ded8",
+  "gated/220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a.motion": "8252305cf06b4217fbdca87d44d052915a8bd0b4e076705c577b5231860b18ba",
+  "gated/220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-b.motion": "6c0455dc9142528d2bc2cc626998e3fb697504ce2dd49ce44b64a6de3ba336b0",
+  "gated/220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-c.motion": "dc07ba287174dd14a11c05041b58e619f0172a93b302a699360451354bfb776e",
+  "gated/220923_Side_Plank_Pose_or_Vasisthasana_-a.motion": "7c7fce71b876e6232b4c6263b5bb13820f170a898c36c5e50c311e4a9f754c4d",
+  "gated/220923_Side_Plank_Pose_or_Vasisthasana_-b.motion": "26419188235afa0d73e8258a9b53190e6653f93bbdbedabdb87f0cec9b1772db",
+  "gated/220923_Standing_Forward_Bend_pose_or_Uttanasana_-a.motion": "8f8cead5835885469667b25ae9dad68b51d029a2a75ba7bc325925287aac3983",
+  "gated/220923_Standing_Split_pose_or_Urdhva_Prasarita_Eka_Padasana_-a.motion": "aff386cf608eace315fc9627f316d55b2218ca073a424f51ddff1c28887dc859",
+  "gated/220923_Standing_Split_pose_or_Urdhva_Prasarita_Eka_Padasana_-b.motion": "d84c37418400e20174864d31f0f0ad423af553f2c51e89b677ff2c6fa057b9cd",
+  "gated/220923_Standing_big_toe_hold_pose_or_Utthita_Padangusthasana-a.motion": "42416be0bbf16c3ebbd3c56028a8de048221adced19de14eb693dd06e3d3909d",
+  "gated/220923_Standing_big_toe_hold_pose_or_Utthita_Padangusthasana-b.motion": "0a89d8d8681c2db9bbc76fe0aecdc6404faeff4f21cee1b0fb586c73712f48b4",
+  "gated/220923_Supported_Headstand_pose_or_Salamba_Sirsasana_-b.motion": "522fcf1431804eb1fe4501a2741109ac7dbcc9cf724b225e6d5be1f0a0812028",
+  "gated/220923_Supported_Shoulderstand_pose_or_Salamba_Sarvangasana_-a.motion": "a403bc3417d15b920549be12ebca908ff31dcc95790459b0d09765890530a79d",
+  "gated/220923_Tree_Pose_or_Vrksasana_-a.motion": "5b2579f286d3780d1c51d92c77e91a1bbbd9d949ddf2193a62a17a64e2a82053",
+  "gated/220923_Tree_Pose_or_Vrksasana_-b.motion": "4c5f700c9f1c935155aec66fafd7f59178154e1443df08fc39396f6e82aed9d5",
+  "gated/220926_Eagle_Pose_or_Garudasana_-a.motion": "0af80215b004fa01e3befee499f7b2c3ea5a18faad79bc43a15e768372c104a7",
+  "gated/220926_Intense_Side_Stretch_Pose_or_Parsvottanasana_-b.motion": "cef52c0505967d708308019b36248d51b4a0835dbb83565574f6626e2b9a1c66",
+  "gated/220926_Lord_of_the_Dance_Pose_or_Natarajasana_-a.motion": "588209c2400727cf102b4686637d685640f3509241512cab2208bf59561bb103",
+  "gated/220926_Lord_of_the_Dance_Pose_or_Natarajasana_-c.motion": "fb1f6d084696d30ce5c1e273bae9efe107a66cbe26ce19f2f889747fe8b47426",
+  "gated/220926_Plow_Pose_or_Halasana_-b.motion": "bbbf50d53a523af750af04b09bbd7af821487c84c5096bd44daadae8a94c0f85",
+  "gated/220926_Supported_Headstand_pose_or_Salamba_Sirsasana_-a.motion": "e48e3a6e5bbaf5e9854f497ebb662b4f46d95b2b9afcfc6e3e159ca1cd741551",
+  "gated/220926_Upward_Plank_Pose_or_Purvottanasana_-a.motion": "e51aa80bef2e52ca6db6099ceeadcf1e70d259914b31f47dcd3423a8c2bef405",
+  "gated/220926_Warrior_III_Pose_or_Virabhadrasana_III_-a.motion": "b33f25b56a7ee1eabbae6e9fdaf962b96919e58838e28f22d94e069a87d3617f",
+  "gated/220926_Warrior_III_Pose_or_Virabhadrasana_III_-b.motion": "32be552da855270d0c7ac7d0e05f657024e3087ce287905c2cf7847858f23204",
+  "gated/220926_Warrior_II_Pose_or_Virabhadrasana_II_-a.motion": "b241f7d834f03912d4010bba7774e97175628f8e675653036bce396892c5cc4f",
+  "gated/220926_viparita_virabhadrasana_or_reverse_warrior_pose-a.motion": "a7c59549d5a00a819bb77b6447c3988427582d18fccec20d27e14c5226b524d0"
+ },
+ "seconds": 176.4,
+ "per_clip": {
+  "220923_Half_Moon_Pose_or_Ardha_Chandrasana_-a": {
+   "v2": {
+    "loaded_frames": 1276,
+    "explained_p50": 0.9533,
+    "explained_ge_0_9": 1.0,
+    "cop_residual_cm_p50": 3.189,
+    "cop_residual_cm_p90": 5.134
+   },
+   "shipped_port": {
+    "loaded_frames": 1276,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 1.0,
+    "cop_residual_cm_p50": 0.017,
+    "cop_residual_cm_p90": 0.017
+   },
+   "ftR": {
+    "loaded_frames": 1276,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 1.0,
+    "cop_residual_cm_p50": 0.017,
+    "cop_residual_cm_p90": 0.017
+   },
+   "v2_port": {
+    "col0_ge_0_9": 0.971,
+    "col1_ge_0_9": 0.6136,
+    "col2_ge_0_9": 0.9984
+   }
+  },
+  "220923_Half_Moon_Pose_or_Ardha_Chandrasana_-b": {
+   "v2": {
+    "loaded_frames": 1444,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 1.0,
+    "cop_residual_cm_p50": 0.016,
+    "cop_residual_cm_p90": 0.061
+   },
+   "shipped_port": {
+    "loaded_frames": 1444,
+    "explained_p50": 0.2684,
+    "explained_ge_0_9": 0.4058,
+    "cop_residual_cm_p50": 47.797,
+    "cop_residual_cm_p90": 50.16
+   },
+   "ftR": {
+    "loaded_frames": 1444,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 1.0,
+    "cop_residual_cm_p50": 0.017,
+    "cop_residual_cm_p90": 0.719
+   },
+   "v2_port": {
+    "col0_ge_0_9": 0.9938,
+    "col1_ge_0_9": 0.9938,
+    "col2_ge_0_9": 0.9972
+   }
+  },
+  "220923_Standing_Split_pose_or_Urdhva_Prasarita_Eka_Padasana_-a": {
+   "v2": {
+    "loaded_frames": 1036,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 1.0,
+    "cop_residual_cm_p50": 0.017,
+    "cop_residual_cm_p90": 0.093
+   },
+   "shipped_port": {
+    "loaded_frames": 1036,
+    "explained_p50": 0.2348,
+    "explained_ge_0_9": 0.4884,
+    "cop_residual_cm_p50": 10.965,
+    "cop_residual_cm_p90": 19.11
+   },
+   "ftR": {
+    "loaded_frames": 1036,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 1.0,
+    "cop_residual_cm_p50": 0.017,
+    "cop_residual_cm_p90": 0.204
+   },
+   "v2_port": {
+    "col0_ge_0_9": 0.9981,
+    "col1_ge_0_9": 0.9981,
+    "col2_ge_0_9": 0.9981
+   }
+  },
+  "220923_Standing_Split_pose_or_Urdhva_Prasarita_Eka_Padasana_-b": {
+   "v2": {
+    "loaded_frames": 988,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 1.0,
+    "cop_residual_cm_p50": 0.017,
+    "cop_residual_cm_p90": 0.018
+   },
+   "shipped_port": {
+    "loaded_frames": 988,
+    "explained_p50": 0.1297,
+    "explained_ge_0_9": 0.4383,
+    "cop_residual_cm_p50": 26.157,
+    "cop_residual_cm_p90": 31.835
+   },
+   "ftR": {
+    "loaded_frames": 988,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 0.9929,
+    "cop_residual_cm_p50": 0.017,
+    "cop_residual_cm_p90": 0.018
+   },
+   "v2_port": {
+    "col0_ge_0_9": 0.9919,
+    "col1_ge_0_9": 0.9919,
+    "col2_ge_0_9": 1.0
+   }
+  },
+  "220923_Standing_big_toe_hold_pose_or_Utthita_Padangusthasana-a": {
+   "v2": {
+    "loaded_frames": 1434,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 1.0,
+    "cop_residual_cm_p50": 0.008,
+    "cop_residual_cm_p90": 0.089
+   },
+   "shipped_port": {
+    "loaded_frames": 1434,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 1.0,
+    "cop_residual_cm_p50": 0.008,
+    "cop_residual_cm_p90": 0.008
+   },
+   "ftR": {
+    "loaded_frames": 1434,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 1.0,
+    "cop_residual_cm_p50": 0.008,
+    "cop_residual_cm_p90": 0.008
+   },
+   "v2_port": {
+    "col0_ge_0_9": 1.0,
+    "col1_ge_0_9": 1.0,
+    "col2_ge_0_9": 1.0
+   }
+  },
+  "220923_Standing_big_toe_hold_pose_or_Utthita_Padangusthasana-b": {
+   "v2": {
+    "loaded_frames": 1224,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 1.0,
+    "cop_residual_cm_p50": 0.008,
+    "cop_residual_cm_p90": 0.008
+   },
+   "shipped_port": {
+    "loaded_frames": 1224,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 1.0,
+    "cop_residual_cm_p50": 0.008,
+    "cop_residual_cm_p90": 0.008
+   },
+   "ftR": {
+    "loaded_frames": 1224,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 1.0,
+    "cop_residual_cm_p50": 0.008,
+    "cop_residual_cm_p90": 0.008
+   },
+   "v2_port": {
+    "col0_ge_0_9": 1.0,
+    "col1_ge_0_9": 1.0,
+    "col2_ge_0_9": 1.0
+   }
+  },
+  "220923_Tree_Pose_or_Vrksasana_-a": {
+   "v2": {
+    "loaded_frames": 1212,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 1.0,
+    "cop_residual_cm_p50": 0.011,
+    "cop_residual_cm_p90": 0.011
+   },
+   "shipped_port": {
+    "loaded_frames": 1212,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 1.0,
+    "cop_residual_cm_p50": 0.011,
+    "cop_residual_cm_p90": 0.011
+   },
+   "ftR": {
+    "loaded_frames": 1212,
+    "explained_p50": 0.9919,
+    "explained_ge_0_9": 0.9398,
+    "cop_residual_cm_p50": 0.097,
+    "cop_residual_cm_p90": 0.925
+   },
+   "v2_port": {
+    "col0_ge_0_9": 1.0,
+    "col1_ge_0_9": 1.0,
+    "col2_ge_0_9": 1.0
+   }
+  },
+  "220923_Tree_Pose_or_Vrksasana_-b": {
+   "v2": {
+    "loaded_frames": 856,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 1.0,
+    "cop_residual_cm_p50": 0.011,
+    "cop_residual_cm_p90": 0.012
+   },
+   "shipped_port": {
+    "loaded_frames": 856,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 1.0,
+    "cop_residual_cm_p50": 0.011,
+    "cop_residual_cm_p90": 0.012
+   },
+   "ftR": {
+    "loaded_frames": 856,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 1.0,
+    "cop_residual_cm_p50": 0.011,
+    "cop_residual_cm_p90": 0.082
+   },
+   "v2_port": {
+    "col0_ge_0_9": 0.9942,
+    "col1_ge_0_9": 0.9942,
+    "col2_ge_0_9": 1.0
+   }
+  },
+  "220926_Eagle_Pose_or_Garudasana_-a": {
+   "v2": {
+    "loaded_frames": 1174,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 1.0,
+    "cop_residual_cm_p50": 0.011,
+    "cop_residual_cm_p90": 0.012
+   },
+   "shipped_port": {
+    "loaded_frames": 1174,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 1.0,
+    "cop_residual_cm_p50": 0.011,
+    "cop_residual_cm_p90": 0.012
+   },
+   "ftR": {
+    "loaded_frames": 1174,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 0.9915,
+    "cop_residual_cm_p50": 0.011,
+    "cop_residual_cm_p90": 0.012
+   },
+   "v2_port": {
+    "col0_ge_0_9": 1.0,
+    "col1_ge_0_9": 1.0,
+    "col2_ge_0_9": 0.9727
+   }
+  },
+  "220926_Lord_of_the_Dance_Pose_or_Natarajasana_-a": {
+   "v2": {
+    "loaded_frames": 1346,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 1.0,
+    "cop_residual_cm_p50": 0.022,
+    "cop_residual_cm_p90": 0.21
+   },
+   "shipped_port": {
+    "loaded_frames": 1346,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 1.0,
+    "cop_residual_cm_p50": 0.022,
+    "cop_residual_cm_p90": 0.022
+   },
+   "ftR": {
+    "loaded_frames": 1346,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 1.0,
+    "cop_residual_cm_p50": 0.022,
+    "cop_residual_cm_p90": 0.022
+   },
+   "v2_port": {
+    "col0_ge_0_9": 1.0,
+    "col1_ge_0_9": 1.0,
+    "col2_ge_0_9": 1.0
+   }
+  },
+  "220926_Lord_of_the_Dance_Pose_or_Natarajasana_-c": {
+   "v2": {
+    "loaded_frames": 1912,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 1.0,
+    "cop_residual_cm_p50": 0.019,
+    "cop_residual_cm_p90": 0.019
+   },
+   "shipped_port": {
+    "loaded_frames": 1912,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 1.0,
+    "cop_residual_cm_p50": 0.019,
+    "cop_residual_cm_p90": 0.019
+   },
+   "ftR": {
+    "loaded_frames": 1912,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 1.0,
+    "cop_residual_cm_p50": 0.019,
+    "cop_residual_cm_p90": 0.019
+   },
+   "v2_port": {
+    "col0_ge_0_9": 0.9969,
+    "col1_ge_0_9": 0.9969,
+    "col2_ge_0_9": 1.0
+   }
+  },
+  "220926_Warrior_III_Pose_or_Virabhadrasana_III_-a": {
+   "v2": {
+    "loaded_frames": 1268,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 1.0,
+    "cop_residual_cm_p50": 0.02,
+    "cop_residual_cm_p90": 0.412
+   },
+   "shipped_port": {
+    "loaded_frames": 1268,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 1.0,
+    "cop_residual_cm_p50": 0.019,
+    "cop_residual_cm_p90": 0.02
+   },
+   "ftR": {
+    "loaded_frames": 1268,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 1.0,
+    "cop_residual_cm_p50": 0.019,
+    "cop_residual_cm_p90": 0.02
+   },
+   "v2_port": {
+    "col0_ge_0_9": 0.9961,
+    "col1_ge_0_9": 0.9953,
+    "col2_ge_0_9": 1.0
+   }
+  },
+  "220926_Warrior_III_Pose_or_Virabhadrasana_III_-b": {
+   "v2": {
+    "loaded_frames": 1174,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 1.0,
+    "cop_residual_cm_p50": 0.014,
+    "cop_residual_cm_p90": 0.014
+   },
+   "shipped_port": {
+    "loaded_frames": 1174,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 1.0,
+    "cop_residual_cm_p50": 0.014,
+    "cop_residual_cm_p90": 0.014
+   },
+   "ftR": {
+    "loaded_frames": 1174,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 1.0,
+    "cop_residual_cm_p50": 0.014,
+    "cop_residual_cm_p90": 0.014
+   },
+   "v2_port": {
+    "col0_ge_0_9": 0.9957,
+    "col1_ge_0_9": 0.9957,
+    "col2_ge_0_9": 0.9915
+   }
+  },
+  "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-a": {
+   "v2": {
+    "loaded_frames": 2144,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 1.0,
+    "cop_residual_cm_p50": 0.017,
+    "cop_residual_cm_p90": 0.223
+   },
+   "shipped_port": {
+    "loaded_frames": 2144,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 0.7607,
+    "cop_residual_cm_p50": 0.021,
+    "cop_residual_cm_p90": 35.813
+   },
+   "ftR": {
+    "loaded_frames": 2144,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 0.9991,
+    "cop_residual_cm_p50": 0.017,
+    "cop_residual_cm_p90": 0.022
+   },
+   "v2_port": {
+    "col0_ge_0_9": 0.3465,
+    "col1_ge_0_9": 0.341,
+    "col2_ge_0_9": 0.9907
+   }
+  },
+  "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-b": {
+   "v2": {
+    "loaded_frames": 2228,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 1.0,
+    "cop_residual_cm_p50": 0.016,
+    "cop_residual_cm_p90": 0.021
+   },
+   "shipped_port": {
+    "loaded_frames": 2228,
+    "explained_p50": 0.9956,
+    "explained_ge_0_9": 0.6746,
+    "cop_residual_cm_p50": 0.068,
+    "cop_residual_cm_p90": 39.77
+   },
+   "ftR": {
+    "loaded_frames": 2228,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 0.9996,
+    "cop_residual_cm_p50": 0.016,
+    "cop_residual_cm_p90": 0.126
+   },
+   "v2_port": {
+    "col0_ge_0_9": 0.289,
+    "col1_ge_0_9": 0.2814,
+    "col2_ge_0_9": 0.9529
+   }
+  },
+  "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-c": {
+   "v2": {
+    "loaded_frames": 2404,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 1.0,
+    "cop_residual_cm_p50": 0.019,
+    "cop_residual_cm_p90": 0.02
+   },
+   "shipped_port": {
+    "loaded_frames": 2404,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 0.7804,
+    "cop_residual_cm_p50": 0.02,
+    "cop_residual_cm_p90": 32.57
+   },
+   "ftR": {
+    "loaded_frames": 2404,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 0.9983,
+    "cop_residual_cm_p50": 0.019,
+    "cop_residual_cm_p90": 0.02
+   },
+   "v2_port": {
+    "col0_ge_0_9": 0.2554,
+    "col1_ge_0_9": 0.2525,
+    "col2_ge_0_9": 0.9929
+   }
+  },
+  "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-d": {
+   "v2": {
+    "loaded_frames": 1984,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 1.0,
+    "cop_residual_cm_p50": 0.017,
+    "cop_residual_cm_p90": 0.021
+   },
+   "shipped_port": {
+    "loaded_frames": 1984,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 0.7752,
+    "cop_residual_cm_p50": 0.021,
+    "cop_residual_cm_p90": 32.943
+   },
+   "ftR": {
+    "loaded_frames": 1984,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 0.9995,
+    "cop_residual_cm_p50": 0.017,
+    "cop_residual_cm_p90": 0.021
+   },
+   "v2_port": {
+    "col0_ge_0_9": 0.3256,
+    "col1_ge_0_9": 0.3221,
+    "col2_ge_0_9": 0.9682
+   }
+  },
+  "220923_Handstand_pose_or_Adho_Mukha_Vrksasana_-a": {
+   "v2": {
+    "loaded_frames": 2938,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 1.0,
+    "cop_residual_cm_p50": 0.023,
+    "cop_residual_cm_p90": 0.176
+   },
+   "shipped_port": {
+    "loaded_frames": 2938,
+    "explained_p50": 0.9901,
+    "explained_ge_0_9": 0.6389,
+    "cop_residual_cm_p50": 0.089,
+    "cop_residual_cm_p90": 38.505
+   },
+   "ftR": {
+    "loaded_frames": 2938,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 0.9986,
+    "cop_residual_cm_p50": 0.023,
+    "cop_residual_cm_p90": 0.336
+   },
+   "v2_port": {
+    "col0_ge_0_9": 0.7032,
+    "col1_ge_0_9": 0.6709,
+    "col2_ge_0_9": 0.9949
+   }
+  },
+  "220923_Legs-Up-the-Wall_Pose_or_Viparita_Karani_-a": {
+   "v2": {
+    "loaded_frames": 1078,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 1.0,
+    "cop_residual_cm_p50": 0.017,
+    "cop_residual_cm_p90": 0.025
+   },
+   "shipped_port": {
+    "loaded_frames": 1078,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 0.6698,
+    "cop_residual_cm_p50": 0.023,
+    "cop_residual_cm_p90": 23.649
+   },
+   "ftR": {
+    "loaded_frames": 1078,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 1.0,
+    "cop_residual_cm_p50": 0.017,
+    "cop_residual_cm_p90": 0.025
+   },
+   "v2_port": {
+    "col0_ge_0_9": 0.5918,
+    "col1_ge_0_9": 0.5918,
+    "col2_ge_0_9": 0.8729
+   }
+  },
+  "220923_Plow_Pose_or_Halasana_-a": {
+   "v2": {
+    "loaded_frames": 1332,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 1.0,
+    "cop_residual_cm_p50": 0.02,
+    "cop_residual_cm_p90": 0.029
+   },
+   "shipped_port": {
+    "loaded_frames": 1332,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 0.8063,
+    "cop_residual_cm_p50": 0.029,
+    "cop_residual_cm_p90": 2.302
+   },
+   "ftR": {
+    "loaded_frames": 1332,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 0.9189,
+    "cop_residual_cm_p50": 0.02,
+    "cop_residual_cm_p90": 0.03
+   },
+   "v2_port": {
+    "col0_ge_0_9": 0.3447,
+    "col1_ge_0_9": 0.3447,
+    "col2_ge_0_9": 0.3946
+   }
+  },
+  "220926_Plow_Pose_or_Halasana_-b": {
+   "v2": {
+    "loaded_frames": 2112,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 0.9782,
+    "cop_residual_cm_p50": 0.021,
+    "cop_residual_cm_p90": 0.1
+   },
+   "shipped_port": {
+    "loaded_frames": 2112,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 0.7325,
+    "cop_residual_cm_p50": 0.023,
+    "cop_residual_cm_p90": 20.071
+   },
+   "ftR": {
+    "loaded_frames": 2112,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 0.884,
+    "cop_residual_cm_p50": 0.021,
+    "cop_residual_cm_p90": 0.199
+   },
+   "v2_port": {
+    "col0_ge_0_9": 0.522,
+    "col1_ge_0_9": 0.522,
+    "col2_ge_0_9": 0.4117
+   }
+  },
+  "220923_Scorpion_pose_or_vrischikasana-a": {
+   "v2": {
+    "loaded_frames": 3270,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 1.0,
+    "cop_residual_cm_p50": 0.019,
+    "cop_residual_cm_p90": 0.02
+   },
+   "shipped_port": {
+    "loaded_frames": 3270,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 0.6957,
+    "cop_residual_cm_p50": 0.02,
+    "cop_residual_cm_p90": 34.272
+   },
+   "ftR": {
+    "loaded_frames": 3270,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 0.9997,
+    "cop_residual_cm_p50": 0.019,
+    "cop_residual_cm_p90": 0.02
+   },
+   "v2_port": {
+    "col0_ge_0_9": 0.2046,
+    "col1_ge_0_9": 0.2021,
+    "col2_ge_0_9": 0.9554
+   }
+  },
+  "220923_Scorpion_pose_or_vrischikasana-b": {
+   "v2": {
+    "loaded_frames": 1808,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 1.0,
+    "cop_residual_cm_p50": 0.01,
+    "cop_residual_cm_p90": 0.081
+   },
+   "shipped_port": {
+    "loaded_frames": 1808,
+    "explained_p50": 0.9919,
+    "explained_ge_0_9": 0.9735,
+    "cop_residual_cm_p50": 0.061,
+    "cop_residual_cm_p90": 0.202
+   },
+   "ftR": {
+    "loaded_frames": 1808,
+    "explained_p50": 0.9956,
+    "explained_ge_0_9": 0.9983,
+    "cop_residual_cm_p50": 0.026,
+    "cop_residual_cm_p90": 0.107
+   },
+   "v2_port": {
+    "col0_ge_0_9": 0.2633,
+    "col1_ge_0_9": 0.2544,
+    "col2_ge_0_9": 0.6692
+   }
+  },
+  "220923_Supported_Headstand_pose_or_Salamba_Sirsasana_-b": {
+   "v2": {
+    "loaded_frames": 1790,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 1.0,
+    "cop_residual_cm_p50": 0.021,
+    "cop_residual_cm_p90": 0.022
+   },
+   "shipped_port": {
+    "loaded_frames": 1790,
+    "explained_p50": 0.2678,
+    "explained_ge_0_9": 0.2006,
+    "cop_residual_cm_p50": 23.911,
+    "cop_residual_cm_p90": 27.414
+   },
+   "ftR": {
+    "loaded_frames": 1790,
+    "explained_p50": 0.4025,
+    "explained_ge_0_9": 0.4022,
+    "cop_residual_cm_p50": 23.717,
+    "cop_residual_cm_p90": 27.17
+   },
+   "v2_port": {
+    "col0_ge_0_9": 0.3637,
+    "col1_ge_0_9": 0.3626,
+    "col2_ge_0_9": 0.9972
+   }
+  },
+  "220926_Supported_Headstand_pose_or_Salamba_Sirsasana_-a": {
+   "v2": {
+    "loaded_frames": 1888,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 1.0,
+    "cop_residual_cm_p50": 0.018,
+    "cop_residual_cm_p90": 0.02
+   },
+   "shipped_port": {
+    "loaded_frames": 1888,
+    "explained_p50": 0.6513,
+    "explained_ge_0_9": 0.2553,
+    "cop_residual_cm_p50": 4.308,
+    "cop_residual_cm_p90": 22.013
+   },
+   "ftR": {
+    "loaded_frames": 1888,
+    "explained_p50": 0.8857,
+    "explained_ge_0_9": 0.4857,
+    "cop_residual_cm_p50": 1.705,
+    "cop_residual_cm_p90": 5.183
+   },
+   "v2_port": {
+    "col0_ge_0_9": 0.8385,
+    "col1_ge_0_9": 0.8374,
+    "col2_ge_0_9": 1.0
+   }
+  },
+  "220923_Supported_Shoulderstand_pose_or_Salamba_Sarvangasana_-a": {
+   "v2": {
+    "loaded_frames": 1608,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 1.0,
+    "cop_residual_cm_p50": 0.017,
+    "cop_residual_cm_p90": 0.029
+   },
+   "shipped_port": {
+    "loaded_frames": 1608,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 0.778,
+    "cop_residual_cm_p50": 0.02,
+    "cop_residual_cm_p90": 7.232
+   },
+   "ftR": {
+    "loaded_frames": 1608,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 0.9459,
+    "cop_residual_cm_p50": 0.017,
+    "cop_residual_cm_p90": 0.38
+   },
+   "v2_port": {
+    "col0_ge_0_9": 0.4527,
+    "col1_ge_0_9": 0.4515,
+    "col2_ge_0_9": 0.7494
+   }
+  },
+  "220923_Crane_Crow_Pose_or_Bakasana_-a": {
+   "v2": {
+    "loaded_frames": 972,
+    "explained_p50": 0.9924,
+    "explained_ge_0_9": 1.0,
+    "cop_residual_cm_p50": 0.129,
+    "cop_residual_cm_p90": 0.31
+   },
+   "shipped_port": {
+    "loaded_frames": 972,
+    "explained_p50": 0.9759,
+    "explained_ge_0_9": 0.6677,
+    "cop_residual_cm_p50": 0.189,
+    "cop_residual_cm_p90": 19.814
+   },
+   "ftR": {
+    "loaded_frames": 972,
+    "explained_p50": 0.9798,
+    "explained_ge_0_9": 0.9979,
+    "cop_residual_cm_p50": 0.21,
+    "cop_residual_cm_p90": 0.749
+   },
+   "v2_port": {
+    "col0_ge_0_9": 0.8251,
+    "col1_ge_0_9": 0.7027,
+    "col2_ge_0_9": 0.9928
+   }
+  },
+  "220923_Firefly_Pose_or_Tittibhasana_-a": {
+   "v2": {
+    "loaded_frames": 1218,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 1.0,
+    "cop_residual_cm_p50": 0.016,
+    "cop_residual_cm_p90": 0.059
+   },
+   "shipped_port": {
+    "loaded_frames": 1218,
+    "explained_p50": 0.9833,
+    "explained_ge_0_9": 0.7315,
+    "cop_residual_cm_p50": 0.119,
+    "cop_residual_cm_p90": 18.181
+   },
+   "ftR": {
+    "loaded_frames": 1218,
+    "explained_p50": 0.9881,
+    "explained_ge_0_9": 0.7192,
+    "cop_residual_cm_p50": 0.212,
+    "cop_residual_cm_p90": 8.069
+   },
+   "v2_port": {
+    "col0_ge_0_9": 0.8785,
+    "col1_ge_0_9": 0.8736,
+    "col2_ge_0_9": 0.9245
+   }
+  },
+  "220923_Peacock_Pose_or_Mayurasana_-a": {
+   "v2": {
+    "loaded_frames": 1790,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 1.0,
+    "cop_residual_cm_p50": 0.022,
+    "cop_residual_cm_p90": 0.167
+   },
+   "shipped_port": {
+    "loaded_frames": 1790,
+    "explained_p50": 0.9934,
+    "explained_ge_0_9": 0.8123,
+    "cop_residual_cm_p50": 0.095,
+    "cop_residual_cm_p90": 12.655
+   },
+   "ftR": {
+    "loaded_frames": 1790,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 0.9994,
+    "cop_residual_cm_p50": 0.024,
+    "cop_residual_cm_p90": 0.414
+   },
+   "v2_port": {
+    "col0_ge_0_9": 0.4654,
+    "col1_ge_0_9": 0.4514,
+    "col2_ge_0_9": 0.6358
+   }
+  },
+  "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-a": {
+   "v2": {
+    "loaded_frames": 1848,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 1.0,
+    "cop_residual_cm_p50": 0.024,
+    "cop_residual_cm_p90": 0.189
+   },
+   "shipped_port": {
+    "loaded_frames": 1848,
+    "explained_p50": 0.5919,
+    "explained_ge_0_9": 0.4021,
+    "cop_residual_cm_p50": 10.507,
+    "cop_residual_cm_p90": 24.806
+   },
+   "ftR": {
+    "loaded_frames": 1848,
+    "explained_p50": 0.727,
+    "explained_ge_0_9": 0.382,
+    "cop_residual_cm_p50": 3.729,
+    "cop_residual_cm_p90": 23.516
+   },
+   "v2_port": {
+    "col0_ge_0_9": 0.4843,
+    "col1_ge_0_9": 0.4167,
+    "col2_ge_0_9": 0.8544
+   }
+  },
+  "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-b": {
+   "v2": {
+    "loaded_frames": 1602,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 1.0,
+    "cop_residual_cm_p50": 0.024,
+    "cop_residual_cm_p90": 0.206
+   },
+   "shipped_port": {
+    "loaded_frames": 1602,
+    "explained_p50": 0.8907,
+    "explained_ge_0_9": 0.4944,
+    "cop_residual_cm_p50": 2.213,
+    "cop_residual_cm_p90": 23.583
+   },
+   "ftR": {
+    "loaded_frames": 1602,
+    "explained_p50": 0.9531,
+    "explained_ge_0_9": 0.608,
+    "cop_residual_cm_p50": 0.826,
+    "cop_residual_cm_p90": 22.802
+   },
+   "v2_port": {
+    "col0_ge_0_9": 0.4825,
+    "col1_ge_0_9": 0.4463,
+    "col2_ge_0_9": 0.5968
+   }
+  },
+  "220923_Shoulder-Pressing_Pose_or_Bhujapidasana_-a": {
+   "v2": {
+    "loaded_frames": 970,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 1.0,
+    "cop_residual_cm_p50": 0.017,
+    "cop_residual_cm_p90": 0.266
+   },
+   "shipped_port": {
+    "loaded_frames": 970,
+    "explained_p50": 0.9623,
+    "explained_ge_0_9": 0.7299,
+    "cop_residual_cm_p50": 0.349,
+    "cop_residual_cm_p90": 15.016
+   },
+   "ftR": {
+    "loaded_frames": 970,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 0.9804,
+    "cop_residual_cm_p50": 0.017,
+    "cop_residual_cm_p90": 0.834
+   },
+   "v2_port": {
+    "col0_ge_0_9": 0.9402,
+    "col1_ge_0_9": 0.9309,
+    "col2_ge_0_9": 1.0
+   }
+  },
+  "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a": {
+   "v2": {
+    "loaded_frames": 1358,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 1.0,
+    "cop_residual_cm_p50": 0.017,
+    "cop_residual_cm_p90": 0.229
+   },
+   "shipped_port": {
+    "loaded_frames": 1358,
+    "explained_p50": 0.8728,
+    "explained_ge_0_9": 0.419,
+    "cop_residual_cm_p50": 1.231,
+    "cop_residual_cm_p90": 33.835
+   },
+   "ftR": {
+    "loaded_frames": 1358,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 0.8682,
+    "cop_residual_cm_p50": 0.018,
+    "cop_residual_cm_p90": 4.858
+   },
+   "v2_port": {
+    "col0_ge_0_9": 0.891,
+    "col1_ge_0_9": 0.8579,
+    "col2_ge_0_9": 0.9455
+   }
+  },
+  "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-b": {
+   "v2": {
+    "loaded_frames": 2038,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 1.0,
+    "cop_residual_cm_p50": 0.024,
+    "cop_residual_cm_p90": 0.276
+   },
+   "shipped_port": {
+    "loaded_frames": 2038,
+    "explained_p50": 0.731,
+    "explained_ge_0_9": 0.2792,
+    "cop_residual_cm_p50": 6.457,
+    "cop_residual_cm_p90": 24.877
+   },
+   "ftR": {
+    "loaded_frames": 2038,
+    "explained_p50": 0.8569,
+    "explained_ge_0_9": 0.4544,
+    "cop_residual_cm_p50": 2.504,
+    "cop_residual_cm_p90": 24.539
+   },
+   "v2_port": {
+    "col0_ge_0_9": 0.5236,
+    "col1_ge_0_9": 0.502,
+    "col2_ge_0_9": 0.7733
+   }
+  },
+  "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-c": {
+   "v2": {
+    "loaded_frames": 2056,
+    "explained_p50": 0.9938,
+    "explained_ge_0_9": 1.0,
+    "cop_residual_cm_p50": 0.091,
+    "cop_residual_cm_p90": 0.201
+   },
+   "shipped_port": {
+    "loaded_frames": 2056,
+    "explained_p50": 0.9643,
+    "explained_ge_0_9": 0.662,
+    "cop_residual_cm_p50": 0.272,
+    "cop_residual_cm_p90": 21.042
+   },
+   "ftR": {
+    "loaded_frames": 2056,
+    "explained_p50": 0.9889,
+    "explained_ge_0_9": 0.9037,
+    "cop_residual_cm_p50": 0.186,
+    "cop_residual_cm_p90": 0.556
+   },
+   "v2_port": {
+    "col0_ge_0_9": 0.9465,
+    "col1_ge_0_9": 0.9173,
+    "col2_ge_0_9": 0.9509
+   }
+  },
+  "220923_Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana_-a": {
+   "v2": {
+    "loaded_frames": 806,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 1.0,
+    "cop_residual_cm_p50": 0.017,
+    "cop_residual_cm_p90": 0.339
+   },
+   "shipped_port": {
+    "loaded_frames": 806,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 0.83,
+    "cop_residual_cm_p50": 0.017,
+    "cop_residual_cm_p90": 21.761
+   },
+   "ftR": {
+    "loaded_frames": 806,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 1.0,
+    "cop_residual_cm_p50": 0.017,
+    "cop_residual_cm_p90": 0.496
+   },
+   "v2_port": {
+    "col0_ge_0_9": 0.8548,
+    "col1_ge_0_9": 0.8524,
+    "col2_ge_0_9": 1.0
+   }
+  },
+  "220923_Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana_-b": {
+   "v2": {
+    "loaded_frames": 974,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 1.0,
+    "cop_residual_cm_p50": 0.016,
+    "cop_residual_cm_p90": 0.363
+   },
+   "shipped_port": {
+    "loaded_frames": 974,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 0.7618,
+    "cop_residual_cm_p50": 0.017,
+    "cop_residual_cm_p90": 16.288
+   },
+   "ftR": {
+    "loaded_frames": 974,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 0.9743,
+    "cop_residual_cm_p50": 0.017,
+    "cop_residual_cm_p90": 0.904
+   },
+   "v2_port": {
+    "col0_ge_0_9": 0.9025,
+    "col1_ge_0_9": 0.9025,
+    "col2_ge_0_9": 0.9969
+   }
+  },
+  "220923_Plank_Pose_or_Kumbhakasana_-a": {
+   "v2": {
+    "loaded_frames": 930,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 1.0,
+    "cop_residual_cm_p50": 0.017,
+    "cop_residual_cm_p90": 0.29
+   },
+   "shipped_port": {
+    "loaded_frames": 930,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 0.9602,
+    "cop_residual_cm_p50": 0.018,
+    "cop_residual_cm_p90": 0.533
+   },
+   "ftR": {
+    "loaded_frames": 930,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 1.0,
+    "cop_residual_cm_p50": 0.019,
+    "cop_residual_cm_p90": 0.414
+   },
+   "v2_port": {
+    "col0_ge_0_9": 0.8849,
+    "col1_ge_0_9": 0.8785,
+    "col2_ge_0_9": 0.9118
+   }
+  },
+  "220923_Four-Limbed_Staff_Pose_or_Chaturanga_Dandasana_-a": {
+   "v2": {
+    "loaded_frames": 894,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 1.0,
+    "cop_residual_cm_p50": 0.018,
+    "cop_residual_cm_p90": 0.023
+   },
+   "shipped_port": {
+    "loaded_frames": 894,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 0.8747,
+    "cop_residual_cm_p50": 0.02,
+    "cop_residual_cm_p90": 10.311
+   },
+   "ftR": {
+    "loaded_frames": 894,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 1.0,
+    "cop_residual_cm_p50": 0.02,
+    "cop_residual_cm_p90": 1.083
+   },
+   "v2_port": {
+    "col0_ge_0_9": 0.8669,
+    "col1_ge_0_9": 0.8647,
+    "col2_ge_0_9": 0.8345
+   }
+  },
+  "220923_Cobra_Pose_or_Bhujangasana_-a": {
+   "v2": {
+    "loaded_frames": 1126,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 1.0,
+    "cop_residual_cm_p50": 0.021,
+    "cop_residual_cm_p90": 0.152
+   },
+   "shipped_port": {
+    "loaded_frames": 1126,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 0.9023,
+    "cop_residual_cm_p50": 0.022,
+    "cop_residual_cm_p90": 3.537
+   },
+   "ftR": {
+    "loaded_frames": 1126,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 0.9725,
+    "cop_residual_cm_p50": 0.022,
+    "cop_residual_cm_p90": 1.12
+   },
+   "v2_port": {
+    "col0_ge_0_9": 0.7735,
+    "col1_ge_0_9": 0.7709,
+    "col2_ge_0_9": 0.9973
+   }
+  },
+  "220923_Side_Plank_Pose_or_Vasisthasana_-a": {
+   "v2": {
+    "loaded_frames": 1326,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 1.0,
+    "cop_residual_cm_p50": 0.018,
+    "cop_residual_cm_p90": 0.019
+   },
+   "shipped_port": {
+    "loaded_frames": 1326,
+    "explained_p50": 0.6922,
+    "explained_ge_0_9": 0.3786,
+    "cop_residual_cm_p50": 31.211,
+    "cop_residual_cm_p90": 50.01
+   },
+   "ftR": {
+    "loaded_frames": 1326,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 0.9864,
+    "cop_residual_cm_p50": 0.019,
+    "cop_residual_cm_p90": 1.773
+   },
+   "v2_port": {
+    "col0_ge_0_9": 0.9005,
+    "col1_ge_0_9": 0.8989,
+    "col2_ge_0_9": 0.69
+   }
+  },
+  "220923_Side_Plank_Pose_or_Vasisthasana_-b": {
+   "v2": {
+    "loaded_frames": 1436,
+    "explained_p50": 0.9965,
+    "explained_ge_0_9": 1.0,
+    "cop_residual_cm_p50": 0.227,
+    "cop_residual_cm_p90": 0.894
+   },
+   "shipped_port": {
+    "loaded_frames": 1436,
+    "explained_p50": 0.5941,
+    "explained_ge_0_9": 0.3914,
+    "cop_residual_cm_p50": 45.366,
+    "cop_residual_cm_p90": 55.186
+   },
+   "ftR": {
+    "loaded_frames": 1436,
+    "explained_p50": 0.9912,
+    "explained_ge_0_9": 0.8294,
+    "cop_residual_cm_p50": 0.484,
+    "cop_residual_cm_p90": 7.368
+   },
+   "v2_port": {
+    "col0_ge_0_9": 0.883,
+    "col1_ge_0_9": 0.7939,
+    "col2_ge_0_9": 0.984
+   }
+  },
+  "220923_Dolphin_Plank_Pose_or_Makara_Adho_Mukha_Svanasana_-a": {
+   "v2": {
+    "loaded_frames": 1110,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 1.0,
+    "cop_residual_cm_p50": 0.016,
+    "cop_residual_cm_p90": 0.02
+   },
+   "shipped_port": {
+    "loaded_frames": 1110,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 0.8901,
+    "cop_residual_cm_p50": 0.019,
+    "cop_residual_cm_p90": 7.81
+   },
+   "ftR": {
+    "loaded_frames": 1110,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 1.0,
+    "cop_residual_cm_p50": 0.016,
+    "cop_residual_cm_p90": 0.021
+   },
+   "v2_port": {
+    "col0_ge_0_9": 0.3541,
+    "col1_ge_0_9": 0.3541,
+    "col2_ge_0_9": 0.2901
+   }
+  },
+  "220923_Dolphin_Pose_or_Ardha_Pincha_Mayurasana_-a": {
+   "v2": {
+    "loaded_frames": 1006,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 1.0,
+    "cop_residual_cm_p50": 0.015,
+    "cop_residual_cm_p90": 0.021
+   },
+   "shipped_port": {
+    "loaded_frames": 1006,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 0.6252,
+    "cop_residual_cm_p50": 0.021,
+    "cop_residual_cm_p90": 15.942
+   },
+   "ftR": {
+    "loaded_frames": 1006,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 1.0,
+    "cop_residual_cm_p50": 0.015,
+    "cop_residual_cm_p90": 0.61
+   },
+   "v2_port": {
+    "col0_ge_0_9": 0.5716,
+    "col1_ge_0_9": 0.5676,
+    "col2_ge_0_9": 0.999
+   }
+  },
+  "220923_Standing_Forward_Bend_pose_or_Uttanasana_-a": {
+   "v2": {
+    "loaded_frames": 982,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 1.0,
+    "cop_residual_cm_p50": 0.008,
+    "cop_residual_cm_p90": 0.009
+   },
+   "shipped_port": {
+    "loaded_frames": 982,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 1.0,
+    "cop_residual_cm_p50": 0.008,
+    "cop_residual_cm_p90": 0.009
+   },
+   "ftR": {
+    "loaded_frames": 982,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 1.0,
+    "cop_residual_cm_p50": 0.008,
+    "cop_residual_cm_p90": 0.009
+   },
+   "v2_port": {
+    "col0_ge_0_9": 1.0,
+    "col1_ge_0_9": 1.0,
+    "col2_ge_0_9": 1.0
+   }
+  },
+  "220923_Garland_Pose_or_Malasana_-a": {
+   "v2": {
+    "loaded_frames": 668,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 1.0,
+    "cop_residual_cm_p50": 0.016,
+    "cop_residual_cm_p90": 0.017
+   },
+   "shipped_port": {
+    "loaded_frames": 668,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 1.0,
+    "cop_residual_cm_p50": 0.016,
+    "cop_residual_cm_p90": 0.023
+   },
+   "ftR": {
+    "loaded_frames": 668,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 1.0,
+    "cop_residual_cm_p50": 0.016,
+    "cop_residual_cm_p90": 0.017
+   },
+   "v2_port": {
+    "col0_ge_0_9": 0.9222,
+    "col1_ge_0_9": 0.9222,
+    "col2_ge_0_9": 0.979
+   }
+  },
+  "220923_Low_Lunge_pose_or_Anjaneyasana_-a": {
+   "v2": {
+    "loaded_frames": 1716,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 1.0,
+    "cop_residual_cm_p50": 0.02,
+    "cop_residual_cm_p90": 0.023
+   },
+   "shipped_port": {
+    "loaded_frames": 1716,
+    "explained_p50": 0.9318,
+    "explained_ge_0_9": 0.6078,
+    "cop_residual_cm_p50": 1.268,
+    "cop_residual_cm_p90": 24.041
+   },
+   "ftR": {
+    "loaded_frames": 1716,
+    "explained_p50": 0.9689,
+    "explained_ge_0_9": 0.9312,
+    "cop_residual_cm_p50": 1.485,
+    "cop_residual_cm_p90": 3.867
+   },
+   "v2_port": {
+    "col0_ge_0_9": 0.8019,
+    "col1_ge_0_9": 0.8019,
+    "col2_ge_0_9": 0.6783
+   }
+  },
+  "220926_Warrior_II_Pose_or_Virabhadrasana_II_-a": {
+   "v2": {
+    "loaded_frames": 912,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 1.0,
+    "cop_residual_cm_p50": 0.016,
+    "cop_residual_cm_p90": 0.022
+   },
+   "shipped_port": {
+    "loaded_frames": 912,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 1.0,
+    "cop_residual_cm_p50": 0.016,
+    "cop_residual_cm_p90": 0.024
+   },
+   "ftR": {
+    "loaded_frames": 912,
+    "explained_p50": 0.9671,
+    "explained_ge_0_9": 0.6239,
+    "cop_residual_cm_p50": 1.796,
+    "cop_residual_cm_p90": 12.195
+   },
+   "v2_port": {
+    "col0_ge_0_9": 0.9956,
+    "col1_ge_0_9": 0.9956,
+    "col2_ge_0_9": 1.0
+   }
+  },
+  "220923_Extended_Revolved_Triangle_Pose_or_Utthita_Trikonasana_-a": {
+   "v2": {
+    "loaded_frames": 1150,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 1.0,
+    "cop_residual_cm_p50": 0.017,
+    "cop_residual_cm_p90": 0.019
+   },
+   "shipped_port": {
+    "loaded_frames": 1150,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 0.607,
+    "cop_residual_cm_p50": 0.019,
+    "cop_residual_cm_p90": 30.785
+   },
+   "ftR": {
+    "loaded_frames": 1150,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 0.9035,
+    "cop_residual_cm_p50": 0.022,
+    "cop_residual_cm_p90": 2.048
+   },
+   "v2_port": {
+    "col0_ge_0_9": 0.9913,
+    "col1_ge_0_9": 0.9913,
+    "col2_ge_0_9": 1.0
+   }
+  },
+  "220923_Extended_Revolved_Side_Angle_Pose_or_Utthita_Parsvakonasana_-a": {
+   "v2": {
+    "loaded_frames": 944,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 0.965,
+    "cop_residual_cm_p50": 0.019,
+    "cop_residual_cm_p90": 8.151
+   },
+   "shipped_port": {
+    "loaded_frames": 944,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 0.5826,
+    "cop_residual_cm_p50": 0.021,
+    "cop_residual_cm_p90": 38.67
+   },
+   "ftR": {
+    "loaded_frames": 944,
+    "explained_p50": 0.9688,
+    "explained_ge_0_9": 0.553,
+    "cop_residual_cm_p50": 1.354,
+    "cop_residual_cm_p90": 37.318
+   },
+   "v2_port": {
+    "col0_ge_0_9": 0.9322,
+    "col1_ge_0_9": 0.8326,
+    "col2_ge_0_9": 0.965
+   }
+  },
+  "220926_Upward_Plank_Pose_or_Purvottanasana_-a": {
+   "v2": {
+    "loaded_frames": 1848,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 1.0,
+    "cop_residual_cm_p50": 0.016,
+    "cop_residual_cm_p90": 0.596
+   },
+   "shipped_port": {
+    "loaded_frames": 1848,
+    "explained_p50": 0.6548,
+    "explained_ge_0_9": 0.2359,
+    "cop_residual_cm_p50": 35.031,
+    "cop_residual_cm_p90": 42.37
+   },
+   "ftR": {
+    "loaded_frames": 1848,
+    "explained_p50": 0.9513,
+    "explained_ge_0_9": 0.7587,
+    "cop_residual_cm_p50": 1.462,
+    "cop_residual_cm_p90": 6.979
+   },
+   "v2_port": {
+    "col0_ge_0_9": 0.8604,
+    "col1_ge_0_9": 0.8404,
+    "col2_ge_0_9": 0.7078
+   }
+  },
+  "220923_Bridge_Pose_or_Setu_Bandha_Sarvangasana_-a": {
+   "v2": {
+    "loaded_frames": 1806,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 1.0,
+    "cop_residual_cm_p50": 0.019,
+    "cop_residual_cm_p90": 0.025
+   },
+   "shipped_port": {
+    "loaded_frames": 1806,
+    "explained_p50": 0.9678,
+    "explained_ge_0_9": 0.51,
+    "cop_residual_cm_p50": 0.604,
+    "cop_residual_cm_p90": 37.04
+   },
+   "ftR": {
+    "loaded_frames": 1806,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 0.9917,
+    "cop_residual_cm_p50": 0.02,
+    "cop_residual_cm_p90": 0.384
+   },
+   "v2_port": {
+    "col0_ge_0_9": 0.4153,
+    "col1_ge_0_9": 0.4153,
+    "col2_ge_0_9": 0.464
+   }
+  },
+  "220923_Extended_Revolved_Side_Angle_Pose_or_Utthita_Parsvakonasana_-b": {
+   "v2": {
+    "loaded_frames": 1050,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 1.0,
+    "cop_residual_cm_p50": 0.015,
+    "cop_residual_cm_p90": 0.018
+   },
+   "shipped_port": {
+    "loaded_frames": 1050,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 1.0,
+    "cop_residual_cm_p50": 0.015,
+    "cop_residual_cm_p90": 0.026
+   },
+   "ftR": {
+    "loaded_frames": 1050,
+    "explained_p50": 0.9345,
+    "explained_ge_0_9": 0.5238,
+    "cop_residual_cm_p50": 3.563,
+    "cop_residual_cm_p90": 30.906
+   },
+   "v2_port": {
+    "col0_ge_0_9": 0.981,
+    "col1_ge_0_9": 0.981,
+    "col2_ge_0_9": 1.0
+   }
+  },
+  "220923_Extended_Revolved_Triangle_Pose_or_Utthita_Trikonasana_-b": {
+   "v2": {
+    "loaded_frames": 1072,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 1.0,
+    "cop_residual_cm_p50": 0.016,
+    "cop_residual_cm_p90": 0.019
+   },
+   "shipped_port": {
+    "loaded_frames": 1072,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 1.0,
+    "cop_residual_cm_p50": 0.016,
+    "cop_residual_cm_p90": 0.025
+   },
+   "ftR": {
+    "loaded_frames": 1072,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 0.9795,
+    "cop_residual_cm_p50": 0.016,
+    "cop_residual_cm_p90": 1.995
+   },
+   "v2_port": {
+    "col0_ge_0_9": 0.9888,
+    "col1_ge_0_9": 0.9888,
+    "col2_ge_0_9": 1.0
+   }
+  },
+  "220926_viparita_virabhadrasana_or_reverse_warrior_pose-a": {
+   "v2": {
+    "loaded_frames": 1180,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 1.0,
+    "cop_residual_cm_p50": 0.016,
+    "cop_residual_cm_p90": 0.019
+   },
+   "shipped_port": {
+    "loaded_frames": 1180,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 1.0,
+    "cop_residual_cm_p50": 0.016,
+    "cop_residual_cm_p90": 0.019
+   },
+   "ftR": {
+    "loaded_frames": 1180,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 1.0,
+    "cop_residual_cm_p50": 0.026,
+    "cop_residual_cm_p90": 0.739
+   },
+   "v2_port": {
+    "col0_ge_0_9": 0.9983,
+    "col1_ge_0_9": 0.9983,
+    "col2_ge_0_9": 1.0
+   }
+  },
+  "220926_Intense_Side_Stretch_Pose_or_Parsvottanasana_-b": {
+   "v2": {
+    "loaded_frames": 1424,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 1.0,
+    "cop_residual_cm_p50": 0.015,
+    "cop_residual_cm_p90": 0.018
+   },
+   "shipped_port": {
+    "loaded_frames": 1424,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 1.0,
+    "cop_residual_cm_p50": 0.015,
+    "cop_residual_cm_p90": 0.018
+   },
+   "ftR": {
+    "loaded_frames": 1424,
+    "explained_p50": 1.0,
+    "explained_ge_0_9": 1.0,
+    "cop_residual_cm_p50": 0.016,
+    "cop_residual_cm_p90": 0.22
+   },
+   "v2_port": {
+    "col0_ge_0_9": 1.0,
+    "col1_ge_0_9": 1.0,
+    "col2_ge_0_9": 1.0
+   }
+  }
+ },
+ "pooled": {
+  "v2": {
+   "clips": 56,
+   "loaded_frames": 81140,
+   "explained_p50": 1.0,
+   "explained_ge_0_9": 0.999,
+   "cop_residual_cm_p50": 0.017,
+   "cop_residual_cm_p90": 0.16
+  },
+  "shipped_port": {
+   "clips": 56,
+   "loaded_frames": 81140,
+   "explained_p50": 1.0,
+   "explained_ge_0_9": 0.7117,
+   "cop_residual_cm_p50": 0.02,
+   "cop_residual_cm_p90": 29.518
+  },
+  "ftR": {
+   "clips": 56,
+   "loaded_frames": 81140,
+   "explained_p50": 1.0,
+   "explained_ge_0_9": 0.8952,
+   "cop_residual_cm_p50": 0.019,
+   "cop_residual_cm_p90": 3.14
+  }
+ },
+ "onmat_index": {
+  "220923_Half_Moon_Pose_or_Ardha_Chandrasana_-a": {
+   "on_mat_frac": 0.9984,
+   "gate_cov_expl": 0.971,
+   "gate_onmat_expl": 0.9984
+  },
+  "220923_Half_Moon_Pose_or_Ardha_Chandrasana_-b": {
+   "on_mat_frac": 0.9972,
+   "gate_cov_expl": 0.9938,
+   "gate_onmat_expl": 0.9972
+  },
+  "220923_Standing_Split_pose_or_Urdhva_Prasarita_Eka_Padasana_-a": {
+   "on_mat_frac": 0.9981,
+   "gate_cov_expl": 0.9981,
+   "gate_onmat_expl": 0.9981
+  },
+  "220923_Standing_Split_pose_or_Urdhva_Prasarita_Eka_Padasana_-b": {
+   "on_mat_frac": 1.0,
+   "gate_cov_expl": 0.9919,
+   "gate_onmat_expl": 1.0
+  },
+  "220923_Standing_big_toe_hold_pose_or_Utthita_Padangusthasana-a": {
+   "on_mat_frac": 1.0,
+   "gate_cov_expl": 1.0,
+   "gate_onmat_expl": 1.0
+  },
+  "220923_Standing_big_toe_hold_pose_or_Utthita_Padangusthasana-b": {
+   "on_mat_frac": 1.0,
+   "gate_cov_expl": 1.0,
+   "gate_onmat_expl": 1.0
+  },
+  "220923_Tree_Pose_or_Vrksasana_-a": {
+   "on_mat_frac": 1.0,
+   "gate_cov_expl": 1.0,
+   "gate_onmat_expl": 1.0
+  },
+  "220923_Tree_Pose_or_Vrksasana_-b": {
+   "on_mat_frac": 1.0,
+   "gate_cov_expl": 0.9942,
+   "gate_onmat_expl": 1.0
+  },
+  "220926_Eagle_Pose_or_Garudasana_-a": {
+   "on_mat_frac": 0.9727,
+   "gate_cov_expl": 1.0,
+   "gate_onmat_expl": 0.9727
+  },
+  "220926_Lord_of_the_Dance_Pose_or_Natarajasana_-a": {
+   "on_mat_frac": 1.0,
+   "gate_cov_expl": 1.0,
+   "gate_onmat_expl": 1.0
+  },
+  "220926_Lord_of_the_Dance_Pose_or_Natarajasana_-c": {
+   "on_mat_frac": 1.0,
+   "gate_cov_expl": 0.9969,
+   "gate_onmat_expl": 1.0
+  },
+  "220926_Warrior_III_Pose_or_Virabhadrasana_III_-a": {
+   "on_mat_frac": 1.0,
+   "gate_cov_expl": 0.9961,
+   "gate_onmat_expl": 1.0
+  },
+  "220926_Warrior_III_Pose_or_Virabhadrasana_III_-b": {
+   "on_mat_frac": 0.9915,
+   "gate_cov_expl": 0.9957,
+   "gate_onmat_expl": 0.9915
+  },
+  "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-a": {
+   "on_mat_frac": 0.9907,
+   "gate_cov_expl": 0.3465,
+   "gate_onmat_expl": 0.9907
+  },
+  "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-b": {
+   "on_mat_frac": 0.9529,
+   "gate_cov_expl": 0.289,
+   "gate_onmat_expl": 0.9529
+  },
+  "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-c": {
+   "on_mat_frac": 0.9929,
+   "gate_cov_expl": 0.2554,
+   "gate_onmat_expl": 0.9929
+  },
+  "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-d": {
+   "on_mat_frac": 0.9682,
+   "gate_cov_expl": 0.3256,
+   "gate_onmat_expl": 0.9682
+  },
+  "220923_Handstand_pose_or_Adho_Mukha_Vrksasana_-a": {
+   "on_mat_frac": 0.9949,
+   "gate_cov_expl": 0.7032,
+   "gate_onmat_expl": 0.9949
+  },
+  "220923_Legs-Up-the-Wall_Pose_or_Viparita_Karani_-a": {
+   "on_mat_frac": 0.8729,
+   "gate_cov_expl": 0.5918,
+   "gate_onmat_expl": 0.8729
+  },
+  "220923_Plow_Pose_or_Halasana_-a": {
+   "on_mat_frac": 0.3946,
+   "gate_cov_expl": 0.3447,
+   "gate_onmat_expl": 0.3946
+  },
+  "220926_Plow_Pose_or_Halasana_-b": {
+   "on_mat_frac": 0.4117,
+   "gate_cov_expl": 0.522,
+   "gate_onmat_expl": 0.4117
+  },
+  "220923_Scorpion_pose_or_vrischikasana-a": {
+   "on_mat_frac": 0.9554,
+   "gate_cov_expl": 0.2046,
+   "gate_onmat_expl": 0.9554
+  },
+  "220923_Scorpion_pose_or_vrischikasana-b": {
+   "on_mat_frac": 0.6692,
+   "gate_cov_expl": 0.2633,
+   "gate_onmat_expl": 0.6692
+  },
+  "220923_Supported_Headstand_pose_or_Salamba_Sirsasana_-b": {
+   "on_mat_frac": 0.9972,
+   "gate_cov_expl": 0.3637,
+   "gate_onmat_expl": 0.9972
+  },
+  "220926_Supported_Headstand_pose_or_Salamba_Sirsasana_-a": {
+   "on_mat_frac": 1.0,
+   "gate_cov_expl": 0.8385,
+   "gate_onmat_expl": 1.0
+  },
+  "220923_Supported_Shoulderstand_pose_or_Salamba_Sarvangasana_-a": {
+   "on_mat_frac": 0.7494,
+   "gate_cov_expl": 0.4527,
+   "gate_onmat_expl": 0.7494
+  },
+  "220923_Crane_Crow_Pose_or_Bakasana_-a": {
+   "on_mat_frac": 0.9928,
+   "gate_cov_expl": 0.8251,
+   "gate_onmat_expl": 0.9928
+  },
+  "220923_Firefly_Pose_or_Tittibhasana_-a": {
+   "on_mat_frac": 0.9245,
+   "gate_cov_expl": 0.8785,
+   "gate_onmat_expl": 0.9245
+  },
+  "220923_Peacock_Pose_or_Mayurasana_-a": {
+   "on_mat_frac": 0.6358,
+   "gate_cov_expl": 0.4654,
+   "gate_onmat_expl": 0.6358
+  },
+  "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-a": {
+   "on_mat_frac": 0.8544,
+   "gate_cov_expl": 0.4843,
+   "gate_onmat_expl": 0.8544
+  },
+  "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-b": {
+   "on_mat_frac": 0.5968,
+   "gate_cov_expl": 0.4825,
+   "gate_onmat_expl": 0.5968
+  },
+  "220923_Shoulder-Pressing_Pose_or_Bhujapidasana_-a": {
+   "on_mat_frac": 1.0,
+   "gate_cov_expl": 0.9402,
+   "gate_onmat_expl": 1.0
+  },
+  "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a": {
+   "on_mat_frac": 0.9455,
+   "gate_cov_expl": 0.891,
+   "gate_onmat_expl": 0.9455
+  },
+  "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-b": {
+   "on_mat_frac": 0.7733,
+   "gate_cov_expl": 0.5236,
+   "gate_onmat_expl": 0.7733
+  },
+  "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-c": {
+   "on_mat_frac": 0.9509,
+   "gate_cov_expl": 0.9465,
+   "gate_onmat_expl": 0.9509
+  },
+  "220923_Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana_-a": {
+   "on_mat_frac": 1.0,
+   "gate_cov_expl": 0.8548,
+   "gate_onmat_expl": 1.0
+  },
+  "220923_Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana_-b": {
+   "on_mat_frac": 0.9969,
+   "gate_cov_expl": 0.9025,
+   "gate_onmat_expl": 0.9969
+  },
+  "220923_Plank_Pose_or_Kumbhakasana_-a": {
+   "on_mat_frac": 0.9118,
+   "gate_cov_expl": 0.8849,
+   "gate_onmat_expl": 0.9118
+  },
+  "220923_Four-Limbed_Staff_Pose_or_Chaturanga_Dandasana_-a": {
+   "on_mat_frac": 0.8345,
+   "gate_cov_expl": 0.8669,
+   "gate_onmat_expl": 0.8345
+  },
+  "220923_Cobra_Pose_or_Bhujangasana_-a": {
+   "on_mat_frac": 0.9973,
+   "gate_cov_expl": 0.7735,
+   "gate_onmat_expl": 0.9973
+  },
+  "220923_Side_Plank_Pose_or_Vasisthasana_-a": {
+   "on_mat_frac": 0.69,
+   "gate_cov_expl": 0.9005,
+   "gate_onmat_expl": 0.69
+  },
+  "220923_Side_Plank_Pose_or_Vasisthasana_-b": {
+   "on_mat_frac": 0.984,
+   "gate_cov_expl": 0.883,
+   "gate_onmat_expl": 0.984
+  },
+  "220923_Dolphin_Plank_Pose_or_Makara_Adho_Mukha_Svanasana_-a": {
+   "on_mat_frac": 0.2901,
+   "gate_cov_expl": 0.3541,
+   "gate_onmat_expl": 0.2901
+  },
+  "220923_Dolphin_Pose_or_Ardha_Pincha_Mayurasana_-a": {
+   "on_mat_frac": 0.999,
+   "gate_cov_expl": 0.5716,
+   "gate_onmat_expl": 0.999
+  },
+  "220923_Standing_Forward_Bend_pose_or_Uttanasana_-a": {
+   "on_mat_frac": 1.0,
+   "gate_cov_expl": 1.0,
+   "gate_onmat_expl": 1.0
+  },
+  "220923_Garland_Pose_or_Malasana_-a": {
+   "on_mat_frac": 0.979,
+   "gate_cov_expl": 0.9222,
+   "gate_onmat_expl": 0.979
+  },
+  "220923_Low_Lunge_pose_or_Anjaneyasana_-a": {
+   "on_mat_frac": 0.6783,
+   "gate_cov_expl": 0.8019,
+   "gate_onmat_expl": 0.6783
+  },
+  "220926_Warrior_II_Pose_or_Virabhadrasana_II_-a": {
+   "on_mat_frac": 1.0,
+   "gate_cov_expl": 0.9956,
+   "gate_onmat_expl": 1.0
+  },
+  "220923_Extended_Revolved_Triangle_Pose_or_Utthita_Trikonasana_-a": {
+   "on_mat_frac": 1.0,
+   "gate_cov_expl": 0.9913,
+   "gate_onmat_expl": 1.0
+  },
+  "220923_Extended_Revolved_Side_Angle_Pose_or_Utthita_Parsvakonasana_-a": {
+   "on_mat_frac": 1.0,
+   "gate_cov_expl": 0.8972,
+   "gate_onmat_expl": 0.965
+  },
+  "220926_Upward_Plank_Pose_or_Purvottanasana_-a": {
+   "on_mat_frac": 0.7078,
+   "gate_cov_expl": 0.8604,
+   "gate_onmat_expl": 0.7078
+  },
+  "220923_Bridge_Pose_or_Setu_Bandha_Sarvangasana_-a": {
+   "on_mat_frac": 0.464,
+   "gate_cov_expl": 0.4153,
+   "gate_onmat_expl": 0.464
+  },
+  "220923_Extended_Revolved_Side_Angle_Pose_or_Utthita_Parsvakonasana_-b": {
+   "on_mat_frac": 1.0,
+   "gate_cov_expl": 0.981,
+   "gate_onmat_expl": 1.0
+  },
+  "220923_Extended_Revolved_Triangle_Pose_or_Utthita_Trikonasana_-b": {
+   "on_mat_frac": 1.0,
+   "gate_cov_expl": 0.9888,
+   "gate_onmat_expl": 1.0
+  },
+  "220926_viparita_virabhadrasana_or_reverse_warrior_pose-a": {
+   "on_mat_frac": 1.0,
+   "gate_cov_expl": 0.9983,
+   "gate_onmat_expl": 1.0
+  },
+  "220926_Intense_Side_Stretch_Pose_or_Parsvottanasana_-b": {
+   "on_mat_frac": 1.0,
+   "gate_cov_expl": 1.0,
+   "gate_onmat_expl": 1.0
+  }
+ }
+}

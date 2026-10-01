@@ -1,0 +1,122 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "impossible_joint",
+    "panels": [
+     "4a",
+     "3c",
+     "2c"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "through_body",
+    "panels": [
+     "4a",
+     "3a"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "through_floor",
+    "panels": [
+     "4a"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "B",
+  "floating_parts": {
+   "A": [],
+   "B": []
+  },
+  "more_natural": "B",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both show an upright stance with feet together and arms held out to the sides. Only the foot placement and orientation at floor level differ."
+  },
+  "summary": "Same pose in both. A's right foot is tilted and twisted, overlaps the left foot and dips slightly into the floor. B's feet sit flat side by side and match the grey feet better."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1126996,
+ "duration_s": 12.89,
+ "errors": [],
+ "frame_hold": 971,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Crane_Crow_Pose_or_Bakasana_-a@971",
+ "inputs": {},
+ "item_id": "220923_Crane_Crow_Pose_or_Bakasana_-a@971#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c2/3388a55f4bafaee44b4a39eb2550e63ecd473e65",
+  "images": {
+   "img_1.png": "5c8958b2c67bc795148bf8b58078506aaf83054adc7d6d5298f1f60980959bd3",
+   "img_2.png": "5b63d2456da0574b1a423d01dc29d7c4f08978c3a837b276014c135a2987cae5",
+   "img_3.png": "28e5d87119710e4c154df52ae8e9fdf1f2ffe2b92b05197fbf8977f2161b870c",
+   "img_4.png": "c9c3a60803bbc313632733b090e9da8715f547601c2901f6018cd7d7f4e966d2",
+   "img_5.png": "ff05d90fae21613b23ca6f9198dd559b73e58607d5ee3f6216fd953356d07afe"
+  },
+  "packet_json_sha256": "b55c0eb34a32efc8ad357a3f26b0bf75010e6e035970265092fe9d1c4421a14b"
+ },
+ "packet_id": "3388a55f4bafaee44b4a39eb2550e63ecd473e65",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c2",
+ "render_v": "render_c2",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "dbc386a5-a748-47c4-bee5-45fb148f4e6a",
+ "started_utc": "2026-10-01T17:17:08+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Crane_Crow_Pose_or_Bakasana_-a",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 10696,
+  "cache_read_input_tokens": 13538,
+  "input_tokens": 6,
+  "output_tokens": 1220,
+  "thinking_tokens": 176
+ },
+ "warnings": []
+}

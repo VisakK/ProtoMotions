@@ -1,0 +1,138 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "4a",
+     "2a",
+     "2c",
+     "1c"
+    ],
+    "part": "right foot",
+    "severity": "major"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1a",
+     "1c",
+     "2c",
+     "3a"
+    ],
+    "part": "head",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "through_body",
+    "panels": [
+     "1a",
+     "3c"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "through_body",
+    "panels": [
+     "1b",
+     "3d"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "B",
+  "floating_parts": {
+   "A": [
+    "right foot"
+   ],
+   "B": []
+  },
+  "more_natural": "B",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both stand on the right leg with the left leg folded and lifted to the side, and both have the same arm placement. Only the height of the standing foot and the overall fit differ."
+  },
+  "summary": "The pose is the same. A's standing right foot is tilted and hovers above the floor, and A's body sits higher than the grey body. B keeps its right foot flat on the floor and follows the grey body closely, so B is closer to the human and more natural."
+ },
+ "audit_id": null,
+ "cost_usd": 0.11737840000000001,
+ "duration_s": 15.56,
+ "errors": [],
+ "frame_hold": 621,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Tree_Pose_or_Vrksasana_-b@621",
+ "inputs": {},
+ "item_id": "220923_Tree_Pose_or_Vrksasana_-b@621#lift",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c2/919fb651c6405b150ebbbb29048534025ac49e12",
+  "images": {
+   "img_1.png": "05858cb4c096d1a0e8de600e89d585691b871f4e89e0e3eab1703b9ffdf889b6",
+   "img_2.png": "a672606d6ac73a482de82dfae0ed424b47d26f5a7bed6ea3048388b10243a11b",
+   "img_3.png": "d082118919f644e8749755eec6c00344415229d3f44c5dc582c87597cb08f0ba",
+   "img_4.png": "aef73517759a86e88304da3162f7fbd3129b65c16bb6d14b21b5987fe5d91956",
+   "img_5.png": "d934059fa171bba709651154fdb14805b91cc8b0e7fe918a70db1e12dd76346e"
+  },
+  "packet_json_sha256": "6fa1191ab9698b57721b58ea1593eec5295afb2be2d749811dd9a6149a75349c"
+ },
+ "packet_id": "919fb651c6405b150ebbbb29048534025ac49e12",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c2",
+ "render_v": "render_c2",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "d797314a-0a35-455d-9197-edff7afef5e7",
+ "started_utc": "2026-10-01T17:11:03+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Tree_Pose_or_Vrksasana_-b",
+ "stratum": "lift",
+ "usage": {
+  "cache_creation_input_tokens": 10654,
+  "cache_read_input_tokens": 13512,
+  "input_tokens": 6,
+  "output_tokens": 1471,
+  "thinking_tokens": 372
+ },
+ "warnings": []
+}

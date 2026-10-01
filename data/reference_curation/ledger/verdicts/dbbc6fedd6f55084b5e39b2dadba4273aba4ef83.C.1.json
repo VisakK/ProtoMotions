@@ -1,0 +1,118 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "through_body",
+    "panels": [
+     "4c",
+     "1c"
+    ],
+    "part": "left hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "through_body",
+    "panels": [
+     "4d",
+     "1d"
+    ],
+    "part": "left hand",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "equal",
+  "floating_parts": {
+   "A": [
+    "left foot",
+    "right foot"
+   ],
+   "B": [
+    "left foot",
+    "right foot"
+   ]
+  },
+  "more_natural": "equal",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Same shape in both: legs over the head, toes reaching the floor behind it, arms stretched along the floor with the hands clasped. Every view matches."
+  },
+  "summary": "I couldn't see any difference between A and B. Both have the toes just above the floor, with short drop lines, and the clasped hand boxes pass into each other. Neither is closer to the grey body or more natural."
+ },
+ "audit_id": null,
+ "cost_usd": 0.12643919999999997,
+ "duration_s": 14.8,
+ "errors": [],
+ "frame_hold": 1384,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220926_Plow_Pose_or_Halasana_-b@1384",
+ "inputs": {},
+ "item_id": "220926_Plow_Pose_or_Halasana_-b@1384#identity",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c2/dbbc6fedd6f55084b5e39b2dadba4273aba4ef83",
+  "images": {
+   "img_1.png": "0113984ef8fbaefd1938162765558753a36130e55b980609dc486736c4ec79d0",
+   "img_2.png": "6eee1fe8467eea8a9002e65940775da0e8992259c435c94c7c515b803d963aa9",
+   "img_3.png": "f02940ade9b814dc904b53ce462bbb5c0383f6387f4ce26be13ffa681c11bc06",
+   "img_4.png": "c018671318a7752ef34d6de7e53cfbd35c40ddd161feba2b8349ec404d0bf710",
+   "img_5.png": "c4984ec4a2f6a12b0b1b12b4d2ea0d60d1e352bd084898cf39195995c1e38d26"
+  },
+  "packet_json_sha256": "d755860629172cceb9d8d516e10d57ea1f9ca88c4592aeb0bcd69e16ff1e24f0"
+ },
+ "packet_id": "dbbc6fedd6f55084b5e39b2dadba4273aba4ef83",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c2",
+ "render_v": "render_c2",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "64a163b4-3125-4445-b624-1072b4f14880",
+ "started_utc": "2026-10-01T17:05:34+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220926_Plow_Pose_or_Halasana_-b",
+ "stratum": "identity",
+ "usage": {
+  "cache_creation_input_tokens": 12114,
+  "cache_read_input_tokens": 13616,
+  "input_tokens": 6,
+  "output_tokens": 1339,
+  "thinking_tokens": 299
+ },
+ "warnings": []
+}

@@ -1,0 +1,386 @@
+{
+ "answer": {
+  "body_body": {
+   "answer": "listed",
+   "contacts": [
+    {
+     "certainty": "clear",
+     "panels": [
+      "3a",
+      "1c",
+      "2b"
+     ],
+     "part_a": "left thigh",
+     "part_b": "left upper arm"
+    },
+    {
+     "certainty": "clear",
+     "panels": [
+      "3b",
+      "1c",
+      "2b"
+     ],
+     "part_a": "right thigh",
+     "part_b": "right upper arm"
+    }
+   ]
+  },
+  "discrepancies": [
+   {
+    "kind": "other",
+    "note": "Human skin of the left shin touches the left upper arm; the avatar keeps a 10 cm gap.",
+    "panels": [
+     "1b",
+     "1c"
+    ],
+    "part": "left shin"
+   },
+   {
+    "kind": "other",
+    "note": "Human skin of the right shin touches the right upper arm; the avatar keeps a gap of about 10 cm.",
+    "panels": [
+     "1d",
+     "1c"
+    ],
+    "part": "right shin"
+   },
+   {
+    "kind": "other",
+    "note": "Human inner thighs touch the torso; the avatar's thighs stand about 6 cm off the torso.",
+    "panels": [
+     "1c",
+     "3a"
+    ],
+    "part": "left thigh"
+   },
+   {
+    "kind": "other",
+    "note": "Human forearms touch the thighs; avatar forearms are 4-5 cm from the thighs. These pairs are unlabelled.",
+    "panels": [
+     "3a",
+     "3b"
+    ],
+    "part": "right forearm"
+   }
+  ],
+  "floor": {
+   "head": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "left foot": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b",
+     "4c"
+    ]
+   },
+   "left forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3a",
+     "3b"
+    ]
+   },
+   "left hand": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "3b",
+     "2b"
+    ]
+   },
+   "left shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "left thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "3a"
+    ]
+   },
+   "left upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "3a"
+    ]
+   },
+   "pelvis": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1c"
+    ]
+   },
+   "right foot": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b",
+     "4c"
+    ]
+   },
+   "right forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3a",
+     "3b"
+    ]
+   },
+   "right hand": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "3b",
+     "2b"
+    ]
+   },
+   "right shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "right thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "3b"
+    ]
+   },
+   "right upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "3b"
+    ]
+   },
+   "torso": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1c"
+    ]
+   }
+  },
+  "implausible": [],
+  "pose": {
+   "candidates": [
+    {
+     "confidence": "high",
+     "name": "Firefly Pose (Tittibhasana)"
+    },
+    {
+     "confidence": "low",
+     "name": "Shoulder-pressing pose (Bhujapidasana)"
+    }
+   ],
+   "description": "Only both hands are on the floor, shoulder-width apart. Head is above the hips, torso leaning forward. Both arms are near-vertical and straight, with the backs of the thighs resting on the upper arms. Both legs spread wide and extend forward and up to the sides, knees nearly straight, feet about half a metre above the floor."
+  },
+  "repair": {
+   "kinds": [],
+   "needed": "no",
+   "note": "Floor contacts and the thigh-on-arm support match. Only the secondary skin contacts with shins and torso are loose."
+  },
+  "roles": [
+   {
+    "note": "Human skin touches near the knee; the pose permits it, but the support is through the thigh.",
+    "panels": [
+     "1b",
+     "1c"
+    ],
+    "part_a": "left shin",
+    "part_b": "left upper arm",
+    "role": "allowed"
+   },
+   {
+    "note": "Human skin touches near the knee; the pose permits it, but the support is through the thigh.",
+    "panels": [
+     "1d",
+     "1c"
+    ],
+    "part_a": "right shin",
+    "part_b": "right upper arm",
+    "role": "allowed"
+   },
+   {
+    "note": "Inner thigh hugs the side of the torso in the deep fold; the avatar does not.",
+    "panels": [
+     "1c",
+     "3a"
+    ],
+    "part_a": "left thigh",
+    "part_b": "torso",
+    "role": "allowed"
+   },
+   {
+    "note": "Back of the thigh rests on the upper arm; this defines Firefly.",
+    "panels": [
+     "3a",
+     "1c"
+    ],
+    "part_a": "left thigh",
+    "part_b": "left upper arm",
+    "role": "required_touch"
+   },
+   {
+    "note": "Inner thigh hugs the side of the torso in the deep fold; the avatar does not.",
+    "panels": [
+     "1c",
+     "3b"
+    ],
+    "part_a": "right thigh",
+    "part_b": "torso",
+    "role": "allowed"
+   },
+   {
+    "note": "Back of the thigh rests on the upper arm; this defines Firefly.",
+    "panels": [
+     "3b",
+     "1c"
+    ],
+    "part_a": "right thigh",
+    "part_b": "right upper arm",
+    "role": "required_touch"
+   },
+   {
+    "note": "Skin gap of about 2 cm is borderline; the pose does not use it.",
+    "panels": [
+     "1c"
+    ],
+    "part_a": "left shin",
+    "part_b": "torso",
+    "role": "incidental"
+   },
+   {
+    "note": "Forearm brushes the back of the thigh as the arm passes behind the leg.",
+    "panels": [
+     "3a"
+    ],
+    "part_a": "left thigh",
+    "part_b": "left forearm",
+    "role": "allowed"
+   },
+   {
+    "note": "Forearm brushes the back of the thigh as the arm passes behind the leg.",
+    "panels": [
+     "3b"
+    ],
+    "part_a": "right thigh",
+    "part_b": "right forearm",
+    "role": "allowed"
+   }
+  ],
+  "timing": {
+   "better_panel": "",
+   "end": "capture",
+   "main_moment": "keep",
+   "note": "The label starts while the feet are still down; the end frames are the same. Panel 4c shows the pose fully formed.",
+   "start": "capture"
+  },
+  "variant": {
+   "matches_label": "yes",
+   "note": ""
+  }
+ },
+ "audit_id": "holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.audit_v2.calibrated.9278736bb1",
+ "cost_usd": 0.267734,
+ "duration_s": 40.7,
+ "errors": [],
+ "frame_hold": 776,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Firefly_Pose_or_Tittibhasana_-a@776",
+ "inputs": {},
+ "item_id": "220923_Firefly_Pose_or_Tittibhasana_-a@776#B4",
+ "n": 1,
+ "num_turns": 7,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_v4/f5d89548e1c9ae3d2145c4d802b69233edca09fd",
+  "images": {
+   "img_1.png": "95c1ca9462d78d896ff0a93217b39efd034440e78706a233f57c8bcfdf2c99a4",
+   "img_2.png": "79442cd2c212215502c0ed3690c44f6bd6e712ed6f0ecfb3b2d70cc869af089c",
+   "img_3.png": "8e5c6608bd8797e217770425ebf39bed93b108679a9ff871b317a46acaed3a5c",
+   "img_4.png": "d3fcd01da8172398dab63092008f5ebaec0620d8b0cf05132af778649b5465c6"
+  },
+  "packet_json_sha256": "3917019322518ed3671e4cacbfd421b8014fde4757e2948b13e66535867f551b"
+ },
+ "packet_id": "f5d89548e1c9ae3d2145c4d802b69233edca09fd",
+ "pass": "B",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_b.md",
+  "sha256": "077dd51bd3c86104e2579843cb3162adaf5e3892192e7634aa4712e2274df649"
+ },
+ "purpose": "b6",
+ "render_v": "render_v4",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "5f537c5cd7b2019f",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_b.json",
+  "sha256": "0c8ebcc47c25a92ae60dea2083cdea7b465230a6702cd4fc11c2b7b6bb6eae8d"
+ },
+ "schema_version": 1,
+ "session_id": "d7003a10-d3f2-4630-bbec-20682c69c674",
+ "started_utc": "2026-10-01T16:31:43+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Firefly_Pose_or_Tittibhasana_-a",
+ "stratum": null,
+ "usage": {
+  "cache_creation_input_tokens": 21871,
+  "cache_read_input_tokens": 43410,
+  "input_tokens": 6,
+  "output_tokens": 4203,
+  "thinking_tokens": 1537
+ },
+ "warnings": []
+}

@@ -1,0 +1,162 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1a",
+     "2a",
+     "3c",
+     "5c"
+    ],
+    "part": "left thigh",
+    "severity": "major"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "1a",
+     "2a",
+     "3c",
+     "5c"
+    ],
+    "part": "right thigh",
+    "severity": "major"
+   },
+   {
+    "avatar": "A",
+    "kind": "pulled_apart",
+    "panels": [
+     "1a",
+     "2a",
+     "3c",
+     "5c"
+    ],
+    "part": "head",
+    "severity": "major"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "4c",
+     "2c",
+     "3c"
+    ],
+    "part": "left hand",
+    "severity": "major"
+   },
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "4c",
+     "2c"
+    ],
+    "part": "right hand",
+    "severity": "major"
+   },
+   {
+    "avatar": "A",
+    "kind": "through_body",
+    "panels": [
+     "4a",
+     "4e"
+    ],
+    "part": "left foot",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "B",
+  "floating_parts": {
+   "A": [
+    "left hand",
+    "right hand"
+   ],
+   "B": []
+  },
+  "more_natural": "B",
+  "same_pose": {
+   "answer": "no",
+   "reason": "B is upright on the forearms with its legs raised high like the grey body. A has fallen: its legs stick out almost level, its head has come away from the body and its hands are lifted off the floor."
+  },
+  "summary": "B closely follows the grey body: its forearms and hands are on the floor and its legs are raised. A has fallen: its legs stick out almost level, its head sphere has come away from the body and both hands float above the floor."
+ },
+ "audit_id": null,
+ "cost_usd": 0.12869979999999998,
+ "duration_s": 15.24,
+ "errors": [],
+ "frame_hold": 1213,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-d@1213",
+ "inputs": {},
+ "item_id": "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-d@1213#swap",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c2/53a2f5e904efeb2b2669e99474c5b75bab217f3f",
+  "images": {
+   "img_1.png": "052b1ae1c1839b455ab27afd253f9f3735fdbf5a1949cedd0a30c97434b2b69b",
+   "img_2.png": "3e26b3ec8f99eb771e4d5aeb911e101cc0f84699db5c6b6897b8e06ac0781afd",
+   "img_3.png": "44ae1717fc45ec02c03786f5bfbe6fbb52f35112f82022983f77fa8233ccd198",
+   "img_4.png": "7351996a004b585e85d0c111e6fb4e243d0825a79515217bf45f77ed944a6701",
+   "img_5.png": "b21a00c2268e563bd8eb25cd71613bb5c4f10b3830c99dbe002deff203a29728"
+  },
+  "packet_json_sha256": "2d5f055bb07db9ac478c8200152b2c79b6a5c3e4177f637f4615d7682dcdcd3f"
+ },
+ "packet_id": "53a2f5e904efeb2b2669e99474c5b75bab217f3f",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c2",
+ "render_v": "render_c2",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "767c6bbe-02b6-42ed-928a-2eb215d3eed1",
+ "started_utc": "2026-10-01T17:06:23+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-d",
+ "stratum": "swap",
+ "usage": {
+  "cache_creation_input_tokens": 12109,
+  "cache_read_input_tokens": 13619,
+  "input_tokens": 6,
+  "output_tokens": 1454,
+  "thinking_tokens": 241
+ },
+ "warnings": []
+}

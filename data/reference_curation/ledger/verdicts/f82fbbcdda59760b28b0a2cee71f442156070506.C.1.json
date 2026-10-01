@@ -1,0 +1,124 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "A",
+    "kind": "other",
+    "panels": [
+     "4a",
+     "1a",
+     "3c",
+     "5c"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "A",
+    "kind": "through_floor",
+    "panels": [
+     "4a"
+    ],
+    "part": "right foot",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "through_body",
+    "panels": [
+     "1d",
+     "3d",
+     "5d"
+    ],
+    "part": "right thigh",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "B",
+  "floating_parts": {
+   "A": [],
+   "B": []
+  },
+  "more_natural": "B",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both stand on the right foot with the trunk level, the left leg raised straight back and both arms hanging down; only the standing foot and shank placement differ slightly."
+  },
+  "summary": "Both avatars hold the same pose. B's standing foot lies flat and lines up with the grey foot. A's right foot is tilted with the heel up, its toe dips slightly into the floor, and it sits a little forward of the grey foot. B shows only a small knee overlap."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1157406,
+ "duration_s": 14.55,
+ "errors": [],
+ "frame_hold": 824,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220926_Warrior_III_Pose_or_Virabhadrasana_III_-b@824",
+ "inputs": {},
+ "item_id": "220926_Warrior_III_Pose_or_Virabhadrasana_III_-b@824#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c2/f82fbbcdda59760b28b0a2cee71f442156070506",
+  "images": {
+   "img_1.png": "026d7de173744aec15ceb74897d0e5989d8e4544d84ed6687ca71781068db376",
+   "img_2.png": "8b475b5f23f467a47f3cddf33a1de213e5a49b7b584b77def6b38db4b45c0e97",
+   "img_3.png": "884bcb974337c75fc7ed302f9006b800804472b11e71cdddb13ccacbf5d9e234",
+   "img_4.png": "fa67f33fc1173140ded738bdaa825be3c1c7251d4cbd3e2c735344b7c9ae2c8a",
+   "img_5.png": "4bb878e177ce611032bd8937138914a0c5c5d2880f7d4cfaa64920fb586b714e"
+  },
+  "packet_json_sha256": "d71e28f44d2c04e5f43f9c56688e11c69d845133a810a21cadd7623e96cea901"
+ },
+ "packet_id": "f82fbbcdda59760b28b0a2cee71f442156070506",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c2",
+ "render_v": "render_c2",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "b874a9dd-eaaf-483f-91ed-2003640bb20f",
+ "started_utc": "2026-10-01T17:38:56+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220926_Warrior_III_Pose_or_Virabhadrasana_III_-b",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 10669,
+  "cache_read_input_tokens": 13523,
+  "input_tokens": 6,
+  "output_tokens": 1383,
+  "thinking_tokens": 294
+ },
+ "warnings": []
+}

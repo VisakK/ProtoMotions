@@ -1,0 +1,337 @@
+{
+ "answer": {
+  "body_body": {
+   "answer": "listed",
+   "contacts": [
+    {
+     "certainty": "clear",
+     "panels": [
+      "3c",
+      "1d"
+     ],
+     "part_a": "right shin",
+     "part_b": "right hand"
+    },
+    {
+     "certainty": "clear",
+     "panels": [
+      "3b",
+      "1d"
+     ],
+     "part_a": "left shin",
+     "part_b": "left hand"
+    },
+    {
+     "certainty": "possible",
+     "panels": [
+      "3b",
+      "2a"
+     ],
+     "part_a": "left foot",
+     "part_b": "left hand"
+    },
+    {
+     "certainty": "possible",
+     "panels": [
+      "3c",
+      "1d"
+     ],
+     "part_a": "right foot",
+     "part_b": "right hand"
+    }
+   ]
+  },
+  "discrepancies": [
+   {
+    "kind": "other",
+    "note": "Label lists left hand on floor; avatar has drop line and skin is clearly above floor.",
+    "panels": [
+     "3b",
+     "2b"
+    ],
+    "part": "left hand"
+   },
+   {
+    "kind": "other",
+    "note": "Label lists right hand on floor; avatar has drop line and skin is clearly above floor.",
+    "panels": [
+     "3c",
+     "1c"
+    ],
+    "part": "right hand"
+   }
+  ],
+  "floor": {
+   "head": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "2b"
+    ]
+   },
+   "left foot": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3b",
+     "2b"
+    ]
+   },
+   "left forearm": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3b",
+     "2b"
+    ]
+   },
+   "left hand": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3b",
+     "2b"
+    ]
+   },
+   "left shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "left thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "left upper arm": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "2b"
+    ]
+   },
+   "pelvis": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "right foot": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3c",
+     "1d"
+    ]
+   },
+   "right forearm": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3d",
+     "1c"
+    ]
+   },
+   "right hand": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3c",
+     "1c"
+    ]
+   },
+   "right shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1c",
+     "3c"
+    ]
+   },
+   "right thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1c",
+     "3d"
+    ]
+   },
+   "right upper arm": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3d",
+     "1c"
+    ]
+   },
+   "torso": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "2b"
+    ]
+   }
+  },
+  "implausible": [],
+  "pose": {
+   "candidates": [
+    {
+     "confidence": "high",
+     "name": "Bridge Pose holding ankles"
+    },
+    {
+     "confidence": "high",
+     "name": "Setu Bandha Sarvangasana"
+    },
+    {
+     "confidence": "low",
+     "name": "Supported Bridge variation"
+    }
+   ],
+   "description": "Supine. Feet flat on floor, knees bent and raised, hips lifted well off the floor. Head is below the hips; head, shoulders/upper back, both upper arms and forearms rest on the floor. Each hand is raised slightly to grasp its own ankle, touching the lower shin and foot."
+  },
+  "repair": {
+   "kinds": [],
+   "needed": "no",
+   "note": "Avatar floor contacts and hand-ankle grip match the human; only the hand floor labels need fixing."
+  },
+  "roles": [
+   {
+    "note": "Hand grips ankle; a common bridge variation, not required by bridge.",
+    "panels": [
+     "3c",
+     "1d"
+    ],
+    "part_a": "right shin",
+    "part_b": "right hand",
+    "role": "allowed"
+   },
+   {
+    "note": "Hand grasping ankle brushes the foot; permitted variation.",
+    "panels": [
+     "3b",
+     "2a"
+    ],
+    "part_a": "left foot",
+    "part_b": "left hand",
+    "role": "allowed"
+   },
+   {
+    "note": "Hand grasping ankle touches the foot; permitted variation.",
+    "panels": [
+     "3c",
+     "1d"
+    ],
+    "part_a": "right foot",
+    "part_b": "right hand",
+    "role": "allowed"
+   },
+   {
+    "note": "Hand grips ankle; matches labelled right-side contact, should be labelled too.",
+    "panels": [
+     "3b",
+     "1d"
+    ],
+    "part_a": "left shin",
+    "part_b": "left hand",
+    "role": "allowed"
+   }
+  ],
+  "timing": {
+   "better_panel": "",
+   "end": "label",
+   "main_moment": "keep",
+   "note": "Label and capture windows coincide; pose is held unchanged from 4b to 4d.",
+   "start": "label"
+  },
+  "variant": {
+   "matches_label": "variant",
+   "note": "Bridge with hands gripping the ankles instead of palms flat or interlaced on the floor; hips moderately lifted."
+  }
+ },
+ "audit_id": "holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.audit_v2.calibrated.9278736bb1",
+ "cost_usd": 0.2352708,
+ "duration_s": 29.88,
+ "errors": [],
+ "frame_hold": 848,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Bridge_Pose_or_Setu_Bandha_Sarvangasana_-a@848",
+ "inputs": {},
+ "item_id": "220923_Bridge_Pose_or_Setu_Bandha_Sarvangasana_-a@848#B4",
+ "n": 2,
+ "num_turns": 7,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_v4/5ee1f898858e2800942ce5d1ce0c973a3938b45b",
+  "images": {
+   "img_1.png": "73fc111e2b8d0cc771f099ec222f5b4034c4a9d7a14f41cd3bec2aed9dec1e38",
+   "img_2.png": "a889bfdf4e60ed03b3fdbb9873f4382df5a6b55c299c1248b5de373dd2d17423",
+   "img_3.png": "a4eead6ca34cb893246bd9798cbb07a53995fb6134a1b070a16abcbdd8b6cef9",
+   "img_4.png": "3ef41e92bb12e45c234317afaad708c8aaed7d39b8325311081a41c2704ba4a2"
+  },
+  "packet_json_sha256": "50b4354815725492b6c0fde95bf5aee090dfe6bb3fd7f1915adc664fca1875fa"
+ },
+ "packet_id": "5ee1f898858e2800942ce5d1ce0c973a3938b45b",
+ "pass": "B",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_b.md",
+  "sha256": "077dd51bd3c86104e2579843cb3162adaf5e3892192e7634aa4712e2274df649"
+ },
+ "purpose": "b6",
+ "render_v": "render_v4",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "5f537c5cd7b2019f",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_b.json",
+  "sha256": "0c8ebcc47c25a92ae60dea2083cdea7b465230a6702cd4fc11c2b7b6bb6eae8d"
+ },
+ "schema_version": 1,
+ "session_id": "6b6d1d1f-29f3-4929-9648-6c9141d28d31",
+ "started_utc": "2026-10-01T16:26:27+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Bridge_Pose_or_Setu_Bandha_Sarvangasana_-a",
+ "stratum": null,
+ "usage": {
+  "cache_creation_input_tokens": 20106,
+  "cache_read_input_tokens": 46294,
+  "input_tokens": 6,
+  "output_tokens": 3257,
+  "thinking_tokens": 903
+ },
+ "warnings": []
+}

@@ -1,0 +1,300 @@
+{
+ "answer": {
+  "body_body": {
+   "answer": "listed",
+   "contacts": [
+    {
+     "certainty": "possible",
+     "panels": [
+      "1c",
+      "2a"
+     ],
+     "part_a": "right shin",
+     "part_b": "right upper arm"
+    },
+    {
+     "certainty": "possible",
+     "panels": [
+      "2b",
+      "1a"
+     ],
+     "part_a": "right shin",
+     "part_b": "left upper arm"
+    },
+    {
+     "certainty": "possible",
+     "panels": [
+      "1a",
+      "2b"
+     ],
+     "part_a": "left shin",
+     "part_b": "left upper arm"
+    }
+   ]
+  },
+  "discrepancies": [
+   {
+    "kind": "avatar_off_floor_markers_on_floor",
+    "note": "The dark red hand box has a drop line a few cm up, but its markers lie at floor level.",
+    "panels": [
+     "3a",
+     "2b"
+    ],
+    "part": "left hand"
+   },
+   {
+    "kind": "avatar_off_floor_markers_on_floor",
+    "note": "The light red hand is slightly raised and has a drop line, but its markers lie on the floor.",
+    "panels": [
+     "3b",
+     "1c",
+     "1d"
+    ],
+    "part": "right hand"
+   },
+   {
+    "kind": "avatar_off_floor_markers_on_floor",
+    "note": "The dark blue foot has a short drop line, but some of its markers sit near floor level.",
+    "panels": [
+     "3c",
+     "2b"
+    ],
+    "part": "left foot"
+   }
+  ],
+  "floor": {
+   "head": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "left foot": {
+    "avatar": "off_floor",
+    "markers": "touching",
+    "panels": [
+     "3c",
+     "2b",
+     "1a"
+    ]
+   },
+   "left forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3a",
+     "3b",
+     "2b"
+    ]
+   },
+   "left hand": {
+    "avatar": "off_floor",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "2b",
+     "1a"
+    ]
+   },
+   "left shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "left thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "left upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "3a"
+    ]
+   },
+   "pelvis": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "right foot": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "1c",
+     "2b"
+    ]
+   },
+   "right forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1c",
+     "3c"
+    ]
+   },
+   "right hand": {
+    "avatar": "off_floor",
+    "markers": "touching",
+    "panels": [
+     "3b",
+     "1c",
+     "1d"
+    ]
+   },
+   "right shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1c"
+    ]
+   },
+   "right thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1c",
+     "2b"
+    ]
+   },
+   "right upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1c",
+     "3a"
+    ]
+   },
+   "torso": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   }
+  },
+  "implausible": [
+   {
+    "kind": "no_base_of_support",
+    "note": "Hands and left foot all have drop lines, so no avatar part touches the floor.",
+    "panels": [
+     "3a",
+     "3c",
+     "2b"
+    ],
+    "parts": [
+     "left hand",
+     "right hand",
+     "left foot"
+    ]
+   }
+  ],
+  "pose": {
+   "candidates": [
+    {
+     "confidence": "medium",
+     "name": "Eka Pada Galavasana (flying pigeon) entry"
+    },
+    {
+     "confidence": "low",
+     "name": "Eka Pada Bakasana transition"
+    },
+    {
+     "confidence": "low",
+     "name": "Standing figure-four forward fold"
+    }
+   ],
+   "description": "Hands are planted near the floor under the shoulders, with the arms bent. The head hangs forward and well below the hips, which are high. The left leg is bent, with its knee near the left arm and the left foot just above the floor. The right leg is bent, its shin lying crosswise behind the upper arms, and the right foot is raised to the side."
+  }
+ },
+ "audit_id": "holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.audit_v2.calibrated.9278736bb1",
+ "cost_usd": 0.1580068,
+ "duration_s": 45.46,
+ "errors": [],
+ "frame_hold": 424,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Crane_Crow_Pose_or_Bakasana_-a@424",
+ "inputs": {},
+ "item_id": "220923_Crane_Crow_Pose_or_Bakasana_-a@424#A4:lift4",
+ "n": 1,
+ "num_turns": 7,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_v4/4f9def6c84a9cb6345c2bd6bc3427de572061972",
+  "images": {
+   "img_1.png": "f4c196e3decd95eb6a4e33bc830398dfa8c5e6e79f21fc9b9136506d0e5eef79",
+   "img_2.png": "7b4ce4c6a07c5a88d8a6e42ba3df7f2c0ace13021f9564760986f775e2102915",
+   "img_3.png": "0bcefb1d1836421ce7ffb06f40df83e309e9aaaf155ccbff35875ed80f7faa9b",
+   "img_4.png": "9d7072157833242fa1476bb33499c64d34628e5e9e95c2976b75a81b8ed11197"
+  },
+  "packet_json_sha256": "ddc747f3673fd7180a8ed6e60c9a84db41f7390585db98bdb08c3830271a79b2"
+ },
+ "packet_id": "4f9def6c84a9cb6345c2bd6bc3427de572061972",
+ "pass": "A",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_a.md",
+  "sha256": "bae5cfe8420cee596fc188c14966536b354df29210c1e9a94384c925aab70510"
+ },
+ "purpose": "calibration",
+ "render_v": "render_v4",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "5de359f0431719d8",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_a.json",
+  "sha256": "5a05ec7b10cce5f545b813c390820a81bbbde96259cc00318df7ec618475ff9d"
+ },
+ "schema_version": 1,
+ "session_id": "b07905ca-409a-40eb-b1db-9cb1d4327f99",
+ "started_utc": "2026-10-01T16:16:48+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Crane_Crow_Pose_or_Bakasana_-a",
+ "stratum": "arm_balance",
+ "usage": {
+  "cache_creation_input_tokens": 7981,
+  "cache_read_input_tokens": 26074,
+  "input_tokens": 6,
+  "output_tokens": 4446,
+  "thinking_tokens": 2556
+ },
+ "warnings": []
+}

@@ -1,0 +1,291 @@
+{
+ "answer": {
+  "body_body": {
+   "answer": "listed",
+   "contacts": []
+  },
+  "discrepancies": [
+   {
+    "kind": "avatar_off_floor_markers_on_floor",
+    "note": "Avatar head floats about 12 cm up with a drop line; the head markers are at the floor.",
+    "panels": [
+     "3a",
+     "3b",
+     "2b"
+    ],
+    "part": "head"
+   },
+   {
+    "kind": "avatar_off_floor_markers_on_floor",
+    "note": "The left hand box is about 12 cm up with a drop line; its markers lie on the floor.",
+    "panels": [
+     "3b",
+     "2b"
+    ],
+    "part": "left hand"
+   },
+   {
+    "kind": "avatar_off_floor_markers_on_floor",
+    "note": "The right hand box is raised, with a drop line; its markers lie on the floor.",
+    "panels": [
+     "3c",
+     "3a"
+    ],
+    "part": "right hand"
+   },
+   {
+    "kind": "avatar_off_floor_markers_on_floor",
+    "note": "The left foot is raised, with a drop line; its markers are near the floor.",
+    "panels": [
+     "3d",
+     "2b"
+    ],
+    "part": "left foot"
+   },
+   {
+    "kind": "avatar_off_floor_markers_on_floor",
+    "note": "The right foot is raised, with a drop line; its markers are near the floor.",
+    "panels": [
+     "3d",
+     "2b"
+    ],
+    "part": "right foot"
+   }
+  ],
+  "floor": {
+   "head": {
+    "avatar": "off_floor",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "3b",
+     "2b"
+    ]
+   },
+   "left foot": {
+    "avatar": "off_floor",
+    "markers": "touching",
+    "panels": [
+     "3d",
+     "2b",
+     "1b"
+    ]
+   },
+   "left forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "3b"
+    ]
+   },
+   "left hand": {
+    "avatar": "off_floor",
+    "markers": "touching",
+    "panels": [
+     "3b",
+     "2b",
+     "3a"
+    ]
+   },
+   "left shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "left thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "left upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "pelvis": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "right foot": {
+    "avatar": "off_floor",
+    "markers": "touching",
+    "panels": [
+     "3d",
+     "2b",
+     "1b"
+    ]
+   },
+   "right forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1c",
+     "3c"
+    ]
+   },
+   "right hand": {
+    "avatar": "off_floor",
+    "markers": "touching",
+    "panels": [
+     "3c",
+     "3a",
+     "1c"
+    ]
+   },
+   "right shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1c",
+     "2b"
+    ]
+   },
+   "right thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1c",
+     "2b"
+    ]
+   },
+   "right upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1c",
+     "3c"
+    ]
+   },
+   "torso": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   }
+  },
+  "implausible": [
+   {
+    "kind": "no_base_of_support",
+    "note": "The whole avatar hovers above the floor. Head, hands and both feet all have drop lines, and no part touches the floor.",
+    "panels": [
+     "2b",
+     "3a",
+     "3d"
+    ],
+    "parts": [
+     "head",
+     "left hand",
+     "right hand",
+     "left foot"
+    ]
+   }
+  ],
+  "pose": {
+   "candidates": [
+    {
+     "confidence": "medium",
+     "name": "Tripod headstand preparation (Sirsasana II prep)"
+    },
+    {
+     "confidence": "low",
+     "name": "Downward dog with head to floor"
+    },
+    {
+     "confidence": "low",
+     "name": "Dolphin pose variation"
+    }
+   ],
+   "description": "Inverted V. Hips are highest. Both legs are nearly straight and slope down to the feet, which are together on the floor. The torso hangs down from the hips to the head, which is near the floor below the hips. Both hands are on the floor beside the head, with the upper arms roughly horizontal and the forearms vertical, so the elbows are bent about 90\u00b0."
+  }
+ },
+ "audit_id": "holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.audit_v2.calibrated.9278736bb1",
+ "cost_usd": 0.1481794,
+ "duration_s": 35.37,
+ "errors": [],
+ "frame_hold": 429,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-b@430",
+ "inputs": {},
+ "item_id": "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-b@430#A4:lift12",
+ "n": 1,
+ "num_turns": 7,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_v4/c26c3318a5f8b8978e62be0d4e74cbde4e7a92a7",
+  "images": {
+   "img_1.png": "69c266cffad49c40cdf35a433bf6b5c7056ef43bebedbe7f21433104298fcb29",
+   "img_2.png": "68c22ffaca4881db73931aafd1088ebc69a3c32f057ebbb3c44a7fffe7eeb81b",
+   "img_3.png": "3d7d39590c444d689b55c7f0c9e25b2e5309c0a76a4f181d6ff534abc01389ca",
+   "img_4.png": "600271c25d13a19fddcf4247727573607507e191d254967392726df125dbe703"
+  },
+  "packet_json_sha256": "a88a980dd3360dbdae105b82602b8178e0f0b77628df19d58d88589081ba586e"
+ },
+ "packet_id": "c26c3318a5f8b8978e62be0d4e74cbde4e7a92a7",
+ "pass": "A",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_a.md",
+  "sha256": "bae5cfe8420cee596fc188c14966536b354df29210c1e9a94384c925aab70510"
+ },
+ "purpose": "calibration",
+ "render_v": "render_v4",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "5de359f0431719d8",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_a.json",
+  "sha256": "5a05ec7b10cce5f545b813c390820a81bbbde96259cc00318df7ec618475ff9d"
+ },
+ "schema_version": 1,
+ "session_id": "1bbe0215-7072-4059-b7a2-dc15b214e48c",
+ "started_utc": "2026-10-01T16:18:05+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-b",
+ "stratum": "arm_balance",
+ "usage": {
+  "cache_creation_input_tokens": 8902,
+  "cache_read_input_tokens": 26097,
+  "input_tokens": 6,
+  "output_tokens": 3586,
+  "thinking_tokens": 1653
+ },
+ "warnings": []
+}

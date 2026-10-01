@@ -1,0 +1,350 @@
+{
+ "answer": {
+  "body_body": {
+   "answer": "listed",
+   "contacts": [
+    {
+     "certainty": "clear",
+     "panels": [
+      "1b",
+      "2a"
+     ],
+     "part_a": "torso",
+     "part_b": "left hand"
+    },
+    {
+     "certainty": "clear",
+     "panels": [
+      "1b",
+      "2a"
+     ],
+     "part_a": "torso",
+     "part_b": "right hand"
+    },
+    {
+     "certainty": "clear",
+     "panels": [
+      "1b",
+      "2a"
+     ],
+     "part_a": "left hand",
+     "part_b": "right hand"
+    }
+   ]
+  },
+  "discrepancies": [
+   {
+    "kind": "other",
+    "note": "Human torso skin touches left thigh; avatar torso stays about 3 cm off the thigh.",
+    "panels": [
+     "1c",
+     "1d"
+    ],
+    "part": "left thigh"
+   },
+   {
+    "kind": "other",
+    "note": "Human head skin touches left shin; avatar head sphere is about 3 cm from the shin.",
+    "panels": [
+     "3a",
+     "1c"
+    ],
+    "part": "head"
+   }
+  ],
+  "floor": {
+   "head": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "3a"
+    ]
+   },
+   "left foot": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "2b",
+     "3a"
+    ]
+   },
+   "left forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1b",
+     "1c"
+    ]
+   },
+   "left hand": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1b",
+     "2a"
+    ]
+   },
+   "left shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "3a"
+    ]
+   },
+   "left thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "left upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1b",
+     "1c"
+    ]
+   },
+   "pelvis": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "right foot": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "2b",
+     "3b"
+    ]
+   },
+   "right forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1b",
+     "2a"
+    ]
+   },
+   "right hand": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1b",
+     "2a"
+    ]
+   },
+   "right shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "3b"
+    ]
+   },
+   "right thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "right upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1b",
+     "2b"
+    ]
+   },
+   "torso": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   }
+  },
+  "implausible": [],
+  "pose": {
+   "candidates": [
+    {
+     "confidence": "high",
+     "name": "Parsvottanasana (Intense Side Stretch)"
+    },
+    {
+     "confidence": "high",
+     "name": "Pyramid pose with reverse prayer hands"
+    },
+    {
+     "confidence": "low",
+     "name": "Standing split-stance forward fold"
+    }
+   ],
+   "description": "Only both feet touch the floor, in a long split stance: left leg forward, right leg back, both knees straight. Hips are high, torso folded forward and down over the left thigh, head far below the hips near the left shin. Both arms bend behind the back, hands pressed together against the back in reverse prayer."
+  },
+  "repair": {
+   "kinds": [
+    "pose_mismatch"
+   ],
+   "needed": "yes",
+   "note": "Deepen the avatar's fold so the torso meets the left thigh and the head nears the shin, matching the skin."
+  },
+  "roles": [
+   {
+    "note": "Full fold lays torso on front thigh; pose still valid without it.",
+    "panels": [
+     "1c",
+     "1d"
+    ],
+    "part_a": "left thigh",
+    "part_b": "torso",
+    "role": "allowed"
+   },
+   {
+    "note": "Reverse prayer hands rest on back; classic arm option.",
+    "panels": [
+     "1b",
+     "2a"
+    ],
+    "part_a": "torso",
+    "part_b": "left hand",
+    "role": "allowed"
+   },
+   {
+    "note": "Reverse prayer hands rest on back; classic arm option.",
+    "panels": [
+     "1b",
+     "2a"
+    ],
+    "part_a": "torso",
+    "part_b": "right hand",
+    "role": "allowed"
+   },
+   {
+    "note": "Skin only near-touch from deep fold; not part of the pose.",
+    "panels": [
+     "1c",
+     "3a"
+    ],
+    "part_a": "left shin",
+    "part_b": "torso",
+    "role": "incidental"
+   },
+   {
+    "note": "Head toward front shin in full expression; human touches, avatar does not.",
+    "panels": [
+     "3a",
+     "1c"
+    ],
+    "part_a": "left shin",
+    "part_b": "head",
+    "role": "allowed"
+   },
+   {
+    "note": "Palms pressed together in reverse prayer behind back.",
+    "panels": [
+     "1b",
+     "2a"
+    ],
+    "part_a": "left hand",
+    "part_b": "right hand",
+    "role": "allowed"
+   }
+  ],
+  "timing": {
+   "better_panel": "",
+   "end": "label",
+   "main_moment": "keep",
+   "note": "At 4b the torso is barely folded; fold is under way by 4c. Both windows share the end.",
+   "start": "capture"
+  },
+  "variant": {
+   "matches_label": "yes",
+   "note": ""
+  }
+ },
+ "audit_id": "holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.audit_v2.calibrated.9278736bb1",
+ "cost_usd": 0.2431282,
+ "duration_s": 33.93,
+ "errors": [],
+ "frame_hold": 999,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220926_Intense_Side_Stretch_Pose_or_Parsvottanasana_-b@999",
+ "inputs": {},
+ "item_id": "220926_Intense_Side_Stretch_Pose_or_Parsvottanasana_-b@999#B4",
+ "n": 1,
+ "num_turns": 7,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_v4/2f7fab28b3a08520fe751ef927fa602086b7e368",
+  "images": {
+   "img_1.png": "5c4df4bd5ec3f3c84f33bc14bf99645131876cbe1931075c024dad9def1db143",
+   "img_2.png": "5892ecb9b637354399dd46b6754e9825c46c80036ce45479c8d5059cb7c80f75",
+   "img_3.png": "4e394a7fa9e9cd667ac0cbd815b6525a2ef0b2c14531bf8d33b4f41cddd70096",
+   "img_4.png": "baae9331240c562b7183bf9ab99b46fb2baa3b50ae187ddda76354ad257d036f"
+  },
+  "packet_json_sha256": "daf599c8e120d5f3860d665ca804847ec26c817726d6a7110c0d556d360f707d"
+ },
+ "packet_id": "2f7fab28b3a08520fe751ef927fa602086b7e368",
+ "pass": "B",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_b.md",
+  "sha256": "077dd51bd3c86104e2579843cb3162adaf5e3892192e7634aa4712e2274df649"
+ },
+ "purpose": "b6",
+ "render_v": "render_v4",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "5f537c5cd7b2019f",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_b.json",
+  "sha256": "0c8ebcc47c25a92ae60dea2083cdea7b465230a6702cd4fc11c2b7b6bb6eae8d"
+ },
+ "schema_version": 1,
+ "session_id": "b18d14ad-3702-45ce-8923-d3118ff0f0a5",
+ "started_utc": "2026-10-01T17:00:02+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220926_Intense_Side_Stretch_Pose_or_Parsvottanasana_-b",
+ "stratum": null,
+ "usage": {
+  "cache_creation_input_tokens": 20131,
+  "cache_read_input_tokens": 41681,
+  "input_tokens": 6,
+  "output_tokens": 3686,
+  "thinking_tokens": 1253
+ },
+ "warnings": []
+}

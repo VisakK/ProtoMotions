@@ -1,0 +1,315 @@
+{
+ "answer": {
+  "body_body": {
+   "answer": "listed",
+   "contacts": [
+    {
+     "certainty": "clear",
+     "panels": [
+      "1b",
+      "3a",
+      "1d"
+     ],
+     "part_a": "left thigh",
+     "part_b": "left upper arm"
+    }
+   ]
+  },
+  "discrepancies": [
+   {
+    "kind": "other",
+    "note": "Human skin of torso touches left thigh; avatar keeps a gap of several cm between them.",
+    "panels": [
+     "1a",
+     "2b"
+    ],
+    "part": "torso"
+   },
+   {
+    "kind": "other",
+    "note": "Capture leaves right shin undecided; skin mesh and avatar both rest it on floor, markers slightly high.",
+    "panels": [
+     "3d",
+     "2b"
+    ],
+    "part": "right shin"
+   },
+   {
+    "kind": "other",
+    "note": "Human skin of left hand touches left foot; avatar hand and foot stay a few cm apart.",
+    "panels": [
+     "3a"
+    ],
+    "part": "left hand"
+   }
+  ],
+  "floor": {
+   "head": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "left foot": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "2b",
+     "1c"
+    ]
+   },
+   "left forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1b",
+     "3a"
+    ]
+   },
+   "left hand": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "2b",
+     "1c"
+    ]
+   },
+   "left shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3a",
+     "1b"
+    ]
+   },
+   "left thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "left upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1b",
+     "3a"
+    ]
+   },
+   "pelvis": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "right foot": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3c",
+     "3d",
+     "2b"
+    ]
+   },
+   "right forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1b",
+     "3b"
+    ]
+   },
+   "right hand": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3b",
+     "2b",
+     "1b"
+    ]
+   },
+   "right shin": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3d",
+     "2b",
+     "1a"
+    ]
+   },
+   "right thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b",
+     "3d"
+    ]
+   },
+   "right upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1b",
+     "3b"
+    ]
+   },
+   "torso": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   }
+  },
+  "implausible": [],
+  "pose": {
+   "candidates": [
+    {
+     "confidence": "high",
+     "name": "Low Lunge, hands down (Anjaneyasana prep)"
+    },
+    {
+     "confidence": "low",
+     "name": "Lizard pose prep (Utthan Pristhasana)"
+    },
+    {
+     "confidence": "low",
+     "name": "Crescent lunge kneeling"
+    }
+   ],
+   "description": "Left foot planted forward with knee deeply bent; right leg extended back with right shin and top of right foot on the floor, right knee just above it. Both hands on the floor either side of the left foot, arms straight. Torso leans forward over the front thigh; head is in front of and above the hips."
+  },
+  "repair": {
+   "kinds": [],
+   "needed": "no",
+   "note": "Floor contacts match the human; only minor torso-thigh gap from capsule shapes."
+  },
+  "roles": [
+   {
+    "note": "Arm rests against outer front thigh with hands down; permitted, not defining.",
+    "panels": [
+     "1b",
+     "3a"
+    ],
+    "part_a": "left thigh",
+    "part_b": "left upper arm",
+    "role": "allowed"
+   },
+   {
+    "note": "Hand placed beside foot brushes it briefly; skin touch only at main moment.",
+    "panels": [
+     "3a",
+     "2a"
+    ],
+    "part_a": "left foot",
+    "part_b": "left hand",
+    "role": "incidental"
+   },
+   {
+    "note": "Deep forward lean lays belly on front thigh; avatar misses it.",
+    "panels": [
+     "1a",
+     "2b"
+    ],
+    "part_a": "left thigh",
+    "part_b": "torso",
+    "role": "allowed"
+   }
+  ],
+  "timing": {
+   "better_panel": "",
+   "end": "label",
+   "main_moment": "keep",
+   "note": "Label and capture windows coincide; main moment shows settled lunge with all five floor contacts.",
+   "start": "label"
+  },
+  "variant": {
+   "matches_label": "variant",
+   "note": "Hands rest on the floor framing the front foot instead of arms raised overhead; torso inclined forward."
+  }
+ },
+ "audit_id": "holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.audit_v2.calibrated.9278736bb1",
+ "cost_usd": 0.2183772,
+ "duration_s": 36.02,
+ "errors": [],
+ "frame_hold": 580,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Low_Lunge_pose_or_Anjaneyasana_-a@580",
+ "inputs": {},
+ "item_id": "220923_Low_Lunge_pose_or_Anjaneyasana_-a@580#B4",
+ "n": 2,
+ "num_turns": 7,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_v4/152da753386e79cff259bf8d0365ff12a098dd0f",
+  "images": {
+   "img_1.png": "72a62756990f16a03afb51c4e7cfc4559f661c5d6b2c7f0fac035810114f906f",
+   "img_2.png": "eb8c3d2bff1f47e8a3d99dfac58f224ed23b92e7474373729cff66fa73a8f98a",
+   "img_3.png": "fbf4f8307bc3fa494ae67610b71152492e820e90260e543f38ad53aba62988c8",
+   "img_4.png": "c83522c31add5d686233803cf4dd1de1dd2c57b6f5f4a7072cdf133a34c951c0"
+  },
+  "packet_json_sha256": "16d7cb9039a9d1fc333ae07ab19edfc34554422fcae00ae401760fd8f30c1c1c"
+ },
+ "packet_id": "152da753386e79cff259bf8d0365ff12a098dd0f",
+ "pass": "B",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_b.md",
+  "sha256": "077dd51bd3c86104e2579843cb3162adaf5e3892192e7634aa4712e2274df649"
+ },
+ "purpose": "b6",
+ "render_v": "render_v4",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "5f537c5cd7b2019f",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_b.json",
+  "sha256": "0c8ebcc47c25a92ae60dea2083cdea7b465230a6702cd4fc11c2b7b6bb6eae8d"
+ },
+ "schema_version": 1,
+ "session_id": "c7590952-e161-46cd-80b8-59c20a15fa6a",
+ "started_utc": "2026-10-01T16:34:59+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Low_Lunge_pose_or_Anjaneyasana_-a",
+ "stratum": null,
+ "usage": {
+  "cache_creation_input_tokens": 17424,
+  "cache_read_input_tokens": 43606,
+  "input_tokens": 6,
+  "output_tokens": 3512,
+  "thinking_tokens": 1395
+ },
+ "warnings": []
+}

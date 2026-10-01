@@ -1,0 +1,124 @@
+{
+ "answer": {
+  "artefacts": [
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "4b",
+     "4d",
+     "3d"
+    ],
+    "part": "left hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "other",
+    "panels": [
+     "4b",
+     "4d",
+     "3d"
+    ],
+    "part": "right hand",
+    "severity": "minor"
+   },
+   {
+    "avatar": "B",
+    "kind": "through_floor",
+    "panels": [
+     "4b",
+     "4d"
+    ],
+    "part": "left hand",
+    "severity": "minor"
+   }
+  ],
+  "closer_to_human": "A",
+  "floating_parts": {
+   "A": [],
+   "B": []
+  },
+  "more_natural": "A",
+  "same_pose": {
+   "answer": "yes",
+   "reason": "Both show the same balance on both hands with a strongly arched back and both legs bent and split overhead; only the hand placement and wrist angles differ slightly."
+  },
+  "summary": "Same pose in both. A's hands lie flat on the floor and match the grey body closely. B's hands are tilted and bent at the wrist, with the edges of the boxes lifting off or dipping slightly into the floor, so B is a little less faithful and less natural."
+ },
+ "audit_id": null,
+ "cost_usd": 0.1204766,
+ "duration_s": 14.82,
+ "errors": [],
+ "frame_hold": 945,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Scorpion_pose_or_vrischikasana-b@945",
+ "inputs": {},
+ "item_id": "220923_Scorpion_pose_or_vrischikasana-b@945#edit",
+ "n": 1,
+ "num_turns": 8,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_c2/13bdf59204aa4896d5b2359789635e11476b67a6",
+  "images": {
+   "img_1.png": "29e1e813510462b540f4c9bd22b6db8d81626386f6053762b2055f37d08bf0d4",
+   "img_2.png": "e05d57ec1d072eebfeeff4a18c3f4c346d61ee79a5ed2a18d96ec78c2b30611e",
+   "img_3.png": "14552ea887ec64b5b0a5b2f0d1113837391407e884d5330a084da0c2aed72f7a",
+   "img_4.png": "08da0d51362207545d028f580f2ecd33978f2406e8f3cb183203b3ca2bc6541b",
+   "img_5.png": "b452f900f4ca7bf119a709680182eff32a93c866f96af9f9d7d59aaaa48153c4"
+  },
+  "packet_json_sha256": "f9b50448c56662c200dfca75ad70144d5ed104370c9fdc6248494f592ae41bee"
+ },
+ "packet_id": "13bdf59204aa4896d5b2359789635e11476b67a6",
+ "pass": "C",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_c.md",
+  "sha256": "8159c34643bf0c9963dec5c2ffa21c77ea115808f960d12c9b548e9bdb09112e"
+ },
+ "purpose": "pass_c2",
+ "render_v": "render_c2",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "2bb2428fb7232a53",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_c.json",
+  "sha256": "01a25df2fdc2acba7931676d4c7df3231ac10a90ecad28fdce7cf7746c6a33b4"
+ },
+ "schema_version": 1,
+ "session_id": "ceae8789-aa7c-4bb6-b28e-ce092be1c20b",
+ "started_utc": "2026-10-01T17:28:32+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Scorpion_pose_or_vrischikasana-b",
+ "stratum": "edit",
+ "usage": {
+  "cache_creation_input_tokens": 11375,
+  "cache_read_input_tokens": 13563,
+  "input_tokens": 6,
+  "output_tokens": 1337,
+  "thinking_tokens": 279
+ },
+ "warnings": []
+}

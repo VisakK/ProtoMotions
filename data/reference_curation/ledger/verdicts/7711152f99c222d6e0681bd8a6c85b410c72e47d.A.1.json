@@ -1,0 +1,280 @@
+{
+ "answer": {
+  "body_body": {
+   "answer": "listed",
+   "contacts": []
+  },
+  "discrepancies": [
+   {
+    "kind": "avatar_off_floor_markers_on_floor",
+    "note": "Avatar left hand hovers several cm up with drop line; its markers lie on the floor.",
+    "panels": [
+     "3a",
+     "3b",
+     "2b"
+    ],
+    "part": "left hand"
+   },
+   {
+    "kind": "avatar_off_floor_markers_on_floor",
+    "note": "Avatar right hand floats above floor with drop line; its markers rest on floor.",
+    "panels": [
+     "3a",
+     "3b",
+     "1c"
+    ],
+    "part": "right hand"
+   },
+   {
+    "kind": "avatar_off_floor_markers_on_floor",
+    "note": "Avatar left foot raised with drop line; its markers sit at floor level.",
+    "panels": [
+     "3c",
+     "2b"
+    ],
+    "part": "left foot"
+   },
+   {
+    "kind": "avatar_off_floor_markers_on_floor",
+    "note": "Avatar right foot raised with drop line; its markers sit at floor level.",
+    "panels": [
+     "3c",
+     "2b"
+    ],
+    "part": "right foot"
+   }
+  ],
+  "floor": {
+   "head": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a",
+     "1c"
+    ]
+   },
+   "left foot": {
+    "avatar": "off_floor",
+    "markers": "touching",
+    "panels": [
+     "3c",
+     "2b",
+     "1b"
+    ]
+   },
+   "left forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "3a"
+    ]
+   },
+   "left hand": {
+    "avatar": "off_floor",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "3b",
+     "2b"
+    ]
+   },
+   "left shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "left thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "left upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "pelvis": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "right foot": {
+    "avatar": "off_floor",
+    "markers": "touching",
+    "panels": [
+     "3c",
+     "2b",
+     "1b"
+    ]
+   },
+   "right forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3a",
+     "3b"
+    ]
+   },
+   "right hand": {
+    "avatar": "off_floor",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "3b",
+     "1c"
+    ]
+   },
+   "right shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1c"
+    ]
+   },
+   "right thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1c"
+    ]
+   },
+   "right upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1c",
+     "3b"
+    ]
+   },
+   "torso": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   }
+  },
+  "implausible": [
+   {
+    "kind": "no_base_of_support",
+    "note": "No avatar part touches the floor; the whole body floats above it.",
+    "panels": [
+     "2b",
+     "3a",
+     "3b",
+     "3c"
+    ],
+    "parts": [
+     "left hand",
+     "right hand",
+     "left foot",
+     "right foot"
+    ]
+   }
+  ],
+  "pose": {
+   "candidates": [
+    {
+     "confidence": "high",
+     "name": "Downward-facing dog"
+    },
+    {
+     "confidence": "low",
+     "name": "Dolphin pose transition"
+    }
+   ],
+   "description": "Inverted V: hips highest, head hanging below hips between the arms. Both arms are straight down from the shoulders to hands near the floor. Both legs are straight and angled back to feet on tiptoe, heels raised. In the avatar, hands and feet all hover a few cm above the floor, with drop lines under them. The hand and foot markers sit on the floor."
+  }
+ },
+ "audit_id": "holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.audit_v2.calibrated.9278736bb1",
+ "cost_usd": 0.1164596,
+ "duration_s": 21.87,
+ "errors": [],
+ "frame_hold": 455,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Scorpion_pose_or_vrischikasana-b@455",
+ "inputs": {},
+ "item_id": "220923_Scorpion_pose_or_vrischikasana-b@455#A4:lift6",
+ "n": 1,
+ "num_turns": 7,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_v4/7711152f99c222d6e0681bd8a6c85b410c72e47d",
+  "images": {
+   "img_1.png": "6fc0b4c1b45529845f4f2ec7598db3381680d347d463c4409a5a6f8624c04ed8",
+   "img_2.png": "8beda19e97a39f5bf429ca54d50af6c9aeb835078f2b2c86aa4ddfdb3edcbb73",
+   "img_3.png": "f2c36efc660cbb81bb6fbb0fcff4e6b6adebb32770ff6a056f0e247e670bece0",
+   "img_4.png": "3ad16a8fea121f39802c3e6bb1a1947e87e772368e479302209281e80d652bd7"
+  },
+  "packet_json_sha256": "449e38e245c2a68f89e7f244d86a22d67e71bd967408c52a6b95236e0dd8f4e4"
+ },
+ "packet_id": "7711152f99c222d6e0681bd8a6c85b410c72e47d",
+ "pass": "A",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_a.md",
+  "sha256": "bae5cfe8420cee596fc188c14966536b354df29210c1e9a94384c925aab70510"
+ },
+ "purpose": "calibration",
+ "render_v": "render_v4",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "5de359f0431719d8",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_a.json",
+  "sha256": "5a05ec7b10cce5f545b813c390820a81bbbde96259cc00318df7ec618475ff9d"
+ },
+ "schema_version": 1,
+ "session_id": "dd86bce9-0bda-4879-8f9f-75d63c1701fd",
+ "started_utc": "2026-10-01T16:18:29+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Scorpion_pose_or_vrischikasana-b",
+ "stratum": "inversion",
+ "usage": {
+  "cache_creation_input_tokens": 7985,
+  "cache_read_input_tokens": 26078,
+  "input_tokens": 6,
+  "output_tokens": 2367,
+  "thinking_tokens": 570
+ },
+ "warnings": []
+}

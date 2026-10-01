@@ -1,0 +1,253 @@
+{
+ "answer": {
+  "body_body": {
+   "answer": "listed",
+   "contacts": []
+  },
+  "discrepancies": [
+   {
+    "kind": "other",
+    "note": "Label names Eagle Pose, but the moment shows a two-footed standing entry with no leg or arm wrap.",
+    "panels": [
+     "1a",
+     "1b",
+     "4c"
+    ],
+    "part": "pelvis"
+   }
+  ],
+  "floor": {
+   "head": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "left foot": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "2b",
+     "1a"
+    ]
+   },
+   "left forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "left hand": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "left shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3a",
+     "2b"
+    ]
+   },
+   "left thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "left upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "pelvis": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "right foot": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "2b",
+     "1a"
+    ]
+   },
+   "right forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "right hand": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "right shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3a",
+     "2b"
+    ]
+   },
+   "right thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "right upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "torso": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   }
+  },
+  "implausible": [],
+  "pose": {
+   "candidates": [
+    {
+     "confidence": "high",
+     "name": "Transition / standing entry into Eagle"
+    },
+    {
+     "confidence": "medium",
+     "name": "Tadasana (Mountain Pose), relaxed"
+    },
+    {
+     "confidence": "low",
+     "name": "Utkatasana (Chair Pose) entry"
+    }
+   ],
+   "description": "Standing upright on both feet, which are flat on the floor about hip width apart. Head is high above the hips. Knees are slightly bent, with the left leg a little forward. Both arms hang down and slightly out at the sides; they have been lowered from a T-position. No leg is wrapped and no arm is bound. This is the entry before Eagle Pose."
+  },
+  "repair": {
+   "kinds": [],
+   "needed": "no",
+   "note": "Avatar feet rest on the floor like the human's; the pose matches the markers."
+  },
+  "roles": [],
+  "timing": {
+   "better_panel": "",
+   "end": "capture",
+   "main_moment": "cannot_tell",
+   "note": "Windows nearly coincide. Eagle never forms in the strip; the right foot only starts lifting at 4e.",
+   "start": "capture"
+  },
+  "variant": {
+   "matches_label": "no",
+   "note": "No leg wrap, no arm wrap, both feet down: a standing entry phase, not Eagle Pose."
+  }
+ },
+ "audit_id": "holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.audit_v2.calibrated.9278736bb1",
+ "cost_usd": 0.18017319999999998,
+ "duration_s": 24.85,
+ "errors": [],
+ "frame_hold": 97,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220926_Eagle_Pose_or_Garudasana_-a@97",
+ "inputs": {},
+ "item_id": "220926_Eagle_Pose_or_Garudasana_-a@97#B4",
+ "n": 2,
+ "num_turns": 7,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_v4/fc3ef0b2d1b536545a2eaa93bf045168d06fc117",
+  "images": {
+   "img_1.png": "e9e4c61293d2dd974c7f0488567b7096b864eeba1c0a4ed9971f03d7493e1c89",
+   "img_2.png": "975b370553bb566b402fae5950f0c3fcec842bc1f58a3388fcc514fd15045f1a",
+   "img_3.png": "034db130262e49ec1c8321c5eaa7463648ca01c477523c6cd36ded61edbce1ba",
+   "img_4.png": "03135cb7d8cd9340304d1bc5d393d348e8c1a6b81ff8d23984b2090357c45359"
+  },
+  "packet_json_sha256": "220723c51f75a566d25f186cec9355f8e5586ad1ea120c23338776874e6edf6f"
+ },
+ "packet_id": "fc3ef0b2d1b536545a2eaa93bf045168d06fc117",
+ "pass": "B",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_b.md",
+  "sha256": "077dd51bd3c86104e2579843cb3162adaf5e3892192e7634aa4712e2274df649"
+ },
+ "purpose": "pose_role",
+ "render_v": "render_v4",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "5f537c5cd7b2019f",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_b.json",
+  "sha256": "0c8ebcc47c25a92ae60dea2083cdea7b465230a6702cd4fc11c2b7b6bb6eae8d"
+ },
+ "schema_version": 1,
+ "session_id": "864e4f07-eeb5-4ac3-95a3-5b01fa40dd0f",
+ "started_utc": "2026-10-01T16:59:03+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220926_Eagle_Pose_or_Garudasana_-a",
+ "stratum": null,
+ "usage": {
+  "cache_creation_input_tokens": 15177,
+  "cache_read_input_tokens": 41366,
+  "input_tokens": 6,
+  "output_tokens": 2523,
+  "thinking_tokens": 633
+ },
+ "warnings": []
+}

@@ -639,8 +639,25 @@ Their posing arrays (J_regressor, weights, posedirs, faces, kinematic parents) a
   - The first final corpus had 28 clips with frames on which a body accelerates > 100 m/s² and the reference does not: Standing Forward Bend -a's elbow at 536 m/s² (its RMS 1.3 → 23.5 m/s²), Scale -a's hand at 1,950 m/s².
   - A 30× smoothness alone traded the jerks for overlaps up to 8 cm. Bringing the pair and penetration terms in by continuation (1 %, 10 %, 100 %) under a 5× smoothness (`solve_gently`) removed them on most: Forward Bend 23.5 → 1.7 m/s² and Side Crow -b 24.9 → 2.6, with no new overlap and every pair still closed.
   - `retarget_clip` re-solves every clip whose direct solution jerks (`spike_frames`) and keeps the smoother result: gentle on 13 of the 28.
-  - **24 clips still add jerk frames**, 1–33 each and 191 in all (321 frames over 100 m/s² against the references' 130). The worst are Firefly -a (+33), Firefly -b (+26), Cockerel -b (+22), Scale -a (+21) and Side Crow -b (+20): arm-balance transitions and lotus binds, where supports, pairs and collisions still conflict.
+  - **24 clips still add jerk frames**, 1–33 each and 191 in all (321 frames over 100 m/s² against the references' 130). The worst are Firefly -a (+33), Firefly -b (+26), Cockerel -b (+22), Scale -a (+21) and Side Crow -a (+20): arm-balance transitions and lotus binds, where supports, pairs and collisions still conflict.
   - Acceleration RMS rises by ×1.26 at the median, ×1.9 at p90 and ×3.7 at worst. Pass C does not see jerk (its strip is ±0.5 s apart), so `frames_acc_gt_spike` in the records is the gate.
+
+**After Step 8, before Step 9** *(2026-09-30)*.
+- **The per-hold release gate** (`reference_curation/gate.py`, `tests/test_gate.py`; `data/reference_curation/gate/…gate_v1.eb652a8568/`) reads labels v1.1, the statics on the retarget, Pass C and the retarget's lineage, and decides every hold: **235 pass, 9 mask, 26 flag, 33 exclude** (family holds 53 / 2 / 11 / 4).
+  - Excluded: the carried -c clip, 9 unresolved labels, 3 not-the-same-pose, 5 statics beyond the plant or infeasible, and 18 holds that cannot be held within the torque limits without a support the plant cannot realise (17 crowns, 1 lotus pelvis).
+  - Masked (the crown taken out of every target, the hold kept): 9 crown holds that the realised supports alone hold (`realised_s_star` ≤ 1).
+  - Flagged: shipped closer (Pass C) 18, a jerk in the window 17, a new overlap 6, over the edit budget inside the window 8.
+  - The transitions carry 135 jerk frames and 138 new overlap pair-frames, per clip in `clips.jsonl`.
+- **Corpus ftR** (`data/scripts/build_expert60_ftR.sh`, `retarget_corpus_manifest.py`, `check_expert60_ftR.py`) is the ftC pipeline rebuilt on the retargeted motions with everything else held. It covers the manifest, 180 hold-extended motions, the package, the hold graph, the MOYO mat attribution and on-mat gate on the new poses, and the physics tables. `build_physics_tables.py` gained `--pressure-dir` and `--pressure-gated-dir`.
+  - **All 20 identity checks pass.** The graph is identical to ftC's, and the measured force, COP and coverage are bit-identical to ftC's port.
+  - **The mat vouches for the new geometry:** loaded frames the attribution explains ≥ 90 % go from 70 % to 87 %, and the attributed-vs-measured COP residual p90 goes from 28.2 to 6.0 cm (Standing Split -a/-b and Half Moon -a from 0.13–0.27 explained to 1.00). Share-valid load signatures go from 651 to 765.
+- **The ft_c probe** (`probe_ft_c/run_probe.sh`, `analyse_probe.py`, `summary.md`) runs ft_c's `last.ckpt` with its own evaluator (2250 steps, not the 600-step default) on both corpora.
+  - Success falls 0.961 → 0.856 and failed motions rise 7 → 26. Connective clips improve (score 0.951 → 0.994) and Upward Plank gains 0.46; single-leg clips collapse (0.998 → 0.804: Tree -a/-b, Lord of the Dance -c, Standing Split -a), and so do the supported headstands and Koundinya.
+  - **This policy was tuned to the shipped references, so the probe cannot separate a worse reference from a shifted one.** Standing Split -a's retargeted COM is inside its supports at every frame where the shipped one was 20 cm outside, and the policy still falls.
+  - The added jerk frames are not where tracking fails (median error 18 cm near one against 14 cm elsewhere; no first failure within 1/6 s of one).
+  - **It did expose a retarget defect: planted supports slide.** The slowest material point of a support the human keeps on the floor moves at median 0.7 → 3.1 cm/s (clip p90 4.5 → 16.4 cm/s), and 9 % → 37 % of touching frames exceed 5 cm/s. Tree -a's standing foot drifts 7.5 cm in 10 s against 0.4 cm shipped. `retarget.py` constrains supports vertically only; its no-slip term was removed because pinning corners dragged the body.
+  - The slide does not correlate with the probe's score drops (Spearman −0.00). A velocity-matching term (keep each planted point's horizontal motion to the shipped one's, which allows pivots) is the fix.
+  - In single support the COM also sits exactly at `BALANCE_MARGIN_M` (Tree -a: 1.5 cm from the flat foot's edge from lift-off), the balance term's minimum.
 
 **Size.** About 450 lines. Built: `retarget.py` 1,876 lines (its docstring about 70), `edits.py` 715, `plant.py` 394, `roles.py` 161, `isaac_statue.py` 164, tests 402 (22 tests).
 

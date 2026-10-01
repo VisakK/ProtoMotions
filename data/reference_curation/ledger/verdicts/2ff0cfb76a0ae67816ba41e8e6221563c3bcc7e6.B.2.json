@@ -1,0 +1,453 @@
+{
+ "answer": {
+  "body_body": {
+   "answer": "listed",
+   "contacts": [
+    {
+     "certainty": "clear",
+     "panels": [
+      "1b",
+      "1d"
+     ],
+     "part_a": "left foot",
+     "part_b": "right foot"
+    },
+    {
+     "certainty": "clear",
+     "panels": [
+      "3a",
+      "1d"
+     ],
+     "part_a": "torso",
+     "part_b": "left hand"
+    },
+    {
+     "certainty": "clear",
+     "panels": [
+      "3b",
+      "1d"
+     ],
+     "part_a": "torso",
+     "part_b": "right hand"
+    },
+    {
+     "certainty": "clear",
+     "panels": [
+      "3b",
+      "1c"
+     ],
+     "part_a": "pelvis",
+     "part_b": "right hand"
+    },
+    {
+     "certainty": "possible",
+     "panels": [
+      "3a",
+      "1a"
+     ],
+     "part_a": "pelvis",
+     "part_b": "left hand"
+    }
+   ]
+  },
+  "discrepancies": [
+   {
+    "kind": "markers_away_from_avatar_part",
+    "note": "Foot markers sit about 10 cm above the avatar foot; avatar legs less vertical than human's.",
+    "panels": [
+     "1a",
+     "1b",
+     "2b"
+    ],
+    "part": "left foot"
+   },
+   {
+    "kind": "markers_away_from_avatar_part",
+    "note": "Foot markers about 10 cm above avatar foot at main moment.",
+    "panels": [
+     "1b",
+     "1d",
+     "1c"
+    ],
+    "part": "right foot"
+   },
+   {
+    "kind": "other",
+    "note": "Labelled shin-shin and foot-shin contacts absent in both skin and avatar at main moment.",
+    "panels": [
+     "1b",
+     "1d"
+    ],
+    "part": "left shin"
+   },
+   {
+    "kind": "other",
+    "note": "Hands-on-back contacts (torso, pelvis) are real in skin and avatar but missing from label_pairs.",
+    "panels": [
+     "3a",
+     "3b",
+     "1d"
+    ],
+    "part": "left hand"
+   },
+   {
+    "kind": "other",
+    "note": "Skin shows forearms touching torso sides; avatar forearms stay about 3 cm away.",
+    "panels": [
+     "3a",
+     "3b"
+    ],
+    "part": "left forearm"
+   }
+  ],
+  "floor": {
+   "head": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "2b",
+     "3a",
+     "3b"
+    ]
+   },
+   "left foot": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "1b"
+    ]
+   },
+   "left forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3a",
+     "2b"
+    ]
+   },
+   "left hand": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3a",
+     "1d"
+    ]
+   },
+   "left shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "1b"
+    ]
+   },
+   "left thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "1b"
+    ]
+   },
+   "left upper arm": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "2b",
+     "3a"
+    ]
+   },
+   "pelvis": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "right foot": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1b",
+     "1d"
+    ]
+   },
+   "right forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3b",
+     "1c"
+    ]
+   },
+   "right hand": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3b",
+     "1d"
+    ]
+   },
+   "right shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1b",
+     "1d"
+    ]
+   },
+   "right thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1b",
+     "1d"
+    ]
+   },
+   "right upper arm": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3b",
+     "1c"
+    ]
+   },
+   "torso": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "2b",
+     "3a",
+     "3b"
+    ]
+   }
+  },
+  "implausible": [],
+  "pose": {
+   "candidates": [
+    {
+     "confidence": "high",
+     "name": "Supported Shoulderstand (Salamba Sarvangasana)"
+    },
+    {
+     "confidence": "low",
+     "name": "Supported Shoulderstand prep with bent hips"
+    }
+   ],
+   "description": "Inverted. Upper back, shoulders, both upper arms and back of head rest on the floor; hips stacked roughly above the shoulders, head below hips. Elbows bent, forearms angled up, both hands pressed on the back at the torso/pelvis. Both legs straight and together pointing vertically up, feet touching each other."
+  },
+  "repair": {
+   "kinds": [
+    "pose_mismatch"
+   ],
+   "needed": "yes",
+   "note": "Minor: avatar legs less vertical, feet ~10 cm below markers; floor contacts already correct."
+  },
+  "roles": [
+   {
+    "note": "Legs held together, feet touching; pose permits but does not need it.",
+    "panels": [
+     "1b",
+     "1d"
+    ],
+    "part_a": "left foot",
+    "part_b": "right foot",
+    "role": "allowed"
+   },
+   {
+    "note": "Not touching in skin or avatar; not part of shoulderstand.",
+    "panels": [
+     "1b",
+     "1d"
+    ],
+    "part_a": "left foot",
+    "part_b": "right shin",
+    "role": "incidental"
+   },
+   {
+    "note": "Not touching in skin or avatar; not part of shoulderstand.",
+    "panels": [
+     "1b",
+     "1d"
+    ],
+    "part_a": "right foot",
+    "part_b": "left shin",
+    "role": "incidental"
+   },
+   {
+    "note": "Legs together permitted; about 5 cm apart here, no contact.",
+    "panels": [
+     "1b",
+     "1d"
+    ],
+    "part_a": "left shin",
+    "part_b": "right shin",
+    "role": "allowed"
+   },
+   {
+    "note": "Skin thighs touch with legs together; avatar keeps small gap.",
+    "panels": [
+     "1b",
+     "1d"
+    ],
+    "part_a": "left thigh",
+    "part_b": "right thigh",
+    "role": "allowed"
+   },
+   {
+    "note": "Hand supports back; placement on pelvis vs torso varies.",
+    "panels": [
+     "3a",
+     "1d"
+    ],
+    "part_a": "pelvis",
+    "part_b": "left hand",
+    "role": "allowed"
+   },
+   {
+    "note": "Hand supports back; placement on pelvis vs torso varies.",
+    "panels": [
+     "3b",
+     "1d"
+    ],
+    "part_a": "pelvis",
+    "part_b": "right hand",
+    "role": "allowed"
+   },
+   {
+    "note": "Forearm brushes torso side in skin; consequence of hands on back.",
+    "panels": [
+     "3a"
+    ],
+    "part_a": "torso",
+    "part_b": "left forearm",
+    "role": "allowed"
+   },
+   {
+    "note": "Forearm brushes torso side in skin; consequence of hands on back.",
+    "panels": [
+     "3b"
+    ],
+    "part_a": "torso",
+    "part_b": "right forearm",
+    "role": "allowed"
+   },
+   {
+    "note": "Hands supporting the back define the supported shoulderstand.",
+    "panels": [
+     "3a",
+     "1d"
+    ],
+    "part_a": "torso",
+    "part_b": "left hand",
+    "role": "required_touch"
+   },
+   {
+    "note": "Hands supporting the back define the supported shoulderstand.",
+    "panels": [
+     "3b",
+     "1d"
+    ],
+    "part_a": "torso",
+    "part_b": "right hand",
+    "role": "required_touch"
+   },
+   {
+    "note": "Skin fingertips nearly meet behind back; not needed by pose.",
+    "panels": [
+     "1d"
+    ],
+    "part_a": "left hand",
+    "part_b": "right hand",
+    "role": "incidental"
+   }
+  ],
+  "timing": {
+   "better_panel": "",
+   "end": "label",
+   "main_moment": "keep",
+   "note": "At 7.8 s legs still rising at ~45 degrees; pose forms later. End at 16.3 s still inverted.",
+   "start": "neither"
+  },
+  "variant": {
+   "matches_label": "yes",
+   "note": ""
+  }
+ },
+ "audit_id": "holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.audit_v2.calibrated.9278736bb1",
+ "cost_usd": 0.2947404,
+ "duration_s": 48.53,
+ "errors": [],
+ "frame_hold": 914,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Supported_Shoulderstand_pose_or_Salamba_Sarvangasana_-a@914",
+ "inputs": {},
+ "item_id": "220923_Supported_Shoulderstand_pose_or_Salamba_Sarvangasana_-a@914#B4",
+ "n": 2,
+ "num_turns": 7,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_v4/2ff0cfb76a0ae67816ba41e8e6221563c3bcc7e6",
+  "images": {
+   "img_1.png": "4e6653380560e521c8ecce7327005561fa9765a70775747ff427a2f17ebd0d90",
+   "img_2.png": "b6a6269fab00457d15c1b8e0168ac0818e117ff1574a548059b11f95b092ae46",
+   "img_3.png": "b70993a296de0b9577ed53d2365b31eece5b6a9f6d7e8b03b7a855d056c21b4d",
+   "img_4.png": "ff9536b59d41f132a56bf40ec27b47c88e7e6a2fb3ba81d2eed50b03e076a57e"
+  },
+  "packet_json_sha256": "5c850892c29efdbd0427fe8750dfafa4feff99d08dd027e5b23682f86759b8c6"
+ },
+ "packet_id": "2ff0cfb76a0ae67816ba41e8e6221563c3bcc7e6",
+ "pass": "B",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_b.md",
+  "sha256": "077dd51bd3c86104e2579843cb3162adaf5e3892192e7634aa4712e2274df649"
+ },
+ "purpose": "b6",
+ "render_v": "render_v4",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "5f537c5cd7b2019f",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_b.json",
+  "sha256": "0c8ebcc47c25a92ae60dea2083cdea7b465230a6702cd4fc11c2b7b6bb6eae8d"
+ },
+ "schema_version": 1,
+ "session_id": "a5ef0ae0-8439-4279-bfa7-70e7846faf7b",
+ "started_utc": "2026-10-01T16:54:35+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Supported_Shoulderstand_pose_or_Salamba_Sarvangasana_-a",
+ "stratum": null,
+ "usage": {
+  "cache_creation_input_tokens": 22142,
+  "cache_read_input_tokens": 49002,
+  "input_tokens": 6,
+  "output_tokens": 5389,
+  "thinking_tokens": 2160
+ },
+ "warnings": []
+}

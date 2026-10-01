@@ -1,0 +1,405 @@
+{
+ "answer": {
+  "body_body": {
+   "answer": "listed",
+   "contacts": [
+    {
+     "certainty": "clear",
+     "panels": [
+      "3b",
+      "1a"
+     ],
+     "part_a": "torso",
+     "part_b": "left forearm"
+    },
+    {
+     "certainty": "clear",
+     "panels": [
+      "3b",
+      "1b"
+     ],
+     "part_a": "torso",
+     "part_b": "right forearm"
+    },
+    {
+     "certainty": "clear",
+     "panels": [
+      "3b",
+      "1b"
+     ],
+     "part_a": "left forearm",
+     "part_b": "right forearm"
+    },
+    {
+     "certainty": "possible",
+     "panels": [
+      "3b",
+      "1b"
+     ],
+     "part_a": "left hand",
+     "part_b": "right hand"
+    }
+   ]
+  },
+  "discrepancies": [
+   {
+    "kind": "other",
+    "note": "Capture flags head off floor (markers about 10 cm up), but skin fit and avatar show head touching.",
+    "panels": [
+     "3a",
+     "2b"
+    ],
+    "part": "head"
+   },
+   {
+    "kind": "other",
+    "note": "Skin shows pelvis touching both forearms; avatar leaves a 1-2 cm gap.",
+    "panels": [
+     "3b",
+     "2b"
+    ],
+    "part": "pelvis"
+   },
+   {
+    "kind": "other",
+    "note": "Skin shows near contact with both upper arms; avatar gap about 4-5 cm.",
+    "panels": [
+     "3b",
+     "1a"
+    ],
+    "part": "pelvis"
+   }
+  ],
+  "floor": {
+   "head": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "2b",
+     "1a"
+    ]
+   },
+   "left foot": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "left forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3b",
+     "2b"
+    ]
+   },
+   "left hand": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3b",
+     "2b"
+    ]
+   },
+   "left shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "left thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "left upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "3a"
+    ]
+   },
+   "pelvis": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "3b"
+    ]
+   },
+   "right foot": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "right forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3b",
+     "2b"
+    ]
+   },
+   "right hand": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3b",
+     "2b"
+    ]
+   },
+   "right shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "right thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b"
+    ]
+   },
+   "right upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3a",
+     "3b"
+    ]
+   },
+   "torso": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "3a"
+    ]
+   }
+  },
+  "implausible": [],
+  "pose": {
+   "candidates": [
+    {
+     "confidence": "high",
+     "name": "Peacock pose, head-down preparation"
+    },
+    {
+     "confidence": "medium",
+     "name": "Mayurasana"
+    },
+    {
+     "confidence": "low",
+     "name": "Peacock pose with split legs"
+    }
+   ],
+   "description": "Both hands flat on the floor, fingers together under the belly; forearms near vertical, pressed into lower torso, elbows together. Head rests on floor, below the hips. Torso tilted head-down; both legs straight, raised high behind, spread in a V, feet far above the floor. Only hands and head touch the floor."
+  },
+  "repair": {
+   "kinds": [],
+   "needed": "no",
+   "note": "Avatar floor contacts match skin fit; head phantom_support flag comes from capture marker height, not avatar."
+  },
+  "roles": [
+   {
+    "note": "Elbows may sit low against hip area; skin touches, avatar slightly apart.",
+    "panels": [
+     "3b",
+     "2b"
+    ],
+    "part_a": "pelvis",
+    "part_b": "left forearm",
+    "role": "allowed"
+   },
+   {
+    "note": "Elbows may sit low against hip area; skin touches, avatar slightly apart.",
+    "panels": [
+     "3b",
+     "2b"
+    ],
+    "part_a": "pelvis",
+    "part_b": "right forearm",
+    "role": "allowed"
+   },
+   {
+    "note": "Elbows pressing into abdomen define Mayurasana support.",
+    "panels": [
+     "3b",
+     "1a"
+    ],
+    "part_a": "torso",
+    "part_b": "left forearm",
+    "role": "required_touch"
+   },
+   {
+    "note": "Elbows pressing into abdomen define Mayurasana support.",
+    "panels": [
+     "3b",
+     "1b"
+    ],
+    "part_a": "torso",
+    "part_b": "right forearm",
+    "role": "required_touch"
+   },
+   {
+    "note": "Elbows drawn together is typical but not defining.",
+    "panels": [
+     "3b",
+     "1b"
+    ],
+    "part_a": "left forearm",
+    "part_b": "right forearm",
+    "role": "allowed"
+   },
+   {
+    "note": "Near-contact of upper arm with hip from compact arm setup.",
+    "panels": [
+     "1a",
+     "3b"
+    ],
+    "part_a": "pelvis",
+    "part_b": "left upper arm",
+    "role": "incidental"
+   },
+   {
+    "note": "Near-contact of upper arm with hip from compact arm setup.",
+    "panels": [
+     "1b",
+     "3b"
+    ],
+    "part_a": "pelvis",
+    "part_b": "right upper arm",
+    "role": "incidental"
+   },
+   {
+    "note": "Hands placed close under forearms; brushing only.",
+    "panels": [
+     "3b"
+    ],
+    "part_a": "left forearm",
+    "part_b": "right hand",
+    "role": "incidental"
+   },
+   {
+    "note": "Hands placed close under forearms; brushing only.",
+    "panels": [
+     "3b"
+    ],
+    "part_a": "right forearm",
+    "part_b": "left hand",
+    "role": "incidental"
+   },
+   {
+    "note": "Hands placed together on the floor is a permitted setup.",
+    "panels": [
+     "3b",
+     "1b"
+    ],
+    "part_a": "left hand",
+    "part_b": "right hand",
+    "role": "allowed"
+   }
+  ],
+  "timing": {
+   "better_panel": "4e",
+   "end": "cannot_tell",
+   "main_moment": "move",
+   "note": "Early frames show head-down entry; legs lower and head lifts by 4e. Label hold lies past strip.",
+   "start": "neither"
+  },
+  "variant": {
+   "matches_label": "variant",
+   "note": "Head rests on the floor and legs rise steeply in a V; classic Mayurasana keeps body horizontal with head off floor."
+  }
+ },
+ "audit_id": "holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.audit_v2.calibrated.9278736bb1",
+ "cost_usd": 0.283008,
+ "duration_s": 55.77,
+ "errors": [],
+ "frame_hold": 973,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Peacock_Pose_or_Mayurasana_-a@1183",
+ "inputs": {},
+ "item_id": "220923_Peacock_Pose_or_Mayurasana_-a@1183#B4",
+ "n": 2,
+ "num_turns": 7,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_v4/e1d4162d85d6a6ffc7499b3fa6a3199054524a82",
+  "images": {
+   "img_1.png": "0f45773ebaecbdd22bf6e5b35986dcb87626f7058e6b4b86d5a97524a8f2e527",
+   "img_2.png": "c44f11b1dbb61ca6f79ae935b25dd2d80c3209be25c3ce56759b5e6e2b2fab77",
+   "img_3.png": "387df2d6a0879ee0f39c342d8918856e82eee0f778647b625c9a2dd748db4f77",
+   "img_4.png": "7244c304675fbf9660717173c5f145d203e7e814b4a37247ef4ed8420bd72f9b"
+  },
+  "packet_json_sha256": "ac080c6207bb178acd16bacf71f77638321d6e275644c5591e2745728faf2b11"
+ },
+ "packet_id": "e1d4162d85d6a6ffc7499b3fa6a3199054524a82",
+ "pass": "B",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_b.md",
+  "sha256": "077dd51bd3c86104e2579843cb3162adaf5e3892192e7634aa4712e2274df649"
+ },
+ "purpose": "b6",
+ "render_v": "render_v4",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "5f537c5cd7b2019f",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_b.json",
+  "sha256": "0c8ebcc47c25a92ae60dea2083cdea7b465230a6702cd4fc11c2b7b6bb6eae8d"
+ },
+ "schema_version": 1,
+ "session_id": "a8bd603b-ac34-460f-9e41-023fd58dbfed",
+ "started_utc": "2026-10-01T16:35:14+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Peacock_Pose_or_Mayurasana_-a",
+ "stratum": null,
+ "usage": {
+  "cache_creation_input_tokens": 19869,
+  "cache_read_input_tokens": 46560,
+  "input_tokens": 6,
+  "output_tokens": 5736,
+  "thinking_tokens": 3034
+ },
+ "warnings": []
+}

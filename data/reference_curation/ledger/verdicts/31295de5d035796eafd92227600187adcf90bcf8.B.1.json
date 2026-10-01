@@ -1,0 +1,305 @@
+{
+ "answer": {
+  "body_body": {
+   "answer": "listed",
+   "contacts": [
+    {
+     "certainty": "clear",
+     "panels": [
+      "1c",
+      "2b",
+      "3b"
+     ],
+     "part_a": "right shin",
+     "part_b": "right upper arm"
+    }
+   ]
+  },
+  "discrepancies": [
+   {
+    "kind": "other",
+    "note": "The human's left thigh skin touches the torso. The avatar's left thigh sits several cm from its torso.",
+    "panels": [
+     "1a",
+     "2b"
+    ],
+    "part": "left thigh"
+   }
+  ],
+  "floor": {
+   "head": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b",
+     "1d"
+    ]
+   },
+   "left foot": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "1a",
+     "2b",
+     "4b"
+    ]
+   },
+   "left forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3a",
+     "3b",
+     "2b"
+    ]
+   },
+   "left hand": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3a",
+     "2b"
+    ]
+   },
+   "left shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "left thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b"
+    ]
+   },
+   "left upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "3a"
+    ]
+   },
+   "pelvis": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   },
+   "right foot": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3c",
+     "2b",
+     "1b"
+    ]
+   },
+   "right forearm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "3b",
+     "2b"
+    ]
+   },
+   "right hand": {
+    "avatar": "touching",
+    "markers": "touching",
+    "panels": [
+     "3b",
+     "2b"
+    ]
+   },
+   "right shin": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1c"
+    ]
+   },
+   "right thigh": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b"
+    ]
+   },
+   "right upper arm": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "3b"
+    ]
+   },
+   "torso": {
+    "avatar": "off_floor",
+    "markers": "off_floor",
+    "panels": [
+     "2b",
+     "1a"
+    ]
+   }
+  },
+  "implausible": [],
+  "pose": {
+   "candidates": [
+    {
+     "confidence": "medium",
+     "name": "Side Crow (Parsva Bakasana) entry"
+    },
+    {
+     "confidence": "low",
+     "name": "Eka Pada Bakasana (one-legged crow)"
+    },
+    {
+     "confidence": "low",
+     "name": "Bakasana (crow)"
+    }
+   ],
+   "description": "Only the two hands are on the floor. The hips are high above the head, and the head hangs low just in front of the left hand. Both arms are bent, with the forearms near vertical. The right knee is deeply bent and the right shin rests on the back of the right upper arm, with the right foot just off the floor. The left leg is bent and lifted, with the left shin horizontal."
+  },
+  "repair": {
+   "kinds": [],
+   "needed": "no",
+   "note": "The avatar's floor contacts and shin-on-arm support match the human. The thigh-to-torso gaps are only minor."
+  },
+  "roles": [
+   {
+    "note": "The leg rests on the arm and carries the arm balance. Both skin and avatar touch.",
+    "panels": [
+     "1c",
+     "2b",
+     "3b"
+    ],
+    "part_a": "right shin",
+    "part_b": "right upper arm",
+    "role": "required_touch"
+   },
+   {
+    "note": "Deep hip flexion presses the thigh to the torso. The avatar shows a small gap.",
+    "panels": [
+     "1a",
+     "2b"
+    ],
+    "part_a": "left thigh",
+    "part_b": "torso",
+    "role": "allowed"
+   },
+   {
+    "note": "The tucked hip brings the thigh near the torso. It is not needed for the pose.",
+    "panels": [
+     "1c",
+     "2b"
+    ],
+    "part_a": "right thigh",
+    "part_b": "torso",
+    "role": "allowed"
+   },
+   {
+    "note": "The thigh lies near the arm above the shin contact. It is a secondary contact.",
+    "panels": [
+     "1c",
+     "2b"
+    ],
+    "part_a": "right thigh",
+    "part_b": "right upper arm",
+    "role": "allowed"
+   }
+  ],
+  "timing": {
+   "better_panel": "",
+   "end": "capture",
+   "main_moment": "keep",
+   "note": "The left foot is still on the floor at 4a, so the label's earlier start is too early. Later moments raise the left leg high.",
+   "start": "capture"
+  },
+  "variant": {
+   "matches_label": "variant",
+   "note": "The right shin rests on the right upper arm, not a stacked outer thigh on the opposite arm. The left leg is lifted separately, with little twist."
+  }
+ },
+ "audit_id": "holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.audit_v2.calibrated.9278736bb1",
+ "cost_usd": 0.2124356,
+ "duration_s": 35.82,
+ "errors": [],
+ "frame_hold": 1349,
+ "generator": {
+  "git_rev": "77d751713f205812e6e2735fe776fb151000a390",
+  "module": "reference_curation.review",
+  "sha256": "702c4bb7ab9e0e4edaa0750c294c199497e98591d4e57c22af9a04df439e7a95"
+ },
+ "hold_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-c@1296",
+ "inputs": {},
+ "item_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-c@1296#B4",
+ "n": 1,
+ "num_turns": 7,
+ "packet": {
+  "dir": "/home/visakii/Documents/moves/reference_review/render_v4/31295de5d035796eafd92227600187adcf90bcf8",
+  "images": {
+   "img_1.png": "15ab69690b9a14d66c6e6a60d41251a8270e7b043882b1308fa577eb4a146171",
+   "img_2.png": "ec4a60a92e898752be46d9ccffc6deb71b5334c3ff432b2a25588afa90d3a053",
+   "img_3.png": "24563f73c53d53e07fc05bf610708887b6476b8fc8bb68e347e141191ee70504",
+   "img_4.png": "e731d329c6fc06dc50bb410e75dd6197b319f794ffc730c95511422eebd0db79"
+  },
+  "packet_json_sha256": "638a0750b28e60ddc80c541b2d2bf7d32fd100f6eb4bed1120f805be02038d6d"
+ },
+ "packet_id": "31295de5d035796eafd92227600187adcf90bcf8",
+ "pass": "B",
+ "prompt": {
+  "path": "data/scripts/reference_curation/prompts/pass_b.md",
+  "sha256": "077dd51bd3c86104e2579843cb3162adaf5e3892192e7634aa4712e2274df649"
+ },
+ "purpose": "b6",
+ "render_v": "render_v4",
+ "returncode": 0,
+ "reviewer": {
+  "cli": "claude",
+  "cli_version": "2.1.280 (Claude Code)",
+  "effort": "high",
+  "flags": [
+   "--tools",
+   "Read",
+   "--allowedTools",
+   "Read",
+   "--restricted",
+   "--strict-mcp-config",
+   "--disable-slash-commands",
+   "--no-session-persistence",
+   "--exclude-dynamic-system-prompt-sections",
+   "--output-format",
+   "json"
+  ],
+  "key": "5f537c5cd7b2019f",
+  "model": "claude-opus-5-5",
+  "per_call_max_usd": 2.0
+ },
+ "schema": {
+  "path": "data/scripts/reference_curation/schemas/pass_b.json",
+  "sha256": "0c8ebcc47c25a92ae60dea2083cdea7b465230a6702cd4fc11c2b7b6bb6eae8d"
+ },
+ "schema_version": 1,
+ "session_id": "1d21cc24-1a84-4a2b-b3ee-263bd7f59263",
+ "started_utc": "2026-10-01T16:48:45+00:00",
+ "status": "valid",
+ "stderr_tail": "",
+ "stem": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-c",
+ "stratum": null,
+ "usage": {
+  "cache_creation_input_tokens": 16407,
+  "cache_read_input_tokens": 43478,
+  "input_tokens": 6,
+  "output_tokens": 3623,
+  "thinking_tokens": 1498
+ },
+ "warnings": []
+}
