@@ -1,0 +1,49 @@
+#usda 1.0
+(
+    defaultPrim = "smpl_yogi03596_v2_flat"
+    metersPerUnit = 1
+    upAxis = "Z"
+)
+
+def Xform "smpl_yogi03596_v2_flat" (
+    variants = {
+        string Physics = "PhysX"
+        string Sensor = "Sensors"
+    }
+    prepend variantSets = ["Physics", "Sensor"]
+)
+{
+    over "worldBody" (
+        active = false
+    )
+    {
+    }
+        variantSet "Physics" = {
+        "None" (
+            prepend references = @configuration/smpl_yogi03596_v2_flat_base.usd@
+        ) {
+            over "joints" (
+                active = false
+            )
+            {
+            }
+
+        }
+        "PhysX" (
+            prepend payload = @configuration/smpl_yogi03596_v2_flat_physics.usd@
+        ) {
+
+        }
+    }
+    variantSet "Sensor" = {
+        "None" {
+
+        }
+        "Sensors" (
+            prepend payload = @configuration/smpl_yogi03596_v2_flat_sensor.usd@
+        ) {
+
+        }
+    }
+}
+

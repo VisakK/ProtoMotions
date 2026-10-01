@@ -779,14 +779,15 @@ headstand clips do not regress against the ftC-era numbers (probe: single-leg 0.
     fixed rotation would absorb only ~10° of it.
   - D6 is done: the Step 8 retarget's motions (pilot and corpus, 223 MB) are deleted. Its lineage stays, because
     `plant_v2.py` reads `head_blocked` from it.
-- E1: Steps 1–3 are staged for the user's commit (2026-09-30).
+- E1 is done: Steps 1–3 are committed (`387665f`). The v2 MJCF/USD and labels v1, which `plant_v2.py` reads,
+  follow in the next commit.
 - BUILD_PLAN Steps 9–10 run after Step 4 here, on labels v2, plant v2 and the Step 3 references. Their cards' inputs
   ("labels v1.1", "the retargeted references", ftR) are superseded.
 
 **Next, in order** (2026-09-30):
 1. **Before Step 4.**
-   - Done: Firefly -b is dropped and the v1 retarget's motions are deleted.
-   - Commit Steps 1–3 (E1, staged): Step 4's records carry the git rev in their provenance.
+   - Done: Firefly -b is dropped, the v1 retarget's motions are deleted, and Steps 1–3 are committed (`387665f`,
+     E1), so Step 4's records stamp a git rev that contains them.
    - ftR and the probe rollouts are still on disk and disposable; delete them only on the user's word.
 2. **Step 4a, machine evidence** (no reviewer cost):
    - capture store v4: the avatar side on v2, the pressure attribution re-run on the Step 3 motions;
