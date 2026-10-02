@@ -42,6 +42,11 @@ ft_b's per-frame term. Without the flags the reward dict is exactly fine-tune A'
 ``--swing-penalty-weight``, ground load on limbs the reference is swinging outside holds, and
 ``--lean-penalty-weight``, the COM's shortfall from ``--lean-min-margin`` inside the commanded
 hand support -- plus weight-0 diagnostics (slip power, lean margin and error, pair load).
+A curation release (``reference_curation.release_v2``, BodyFix Step 5) adds two flags:
+``--contact-targets`` loads its contact-target sidecar (the unwanted-support term then charges only zones
+the human is known to keep free, masked contacts leave every target, and five target diagnostics are
+logged at weight 0), and ``--release-record`` makes every artifact the run loads prove by sha256 that it
+is that release's (``data/scripts/run_expert_release_v2.sh`` passes both).
 
 **Goals** come from ``data/scripts/build_hold_graph.py`` (nodes = named holds
 from the kinematic manifest; the transitions are the gaps between them), on
@@ -307,6 +312,21 @@ def additional_experiment_arguments(parser: argparse.ArgumentParser):
                         help="Time constant (s) of the moving average applied to the charged load "
                              "before the clamp. 0 = the per-frame term ft_b trained with; 0.25 closes "
                              "its duty-cycle loophole (report.MD §8).")
+    # --- A curation release (BodyFix Step 5 / BUILD_PLAN Steps 9-10) ----------- #
+    parser.add_argument(
+        "--contact-targets", type=str, default=None,
+        help="contact_targets.pt, the release's contact-target sidecar (reference_curation."
+             "contact_targets_v2). Given, the unwanted-support term charges only zones the human is "
+             "known to keep free, masked contacts leave every target, and five weight-0 target "
+             "diagnostics are logged (diag_required_support_*, diag_pair_target_*, "
+             "diag_known_free_load_n).",
+    )
+    parser.add_argument(
+        "--release-record", type=str, default=None,
+        help="data/reference_curation/releases/<id>.json. Given, every artifact the run loads (motion "
+             "library, graph, physics tables, sidecar, evaluator hold manifest) must be that release's "
+             "by sha256, or the run refuses to start.",
+    )
 
 
 def terrain_config(args: argparse.Namespace):
@@ -432,6 +452,8 @@ def env_config(robot_cfg: RobotConfig, args: argparse.Namespace) -> EnvConfig:
             lean_min_margin=float(getattr(args, "lean_min_margin", 0.03)),
             lean_scale=float(getattr(args, "lean_scale", 0.10)),
             physics_exclude_motions=list(getattr(args, "physics_exclude_motions", None) or []),
+            contact_targets_file=str(getattr(args, "contact_targets", None) or ""),
+            release_file=str(getattr(args, "release_record", None) or ""),
         ),
     }
 
@@ -635,6 +657,21 @@ def env_config(robot_cfg: RobotConfig, args: argparse.Namespace) -> EnvConfig:
             ("diag_lean_error_valid", EnvContext.contact_goal.lean_error_valid),
             ("diag_slip_power_w", EnvContext.contact_goal.slip_power),
             ("diag_pair_load_n", EnvContext.contact_goal.pair_load_n),
+        ):
+            reward_components[diag] = MdpComponent(
+                compute_func=compute_physics_diag,
+                dynamic_vars={"value": path},
+                static_params={"weight": 0.0},
+            )
+
+    if getattr(args, "contact_targets", None):
+        # The release's contact-target sidecar: weight-0 diagnostics only (ContactGraphControl._target_terms).
+        for diag, path in (
+            ("diag_required_support_met", EnvContext.contact_goal.required_support_met),
+            ("diag_required_support_gate", EnvContext.contact_goal.required_support_gate),
+            ("diag_pair_target_met", EnvContext.contact_goal.pair_target_met),
+            ("diag_pair_target_gate", EnvContext.contact_goal.pair_target_gate),
+            ("diag_known_free_load_n", EnvContext.contact_goal.known_free_load_n),
         ):
             reward_components[diag] = MdpComponent(
                 compute_func=compute_physics_diag,

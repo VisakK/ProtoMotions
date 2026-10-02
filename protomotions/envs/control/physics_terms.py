@@ -53,7 +53,8 @@ class PhysicsTables:
     """
 
     def __init__(self, path: str, motion_names: List[str], body_names: List[str], device,
-                 plant_mjcf: Optional[str] = None):
+                 plant_mjcf: Optional[str] = None, motion_num_frames: Optional[Tensor] = None,
+                 fps: Optional[float] = None):
         payload = torch.load(str(path), map_location="cpu", weights_only=False)
         if plant_mjcf is not None:
             from protomotions.utils import plant_identity
@@ -66,6 +67,19 @@ class PhysicsTables:
             )
         if list(payload["body_names"]) != list(body_names):
             raise ValueError(f"{path} body order {payload['body_names']} != robot {body_names}")
+        # The swing rows are indexed by clip frame: a library re-timed or re-cut under the same
+        # names would read every label at the wrong frame. Checked on every version.
+        if fps is not None and round(float(fps)) != round(float(payload["fps"])):
+            raise ValueError(f"{path} was built at {payload['fps']} fps, the library runs at {fps}")
+        if motion_num_frames is not None:
+            frames = torch.as_tensor(motion_num_frames).long().cpu()
+            if not torch.equal(payload["swing_len"].long().cpu(), frames):
+                raise ValueError(f"{path}: its swing rows' lengths differ from the library's frame counts")
+        # v2 (build_physics_tables_v2.py): built on a release; the control checks these against its graph.
+        self.version = int(payload.get("version", 1))
+        self.pair_names = list(payload.get("pair_names") or [])
+        self.graph_sha256 = payload.get("graph_sha256")
+        self.package_sha256 = payload.get("package_sha256")
         self.fps = float(payload["fps"])
         self.zone_order = list(payload["zone_order"])
         self.zone_bodies = {z: list(v) for z, v in payload["zone_bodies"].items()}

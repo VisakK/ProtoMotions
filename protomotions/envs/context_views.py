@@ -460,6 +460,11 @@ class ContactGoalContext:
     lean_error_valid: Tensor = FieldPath()
     slip_power: Tensor = FieldPath()
     pair_load_n: Tensor = FieldPath()
+    required_support_met: Tensor = FieldPath()
+    required_support_gate: Tensor = FieldPath()
+    pair_target_met: Tensor = FieldPath()
+    pair_target_gate: Tensor = FieldPath()
+    known_free_load_n: Tensor = FieldPath()
 
     def __init__(
         self,
@@ -488,6 +493,11 @@ class ContactGoalContext:
         lean_error_valid: Optional[Tensor] = None,
         slip_power: Optional[Tensor] = None,
         pair_load_n: Optional[Tensor] = None,
+        required_support_met: Optional[Tensor] = None,
+        required_support_gate: Optional[Tensor] = None,
+        pair_target_met: Optional[Tensor] = None,
+        pair_target_gate: Optional[Tensor] = None,
+        known_free_load_n: Optional[Tensor] = None,
     ):
         """Initialize ContactGoalContext.
 
@@ -553,6 +563,15 @@ class ContactGoalContext:
                 feet and hands (W) [num_envs]. Diagnostic.
             pair_load_n: load (N) through the commanded hold's leg-on-arm /
                 leg-on-trunk pairs, gated rows' mean elsewhere [num_envs]. Diagnostic.
+            required_support_met / required_support_gate: share of the commanded hold's
+                ``required_support`` ground zones in contact, and 1.0 on the rows that have any
+                (a release's contact-target sidecar; ``ContactGraphControl._target_terms``) [num_envs].
+                Diagnostic.
+            pair_target_met / pair_target_gate: share of the hold's configured body-body contacts
+                in sensed contact, on the frames the reference and the human both close them, and
+                1.0 on the rows with any such pair [num_envs]. Diagnostic.
+            known_free_load_n: vertical ground load (N) on zones the human keeps off the floor in
+                the commanded hold [num_envs]. Diagnostic.
         """
         self.contact_spec = contact_spec
         self.orient_spec = orient_spec
@@ -586,6 +605,11 @@ class ContactGoalContext:
         self.lean_error_valid = lean_error_valid
         self.slip_power = slip_power
         self.pair_load_n = pair_load_n
+        self.required_support_met = required_support_met
+        self.required_support_gate = required_support_gate
+        self.pair_target_met = pair_target_met
+        self.pair_target_gate = pair_target_gate
+        self.known_free_load_n = known_free_load_n
 
 
 class SteeringContext:

@@ -60,6 +60,16 @@ class ContactGraph:
         seg_start / seg_end / seg_hold: ``[num_motions, max_segments]`` clip times,
             ``+inf`` where padded so ``searchsorted`` runs off the end cleanly.
         seg_count: ``[num_motions]`` number of real segments per motion.
+        graph_version: 1 for every graph built before ``build_hold_graph_v2.py``; 2 adds the
+            fields below.
+        manual_goal_rule: ``"node"`` (v1: a manual goal is served ``node_contact``) or
+            ``"segment"`` (v2: the contact set of the segment holding the goal's pose, when it
+            belongs to the requested node; see :meth:`manual_contact`).
+        hold_ids / seg_hold_index: v2's stable hold ids (``<stem>@<x0 exemplar frame>``) and,
+            per segment, the index of its hold in ``hold_ids`` (``-1`` where padded). ``None``
+            on v1 graphs.
+        fps / motion_num_frames: the library's frame rate and frame counts the graph was
+            built for (v2), checked by :meth:`validate_against_motion_lib`.
     """
 
     def __init__(self, payload: dict, device: torch.device | str = "cpu"):
@@ -116,6 +126,35 @@ class ContactGraph:
         if bool((self.seg_start[:, 1:] < self.seg_start[:, :-1]).any()):
             raise ValueError("contact graph segment start times are not sorted per motion")
 
+        # v2 (build_hold_graph_v2.py): stable hold ids and the segment rule for manual goals.
+        self.graph_version: int = int(payload.get("graph_version", 1))
+        self.manual_goal_rule: str = str(payload.get("manual_goal_rule", "node"))
+        if self.manual_goal_rule not in ("node", "segment"):
+            raise ValueError(f"unknown manual_goal_rule {self.manual_goal_rule!r}")
+        self.hold_ids: Optional[List[str]] = (
+            list(payload["hold_ids"]) if payload.get("hold_ids") is not None else None
+        )
+        seg_hold_index = payload.get("seg_hold_index")
+        self.seg_hold_index: Optional[Tensor] = (
+            seg_hold_index.to(self.device).long() if seg_hold_index is not None else None
+        )
+        self.fps: Optional[int] = int(payload["fps"]) if payload.get("fps") is not None else None
+        frames = payload.get("motion_num_frames")
+        self.motion_num_frames: Optional[Tensor] = (
+            torch.as_tensor(frames).long() if frames is not None else None
+        )
+        if self.seg_hold_index is not None:
+            if self.seg_hold_index.shape != self.seg_node.shape or self.hold_ids is None:
+                raise ValueError("seg_hold_index does not match the segment layout (or hold_ids is missing)")
+            slots = torch.arange(self.seg_node.shape[1], device=self.device).unsqueeze(0)
+            live = slots < self.seg_count.unsqueeze(-1)
+            if bool(((self.seg_hold_index >= 0) != live).any()) or bool(
+                (self.seg_hold_index >= len(self.hold_ids)).any()
+            ):
+                raise ValueError("seg_hold_index must index hold_ids on live segments and be -1 on padding")
+        if self.manual_goal_rule == "segment" and self.seg_contact is None:
+            raise ValueError("manual_goal_rule 'segment' needs seg_contact")
+
     # ------------------------------------------------------------------ #
     @classmethod
     def from_file(cls, path: str | Path, device: torch.device | str = "cpu") -> "ContactGraph":
@@ -146,8 +185,18 @@ class ContactGraph:
         return self.num_pairs + self.num_orientations + 1
 
     # ------------------------------------------------------------------ #
-    def validate_against_motion_lib(self, motion_files: List[str]) -> None:
-        """Refuse to run against a library the tables were not built for."""
+    def validate_against_motion_lib(
+        self,
+        motion_files: List[str],
+        motion_num_frames=None,
+        fps: Optional[float] = None,
+    ) -> None:
+        """Refuse to run against a library the tables were not built for.
+
+        The names are always checked. A v2 graph also records the frame counts and frame rate
+        it was built for; where the caller passes the library's, they must agree too (a
+        re-timed clip under an unchanged name would shift every goal).
+        """
         names = [Path(f).stem for f in motion_files]
         if names != self.motion_names:
             overlap = len(set(names) & set(self.motion_names))
@@ -157,6 +206,18 @@ class ContactGraph:
                 f"graph, {overlap} names in common. Rebuild the graph with "
                 f"--motion-file pointing at this library."
             )
+        if motion_num_frames is not None and self.motion_num_frames is not None:
+            actual = torch.as_tensor(motion_num_frames).long().cpu()
+            if actual.shape != self.motion_num_frames.shape or not torch.equal(
+                actual, self.motion_num_frames.cpu()
+            ):
+                bad = int((actual != self.motion_num_frames.cpu()).sum()) if actual.shape == \
+                    self.motion_num_frames.shape else len(actual)
+                raise ValueError(
+                    f"contact graph was built for a library with other frame counts ({bad} clips differ)"
+                )
+        if fps is not None and self.fps is not None and round(float(fps)) != self.fps:
+            raise ValueError(f"contact graph was built at {self.fps} fps, the library runs at {fps}")
 
     def coverage(self) -> Tuple[int, int]:
         """``(motions with at least one segment, total motions)``."""
@@ -304,6 +365,42 @@ class ContactGraph:
             "contact": contact,
             "orient": self.node_orient[node],
         }
+
+    def segment_containing(self, motion_ids: Tensor, times: Tensor) -> Tuple[Tensor, Tensor]:
+        """``(segment index, inside)``, both shaped like ``times``: the segment of each motion whose
+        ``[t_start, t_end]`` contains the time (index clamped into range where none does)."""
+        shape = times.shape
+        mids = motion_ids.reshape(-1)
+        t = times.reshape(-1, 1).to(self.seg_start.dtype)
+        starts = self.seg_start.index_select(0, mids)
+        ends = self.seg_end.index_select(0, mids)
+        counts = self.seg_count.index_select(0, mids)
+        index = (torch.searchsorted(starts.contiguous(), t.contiguous(), right=True) - 1).clamp(min=0)
+        inside = (index < counts.unsqueeze(-1)) & (t >= starts.gather(1, index)) & (t <= ends.gather(1, index))
+        index = torch.minimum(index, (counts - 1).clamp(min=0).unsqueeze(-1))
+        return index.view(shape), inside.view(shape)
+
+    def manual_contact(
+        self, node_ids: Tensor, pose_motion_ids: Tensor, pose_times: Tensor
+    ) -> Tuple[Tensor, Tensor]:
+        """``(contact [..., P], resolved [...])`` a manual goal is served.
+
+        ``node_ids``, ``pose_motion_ids`` and ``pose_times`` share one shape (``[E, K]`` from
+        ``set_manual_goal``). Under ``manual_goal_rule == "segment"`` (graph v2) a goal whose pose
+        lies inside a segment of the requested node is served **that segment's** contact set --
+        the side-specific hold the pose belongs to, exactly what the scheduled goal at that pose
+        serves -- and ``resolved`` is True there. Every other goal, and every goal on a v1 graph,
+        is served ``node_contact`` (v1: the ground set plus the 0.5-vote body-body pairs; v2: the
+        pairs every source hold of the node commands).
+        """
+        safe_node = node_ids.clamp(min=0)
+        fallback = self.node_contact[safe_node]
+        if self.manual_goal_rule != "segment" or self.seg_contact is None:
+            return fallback, torch.zeros_like(node_ids, dtype=torch.bool)
+        seg, inside = self.segment_containing(pose_motion_ids, pose_times)
+        resolved = inside & (self.safe_seg_node[pose_motion_ids, seg] == node_ids) & (node_ids >= 0)
+        contact = torch.where(resolved.unsqueeze(-1), self.seg_contact[pose_motion_ids, seg], fallback)
+        return contact, resolved
 
     def describe_node(self, node_id: int) -> str:
         if node_id < 0 or node_id >= self.num_nodes:

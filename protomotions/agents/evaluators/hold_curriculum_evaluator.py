@@ -59,6 +59,16 @@ class HoldCurriculumEvaluator(MimicEvaluator):
             return
         if not self.config.hold_manifest:
             raise ValueError("HoldCurriculumEvaluatorConfig.hold_manifest is required")
+        # A run that names its release (ContactGraphControlConfig.release_file) scores the release's
+        # own hold manifest, checked by content like every other artifact it loads.
+        ctrl = getattr(self.env, "control_manager", None)
+        comps = getattr(ctrl, "components", None) or {}
+        graph_ctrl = comps.get("contact_graph") if isinstance(comps, dict) else None
+        release = getattr(graph_ctrl, "release", None)
+        if release is not None:
+            from protomotions.utils.release_identity import require_artifact
+
+            require_artifact(release, "holds_extended", self.config.hold_manifest, "evaluator hold manifest")
         manifest = yaml.safe_load(open(self.config.hold_manifest))
         by_stem = {c["stem"]: c for c in manifest["clips"]}
         stems = [Path(f).name[: -len(".motion")] for f in self.motion_lib.motion_files]

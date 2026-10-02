@@ -1060,6 +1060,212 @@ minus the gate's exclusions and masks), the Step 3 motions and plant v2. Then tr
 **Acceptance.** BUILD_PLAN Step 9's exit tests on the new release, and a first expert whose single-leg and
 headstand clips do not regress against the ftC-era numbers (probe: single-leg 0.998, inversion 0.998 on ftC).
 
+**What Step 5 found (2026-10-01).** In progress. BUILD_PLAN Step 9's exit is met and the release is recorded; the
+fresh expert is training. The expert half of the acceptance, the evaluation and Pass D wait for checkpoints.
+- **The release** is `holds_repaired_ftC_posefix.release_v2.a2dda5d2ac`.
+  - Record: `data/reference_curation/releases/<id>.json` (+ `.md`), with every artifact's sha256.
+  - Heavy files: `data/smpl/reference_curation/<id>/`, 1.4 GB. They are untracked, like every corpus in `data/smpl/`.
+  - Inputs, pinned by id and content: gate v2's manifest (its sha256 is pinned in the builder), each of the 56
+    references against the retarget record, and each gated port against the pressure record. A port must carry
+    its reference's kinematics exactly.
+  - Build with `-m reference_curation.release_v2 --build` (38 s); re-check with `--check <id>` (7 s). The id
+    hashes the inputs, the builders' sources and the parameters. A release is never rebuilt in place, and a
+    folder without a record is not a release.
+- **Files.** The v1 builders are unchanged, so ftC and ftR stay reproducible.
+  - Builders: `data/scripts/build_hold_graph_v2.py` and `build_physics_tables_v2.py`;
+    `reference_curation/{hold_extension_v2, contact_targets_v2, release_v2}.py`.
+  - Runtime, new: `protomotions/utils/release_identity.py`, `protomotions/envs/control/contact_targets.py`.
+  - Runtime, edited: `contact_graph.py`, `contact_graph_control.py`, `physics_terms.py`, `support_penalty.py`,
+    `context_views.py`, `hold_curriculum_evaluator.py`, and `mlp_goal_conditioned.py` (`--contact-targets`,
+    `--release-record`). Without the new flags every run behaves exactly as before.
+  - Launcher: `data/scripts/run_expert_release_v2.sh` (`SMOKE=1` gives the exit run). It reads every path from
+    the record.
+  - Evaluation: `reference_curation/realisability_v2.py` scores any rollout library the evaluator saves
+    (`results/<run>/results/predicted_motion_lib_epoch_<N>.pt`, every 3rd evaluation) for slide, float and COM vs
+    COP. `--reference` scores the reference itself as the baseline (10 s).
+  - Tests: `reference_curation/tests/test_release_v2.py` (12) and `protomotions/tests/test_release_v2_runtime.py`
+    (13). Full suites: reference_curation 275 pass and 3 skip (pre-existing conditional skips), 10.5 min at
+    `OMP_NUM_THREADS=1`; the 16 runtime test files touching the changed modules, 290 pass.
+- **The chain**, `build_expert60_ftR.sh`'s, pointed at v2.
+
+  | Item | Result |
+  |---|---|
+  | Hold extension v2 | 56 clips x (0, 3, 7 s) = 168 motions, 282,936 frames, 38,400 inserted (64 extendable holds). Real frames keep the port's measurement; inserted frames carry zeros with every validity column 0. The d = 0 variants are the gated ports byte for byte, and the kinematics are v1's splice exactly. `lineage.npz` gives each frame's x0 source. |
+  | Package | `motions.pt`, equal to the motions frame by frame, the three measured channels included; plant v2's sha256 |
+  | Graph v2 | 123 nodes, 196 edges, 810 segments, 270 hold ids; node ids are the sorted keys |
+  | Physics tables v2 | 345,854 swing zone-frames; lean-gated 90, COP-valid 768, share-valid 735 segments; the sha256 of the graph, the package and the manifest |
+  | Sidecar (C1) | 63 configured body-body contacts (59 critical, 4 restored), 1 mask, 4 flags, roles, statics loads, 3,233 known-free ground zone-holds, a per-frame pair table |
+  | Probe plans | 148 fork and dwell plans, built from the release's own graph (`plans/`) |
+  | Identity checks (C5) | **26 of 26 pass** |
+
+- **Identity checks (C5, the port of `check_expert60_ftR.py`).** Every derived artifact is re-derived or compared
+  with what its inputs determine.
+  - Manifest and sources pinned.
+  - Every variant is its port spliced: kinematics, plant, fps and lineage. Pressure: real frames are the port's,
+    inserted frames zero and invalid. The d = 0 variants are byte-identical to their ports. The holds are
+    re-timed with their hold ids kept.
+  - Package order, frame counts, fps and plant; the package equals the motions frame by frame.
+  - Graph: built from this package and manifest. Motion order, frames, fps and vocabularies match. Segments match
+    the manifest's holds (hold id, times, commanded contacts, node key). A4 holds on every segment. Every hold's
+    pose resolves to its own contact set.
+  - Tables: graph, package and manifest sha256; names, frames, fps, body order and plant; the graph's pair names,
+    zone order and layout. No pressure-sourced swing label falls on an inserted frame.
+  - Sidecar: hashes, names, pairs, hold ids and frames. Commanded = configured − masks = the graph's
+    `seg_contact`. Its counts equal the labels' and the gate's.
+  - The runtime loaders accept all three, and the plans resolve.
+  - **Runtime identity checks fail loudly.** These are new:
+    - graph v2 against the library's frame counts and fps;
+    - physics tables against frame counts and fps on every version, and v2 tables against the graph's pair names
+      and sha256;
+    - `ContactTargets` against the graph (names, pairs, zone order, layout, hold ids, commanded set, sha256),
+      frames, fps and plant.
+    - With `--release-record`, the package, graph, tables, sidecar and the evaluator's hold manifest must match
+      the record by sha256 (`ReleaseMismatchError`).
+- **Graph v2: what the 0.5-vote union got wrong.** Five nodes hold side-specific body-body pairs.
+  - Side Crow -c's two holds share one node: @606 has the left shelf, @1296 the right. Each shelf is in half
+    the node's segments, so v1's `node_contact` commanded **both** shelves for a manual goal at either hold.
+  - Koundinya, Side Plank, Standing big toe hold and the supported headstand gain a pair one hold lacks in the
+    same way.
+  - At its own hold's pose, v1's rule would have served a manual goal another contact set on 18 segments. v2
+    serves each segment its own set (`ContactGraph.manual_contact`). `node_contact` is now the pairs every source
+    hold of the node commands, and conflicts are recorded in the description.
+- **Physics tables v2 and the swing re-check (C3).**
+  - Rules: column 1 for the absolute 14 / 70 N thresholds; column 2 only for shares, and with column 0 for the
+    COP. "Unloaded" counts only where the zone's lowest point is within the attribution's 6 cm band and over
+    the mat.
+  - On the same 168 motions, pressure-only labels fall 28,147 → 17,649. ftC had 18,254 and ftR 50,824. 6,807
+    of v1's "unloaded" frames were invisible to the attribution.
+  - Against the human evidence, on the x0 clips:
+    - velocity-rule labels: the human is separated on 99.88 % of 107,457 zone-frames; 4 % of the 629 the mat
+      sees carry over 14 N, none over 70 N;
+    - pressure-rule labels are placed but unloaded limbs: mesh contact 82 %, the mat over 14 N on 0 %.
+  - The human's own load on labelled feet and hands is p50 0 N, p99 12.9 N, max 30.8 N, against the term's
+    72.6 N saturation. A perfect imitator is never charged to saturation, so ft_c's −0.3 calibration carries
+    over.
+- **The sidecar (C1).**
+  - Roles on the 270 released holds:
+    - ground: `required_support` 515, `required_touch` 299, `forbidden_support` 16;
+    - pairs: `required_touch` 63, `allowed` 283, `incidental` 196, `unresolved` 66, `unspecified` 146.
+  - Flags (not release decisions): `pose_preparation` 30 (35 before the 5 excluded transitions),
+    `fit_closer` 24, `statue_moved_single_leg` 17, `critical_partly_realised` 1.
+  - **Known free.** A zone is a known negative when it is not configured and the human evidence
+    (`sources.ground_source` on capture store v4) calls it separated on ≥ 95 % of the window.
+    - 3,233 of 3,236 non-configured zone-holds are separated on every frame.
+    - The other 3 are never seen touching but are undecided on 9–79 % of their frames: Standing Split
+      -a@540 R_FOOT, Garland -a@334 PELVIS, big toe hold -a@950 L_THIGH. They stay unknown and are never charged.
+    - Configured zones are in contact on 100 % of their frames.
+  - **Per-frame pair masks.** A pair target is eligible where the reference closes the pair (v4's plant-v2 gap
+    ≤ 1 cm) and the human's mesh touches. It reproduces the gate's flag: Shoulderstand -a@914's TRUNK+L_HAND is
+    0.471 of her contact frames.
+  - The two human-mesh pairs outside the graph's vocabulary (`HEAD+*_UPPER_ARM`, adjacent zones) are counted,
+    not carried; none is configured.
+- **C4 is closed for this experiment.** The only reader of the reference's `rigid_body_contacts` is the
+  contact-match reward, which the goal-conditioned expert never binds. Graph, tables and evaluator read the
+  manifest.
+- **Smoke run (the Step 9 exit).** `SMOKE=1`: 256 envs, 4 epochs, every non-tracking term at weight 0.
+  - It completed with the release check passing at startup. The sidecar loaded exactly 3x the x0 counts.
+  - Every term logged finite values:
+    - required-support gate 0.69–0.73, with the support gate at 0.70–0.74;
+    - pair-target gate ~0.02; known-free load 1–4 N;
+    - swing gate 0.26–0.30, swing load 6–13 N (ft_c's smoke 0.30–0.45 and 5–16 N); lean gate 0.016–0.022.
+  - **Index agreement.** On uniformly sampled (clip, time), the runtime lookup reproduces the sidecar's offline
+    coverage: in-hold 0.557 / 0.557, required support 0.515 / 0.516, pair target 0.126 / 0.127. The smoke's lower
+    pair gate is an untrained policy's state distribution (short episodes, 60 % segment-anchored resets).
+- **Training (Step 10), running since 2026-10-01 16:32.**
+  - Run `smpl_yogi_v2_expert56_a2dda5d2ac` (wandb `06k9vjpn`, PID 215359, log
+    `results/smpl_yogi_v2_expert56_a2dda5d2ac_train.log`), launched by `run_expert_release_v2.sh` with
+    `setsid nohup`, so it outlives the session. Stop it with `kill 215359`.
+  - Robot `smpl_yogi_v2`, no checkpoint, fresh normalisers; 4,096 envs and 30,000 epochs.
+  - Measured 9.57 s per epoch, evaluations included, so it ends around **2026-10-05 00:19**.
+  - Disk: checkpoints every 500 epochs, 0.637 GB each (~38 GB in all); a rollout library
+    (`results/<run>/results/predicted_motion_lib_epoch_<N>.pt`, 0.26 GB) every third evaluation. 110 GB was free
+    at epoch 1,558.
+  - Reward: ft_c's stack, unchanged in kind:
+    - tracking;
+    - support −0.3 (0.25 s EMA), now gated by the sidecar's known-free zones;
+    - swing −0.3 and lean −0.3;
+    - the sidecar diagnostics at weight 0.
+  - Curriculum mixture (0.8 uniform); full-clip evaluator every 500 epochs over 2,250 steps (the longest motion
+    needs 1,890).
+  - **Read the acceptance off** `eval/perf_group/single_leg_score` and `inversion_score`, against ft_c's 0.998 /
+    0.998 on ftC: the same `HoldCurriculumEvaluator`, deterministic, 2,250 steps. Confirm a candidate standalone
+    with `expert_revist/ft_c/eval_checkpoint.py --checkpoint results/<run>/epoch_N.ckpt --config
+    results/<run>/resolved_configs.pt --out-dir <dir>`. Allow ±0.035 evaluation noise (the ft_c memory), and pick
+    checkpoints per family from the per-clip CSVs in `results/<run>/curriculum/`.
+  - **Realisability.** The evaluator logs drag (`eval/drag/*`) and support violation. Score slide, float and COM vs
+    COP with `realisability_v2 --rollouts <predicted_motion_lib>`; only tracked frames count. The baseline is
+    the reference itself (`--reference`), which a perfect imitator matches:
+    - tracked 1.0; float 0.0 of commanded supports;
+    - slide p50 / p90 0.30 / 2.54 cm/s, 5.9 % of planted human-touch frames above 5 cm/s;
+    - COM–COP p50 / p90 1.44 / 3.44 cm over every hold frame where the mat's COP is valid.
+
+    Its per-motion tracked share equals the evaluator's `eval/perf/track`: 0.1817 on the smoke, and 0.2295 vs
+    0.229 at epoch 500. That is an independent check of its frame alignment. Read `tracked_motion_mean`;
+    `tracked_share` pools frames, and full-length rollouts differ in length.
+  - **Progress at epoch 1,558 (2026-10-01 20:41).** Three full-length evaluations, no errors. The 2,250-step window
+    covers every motion; the longest needs 1,890.
+
+    | Evaluation (epoch) | 500 | 1,000 | 1,500 | ft_c on ftC |
+    |---|---|---|---|---|
+    | `eval/success_rate` | 0.107 | 0.179 | 0.202 | 0.961 |
+    | `eval/perf/score` / track / hold | 0.277 / 0.229 / 0.324 | 0.394 / 0.393 / 0.396 | 0.462 / 0.471 / 0.454 | 0.962 / 0.984 / 0.940 |
+    | family hold / support violation | 0.024 / 0.456 | 0.158 / 0.391 | 0.233 / 0.323 | 0.903 / — |
+    | group score: **single-leg** / **inversion** | 0.249 / 0.195 | 0.295 / 0.257 | **0.458 / 0.304** | **0.998 / 0.998** |
+    | group score: arm balance / connective | 0.252 / 0.355 | 0.293 / 0.584 | 0.385 / 0.596 | 0.899 / 0.951 |
+    | drag, all / gate set (J per rollout) | 41.5 / 32.9 | 72.5 / 65.7 | 111.0 / 127.3 | 23.3 / 57.3 |
+    | normalised jerk | 97.8 | 133.8 | 211.8 | 87.1 |
+    | episode length in training, nearest epoch (steps) | 99 | 147 | 188 | — |
+
+    - Every tracking and hold metric rises from one evaluation to the next. The acceptance bar is far off at
+      1,500 of 30,000 epochs, as expected from scratch. The ft_c column is the probe's (`probe_ft_c/summary.md`):
+      the same evaluator, after ~54k cumulative epochs.
+    - **Drag and jerk are rising** with survival. A policy that falls within 0.3 s drags little.
+      - At epoch 1,500, drag is 4.8x ft_c's corpus figure and jerk 2.4x.
+      - ft_c's gates were "drag down, jerk ≤ baseline". Watch whether these come down once tracking saturates.
+      - If they do not, the swing term's weight is the first lever.
+    - **The pair-target gate has reached the sidecar's offline coverage**: about 0.02 in the smoke and at the run's
+      start, 0.131 at epoch 1,560, against 0.127 offline. The policy now lives through the holds.
+      - The configured body-body contacts are made on ~2 % of their eligible frames, and nothing asks for them
+        at weight 0.
+      - This is the measurement the weight-0 decision waits for.
+    - The penalties stay small (raw means, weight −0.3): support 0.013–0.019, swing 0.055–0.071, lean
+      0.005–0.014. Required-support met is 0.89–0.91.
+    - Realisability, on the only rollout library so far (epoch 500; the next is at 2,000): float 12.6 % of
+      commanded supports, slide p90 0.96 cm/s, COM–COP p50 4.3 cm. Only tracked frames count: 19.7 % of the
+      rollout frames, 0.23 per motion. This is the from-scratch baseline the later checkpoints are read against.
+- **Decisions, with the measurement behind each.**
+  - **The attribution chain is not re-run on the variants**, a deviation from "Carried in from Step 4".
+    `add_pressure_to_motions.py` pairs a motion's frame i with capture frame i, so on a variant every frame after
+    the first insertion would be misaligned with the mat. That is why v1 dropped the channels and the v1 tables
+    re-timed the port. A variant's real frames are x0 frames with identical poses, so their attribution is the
+    port's. Hold extension v2 carries it through the splice index, and the identity checks prove it equals the
+    port at each frame's source; inserted frames carry no measurement.
+  - "Evaluate on the original corpus" (BUILD_PLAN Step 10) is ft_c's recorded numbers on ftC. The shipped
+    references are plant v1's, and plant identity refuses them on `smpl_yogi_v2` by design.
+  - Known free at ≥ 95 % separated (above). Every threshold from 0.92 to 1.0 gives the same partition.
+  - Graph node ids are the sorted keys. Plans name nodes by key, so nothing depended on the order.
+  - The fresh run keeps ft_c's reward stack. The design's ablation C ("repaired references, unchanged reward
+    stack") is the clean first comparison. New pair and pressure targets stay at weight 0 until a run on this
+    release shows which contacts the policy actually loads.
+  - The support term with the sidecar differs from ft_c's complement rule only on the 3 undecided zone-holds.
+- **Traps.**
+  - **Graph times are float32.** Compare with the float32 of the manifest's value, not with a tolerance: past 32 s
+    the half-ulp is 1.9e-6. The first build's check failed Lord of the Dance -c's x3s and x7s on a 1e-6 tolerance.
+  - **The release id hashes the builders' sources**, so editing a builder, even a comment, moves the id. `--check`
+    on a frozen release reports that drift as a note and certifies it by artifact hashes and the 26 checks.
+  - **`data/smpl/` is not git-ignored.** Leave the release folder untracked.
+  - Run `release_v2` without `REFERENCE_PLANT`. The human-side capture stores refuse plant v2.
+  - MotionLib prints a warning per unknown `.motion` key, so the lineage lives in `lineage.npz`, not in the
+    motions.
+  - A foreground `sleep` is blocked in this harness. Wait on a run with a background until-loop that also
+    exits on `Traceback|Error:|Killed` or a dead PID.
+- **Still open.**
+  - The expert's acceptance, and its realisability scored on its own rollouts (the tooling and the reference
+    baseline exist).
+  - Pass D, and new PhysX rollouts for `plant.py`'s force validation.
+  - D3, the IsaacLab statue.
+  - The head's marker admission (recorded, not applied).
+
 ---
 
 ## 5. Status
@@ -1071,7 +1277,7 @@ headstand clips do not regress against the ftC-era numbers (probe: single-leg 0.
 | 2: USD, robot config, plant identity | done | 2026-09-30 | USD `smpl_yogi03596_v2_usd/` (`build_plant_v2_usd.py`, record `usd_v2.json`); robot `smpl_yogi_v2`; PhysX sanity `reference_curation.plant_v2_physx` (`physx_smpl_yogi_v2.json`, v1 baseline `physx_smpl_yogi.json`); `protomotions/utils/plant_identity.py`; 22 tests. One articulation root (Pelvis); colliders ≤ 8e-6 mm / 5e-6°; PhysX 74.000 kg, every body ≤ 2.6e-7; limits ≤ 8e-8 rad; wrist / hand 30 / 15 N·m; neck 1158 / 116; FK 418 frames ≤ 1.4e-6 m; default and 136 standing resets: no launch; v1 / legacy / mixed data raises `PlantMismatchError`. Capture / statics loader checks go to Step 4's new store versions. See "What Step 2 found". |
 | 3: references on plant v2 | done; 9 of 10 acceptance tests met (open: worst-body p50) | 2026-09-30 | Writer `reference_curation/fit_writer.py` (`fit_v2.v1.b8f5e86fc9`, 56 clips; Cockerel -b, Scale -a, big toe hold -c and, by the user's decision after the first run, Firefly -b dropped); retarget `reference_curation/retarget_v2.py` (`…labels_v1_1.3b3fc75828.retarget_v2.e4278ada02`, 14 min on 16 workers; the other 56 motions are byte-identical to the 57-clip run's); PhysX `retarget_v2_physx.py`; 11 tests (`test_retarget_v2.py`). Fit → retarget: frames past the box 26,532 → 0; labelled floats 48 → 1 of 864; crowns 21/21; touch penetration 43.0 % → 0.01 % (skin 15.3 %); slide p90 2.96 → 2.99 cm/s, > 5 cm/s 6.7 → 6.9 %; new jerk frames 0; overlaps > 1 cm 63,201 → 604, 0 new; mean displacement p50 1.37 cm (Step 8 3.61), **worst body p50 10.6 cm (Step 8 15.5; soft supports, poses past the box, palm loading)**; COM–COP p50 1.10 cm. PhysX: library loads on v2, v1 refused, FK 1.2e-6 m on 701 frames, 0/701 resets launch (control 3/3). See "What Step 3 found". |
 | 4: reviewer re-run, labels v2, gate v2 | done; all 5 acceptance tests met | 2026-10-01 | Modules `reference_curation/{pressure_v2, capture_v4, audit_v2, witness_v2, statics_v2, render_v4, packets_v4, calibrate_v4, b6, labels_v2, labels_v2_restore, edits_v2, gate_v2}.py`; 59 tests (`test_step4_{evidence,rules,review,final}.py`). Labels v2 `…labels_v2.e03994ad3c` (statics `…labels_v2.46024365fa.statics_v2.aab60189f4`); gate v2 `…gate_v2.b2f76f2606`: 270 / 280 holds released (204 pass, 65 flagged, 1 masked), 10 excluded (8 transitions, 2 Scorpion -b beyond the plant). Mat explained ≥ 90 % on 99.9 % of loaded frames; labelled floats 434 → 1 / 864; unexplained-load holds 33 → 0; LP-holdable 277 / 280; statue (D4) 198 / 277. Pass A v4 admits float, floor and left/right. B6 admitted (0.933 on 135 claims): 59 critical pairs in 44 holds, plus 4 restored by statics (Peacock -a@788); 0 configured pairs unrealised. Pass C: 0 / 272 called a different pose, 24 `fit_closer`. Reviewer $106.94 (plan ~$90). See "What Step 4 found". |
-| 5: release and fresh training | todo | | |
+| 5: release and fresh training | in progress: Step 9 exit met, release recorded, expert training | 2026-10-01 | Release `holds_repaired_ftC_posefix.release_v2.a2dda5d2ac` (`reference_curation.release_v2`; record `data/reference_curation/releases/`, 1.4 GB in `data/smpl/reference_curation/`): 56 clips, 270 holds, 168 motions (0/3/7 s, 38,400 inserted frames carrying no measurement), graph v2 (123 nodes, 270 hold ids; manual goals resolve the side-specific segment, which v1's 0.5 vote got wrong on 18 segments, e.g. Side Crow -c's two shelves), tables v2 (pressure-only swing labels 28,147 → 17,649), sidecar (59 critical + 4 restored pairs, 1 mask, 3,233 known-free zone-holds, per-frame pair masks). 26 / 26 identity checks (C5); C3: velocity-rule labels human-separated 99.88 %, the human's own load on labels p99 12.9 N vs the 72.6 N saturation. Runtime checks: frames, fps, pair names, graph sha256, release record. Weight-0 smoke passed; the runtime lookup reproduces the sidecar's coverage (0.126 / 0.127). Realisability tooling (`realisability_v2`): the reference baseline is float 0, slide p90 2.5 cm/s, COM–COP p50 1.4 cm. 25 new tests. Training `smpl_yogi_v2_expert56_a2dda5d2ac` (wandb `06k9vjpn`, PID 215359) since 16:32. At epoch 1,558 (20:41) the score was 0.277 → 0.394 → 0.462 over the evaluations at 500 / 1,000 / 1,500, with single-leg 0.458 and inversion 0.304 against the 0.998 bar. Drag and jerk are rising with survival (watch them). The run ends around 2026-10-05 00:19. Step 5's files were staged on 2026-10-01. See "What Step 5 found". |
 
 **How this relates to the existing plan.**
 - `TODO_before_step9.MD` A1–A3 are done in Step 3:
@@ -1089,6 +1295,13 @@ headstand clips do not regress against the ftC-era numbers (probe: single-leg 0.
   - None of Step 3's 60 `geometry_incompatible` pairs is left configured and unrealised.
 - C1–C6 carry into Step 5. C4 ("`rigid_body_contacts` now means something else") holds for the Step 3 motions
   too: they are geometric (≤ 1 cm).
+  - Step 5 did all of them:
+    - C1: the contact-target sidecar, with the gate's masks and flags;
+    - C2: hold extension v2 and `lineage.npz`;
+    - C3: the attribution chain (Step 4) and the swing re-check;
+    - C4: no consumer in the expert;
+    - C5: 26 identity checks plus the runtime checks.
+  - C6 (re-review after a retarget change) did not arise: the references are Step 3's, unchanged.
 - D:
   - D1 is closed: with Firefly -b dropped, Step 3 adds no new overlap.
   - D2 is done in Step 4: render_c2 draws drop lines only under zones the human touches.
@@ -1105,7 +1318,29 @@ headstand clips do not regress against the ftC-era numbers (probe: single-leg 0.
 - BUILD_PLAN Steps 9–10 run after Step 4 here, on labels v2, plant v2 and the Step 3 references. Their cards' inputs
   ("labels v1.1", "the retargeted references", ftR) are superseded.
 
-**Next, in order** (2026-10-01):
+**Next, in order** (updated 2026-10-01, Step 5 in progress):
+1. **Watch the fresh run** (`smpl_yogi_v2_expert56_a2dda5d2ac`, wandb `06k9vjpn`, PID 215359). It ends around
+   2026-10-05 00:19. Every 500 epochs, check:
+   - `eval/perf_group/single_leg_score` and `inversion_score` against ft_c's 0.998 / 0.998 (0.458 / 0.304 at
+     epoch 1,500), and the other groups;
+   - `eval/drag/*` and `eval/normalized_jerk_mean`. They rose 41.5 → 111.0 J and 97.8 → 211.8 over the first three
+     evaluations; they should fall once tracking saturates, or the swing term's weight is the first lever;
+   - `env/raw_r/diag_pair_target_met`, about 0.02 of eligible frames at weight 0;
+   - the viz panel.
+
+   Score each saved rollout library (epochs 500, 2,000, 3,500, …) with `realisability_v2 --rollouts`. Confirm a
+   candidate checkpoint standalone with `eval_checkpoint.py` (see "What Step 5 found"). Then run Pass D on it and
+   record PhysX rollouts for `plant.py`'s force validation.
+2. **Step 5's files are staged** (2026-10-01) for the user's commit.
+   - Code: the builders, the runtime changes, the launcher and the tests.
+   - Records: the release record (`data/reference_curation/releases/`) and this text.
+   - Not staged:
+     - the 1.4 GB release folder, which stays untracked;
+     - `CLAUDE.md`, which has never been tracked; its Step 5 paragraph is in the working copy only.
+   - The record's `git_rev` is Step 4's commit `f2dc103`, because Step 5 was uncommitted when it was built. The
+     sha256s of the 12 builders it carries pin Step 5's code instead.
+
+The items below were the plan before Step 5 and are kept for the record:
 1. **Step 4 is done and committed together with this text** (staged 2026-10-01 for the user's commit), so Step 5's
    records stamp a git rev that contains it, as E1 did for Steps 1–3. The commit contains:
    - the 13 modules and 4 test files under `data/scripts/reference_curation/`;

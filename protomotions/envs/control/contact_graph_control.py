@@ -44,6 +44,8 @@ from torch import Tensor
 
 from protomotions.components.contact_graph import ContactGraph
 from protomotions.envs.control.contact_event_tracker import ContactEventTracker
+from protomotions.envs.control.contact_targets import ContactTargets
+from protomotions.utils.release_identity import file_sha256, load_release, require_artifact
 from protomotions.envs.control.support_penalty import ChargedLoadEMA, unwanted_support
 from protomotions.envs.control.physics_terms import (
     PhysicsTables,
@@ -74,6 +76,18 @@ from protomotions.utils.rotations import calc_heading_quat_inv, quat_rotate
 
 if TYPE_CHECKING:
     from protomotions.envs.base_env.env import BaseEnv
+
+
+def _library_layout(motion_lib) -> Tuple[Optional[Tensor], Optional[float]]:
+    """``(frame counts [M] on the CPU, the single frame rate)`` of a motion library; ``(None, None)``
+    for a stub without them. A library mixing frame rates returns no rate: the frame-indexed tables
+    (graph v2, physics tables, contact targets) then refuse it through their own checks."""
+    frames = getattr(motion_lib, "motion_num_frames", None)
+    dt = getattr(motion_lib, "motion_dt", None)
+    if frames is None or dt is None or not torch.is_tensor(dt) or dt.numel() == 0:
+        return None, None
+    rates = torch.round(1.0 / dt.double()).unique()
+    return frames.detach().long().cpu(), (float(rates[0]) if rates.numel() == 1 else None)
 
 
 @dataclass
@@ -186,6 +200,19 @@ class ContactGraphControlConfig(MaskedMimicControlConfig):
         physics_exclude_motions: Substrings of motion names neither physics
             term charges (the support term's references that cannot be
             performed with their labelled support).
+        contact_targets_file: ``contact_targets.pt``, a release's contact-target
+            sidecar (``reference_curation.contact_targets_v2``; TODO C1), keyed to
+            this graph. Empty, the default, changes nothing. With it, the
+            unwanted-support term charges only zones the human is *known* to keep
+            off the floor in the commanded hold (and still only where the
+            reference keeps them above ``support_clear_height``), a masked
+            contact is never charged, and ``ctx.contact_goal`` carries weight-0
+            target diagnostics (``ContactTargets``).
+        release_file: A release record (``data/reference_curation/releases/
+            <id>.json``). Given, the motion library, the graph, the physics
+            tables and the sidecar this control loads must be that release's
+            artifacts by sha256, or construction fails
+            (``protomotions/utils/release_identity.py``).
     """
 
     _target_: str = "protomotions.envs.control.contact_graph_control.ContactGraphControl"
@@ -218,6 +245,8 @@ class ContactGraphControlConfig(MaskedMimicControlConfig):
     lean_min_margin: float = 0.03
     lean_scale: float = 0.10
     physics_exclude_motions: List[str] = field(default_factory=list)
+    contact_targets_file: str = ""
+    release_file: str = ""
 
 
 class ContactGraphControl(MaskedMimicControl):
@@ -241,7 +270,14 @@ class ContactGraphControl(MaskedMimicControl):
         if not config.graph_file:
             raise ValueError("ContactGraphControlConfig.graph_file is required")
         self.graph = ContactGraph.from_file(config.graph_file, device=self.env.device)
-        self.graph.validate_against_motion_lib(list(self.env.motion_lib.motion_files))
+        frames, fps = _library_layout(self.env.motion_lib)
+        if frames is not None and fps is None and self.graph.fps is not None:
+            raise ValueError("the motion library mixes frame rates; the v2 contact graph was built at "
+                             f"{self.graph.fps} fps for every clip")
+        self.graph.validate_against_motion_lib(
+            list(self.env.motion_lib.motion_files), motion_num_frames=frames, fps=fps
+        )
+        self._manual_resolved = None
         covered, total = self.graph.coverage()
         print(
             f"ContactGraphControl: {self.graph.num_nodes} nodes, "
@@ -311,6 +347,8 @@ class ContactGraphControl(MaskedMimicControl):
             f"({self._contact_maps['num_body_body_slots']} of them body-body)"
         )
         self._init_physics_terms()
+        self._init_contact_targets()
+        self._init_release()
 
         # Contact-event history: measured past in the goal's own vocabulary.
         # getattr defaults keep resolved configs frozen before these fields
@@ -446,8 +484,20 @@ class ContactGraphControl(MaskedMimicControl):
         names = [_Path(f).stem for f in self.env.motion_lib.motion_files]
         from protomotions.utils import plant_identity
 
+        frames, fps = _library_layout(self.env.motion_lib)
         tables = PhysicsTables(path, names, body_names, device,
-                               plant_mjcf=plant_identity.robot_mjcf(self.env.robot_config))
+                               plant_mjcf=plant_identity.robot_mjcf(self.env.robot_config),
+                               motion_num_frames=frames, fps=fps)
+        if tables.version >= 2:
+            # Built on a release: the tables name the graph they were built with.
+            if tables.pair_names != list(self.graph.pair_names):
+                raise ValueError(f"physics tables {path} use another pair vocabulary than the graph")
+            graph_sha = file_sha256(self.config.graph_file)
+            if tables.graph_sha256 != graph_sha:
+                raise ValueError(
+                    f"physics tables {path} were built with graph sha256 {str(tables.graph_sha256)[:12]}, "
+                    f"the graph in use is {graph_sha[:12]} ({self.config.graph_file})"
+                )
         zone_order, _ = self.graph.zone_definition()
         if list(zone_order) != tables.zone_order:
             raise ValueError(f"physics tables zone order {tables.zone_order} != graph {zone_order}")
@@ -497,6 +547,139 @@ class ContactGraphControl(MaskedMimicControl):
             f"{self._lean_min_margin:.3f} m over {len(self._lean_point_zone)} candidate points, "
             f"{int(tables.seg_lean_gate.sum())} lean-gated segments, "
             f"{int(self._physics_excluded.sum())}/{len(names)} motions excluded"
+        )
+
+    def _init_contact_targets(self) -> None:
+        """Load the release's contact-target sidecar (``ContactTargets``) if configured.
+
+        ``getattr`` defaults keep frozen configs written before the field existed loading with
+        the sidecar off, which leaves the unwanted-support term exactly fine-tune C's.
+        """
+        self._targets = None
+        path = getattr(self.config, "contact_targets_file", "") or ""
+        if not path:
+            return
+        from pathlib import Path as _Path
+        from protomotions.utils import plant_identity
+
+        frames, fps = _library_layout(self.env.motion_lib)
+        names = [_Path(f).stem for f in self.env.motion_lib.motion_files]
+        targets = ContactTargets(
+            path, self.graph, names, self.env.device, motion_num_frames=frames, fps=fps,
+            graph_sha256=file_sha256(self.config.graph_file),
+            plant_mjcf=plant_identity.robot_mjcf(self.env.robot_config),
+        )
+        # the support term's zones (``_ground_zone_names``) as columns of the sidecar's [M, S, Z] tables
+        self._targets_support_cols = torch.tensor(
+            [targets.zone_order.index(z) for z in self._ground_zone_names], dtype=torch.long, device=self.env.device
+        )
+        self._targets = targets
+        print(
+            f"ContactGraphControl: contact targets on ({path}, release {targets.release_id}): "
+            f"{int(targets.required_support.sum())} required-support, {int(targets.configured[..., targets.body_pair].sum())} "
+            f"configured body-body and {int(targets.masked.sum())} masked segment contacts; "
+            f"{int(targets.ground_free.sum())} known-free ground zone-segments"
+        )
+
+    def _init_release(self) -> None:
+        """Check every artifact this control loads against the release record, if one is named."""
+        self.release = None
+        path = getattr(self.config, "release_file", "") or ""
+        if not path:
+            return
+        from protomotions.utils import plant_identity
+
+        release = load_release(path)
+        motion_file = getattr(self.env.motion_lib, "motion_file", None)
+        if not motion_file:
+            raise ValueError("release_file is set but the motion library names no packaged file to check")
+        require_artifact(release, "package", motion_file, "motion library")
+        require_artifact(release, "graph", self.config.graph_file, "contact graph")
+        tables = getattr(self.config, "physics_tables_file", "") or ""
+        if tables:
+            require_artifact(release, "physics_tables", tables, "physics tables")
+        targets = getattr(self.config, "contact_targets_file", "") or ""
+        if targets:
+            require_artifact(release, "contact_targets", targets, "contact targets")
+        mjcf = plant_identity.robot_mjcf(self.env.robot_config)
+        if mjcf is not None:
+            plant_identity.require(release["plant"].get(plant_identity.KEY), mjcf, f"release {release['release_id']}")
+        self.release = release
+        print(f"ContactGraphControl: release {release['release_id']} -- every loaded artifact matches its record")
+
+    def _target_terms(self, ctx: EnvContext) -> Dict[str, Optional[Tensor]]:
+        """Weight-0 diagnostics of the contact-target sidecar (all ``[E]``), or all None without one.
+
+        Inside the commanded hold (slot 0 valid, clip time in its window):
+
+        * ``required_support_met`` -- share of the hold's ``required_support`` ground zones (not
+          masked) carrying more than the reached-goal threshold; ``required_support_gate`` marks the
+          rows that have any;
+        * ``pair_target_met`` -- share of the hold's configured body-body contacts (B6's critical
+          pairs and the statics restorations, not masked), on the frames where the reference and the
+          human both close them (the sidecar's per-frame mask), in sensed contact;
+          ``pair_target_gate`` marks the rows with any such eligible pair (0 without pair sensing);
+        * ``known_free_load_n`` -- terrain-filtered load on zones the human keeps off the floor in
+          that hold.
+
+        Rows without targets carry the targeted rows' mean, as the physics diagnostics do.
+        """
+        keys = ("required_support_met", "required_support_gate", "pair_target_met", "pair_target_gate",
+                "known_free_load_n")
+        if self._targets is None:
+            return {k: None for k in keys}
+        num_envs, device = self.env.num_envs, self.env.device
+        zeros = torch.zeros(num_envs, device=device)
+        if self._manual is not None or ctx.mimic is None:
+            return {k: zeros for k in keys}
+        t = self._targets
+        mids = self.env.motion_manager.motion_ids
+        now = self.env.motion_manager.motion_times
+        g = self._gathered
+        in_hold = self.goal_valid[:, 0] & (now >= g["t_start"][:, 0]) & (now <= g["t_end"][:, 0])
+        seg = self.goal_index[:, 0].clamp(0, t.masked.shape[1] - 1)
+        masked = t.masked[mids, seg]                                              # [E, P]
+        ground = getattr(ctx.current, "rigid_body_ground_forces", None)
+        maps = self._contact_maps
+        pair_forces = getattr(ctx.current, "rigid_body_pair_contact_forces", None)
+        if ground is None or (pair_forces is None and maps["pair_slot"].numel() > 0):
+            return {k: zeros for k in keys}
+        forces = compute_contact_slot_forces(
+            ground, pair_forces, maps["ground_slot"], maps["ground_body"], maps["pair_slot"],
+            maps["pair_body_a"], maps["pair_body_b"], maps["num_pairs"],
+        )
+        touching = forces > maps["thresholds"].unsqueeze(0)                       # [E, P]
+
+        required = t.required_support[mids, seg] & ~masked & in_hold.unsqueeze(-1)
+        required_count = required.sum(-1)
+        required_rows = required_count > 0
+        required_met = (touching & required).sum(-1).float() / required_count.clamp(min=1).float()
+
+        eligible = (t.configured[mids, seg] & ~masked & t.body_pair.unsqueeze(0)
+                    & t.frame_pairs(mids, now) & in_hold.unsqueeze(-1))
+        if maps["num_body_body_slots"] == 0:
+            eligible = torch.zeros_like(eligible)
+        eligible_count = eligible.sum(-1)
+        pair_rows = eligible_count > 0
+        pair_met = (touching & eligible).sum(-1).float() / eligible_count.clamp(min=1).float()
+
+        # the support term's pricing: terrain-filtered vertical load, pooled into its zones
+        zone_load = ground[..., 2].clamp_min(0.0) @ self._support_zone_matrix.t().to(ground.dtype)
+        free = (t.ground_free[mids, seg][:, self._targets_support_cols]
+                & ~masked[:, self._ground_pair_ids] & in_hold.unsqueeze(-1))
+        free_load = (zone_load * free.to(zone_load.dtype)).sum(-1)
+
+        def fill(x, rows):
+            if bool(rows.any()):
+                return torch.where(rows, x, x[rows].mean())
+            return torch.zeros_like(x)
+
+        return dict(
+            required_support_met=fill(required_met, required_rows),
+            required_support_gate=required_rows.float(),
+            pair_target_met=fill(pair_met, pair_rows),
+            pair_target_gate=pair_rows.float(),
+            known_free_load_n=free_load,
         )
 
     def _physics_terms(self, ctx: EnvContext) -> Dict[str, Optional[Tensor]]:
@@ -605,7 +788,16 @@ class ContactGraphControl(MaskedMimicControl):
             & (now <= g["t_end"][:, 0])
         )
         goal_ground = g["contact"][:, 0][:, self._ground_pair_ids] > 0.5
-        excluded = self._support_excluded_motion[self.env.motion_manager.motion_ids]
+        mids = self.env.motion_manager.motion_ids
+        excluded = self._support_excluded_motion[mids]
+        known_free = None
+        if getattr(self, "_targets", None) is not None:
+            # A release's sidecar: only zones the human keeps off the floor in this hold are
+            # known negatives, and a masked contact leaves every target (TODO C1).
+            t = self._targets
+            seg = self.goal_index[:, 0].clamp(0, t.masked.shape[1] - 1)
+            known_free = (t.ground_free[mids, seg][:, self._targets_support_cols]
+                          & ~t.masked[mids, seg][:, self._ground_pair_ids])
         penalty, charged = unwanted_support(
             ground_forces=getattr(ctx.current, "rigid_body_ground_forces", None),
             ref_body_pos=ctx.mimic.ref_state.rigid_body_pos,
@@ -615,6 +807,7 @@ class ContactGraphControl(MaskedMimicControl):
             clear_height=self._support_clear_height,
             load_ref_n=self._support_load_ref_n,
             excluded=excluded,
+            known_free=known_free,
         )
         gate = (in_hold & ~excluded).float()
         if self._support_ema is not None:
@@ -858,13 +1051,19 @@ class ContactGraphControl(MaskedMimicControl):
         # A manual goal has no segment, so one is synthesised: it starts at the
         # commanded frame and lasts as long as the caller asked it to be held.
         # With hold_seconds omitted this collapses to the pre-v10_1 zero-length
-        # segment.
+        # segment. Its contact set: on a v2 graph the segment holding the goal's
+        # pose (the side-specific hold, as its scheduled goal serves it), else
+        # the node's (ContactGraph.manual_contact).
+        contact, resolved = self.graph.manual_contact(
+            node, self._goal_motion_ids, self.target_times
+        )
+        self._manual_resolved = resolved
         self._gathered = {
             "node": safe_node,
             "t_start": self.target_times,
             "t_end": self.target_times + manual["hold_total"],
             "t_hold": self.target_times,
-            "contact": self.graph.node_contact[safe_node],
+            "contact": contact,
             "orient": self.graph.node_orient[safe_node],
         }
         if self.config.dwell_channels:
@@ -1345,6 +1544,7 @@ class ContactGraphControl(MaskedMimicControl):
         pose_error, pose_error_visible = self._goal_pose_error(ctx, ref_pos, ref_rot)
         support_penalty, support_load_n, support_gate = self._unwanted_support(ctx)
         physics = self._physics_terms(ctx)
+        physics.update(self._target_terms(ctx))
 
         ctx.contact_goal = ContactGoalContext(
             contact_spec=contact_spec,

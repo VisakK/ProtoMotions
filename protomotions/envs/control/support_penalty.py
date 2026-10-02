@@ -48,6 +48,7 @@ def unwanted_support(
     clear_height: float,
     load_ref_n: float,
     excluded: Optional[Tensor] = None,
+    known_free: Optional[Tensor] = None,
 ) -> Tuple[Tensor, Tensor]:
     """Penalty in [0, 1] and the charged load in newtons, both ``[E]``.
 
@@ -64,6 +65,11 @@ def unwanted_support(
             joint centre is above this (m).
         load_ref_n: Charged load at which the penalty saturates (N).
         excluded: Optional ``[E]`` bool; True rows are never charged.
+        known_free: Optional ``[E, Z]`` bool, from a release's contact-target sidecar: True where
+            the human is known to keep the zone off the floor in the commanded hold (and the gate
+            did not mask it). Given, only those zones can be charged -- the complement of the
+            goal's ground set alone is not a known negative. ``None`` keeps the term exactly
+            fine-tune C's.
     """
     num_envs = ref_body_pos.shape[0]
     device = ref_body_pos.device
@@ -78,6 +84,8 @@ def unwanted_support(
     inf = torch.full_like(ref_z, float("inf"))
     zone_min_z = torch.where(member.unsqueeze(0), ref_z, inf).amin(dim=-1)   # [E, Z]
     free = (~goal_ground.bool()) & (zone_min_z > clear_height)
+    if known_free is not None:
+        free = free & known_free.bool()
     gate = in_hold.bool()
     if excluded is not None:
         gate = gate & ~excluded.bool()
