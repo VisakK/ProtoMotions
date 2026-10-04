@@ -15,12 +15,26 @@ feet-down, and the curriculum it drove starved 102/180 variants below
 p = 1e-4 and made the starved clips regress. The score here is continuous, covers
 the whole clip, scores the holds the policy is commanded to reach (pose *and*
 support), and only ever steers a fixed minority of the sampling mass.
+
+**Support rule v2** (``support_v2_holds``; card E1 of
+``expert_revist/graph_growth_2026_10_03/PLAN.MD``). v1's support check is a body
+*origin* below 8 cm, applied only to zones the reference keeps entirely above
+15 cm; at epoch 15,500 it saw 1 of the 10 support substitutions the collider
+geometry shows (``expert_revist/expert56_v2_e15500/README.MD`` §4: a pointed toe
+tip on the floor leaves the toe origin at 8.2 cm). v2 checks every zone the
+release's sidecar says the human keeps free in the hold, by *load*: a zone
+violates when its terrain-filtered ground load is at least 3 % of body weight on
+at least 20 % of the hold window, the load mask dilated by the event window
+first (so a tapping limb counts as down). Geometry alone never counts -- a head
+hovering within 2 cm of the floor is not a support. Alongside it, commanded
+supports are scored as realised when every commanded zone's lowest collider
+point is within 2 cm of the floor on at least 90 % of the window.
 """
 
 from __future__ import annotations
 
 from dataclasses import dataclass
-from typing import Dict, List, Optional, Sequence
+from typing import Dict, List, Optional, Sequence, Tuple
 
 import torch
 from torch import Tensor
@@ -36,11 +50,17 @@ SUPPORT_ZONES = {
 
 @dataclass
 class HoldWindow:
-    """One scored hold: the commanded pose is the reference at ``t_hold``."""
+    """One scored hold: the commanded pose is the reference at ``t_hold``.
+
+    ``t_start`` is the start of the labelled window (v2 scores supports over
+    ``[t_start, t_end]``, v1 and the pose over ``[t_hold, t_end]``); NaN means
+    ``t_hold``.
+    """
 
     t_hold: float
     t_end: float
     family: bool = False
+    t_start: float = float("nan")
 
 
 @dataclass
@@ -51,6 +71,23 @@ class ScoreParams:
     unloaded_ref_min_z: float = 0.15
     track_weight: float = 0.5
     event_dilate_frames: int = 7
+
+
+@dataclass
+class SupportV2Params:
+    """Support rule v2 (module docstring). Defaults are card E1's."""
+
+    load_frac_bw: float = 0.03       # a zone is loaded at >= this share of body weight (vertical, N)
+    body_weight_n: float = 74.0 * 9.81
+    min_share: float = 0.2           # ... on >= this share of the window (after dilation) -> violation
+    dilate_frames: int = 7           # +-0.23 s at 30 Hz
+    down_m: float = 0.02             # a commanded zone is down when its lowest collider point is this low
+    realised_share: float = 0.9      # ... on >= this share of the window -> commanded supports realised
+    tracked_share: float = 0.9       # a hold counts as tracked when this share of its window is tracked
+
+    @property
+    def load_threshold_n(self) -> float:
+        return self.load_frac_bw * self.body_weight_n
 
 
 def dilate(mask: Tensor, k: int) -> Tensor:
@@ -95,6 +132,7 @@ def score_clip(
     goal_ids: Sequence[int],
     zone_ids: Dict[str, Sequence[int]],
     params: ScoreParams,
+    hold_violation: Optional[Sequence[Optional[Tensor]]] = None,
 ) -> Dict[str, float]:
     """Score one rollout of one clip.
 
@@ -105,6 +143,11 @@ def score_clip(
         holds: the clip's holds (from the hold manifest).
         exemplars: ``[H, B, 3]`` reference positions at each hold's ``t_hold``.
         goal_ids / zone_ids: body indices of the goal bodies and support zones.
+        hold_violation: ``None`` (the v1 rule, unchanged) or, per hold, a bool
+            mask over that hold's scored frames (``t_hold <= t <= t_end``) that
+            replaces v1's per-frame support violation -- support rule v2's
+            ``support_v2_holds`` masks, already event-dilated, so the event
+            metric does not dilate them again. ``zone_ids`` is then unused.
 
     Returns:
         ``p_track`` (share of frames under the training termination's max-body
@@ -138,12 +181,18 @@ def score_clip(
         ex = exemplars[h]
         dist = best_yaw_distance(s[:, goal] - s[:, :1], ex[goal] - ex[:1])
         attained = dist < params.pose_threshold_m
-        violation = torch.zeros_like(attained)
-        for ids in zone_ids.values():
-            ids = list(ids)
-            if float(r[:, ids, 2].min()) > params.unloaded_ref_min_z:
-                violation |= s[:, ids, 2].min(dim=-1).values < params.foot_down_z
-        event = attained & ~dilate(violation, params.event_dilate_frames)
+        if hold_violation is None:
+            violation = torch.zeros_like(attained)
+            for ids in zone_ids.values():
+                ids = list(ids)
+                if float(r[:, ids, 2].min()) > params.unloaded_ref_min_z:
+                    violation |= s[:, ids, 2].min(dim=-1).values < params.foot_down_z
+            event = attained & ~dilate(violation, params.event_dilate_frames)
+        else:
+            given = hold_violation[h]
+            violation = (torch.zeros_like(attained) if given is None
+                         else given.to(device=attained.device, dtype=torch.bool))
+            event = attained & ~violation
         attained &= ~violation
         share = attained.float().mean().item()
         hold_scores.append(share)
@@ -170,6 +219,110 @@ def score_clip(
         score=score,
         holds_scored=float(len(hold_scores)),
     )
+
+
+def tracked_frames(sim_pos: Tensor, ref_pos: Tensor, track_fail_m: float) -> Tensor:
+    """``[T]`` bool: every body within ``track_fail_m`` of the reference, after
+    ``score_clip``'s frame-0 XY alignment (its ``p_track`` is the mean of this)."""
+    sim = sim_pos.clone()
+    sim[..., :2] -= (sim[0, 0, :2] - ref_pos[0, 0, :2])
+    return ~((sim - ref_pos).norm(dim=-1).max(dim=-1).values > track_fail_m)
+
+
+def zone_lowest_points(pos: Tensor, rot: Tensor, tables, zone_body_ids: Sequence[Sequence[int]]) -> Tensor:
+    """``[N, Z]`` height of each zone's lowest collider patch point.
+
+    ``pos [N, B, 3]``, ``rot [N, B, 4]`` (xyzw); ``tables`` carries the plant's
+    collider geometry (``physics_terms.PhysicsTables`` or the same fields). The
+    points are ``physics_terms.patch_points``' -- the selection
+    ``build_physics_tables.patch_points`` uses offline.
+    """
+    from protomotions.envs.control.physics_terms import patch_points
+
+    low: Dict[int, Tensor] = {}
+    for ids in zone_body_ids:
+        for b in ids:
+            if b not in low:
+                low[b] = patch_points(pos, rot, tables, [int(b)])[..., 2].min(dim=1).values
+    return torch.stack(
+        [torch.stack([low[b] for b in ids], dim=-1).min(dim=-1).values for ids in zone_body_ids], dim=-1
+    )
+
+
+def zone_vertical_load(ground_forces: Tensor, zone_body_ids: Sequence[Sequence[int]]) -> Tensor:
+    """``[N, Z]`` terrain-filtered vertical load (N) per zone: the bodies' ``fz``,
+    clamped at zero and summed -- the pricing of the unwanted-support term."""
+    fz = ground_forces[..., 2].clamp_min(0.0)
+    return torch.stack([fz[:, list(ids)].sum(dim=-1) for ids in zone_body_ids], dim=-1)
+
+
+def support_v2_holds(
+    times: Tensor,
+    zone_loaded: Tensor,
+    zone_low: Tensor,
+    holds: Sequence[HoldWindow],
+    commanded: Tensor,
+    known_free: Tensor,
+    tracked: Tensor,
+    params: SupportV2Params,
+) -> Tuple[List[Optional[dict]], List[Optional[Tensor]]]:
+    """Support rule v2 on one rollout (module docstring).
+
+    Args:
+        times: ``[T]`` clip time of each frame.
+        zone_loaded: ``[T, Z]`` bool, the zone carries at least
+            ``params.load_threshold_n`` (an offline re-score may pass a proxy).
+        zone_low: ``[T, Z]`` lowest collider point of each zone (m).
+        holds: the clip's holds; the window is ``[t_start, t_end]``.
+        commanded: ``[H, Z]`` bool, the hold's commanded ground zones.
+        known_free: ``[H, Z]`` bool, zones the human is known to keep free.
+        tracked: ``[T]`` bool (``tracked_frames``).
+
+    Returns:
+        ``(rows, masks)``, one entry per hold, ``None`` when no frame falls in
+        its window. A row holds ``frames``, ``tracked_share``, ``realised``
+        (``None`` without commanded zones), ``support_share`` (per commanded
+        zone index), ``zone_share`` (``[Z]`` dilated load share on the known-free
+        zones, 0 elsewhere), ``flagged`` (zone indices) and ``substitution``.
+        A mask is the per-frame violation (any flagged zone's dilated load) on
+        the hold's scored frames ``t_hold <= t <= t_end``, aligned with
+        ``score_clip``'s selection, for its ``hold_violation``.
+    """
+    rows: List[Optional[dict]] = []
+    masks: List[Optional[Tensor]] = []
+    for h, hold in enumerate(holds):
+        t0 = hold.t_start if hold.t_start == hold.t_start else hold.t_hold   # NaN -> t_hold
+        win = (times >= t0) & (times <= hold.t_end)
+        if not bool(win.any()):
+            rows.append(None)
+            masks.append(None)
+            continue
+        free = known_free[h].to(device=zone_loaded.device, dtype=torch.bool)
+        load = dilate(zone_loaded[win], params.dilate_frames)                   # [n, Z]
+        share = load.float().mean(dim=0) * free.float()                          # [Z]
+        flagged = free & (share >= params.min_share)
+        frame_violation = torch.zeros_like(times, dtype=torch.bool)
+        frame_violation[win] = (load & flagged.unsqueeze(0)).any(dim=-1)
+        post = (times >= hold.t_hold) & (times <= hold.t_end)
+        masks.append(frame_violation[post])
+
+        cmd = commanded[h].to(device=zone_low.device, dtype=torch.bool)
+        realised: Optional[bool] = None
+        support_share: Dict[int, float] = {}
+        if bool(cmd.any()):
+            down = (zone_low[win][:, cmd] <= params.down_m).float().mean(dim=0)
+            support_share = {int(z): float(v) for z, v in zip(torch.nonzero(cmd).flatten().tolist(), down)}
+            realised = bool((down >= params.realised_share).all())
+        rows.append(dict(
+            frames=int(win.sum()),
+            tracked_share=float(tracked[win].float().mean()),
+            realised=realised,
+            support_share=support_share,
+            zone_share=share.cpu(),
+            flagged=[int(z) for z in torch.nonzero(flagged).flatten().tolist()],
+            substitution=bool(flagged.any()),
+        ))
+    return rows, masks
 
 
 def update_score_ema(previous: Optional[Tensor], current: Tensor, keep: float) -> Tensor:

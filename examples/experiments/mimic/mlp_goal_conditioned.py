@@ -312,6 +312,14 @@ def additional_experiment_arguments(parser: argparse.ArgumentParser):
                         help="Time constant (s) of the moving average applied to the charged load "
                              "before the clamp. 0 = the per-frame term ft_b trained with; 0.25 closes "
                              "its duty-cycle loophole (report.MD §8).")
+    parser.add_argument(
+        "--support-rule", type=str, default="v1", choices=["v1", "v2"],
+        help="mixture curriculum: the hold score its sampling runs on. v1 = a body origin below 8 cm on "
+             "zones the reference keeps above 15 cm (round 1). v2 = load >= 3 %% BW on the release "
+             "sidecar's known-free zones for >= 20 %% of the hold window (graph_growth PLAN.MD card E1; "
+             "needs --physics-tables and --contact-targets). Logged eval/perf* keys stay v1 either way; "
+             "v2 is logged under eval/perf_v2/* whenever it can be computed.",
+    )
     # --- A curation release (BodyFix Step 5 / BUILD_PLAN Steps 9-10) ----------- #
     parser.add_argument(
         "--contact-targets", type=str, default=None,
@@ -788,6 +796,7 @@ def agent_config(
                 event_dilate_frames=int(getattr(args, "event_dilate_frames", 7)),
                 report_exclude_motions=list(getattr(args, "report_exclude_motions", None) or []),
                 drag_report_motions=list(getattr(args, "drag_report_motions", None) or []),
+                support_rule=str(getattr(args, "support_rule", "v1") or "v1"),
             ),
         )
     else:

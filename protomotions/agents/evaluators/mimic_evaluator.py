@@ -494,6 +494,16 @@ class MimicEvaluator(BaseEvaluator):
             "contacts": contacts,  # Always save predicted contacts
         }
 
+        # The simulator's terrain-filtered per-body ground forces, when it reported them, so a
+        # saved rollout can be re-scored by load offline (support rule v2). Deliberately NOT
+        # MotionLib's ``gnf``: that field means *measured* ground reaction (the pressure port),
+        # and a replayed predicted library must not pass simulated forces off as measured ones.
+        ground = metrics.get("rigid_body_ground_forces")
+        if ground is not None and bool((ground.frame_counts > 0).any()):
+            save_data["sim_rigid_body_ground_forces"] = pack_metric(
+                "rigid_body_ground_forces"
+            ).view(-1, num_bodies, 3)
+
         # create dir if not exists
         output_dir = self.root_dir / "results"
         output_dir.mkdir(parents=True, exist_ok=True)

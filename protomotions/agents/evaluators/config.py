@@ -136,6 +136,35 @@ class HoldCurriculumConfig:
     drag_mu: float = field(
         default=0.75, metadata={"help": "Friction coefficient converting load x slip into drag work (J)."}
     )
+    # --- Support rule v2 (card E1, expert_revist/graph_growth_2026_10_03/PLAN.MD) --- #
+    # Plain scalar defaults on purpose: frozen configs pickled before these fields existed resume
+    # with the class defaults, and the evaluator reads them with getattr defaults as well.
+    support_rule: str = field(
+        default="v1",
+        metadata={"help": "Score that drives the curriculum's sampling: 'v1' (body origin below "
+                          "foot_down_z on zones the reference keeps above unloaded_ref_min_z) or 'v2' "
+                          "(load on the release sidecar's known-free zones; needs the physics tables "
+                          "and the sidecar). Every logged eval/perf* key and score_based.ckpt stay v1; "
+                          "v2 is logged under eval/perf_v2/* whenever it can be computed."},
+    )
+    support_v2_load_frac_bw: float = field(
+        default=0.03, metadata={"help": "v2: a known-free zone is loaded at this share of body weight."}
+    )
+    support_v2_min_share: float = field(
+        default=0.2, metadata={"help": "v2: ... on this share of the hold window (load mask dilated by "
+                                       "event_dilate_frames first) -> a support violation."}
+    )
+    support_v2_down_m: float = field(
+        default=0.02, metadata={"help": "v2: a commanded zone is down when its lowest collider point is this low."}
+    )
+    support_v2_realised_share: float = field(
+        default=0.9, metadata={"help": "v2: commanded supports are realised when every commanded zone is "
+                                       "down on this share of the window."}
+    )
+    support_v2_tracked_share: float = field(
+        default=0.9, metadata={"help": "v2: a hold counts (realised / substitution totals) when this share "
+                                       "of its window is tracked."}
+    )
 
 
 @dataclass
