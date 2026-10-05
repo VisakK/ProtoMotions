@@ -1,0 +1,22 @@
+value ['agent'].amp_calibrate_style_ratio: 0.0  <-  0.25
+key   ['agent'].amp_lineage_weights['SYN_']: 0.5  <-  None
+value ['agent'].amp_reward_w_full_epoch: 0  <-  500
+value ['agent'].amp_reward_w_start_epoch: 0  <-  200
+value ['agent'].amp_reward_w_target: 0.5  <-  0.1
+value ['agent'].demo_exclude_motions: ['Scorpion_pose_or_vrischikasana-b', 'SYN_']  <-  ['Scorpion_pose_or_vrischikasana-b']
+new   ['agent'].evaluator.curriculum.motion_prior: 'package'  <-  'none'
+value ['agent'].evaluator.hold_manifest: 'data/smpl/reference_curation/holds_repaired_ftC_posefix.release_v3.2f132f4299/holds_extended.yaml'  <-  'data/smpl/reference_curation/holds_repaired_ftC_posefix.release_v2.a2dda5d2ac/holds_extended.yaml'
+new   ['agent'].freeze_obs_normalizers: True  <-  False
+value ['agent'].sequence_viz.num_sequences: 22  <-  12
+value ['agent'].sequence_viz.plan_files: ['data/smpl/reference_curation/holds_repaired_ftC_posefix.release_v3.2f132f4299/plans/fork_Warrior_II_Pose_or_Virabhadrasana_II.json', 'data/smpl/reference_curation/holds_repaired_ftC_posefix.release_v3.2f132f4299/plans/fork_Tree_Pose_or_Vrksasana.json', 'data/smpl/reference_curation/holds_repaired_...  <-  ['data/smpl/reference_curation/holds_repaired_ftC_posefix.release_v2.a2dda5d2ac/plans/fork_Warrior_II_Pose_or_Virabhadrasana_II.json', 'data/smpl/reference_curation/holds_repaired_ftC_posefix.release_v2.a2dda5d2ac/plans/fork_Tree_Pose_or_Vrksasana.json', 'data/smpl/reference_curation/holds_repaired_...
+value ['agent'].training_max_steps: 786432000  <-  655360000
+value ['env'].control_components['contact_graph'].contact_targets_file: 'data/smpl/reference_curation/holds_repaired_ftC_posefix.release_v3.2f132f4299/contact_targets.pt'  <-  'data/smpl/reference_curation/holds_repaired_ftC_posefix.release_v2.a2dda5d2ac/contact_targets.pt'
+value ['env'].control_components['contact_graph'].graph_file: 'data/smpl/reference_curation/holds_repaired_ftC_posefix.release_v3.2f132f4299/contact_graph.pt'  <-  'data/smpl/reference_curation/holds_repaired_ftC_posefix.release_v2.a2dda5d2ac/contact_graph.pt'
+value ['env'].control_components['contact_graph'].physics_tables_file: 'data/smpl/reference_curation/holds_repaired_ftC_posefix.release_v3.2f132f4299/physics_tables.pt'  <-  'data/smpl/reference_curation/holds_repaired_ftC_posefix.release_v2.a2dda5d2ac/physics_tables.pt'
+value ['env'].control_components['contact_graph'].release_file: 'data/reference_curation/releases/holds_repaired_ftC_posefix.release_v3.2f132f4299.json'  <-  'data/reference_curation/releases/holds_repaired_ftC_posefix.release_v2.a2dda5d2ac.json'
+value ['env'].motion_manager.graph_file: 'data/smpl/reference_curation/holds_repaired_ftC_posefix.release_v3.2f132f4299/contact_graph.pt'  <-  'data/smpl/reference_curation/holds_repaired_ftC_posefix.release_v2.a2dda5d2ac/contact_graph.pt'
+new   ['env'].motion_manager.segment_end_prob: 0.2  <-  0.0
+value ['env'].motion_manager.segment_start_prob: 0.4  <-  0.6
+value ['motion_lib'].motion_file: 'data/smpl/reference_curation/holds_repaired_ftC_posefix.release_v3.2f132f4299/motions.pt'  <-  'data/smpl/reference_curation/holds_repaired_ftC_posefix.release_v2.a2dda5d2ac/motions.pt'
+value ['simulator'].experiment_name: 'zz_r3_cfg_2f132f4299'  <-  'smpl_yogi_v2_expert56_amp_ft_a2dda5d2ac'
+21 differences

@@ -1,0 +1,26 @@
+
+| holds | n | tracked >= 90 % of window | commanded supports down >= 90 % | 6-body pose < 0.15 m | substitution |
+|---|---|---|---|---|---|
+| all | 382 | 376 (98%) | 358 (95%) | 328 (87%) | 9 (2%) |
+| single_leg | 54 | 54 (100%) | 53 (98%) | 53 (98%) | 3 (6%) |
+| inversion | 69 | 65 (94%) | 56 (86%) | 62 (95%) | 0 (0%) |
+| arm_balance | 60 | 60 (100%) | 54 (90%) | 54 (90%) | 5 (8%) |
+| connective | 87 | 85 (98%) | 83 (98%) | 79 (93%) | 1 (1%) |
+| role: family | 127 | 125 (98%) | 122 (98%) | 124 (99%) | 5 (4%) |
+| role: standing | 132 | 129 (98%) | 129 (100%) | 110 (85%) | 0 (0%) |
+| role: variant | 77 | 77 (100%) | 72 (94%) | 49 (64%) | 3 (4%) |
+| role: preparation | 30 | 29 (97%) | 20 (69%) | 29 (100%) | 0 (0%) |
+| role: undecided | 16 | 16 (100%) | 15 (94%) | 16 (100%) | 1 (6%) |
+
+substitutions (tracked holds):
+  Eagle_Pose_or_Garudasana_-a @7.2s [variant] ground L_FOOT: R_FOOT down 100% (reference 11.7 cm up)
+  Eagle_Pose_or_Garudasana_-a @11.7s [undecided] ground L_FOOT: R_FOOT down 100% (reference 10.3 cm up)
+  Eagle_Pose_or_Garudasana_-a @13.3s [family] ground L_FOOT: R_FOOT down 100% (reference 9.4 cm up)
+  Peacock_Pose_or_Mayurasana_-a @10.3s [family] ground L_FOOT+R_FOOT+L_HAND+R_HAND: L_SHANK down 29% (reference 7.4 cm up), L_THIGH down 23% (reference 8.1 cm up)
+  Peacock_Pose_or_Mayurasana_-a @13.1s [variant] ground L_FOOT+L_HAND+R_HAND: HEAD down 100% (reference 12.0 cm up)
+  Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-b @17.7s [variant] ground L_HAND+R_HAND: L_FOOT down 43% (reference 35.8 cm up)
+  Shoulder-Pressing_Pose_or_Bhujapidasana_-a @9.1s [family] ground L_HAND+R_HAND: L_FOOT down 42% (reference 4.8 cm up)
+  Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a @14.5s [family] ground L_HAND+R_HAND: R_FOOT down 35% (reference 15.9 cm up)
+  Side_Plank_Pose_or_Vasisthasana_-a @14.7s [family] ground R_FOOT+R_HAND: L_FOOT down 100% (reference 7.2 cm up)
+
+84 rollouts -> expert_revist/graph_growth_2026_10_03/g3/data/library_g3_e3420.json

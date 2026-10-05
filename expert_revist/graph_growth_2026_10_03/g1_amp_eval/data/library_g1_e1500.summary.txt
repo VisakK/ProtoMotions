@@ -1,0 +1,24 @@
+
+| holds | n | tracked >= 90 % of window | commanded supports down >= 90 % | 6-body pose < 0.15 m | substitution |
+|---|---|---|---|---|---|
+| all | 270 | 251 (93%) | 228 (91%) | 235 (94%) | 7 (3%) |
+| single_leg | 54 | 53 (98%) | 51 (96%) | 52 (98%) | 3 (6%) |
+| inversion | 69 | 58 (84%) | 49 (84%) | 55 (95%) | 0 (0%) |
+| arm_balance | 60 | 59 (98%) | 51 (86%) | 53 (90%) | 4 (7%) |
+| connective | 87 | 81 (93%) | 77 (95%) | 75 (93%) | 0 (0%) |
+| role: family | 71 | 63 (89%) | 60 (95%) | 62 (98%) | 2 (3%) |
+| role: standing | 112 | 106 (95%) | 105 (99%) | 95 (90%) | 0 (0%) |
+| role: variant | 49 | 45 (92%) | 36 (80%) | 41 (91%) | 4 (9%) |
+| role: preparation | 30 | 29 (97%) | 19 (66%) | 29 (100%) | 0 (0%) |
+| role: undecided | 8 | 8 (100%) | 8 (100%) | 8 (100%) | 1 (12%) |
+
+substitutions (tracked holds):
+  Eagle_Pose_or_Garudasana_-a @7.2s [variant] ground L_FOOT: R_FOOT down 100% (reference 11.7 cm up)
+  Eagle_Pose_or_Garudasana_-a @11.7s [undecided] ground L_FOOT: R_FOOT down 100% (reference 10.3 cm up)
+  Eagle_Pose_or_Garudasana_-a @13.3s [family] ground L_FOOT: R_FOOT down 100% (reference 9.4 cm up)
+  Peacock_Pose_or_Mayurasana_-a @13.1s [variant] ground L_FOOT+L_HAND+R_HAND: HEAD down 100% (reference 12.0 cm up)
+  Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-a @20.4s [family] ground L_HAND+R_HAND: HEAD down 100% (reference 8.8 cm up)
+  Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-b @17.7s [variant] ground L_HAND+R_HAND: L_FOOT down 45% (reference 35.8 cm up)
+  Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-b @19.6s [variant] ground L_HAND+R_HAND: R_FOOT down 100% (reference 8.9 cm up)
+
+56 rollouts -> expert_revist/graph_growth_2026_10_03/g1_amp_eval/data/library_g1_e1500.json

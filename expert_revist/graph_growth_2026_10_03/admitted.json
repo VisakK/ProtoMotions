@@ -1,0 +1,3419 @@
+{
+ "schema_version": 1,
+ "generator": {
+  "module": "edge_synthesis.admit",
+  "git_rev": "96638d57b3794d23748b062ad1a4a5cfec238402",
+  "sha256": "1e2d46c878d3dc0e5c554c626bb7eadd3f20800491528df518b93a43efc8d144"
+ },
+ "inputs": {
+  "output/edge_synthesis/motions/SYN_B1_B1_high_s0_v4.json": "23bbdb5442f0c4ec388a1a6eb99b089ccb28886e8dde48626f335647a1820468",
+  "output/edge_synthesis/motions/SYN_B1_B1_mid_s0_land2.json": "df27e0369a5a16e9f16dd37a8a0ecf1d75fd6b77821a6ef28ebeed3bbbcb4228",
+  "output/edge_synthesis/motions/SYN_B1_B1_mid_s1_v4.json": "14e054819dc0882a11e1ca5c8c8a870ff509ee7cacc0e46d7f667ee5a1a49b4d",
+  "output/edge_synthesis/motions/SYN_E1_E1_E1_high_s1_refff.json": "ba4963a6f199d361158bea26a27039a282ef8fefd7fe9f4c0c509b8117e8253b",
+  "output/edge_synthesis/motions/SYN_E1_E1_E1_high_s2_refff.json": "ee2cd245bbf97eda416a51d742d446d77096eb0a3ebe9fcdbde7f904a41a7c58",
+  "output/edge_synthesis/motions/SYN_E1_E1_E1_high_s3_refff.json": "31f3df06da13575563a07bce08e9e4224dfde3dacc8b8001bfc4e320820bf640",
+  "output/edge_synthesis/motions/SYN_E1_E1_E1_high_s4_refff.json": "399255aa41b024ed354962f11e9c30d9bb44746a1a7800d057d392c672e454be",
+  "output/edge_synthesis/motions/SYN_E1_E1_E1_mid_s0_refff.json": "fb76a3eccacc90683a1cc285a88b9b35dbdc3326f21728769d5a107b9a2a6e6e",
+  "output/edge_synthesis/motions/SYN_E2_E2_mid_s0_land2.json": "c3f2d5183ae332475c3e40fdf6dd261bfa6b0416c68aca13151e56ec44786f5c",
+  "output/edge_synthesis/motions/SYN_E2_E2_mid_s1_v2w.json": "3ec0c4f252dcddc3033e5a56c3c6426fb5f55182829e4c2de29dce5fde5db7ad",
+  "output/edge_synthesis/motions/SYN_E2_E2_mid_s2_v2w.json": "75f6988ccc837d77ed774257be0b6e421eb31de04f3a96cf886b8ec173a94e45",
+  "output/edge_synthesis/motions/SYN_E3_E3_E3_high_s0_refff.json": "c093b9ccacbf2f822a9a437107360a5544b5a5208f74158006709da0bad30b84",
+  "output/edge_synthesis/motions/SYN_E3_E3_E3_high_s1_refff_t2.json": "571f5600e4d857b5877b6c38ebe498d76d832de5966b501d1f04c959cfed3412",
+  "output/edge_synthesis/motions/SYN_E3_E3_E3_high_s2_refff_t2.json": "e4f31d5cf23574f976a7f82b6170918db016a57dccf82e7a80d4935307270784",
+  "output/edge_synthesis/motions/SYN_E3_E3_E3_mid_s0_refff.json": "109f886a6fc7fccd000c8fdea04e5d080c2c4268100401c57dbc00d49cb65c1f",
+  "output/edge_synthesis/motions/SYN_E4_E4_E4_high_s0_refff.json": "ca54bf3704464e45d6d5d48ab8a21f29d541a8e1bf17b3c37dee9cea70f0c7e9",
+  "output/edge_synthesis/motions/SYN_E4_E4_E4_high_s1_refff.json": "0dccab44d276c93e851ee8203c6f33e87a6252fc181f08791aa415aa07abc67a",
+  "output/edge_synthesis/motions/SYN_E4_E4_E4_mid_s0_refff.json": "40d80e389aa1950088c64787b5f480f6006d679105f9f2ad12fb8192278b8fe3",
+  "output/edge_synthesis/motions/SYN_E5_E5_mid_s0_v3.json": "a835b65ed60773c7b9825c27feec2a3a81467797fa4efc1f95ba19401bddc797",
+  "output/edge_synthesis/motions/SYN_E5_E5_mid_s1_v3.json": "d0c36306972e981d9718636f47b2acf2d012937b44aec6b58e28fcebc18edfef",
+  "output/edge_synthesis/motions/SYN_E5_E5_mid_s2_v3.json": "fc1038b2ee49846894e6d17a8f02df76b0007c634b09eae594426f7278f52bd2"
+ },
+ "kind": "edge_admission",
+ "thresholds": {
+  "box_deg": 1.0,
+  "floor_cm": -0.5,
+  "overlap_m": 0.001,
+  "acc_max": 100.0,
+  "impact_s": 0.1,
+  "torque_util": 0.98,
+  "torque_share": 0.05,
+  "mu": 0.75,
+  "cone_tol": 0.05,
+  "d6_max": 0.05,
+  "com_speed_max": 0.05,
+  "brace_cm": 1.0
+ },
+ "variants": [
+  {
+   "variant": "SYN_B1_B1_high_s0_v4",
+   "edge": "B1",
+   "motion": "output/edge_synthesis/motions/SYN_B1_B1_high_s0_v4.motion",
+   "sha256": "84f683e797db9f6280db6cb4b965e29b271f568b8b35f7886f0a006b9917c72f",
+   "source_run": "output/edge_synthesis/runs/B1_high_s0_v4",
+   "durations_s": [
+    0.6,
+    1.0
+   ],
+   "via": null,
+   "reference": null,
+   "contract": {
+    "box_frames_past_1deg": 0,
+    "box_max_deg": 0.0,
+    "floor_min_cm": 0.17,
+    "new_overlaps_1mm": 0,
+    "new_overlap_examples": [],
+    "acc_over_100_outside_impacts": 0,
+    "acc_max": 97.9,
+    "impact_windows_s": [
+     0.45,
+     0.525,
+     0.546,
+     0.567,
+     0.608,
+     0.658,
+     0.708,
+     0.758,
+     0.812,
+     0.871,
+     0.938,
+     0.475,
+     0.646,
+     0.708,
+     0.783,
+     0.821,
+     0.879,
+     0.946,
+     -0.271,
+     -0.271
+    ],
+    "pass": true
+   },
+   "statics": {
+    "checked": 46,
+    "s_star_max": 0.1854,
+    "beyond": 0,
+    "not_optimal": 0,
+    "not_optimal_examples": [],
+    "pass": true
+   },
+   "dynamics": {
+    "torque_saturated_share_max": 0.084,
+    "torque_saturated_joints": {
+     "L_Toe_y": 0.062,
+     "L_Wrist_x": 0.075,
+     "R_Wrist_x": 0.084
+    },
+    "friction_ratio_p99": {
+     "L_FOOT": 0.75,
+     "R_FOOT": 0.75,
+     "L_HAND": 0.41,
+     "R_HAND": 0.329
+    },
+    "pass": false
+   },
+   "naturalness": {
+    "speed_over_p99": {
+     "Pelvis": 1.6,
+     "L_Hip": 1.46,
+     "L_Knee": 2.4,
+     "L_Ankle": 1.44,
+     "L_Toe": 1.24,
+     "R_Hip": 1.34,
+     "R_Knee": 2.61,
+     "R_Ankle": 1.69,
+     "R_Toe": 1.53,
+     "Torso": 1.63,
+     "Spine": 1.13
+    },
+    "jerk_over_p99": {
+     "Pelvis": 1.12,
+     "L_Knee": 4.81,
+     "L_Ankle": 4.42,
+     "L_Toe": 7.79,
+     "R_Knee": 2.89,
+     "R_Ankle": 4.2,
+     "R_Toe": 4.55,
+     "Head": 1.47,
+     "L_Hand": 1.19,
+     "R_Hand": 1.62
+    },
+    "speed_over_corpus_max": {
+     "L_Knee": 1.16,
+     "R_Knee": 1.2
+    },
+    "critic": "pending (card E5)",
+    "jerk_over_p99_outside_impacts": {
+     "Pelvis": 1.12,
+     "L_Knee": 3.65,
+     "L_Ankle": 3.12,
+     "L_Toe": 7.79,
+     "R_Knee": 2.16,
+     "R_Ankle": 2.37,
+     "R_Toe": 2.51,
+     "Head": 1.23,
+     "L_Hand": 1.19,
+     "R_Hand": 1.62
+    },
+    "pass_p99": false
+   },
+   "endpoints": {
+    "final_d6_m": 0.0248,
+    "com_speed_end": 0.0219,
+    "brace_gap_end_cm": {},
+    "pass": true
+   },
+   "physx": {
+    "round_trip_pos_m": 3.6747619869270665e-07,
+    "round_trip_ok": true,
+    "motionlib_cpu_plant_v2": true,
+    "motionlib_frames": 234,
+    "launches_at_reset": "pending (IsaacLab, GPU)",
+    "pass_cpu": true
+   },
+   "failed": [
+    "dynamics",
+    "naturalness_p99"
+   ],
+   "decision": "rejected",
+   "pending": [
+    "naturalness critic (E5)",
+    "PhysX: 0 launches at reset"
+   ]
+  },
+  {
+   "variant": "SYN_B1_B1_mid_s0_land2",
+   "edge": "B1",
+   "motion": "output/edge_synthesis/motions/SYN_B1_B1_mid_s0_land2.motion",
+   "sha256": "9dcbacf3fb3f93b3861d387f4f8a3335a5fc551547dda558f13794d62a8b1fca",
+   "source_run": "output/edge_synthesis/runs/B1_mid_s0_land2",
+   "durations_s": [
+    0.425,
+    0.65
+   ],
+   "via": null,
+   "reference": null,
+   "contract": {
+    "box_frames_past_1deg": 0,
+    "box_max_deg": 0.0,
+    "floor_min_cm": 0.18,
+    "new_overlaps_1mm": 0,
+    "new_overlap_examples": [],
+    "acc_over_100_outside_impacts": 0,
+    "acc_max": 74.9,
+    "impact_windows_s": [
+     0.462,
+     0.554,
+     0.617,
+     0.675,
+     0.742,
+     0.808,
+     0.483,
+     0.604,
+     0.679,
+     0.746,
+     0.817,
+     -0.271,
+     -0.271
+    ],
+    "pass": true
+   },
+   "statics": {
+    "checked": 46,
+    "s_star_max": 0.1841,
+    "beyond": 0,
+    "not_optimal": 0,
+    "not_optimal_examples": [],
+    "pass": true
+   },
+   "dynamics": {
+    "torque_saturated_share_max": 0.097,
+    "torque_saturated_joints": {
+     "L_Toe_y": 0.082,
+     "R_Toe_y": 0.097,
+     "L_Wrist_x": 0.064,
+     "R_Wrist_x": 0.056
+    },
+    "friction_ratio_p99": {
+     "L_FOOT": 0.75,
+     "R_FOOT": 0.75,
+     "L_HAND": 0.446,
+     "R_HAND": 0.403
+    },
+    "pass": false
+   },
+   "naturalness": {
+    "speed_over_p99": {
+     "Pelvis": 1.98,
+     "L_Hip": 1.81,
+     "L_Knee": 2.23,
+     "L_Ankle": 1.35,
+     "L_Toe": 1.13,
+     "R_Hip": 1.75,
+     "R_Knee": 2.94,
+     "R_Ankle": 1.86,
+     "R_Toe": 1.56,
+     "Torso": 1.96,
+     "Spine": 1.31,
+     "Head": 1.06
+    },
+    "jerk_over_p99": {
+     "Pelvis": 1.17,
+     "L_Knee": 3.44,
+     "L_Ankle": 3.01,
+     "L_Toe": 9.42,
+     "R_Hip": 1.05,
+     "R_Knee": 3.36,
+     "R_Ankle": 3.99,
+     "R_Toe": 8.35,
+     "Torso": 1.05,
+     "Head": 1.31,
+     "L_Hand": 1.47,
+     "R_Elbow": 1.12,
+     "R_Wrist": 1.0,
+     "R_Hand": 1.91
+    },
+    "speed_over_corpus_max": {
+     "L_Knee": 1.08,
+     "R_Knee": 1.35
+    },
+    "critic": "pending (card E5)",
+    "jerk_over_p99_outside_impacts": {
+     "Pelvis": 1.17,
+     "L_Knee": 3.44,
+     "L_Ankle": 3.01,
+     "L_Toe": 9.42,
+     "R_Hip": 1.05,
+     "R_Knee": 3.36,
+     "R_Ankle": 3.99,
+     "R_Toe": 8.35,
+     "Torso": 1.05,
+     "Head": 1.31,
+     "L_Hand": 1.47,
+     "R_Elbow": 1.12,
+     "R_Wrist": 1.0,
+     "R_Hand": 1.91
+    },
+    "pass_p99": false
+   },
+   "endpoints": {
+    "final_d6_m": 0.0176,
+    "com_speed_end": 0.0294,
+    "brace_gap_end_cm": {},
+    "pass": true
+   },
+   "physx": {
+    "round_trip_pos_m": 2.6506082151378507e-07,
+    "round_trip_ok": true,
+    "motionlib_cpu_plant_v2": true,
+    "motionlib_frames": 204,
+    "launches_at_reset": "pending (IsaacLab, GPU)",
+    "pass_cpu": true
+   },
+   "failed": [
+    "dynamics",
+    "naturalness_p99"
+   ],
+   "decision": "rejected",
+   "pending": [
+    "naturalness critic (E5)",
+    "PhysX: 0 launches at reset"
+   ]
+  },
+  {
+   "variant": "SYN_B1_B1_mid_s1_v4",
+   "edge": "B1",
+   "motion": "output/edge_synthesis/motions/SYN_B1_B1_mid_s1_v4.motion",
+   "sha256": "e65e98294d65b660513c5d9d9bc16c97c695e9c10c6d85923e95c77136e2b829",
+   "source_run": "output/edge_synthesis/runs/B1_mid_s1_v4",
+   "durations_s": [
+    0.425,
+    0.65
+   ],
+   "via": null,
+   "reference": null,
+   "contract": {
+    "box_frames_past_1deg": 0,
+    "box_max_deg": 0.0,
+    "floor_min_cm": 0.17,
+    "new_overlaps_1mm": 0,
+    "new_overlap_examples": [],
+    "acc_over_100_outside_impacts": 0,
+    "acc_max": 141.4,
+    "impact_windows_s": [
+     0.383,
+     0.475,
+     0.533,
+     0.587,
+     0.646,
+     0.7,
+     0.75,
+     0.8,
+     0.413,
+     0.492,
+     0.596,
+     0.663,
+     0.721,
+     0.783,
+     0.854,
+     -0.271,
+     -0.267
+    ],
+    "pass": true
+   },
+   "statics": {
+    "checked": 46,
+    "s_star_max": 0.1874,
+    "beyond": 0,
+    "not_optimal": 0,
+    "not_optimal_examples": [],
+    "pass": true
+   },
+   "dynamics": {
+    "torque_saturated_share_max": 0.092,
+    "torque_saturated_joints": {
+     "L_Toe_y": 0.078,
+     "R_Toe_y": 0.092,
+     "L_Wrist_x": 0.067,
+     "R_Wrist_x": 0.066
+    },
+    "friction_ratio_p99": {
+     "L_FOOT": 0.75,
+     "R_FOOT": 0.75,
+     "L_HAND": 0.416,
+     "R_HAND": 0.373
+    },
+    "pass": false
+   },
+   "naturalness": {
+    "speed_over_p99": {
+     "Pelvis": 1.64,
+     "L_Hip": 1.37,
+     "L_Knee": 2.72,
+     "L_Ankle": 1.67,
+     "L_Toe": 1.41,
+     "R_Hip": 1.38,
+     "R_Knee": 3.88,
+     "R_Ankle": 2.44,
+     "R_Toe": 2.2,
+     "Torso": 1.7,
+     "Spine": 1.01
+    },
+    "jerk_over_p99": {
+     "Pelvis": 1.23,
+     "L_Hip": 1.06,
+     "L_Knee": 6.28,
+     "L_Ankle": 8.61,
+     "L_Toe": 10.46,
+     "R_Hip": 1.03,
+     "R_Knee": 4.58,
+     "R_Ankle": 4.23,
+     "R_Toe": 7.84,
+     "Torso": 1.1,
+     "Head": 1.56,
+     "L_Hand": 1.38,
+     "R_Elbow": 1.12,
+     "R_Hand": 1.26
+    },
+    "speed_over_corpus_max": {
+     "L_Knee": 1.32,
+     "R_Knee": 1.78
+    },
+    "critic": "pending (card E5)",
+    "jerk_over_p99_outside_impacts": {
+     "Pelvis": 1.23,
+     "L_Hip": 1.06,
+     "L_Knee": 5.21,
+     "L_Ankle": 4.2,
+     "L_Toe": 10.46,
+     "R_Hip": 1.03,
+     "R_Knee": 4.58,
+     "R_Ankle": 4.23,
+     "R_Toe": 7.84,
+     "Torso": 1.1,
+     "Head": 1.56,
+     "L_Hand": 1.38,
+     "R_Elbow": 1.12,
+     "R_Hand": 1.26
+    },
+    "pass_p99": false
+   },
+   "endpoints": {
+    "final_d6_m": 0.0149,
+    "com_speed_end": 0.0172,
+    "brace_gap_end_cm": {},
+    "pass": true
+   },
+   "physx": {
+    "round_trip_pos_m": 3.049414560307717e-07,
+    "round_trip_ok": true,
+    "motionlib_cpu_plant_v2": true,
+    "motionlib_frames": 204,
+    "launches_at_reset": "pending (IsaacLab, GPU)",
+    "pass_cpu": true
+   },
+   "failed": [
+    "dynamics",
+    "naturalness_p99"
+   ],
+   "decision": "rejected",
+   "pending": [
+    "naturalness critic (E5)",
+    "PhysX: 0 launches at reset"
+   ]
+  },
+  {
+   "variant": "SYN_E1_E1_E1_high_s1_refff",
+   "edge": "E1",
+   "motion": "output/edge_synthesis/motions/SYN_E1_E1_E1_high_s1_refff.motion",
+   "sha256": "4b79235fcd67a8fd3912250998917c7b8b0c477dae401b6f97b954fcd86c6fbb",
+   "source_run": "output/edge_synthesis/runs/E1_E1_high_s1_refff",
+   "durations_s": [
+    2.5,
+    2.0
+   ],
+   "via": null,
+   "reference": "output/edge_synthesis/quasistatic/E1_high",
+   "contract": {
+    "box_frames_past_1deg": 0,
+    "box_max_deg": 0.0,
+    "floor_min_cm": 0.26,
+    "new_overlaps_1mm": 0,
+    "new_overlap_examples": [],
+    "acc_over_100_outside_impacts": 0,
+    "acc_max": 10.3,
+    "impact_windows_s": [
+     -0.287,
+     -0.283
+    ],
+    "pass": true
+   },
+   "statics": {
+    "checked": 136,
+    "s_star_max": 0.5205,
+    "beyond": 0,
+    "not_optimal": 0,
+    "not_optimal_examples": [],
+    "pass": true
+   },
+   "dynamics": {
+    "torque_saturated_share_max": 0.0,
+    "torque_saturated_joints": {},
+    "friction_ratio_p99": {
+     "L_HAND": 0.116,
+     "R_HAND": 0.123
+    },
+    "pass": true
+   },
+   "naturalness": {
+    "speed_over_p99": {},
+    "jerk_over_p99": {},
+    "speed_over_corpus_max": {},
+    "critic": "pending (card E5)",
+    "jerk_over_p99_outside_impacts": {},
+    "pass_p99": true
+   },
+   "endpoints": {
+    "final_d6_m": 0.0366,
+    "com_speed_end": 0.0098,
+    "brace_gap_end_cm": {},
+    "pass": true
+   },
+   "physx": {
+    "round_trip_pos_m": 4.759973153412034e-07,
+    "round_trip_ok": true,
+    "motionlib_cpu_plant_v2": true,
+    "motionlib_frames": 408,
+    "launches_at_reset": "pending (IsaacLab, GPU)",
+    "pass_cpu": true
+   },
+   "failed": [],
+   "decision": "provisional",
+   "pending": [
+    "naturalness critic (E5)",
+    "PhysX: 0 launches at reset"
+   ]
+  },
+  {
+   "variant": "SYN_E1_E1_E1_high_s2_refff",
+   "edge": "E1",
+   "motion": "output/edge_synthesis/motions/SYN_E1_E1_E1_high_s2_refff.motion",
+   "sha256": "3e60880c66b2eff234c7d57ba1b4bbde3b0d69e4332a62236aee344af74bfd31",
+   "source_run": "output/edge_synthesis/runs/E1_E1_high_s2_refff",
+   "durations_s": [
+    2.5,
+    2.0
+   ],
+   "via": null,
+   "reference": "output/edge_synthesis/quasistatic/E1_high",
+   "contract": {
+    "box_frames_past_1deg": 0,
+    "box_max_deg": 0.0,
+    "floor_min_cm": 0.26,
+    "new_overlaps_1mm": 0,
+    "new_overlap_examples": [],
+    "acc_over_100_outside_impacts": 0,
+    "acc_max": 10.3,
+    "impact_windows_s": [
+     -0.287,
+     -0.283
+    ],
+    "pass": true
+   },
+   "statics": {
+    "checked": 136,
+    "s_star_max": 0.5301,
+    "beyond": 0,
+    "not_optimal": 0,
+    "not_optimal_examples": [],
+    "pass": true
+   },
+   "dynamics": {
+    "torque_saturated_share_max": 0.0,
+    "torque_saturated_joints": {},
+    "friction_ratio_p99": {
+     "L_HAND": 0.114,
+     "R_HAND": 0.122
+    },
+    "pass": true
+   },
+   "naturalness": {
+    "speed_over_p99": {},
+    "jerk_over_p99": {},
+    "speed_over_corpus_max": {},
+    "critic": "pending (card E5)",
+    "jerk_over_p99_outside_impacts": {},
+    "pass_p99": true
+   },
+   "endpoints": {
+    "final_d6_m": 0.0412,
+    "com_speed_end": 0.0172,
+    "brace_gap_end_cm": {},
+    "pass": true
+   },
+   "physx": {
+    "round_trip_pos_m": 3.7628215968435463e-07,
+    "round_trip_ok": true,
+    "motionlib_cpu_plant_v2": true,
+    "motionlib_frames": 408,
+    "launches_at_reset": "pending (IsaacLab, GPU)",
+    "pass_cpu": true
+   },
+   "failed": [],
+   "decision": "provisional",
+   "pending": [
+    "naturalness critic (E5)",
+    "PhysX: 0 launches at reset"
+   ]
+  },
+  {
+   "variant": "SYN_E1_E1_E1_high_s3_refff",
+   "edge": "E1",
+   "motion": "output/edge_synthesis/motions/SYN_E1_E1_E1_high_s3_refff.motion",
+   "sha256": "5b4c373a27521a38e9a882d520ecdfc92c9d373f2620e789eb202d516e8cd7ec",
+   "source_run": "output/edge_synthesis/runs/E1_E1_high_s3_refff",
+   "durations_s": [
+    2.5,
+    2.0
+   ],
+   "via": null,
+   "reference": "output/edge_synthesis/quasistatic/E1_high",
+   "contract": {
+    "box_frames_past_1deg": 0,
+    "box_max_deg": 0.0,
+    "floor_min_cm": -0.06,
+    "new_overlaps_1mm": 0,
+    "new_overlap_examples": [],
+    "acc_over_100_outside_impacts": 2,
+    "acc_max": 188.1,
+    "impact_windows_s": [
+     5.858,
+     5.967,
+     6.213,
+     6.325,
+     6.358,
+     6.383,
+     6.404,
+     6.425,
+     6.45,
+     6.487,
+     5.862,
+     5.979,
+     5.9,
+     -0.287,
+     5.896,
+     6.129,
+     6.192,
+     6.233,
+     -0.283,
+     5.921,
+     6.208,
+     6.283
+    ],
+    "pass": false
+   },
+   "statics": {
+    "checked": 136,
+    "s_star_max": 1.1929,
+    "beyond": 4,
+    "not_optimal": 7,
+    "not_optimal_examples": [
+     {
+      "frame": 363,
+      "t": 5.767,
+      "status": "infeasible",
+      "s_star": null,
+      "binding": null,
+      "unrealised": [],
+      "open": []
+     },
+     {
+      "frame": 366,
+      "t": 5.817,
+      "status": "infeasible",
+      "s_star": null,
+      "binding": null,
+      "unrealised": [],
+      "open": []
+     },
+     {
+      "frame": 369,
+      "t": 5.867,
+      "status": "infeasible",
+      "s_star": null,
+      "binding": null,
+      "unrealised": [],
+      "open": []
+     }
+    ],
+    "pass": false
+   },
+   "dynamics": {
+    "torque_saturated_share_max": 0.009,
+    "torque_saturated_joints": {},
+    "friction_ratio_p99": {
+     "R_FOOT": 0.75,
+     "R_SHANK": 0.75,
+     "L_HAND": 0.75,
+     "R_HAND": 0.75
+    },
+    "pass": true
+   },
+   "naturalness": {
+    "speed_over_p99": {
+     "Pelvis": 5.01,
+     "L_Hip": 4.73,
+     "L_Knee": 4.08,
+     "L_Ankle": 3.05,
+     "L_Toe": 2.81,
+     "R_Hip": 4.62,
+     "R_Knee": 2.77,
+     "R_Ankle": 2.46,
+     "R_Toe": 2.48,
+     "Torso": 5.04,
+     "Spine": 5.19,
+     "Chest": 4.91,
+     "Neck": 3.83,
+     "Head": 3.79,
+     "L_Thorax": 4.04,
+     "L_Shoulder": 3.19,
+     "L_Elbow": 1.09,
+     "L_Wrist": 1.41,
+     "L_Hand": 1.26,
+     "R_Thorax": 4.34,
+     "R_Shoulder": 3.57,
+     "R_Elbow": 1.57,
+     "R_Wrist": 1.47,
+     "R_Hand": 1.59
+    },
+    "jerk_over_p99": {
+     "Pelvis": 8.89,
+     "L_Hip": 7.58,
+     "L_Knee": 8.37,
+     "L_Ankle": 9.3,
+     "L_Toe": 8.18,
+     "R_Hip": 8.52,
+     "R_Knee": 9.33,
+     "R_Ankle": 6.81,
+     "R_Toe": 6.77,
+     "Torso": 7.71,
+     "Spine": 4.87,
+     "Chest": 4.08,
+     "Neck": 2.47,
+     "Head": 6.68,
+     "L_Thorax": 2.53,
+     "L_Shoulder": 1.09,
+     "L_Elbow": 5.92,
+     "L_Wrist": 20.74,
+     "L_Hand": 19.97,
+     "R_Thorax": 3.69,
+     "R_Shoulder": 2.89,
+     "R_Elbow": 12.4,
+     "R_Wrist": 25.57,
+     "R_Hand": 22.35
+    },
+    "speed_over_corpus_max": {
+     "Pelvis": 1.83,
+     "L_Hip": 1.71,
+     "L_Knee": 1.97,
+     "L_Ankle": 1.49,
+     "L_Toe": 1.42,
+     "R_Hip": 1.62,
+     "R_Knee": 1.27,
+     "Torso": 1.96,
+     "Spine": 2.75,
+     "Chest": 2.94,
+     "Neck": 2.5,
+     "Head": 2.38,
+     "L_Thorax": 2.81,
+     "L_Shoulder": 2.16,
+     "R_Thorax": 3.1,
+     "R_Shoulder": 2.54,
+     "R_Elbow": 1.02
+    },
+    "critic": "pending (card E5)",
+    "jerk_over_p99_outside_impacts": {
+     "Pelvis": 2.52,
+     "L_Hip": 2.28,
+     "L_Knee": 4.48,
+     "L_Ankle": 5.06,
+     "L_Toe": 4.73,
+     "R_Hip": 2.06,
+     "R_Knee": 1.47,
+     "R_Ankle": 1.55,
+     "R_Toe": 1.51,
+     "Torso": 2.22,
+     "Spine": 1.68,
+     "Chest": 1.63,
+     "Neck": 1.35,
+     "Head": 2.66,
+     "L_Thorax": 1.39,
+     "R_Thorax": 1.67,
+     "R_Shoulder": 1.64,
+     "R_Elbow": 1.89,
+     "R_Wrist": 1.12,
+     "R_Hand": 1.48
+    },
+    "pass_p99": false
+   },
+   "endpoints": {
+    "final_d6_m": 0.8791,
+    "com_speed_end": 0.0777,
+    "brace_gap_end_cm": {},
+    "pass": false
+   },
+   "physx": {
+    "round_trip_pos_m": 3.8849354888625953e-07,
+    "round_trip_ok": true,
+    "motionlib_cpu_plant_v2": true,
+    "motionlib_frames": 408,
+    "launches_at_reset": "pending (IsaacLab, GPU)",
+    "pass_cpu": true
+   },
+   "failed": [
+    "contract",
+    "statics",
+    "naturalness_p99",
+    "endpoints"
+   ],
+   "decision": "rejected",
+   "pending": [
+    "naturalness critic (E5)",
+    "PhysX: 0 launches at reset"
+   ]
+  },
+  {
+   "variant": "SYN_E1_E1_E1_high_s4_refff",
+   "edge": "E1",
+   "motion": "output/edge_synthesis/motions/SYN_E1_E1_E1_high_s4_refff.motion",
+   "sha256": "ddc4cdadfa2beed7fb06c1c4fb3d1d859ac2ec30872a3bc8f9a8e9de0641aca6",
+   "source_run": "output/edge_synthesis/runs/E1_E1_high_s4_refff",
+   "durations_s": [
+    2.5,
+    2.0
+   ],
+   "via": null,
+   "reference": "output/edge_synthesis/quasistatic/E1_high",
+   "contract": {
+    "box_frames_past_1deg": 0,
+    "box_max_deg": 0.0,
+    "floor_min_cm": -0.24,
+    "new_overlaps_1mm": 0,
+    "new_overlap_examples": [],
+    "acc_over_100_outside_impacts": 2,
+    "acc_max": 153.7,
+    "impact_windows_s": [
+     5.092,
+     5.125,
+     -0.287,
+     5.158,
+     5.388,
+     -0.283,
+     5.096,
+     5.142,
+     5.158,
+     5.175,
+     5.188,
+     5.213
+    ],
+    "pass": false
+   },
+   "statics": {
+    "checked": 136,
+    "s_star_max": 1.0106,
+    "beyond": 2,
+    "not_optimal": 5,
+    "not_optimal_examples": [
+     {
+      "frame": 312,
+      "t": 4.917,
+      "status": "infeasible",
+      "s_star": null,
+      "binding": null,
+      "unrealised": [],
+      "open": []
+     },
+     {
+      "frame": 315,
+      "t": 4.967,
+      "status": "infeasible",
+      "s_star": null,
+      "binding": null,
+      "unrealised": [],
+      "open": []
+     },
+     {
+      "frame": 318,
+      "t": 5.017,
+      "status": "infeasible",
+      "s_star": null,
+      "binding": null,
+      "unrealised": [],
+      "open": []
+     }
+    ],
+    "pass": false
+   },
+   "dynamics": {
+    "torque_saturated_share_max": 0.005,
+    "torque_saturated_joints": {},
+    "friction_ratio_p99": {
+     "R_SHANK": 0.499,
+     "L_HAND": 0.75,
+     "R_HAND": 0.75
+    },
+    "pass": true
+   },
+   "naturalness": {
+    "speed_over_p99": {
+     "Pelvis": 5.58,
+     "L_Hip": 5.0,
+     "L_Knee": 4.17,
+     "L_Ankle": 2.99,
+     "L_Toe": 2.73,
+     "R_Hip": 5.1,
+     "R_Knee": 4.81,
+     "R_Ankle": 2.61,
+     "R_Toe": 2.47,
+     "Torso": 5.57,
+     "Spine": 5.51,
+     "Chest": 5.14,
+     "Neck": 3.86,
+     "Head": 3.79,
+     "L_Thorax": 4.27,
+     "L_Shoulder": 3.37,
+     "L_Elbow": 1.27,
+     "L_Wrist": 1.55,
+     "L_Hand": 1.24,
+     "R_Thorax": 4.29,
+     "R_Shoulder": 3.53,
+     "R_Elbow": 1.51
+    },
+    "jerk_over_p99": {
+     "Pelvis": 7.78,
+     "L_Hip": 6.35,
+     "L_Knee": 5.32,
+     "L_Ankle": 5.94,
+     "L_Toe": 5.6,
+     "R_Hip": 11.72,
+     "R_Knee": 12.67,
+     "R_Ankle": 10.7,
+     "R_Toe": 9.96,
+     "Torso": 5.55,
+     "Spine": 3.36,
+     "Chest": 2.85,
+     "Neck": 3.18,
+     "Head": 8.79,
+     "L_Thorax": 3.48,
+     "L_Shoulder": 2.26,
+     "L_Elbow": 5.23,
+     "L_Wrist": 16.2,
+     "L_Hand": 14.87,
+     "R_Thorax": 2.43,
+     "R_Shoulder": 2.26,
+     "R_Elbow": 4.61,
+     "R_Wrist": 7.82,
+     "R_Hand": 7.65
+    },
+    "speed_over_corpus_max": {
+     "Pelvis": 2.04,
+     "L_Hip": 1.8,
+     "L_Knee": 2.02,
+     "L_Ankle": 1.46,
+     "L_Toe": 1.38,
+     "R_Hip": 1.79,
+     "R_Knee": 2.21,
+     "Torso": 2.17,
+     "Spine": 2.92,
+     "Chest": 3.08,
+     "Neck": 2.52,
+     "Head": 2.38,
+     "L_Thorax": 2.97,
+     "L_Shoulder": 2.28,
+     "R_Thorax": 3.06,
+     "R_Shoulder": 2.51
+    },
+    "critic": "pending (card E5)",
+    "jerk_over_p99_outside_impacts": {
+     "Pelvis": 2.57,
+     "L_Hip": 2.19,
+     "L_Knee": 5.08,
+     "L_Ankle": 5.94,
+     "L_Toe": 5.6,
+     "R_Hip": 2.21,
+     "R_Knee": 3.79,
+     "R_Ankle": 2.63,
+     "R_Toe": 2.58,
+     "Torso": 2.29,
+     "Spine": 1.7,
+     "Chest": 1.63,
+     "Neck": 1.47,
+     "Head": 3.41,
+     "L_Thorax": 1.38,
+     "L_Wrist": 1.1,
+     "L_Hand": 1.21,
+     "R_Thorax": 1.75,
+     "R_Shoulder": 1.88,
+     "R_Elbow": 3.28,
+     "R_Wrist": 3.98,
+     "R_Hand": 3.62
+    },
+    "pass_p99": false
+   },
+   "endpoints": {
+    "final_d6_m": 0.8564,
+    "com_speed_end": 0.0331,
+    "brace_gap_end_cm": {},
+    "pass": false
+   },
+   "physx": {
+    "round_trip_pos_m": 4.2432416486049007e-07,
+    "round_trip_ok": true,
+    "motionlib_cpu_plant_v2": true,
+    "motionlib_frames": 408,
+    "launches_at_reset": "pending (IsaacLab, GPU)",
+    "pass_cpu": true
+   },
+   "failed": [
+    "contract",
+    "statics",
+    "naturalness_p99",
+    "endpoints"
+   ],
+   "decision": "rejected",
+   "pending": [
+    "naturalness critic (E5)",
+    "PhysX: 0 launches at reset"
+   ]
+  },
+  {
+   "variant": "SYN_E1_E1_E1_mid_s0_refff",
+   "edge": "E1",
+   "motion": "output/edge_synthesis/motions/SYN_E1_E1_E1_mid_s0_refff.motion",
+   "sha256": "4268e6019849bf9f2f45aea1e948a83bdda454eccaf43bc6e96f5688be50d49a",
+   "source_run": "output/edge_synthesis/runs/E1_E1_mid_s0_refff",
+   "durations_s": [
+    1.65,
+    1.3
+   ],
+   "via": null,
+   "reference": "output/edge_synthesis/quasistatic/E1_mid",
+   "contract": {
+    "box_frames_past_1deg": 0,
+    "box_max_deg": 0.0,
+    "floor_min_cm": 0.25,
+    "new_overlaps_1mm": 0,
+    "new_overlap_examples": [],
+    "acc_over_100_outside_impacts": 0,
+    "acc_max": 10.9,
+    "impact_windows_s": [
+     -0.283,
+     -0.283
+    ],
+    "pass": true
+   },
+   "statics": {
+    "checked": 106,
+    "s_star_max": 0.5467,
+    "beyond": 0,
+    "not_optimal": 0,
+    "not_optimal_examples": [],
+    "pass": true
+   },
+   "dynamics": {
+    "torque_saturated_share_max": 0.0,
+    "torque_saturated_joints": {},
+    "friction_ratio_p99": {
+     "L_HAND": 0.139,
+     "R_HAND": 0.163
+    },
+    "pass": true
+   },
+   "naturalness": {
+    "speed_over_p99": {
+     "L_Hip": 1.06,
+     "R_Hip": 1.12,
+     "R_Knee": 1.33,
+     "R_Ankle": 1.03,
+     "R_Toe": 1.1
+    },
+    "jerk_over_p99": {
+     "L_Ankle": 1.12,
+     "L_Toe": 1.16
+    },
+    "speed_over_corpus_max": {},
+    "critic": "pending (card E5)",
+    "jerk_over_p99_outside_impacts": {
+     "L_Ankle": 1.12,
+     "L_Toe": 1.16
+    },
+    "pass_p99": false
+   },
+   "endpoints": {
+    "final_d6_m": 0.0369,
+    "com_speed_end": 0.0171,
+    "brace_gap_end_cm": {},
+    "pass": true
+   },
+   "physx": {
+    "round_trip_pos_m": 4.452673365573645e-07,
+    "round_trip_ok": true,
+    "motionlib_cpu_plant_v2": true,
+    "motionlib_frames": 318,
+    "launches_at_reset": "pending (IsaacLab, GPU)",
+    "pass_cpu": true
+   },
+   "failed": [
+    "naturalness_p99"
+   ],
+   "decision": "rejected",
+   "pending": [
+    "naturalness critic (E5)",
+    "PhysX: 0 launches at reset"
+   ]
+  },
+  {
+   "variant": "SYN_E2_E2_mid_s0_land2",
+   "edge": "E2",
+   "motion": "output/edge_synthesis/motions/SYN_E2_E2_mid_s0_land2.motion",
+   "sha256": "76d12e063aebf779b698ac1fa608b4571310c35ac551b6993836aa0d54db57f2",
+   "source_run": "output/edge_synthesis/runs/E2_mid_s0_land2",
+   "durations_s": [
+    0.425,
+    0.65
+   ],
+   "via": null,
+   "reference": null,
+   "contract": {
+    "box_frames_past_1deg": 0,
+    "box_max_deg": 0.0,
+    "floor_min_cm": 0.16,
+    "new_overlaps_1mm": 0,
+    "new_overlap_examples": [],
+    "acc_over_100_outside_impacts": 0,
+    "acc_max": 62.6,
+    "impact_windows_s": [
+     0.446,
+     0.504,
+     0.438,
+     0.5,
+     0.55,
+     0.625,
+     0.725,
+     -0.271,
+     0.254,
+     -0.271,
+     0.212,
+     0.225,
+     0.267
+    ],
+    "pass": true
+   },
+   "statics": {
+    "checked": 46,
+    "s_star_max": 0.2824,
+    "beyond": 0,
+    "not_optimal": 0,
+    "not_optimal_examples": [],
+    "pass": true
+   },
+   "dynamics": {
+    "torque_saturated_share_max": 0.047,
+    "torque_saturated_joints": {},
+    "friction_ratio_p99": {
+     "L_FOOT": 0.75,
+     "R_FOOT": 0.75,
+     "L_HAND": 0.75,
+     "R_HAND": 0.619
+    },
+    "pass": true
+   },
+   "naturalness": {
+    "speed_over_p99": {
+     "Pelvis": 2.97,
+     "L_Hip": 2.51,
+     "L_Knee": 1.98,
+     "L_Ankle": 1.26,
+     "L_Toe": 1.16,
+     "R_Hip": 2.56,
+     "R_Knee": 3.32,
+     "R_Ankle": 2.16,
+     "R_Toe": 1.99,
+     "Torso": 3.05,
+     "Spine": 2.51,
+     "Chest": 2.19,
+     "Neck": 1.22,
+     "L_Thorax": 1.52,
+     "L_Shoulder": 1.16,
+     "R_Thorax": 1.54,
+     "R_Shoulder": 1.24
+    },
+    "jerk_over_p99": {
+     "Pelvis": 1.37,
+     "L_Hip": 1.32,
+     "L_Knee": 3.51,
+     "L_Ankle": 5.37,
+     "L_Toe": 6.51,
+     "R_Hip": 1.4,
+     "R_Knee": 3.6,
+     "R_Ankle": 4.77,
+     "R_Toe": 5.56,
+     "Torso": 1.25,
+     "Head": 2.28,
+     "L_Elbow": 1.01,
+     "L_Wrist": 1.92,
+     "L_Hand": 1.2,
+     "R_Elbow": 7.34,
+     "R_Wrist": 6.26,
+     "R_Hand": 5.11
+    },
+    "speed_over_corpus_max": {
+     "Pelvis": 1.08,
+     "R_Knee": 1.53,
+     "Torso": 1.19,
+     "Spine": 1.33,
+     "Chest": 1.31,
+     "L_Thorax": 1.06,
+     "R_Thorax": 1.1
+    },
+    "critic": "pending (card E5)",
+    "jerk_over_p99_outside_impacts": {
+     "L_Knee": 1.92,
+     "L_Ankle": 1.72,
+     "L_Toe": 1.94,
+     "R_Knee": 1.05,
+     "R_Toe": 1.07
+    },
+    "pass_p99": false
+   },
+   "endpoints": {
+    "final_d6_m": 0.0194,
+    "com_speed_end": 0.0361,
+    "brace_gap_end_cm": {},
+    "pass": true
+   },
+   "physx": {
+    "round_trip_pos_m": 2.58755503468322e-07,
+    "round_trip_ok": true,
+    "motionlib_cpu_plant_v2": true,
+    "motionlib_frames": 204,
+    "launches_at_reset": "pending (IsaacLab, GPU)",
+    "pass_cpu": true
+   },
+   "failed": [
+    "naturalness_p99"
+   ],
+   "decision": "rejected",
+   "pending": [
+    "naturalness critic (E5)",
+    "PhysX: 0 launches at reset"
+   ]
+  },
+  {
+   "variant": "SYN_E2_E2_mid_s1_v2w",
+   "edge": "E2",
+   "motion": "output/edge_synthesis/motions/SYN_E2_E2_mid_s1_v2w.motion",
+   "sha256": "5033c00d9c64cf4a070ef4611d4dea571d3ac600437f0b470c734b5193ee06e0",
+   "source_run": "output/edge_synthesis/runs/E2_mid_s1_v2w",
+   "durations_s": [
+    0.425,
+    0.65
+   ],
+   "via": null,
+   "reference": null,
+   "contract": {
+    "box_frames_past_1deg": 0,
+    "box_max_deg": 0.0,
+    "floor_min_cm": 0.18,
+    "new_overlaps_1mm": 0,
+    "new_overlap_examples": [],
+    "acc_over_100_outside_impacts": 0,
+    "acc_max": 86.1,
+    "impact_windows_s": [
+     0.462,
+     0.525,
+     0.462,
+     0.538,
+     1.55,
+     1.608,
+     1.642,
+     -0.271,
+     0.25,
+     -0.267,
+     0.221
+    ],
+    "pass": true
+   },
+   "statics": {
+    "checked": 46,
+    "s_star_max": 0.2772,
+    "beyond": 0,
+    "not_optimal": 0,
+    "not_optimal_examples": [],
+    "pass": true
+   },
+   "dynamics": {
+    "torque_saturated_share_max": 0.048,
+    "torque_saturated_joints": {},
+    "friction_ratio_p99": {
+     "L_FOOT": 0.75,
+     "R_FOOT": 0.75,
+     "L_HAND": 0.75,
+     "R_HAND": 0.656
+    },
+    "pass": true
+   },
+   "naturalness": {
+    "speed_over_p99": {
+     "Pelvis": 2.89,
+     "L_Hip": 2.51,
+     "L_Knee": 1.94,
+     "L_Ankle": 1.23,
+     "L_Toe": 1.12,
+     "R_Hip": 2.45,
+     "R_Knee": 2.99,
+     "R_Ankle": 2.04,
+     "R_Toe": 1.9,
+     "Torso": 2.94,
+     "Spine": 2.42,
+     "Chest": 2.1,
+     "Neck": 1.02,
+     "L_Thorax": 1.39,
+     "L_Shoulder": 1.07,
+     "R_Thorax": 1.36
+    },
+    "jerk_over_p99": {
+     "Pelvis": 1.4,
+     "L_Hip": 1.61,
+     "L_Knee": 3.76,
+     "L_Ankle": 5.28,
+     "L_Toe": 6.03,
+     "R_Hip": 1.34,
+     "R_Knee": 3.51,
+     "R_Ankle": 4.98,
+     "R_Toe": 7.8,
+     "Torso": 1.2,
+     "Neck": 1.44,
+     "Head": 4.01,
+     "L_Thorax": 1.14,
+     "L_Elbow": 2.73,
+     "L_Wrist": 2.72,
+     "L_Hand": 2.16,
+     "R_Thorax": 1.28,
+     "R_Shoulder": 1.17,
+     "R_Elbow": 6.06,
+     "R_Wrist": 4.15,
+     "R_Hand": 3.67
+    },
+    "speed_over_corpus_max": {
+     "Pelvis": 1.06,
+     "R_Knee": 1.37,
+     "Torso": 1.15,
+     "Spine": 1.28,
+     "Chest": 1.26
+    },
+    "critic": "pending (card E5)",
+    "jerk_over_p99_outside_impacts": {
+     "L_Knee": 1.42,
+     "L_Ankle": 2.45,
+     "L_Toe": 3.1,
+     "R_Knee": 1.98,
+     "R_Ankle": 2.08,
+     "R_Toe": 2.39,
+     "L_Wrist": 1.09,
+     "R_Elbow": 1.75,
+     "R_Wrist": 1.57
+    },
+    "pass_p99": false
+   },
+   "endpoints": {
+    "final_d6_m": 0.0307,
+    "com_speed_end": 0.0264,
+    "brace_gap_end_cm": {},
+    "pass": true
+   },
+   "physx": {
+    "round_trip_pos_m": 2.701542241023702e-07,
+    "round_trip_ok": true,
+    "motionlib_cpu_plant_v2": true,
+    "motionlib_frames": 204,
+    "launches_at_reset": "pending (IsaacLab, GPU)",
+    "pass_cpu": true
+   },
+   "failed": [
+    "naturalness_p99"
+   ],
+   "decision": "rejected",
+   "pending": [
+    "naturalness critic (E5)",
+    "PhysX: 0 launches at reset"
+   ]
+  },
+  {
+   "variant": "SYN_E2_E2_mid_s2_v2w",
+   "edge": "E2",
+   "motion": "output/edge_synthesis/motions/SYN_E2_E2_mid_s2_v2w.motion",
+   "sha256": "177738d95533aaddab5ff819a7a04decda95100d39f73bd65c5d5bf1b2406bc8",
+   "source_run": "output/edge_synthesis/runs/E2_mid_s2_v2w",
+   "durations_s": [
+    0.425,
+    0.65
+   ],
+   "via": null,
+   "reference": null,
+   "contract": {
+    "box_frames_past_1deg": 0,
+    "box_max_deg": 0.0,
+    "floor_min_cm": 0.18,
+    "new_overlaps_1mm": 0,
+    "new_overlap_examples": [],
+    "acc_over_100_outside_impacts": 0,
+    "acc_max": 64.1,
+    "impact_windows_s": [
+     0.462,
+     0.55,
+     0.608,
+     0.667,
+     0.75,
+     0.796,
+     0.854,
+     0.9,
+     0.929,
+     3.092,
+     0.45,
+     0.517,
+     -0.271,
+     0.188,
+     0.288,
+     -0.267,
+     0.192,
+     0.221,
+     0.271
+    ],
+    "pass": true
+   },
+   "statics": {
+    "checked": 46,
+    "s_star_max": 0.2664,
+    "beyond": 0,
+    "not_optimal": 0,
+    "not_optimal_examples": [],
+    "pass": true
+   },
+   "dynamics": {
+    "torque_saturated_share_max": 0.032,
+    "torque_saturated_joints": {},
+    "friction_ratio_p99": {
+     "L_FOOT": 0.75,
+     "R_FOOT": 0.75,
+     "L_HAND": 0.75,
+     "R_HAND": 0.719
+    },
+    "pass": true
+   },
+   "naturalness": {
+    "speed_over_p99": {
+     "Pelvis": 2.94,
+     "L_Hip": 2.54,
+     "L_Knee": 1.99,
+     "L_Ankle": 1.24,
+     "L_Toe": 1.14,
+     "R_Hip": 2.52,
+     "R_Knee": 3.09,
+     "R_Ankle": 2.06,
+     "R_Toe": 1.94,
+     "Torso": 3.01,
+     "Spine": 2.45,
+     "Chest": 2.12,
+     "Neck": 1.06,
+     "L_Thorax": 1.34,
+     "L_Shoulder": 1.03,
+     "R_Thorax": 1.4,
+     "R_Shoulder": 1.09
+    },
+    "jerk_over_p99": {
+     "Pelvis": 1.42,
+     "L_Hip": 1.25,
+     "L_Knee": 3.42,
+     "L_Ankle": 5.44,
+     "L_Toe": 6.44,
+     "R_Hip": 1.41,
+     "R_Knee": 3.53,
+     "R_Ankle": 5.01,
+     "R_Toe": 5.96,
+     "Torso": 1.27,
+     "Head": 2.14,
+     "L_Elbow": 1.11,
+     "L_Wrist": 2.3,
+     "L_Hand": 1.31,
+     "R_Shoulder": 1.08,
+     "R_Elbow": 6.95,
+     "R_Wrist": 5.84,
+     "R_Hand": 4.52
+    },
+    "speed_over_corpus_max": {
+     "Pelvis": 1.08,
+     "R_Knee": 1.42,
+     "Torso": 1.17,
+     "Spine": 1.3,
+     "Chest": 1.27
+    },
+    "critic": "pending (card E5)",
+    "jerk_over_p99_outside_impacts": {
+     "L_Knee": 1.59,
+     "L_Ankle": 1.38,
+     "L_Toe": 1.48,
+     "R_Knee": 1.47,
+     "R_Ankle": 1.29,
+     "R_Toe": 1.26
+    },
+    "pass_p99": false
+   },
+   "endpoints": {
+    "final_d6_m": 0.0451,
+    "com_speed_end": 0.0127,
+    "brace_gap_end_cm": {},
+    "pass": true
+   },
+   "physx": {
+    "round_trip_pos_m": 2.5990570740042074e-07,
+    "round_trip_ok": true,
+    "motionlib_cpu_plant_v2": true,
+    "motionlib_frames": 204,
+    "launches_at_reset": "pending (IsaacLab, GPU)",
+    "pass_cpu": true
+   },
+   "failed": [
+    "naturalness_p99"
+   ],
+   "decision": "rejected",
+   "pending": [
+    "naturalness critic (E5)",
+    "PhysX: 0 launches at reset"
+   ]
+  },
+  {
+   "variant": "SYN_E3_E3_E3_high_s0_refff",
+   "edge": "E3",
+   "motion": "output/edge_synthesis/motions/SYN_E3_E3_E3_high_s0_refff.motion",
+   "sha256": "a076430098735471b448ee62349968ce9daaf656a763e67a92748cf4d7a4372d",
+   "source_run": "output/edge_synthesis/runs/E3_E3_high_s0_refff",
+   "durations_s": [
+    3.0,
+    1.0
+   ],
+   "via": null,
+   "reference": "output/edge_synthesis/quasistatic/E3_high",
+   "contract": {
+    "box_frames_past_1deg": 0,
+    "box_max_deg": 0.0,
+    "floor_min_cm": 0.24,
+    "new_overlaps_1mm": 0,
+    "new_overlap_examples": [],
+    "acc_over_100_outside_impacts": 0,
+    "acc_max": 9.6,
+    "impact_windows_s": [
+     -0.279,
+     -0.283
+    ],
+    "pass": true
+   },
+   "statics": {
+    "checked": 126,
+    "s_star_max": 0.6726,
+    "beyond": 0,
+    "not_optimal": 0,
+    "not_optimal_examples": [],
+    "pass": true
+   },
+   "dynamics": {
+    "torque_saturated_share_max": 0.09,
+    "torque_saturated_joints": {
+     "R_Wrist_x": 0.09
+    },
+    "friction_ratio_p99": {
+     "L_HAND": 0.174,
+     "R_HAND": 0.272
+    },
+    "pass": false
+   },
+   "naturalness": {
+    "speed_over_p99": {
+     "R_Hip": 1.06
+    },
+    "jerk_over_p99": {
+     "R_Hand": 1.5
+    },
+    "speed_over_corpus_max": {},
+    "critic": "pending (card E5)",
+    "jerk_over_p99_outside_impacts": {},
+    "pass_p99": false
+   },
+   "endpoints": {
+    "final_d6_m": 0.0213,
+    "com_speed_end": 0.0117,
+    "brace_gap_end_cm": {
+     "L_SHANK+L_UPPER_ARM": -0.07,
+     "R_SHANK+R_UPPER_ARM": -0.06
+    },
+    "pass": true
+   },
+   "physx": {
+    "round_trip_pos_m": 4.1455553023359015e-07,
+    "round_trip_ok": true,
+    "motionlib_cpu_plant_v2": true,
+    "motionlib_frames": 378,
+    "launches_at_reset": "pending (IsaacLab, GPU)",
+    "pass_cpu": true
+   },
+   "failed": [
+    "dynamics",
+    "naturalness_p99"
+   ],
+   "decision": "rejected",
+   "pending": [
+    "naturalness critic (E5)",
+    "PhysX: 0 launches at reset"
+   ]
+  },
+  {
+   "variant": "SYN_E3_E3_E3_high_s1_refff_t2",
+   "edge": "E3",
+   "motion": "output/edge_synthesis/motions/SYN_E3_E3_E3_high_s1_refff_t2.motion",
+   "sha256": "702b66542d6f0fb80fe7810aa46d28fc93c88538ffab9321da7adc9cd4ffd527",
+   "source_run": "output/edge_synthesis/runs/E3_E3_high_s1_refff_t2",
+   "durations_s": [
+    3.0,
+    1.0
+   ],
+   "via": null,
+   "reference": "output/edge_synthesis/quasistatic/E3_high",
+   "contract": {
+    "box_frames_past_1deg": 0,
+    "box_max_deg": 0.0,
+    "floor_min_cm": 0.09,
+    "new_overlaps_1mm": 49,
+    "new_overlap_examples": [
+     [
+      205,
+      "R_Hip",
+      "R_Thorax",
+      -0.12
+     ],
+     [
+      206,
+      "R_Hip",
+      "R_Thorax",
+      -0.13
+     ],
+     [
+      207,
+      "R_Hip",
+      "R_Thorax",
+      -0.12
+     ],
+     [
+      208,
+      "L_Hip",
+      "L_Thorax",
+      -0.11
+     ],
+     [
+      228,
+      "L_Hip",
+      "L_Thorax",
+      -0.14
+     ]
+    ],
+    "acc_over_100_outside_impacts": 0,
+    "acc_max": 241.0,
+    "impact_windows_s": [
+     2.0,
+     1.996,
+     3.913,
+     2.004,
+     2.217,
+     2.008,
+     2.046,
+     3.733,
+     2.217,
+     2.533,
+     4.1,
+     1.971,
+     2.096,
+     2.192,
+     2.213,
+     2.221,
+     2.258,
+     2.292,
+     2.321,
+     2.367,
+     2.425,
+     2.442,
+     2.454,
+     2.492,
+     2.529,
+     2.562,
+     2.596,
+     2.65,
+     2.683,
+     2.742,
+     2.788,
+     2.829,
+     2.879,
+     2.929,
+     2.975,
+     3.029,
+     4.058,
+     4.133,
+     4.2,
+     4.371,
+     4.454,
+     4.517,
+     4.633,
+     4.942,
+     -0.279,
+     -0.283,
+     3.788,
+     3.854,
+     3.925,
+     4.213
+    ],
+    "pass": false
+   },
+   "statics": {
+    "checked": 126,
+    "s_star_max": 2.4308,
+    "beyond": 5,
+    "not_optimal": 49,
+    "not_optimal_examples": [
+     {
+      "frame": 117,
+      "t": 1.667,
+      "status": "infeasible",
+      "s_star": null,
+      "binding": null,
+      "unrealised": [],
+      "open": []
+     },
+     {
+      "frame": 120,
+      "t": 1.717,
+      "status": "infeasible",
+      "s_star": null,
+      "binding": null,
+      "unrealised": [],
+      "open": []
+     },
+     {
+      "frame": 123,
+      "t": 1.767,
+      "status": "infeasible",
+      "s_star": null,
+      "binding": null,
+      "unrealised": [],
+      "open": []
+     }
+    ],
+    "pass": false
+   },
+   "dynamics": {
+    "torque_saturated_share_max": 0.257,
+    "torque_saturated_joints": {
+     "L_Toe_z": 0.075,
+     "Head_y": 0.093,
+     "L_Wrist_x": 0.193,
+     "R_Wrist_x": 0.257
+    },
+    "friction_ratio_p99": {
+     "R_THIGH": 0.75,
+     "PELVIS": 0.474,
+     "TRUNK": 0.75,
+     "HEAD": 0.75,
+     "L_HAND": 0.75,
+     "R_HAND": 0.75
+    },
+    "pass": false
+   },
+   "naturalness": {
+    "speed_over_p99": {
+     "Pelvis": 7.16,
+     "L_Hip": 6.16,
+     "L_Knee": 4.13,
+     "L_Ankle": 2.45,
+     "L_Toe": 2.14,
+     "R_Hip": 6.29,
+     "R_Knee": 5.92,
+     "R_Ankle": 3.68,
+     "R_Toe": 3.45,
+     "Torso": 7.07,
+     "Spine": 7.21,
+     "Chest": 6.86,
+     "Neck": 4.17,
+     "Head": 3.65,
+     "L_Thorax": 5.24,
+     "L_Shoulder": 4.07,
+     "L_Elbow": 2.5,
+     "L_Wrist": 2.69,
+     "L_Hand": 2.17,
+     "R_Thorax": 5.03,
+     "R_Shoulder": 3.51,
+     "R_Elbow": 1.55,
+     "R_Wrist": 2.12,
+     "R_Hand": 1.95
+    },
+    "jerk_over_p99": {
+     "Pelvis": 13.89,
+     "L_Hip": 13.43,
+     "L_Knee": 17.53,
+     "L_Ankle": 17.82,
+     "L_Toe": 16.92,
+     "R_Hip": 11.85,
+     "R_Knee": 17.23,
+     "R_Ankle": 14.26,
+     "R_Toe": 14.37,
+     "Torso": 10.65,
+     "Spine": 7.1,
+     "Chest": 6.57,
+     "Neck": 3.5,
+     "Head": 7.87,
+     "L_Thorax": 3.86,
+     "L_Shoulder": 1.63,
+     "L_Elbow": 5.86,
+     "L_Wrist": 15.05,
+     "L_Hand": 11.98,
+     "R_Thorax": 5.16,
+     "R_Shoulder": 4.87,
+     "R_Elbow": 13.56,
+     "R_Wrist": 21.71,
+     "R_Hand": 16.81
+    },
+    "speed_over_corpus_max": {
+     "Pelvis": 2.62,
+     "L_Hip": 2.22,
+     "L_Knee": 2.0,
+     "L_Ankle": 1.2,
+     "L_Toe": 1.08,
+     "R_Hip": 2.21,
+     "R_Knee": 2.72,
+     "R_Ankle": 1.12,
+     "R_Toe": 1.09,
+     "Torso": 2.76,
+     "Spine": 3.82,
+     "Chest": 4.11,
+     "Neck": 2.72,
+     "Head": 2.29,
+     "L_Thorax": 3.64,
+     "L_Shoulder": 2.75,
+     "L_Elbow": 1.25,
+     "L_Wrist": 1.32,
+     "L_Hand": 1.12,
+     "R_Thorax": 3.59,
+     "R_Shoulder": 2.49,
+     "R_Elbow": 1.0,
+     "R_Wrist": 1.27,
+     "R_Hand": 1.15
+    },
+    "critic": "pending (card E5)",
+    "jerk_over_p99_outside_impacts": {
+     "Pelvis": 3.91,
+     "L_Hip": 3.14,
+     "L_Knee": 5.33,
+     "L_Ankle": 3.48,
+     "L_Toe": 2.8,
+     "R_Hip": 3.01,
+     "R_Knee": 4.43,
+     "R_Ankle": 2.9,
+     "R_Toe": 2.64,
+     "Torso": 3.57,
+     "Spine": 2.89,
+     "Chest": 2.84,
+     "Neck": 2.01,
+     "Head": 4.02,
+     "L_Thorax": 2.33,
+     "L_Shoulder": 1.04,
+     "L_Elbow": 1.37,
+     "L_Wrist": 1.1,
+     "L_Hand": 2.01,
+     "R_Thorax": 2.55,
+     "R_Shoulder": 2.06,
+     "R_Elbow": 2.46,
+     "R_Wrist": 1.1,
+     "R_Hand": 1.6
+    },
+    "pass_p99": false
+   },
+   "endpoints": {
+    "final_d6_m": 0.5978,
+    "com_speed_end": 0.0067,
+    "brace_gap_end_cm": {
+     "L_SHANK+L_UPPER_ARM": 1.01,
+     "R_SHANK+R_UPPER_ARM": 1.7
+    },
+    "pass": false
+   },
+   "physx": {
+    "round_trip_pos_m": 4.1043008192076513e-07,
+    "round_trip_ok": true,
+    "motionlib_cpu_plant_v2": true,
+    "motionlib_frames": 378,
+    "launches_at_reset": "pending (IsaacLab, GPU)",
+    "pass_cpu": true
+   },
+   "failed": [
+    "contract",
+    "statics",
+    "dynamics",
+    "naturalness_p99",
+    "endpoints"
+   ],
+   "decision": "rejected",
+   "pending": [
+    "naturalness critic (E5)",
+    "PhysX: 0 launches at reset"
+   ]
+  },
+  {
+   "variant": "SYN_E3_E3_E3_high_s2_refff_t2",
+   "edge": "E3",
+   "motion": "output/edge_synthesis/motions/SYN_E3_E3_E3_high_s2_refff_t2.motion",
+   "sha256": "3a70db5409f1d568f099b2592dd8d7750fb8bda5f7d25f8344b0a5cfa0fbb175",
+   "source_run": "output/edge_synthesis/runs/E3_E3_high_s2_refff_t2",
+   "durations_s": [
+    3.0,
+    1.0
+   ],
+   "via": null,
+   "reference": "output/edge_synthesis/quasistatic/E3_high",
+   "contract": {
+    "box_frames_past_1deg": 0,
+    "box_max_deg": 0.0,
+    "floor_min_cm": 0.14,
+    "new_overlaps_1mm": 31,
+    "new_overlap_examples": [
+     [
+      198,
+      "L_Hip",
+      "L_Thorax",
+      -0.11
+     ],
+     [
+      217,
+      "L_Toe",
+      "R_Toe",
+      -0.12
+     ],
+     [
+      302,
+      "L_Ankle",
+      "R_Knee",
+      -0.16
+     ],
+     [
+      303,
+      "L_Ankle",
+      "R_Knee",
+      -0.28
+     ],
+     [
+      304,
+      "L_Ankle",
+      "R_Knee",
+      -0.37
+     ]
+    ],
+    "acc_over_100_outside_impacts": 0,
+    "acc_max": 212.5,
+    "impact_windows_s": [
+     2.275,
+     3.438,
+     3.946,
+     2.279,
+     2.467,
+     2.579,
+     3.896,
+     4.0,
+     4.333,
+     4.413,
+     4.45,
+     4.546,
+     4.592,
+     4.608,
+     4.633,
+     4.663,
+     4.704,
+     2.242,
+     2.575,
+     2.683,
+     2.75,
+     2.804,
+     2.858,
+     2.929,
+     2.996,
+     3.067,
+     3.129,
+     3.171,
+     3.221,
+     3.263,
+     3.312,
+     3.371,
+     3.421,
+     3.433,
+     3.454,
+     3.725,
+     3.779,
+     3.829,
+     3.896,
+     -0.279,
+     -0.279,
+     3.413,
+     3.9,
+     4.538,
+     4.929,
+     5.025,
+     5.225,
+     5.833
+    ],
+    "pass": false
+   },
+   "statics": {
+    "checked": 126,
+    "s_star_max": 2.0393,
+    "beyond": 4,
+    "not_optimal": 37,
+    "not_optimal_examples": [
+     {
+      "frame": 132,
+      "t": 1.917,
+      "status": "infeasible",
+      "s_star": null,
+      "binding": null,
+      "unrealised": [],
+      "open": []
+     },
+     {
+      "frame": 135,
+      "t": 1.967,
+      "status": "infeasible",
+      "s_star": null,
+      "binding": null,
+      "unrealised": [],
+      "open": []
+     },
+     {
+      "frame": 138,
+      "t": 2.017,
+      "status": "infeasible",
+      "s_star": null,
+      "binding": null,
+      "unrealised": [],
+      "open": []
+     }
+    ],
+    "pass": false
+   },
+   "dynamics": {
+    "torque_saturated_share_max": 0.272,
+    "torque_saturated_joints": {
+     "L_Wrist_x": 0.186,
+     "R_Wrist_x": 0.272
+    },
+    "friction_ratio_p99": {
+     "R_THIGH": 0.698,
+     "PELVIS": 0.75,
+     "TRUNK": 0.75,
+     "HEAD": 0.75,
+     "L_HAND": 0.75,
+     "R_HAND": 0.75
+    },
+    "pass": false
+   },
+   "naturalness": {
+    "speed_over_p99": {
+     "Pelvis": 6.19,
+     "L_Hip": 5.42,
+     "L_Knee": 3.51,
+     "L_Ankle": 2.2,
+     "L_Toe": 1.96,
+     "R_Hip": 5.45,
+     "R_Knee": 4.75,
+     "R_Ankle": 3.73,
+     "R_Toe": 3.76,
+     "Torso": 6.08,
+     "Spine": 6.17,
+     "Chest": 5.86,
+     "Neck": 3.28,
+     "Head": 2.31,
+     "L_Thorax": 4.15,
+     "L_Shoulder": 3.06,
+     "L_Elbow": 3.58,
+     "L_Wrist": 3.96,
+     "L_Hand": 3.16,
+     "R_Thorax": 4.24,
+     "R_Shoulder": 3.05,
+     "R_Elbow": 1.79,
+     "R_Wrist": 2.52,
+     "R_Hand": 2.11
+    },
+    "jerk_over_p99": {
+     "Pelvis": 17.08,
+     "L_Hip": 15.4,
+     "L_Knee": 18.08,
+     "L_Ankle": 13.84,
+     "L_Toe": 13.63,
+     "R_Hip": 14.54,
+     "R_Knee": 14.17,
+     "R_Ankle": 10.14,
+     "R_Toe": 10.31,
+     "Torso": 13.91,
+     "Spine": 9.72,
+     "Chest": 9.12,
+     "Neck": 4.45,
+     "Head": 5.84,
+     "L_Thorax": 5.54,
+     "L_Shoulder": 2.12,
+     "L_Elbow": 4.86,
+     "L_Wrist": 13.1,
+     "L_Hand": 10.37,
+     "R_Thorax": 7.23,
+     "R_Shoulder": 6.48,
+     "R_Elbow": 11.83,
+     "R_Wrist": 17.31,
+     "R_Hand": 13.3
+    },
+    "speed_over_corpus_max": {
+     "Pelvis": 2.27,
+     "L_Hip": 1.95,
+     "L_Knee": 1.7,
+     "L_Ankle": 1.08,
+     "R_Hip": 1.91,
+     "R_Knee": 2.18,
+     "R_Ankle": 1.13,
+     "R_Toe": 1.19,
+     "Torso": 2.37,
+     "Spine": 3.27,
+     "Chest": 3.51,
+     "Neck": 2.14,
+     "Head": 1.44,
+     "L_Thorax": 2.88,
+     "L_Shoulder": 2.07,
+     "L_Elbow": 1.8,
+     "L_Wrist": 1.93,
+     "L_Hand": 1.63,
+     "R_Thorax": 3.03,
+     "R_Shoulder": 2.17,
+     "R_Elbow": 1.16,
+     "R_Wrist": 1.51,
+     "R_Hand": 1.25
+    },
+    "critic": "pending (card E5)",
+    "jerk_over_p99_outside_impacts": {
+     "Pelvis": 3.31,
+     "L_Hip": 2.68,
+     "L_Knee": 4.67,
+     "L_Ankle": 3.6,
+     "L_Toe": 3.12,
+     "R_Hip": 2.61,
+     "R_Knee": 3.75,
+     "R_Ankle": 3.46,
+     "R_Toe": 3.46,
+     "Torso": 2.94,
+     "Spine": 2.32,
+     "Chest": 2.25,
+     "Neck": 1.41,
+     "Head": 2.1,
+     "L_Thorax": 1.63,
+     "L_Wrist": 2.09,
+     "L_Hand": 1.98,
+     "R_Thorax": 2.0,
+     "R_Shoulder": 1.76,
+     "R_Elbow": 2.54,
+     "R_Hand": 1.08
+    },
+    "pass_p99": false
+   },
+   "endpoints": {
+    "final_d6_m": 0.5853,
+    "com_speed_end": 0.0132,
+    "brace_gap_end_cm": {
+     "L_SHANK+L_UPPER_ARM": 1.35,
+     "R_SHANK+R_UPPER_ARM": 2.59
+    },
+    "pass": false
+   },
+   "physx": {
+    "round_trip_pos_m": 4.195250316932353e-07,
+    "round_trip_ok": true,
+    "motionlib_cpu_plant_v2": true,
+    "motionlib_frames": 378,
+    "launches_at_reset": "pending (IsaacLab, GPU)",
+    "pass_cpu": true
+   },
+   "failed": [
+    "contract",
+    "statics",
+    "dynamics",
+    "naturalness_p99",
+    "endpoints"
+   ],
+   "decision": "rejected",
+   "pending": [
+    "naturalness critic (E5)",
+    "PhysX: 0 launches at reset"
+   ]
+  },
+  {
+   "variant": "SYN_E3_E3_E3_mid_s0_refff",
+   "edge": "E3",
+   "motion": "output/edge_synthesis/motions/SYN_E3_E3_E3_mid_s0_refff.motion",
+   "sha256": "9fa5f18132048316d7d9787cf8d7f8244221c6b9ddb01a0a86f45d43060f1d60",
+   "source_run": "output/edge_synthesis/runs/E3_E3_mid_s0_refff",
+   "durations_s": [
+    2.0,
+    0.65
+   ],
+   "via": null,
+   "reference": "output/edge_synthesis/quasistatic/E3_mid",
+   "contract": {
+    "box_frames_past_1deg": 0,
+    "box_max_deg": 0.0,
+    "floor_min_cm": 0.24,
+    "new_overlaps_1mm": 0,
+    "new_overlap_examples": [],
+    "acc_over_100_outside_impacts": 0,
+    "acc_max": 24.2,
+    "impact_windows_s": [
+     -0.279,
+     -0.283
+    ],
+    "pass": true
+   },
+   "statics": {
+    "checked": 100,
+    "s_star_max": 0.6662,
+    "beyond": 0,
+    "not_optimal": 0,
+    "not_optimal_examples": [],
+    "pass": true
+   },
+   "dynamics": {
+    "torque_saturated_share_max": 0.088,
+    "torque_saturated_joints": {
+     "R_Wrist_x": 0.088
+    },
+    "friction_ratio_p99": {
+     "L_HAND": 0.141,
+     "R_HAND": 0.38
+    },
+    "pass": false
+   },
+   "naturalness": {
+    "speed_over_p99": {
+     "Pelvis": 1.21,
+     "L_Hip": 1.49,
+     "R_Hip": 1.62,
+     "R_Knee": 1.39,
+     "R_Ankle": 1.29,
+     "R_Toe": 1.42
+    },
+    "jerk_over_p99": {
+     "L_Knee": 1.25,
+     "L_Ankle": 1.25,
+     "L_Toe": 1.34,
+     "R_Knee": 2.02,
+     "R_Ankle": 1.11,
+     "R_Toe": 1.18,
+     "R_Hand": 1.48
+    },
+    "speed_over_corpus_max": {},
+    "critic": "pending (card E5)",
+    "jerk_over_p99_outside_impacts": {
+     "L_Knee": 1.25,
+     "L_Ankle": 1.25,
+     "L_Toe": 1.34,
+     "R_Knee": 2.02,
+     "R_Ankle": 1.11,
+     "R_Toe": 1.18
+    },
+    "pass_p99": false
+   },
+   "endpoints": {
+    "final_d6_m": 0.0253,
+    "com_speed_end": 0.0086,
+    "brace_gap_end_cm": {
+     "L_SHANK+L_UPPER_ARM": -0.08,
+     "R_SHANK+R_UPPER_ARM": -0.07
+    },
+    "pass": true
+   },
+   "physx": {
+    "round_trip_pos_m": 4.738135330750737e-07,
+    "round_trip_ok": true,
+    "motionlib_cpu_plant_v2": true,
+    "motionlib_frames": 300,
+    "launches_at_reset": "pending (IsaacLab, GPU)",
+    "pass_cpu": true
+   },
+   "failed": [
+    "dynamics",
+    "naturalness_p99"
+   ],
+   "decision": "rejected",
+   "pending": [
+    "naturalness critic (E5)",
+    "PhysX: 0 launches at reset"
+   ]
+  },
+  {
+   "variant": "SYN_E4_E4_E4_high_s0_refff",
+   "edge": "E4",
+   "motion": "output/edge_synthesis/motions/SYN_E4_E4_E4_high_s0_refff.motion",
+   "sha256": "08e0e45e066e89569360e686c285deaded6d95dc963c60000759644a0ea646e1",
+   "source_run": "output/edge_synthesis/runs/E4_E4_high_s0_refff",
+   "durations_s": [
+    2.0,
+    2.5,
+    1.0
+   ],
+   "via": null,
+   "reference": "output/edge_synthesis/quasistatic/E4_high",
+   "contract": {
+    "box_frames_past_1deg": 0,
+    "box_max_deg": 0.0,
+    "floor_min_cm": 0.19,
+    "new_overlaps_1mm": 1,
+    "new_overlap_examples": [
+     [
+      122,
+      "L_Ankle",
+      "R_Ankle",
+      -0.12
+     ]
+    ],
+    "acc_over_100_outside_impacts": 0,
+    "acc_max": 43.3,
+    "impact_windows_s": [
+     -0.267,
+     1.85,
+     2.104,
+     2.208,
+     3.021,
+     3.062,
+     3.079,
+     3.087,
+     3.104,
+     3.113,
+     3.125,
+     3.146,
+     3.154,
+     3.175,
+     3.204,
+     3.217,
+     3.242,
+     3.263,
+     3.283,
+     3.296,
+     3.312,
+     3.321,
+     3.333,
+     3.35,
+     3.358,
+     3.388,
+     3.408,
+     3.442,
+     3.483,
+     3.513,
+     3.558,
+     3.596,
+     3.629,
+     3.646,
+     3.671,
+     3.708,
+     3.808,
+     3.862,
+     -0.279,
+     -0.283
+    ],
+    "pass": false
+   },
+   "statics": {
+    "checked": 156,
+    "s_star_max": 1.1553,
+    "beyond": 8,
+    "not_optimal": 4,
+    "not_optimal_examples": [
+     {
+      "frame": 147,
+      "t": 2.167,
+      "status": "infeasible",
+      "s_star": null,
+      "binding": null,
+      "unrealised": [],
+      "open": []
+     },
+     {
+      "frame": 198,
+      "t": 3.017,
+      "status": "infeasible",
+      "s_star": null,
+      "binding": null,
+      "unrealised": [],
+      "open": []
+     },
+     {
+      "frame": 216,
+      "t": 3.317,
+      "status": "infeasible",
+      "s_star": null,
+      "binding": null,
+      "unrealised": [],
+      "open": []
+     }
+    ],
+    "pass": false
+   },
+   "dynamics": {
+    "torque_saturated_share_max": 0.045,
+    "torque_saturated_joints": {},
+    "friction_ratio_p99": {
+     "HEAD": 0.75,
+     "L_HAND": 0.649,
+     "R_HAND": 0.59
+    },
+    "pass": true
+   },
+   "naturalness": {
+    "speed_over_p99": {
+     "Pelvis": 1.12,
+     "L_Knee": 1.33,
+     "R_Hip": 1.02,
+     "R_Knee": 1.82,
+     "Torso": 1.07,
+     "Spine": 1.03
+    },
+    "jerk_over_p99": {
+     "Pelvis": 1.45,
+     "L_Hip": 1.22,
+     "L_Knee": 2.93,
+     "L_Ankle": 1.56,
+     "L_Toe": 1.67,
+     "R_Hip": 1.25,
+     "R_Knee": 2.6,
+     "R_Ankle": 1.27,
+     "R_Toe": 1.2,
+     "Torso": 1.28,
+     "Head": 2.1,
+     "R_Elbow": 1.54,
+     "R_Wrist": 1.5,
+     "R_Hand": 1.06
+    },
+    "speed_over_corpus_max": {},
+    "critic": "pending (card E5)",
+    "jerk_over_p99_outside_impacts": {
+     "L_Knee": 2.93,
+     "L_Ankle": 1.56,
+     "L_Toe": 1.43,
+     "R_Knee": 2.6,
+     "R_Ankle": 1.27,
+     "R_Toe": 1.17,
+     "Head": 1.6,
+     "R_Elbow": 1.54,
+     "R_Wrist": 1.5,
+     "R_Hand": 1.06
+    },
+    "pass_p99": false
+   },
+   "endpoints": {
+    "final_d6_m": 0.0361,
+    "com_speed_end": 0.004,
+    "brace_gap_end_cm": {
+     "L_SHANK+L_UPPER_ARM": -0.05,
+     "R_SHANK+R_UPPER_ARM": -0.07
+    },
+    "pass": true
+   },
+   "physx": {
+    "round_trip_pos_m": 3.650139611677261e-07,
+    "round_trip_ok": true,
+    "motionlib_cpu_plant_v2": true,
+    "motionlib_frames": 468,
+    "launches_at_reset": "pending (IsaacLab, GPU)",
+    "pass_cpu": true
+   },
+   "failed": [
+    "contract",
+    "statics",
+    "naturalness_p99"
+   ],
+   "decision": "rejected",
+   "pending": [
+    "naturalness critic (E5)",
+    "PhysX: 0 launches at reset"
+   ]
+  },
+  {
+   "variant": "SYN_E4_E4_E4_high_s1_refff",
+   "edge": "E4",
+   "motion": "output/edge_synthesis/motions/SYN_E4_E4_E4_high_s1_refff.motion",
+   "sha256": "0333c3af25a861424bd660636b2f2df3082d14bce8aa360c8d37c4ce969e4f9d",
+   "source_run": "output/edge_synthesis/runs/E4_E4_high_s1_refff",
+   "durations_s": [
+    2.0,
+    2.5,
+    1.0
+   ],
+   "via": null,
+   "reference": "output/edge_synthesis/quasistatic/E4_high",
+   "contract": {
+    "box_frames_past_1deg": 0,
+    "box_max_deg": 0.0,
+    "floor_min_cm": 0.19,
+    "new_overlaps_1mm": 0,
+    "new_overlap_examples": [],
+    "acc_over_100_outside_impacts": 0,
+    "acc_max": 43.3,
+    "impact_windows_s": [
+     -0.267,
+     1.633,
+     1.892,
+     2.062,
+     2.163,
+     2.246,
+     2.817,
+     2.896,
+     2.992,
+     3.025,
+     3.062,
+     3.092,
+     3.121,
+     3.158,
+     3.188,
+     3.212,
+     3.225,
+     3.263,
+     3.296,
+     3.333,
+     3.371,
+     3.396,
+     3.421,
+     3.446,
+     3.467,
+     3.488,
+     3.513,
+     3.546,
+     3.575,
+     3.613,
+     3.642,
+     3.671,
+     3.708,
+     4.263,
+     -0.279,
+     -0.279
+    ],
+    "pass": true
+   },
+   "statics": {
+    "checked": 156,
+    "s_star_max": 1.1465,
+    "beyond": 9,
+    "not_optimal": 11,
+    "not_optimal_examples": [
+     {
+      "frame": 111,
+      "t": 1.567,
+      "status": "infeasible",
+      "s_star": null,
+      "binding": null,
+      "unrealised": [],
+      "open": []
+     },
+     {
+      "frame": 114,
+      "t": 1.617,
+      "status": "infeasible",
+      "s_star": null,
+      "binding": null,
+      "unrealised": [],
+      "open": []
+     },
+     {
+      "frame": 144,
+      "t": 2.117,
+      "status": "infeasible",
+      "s_star": null,
+      "binding": null,
+      "unrealised": [],
+      "open": []
+     }
+    ],
+    "pass": false
+   },
+   "dynamics": {
+    "torque_saturated_share_max": 0.046,
+    "torque_saturated_joints": {},
+    "friction_ratio_p99": {
+     "HEAD": 0.75,
+     "L_HAND": 0.553,
+     "R_HAND": 0.577
+    },
+    "pass": true
+   },
+   "naturalness": {
+    "speed_over_p99": {
+     "Pelvis": 1.13,
+     "L_Hip": 1.03,
+     "L_Knee": 1.25,
+     "R_Hip": 1.04,
+     "R_Knee": 1.62,
+     "Torso": 1.08,
+     "Spine": 1.05,
+     "Chest": 1.01
+    },
+    "jerk_over_p99": {
+     "Pelvis": 1.68,
+     "L_Hip": 1.45,
+     "L_Knee": 2.76,
+     "L_Ankle": 1.58,
+     "L_Toe": 1.81,
+     "R_Hip": 1.55,
+     "R_Knee": 2.44,
+     "R_Ankle": 1.09,
+     "R_Toe": 1.25,
+     "Torso": 1.45,
+     "Spine": 1.04,
+     "Head": 1.7,
+     "L_Elbow": 1.34,
+     "L_Wrist": 1.9,
+     "L_Hand": 1.22,
+     "R_Elbow": 1.64,
+     "R_Wrist": 1.35,
+     "R_Hand": 2.74
+    },
+    "speed_over_corpus_max": {},
+    "critic": "pending (card E5)",
+    "jerk_over_p99_outside_impacts": {
+     "L_Knee": 1.62,
+     "Head": 1.62,
+     "L_Elbow": 1.34,
+     "L_Wrist": 1.9,
+     "L_Hand": 1.22,
+     "R_Elbow": 1.64,
+     "R_Wrist": 1.35,
+     "R_Hand": 2.74
+    },
+    "pass_p99": false
+   },
+   "endpoints": {
+    "final_d6_m": 0.0447,
+    "com_speed_end": 0.007,
+    "brace_gap_end_cm": {
+     "L_SHANK+L_UPPER_ARM": -0.0,
+     "R_SHANK+R_UPPER_ARM": 0.08
+    },
+    "pass": true
+   },
+   "physx": {
+    "round_trip_pos_m": 3.618470201249835e-07,
+    "round_trip_ok": true,
+    "motionlib_cpu_plant_v2": true,
+    "motionlib_frames": 468,
+    "launches_at_reset": "pending (IsaacLab, GPU)",
+    "pass_cpu": true
+   },
+   "failed": [
+    "statics",
+    "naturalness_p99"
+   ],
+   "decision": "rejected",
+   "pending": [
+    "naturalness critic (E5)",
+    "PhysX: 0 launches at reset"
+   ]
+  },
+  {
+   "variant": "SYN_E4_E4_E4_mid_s0_refff",
+   "edge": "E4",
+   "motion": "output/edge_synthesis/motions/SYN_E4_E4_E4_mid_s0_refff.motion",
+   "sha256": "0a8ea66413b2e841eec086c2c2a6502c8d93427aaa30bd8de283cd6e8fc972ce",
+   "source_run": "output/edge_synthesis/runs/E4_E4_mid_s0_refff",
+   "durations_s": [
+    1.2,
+    1.5,
+    0.65
+   ],
+   "via": null,
+   "reference": "output/edge_synthesis/quasistatic/E4_mid",
+   "contract": {
+    "box_frames_past_1deg": 0,
+    "box_max_deg": 0.0,
+    "floor_min_cm": 0.19,
+    "new_overlaps_1mm": 0,
+    "new_overlap_examples": [],
+    "acc_over_100_outside_impacts": 0,
+    "acc_max": 47.0,
+    "impact_windows_s": [
+     -0.267,
+     1.054,
+     1.221,
+     1.242,
+     1.317,
+     1.404,
+     1.517,
+     1.688,
+     1.75,
+     1.929,
+     1.967,
+     1.996,
+     2.029,
+     2.062,
+     2.079,
+     2.088,
+     2.108,
+     2.133,
+     2.154,
+     2.188,
+     2.213,
+     2.233,
+     2.267,
+     2.292,
+     2.325,
+     2.354,
+     2.375,
+     2.396,
+     2.421,
+     2.471,
+     2.517,
+     -0.279,
+     -0.283
+    ],
+    "pass": true
+   },
+   "statics": {
+    "checked": 114,
+    "s_star_max": 1.1685,
+    "beyond": 10,
+    "not_optimal": 2,
+    "not_optimal_examples": [
+     {
+      "frame": 99,
+      "t": 1.367,
+      "status": "infeasible",
+      "s_star": null,
+      "binding": null,
+      "unrealised": [],
+      "open": []
+     },
+     {
+      "frame": 105,
+      "t": 1.467,
+      "status": "infeasible",
+      "s_star": null,
+      "binding": null,
+      "unrealised": [],
+      "open": []
+     }
+    ],
+    "pass": false
+   },
+   "dynamics": {
+    "torque_saturated_share_max": 0.037,
+    "torque_saturated_joints": {},
+    "friction_ratio_p99": {
+     "HEAD": 0.75,
+     "L_HAND": 0.472,
+     "R_HAND": 0.451
+    },
+    "pass": true
+   },
+   "naturalness": {
+    "speed_over_p99": {
+     "Pelvis": 1.0,
+     "L_Knee": 1.41,
+     "R_Knee": 1.95,
+     "R_Ankle": 1.03,
+     "Torso": 1.04,
+     "Spine": 1.03
+    },
+    "jerk_over_p99": {
+     "Pelvis": 1.56,
+     "L_Hip": 1.85,
+     "L_Knee": 3.45,
+     "L_Ankle": 2.15,
+     "L_Toe": 2.15,
+     "R_Hip": 1.48,
+     "R_Knee": 1.98,
+     "R_Ankle": 1.35,
+     "R_Toe": 1.59,
+     "Head": 1.89,
+     "L_Wrist": 1.11,
+     "R_Elbow": 1.45,
+     "R_Wrist": 1.21
+    },
+    "speed_over_corpus_max": {},
+    "critic": "pending (card E5)",
+    "jerk_over_p99_outside_impacts": {
+     "L_Knee": 3.45,
+     "L_Ankle": 1.76,
+     "L_Toe": 1.98,
+     "R_Knee": 1.33,
+     "R_Ankle": 1.35,
+     "R_Toe": 1.59
+    },
+    "pass_p99": false
+   },
+   "endpoints": {
+    "final_d6_m": 0.0594,
+    "com_speed_end": 0.0309,
+    "brace_gap_end_cm": {
+     "L_SHANK+L_UPPER_ARM": 0.04,
+     "R_SHANK+R_UPPER_ARM": 0.09
+    },
+    "pass": false
+   },
+   "physx": {
+    "round_trip_pos_m": 3.2229224322666283e-07,
+    "round_trip_ok": true,
+    "motionlib_cpu_plant_v2": true,
+    "motionlib_frames": 342,
+    "launches_at_reset": "pending (IsaacLab, GPU)",
+    "pass_cpu": true
+   },
+   "failed": [
+    "statics",
+    "naturalness_p99",
+    "endpoints"
+   ],
+   "decision": "rejected",
+   "pending": [
+    "naturalness critic (E5)",
+    "PhysX: 0 launches at reset"
+   ]
+  },
+  {
+   "variant": "SYN_E5_E5_mid_s0_v3",
+   "edge": "E5",
+   "motion": "output/edge_synthesis/motions/SYN_E5_E5_mid_s0_v3.motion",
+   "sha256": "421758c4f2509dfedcb8e6615cbdc6a289194b3ee95f09eb4f8f2ce1db07328e",
+   "source_run": "output/edge_synthesis/runs/E5_mid_s0_v3",
+   "durations_s": [
+    1.0,
+    0.65
+   ],
+   "via": "220923_Plank_Pose_or_Kumbhakasana_-a@541",
+   "reference": null,
+   "contract": {
+    "box_frames_past_1deg": 0,
+    "box_max_deg": 0.0,
+    "floor_min_cm": 0.16,
+    "new_overlaps_1mm": 0,
+    "new_overlap_examples": [],
+    "acc_over_100_outside_impacts": 0,
+    "acc_max": 301.7,
+    "impact_windows_s": [
+     1.071,
+     1.367,
+     1.458,
+     1.517,
+     1.783,
+     1.875,
+     1.967,
+     1.067,
+     1.362,
+     1.475,
+     1.833,
+     1.921,
+     2.171,
+     -0.279,
+     1.354,
+     1.454,
+     -0.283
+    ],
+    "pass": true
+   },
+   "statics": {
+    "checked": 47,
+    "s_star_max": 0.3281,
+    "beyond": 0,
+    "not_optimal": 0,
+    "not_optimal_examples": [],
+    "pass": true
+   },
+   "dynamics": {
+    "torque_saturated_share_max": 0.154,
+    "torque_saturated_joints": {
+     "R_Toe_y": 0.086,
+     "R_Wrist_x": 0.154
+    },
+    "friction_ratio_p99": {
+     "L_FOOT": 0.75,
+     "R_FOOT": 0.75,
+     "L_HAND": 0.647,
+     "R_HAND": 0.712
+    },
+    "pass": false
+   },
+   "naturalness": {
+    "speed_over_p99": {
+     "Pelvis": 2.09,
+     "L_Hip": 2.29,
+     "L_Knee": 2.18,
+     "L_Ankle": 2.07,
+     "L_Toe": 1.88,
+     "R_Hip": 2.26,
+     "R_Knee": 2.96,
+     "R_Ankle": 3.1,
+     "R_Toe": 2.87,
+     "Torso": 1.87,
+     "Spine": 1.66,
+     "Chest": 1.36,
+     "Neck": 1.19,
+     "Head": 1.26,
+     "L_Thorax": 1.16,
+     "R_Thorax": 1.23
+    },
+    "jerk_over_p99": {
+     "Pelvis": 3.18,
+     "L_Hip": 3.17,
+     "L_Knee": 10.02,
+     "L_Ankle": 22.83,
+     "L_Toe": 21.12,
+     "R_Hip": 3.24,
+     "R_Knee": 10.11,
+     "R_Ankle": 20.03,
+     "R_Toe": 18.14,
+     "Torso": 3.08,
+     "Spine": 2.42,
+     "Chest": 2.24,
+     "Neck": 1.75,
+     "Head": 3.12,
+     "L_Thorax": 1.88,
+     "L_Elbow": 1.02,
+     "L_Wrist": 1.3,
+     "L_Hand": 1.12,
+     "R_Thorax": 2.2,
+     "R_Shoulder": 1.99,
+     "R_Elbow": 1.9,
+     "R_Wrist": 1.42,
+     "R_Hand": 1.46
+    },
+    "speed_over_corpus_max": {
+     "L_Knee": 1.06,
+     "L_Ankle": 1.01,
+     "R_Knee": 1.36
+    },
+    "critic": "pending (card E5)",
+    "jerk_over_p99_outside_impacts": {
+     "L_Ankle": 1.41,
+     "L_Toe": 1.44,
+     "R_Ankle": 1.54,
+     "R_Toe": 1.45,
+     "R_Elbow": 1.24,
+     "R_Hand": 1.38
+    },
+    "pass_p99": false
+   },
+   "endpoints": {
+    "final_d6_m": 0.0409,
+    "com_speed_end": 0.0243,
+    "brace_gap_end_cm": {},
+    "pass": true
+   },
+   "physx": {
+    "round_trip_pos_m": 3.21216636400834e-07,
+    "round_trip_ok": true,
+    "motionlib_cpu_plant_v2": true,
+    "motionlib_frames": 240,
+    "launches_at_reset": "pending (IsaacLab, GPU)",
+    "pass_cpu": true
+   },
+   "failed": [
+    "dynamics",
+    "naturalness_p99"
+   ],
+   "decision": "rejected",
+   "pending": [
+    "naturalness critic (E5)",
+    "PhysX: 0 launches at reset"
+   ]
+  },
+  {
+   "variant": "SYN_E5_E5_mid_s1_v3",
+   "edge": "E5",
+   "motion": "output/edge_synthesis/motions/SYN_E5_E5_mid_s1_v3.motion",
+   "sha256": "cc19d52f0e61ec81d5dda444071654e22dee4121ccf629802dd58e9865869d8d",
+   "source_run": "output/edge_synthesis/runs/E5_mid_s1_v3",
+   "durations_s": [
+    1.0,
+    0.65
+   ],
+   "via": "220923_Plank_Pose_or_Kumbhakasana_-a@541",
+   "reference": null,
+   "contract": {
+    "box_frames_past_1deg": 0,
+    "box_max_deg": 0.0,
+    "floor_min_cm": 0.19,
+    "new_overlaps_1mm": 0,
+    "new_overlap_examples": [],
+    "acc_over_100_outside_impacts": 0,
+    "acc_max": 288.7,
+    "impact_windows_s": [
+     1.079,
+     1.346,
+     1.438,
+     1.483,
+     1.754,
+     2.421,
+     2.529,
+     1.071,
+     1.362,
+     1.471,
+     1.521,
+     -0.279,
+     -0.283
+    ],
+    "pass": true
+   },
+   "statics": {
+    "checked": 47,
+    "s_star_max": 0.324,
+    "beyond": 0,
+    "not_optimal": 0,
+    "not_optimal_examples": [],
+    "pass": true
+   },
+   "dynamics": {
+    "torque_saturated_share_max": 0.143,
+    "torque_saturated_joints": {
+     "R_Toe_y": 0.09,
+     "R_Wrist_x": 0.143
+    },
+    "friction_ratio_p99": {
+     "L_FOOT": 0.75,
+     "R_FOOT": 0.75,
+     "L_HAND": 0.45,
+     "R_HAND": 0.74
+    },
+    "pass": false
+   },
+   "naturalness": {
+    "speed_over_p99": {
+     "Pelvis": 2.21,
+     "L_Hip": 2.39,
+     "L_Knee": 2.2,
+     "L_Ankle": 2.06,
+     "L_Toe": 1.85,
+     "R_Hip": 2.38,
+     "R_Knee": 3.09,
+     "R_Ankle": 3.07,
+     "R_Toe": 2.83,
+     "Torso": 1.97,
+     "Spine": 1.68,
+     "Chest": 1.34,
+     "Neck": 1.16,
+     "Head": 1.31,
+     "L_Thorax": 1.12,
+     "R_Thorax": 1.18
+    },
+    "jerk_over_p99": {
+     "Pelvis": 3.59,
+     "L_Hip": 3.9,
+     "L_Knee": 11.29,
+     "L_Ankle": 19.65,
+     "L_Toe": 17.83,
+     "R_Hip": 4.1,
+     "R_Knee": 7.23,
+     "R_Ankle": 18.08,
+     "R_Toe": 16.83,
+     "Torso": 3.08,
+     "Spine": 2.26,
+     "Chest": 1.98,
+     "Neck": 1.78,
+     "Head": 3.76,
+     "L_Thorax": 1.75,
+     "L_Wrist": 1.85,
+     "L_Hand": 1.32,
+     "R_Thorax": 2.08,
+     "R_Shoulder": 1.83,
+     "R_Elbow": 1.86,
+     "R_Wrist": 1.72,
+     "R_Hand": 1.78
+    },
+    "speed_over_corpus_max": {
+     "L_Knee": 1.06,
+     "L_Ankle": 1.01,
+     "R_Knee": 1.42
+    },
+    "critic": "pending (card E5)",
+    "jerk_over_p99_outside_impacts": {
+     "L_Ankle": 1.19,
+     "L_Toe": 1.23,
+     "L_Hand": 1.12,
+     "R_Elbow": 1.41,
+     "R_Wrist": 1.35,
+     "R_Hand": 1.78
+    },
+    "pass_p99": false
+   },
+   "endpoints": {
+    "final_d6_m": 0.0344,
+    "com_speed_end": 0.0218,
+    "brace_gap_end_cm": {},
+    "pass": true
+   },
+   "physx": {
+    "round_trip_pos_m": 4.836496239057908e-07,
+    "round_trip_ok": true,
+    "motionlib_cpu_plant_v2": true,
+    "motionlib_frames": 240,
+    "launches_at_reset": "pending (IsaacLab, GPU)",
+    "pass_cpu": true
+   },
+   "failed": [
+    "dynamics",
+    "naturalness_p99"
+   ],
+   "decision": "rejected",
+   "pending": [
+    "naturalness critic (E5)",
+    "PhysX: 0 launches at reset"
+   ]
+  },
+  {
+   "variant": "SYN_E5_E5_mid_s2_v3",
+   "edge": "E5",
+   "motion": "output/edge_synthesis/motions/SYN_E5_E5_mid_s2_v3.motion",
+   "sha256": "f1ff445acde8b49b1b4211af6964bdba226446b9d4856a738e3310b6058eb9b4",
+   "source_run": "output/edge_synthesis/runs/E5_mid_s2_v3",
+   "durations_s": [
+    1.0,
+    0.65
+   ],
+   "via": "220923_Plank_Pose_or_Kumbhakasana_-a@541",
+   "reference": null,
+   "contract": {
+    "box_frames_past_1deg": 0,
+    "box_max_deg": 0.0,
+    "floor_min_cm": 0.2,
+    "new_overlaps_1mm": 0,
+    "new_overlap_examples": [],
+    "acc_over_100_outside_impacts": 0,
+    "acc_max": 290.4,
+    "impact_windows_s": [
+     1.071,
+     1.312,
+     1.429,
+     1.487,
+     1.662,
+     1.767,
+     1.821,
+     1.062,
+     1.308,
+     1.433,
+     1.487,
+     1.775,
+     -0.279,
+     1.4,
+     1.454,
+     -0.279
+    ],
+    "pass": true
+   },
+   "statics": {
+    "checked": 47,
+    "s_star_max": 0.3174,
+    "beyond": 0,
+    "not_optimal": 0,
+    "not_optimal_examples": [],
+    "pass": true
+   },
+   "dynamics": {
+    "torque_saturated_share_max": 0.117,
+    "torque_saturated_joints": {
+     "R_Toe_y": 0.079,
+     "R_Wrist_x": 0.117
+    },
+    "friction_ratio_p99": {
+     "L_FOOT": 0.75,
+     "R_FOOT": 0.75,
+     "L_HAND": 0.446,
+     "R_HAND": 0.649
+    },
+    "pass": false
+   },
+   "naturalness": {
+    "speed_over_p99": {
+     "Pelvis": 2.37,
+     "L_Hip": 2.49,
+     "L_Knee": 2.28,
+     "L_Ankle": 2.14,
+     "L_Toe": 1.92,
+     "R_Hip": 2.55,
+     "R_Knee": 3.21,
+     "R_Ankle": 3.15,
+     "R_Toe": 2.89,
+     "Torso": 2.16,
+     "Spine": 1.9,
+     "Chest": 1.52,
+     "Neck": 1.3,
+     "Head": 1.42,
+     "L_Thorax": 1.27,
+     "L_Shoulder": 1.03,
+     "R_Thorax": 1.33
+    },
+    "jerk_over_p99": {
+     "Pelvis": 3.25,
+     "L_Hip": 3.33,
+     "L_Knee": 10.51,
+     "L_Ankle": 23.96,
+     "L_Toe": 21.92,
+     "R_Hip": 3.86,
+     "R_Knee": 9.37,
+     "R_Ankle": 18.8,
+     "R_Toe": 17.22,
+     "Torso": 3.21,
+     "Spine": 2.54,
+     "Chest": 2.31,
+     "Neck": 1.84,
+     "Head": 3.35,
+     "L_Thorax": 1.95,
+     "L_Wrist": 1.33,
+     "L_Hand": 1.53,
+     "R_Thorax": 2.29,
+     "R_Shoulder": 2.02,
+     "R_Elbow": 1.97,
+     "R_Wrist": 1.43,
+     "R_Hand": 1.13
+    },
+    "speed_over_corpus_max": {
+     "L_Knee": 1.1,
+     "L_Ankle": 1.05,
+     "R_Knee": 1.48,
+     "Spine": 1.01
+    },
+    "critic": "pending (card E5)",
+    "jerk_over_p99_outside_impacts": {
+     "R_Ankle": 1.04,
+     "R_Toe": 1.05,
+     "L_Hand": 1.29,
+     "R_Elbow": 1.44
+    },
+    "pass_p99": false
+   },
+   "endpoints": {
+    "final_d6_m": 0.0553,
+    "com_speed_end": 0.0091,
+    "brace_gap_end_cm": {},
+    "pass": false
+   },
+   "physx": {
+    "round_trip_pos_m": 3.1474387984786745e-07,
+    "round_trip_ok": true,
+    "motionlib_cpu_plant_v2": true,
+    "motionlib_frames": 240,
+    "launches_at_reset": "pending (IsaacLab, GPU)",
+    "pass_cpu": true
+   },
+   "failed": [
+    "dynamics",
+    "naturalness_p99",
+    "endpoints"
+   ],
+   "decision": "rejected",
+   "pending": [
+    "naturalness critic (E5)",
+    "PhysX: 0 launches at reset"
+   ]
+  }
+ ],
+ "summary": {
+  "SYN_B1_B1_high_s0_v4": {
+   "decision": "rejected",
+   "failed": [
+    "dynamics",
+    "naturalness_p99"
+   ]
+  },
+  "SYN_B1_B1_mid_s0_land2": {
+   "decision": "rejected",
+   "failed": [
+    "dynamics",
+    "naturalness_p99"
+   ]
+  },
+  "SYN_B1_B1_mid_s1_v4": {
+   "decision": "rejected",
+   "failed": [
+    "dynamics",
+    "naturalness_p99"
+   ]
+  },
+  "SYN_E1_E1_E1_high_s1_refff": {
+   "decision": "provisional",
+   "failed": []
+  },
+  "SYN_E1_E1_E1_high_s2_refff": {
+   "decision": "provisional",
+   "failed": []
+  },
+  "SYN_E1_E1_E1_high_s3_refff": {
+   "decision": "rejected",
+   "failed": [
+    "contract",
+    "statics",
+    "naturalness_p99",
+    "endpoints"
+   ]
+  },
+  "SYN_E1_E1_E1_high_s4_refff": {
+   "decision": "rejected",
+   "failed": [
+    "contract",
+    "statics",
+    "naturalness_p99",
+    "endpoints"
+   ]
+  },
+  "SYN_E1_E1_E1_mid_s0_refff": {
+   "decision": "rejected",
+   "failed": [
+    "naturalness_p99"
+   ]
+  },
+  "SYN_E2_E2_mid_s0_land2": {
+   "decision": "rejected",
+   "failed": [
+    "naturalness_p99"
+   ]
+  },
+  "SYN_E2_E2_mid_s1_v2w": {
+   "decision": "rejected",
+   "failed": [
+    "naturalness_p99"
+   ]
+  },
+  "SYN_E2_E2_mid_s2_v2w": {
+   "decision": "rejected",
+   "failed": [
+    "naturalness_p99"
+   ]
+  },
+  "SYN_E3_E3_E3_high_s0_refff": {
+   "decision": "rejected",
+   "failed": [
+    "dynamics",
+    "naturalness_p99"
+   ]
+  },
+  "SYN_E3_E3_E3_high_s1_refff_t2": {
+   "decision": "rejected",
+   "failed": [
+    "contract",
+    "statics",
+    "dynamics",
+    "naturalness_p99",
+    "endpoints"
+   ]
+  },
+  "SYN_E3_E3_E3_high_s2_refff_t2": {
+   "decision": "rejected",
+   "failed": [
+    "contract",
+    "statics",
+    "dynamics",
+    "naturalness_p99",
+    "endpoints"
+   ]
+  },
+  "SYN_E3_E3_E3_mid_s0_refff": {
+   "decision": "rejected",
+   "failed": [
+    "dynamics",
+    "naturalness_p99"
+   ]
+  },
+  "SYN_E4_E4_E4_high_s0_refff": {
+   "decision": "rejected",
+   "failed": [
+    "contract",
+    "statics",
+    "naturalness_p99"
+   ]
+  },
+  "SYN_E4_E4_E4_high_s1_refff": {
+   "decision": "rejected",
+   "failed": [
+    "statics",
+    "naturalness_p99"
+   ]
+  },
+  "SYN_E4_E4_E4_mid_s0_refff": {
+   "decision": "rejected",
+   "failed": [
+    "statics",
+    "naturalness_p99",
+    "endpoints"
+   ]
+  },
+  "SYN_E5_E5_mid_s0_v3": {
+   "decision": "rejected",
+   "failed": [
+    "dynamics",
+    "naturalness_p99"
+   ]
+  },
+  "SYN_E5_E5_mid_s1_v3": {
+   "decision": "rejected",
+   "failed": [
+    "dynamics",
+    "naturalness_p99"
+   ]
+  },
+  "SYN_E5_E5_mid_s2_v3": {
+   "decision": "rejected",
+   "failed": [
+    "dynamics",
+    "naturalness_p99",
+    "endpoints"
+   ]
+  }
+ }
+}

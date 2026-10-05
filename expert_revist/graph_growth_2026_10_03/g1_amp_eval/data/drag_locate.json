@@ -1,0 +1,1382 @@
+{
+ "1": {
+  "220923_Half_Moon_Pose_or_Ardha_Chandrasana_-b": {
+   "total_J": 37.76283645629883,
+   "by_zone": {
+    "L_FOOT": 6.373846054077148,
+    "R_FOOT": 29.763378143310547,
+    "L_HAND": 0.0,
+    "R_HAND": 1.625615119934082
+   },
+   "segments": [
+    {
+     "t0": 4.13,
+     "t1": 4.43,
+     "J": 23.6,
+     "where": "between holds"
+    },
+    {
+     "t0": 20.63,
+     "t1": 20.83,
+     "J": 4.7,
+     "where": "between holds"
+    },
+    {
+     "t0": 20.23,
+     "t1": 20.33,
+     "J": 3.4,
+     "where": "between holds"
+    },
+    {
+     "t0": 21.73,
+     "t1": 22.07,
+     "J": 2.0,
+     "where": "between holds"
+    },
+    {
+     "t0": 1.17,
+     "t1": 1.17,
+     "J": 1.7,
+     "where": "between holds"
+    },
+    {
+     "t0": 21.17,
+     "t1": 21.3,
+     "J": 1.7,
+     "where": "between holds"
+    }
+   ]
+  },
+  "220926_Plow_Pose_or_Halasana_-b": {
+   "total_J": 47.89313507080078,
+   "by_zone": {
+    "L_FOOT": 26.143198013305664,
+    "R_FOOT": 6.66464900970459,
+    "L_HAND": 2.8784759044647217,
+    "R_HAND": 12.206809043884277
+   },
+   "segments": [
+    {
+     "t0": 3.93,
+     "t1": 4.53,
+     "J": 13.5,
+     "where": "between holds"
+    },
+    {
+     "t0": 3.4,
+     "t1": 3.7,
+     "J": 11.7,
+     "where": "between holds"
+    },
+    {
+     "t0": 11.67,
+     "t1": 12.2,
+     "J": 6.2,
+     "where": "between holds"
+    },
+    {
+     "t0": 38.7,
+     "t1": 38.83,
+     "J": 2.8,
+     "where": "hold standing [38.6-40.2]"
+    },
+    {
+     "t0": 2.0,
+     "t1": 2.07,
+     "J": 2.5,
+     "where": "between holds"
+    },
+    {
+     "t0": 35.13,
+     "t1": 35.33,
+     "J": 2.4,
+     "where": "between holds"
+    }
+   ]
+  },
+  "220923_Scorpion_pose_or_vrischikasana-b": {
+   "total_J": 8.883420944213867,
+   "by_zone": {
+    "L_FOOT": 0.1372005045413971,
+    "R_FOOT": 1.3341127634048462,
+    "L_HAND": 6.966923236846924,
+    "R_HAND": 0.4451844096183777
+   },
+   "segments": [
+    {
+     "t0": 8.97,
+     "t1": 9.17,
+     "J": 6.2,
+     "where": "between holds"
+    },
+    {
+     "t0": 26.5,
+     "t1": 26.6,
+     "J": 0.9,
+     "where": "between holds"
+    },
+    {
+     "t0": 14.93,
+     "t1": 14.93,
+     "J": 0.8,
+     "where": "between holds"
+    },
+    {
+     "t0": 8.5,
+     "t1": 8.53,
+     "J": 0.5,
+     "where": "between holds"
+    },
+    {
+     "t0": 9.47,
+     "t1": 9.5,
+     "J": 0.4,
+     "where": "between holds"
+    },
+    {
+     "t0": 15.6,
+     "t1": 15.6,
+     "J": 0.1,
+     "where": "between holds"
+    }
+   ]
+  },
+  "220923_Supported_Shoulderstand_pose_or_Salamba_Sarvangasana_-a": {
+   "total_J": 43.40011978149414,
+   "by_zone": {
+    "L_FOOT": 22.655393600463867,
+    "R_FOOT": 16.56665802001953,
+    "L_HAND": 0.9002531170845032,
+    "R_HAND": 3.2778160572052
+   },
+   "segments": [
+    {
+     "t0": 1.87,
+     "t1": 2.03,
+     "J": 16.6,
+     "where": "between holds"
+    },
+    {
+     "t0": 3.17,
+     "t1": 3.33,
+     "J": 14.8,
+     "where": "between holds"
+    },
+    {
+     "t0": 22.7,
+     "t1": 23.07,
+     "J": 3.0,
+     "where": "between holds"
+    },
+    {
+     "t0": 2.8,
+     "t1": 2.8,
+     "J": 2.2,
+     "where": "between holds"
+    },
+    {
+     "t0": 22.23,
+     "t1": 22.47,
+     "J": 1.8,
+     "where": "between holds"
+    },
+    {
+     "t0": 21.5,
+     "t1": 21.97,
+     "J": 1.8,
+     "where": "between holds"
+    }
+   ]
+  },
+  "220923_Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana_-a": {
+   "total_J": 10.360637664794922,
+   "by_zone": {
+    "L_FOOT": 1.3924057483673096,
+    "R_FOOT": 8.584169387817383,
+    "L_HAND": 0.3840639591217041,
+    "R_HAND": 0.0
+   },
+   "segments": [
+    {
+     "t0": 8.43,
+     "t1": 8.6,
+     "J": 6.2,
+     "where": "between holds"
+    },
+    {
+     "t0": 11.63,
+     "t1": 11.7,
+     "J": 2.5,
+     "where": "between holds"
+    },
+    {
+     "t0": 0.03,
+     "t1": 0.03,
+     "J": 1.2,
+     "where": "hold standing [0.0-0.9]"
+    },
+    {
+     "t0": 7.8,
+     "t1": 7.8,
+     "J": 0.4,
+     "where": "hold Downward-Facing_Dog_pose [4.9-7.8]"
+    }
+   ]
+  },
+  "220923_Plank_Pose_or_Kumbhakasana_-a": {
+   "total_J": 7.427401542663574,
+   "by_zone": {
+    "L_FOOT": 1.9377492666244507,
+    "R_FOOT": 5.489652156829834,
+    "L_HAND": 0.0,
+    "R_HAND": 0.0
+   },
+   "segments": [
+    {
+     "t0": 13.6,
+     "t1": 13.77,
+     "J": 4.3,
+     "where": "between holds"
+    },
+    {
+     "t0": 11.1,
+     "t1": 11.1,
+     "J": 1.6,
+     "where": "between holds"
+    },
+    {
+     "t0": 14.7,
+     "t1": 14.7,
+     "J": 0.9,
+     "where": "hold standing [14.2-15.5]"
+    },
+    {
+     "t0": 0.9,
+     "t1": 0.9,
+     "J": 0.3,
+     "where": "hold standing [0.0-0.8]"
+    },
+    {
+     "t0": 9.4,
+     "t1": 9.4,
+     "J": 0.2,
+     "where": "hold Plank_Pose_or_Kumbhakasa [6.4-9.3]"
+    },
+    {
+     "t0": 4.4,
+     "t1": 4.4,
+     "J": 0.1,
+     "where": "between holds"
+    }
+   ]
+  },
+  "220923_Side_Plank_Pose_or_Vasisthasana_-a": {
+   "total_J": 20.35000228881836,
+   "by_zone": {
+    "L_FOOT": 3.795628547668457,
+    "R_FOOT": 9.915574073791504,
+    "L_HAND": 0.0,
+    "R_HAND": 6.638797760009766
+   },
+   "segments": [
+    {
+     "t0": 3.5,
+     "t1": 3.77,
+     "J": 8.6,
+     "where": "between holds"
+    },
+    {
+     "t0": 16.4,
+     "t1": 16.43,
+     "J": 3.7,
+     "where": "between holds"
+    },
+    {
+     "t0": 17.87,
+     "t1": 18.03,
+     "J": 3.0,
+     "where": "between holds"
+    },
+    {
+     "t0": 3.13,
+     "t1": 3.13,
+     "J": 3.0,
+     "where": "between holds"
+    },
+    {
+     "t0": 18.9,
+     "t1": 18.9,
+     "J": 1.0,
+     "where": "between holds"
+    },
+    {
+     "t0": 2.03,
+     "t1": 2.03,
+     "J": 0.8,
+     "where": "between holds"
+    }
+   ]
+  },
+  "220923_Side_Plank_Pose_or_Vasisthasana_-b": {
+   "total_J": 21.644977569580078,
+   "by_zone": {
+    "L_FOOT": 4.582437515258789,
+    "R_FOOT": 15.681427001953125,
+    "L_HAND": 0.0,
+    "R_HAND": 1.3811156749725342
+   },
+   "segments": [
+    {
+     "t0": 4.13,
+     "t1": 4.67,
+     "J": 10.2,
+     "where": "between holds"
+    },
+    {
+     "t0": 21.33,
+     "t1": 21.53,
+     "J": 2.4,
+     "where": "between holds"
+    },
+    {
+     "t0": 20.43,
+     "t1": 20.43,
+     "J": 2.2,
+     "where": "between holds"
+    },
+    {
+     "t0": 1.83,
+     "t1": 1.83,
+     "J": 1.6,
+     "where": "between holds"
+    },
+    {
+     "t0": 15.4,
+     "t1": 15.4,
+     "J": 1.4,
+     "where": "hold Side_Plank_Pose_or_Vasis [9.4-17.2]"
+    },
+    {
+     "t0": 21.87,
+     "t1": 21.87,
+     "J": 1.3,
+     "where": "between holds"
+    }
+   ]
+  },
+  "220923_Dolphin_Plank_Pose_or_Makara_Adho_Mukha_Svanasana_-a": {
+   "total_J": 48.652584075927734,
+   "by_zone": {
+    "L_FOOT": 18.896621704101562,
+    "R_FOOT": 10.954233169555664,
+    "L_HAND": 10.71599292755127,
+    "R_HAND": 8.085734367370605
+   },
+   "segments": [
+    {
+     "t0": 6.13,
+     "t1": 6.83,
+     "J": 27.8,
+     "where": "hold Dolphin_Plank_Pose_or_Ma [6.5-8.6]"
+    },
+    {
+     "t0": 7.93,
+     "t1": 8.3,
+     "J": 8.1,
+     "where": "hold Dolphin_Plank_Pose_or_Ma [6.5-8.6]"
+    },
+    {
+     "t0": 11.93,
+     "t1": 12.6,
+     "J": 4.1,
+     "where": "between holds"
+    },
+    {
+     "t0": 17.27,
+     "t1": 17.57,
+     "J": 2.5,
+     "where": "hold standing [17.1-18.5]"
+    },
+    {
+     "t0": 8.63,
+     "t1": 8.63,
+     "J": 1.9,
+     "where": "hold Dolphin_Plank_Pose_or_Ma [6.5-8.6]"
+    },
+    {
+     "t0": 13.5,
+     "t1": 13.77,
+     "J": 1.3,
+     "where": "between holds"
+    }
+   ]
+  },
+  "220926_Intense_Side_Stretch_Pose_or_Parsvottanasana_-b": {
+   "total_J": 31.169097900390625,
+   "by_zone": {
+    "L_FOOT": 0.7474408149719238,
+    "R_FOOT": 30.42165756225586,
+    "L_HAND": 0.0,
+    "R_HAND": 0.0
+   },
+   "segments": [
+    {
+     "t0": 18.83,
+     "t1": 19.5,
+     "J": 12.2,
+     "where": "between holds"
+    },
+    {
+     "t0": 21.2,
+     "t1": 21.27,
+     "J": 6.2,
+     "where": "between holds"
+    },
+    {
+     "t0": 6.4,
+     "t1": 6.6,
+     "J": 4.5,
+     "where": "between holds"
+    },
+    {
+     "t0": 21.73,
+     "t1": 21.97,
+     "J": 2.7,
+     "where": "hold standing [21.8-23.7]"
+    },
+    {
+     "t0": 21.5,
+     "t1": 21.5,
+     "J": 1.8,
+     "where": "between holds"
+    },
+    {
+     "t0": 19.8,
+     "t1": 19.97,
+     "J": 1.5,
+     "where": "between holds"
+    }
+   ]
+  }
+ },
+ "4500": {
+  "220923_Half_Moon_Pose_or_Ardha_Chandrasana_-b": {
+   "total_J": 40.899925231933594,
+   "by_zone": {
+    "L_FOOT": 26.847126007080078,
+    "R_FOOT": 5.951723575592041,
+    "L_HAND": 0.0,
+    "R_HAND": 8.101078033447266
+   },
+   "segments": [
+    {
+     "t0": 3.77,
+     "t1": 4.3,
+     "J": 20.0,
+     "where": "between holds"
+    },
+    {
+     "t0": 18.8,
+     "t1": 18.87,
+     "J": 4.0,
+     "where": "hold Half_Moon_Pose_or_Ardha_ [5.6-18.7]"
+    },
+    {
+     "t0": 4.93,
+     "t1": 5.03,
+     "J": 4.0,
+     "where": "between holds"
+    },
+    {
+     "t0": 1.27,
+     "t1": 1.33,
+     "J": 3.5,
+     "where": "between holds"
+    },
+    {
+     "t0": 21.3,
+     "t1": 21.83,
+     "J": 3.0,
+     "where": "between holds"
+    },
+    {
+     "t0": 2.23,
+     "t1": 2.33,
+     "J": 2.0,
+     "where": "between holds"
+    }
+   ]
+  },
+  "220926_Plow_Pose_or_Halasana_-b": {
+   "total_J": 111.9156723022461,
+   "by_zone": {
+    "L_FOOT": 38.76063537597656,
+    "R_FOOT": 56.05458068847656,
+    "L_HAND": 10.288050651550293,
+    "R_HAND": 6.812411785125732
+   },
+   "segments": [
+    {
+     "t0": 35.43,
+     "t1": 36.7,
+     "J": 59.4,
+     "where": "between holds"
+    },
+    {
+     "t0": 3.33,
+     "t1": 4.43,
+     "J": 38.8,
+     "where": "between holds"
+    },
+    {
+     "t0": 32.83,
+     "t1": 33.3,
+     "J": 3.9,
+     "where": "between holds"
+    },
+    {
+     "t0": 7.8,
+     "t1": 8.17,
+     "J": 2.8,
+     "where": "between holds"
+    },
+    {
+     "t0": 7.0,
+     "t1": 7.13,
+     "J": 1.2,
+     "where": "between holds"
+    },
+    {
+     "t0": 9.6,
+     "t1": 9.73,
+     "J": 1.1,
+     "where": "between holds"
+    }
+   ]
+  },
+  "220923_Scorpion_pose_or_vrischikasana-b": {
+   "total_J": 152.88662719726562,
+   "by_zone": {
+    "L_FOOT": 11.455906867980957,
+    "R_FOOT": 19.614479064941406,
+    "L_HAND": 3.322274684906006,
+    "R_HAND": 118.49396514892578
+   },
+   "segments": [
+    {
+     "t0": 16.13,
+     "t1": 19.17,
+     "J": 111.1,
+     "where": "between holds"
+    },
+    {
+     "t0": 25.8,
+     "t1": 25.97,
+     "J": 12.5,
+     "where": "between holds"
+    },
+    {
+     "t0": 8.33,
+     "t1": 8.6,
+     "J": 7.8,
+     "where": "between holds"
+    },
+    {
+     "t0": 21.7,
+     "t1": 21.93,
+     "J": 4.1,
+     "where": "between holds"
+    },
+    {
+     "t0": 2.43,
+     "t1": 2.57,
+     "J": 2.9,
+     "where": "between holds"
+    },
+    {
+     "t0": 28.23,
+     "t1": 28.37,
+     "J": 2.7,
+     "where": "between holds"
+    }
+   ]
+  },
+  "220923_Supported_Shoulderstand_pose_or_Salamba_Sarvangasana_-a": {
+   "total_J": 117.8333740234375,
+   "by_zone": {
+    "L_FOOT": 28.80441665649414,
+    "R_FOOT": 64.28518676757812,
+    "L_HAND": 10.407249450683594,
+    "R_HAND": 14.33652114868164
+   },
+   "segments": [
+    {
+     "t0": 18.67,
+     "t1": 19.43,
+     "J": 41.4,
+     "where": "between holds"
+    },
+    {
+     "t0": 19.67,
+     "t1": 20.63,
+     "J": 24.7,
+     "where": "between holds"
+    },
+    {
+     "t0": 3.07,
+     "t1": 3.3,
+     "J": 16.0,
+     "where": "between holds"
+    },
+    {
+     "t0": 25.83,
+     "t1": 26.03,
+     "J": 14.0,
+     "where": "hold standing [24.9-26.8]"
+    },
+    {
+     "t0": 3.6,
+     "t1": 4.13,
+     "J": 10.0,
+     "where": "between holds"
+    },
+    {
+     "t0": 2.1,
+     "t1": 2.13,
+     "J": 2.9,
+     "where": "between holds"
+    }
+   ]
+  },
+  "220923_Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana_-a": {
+   "total_J": 53.443641662597656,
+   "by_zone": {
+    "L_FOOT": 42.9911994934082,
+    "R_FOOT": 4.779584884643555,
+    "L_HAND": 5.160637378692627,
+    "R_HAND": 0.5122201442718506
+   },
+   "segments": [
+    {
+     "t0": 11.2,
+     "t1": 11.6,
+     "J": 41.4,
+     "where": "between holds"
+    },
+    {
+     "t0": 10.17,
+     "t1": 10.43,
+     "J": 5.2,
+     "where": "between holds"
+    },
+    {
+     "t0": 4.87,
+     "t1": 5.7,
+     "J": 4.1,
+     "where": "hold Downward-Facing_Dog_pose [4.9-7.8]"
+    },
+    {
+     "t0": 7.8,
+     "t1": 7.8,
+     "J": 1.2,
+     "where": "hold Downward-Facing_Dog_pose [4.9-7.8]"
+    },
+    {
+     "t0": 3.17,
+     "t1": 3.17,
+     "J": 1.1,
+     "where": "between holds"
+    },
+    {
+     "t0": 8.7,
+     "t1": 8.7,
+     "J": 0.4,
+     "where": "between holds"
+    }
+   ]
+  },
+  "220923_Plank_Pose_or_Kumbhakasana_-a": {
+   "total_J": 104.16478729248047,
+   "by_zone": {
+    "L_FOOT": 82.11996459960938,
+    "R_FOOT": 5.9888081550598145,
+    "L_HAND": 7.323045253753662,
+    "R_HAND": 8.732970237731934
+   },
+   "segments": [
+    {
+     "t0": 13.3,
+     "t1": 14.13,
+     "J": 76.9,
+     "where": "between holds"
+    },
+    {
+     "t0": 9.37,
+     "t1": 9.8,
+     "J": 13.5,
+     "where": "between holds"
+    },
+    {
+     "t0": 11.97,
+     "t1": 12.3,
+     "J": 8.9,
+     "where": "between holds"
+    },
+    {
+     "t0": 10.97,
+     "t1": 11.0,
+     "J": 2.7,
+     "where": "between holds"
+    },
+    {
+     "t0": 4.53,
+     "t1": 4.6,
+     "J": 1.9,
+     "where": "between holds"
+    },
+    {
+     "t0": 3.27,
+     "t1": 3.27,
+     "J": 0.3,
+     "where": "between holds"
+    }
+   ]
+  },
+  "220923_Side_Plank_Pose_or_Vasisthasana_-a": {
+   "total_J": 157.79058837890625,
+   "by_zone": {
+    "L_FOOT": 118.94427490234375,
+    "R_FOOT": 27.882734298706055,
+    "L_HAND": 0.0,
+    "R_HAND": 10.96358585357666
+   },
+   "segments": [
+    {
+     "t0": 19.73,
+     "t1": 20.77,
+     "J": 113.9,
+     "where": "between holds"
+    },
+    {
+     "t0": 4.97,
+     "t1": 5.6,
+     "J": 17.0,
+     "where": "between holds"
+    },
+    {
+     "t0": 3.7,
+     "t1": 4.03,
+     "J": 9.2,
+     "where": "between holds"
+    },
+    {
+     "t0": 9.47,
+     "t1": 9.97,
+     "J": 6.6,
+     "where": "between holds"
+    },
+    {
+     "t0": 6.57,
+     "t1": 6.7,
+     "J": 3.0,
+     "where": "between holds"
+    },
+    {
+     "t0": 8.17,
+     "t1": 8.57,
+     "J": 2.7,
+     "where": "between holds"
+    }
+   ]
+  },
+  "220923_Side_Plank_Pose_or_Vasisthasana_-b": {
+   "total_J": 115.32508087158203,
+   "by_zone": {
+    "L_FOOT": 100.86529541015625,
+    "R_FOOT": 13.365464210510254,
+    "L_HAND": 0.0,
+    "R_HAND": 1.094313144683838
+   },
+   "segments": [
+    {
+     "t0": 21.43,
+     "t1": 22.47,
+     "J": 103.9,
+     "where": "between holds"
+    },
+    {
+     "t0": 4.47,
+     "t1": 4.63,
+     "J": 6.0,
+     "where": "between holds"
+    },
+    {
+     "t0": 18.87,
+     "t1": 19.0,
+     "J": 1.8,
+     "where": "between holds"
+    },
+    {
+     "t0": 4.17,
+     "t1": 4.23,
+     "J": 1.3,
+     "where": "between holds"
+    },
+    {
+     "t0": 12.63,
+     "t1": 12.63,
+     "J": 1.1,
+     "where": "hold Side_Plank_Pose_or_Vasis [9.4-17.2]"
+    },
+    {
+     "t0": 23.57,
+     "t1": 23.57,
+     "J": 1.0,
+     "where": "hold standing [22.2-23.9]"
+    }
+   ]
+  },
+  "220923_Dolphin_Plank_Pose_or_Makara_Adho_Mukha_Svanasana_-a": {
+   "total_J": 86.4161148071289,
+   "by_zone": {
+    "L_FOOT": 41.94007873535156,
+    "R_FOOT": 8.535999298095703,
+    "L_HAND": 18.22540855407715,
+    "R_HAND": 17.714630126953125
+   },
+   "segments": [
+    {
+     "t0": 16.5,
+     "t1": 17.0,
+     "J": 31.0,
+     "where": "between holds"
+    },
+    {
+     "t0": 6.13,
+     "t1": 7.23,
+     "J": 22.7,
+     "where": "hold Dolphin_Plank_Pose_or_Ma [6.5-8.6]"
+    },
+    {
+     "t0": 8.9,
+     "t1": 9.13,
+     "J": 14.1,
+     "where": "hold Dolphin_Plank_Pose_or_Ma [8.6-11.8]"
+    },
+    {
+     "t0": 12.1,
+     "t1": 12.47,
+     "J": 4.9,
+     "where": "between holds"
+    },
+    {
+     "t0": 13.23,
+     "t1": 13.33,
+     "J": 4.4,
+     "where": "between holds"
+    },
+    {
+     "t0": 4.23,
+     "t1": 4.5,
+     "J": 3.9,
+     "where": "between holds"
+    }
+   ]
+  },
+  "220926_Intense_Side_Stretch_Pose_or_Parsvottanasana_-b": {
+   "total_J": 6.627017021179199,
+   "by_zone": {
+    "L_FOOT": 4.2210493087768555,
+    "R_FOOT": 2.405967950820923,
+    "L_HAND": 0.0,
+    "R_HAND": 0.0
+   },
+   "segments": [
+    {
+     "t0": 10.27,
+     "t1": 10.27,
+     "J": 3.6,
+     "where": "hold Intense_Side_Stretch_Pos [8.4-10.2]"
+    },
+    {
+     "t0": 18.87,
+     "t1": 18.97,
+     "J": 1.5,
+     "where": "between holds"
+    },
+    {
+     "t0": 0.43,
+     "t1": 0.43,
+     "J": 0.9,
+     "where": "hold standing [0.0-0.8]"
+    },
+    {
+     "t0": 7.83,
+     "t1": 7.83,
+     "J": 0.6,
+     "where": "between holds"
+    }
+   ]
+  }
+ },
+ "standalone": {
+  "220923_Half_Moon_Pose_or_Ardha_Chandrasana_-b": {
+   "total_J": 49.086734771728516,
+   "by_zone": {
+    "L_FOOT": 18.539945602416992,
+    "R_FOOT": 29.05460548400879,
+    "L_HAND": 0.0,
+    "R_HAND": 1.4921832084655762
+   },
+   "segments": [
+    {
+     "t0": 4.53,
+     "t1": 4.9,
+     "J": 26.1,
+     "where": "between holds"
+    },
+    {
+     "t0": 21.93,
+     "t1": 22.47,
+     "J": 16.4,
+     "where": "between holds"
+    },
+    {
+     "t0": 20.63,
+     "t1": 20.8,
+     "J": 4.0,
+     "where": "between holds"
+    },
+    {
+     "t0": 18.73,
+     "t1": 18.73,
+     "J": 1.5,
+     "where": "hold Half_Moon_Pose_or_Ardha_ [5.6-18.7]"
+    },
+    {
+     "t0": 21.23,
+     "t1": 21.23,
+     "J": 0.5,
+     "where": "between holds"
+    },
+    {
+     "t0": 20.0,
+     "t1": 20.0,
+     "J": 0.4,
+     "where": "between holds"
+    }
+   ]
+  },
+  "220926_Plow_Pose_or_Halasana_-b": {
+   "total_J": 67.87108612060547,
+   "by_zone": {
+    "L_FOOT": 9.811002731323242,
+    "R_FOOT": 49.10569381713867,
+    "L_HAND": 6.215579032897949,
+    "R_HAND": 2.7388062477111816
+   },
+   "segments": [
+    {
+     "t0": 3.37,
+     "t1": 3.83,
+     "J": 35.8,
+     "where": "between holds"
+    },
+    {
+     "t0": 37.4,
+     "t1": 37.7,
+     "J": 5.9,
+     "where": "between holds"
+    },
+    {
+     "t0": 36.73,
+     "t1": 37.17,
+     "J": 5.3,
+     "where": "between holds"
+    },
+    {
+     "t0": 38.17,
+     "t1": 38.2,
+     "J": 5.1,
+     "where": "between holds"
+    },
+    {
+     "t0": 0.07,
+     "t1": 0.17,
+     "J": 3.7,
+     "where": "hold standing [0.0-0.9]"
+    },
+    {
+     "t0": 2.1,
+     "t1": 2.1,
+     "J": 2.5,
+     "where": "between holds"
+    }
+   ]
+  },
+  "220923_Scorpion_pose_or_vrischikasana-b": {
+   "total_J": 53.56444549560547,
+   "by_zone": {
+    "L_FOOT": 10.797687530517578,
+    "R_FOOT": 25.217222213745117,
+    "L_HAND": 14.346273422241211,
+    "R_HAND": 3.2032618522644043
+   },
+   "segments": [
+    {
+     "t0": 8.13,
+     "t1": 8.93,
+     "J": 11.1,
+     "where": "between holds"
+    },
+    {
+     "t0": 27.2,
+     "t1": 27.37,
+     "J": 9.3,
+     "where": "between holds"
+    },
+    {
+     "t0": 25.83,
+     "t1": 25.87,
+     "J": 6.9,
+     "where": "between holds"
+    },
+    {
+     "t0": 27.97,
+     "t1": 28.17,
+     "J": 5.9,
+     "where": "between holds"
+    },
+    {
+     "t0": 10.83,
+     "t1": 10.9,
+     "J": 3.6,
+     "where": "between holds"
+    },
+    {
+     "t0": 10.43,
+     "t1": 10.57,
+     "J": 3.3,
+     "where": "between holds"
+    }
+   ]
+  },
+  "220923_Supported_Shoulderstand_pose_or_Salamba_Sarvangasana_-a": {
+   "total_J": 217.06076049804688,
+   "by_zone": {
+    "L_FOOT": 55.90953826904297,
+    "R_FOOT": 38.83755874633789,
+    "L_HAND": 57.03626251220703,
+    "R_HAND": 65.27737426757812
+   },
+   "segments": [
+    {
+     "t0": 20.87,
+     "t1": 23.27,
+     "J": 179.1,
+     "where": "between holds"
+    },
+    {
+     "t0": 19.13,
+     "t1": 19.53,
+     "J": 18.8,
+     "where": "between holds"
+    },
+    {
+     "t0": 3.2,
+     "t1": 3.3,
+     "J": 10.8,
+     "where": "between holds"
+    },
+    {
+     "t0": 3.7,
+     "t1": 4.1,
+     "J": 6.4,
+     "where": "between holds"
+    },
+    {
+     "t0": 18.23,
+     "t1": 18.3,
+     "J": 0.9,
+     "where": "between holds"
+    },
+    {
+     "t0": 18.67,
+     "t1": 18.7,
+     "J": 0.5,
+     "where": "between holds"
+    }
+   ]
+  },
+  "220923_Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana_-a": {
+   "total_J": 27.765911102294922,
+   "by_zone": {
+    "L_FOOT": 11.220298767089844,
+    "R_FOOT": 15.314562797546387,
+    "L_HAND": 1.018528938293457,
+    "R_HAND": 0.21251866221427917
+   },
+   "segments": [
+    {
+     "t0": 11.5,
+     "t1": 12.3,
+     "J": 25.1,
+     "where": "hold standing [12.1-13.4]"
+    },
+    {
+     "t0": 2.9,
+     "t1": 3.03,
+     "J": 1.1,
+     "where": "between holds"
+    },
+    {
+     "t0": 4.03,
+     "t1": 4.07,
+     "J": 0.6,
+     "where": "between holds"
+    },
+    {
+     "t0": 10.17,
+     "t1": 10.17,
+     "J": 0.5,
+     "where": "between holds"
+    },
+    {
+     "t0": 7.8,
+     "t1": 7.8,
+     "J": 0.2,
+     "where": "hold Downward-Facing_Dog_pose [4.9-7.8]"
+    },
+    {
+     "t0": 8.53,
+     "t1": 8.53,
+     "J": 0.2,
+     "where": "between holds"
+    }
+   ]
+  },
+  "220923_Plank_Pose_or_Kumbhakasana_-a": {
+   "total_J": 55.0928955078125,
+   "by_zone": {
+    "L_FOOT": 33.785362243652344,
+    "R_FOOT": 3.488260507583618,
+    "L_HAND": 3.039705276489258,
+    "R_HAND": 14.77956771850586
+   },
+   "segments": [
+    {
+     "t0": 13.33,
+     "t1": 14.0,
+     "J": 32.8,
+     "where": "between holds"
+    },
+    {
+     "t0": 9.4,
+     "t1": 10.03,
+     "J": 11.5,
+     "where": "between holds"
+    },
+    {
+     "t0": 12.07,
+     "t1": 12.5,
+     "J": 9.8,
+     "where": "between holds"
+    },
+    {
+     "t0": 4.47,
+     "t1": 4.5,
+     "J": 1.0,
+     "where": "between holds"
+    }
+   ]
+  },
+  "220923_Side_Plank_Pose_or_Vasisthasana_-a": {
+   "total_J": 95.27865600585938,
+   "by_zone": {
+    "L_FOOT": 56.59196472167969,
+    "R_FOOT": 11.64876937866211,
+    "L_HAND": 13.425835609436035,
+    "R_HAND": 13.612086296081543
+   },
+   "segments": [
+    {
+     "t0": 20.73,
+     "t1": 21.3,
+     "J": 29.7,
+     "where": "hold standing [20.7-22.1]"
+    },
+    {
+     "t0": 19.87,
+     "t1": 20.4,
+     "J": 16.6,
+     "where": "between holds"
+    },
+    {
+     "t0": 7.73,
+     "t1": 8.6,
+     "J": 13.4,
+     "where": "between holds"
+    },
+    {
+     "t0": 6.13,
+     "t1": 6.3,
+     "J": 10.4,
+     "where": "between holds"
+    },
+    {
+     "t0": 4.63,
+     "t1": 5.27,
+     "J": 7.5,
+     "where": "between holds"
+    },
+    {
+     "t0": 17.57,
+     "t1": 17.77,
+     "J": 6.4,
+     "where": "between holds"
+    }
+   ]
+  },
+  "220923_Side_Plank_Pose_or_Vasisthasana_-b": {
+   "total_J": 51.0291862487793,
+   "by_zone": {
+    "L_FOOT": 41.8565673828125,
+    "R_FOOT": 0.6347674131393433,
+    "L_HAND": 0.19580906629562378,
+    "R_HAND": 8.342041015625
+   },
+   "segments": [
+    {
+     "t0": 22.37,
+     "t1": 22.77,
+     "J": 21.7,
+     "where": "hold standing [22.2-23.9]"
+    },
+    {
+     "t0": 21.53,
+     "t1": 22.0,
+     "J": 19.1,
+     "where": "between holds"
+    },
+    {
+     "t0": 18.57,
+     "t1": 18.63,
+     "J": 3.6,
+     "where": "between holds"
+    },
+    {
+     "t0": 10.57,
+     "t1": 10.73,
+     "J": 2.3,
+     "where": "hold Side_Plank_Pose_or_Vasis [9.4-17.2]"
+    },
+    {
+     "t0": 5.9,
+     "t1": 6.13,
+     "J": 1.1,
+     "where": "between holds"
+    },
+    {
+     "t0": 11.57,
+     "t1": 11.57,
+     "J": 1.1,
+     "where": "hold Side_Plank_Pose_or_Vasis [9.4-17.2]"
+    }
+   ]
+  },
+  "220923_Dolphin_Plank_Pose_or_Makara_Adho_Mukha_Svanasana_-a": {
+   "total_J": 159.9700164794922,
+   "by_zone": {
+    "L_FOOT": 19.206787109375,
+    "R_FOOT": 96.27017211914062,
+    "L_HAND": 18.69133949279785,
+    "R_HAND": 25.801715850830078
+   },
+   "segments": [
+    {
+     "t0": 16.37,
+     "t1": 18.03,
+     "J": 84.6,
+     "where": "hold standing [17.1-18.5]"
+    },
+    {
+     "t0": 6.13,
+     "t1": 6.97,
+     "J": 30.3,
+     "where": "hold Dolphin_Plank_Pose_or_Ma [6.5-8.6]"
+    },
+    {
+     "t0": 8.63,
+     "t1": 9.0,
+     "J": 12.2,
+     "where": "hold Dolphin_Plank_Pose_or_Ma [6.5-8.6]"
+    },
+    {
+     "t0": 4.27,
+     "t1": 4.7,
+     "J": 9.4,
+     "where": "between holds"
+    },
+    {
+     "t0": 11.83,
+     "t1": 12.37,
+     "J": 7.3,
+     "where": "between holds"
+    },
+    {
+     "t0": 7.5,
+     "t1": 7.67,
+     "J": 5.0,
+     "where": "hold Dolphin_Plank_Pose_or_Ma [6.5-8.6]"
+    }
+   ]
+  },
+  "220926_Intense_Side_Stretch_Pose_or_Parsvottanasana_-b": {
+   "total_J": 126.66909790039062,
+   "by_zone": {
+    "L_FOOT": 111.38365936279297,
+    "R_FOOT": 15.285432815551758,
+    "L_HAND": 0.0,
+    "R_HAND": 0.0
+   },
+   "segments": [
+    {
+     "t0": 15.17,
+     "t1": 17.87,
+     "J": 99.3,
+     "where": "hold Intense_Side_Stretch_Pos [10.8-17.9]"
+    },
+    {
+     "t0": 21.9,
+     "t1": 22.17,
+     "J": 9.8,
+     "where": "hold standing [21.8-23.7]"
+    },
+    {
+     "t0": 10.73,
+     "t1": 10.93,
+     "J": 4.5,
+     "where": "hold Intense_Side_Stretch_Pos [10.8-17.9]"
+    },
+    {
+     "t0": 5.8,
+     "t1": 5.87,
+     "J": 4.1,
+     "where": "hold Intense_Side_Stretch_Pos [1.4-5.8]"
+    },
+    {
+     "t0": 21.63,
+     "t1": 21.63,
+     "J": 2.7,
+     "where": "hold standing [21.8-23.7]"
+    },
+    {
+     "t0": 12.47,
+     "t1": 12.67,
+     "J": 1.6,
+     "where": "hold Intense_Side_Stretch_Pos [10.8-17.9]"
+    }
+   ]
+  }
+ }
+}

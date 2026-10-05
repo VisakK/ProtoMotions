@@ -1,0 +1,1797 @@
+{
+ "schema_version": 1,
+ "generator": {
+  "module": "edge_synthesis.select_variants",
+  "git_rev": "96638d57b3794d23748b062ad1a4a5cfec238402",
+  "sha256": "fe4364527e32d1d379f6231f9a68b37cb8a254b0421ac6399d54251bfffcbe3b"
+ },
+ "inputs": {
+  "expert_revist/graph_growth_2026_10_03/admitted_physx.json": "5a66e0560cf5841ea91c754da3eefb2642903e83e4bf6bdc5689ec5d5a91488a"
+ },
+ "kind": "step3_variant_selection",
+ "decision": {
+  "date": "2026-10-04",
+  "by": "the user",
+  "edges": [
+   "E1",
+   "E3",
+   "B1",
+   "E2",
+   "E5"
+  ],
+  "dropped": {
+   "E4": "fails statics (as on MuJoCo); the executed head-lift is dynamic",
+   "B2": "never reaches crow (as on MuJoCo)"
+  },
+  "endpoints_advisory": [
+   "E2",
+   "E5"
+  ],
+  "note": "E2 and E5 end in a low chaturanga, 0.07-0.09 m (6-body) from the exemplar; accepted by the user"
+ },
+ "rule": {
+  "hard_every_edge": [
+   "contract",
+   "statics",
+   "physx_cpu",
+   "held"
+  ],
+  "hard_unless_endpoints_advisory": [
+   "endpoints"
+  ],
+  "advisory": [
+   "dynamics",
+   "naturalness_p99"
+  ],
+  "physx_reset_check": {
+   "library": {
+    "motion_dir": "output/edge_synthesis/physx/motions",
+    "loaded": true,
+    "error": null,
+    "motions": 92,
+    "plant_sha256": "aa541c77bcc1526905777c425e5ab072f21cae7bcadad9f71e3b1eb531f98f91",
+    "plant": "v2",
+    "v1_refused": true,
+    "v1_error": "motion library /home/visakii/Documents/moves/ProtoMotions/data/smpl/yoga_motions_proto_yogi_expert60_ftC/220923_Crane_Crow_Pose_or_Bakasana_-a.motion carries no plant identity, so it predates plant v2"
+   },
+   "fk": {
+    "frames": 1840,
+    "exemplars": 0,
+    "clips": 92,
+    "pos_max_err_m": 1.2347806110826066e-06,
+    "pos_p99_err_m": 6.415024317911625e-07,
+    "rot_max_err_deg": 0.00013216561457119006,
+    "dof_readback_max_err_rad": 0.0,
+    "worst": {
+     "stem": "SYN_E1_E1_E1_mid_s2_px12",
+     "frame": 284,
+     "exemplar": false,
+     "body": "R_Wrist"
+    }
+   },
+   "reset_launched": 0,
+   "reset_frames": 1840
+  }
+ },
+ "summary": {
+  "E1": {
+   "variants": 7,
+   "names": [
+    "SYN_E1_E1_E1_high_s0_px",
+    "SYN_E1_E1_E1_high_s1_px",
+    "SYN_E1_E1_E1_high_s2_px",
+    "SYN_E1_E1_E1_high_s3_px",
+    "SYN_E1_E1_E1_mid_s0_px",
+    "SYN_E1_E1_E1_mid_s2_px",
+    "SYN_E1_E1_E1_mid_s3_px"
+   ],
+   "final_d6_m": [
+    0.043,
+    0.0466,
+    0.0494,
+    0.038,
+    0.0325,
+    0.0341,
+    0.0421
+   ],
+   "hands_start_cm_max": 5.76,
+   "hands_end_cm_max": 5.19,
+   "feet_end_cm_max": 0
+  },
+  "E3": {
+   "variants": 3,
+   "names": [
+    "SYN_E3_E3_E3_high_s2_px",
+    "SYN_E3_E3_E3_high_s0_px12",
+    "SYN_E3_E3_E3_high_s3_px12"
+   ],
+   "final_d6_m": [
+    0.0493,
+    0.0492,
+    0.0458
+   ],
+   "hands_start_cm_max": 5.16,
+   "hands_end_cm_max": 5.58,
+   "feet_end_cm_max": 0
+  },
+  "B1": {
+   "variants": 9,
+   "names": [
+    "SYN_B1_B1_high_s0_px",
+    "SYN_B1_B1_high_s1_px",
+    "SYN_B1_B1_high_s2_px",
+    "SYN_B1_B1_high_s3_px",
+    "SYN_B1_B1_mid_s0_px",
+    "SYN_B1_B1_high_s2_px12",
+    "SYN_B1_B1_mid_s0_px12",
+    "SYN_B1_B1_mid_s1_px12",
+    "SYN_B1_B1_mid_s3_px12"
+   ],
+   "final_d6_m": [
+    0.0486,
+    0.0298,
+    0.0292,
+    0.0482,
+    0.0379,
+    0.0414,
+    0.0454,
+    0.0455,
+    0.042
+   ],
+   "hands_start_cm_max": 0.26,
+   "hands_end_cm_max": 0.74,
+   "feet_end_cm_max": 14.2
+  },
+  "E2": {
+   "variants": 4,
+   "names": [
+    "SYN_E2_E2_mid_s1_px",
+    "SYN_E2_E2_mid_s0_px12",
+    "SYN_E2_E2_mid_s1_px12",
+    "SYN_E2_E2_mid_s3_px12"
+   ],
+   "final_d6_m": [
+    0.0872,
+    0.0778,
+    0.0818,
+    0.0747
+   ],
+   "hands_start_cm_max": 0.3,
+   "hands_end_cm_max": 3.3,
+   "feet_end_cm_max": 5.88
+  },
+  "E5": {
+   "variants": 1,
+   "names": [
+    "SYN_E5_E5_mid_s0_px12"
+   ],
+   "final_d6_m": [
+    0.0884
+   ],
+   "hands_start_cm_max": 0.24,
+   "hands_end_cm_max": 0.5,
+   "feet_end_cm_max": 6.1
+  }
+ },
+ "variants": [
+  {
+   "variant": "SYN_B1_B1_high_s0_px",
+   "edge": "B1",
+   "label": "crow -> plank (jump-back, straight arms)",
+   "motion": "output/edge_synthesis/physx/motions/SYN_B1_B1_high_s0_px.motion",
+   "sha256": "f9d82509865dcfdc128ed84d70627b69ad9d55e90c8c0d0944def3a3a13a85da",
+   "record": "output/edge_synthesis/physx/motions/SYN_B1_B1_high_s0_px.json",
+   "source_run": "output/edge_synthesis/physx/runs/B1_high_s0_px",
+   "frames": 234,
+   "fps": 60,
+   "recipe": {
+    "pass": "px",
+    "noise": 0.08,
+    "timing": "high",
+    "durations_s": [
+     0.6,
+     1.0
+    ],
+    "T": 1.6,
+    "seed": 0,
+    "reference": null,
+    "via": null,
+    "start": {
+     "mode": "exemplar",
+     "source": "release exemplar"
+    }
+   },
+   "metrics": {
+    "final_d6_m": 0.0486,
+    "com_speed_end": 0.0192,
+    "held": true,
+    "landing_peak_bw": 0.897,
+    "hand_drift_cm": 1.33,
+    "torque_saturated_share_max": 0.669,
+    "speed_over_p99_max": 1.9,
+    "statics_s_star_max": 0.2205,
+    "free_violations": {}
+   },
+   "advisory_failed": [
+    "dynamics",
+    "naturalness_p99"
+   ],
+   "seams": {
+    "hands_start_cm": 0.15,
+    "hands_end_cm": 0.24,
+    "feet_end_cm": 14.2,
+    "hand_width_m": {
+     "synthetic": 0.3472,
+     "S": 0.3478,
+     "D": 0.3397
+    },
+    "hand_drift_cm": 0.39
+   }
+  },
+  {
+   "variant": "SYN_B1_B1_high_s1_px",
+   "edge": "B1",
+   "label": "crow -> plank (jump-back, straight arms)",
+   "motion": "output/edge_synthesis/physx/motions/SYN_B1_B1_high_s1_px.motion",
+   "sha256": "3a6bfedb052fbe95888d0cc3bdd6dd94ce828feb7b007c7f1ef408728e90d98a",
+   "record": "output/edge_synthesis/physx/motions/SYN_B1_B1_high_s1_px.json",
+   "source_run": "output/edge_synthesis/physx/runs/B1_high_s1_px",
+   "frames": 234,
+   "fps": 60,
+   "recipe": {
+    "pass": "px",
+    "noise": 0.08,
+    "timing": "high",
+    "durations_s": [
+     0.6,
+     1.0
+    ],
+    "T": 1.6,
+    "seed": 1,
+    "reference": null,
+    "via": null,
+    "start": {
+     "mode": "exemplar",
+     "source": "release exemplar"
+    }
+   },
+   "metrics": {
+    "final_d6_m": 0.0298,
+    "com_speed_end": 0.0363,
+    "held": true,
+    "landing_peak_bw": 0.963,
+    "hand_drift_cm": 1.78,
+    "torque_saturated_share_max": 0.265,
+    "speed_over_p99_max": 1.76,
+    "statics_s_star_max": 0.2335,
+    "free_violations": {}
+   },
+   "advisory_failed": [
+    "dynamics",
+    "naturalness_p99"
+   ],
+   "seams": {
+    "hands_start_cm": 0.11,
+    "hands_end_cm": 0.36,
+    "feet_end_cm": 7.34,
+    "hand_width_m": {
+     "synthetic": 0.3481,
+     "S": 0.3478,
+     "D": 0.3397
+    },
+    "hand_drift_cm": 0.7
+   }
+  },
+  {
+   "variant": "SYN_B1_B1_high_s2_px",
+   "edge": "B1",
+   "label": "crow -> plank (jump-back, straight arms)",
+   "motion": "output/edge_synthesis/physx/motions/SYN_B1_B1_high_s2_px.motion",
+   "sha256": "571b7d8c66134d011a302b331b8459b9130f7c7530b880ff47330a93405713a4",
+   "record": "output/edge_synthesis/physx/motions/SYN_B1_B1_high_s2_px.json",
+   "source_run": "output/edge_synthesis/physx/runs/B1_high_s2_px",
+   "frames": 234,
+   "fps": 60,
+   "recipe": {
+    "pass": "px",
+    "noise": 0.08,
+    "timing": "high",
+    "durations_s": [
+     0.6,
+     1.0
+    ],
+    "T": 1.6,
+    "seed": 2,
+    "reference": null,
+    "via": null,
+    "start": {
+     "mode": "exemplar",
+     "source": "release exemplar"
+    }
+   },
+   "metrics": {
+    "final_d6_m": 0.0292,
+    "com_speed_end": 0.0275,
+    "held": true,
+    "landing_peak_bw": 1.013,
+    "hand_drift_cm": 1.33,
+    "torque_saturated_share_max": 0.434,
+    "speed_over_p99_max": 1.8,
+    "statics_s_star_max": 0.2353,
+    "free_violations": {}
+   },
+   "advisory_failed": [
+    "dynamics",
+    "naturalness_p99"
+   ],
+   "seams": {
+    "hands_start_cm": 0.18,
+    "hands_end_cm": 0.74,
+    "feet_end_cm": 11.95,
+    "hand_width_m": {
+     "synthetic": 0.3467,
+     "S": 0.3478,
+     "D": 0.3397
+    },
+    "hand_drift_cm": 0.57
+   }
+  },
+  {
+   "variant": "SYN_B1_B1_high_s3_px",
+   "edge": "B1",
+   "label": "crow -> plank (jump-back, straight arms)",
+   "motion": "output/edge_synthesis/physx/motions/SYN_B1_B1_high_s3_px.motion",
+   "sha256": "714565fdbc7245c67410ad3af18413b3b358cd0b9b30f09f2d6fc5978ea4557d",
+   "record": "output/edge_synthesis/physx/motions/SYN_B1_B1_high_s3_px.json",
+   "source_run": "output/edge_synthesis/physx/runs/B1_high_s3_px",
+   "frames": 234,
+   "fps": 60,
+   "recipe": {
+    "pass": "px",
+    "noise": 0.08,
+    "timing": "high",
+    "durations_s": [
+     0.6,
+     1.0
+    ],
+    "T": 1.6,
+    "seed": 3,
+    "reference": null,
+    "via": null,
+    "start": {
+     "mode": "exemplar",
+     "source": "release exemplar"
+    }
+   },
+   "metrics": {
+    "final_d6_m": 0.0482,
+    "com_speed_end": 0.0295,
+    "held": true,
+    "landing_peak_bw": 0.714,
+    "hand_drift_cm": 1.17,
+    "torque_saturated_share_max": 0.265,
+    "speed_over_p99_max": 1.84,
+    "statics_s_star_max": 0.1869,
+    "free_violations": {
+     "L_FOOT": 4,
+     "R_FOOT": 1
+    }
+   },
+   "advisory_failed": [
+    "dynamics",
+    "naturalness_p99"
+   ],
+   "seams": {
+    "hands_start_cm": 0.26,
+    "hands_end_cm": 0.58,
+    "feet_end_cm": 9.04,
+    "hand_width_m": {
+     "synthetic": 0.3472,
+     "S": 0.3478,
+     "D": 0.3397
+    },
+    "hand_drift_cm": 0.38
+   }
+  },
+  {
+   "variant": "SYN_B1_B1_mid_s0_px",
+   "edge": "B1",
+   "label": "crow -> plank (jump-back, straight arms)",
+   "motion": "output/edge_synthesis/physx/motions/SYN_B1_B1_mid_s0_px.motion",
+   "sha256": "de2f53303a0a8c793211332accbb83cc475846aa84728921ee1530e2e3375b1b",
+   "record": "output/edge_synthesis/physx/motions/SYN_B1_B1_mid_s0_px.json",
+   "source_run": "output/edge_synthesis/physx/runs/B1_mid_s0_px",
+   "frames": 204,
+   "fps": 60,
+   "recipe": {
+    "pass": "px",
+    "noise": 0.08,
+    "timing": "mid",
+    "durations_s": [
+     0.425,
+     0.65
+    ],
+    "T": 1.075,
+    "seed": 0,
+    "reference": null,
+    "via": null,
+    "start": {
+     "mode": "exemplar",
+     "source": "release exemplar"
+    }
+   },
+   "metrics": {
+    "final_d6_m": 0.0379,
+    "com_speed_end": 0.034,
+    "held": true,
+    "landing_peak_bw": 1.338,
+    "hand_drift_cm": 1.55,
+    "torque_saturated_share_max": 0.243,
+    "speed_over_p99_max": 2.14,
+    "statics_s_star_max": 0.1965,
+    "free_violations": {}
+   },
+   "advisory_failed": [
+    "dynamics",
+    "naturalness_p99"
+   ],
+   "seams": {
+    "hands_start_cm": 0.19,
+    "hands_end_cm": 0.32,
+    "feet_end_cm": 5.72,
+    "hand_width_m": {
+     "synthetic": 0.3469,
+     "S": 0.3478,
+     "D": 0.3397
+    },
+    "hand_drift_cm": 0.69
+   }
+  },
+  {
+   "variant": "SYN_E1_E1_E1_high_s0_px",
+   "edge": "E1",
+   "label": "crow -> handstand (press)",
+   "motion": "output/edge_synthesis/physx/motions/SYN_E1_E1_E1_high_s0_px.motion",
+   "sha256": "51f0270ddf427120e9affe63af457737dc05a6b0a9c91f63e8b06ec6819482ec",
+   "record": "output/edge_synthesis/physx/motions/SYN_E1_E1_E1_high_s0_px.json",
+   "source_run": "output/edge_synthesis/physx/runs/E1_E1_high_s0_px",
+   "frames": 408,
+   "fps": 60,
+   "recipe": {
+    "pass": "px",
+    "noise": 0.05,
+    "timing": "E1_high",
+    "durations_s": [
+     2.5,
+     2.0
+    ],
+    "T": 4.5,
+    "seed": 0,
+    "reference": "output/edge_synthesis/quasistatic/E1_high",
+    "via": null,
+    "start": {
+     "mode": "reference",
+     "source": "reference frame 0 (t=-0.300)"
+    }
+   },
+   "metrics": {
+    "final_d6_m": 0.043,
+    "com_speed_end": 0.0284,
+    "held": true,
+    "landing_peak_bw": 0.647,
+    "hand_drift_cm": 0.43,
+    "torque_saturated_share_max": 0.306,
+    "speed_over_p99_max": 1.27,
+    "statics_s_star_max": 0.606,
+    "free_violations": {}
+   },
+   "advisory_failed": [
+    "dynamics",
+    "naturalness_p99"
+   ],
+   "seams": {
+    "hands_start_cm": 5.66,
+    "hands_end_cm": 4.98,
+    "feet_end_cm": null,
+    "hand_width_m": {
+     "synthetic": 0.407,
+     "S": 0.3478,
+     "D": 0.3584
+    },
+    "hand_drift_cm": 0.66
+   }
+  },
+  {
+   "variant": "SYN_E1_E1_E1_high_s1_px",
+   "edge": "E1",
+   "label": "crow -> handstand (press)",
+   "motion": "output/edge_synthesis/physx/motions/SYN_E1_E1_E1_high_s1_px.motion",
+   "sha256": "74c48fb60f6967a8ddc25f700a7d86c7aaeac90d95d03d9f25e1e7367cb57b04",
+   "record": "output/edge_synthesis/physx/motions/SYN_E1_E1_E1_high_s1_px.json",
+   "source_run": "output/edge_synthesis/physx/runs/E1_E1_high_s1_px",
+   "frames": 408,
+   "fps": 60,
+   "recipe": {
+    "pass": "px",
+    "noise": 0.05,
+    "timing": "E1_high",
+    "durations_s": [
+     2.5,
+     2.0
+    ],
+    "T": 4.5,
+    "seed": 1,
+    "reference": "output/edge_synthesis/quasistatic/E1_high",
+    "via": null,
+    "start": {
+     "mode": "reference",
+     "source": "reference frame 0 (t=-0.300)"
+    }
+   },
+   "metrics": {
+    "final_d6_m": 0.0466,
+    "com_speed_end": 0.0277,
+    "held": true,
+    "landing_peak_bw": 0.621,
+    "hand_drift_cm": 0.49,
+    "torque_saturated_share_max": 0.395,
+    "speed_over_p99_max": 1.12,
+    "statics_s_star_max": 0.6937,
+    "free_violations": {}
+   },
+   "advisory_failed": [
+    "dynamics",
+    "naturalness_p99"
+   ],
+   "seams": {
+    "hands_start_cm": 5.76,
+    "hands_end_cm": 5.15,
+    "feet_end_cm": null,
+    "hand_width_m": {
+     "synthetic": 0.4072,
+     "S": 0.3478,
+     "D": 0.3584
+    },
+    "hand_drift_cm": 0.92
+   }
+  },
+  {
+   "variant": "SYN_E1_E1_E1_high_s2_px",
+   "edge": "E1",
+   "label": "crow -> handstand (press)",
+   "motion": "output/edge_synthesis/physx/motions/SYN_E1_E1_E1_high_s2_px.motion",
+   "sha256": "567f25216d8c7889a93f780ded50e57201f7e7acffd5676f0d7acce696d1e444",
+   "record": "output/edge_synthesis/physx/motions/SYN_E1_E1_E1_high_s2_px.json",
+   "source_run": "output/edge_synthesis/physx/runs/E1_E1_high_s2_px",
+   "frames": 408,
+   "fps": 60,
+   "recipe": {
+    "pass": "px",
+    "noise": 0.05,
+    "timing": "E1_high",
+    "durations_s": [
+     2.5,
+     2.0
+    ],
+    "T": 4.5,
+    "seed": 2,
+    "reference": "output/edge_synthesis/quasistatic/E1_high",
+    "via": null,
+    "start": {
+     "mode": "reference",
+     "source": "reference frame 0 (t=-0.300)"
+    }
+   },
+   "metrics": {
+    "final_d6_m": 0.0494,
+    "com_speed_end": 0.0219,
+    "held": true,
+    "landing_peak_bw": 0.646,
+    "hand_drift_cm": 0.43,
+    "torque_saturated_share_max": 0.417,
+    "speed_over_p99_max": 1.2,
+    "statics_s_star_max": 0.751,
+    "free_violations": {}
+   },
+   "advisory_failed": [
+    "dynamics",
+    "naturalness_p99"
+   ],
+   "seams": {
+    "hands_start_cm": 5.72,
+    "hands_end_cm": 5.08,
+    "feet_end_cm": null,
+    "hand_width_m": {
+     "synthetic": 0.4059,
+     "S": 0.3478,
+     "D": 0.3584
+    },
+    "hand_drift_cm": 0.67
+   }
+  },
+  {
+   "variant": "SYN_E1_E1_E1_high_s3_px",
+   "edge": "E1",
+   "label": "crow -> handstand (press)",
+   "motion": "output/edge_synthesis/physx/motions/SYN_E1_E1_E1_high_s3_px.motion",
+   "sha256": "9e712d930f31318c51cbea85981563746c5fea2ee1f33fa581b43e3647d6d4e2",
+   "record": "output/edge_synthesis/physx/motions/SYN_E1_E1_E1_high_s3_px.json",
+   "source_run": "output/edge_synthesis/physx/runs/E1_E1_high_s3_px",
+   "frames": 408,
+   "fps": 60,
+   "recipe": {
+    "pass": "px",
+    "noise": 0.05,
+    "timing": "E1_high",
+    "durations_s": [
+     2.5,
+     2.0
+    ],
+    "T": 4.5,
+    "seed": 3,
+    "reference": "output/edge_synthesis/quasistatic/E1_high",
+    "via": null,
+    "start": {
+     "mode": "reference",
+     "source": "reference frame 0 (t=-0.300)"
+    }
+   },
+   "metrics": {
+    "final_d6_m": 0.038,
+    "com_speed_end": 0.0229,
+    "held": true,
+    "landing_peak_bw": 0.619,
+    "hand_drift_cm": 0.51,
+    "torque_saturated_share_max": 0.3,
+    "speed_over_p99_max": 1.21,
+    "statics_s_star_max": 0.5822,
+    "free_violations": {}
+   },
+   "advisory_failed": [
+    "dynamics",
+    "naturalness_p99"
+   ],
+   "seams": {
+    "hands_start_cm": 5.67,
+    "hands_end_cm": 5.19,
+    "feet_end_cm": null,
+    "hand_width_m": {
+     "synthetic": 0.4067,
+     "S": 0.3478,
+     "D": 0.3584
+    },
+    "hand_drift_cm": 0.56
+   }
+  },
+  {
+   "variant": "SYN_E1_E1_E1_mid_s0_px",
+   "edge": "E1",
+   "label": "crow -> handstand (press)",
+   "motion": "output/edge_synthesis/physx/motions/SYN_E1_E1_E1_mid_s0_px.motion",
+   "sha256": "115e7b38549ea68cf654a69578488c4ca68cccda37fe90c47af8f9e61065f31f",
+   "record": "output/edge_synthesis/physx/motions/SYN_E1_E1_E1_mid_s0_px.json",
+   "source_run": "output/edge_synthesis/physx/runs/E1_E1_mid_s0_px",
+   "frames": 318,
+   "fps": 60,
+   "recipe": {
+    "pass": "px",
+    "noise": 0.05,
+    "timing": "E1_mid",
+    "durations_s": [
+     1.65,
+     1.3
+    ],
+    "T": 2.95,
+    "seed": 0,
+    "reference": "output/edge_synthesis/quasistatic/E1_mid",
+    "via": null,
+    "start": {
+     "mode": "reference",
+     "source": "reference frame 0 (t=-0.300)"
+    }
+   },
+   "metrics": {
+    "final_d6_m": 0.0325,
+    "com_speed_end": 0.0147,
+    "held": true,
+    "landing_peak_bw": 0.705,
+    "hand_drift_cm": 0.67,
+    "torque_saturated_share_max": 0.429,
+    "speed_over_p99_max": 1.44,
+    "statics_s_star_max": 0.7807,
+    "free_violations": {}
+   },
+   "advisory_failed": [
+    "dynamics",
+    "naturalness_p99"
+   ],
+   "seams": {
+    "hands_start_cm": 4.4,
+    "hands_end_cm": 3.71,
+    "feet_end_cm": null,
+    "hand_width_m": {
+     "synthetic": 0.3832,
+     "S": 0.3478,
+     "D": 0.3584
+    },
+    "hand_drift_cm": 0.89
+   }
+  },
+  {
+   "variant": "SYN_E1_E1_E1_mid_s2_px",
+   "edge": "E1",
+   "label": "crow -> handstand (press)",
+   "motion": "output/edge_synthesis/physx/motions/SYN_E1_E1_E1_mid_s2_px.motion",
+   "sha256": "e85c34dc8de43533c458c3aa91aa01f81e122e548373ce837e1dc2dbd77699cb",
+   "record": "output/edge_synthesis/physx/motions/SYN_E1_E1_E1_mid_s2_px.json",
+   "source_run": "output/edge_synthesis/physx/runs/E1_E1_mid_s2_px",
+   "frames": 318,
+   "fps": 60,
+   "recipe": {
+    "pass": "px",
+    "noise": 0.05,
+    "timing": "E1_mid",
+    "durations_s": [
+     1.65,
+     1.3
+    ],
+    "T": 2.95,
+    "seed": 2,
+    "reference": "output/edge_synthesis/quasistatic/E1_mid",
+    "via": null,
+    "start": {
+     "mode": "reference",
+     "source": "reference frame 0 (t=-0.300)"
+    }
+   },
+   "metrics": {
+    "final_d6_m": 0.0341,
+    "com_speed_end": 0.0169,
+    "held": true,
+    "landing_peak_bw": 0.653,
+    "hand_drift_cm": 0.47,
+    "torque_saturated_share_max": 0.459,
+    "speed_over_p99_max": 1.41,
+    "statics_s_star_max": 0.8406,
+    "free_violations": {}
+   },
+   "advisory_failed": [
+    "dynamics",
+    "naturalness_p99"
+   ],
+   "seams": {
+    "hands_start_cm": 4.4,
+    "hands_end_cm": 3.96,
+    "feet_end_cm": null,
+    "hand_width_m": {
+     "synthetic": 0.3815,
+     "S": 0.3478,
+     "D": 0.3584
+    },
+    "hand_drift_cm": 0.68
+   }
+  },
+  {
+   "variant": "SYN_E1_E1_E1_mid_s3_px",
+   "edge": "E1",
+   "label": "crow -> handstand (press)",
+   "motion": "output/edge_synthesis/physx/motions/SYN_E1_E1_E1_mid_s3_px.motion",
+   "sha256": "f3593e9cc701d38ea58899531904cceccf8bea73c490c123e97153585fdc338e",
+   "record": "output/edge_synthesis/physx/motions/SYN_E1_E1_E1_mid_s3_px.json",
+   "source_run": "output/edge_synthesis/physx/runs/E1_E1_mid_s3_px",
+   "frames": 318,
+   "fps": 60,
+   "recipe": {
+    "pass": "px",
+    "noise": 0.05,
+    "timing": "E1_mid",
+    "durations_s": [
+     1.65,
+     1.3
+    ],
+    "T": 2.95,
+    "seed": 3,
+    "reference": "output/edge_synthesis/quasistatic/E1_mid",
+    "via": null,
+    "start": {
+     "mode": "reference",
+     "source": "reference frame 0 (t=-0.300)"
+    }
+   },
+   "metrics": {
+    "final_d6_m": 0.0421,
+    "com_speed_end": 0.0223,
+    "held": true,
+    "landing_peak_bw": 0.665,
+    "hand_drift_cm": 0.58,
+    "torque_saturated_share_max": 0.497,
+    "speed_over_p99_max": 1.43,
+    "statics_s_star_max": 0.7903,
+    "free_violations": {}
+   },
+   "advisory_failed": [
+    "dynamics",
+    "naturalness_p99"
+   ],
+   "seams": {
+    "hands_start_cm": 4.36,
+    "hands_end_cm": 4.0,
+    "feet_end_cm": null,
+    "hand_width_m": {
+     "synthetic": 0.3824,
+     "S": 0.3478,
+     "D": 0.3584
+    },
+    "hand_drift_cm": 0.64
+   }
+  },
+  {
+   "variant": "SYN_E2_E2_mid_s1_px",
+   "edge": "E2",
+   "label": "crow -> chaturanga (jump-back)",
+   "motion": "output/edge_synthesis/physx/motions/SYN_E2_E2_mid_s1_px.motion",
+   "sha256": "ed5c409c3ab5cb08edd2c6f9eab669d9ecd7e7c3dae20e461341bf84adf7689b",
+   "record": "output/edge_synthesis/physx/motions/SYN_E2_E2_mid_s1_px.json",
+   "source_run": "output/edge_synthesis/physx/runs/E2_mid_s1_px",
+   "frames": 204,
+   "fps": 60,
+   "recipe": {
+    "pass": "px",
+    "noise": 0.08,
+    "timing": "mid",
+    "durations_s": [
+     0.425,
+     0.65
+    ],
+    "T": 1.075,
+    "seed": 1,
+    "reference": null,
+    "via": null,
+    "start": {
+     "mode": "exemplar",
+     "source": "release exemplar"
+    }
+   },
+   "metrics": {
+    "final_d6_m": 0.0872,
+    "com_speed_end": 0.0397,
+    "held": true,
+    "landing_peak_bw": 1.777,
+    "hand_drift_cm": 3.71,
+    "torque_saturated_share_max": 0.998,
+    "speed_over_p99_max": 2.83,
+    "statics_s_star_max": 0.3733,
+    "free_violations": {
+     "L_SHANK": 7,
+     "L_THIGH": 8
+    }
+   },
+   "advisory_failed": [
+    "dynamics",
+    "endpoints",
+    "naturalness_p99"
+   ],
+   "seams": {
+    "hands_start_cm": 0.3,
+    "hands_end_cm": 2.68,
+    "feet_end_cm": 5.88,
+    "hand_width_m": {
+     "synthetic": 0.3469,
+     "S": 0.3478,
+     "D": 0.368
+    },
+    "hand_drift_cm": 2.69
+   }
+  },
+  {
+   "variant": "SYN_E3_E3_E3_high_s2_px",
+   "edge": "E3",
+   "label": "handstand -> crow (lower)",
+   "motion": "output/edge_synthesis/physx/motions/SYN_E3_E3_E3_high_s2_px.motion",
+   "sha256": "40386f69e246978902b2b7b7cd55a73d7f0e9fb6f2308aeac0a3b9a49fccab2f",
+   "record": "output/edge_synthesis/physx/motions/SYN_E3_E3_E3_high_s2_px.json",
+   "source_run": "output/edge_synthesis/physx/runs/E3_E3_high_s2_px",
+   "frames": 378,
+   "fps": 60,
+   "recipe": {
+    "pass": "px",
+    "noise": 0.05,
+    "timing": "E3_high",
+    "durations_s": [
+     3.0,
+     1.0
+    ],
+    "T": 4.0,
+    "seed": 2,
+    "reference": "output/edge_synthesis/quasistatic/E3_high",
+    "via": null,
+    "start": {
+     "mode": "reference",
+     "source": "reference frame 0 (t=-0.300)"
+    }
+   },
+   "metrics": {
+    "final_d6_m": 0.0493,
+    "com_speed_end": 0.0292,
+    "held": true,
+    "landing_peak_bw": 1.879,
+    "hand_drift_cm": 0.5,
+    "torque_saturated_share_max": 0.635,
+    "speed_over_p99_max": 1.73,
+    "statics_s_star_max": 0.6441,
+    "free_violations": {}
+   },
+   "advisory_failed": [
+    "dynamics",
+    "naturalness_p99"
+   ],
+   "seams": {
+    "hands_start_cm": 5.05,
+    "hands_end_cm": 5.42,
+    "feet_end_cm": null,
+    "hand_width_m": {
+     "synthetic": 0.3966,
+     "S": 0.3584,
+     "D": 0.3478
+    },
+    "hand_drift_cm": 0.77
+   }
+  },
+  {
+   "variant": "SYN_B1_B1_high_s2_px12",
+   "edge": "B1",
+   "label": "crow -> plank (jump-back, straight arms)",
+   "motion": "output/edge_synthesis/physx/motions/SYN_B1_B1_high_s2_px12.motion",
+   "sha256": "cc2951a888ffdf4834bfd3aef05439259046b1463db8dad2200876f9a13dbcff",
+   "record": "output/edge_synthesis/physx/motions/SYN_B1_B1_high_s2_px12.json",
+   "source_run": "output/edge_synthesis/physx/runs/B1_high_s2_px12",
+   "frames": 234,
+   "fps": 60,
+   "recipe": {
+    "pass": "px12",
+    "noise": 0.12,
+    "timing": "high",
+    "durations_s": [
+     0.6,
+     1.0
+    ],
+    "T": 1.6,
+    "seed": 2,
+    "reference": null,
+    "via": null,
+    "start": {
+     "mode": "exemplar",
+     "source": "release exemplar"
+    }
+   },
+   "metrics": {
+    "final_d6_m": 0.0414,
+    "com_speed_end": 0.0307,
+    "held": true,
+    "landing_peak_bw": 1.452,
+    "hand_drift_cm": 1.61,
+    "torque_saturated_share_max": 0.756,
+    "speed_over_p99_max": 1.64,
+    "statics_s_star_max": 0.2583,
+    "free_violations": {}
+   },
+   "advisory_failed": [
+    "dynamics",
+    "naturalness_p99"
+   ],
+   "seams": {
+    "hands_start_cm": 0.14,
+    "hands_end_cm": 0.58,
+    "feet_end_cm": 10.98,
+    "hand_width_m": {
+     "synthetic": 0.3478,
+     "S": 0.3478,
+     "D": 0.3397
+    },
+    "hand_drift_cm": 0.7
+   }
+  },
+  {
+   "variant": "SYN_B1_B1_mid_s0_px12",
+   "edge": "B1",
+   "label": "crow -> plank (jump-back, straight arms)",
+   "motion": "output/edge_synthesis/physx/motions/SYN_B1_B1_mid_s0_px12.motion",
+   "sha256": "83b39275e53d2cec6f162ba194e7877bb9eb467a34993506aa86ef8c1ed6849d",
+   "record": "output/edge_synthesis/physx/motions/SYN_B1_B1_mid_s0_px12.json",
+   "source_run": "output/edge_synthesis/physx/runs/B1_mid_s0_px12",
+   "frames": 204,
+   "fps": 60,
+   "recipe": {
+    "pass": "px12",
+    "noise": 0.12,
+    "timing": "mid",
+    "durations_s": [
+     0.425,
+     0.65
+    ],
+    "T": 1.075,
+    "seed": 0,
+    "reference": null,
+    "via": null,
+    "start": {
+     "mode": "exemplar",
+     "source": "release exemplar"
+    }
+   },
+   "metrics": {
+    "final_d6_m": 0.0454,
+    "com_speed_end": 0.0335,
+    "held": true,
+    "landing_peak_bw": 1.395,
+    "hand_drift_cm": 1.59,
+    "torque_saturated_share_max": 0.561,
+    "speed_over_p99_max": 2.0,
+    "statics_s_star_max": 0.2064,
+    "free_violations": {}
+   },
+   "advisory_failed": [
+    "dynamics",
+    "naturalness_p99"
+   ],
+   "seams": {
+    "hands_start_cm": 0.16,
+    "hands_end_cm": 0.44,
+    "feet_end_cm": 12.1,
+    "hand_width_m": {
+     "synthetic": 0.3487,
+     "S": 0.3478,
+     "D": 0.3397
+    },
+    "hand_drift_cm": 0.81
+   }
+  },
+  {
+   "variant": "SYN_B1_B1_mid_s1_px12",
+   "edge": "B1",
+   "label": "crow -> plank (jump-back, straight arms)",
+   "motion": "output/edge_synthesis/physx/motions/SYN_B1_B1_mid_s1_px12.motion",
+   "sha256": "46b8fff54b4474fe2e11608dbe251827134666956733f249af899b5cd20c1c1d",
+   "record": "output/edge_synthesis/physx/motions/SYN_B1_B1_mid_s1_px12.json",
+   "source_run": "output/edge_synthesis/physx/runs/B1_mid_s1_px12",
+   "frames": 204,
+   "fps": 60,
+   "recipe": {
+    "pass": "px12",
+    "noise": 0.12,
+    "timing": "mid",
+    "durations_s": [
+     0.425,
+     0.65
+    ],
+    "T": 1.075,
+    "seed": 1,
+    "reference": null,
+    "via": null,
+    "start": {
+     "mode": "exemplar",
+     "source": "release exemplar"
+    }
+   },
+   "metrics": {
+    "final_d6_m": 0.0455,
+    "com_speed_end": 0.0283,
+    "held": true,
+    "landing_peak_bw": 1.584,
+    "hand_drift_cm": 1.21,
+    "torque_saturated_share_max": 0.36,
+    "speed_over_p99_max": 1.99,
+    "statics_s_star_max": 0.1902,
+    "free_violations": {}
+   },
+   "advisory_failed": [
+    "dynamics",
+    "naturalness_p99"
+   ],
+   "seams": {
+    "hands_start_cm": 0.2,
+    "hands_end_cm": 0.54,
+    "feet_end_cm": 10.25,
+    "hand_width_m": {
+     "synthetic": 0.3477,
+     "S": 0.3478,
+     "D": 0.3397
+    },
+    "hand_drift_cm": 0.65
+   }
+  },
+  {
+   "variant": "SYN_B1_B1_mid_s3_px12",
+   "edge": "B1",
+   "label": "crow -> plank (jump-back, straight arms)",
+   "motion": "output/edge_synthesis/physx/motions/SYN_B1_B1_mid_s3_px12.motion",
+   "sha256": "eca6b701197ae73cb05a1fc108483a5edc9aff88454f0cceb179b26d6fec60ef",
+   "record": "output/edge_synthesis/physx/motions/SYN_B1_B1_mid_s3_px12.json",
+   "source_run": "output/edge_synthesis/physx/runs/B1_mid_s3_px12",
+   "frames": 204,
+   "fps": 60,
+   "recipe": {
+    "pass": "px12",
+    "noise": 0.12,
+    "timing": "mid",
+    "durations_s": [
+     0.425,
+     0.65
+    ],
+    "T": 1.075,
+    "seed": 3,
+    "reference": null,
+    "via": null,
+    "start": {
+     "mode": "exemplar",
+     "source": "release exemplar"
+    }
+   },
+   "metrics": {
+    "final_d6_m": 0.042,
+    "com_speed_end": 0.042,
+    "held": true,
+    "landing_peak_bw": 1.569,
+    "hand_drift_cm": 1.14,
+    "torque_saturated_share_max": 0.257,
+    "speed_over_p99_max": 1.92,
+    "statics_s_star_max": 0.1782,
+    "free_violations": {}
+   },
+   "advisory_failed": [
+    "dynamics",
+    "naturalness_p99"
+   ],
+   "seams": {
+    "hands_start_cm": 0.18,
+    "hands_end_cm": 0.26,
+    "feet_end_cm": 7.31,
+    "hand_width_m": {
+     "synthetic": 0.3493,
+     "S": 0.3478,
+     "D": 0.3397
+    },
+    "hand_drift_cm": 0.51
+   }
+  },
+  {
+   "variant": "SYN_E2_E2_mid_s0_px12",
+   "edge": "E2",
+   "label": "crow -> chaturanga (jump-back)",
+   "motion": "output/edge_synthesis/physx/motions/SYN_E2_E2_mid_s0_px12.motion",
+   "sha256": "d0b122fdc536481da739dbfb0e69a63ab24faeead207827c184c903bf4c44d1a",
+   "record": "output/edge_synthesis/physx/motions/SYN_E2_E2_mid_s0_px12.json",
+   "source_run": "output/edge_synthesis/physx/runs/E2_mid_s0_px12",
+   "frames": 204,
+   "fps": 60,
+   "recipe": {
+    "pass": "px12",
+    "noise": 0.12,
+    "timing": "mid",
+    "durations_s": [
+     0.425,
+     0.65
+    ],
+    "T": 1.075,
+    "seed": 0,
+    "reference": null,
+    "via": null,
+    "start": {
+     "mode": "exemplar",
+     "source": "release exemplar"
+    }
+   },
+   "metrics": {
+    "final_d6_m": 0.0778,
+    "com_speed_end": 0.0318,
+    "held": true,
+    "landing_peak_bw": 3.84,
+    "hand_drift_cm": 3.5,
+    "torque_saturated_share_max": 0.993,
+    "speed_over_p99_max": 2.63,
+    "statics_s_star_max": 0.2398,
+    "free_violations": {
+     "L_SHANK": 9,
+     "L_THIGH": 9
+    }
+   },
+   "advisory_failed": [
+    "dynamics",
+    "endpoints",
+    "naturalness_p99"
+   ],
+   "seams": {
+    "hands_start_cm": 0.18,
+    "hands_end_cm": 2.5,
+    "feet_end_cm": 5.23,
+    "hand_width_m": {
+     "synthetic": 0.3479,
+     "S": 0.3478,
+     "D": 0.368
+    },
+    "hand_drift_cm": 3.39
+   }
+  },
+  {
+   "variant": "SYN_E2_E2_mid_s1_px12",
+   "edge": "E2",
+   "label": "crow -> chaturanga (jump-back)",
+   "motion": "output/edge_synthesis/physx/motions/SYN_E2_E2_mid_s1_px12.motion",
+   "sha256": "cb28b7114abec92a9280e496ccaeca334faff5c4d8c7087a4e6c37d4e03f57af",
+   "record": "output/edge_synthesis/physx/motions/SYN_E2_E2_mid_s1_px12.json",
+   "source_run": "output/edge_synthesis/physx/runs/E2_mid_s1_px12",
+   "frames": 204,
+   "fps": 60,
+   "recipe": {
+    "pass": "px12",
+    "noise": 0.12,
+    "timing": "mid",
+    "durations_s": [
+     0.425,
+     0.65
+    ],
+    "T": 1.075,
+    "seed": 1,
+    "reference": null,
+    "via": null,
+    "start": {
+     "mode": "exemplar",
+     "source": "release exemplar"
+    }
+   },
+   "metrics": {
+    "final_d6_m": 0.0818,
+    "com_speed_end": 0.0321,
+    "held": true,
+    "landing_peak_bw": 1.789,
+    "hand_drift_cm": 2.73,
+    "torque_saturated_share_max": 0.998,
+    "speed_over_p99_max": 2.67,
+    "statics_s_star_max": 0.2555,
+    "free_violations": {
+     "L_SHANK": 4,
+     "L_THIGH": 4
+    }
+   },
+   "advisory_failed": [
+    "dynamics",
+    "endpoints",
+    "naturalness_p99"
+   ],
+   "seams": {
+    "hands_start_cm": 0.19,
+    "hands_end_cm": 3.3,
+    "feet_end_cm": 4.99,
+    "hand_width_m": {
+     "synthetic": 0.3489,
+     "S": 0.3478,
+     "D": 0.368
+    },
+    "hand_drift_cm": 2.75
+   }
+  },
+  {
+   "variant": "SYN_E2_E2_mid_s3_px12",
+   "edge": "E2",
+   "label": "crow -> chaturanga (jump-back)",
+   "motion": "output/edge_synthesis/physx/motions/SYN_E2_E2_mid_s3_px12.motion",
+   "sha256": "954c68f0081c3d283ae98d44de9f274327ef8cda279af48e5d2efe225dc6cf9e",
+   "record": "output/edge_synthesis/physx/motions/SYN_E2_E2_mid_s3_px12.json",
+   "source_run": "output/edge_synthesis/physx/runs/E2_mid_s3_px12",
+   "frames": 204,
+   "fps": 60,
+   "recipe": {
+    "pass": "px12",
+    "noise": 0.12,
+    "timing": "mid",
+    "durations_s": [
+     0.425,
+     0.65
+    ],
+    "T": 1.075,
+    "seed": 3,
+    "reference": null,
+    "via": null,
+    "start": {
+     "mode": "exemplar",
+     "source": "release exemplar"
+    }
+   },
+   "metrics": {
+    "final_d6_m": 0.0747,
+    "com_speed_end": 0.0249,
+    "held": true,
+    "landing_peak_bw": 4.95,
+    "hand_drift_cm": 1.82,
+    "torque_saturated_share_max": 1.0,
+    "speed_over_p99_max": 2.64,
+    "statics_s_star_max": 0.2429,
+    "free_violations": {
+     "L_SHANK": 16,
+     "L_THIGH": 13
+    }
+   },
+   "advisory_failed": [
+    "dynamics",
+    "endpoints",
+    "naturalness_p99"
+   ],
+   "seams": {
+    "hands_start_cm": 0.18,
+    "hands_end_cm": 3.09,
+    "feet_end_cm": 4.98,
+    "hand_width_m": {
+     "synthetic": 0.3494,
+     "S": 0.3478,
+     "D": 0.368
+    },
+    "hand_drift_cm": 1.75
+   }
+  },
+  {
+   "variant": "SYN_E3_E3_E3_high_s0_px12",
+   "edge": "E3",
+   "label": "handstand -> crow (lower)",
+   "motion": "output/edge_synthesis/physx/motions/SYN_E3_E3_E3_high_s0_px12.motion",
+   "sha256": "b2ad85b390133c1fa7ab6b89f232447170c8d0d8ee5d1e9cfc44e0eb88ab53b6",
+   "record": "output/edge_synthesis/physx/motions/SYN_E3_E3_E3_high_s0_px12.json",
+   "source_run": "output/edge_synthesis/physx/runs/E3_E3_high_s0_px12",
+   "frames": 378,
+   "fps": 60,
+   "recipe": {
+    "pass": "px12",
+    "noise": 0.12,
+    "timing": "E3_high",
+    "durations_s": [
+     3.0,
+     1.0
+    ],
+    "T": 4.0,
+    "seed": 0,
+    "reference": "output/edge_synthesis/quasistatic/E3_high",
+    "via": null,
+    "start": {
+     "mode": "reference",
+     "source": "reference frame 0 (t=-0.300)"
+    }
+   },
+   "metrics": {
+    "final_d6_m": 0.0492,
+    "com_speed_end": 0.0307,
+    "held": true,
+    "landing_peak_bw": 1.542,
+    "hand_drift_cm": 0.67,
+    "torque_saturated_share_max": 0.586,
+    "speed_over_p99_max": 1.65,
+    "statics_s_star_max": 0.7006,
+    "free_violations": {}
+   },
+   "advisory_failed": [
+    "dynamics",
+    "naturalness_p99"
+   ],
+   "seams": {
+    "hands_start_cm": 5.16,
+    "hands_end_cm": 5.58,
+    "feet_end_cm": null,
+    "hand_width_m": {
+     "synthetic": 0.3941,
+     "S": 0.3584,
+     "D": 0.3478
+    },
+    "hand_drift_cm": 1.09
+   }
+  },
+  {
+   "variant": "SYN_E3_E3_E3_high_s3_px12",
+   "edge": "E3",
+   "label": "handstand -> crow (lower)",
+   "motion": "output/edge_synthesis/physx/motions/SYN_E3_E3_E3_high_s3_px12.motion",
+   "sha256": "82109b1db2e38edc60d36cb29653336149bee527a689f480ca8c78b5023f4902",
+   "record": "output/edge_synthesis/physx/motions/SYN_E3_E3_E3_high_s3_px12.json",
+   "source_run": "output/edge_synthesis/physx/runs/E3_E3_high_s3_px12",
+   "frames": 378,
+   "fps": 60,
+   "recipe": {
+    "pass": "px12",
+    "noise": 0.12,
+    "timing": "E3_high",
+    "durations_s": [
+     3.0,
+     1.0
+    ],
+    "T": 4.0,
+    "seed": 3,
+    "reference": "output/edge_synthesis/quasistatic/E3_high",
+    "via": null,
+    "start": {
+     "mode": "reference",
+     "source": "reference frame 0 (t=-0.300)"
+    }
+   },
+   "metrics": {
+    "final_d6_m": 0.0458,
+    "com_speed_end": 0.0224,
+    "held": true,
+    "landing_peak_bw": 1.052,
+    "hand_drift_cm": 0.35,
+    "torque_saturated_share_max": 0.603,
+    "speed_over_p99_max": 1.45,
+    "statics_s_star_max": 0.7154,
+    "free_violations": {}
+   },
+   "advisory_failed": [
+    "dynamics",
+    "naturalness_p99"
+   ],
+   "seams": {
+    "hands_start_cm": 5.14,
+    "hands_end_cm": 5.46,
+    "feet_end_cm": null,
+    "hand_width_m": {
+     "synthetic": 0.3952,
+     "S": 0.3584,
+     "D": 0.3478
+    },
+    "hand_drift_cm": 0.43
+   }
+  },
+  {
+   "variant": "SYN_E5_E5_mid_s0_px12",
+   "edge": "E5",
+   "label": "handstand -> chaturanga (float-down)",
+   "motion": "output/edge_synthesis/physx/motions/SYN_E5_E5_mid_s0_px12.motion",
+   "sha256": "247dde7a170b9eea1dceb2a0eb31940479206bcf15f9bfad037a3e9cbf301056",
+   "record": "output/edge_synthesis/physx/motions/SYN_E5_E5_mid_s0_px12.json",
+   "source_run": "output/edge_synthesis/physx/runs/E5_mid_s0_px12",
+   "frames": 240,
+   "fps": 60,
+   "recipe": {
+    "pass": "px12",
+    "noise": 0.12,
+    "timing": "mid",
+    "durations_s": [
+     1.0,
+     0.65
+    ],
+    "T": 1.65,
+    "seed": 0,
+    "reference": null,
+    "via": "220923_Plank_Pose_or_Kumbhakasana_-a@541",
+    "start": {
+     "mode": "exemplar",
+     "source": "release exemplar"
+    }
+   },
+   "metrics": {
+    "final_d6_m": 0.0884,
+    "com_speed_end": 0.0285,
+    "held": true,
+    "landing_peak_bw": 3.507,
+    "hand_drift_cm": 1.88,
+    "torque_saturated_share_max": 0.827,
+    "speed_over_p99_max": 3.03,
+    "statics_s_star_max": 0.3554,
+    "free_violations": {}
+   },
+   "advisory_failed": [
+    "dynamics",
+    "endpoints",
+    "naturalness_p99"
+   ],
+   "seams": {
+    "hands_start_cm": 0.24,
+    "hands_end_cm": 0.5,
+    "feet_end_cm": 6.1,
+    "hand_width_m": {
+     "synthetic": 0.3568,
+     "S": 0.3584,
+     "D": 0.368
+    },
+    "hand_drift_cm": 0.61
+   }
+  }
+ ],
+ "rejected": [
+  {
+   "variant": "SYN_B1_B1_mid_s1_px",
+   "edge": "B1",
+   "failed_hard": [
+    "endpoints"
+   ]
+  },
+  {
+   "variant": "SYN_B1_B1_mid_s2_px",
+   "edge": "B1",
+   "failed_hard": [
+    "endpoints"
+   ]
+  },
+  {
+   "variant": "SYN_B1_B1_mid_s3_px",
+   "edge": "B1",
+   "failed_hard": [
+    "endpoints"
+   ]
+  },
+  {
+   "variant": "SYN_E1_E1_E1_mid_s1_px",
+   "edge": "E1",
+   "failed_hard": [
+    "endpoints",
+    "statics",
+    "held"
+   ]
+  },
+  {
+   "variant": "SYN_E2_E2_mid_s0_px",
+   "edge": "E2",
+   "failed_hard": [
+    "held"
+   ]
+  },
+  {
+   "variant": "SYN_E2_E2_mid_s2_px",
+   "edge": "E2",
+   "failed_hard": [
+    "held"
+   ]
+  },
+  {
+   "variant": "SYN_E2_E2_mid_s3_px",
+   "edge": "E2",
+   "failed_hard": [
+    "held"
+   ]
+  },
+  {
+   "variant": "SYN_E3_E3_E3_high_s0_px",
+   "edge": "E3",
+   "failed_hard": [
+    "endpoints"
+   ]
+  },
+  {
+   "variant": "SYN_E3_E3_E3_high_s1_px",
+   "edge": "E3",
+   "failed_hard": [
+    "endpoints"
+   ]
+  },
+  {
+   "variant": "SYN_E3_E3_E3_high_s3_px",
+   "edge": "E3",
+   "failed_hard": [
+    "endpoints"
+   ]
+  },
+  {
+   "variant": "SYN_E3_E3_E3_mid_s0_px",
+   "edge": "E3",
+   "failed_hard": [
+    "endpoints"
+   ]
+  },
+  {
+   "variant": "SYN_E3_E3_E3_mid_s1_px",
+   "edge": "E3",
+   "failed_hard": [
+    "endpoints"
+   ]
+  },
+  {
+   "variant": "SYN_E3_E3_E3_mid_s2_px",
+   "edge": "E3",
+   "failed_hard": [
+    "endpoints",
+    "held"
+   ]
+  },
+  {
+   "variant": "SYN_E3_E3_E3_mid_s3_px",
+   "edge": "E3",
+   "failed_hard": [
+    "endpoints"
+   ]
+  },
+  {
+   "variant": "SYN_E5_E5_mid_s0_px",
+   "edge": "E5",
+   "failed_hard": [
+    "held"
+   ]
+  },
+  {
+   "variant": "SYN_E5_E5_mid_s1_px",
+   "edge": "E5",
+   "failed_hard": [
+    "held"
+   ]
+  },
+  {
+   "variant": "SYN_E5_E5_mid_s2_px",
+   "edge": "E5",
+   "failed_hard": [
+    "held"
+   ]
+  },
+  {
+   "variant": "SYN_E5_E5_mid_s3_px",
+   "edge": "E5",
+   "failed_hard": [
+    "held"
+   ]
+  },
+  {
+   "variant": "SYN_B1_B1_high_s0_px12",
+   "edge": "B1",
+   "failed_hard": [
+    "endpoints"
+   ]
+  },
+  {
+   "variant": "SYN_B1_B1_high_s1_px12",
+   "edge": "B1",
+   "failed_hard": [
+    "endpoints"
+   ]
+  },
+  {
+   "variant": "SYN_B1_B1_high_s3_px12",
+   "edge": "B1",
+   "failed_hard": [
+    "endpoints"
+   ]
+  },
+  {
+   "variant": "SYN_B1_B1_mid_s2_px12",
+   "edge": "B1",
+   "failed_hard": [
+    "endpoints"
+   ]
+  },
+  {
+   "variant": "SYN_E1_E1_E1_high_s0_px12",
+   "edge": "E1",
+   "failed_hard": [
+    "endpoints",
+    "statics",
+    "held"
+   ]
+  },
+  {
+   "variant": "SYN_E1_E1_E1_high_s1_px12",
+   "edge": "E1",
+   "failed_hard": [
+    "endpoints",
+    "statics",
+    "held"
+   ]
+  },
+  {
+   "variant": "SYN_E1_E1_E1_high_s2_px12",
+   "edge": "E1",
+   "failed_hard": [
+    "endpoints",
+    "statics",
+    "held"
+   ]
+  },
+  {
+   "variant": "SYN_E1_E1_E1_high_s3_px12",
+   "edge": "E1",
+   "failed_hard": [
+    "endpoints",
+    "statics",
+    "held"
+   ]
+  },
+  {
+   "variant": "SYN_E1_E1_E1_mid_s0_px12",
+   "edge": "E1",
+   "failed_hard": [
+    "endpoints",
+    "statics",
+    "held"
+   ]
+  },
+  {
+   "variant": "SYN_E1_E1_E1_mid_s1_px12",
+   "edge": "E1",
+   "failed_hard": [
+    "endpoints",
+    "statics",
+    "held"
+   ]
+  },
+  {
+   "variant": "SYN_E1_E1_E1_mid_s2_px12",
+   "edge": "E1",
+   "failed_hard": [
+    "endpoints",
+    "statics",
+    "held"
+   ]
+  },
+  {
+   "variant": "SYN_E1_E1_E1_mid_s3_px12",
+   "edge": "E1",
+   "failed_hard": [
+    "endpoints",
+    "statics",
+    "held"
+   ]
+  },
+  {
+   "variant": "SYN_E2_E2_mid_s2_px12",
+   "edge": "E2",
+   "failed_hard": [
+    "held"
+   ]
+  },
+  {
+   "variant": "SYN_E3_E3_E3_high_s1_px12",
+   "edge": "E3",
+   "failed_hard": [
+    "endpoints"
+   ]
+  },
+  {
+   "variant": "SYN_E3_E3_E3_high_s2_px12",
+   "edge": "E3",
+   "failed_hard": [
+    "endpoints"
+   ]
+  },
+  {
+   "variant": "SYN_E3_E3_E3_mid_s0_px12",
+   "edge": "E3",
+   "failed_hard": [
+    "contract",
+    "endpoints"
+   ]
+  },
+  {
+   "variant": "SYN_E3_E3_E3_mid_s1_px12",
+   "edge": "E3",
+   "failed_hard": [
+    "held"
+   ]
+  },
+  {
+   "variant": "SYN_E3_E3_E3_mid_s2_px12",
+   "edge": "E3",
+   "failed_hard": [
+    "endpoints",
+    "held"
+   ]
+  },
+  {
+   "variant": "SYN_E3_E3_E3_mid_s3_px12",
+   "edge": "E3",
+   "failed_hard": [
+    "endpoints"
+   ]
+  },
+  {
+   "variant": "SYN_E5_E5_mid_s1_px12",
+   "edge": "E5",
+   "failed_hard": [
+    "held"
+   ]
+  },
+  {
+   "variant": "SYN_E5_E5_mid_s2_px12",
+   "edge": "E5",
+   "failed_hard": [
+    "held"
+   ]
+  },
+  {
+   "variant": "SYN_E5_E5_mid_s3_px12",
+   "edge": "E5",
+   "failed_hard": [
+    "held"
+   ]
+  }
+ ]
+}

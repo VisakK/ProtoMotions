@@ -1,0 +1,62 @@
+=== G3 graph SMOKE (4 epochs) on release holds_repaired_ftC_posefix.release_v3.2f132f4299 -> results/zz_r3_2f132f4299_smoke
+    release        : purpose candidate; 28 synthetic variants: SYN_E1_press_high_s0_t6px, SYN_E1_press_high_s2_t6px, SYN_E1_press_high_s3_t6px, SYN_E1_press_high_s4_t6px, SYN_E1_press_mid_s0_t6px, SYN_E1_press_mid_s2_t6px, SYN_E1_press_mid_s3_t6px, SYN_E1_press_mid_s4_t6px, SYN_E3_lower_high_s0_t6px, SYN_E3_lower_high_s2_t6px, SYN_E3_lower_high_s3_t6px12, SYN_B1_jumpplank_high_s1_t6rpx, SYN_B1_jum
+    warm start     : results/smpl_yogi_v2_expert56_amp_ft_a2dda5d2ac/epoch_5000.ckpt (+ PPO and AMP optimisation state)
+    experiment     : examples/experiments/mimic/mlp_goal_conditioned_amp.py
+    robot / corpus : smpl_yogi_v2 | data/smpl/reference_curation/holds_repaired_ftC_posefix.release_v3.2f132f4299/motions.pt (252 motions, 84 SYN_)
+    terms          : support -0.3 (EMA 0.25 s), swing -0.3 (0.1 s), lean -0.3; ref_respawn_offset 0.005
+    AMP            : w 0.5 from epoch 0 (full by 0); calibration ratio 0 (0 = off); disc batch 1024, GP 10.0
+    lineage        : SYN_=0.5 -> 84 of 252 motions
+    demonstrations : x0 clips without [Scorpion_pose_or_vrischikasana-b SYN_] -> 55 motions (before the length filter); SYN_ among them: 0
+    sampling       : arrival 0.4, departure 0.2, pre-roll 0.5 s; mixture 0.8 uniform, motion prior package; support rule v2
+    normalisers    : actor/critic frozen True (discriminator free)
+    panel          : 20 plans (10 G1, 5 edge, 5 no-hijack; all resolve) -> --viz-num-sequences 22, every 0
+    envs / batch   : 256 / 1024; 4 epochs; eval every 2 over 150 steps (record: >= 1890); save every 2
+    command        : ../env_isaaclab/bin/python protomotions/train_agent.py --robot-name smpl_yogi_v2 --simulator isaaclab --experiment-path examples/experiments/mimic/mlp_goal_conditioned_amp.py --experiment-name zz_r3_2f132f4299_smoke --checkpoint results/smpl_yogi_v2_expert56_amp_ft_a2dda5d2ac/epoch_5000.ckpt --warm-start-optimization-state --motion-file data/smpl/reference_curation/holds_repai
+ContactGraphMotionManager: anchoring 40% of resets to 1146 segments over 252/252 motions (weighting 'uniform', pre-roll 0-0.50 s)
+ContactGraphMotionManager: departure-anchoring 20% of resets to 894 segments over 252/252 motions (segments ending within env_dt of their clip's end excluded)
+ContactGraphControl: 123 nodes, 104 contact pairs, 252/252 motions carry contact goals
+ContactGraphControl: unwanted-support load averaged over 0.250 s before the clamp (alpha 0.1176 per step)
+ContactGraphControl: scoring the reached-goal diagnostic over 104/104 contact pairs (89 of them body-body)
+ContactGraphControl: physics terms on (data/smpl/reference_curation/holds_repaired_ftC_posefix.release_v3.2f132f4299/physics_tables.pt): swing labels (252, 3778, 15), swing tau 0.10 s, lean margin 0.030 m over 22 candidate points, 207 lean-gated segments, 0/252 motions excluded
+ContactGraphControl: contact targets on (data/smpl/reference_curation/holds_repaired_ftC_posefix.release_v3.2f132f4299/contact_targets.pt, release holds_repaired_ftC_posefix.release_v3.2f132f4299): 2403 required-support, 495 configured body-body and 3 masked segment contacts; 13857 known-free ground zone-segments
+ContactGraphControl: release holds_repaired_ftC_posefix.release_v3.2f132f4299 -- every loaded artifact matches its record
+HoldCurriculumEvaluator: package motion prior over 252 motions (weight: motions) {0.27272728085517883: 33, 0.375: 24, 0.6000000238418579: 15, 1.0: 177, 3.0: 3}
+[amp lineage] 84 of 252 motions are 'syn' (matched); 168 are 'human' (w 1.0)
+Warm start: restored running_reward_norm from checkpoint
+Warm start: restored PPO optimizer states and advantage EMA from checkpoint
+Warm start: restored AMP training state from checkpoint: discriminator optimizer (step 39920, lr 0.0001), disc-critic optimizer (step 39920, lr 0.0001), AMP reward normaliser (count 655360000, var 155.8)
+Warm start: AMP weight target 0.5 (configured; calibration off; equals the checkpoint's calibrated target); 1000 calibration ratio-history entries from the old run's epoch clock dropped
+freeze_obs_normalizers: froze ['_actor.mu.norm', '_critic.norm'] (9448 statistics); they are checked bit-for-bit after the first epoch that updates the policy
+[amp demos] 55 of 252 motions serve as demonstrations, 1290.8 s usable (t >= 0.667 s); excluded 168 by regex '_x\\d+s$', 29 by name ['Scorpion_pose_or_vrischikasana-b', 'SYN_'], 0 too short
+[amp demos] lineage-matched motions among the demonstrations: 0
+[33m19:38:02 [agent.py] WARNING: Epoch 0: Skipping actor updates for remaining batches (clip_frac 0.707 > 0.6)[0m
+Saving to: results/zz_r3_2f132f4299_smoke/failed_motions/failed_motions_epoch_1_rank_0.txt
+          5,   6,   7,   8,   9,  10,  11,  12,  13,  14,  15,  16,  17,  18,
+         19,  20,  21,  22,  23,  24,  25,  26,  27,  28,  29,  30,  31,  32,
+         33,  34,  35,  36,  37,  38,  39,  40], device='cuda:0')
+        0.0038, 0.0038, 0.0038, 0.0038, 0.0038, 0.0038, 0.0038, 0.0038, 0.0038,
+        0.0038, 0.0038, 0.0038, 0.0038, 0.0038, 0.0038, 0.0038, 0.0038, 0.0038,
+        0.0038, 0.0038, 0.0038, 0.0038, 0.0038, 0.0038, 0.0038, 0.0038, 0.0038,
+        0.0038, 0.0038, 0.0038, 0.0038, 0.0038, 0.0038, 0.0038, 0.0038, 0.0038,
+        0.0038, 0.0038, 0.0038, 0.0038, 0.0038], device='cuda:0')
+Predicted MotionLib saved to results/zz_r3_2f132f4299_smoke/results/predicted_motion_lib_epoch_1.pt
+freeze_obs_normalizers: verified -- 6 statistics buffers of ['_actor.mu.norm', '_critic.norm'] bit-identical through this launch's first policy update (1 epoch(s); epoch counter now 1)
+Saving to: results/zz_r3_2f132f4299_smoke/failed_motions/failed_motions_epoch_2_rank_0.txt
+          5,   6,   7,   8,   9,  10,  11,  12,  13,  14,  15,  16,  17,  18,
+         19,  20,  21,  22,  23,  24,  25,  26,  27,  28,  29,  30,  31,  32,
+         33,  34,  35,  36,  37,  38,  39,  40], device='cuda:0')
+        0.0038, 0.0038, 0.0038, 0.0038, 0.0038, 0.0038, 0.0038, 0.0038, 0.0038,
+        0.0038, 0.0038, 0.0038, 0.0038, 0.0038, 0.0038, 0.0038, 0.0038, 0.0038,
+        0.0038, 0.0038, 0.0038, 0.0038, 0.0038, 0.0038, 0.0038, 0.0038, 0.0038,
+        0.0038, 0.0038, 0.0038, 0.0038, 0.0038, 0.0038, 0.0038, 0.0038, 0.0038,
+        0.0038, 0.0038, 0.0038, 0.0038, 0.0038], device='cuda:0')
+[33m19:39:09 [agent.py] WARNING: Epoch 3: Skipping actor updates for remaining batches (clip_frac 0.654 > 0.6)[0m
+Saving to: results/zz_r3_2f132f4299_smoke/failed_motions/failed_motions_epoch_4_rank_0.txt
+         86,   0,   1,   2,   3,   4,   5,   6,   7,   8,   9,  10,  11,  12,
+         13,  14,  15,  16,  17,  18,  19,  20,  21,  22,  23,  24,  25,  26,
+         27,  28,  29,  30,  31,  32,  33,  34], device='cuda:0')
+        0.0126, 0.0126, 0.0126, 0.0041, 0.0041, 0.0041, 0.0038, 0.0038, 0.0038,
+        0.0038, 0.0038, 0.0038, 0.0038, 0.0038, 0.0038, 0.0038, 0.0038, 0.0038,
+        0.0038, 0.0038, 0.0038, 0.0038, 0.0038, 0.0038, 0.0038, 0.0038, 0.0038,
+        0.0038, 0.0038, 0.0038, 0.0038, 0.0038, 0.0038, 0.0038, 0.0038, 0.0038,
+        0.0038, 0.0038, 0.0038, 0.0038, 0.0038], device='cuda:0')

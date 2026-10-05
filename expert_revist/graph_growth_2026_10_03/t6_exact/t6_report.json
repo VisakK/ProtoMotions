@@ -1,0 +1,9416 @@
+{
+ "schema_version": 1,
+ "generator": {
+  "module": "edge_synthesis.t6_report",
+  "git_rev": "5fdbd50f115d2e8da666c683a475d69c3ac43045",
+  "sha256": "6a0ed518ead16fe16bfc884356faadde4ff2d3f65f32bcde9438fd5594b55949"
+ },
+ "inputs": {
+  "expert_revist/graph_growth_2026_10_03/admitted_physx.json": "4e200ce95503c142deabcafa4f05edda781a5178a44046449d751fdca252a953",
+  "expert_revist/graph_growth_2026_10_03/admitted_physx_pre_t6.json": "5a66e0560cf5841ea91c754da3eefb2642903e83e4bf6bdc5689ec5d5a91488a"
+ },
+ "kind": "t6_report",
+ "summary": {
+  "B1 high px": {
+   "seeds": 5,
+   "held": 1,
+   "d1_selected": 0,
+   "seams_pass": 0,
+   "seams_pass_attainable": 0,
+   "seam_failures": [
+    "drift",
+    "end"
+   ],
+   "start_planted_cm_max": 0.368,
+   "start_all_cm_max": 0.617,
+   "end_planted_cm": [
+    2.785,
+    2.502,
+    3.622,
+    3.215,
+    3.661
+   ],
+   "drift_cm": [
+    11.497,
+    10.124,
+    16.414,
+    18.412,
+    12.637
+   ],
+   "final_d6_m": [
+    0.0881,
+    0.087,
+    0.1236,
+    0.1018,
+    0.0742
+   ],
+   "before_final_d6_m": [
+    0.0486,
+    0.0298,
+    0.0292,
+    0.0482
+   ],
+   "before_hands_start_cm": [
+    0.15,
+    0.11,
+    0.18,
+    0.26
+   ],
+   "legacy_hands_start_cm": [
+    0.16,
+    0.2,
+    0.14,
+    0.16,
+    0.18
+   ],
+   "before_hands_end_cm": [
+    0.24,
+    0.36,
+    0.74,
+    0.58
+   ],
+   "legacy_hands_end_cm": [
+    0.37,
+    0.49,
+    0.54,
+    0.31,
+    0.27
+   ],
+   "before_feet_end_cm": [
+    14.2,
+    7.34,
+    11.95,
+    9.04
+   ],
+   "legacy_feet_end_cm": [
+    2.78,
+    2.5,
+    3.62,
+    3.21,
+    3.66
+   ],
+   "groups_changed": [
+    "endpoints"
+   ]
+  },
+  "B1 high px (reference only)": {
+   "seeds": 5,
+   "held": 5,
+   "d1_selected": 2,
+   "seams_pass": 0,
+   "seams_pass_attainable": 0,
+   "seam_failures": [
+    "drift",
+    "end",
+    "start"
+   ],
+   "start_planted_cm_max": 0.509,
+   "start_all_cm_max": 0.772,
+   "end_planted_cm": [
+    23.334,
+    4.541,
+    3.062,
+    9.441,
+    1.703
+   ],
+   "drift_cm": [
+    27.518,
+    22.485,
+    26.069,
+    28.51,
+    23.745
+   ],
+   "final_d6_m": [
+    0.0744,
+    0.0271,
+    0.0486,
+    0.0535,
+    0.0512
+   ],
+   "before_final_d6_m": [
+    0.0486,
+    0.0298,
+    0.0292,
+    0.0482
+   ],
+   "before_hands_start_cm": [
+    0.15,
+    0.11,
+    0.18,
+    0.26
+   ],
+   "legacy_hands_start_cm": [
+    0.14,
+    0.12,
+    0.09,
+    0.22,
+    0.2
+   ],
+   "before_hands_end_cm": [
+    0.24,
+    0.36,
+    0.74,
+    0.58
+   ],
+   "legacy_hands_end_cm": [
+    0.52,
+    0.85,
+    0.98,
+    0.76,
+    0.42
+   ],
+   "before_feet_end_cm": [
+    14.2,
+    7.34,
+    11.95,
+    9.04
+   ],
+   "legacy_feet_end_cm": [
+    23.33,
+    4.54,
+    3.06,
+    9.44,
+    1.42
+   ],
+   "groups_changed": [
+    "endpoints"
+   ]
+  },
+  "B1 high px12": {
+   "seeds": 5,
+   "held": 5,
+   "d1_selected": 0,
+   "seams_pass": 0,
+   "seams_pass_attainable": 0,
+   "seam_failures": [
+    "drift",
+    "end"
+   ],
+   "start_planted_cm_max": 0.429,
+   "start_all_cm_max": 0.57,
+   "end_planted_cm": [
+    6.247,
+    4.907,
+    7.911,
+    9.066,
+    6.454
+   ],
+   "drift_cm": [
+    9.408,
+    7.774,
+    8.797,
+    7.179,
+    6.469
+   ],
+   "final_d6_m": [
+    0.0738,
+    0.0687,
+    0.0854,
+    0.0746,
+    0.08
+   ],
+   "before_final_d6_m": [
+    0.0712,
+    0.0517,
+    0.0414,
+    0.0745
+   ],
+   "before_hands_start_cm": [
+    0.17,
+    0.11,
+    0.14,
+    0.18
+   ],
+   "legacy_hands_start_cm": [
+    0.14,
+    0.15,
+    0.19,
+    0.16,
+    0.14
+   ],
+   "before_hands_end_cm": [
+    0.84,
+    0.61,
+    0.58,
+    0.43
+   ],
+   "legacy_hands_end_cm": [
+    0.7,
+    0.39,
+    0.76,
+    0.38,
+    0.58
+   ],
+   "before_feet_end_cm": [
+    22.73,
+    19.59,
+    10.98,
+    12.82
+   ],
+   "legacy_feet_end_cm": [
+    6.25,
+    4.91,
+    7.91,
+    9.07,
+    6.45
+   ],
+   "groups_changed": [
+    "endpoints"
+   ]
+  },
+  "B1 high px12 (reference only)": {
+   "seeds": 5,
+   "held": 5,
+   "d1_selected": 1,
+   "seams_pass": 0,
+   "seams_pass_attainable": 0,
+   "seam_failures": [
+    "drift",
+    "end",
+    "start"
+   ],
+   "start_planted_cm_max": 0.543,
+   "start_all_cm_max": 0.924,
+   "end_planted_cm": [
+    19.696,
+    21.585,
+    10.268,
+    10.963,
+    9.348
+   ],
+   "drift_cm": [
+    16.295,
+    16.04,
+    18.542,
+    15.381,
+    16.476
+   ],
+   "final_d6_m": [
+    0.0589,
+    0.0552,
+    0.0511,
+    0.06,
+    0.0444
+   ],
+   "before_final_d6_m": [
+    0.0712,
+    0.0517,
+    0.0414,
+    0.0745
+   ],
+   "before_hands_start_cm": [
+    0.17,
+    0.11,
+    0.14,
+    0.18
+   ],
+   "legacy_hands_start_cm": [
+    0.18,
+    0.12,
+    0.12,
+    0.16,
+    0.19
+   ],
+   "before_hands_end_cm": [
+    0.84,
+    0.61,
+    0.58,
+    0.43
+   ],
+   "legacy_hands_end_cm": [
+    1.06,
+    0.62,
+    0.54,
+    0.4,
+    0.4
+   ],
+   "before_feet_end_cm": [
+    22.73,
+    19.59,
+    10.98,
+    12.82
+   ],
+   "legacy_feet_end_cm": [
+    19.7,
+    21.59,
+    10.27,
+    10.96,
+    9.35
+   ],
+   "groups_changed": [
+    "endpoints"
+   ]
+  },
+  "B1 mid px": {
+   "seeds": 5,
+   "held": 2,
+   "d1_selected": 0,
+   "seams_pass": 0,
+   "seams_pass_attainable": 0,
+   "seam_failures": [
+    "drift",
+    "end"
+   ],
+   "start_planted_cm_max": 0.438,
+   "start_all_cm_max": 0.471,
+   "end_planted_cm": [
+    1.89,
+    3.388,
+    1.652,
+    5.059,
+    2.683
+   ],
+   "drift_cm": [
+    10.914,
+    11.55,
+    12.663,
+    14.539,
+    13.025
+   ],
+   "final_d6_m": [
+    0.065,
+    0.0887,
+    0.0974,
+    0.081,
+    0.0638
+   ],
+   "before_final_d6_m": [
+    0.0379,
+    0.0614,
+    0.0681,
+    0.0501
+   ],
+   "before_hands_start_cm": [
+    0.19,
+    0.23,
+    0.21,
+    0.23
+   ],
+   "legacy_hands_start_cm": [
+    0.21,
+    0.28,
+    0.25,
+    0.32,
+    0.23
+   ],
+   "before_hands_end_cm": [
+    0.32,
+    0.21,
+    0.2,
+    0.39
+   ],
+   "legacy_hands_end_cm": [
+    0.34,
+    0.45,
+    0.44,
+    0.18,
+    0.25
+   ],
+   "before_feet_end_cm": [
+    5.72,
+    1.76,
+    2.92,
+    4.03
+   ],
+   "legacy_feet_end_cm": [
+    1.83,
+    3.39,
+    1.65,
+    5.06,
+    2.68
+   ],
+   "groups_changed": [
+    "endpoints"
+   ]
+  },
+  "B1 mid px (reference only)": {
+   "seeds": 5,
+   "held": 5,
+   "d1_selected": 1,
+   "seams_pass": 0,
+   "seams_pass_attainable": 0,
+   "seam_failures": [
+    "drift",
+    "end"
+   ],
+   "start_planted_cm_max": 0.444,
+   "start_all_cm_max": 0.646,
+   "end_planted_cm": [
+    3.266,
+    2.625,
+    1.869,
+    3.045,
+    4.129
+   ],
+   "drift_cm": [
+    13.198,
+    13.605,
+    17.9,
+    17.025,
+    20.774
+   ],
+   "final_d6_m": [
+    0.0443,
+    0.0618,
+    0.07,
+    0.0564,
+    0.0602
+   ],
+   "before_final_d6_m": [
+    0.0379,
+    0.0614,
+    0.0681,
+    0.0501
+   ],
+   "before_hands_start_cm": [
+    0.19,
+    0.23,
+    0.21,
+    0.23
+   ],
+   "legacy_hands_start_cm": [
+    0.19,
+    0.25,
+    0.23,
+    0.22,
+    0.3
+   ],
+   "before_hands_end_cm": [
+    0.32,
+    0.21,
+    0.2,
+    0.39
+   ],
+   "legacy_hands_end_cm": [
+    0.34,
+    0.21,
+    0.33,
+    0.37,
+    0.27
+   ],
+   "before_feet_end_cm": [
+    5.72,
+    1.76,
+    2.92,
+    4.03
+   ],
+   "legacy_feet_end_cm": [
+    3.27,
+    2.63,
+    1.68,
+    3.05,
+    4.13
+   ],
+   "groups_changed": []
+  },
+  "B1 mid px12": {
+   "seeds": 5,
+   "held": 5,
+   "d1_selected": 0,
+   "seams_pass": 0,
+   "seams_pass_attainable": 0,
+   "seam_failures": [
+    "drift",
+    "end"
+   ],
+   "start_planted_cm_max": 0.496,
+   "start_all_cm_max": 0.638,
+   "end_planted_cm": [
+    6.319,
+    5.784,
+    5.286,
+    6.394,
+    7.679
+   ],
+   "drift_cm": [
+    9.322,
+    7.903,
+    7.731,
+    10.271,
+    8.174
+   ],
+   "final_d6_m": [
+    0.057,
+    0.068,
+    0.0812,
+    0.0655,
+    0.0701
+   ],
+   "before_final_d6_m": [
+    0.0454,
+    0.0455,
+    0.0648,
+    0.042
+   ],
+   "before_hands_start_cm": [
+    0.16,
+    0.2,
+    0.24,
+    0.18
+   ],
+   "legacy_hands_start_cm": [
+    0.18,
+    0.21,
+    0.23,
+    0.24,
+    0.15
+   ],
+   "before_hands_end_cm": [
+    0.44,
+    0.54,
+    2.41,
+    0.26
+   ],
+   "legacy_hands_end_cm": [
+    0.38,
+    0.25,
+    0.64,
+    0.47,
+    0.44
+   ],
+   "before_feet_end_cm": [
+    12.1,
+    10.25,
+    6.21,
+    7.31
+   ],
+   "legacy_feet_end_cm": [
+    6.32,
+    5.78,
+    5.29,
+    6.39,
+    7.68
+   ],
+   "groups_changed": [
+    "endpoints"
+   ]
+  },
+  "B1 mid px12 (reference only)": {
+   "seeds": 5,
+   "held": 5,
+   "d1_selected": 1,
+   "seams_pass": 0,
+   "seams_pass_attainable": 0,
+   "seam_failures": [
+    "drift",
+    "end",
+    "start"
+   ],
+   "start_planted_cm_max": 0.523,
+   "start_all_cm_max": 0.804,
+   "end_planted_cm": [
+    9.926,
+    10.067,
+    5.788,
+    7.849,
+    9.492
+   ],
+   "drift_cm": [
+    14.071,
+    8.372,
+    13.535,
+    11.023,
+    10.756
+   ],
+   "final_d6_m": [
+    0.0336,
+    0.0452,
+    0.0654,
+    0.0551,
+    0.0568
+   ],
+   "before_final_d6_m": [
+    0.0454,
+    0.0455,
+    0.0648,
+    0.042
+   ],
+   "before_hands_start_cm": [
+    0.16,
+    0.2,
+    0.24,
+    0.18
+   ],
+   "legacy_hands_start_cm": [
+    0.16,
+    0.21,
+    0.25,
+    0.18,
+    0.33
+   ],
+   "before_hands_end_cm": [
+    0.44,
+    0.54,
+    2.41,
+    0.26
+   ],
+   "legacy_hands_end_cm": [
+    0.58,
+    0.6,
+    1.37,
+    0.38,
+    0.34
+   ],
+   "before_feet_end_cm": [
+    12.1,
+    10.25,
+    6.21,
+    7.31
+   ],
+   "legacy_feet_end_cm": [
+    9.93,
+    10.07,
+    5.79,
+    7.85,
+    9.49
+   ],
+   "groups_changed": [
+    "endpoints"
+   ]
+  },
+  "E1 high px": {
+   "seeds": 5,
+   "held": 5,
+   "d1_selected": 4,
+   "seams_pass": 0,
+   "seams_pass_attainable": 0,
+   "seam_failures": [
+    "drift",
+    "end"
+   ],
+   "start_planted_cm_max": 0.289,
+   "start_all_cm_max": 0.476,
+   "end_planted_cm": [
+    2.851,
+    2.863,
+    2.776,
+    2.796,
+    2.799
+   ],
+   "drift_cm": [
+    0.88,
+    1.093,
+    0.875,
+    0.809,
+    0.861
+   ],
+   "final_d6_m": [
+    0.0308,
+    0.0296,
+    0.0318,
+    0.0317,
+    0.0337
+   ],
+   "before_final_d6_m": [
+    0.043,
+    0.0466,
+    0.0494,
+    0.038
+   ],
+   "before_hands_start_cm": [
+    5.66,
+    5.76,
+    5.72,
+    5.67
+   ],
+   "legacy_hands_start_cm": [
+    0.15,
+    0.13,
+    0.15,
+    0.18,
+    0.14
+   ],
+   "before_hands_end_cm": [
+    4.98,
+    5.15,
+    5.08,
+    5.19
+   ],
+   "legacy_hands_end_cm": [
+    0.46,
+    0.49,
+    0.44,
+    0.56,
+    0.75
+   ],
+   "before_feet_end_cm": [
+    null,
+    null,
+    null,
+    null
+   ],
+   "legacy_feet_end_cm": [
+    null,
+    null,
+    null,
+    null,
+    null
+   ],
+   "groups_changed": []
+  },
+  "E1 mid px": {
+   "seeds": 5,
+   "held": 4,
+   "d1_selected": 4,
+   "seams_pass": 0,
+   "seams_pass_attainable": 0,
+   "seam_failures": [
+    "drift",
+    "end"
+   ],
+   "start_planted_cm_max": 0.283,
+   "start_all_cm_max": 0.458,
+   "end_planted_cm": [
+    2.858,
+    3.856,
+    2.901,
+    2.913,
+    2.982
+   ],
+   "drift_cm": [
+    0.859,
+    1.483,
+    0.869,
+    0.807,
+    0.828
+   ],
+   "final_d6_m": [
+    0.0217,
+    0.5209,
+    0.0161,
+    0.0317,
+    0.0269
+   ],
+   "before_final_d6_m": [
+    0.0325,
+    0.5165,
+    0.0341,
+    0.0421
+   ],
+   "before_hands_start_cm": [
+    4.4,
+    4.36,
+    4.4,
+    4.36
+   ],
+   "legacy_hands_start_cm": [
+    0.13,
+    0.13,
+    0.16,
+    0.18,
+    0.14
+   ],
+   "before_hands_end_cm": [
+    3.71,
+    5.4,
+    3.96,
+    4.0
+   ],
+   "legacy_hands_end_cm": [
+    0.66,
+    2.84,
+    0.66,
+    0.64,
+    0.75
+   ],
+   "before_feet_end_cm": [
+    null,
+    null,
+    null,
+    null
+   ],
+   "legacy_feet_end_cm": [
+    null,
+    null,
+    null,
+    null,
+    null
+   ],
+   "groups_changed": []
+  },
+  "E2 mid px": {
+   "seeds": 5,
+   "held": 3,
+   "d1_selected": 2,
+   "seams_pass": 0,
+   "seams_pass_attainable": 0,
+   "seam_failures": [
+    "drift",
+    "end",
+    "start"
+   ],
+   "start_planted_cm_max": 0.567,
+   "start_all_cm_max": 0.567,
+   "end_planted_cm": [
+    3.422,
+    5.282,
+    5.728,
+    4.627,
+    2.816
+   ],
+   "drift_cm": [
+    4.153,
+    3.813,
+    2.894,
+    3.271,
+    4.002
+   ],
+   "final_d6_m": [
+    0.0772,
+    0.0919,
+    0.0955,
+    0.1061,
+    0.085
+   ],
+   "before_final_d6_m": [
+    0.1402,
+    0.0872,
+    0.1477,
+    0.1523
+   ],
+   "before_hands_start_cm": [
+    0.23,
+    0.3,
+    0.3,
+    0.36
+   ],
+   "legacy_hands_start_cm": [
+    0.3,
+    0.2,
+    0.39,
+    0.33,
+    0.35
+   ],
+   "before_hands_end_cm": [
+    3.63,
+    2.68,
+    4.21,
+    2.76
+   ],
+   "legacy_hands_end_cm": [
+    2.14,
+    2.17,
+    1.74,
+    2.4,
+    2.05
+   ],
+   "before_feet_end_cm": [
+    10.04,
+    5.88,
+    8.16,
+    7.81
+   ],
+   "legacy_feet_end_cm": [
+    3.42,
+    5.28,
+    5.73,
+    4.63,
+    2.82
+   ],
+   "groups_changed": [
+    "statics"
+   ]
+  },
+  "E2 mid px (reference only)": {
+   "seeds": 5,
+   "held": 3,
+   "d1_selected": 1,
+   "seams_pass": 0,
+   "seams_pass_attainable": 0,
+   "seam_failures": [
+    "drift",
+    "end",
+    "start"
+   ],
+   "start_planted_cm_max": 0.679,
+   "start_all_cm_max": 0.679,
+   "end_planted_cm": [
+    4.054,
+    4.251,
+    7.484,
+    7.303,
+    5.067
+   ],
+   "drift_cm": [
+    5.834,
+    3.711,
+    8.166,
+    3.422,
+    4.687
+   ],
+   "final_d6_m": [
+    0.077,
+    0.0953,
+    0.147,
+    0.1191,
+    0.091
+   ],
+   "before_final_d6_m": [
+    0.1402,
+    0.0872,
+    0.1477,
+    0.1523
+   ],
+   "before_hands_start_cm": [
+    0.23,
+    0.3,
+    0.3,
+    0.36
+   ],
+   "legacy_hands_start_cm": [
+    0.26,
+    0.22,
+    0.29,
+    0.5,
+    0.35
+   ],
+   "before_hands_end_cm": [
+    3.63,
+    2.68,
+    4.21,
+    2.76
+   ],
+   "legacy_hands_end_cm": [
+    2.42,
+    2.55,
+    3.68,
+    2.44,
+    2.09
+   ],
+   "before_feet_end_cm": [
+    10.04,
+    5.88,
+    8.16,
+    7.81
+   ],
+   "legacy_feet_end_cm": [
+    3.44,
+    4.25,
+    7.48,
+    7.3,
+    5.07
+   ],
+   "groups_changed": []
+  },
+  "E2 mid px12": {
+   "seeds": 5,
+   "held": 5,
+   "d1_selected": 5,
+   "seams_pass": 0,
+   "seams_pass_attainable": 0,
+   "seam_failures": [
+    "drift",
+    "end"
+   ],
+   "start_planted_cm_max": 0.432,
+   "start_all_cm_max": 0.742,
+   "end_planted_cm": [
+    3.192,
+    5.538,
+    4.629,
+    6.293,
+    4.237
+   ],
+   "drift_cm": [
+    3.696,
+    2.343,
+    2.705,
+    3.433,
+    2.521
+   ],
+   "final_d6_m": [
+    0.0784,
+    0.0863,
+    0.0918,
+    0.079,
+    0.0843
+   ],
+   "before_final_d6_m": [
+    0.0778,
+    0.0818,
+    0.1118,
+    0.0747
+   ],
+   "before_hands_start_cm": [
+    0.18,
+    0.19,
+    0.31,
+    0.18
+   ],
+   "legacy_hands_start_cm": [
+    0.18,
+    0.22,
+    0.29,
+    0.22,
+    0.38
+   ],
+   "before_hands_end_cm": [
+    2.5,
+    3.3,
+    2.92,
+    3.09
+   ],
+   "legacy_hands_end_cm": [
+    1.71,
+    1.35,
+    1.95,
+    2.98,
+    1.79
+   ],
+   "before_feet_end_cm": [
+    5.23,
+    4.99,
+    3.13,
+    4.98
+   ],
+   "legacy_feet_end_cm": [
+    3.19,
+    5.54,
+    4.63,
+    6.29,
+    4.24
+   ],
+   "groups_changed": []
+  },
+  "E2 mid px12 (reference only)": {
+   "seeds": 5,
+   "held": 5,
+   "d1_selected": 4,
+   "seams_pass": 0,
+   "seams_pass_attainable": 0,
+   "seam_failures": [
+    "drift",
+    "end"
+   ],
+   "start_planted_cm_max": 0.475,
+   "start_all_cm_max": 0.974,
+   "end_planted_cm": [
+    4.351,
+    3.979,
+    3.295,
+    6.957,
+    3.123
+   ],
+   "drift_cm": [
+    5.309,
+    3.41,
+    4.346,
+    3.676,
+    2.957
+   ],
+   "final_d6_m": [
+    0.0906,
+    0.0839,
+    0.1108,
+    0.0792,
+    0.0957
+   ],
+   "before_final_d6_m": [
+    0.0778,
+    0.0818,
+    0.1118,
+    0.0747
+   ],
+   "before_hands_start_cm": [
+    0.18,
+    0.19,
+    0.31,
+    0.18
+   ],
+   "legacy_hands_start_cm": [
+    0.2,
+    0.22,
+    0.3,
+    0.2,
+    0.23
+   ],
+   "before_hands_end_cm": [
+    2.5,
+    3.3,
+    2.92,
+    3.09
+   ],
+   "legacy_hands_end_cm": [
+    3.27,
+    3.04,
+    1.99,
+    2.89,
+    2.43
+   ],
+   "before_feet_end_cm": [
+    5.23,
+    4.99,
+    3.13,
+    4.98
+   ],
+   "legacy_feet_end_cm": [
+    4.35,
+    3.98,
+    3.3,
+    6.96,
+    3.12
+   ],
+   "groups_changed": [
+    "statics"
+   ]
+  },
+  "E3 high px": {
+   "seeds": 5,
+   "held": 5,
+   "d1_selected": 2,
+   "seams_pass": 0,
+   "seams_pass_attainable": 0,
+   "seam_failures": [
+    "drift",
+    "end"
+   ],
+   "start_planted_cm_max": 0.242,
+   "start_all_cm_max": 0.277,
+   "end_planted_cm": [
+    2.902,
+    2.96,
+    3.222,
+    3.11,
+    3.158
+   ],
+   "drift_cm": [
+    0.797,
+    0.927,
+    0.937,
+    1.222,
+    1.1
+   ],
+   "final_d6_m": [
+    0.0481,
+    0.0505,
+    0.0489,
+    0.0491,
+    0.0446
+   ],
+   "before_final_d6_m": [
+    0.0523,
+    0.0536,
+    0.0493,
+    0.0598
+   ],
+   "before_hands_start_cm": [
+    5.1,
+    5.16,
+    5.05,
+    5.15
+   ],
+   "legacy_hands_start_cm": [
+    0.18,
+    0.24,
+    0.18,
+    0.17,
+    0.23
+   ],
+   "before_hands_end_cm": [
+    5.59,
+    5.62,
+    5.42,
+    5.44
+   ],
+   "legacy_hands_end_cm": [
+    0.49,
+    0.56,
+    0.41,
+    0.53,
+    0.39
+   ],
+   "before_feet_end_cm": [
+    null,
+    null,
+    null,
+    null
+   ],
+   "legacy_feet_end_cm": [
+    null,
+    null,
+    null,
+    null,
+    null
+   ],
+   "groups_changed": [
+    "endpoints"
+   ]
+  },
+  "E3 high px12": {
+   "seeds": 5,
+   "held": 5,
+   "d1_selected": 1,
+   "seams_pass": 0,
+   "seams_pass_attainable": 0,
+   "seam_failures": [
+    "drift",
+    "end"
+   ],
+   "start_planted_cm_max": 0.281,
+   "start_all_cm_max": 0.463,
+   "end_planted_cm": [
+    3.263,
+    3.403,
+    3.885,
+    3.139,
+    3.338
+   ],
+   "drift_cm": [
+    1.278,
+    0.957,
+    1.085,
+    0.717,
+    1.013
+   ],
+   "final_d6_m": [
+    0.0511,
+    0.054,
+    0.0432,
+    0.0424,
+    0.0379
+   ],
+   "before_final_d6_m": [
+    0.0492,
+    0.0526,
+    0.0531,
+    0.0458
+   ],
+   "before_hands_start_cm": [
+    5.16,
+    4.88,
+    5.11,
+    5.14
+   ],
+   "legacy_hands_start_cm": [
+    0.17,
+    0.28,
+    0.26,
+    0.17,
+    0.22
+   ],
+   "before_hands_end_cm": [
+    5.58,
+    5.17,
+    5.4,
+    5.46
+   ],
+   "legacy_hands_end_cm": [
+    0.96,
+    0.67,
+    0.42,
+    0.67,
+    0.33
+   ],
+   "before_feet_end_cm": [
+    null,
+    null,
+    null,
+    null
+   ],
+   "legacy_feet_end_cm": [
+    null,
+    null,
+    null,
+    null,
+    null
+   ],
+   "groups_changed": [
+    "endpoints"
+   ]
+  },
+  "E5 mid px12": {
+   "seeds": 5,
+   "held": 0,
+   "d1_selected": 0,
+   "seams_pass": 0,
+   "seams_pass_attainable": 0,
+   "seam_failures": [
+    "drift",
+    "end"
+   ],
+   "start_planted_cm_max": 0.3,
+   "start_all_cm_max": 0.486,
+   "end_planted_cm": [
+    4.913,
+    3.755,
+    3.084,
+    5.886,
+    4.286
+   ],
+   "drift_cm": [
+    10.068,
+    8.748,
+    12.028,
+    13.59,
+    11.655
+   ],
+   "final_d6_m": [
+    0.1222,
+    0.0963,
+    0.0969,
+    0.0903,
+    0.1175
+   ],
+   "before_final_d6_m": [
+    0.0884,
+    0.0904,
+    0.0916,
+    0.081
+   ],
+   "before_hands_start_cm": [
+    0.24,
+    0.27,
+    0.29,
+    0.22
+   ],
+   "legacy_hands_start_cm": [
+    0.22,
+    0.29,
+    0.3,
+    0.23,
+    0.27
+   ],
+   "before_hands_end_cm": [
+    0.5,
+    1.62,
+    1.19,
+    1.71
+   ],
+   "legacy_hands_end_cm": [
+    1.01,
+    1.13,
+    1.14,
+    0.76,
+    1.26
+   ],
+   "before_feet_end_cm": [
+    6.1,
+    8.29,
+    5.34,
+    7.42
+   ],
+   "legacy_feet_end_cm": [
+    4.91,
+    3.75,
+    3.08,
+    5.89,
+    4.29
+   ],
+   "groups_changed": []
+  },
+  "E5 mid px12 (reference only)": {
+   "seeds": 5,
+   "held": 1,
+   "d1_selected": 1,
+   "seams_pass": 0,
+   "seams_pass_attainable": 0,
+   "seam_failures": [
+    "drift",
+    "end",
+    "start"
+   ],
+   "start_planted_cm_max": 0.627,
+   "start_all_cm_max": 0.627,
+   "end_planted_cm": [
+    4.493,
+    9.587,
+    4.508,
+    7.231,
+    4.121
+   ],
+   "drift_cm": [
+    12.406,
+    19.738,
+    11.96,
+    16.116,
+    12.709
+   ],
+   "final_d6_m": [
+    0.0887,
+    0.0981,
+    0.0936,
+    0.0769,
+    0.0829
+   ],
+   "before_final_d6_m": [
+    0.0884,
+    0.0904,
+    0.0916,
+    0.081
+   ],
+   "before_hands_start_cm": [
+    0.24,
+    0.27,
+    0.29,
+    0.22
+   ],
+   "legacy_hands_start_cm": [
+    0.23,
+    0.63,
+    0.27,
+    0.22,
+    0.29
+   ],
+   "before_hands_end_cm": [
+    0.5,
+    1.62,
+    1.19,
+    1.71
+   ],
+   "legacy_hands_end_cm": [
+    0.56,
+    2.53,
+    1.02,
+    0.85,
+    1.11
+   ],
+   "before_feet_end_cm": [
+    6.1,
+    8.29,
+    5.34,
+    7.42
+   ],
+   "legacy_feet_end_cm": [
+    4.49,
+    9.59,
+    4.51,
+    7.23,
+    4.12
+   ],
+   "groups_changed": []
+  }
+ },
+ "rows": [
+  {
+   "edge": "B1",
+   "timing": "high",
+   "seed": 0,
+   "pass": "px12",
+   "set": "t6",
+   "t6": {
+    "variant": "SYN_B1_B1_B1_high_s0_t6px12",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.0738,
+    "held": true,
+    "hand_drift_cm": 1.35,
+    "dynamics_sat_max": 0.609,
+    "statics_s_star_max": 0.1914,
+    "legacy_seams": {
+     "hands_start_cm": 0.14,
+     "hands_end_cm": 0.7,
+     "feet_end_cm": 6.25,
+     "hand_width_m": {
+      "synthetic": 0.3494,
+      "S": 0.3478,
+      "D": 0.3397
+     },
+     "hand_drift_cm": 0.97
+    },
+    "seams": {
+     "pass": false,
+     "pass_attainable": false,
+     "failed": [
+      "end",
+      "drift"
+     ],
+     "start_all_cm": 0.429,
+     "start_planted_cm": 0.429,
+     "end_planted_cm": 6.247,
+     "end_beyond": [
+      "L_Ankle",
+      "L_Toe",
+      "L_Wrist",
+      "R_Ankle",
+      "R_Toe",
+      "R_Wrist"
+     ],
+     "end_exemplar_bodies": [
+      "L_Wrist",
+      "R_Wrist"
+     ],
+     "drift_cm": 9.408,
+     "drift_zones": {
+      "L_FOOT": 9.239,
+      "L_HAND": 1.353,
+      "R_FOOT": 9.408,
+      "R_HAND": 0.971
+     }
+    },
+    "d1": {
+     "selected": false,
+     "failed_hard": [
+      "endpoints"
+     ],
+     "advisory_failed": [
+      "dynamics",
+      "naturalness_p99",
+      "seams_drift",
+      "seams_end"
+     ]
+    }
+   },
+   "before": {
+    "variant": "SYN_B1_B1_high_s0_px12",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.0712,
+    "held": true,
+    "hand_drift_cm": 1.86,
+    "dynamics_sat_max": 0.831,
+    "statics_s_star_max": 0.2831,
+    "legacy_seams": {
+     "hands_start_cm": 0.17,
+     "hands_end_cm": 0.84,
+     "feet_end_cm": 22.73,
+     "hand_width_m": {
+      "synthetic": 0.3486,
+      "S": 0.3478,
+      "D": 0.3397
+     },
+     "hand_drift_cm": 1.1
+    }
+   }
+  },
+  {
+   "edge": "B1",
+   "timing": "high",
+   "seed": 0,
+   "pass": "px",
+   "set": "t6",
+   "t6": {
+    "variant": "SYN_B1_B1_B1_high_s0_t6px",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.0881,
+    "held": false,
+    "hand_drift_cm": 0.89,
+    "dynamics_sat_max": 0.222,
+    "statics_s_star_max": 0.189,
+    "legacy_seams": {
+     "hands_start_cm": 0.16,
+     "hands_end_cm": 0.37,
+     "feet_end_cm": 2.78,
+     "hand_width_m": {
+      "synthetic": 0.3478,
+      "S": 0.3478,
+      "D": 0.3397
+     },
+     "hand_drift_cm": 0.75
+    },
+    "seams": {
+     "pass": false,
+     "pass_attainable": false,
+     "failed": [
+      "end",
+      "drift"
+     ],
+     "start_all_cm": 0.368,
+     "start_planted_cm": 0.368,
+     "end_planted_cm": 2.785,
+     "end_beyond": [
+      "L_Ankle",
+      "L_Toe",
+      "L_Wrist",
+      "R_Ankle",
+      "R_Toe",
+      "R_Wrist"
+     ],
+     "end_exemplar_bodies": [
+      "L_Wrist",
+      "R_Wrist"
+     ],
+     "drift_cm": 11.497,
+     "drift_zones": {
+      "L_FOOT": 11.497,
+      "L_HAND": 0.958,
+      "R_FOOT": 11.074,
+      "R_HAND": 0.748
+     }
+    },
+    "d1": {
+     "selected": false,
+     "failed_hard": [
+      "endpoints",
+      "held"
+     ],
+     "advisory_failed": [
+      "dynamics",
+      "naturalness_p99",
+      "seams_drift",
+      "seams_end"
+     ]
+    }
+   },
+   "before": {
+    "variant": "SYN_B1_B1_high_s0_px",
+    "failed": [
+     "dynamics",
+     "naturalness_p99"
+    ],
+    "final_d6_m": 0.0486,
+    "held": true,
+    "hand_drift_cm": 1.33,
+    "dynamics_sat_max": 0.669,
+    "statics_s_star_max": 0.2205,
+    "legacy_seams": {
+     "hands_start_cm": 0.15,
+     "hands_end_cm": 0.24,
+     "feet_end_cm": 14.2,
+     "hand_width_m": {
+      "synthetic": 0.3472,
+      "S": 0.3478,
+      "D": 0.3397
+     },
+     "hand_drift_cm": 0.39
+    }
+   }
+  },
+  {
+   "edge": "B1",
+   "timing": "high",
+   "seed": 0,
+   "pass": "px12",
+   "set": "t6r",
+   "t6": {
+    "variant": "SYN_B1_B1_B1_high_s0_t6rpx12",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.0589,
+    "held": true,
+    "hand_drift_cm": 1.58,
+    "dynamics_sat_max": 0.654,
+    "statics_s_star_max": 0.2837,
+    "legacy_seams": {
+     "hands_start_cm": 0.18,
+     "hands_end_cm": 1.06,
+     "feet_end_cm": 19.7,
+     "hand_width_m": {
+      "synthetic": 0.3485,
+      "S": 0.3478,
+      "D": 0.3397
+     },
+     "hand_drift_cm": 1.05
+    },
+    "seams": {
+     "pass": false,
+     "pass_attainable": false,
+     "failed": [
+      "start",
+      "end",
+      "drift"
+     ],
+     "start_all_cm": 0.543,
+     "start_planted_cm": 0.543,
+     "end_planted_cm": 19.696,
+     "end_beyond": [
+      "L_Ankle",
+      "L_Toe",
+      "L_Wrist",
+      "R_Ankle",
+      "R_Toe",
+      "R_Wrist"
+     ],
+     "end_exemplar_bodies": [
+      "R_Wrist"
+     ],
+     "drift_cm": 16.295,
+     "drift_zones": {
+      "L_FOOT": 11.914,
+      "L_HAND": 1.563,
+      "R_FOOT": 16.295,
+      "R_HAND": 1.379
+     }
+    },
+    "d1": {
+     "selected": false,
+     "failed_hard": [
+      "endpoints",
+      "seams"
+     ],
+     "advisory_failed": [
+      "dynamics",
+      "naturalness_p99",
+      "seams_drift",
+      "seams_end"
+     ]
+    }
+   },
+   "before": {
+    "variant": "SYN_B1_B1_high_s0_px12",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.0712,
+    "held": true,
+    "hand_drift_cm": 1.86,
+    "dynamics_sat_max": 0.831,
+    "statics_s_star_max": 0.2831,
+    "legacy_seams": {
+     "hands_start_cm": 0.17,
+     "hands_end_cm": 0.84,
+     "feet_end_cm": 22.73,
+     "hand_width_m": {
+      "synthetic": 0.3486,
+      "S": 0.3478,
+      "D": 0.3397
+     },
+     "hand_drift_cm": 1.1
+    }
+   }
+  },
+  {
+   "edge": "B1",
+   "timing": "high",
+   "seed": 0,
+   "pass": "px",
+   "set": "t6r",
+   "t6": {
+    "variant": "SYN_B1_B1_B1_high_s0_t6rpx",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.0744,
+    "held": true,
+    "hand_drift_cm": 1.33,
+    "dynamics_sat_max": 0.594,
+    "statics_s_star_max": 0.2506,
+    "legacy_seams": {
+     "hands_start_cm": 0.14,
+     "hands_end_cm": 0.52,
+     "feet_end_cm": 23.33,
+     "hand_width_m": {
+      "synthetic": 0.3482,
+      "S": 0.3478,
+      "D": 0.3397
+     },
+     "hand_drift_cm": 0.66
+    },
+    "seams": {
+     "pass": false,
+     "pass_attainable": false,
+     "failed": [
+      "start",
+      "end",
+      "drift"
+     ],
+     "start_all_cm": 0.509,
+     "start_planted_cm": 0.509,
+     "end_planted_cm": 23.334,
+     "end_beyond": [
+      "L_Ankle",
+      "L_Toe",
+      "L_Wrist",
+      "R_Ankle",
+      "R_Toe",
+      "R_Wrist"
+     ],
+     "end_exemplar_bodies": [
+      "L_Wrist"
+     ],
+     "drift_cm": 27.518,
+     "drift_zones": {
+      "L_FOOT": 15.796,
+      "L_HAND": 1.282,
+      "R_FOOT": 27.518,
+      "R_HAND": 1.215
+     }
+    },
+    "d1": {
+     "selected": false,
+     "failed_hard": [
+      "endpoints",
+      "seams"
+     ],
+     "advisory_failed": [
+      "dynamics",
+      "naturalness_p99",
+      "seams_drift",
+      "seams_end"
+     ]
+    }
+   },
+   "before": {
+    "variant": "SYN_B1_B1_high_s0_px",
+    "failed": [
+     "dynamics",
+     "naturalness_p99"
+    ],
+    "final_d6_m": 0.0486,
+    "held": true,
+    "hand_drift_cm": 1.33,
+    "dynamics_sat_max": 0.669,
+    "statics_s_star_max": 0.2205,
+    "legacy_seams": {
+     "hands_start_cm": 0.15,
+     "hands_end_cm": 0.24,
+     "feet_end_cm": 14.2,
+     "hand_width_m": {
+      "synthetic": 0.3472,
+      "S": 0.3478,
+      "D": 0.3397
+     },
+     "hand_drift_cm": 0.39
+    }
+   }
+  },
+  {
+   "edge": "B1",
+   "timing": "high",
+   "seed": 1,
+   "pass": "px12",
+   "set": "t6",
+   "t6": {
+    "variant": "SYN_B1_B1_B1_high_s1_t6px12",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.0687,
+    "held": true,
+    "hand_drift_cm": 1.04,
+    "dynamics_sat_max": 0.282,
+    "statics_s_star_max": 0.1824,
+    "legacy_seams": {
+     "hands_start_cm": 0.15,
+     "hands_end_cm": 0.39,
+     "feet_end_cm": 4.91,
+     "hand_width_m": {
+      "synthetic": 0.3492,
+      "S": 0.3478,
+      "D": 0.3397
+     },
+     "hand_drift_cm": 0.89
+    },
+    "seams": {
+     "pass": false,
+     "pass_attainable": false,
+     "failed": [
+      "end",
+      "drift"
+     ],
+     "start_all_cm": 0.285,
+     "start_planted_cm": 0.232,
+     "end_planted_cm": 4.907,
+     "end_beyond": [
+      "L_Ankle",
+      "L_Toe",
+      "R_Ankle",
+      "R_Toe",
+      "R_Wrist"
+     ],
+     "end_exemplar_bodies": [
+      "R_Wrist"
+     ],
+     "drift_cm": 7.774,
+     "drift_zones": {
+      "L_FOOT": 7.258,
+      "L_HAND": 0.889,
+      "R_FOOT": 7.774,
+      "R_HAND": 1.05
+     }
+    },
+    "d1": {
+     "selected": false,
+     "failed_hard": [
+      "endpoints"
+     ],
+     "advisory_failed": [
+      "dynamics",
+      "naturalness_p99",
+      "seams_drift",
+      "seams_end"
+     ]
+    }
+   },
+   "before": {
+    "variant": "SYN_B1_B1_high_s1_px12",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.0517,
+    "held": true,
+    "hand_drift_cm": 1.73,
+    "dynamics_sat_max": 0.538,
+    "statics_s_star_max": 0.2452,
+    "legacy_seams": {
+     "hands_start_cm": 0.11,
+     "hands_end_cm": 0.61,
+     "feet_end_cm": 19.59,
+     "hand_width_m": {
+      "synthetic": 0.3493,
+      "S": 0.3478,
+      "D": 0.3397
+     },
+     "hand_drift_cm": 0.6
+    }
+   }
+  },
+  {
+   "edge": "B1",
+   "timing": "high",
+   "seed": 1,
+   "pass": "px",
+   "set": "t6",
+   "t6": {
+    "variant": "SYN_B1_B1_B1_high_s1_t6px",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.087,
+    "held": false,
+    "hand_drift_cm": 0.75,
+    "dynamics_sat_max": 0.235,
+    "statics_s_star_max": 0.1824,
+    "legacy_seams": {
+     "hands_start_cm": 0.2,
+     "hands_end_cm": 0.49,
+     "feet_end_cm": 2.5,
+     "hand_width_m": {
+      "synthetic": 0.3479,
+      "S": 0.3478,
+      "D": 0.3397
+     },
+     "hand_drift_cm": 0.41
+    },
+    "seams": {
+     "pass": false,
+     "pass_attainable": false,
+     "failed": [
+      "end",
+      "drift"
+     ],
+     "start_all_cm": 0.282,
+     "start_planted_cm": 0.214,
+     "end_planted_cm": 2.502,
+     "end_beyond": [
+      "L_Ankle",
+      "L_Toe",
+      "R_Ankle",
+      "R_Toe",
+      "R_Wrist"
+     ],
+     "end_exemplar_bodies": [
+      "R_Wrist"
+     ],
+     "drift_cm": 10.124,
+     "drift_zones": {
+      "L_FOOT": 10.058,
+      "L_HAND": 0.783,
+      "R_FOOT": 10.124,
+      "R_HAND": 0.744
+     }
+    },
+    "d1": {
+     "selected": false,
+     "failed_hard": [
+      "endpoints",
+      "held"
+     ],
+     "advisory_failed": [
+      "dynamics",
+      "naturalness_p99",
+      "seams_drift",
+      "seams_end"
+     ]
+    }
+   },
+   "before": {
+    "variant": "SYN_B1_B1_high_s1_px",
+    "failed": [
+     "dynamics",
+     "naturalness_p99"
+    ],
+    "final_d6_m": 0.0298,
+    "held": true,
+    "hand_drift_cm": 1.78,
+    "dynamics_sat_max": 0.265,
+    "statics_s_star_max": 0.2335,
+    "legacy_seams": {
+     "hands_start_cm": 0.11,
+     "hands_end_cm": 0.36,
+     "feet_end_cm": 7.34,
+     "hand_width_m": {
+      "synthetic": 0.3481,
+      "S": 0.3478,
+      "D": 0.3397
+     },
+     "hand_drift_cm": 0.7
+    }
+   }
+  },
+  {
+   "edge": "B1",
+   "timing": "high",
+   "seed": 1,
+   "pass": "px12",
+   "set": "t6r",
+   "t6": {
+    "variant": "SYN_B1_B1_B1_high_s1_t6rpx12",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.0552,
+    "held": true,
+    "hand_drift_cm": 1.56,
+    "dynamics_sat_max": 0.632,
+    "statics_s_star_max": 0.2433,
+    "legacy_seams": {
+     "hands_start_cm": 0.12,
+     "hands_end_cm": 0.62,
+     "feet_end_cm": 21.59,
+     "hand_width_m": {
+      "synthetic": 0.3491,
+      "S": 0.3478,
+      "D": 0.3397
+     },
+     "hand_drift_cm": 0.59
+    },
+    "seams": {
+     "pass": false,
+     "pass_attainable": false,
+     "failed": [
+      "end",
+      "drift"
+     ],
+     "start_all_cm": 0.924,
+     "start_planted_cm": 0.265,
+     "end_planted_cm": 21.585,
+     "end_beyond": [
+      "L_Ankle",
+      "L_Toe",
+      "R_Ankle",
+      "R_Toe",
+      "R_Wrist"
+     ],
+     "end_exemplar_bodies": [
+      "R_Wrist"
+     ],
+     "drift_cm": 16.04,
+     "drift_zones": {
+      "L_FOOT": 16.04,
+      "L_HAND": 1.58,
+      "R_FOOT": 15.052,
+      "R_HAND": 1.445
+     }
+    },
+    "d1": {
+     "selected": false,
+     "failed_hard": [
+      "endpoints"
+     ],
+     "advisory_failed": [
+      "dynamics",
+      "naturalness_p99",
+      "seams_drift",
+      "seams_end"
+     ]
+    }
+   },
+   "before": {
+    "variant": "SYN_B1_B1_high_s1_px12",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.0517,
+    "held": true,
+    "hand_drift_cm": 1.73,
+    "dynamics_sat_max": 0.538,
+    "statics_s_star_max": 0.2452,
+    "legacy_seams": {
+     "hands_start_cm": 0.11,
+     "hands_end_cm": 0.61,
+     "feet_end_cm": 19.59,
+     "hand_width_m": {
+      "synthetic": 0.3493,
+      "S": 0.3478,
+      "D": 0.3397
+     },
+     "hand_drift_cm": 0.6
+    }
+   }
+  },
+  {
+   "edge": "B1",
+   "timing": "high",
+   "seed": 1,
+   "pass": "px",
+   "set": "t6r",
+   "t6": {
+    "variant": "SYN_B1_B1_B1_high_s1_t6rpx",
+    "failed": [
+     "dynamics",
+     "naturalness_p99"
+    ],
+    "final_d6_m": 0.0271,
+    "held": true,
+    "hand_drift_cm": 1.55,
+    "dynamics_sat_max": 0.278,
+    "statics_s_star_max": 0.2715,
+    "legacy_seams": {
+     "hands_start_cm": 0.12,
+     "hands_end_cm": 0.85,
+     "feet_end_cm": 4.54,
+     "hand_width_m": {
+      "synthetic": 0.348,
+      "S": 0.3478,
+      "D": 0.3397
+     },
+     "hand_drift_cm": 0.97
+    },
+    "seams": {
+     "pass": false,
+     "pass_attainable": false,
+     "failed": [
+      "end",
+      "drift"
+     ],
+     "start_all_cm": 0.575,
+     "start_planted_cm": 0.316,
+     "end_planted_cm": 4.541,
+     "end_beyond": [
+      "L_Ankle",
+      "L_Toe",
+      "L_Wrist",
+      "R_Ankle",
+      "R_Toe",
+      "R_Wrist"
+     ],
+     "end_exemplar_bodies": [
+      "L_Wrist"
+     ],
+     "drift_cm": 22.485,
+     "drift_zones": {
+      "L_FOOT": 21.423,
+      "L_HAND": 1.486,
+      "R_FOOT": 22.485,
+      "R_HAND": 1.455
+     }
+    },
+    "d1": {
+     "selected": true,
+     "failed_hard": [],
+     "advisory_failed": [
+      "dynamics",
+      "naturalness_p99",
+      "seams_drift",
+      "seams_end"
+     ]
+    }
+   },
+   "before": {
+    "variant": "SYN_B1_B1_high_s1_px",
+    "failed": [
+     "dynamics",
+     "naturalness_p99"
+    ],
+    "final_d6_m": 0.0298,
+    "held": true,
+    "hand_drift_cm": 1.78,
+    "dynamics_sat_max": 0.265,
+    "statics_s_star_max": 0.2335,
+    "legacy_seams": {
+     "hands_start_cm": 0.11,
+     "hands_end_cm": 0.36,
+     "feet_end_cm": 7.34,
+     "hand_width_m": {
+      "synthetic": 0.3481,
+      "S": 0.3478,
+      "D": 0.3397
+     },
+     "hand_drift_cm": 0.7
+    }
+   }
+  },
+  {
+   "edge": "B1",
+   "timing": "high",
+   "seed": 2,
+   "pass": "px12",
+   "set": "t6",
+   "t6": {
+    "variant": "SYN_B1_B1_B1_high_s2_t6px12",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.0854,
+    "held": true,
+    "hand_drift_cm": 0.97,
+    "dynamics_sat_max": 0.656,
+    "statics_s_star_max": 0.1925,
+    "legacy_seams": {
+     "hands_start_cm": 0.19,
+     "hands_end_cm": 0.76,
+     "feet_end_cm": 7.91,
+     "hand_width_m": {
+      "synthetic": 0.347,
+      "S": 0.3478,
+      "D": 0.3397
+     },
+     "hand_drift_cm": 1.06
+    },
+    "seams": {
+     "pass": false,
+     "pass_attainable": false,
+     "failed": [
+      "end",
+      "drift"
+     ],
+     "start_all_cm": 0.57,
+     "start_planted_cm": 0.233,
+     "end_planted_cm": 7.911,
+     "end_beyond": [
+      "L_Ankle",
+      "L_Toe",
+      "R_Ankle",
+      "R_Toe",
+      "R_Wrist"
+     ],
+     "end_exemplar_bodies": [],
+     "drift_cm": 8.797,
+     "drift_zones": {
+      "L_FOOT": 5.549,
+      "L_HAND": 0.887,
+      "R_FOOT": 8.797,
+      "R_HAND": 1.058
+     }
+    },
+    "d1": {
+     "selected": false,
+     "failed_hard": [
+      "endpoints"
+     ],
+     "advisory_failed": [
+      "dynamics",
+      "naturalness_p99",
+      "seams_drift",
+      "seams_end"
+     ]
+    }
+   },
+   "before": {
+    "variant": "SYN_B1_B1_high_s2_px12",
+    "failed": [
+     "dynamics",
+     "naturalness_p99"
+    ],
+    "final_d6_m": 0.0414,
+    "held": true,
+    "hand_drift_cm": 1.61,
+    "dynamics_sat_max": 0.756,
+    "statics_s_star_max": 0.2583,
+    "legacy_seams": {
+     "hands_start_cm": 0.14,
+     "hands_end_cm": 0.58,
+     "feet_end_cm": 10.98,
+     "hand_width_m": {
+      "synthetic": 0.3478,
+      "S": 0.3478,
+      "D": 0.3397
+     },
+     "hand_drift_cm": 0.7
+    }
+   }
+  },
+  {
+   "edge": "B1",
+   "timing": "high",
+   "seed": 2,
+   "pass": "px",
+   "set": "t6",
+   "t6": {
+    "variant": "SYN_B1_B1_B1_high_s2_t6px",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.1236,
+    "held": false,
+    "hand_drift_cm": 1.08,
+    "dynamics_sat_max": 0.408,
+    "statics_s_star_max": 0.1741,
+    "legacy_seams": {
+     "hands_start_cm": 0.14,
+     "hands_end_cm": 0.54,
+     "feet_end_cm": 3.62,
+     "hand_width_m": {
+      "synthetic": 0.3464,
+      "S": 0.3478,
+      "D": 0.3397
+     },
+     "hand_drift_cm": 0.74
+    },
+    "seams": {
+     "pass": false,
+     "pass_attainable": false,
+     "failed": [
+      "end",
+      "drift"
+     ],
+     "start_all_cm": 0.617,
+     "start_planted_cm": 0.23,
+     "end_planted_cm": 3.622,
+     "end_beyond": [
+      "L_Ankle",
+      "L_Toe",
+      "L_Wrist",
+      "R_Toe",
+      "R_Wrist"
+     ],
+     "end_exemplar_bodies": [
+      "L_Wrist"
+     ],
+     "drift_cm": 16.414,
+     "drift_zones": {
+      "L_FOOT": 14.182,
+      "L_HAND": 1.124,
+      "R_FOOT": 16.414,
+      "R_HAND": 0.973
+     }
+    },
+    "d1": {
+     "selected": false,
+     "failed_hard": [
+      "endpoints",
+      "held"
+     ],
+     "advisory_failed": [
+      "dynamics",
+      "naturalness_p99",
+      "seams_drift",
+      "seams_end"
+     ]
+    }
+   },
+   "before": {
+    "variant": "SYN_B1_B1_high_s2_px",
+    "failed": [
+     "dynamics",
+     "naturalness_p99"
+    ],
+    "final_d6_m": 0.0292,
+    "held": true,
+    "hand_drift_cm": 1.33,
+    "dynamics_sat_max": 0.434,
+    "statics_s_star_max": 0.2353,
+    "legacy_seams": {
+     "hands_start_cm": 0.18,
+     "hands_end_cm": 0.74,
+     "feet_end_cm": 11.95,
+     "hand_width_m": {
+      "synthetic": 0.3467,
+      "S": 0.3478,
+      "D": 0.3397
+     },
+     "hand_drift_cm": 0.57
+    }
+   }
+  },
+  {
+   "edge": "B1",
+   "timing": "high",
+   "seed": 2,
+   "pass": "px12",
+   "set": "t6r",
+   "t6": {
+    "variant": "SYN_B1_B1_B1_high_s2_t6rpx12",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.0511,
+    "held": true,
+    "hand_drift_cm": 1.51,
+    "dynamics_sat_max": 0.855,
+    "statics_s_star_max": 0.2572,
+    "legacy_seams": {
+     "hands_start_cm": 0.12,
+     "hands_end_cm": 0.54,
+     "feet_end_cm": 10.27,
+     "hand_width_m": {
+      "synthetic": 0.3478,
+      "S": 0.3478,
+      "D": 0.3397
+     },
+     "hand_drift_cm": 0.5
+    },
+    "seams": {
+     "pass": false,
+     "pass_attainable": false,
+     "failed": [
+      "end",
+      "drift"
+     ],
+     "start_all_cm": 0.862,
+     "start_planted_cm": 0.333,
+     "end_planted_cm": 10.268,
+     "end_beyond": [
+      "L_Ankle",
+      "L_Toe",
+      "L_Wrist",
+      "R_Ankle",
+      "R_Toe",
+      "R_Wrist"
+     ],
+     "end_exemplar_bodies": [
+      "L_Wrist"
+     ],
+     "drift_cm": 18.542,
+     "drift_zones": {
+      "L_FOOT": 14.932,
+      "L_HAND": 1.473,
+      "R_FOOT": 18.542,
+      "R_HAND": 1.579
+     }
+    },
+    "d1": {
+     "selected": false,
+     "failed_hard": [
+      "endpoints"
+     ],
+     "advisory_failed": [
+      "dynamics",
+      "naturalness_p99",
+      "seams_drift",
+      "seams_end"
+     ]
+    }
+   },
+   "before": {
+    "variant": "SYN_B1_B1_high_s2_px12",
+    "failed": [
+     "dynamics",
+     "naturalness_p99"
+    ],
+    "final_d6_m": 0.0414,
+    "held": true,
+    "hand_drift_cm": 1.61,
+    "dynamics_sat_max": 0.756,
+    "statics_s_star_max": 0.2583,
+    "legacy_seams": {
+     "hands_start_cm": 0.14,
+     "hands_end_cm": 0.58,
+     "feet_end_cm": 10.98,
+     "hand_width_m": {
+      "synthetic": 0.3478,
+      "S": 0.3478,
+      "D": 0.3397
+     },
+     "hand_drift_cm": 0.7
+    }
+   }
+  },
+  {
+   "edge": "B1",
+   "timing": "high",
+   "seed": 2,
+   "pass": "px",
+   "set": "t6r",
+   "t6": {
+    "variant": "SYN_B1_B1_B1_high_s2_t6rpx",
+    "failed": [
+     "dynamics",
+     "naturalness_p99"
+    ],
+    "final_d6_m": 0.0486,
+    "held": true,
+    "hand_drift_cm": 1.57,
+    "dynamics_sat_max": 0.286,
+    "statics_s_star_max": 0.2726,
+    "legacy_seams": {
+     "hands_start_cm": 0.09,
+     "hands_end_cm": 0.98,
+     "feet_end_cm": 3.06,
+     "hand_width_m": {
+      "synthetic": 0.3473,
+      "S": 0.3478,
+      "D": 0.3397
+     },
+     "hand_drift_cm": 0.59
+    },
+    "seams": {
+     "pass": false,
+     "pass_attainable": false,
+     "failed": [
+      "end",
+      "drift"
+     ],
+     "start_all_cm": 0.772,
+     "start_planted_cm": 0.357,
+     "end_planted_cm": 3.062,
+     "end_beyond": [
+      "L_Ankle",
+      "L_Toe",
+      "L_Wrist",
+      "R_Ankle",
+      "R_Wrist"
+     ],
+     "end_exemplar_bodies": [],
+     "drift_cm": 26.069,
+     "drift_zones": {
+      "L_FOOT": 24.384,
+      "L_HAND": 1.583,
+      "R_FOOT": 26.069,
+      "R_HAND": 1.466
+     }
+    },
+    "d1": {
+     "selected": true,
+     "failed_hard": [],
+     "advisory_failed": [
+      "dynamics",
+      "naturalness_p99",
+      "seams_drift",
+      "seams_end"
+     ]
+    }
+   },
+   "before": {
+    "variant": "SYN_B1_B1_high_s2_px",
+    "failed": [
+     "dynamics",
+     "naturalness_p99"
+    ],
+    "final_d6_m": 0.0292,
+    "held": true,
+    "hand_drift_cm": 1.33,
+    "dynamics_sat_max": 0.434,
+    "statics_s_star_max": 0.2353,
+    "legacy_seams": {
+     "hands_start_cm": 0.18,
+     "hands_end_cm": 0.74,
+     "feet_end_cm": 11.95,
+     "hand_width_m": {
+      "synthetic": 0.3467,
+      "S": 0.3478,
+      "D": 0.3397
+     },
+     "hand_drift_cm": 0.57
+    }
+   }
+  },
+  {
+   "edge": "B1",
+   "timing": "high",
+   "seed": 3,
+   "pass": "px12",
+   "set": "t6",
+   "t6": {
+    "variant": "SYN_B1_B1_B1_high_s3_t6px12",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.0746,
+    "held": true,
+    "hand_drift_cm": 0.87,
+    "dynamics_sat_max": 0.502,
+    "statics_s_star_max": 0.1749,
+    "legacy_seams": {
+     "hands_start_cm": 0.16,
+     "hands_end_cm": 0.38,
+     "feet_end_cm": 9.07,
+     "hand_width_m": {
+      "synthetic": 0.3494,
+      "S": 0.3478,
+      "D": 0.3397
+     },
+     "hand_drift_cm": 0.45
+    },
+    "seams": {
+     "pass": false,
+     "pass_attainable": false,
+     "failed": [
+      "end",
+      "drift"
+     ],
+     "start_all_cm": 0.451,
+     "start_planted_cm": 0.337,
+     "end_planted_cm": 9.066,
+     "end_beyond": [
+      "L_Ankle",
+      "L_Toe",
+      "L_Wrist",
+      "R_Ankle",
+      "R_Toe",
+      "R_Wrist"
+     ],
+     "end_exemplar_bodies": [
+      "L_Wrist"
+     ],
+     "drift_cm": 7.179,
+     "drift_zones": {
+      "L_FOOT": 7.179,
+      "L_HAND": 0.813,
+      "R_FOOT": 6.273,
+      "R_HAND": 0.85
+     }
+    },
+    "d1": {
+     "selected": false,
+     "failed_hard": [
+      "endpoints"
+     ],
+     "advisory_failed": [
+      "dynamics",
+      "naturalness_p99",
+      "seams_drift",
+      "seams_end"
+     ]
+    }
+   },
+   "before": {
+    "variant": "SYN_B1_B1_high_s3_px12",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.0745,
+    "held": true,
+    "hand_drift_cm": 1.05,
+    "dynamics_sat_max": 0.329,
+    "statics_s_star_max": 0.1731,
+    "legacy_seams": {
+     "hands_start_cm": 0.18,
+     "hands_end_cm": 0.43,
+     "feet_end_cm": 12.82,
+     "hand_width_m": {
+      "synthetic": 0.3491,
+      "S": 0.3478,
+      "D": 0.3397
+     },
+     "hand_drift_cm": 0.49
+    }
+   }
+  },
+  {
+   "edge": "B1",
+   "timing": "high",
+   "seed": 3,
+   "pass": "px",
+   "set": "t6",
+   "t6": {
+    "variant": "SYN_B1_B1_B1_high_s3_t6px",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.1018,
+    "held": false,
+    "hand_drift_cm": 1.12,
+    "dynamics_sat_max": 0.647,
+    "statics_s_star_max": 0.2725,
+    "legacy_seams": {
+     "hands_start_cm": 0.16,
+     "hands_end_cm": 0.31,
+     "feet_end_cm": 3.21,
+     "hand_width_m": {
+      "synthetic": 0.3472,
+      "S": 0.3478,
+      "D": 0.3397
+     },
+     "hand_drift_cm": 0.76
+    },
+    "seams": {
+     "pass": false,
+     "pass_attainable": false,
+     "failed": [
+      "end",
+      "drift"
+     ],
+     "start_all_cm": 0.389,
+     "start_planted_cm": 0.302,
+     "end_planted_cm": 3.215,
+     "end_beyond": [
+      "L_Ankle",
+      "L_Toe",
+      "R_Ankle",
+      "R_Toe",
+      "R_Wrist"
+     ],
+     "end_exemplar_bodies": [],
+     "drift_cm": 18.412,
+     "drift_zones": {
+      "L_FOOT": 18.412,
+      "L_HAND": 1.119,
+      "R_FOOT": 1.194,
+      "R_HAND": 0.801
+     }
+    },
+    "d1": {
+     "selected": false,
+     "failed_hard": [
+      "endpoints",
+      "held"
+     ],
+     "advisory_failed": [
+      "dynamics",
+      "naturalness_p99",
+      "seams_drift",
+      "seams_end"
+     ]
+    }
+   },
+   "before": {
+    "variant": "SYN_B1_B1_high_s3_px",
+    "failed": [
+     "dynamics",
+     "naturalness_p99"
+    ],
+    "final_d6_m": 0.0482,
+    "held": true,
+    "hand_drift_cm": 1.17,
+    "dynamics_sat_max": 0.265,
+    "statics_s_star_max": 0.1869,
+    "legacy_seams": {
+     "hands_start_cm": 0.26,
+     "hands_end_cm": 0.58,
+     "feet_end_cm": 9.04,
+     "hand_width_m": {
+      "synthetic": 0.3472,
+      "S": 0.3478,
+      "D": 0.3397
+     },
+     "hand_drift_cm": 0.38
+    }
+   }
+  },
+  {
+   "edge": "B1",
+   "timing": "high",
+   "seed": 3,
+   "pass": "px12",
+   "set": "t6r",
+   "t6": {
+    "variant": "SYN_B1_B1_B1_high_s3_t6rpx12",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.06,
+    "held": true,
+    "hand_drift_cm": 0.89,
+    "dynamics_sat_max": 0.353,
+    "statics_s_star_max": 0.1853,
+    "legacy_seams": {
+     "hands_start_cm": 0.16,
+     "hands_end_cm": 0.4,
+     "feet_end_cm": 10.96,
+     "hand_width_m": {
+      "synthetic": 0.3492,
+      "S": 0.3478,
+      "D": 0.3397
+     },
+     "hand_drift_cm": 0.56
+    },
+    "seams": {
+     "pass": false,
+     "pass_attainable": false,
+     "failed": [
+      "end",
+      "drift"
+     ],
+     "start_all_cm": 0.467,
+     "start_planted_cm": 0.332,
+     "end_planted_cm": 10.963,
+     "end_beyond": [
+      "L_Ankle",
+      "L_Toe",
+      "L_Wrist",
+      "R_Ankle",
+      "R_Toe",
+      "R_Wrist"
+     ],
+     "end_exemplar_bodies": [
+      "L_Wrist"
+     ],
+     "drift_cm": 15.381,
+     "drift_zones": {
+      "L_FOOT": 13.94,
+      "L_HAND": 0.792,
+      "R_FOOT": 15.381,
+      "R_HAND": 0.919
+     }
+    },
+    "d1": {
+     "selected": false,
+     "failed_hard": [
+      "endpoints"
+     ],
+     "advisory_failed": [
+      "dynamics",
+      "naturalness_p99",
+      "seams_drift",
+      "seams_end"
+     ]
+    }
+   },
+   "before": {
+    "variant": "SYN_B1_B1_high_s3_px12",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.0745,
+    "held": true,
+    "hand_drift_cm": 1.05,
+    "dynamics_sat_max": 0.329,
+    "statics_s_star_max": 0.1731,
+    "legacy_seams": {
+     "hands_start_cm": 0.18,
+     "hands_end_cm": 0.43,
+     "feet_end_cm": 12.82,
+     "hand_width_m": {
+      "synthetic": 0.3491,
+      "S": 0.3478,
+      "D": 0.3397
+     },
+     "hand_drift_cm": 0.49
+    }
+   }
+  },
+  {
+   "edge": "B1",
+   "timing": "high",
+   "seed": 3,
+   "pass": "px",
+   "set": "t6r",
+   "t6": {
+    "variant": "SYN_B1_B1_B1_high_s3_t6rpx",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.0535,
+    "held": true,
+    "hand_drift_cm": 0.72,
+    "dynamics_sat_max": 0.295,
+    "statics_s_star_max": 0.1996,
+    "legacy_seams": {
+     "hands_start_cm": 0.22,
+     "hands_end_cm": 0.76,
+     "feet_end_cm": 9.44,
+     "hand_width_m": {
+      "synthetic": 0.3475,
+      "S": 0.3478,
+      "D": 0.3397
+     },
+     "hand_drift_cm": 0.41
+    },
+    "seams": {
+     "pass": false,
+     "pass_attainable": false,
+     "failed": [
+      "end",
+      "drift"
+     ],
+     "start_all_cm": 0.377,
+     "start_planted_cm": 0.277,
+     "end_planted_cm": 9.441,
+     "end_beyond": [
+      "L_Ankle",
+      "L_Toe",
+      "L_Wrist",
+      "R_Ankle",
+      "R_Toe",
+      "R_Wrist"
+     ],
+     "end_exemplar_bodies": [
+      "L_Wrist"
+     ],
+     "drift_cm": 28.51,
+     "drift_zones": {
+      "L_FOOT": 27.93,
+      "L_HAND": 0.798,
+      "R_FOOT": 28.51,
+      "R_HAND": 0.702
+     }
+    },
+    "d1": {
+     "selected": false,
+     "failed_hard": [
+      "endpoints"
+     ],
+     "advisory_failed": [
+      "dynamics",
+      "naturalness_p99",
+      "seams_drift",
+      "seams_end"
+     ]
+    }
+   },
+   "before": {
+    "variant": "SYN_B1_B1_high_s3_px",
+    "failed": [
+     "dynamics",
+     "naturalness_p99"
+    ],
+    "final_d6_m": 0.0482,
+    "held": true,
+    "hand_drift_cm": 1.17,
+    "dynamics_sat_max": 0.265,
+    "statics_s_star_max": 0.1869,
+    "legacy_seams": {
+     "hands_start_cm": 0.26,
+     "hands_end_cm": 0.58,
+     "feet_end_cm": 9.04,
+     "hand_width_m": {
+      "synthetic": 0.3472,
+      "S": 0.3478,
+      "D": 0.3397
+     },
+     "hand_drift_cm": 0.38
+    }
+   }
+  },
+  {
+   "edge": "B1",
+   "timing": "high",
+   "seed": 4,
+   "pass": "px12",
+   "set": "t6",
+   "t6": {
+    "variant": "SYN_B1_B1_B1_high_s4_t6px12",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.08,
+    "held": true,
+    "hand_drift_cm": 0.78,
+    "dynamics_sat_max": 0.442,
+    "statics_s_star_max": 0.1769,
+    "legacy_seams": {
+     "hands_start_cm": 0.14,
+     "hands_end_cm": 0.58,
+     "feet_end_cm": 6.45,
+     "hand_width_m": {
+      "synthetic": 0.3479,
+      "S": 0.3478,
+      "D": 0.3397
+     },
+     "hand_drift_cm": 0.35
+    },
+    "seams": {
+     "pass": false,
+     "pass_attainable": false,
+     "failed": [
+      "end",
+      "drift"
+     ],
+     "start_all_cm": 0.319,
+     "start_planted_cm": 0.276,
+     "end_planted_cm": 6.454,
+     "end_beyond": [
+      "L_Ankle",
+      "L_Toe",
+      "L_Wrist",
+      "R_Ankle",
+      "R_Toe",
+      "R_Wrist"
+     ],
+     "end_exemplar_bodies": [
+      "L_Wrist",
+      "R_Wrist"
+     ],
+     "drift_cm": 6.469,
+     "drift_zones": {
+      "L_FOOT": 6.469,
+      "L_HAND": 0.788,
+      "R_FOOT": 6.173,
+      "R_HAND": 0.529
+     }
+    },
+    "d1": {
+     "selected": false,
+     "failed_hard": [
+      "endpoints"
+     ],
+     "advisory_failed": [
+      "dynamics",
+      "naturalness_p99",
+      "seams_drift",
+      "seams_end"
+     ]
+    }
+   },
+   "before": null
+  },
+  {
+   "edge": "B1",
+   "timing": "high",
+   "seed": 4,
+   "pass": "px",
+   "set": "t6",
+   "t6": {
+    "variant": "SYN_B1_B1_B1_high_s4_t6px",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.0742,
+    "held": true,
+    "hand_drift_cm": 0.72,
+    "dynamics_sat_max": 0.22,
+    "statics_s_star_max": 0.1788,
+    "legacy_seams": {
+     "hands_start_cm": 0.18,
+     "hands_end_cm": 0.27,
+     "feet_end_cm": 3.66,
+     "hand_width_m": {
+      "synthetic": 0.3472,
+      "S": 0.3478,
+      "D": 0.3397
+     },
+     "hand_drift_cm": 0.48
+    },
+    "seams": {
+     "pass": false,
+     "pass_attainable": false,
+     "failed": [
+      "end",
+      "drift"
+     ],
+     "start_all_cm": 0.501,
+     "start_planted_cm": 0.247,
+     "end_planted_cm": 3.661,
+     "end_beyond": [
+      "L_Wrist",
+      "R_Ankle",
+      "R_Toe",
+      "R_Wrist"
+     ],
+     "end_exemplar_bodies": [
+      "L_Wrist",
+      "R_Wrist"
+     ],
+     "drift_cm": 12.637,
+     "drift_zones": {
+      "L_FOOT": 11.322,
+      "L_HAND": 0.77,
+      "R_FOOT": 12.637,
+      "R_HAND": 0.497
+     }
+    },
+    "d1": {
+     "selected": false,
+     "failed_hard": [
+      "endpoints"
+     ],
+     "advisory_failed": [
+      "dynamics",
+      "naturalness_p99",
+      "seams_drift",
+      "seams_end"
+     ]
+    }
+   },
+   "before": null
+  },
+  {
+   "edge": "B1",
+   "timing": "high",
+   "seed": 4,
+   "pass": "px12",
+   "set": "t6r",
+   "t6": {
+    "variant": "SYN_B1_B1_B1_high_s4_t6rpx12",
+    "failed": [
+     "dynamics",
+     "naturalness_p99"
+    ],
+    "final_d6_m": 0.0444,
+    "held": true,
+    "hand_drift_cm": 1.31,
+    "dynamics_sat_max": 0.761,
+    "statics_s_star_max": 0.2332,
+    "legacy_seams": {
+     "hands_start_cm": 0.19,
+     "hands_end_cm": 0.4,
+     "feet_end_cm": 9.35,
+     "hand_width_m": {
+      "synthetic": 0.3466,
+      "S": 0.3478,
+      "D": 0.3397
+     },
+     "hand_drift_cm": 0.71
+    },
+    "seams": {
+     "pass": false,
+     "pass_attainable": false,
+     "failed": [
+      "end",
+      "drift"
+     ],
+     "start_all_cm": 0.46,
+     "start_planted_cm": 0.34,
+     "end_planted_cm": 9.348,
+     "end_beyond": [
+      "L_Ankle",
+      "L_Toe",
+      "L_Wrist",
+      "R_Ankle",
+      "R_Toe",
+      "R_Wrist"
+     ],
+     "end_exemplar_bodies": [
+      "L_Wrist",
+      "R_Wrist"
+     ],
+     "drift_cm": 16.476,
+     "drift_zones": {
+      "L_FOOT": 15.605,
+      "L_HAND": 1.289,
+      "R_FOOT": 16.476,
+      "R_HAND": 1.271
+     }
+    },
+    "d1": {
+     "selected": true,
+     "failed_hard": [],
+     "advisory_failed": [
+      "dynamics",
+      "naturalness_p99",
+      "seams_drift",
+      "seams_end"
+     ]
+    }
+   },
+   "before": null
+  },
+  {
+   "edge": "B1",
+   "timing": "high",
+   "seed": 4,
+   "pass": "px",
+   "set": "t6r",
+   "t6": {
+    "variant": "SYN_B1_B1_B1_high_s4_t6rpx",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.0512,
+    "held": true,
+    "hand_drift_cm": 1.43,
+    "dynamics_sat_max": 0.267,
+    "statics_s_star_max": 0.2343,
+    "legacy_seams": {
+     "hands_start_cm": 0.2,
+     "hands_end_cm": 0.42,
+     "feet_end_cm": 1.42,
+     "hand_width_m": {
+      "synthetic": 0.3464,
+      "S": 0.3478,
+      "D": 0.3397
+     },
+     "hand_drift_cm": 0.84
+    },
+    "seams": {
+     "pass": false,
+     "pass_attainable": false,
+     "failed": [
+      "end",
+      "drift"
+     ],
+     "start_all_cm": 0.38,
+     "start_planted_cm": 0.377,
+     "end_planted_cm": 1.703,
+     "end_beyond": [
+      "L_Wrist",
+      "R_Wrist"
+     ],
+     "end_exemplar_bodies": [
+      "L_Wrist"
+     ],
+     "drift_cm": 23.745,
+     "drift_zones": {
+      "L_FOOT": 23.745,
+      "L_HAND": 1.422,
+      "R_FOOT": 22.971,
+      "R_HAND": 1.402
+     }
+    },
+    "d1": {
+     "selected": false,
+     "failed_hard": [
+      "endpoints"
+     ],
+     "advisory_failed": [
+      "dynamics",
+      "naturalness_p99",
+      "seams_drift",
+      "seams_end"
+     ]
+    }
+   },
+   "before": null
+  },
+  {
+   "edge": "B1",
+   "timing": "mid",
+   "seed": 0,
+   "pass": "px12",
+   "set": "t6",
+   "t6": {
+    "variant": "SYN_B1_B1_B1_mid_s0_t6px12",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.057,
+    "held": true,
+    "hand_drift_cm": 0.95,
+    "dynamics_sat_max": 0.512,
+    "statics_s_star_max": 0.2041,
+    "legacy_seams": {
+     "hands_start_cm": 0.18,
+     "hands_end_cm": 0.38,
+     "feet_end_cm": 6.32,
+     "hand_width_m": {
+      "synthetic": 0.3487,
+      "S": 0.3478,
+      "D": 0.3397
+     },
+     "hand_drift_cm": 0.86
+    },
+    "seams": {
+     "pass": false,
+     "pass_attainable": false,
+     "failed": [
+      "end",
+      "drift"
+     ],
+     "start_all_cm": 0.496,
+     "start_planted_cm": 0.496,
+     "end_planted_cm": 6.319,
+     "end_beyond": [
+      "L_Ankle",
+      "L_Toe",
+      "L_Wrist",
+      "R_Ankle",
+      "R_Toe",
+      "R_Wrist"
+     ],
+     "end_exemplar_bodies": [
+      "L_Wrist"
+     ],
+     "drift_cm": 9.322,
+     "drift_zones": {
+      "L_FOOT": 8.239,
+      "L_HAND": 1.082,
+      "R_FOOT": 9.322,
+      "R_HAND": 0.858
+     }
+    },
+    "d1": {
+     "selected": false,
+     "failed_hard": [
+      "endpoints"
+     ],
+     "advisory_failed": [
+      "dynamics",
+      "naturalness_p99",
+      "seams_drift",
+      "seams_end"
+     ]
+    }
+   },
+   "before": {
+    "variant": "SYN_B1_B1_mid_s0_px12",
+    "failed": [
+     "dynamics",
+     "naturalness_p99"
+    ],
+    "final_d6_m": 0.0454,
+    "held": true,
+    "hand_drift_cm": 1.59,
+    "dynamics_sat_max": 0.561,
+    "statics_s_star_max": 0.2064,
+    "legacy_seams": {
+     "hands_start_cm": 0.16,
+     "hands_end_cm": 0.44,
+     "feet_end_cm": 12.1,
+     "hand_width_m": {
+      "synthetic": 0.3487,
+      "S": 0.3478,
+      "D": 0.3397
+     },
+     "hand_drift_cm": 0.81
+    }
+   }
+  },
+  {
+   "edge": "B1",
+   "timing": "mid",
+   "seed": 0,
+   "pass": "px",
+   "set": "t6",
+   "t6": {
+    "variant": "SYN_B1_B1_B1_mid_s0_t6px",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.065,
+    "held": true,
+    "hand_drift_cm": 0.79,
+    "dynamics_sat_max": 0.248,
+    "statics_s_star_max": 0.195,
+    "legacy_seams": {
+     "hands_start_cm": 0.21,
+     "hands_end_cm": 0.34,
+     "feet_end_cm": 1.83,
+     "hand_width_m": {
+      "synthetic": 0.3477,
+      "S": 0.3478,
+      "D": 0.3397
+     },
+     "hand_drift_cm": 0.81
+    },
+    "seams": {
+     "pass": false,
+     "pass_attainable": false,
+     "failed": [
+      "end",
+      "drift"
+     ],
+     "start_all_cm": 0.438,
+     "start_planted_cm": 0.438,
+     "end_planted_cm": 1.89,
+     "end_beyond": [
+      "L_Wrist",
+      "R_Toe",
+      "R_Wrist"
+     ],
+     "end_exemplar_bodies": [
+      "L_Wrist"
+     ],
+     "drift_cm": 10.914,
+     "drift_zones": {
+      "L_FOOT": 9.972,
+      "L_HAND": 0.786,
+      "R_FOOT": 10.914,
+      "R_HAND": 0.809
+     }
+    },
+    "d1": {
+     "selected": false,
+     "failed_hard": [
+      "endpoints"
+     ],
+     "advisory_failed": [
+      "dynamics",
+      "naturalness_p99",
+      "seams_drift",
+      "seams_end"
+     ]
+    }
+   },
+   "before": {
+    "variant": "SYN_B1_B1_mid_s0_px",
+    "failed": [
+     "dynamics",
+     "naturalness_p99"
+    ],
+    "final_d6_m": 0.0379,
+    "held": true,
+    "hand_drift_cm": 1.55,
+    "dynamics_sat_max": 0.243,
+    "statics_s_star_max": 0.1965,
+    "legacy_seams": {
+     "hands_start_cm": 0.19,
+     "hands_end_cm": 0.32,
+     "feet_end_cm": 5.72,
+     "hand_width_m": {
+      "synthetic": 0.3469,
+      "S": 0.3478,
+      "D": 0.3397
+     },
+     "hand_drift_cm": 0.69
+    }
+   }
+  },
+  {
+   "edge": "B1",
+   "timing": "mid",
+   "seed": 0,
+   "pass": "px12",
+   "set": "t6r",
+   "t6": {
+    "variant": "SYN_B1_B1_B1_mid_s0_t6rpx12",
+    "failed": [
+     "dynamics",
+     "naturalness_p99"
+    ],
+    "final_d6_m": 0.0336,
+    "held": true,
+    "hand_drift_cm": 1.28,
+    "dynamics_sat_max": 0.409,
+    "statics_s_star_max": 0.2116,
+    "legacy_seams": {
+     "hands_start_cm": 0.16,
+     "hands_end_cm": 0.58,
+     "feet_end_cm": 9.93,
+     "hand_width_m": {
+      "synthetic": 0.349,
+      "S": 0.3478,
+      "D": 0.3397
+     },
+     "hand_drift_cm": 1.0
+    },
+    "seams": {
+     "pass": false,
+     "pass_attainable": false,
+     "failed": [
+      "start",
+      "end",
+      "drift"
+     ],
+     "start_all_cm": 0.626,
+     "start_planted_cm": 0.523,
+     "end_planted_cm": 9.926,
+     "end_beyond": [
+      "L_Ankle",
+      "L_Toe",
+      "L_Wrist",
+      "R_Ankle",
+      "R_Toe",
+      "R_Wrist"
+     ],
+     "end_exemplar_bodies": [
+      "L_Wrist",
+      "R_Wrist"
+     ],
+     "drift_cm": 14.071,
+     "drift_zones": {
+      "L_FOOT": 11.421,
+      "L_HAND": 1.383,
+      "R_FOOT": 14.071,
+      "R_HAND": 1.019
+     }
+    },
+    "d1": {
+     "selected": false,
+     "failed_hard": [
+      "seams"
+     ],
+     "advisory_failed": [
+      "dynamics",
+      "naturalness_p99",
+      "seams_drift",
+      "seams_end"
+     ]
+    }
+   },
+   "before": {
+    "variant": "SYN_B1_B1_mid_s0_px12",
+    "failed": [
+     "dynamics",
+     "naturalness_p99"
+    ],
+    "final_d6_m": 0.0454,
+    "held": true,
+    "hand_drift_cm": 1.59,
+    "dynamics_sat_max": 0.561,
+    "statics_s_star_max": 0.2064,
+    "legacy_seams": {
+     "hands_start_cm": 0.16,
+     "hands_end_cm": 0.44,
+     "feet_end_cm": 12.1,
+     "hand_width_m": {
+      "synthetic": 0.3487,
+      "S": 0.3478,
+      "D": 0.3397
+     },
+     "hand_drift_cm": 0.81
+    }
+   }
+  },
+  {
+   "edge": "B1",
+   "timing": "mid",
+   "seed": 0,
+   "pass": "px",
+   "set": "t6r",
+   "t6": {
+    "variant": "SYN_B1_B1_B1_mid_s0_t6rpx",
+    "failed": [
+     "dynamics",
+     "naturalness_p99"
+    ],
+    "final_d6_m": 0.0443,
+    "held": true,
+    "hand_drift_cm": 1.0,
+    "dynamics_sat_max": 0.208,
+    "statics_s_star_max": 0.1985,
+    "legacy_seams": {
+     "hands_start_cm": 0.19,
+     "hands_end_cm": 0.34,
+     "feet_end_cm": 3.27,
+     "hand_width_m": {
+      "synthetic": 0.3479,
+      "S": 0.3478,
+      "D": 0.3397
+     },
+     "hand_drift_cm": 0.64
+    },
+    "seams": {
+     "pass": false,
+     "pass_attainable": false,
+     "failed": [
+      "end",
+      "drift"
+     ],
+     "start_all_cm": 0.544,
+     "start_planted_cm": 0.444,
+     "end_planted_cm": 3.266,
+     "end_beyond": [
+      "L_Wrist",
+      "R_Toe",
+      "R_Wrist"
+     ],
+     "end_exemplar_bodies": [
+      "L_Wrist",
+      "R_Wrist"
+     ],
+     "drift_cm": 13.198,
+     "drift_zones": {
+      "L_FOOT": 13.198,
+      "L_HAND": 1.143,
+      "R_FOOT": 13.152,
+      "R_HAND": 0.978
+     }
+    },
+    "d1": {
+     "selected": true,
+     "failed_hard": [],
+     "advisory_failed": [
+      "dynamics",
+      "naturalness_p99",
+      "seams_drift",
+      "seams_end"
+     ]
+    }
+   },
+   "before": {
+    "variant": "SYN_B1_B1_mid_s0_px",
+    "failed": [
+     "dynamics",
+     "naturalness_p99"
+    ],
+    "final_d6_m": 0.0379,
+    "held": true,
+    "hand_drift_cm": 1.55,
+    "dynamics_sat_max": 0.243,
+    "statics_s_star_max": 0.1965,
+    "legacy_seams": {
+     "hands_start_cm": 0.19,
+     "hands_end_cm": 0.32,
+     "feet_end_cm": 5.72,
+     "hand_width_m": {
+      "synthetic": 0.3469,
+      "S": 0.3478,
+      "D": 0.3397
+     },
+     "hand_drift_cm": 0.69
+    }
+   }
+  },
+  {
+   "edge": "B1",
+   "timing": "mid",
+   "seed": 1,
+   "pass": "px12",
+   "set": "t6",
+   "t6": {
+    "variant": "SYN_B1_B1_B1_mid_s1_t6px12",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.068,
+    "held": true,
+    "hand_drift_cm": 0.69,
+    "dynamics_sat_max": 0.439,
+    "statics_s_star_max": 0.2041,
+    "legacy_seams": {
+     "hands_start_cm": 0.21,
+     "hands_end_cm": 0.25,
+     "feet_end_cm": 5.78,
+     "hand_width_m": {
+      "synthetic": 0.3482,
+      "S": 0.3478,
+      "D": 0.3397
+     },
+     "hand_drift_cm": 0.4
+    },
+    "seams": {
+     "pass": false,
+     "pass_attainable": false,
+     "failed": [
+      "end",
+      "drift"
+     ],
+     "start_all_cm": 0.38,
+     "start_planted_cm": 0.24,
+     "end_planted_cm": 5.784,
+     "end_beyond": [
+      "L_Ankle",
+      "L_Toe",
+      "R_Ankle",
+      "R_Toe",
+      "R_Wrist"
+     ],
+     "end_exemplar_bodies": [],
+     "drift_cm": 7.903,
+     "drift_zones": {
+      "L_FOOT": 7.903,
+      "L_HAND": 0.586,
+      "R_FOOT": 7.843,
+      "R_HAND": 0.791
+     }
+    },
+    "d1": {
+     "selected": false,
+     "failed_hard": [
+      "endpoints"
+     ],
+     "advisory_failed": [
+      "dynamics",
+      "naturalness_p99",
+      "seams_drift",
+      "seams_end"
+     ]
+    }
+   },
+   "before": {
+    "variant": "SYN_B1_B1_mid_s1_px12",
+    "failed": [
+     "dynamics",
+     "naturalness_p99"
+    ],
+    "final_d6_m": 0.0455,
+    "held": true,
+    "hand_drift_cm": 1.21,
+    "dynamics_sat_max": 0.36,
+    "statics_s_star_max": 0.1902,
+    "legacy_seams": {
+     "hands_start_cm": 0.2,
+     "hands_end_cm": 0.54,
+     "feet_end_cm": 10.25,
+     "hand_width_m": {
+      "synthetic": 0.3477,
+      "S": 0.3478,
+      "D": 0.3397
+     },
+     "hand_drift_cm": 0.65
+    }
+   }
+  },
+  {
+   "edge": "B1",
+   "timing": "mid",
+   "seed": 1,
+   "pass": "px",
+   "set": "t6",
+   "t6": {
+    "variant": "SYN_B1_B1_B1_mid_s1_t6px",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.0887,
+    "held": false,
+    "hand_drift_cm": 0.84,
+    "dynamics_sat_max": 0.618,
+    "statics_s_star_max": 0.2351,
+    "legacy_seams": {
+     "hands_start_cm": 0.28,
+     "hands_end_cm": 0.45,
+     "feet_end_cm": 3.39,
+     "hand_width_m": {
+      "synthetic": 0.3478,
+      "S": 0.3478,
+      "D": 0.3397
+     },
+     "hand_drift_cm": 0.31
+    },
+    "seams": {
+     "pass": false,
+     "pass_attainable": false,
+     "failed": [
+      "end",
+      "drift"
+     ],
+     "start_all_cm": 0.337,
+     "start_planted_cm": 0.337,
+     "end_planted_cm": 3.388,
+     "end_beyond": [
+      "L_Toe",
+      "R_Ankle",
+      "R_Toe",
+      "R_Wrist"
+     ],
+     "end_exemplar_bodies": [
+      "R_Wrist"
+     ],
+     "drift_cm": 11.55,
+     "drift_zones": {
+      "L_FOOT": 11.55,
+      "L_HAND": 0.983,
+      "R_FOOT": 11.383,
+      "R_HAND": 0.526
+     }
+    },
+    "d1": {
+     "selected": false,
+     "failed_hard": [
+      "endpoints",
+      "held"
+     ],
+     "advisory_failed": [
+      "dynamics",
+      "naturalness_p99",
+      "seams_drift",
+      "seams_end"
+     ]
+    }
+   },
+   "before": {
+    "variant": "SYN_B1_B1_mid_s1_px",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.0614,
+    "held": true,
+    "hand_drift_cm": 0.86,
+    "dynamics_sat_max": 0.515,
+    "statics_s_star_max": 0.1954,
+    "legacy_seams": {
+     "hands_start_cm": 0.23,
+     "hands_end_cm": 0.21,
+     "feet_end_cm": 1.76,
+     "hand_width_m": {
+      "synthetic": 0.3463,
+      "S": 0.3478,
+      "D": 0.3397
+     },
+     "hand_drift_cm": 0.48
+    }
+   }
+  },
+  {
+   "edge": "B1",
+   "timing": "mid",
+   "seed": 1,
+   "pass": "px12",
+   "set": "t6r",
+   "t6": {
+    "variant": "SYN_B1_B1_B1_mid_s1_t6rpx12",
+    "failed": [
+     "dynamics",
+     "naturalness_p99"
+    ],
+    "final_d6_m": 0.0452,
+    "held": true,
+    "hand_drift_cm": 0.95,
+    "dynamics_sat_max": 0.37,
+    "statics_s_star_max": 0.1937,
+    "legacy_seams": {
+     "hands_start_cm": 0.21,
+     "hands_end_cm": 0.6,
+     "feet_end_cm": 10.07,
+     "hand_width_m": {
+      "synthetic": 0.3482,
+      "S": 0.3478,
+      "D": 0.3397
+     },
+     "hand_drift_cm": 0.55
+    },
+    "seams": {
+     "pass": false,
+     "pass_attainable": false,
+     "failed": [
+      "end",
+      "drift"
+     ],
+     "start_all_cm": 0.614,
+     "start_planted_cm": 0.31,
+     "end_planted_cm": 10.067,
+     "end_beyond": [
+      "L_Ankle",
+      "L_Toe",
+      "R_Ankle",
+      "R_Toe",
+      "R_Wrist"
+     ],
+     "end_exemplar_bodies": [],
+     "drift_cm": 8.372,
+     "drift_zones": {
+      "L_FOOT": 7.369,
+      "L_HAND": 1.047,
+      "R_FOOT": 8.372,
+      "R_HAND": 0.809
+     }
+    },
+    "d1": {
+     "selected": true,
+     "failed_hard": [],
+     "advisory_failed": [
+      "dynamics",
+      "naturalness_p99",
+      "seams_drift",
+      "seams_end"
+     ]
+    }
+   },
+   "before": {
+    "variant": "SYN_B1_B1_mid_s1_px12",
+    "failed": [
+     "dynamics",
+     "naturalness_p99"
+    ],
+    "final_d6_m": 0.0455,
+    "held": true,
+    "hand_drift_cm": 1.21,
+    "dynamics_sat_max": 0.36,
+    "statics_s_star_max": 0.1902,
+    "legacy_seams": {
+     "hands_start_cm": 0.2,
+     "hands_end_cm": 0.54,
+     "feet_end_cm": 10.25,
+     "hand_width_m": {
+      "synthetic": 0.3477,
+      "S": 0.3478,
+      "D": 0.3397
+     },
+     "hand_drift_cm": 0.65
+    }
+   }
+  },
+  {
+   "edge": "B1",
+   "timing": "mid",
+   "seed": 1,
+   "pass": "px",
+   "set": "t6r",
+   "t6": {
+    "variant": "SYN_B1_B1_B1_mid_s1_t6rpx",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.0618,
+    "held": true,
+    "hand_drift_cm": 0.75,
+    "dynamics_sat_max": 0.505,
+    "statics_s_star_max": 0.1965,
+    "legacy_seams": {
+     "hands_start_cm": 0.25,
+     "hands_end_cm": 0.21,
+     "feet_end_cm": 2.63,
+     "hand_width_m": {
+      "synthetic": 0.3472,
+      "S": 0.3478,
+      "D": 0.3397
+     },
+     "hand_drift_cm": 0.54
+    },
+    "seams": {
+     "pass": false,
+     "pass_attainable": false,
+     "failed": [
+      "end",
+      "drift"
+     ],
+     "start_all_cm": 0.345,
+     "start_planted_cm": 0.345,
+     "end_planted_cm": 2.625,
+     "end_beyond": [
+      "L_Ankle",
+      "L_Toe",
+      "L_Wrist",
+      "R_Ankle",
+      "R_Toe",
+      "R_Wrist"
+     ],
+     "end_exemplar_bodies": [
+      "L_Wrist"
+     ],
+     "drift_cm": 13.605,
+     "drift_zones": {
+      "L_FOOT": 12.341,
+      "L_HAND": 0.863,
+      "R_FOOT": 13.605,
+      "R_HAND": 0.917
+     }
+    },
+    "d1": {
+     "selected": false,
+     "failed_hard": [
+      "endpoints"
+     ],
+     "advisory_failed": [
+      "dynamics",
+      "naturalness_p99",
+      "seams_drift",
+      "seams_end"
+     ]
+    }
+   },
+   "before": {
+    "variant": "SYN_B1_B1_mid_s1_px",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.0614,
+    "held": true,
+    "hand_drift_cm": 0.86,
+    "dynamics_sat_max": 0.515,
+    "statics_s_star_max": 0.1954,
+    "legacy_seams": {
+     "hands_start_cm": 0.23,
+     "hands_end_cm": 0.21,
+     "feet_end_cm": 1.76,
+     "hand_width_m": {
+      "synthetic": 0.3463,
+      "S": 0.3478,
+      "D": 0.3397
+     },
+     "hand_drift_cm": 0.48
+    }
+   }
+  },
+  {
+   "edge": "B1",
+   "timing": "mid",
+   "seed": 2,
+   "pass": "px12",
+   "set": "t6",
+   "t6": {
+    "variant": "SYN_B1_B1_B1_mid_s2_t6px12",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.0812,
+    "held": true,
+    "hand_drift_cm": 0.79,
+    "dynamics_sat_max": 0.446,
+    "statics_s_star_max": 0.2162,
+    "legacy_seams": {
+     "hands_start_cm": 0.23,
+     "hands_end_cm": 0.64,
+     "feet_end_cm": 5.29,
+     "hand_width_m": {
+      "synthetic": 0.3457,
+      "S": 0.3478,
+      "D": 0.3397
+     },
+     "hand_drift_cm": 1.0
+    },
+    "seams": {
+     "pass": false,
+     "pass_attainable": false,
+     "failed": [
+      "end",
+      "drift"
+     ],
+     "start_all_cm": 0.438,
+     "start_planted_cm": 0.261,
+     "end_planted_cm": 5.286,
+     "end_beyond": [
+      "L_Ankle",
+      "L_Toe",
+      "L_Wrist",
+      "R_Ankle",
+      "R_Toe",
+      "R_Wrist"
+     ],
+     "end_exemplar_bodies": [
+      "L_Wrist"
+     ],
+     "drift_cm": 7.731,
+     "drift_zones": {
+      "L_FOOT": 6.322,
+      "L_HAND": 0.673,
+      "R_FOOT": 7.731,
+      "R_HAND": 1.002
+     }
+    },
+    "d1": {
+     "selected": false,
+     "failed_hard": [
+      "endpoints"
+     ],
+     "advisory_failed": [
+      "dynamics",
+      "naturalness_p99",
+      "seams_drift",
+      "seams_end"
+     ]
+    }
+   },
+   "before": {
+    "variant": "SYN_B1_B1_mid_s2_px12",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.0648,
+    "held": true,
+    "hand_drift_cm": 2.62,
+    "dynamics_sat_max": 0.326,
+    "statics_s_star_max": 0.1999,
+    "legacy_seams": {
+     "hands_start_cm": 0.24,
+     "hands_end_cm": 2.41,
+     "feet_end_cm": 6.21,
+     "hand_width_m": {
+      "synthetic": 0.3452,
+      "S": 0.3478,
+      "D": 0.3397
+     },
+     "hand_drift_cm": 2.69
+    }
+   }
+  },
+  {
+   "edge": "B1",
+   "timing": "mid",
+   "seed": 2,
+   "pass": "px",
+   "set": "t6",
+   "t6": {
+    "variant": "SYN_B1_B1_B1_mid_s2_t6px",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.0974,
+    "held": false,
+    "hand_drift_cm": 0.91,
+    "dynamics_sat_max": 0.272,
+    "statics_s_star_max": 0.232,
+    "legacy_seams": {
+     "hands_start_cm": 0.25,
+     "hands_end_cm": 0.44,
+     "feet_end_cm": 1.65,
+     "hand_width_m": {
+      "synthetic": 0.3449,
+      "S": 0.3478,
+      "D": 0.3397
+     },
+     "hand_drift_cm": 0.58
+    },
+    "seams": {
+     "pass": false,
+     "pass_attainable": false,
+     "failed": [
+      "end",
+      "drift"
+     ],
+     "start_all_cm": 0.432,
+     "start_planted_cm": 0.332,
+     "end_planted_cm": 1.652,
+     "end_beyond": [
+      "L_Ankle",
+      "R_Wrist"
+     ],
+     "end_exemplar_bodies": [],
+     "drift_cm": 12.663,
+     "drift_zones": {
+      "L_FOOT": 10.834,
+      "L_HAND": 1.013,
+      "R_FOOT": 12.663,
+      "R_HAND": 1.016
+     }
+    },
+    "d1": {
+     "selected": false,
+     "failed_hard": [
+      "endpoints",
+      "held"
+     ],
+     "advisory_failed": [
+      "dynamics",
+      "naturalness_p99",
+      "seams_drift",
+      "seams_end"
+     ]
+    }
+   },
+   "before": {
+    "variant": "SYN_B1_B1_mid_s2_px",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.0681,
+    "held": true,
+    "hand_drift_cm": 1.2,
+    "dynamics_sat_max": 0.397,
+    "statics_s_star_max": 0.1975,
+    "legacy_seams": {
+     "hands_start_cm": 0.21,
+     "hands_end_cm": 0.2,
+     "feet_end_cm": 2.92,
+     "hand_width_m": {
+      "synthetic": 0.3452,
+      "S": 0.3478,
+      "D": 0.3397
+     },
+     "hand_drift_cm": 0.55
+    }
+   }
+  },
+  {
+   "edge": "B1",
+   "timing": "mid",
+   "seed": 2,
+   "pass": "px12",
+   "set": "t6r",
+   "t6": {
+    "variant": "SYN_B1_B1_B1_mid_s2_t6rpx12",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.0654,
+    "held": true,
+    "hand_drift_cm": 1.54,
+    "dynamics_sat_max": 0.404,
+    "statics_s_star_max": 0.2234,
+    "legacy_seams": {
+     "hands_start_cm": 0.25,
+     "hands_end_cm": 1.37,
+     "feet_end_cm": 5.79,
+     "hand_width_m": {
+      "synthetic": 0.3452,
+      "S": 0.3478,
+      "D": 0.3397
+     },
+     "hand_drift_cm": 1.66
+    },
+    "seams": {
+     "pass": false,
+     "pass_attainable": false,
+     "failed": [
+      "end",
+      "drift"
+     ],
+     "start_all_cm": 0.804,
+     "start_planted_cm": 0.367,
+     "end_planted_cm": 5.788,
+     "end_beyond": [
+      "L_Ankle",
+      "L_Toe",
+      "L_Wrist",
+      "R_Ankle",
+      "R_Toe",
+      "R_Wrist"
+     ],
+     "end_exemplar_bodies": [
+      "L_Wrist"
+     ],
+     "drift_cm": 13.535,
+     "drift_zones": {
+      "L_FOOT": 10.931,
+      "L_HAND": 0.986,
+      "R_FOOT": 13.535,
+      "R_HAND": 1.663
+     }
+    },
+    "d1": {
+     "selected": false,
+     "failed_hard": [
+      "endpoints"
+     ],
+     "advisory_failed": [
+      "dynamics",
+      "naturalness_p99",
+      "seams_drift",
+      "seams_end"
+     ]
+    }
+   },
+   "before": {
+    "variant": "SYN_B1_B1_mid_s2_px12",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.0648,
+    "held": true,
+    "hand_drift_cm": 2.62,
+    "dynamics_sat_max": 0.326,
+    "statics_s_star_max": 0.1999,
+    "legacy_seams": {
+     "hands_start_cm": 0.24,
+     "hands_end_cm": 2.41,
+     "feet_end_cm": 6.21,
+     "hand_width_m": {
+      "synthetic": 0.3452,
+      "S": 0.3478,
+      "D": 0.3397
+     },
+     "hand_drift_cm": 2.69
+    }
+   }
+  },
+  {
+   "edge": "B1",
+   "timing": "mid",
+   "seed": 2,
+   "pass": "px",
+   "set": "t6r",
+   "t6": {
+    "variant": "SYN_B1_B1_B1_mid_s2_t6rpx",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.07,
+    "held": true,
+    "hand_drift_cm": 1.14,
+    "dynamics_sat_max": 0.485,
+    "statics_s_star_max": 0.1936,
+    "legacy_seams": {
+     "hands_start_cm": 0.23,
+     "hands_end_cm": 0.33,
+     "feet_end_cm": 1.68,
+     "hand_width_m": {
+      "synthetic": 0.3461,
+      "S": 0.3478,
+      "D": 0.3397
+     },
+     "hand_drift_cm": 0.58
+    },
+    "seams": {
+     "pass": false,
+     "pass_attainable": false,
+     "failed": [
+      "end",
+      "drift"
+     ],
+     "start_all_cm": 0.583,
+     "start_planted_cm": 0.395,
+     "end_planted_cm": 1.869,
+     "end_beyond": [
+      "L_Toe",
+      "L_Wrist",
+      "R_Wrist"
+     ],
+     "end_exemplar_bodies": [
+      "L_Wrist"
+     ],
+     "drift_cm": 17.9,
+     "drift_zones": {
+      "L_FOOT": 16.743,
+      "L_HAND": 1.258,
+      "R_FOOT": 17.9,
+      "R_HAND": 1.153
+     }
+    },
+    "d1": {
+     "selected": false,
+     "failed_hard": [
+      "endpoints"
+     ],
+     "advisory_failed": [
+      "dynamics",
+      "naturalness_p99",
+      "seams_drift",
+      "seams_end"
+     ]
+    }
+   },
+   "before": {
+    "variant": "SYN_B1_B1_mid_s2_px",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.0681,
+    "held": true,
+    "hand_drift_cm": 1.2,
+    "dynamics_sat_max": 0.397,
+    "statics_s_star_max": 0.1975,
+    "legacy_seams": {
+     "hands_start_cm": 0.21,
+     "hands_end_cm": 0.2,
+     "feet_end_cm": 2.92,
+     "hand_width_m": {
+      "synthetic": 0.3452,
+      "S": 0.3478,
+      "D": 0.3397
+     },
+     "hand_drift_cm": 0.55
+    }
+   }
+  },
+  {
+   "edge": "B1",
+   "timing": "mid",
+   "seed": 3,
+   "pass": "px12",
+   "set": "t6",
+   "t6": {
+    "variant": "SYN_B1_B1_B1_mid_s3_t6px12",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.0655,
+    "held": true,
+    "hand_drift_cm": 0.87,
+    "dynamics_sat_max": 0.694,
+    "statics_s_star_max": 0.2274,
+    "legacy_seams": {
+     "hands_start_cm": 0.24,
+     "hands_end_cm": 0.47,
+     "feet_end_cm": 6.39,
+     "hand_width_m": {
+      "synthetic": 0.3489,
+      "S": 0.3478,
+      "D": 0.3397
+     },
+     "hand_drift_cm": 0.81
+    },
+    "seams": {
+     "pass": false,
+     "pass_attainable": false,
+     "failed": [
+      "end",
+      "drift"
+     ],
+     "start_all_cm": 0.638,
+     "start_planted_cm": 0.318,
+     "end_planted_cm": 6.394,
+     "end_beyond": [
+      "L_Ankle",
+      "L_Toe",
+      "L_Wrist",
+      "R_Ankle",
+      "R_Toe",
+      "R_Wrist"
+     ],
+     "end_exemplar_bodies": [
+      "R_Wrist"
+     ],
+     "drift_cm": 10.271,
+     "drift_zones": {
+      "L_FOOT": 10.271,
+      "L_HAND": 0.813,
+      "R_FOOT": 9.878,
+      "R_HAND": 0.723
+     }
+    },
+    "d1": {
+     "selected": false,
+     "failed_hard": [
+      "endpoints"
+     ],
+     "advisory_failed": [
+      "dynamics",
+      "naturalness_p99",
+      "seams_drift",
+      "seams_end"
+     ]
+    }
+   },
+   "before": {
+    "variant": "SYN_B1_B1_mid_s3_px12",
+    "failed": [
+     "dynamics",
+     "naturalness_p99"
+    ],
+    "final_d6_m": 0.042,
+    "held": true,
+    "hand_drift_cm": 1.14,
+    "dynamics_sat_max": 0.257,
+    "statics_s_star_max": 0.1782,
+    "legacy_seams": {
+     "hands_start_cm": 0.18,
+     "hands_end_cm": 0.26,
+     "feet_end_cm": 7.31,
+     "hand_width_m": {
+      "synthetic": 0.3493,
+      "S": 0.3478,
+      "D": 0.3397
+     },
+     "hand_drift_cm": 0.51
+    }
+   }
+  },
+  {
+   "edge": "B1",
+   "timing": "mid",
+   "seed": 3,
+   "pass": "px",
+   "set": "t6",
+   "t6": {
+    "variant": "SYN_B1_B1_B1_mid_s3_t6px",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.081,
+    "held": false,
+    "hand_drift_cm": 0.85,
+    "dynamics_sat_max": 0.331,
+    "statics_s_star_max": 0.1901,
+    "legacy_seams": {
+     "hands_start_cm": 0.32,
+     "hands_end_cm": 0.18,
+     "feet_end_cm": 5.06,
+     "hand_width_m": {
+      "synthetic": 0.3466,
+      "S": 0.3478,
+      "D": 0.3397
+     },
+     "hand_drift_cm": 0.47
+    },
+    "seams": {
+     "pass": false,
+     "pass_attainable": false,
+     "failed": [
+      "end",
+      "drift"
+     ],
+     "start_all_cm": 0.471,
+     "start_planted_cm": 0.321,
+     "end_planted_cm": 5.059,
+     "end_beyond": [
+      "L_Ankle",
+      "R_Ankle",
+      "R_Toe",
+      "R_Wrist"
+     ],
+     "end_exemplar_bodies": [],
+     "drift_cm": 14.539,
+     "drift_zones": {
+      "L_FOOT": 14.259,
+      "L_HAND": 0.935,
+      "R_FOOT": 14.539,
+      "R_HAND": 0.607
+     }
+    },
+    "d1": {
+     "selected": false,
+     "failed_hard": [
+      "endpoints",
+      "held"
+     ],
+     "advisory_failed": [
+      "dynamics",
+      "naturalness_p99",
+      "seams_drift",
+      "seams_end"
+     ]
+    }
+   },
+   "before": {
+    "variant": "SYN_B1_B1_mid_s3_px",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.0501,
+    "held": true,
+    "hand_drift_cm": 1.36,
+    "dynamics_sat_max": 0.245,
+    "statics_s_star_max": 0.1849,
+    "legacy_seams": {
+     "hands_start_cm": 0.23,
+     "hands_end_cm": 0.39,
+     "feet_end_cm": 4.03,
+     "hand_width_m": {
+      "synthetic": 0.3457,
+      "S": 0.3478,
+      "D": 0.3397
+     },
+     "hand_drift_cm": 0.59
+    }
+   }
+  },
+  {
+   "edge": "B1",
+   "timing": "mid",
+   "seed": 3,
+   "pass": "px12",
+   "set": "t6r",
+   "t6": {
+    "variant": "SYN_B1_B1_B1_mid_s3_t6rpx12",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.0551,
+    "held": true,
+    "hand_drift_cm": 0.93,
+    "dynamics_sat_max": 0.26,
+    "statics_s_star_max": 0.1786,
+    "legacy_seams": {
+     "hands_start_cm": 0.18,
+     "hands_end_cm": 0.38,
+     "feet_end_cm": 7.85,
+     "hand_width_m": {
+      "synthetic": 0.3489,
+      "S": 0.3478,
+      "D": 0.3397
+     },
+     "hand_drift_cm": 0.42
+    },
+    "seams": {
+     "pass": false,
+     "pass_attainable": false,
+     "failed": [
+      "end",
+      "drift"
+     ],
+     "start_all_cm": 0.666,
+     "start_planted_cm": 0.304,
+     "end_planted_cm": 7.849,
+     "end_beyond": [
+      "L_Ankle",
+      "L_Toe",
+      "L_Wrist",
+      "R_Ankle",
+      "R_Toe",
+      "R_Wrist"
+     ],
+     "end_exemplar_bodies": [
+      "L_Wrist",
+      "R_Wrist"
+     ],
+     "drift_cm": 11.023,
+     "drift_zones": {
+      "L_FOOT": 11.023,
+      "L_HAND": 0.83,
+      "R_FOOT": 10.894,
+      "R_HAND": 0.943
+     }
+    },
+    "d1": {
+     "selected": false,
+     "failed_hard": [
+      "endpoints"
+     ],
+     "advisory_failed": [
+      "dynamics",
+      "naturalness_p99",
+      "seams_drift",
+      "seams_end"
+     ]
+    }
+   },
+   "before": {
+    "variant": "SYN_B1_B1_mid_s3_px12",
+    "failed": [
+     "dynamics",
+     "naturalness_p99"
+    ],
+    "final_d6_m": 0.042,
+    "held": true,
+    "hand_drift_cm": 1.14,
+    "dynamics_sat_max": 0.257,
+    "statics_s_star_max": 0.1782,
+    "legacy_seams": {
+     "hands_start_cm": 0.18,
+     "hands_end_cm": 0.26,
+     "feet_end_cm": 7.31,
+     "hand_width_m": {
+      "synthetic": 0.3493,
+      "S": 0.3478,
+      "D": 0.3397
+     },
+     "hand_drift_cm": 0.51
+    }
+   }
+  },
+  {
+   "edge": "B1",
+   "timing": "mid",
+   "seed": 3,
+   "pass": "px",
+   "set": "t6r",
+   "t6": {
+    "variant": "SYN_B1_B1_B1_mid_s3_t6rpx",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.0564,
+    "held": true,
+    "hand_drift_cm": 0.95,
+    "dynamics_sat_max": 0.27,
+    "statics_s_star_max": 0.1842,
+    "legacy_seams": {
+     "hands_start_cm": 0.22,
+     "hands_end_cm": 0.37,
+     "feet_end_cm": 3.05,
+     "hand_width_m": {
+      "synthetic": 0.3463,
+      "S": 0.3478,
+      "D": 0.3397
+     },
+     "hand_drift_cm": 0.66
+    },
+    "seams": {
+     "pass": false,
+     "pass_attainable": false,
+     "failed": [
+      "end",
+      "drift"
+     ],
+     "start_all_cm": 0.646,
+     "start_planted_cm": 0.285,
+     "end_planted_cm": 3.045,
+     "end_beyond": [
+      "L_Wrist",
+      "R_Ankle",
+      "R_Toe",
+      "R_Wrist"
+     ],
+     "end_exemplar_bodies": [
+      "L_Wrist",
+      "R_Wrist"
+     ],
+     "drift_cm": 17.025,
+     "drift_zones": {
+      "L_FOOT": 16.895,
+      "L_HAND": 1.008,
+      "R_FOOT": 17.025,
+      "R_HAND": 1.01
+     }
+    },
+    "d1": {
+     "selected": false,
+     "failed_hard": [
+      "endpoints"
+     ],
+     "advisory_failed": [
+      "dynamics",
+      "naturalness_p99",
+      "seams_drift",
+      "seams_end"
+     ]
+    }
+   },
+   "before": {
+    "variant": "SYN_B1_B1_mid_s3_px",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.0501,
+    "held": true,
+    "hand_drift_cm": 1.36,
+    "dynamics_sat_max": 0.245,
+    "statics_s_star_max": 0.1849,
+    "legacy_seams": {
+     "hands_start_cm": 0.23,
+     "hands_end_cm": 0.39,
+     "feet_end_cm": 4.03,
+     "hand_width_m": {
+      "synthetic": 0.3457,
+      "S": 0.3478,
+      "D": 0.3397
+     },
+     "hand_drift_cm": 0.59
+    }
+   }
+  },
+  {
+   "edge": "B1",
+   "timing": "mid",
+   "seed": 4,
+   "pass": "px12",
+   "set": "t6",
+   "t6": {
+    "variant": "SYN_B1_B1_B1_mid_s4_t6px12",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.0701,
+    "held": true,
+    "hand_drift_cm": 0.65,
+    "dynamics_sat_max": 0.581,
+    "statics_s_star_max": 0.2709,
+    "legacy_seams": {
+     "hands_start_cm": 0.15,
+     "hands_end_cm": 0.44,
+     "feet_end_cm": 7.68,
+     "hand_width_m": {
+      "synthetic": 0.3478,
+      "S": 0.3478,
+      "D": 0.3397
+     },
+     "hand_drift_cm": 0.56
+    },
+    "seams": {
+     "pass": false,
+     "pass_attainable": false,
+     "failed": [
+      "end",
+      "drift"
+     ],
+     "start_all_cm": 0.28,
+     "start_planted_cm": 0.279,
+     "end_planted_cm": 7.679,
+     "end_beyond": [
+      "L_Ankle",
+      "L_Toe",
+      "R_Ankle",
+      "R_Toe",
+      "R_Wrist"
+     ],
+     "end_exemplar_bodies": [],
+     "drift_cm": 8.174,
+     "drift_zones": {
+      "L_FOOT": 7.748,
+      "L_HAND": 0.68,
+      "R_FOOT": 8.174,
+      "R_HAND": 0.679
+     }
+    },
+    "d1": {
+     "selected": false,
+     "failed_hard": [
+      "endpoints"
+     ],
+     "advisory_failed": [
+      "dynamics",
+      "naturalness_p99",
+      "seams_drift",
+      "seams_end"
+     ]
+    }
+   },
+   "before": null
+  },
+  {
+   "edge": "B1",
+   "timing": "mid",
+   "seed": 4,
+   "pass": "px",
+   "set": "t6",
+   "t6": {
+    "variant": "SYN_B1_B1_B1_mid_s4_t6px",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.0638,
+    "held": true,
+    "hand_drift_cm": 0.9,
+    "dynamics_sat_max": 0.299,
+    "statics_s_star_max": 0.1875,
+    "legacy_seams": {
+     "hands_start_cm": 0.23,
+     "hands_end_cm": 0.25,
+     "feet_end_cm": 2.68,
+     "hand_width_m": {
+      "synthetic": 0.3473,
+      "S": 0.3478,
+      "D": 0.3397
+     },
+     "hand_drift_cm": 0.49
+    },
+    "seams": {
+     "pass": false,
+     "pass_attainable": false,
+     "failed": [
+      "end",
+      "drift"
+     ],
+     "start_all_cm": 0.391,
+     "start_planted_cm": 0.391,
+     "end_planted_cm": 2.683,
+     "end_beyond": [
+      "L_Wrist",
+      "R_Toe",
+      "R_Wrist"
+     ],
+     "end_exemplar_bodies": [
+      "L_Wrist",
+      "R_Wrist"
+     ],
+     "drift_cm": 13.025,
+     "drift_zones": {
+      "L_FOOT": 13.025,
+      "L_HAND": 1.064,
+      "R_FOOT": 12.821,
+      "R_HAND": 0.883
+     }
+    },
+    "d1": {
+     "selected": false,
+     "failed_hard": [
+      "endpoints"
+     ],
+     "advisory_failed": [
+      "dynamics",
+      "naturalness_p99",
+      "seams_drift",
+      "seams_end"
+     ]
+    }
+   },
+   "before": null
+  },
+  {
+   "edge": "B1",
+   "timing": "mid",
+   "seed": 4,
+   "pass": "px12",
+   "set": "t6r",
+   "t6": {
+    "variant": "SYN_B1_B1_B1_mid_s4_t6rpx12",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.0568,
+    "held": true,
+    "hand_drift_cm": 0.6,
+    "dynamics_sat_max": 0.419,
+    "statics_s_star_max": 0.1999,
+    "legacy_seams": {
+     "hands_start_cm": 0.33,
+     "hands_end_cm": 0.34,
+     "feet_end_cm": 9.49,
+     "hand_width_m": {
+      "synthetic": 0.3467,
+      "S": 0.3478,
+      "D": 0.3397
+     },
+     "hand_drift_cm": 0.43
+    },
+    "seams": {
+     "pass": false,
+     "pass_attainable": false,
+     "failed": [
+      "end",
+      "drift"
+     ],
+     "start_all_cm": 0.368,
+     "start_planted_cm": 0.33,
+     "end_planted_cm": 9.492,
+     "end_beyond": [
+      "L_Ankle",
+      "L_Toe",
+      "L_Wrist",
+      "R_Ankle",
+      "R_Toe",
+      "R_Wrist"
+     ],
+     "end_exemplar_bodies": [
+      "L_Wrist",
+      "R_Wrist"
+     ],
+     "drift_cm": 10.756,
+     "drift_zones": {
+      "L_FOOT": 10.357,
+      "L_HAND": 0.723,
+      "R_FOOT": 10.756,
+      "R_HAND": 0.662
+     }
+    },
+    "d1": {
+     "selected": false,
+     "failed_hard": [
+      "endpoints"
+     ],
+     "advisory_failed": [
+      "dynamics",
+      "naturalness_p99",
+      "seams_drift",
+      "seams_end"
+     ]
+    }
+   },
+   "before": null
+  },
+  {
+   "edge": "B1",
+   "timing": "mid",
+   "seed": 4,
+   "pass": "px",
+   "set": "t6r",
+   "t6": {
+    "variant": "SYN_B1_B1_B1_mid_s4_t6rpx",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.0602,
+    "held": true,
+    "hand_drift_cm": 1.03,
+    "dynamics_sat_max": 0.255,
+    "statics_s_star_max": 0.1934,
+    "legacy_seams": {
+     "hands_start_cm": 0.3,
+     "hands_end_cm": 0.27,
+     "feet_end_cm": 4.13,
+     "hand_width_m": {
+      "synthetic": 0.3456,
+      "S": 0.3478,
+      "D": 0.3397
+     },
+     "hand_drift_cm": 0.69
+    },
+    "seams": {
+     "pass": false,
+     "pass_attainable": false,
+     "failed": [
+      "end",
+      "drift"
+     ],
+     "start_all_cm": 0.372,
+     "start_planted_cm": 0.36,
+     "end_planted_cm": 4.129,
+     "end_beyond": [
+      "R_Ankle",
+      "R_Toe",
+      "R_Wrist"
+     ],
+     "end_exemplar_bodies": [
+      "R_Wrist"
+     ],
+     "drift_cm": 20.774,
+     "drift_zones": {
+      "L_FOOT": 20.126,
+      "L_HAND": 1.169,
+      "R_FOOT": 20.774,
+      "R_HAND": 1.082
+     }
+    },
+    "d1": {
+     "selected": false,
+     "failed_hard": [
+      "endpoints"
+     ],
+     "advisory_failed": [
+      "dynamics",
+      "naturalness_p99",
+      "seams_drift",
+      "seams_end"
+     ]
+    }
+   },
+   "before": null
+  },
+  {
+   "edge": "E1",
+   "timing": "high",
+   "seed": 0,
+   "pass": "px",
+   "set": "t6",
+   "t6": {
+    "variant": "SYN_E1_E1_E1_high_s0_t6px",
+    "failed": [
+     "dynamics",
+     "naturalness_p99"
+    ],
+    "final_d6_m": 0.0308,
+    "held": true,
+    "hand_drift_cm": 0.43,
+    "dynamics_sat_max": 0.306,
+    "statics_s_star_max": 0.6165,
+    "legacy_seams": {
+     "hands_start_cm": 0.15,
+     "hands_end_cm": 0.46,
+     "feet_end_cm": null,
+     "hand_width_m": {
+      "synthetic": 0.3482,
+      "S": 0.3478,
+      "D": 0.3584
+     },
+     "hand_drift_cm": 0.6
+    },
+    "seams": {
+     "pass": false,
+     "pass_attainable": false,
+     "failed": [
+      "end",
+      "drift"
+     ],
+     "start_all_cm": 0.402,
+     "start_planted_cm": 0.289,
+     "end_planted_cm": 2.851,
+     "end_beyond": [
+      "L_Wrist",
+      "R_Wrist"
+     ],
+     "end_exemplar_bodies": [
+      "L_Wrist",
+      "R_Wrist"
+     ],
+     "drift_cm": 0.88,
+     "drift_zones": {
+      "L_HAND": 0.88,
+      "R_HAND": 0.599
+     }
+    },
+    "d1": {
+     "selected": true,
+     "failed_hard": [],
+     "advisory_failed": [
+      "dynamics",
+      "naturalness_p99"
+     ]
+    }
+   },
+   "before": {
+    "variant": "SYN_E1_E1_E1_high_s0_px",
+    "failed": [
+     "dynamics",
+     "naturalness_p99"
+    ],
+    "final_d6_m": 0.043,
+    "held": true,
+    "hand_drift_cm": 0.43,
+    "dynamics_sat_max": 0.306,
+    "statics_s_star_max": 0.606,
+    "legacy_seams": {
+     "hands_start_cm": 5.66,
+     "hands_end_cm": 4.98,
+     "feet_end_cm": null,
+     "hand_width_m": {
+      "synthetic": 0.407,
+      "S": 0.3478,
+      "D": 0.3584
+     },
+     "hand_drift_cm": 0.66
+    }
+   }
+  },
+  {
+   "edge": "E1",
+   "timing": "high",
+   "seed": 1,
+   "pass": "px",
+   "set": "t6",
+   "t6": {
+    "variant": "SYN_E1_E1_E1_high_s1_t6px",
+    "failed": [
+     "dynamics",
+     "naturalness_p99"
+    ],
+    "final_d6_m": 0.0296,
+    "held": true,
+    "hand_drift_cm": 0.34,
+    "dynamics_sat_max": 0.319,
+    "statics_s_star_max": 0.5947,
+    "legacy_seams": {
+     "hands_start_cm": 0.13,
+     "hands_end_cm": 0.49,
+     "feet_end_cm": null,
+     "hand_width_m": {
+      "synthetic": 0.3485,
+      "S": 0.3478,
+      "D": 0.3584
+     },
+     "hand_drift_cm": 0.8
+    },
+    "seams": {
+     "pass": false,
+     "pass_attainable": false,
+     "failed": [
+      "end",
+      "drift"
+     ],
+     "start_all_cm": 0.422,
+     "start_planted_cm": 0.231,
+     "end_planted_cm": 2.863,
+     "end_beyond": [
+      "L_Wrist",
+      "R_Wrist"
+     ],
+     "end_exemplar_bodies": [
+      "L_Wrist"
+     ],
+     "drift_cm": 1.093,
+     "drift_zones": {
+      "L_HAND": 1.093,
+      "R_HAND": 0.879
+     }
+    },
+    "d1": {
+     "selected": false,
+     "failed_hard": [
+      "seams"
+     ],
+     "advisory_failed": [
+      "dynamics",
+      "naturalness_p99"
+     ]
+    }
+   },
+   "before": {
+    "variant": "SYN_E1_E1_E1_high_s1_px",
+    "failed": [
+     "dynamics",
+     "naturalness_p99"
+    ],
+    "final_d6_m": 0.0466,
+    "held": true,
+    "hand_drift_cm": 0.49,
+    "dynamics_sat_max": 0.395,
+    "statics_s_star_max": 0.6937,
+    "legacy_seams": {
+     "hands_start_cm": 5.76,
+     "hands_end_cm": 5.15,
+     "feet_end_cm": null,
+     "hand_width_m": {
+      "synthetic": 0.4072,
+      "S": 0.3478,
+      "D": 0.3584
+     },
+     "hand_drift_cm": 0.92
+    }
+   }
+  },
+  {
+   "edge": "E1",
+   "timing": "high",
+   "seed": 2,
+   "pass": "px",
+   "set": "t6",
+   "t6": {
+    "variant": "SYN_E1_E1_E1_high_s2_t6px",
+    "failed": [
+     "dynamics",
+     "naturalness_p99"
+    ],
+    "final_d6_m": 0.0318,
+    "held": true,
+    "hand_drift_cm": 0.4,
+    "dynamics_sat_max": 0.338,
+    "statics_s_star_max": 0.6156,
+    "legacy_seams": {
+     "hands_start_cm": 0.15,
+     "hands_end_cm": 0.44,
+     "feet_end_cm": null,
+     "hand_width_m": {
+      "synthetic": 0.3479,
+      "S": 0.3478,
+      "D": 0.3584
+     },
+     "hand_drift_cm": 0.59
+    },
+    "seams": {
+     "pass": false,
+     "pass_attainable": false,
+     "failed": [
+      "end",
+      "drift"
+     ],
+     "start_all_cm": 0.476,
+     "start_planted_cm": 0.216,
+     "end_planted_cm": 2.776,
+     "end_beyond": [
+      "L_Wrist",
+      "R_Wrist"
+     ],
+     "end_exemplar_bodies": [
+      "L_Wrist",
+      "R_Wrist"
+     ],
+     "drift_cm": 0.875,
+     "drift_zones": {
+      "L_HAND": 0.875,
+      "R_HAND": 0.608
+     }
+    },
+    "d1": {
+     "selected": true,
+     "failed_hard": [],
+     "advisory_failed": [
+      "dynamics",
+      "naturalness_p99"
+     ]
+    }
+   },
+   "before": {
+    "variant": "SYN_E1_E1_E1_high_s2_px",
+    "failed": [
+     "dynamics",
+     "naturalness_p99"
+    ],
+    "final_d6_m": 0.0494,
+    "held": true,
+    "hand_drift_cm": 0.43,
+    "dynamics_sat_max": 0.417,
+    "statics_s_star_max": 0.751,
+    "legacy_seams": {
+     "hands_start_cm": 5.72,
+     "hands_end_cm": 5.08,
+     "feet_end_cm": null,
+     "hand_width_m": {
+      "synthetic": 0.4059,
+      "S": 0.3478,
+      "D": 0.3584
+     },
+     "hand_drift_cm": 0.67
+    }
+   }
+  },
+  {
+   "edge": "E1",
+   "timing": "high",
+   "seed": 3,
+   "pass": "px",
+   "set": "t6",
+   "t6": {
+    "variant": "SYN_E1_E1_E1_high_s3_t6px",
+    "failed": [
+     "dynamics",
+     "naturalness_p99"
+    ],
+    "final_d6_m": 0.0317,
+    "held": true,
+    "hand_drift_cm": 0.33,
+    "dynamics_sat_max": 0.309,
+    "statics_s_star_max": 0.6041,
+    "legacy_seams": {
+     "hands_start_cm": 0.18,
+     "hands_end_cm": 0.56,
+     "feet_end_cm": null,
+     "hand_width_m": {
+      "synthetic": 0.3482,
+      "S": 0.3478,
+      "D": 0.3584
+     },
+     "hand_drift_cm": 0.48
+    },
+    "seams": {
+     "pass": false,
+     "pass_attainable": false,
+     "failed": [
+      "end",
+      "drift"
+     ],
+     "start_all_cm": 0.281,
+     "start_planted_cm": 0.238,
+     "end_planted_cm": 2.796,
+     "end_beyond": [
+      "L_Wrist",
+      "R_Wrist"
+     ],
+     "end_exemplar_bodies": [
+      "L_Wrist",
+      "R_Wrist"
+     ],
+     "drift_cm": 0.809,
+     "drift_zones": {
+      "L_HAND": 0.809,
+      "R_HAND": 0.505
+     }
+    },
+    "d1": {
+     "selected": true,
+     "failed_hard": [],
+     "advisory_failed": [
+      "dynamics",
+      "naturalness_p99"
+     ]
+    }
+   },
+   "before": {
+    "variant": "SYN_E1_E1_E1_high_s3_px",
+    "failed": [
+     "dynamics",
+     "naturalness_p99"
+    ],
+    "final_d6_m": 0.038,
+    "held": true,
+    "hand_drift_cm": 0.51,
+    "dynamics_sat_max": 0.3,
+    "statics_s_star_max": 0.5822,
+    "legacy_seams": {
+     "hands_start_cm": 5.67,
+     "hands_end_cm": 5.19,
+     "feet_end_cm": null,
+     "hand_width_m": {
+      "synthetic": 0.4067,
+      "S": 0.3478,
+      "D": 0.3584
+     },
+     "hand_drift_cm": 0.56
+    }
+   }
+  },
+  {
+   "edge": "E1",
+   "timing": "high",
+   "seed": 4,
+   "pass": "px",
+   "set": "t6",
+   "t6": {
+    "variant": "SYN_E1_E1_E1_high_s4_t6px",
+    "failed": [
+     "dynamics",
+     "naturalness_p99"
+    ],
+    "final_d6_m": 0.0337,
+    "held": true,
+    "hand_drift_cm": 0.38,
+    "dynamics_sat_max": 0.3,
+    "statics_s_star_max": 0.6312,
+    "legacy_seams": {
+     "hands_start_cm": 0.14,
+     "hands_end_cm": 0.75,
+     "feet_end_cm": null,
+     "hand_width_m": {
+      "synthetic": 0.3474,
+      "S": 0.3478,
+      "D": 0.3584
+     },
+     "hand_drift_cm": 0.64
+    },
+    "seams": {
+     "pass": false,
+     "pass_attainable": false,
+     "failed": [
+      "end",
+      "drift"
+     ],
+     "start_all_cm": 0.401,
+     "start_planted_cm": 0.231,
+     "end_planted_cm": 2.799,
+     "end_beyond": [
+      "L_Wrist",
+      "R_Wrist"
+     ],
+     "end_exemplar_bodies": [
+      "L_Wrist",
+      "R_Wrist"
+     ],
+     "drift_cm": 0.861,
+     "drift_zones": {
+      "L_HAND": 0.861,
+      "R_HAND": 0.582
+     }
+    },
+    "d1": {
+     "selected": true,
+     "failed_hard": [],
+     "advisory_failed": [
+      "dynamics",
+      "naturalness_p99"
+     ]
+    }
+   },
+   "before": null
+  },
+  {
+   "edge": "E1",
+   "timing": "mid",
+   "seed": 0,
+   "pass": "px",
+   "set": "t6",
+   "t6": {
+    "variant": "SYN_E1_E1_E1_mid_s0_t6px",
+    "failed": [
+     "dynamics",
+     "naturalness_p99"
+    ],
+    "final_d6_m": 0.0217,
+    "held": true,
+    "hand_drift_cm": 0.53,
+    "dynamics_sat_max": 0.469,
+    "statics_s_star_max": 0.6265,
+    "legacy_seams": {
+     "hands_start_cm": 0.13,
+     "hands_end_cm": 0.66,
+     "feet_end_cm": null,
+     "hand_width_m": {
+      "synthetic": 0.3485,
+      "S": 0.3478,
+      "D": 0.3584
+     },
+     "hand_drift_cm": 0.64
+    },
+    "seams": {
+     "pass": false,
+     "pass_attainable": false,
+     "failed": [
+      "end",
+      "drift"
+     ],
+     "start_all_cm": 0.41,
+     "start_planted_cm": 0.283,
+     "end_planted_cm": 2.858,
+     "end_beyond": [
+      "L_Wrist",
+      "R_Wrist"
+     ],
+     "end_exemplar_bodies": [
+      "L_Wrist"
+     ],
+     "drift_cm": 0.859,
+     "drift_zones": {
+      "L_HAND": 0.859,
+      "R_HAND": 0.635
+     }
+    },
+    "d1": {
+     "selected": true,
+     "failed_hard": [],
+     "advisory_failed": [
+      "dynamics",
+      "naturalness_p99"
+     ]
+    }
+   },
+   "before": {
+    "variant": "SYN_E1_E1_E1_mid_s0_px",
+    "failed": [
+     "dynamics",
+     "naturalness_p99"
+    ],
+    "final_d6_m": 0.0325,
+    "held": true,
+    "hand_drift_cm": 0.67,
+    "dynamics_sat_max": 0.429,
+    "statics_s_star_max": 0.7807,
+    "legacy_seams": {
+     "hands_start_cm": 4.4,
+     "hands_end_cm": 3.71,
+     "feet_end_cm": null,
+     "hand_width_m": {
+      "synthetic": 0.3832,
+      "S": 0.3478,
+      "D": 0.3584
+     },
+     "hand_drift_cm": 0.89
+    }
+   }
+  },
+  {
+   "edge": "E1",
+   "timing": "mid",
+   "seed": 1,
+   "pass": "px",
+   "set": "t6",
+   "t6": {
+    "variant": "SYN_E1_E1_E1_mid_s1_t6px",
+    "failed": [
+     "statics",
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.5209,
+    "held": false,
+    "hand_drift_cm": 1.33,
+    "dynamics_sat_max": 0.509,
+    "statics_s_star_max": 1.0627,
+    "legacy_seams": {
+     "hands_start_cm": 0.13,
+     "hands_end_cm": 2.84,
+     "feet_end_cm": null,
+     "hand_width_m": {
+      "synthetic": 0.348,
+      "S": 0.3478,
+      "D": 0.3584
+     },
+     "hand_drift_cm": 0.9
+    },
+    "seams": {
+     "pass": false,
+     "pass_attainable": false,
+     "failed": [
+      "end",
+      "drift"
+     ],
+     "start_all_cm": 0.395,
+     "start_planted_cm": 0.205,
+     "end_planted_cm": 3.856,
+     "end_beyond": [
+      "L_Wrist",
+      "L_Hand",
+      "R_Wrist",
+      "R_Hand"
+     ],
+     "end_exemplar_bodies": [],
+     "drift_cm": 1.483,
+     "drift_zones": {
+      "L_HAND": 0.903,
+      "R_HAND": 1.483
+     }
+    },
+    "d1": {
+     "selected": false,
+     "failed_hard": [
+      "endpoints",
+      "statics",
+      "held",
+      "seams"
+     ],
+     "advisory_failed": [
+      "dynamics",
+      "naturalness_p99"
+     ]
+    }
+   },
+   "before": {
+    "variant": "SYN_E1_E1_E1_mid_s1_px",
+    "failed": [
+     "statics",
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.5165,
+    "held": false,
+    "hand_drift_cm": 1.89,
+    "dynamics_sat_max": 0.519,
+    "statics_s_star_max": 1.5723,
+    "legacy_seams": {
+     "hands_start_cm": 4.36,
+     "hands_end_cm": 5.4,
+     "feet_end_cm": null,
+     "hand_width_m": {
+      "synthetic": 0.3822,
+      "S": 0.3478,
+      "D": 0.3584
+     },
+     "hand_drift_cm": 1.86
+    }
+   }
+  },
+  {
+   "edge": "E1",
+   "timing": "mid",
+   "seed": 2,
+   "pass": "px",
+   "set": "t6",
+   "t6": {
+    "variant": "SYN_E1_E1_E1_mid_s2_t6px",
+    "failed": [
+     "dynamics",
+     "naturalness_p99"
+    ],
+    "final_d6_m": 0.0161,
+    "held": true,
+    "hand_drift_cm": 0.39,
+    "dynamics_sat_max": 0.502,
+    "statics_s_star_max": 0.6321,
+    "legacy_seams": {
+     "hands_start_cm": 0.16,
+     "hands_end_cm": 0.66,
+     "feet_end_cm": null,
+     "hand_width_m": {
+      "synthetic": 0.3479,
+      "S": 0.3478,
+      "D": 0.3584
+     },
+     "hand_drift_cm": 0.57
+    },
+    "seams": {
+     "pass": false,
+     "pass_attainable": false,
+     "failed": [
+      "end",
+      "drift"
+     ],
+     "start_all_cm": 0.458,
+     "start_planted_cm": 0.216,
+     "end_planted_cm": 2.901,
+     "end_beyond": [
+      "L_Wrist",
+      "R_Wrist"
+     ],
+     "end_exemplar_bodies": [
+      "L_Wrist",
+      "R_Wrist"
+     ],
+     "drift_cm": 0.869,
+     "drift_zones": {
+      "L_HAND": 0.869,
+      "R_HAND": 0.571
+     }
+    },
+    "d1": {
+     "selected": true,
+     "failed_hard": [],
+     "advisory_failed": [
+      "dynamics",
+      "naturalness_p99"
+     ]
+    }
+   },
+   "before": {
+    "variant": "SYN_E1_E1_E1_mid_s2_px",
+    "failed": [
+     "dynamics",
+     "naturalness_p99"
+    ],
+    "final_d6_m": 0.0341,
+    "held": true,
+    "hand_drift_cm": 0.47,
+    "dynamics_sat_max": 0.459,
+    "statics_s_star_max": 0.8406,
+    "legacy_seams": {
+     "hands_start_cm": 4.4,
+     "hands_end_cm": 3.96,
+     "feet_end_cm": null,
+     "hand_width_m": {
+      "synthetic": 0.3815,
+      "S": 0.3478,
+      "D": 0.3584
+     },
+     "hand_drift_cm": 0.68
+    }
+   }
+  },
+  {
+   "edge": "E1",
+   "timing": "mid",
+   "seed": 3,
+   "pass": "px",
+   "set": "t6",
+   "t6": {
+    "variant": "SYN_E1_E1_E1_mid_s3_t6px",
+    "failed": [
+     "dynamics",
+     "naturalness_p99"
+    ],
+    "final_d6_m": 0.0317,
+    "held": true,
+    "hand_drift_cm": 0.47,
+    "dynamics_sat_max": 0.538,
+    "statics_s_star_max": 0.5976,
+    "legacy_seams": {
+     "hands_start_cm": 0.18,
+     "hands_end_cm": 0.64,
+     "feet_end_cm": null,
+     "hand_width_m": {
+      "synthetic": 0.3483,
+      "S": 0.3478,
+      "D": 0.3584
+     },
+     "hand_drift_cm": 0.58
+    },
+    "seams": {
+     "pass": false,
+     "pass_attainable": false,
+     "failed": [
+      "end",
+      "drift"
+     ],
+     "start_all_cm": 0.268,
+     "start_planted_cm": 0.243,
+     "end_planted_cm": 2.913,
+     "end_beyond": [
+      "L_Wrist",
+      "R_Wrist"
+     ],
+     "end_exemplar_bodies": [
+      "L_Wrist"
+     ],
+     "drift_cm": 0.807,
+     "drift_zones": {
+      "L_HAND": 0.807,
+      "R_HAND": 0.607
+     }
+    },
+    "d1": {
+     "selected": true,
+     "failed_hard": [],
+     "advisory_failed": [
+      "dynamics",
+      "naturalness_p99"
+     ]
+    }
+   },
+   "before": {
+    "variant": "SYN_E1_E1_E1_mid_s3_px",
+    "failed": [
+     "dynamics",
+     "naturalness_p99"
+    ],
+    "final_d6_m": 0.0421,
+    "held": true,
+    "hand_drift_cm": 0.58,
+    "dynamics_sat_max": 0.497,
+    "statics_s_star_max": 0.7903,
+    "legacy_seams": {
+     "hands_start_cm": 4.36,
+     "hands_end_cm": 4.0,
+     "feet_end_cm": null,
+     "hand_width_m": {
+      "synthetic": 0.3824,
+      "S": 0.3478,
+      "D": 0.3584
+     },
+     "hand_drift_cm": 0.64
+    }
+   }
+  },
+  {
+   "edge": "E1",
+   "timing": "mid",
+   "seed": 4,
+   "pass": "px",
+   "set": "t6",
+   "t6": {
+    "variant": "SYN_E1_E1_E1_mid_s4_t6px",
+    "failed": [
+     "dynamics",
+     "naturalness_p99"
+    ],
+    "final_d6_m": 0.0269,
+    "held": true,
+    "hand_drift_cm": 0.42,
+    "dynamics_sat_max": 0.498,
+    "statics_s_star_max": 0.6301,
+    "legacy_seams": {
+     "hands_start_cm": 0.14,
+     "hands_end_cm": 0.75,
+     "feet_end_cm": null,
+     "hand_width_m": {
+      "synthetic": 0.3473,
+      "S": 0.3478,
+      "D": 0.3584
+     },
+     "hand_drift_cm": 0.59
+    },
+    "seams": {
+     "pass": false,
+     "pass_attainable": false,
+     "failed": [
+      "end",
+      "drift"
+     ],
+     "start_all_cm": 0.397,
+     "start_planted_cm": 0.221,
+     "end_planted_cm": 2.982,
+     "end_beyond": [
+      "L_Wrist",
+      "R_Wrist"
+     ],
+     "end_exemplar_bodies": [
+      "L_Wrist"
+     ],
+     "drift_cm": 0.828,
+     "drift_zones": {
+      "L_HAND": 0.828,
+      "R_HAND": 0.715
+     }
+    },
+    "d1": {
+     "selected": true,
+     "failed_hard": [],
+     "advisory_failed": [
+      "dynamics",
+      "naturalness_p99"
+     ]
+    }
+   },
+   "before": null
+  },
+  {
+   "edge": "E2",
+   "timing": "mid",
+   "seed": 0,
+   "pass": "px12",
+   "set": "t6",
+   "t6": {
+    "variant": "SYN_E2_E2_E2_mid_s0_t6px12",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.0784,
+    "held": true,
+    "hand_drift_cm": 2.61,
+    "dynamics_sat_max": 1.0,
+    "statics_s_star_max": 0.282,
+    "legacy_seams": {
+     "hands_start_cm": 0.18,
+     "hands_end_cm": 1.71,
+     "feet_end_cm": 3.19,
+     "hand_width_m": {
+      "synthetic": 0.3478,
+      "S": 0.3478,
+      "D": 0.368
+     },
+     "hand_drift_cm": 2.36
+    },
+    "seams": {
+     "pass": false,
+     "pass_attainable": false,
+     "failed": [
+      "end",
+      "drift"
+     ],
+     "start_all_cm": 0.432,
+     "start_planted_cm": 0.432,
+     "end_planted_cm": 3.192,
+     "end_beyond": [
+      "L_Ankle",
+      "L_Toe",
+      "L_Wrist",
+      "R_Ankle",
+      "R_Toe",
+      "R_Wrist",
+      "R_Hand"
+     ],
+     "end_exemplar_bodies": [],
+     "drift_cm": 3.696,
+     "drift_zones": {
+      "L_FOOT": 3.696,
+      "L_HAND": 2.15,
+      "R_FOOT": 3.632,
+      "R_HAND": 2.36
+     }
+    },
+    "d1": {
+     "selected": true,
+     "failed_hard": [],
+     "advisory_failed": [
+      "dynamics",
+      "endpoints",
+      "naturalness_p99",
+      "seams_drift",
+      "seams_end"
+     ]
+    }
+   },
+   "before": {
+    "variant": "SYN_E2_E2_mid_s0_px12",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.0778,
+    "held": true,
+    "hand_drift_cm": 3.5,
+    "dynamics_sat_max": 0.993,
+    "statics_s_star_max": 0.2398,
+    "legacy_seams": {
+     "hands_start_cm": 0.18,
+     "hands_end_cm": 2.5,
+     "feet_end_cm": 5.23,
+     "hand_width_m": {
+      "synthetic": 0.3479,
+      "S": 0.3478,
+      "D": 0.368
+     },
+     "hand_drift_cm": 3.39
+    }
+   }
+  },
+  {
+   "edge": "E2",
+   "timing": "mid",
+   "seed": 0,
+   "pass": "px",
+   "set": "t6",
+   "t6": {
+    "variant": "SYN_E2_E2_E2_mid_s0_t6px",
+    "failed": [
+     "statics",
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.0772,
+    "held": true,
+    "hand_drift_cm": 2.34,
+    "dynamics_sat_max": 1.0,
+    "statics_s_star_max": 0.3151,
+    "legacy_seams": {
+     "hands_start_cm": 0.3,
+     "hands_end_cm": 2.14,
+     "feet_end_cm": 3.42,
+     "hand_width_m": {
+      "synthetic": 0.3468,
+      "S": 0.3478,
+      "D": 0.368
+     },
+     "hand_drift_cm": 2.27
+    },
+    "seams": {
+     "pass": false,
+     "pass_attainable": false,
+     "failed": [
+      "start",
+      "end",
+      "drift"
+     ],
+     "start_all_cm": 0.567,
+     "start_planted_cm": 0.567,
+     "end_planted_cm": 3.422,
+     "end_beyond": [
+      "L_Ankle",
+      "L_Toe",
+      "L_Wrist",
+      "R_Ankle",
+      "R_Toe",
+      "R_Wrist",
+      "R_Hand"
+     ],
+     "end_exemplar_bodies": [],
+     "drift_cm": 4.153,
+     "drift_zones": {
+      "L_FOOT": 4.028,
+      "L_HAND": 1.122,
+      "R_FOOT": 4.153,
+      "R_HAND": 2.271
+     }
+    },
+    "d1": {
+     "selected": false,
+     "failed_hard": [
+      "statics",
+      "seams"
+     ],
+     "advisory_failed": [
+      "dynamics",
+      "endpoints",
+      "naturalness_p99",
+      "seams_drift",
+      "seams_end"
+     ]
+    }
+   },
+   "before": {
+    "variant": "SYN_E2_E2_mid_s0_px",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.1402,
+    "held": false,
+    "hand_drift_cm": 7.79,
+    "dynamics_sat_max": 1.0,
+    "statics_s_star_max": 0.1993,
+    "legacy_seams": {
+     "hands_start_cm": 0.23,
+     "hands_end_cm": 3.63,
+     "feet_end_cm": 10.04,
+     "hand_width_m": {
+      "synthetic": 0.3478,
+      "S": 0.3478,
+      "D": 0.368
+     },
+     "hand_drift_cm": 2.19
+    }
+   }
+  },
+  {
+   "edge": "E2",
+   "timing": "mid",
+   "seed": 0,
+   "pass": "px12",
+   "set": "t6r",
+   "t6": {
+    "variant": "SYN_E2_E2_E2_mid_s0_t6rpx12",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.0906,
+    "held": true,
+    "hand_drift_cm": 1.95,
+    "dynamics_sat_max": 1.0,
+    "statics_s_star_max": 0.212,
+    "legacy_seams": {
+     "hands_start_cm": 0.2,
+     "hands_end_cm": 3.27,
+     "feet_end_cm": 4.35,
+     "hand_width_m": {
+      "synthetic": 0.3483,
+      "S": 0.3478,
+      "D": 0.368
+     },
+     "hand_drift_cm": 1.46
+    },
+    "seams": {
+     "pass": false,
+     "pass_attainable": false,
+     "failed": [
+      "end",
+      "drift"
+     ],
+     "start_all_cm": 0.475,
+     "start_planted_cm": 0.475,
+     "end_planted_cm": 4.351,
+     "end_beyond": [
+      "L_Ankle",
+      "L_Toe",
+      "L_Wrist",
+      "R_Ankle",
+      "R_Toe",
+      "R_Wrist",
+      "R_Hand"
+     ],
+     "end_exemplar_bodies": [
+      "L_Wrist"
+     ],
+     "drift_cm": 5.309,
+     "drift_zones": {
+      "L_FOOT": 5.309,
+      "L_HAND": 0.68,
+      "R_FOOT": 4.138,
+      "R_HAND": 1.571
+     }
+    },
+    "d1": {
+     "selected": true,
+     "failed_hard": [],
+     "advisory_failed": [
+      "dynamics",
+      "endpoints",
+      "naturalness_p99",
+      "seams_drift",
+      "seams_end"
+     ]
+    }
+   },
+   "before": {
+    "variant": "SYN_E2_E2_mid_s0_px12",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.0778,
+    "held": true,
+    "hand_drift_cm": 3.5,
+    "dynamics_sat_max": 0.993,
+    "statics_s_star_max": 0.2398,
+    "legacy_seams": {
+     "hands_start_cm": 0.18,
+     "hands_end_cm": 2.5,
+     "feet_end_cm": 5.23,
+     "hand_width_m": {
+      "synthetic": 0.3479,
+      "S": 0.3478,
+      "D": 0.368
+     },
+     "hand_drift_cm": 3.39
+    }
+   }
+  },
+  {
+   "edge": "E2",
+   "timing": "mid",
+   "seed": 0,
+   "pass": "px",
+   "set": "t6r",
+   "t6": {
+    "variant": "SYN_E2_E2_E2_mid_s0_t6rpx",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.077,
+    "held": true,
+    "hand_drift_cm": 2.64,
+    "dynamics_sat_max": 1.0,
+    "statics_s_star_max": 0.3243,
+    "legacy_seams": {
+     "hands_start_cm": 0.26,
+     "hands_end_cm": 2.42,
+     "feet_end_cm": 3.44,
+     "hand_width_m": {
+      "synthetic": 0.3478,
+      "S": 0.3478,
+      "D": 0.368
+     },
+     "hand_drift_cm": 2.61
+    },
+    "seams": {
+     "pass": false,
+     "pass_attainable": false,
+     "failed": [
+      "start",
+      "end",
+      "drift"
+     ],
+     "start_all_cm": 0.58,
+     "start_planted_cm": 0.58,
+     "end_planted_cm": 4.054,
+     "end_beyond": [
+      "L_Ankle",
+      "L_Toe",
+      "L_Wrist",
+      "R_Ankle",
+      "R_Toe",
+      "R_Hand"
+     ],
+     "end_exemplar_bodies": [],
+     "drift_cm": 5.834,
+     "drift_zones": {
+      "L_FOOT": 5.834,
+      "L_HAND": 1.938,
+      "R_FOOT": 5.682,
+      "R_HAND": 2.608
+     }
+    },
+    "d1": {
+     "selected": false,
+     "failed_hard": [
+      "seams"
+     ],
+     "advisory_failed": [
+      "dynamics",
+      "endpoints",
+      "naturalness_p99",
+      "seams_drift",
+      "seams_end"
+     ]
+    }
+   },
+   "before": {
+    "variant": "SYN_E2_E2_mid_s0_px",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.1402,
+    "held": false,
+    "hand_drift_cm": 7.79,
+    "dynamics_sat_max": 1.0,
+    "statics_s_star_max": 0.1993,
+    "legacy_seams": {
+     "hands_start_cm": 0.23,
+     "hands_end_cm": 3.63,
+     "feet_end_cm": 10.04,
+     "hand_width_m": {
+      "synthetic": 0.3478,
+      "S": 0.3478,
+      "D": 0.368
+     },
+     "hand_drift_cm": 2.19
+    }
+   }
+  },
+  {
+   "edge": "E2",
+   "timing": "mid",
+   "seed": 1,
+   "pass": "px12",
+   "set": "t6",
+   "t6": {
+    "variant": "SYN_E2_E2_E2_mid_s1_t6px12",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.0863,
+    "held": true,
+    "hand_drift_cm": 2.62,
+    "dynamics_sat_max": 1.0,
+    "statics_s_star_max": 0.3068,
+    "legacy_seams": {
+     "hands_start_cm": 0.22,
+     "hands_end_cm": 1.35,
+     "feet_end_cm": 5.54,
+     "hand_width_m": {
+      "synthetic": 0.3472,
+      "S": 0.3478,
+      "D": 0.368
+     },
+     "hand_drift_cm": 1.7
+    },
+    "seams": {
+     "pass": false,
+     "pass_attainable": false,
+     "failed": [
+      "end",
+      "drift"
+     ],
+     "start_all_cm": 0.539,
+     "start_planted_cm": 0.276,
+     "end_planted_cm": 5.538,
+     "end_beyond": [
+      "L_Ankle",
+      "L_Toe",
+      "L_Wrist",
+      "R_Ankle",
+      "R_Toe",
+      "R_Wrist"
+     ],
+     "end_exemplar_bodies": [],
+     "drift_cm": 2.343,
+     "drift_zones": {
+      "L_FOOT": 1.984,
+      "L_HAND": 0.761,
+      "R_FOOT": 1.544,
+      "R_HAND": 2.343
+     }
+    },
+    "d1": {
+     "selected": true,
+     "failed_hard": [],
+     "advisory_failed": [
+      "dynamics",
+      "endpoints",
+      "naturalness_p99",
+      "seams_drift",
+      "seams_end"
+     ]
+    }
+   },
+   "before": {
+    "variant": "SYN_E2_E2_mid_s1_px12",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.0818,
+    "held": true,
+    "hand_drift_cm": 2.73,
+    "dynamics_sat_max": 0.998,
+    "statics_s_star_max": 0.2555,
+    "legacy_seams": {
+     "hands_start_cm": 0.19,
+     "hands_end_cm": 3.3,
+     "feet_end_cm": 4.99,
+     "hand_width_m": {
+      "synthetic": 0.3489,
+      "S": 0.3478,
+      "D": 0.368
+     },
+     "hand_drift_cm": 2.75
+    }
+   }
+  },
+  {
+   "edge": "E2",
+   "timing": "mid",
+   "seed": 1,
+   "pass": "px",
+   "set": "t6",
+   "t6": {
+    "variant": "SYN_E2_E2_E2_mid_s1_t6px",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.0919,
+    "held": true,
+    "hand_drift_cm": 2.2,
+    "dynamics_sat_max": 0.998,
+    "statics_s_star_max": 0.3114,
+    "legacy_seams": {
+     "hands_start_cm": 0.2,
+     "hands_end_cm": 2.17,
+     "feet_end_cm": 5.28,
+     "hand_width_m": {
+      "synthetic": 0.3472,
+      "S": 0.3478,
+      "D": 0.368
+     },
+     "hand_drift_cm": 2.09
+    },
+    "seams": {
+     "pass": false,
+     "pass_attainable": false,
+     "failed": [
+      "end",
+      "drift"
+     ],
+     "start_all_cm": 0.34,
+     "start_planted_cm": 0.34,
+     "end_planted_cm": 5.282,
+     "end_beyond": [
+      "L_Ankle",
+      "L_Toe",
+      "L_Wrist",
+      "L_Hand",
+      "R_Ankle",
+      "R_Toe",
+      "R_Wrist",
+      "R_Hand"
+     ],
+     "end_exemplar_bodies": [],
+     "drift_cm": 3.813,
+     "drift_zones": {
+      "L_FOOT": 3.813,
+      "L_HAND": 0.865,
+      "R_FOOT": 2.989,
+      "R_HAND": 2.086
+     }
+    },
+    "d1": {
+     "selected": true,
+     "failed_hard": [],
+     "advisory_failed": [
+      "dynamics",
+      "endpoints",
+      "naturalness_p99",
+      "seams_drift",
+      "seams_end"
+     ]
+    }
+   },
+   "before": {
+    "variant": "SYN_E2_E2_mid_s1_px",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.0872,
+    "held": true,
+    "hand_drift_cm": 3.71,
+    "dynamics_sat_max": 0.998,
+    "statics_s_star_max": 0.3733,
+    "legacy_seams": {
+     "hands_start_cm": 0.3,
+     "hands_end_cm": 2.68,
+     "feet_end_cm": 5.88,
+     "hand_width_m": {
+      "synthetic": 0.3469,
+      "S": 0.3478,
+      "D": 0.368
+     },
+     "hand_drift_cm": 2.69
+    }
+   }
+  },
+  {
+   "edge": "E2",
+   "timing": "mid",
+   "seed": 1,
+   "pass": "px12",
+   "set": "t6r",
+   "t6": {
+    "variant": "SYN_E2_E2_E2_mid_s1_t6rpx12",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.0839,
+    "held": true,
+    "hand_drift_cm": 2.01,
+    "dynamics_sat_max": 0.99,
+    "statics_s_star_max": 0.232,
+    "legacy_seams": {
+     "hands_start_cm": 0.22,
+     "hands_end_cm": 3.04,
+     "feet_end_cm": 3.98,
+     "hand_width_m": {
+      "synthetic": 0.3494,
+      "S": 0.3478,
+      "D": 0.368
+     },
+     "hand_drift_cm": 1.78
+    },
+    "seams": {
+     "pass": false,
+     "pass_attainable": false,
+     "failed": [
+      "end",
+      "drift"
+     ],
+     "start_all_cm": 0.974,
+     "start_planted_cm": 0.334,
+     "end_planted_cm": 3.979,
+     "end_beyond": [
+      "L_Ankle",
+      "L_Toe",
+      "L_Wrist",
+      "R_Ankle",
+      "R_Toe",
+      "R_Wrist",
+      "R_Hand"
+     ],
+     "end_exemplar_bodies": [
+      "L_Wrist"
+     ],
+     "drift_cm": 3.41,
+     "drift_zones": {
+      "L_FOOT": 3.41,
+      "L_HAND": 0.757,
+      "R_FOOT": 3.163,
+      "R_HAND": 1.851
+     }
+    },
+    "d1": {
+     "selected": true,
+     "failed_hard": [],
+     "advisory_failed": [
+      "dynamics",
+      "endpoints",
+      "naturalness_p99",
+      "seams_drift",
+      "seams_end"
+     ]
+    }
+   },
+   "before": {
+    "variant": "SYN_E2_E2_mid_s1_px12",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.0818,
+    "held": true,
+    "hand_drift_cm": 2.73,
+    "dynamics_sat_max": 0.998,
+    "statics_s_star_max": 0.2555,
+    "legacy_seams": {
+     "hands_start_cm": 0.19,
+     "hands_end_cm": 3.3,
+     "feet_end_cm": 4.99,
+     "hand_width_m": {
+      "synthetic": 0.3489,
+      "S": 0.3478,
+      "D": 0.368
+     },
+     "hand_drift_cm": 2.75
+    }
+   }
+  },
+  {
+   "edge": "E2",
+   "timing": "mid",
+   "seed": 1,
+   "pass": "px",
+   "set": "t6r",
+   "t6": {
+    "variant": "SYN_E2_E2_E2_mid_s1_t6rpx",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.0953,
+    "held": true,
+    "hand_drift_cm": 2.54,
+    "dynamics_sat_max": 0.998,
+    "statics_s_star_max": 0.2939,
+    "legacy_seams": {
+     "hands_start_cm": 0.22,
+     "hands_end_cm": 2.55,
+     "feet_end_cm": 4.25,
+     "hand_width_m": {
+      "synthetic": 0.3475,
+      "S": 0.3478,
+      "D": 0.368
+     },
+     "hand_drift_cm": 2.44
+    },
+    "seams": {
+     "pass": false,
+     "pass_attainable": false,
+     "failed": [
+      "end",
+      "drift"
+     ],
+     "start_all_cm": 0.613,
+     "start_planted_cm": 0.366,
+     "end_planted_cm": 4.251,
+     "end_beyond": [
+      "L_Ankle",
+      "L_Toe",
+      "L_Wrist",
+      "L_Hand",
+      "R_Ankle",
+      "R_Toe",
+      "R_Wrist",
+      "R_Hand"
+     ],
+     "end_exemplar_bodies": [],
+     "drift_cm": 3.711,
+     "drift_zones": {
+      "L_FOOT": 3.711,
+      "L_HAND": 1.696,
+      "R_FOOT": 2.871,
+      "R_HAND": 2.613
+     }
+    },
+    "d1": {
+     "selected": true,
+     "failed_hard": [],
+     "advisory_failed": [
+      "dynamics",
+      "endpoints",
+      "naturalness_p99",
+      "seams_drift",
+      "seams_end"
+     ]
+    }
+   },
+   "before": {
+    "variant": "SYN_E2_E2_mid_s1_px",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.0872,
+    "held": true,
+    "hand_drift_cm": 3.71,
+    "dynamics_sat_max": 0.998,
+    "statics_s_star_max": 0.3733,
+    "legacy_seams": {
+     "hands_start_cm": 0.3,
+     "hands_end_cm": 2.68,
+     "feet_end_cm": 5.88,
+     "hand_width_m": {
+      "synthetic": 0.3469,
+      "S": 0.3478,
+      "D": 0.368
+     },
+     "hand_drift_cm": 2.69
+    }
+   }
+  },
+  {
+   "edge": "E2",
+   "timing": "mid",
+   "seed": 2,
+   "pass": "px12",
+   "set": "t6",
+   "t6": {
+    "variant": "SYN_E2_E2_E2_mid_s2_t6px12",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.0918,
+    "held": true,
+    "hand_drift_cm": 2.32,
+    "dynamics_sat_max": 1.0,
+    "statics_s_star_max": 0.3115,
+    "legacy_seams": {
+     "hands_start_cm": 0.29,
+     "hands_end_cm": 1.95,
+     "feet_end_cm": 4.63,
+     "hand_width_m": {
+      "synthetic": 0.3444,
+      "S": 0.3478,
+      "D": 0.368
+     },
+     "hand_drift_cm": 1.7
+    },
+    "seams": {
+     "pass": false,
+     "pass_attainable": false,
+     "failed": [
+      "end",
+      "drift"
+     ],
+     "start_all_cm": 0.742,
+     "start_planted_cm": 0.323,
+     "end_planted_cm": 4.629,
+     "end_beyond": [
+      "L_Ankle",
+      "L_Toe",
+      "L_Wrist",
+      "R_Ankle",
+      "R_Hand"
+     ],
+     "end_exemplar_bodies": [
+      "L_Wrist"
+     ],
+     "drift_cm": 2.705,
+     "drift_zones": {
+      "L_FOOT": 2.285,
+      "L_HAND": 0.647,
+      "R_FOOT": 2.705,
+      "R_HAND": 2.139
+     }
+    },
+    "d1": {
+     "selected": true,
+     "failed_hard": [],
+     "advisory_failed": [
+      "dynamics",
+      "endpoints",
+      "naturalness_p99",
+      "seams_drift",
+      "seams_end"
+     ]
+    }
+   },
+   "before": {
+    "variant": "SYN_E2_E2_mid_s2_px12",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.1118,
+    "held": false,
+    "hand_drift_cm": 2.37,
+    "dynamics_sat_max": 0.998,
+    "statics_s_star_max": 0.2636,
+    "legacy_seams": {
+     "hands_start_cm": 0.31,
+     "hands_end_cm": 2.92,
+     "feet_end_cm": 3.13,
+     "hand_width_m": {
+      "synthetic": 0.3443,
+      "S": 0.3478,
+      "D": 0.368
+     },
+     "hand_drift_cm": 2.17
+    }
+   }
+  },
+  {
+   "edge": "E2",
+   "timing": "mid",
+   "seed": 2,
+   "pass": "px",
+   "set": "t6",
+   "t6": {
+    "variant": "SYN_E2_E2_E2_mid_s2_t6px",
+    "failed": [
+     "statics",
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.0955,
+    "held": false,
+    "hand_drift_cm": 1.99,
+    "dynamics_sat_max": 1.0,
+    "statics_s_star_max": 0.3321,
+    "legacy_seams": {
+     "hands_start_cm": 0.39,
+     "hands_end_cm": 1.74,
+     "feet_end_cm": 5.73,
+     "hand_width_m": {
+      "synthetic": 0.3424,
+      "S": 0.3478,
+      "D": 0.368
+     },
+     "hand_drift_cm": 1.59
+    },
+    "seams": {
+     "pass": false,
+     "pass_attainable": false,
+     "failed": [
+      "end",
+      "drift"
+     ],
+     "start_all_cm": 0.56,
+     "start_planted_cm": 0.386,
+     "end_planted_cm": 5.728,
+     "end_beyond": [
+      "L_Ankle",
+      "L_Toe",
+      "L_Wrist",
+      "R_Ankle",
+      "R_Toe",
+      "R_Wrist",
+      "R_Hand"
+     ],
+     "end_exemplar_bodies": [],
+     "drift_cm": 2.894,
+     "drift_zones": {
+      "L_FOOT": 2.894,
+      "L_HAND": 0.815,
+      "R_FOOT": 2.602,
+      "R_HAND": 1.773
+     }
+    },
+    "d1": {
+     "selected": false,
+     "failed_hard": [
+      "statics",
+      "held"
+     ],
+     "advisory_failed": [
+      "dynamics",
+      "endpoints",
+      "naturalness_p99",
+      "seams_drift",
+      "seams_end"
+     ]
+    }
+   },
+   "before": {
+    "variant": "SYN_E2_E2_mid_s2_px",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.1477,
+    "held": false,
+    "hand_drift_cm": 6.85,
+    "dynamics_sat_max": 1.0,
+    "statics_s_star_max": 0.1953,
+    "legacy_seams": {
+     "hands_start_cm": 0.3,
+     "hands_end_cm": 4.21,
+     "feet_end_cm": 8.16,
+     "hand_width_m": {
+      "synthetic": 0.3464,
+      "S": 0.3478,
+      "D": 0.368
+     },
+     "hand_drift_cm": 2.05
+    }
+   }
+  },
+  {
+   "edge": "E2",
+   "timing": "mid",
+   "seed": 2,
+   "pass": "px12",
+   "set": "t6r",
+   "t6": {
+    "variant": "SYN_E2_E2_E2_mid_s2_t6rpx12",
+    "failed": [
+     "statics",
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.1108,
+    "held": true,
+    "hand_drift_cm": 1.63,
+    "dynamics_sat_max": 0.998,
+    "statics_s_star_max": 0.2255,
+    "legacy_seams": {
+     "hands_start_cm": 0.3,
+     "hands_end_cm": 1.99,
+     "feet_end_cm": 3.3,
+     "hand_width_m": {
+      "synthetic": 0.3442,
+      "S": 0.3478,
+      "D": 0.368
+     },
+     "hand_drift_cm": 1.29
+    },
+    "seams": {
+     "pass": false,
+     "pass_attainable": false,
+     "failed": [
+      "end",
+      "drift"
+     ],
+     "start_all_cm": 0.57,
+     "start_planted_cm": 0.326,
+     "end_planted_cm": 3.295,
+     "end_beyond": [
+      "L_Ankle",
+      "L_Toe",
+      "L_Wrist",
+      "L_Hand",
+      "R_Ankle",
+      "R_Toe",
+      "R_Wrist",
+      "R_Hand"
+     ],
+     "end_exemplar_bodies": [],
+     "drift_cm": 4.346,
+     "drift_zones": {
+      "L_FOOT": 4.346,
+      "L_HAND": 0.669,
+      "R_FOOT": 3.606,
+      "R_HAND": 1.414
+     }
+    },
+    "d1": {
+     "selected": false,
+     "failed_hard": [
+      "statics"
+     ],
+     "advisory_failed": [
+      "dynamics",
+      "endpoints",
+      "naturalness_p99",
+      "seams_drift",
+      "seams_end"
+     ]
+    }
+   },
+   "before": {
+    "variant": "SYN_E2_E2_mid_s2_px12",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.1118,
+    "held": false,
+    "hand_drift_cm": 2.37,
+    "dynamics_sat_max": 0.998,
+    "statics_s_star_max": 0.2636,
+    "legacy_seams": {
+     "hands_start_cm": 0.31,
+     "hands_end_cm": 2.92,
+     "feet_end_cm": 3.13,
+     "hand_width_m": {
+      "synthetic": 0.3443,
+      "S": 0.3478,
+      "D": 0.368
+     },
+     "hand_drift_cm": 2.17
+    }
+   }
+  },
+  {
+   "edge": "E2",
+   "timing": "mid",
+   "seed": 2,
+   "pass": "px",
+   "set": "t6r",
+   "t6": {
+    "variant": "SYN_E2_E2_E2_mid_s2_t6rpx",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.147,
+    "held": false,
+    "hand_drift_cm": 5.62,
+    "dynamics_sat_max": 1.0,
+    "statics_s_star_max": 0.1978,
+    "legacy_seams": {
+     "hands_start_cm": 0.29,
+     "hands_end_cm": 3.68,
+     "feet_end_cm": 7.48,
+     "hand_width_m": {
+      "synthetic": 0.346,
+      "S": 0.3478,
+      "D": 0.368
+     },
+     "hand_drift_cm": 1.87
+    },
+    "seams": {
+     "pass": false,
+     "pass_attainable": false,
+     "failed": [
+      "start",
+      "end",
+      "drift"
+     ],
+     "start_all_cm": 0.658,
+     "start_planted_cm": 0.658,
+     "end_planted_cm": 7.484,
+     "end_beyond": [
+      "L_Ankle",
+      "L_Toe",
+      "L_Wrist",
+      "R_Ankle",
+      "R_Toe",
+      "R_Wrist",
+      "R_Hand"
+     ],
+     "end_exemplar_bodies": [],
+     "drift_cm": 8.166,
+     "drift_zones": {
+      "L_FOOT": 8.166,
+      "L_HAND": 5.279,
+      "R_FOOT": 7.269,
+      "R_HAND": 5.293
+     }
+    },
+    "d1": {
+     "selected": false,
+     "failed_hard": [
+      "held",
+      "seams"
+     ],
+     "advisory_failed": [
+      "dynamics",
+      "endpoints",
+      "naturalness_p99",
+      "seams_drift",
+      "seams_end"
+     ]
+    }
+   },
+   "before": {
+    "variant": "SYN_E2_E2_mid_s2_px",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.1477,
+    "held": false,
+    "hand_drift_cm": 6.85,
+    "dynamics_sat_max": 1.0,
+    "statics_s_star_max": 0.1953,
+    "legacy_seams": {
+     "hands_start_cm": 0.3,
+     "hands_end_cm": 4.21,
+     "feet_end_cm": 8.16,
+     "hand_width_m": {
+      "synthetic": 0.3464,
+      "S": 0.3478,
+      "D": 0.368
+     },
+     "hand_drift_cm": 2.05
+    }
+   }
+  },
+  {
+   "edge": "E2",
+   "timing": "mid",
+   "seed": 3,
+   "pass": "px12",
+   "set": "t6",
+   "t6": {
+    "variant": "SYN_E2_E2_E2_mid_s3_t6px12",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.079,
+    "held": true,
+    "hand_drift_cm": 2.5,
+    "dynamics_sat_max": 1.0,
+    "statics_s_star_max": 0.2889,
+    "legacy_seams": {
+     "hands_start_cm": 0.22,
+     "hands_end_cm": 2.98,
+     "feet_end_cm": 6.29,
+     "hand_width_m": {
+      "synthetic": 0.3479,
+      "S": 0.3478,
+      "D": 0.368
+     },
+     "hand_drift_cm": 2.44
+    },
+    "seams": {
+     "pass": false,
+     "pass_attainable": false,
+     "failed": [
+      "end",
+      "drift"
+     ],
+     "start_all_cm": 0.415,
+     "start_planted_cm": 0.415,
+     "end_planted_cm": 6.293,
+     "end_beyond": [
+      "L_Ankle",
+      "L_Toe",
+      "L_Wrist",
+      "R_Ankle",
+      "R_Toe",
+      "R_Wrist",
+      "R_Hand"
+     ],
+     "end_exemplar_bodies": [],
+     "drift_cm": 3.433,
+     "drift_zones": {
+      "L_FOOT": 3.433,
+      "L_HAND": 1.305,
+      "R_FOOT": 3.392,
+      "R_HAND": 2.44
+     }
+    },
+    "d1": {
+     "selected": true,
+     "failed_hard": [],
+     "advisory_failed": [
+      "dynamics",
+      "endpoints",
+      "naturalness_p99",
+      "seams_drift",
+      "seams_end"
+     ]
+    }
+   },
+   "before": {
+    "variant": "SYN_E2_E2_mid_s3_px12",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.0747,
+    "held": true,
+    "hand_drift_cm": 1.82,
+    "dynamics_sat_max": 1.0,
+    "statics_s_star_max": 0.2429,
+    "legacy_seams": {
+     "hands_start_cm": 0.18,
+     "hands_end_cm": 3.09,
+     "feet_end_cm": 4.98,
+     "hand_width_m": {
+      "synthetic": 0.3494,
+      "S": 0.3478,
+      "D": 0.368
+     },
+     "hand_drift_cm": 1.75
+    }
+   }
+  },
+  {
+   "edge": "E2",
+   "timing": "mid",
+   "seed": 3,
+   "pass": "px",
+   "set": "t6",
+   "t6": {
+    "variant": "SYN_E2_E2_E2_mid_s3_t6px",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.1061,
+    "held": false,
+    "hand_drift_cm": 2.51,
+    "dynamics_sat_max": 1.0,
+    "statics_s_star_max": 0.3263,
+    "legacy_seams": {
+     "hands_start_cm": 0.33,
+     "hands_end_cm": 2.4,
+     "feet_end_cm": 4.63,
+     "hand_width_m": {
+      "synthetic": 0.3464,
+      "S": 0.3478,
+      "D": 0.368
+     },
+     "hand_drift_cm": 2.35
+    },
+    "seams": {
+     "pass": false,
+     "pass_attainable": false,
+     "failed": [
+      "start",
+      "end",
+      "drift"
+     ],
+     "start_all_cm": 0.561,
+     "start_planted_cm": 0.561,
+     "end_planted_cm": 4.627,
+     "end_beyond": [
+      "L_Ankle",
+      "L_Toe",
+      "L_Wrist",
+      "R_Ankle",
+      "R_Toe",
+      "R_Wrist",
+      "R_Hand"
+     ],
+     "end_exemplar_bodies": [],
+     "drift_cm": 3.271,
+     "drift_zones": {
+      "L_FOOT": 3.271,
+      "L_HAND": 2.349,
+      "R_FOOT": 2.623,
+      "R_HAND": 2.345
+     }
+    },
+    "d1": {
+     "selected": false,
+     "failed_hard": [
+      "held",
+      "seams"
+     ],
+     "advisory_failed": [
+      "dynamics",
+      "endpoints",
+      "naturalness_p99",
+      "seams_drift",
+      "seams_end"
+     ]
+    }
+   },
+   "before": {
+    "variant": "SYN_E2_E2_mid_s3_px",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.1523,
+    "held": false,
+    "hand_drift_cm": 5.46,
+    "dynamics_sat_max": 1.0,
+    "statics_s_star_max": 0.2099,
+    "legacy_seams": {
+     "hands_start_cm": 0.36,
+     "hands_end_cm": 2.76,
+     "feet_end_cm": 7.81,
+     "hand_width_m": {
+      "synthetic": 0.3473,
+      "S": 0.3478,
+      "D": 0.368
+     },
+     "hand_drift_cm": 2.09
+    }
+   }
+  },
+  {
+   "edge": "E2",
+   "timing": "mid",
+   "seed": 3,
+   "pass": "px12",
+   "set": "t6r",
+   "t6": {
+    "variant": "SYN_E2_E2_E2_mid_s3_t6rpx12",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.0792,
+    "held": true,
+    "hand_drift_cm": 1.9,
+    "dynamics_sat_max": 1.0,
+    "statics_s_star_max": 0.2219,
+    "legacy_seams": {
+     "hands_start_cm": 0.2,
+     "hands_end_cm": 2.89,
+     "feet_end_cm": 6.96,
+     "hand_width_m": {
+      "synthetic": 0.349,
+      "S": 0.3478,
+      "D": 0.368
+     },
+     "hand_drift_cm": 1.69
+    },
+    "seams": {
+     "pass": false,
+     "pass_attainable": false,
+     "failed": [
+      "end",
+      "drift"
+     ],
+     "start_all_cm": 0.667,
+     "start_planted_cm": 0.402,
+     "end_planted_cm": 6.957,
+     "end_beyond": [
+      "L_Ankle",
+      "L_Toe",
+      "L_Wrist",
+      "R_Ankle",
+      "R_Toe",
+      "R_Wrist",
+      "R_Hand"
+     ],
+     "end_exemplar_bodies": [
+      "L_Wrist"
+     ],
+     "drift_cm": 3.676,
+     "drift_zones": {
+      "L_FOOT": 3.676,
+      "L_HAND": 0.704,
+      "R_FOOT": 3.038,
+      "R_HAND": 1.686
+     }
+    },
+    "d1": {
+     "selected": true,
+     "failed_hard": [],
+     "advisory_failed": [
+      "dynamics",
+      "endpoints",
+      "naturalness_p99",
+      "seams_drift",
+      "seams_end"
+     ]
+    }
+   },
+   "before": {
+    "variant": "SYN_E2_E2_mid_s3_px12",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.0747,
+    "held": true,
+    "hand_drift_cm": 1.82,
+    "dynamics_sat_max": 1.0,
+    "statics_s_star_max": 0.2429,
+    "legacy_seams": {
+     "hands_start_cm": 0.18,
+     "hands_end_cm": 3.09,
+     "feet_end_cm": 4.98,
+     "hand_width_m": {
+      "synthetic": 0.3494,
+      "S": 0.3478,
+      "D": 0.368
+     },
+     "hand_drift_cm": 1.75
+    }
+   }
+  },
+  {
+   "edge": "E2",
+   "timing": "mid",
+   "seed": 3,
+   "pass": "px",
+   "set": "t6r",
+   "t6": {
+    "variant": "SYN_E2_E2_E2_mid_s3_t6rpx",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.1191,
+    "held": false,
+    "hand_drift_cm": 2.45,
+    "dynamics_sat_max": 1.0,
+    "statics_s_star_max": 0.248,
+    "legacy_seams": {
+     "hands_start_cm": 0.5,
+     "hands_end_cm": 2.44,
+     "feet_end_cm": 7.3,
+     "hand_width_m": {
+      "synthetic": 0.3487,
+      "S": 0.3478,
+      "D": 0.368
+     },
+     "hand_drift_cm": 1.99
+    },
+    "seams": {
+     "pass": false,
+     "pass_attainable": false,
+     "failed": [
+      "start",
+      "end",
+      "drift"
+     ],
+     "start_all_cm": 0.679,
+     "start_planted_cm": 0.679,
+     "end_planted_cm": 7.303,
+     "end_beyond": [
+      "L_Ankle",
+      "L_Toe",
+      "L_Wrist",
+      "R_Ankle",
+      "R_Toe",
+      "R_Wrist",
+      "R_Hand"
+     ],
+     "end_exemplar_bodies": [],
+     "drift_cm": 3.422,
+     "drift_zones": {
+      "L_FOOT": 0.919,
+      "L_HAND": 1.691,
+      "R_FOOT": 3.422,
+      "R_HAND": 2.255
+     }
+    },
+    "d1": {
+     "selected": false,
+     "failed_hard": [
+      "held",
+      "seams"
+     ],
+     "advisory_failed": [
+      "dynamics",
+      "endpoints",
+      "naturalness_p99",
+      "seams_drift",
+      "seams_end"
+     ]
+    }
+   },
+   "before": {
+    "variant": "SYN_E2_E2_mid_s3_px",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.1523,
+    "held": false,
+    "hand_drift_cm": 5.46,
+    "dynamics_sat_max": 1.0,
+    "statics_s_star_max": 0.2099,
+    "legacy_seams": {
+     "hands_start_cm": 0.36,
+     "hands_end_cm": 2.76,
+     "feet_end_cm": 7.81,
+     "hand_width_m": {
+      "synthetic": 0.3473,
+      "S": 0.3478,
+      "D": 0.368
+     },
+     "hand_drift_cm": 2.09
+    }
+   }
+  },
+  {
+   "edge": "E2",
+   "timing": "mid",
+   "seed": 4,
+   "pass": "px12",
+   "set": "t6",
+   "t6": {
+    "variant": "SYN_E2_E2_E2_mid_s4_t6px12",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.0843,
+    "held": true,
+    "hand_drift_cm": 2.05,
+    "dynamics_sat_max": 1.0,
+    "statics_s_star_max": 0.2882,
+    "legacy_seams": {
+     "hands_start_cm": 0.38,
+     "hands_end_cm": 1.79,
+     "feet_end_cm": 4.24,
+     "hand_width_m": {
+      "synthetic": 0.3452,
+      "S": 0.3478,
+      "D": 0.368
+     },
+     "hand_drift_cm": 1.27
+    },
+    "seams": {
+     "pass": false,
+     "pass_attainable": false,
+     "failed": [
+      "end",
+      "drift"
+     ],
+     "start_all_cm": 0.393,
+     "start_planted_cm": 0.393,
+     "end_planted_cm": 4.237,
+     "end_beyond": [
+      "L_Ankle",
+      "L_Toe",
+      "L_Wrist",
+      "R_Ankle",
+      "R_Toe",
+      "R_Hand"
+     ],
+     "end_exemplar_bodies": [],
+     "drift_cm": 2.521,
+     "drift_zones": {
+      "L_FOOT": 2.191,
+      "L_HAND": 0.812,
+      "R_FOOT": 2.521,
+      "R_HAND": 1.814
+     }
+    },
+    "d1": {
+     "selected": true,
+     "failed_hard": [],
+     "advisory_failed": [
+      "dynamics",
+      "endpoints",
+      "naturalness_p99",
+      "seams_drift",
+      "seams_end"
+     ]
+    }
+   },
+   "before": null
+  },
+  {
+   "edge": "E2",
+   "timing": "mid",
+   "seed": 4,
+   "pass": "px",
+   "set": "t6",
+   "t6": {
+    "variant": "SYN_E2_E2_E2_mid_s4_t6px",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.085,
+    "held": true,
+    "hand_drift_cm": 1.9,
+    "dynamics_sat_max": 1.0,
+    "statics_s_star_max": 0.3118,
+    "legacy_seams": {
+     "hands_start_cm": 0.35,
+     "hands_end_cm": 2.05,
+     "feet_end_cm": 2.82,
+     "hand_width_m": {
+      "synthetic": 0.3445,
+      "S": 0.3478,
+      "D": 0.368
+     },
+     "hand_drift_cm": 1.59
+    },
+    "seams": {
+     "pass": false,
+     "pass_attainable": false,
+     "failed": [
+      "end",
+      "drift"
+     ],
+     "start_all_cm": 0.367,
+     "start_planted_cm": 0.367,
+     "end_planted_cm": 2.816,
+     "end_beyond": [
+      "L_Ankle",
+      "L_Wrist",
+      "R_Ankle",
+      "R_Toe",
+      "R_Wrist",
+      "R_Hand"
+     ],
+     "end_exemplar_bodies": [
+      "L_Wrist"
+     ],
+     "drift_cm": 4.002,
+     "drift_zones": {
+      "L_FOOT": 4.002,
+      "L_HAND": 0.946,
+      "R_FOOT": 3.422,
+      "R_HAND": 2.03
+     }
+    },
+    "d1": {
+     "selected": true,
+     "failed_hard": [],
+     "advisory_failed": [
+      "dynamics",
+      "endpoints",
+      "naturalness_p99",
+      "seams_drift",
+      "seams_end"
+     ]
+    }
+   },
+   "before": null
+  },
+  {
+   "edge": "E2",
+   "timing": "mid",
+   "seed": 4,
+   "pass": "px12",
+   "set": "t6r",
+   "t6": {
+    "variant": "SYN_E2_E2_E2_mid_s4_t6rpx12",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.0957,
+    "held": true,
+    "hand_drift_cm": 1.45,
+    "dynamics_sat_max": 0.998,
+    "statics_s_star_max": 0.2428,
+    "legacy_seams": {
+     "hands_start_cm": 0.23,
+     "hands_end_cm": 2.43,
+     "feet_end_cm": 3.12,
+     "hand_width_m": {
+      "synthetic": 0.3456,
+      "S": 0.3478,
+      "D": 0.368
+     },
+     "hand_drift_cm": 1.0
+    },
+    "seams": {
+     "pass": false,
+     "pass_attainable": false,
+     "failed": [
+      "end",
+      "drift"
+     ],
+     "start_all_cm": 0.311,
+     "start_planted_cm": 0.276,
+     "end_planted_cm": 3.123,
+     "end_beyond": [
+      "L_Ankle",
+      "L_Toe",
+      "L_Wrist",
+      "R_Ankle",
+      "R_Toe",
+      "R_Wrist",
+      "R_Hand"
+     ],
+     "end_exemplar_bodies": [],
+     "drift_cm": 2.957,
+     "drift_zones": {
+      "L_FOOT": 2.104,
+      "L_HAND": 0.629,
+      "R_FOOT": 2.957,
+      "R_HAND": 1.267
+     }
+    },
+    "d1": {
+     "selected": true,
+     "failed_hard": [],
+     "advisory_failed": [
+      "dynamics",
+      "endpoints",
+      "naturalness_p99",
+      "seams_drift",
+      "seams_end"
+     ]
+    }
+   },
+   "before": null
+  },
+  {
+   "edge": "E2",
+   "timing": "mid",
+   "seed": 4,
+   "pass": "px",
+   "set": "t6r",
+   "t6": {
+    "variant": "SYN_E2_E2_E2_mid_s4_t6rpx",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.091,
+    "held": true,
+    "hand_drift_cm": 3.1,
+    "dynamics_sat_max": 1.0,
+    "statics_s_star_max": 0.3502,
+    "legacy_seams": {
+     "hands_start_cm": 0.35,
+     "hands_end_cm": 2.09,
+     "feet_end_cm": 5.07,
+     "hand_width_m": {
+      "synthetic": 0.3433,
+      "S": 0.3478,
+      "D": 0.368
+     },
+     "hand_drift_cm": 1.8
+    },
+    "seams": {
+     "pass": false,
+     "pass_attainable": false,
+     "failed": [
+      "start",
+      "end",
+      "drift"
+     ],
+     "start_all_cm": 0.548,
+     "start_planted_cm": 0.548,
+     "end_planted_cm": 5.067,
+     "end_beyond": [
+      "L_Ankle",
+      "L_Toe",
+      "L_Wrist",
+      "R_Ankle",
+      "R_Toe",
+      "R_Wrist",
+      "R_Hand"
+     ],
+     "end_exemplar_bodies": [],
+     "drift_cm": 4.687,
+     "drift_zones": {
+      "L_FOOT": 4.687,
+      "L_HAND": 1.814,
+      "R_FOOT": 4.113,
+      "R_HAND": 2.794
+     }
+    },
+    "d1": {
+     "selected": false,
+     "failed_hard": [
+      "seams"
+     ],
+     "advisory_failed": [
+      "dynamics",
+      "endpoints",
+      "naturalness_p99",
+      "seams_drift",
+      "seams_end"
+     ]
+    }
+   },
+   "before": null
+  },
+  {
+   "edge": "E3",
+   "timing": "high",
+   "seed": 0,
+   "pass": "px12",
+   "set": "t6",
+   "t6": {
+    "variant": "SYN_E3_E3_E3_high_s0_t6px12",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.0511,
+    "held": true,
+    "hand_drift_cm": 1.09,
+    "dynamics_sat_max": 0.733,
+    "statics_s_star_max": 0.5785,
+    "legacy_seams": {
+     "hands_start_cm": 0.17,
+     "hands_end_cm": 0.96,
+     "feet_end_cm": null,
+     "hand_width_m": {
+      "synthetic": 0.3566,
+      "S": 0.3584,
+      "D": 0.3478
+     },
+     "hand_drift_cm": 1.22
+    },
+    "seams": {
+     "pass": false,
+     "pass_attainable": false,
+     "failed": [
+      "end",
+      "drift"
+     ],
+     "start_all_cm": 0.395,
+     "start_planted_cm": 0.174,
+     "end_planted_cm": 3.263,
+     "end_beyond": [
+      "L_Wrist",
+      "R_Wrist"
+     ],
+     "end_exemplar_bodies": [
+      "L_Wrist"
+     ],
+     "drift_cm": 1.278,
+     "drift_zones": {
+      "L_HAND": 1.278,
+      "R_HAND": 0.887
+     }
+    },
+    "d1": {
+     "selected": false,
+     "failed_hard": [
+      "endpoints",
+      "seams"
+     ],
+     "advisory_failed": [
+      "dynamics",
+      "naturalness_p99"
+     ]
+    }
+   },
+   "before": {
+    "variant": "SYN_E3_E3_E3_high_s0_px12",
+    "failed": [
+     "dynamics",
+     "naturalness_p99"
+    ],
+    "final_d6_m": 0.0492,
+    "held": true,
+    "hand_drift_cm": 0.67,
+    "dynamics_sat_max": 0.586,
+    "statics_s_star_max": 0.7006,
+    "legacy_seams": {
+     "hands_start_cm": 5.16,
+     "hands_end_cm": 5.58,
+     "feet_end_cm": null,
+     "hand_width_m": {
+      "synthetic": 0.3941,
+      "S": 0.3584,
+      "D": 0.3478
+     },
+     "hand_drift_cm": 1.09
+    }
+   }
+  },
+  {
+   "edge": "E3",
+   "timing": "high",
+   "seed": 0,
+   "pass": "px",
+   "set": "t6",
+   "t6": {
+    "variant": "SYN_E3_E3_E3_high_s0_t6px",
+    "failed": [
+     "dynamics",
+     "naturalness_p99"
+    ],
+    "final_d6_m": 0.0481,
+    "held": true,
+    "hand_drift_cm": 0.3,
+    "dynamics_sat_max": 0.646,
+    "statics_s_star_max": 0.6208,
+    "legacy_seams": {
+     "hands_start_cm": 0.18,
+     "hands_end_cm": 0.49,
+     "feet_end_cm": null,
+     "hand_width_m": {
+      "synthetic": 0.3575,
+      "S": 0.3584,
+      "D": 0.3478
+     },
+     "hand_drift_cm": 0.57
+    },
+    "seams": {
+     "pass": false,
+     "pass_attainable": false,
+     "failed": [
+      "end",
+      "drift"
+     ],
+     "start_all_cm": 0.235,
+     "start_planted_cm": 0.185,
+     "end_planted_cm": 2.902,
+     "end_beyond": [
+      "L_Wrist",
+      "R_Wrist"
+     ],
+     "end_exemplar_bodies": [
+      "L_Wrist",
+      "R_Wrist"
+     ],
+     "drift_cm": 0.797,
+     "drift_zones": {
+      "L_HAND": 0.797,
+      "R_HAND": 0.543
+     }
+    },
+    "d1": {
+     "selected": true,
+     "failed_hard": [],
+     "advisory_failed": [
+      "dynamics",
+      "naturalness_p99"
+     ]
+    }
+   },
+   "before": {
+    "variant": "SYN_E3_E3_E3_high_s0_px",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.0523,
+    "held": true,
+    "hand_drift_cm": 0.39,
+    "dynamics_sat_max": 0.63,
+    "statics_s_star_max": 0.6579,
+    "legacy_seams": {
+     "hands_start_cm": 5.1,
+     "hands_end_cm": 5.59,
+     "feet_end_cm": null,
+     "hand_width_m": {
+      "synthetic": 0.3962,
+      "S": 0.3584,
+      "D": 0.3478
+     },
+     "hand_drift_cm": 0.56
+    }
+   }
+  },
+  {
+   "edge": "E3",
+   "timing": "high",
+   "seed": 1,
+   "pass": "px12",
+   "set": "t6",
+   "t6": {
+    "variant": "SYN_E3_E3_E3_high_s1_t6px12",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.054,
+    "held": true,
+    "hand_drift_cm": 0.35,
+    "dynamics_sat_max": 0.595,
+    "statics_s_star_max": 0.5719,
+    "legacy_seams": {
+     "hands_start_cm": 0.28,
+     "hands_end_cm": 0.67,
+     "feet_end_cm": null,
+     "hand_width_m": {
+      "synthetic": 0.3572,
+      "S": 0.3584,
+      "D": 0.3478
+     },
+     "hand_drift_cm": 0.76
+    },
+    "seams": {
+     "pass": false,
+     "pass_attainable": false,
+     "failed": [
+      "end",
+      "drift"
+     ],
+     "start_all_cm": 0.301,
+     "start_planted_cm": 0.281,
+     "end_planted_cm": 3.403,
+     "end_beyond": [
+      "L_Wrist",
+      "R_Wrist"
+     ],
+     "end_exemplar_bodies": [
+      "L_Wrist"
+     ],
+     "drift_cm": 0.957,
+     "drift_zones": {
+      "L_HAND": 0.742,
+      "R_HAND": 0.957
+     }
+    },
+    "d1": {
+     "selected": false,
+     "failed_hard": [
+      "endpoints"
+     ],
+     "advisory_failed": [
+      "dynamics",
+      "naturalness_p99"
+     ]
+    }
+   },
+   "before": {
+    "variant": "SYN_E3_E3_E3_high_s1_px12",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.0526,
+    "held": true,
+    "hand_drift_cm": 0.32,
+    "dynamics_sat_max": 0.59,
+    "statics_s_star_max": 0.6895,
+    "legacy_seams": {
+     "hands_start_cm": 4.88,
+     "hands_end_cm": 5.17,
+     "feet_end_cm": null,
+     "hand_width_m": {
+      "synthetic": 0.3959,
+      "S": 0.3584,
+      "D": 0.3478
+     },
+     "hand_drift_cm": 0.67
+    }
+   }
+  },
+  {
+   "edge": "E3",
+   "timing": "high",
+   "seed": 1,
+   "pass": "px",
+   "set": "t6",
+   "t6": {
+    "variant": "SYN_E3_E3_E3_high_s1_t6px",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.0505,
+    "held": true,
+    "hand_drift_cm": 0.36,
+    "dynamics_sat_max": 0.581,
+    "statics_s_star_max": 0.6087,
+    "legacy_seams": {
+     "hands_start_cm": 0.24,
+     "hands_end_cm": 0.56,
+     "feet_end_cm": null,
+     "hand_width_m": {
+      "synthetic": 0.3586,
+      "S": 0.3584,
+      "D": 0.3478
+     },
+     "hand_drift_cm": 0.87
+    },
+    "seams": {
+     "pass": false,
+     "pass_attainable": false,
+     "failed": [
+      "end",
+      "drift"
+     ],
+     "start_all_cm": 0.242,
+     "start_planted_cm": 0.242,
+     "end_planted_cm": 2.96,
+     "end_beyond": [
+      "L_Wrist",
+      "R_Wrist"
+     ],
+     "end_exemplar_bodies": [
+      "L_Wrist",
+      "R_Wrist"
+     ],
+     "drift_cm": 0.927,
+     "drift_zones": {
+      "L_HAND": 0.927,
+      "R_HAND": 0.874
+     }
+    },
+    "d1": {
+     "selected": false,
+     "failed_hard": [
+      "endpoints"
+     ],
+     "advisory_failed": [
+      "dynamics",
+      "naturalness_p99"
+     ]
+    }
+   },
+   "before": {
+    "variant": "SYN_E3_E3_E3_high_s1_px",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.0536,
+    "held": true,
+    "hand_drift_cm": 0.52,
+    "dynamics_sat_max": 0.591,
+    "statics_s_star_max": 0.6564,
+    "legacy_seams": {
+     "hands_start_cm": 5.16,
+     "hands_end_cm": 5.62,
+     "feet_end_cm": null,
+     "hand_width_m": {
+      "synthetic": 0.3967,
+      "S": 0.3584,
+      "D": 0.3478
+     },
+     "hand_drift_cm": 0.45
+    }
+   }
+  },
+  {
+   "edge": "E3",
+   "timing": "high",
+   "seed": 2,
+   "pass": "px12",
+   "set": "t6",
+   "t6": {
+    "variant": "SYN_E3_E3_E3_high_s2_t6px12",
+    "failed": [
+     "dynamics",
+     "naturalness_p99"
+    ],
+    "final_d6_m": 0.0432,
+    "held": true,
+    "hand_drift_cm": 0.97,
+    "dynamics_sat_max": 0.696,
+    "statics_s_star_max": 0.6075,
+    "legacy_seams": {
+     "hands_start_cm": 0.26,
+     "hands_end_cm": 0.42,
+     "feet_end_cm": null,
+     "hand_width_m": {
+      "synthetic": 0.3564,
+      "S": 0.3584,
+      "D": 0.3478
+     },
+     "hand_drift_cm": 0.6
+    },
+    "seams": {
+     "pass": false,
+     "pass_attainable": false,
+     "failed": [
+      "end",
+      "drift"
+     ],
+     "start_all_cm": 0.259,
+     "start_planted_cm": 0.259,
+     "end_planted_cm": 3.885,
+     "end_beyond": [
+      "L_Wrist",
+      "R_Wrist"
+     ],
+     "end_exemplar_bodies": [
+      "R_Wrist"
+     ],
+     "drift_cm": 1.085,
+     "drift_zones": {
+      "L_HAND": 1.085,
+      "R_HAND": 0.626
+     }
+    },
+    "d1": {
+     "selected": false,
+     "failed_hard": [
+      "seams"
+     ],
+     "advisory_failed": [
+      "dynamics",
+      "naturalness_p99"
+     ]
+    }
+   },
+   "before": {
+    "variant": "SYN_E3_E3_E3_high_s2_px12",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.0531,
+    "held": true,
+    "hand_drift_cm": 0.62,
+    "dynamics_sat_max": 0.792,
+    "statics_s_star_max": 0.6949,
+    "legacy_seams": {
+     "hands_start_cm": 5.11,
+     "hands_end_cm": 5.4,
+     "feet_end_cm": null,
+     "hand_width_m": {
+      "synthetic": 0.3939,
+      "S": 0.3584,
+      "D": 0.3478
+     },
+     "hand_drift_cm": 0.62
+    }
+   }
+  },
+  {
+   "edge": "E3",
+   "timing": "high",
+   "seed": 2,
+   "pass": "px",
+   "set": "t6",
+   "t6": {
+    "variant": "SYN_E3_E3_E3_high_s2_t6px",
+    "failed": [
+     "dynamics",
+     "naturalness_p99"
+    ],
+    "final_d6_m": 0.0489,
+    "held": true,
+    "hand_drift_cm": 0.39,
+    "dynamics_sat_max": 0.64,
+    "statics_s_star_max": 0.6293,
+    "legacy_seams": {
+     "hands_start_cm": 0.18,
+     "hands_end_cm": 0.41,
+     "feet_end_cm": null,
+     "hand_width_m": {
+      "synthetic": 0.3581,
+      "S": 0.3584,
+      "D": 0.3478
+     },
+     "hand_drift_cm": 0.94
+    },
+    "seams": {
+     "pass": false,
+     "pass_attainable": false,
+     "failed": [
+      "end",
+      "drift"
+     ],
+     "start_all_cm": 0.188,
+     "start_planted_cm": 0.183,
+     "end_planted_cm": 3.222,
+     "end_beyond": [
+      "L_Wrist",
+      "R_Wrist"
+     ],
+     "end_exemplar_bodies": [
+      "L_Wrist",
+      "R_Wrist"
+     ],
+     "drift_cm": 0.937,
+     "drift_zones": {
+      "L_HAND": 0.937,
+      "R_HAND": 0.705
+     }
+    },
+    "d1": {
+     "selected": true,
+     "failed_hard": [],
+     "advisory_failed": [
+      "dynamics",
+      "naturalness_p99"
+     ]
+    }
+   },
+   "before": {
+    "variant": "SYN_E3_E3_E3_high_s2_px",
+    "failed": [
+     "dynamics",
+     "naturalness_p99"
+    ],
+    "final_d6_m": 0.0493,
+    "held": true,
+    "hand_drift_cm": 0.5,
+    "dynamics_sat_max": 0.635,
+    "statics_s_star_max": 0.6441,
+    "legacy_seams": {
+     "hands_start_cm": 5.05,
+     "hands_end_cm": 5.42,
+     "feet_end_cm": null,
+     "hand_width_m": {
+      "synthetic": 0.3966,
+      "S": 0.3584,
+      "D": 0.3478
+     },
+     "hand_drift_cm": 0.77
+    }
+   }
+  },
+  {
+   "edge": "E3",
+   "timing": "high",
+   "seed": 3,
+   "pass": "px12",
+   "set": "t6",
+   "t6": {
+    "variant": "SYN_E3_E3_E3_high_s3_t6px12",
+    "failed": [
+     "dynamics",
+     "naturalness_p99"
+    ],
+    "final_d6_m": 0.0424,
+    "held": true,
+    "hand_drift_cm": 0.57,
+    "dynamics_sat_max": 0.635,
+    "statics_s_star_max": 0.5684,
+    "legacy_seams": {
+     "hands_start_cm": 0.17,
+     "hands_end_cm": 0.67,
+     "feet_end_cm": null,
+     "hand_width_m": {
+      "synthetic": 0.3567,
+      "S": 0.3584,
+      "D": 0.3478
+     },
+     "hand_drift_cm": 0.72
+    },
+    "seams": {
+     "pass": false,
+     "pass_attainable": false,
+     "failed": [
+      "end",
+      "drift"
+     ],
+     "start_all_cm": 0.381,
+     "start_planted_cm": 0.173,
+     "end_planted_cm": 3.139,
+     "end_beyond": [
+      "L_Wrist",
+      "R_Wrist"
+     ],
+     "end_exemplar_bodies": [
+      "R_Wrist"
+     ],
+     "drift_cm": 0.717,
+     "drift_zones": {
+      "L_HAND": 0.717,
+      "R_HAND": 0.689
+     }
+    },
+    "d1": {
+     "selected": true,
+     "failed_hard": [],
+     "advisory_failed": [
+      "dynamics",
+      "naturalness_p99"
+     ]
+    }
+   },
+   "before": {
+    "variant": "SYN_E3_E3_E3_high_s3_px12",
+    "failed": [
+     "dynamics",
+     "naturalness_p99"
+    ],
+    "final_d6_m": 0.0458,
+    "held": true,
+    "hand_drift_cm": 0.35,
+    "dynamics_sat_max": 0.603,
+    "statics_s_star_max": 0.7154,
+    "legacy_seams": {
+     "hands_start_cm": 5.14,
+     "hands_end_cm": 5.46,
+     "feet_end_cm": null,
+     "hand_width_m": {
+      "synthetic": 0.3952,
+      "S": 0.3584,
+      "D": 0.3478
+     },
+     "hand_drift_cm": 0.43
+    }
+   }
+  },
+  {
+   "edge": "E3",
+   "timing": "high",
+   "seed": 3,
+   "pass": "px",
+   "set": "t6",
+   "t6": {
+    "variant": "SYN_E3_E3_E3_high_s3_t6px",
+    "failed": [
+     "dynamics",
+     "naturalness_p99"
+    ],
+    "final_d6_m": 0.0491,
+    "held": true,
+    "hand_drift_cm": 0.71,
+    "dynamics_sat_max": 0.642,
+    "statics_s_star_max": 0.6194,
+    "legacy_seams": {
+     "hands_start_cm": 0.17,
+     "hands_end_cm": 0.53,
+     "feet_end_cm": null,
+     "hand_width_m": {
+      "synthetic": 0.3577,
+      "S": 0.3584,
+      "D": 0.3478
+     },
+     "hand_drift_cm": 1.22
+    },
+    "seams": {
+     "pass": false,
+     "pass_attainable": false,
+     "failed": [
+      "end",
+      "drift"
+     ],
+     "start_all_cm": 0.222,
+     "start_planted_cm": 0.175,
+     "end_planted_cm": 3.11,
+     "end_beyond": [
+      "L_Wrist",
+      "R_Wrist"
+     ],
+     "end_exemplar_bodies": [
+      "L_Wrist",
+      "R_Wrist"
+     ],
+     "drift_cm": 1.222,
+     "drift_zones": {
+      "L_HAND": 1.222,
+      "R_HAND": 0.715
+     }
+    },
+    "d1": {
+     "selected": false,
+     "failed_hard": [
+      "seams"
+     ],
+     "advisory_failed": [
+      "dynamics",
+      "naturalness_p99"
+     ]
+    }
+   },
+   "before": {
+    "variant": "SYN_E3_E3_E3_high_s3_px",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.0598,
+    "held": true,
+    "hand_drift_cm": 0.41,
+    "dynamics_sat_max": 0.64,
+    "statics_s_star_max": 0.6643,
+    "legacy_seams": {
+     "hands_start_cm": 5.15,
+     "hands_end_cm": 5.44,
+     "feet_end_cm": null,
+     "hand_width_m": {
+      "synthetic": 0.3959,
+      "S": 0.3584,
+      "D": 0.3478
+     },
+     "hand_drift_cm": 0.58
+    }
+   }
+  },
+  {
+   "edge": "E3",
+   "timing": "high",
+   "seed": 4,
+   "pass": "px12",
+   "set": "t6",
+   "t6": {
+    "variant": "SYN_E3_E3_E3_high_s4_t6px12",
+    "failed": [
+     "dynamics",
+     "naturalness_p99"
+    ],
+    "final_d6_m": 0.0379,
+    "held": true,
+    "hand_drift_cm": 0.8,
+    "dynamics_sat_max": 0.622,
+    "statics_s_star_max": 0.5778,
+    "legacy_seams": {
+     "hands_start_cm": 0.22,
+     "hands_end_cm": 0.33,
+     "feet_end_cm": null,
+     "hand_width_m": {
+      "synthetic": 0.3568,
+      "S": 0.3584,
+      "D": 0.3478
+     },
+     "hand_drift_cm": 1.01
+    },
+    "seams": {
+     "pass": false,
+     "pass_attainable": false,
+     "failed": [
+      "end",
+      "drift"
+     ],
+     "start_all_cm": 0.463,
+     "start_planted_cm": 0.215,
+     "end_planted_cm": 3.338,
+     "end_beyond": [
+      "L_Wrist",
+      "R_Wrist"
+     ],
+     "end_exemplar_bodies": [],
+     "drift_cm": 1.013,
+     "drift_zones": {
+      "L_HAND": 0.886,
+      "R_HAND": 1.013
+     }
+    },
+    "d1": {
+     "selected": false,
+     "failed_hard": [
+      "seams"
+     ],
+     "advisory_failed": [
+      "dynamics",
+      "naturalness_p99"
+     ]
+    }
+   },
+   "before": null
+  },
+  {
+   "edge": "E3",
+   "timing": "high",
+   "seed": 4,
+   "pass": "px",
+   "set": "t6",
+   "t6": {
+    "variant": "SYN_E3_E3_E3_high_s4_t6px",
+    "failed": [
+     "dynamics",
+     "naturalness_p99"
+    ],
+    "final_d6_m": 0.0446,
+    "held": true,
+    "hand_drift_cm": 0.65,
+    "dynamics_sat_max": 0.63,
+    "statics_s_star_max": 0.6134,
+    "legacy_seams": {
+     "hands_start_cm": 0.23,
+     "hands_end_cm": 0.39,
+     "feet_end_cm": null,
+     "hand_width_m": {
+      "synthetic": 0.3575,
+      "S": 0.3584,
+      "D": 0.3478
+     },
+     "hand_drift_cm": 1.1
+    },
+    "seams": {
+     "pass": false,
+     "pass_attainable": false,
+     "failed": [
+      "end",
+      "drift"
+     ],
+     "start_all_cm": 0.277,
+     "start_planted_cm": 0.227,
+     "end_planted_cm": 3.158,
+     "end_beyond": [
+      "L_Wrist",
+      "R_Wrist"
+     ],
+     "end_exemplar_bodies": [
+      "R_Wrist"
+     ],
+     "drift_cm": 1.1,
+     "drift_zones": {
+      "L_HAND": 1.1,
+      "R_HAND": 0.659
+     }
+    },
+    "d1": {
+     "selected": false,
+     "failed_hard": [
+      "seams"
+     ],
+     "advisory_failed": [
+      "dynamics",
+      "naturalness_p99"
+     ]
+    }
+   },
+   "before": null
+  },
+  {
+   "edge": "E5",
+   "timing": "mid",
+   "seed": 0,
+   "pass": "px12",
+   "set": "t6",
+   "t6": {
+    "variant": "SYN_E5_E5_E5_mid_s0_t6px12",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.1222,
+    "held": false,
+    "hand_drift_cm": 1.46,
+    "dynamics_sat_max": 0.79,
+    "statics_s_star_max": 0.3414,
+    "legacy_seams": {
+     "hands_start_cm": 0.22,
+     "hands_end_cm": 1.01,
+     "feet_end_cm": 4.91,
+     "hand_width_m": {
+      "synthetic": 0.3569,
+      "S": 0.3584,
+      "D": 0.368
+     },
+     "hand_drift_cm": 1.53
+    },
+    "seams": {
+     "pass": false,
+     "pass_attainable": false,
+     "failed": [
+      "end",
+      "drift"
+     ],
+     "start_all_cm": 0.382,
+     "start_planted_cm": 0.222,
+     "end_planted_cm": 4.913,
+     "end_beyond": [
+      "L_Ankle",
+      "R_Ankle",
+      "R_Toe"
+     ],
+     "end_exemplar_bodies": [],
+     "drift_cm": 10.068,
+     "drift_zones": {
+      "L_FOOT": 10.068,
+      "L_HAND": 1.532,
+      "R_FOOT": 9.608,
+      "R_HAND": 1.441
+     }
+    },
+    "d1": {
+     "selected": false,
+     "failed_hard": [
+      "held"
+     ],
+     "advisory_failed": [
+      "dynamics",
+      "endpoints",
+      "naturalness_p99",
+      "seams_drift",
+      "seams_end"
+     ]
+    }
+   },
+   "before": {
+    "variant": "SYN_E5_E5_mid_s0_px12",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.0884,
+    "held": true,
+    "hand_drift_cm": 1.88,
+    "dynamics_sat_max": 0.827,
+    "statics_s_star_max": 0.3554,
+    "legacy_seams": {
+     "hands_start_cm": 0.24,
+     "hands_end_cm": 0.5,
+     "feet_end_cm": 6.1,
+     "hand_width_m": {
+      "synthetic": 0.3568,
+      "S": 0.3584,
+      "D": 0.368
+     },
+     "hand_drift_cm": 0.61
+    }
+   }
+  },
+  {
+   "edge": "E5",
+   "timing": "mid",
+   "seed": 0,
+   "pass": "px12",
+   "set": "t6r",
+   "t6": {
+    "variant": "SYN_E5_E5_E5_mid_s0_t6rpx12",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.0887,
+    "held": true,
+    "hand_drift_cm": 1.47,
+    "dynamics_sat_max": 0.79,
+    "statics_s_star_max": 0.3467,
+    "legacy_seams": {
+     "hands_start_cm": 0.23,
+     "hands_end_cm": 0.56,
+     "feet_end_cm": 4.49,
+     "hand_width_m": {
+      "synthetic": 0.3568,
+      "S": 0.3584,
+      "D": 0.368
+     },
+     "hand_drift_cm": 0.57
+    },
+    "seams": {
+     "pass": false,
+     "pass_attainable": false,
+     "failed": [
+      "end",
+      "drift"
+     ],
+     "start_all_cm": 0.351,
+     "start_planted_cm": 0.233,
+     "end_planted_cm": 4.493,
+     "end_beyond": [
+      "L_Ankle",
+      "L_Toe",
+      "R_Ankle",
+      "R_Toe"
+     ],
+     "end_exemplar_bodies": [],
+     "drift_cm": 12.406,
+     "drift_zones": {
+      "L_FOOT": 11.388,
+      "L_HAND": 1.454,
+      "R_FOOT": 12.406,
+      "R_HAND": 1.42
+     }
+    },
+    "d1": {
+     "selected": true,
+     "failed_hard": [],
+     "advisory_failed": [
+      "dynamics",
+      "endpoints",
+      "naturalness_p99",
+      "seams_drift",
+      "seams_end"
+     ]
+    }
+   },
+   "before": {
+    "variant": "SYN_E5_E5_mid_s0_px12",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.0884,
+    "held": true,
+    "hand_drift_cm": 1.88,
+    "dynamics_sat_max": 0.827,
+    "statics_s_star_max": 0.3554,
+    "legacy_seams": {
+     "hands_start_cm": 0.24,
+     "hands_end_cm": 0.5,
+     "feet_end_cm": 6.1,
+     "hand_width_m": {
+      "synthetic": 0.3568,
+      "S": 0.3584,
+      "D": 0.368
+     },
+     "hand_drift_cm": 0.61
+    }
+   }
+  },
+  {
+   "edge": "E5",
+   "timing": "mid",
+   "seed": 1,
+   "pass": "px12",
+   "set": "t6",
+   "t6": {
+    "variant": "SYN_E5_E5_E5_mid_s1_t6px12",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.0963,
+    "held": false,
+    "hand_drift_cm": 1.34,
+    "dynamics_sat_max": 0.717,
+    "statics_s_star_max": 0.3206,
+    "legacy_seams": {
+     "hands_start_cm": 0.29,
+     "hands_end_cm": 1.13,
+     "feet_end_cm": 3.75,
+     "hand_width_m": {
+      "synthetic": 0.3576,
+      "S": 0.3584,
+      "D": 0.368
+     },
+     "hand_drift_cm": 1.3
+    },
+    "seams": {
+     "pass": false,
+     "pass_attainable": false,
+     "failed": [
+      "end",
+      "drift"
+     ],
+     "start_all_cm": 0.377,
+     "start_planted_cm": 0.29,
+     "end_planted_cm": 3.755,
+     "end_beyond": [
+      "L_Ankle",
+      "L_Toe",
+      "R_Ankle",
+      "R_Toe"
+     ],
+     "end_exemplar_bodies": [],
+     "drift_cm": 8.748,
+     "drift_zones": {
+      "L_FOOT": 8.748,
+      "L_HAND": 1.475,
+      "R_FOOT": 7.552,
+      "R_HAND": 1.48
+     }
+    },
+    "d1": {
+     "selected": false,
+     "failed_hard": [
+      "held"
+     ],
+     "advisory_failed": [
+      "dynamics",
+      "endpoints",
+      "naturalness_p99",
+      "seams_drift",
+      "seams_end"
+     ]
+    }
+   },
+   "before": {
+    "variant": "SYN_E5_E5_mid_s1_px12",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.0904,
+    "held": false,
+    "hand_drift_cm": 1.49,
+    "dynamics_sat_max": 0.692,
+    "statics_s_star_max": 0.3284,
+    "legacy_seams": {
+     "hands_start_cm": 0.27,
+     "hands_end_cm": 1.62,
+     "feet_end_cm": 8.29,
+     "hand_width_m": {
+      "synthetic": 0.3569,
+      "S": 0.3584,
+      "D": 0.368
+     },
+     "hand_drift_cm": 1.68
+    }
+   }
+  },
+  {
+   "edge": "E5",
+   "timing": "mid",
+   "seed": 1,
+   "pass": "px12",
+   "set": "t6r",
+   "t6": {
+    "variant": "SYN_E5_E5_E5_mid_s1_t6rpx12",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.0981,
+    "held": false,
+    "hand_drift_cm": 1.39,
+    "dynamics_sat_max": 0.742,
+    "statics_s_star_max": 0.313,
+    "legacy_seams": {
+     "hands_start_cm": 0.63,
+     "hands_end_cm": 2.53,
+     "feet_end_cm": 9.59,
+     "hand_width_m": {
+      "synthetic": 0.3579,
+      "S": 0.3584,
+      "D": 0.368
+     },
+     "hand_drift_cm": 1.69
+    },
+    "seams": {
+     "pass": false,
+     "pass_attainable": false,
+     "failed": [
+      "start",
+      "end",
+      "drift"
+     ],
+     "start_all_cm": 0.627,
+     "start_planted_cm": 0.627,
+     "end_planted_cm": 9.587,
+     "end_beyond": [
+      "L_Ankle",
+      "L_Toe",
+      "L_Hand",
+      "R_Ankle",
+      "R_Toe"
+     ],
+     "end_exemplar_bodies": [],
+     "drift_cm": 19.738,
+     "drift_zones": {
+      "L_FOOT": 11.313,
+      "L_HAND": 1.689,
+      "R_FOOT": 19.738,
+      "R_HAND": 1.685
+     }
+    },
+    "d1": {
+     "selected": false,
+     "failed_hard": [
+      "held",
+      "seams"
+     ],
+     "advisory_failed": [
+      "dynamics",
+      "endpoints",
+      "naturalness_p99",
+      "seams_drift",
+      "seams_end"
+     ]
+    }
+   },
+   "before": {
+    "variant": "SYN_E5_E5_mid_s1_px12",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.0904,
+    "held": false,
+    "hand_drift_cm": 1.49,
+    "dynamics_sat_max": 0.692,
+    "statics_s_star_max": 0.3284,
+    "legacy_seams": {
+     "hands_start_cm": 0.27,
+     "hands_end_cm": 1.62,
+     "feet_end_cm": 8.29,
+     "hand_width_m": {
+      "synthetic": 0.3569,
+      "S": 0.3584,
+      "D": 0.368
+     },
+     "hand_drift_cm": 1.68
+    }
+   }
+  },
+  {
+   "edge": "E5",
+   "timing": "mid",
+   "seed": 2,
+   "pass": "px12",
+   "set": "t6",
+   "t6": {
+    "variant": "SYN_E5_E5_E5_mid_s2_t6px12",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.0969,
+    "held": false,
+    "hand_drift_cm": 1.68,
+    "dynamics_sat_max": 0.85,
+    "statics_s_star_max": 0.3454,
+    "legacy_seams": {
+     "hands_start_cm": 0.3,
+     "hands_end_cm": 1.14,
+     "feet_end_cm": 3.08,
+     "hand_width_m": {
+      "synthetic": 0.3565,
+      "S": 0.3584,
+      "D": 0.368
+     },
+     "hand_drift_cm": 1.32
+    },
+    "seams": {
+     "pass": false,
+     "pass_attainable": false,
+     "failed": [
+      "end",
+      "drift"
+     ],
+     "start_all_cm": 0.3,
+     "start_planted_cm": 0.3,
+     "end_planted_cm": 3.084,
+     "end_beyond": [
+      "L_Ankle",
+      "L_Toe",
+      "R_Ankle",
+      "R_Toe"
+     ],
+     "end_exemplar_bodies": [],
+     "drift_cm": 12.028,
+     "drift_zones": {
+      "L_FOOT": 12.028,
+      "L_HAND": 1.316,
+      "R_FOOT": 10.243,
+      "R_HAND": 1.85
+     }
+    },
+    "d1": {
+     "selected": false,
+     "failed_hard": [
+      "held"
+     ],
+     "advisory_failed": [
+      "dynamics",
+      "endpoints",
+      "naturalness_p99",
+      "seams_drift",
+      "seams_end"
+     ]
+    }
+   },
+   "before": {
+    "variant": "SYN_E5_E5_mid_s2_px12",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.0916,
+    "held": false,
+    "hand_drift_cm": 1.54,
+    "dynamics_sat_max": 0.917,
+    "statics_s_star_max": 0.3479,
+    "legacy_seams": {
+     "hands_start_cm": 0.29,
+     "hands_end_cm": 1.19,
+     "feet_end_cm": 5.34,
+     "hand_width_m": {
+      "synthetic": 0.3567,
+      "S": 0.3584,
+      "D": 0.368
+     },
+     "hand_drift_cm": 0.77
+    }
+   }
+  },
+  {
+   "edge": "E5",
+   "timing": "mid",
+   "seed": 2,
+   "pass": "px12",
+   "set": "t6r",
+   "t6": {
+    "variant": "SYN_E5_E5_E5_mid_s2_t6rpx12",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.0936,
+    "held": false,
+    "hand_drift_cm": 1.5,
+    "dynamics_sat_max": 0.871,
+    "statics_s_star_max": 0.344,
+    "legacy_seams": {
+     "hands_start_cm": 0.27,
+     "hands_end_cm": 1.02,
+     "feet_end_cm": 4.51,
+     "hand_width_m": {
+      "synthetic": 0.357,
+      "S": 0.3584,
+      "D": 0.368
+     },
+     "hand_drift_cm": 0.69
+    },
+    "seams": {
+     "pass": false,
+     "pass_attainable": false,
+     "failed": [
+      "end",
+      "drift"
+     ],
+     "start_all_cm": 0.275,
+     "start_planted_cm": 0.275,
+     "end_planted_cm": 4.508,
+     "end_beyond": [
+      "L_Ankle",
+      "L_Toe",
+      "R_Ankle",
+      "R_Toe"
+     ],
+     "end_exemplar_bodies": [],
+     "drift_cm": 11.96,
+     "drift_zones": {
+      "L_FOOT": 11.96,
+      "L_HAND": 1.074,
+      "R_FOOT": 10.356,
+      "R_HAND": 1.618
+     }
+    },
+    "d1": {
+     "selected": false,
+     "failed_hard": [
+      "held"
+     ],
+     "advisory_failed": [
+      "dynamics",
+      "endpoints",
+      "naturalness_p99",
+      "seams_drift",
+      "seams_end"
+     ]
+    }
+   },
+   "before": {
+    "variant": "SYN_E5_E5_mid_s2_px12",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.0916,
+    "held": false,
+    "hand_drift_cm": 1.54,
+    "dynamics_sat_max": 0.917,
+    "statics_s_star_max": 0.3479,
+    "legacy_seams": {
+     "hands_start_cm": 0.29,
+     "hands_end_cm": 1.19,
+     "feet_end_cm": 5.34,
+     "hand_width_m": {
+      "synthetic": 0.3567,
+      "S": 0.3584,
+      "D": 0.368
+     },
+     "hand_drift_cm": 0.77
+    }
+   }
+  },
+  {
+   "edge": "E5",
+   "timing": "mid",
+   "seed": 3,
+   "pass": "px12",
+   "set": "t6",
+   "t6": {
+    "variant": "SYN_E5_E5_E5_mid_s3_t6px12",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.0903,
+    "held": false,
+    "hand_drift_cm": 1.31,
+    "dynamics_sat_max": 0.752,
+    "statics_s_star_max": 0.3447,
+    "legacy_seams": {
+     "hands_start_cm": 0.23,
+     "hands_end_cm": 0.76,
+     "feet_end_cm": 5.89,
+     "hand_width_m": {
+      "synthetic": 0.3563,
+      "S": 0.3584,
+      "D": 0.368
+     },
+     "hand_drift_cm": 0.64
+    },
+    "seams": {
+     "pass": false,
+     "pass_attainable": false,
+     "failed": [
+      "end",
+      "drift"
+     ],
+     "start_all_cm": 0.384,
+     "start_planted_cm": 0.232,
+     "end_planted_cm": 5.886,
+     "end_beyond": [
+      "L_Ankle",
+      "L_Toe",
+      "R_Ankle",
+      "R_Toe"
+     ],
+     "end_exemplar_bodies": [],
+     "drift_cm": 13.59,
+     "drift_zones": {
+      "L_FOOT": 13.59,
+      "L_HAND": 0.94,
+      "R_FOOT": 7.731,
+      "R_HAND": 1.39
+     }
+    },
+    "d1": {
+     "selected": false,
+     "failed_hard": [
+      "held"
+     ],
+     "advisory_failed": [
+      "dynamics",
+      "endpoints",
+      "naturalness_p99",
+      "seams_drift",
+      "seams_end"
+     ]
+    }
+   },
+   "before": {
+    "variant": "SYN_E5_E5_mid_s3_px12",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.081,
+    "held": false,
+    "hand_drift_cm": 1.63,
+    "dynamics_sat_max": 0.815,
+    "statics_s_star_max": 0.3447,
+    "legacy_seams": {
+     "hands_start_cm": 0.22,
+     "hands_end_cm": 1.71,
+     "feet_end_cm": 7.42,
+     "hand_width_m": {
+      "synthetic": 0.3565,
+      "S": 0.3584,
+      "D": 0.368
+     },
+     "hand_drift_cm": 1.81
+    }
+   }
+  },
+  {
+   "edge": "E5",
+   "timing": "mid",
+   "seed": 3,
+   "pass": "px12",
+   "set": "t6r",
+   "t6": {
+    "variant": "SYN_E5_E5_E5_mid_s3_t6rpx12",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.0769,
+    "held": false,
+    "hand_drift_cm": 1.53,
+    "dynamics_sat_max": 0.723,
+    "statics_s_star_max": 0.3457,
+    "legacy_seams": {
+     "hands_start_cm": 0.22,
+     "hands_end_cm": 0.85,
+     "feet_end_cm": 7.23,
+     "hand_width_m": {
+      "synthetic": 0.3564,
+      "S": 0.3584,
+      "D": 0.368
+     },
+     "hand_drift_cm": 0.67
+    },
+    "seams": {
+     "pass": false,
+     "pass_attainable": false,
+     "failed": [
+      "end",
+      "drift"
+     ],
+     "start_all_cm": 0.371,
+     "start_planted_cm": 0.222,
+     "end_planted_cm": 7.231,
+     "end_beyond": [
+      "L_Ankle",
+      "L_Toe",
+      "R_Ankle",
+      "R_Toe"
+     ],
+     "end_exemplar_bodies": [],
+     "drift_cm": 16.116,
+     "drift_zones": {
+      "L_FOOT": 16.116,
+      "L_HAND": 1.2,
+      "R_FOOT": 12.567,
+      "R_HAND": 1.588
+     }
+    },
+    "d1": {
+     "selected": false,
+     "failed_hard": [
+      "held"
+     ],
+     "advisory_failed": [
+      "dynamics",
+      "endpoints",
+      "naturalness_p99",
+      "seams_drift",
+      "seams_end"
+     ]
+    }
+   },
+   "before": {
+    "variant": "SYN_E5_E5_mid_s3_px12",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.081,
+    "held": false,
+    "hand_drift_cm": 1.63,
+    "dynamics_sat_max": 0.815,
+    "statics_s_star_max": 0.3447,
+    "legacy_seams": {
+     "hands_start_cm": 0.22,
+     "hands_end_cm": 1.71,
+     "feet_end_cm": 7.42,
+     "hand_width_m": {
+      "synthetic": 0.3565,
+      "S": 0.3584,
+      "D": 0.368
+     },
+     "hand_drift_cm": 1.81
+    }
+   }
+  },
+  {
+   "edge": "E5",
+   "timing": "mid",
+   "seed": 4,
+   "pass": "px12",
+   "set": "t6",
+   "t6": {
+    "variant": "SYN_E5_E5_E5_mid_s4_t6px12",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.1175,
+    "held": false,
+    "hand_drift_cm": 1.58,
+    "dynamics_sat_max": 0.785,
+    "statics_s_star_max": 0.348,
+    "legacy_seams": {
+     "hands_start_cm": 0.27,
+     "hands_end_cm": 1.26,
+     "feet_end_cm": 4.29,
+     "hand_width_m": {
+      "synthetic": 0.3567,
+      "S": 0.3584,
+      "D": 0.368
+     },
+     "hand_drift_cm": 1.3
+    },
+    "seams": {
+     "pass": false,
+     "pass_attainable": false,
+     "failed": [
+      "end",
+      "drift"
+     ],
+     "start_all_cm": 0.486,
+     "start_planted_cm": 0.275,
+     "end_planted_cm": 4.286,
+     "end_beyond": [
+      "L_Ankle",
+      "L_Toe",
+      "R_Ankle",
+      "R_Toe",
+      "R_Wrist"
+     ],
+     "end_exemplar_bodies": [],
+     "drift_cm": 11.655,
+     "drift_zones": {
+      "L_FOOT": 7.178,
+      "L_HAND": 1.552,
+      "R_FOOT": 11.655,
+      "R_HAND": 1.861
+     }
+    },
+    "d1": {
+     "selected": false,
+     "failed_hard": [
+      "held"
+     ],
+     "advisory_failed": [
+      "dynamics",
+      "endpoints",
+      "naturalness_p99",
+      "seams_drift",
+      "seams_end"
+     ]
+    }
+   },
+   "before": null
+  },
+  {
+   "edge": "E5",
+   "timing": "mid",
+   "seed": 4,
+   "pass": "px12",
+   "set": "t6r",
+   "t6": {
+    "variant": "SYN_E5_E5_E5_mid_s4_t6rpx12",
+    "failed": [
+     "dynamics",
+     "naturalness_p99",
+     "endpoints"
+    ],
+    "final_d6_m": 0.0829,
+    "held": false,
+    "hand_drift_cm": 1.34,
+    "dynamics_sat_max": 0.783,
+    "statics_s_star_max": 0.3491,
+    "legacy_seams": {
+     "hands_start_cm": 0.29,
+     "hands_end_cm": 1.11,
+     "feet_end_cm": 4.12,
+     "hand_width_m": {
+      "synthetic": 0.3568,
+      "S": 0.3584,
+      "D": 0.368
+     },
+     "hand_drift_cm": 0.91
+    },
+    "seams": {
+     "pass": false,
+     "pass_attainable": false,
+     "failed": [
+      "end",
+      "drift"
+     ],
+     "start_all_cm": 0.487,
+     "start_planted_cm": 0.286,
+     "end_planted_cm": 4.121,
+     "end_beyond": [
+      "L_Ankle",
+      "L_Toe",
+      "R_Ankle",
+      "R_Toe"
+     ],
+     "end_exemplar_bodies": [],
+     "drift_cm": 12.709,
+     "drift_zones": {
+      "L_FOOT": 12.709,
+      "L_HAND": 1.635,
+      "R_FOOT": 12.2,
+      "R_HAND": 1.416
+     }
+    },
+    "d1": {
+     "selected": false,
+     "failed_hard": [
+      "held"
+     ],
+     "advisory_failed": [
+      "dynamics",
+      "endpoints",
+      "naturalness_p99",
+      "seams_drift",
+      "seams_end"
+     ]
+    }
+   },
+   "before": null
+  }
+ ]
+}

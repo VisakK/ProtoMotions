@@ -1,0 +1,312 @@
+# SMOKE=1 on holds_repaired_ftC_posefix.release_v3.2f132f4299 (256 envs x 4 epochs): 311 scalar tags, 0 non-finite values
+actor/approx_kl                                              1:0.314767 4:0.198526
+actor/bad_grads_count                                        1:0 4:0
+actor/bounds_loss                                            1:0 4:0
+actor/clip_frac                                              1:0.584961 4:0.562622
+actor/entropy_loss                                           1:0 4:0
+actor/extra_loss                                             1:0 4:0
+actor/grad_norm_after_clip                                   1:38.41 4:34.6784
+actor/grad_norm_before_clip                                  1:50.5951 4:34.6784
+actor/model_loss                                             1:0 4:0
+actor/ppo_loss                                               1:0.620669 4:0.557058
+actor/ratio_max                                              1:36.8129 4:8.99093
+actor/ratio_mean                                             1:0.993025 4:0.97532
+actor/ratio_std                                              1:1.40087 4:0.597099
+actor/update_skipped                                         1:0.75 4:0.875
+adv_norm/clamp_frac                                          1:0.0413818 4:0.101196
+adv_norm/mean_ema                                            1:0.0217618 4:-0.0552029
+adv_norm/raw_max                                             1:27.8787 4:78.0885
+adv_norm/raw_mean                                            1:-0.954717 4:-1.65791
+adv_norm/raw_min                                             1:-102.908 4:-114.66
+adv_norm/raw_std                                             1:6.53987 4:9.47279
+adv_norm/std_ema                                             1:0.989166 4:1.11765
+advantages/disc_mean                                         1:-0.348954 2:-0.611327 3:-0.821565 4:-0.539608
+advantages/disc_raw_std                                      1:3.14691 2:5.29947 3:6.01615 4:4.1895
+advantages/disc_std                                          1:1.57345 2:2.64973 3:3.00808 4:2.09475
+advantages/style_raw_to_task_std                             1:0.613018 2:0.546639 3:0.524322 4:0.550255
+advantages/style_to_task_std                                 1:0.306509 2:0.27332 3:0.262161 4:0.275127
+advantages/style_to_task_std_at_target                       1:0.306509 2:0.27332 3:0.262161 4:0.275127
+advantages/task_mean                                         1:-0.605763 2:-1.07015 3:-1.946 4:-1.1183
+advantages/task_std                                          1:5.13347 2:9.69464 3:11.4741 4:7.61374
+amp/parity_max_abs_amp_obs                                   1:7.7486e-07
+amp/parity_share_ok_amp_obs                                  1:1
+amp/reward_mean_human                                        1:0.591524 2:0.530403 3:0.534825 4:0.538573
+amp/reward_mean_syn                                          1:0.601606 2:0.508057 3:0.505799 4:0.512804
+amp/reward_mean_syn_weighted                                 1:0.300803 2:0.254029 3:0.2529 4:0.256402
+amp/reward_w                                                 1:0.5 2:0.5 3:0.5 4:0.5
+amp/reward_w_target                                          1:0.5 2:0.5 3:0.5 4:0.5
+amp/syn_sample_share                                         1:0.200073 2:0.193359 3:0.207397 4:0.18396
+amp_reward_norm/post_norm                                    1:0.0427339 2:0.0382146 3:0.0381653 4:0.038991
+amp_reward_norm/pre_norm                                     1:0.533358 2:0.476964 3:0.476355 4:0.486665
+amp_reward_norm/var                                          1:155.773 2:155.78 3:155.784 4:155.787
+critic/bad_grads_count                                       1:0 4:0
+critic/error_mean                                            1:-0.0051601 4:0.0482388
+critic/error_std                                             1:0.149385 4:0.333564
+critic/explained_variance                                    1:0.900019 4:0.814254
+critic/grad_norm_after_clip                                  1:3.90257 4:5.34377
+critic/grad_norm_before_clip                                 1:3.90257 4:5.34377
+critic/model_loss                                            1:0 4:0
+critic/return_mean                                           1:4.25617 4:4.08604
+critic/return_std                                            1:0.501498 4:0.773963
+critic/value_mean                                            1:4.25101 4:4.13428
+critic/value_std                                             1:0.454851 4:0.675492
+disc_critic/bad_grads_count                                  1:0 4:0
+disc_critic/error_mean                                       1:-0.0244292 4:0.0956997
+disc_critic/error_std                                        1:0.195219 4:0.365055
+disc_critic/explained_variance                               1:0.912286 4:0.819341
+disc_critic/grad_norm_after_clip                             1:4.30656 4:4.86609
+disc_critic/grad_norm_before_clip                            1:4.30656 4:4.86609
+disc_critic/return_mean                                      1:4.20116 4:4.00405
+disc_critic/return_std                                       1:0.684295 4:0.858873
+disc_critic/value_mean                                       1:4.17673 4:4.09975
+disc_critic/value_std                                        1:0.647786 4:0.771505
+discriminator/agent_acc                                      1:0.792969 4:0.908203
+discriminator/agent_logit_mean                               1:-0.2214 4:-0.375028
+discriminator/bad_grads_count                                1:0 4:0
+discriminator/class_loss                                     1:0.552536 4:0.538271
+discriminator/expert_logit_mean                              1:0.444396 4:0.394867
+discriminator/grad_loss                                      1:0.0752965 4:0.0606941
+discriminator/grad_norm_after_clip                           1:0.37716 4:0.322347
+discriminator/grad_norm_before_clip                          1:0.37716 4:0.322347
+discriminator/grad_penalty                                   1:0.00752965 4:0.00606941
+discriminator/l2_logit_loss                                  1:0.00149227 4:0.00148134
+discriminator/l2_logit_total                                 1:0.149227 4:0.148134
+discriminator/l2_loss                                        1:0.00620986 4:0.00620681
+discriminator/l2_total                                       1:62.0986 4:62.0681
+discriminator/neg_acc                                        1:0.792969 4:0.866211
+discriminator/negative_logit_mean                            1:-0.221366 4:-0.336121
+discriminator/pos_acc                                        1:0.956543 4:0.948242
+discriminator/replay_acc                                     1:0.792969 4:0.824219
+discriminator/replay_logit_mean                              1:-0.221332 4:-0.297215
+env/amp_cumulative_bad_transitions_mean                      1:0 2:0 3:0 4:0
+env/amp_cumulative_bad_transitions_std                       1:0 2:0 3:0 4:0
+env/amp_discriminator_termination_mean                       1:0 2:0 3:0 4:0
+env/amp_discriminator_termination_std                        1:0 2:0 3:0 4:0
+env/anchor/arrival_resets                                    1:6.78125 2:0.40625 3:0.375 4:0.4375
+env/anchor/departure_resets                                  1:2.90625 2:0.4375 3:0.21875 4:0.1875
+env/anchor/resets                                            1:16.3125 2:1.1875 3:1.09375 4:0.84375
+env/anchor/t0_resets                                         1:1.125 2:0 3:0.1875 4:0.03125
+env/anchor/uniform_resets                                    1:5.5 2:0.34375 3:0.3125 4:0.1875
+env/contact/active_body_fraction                             4:0.184204
+env/contact/any_selected_contact_fraction                    4:1
+env/contact/force_component_clip_fraction                    4:0
+env/contact/force_magnitude_mean                             4:45.5625
+env/contact/force_magnitude_p95                              4:317.25
+env/contact/force_magnitude_p99                              4:597.5
+env/contact/force_rate_component_clip_fraction               4:0
+env/contact/force_rate_magnitude_p95                         4:7424
+env/contact/force_rate_magnitude_p99                         4:14760
+env/contact/friction_utilization_proxy_max                   4:1
+env/contact/friction_utilization_proxy_mean                  4:0.0541992
+env/contact/max_contact_age_s                                4:3.33398
+env/contact/num_observation_bodies                           4:24
+env/raw_r/action_smoothness_mean                             1:1.94855 2:2.09393 3:2.08041 4:1.89697
+env/raw_r/action_smoothness_std                              1:0.236298 2:0.289249 3:0.271503 4:0.20689
+env/raw_r/diag_contact_goal_iou_mean                         1:0.601776 2:0.55397 3:0.563965 4:0.573853
+env/raw_r/diag_contact_goal_iou_std                          1:0.27158 2:0.303871 3:0.299812 4:0.295525
+env/raw_r/diag_goal_pose_error_mean                          1:0.209267 2:0.252396 3:0.261398 4:0.257545
+env/raw_r/diag_goal_pose_error_std                           1:0.235386 2:0.239662 3:0.238888 4:0.248013
+env/raw_r/diag_goal_pose_visible_mean                        1:1 2:1 3:1 4:1
+env/raw_r/diag_goal_pose_visible_std                         1:0 2:0 3:0 4:0
+env/raw_r/diag_known_free_load_n_mean                        1:0.321266 2:4.00482 3:6.20462 4:6.63928
+env/raw_r/diag_known_free_load_n_std                         1:5.14026 2:37.9919 3:46.2 4:45.8457
+env/raw_r/diag_lean_error_m_mean                             1:0.0334702 2:0.0413847 3:0.0423207 4:0.0403595
+env/raw_r/diag_lean_error_m_std                              1:0.00316831 2:0.00640315 3:0.00999606 4:0.00536323
+env/raw_r/diag_lean_error_valid_mean                         1:0.0554199 2:0.0654297 3:0.0837402 4:0.085083
+env/raw_r/diag_lean_error_valid_std                          1:0.229156 2:0.247509 3:0.277306 4:0.279106
+env/raw_r/diag_lean_gate_mean                                1:0.108887 2:0.151611 3:0.182495 4:0.164429
+env/raw_r/diag_lean_gate_std                                 1:0.311661 2:0.358627 3:0.386826 4:0.37088
+env/raw_r/diag_lean_margin_m_mean                            1:0.0537271 2:0.0341797 3:0.0336657 4:0.0355754
+env/raw_r/diag_lean_margin_m_std                             1:0.00659299 2:0.0202255 3:0.0220675 4:0.0176425
+env/raw_r/diag_pair_load_n_mean                              1:361.547 2:297.837 3:292.613 4:260.965
+env/raw_r/diag_pair_load_n_std                               1:90.9268 2:98.0303 3:112.924 4:98.9785
+env/raw_r/diag_pair_target_gate_mean                         1:0.114014 2:0.130615 3:0.143066 4:0.149658
+env/raw_r/diag_pair_target_gate_std                          1:0.318123 2:0.337288 3:0.350243 4:0.357262
+env/raw_r/diag_pair_target_met_mean                          1:0.4757 2:0.373274 3:0.388885 4:0.448799
+env/raw_r/diag_pair_target_met_std                           1:0.137211 2:0.133214 3:0.148884 4:0.151993
+env/raw_r/diag_required_support_gate_mean                    1:0.568481 2:0.507446 3:0.484375 4:0.484131
+env/raw_r/diag_required_support_gate_std                     1:0.494217 2:0.500679 3:0.500717 4:0.500603
+env/raw_r/diag_required_support_met_mean                     1:0.930099 2:0.90332 3:0.909027 4:0.931183
+env/raw_r/diag_required_support_met_std                      1:0.120064 2:0.132074 3:0.128059 4:0.116905
+env/raw_r/diag_slip_power_w_mean                             1:19.9863 2:25.9446 3:28.2344 4:20.3284
+env/raw_r/diag_slip_power_w_std                              1:37.4727 2:47.6045 3:51.8799 4:34.5728
+env/raw_r/diag_support_gate_mean                             1:0.614868 2:0.550293 3:0.52356 4:0.528931
+env/raw_r/diag_support_gate_std                              1:0.485207 2:0.49823 3:0.500343 4:0.499954
+env/raw_r/diag_swing_gate_mean                               1:0.385132 2:0.449707 3:0.47644 4:0.471069
+env/raw_r/diag_swing_gate_std                                1:0.485207 2:0.49823 3:0.500343 4:0.499954
+env/raw_r/diag_swing_load_n_mean                             1:1.29779 2:2.56931 3:3.49463 4:3.37845
+env/raw_r/diag_swing_load_n_std                              1:16.262 2:31.0711 3:37.9954 4:32.209
+env/raw_r/diag_unwanted_support_n_mean                       1:0 2:1.4894 3:3.13219 4:4.08902
+env/raw_r/diag_unwanted_support_n_std                        1:0 2:18.8616 3:33.9136 4:36.9075
+env/raw_r/gav_rew_mean                                       1:0.776215 2:0.737141 3:0.736446 4:0.776703
+env/raw_r/gav_rew_std                                        1:0.0855064 2:0.0959282 3:0.09515 4:0.0830536
+env/raw_r/gr_rew_mean                                        1:0.799835 2:0.720901 3:0.670425 4:0.714447
+env/raw_r/gr_rew_std                                         1:0.118182 2:0.159256 3:0.1847 4:0.184731
+env/raw_r/gt_rew_mean                                        1:0.973846 2:0.942093 3:0.919968 4:0.931702
+env/raw_r/gt_rew_std                                         1:0.0276387 2:0.0593662 3:0.0809307 4:0.0766163
+env/raw_r/gv_rew_mean                                        1:0.953659 2:0.929016 3:0.929749 4:0.953766
+env/raw_r/gv_rew_std                                         1:0.0346136 2:0.0507383 3:0.0504141 4:0.0367336
+env/raw_r/lean_penalty_rew_mean                              1:0.000856474 2:0.0175502 3:0.0252924 4:0.0215514
+env/raw_r/lean_penalty_rew_std                               1:0.0105864 2:0.100702 3:0.120604 4:0.102619
+env/raw_r/pow_rew_mean                                       1:2943.75 2:3435.94 3:3484.38 4:3026.19
+env/raw_r/pow_rew_std                                        1:798.031 2:981.359 3:985.953 4:800.656
+env/raw_r/rh_rew_mean                                        1:0.972534 2:0.944916 3:0.921341 4:0.93573
+env/raw_r/rh_rew_std                                         1:0.077673 2:0.122503 3:0.16011 4:0.154522
+env/raw_r/swing_penalty_rew_mean                             1:0.00768125 2:0.0200894 3:0.0264134 4:0.024184
+env/raw_r/swing_penalty_rew_std                              1:0.0654187 2:0.117693 3:0.138124 4:0.131624
+env/raw_r/unwanted_support_rew_mean                          1:0 2:0.031023 3:0.0434918 4:0.0352492
+env/raw_r/unwanted_support_rew_std                           1:0 2:0.138536 3:0.173992 4:0.159674
+env/scaled_r/action_smoothness_mean                          1:-0.0389719 2:-0.0418825 3:-0.0416079 4:-0.03794
+env/scaled_r/action_smoothness_std                           1:0.00472569 2:0.00578505 3:0.0054304 4:0.00413787
+env/scaled_r/gav_rew_mean                                    1:0.155239 2:0.147433 3:0.147282 4:0.155346
+env/scaled_r/gav_rew_std                                     1:0.0171027 2:0.0191855 3:0.019031 4:0.0166121
+env/scaled_r/gr_rew_mean                                     1:0.23996 2:0.216282 3:0.201118 4:0.214348
+env/scaled_r/gr_rew_std                                      1:0.0354534 2:0.0477762 3:0.0554104 4:0.0554209
+env/scaled_r/gt_rew_mean                                     1:0.486923 2:0.471046 3:0.459984 4:0.465851
+env/scaled_r/gt_rew_std                                      1:0.0138193 2:0.0296831 3:0.0404654 4:0.0383081
+env/scaled_r/gv_rew_mean                                     1:0.0953598 2:0.0929031 3:0.0929728 4:0.0953732
+env/scaled_r/gv_rew_std                                      1:0.00346106 2:0.00507408 3:0.00504118 4:0.00367367
+env/scaled_r/lean_penalty_rew_mean                           1:-0.000256918 2:-0.00526538 3:-0.00758803 4:-0.00646538
+env/scaled_r/lean_penalty_rew_std                            1:0.00317585 2:0.030211 3:0.0361767 4:0.0307899
+env/scaled_r/pow_rew_mean                                    1:-0.0294366 2:-0.0343556 3:-0.0348434 4:-0.030262
+env/scaled_r/pow_rew_std                                     1:0.00798059 2:0.00981331 3:0.00985861 4:0.00800693
+env/scaled_r/rh_rew_mean                                     1:0.194492 2:0.188976 3:0.184265 4:0.187126
+env/scaled_r/rh_rew_std                                      1:0.015535 2:0.0245013 3:0.032021 4:0.0309043
+env/scaled_r/swing_penalty_rew_mean                          1:-0.00230418 2:-0.00602674 3:-0.00792432 4:-0.0072552
+env/scaled_r/swing_penalty_rew_std                           1:0.0196241 2:0.0353088 3:0.0414391 4:0.0394874
+env/scaled_r/unwanted_support_rew_mean                       1:0 2:-0.00930738 3:-0.0130482 4:-0.0105743
+env/scaled_r/unwanted_support_rew_std                        1:0 2:0.0415592 3:0.0521936 4:0.047904
+env/terminate_mean                                           1:0.000854492 2:0.00183105 3:0.0032959 4:0.00195312
+env/terminate_std                                            1:0.0125217 2:0.0281467 3:0.0394154 4:0.0262718
+env/termination/tracking_error_mean                          1:0.000854492 2:0.00183105 3:0.0032959 4:0.00195312
+env/termination/tracking_error_std                           1:0.0125217 2:0.0281467 3:0.0394154 4:0.0262718
+env/total_env_reward_mean                                    1:1.10095 2:1.01981 3:0.980637 4:1.02554
+env/total_env_reward_std                                     1:0.0710411 2:0.130852 3:0.157146 4:0.156746
+epoch                                                        1:0 2:1 3:2 4:3
+eval/action_delta_max_deg                                    1:1.14502 2:1.13926 4:1.03113
+eval/action_delta_max_rad                                    1:0.0199843 2:0.0198839 4:0.0179967
+eval/action_delta_mean_deg                                   1:0.210038 2:0.208705 4:0.190169
+eval/action_delta_mean_rad                                   1:0.00366584 2:0.00364258 4:0.00331908
+eval/action_rate_mean_rad_s                                  1:0.109975 2:0.109277 4:0.0995723
+eval/curriculum/ess                                          1:109.139 2:109.139 4:120.111
+eval/curriculum/group_prob/arm_balance                       1:0.103276 2:0.103276 4:0.103907
+eval/curriculum/group_prob/connective                        1:0.240977 2:0.240977 4:0.240367
+eval/curriculum/group_prob/edge                              1:0.357396 2:0.357396 4:0.358128
+eval/curriculum/group_prob/inversion                         1:0.149176 2:0.149176 4:0.148799
+eval/curriculum/group_prob/single_leg                        1:0.149176 2:0.149176 4:0.148799
+eval/curriculum/max_prob_x_n                                 1:7.9689 2:7.9689 4:7.25181
+eval/curriculum/prior_share/arm_balance                      1:0.126761 2:0.126761 4:0.126761
+eval/curriculum/prior_share/connective                       1:0.295775 2:0.295775 4:0.295775
+eval/curriculum/prior_share/edge                             1:0.211268 2:0.211268 4:0.211268
+eval/curriculum/prior_share/inversion                        1:0.183099 2:0.183099 4:0.183099
+eval/curriculum/prior_share/single_leg                       1:0.183099 2:0.183099 4:0.183099
+eval/curriculum/prioritized_top10_share                      1:0.916321 2:0.916321 4:0.835316
+eval/drag/Bridge_Pose_or_Setu_Bandha_Sarvangasana_-a_J       1:9.28507 2:7.86527 4:8.45835
+eval/drag/Dolphin_Pose_or_Ardha_Pincha_Mayurasana_-a_J       1:2.89431 2:3.47732 4:4.14175
+eval/drag/Low_Lunge_pose_or_Anjaneyasana_-a_J                1:5.72828 2:2.65006 4:4.1168
+eval/drag/Peacock_Pose_or_Mayurasana_-a_J                    1:27.3249 2:29.4131 4:14.2885
+eval/drag/Plow_Pose_or_Halasana_-a_J                         1:37.0306 2:38.5931 4:31.8207
+eval/drag/Plow_Pose_or_Halasana_-b_J                         1:39.3403 2:43.3459 4:34.797
+eval/drag/Upward_Plank_Pose_or_Purvottanasana_-a_J           1:3.72997 2:3.64341 4:4.96862
+eval/drag/Warrior_II_Pose_or_Virabhadrasana_II_-a_J          1:3.90444 2:2.66693 4:7.0182
+eval/drag/all_J                                              1:6.21138 2:6.22148 4:6.36185
+eval/drag/all_s                                              1:0.233466 2:0.232804 4:0.253175
+eval/drag/all_swing_J                                        1:1.10593 2:1.04558 4:1.1927
+eval/drag/top_J                                              1:16.1547 2:16.4569 4:13.7012
+eval/drag/top_s                                              1:0.5625 2:0.559722 4:0.502778
+eval/drag/top_swing_J                                        1:0.272037 2:0.238425 4:0.231162
+eval/drag_group/arm_balance_J                                1:5.5598 2:5.81476 4:3.73218
+eval/drag_group/arm_balance_s                                1:0.225926 2:0.224691 4:0.207407
+eval/drag_group/arm_balance_swing_J                          1:0.18291 2:0.0257272 4:0.234622
+eval/drag_group/connective_J                                 1:4.31966 2:4.28202 4:5.0017
+eval/drag_group/connective_s                                 1:0.177249 2:0.180952 4:0.192593
+eval/drag_group/connective_swing_J                           1:0.101284 2:0.121571 4:0.0546015
+eval/drag_group/edge_J                                       1:6.44819 2:6.06781 4:6.73508
+eval/drag_group/edge_s                                       1:0.222222 2:0.214286 4:0.269444
+eval/drag_group/edge_swing_J                                 1:2.41772 2:2.25698 4:3.01931
+eval/drag_group/inversion_J                                  1:11.3903 2:11.8922 4:12.0362
+eval/drag_group/inversion_s                                  1:0.47094 2:0.469231 4:0.48547
+eval/drag_group/inversion_swing_J                            1:0.353352 2:0.354738 4:0.430508
+eval/drag_group/single_leg_J                                 1:4.0294 2:4.29626 4:3.90134
+eval/drag_group/single_leg_s                                 1:0.116239 2:0.125641 4:0.115385
+eval/drag_group/single_leg_swing_J                           1:1.295 2:1.3259 4:0.522372
+eval/gr_error/max                                            1:1.43169 2:1.4304 4:1.43728
+eval/gr_error/mean                                           1:0.189179 2:0.189273 4:0.202061
+eval/gr_error/min                                            1:0.0183548 2:0.0183642 4:0.0197621
+eval/gt_error/failure_rate                                   1:0.0357143 2:0.0357143 4:0.0476191
+eval/gt_error/max                                            1:0.638075 2:0.638412 4:0.641129
+eval/gt_error/mean                                           1:0.0616357 2:0.0615959 4:0.0660785
+eval/gt_error/min                                            1:0.00265568 2:0.00258323 4:0.00268084
+eval/high_jerk_frame_percentage_mean                         1:1.47025 2:1.09056 4:0.465342
+eval/max_joint_error/max                                     1:2.3107 2:2.30896 4:2.32268
+eval/max_joint_error/mean                                    1:0.175167 2:0.175289 4:0.196475
+eval/max_joint_error/min                                     1:0.00585721 2:0.00568349 4:0.00607913
+eval/normalized_jerk_mean                                    1:97.6917 2:95.6585 4:79.451
+eval/num_evaluated                                           1:252 2:252 4:252
+eval/perf/family_hold                                        1:1 2:1 4:1
+eval/perf/hold                                               1:1 2:1 4:1
+eval/perf/holds_tracked_v2                                   1:423 2:423 4:420
+eval/perf/holds_tracked_v2_x0                                1:143 2:143 4:140
+eval/perf/score                                              1:0.989524 2:0.989524 4:0.985794
+eval/perf/substitution_holds_v2                              1:51 2:54 4:72
+eval/perf/substitution_holds_v2_x0                           1:7 2:9 4:24
+eval/perf/support_realised_v2                                1:0.964539 2:0.964539 4:0.964286
+eval/perf/support_realised_v2_x0                             1:0.965035 2:0.965035 4:0.964286
+eval/perf/support_violation                                  1:0 2:0 4:0
+eval/perf/support_violation_v2                               1:0 2:0 4:0
+eval/perf/track                                              1:0.979048 2:0.979048 4:0.971587
+eval/perf/track_fail_frac                                    1:0.0209524 2:0.0209524 4:0.0284127
+eval/perf/worst10_score                                      1:0.736 2:0.736 4:0.703667
+eval/perf_group/arm_balance_hold                             1:1 2:1 4:1
+eval/perf_group/arm_balance_score                            1:1 2:1 4:0.998889
+eval/perf_group/connective_family                            1:1 2:1 4:1
+eval/perf_group/connective_family_event                      1:1 2:1 4:1
+eval/perf_group/connective_hold                              1:1 2:1 4:1
+eval/perf_group/connective_score                             1:1 2:1 4:1
+eval/perf_group/edge_hold                                    1:1 2:1 4:1
+eval/perf_group/edge_score                                   1:0.968571 2:0.968571 4:0.957738
+eval/perf_group/inversion_hold                               1:1 2:1 4:1
+eval/perf_group/inversion_score                              1:1 2:1 4:1
+eval/perf_group/single_leg_hold                              1:1 2:1 4:1
+eval/perf_group/single_leg_score                             1:1 2:1 4:1
+eval/perf_group_v2/arm_balance_hold                          1:1 2:1 4:1
+eval/perf_group_v2/arm_balance_score                         1:1 2:1 4:0.998889
+eval/perf_group_v2/connective_family                         1:1 2:1 4:1
+eval/perf_group_v2/connective_hold                           1:1 2:1 4:1
+eval/perf_group_v2/connective_score                          1:1 2:1 4:1
+eval/perf_group_v2/edge_hold                                 1:1 2:1 4:1
+eval/perf_group_v2/edge_score                                1:0.968571 2:0.968571 4:0.957738
+eval/perf_group_v2/inversion_hold                            1:1 2:1 4:1
+eval/perf_group_v2/inversion_score                           1:1 2:1 4:1
+eval/perf_group_v2/single_leg_hold                           1:1 2:1 4:1
+eval/perf_group_v2/single_leg_score                          1:1 2:1 4:1
+eval/perf_v2/family_hold                                     1:1 2:1 4:1
+eval/perf_v2/family_hold_event                               1:1 2:1 4:1
+eval/perf_v2/hold                                            1:1 2:1 4:1
+eval/perf_v2/score                                           1:0.989524 2:0.989524 4:0.985794
+eval/perf_v2/worst10_score                                   1:0.736 2:0.736 4:0.703667
+eval/success_rate                                            1:0.964286 2:0.964286 4:0.952381
+info/episode_length                                          1:19.8333 2:50.7027 3:64.8421 4:82.6522
+info/episode_reward                                          1:20.1011 2:52.6579 3:64.4269 4:81.1821
+info/frames                                                  1:8192 2:16384 3:24576 4:32768
+info/gframes                                                 1:8.192e-06 2:1.6384e-05 3:2.4576e-05 4:3.2768e-05
+losses/actor_loss                                            1:0.620669 4:0.557058
+losses/critic_loss                                           1:0.025565 4:0.113483
+losses/disc_critic_loss                                      1:0.0497395 4:0.142293
+losses/discriminator_loss                                    1:0.635535 4:0.606654
+reward_norm/post_norm_reward                                 1:0.0438084 2:0.0405766 3:0.0390173 4:0.0408059
+reward_norm/pre_norm_reward                                  1:1.10101 2:1.01979 3:0.980601 4:1.02555
+reward_norm/var                                              1:631.631 2:631.637 3:631.64 4:631.641
+rewards/amp_rewards                                          1:0.0427339 2:0.0382146 3:0.0381653 4:0.038991
+rewards/amp_rewards_max                                      1:0.118364 2:0.114528 3:0.129941 4:0.10433
+rewards/amp_rewards_min                                      1:0.0115696 2:0.00907546 3:0.00966379 4:0.0108841
+rewards/amp_rewards_std                                      1:0.0138905 2:0.012295 3:0.0125296 4:0.0122145
+rewards/task_rewards                                         1:0.0438084 2:0.0405766 3:0.0390173 4:0.0408059
+rewards/unnormalized_amp_rewards                             1:0.533358 2:0.476964 3:0.476355 4:0.486665
+rewards/unnormalized_task_rewards                            1:1.10101 2:1.01979 3:0.980601 4:1.02555
+skipped_policy_update                                        2:1 3:1
+times/fps_last_epoch                                         1:209.675 2:307.501 3:1792.61 4:338.714
+times/fps_total                                              1:209.674 2:249.207 3:349.446 4:346.659
+times/last_epoch_seconds                                     1:39.07 2:26.6406 3:4.56988 4:24.1856
+times/training_hours                                         1:0.0108528 2:0.0182624 3:0.0195357 4:0.026257
+times/training_minutes                                       1:0.65117 2:1.09574 3:1.17214 4:1.57542

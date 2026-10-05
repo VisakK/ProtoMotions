@@ -1,0 +1,428 @@
+# TensorBoard scalars of the smoke run (results/zz_step3_smoke_smoke/lightning_logs/version_0), read on the CPU
+# by a scratch reader. TB step s = the epoch-(s-1) log; the step-1 eval keys are the loaded checkpoint's evaluation
+# after epoch 0. Epochs 1, 2, 4, 6, 8 skip the policy update (the epoch after an evaluation), so loss keys log on
+# steps 1, 4, 6, 8, 10 only.
+
+== losses (14 tags)
+  actor/bounds_loss                                            1:0 4:0 6:0 8:0 10:0
+  actor/entropy_loss                                           1:0 4:0 6:0 8:0 10:0
+  actor/extra_loss                                             1:0 4:0 6:0 8:0 10:0
+  actor/model_loss                                             1:0 4:0 6:0 8:0 10:0
+  actor/ppo_loss                                               1:0.18459 4:0.30361 6:0.44287 8:0.26472 10:0.055284
+  critic/model_loss                                            1:0 4:0 6:0 8:0 10:0
+  discriminator/class_loss                                     1:0.55413 4:0.543 6:0.53368 8:0.52901 10:0.52347
+  discriminator/grad_loss                                      1:0.070392 4:0.054441 6:0.058418 8:0.053309 10:0.050573
+  discriminator/l2_logit_loss                                  1:0.0014929 4:0.0014807 6:0.0014709 8:0.0014648 10:0.0014599
+  discriminator/l2_loss                                        1:0.0062101 4:0.0062079 6:0.0062075 8:0.0062077 10:0.0062086
+  losses/actor_loss                                            1:0.18459 4:0.30361 6:0.44287 8:0.26472 10:0.055284
+  losses/critic_loss                                           1:0.0075381 4:0.011587 6:0.067569 8:0.042412 10:0.099742
+  losses/disc_critic_loss                                      1:0.011726 4:0.018862 6:0.078609 8:0.042872 10:0.084777
+  losses/discriminator_loss                                    1:0.63223 4:0.60513 6:0.59978 8:0.58999 10:0.58171
+
+== amp (8 tags)
+  amp/parity_max_abs_amp_obs                                   1:7.7486e-07
+  amp/parity_share_ok_amp_obs                                  1:1
+  amp/reward_mean_human                                        1:0.59805 2:0.52126 3:0.53279 4:0.54778 5:0.50534 6:0.50298 7:0.47949 8:0.48422 9:0.47988 10:0.48711
+  amp/reward_mean_syn                                          1:0.62268 2:0.59414 3:0.58845 4:0.59883 5:0.55958 6:0.55754 7:0.5266 8:0.53177 9:0.50718 10:0.51957
+  amp/reward_mean_syn_weighted                                 1:0.31134 2:0.29707 3:0.29423 4:0.29942 5:0.27979 6:0.27877 7:0.2633 8:0.26589 9:0.25359 10:0.25979
+  amp/reward_w                                                 1:0.5 2:0.5 3:0.5 4:0.5 5:0.5 6:0.5 7:0.5 8:0.5 9:0.5 10:0.5
+  amp/reward_w_target                                          1:0.5 2:0.5 3:0.5 4:0.5 5:0.5 6:0.5 7:0.5 8:0.5 9:0.5 10:0.5
+  amp/syn_sample_share                                         1:0.066406 2:0.067871 3:0.071777 4:0.069092 5:0.066406 6:0.067261 7:0.073853 8:0.080444 9:0.078735 10:0.084717
+
+== amp rewards / discriminator (23 tags)
+  discriminator/agent_acc                                      1:0.77881 4:0.89355 6:0.93848 8:0.95117 10:0.96191
+  discriminator/agent_logit_mean                               1:-0.21601 4:-0.34909 6:-0.43518 8:-0.47435 10:-0.47969
+  discriminator/bad_grads_count                                1:0 4:0 6:0 8:0 10:0
+  discriminator/class_loss                                     1:0.55413 4:0.543 6:0.53368 8:0.52901 10:0.52347
+  discriminator/expert_logit_mean                              1:0.4429 4:0.36744 6:0.35374 8:0.32238 10:0.3367
+  discriminator/grad_loss                                      1:0.070392 4:0.054441 6:0.058418 8:0.053309 10:0.050573
+  discriminator/grad_norm_after_clip                           1:0.43559 4:0.3563 6:0.34303 8:0.36054 10:0.44789
+  discriminator/grad_norm_before_clip                          1:0.43559 4:0.3563 6:0.34303 8:0.36054 10:0.44789
+  discriminator/grad_penalty                                   1:0.0070392 4:0.0054441 6:0.0058418 8:0.0053309 10:0.0050573
+  discriminator/l2_logit_loss                                  1:0.0014929 4:0.0014807 6:0.0014709 8:0.0014648 10:0.0014599
+  discriminator/l2_logit_total                                 1:0.14929 4:0.14807 6:0.14709 8:0.14648 10:0.14599
+  discriminator/l2_loss                                        1:0.0062101 4:0.0062079 6:0.0062075 8:0.0062077 10:0.0062086
+  discriminator/l2_total                                       1:62.101 4:62.079 6:62.075 8:62.077 10:62.086
+  discriminator/neg_acc                                        1:0.77881 4:0.86377 6:0.91455 8:0.94336 10:0.95703
+  discriminator/negative_logit_mean                            1:-0.21597 4:-0.3475 6:-0.40575 8:-0.452 10:-0.465
+  discriminator/pos_acc                                        1:0.95264 4:0.84961 6:0.84082 8:0.83008 10:0.85742
+  discriminator/replay_acc                                     1:0.77881 4:0.83398 6:0.89062 8:0.93555 10:0.95215
+  discriminator/replay_logit_mean                              1:-0.21594 4:-0.34591 6:-0.37632 8:-0.42966 10:-0.45031
+  rewards/amp_rewards                                          1:0.046392 2:0.040545 3:0.041315 4:0.042513 5:0.039288 6:0.03909 7:0.037138 8:0.037388 9:0.03702 10:0.037484
+  rewards/amp_rewards_max                                      1:0.12705 2:0.096421 3:0.09473 4:0.102 5:0.095215 6:0.10169 7:0.092691 8:0.091279 9:0.11747 10:0.08977
+  rewards/amp_rewards_min                                      1:0.011688 2:0.013356 3:0.012651 4:0.011931 5:0.012368 6:0.0088552 7:0.011537 8:0.008707 9:0.0076289 10:0.0065162
+  rewards/amp_rewards_std                                      1:0.011827 2:0.0097727 3:0.010066 4:0.010358 5:0.0097363 6:0.010118 7:0.0096984 8:0.0099332 9:0.010293 10:0.0099774
+  rewards/unnormalized_amp_rewards                             1:0.57901 2:0.50605 3:0.51567 4:0.53062 5:0.49036 6:0.4879 7:0.46353 8:0.46666 9:0.46206 10:0.46785
+
+== anchoring counts (5 tags)
+  env/anchor/arrival_resets                                    1:6.75 2:0.53125 3:0.21875 4:0.25 5:0.21875 6:0.53125 7:0.6875 8:0.40625 9:0.40625 10:0.21875
+  env/anchor/departure_resets                                  1:2.875 2:0.25 3:0.25 4:0.125 5:0.15625 6:0.1875 7:0.125 8:0.0625 9:0.3125 10:0.375
+  env/anchor/resets                                            1:16.156 2:1.1875 3:0.84375 4:0.53125 5:0.53125 6:0.9375 7:1.1562 8:0.53125 9:1.0938 10:0.8125
+  env/anchor/t0_resets                                         1:1.125 2:0.09375 3:0.09375 4:0 5:0 6:0.0625 7:0.125 8:0 9:0.0625 10:0.03125
+  env/anchor/uniform_resets                                    1:5.4062 2:0.3125 3:0.28125 4:0.15625 5:0.15625 6:0.15625 7:0.21875 8:0.0625 9:0.3125 10:0.1875
+
+== curriculum (11 tags)
+  eval/curriculum/ess                                          1:153.89 2:149.94 4:129.2 6:119.19 8:114.91 10:114.77
+  eval/curriculum/group_prob/arm_balance                       1:0.15453 2:0.15392 4:0.14891 6:0.14687 8:0.146 10:0.14491
+  eval/curriculum/group_prob/connective                        1:0.39904 2:0.40141 4:0.4209 6:0.42883 8:0.43223 10:0.42942
+  eval/curriculum/group_prob/inversion                         1:0.22321 2:0.22233 4:0.21509 6:0.21215 8:0.21089 10:0.21032
+  eval/curriculum/group_prob/single_leg                        1:0.22321 2:0.22233 4:0.21509 6:0.21215 8:0.21089 10:0.21536
+  eval/curriculum/max_prob_x_n                                 1:4.1923 2:4.1127 4:5.3559 6:5.943 8:6.1944 10:6.0891
+  eval/curriculum/prior_share/arm_balance                      1:0.16071 2:0.16071 4:0.16071 6:0.16071 8:0.16071 10:0.16071
+  eval/curriculum/prior_share/connective                       1:0.375 2:0.375 4:0.375 6:0.375 8:0.375 10:0.375
+  eval/curriculum/prior_share/inversion                        1:0.23214 2:0.23214 4:0.23214 6:0.23214 8:0.23214 10:0.23214
+  eval/curriculum/prior_share/single_leg                       1:0.23214 2:0.23214 4:0.23214 6:0.23214 8:0.23214 10:0.23214
+  eval/curriculum/prioritized_top10_share                      1:0.24038 2:0.25822 4:0.4049 6:0.46456 8:0.49012 10:0.52209
+
+non-finite scalar values: 0 []
+
+== drawn shares (env/anchor/<kind>_resets / env/anchor/resets)
+  step 1: resets/step 16.16 | arrival 0.4178 departure 0.1779 t0 0.0696 uniform 0.3346 | sum 1.00000
+  step 2: resets/step 1.188 | arrival 0.4474 departure 0.2105 t0 0.0789 uniform 0.2632 | sum 1.00000
+  step 3: resets/step 0.8438 | arrival 0.2593 departure 0.2963 t0 0.1111 uniform 0.3333 | sum 1.00000
+  step 4: resets/step 0.5312 | arrival 0.4706 departure 0.2353 t0 0.0000 uniform 0.2941 | sum 1.00000
+  step 5: resets/step 0.5312 | arrival 0.4118 departure 0.2941 t0 0.0000 uniform 0.2941 | sum 1.00000
+  step 6: resets/step 0.9375 | arrival 0.5667 departure 0.2000 t0 0.0667 uniform 0.1667 | sum 1.00000
+  step 7: resets/step 1.156 | arrival 0.5946 departure 0.1081 t0 0.1081 uniform 0.1892 | sum 1.00000
+  step 8: resets/step 0.5312 | arrival 0.7647 departure 0.1176 t0 0.0000 uniform 0.1176 | sum 1.00000
+  step 9: resets/step 1.094 | arrival 0.3714 departure 0.2857 t0 0.0571 uniform 0.2857 | sum 1.00000
+  step 10: resets/step 0.8125 | arrival 0.2692 departure 0.4615 t0 0.0385 uniform 0.2308 | sum 1.00000
+  pooled over logged epochs (equal step counts per epoch): arrival 0.4297 departure 0.1984 t0 0.0670 uniform 0.3049
+
+== lineage identity against rewards/unnormalized_amp_rewards
+  step 1: share 0.0664 syn 0.62268 syn_w 0.31134 human 0.59805 -> 0.579010 vs 0.579010 (rel diff 1.23e-08)
+  step 2: share 0.0679 syn 0.59414 syn_w 0.29707 human 0.52126 -> 0.506046 vs 0.506046 (rel diff 1.95e-08)
+  step 3: share 0.0718 syn 0.58845 syn_w 0.29423 human 0.53279 -> 0.515668 vs 0.515668 (rel diff 4.31e-08)
+  step 4: share 0.0691 syn 0.59883 syn_w 0.29942 human 0.54778 -> 0.530622 vs 0.530622 (rel diff 1.71e-09)
+  step 5: share 0.0664 syn 0.55958 syn_w 0.27979 human 0.50534 -> 0.490365 vs 0.490365 (rel diff 5.56e-08)
+  step 6: share 0.0673 syn 0.55754 syn_w 0.27877 human 0.50298 -> 0.487900 vs 0.487900 (rel diff 4.92e-08)
+  step 7: share 0.0739 syn 0.52660 syn_w 0.26330 human 0.47949 -> 0.463526 vs 0.463526 (rel diff 1.19e-08)
+  step 8: share 0.0804 syn 0.53177 syn_w 0.26589 human 0.48422 -> 0.466656 vs 0.466656 (rel diff 4.31e-08)
+  step 9: share 0.0787 syn 0.50718 syn_w 0.25359 human 0.47988 -> 0.462061 vs 0.462061 (rel diff 1.44e-08)
+  step 10: share 0.0847 syn 0.51957 syn_w 0.25979 human 0.48711 -> 0.467850 vs 0.467850 (rel diff 2.71e-09)
+
+== evaluation scores and anchoring z-scores
+eval/curriculum/ess                           1:153.8862 2:149.9448 4:129.2045 6:119.1863 8:114.9061 10:114.7744
+eval/perf/score                               1:0.9998 2:0.9997 4:0.9991 6:0.9991 8:0.9991 10:0.9989
+eval/perf/substitution_holds_v2               1:0.0000 2:0.0000 4:0.0000 6:0.0000 8:0.0000 10:0.0000
+eval/perf_group/arm_balance_score             1:1.0000 2:1.0000 4:1.0000 6:1.0000 8:1.0000 10:1.0000
+eval/perf_group/connective_score              1:0.9994 2:0.9992 4:0.9976 6:0.9975 8:0.9975 10:0.9975
+eval/perf_group/inversion_score               1:1.0000 2:1.0000 4:1.0000 6:1.0000 8:1.0000 10:0.9999
+eval/perf_group/single_leg_score              1:1.0000 2:1.0000 4:1.0000 6:1.0000 8:1.0000 10:0.9995
+times/last_epoch_seconds                      1:35.9959 2:24.5483 3:4.3710 4:22.7418 5:4.1700 6:23.0684 7:4.5463 8:22.7825 9:4.5017 10:23.5397
+all 10 epochs: 761 resets
+  arrival     327  share 0.4297  expected 0.40  z +1.67
+  departure   151  share 0.1984  expected 0.20  z -0.11
+  t0           51  share 0.0670  expected 0.08  z -1.32
+  uniform     232  share 0.3049  expected 0.32  z -0.90
+epochs 1-9 (without the launch's two full resets): 244 resets
+  arrival     111  share 0.4549  expected 0.40  z +1.75
+  departure    59  share 0.2418  expected 0.20  z +1.63
+  t0           15  share 0.0615  expected 0.08  z -1.07
+  uniform      59  share 0.2418  expected 0.32  z -2.62
+
+== all scalar tags (name, number of logged steps)
+302 scalar tags
+   actor/approx_kl 5
+   actor/bad_grads_count 5
+   actor/bounds_loss 5
+   actor/clip_frac 5
+   actor/entropy_loss 5
+   actor/extra_loss 5
+   actor/grad_norm_after_clip 5
+   actor/grad_norm_before_clip 5
+   actor/model_loss 5
+   actor/ppo_loss 5
+   actor/ratio_max 5
+   actor/ratio_mean 5
+   actor/ratio_std 5
+   actor/update_skipped 5
+   adv_norm/clamp_frac 5
+   adv_norm/mean_ema 5
+   adv_norm/raw_max 5
+   adv_norm/raw_mean 5
+   adv_norm/raw_min 5
+   adv_norm/raw_std 5
+   adv_norm/std_ema 5
+   advantages/disc_mean 10
+   advantages/disc_raw_std 10
+   advantages/disc_std 10
+   advantages/style_raw_to_task_std 10
+   advantages/style_to_task_std 10
+   advantages/style_to_task_std_at_target 10
+   advantages/task_mean 10
+   advantages/task_std 10
+   amp/parity_max_abs_amp_obs 1
+   amp/parity_share_ok_amp_obs 1
+   amp/reward_mean_human 10
+   amp/reward_mean_syn 10
+   amp/reward_mean_syn_weighted 10
+   amp/reward_w 10
+   amp/reward_w_target 10
+   amp/syn_sample_share 10
+   amp_reward_norm/post_norm 10
+   amp_reward_norm/pre_norm 10
+   amp_reward_norm/var 10
+   critic/bad_grads_count 5
+   critic/error_mean 5
+   critic/error_std 5
+   critic/explained_variance 5
+   critic/grad_norm_after_clip 5
+   critic/grad_norm_before_clip 5
+   critic/model_loss 5
+   critic/return_mean 5
+   critic/return_std 5
+   critic/value_mean 5
+   critic/value_std 5
+   disc_critic/bad_grads_count 5
+   disc_critic/error_mean 5
+   disc_critic/error_std 5
+   disc_critic/explained_variance 5
+   disc_critic/grad_norm_after_clip 5
+   disc_critic/grad_norm_before_clip 5
+   disc_critic/return_mean 5
+   disc_critic/return_std 5
+   disc_critic/value_mean 5
+   disc_critic/value_std 5
+   discriminator/agent_acc 5
+   discriminator/agent_logit_mean 5
+   discriminator/bad_grads_count 5
+   discriminator/class_loss 5
+   discriminator/expert_logit_mean 5
+   discriminator/grad_loss 5
+   discriminator/grad_norm_after_clip 5
+   discriminator/grad_norm_before_clip 5
+   discriminator/grad_penalty 5
+   discriminator/l2_logit_loss 5
+   discriminator/l2_logit_total 5
+   discriminator/l2_loss 5
+   discriminator/l2_total 5
+   discriminator/neg_acc 5
+   discriminator/negative_logit_mean 5
+   discriminator/pos_acc 5
+   discriminator/replay_acc 5
+   discriminator/replay_logit_mean 5
+   env/amp_cumulative_bad_transitions_mean 10
+   env/amp_cumulative_bad_transitions_std 10
+   env/amp_discriminator_termination_mean 10
+   env/amp_discriminator_termination_std 10
+   env/anchor/arrival_resets 10
+   env/anchor/departure_resets 10
+   env/anchor/resets 10
+   env/anchor/t0_resets 10
+   env/anchor/uniform_resets 10
+   env/contact/active_body_fraction 3
+   env/contact/any_selected_contact_fraction 3
+   env/contact/force_component_clip_fraction 3
+   env/contact/force_magnitude_mean 3
+   env/contact/force_magnitude_p95 3
+   env/contact/force_magnitude_p99 3
+   env/contact/force_rate_component_clip_fraction 3
+   env/contact/force_rate_magnitude_p95 3
+   env/contact/force_rate_magnitude_p99 3
+   env/contact/friction_utilization_proxy_max 3
+   env/contact/friction_utilization_proxy_mean 3
+   env/contact/max_contact_age_s 3
+   env/contact/num_observation_bodies 3
+   env/raw_r/action_smoothness_mean 10
+   env/raw_r/action_smoothness_std 10
+   env/raw_r/diag_contact_goal_iou_mean 10
+   env/raw_r/diag_contact_goal_iou_std 10
+   env/raw_r/diag_goal_pose_error_mean 10
+   env/raw_r/diag_goal_pose_error_std 10
+   env/raw_r/diag_goal_pose_visible_mean 10
+   env/raw_r/diag_goal_pose_visible_std 10
+   env/raw_r/diag_known_free_load_n_mean 10
+   env/raw_r/diag_known_free_load_n_std 10
+   env/raw_r/diag_lean_error_m_mean 10
+   env/raw_r/diag_lean_error_m_std 10
+   env/raw_r/diag_lean_error_valid_mean 10
+   env/raw_r/diag_lean_error_valid_std 10
+   env/raw_r/diag_lean_gate_mean 10
+   env/raw_r/diag_lean_gate_std 10
+   env/raw_r/diag_lean_margin_m_mean 10
+   env/raw_r/diag_lean_margin_m_std 10
+   env/raw_r/diag_pair_load_n_mean 10
+   env/raw_r/diag_pair_load_n_std 10
+   env/raw_r/diag_pair_target_gate_mean 10
+   env/raw_r/diag_pair_target_gate_std 10
+   env/raw_r/diag_pair_target_met_mean 10
+   env/raw_r/diag_pair_target_met_std 10
+   env/raw_r/diag_required_support_gate_mean 10
+   env/raw_r/diag_required_support_gate_std 10
+   env/raw_r/diag_required_support_met_mean 10
+   env/raw_r/diag_required_support_met_std 10
+   env/raw_r/diag_slip_power_w_mean 10
+   env/raw_r/diag_slip_power_w_std 10
+   env/raw_r/diag_support_gate_mean 10
+   env/raw_r/diag_support_gate_std 10
+   env/raw_r/diag_swing_gate_mean 10
+   env/raw_r/diag_swing_gate_std 10
+   env/raw_r/diag_swing_load_n_mean 10
+   env/raw_r/diag_swing_load_n_std 10
+   env/raw_r/diag_unwanted_support_n_mean 10
+   env/raw_r/diag_unwanted_support_n_std 10
+   env/raw_r/gav_rew_mean 10
+   env/raw_r/gav_rew_std 10
+   env/raw_r/gr_rew_mean 10
+   env/raw_r/gr_rew_std 10
+   env/raw_r/gt_rew_mean 10
+   env/raw_r/gt_rew_std 10
+   env/raw_r/gv_rew_mean 10
+   env/raw_r/gv_rew_std 10
+   env/raw_r/lean_penalty_rew_mean 10
+   env/raw_r/lean_penalty_rew_std 10
+   env/raw_r/pow_rew_mean 10
+   env/raw_r/pow_rew_std 10
+   env/raw_r/rh_rew_mean 10
+   env/raw_r/rh_rew_std 10
+   env/raw_r/swing_penalty_rew_mean 10
+   env/raw_r/swing_penalty_rew_std 10
+   env/raw_r/unwanted_support_rew_mean 10
+   env/raw_r/unwanted_support_rew_std 10
+   env/scaled_r/action_smoothness_mean 10
+   env/scaled_r/action_smoothness_std 10
+   env/scaled_r/gav_rew_mean 10
+   env/scaled_r/gav_rew_std 10
+   env/scaled_r/gr_rew_mean 10
+   env/scaled_r/gr_rew_std 10
+   env/scaled_r/gt_rew_mean 10
+   env/scaled_r/gt_rew_std 10
+   env/scaled_r/gv_rew_mean 10
+   env/scaled_r/gv_rew_std 10
+   env/scaled_r/lean_penalty_rew_mean 10
+   env/scaled_r/lean_penalty_rew_std 10
+   env/scaled_r/pow_rew_mean 10
+   env/scaled_r/pow_rew_std 10
+   env/scaled_r/rh_rew_mean 10
+   env/scaled_r/rh_rew_std 10
+   env/scaled_r/swing_penalty_rew_mean 10
+   env/scaled_r/swing_penalty_rew_std 10
+   env/scaled_r/unwanted_support_rew_mean 10
+   env/scaled_r/unwanted_support_rew_std 10
+   env/terminate_mean 10
+   env/terminate_std 10
+   env/termination/tracking_error_mean 10
+   env/termination/tracking_error_std 10
+   env/total_env_reward_mean 10
+   env/total_env_reward_std 10
+   epoch 10
+   eval/action_delta_max_deg 6
+   eval/action_delta_max_rad 6
+   eval/action_delta_mean_deg 6
+   eval/action_delta_mean_rad 6
+   eval/action_rate_mean_rad_s 6
+   eval/curriculum/ess 6
+   eval/curriculum/group_prob/arm_balance 6
+   eval/curriculum/group_prob/connective 6
+   eval/curriculum/group_prob/inversion 6
+   eval/curriculum/group_prob/single_leg 6
+   eval/curriculum/max_prob_x_n 6
+   eval/curriculum/prior_share/arm_balance 6
+   eval/curriculum/prior_share/connective 6
+   eval/curriculum/prior_share/inversion 6
+   eval/curriculum/prior_share/single_leg 6
+   eval/curriculum/prioritized_top10_share 6
+   eval/drag/Bridge_Pose_or_Setu_Bandha_Sarvangasana_-a_J 6
+   eval/drag/Dolphin_Pose_or_Ardha_Pincha_Mayurasana_-a_J 6
+   eval/drag/Low_Lunge_pose_or_Anjaneyasana_-a_J 6
+   eval/drag/Peacock_Pose_or_Mayurasana_-a_J 6
+   eval/drag/Plow_Pose_or_Halasana_-a_J 6
+   eval/drag/Plow_Pose_or_Halasana_-b_J 6
+   eval/drag/Upward_Plank_Pose_or_Purvottanasana_-a_J 6
+   eval/drag/Warrior_II_Pose_or_Virabhadrasana_II_-a_J 6
+   eval/drag/all_J 6
+   eval/drag/all_s 6
+   eval/drag/all_swing_J 6
+   eval/drag/top_J 6
+   eval/drag/top_s 6
+   eval/drag/top_swing_J 6
+   eval/drag_group/arm_balance_J 6
+   eval/drag_group/arm_balance_s 6
+   eval/drag_group/arm_balance_swing_J 6
+   eval/drag_group/connective_J 6
+   eval/drag_group/connective_s 6
+   eval/drag_group/connective_swing_J 6
+   eval/drag_group/inversion_J 6
+   eval/drag_group/inversion_s 6
+   eval/drag_group/inversion_swing_J 6
+   eval/drag_group/single_leg_J 6
+   eval/drag_group/single_leg_s 6
+   eval/drag_group/single_leg_swing_J 6
+   eval/gr_error/max 6
+   eval/gr_error/mean 6
+   eval/gr_error/min 6
+   eval/gt_error/failure_rate 6
+   eval/gt_error/max 6
+   eval/gt_error/mean 6
+   eval/gt_error/min 6
+   eval/high_jerk_frame_percentage_mean 6
+   eval/max_joint_error/max 6
+   eval/max_joint_error/mean 6
+   eval/max_joint_error/min 6
+   eval/normalized_jerk_mean 6
+   eval/num_evaluated 6
+   eval/perf/family_hold 6
+   eval/perf/hold 6
+   eval/perf/holds_tracked_v2 6
+   eval/perf/holds_tracked_v2_x0 6
+   eval/perf/score 6
+   eval/perf/substitution_holds_v2 6
+   eval/perf/substitution_holds_v2_x0 6
+   eval/perf/support_realised_v2 6
+   eval/perf/support_realised_v2_x0 6
+   eval/perf/support_violation 6
+   eval/perf/support_violation_v2 6
+   eval/perf/track 6
+   eval/perf/track_fail_frac 6
+   eval/perf/worst10_score 6
+   eval/perf_group/arm_balance_hold 6
+   eval/perf_group/arm_balance_score 6
+   eval/perf_group/connective_family 6
+   eval/perf_group/connective_family_event 6
+   eval/perf_group/connective_hold 6
+   eval/perf_group/connective_score 6
+   eval/perf_group/inversion_hold 6
+   eval/perf_group/inversion_score 6
+   eval/perf_group/single_leg_hold 6
+   eval/perf_group/single_leg_score 6
+   eval/perf_group_v2/arm_balance_hold 6
+   eval/perf_group_v2/arm_balance_score 6
+   eval/perf_group_v2/connective_family 6
+   eval/perf_group_v2/connective_hold 6
+   eval/perf_group_v2/connective_score 6
+   eval/perf_group_v2/inversion_hold 6
+   eval/perf_group_v2/inversion_score 6
+   eval/perf_group_v2/single_leg_hold 6
+   eval/perf_group_v2/single_leg_score 6
+   eval/perf_v2/family_hold 6
+   eval/perf_v2/family_hold_event 6
+   eval/perf_v2/hold 6
+   eval/perf_v2/score 6
+   eval/perf_v2/worst10_score 6
+   eval/success_rate 6
+   info/episode_length 10
+   info/episode_reward 10
+   info/frames 10
+   info/gframes 10
+   losses/actor_loss 5
+   losses/critic_loss 5
+   losses/disc_critic_loss 5
+   losses/discriminator_loss 5
+   reward_norm/post_norm_reward 10
+   reward_norm/pre_norm_reward 10
+   reward_norm/var 10
+   rewards/amp_rewards 10
+   rewards/amp_rewards_max 10
+   rewards/amp_rewards_min 10
+   rewards/amp_rewards_std 10
+   rewards/task_rewards 10
+   rewards/unnormalized_amp_rewards 10
+   rewards/unnormalized_task_rewards 10
+   skipped_policy_update 5
+   times/fps_last_epoch 10
+   times/fps_total 10
+   times/last_epoch_seconds 10
+   times/training_hours 10
+   times/training_minutes 10
+

@@ -1,0 +1,25 @@
+
+| holds | n | tracked >= 90 % of window | commanded supports down >= 90 % | 6-body pose < 0.15 m | substitution |
+|---|---|---|---|---|---|
+| all | 382 | 365 (96%) | 346 (95%) | 318 (87%) | 8 (2%) |
+| single_leg | 54 | 54 (100%) | 51 (94%) | 53 (98%) | 3 (6%) |
+| inversion | 69 | 66 (96%) | 60 (91%) | 63 (95%) | 0 (0%) |
+| arm_balance | 60 | 60 (100%) | 54 (90%) | 54 (90%) | 4 (7%) |
+| connective | 87 | 81 (93%) | 77 (95%) | 76 (94%) | 1 (1%) |
+| role: family | 127 | 115 (91%) | 112 (97%) | 114 (99%) | 4 (3%) |
+| role: standing | 132 | 129 (98%) | 127 (98%) | 111 (86%) | 0 (0%) |
+| role: variant | 77 | 76 (99%) | 72 (95%) | 48 (63%) | 3 (4%) |
+| role: preparation | 30 | 29 (97%) | 19 (66%) | 29 (100%) | 0 (0%) |
+| role: undecided | 16 | 16 (100%) | 16 (100%) | 16 (100%) | 1 (6%) |
+
+substitutions (tracked holds):
+  Eagle_Pose_or_Garudasana_-a @7.2s [variant] ground L_FOOT: R_FOOT down 100% (reference 11.7 cm up)
+  Eagle_Pose_or_Garudasana_-a @11.7s [undecided] ground L_FOOT: R_FOOT down 100% (reference 10.3 cm up)
+  Eagle_Pose_or_Garudasana_-a @13.3s [family] ground L_FOOT: R_FOOT down 100% (reference 9.4 cm up)
+  Peacock_Pose_or_Mayurasana_-a @13.1s [variant] ground L_FOOT+L_HAND+R_HAND: HEAD down 100% (reference 12.0 cm up)
+  Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-b @17.7s [variant] ground L_HAND+R_HAND: L_FOOT down 51% (reference 35.8 cm up)
+  Shoulder-Pressing_Pose_or_Bhujapidasana_-a @9.1s [family] ground L_HAND+R_HAND: L_FOOT down 47% (reference 4.8 cm up)
+  Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a @14.5s [family] ground L_HAND+R_HAND: R_FOOT down 100% (reference 15.9 cm up)
+  Side_Plank_Pose_or_Vasisthasana_-a @14.7s [family] ground R_FOOT+R_HAND: L_FOOT down 100% (reference 7.2 cm up)
+
+84 rollouts -> expert_revist/graph_growth_2026_10_03/g3/data/library_g3_e1500.json

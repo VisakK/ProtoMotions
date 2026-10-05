@@ -1,0 +1,214 @@
+{
+ "schema_version": 1,
+ "generator": {
+  "module": "edge_synthesis.plant_mj",
+  "git_rev": "96638d57b3794d23748b062ad1a4a5cfec238402",
+  "sha256": "130241edd4d1b465fa6cee80b0ac4ec5798f1c3418f0c10eb649da78192544f7"
+ },
+ "inputs": {
+  "data/assets/smpl/smpl_yogi03596_v2_flat.xml": "968f7e94ffce0011d6c43a8fb30d55a21885ba733207dd07bc1aa3fd1a110e17"
+ },
+ "dt": 0.004166666666666667,
+ "substeps": 8,
+ "cone": "elliptic",
+ "mu_floor": 0.75,
+ "mu_body": 0.5,
+ "model": {
+  "nq": 76,
+  "nv": 75,
+  "nu": 69,
+  "mass_kg": 74.0,
+  "nsensordata": 66,
+  "nstate": 152
+ },
+ "fk": {
+  "frames": 100,
+  "clips": 46,
+  "mj_kinematics_vs_poselib_m": 1.8643040666788124e-08,
+  "numpy_fk_vs_poselib_m": 1.8643040708421488e-08,
+  "stored_float32_vs_poselib_m": 3.1655502780170153e-07,
+  "expmap_round_trip_rot": 1.1102230246251565e-15,
+  "pass": true
+ },
+ "throughput": {
+  "elliptic": {
+   "threads": 8,
+   "nbatch": 256,
+   "horizon_ctrl_steps": 30,
+   "noise_rad": 0.05,
+   "ms_per_batch": 1560.6,
+   "ctrl_steps_per_s": 4921,
+   "physics_steps_per_s": 39369,
+   "unstable_share": 0.0,
+   "finite": true,
+   "pass": false
+  },
+  "pyramidal": {
+   "threads": 8,
+   "nbatch": 256,
+   "horizon_ctrl_steps": 30,
+   "noise_rad": 0.05,
+   "ms_per_batch": 996.1,
+   "ctrl_steps_per_s": 7710,
+   "physics_steps_per_s": 61681,
+   "unstable_share": 0.0,
+   "finite": true,
+   "pass": false
+  }
+ },
+ "slide": {
+  "elliptic": {
+   "cone": "elliptic",
+   "displacement_m_after_s": 1.0,
+   "displacement": {
+    "L_Ankle_az0_t0.70": 0.0015,
+    "L_Ankle_az0_t0.74": 0.0017,
+    "L_Ankle_az0_t0.76": 0.0564,
+    "L_Ankle_az0_t0.80": 0.2688,
+    "L_Ankle_az45_t0.70": 0.0017,
+    "L_Ankle_az45_t0.74": 0.0019,
+    "L_Ankle_az45_t0.76": 0.1124,
+    "L_Ankle_az45_t0.80": 0.3223,
+    "L_Ankle_az90_t0.70": 0.0018,
+    "L_Ankle_az90_t0.74": 0.0019,
+    "L_Ankle_az90_t0.76": 0.0572,
+    "L_Ankle_az90_t0.80": 0.2691,
+    "L_Hand_az0_t0.70": 0.0015,
+    "L_Hand_az0_t0.74": 0.0017,
+    "L_Hand_az0_t0.76": 0.0565,
+    "L_Hand_az0_t0.80": 0.2683,
+    "L_Hand_az45_t0.70": 0.0015,
+    "L_Hand_az45_t0.74": 0.0017,
+    "L_Hand_az45_t0.76": 0.0802,
+    "L_Hand_az45_t0.80": 0.2969,
+    "L_Hand_az90_t0.70": 0.0015,
+    "L_Hand_az90_t0.74": 0.0016,
+    "L_Hand_az90_t0.76": 0.0565,
+    "L_Hand_az90_t0.80": 0.2686
+   },
+   "sticks_below_0.75": true,
+   "slides_above_0.75": true,
+   "pass": true
+  },
+  "pyramidal": {
+   "cone": "pyramidal",
+   "displacement_m_after_s": 1.0,
+   "displacement": {
+    "L_Ankle_az0_t0.70": 0.0074,
+    "L_Ankle_az0_t0.74": 0.0096,
+    "L_Ankle_az0_t0.76": 0.062,
+    "L_Ankle_az0_t0.80": 0.271,
+    "L_Ankle_az45_t0.70": 0.9557,
+    "L_Ankle_az45_t0.74": 1.1589,
+    "L_Ankle_az45_t0.76": 1.258,
+    "L_Ankle_az45_t0.80": 1.4462,
+    "L_Ankle_az90_t0.70": 0.0086,
+    "L_Ankle_az90_t0.74": 0.0111,
+    "L_Ankle_az90_t0.76": 0.0637,
+    "L_Ankle_az90_t0.80": 0.2717,
+    "L_Hand_az0_t0.70": 0.0071,
+    "L_Hand_az0_t0.74": 0.0096,
+    "L_Hand_az0_t0.76": 0.0618,
+    "L_Hand_az0_t0.80": 0.2708,
+    "L_Hand_az45_t0.70": 0.9565,
+    "L_Hand_az45_t0.74": 1.1571,
+    "L_Hand_az45_t0.76": 1.2559,
+    "L_Hand_az45_t0.80": 1.4473,
+    "L_Hand_az90_t0.70": 0.0071,
+    "L_Hand_az90_t0.74": 0.0095,
+    "L_Hand_az90_t0.76": 0.0618,
+    "L_Hand_az90_t0.80": 0.2706
+   },
+   "sticks_below_0.75": false,
+   "slides_above_0.75": true,
+   "pass": false
+  }
+ },
+ "mppi_hold": {
+  "crow": {
+   "held": 3,
+   "of": 3,
+   "runs": [
+    {
+     "seed": 0,
+     "held": true,
+     "seconds": 5.0,
+     "wall_s": 91.6,
+     "plan_ms_per_0.1s": 1831.0,
+     "root_z_drop_max_m": 0.0205,
+     "tilt_max_deg": 1.85,
+     "watch_min_z": 0.2719
+    },
+    {
+     "seed": 1,
+     "held": true,
+     "seconds": 5.0,
+     "wall_s": 82.1,
+     "plan_ms_per_0.1s": 1642.0,
+     "root_z_drop_max_m": 0.0207,
+     "tilt_max_deg": 2.06,
+     "watch_min_z": 0.2709
+    },
+    {
+     "seed": 2,
+     "held": true,
+     "seconds": 5.0,
+     "wall_s": 88.9,
+     "plan_ms_per_0.1s": 1778.0,
+     "root_z_drop_max_m": 0.0227,
+     "tilt_max_deg": 2.11,
+     "watch_min_z": 0.2718
+    }
+   ]
+  },
+  "handstand": {
+   "held": 3,
+   "of": 3,
+   "runs": [
+    {
+     "seed": 0,
+     "held": true,
+     "seconds": 5.0,
+     "wall_s": 60.5,
+     "plan_ms_per_0.1s": 1208.0,
+     "root_z_drop_max_m": 0.0667,
+     "tilt_max_deg": 17.35,
+     "watch_min_z": 0.2407
+    },
+    {
+     "seed": 1,
+     "held": true,
+     "seconds": 5.0,
+     "wall_s": 58.3,
+     "plan_ms_per_0.1s": 1166.0,
+     "root_z_drop_max_m": 0.0944,
+     "tilt_max_deg": 22.1,
+     "watch_min_z": 0.232
+    },
+    {
+     "seed": 2,
+     "held": true,
+     "seconds": 5.0,
+     "wall_s": 57.4,
+     "plan_ms_per_0.1s": 1147.0,
+     "root_z_drop_max_m": 0.0157,
+     "tilt_max_deg": 21.19,
+     "watch_min_z": 0.2583
+    }
+   ]
+  },
+  "config": {
+   "horizon": 24,
+   "knots": 4,
+   "samples": 192,
+   "iters": 2,
+   "lam": 0.05,
+   "noise": 0.05,
+   "replan": 3,
+   "interp": "linear",
+   "seed": 0,
+   "noise_scale": null
+  },
+  "pass": true
+ }
+}

@@ -1,0 +1,7434 @@
+{
+ "g3": {
+  "500": {
+   "fork_Warrior_II_Pose_or_Virabhadrasana_II": {
+    "replicas": 186,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 1.0,
+    "goals": [
+     {
+      "goal": "Warrior_II_Pose_or_Virab",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.075,
+      "best_err": 0.073,
+      "held_s": 7.867,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.018,
+      "best_err": 0.016,
+      "held_s": 2.8,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "fork_Tree_Pose_or_Vrksasana": {
+    "replicas": 186,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 0.102,
+    "goals": [
+     {
+      "goal": "Tree_Pose_or_Vrksasana",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.038,
+      "best_err": 0.033,
+      "held_s": 7.2,
+      "hold_iou": 0.195
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.023,
+      "best_err": 0.022,
+      "held_s": 6.467,
+      "hold_iou": 0.5
+     }
+    ]
+   },
+   "fork_Crane_Crow_Pose_or_Bakasana": {
+    "replicas": 186,
+    "hold_success_rate": 0.22,
+    "reached_exact_rate": 0.21,
+    "goals": [
+     {
+      "goal": "Crane_Crow_Pose_or_Bakas",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.062,
+      "best_err": 0.059,
+      "held_s": 8.933,
+      "hold_iou": 0.193
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 0.22,
+      "reach_rate": 0.796,
+      "hold_err": 0.417,
+      "best_err": 0.127,
+      "held_s": 1.233,
+      "hold_iou": 0.516
+     }
+    ]
+   },
+   "fork_Handstand_pose_or_Adho_Mukha_Vrksasana": {
+    "replicas": 186,
+    "hold_success_rate": 0.0,
+    "reached_exact_rate": 0.0,
+    "goals": [
+     {
+      "goal": "Handstand_pose_or_Adho_M",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.757,
+      "best_err": 0.588,
+      "held_s": 0.0,
+      "hold_iou": 0.353
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.57,
+      "best_err": 0.495,
+      "held_s": 0.0,
+      "hold_iou": 0.211
+     }
+    ]
+   },
+   "fork_Feathered_Peacock_Pose_or_Pincha_Mayuras": {
+    "replicas": 186,
+    "hold_success_rate": 0.0,
+    "reached_exact_rate": 0.0,
+    "goals": [
+     {
+      "goal": "Feathered_Peacock_Pose_o",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.732,
+      "best_err": 0.698,
+      "held_s": 0.0,
+      "hold_iou": 0.237
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.606,
+      "best_err": 0.473,
+      "held_s": 0.0,
+      "hold_iou": 0.25
+     }
+    ]
+   },
+   "fork_Supported_Headstand_pose_or_Salamba_Sirs": {
+    "replicas": 186,
+    "hold_success_rate": 0.0,
+    "reached_exact_rate": 0.0,
+    "goals": [
+     {
+      "goal": "Supported_Headstand_pose",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.679,
+      "best_err": 0.47,
+      "held_s": 0.0,
+      "hold_iou": 0.0
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.672,
+      "best_err": 0.655,
+      "held_s": 0.0,
+      "hold_iou": 0.125
+     }
+    ]
+   },
+   "fork_Side_Plank_Pose_or_Vasisthasana": {
+    "replicas": 186,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 1.0,
+    "goals": [
+     {
+      "goal": "Side_Plank_Pose_or_Vasis",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.043,
+      "best_err": 0.04,
+      "held_s": 6.6,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.042,
+      "best_err": 0.04,
+      "held_s": 2.8,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "fork_Downward_Facing_Dog_pose_or_Adho_Mukha_S": {
+    "replicas": 186,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 1.0,
+    "goals": [
+     {
+      "goal": "Downward-Facing_Dog_pose",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.103,
+      "best_err": 0.099,
+      "held_s": 4.067,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.029,
+      "best_err": 0.028,
+      "held_s": 3.267,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "dwell_Warrior_II_Pose_or_Virabhadrasana_II_3s": {
+    "replicas": 186,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 1.0,
+    "goals": [
+     {
+      "goal": "Warrior_II_Pose_or_Virab",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.043,
+      "best_err": 0.035,
+      "held_s": 3.467,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.018,
+      "best_err": 0.017,
+      "held_s": 2.867,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "dwell_Warrior_II_Pose_or_Virabhadrasana_II_10s": {
+    "replicas": 186,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 1.0,
+    "goals": [
+     {
+      "goal": "Warrior_II_Pose_or_Virab",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.041,
+      "best_err": 0.033,
+      "held_s": 10.467,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.018,
+      "best_err": 0.017,
+      "held_s": 2.867,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "edge_B1": {
+    "replicas": 186,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 1.0,
+    "goals": [
+     {
+      "goal": "Crane_Crow_Pose_or_Bakas",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.065,
+      "best_err": 0.047,
+      "held_s": 3.467,
+      "hold_iou": 0.2
+     },
+     {
+      "goal": "Plank_Pose_or_Kumbhakasa",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.052,
+      "best_err": 0.052,
+      "held_s": 4.2,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "edge_E1": {
+    "replicas": 186,
+    "hold_success_rate": 0.0,
+    "reached_exact_rate": 0.0,
+    "goals": [
+     {
+      "goal": "Crane_Crow_Pose_or_Bakas",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.062,
+      "best_err": 0.04,
+      "held_s": 3.467,
+      "hold_iou": 0.2
+     },
+     {
+      "goal": "Handstand_pose_or_Adho_M",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.508,
+      "best_err": 0.503,
+      "held_s": 0.0,
+      "hold_iou": 0.2
+     }
+    ]
+   },
+   "edge_E2": {
+    "replicas": 186,
+    "hold_success_rate": 0.0,
+    "reached_exact_rate": 1.0,
+    "goals": [
+     {
+      "goal": "Crane_Crow_Pose_or_Bakas",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.071,
+      "best_err": 0.043,
+      "held_s": 3.467,
+      "hold_iou": 0.231
+     },
+     {
+      "goal": "Four-Limbed_Staff_Pose_o",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.418,
+      "best_err": 0.408,
+      "held_s": 0.0,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "edge_E3": {
+    "replicas": 186,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 0.0,
+    "goals": [
+     {
+      "goal": "Handstand_pose_or_Adho_M",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.049,
+      "best_err": 0.041,
+      "held_s": 3.467,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "Crane_Crow_Pose_or_Bakas",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.093,
+      "best_err": 0.078,
+      "held_s": 5.4,
+      "hold_iou": 0.226
+     }
+    ]
+   },
+   "edge_E5": {
+    "replicas": 186,
+    "hold_success_rate": 0.0,
+    "reached_exact_rate": 1.0,
+    "goals": [
+     {
+      "goal": "Handstand_pose_or_Adho_M",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.052,
+      "best_err": 0.042,
+      "held_s": 3.467,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "Four-Limbed_Staff_Pose_o",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.483,
+      "best_err": 0.34,
+      "held_s": 0.0,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "nohijack_B1": {
+    "replicas": 186,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 1.0,
+    "goals": [
+     {
+      "goal": "Crane_Crow_Pose_or_Bakas",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.058,
+      "best_err": 0.05,
+      "held_s": 3.467,
+      "hold_iou": 0.199
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.036,
+      "best_err": 0.031,
+      "held_s": 4.0,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "nohijack_E1": {
+    "replicas": 186,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 1.0,
+    "goals": [
+     {
+      "goal": "Crane_Crow_Pose_or_Bakas",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.058,
+      "best_err": 0.049,
+      "held_s": 3.467,
+      "hold_iou": 0.2
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.036,
+      "best_err": 0.031,
+      "held_s": 4.0,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "nohijack_E2": {
+    "replicas": 186,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 1.0,
+    "goals": [
+     {
+      "goal": "Crane_Crow_Pose_or_Bakas",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.058,
+      "best_err": 0.05,
+      "held_s": 3.467,
+      "hold_iou": 0.2
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.036,
+      "best_err": 0.031,
+      "held_s": 4.0,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "nohijack_E3": {
+    "replicas": 186,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 1.0,
+    "goals": [
+     {
+      "goal": "Handstand_pose_or_Adho_M",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.035,
+      "best_err": 0.029,
+      "held_s": 3.467,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "Handstand_pose_or_Adho_M",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.101,
+      "best_err": 0.094,
+      "held_s": 4.6,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "nohijack_E5": {
+    "replicas": 186,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 1.0,
+    "goals": [
+     {
+      "goal": "Handstand_pose_or_Adho_M",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.035,
+      "best_err": 0.029,
+      "held_s": 3.467,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "Handstand_pose_or_Adho_M",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.101,
+      "best_err": 0.094,
+      "held_s": 4.6,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "hold_Crane_Crow_Pos_LH_RH": {
+    "replicas": 186,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 0.0,
+    "goals": [
+     {
+      "goal": "hold",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.045,
+      "best_err": 0.037,
+      "held_s": 8.467,
+      "hold_iou": 0.238
+     }
+    ]
+   },
+   "hold_standing_LF_RF__upri": {
+    "replicas": 186,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 1.0,
+    "goals": [
+     {
+      "goal": "hold",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.022,
+      "best_err": 0.018,
+      "held_s": 8.467,
+      "hold_iou": 1.0
+     }
+    ]
+   }
+  },
+  "1000": {
+   "fork_Warrior_II_Pose_or_Virabhadrasana_II": {
+    "replicas": 186,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 1.0,
+    "goals": [
+     {
+      "goal": "Warrior_II_Pose_or_Virab",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.076,
+      "best_err": 0.075,
+      "held_s": 7.933,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.018,
+      "best_err": 0.017,
+      "held_s": 3.267,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "fork_Tree_Pose_or_Vrksasana": {
+    "replicas": 186,
+    "hold_success_rate": 0.0,
+    "reached_exact_rate": 0.0,
+    "goals": [
+     {
+      "goal": "Tree_Pose_or_Vrksasana",
+      "hold_rate": 0.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.545,
+      "best_err": 0.059,
+      "held_s": 3.2,
+      "hold_iou": 0.209
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.796,
+      "best_err": 0.705,
+      "held_s": 0.0,
+      "hold_iou": 0.5
+     }
+    ]
+   },
+   "fork_Crane_Crow_Pose_or_Bakasana": {
+    "replicas": 186,
+    "hold_success_rate": 0.978,
+    "reached_exact_rate": 0.914,
+    "goals": [
+     {
+      "goal": "Crane_Crow_Pose_or_Bakas",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.077,
+      "best_err": 0.067,
+      "held_s": 7.533,
+      "hold_iou": 0.2
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 0.978,
+      "reach_rate": 0.995,
+      "hold_err": 0.034,
+      "best_err": 0.027,
+      "held_s": 2.6,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "fork_Handstand_pose_or_Adho_Mukha_Vrksasana": {
+    "replicas": 186,
+    "hold_success_rate": 0.065,
+    "reached_exact_rate": 0.065,
+    "goals": [
+     {
+      "goal": "Handstand_pose_or_Adho_M",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.729,
+      "best_err": 0.625,
+      "held_s": 0.0,
+      "hold_iou": 0.5
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 0.065,
+      "reach_rate": 0.102,
+      "hold_err": 0.767,
+      "best_err": 0.672,
+      "held_s": 0.0,
+      "hold_iou": 0.0
+     }
+    ]
+   },
+   "fork_Feathered_Peacock_Pose_or_Pincha_Mayuras": {
+    "replicas": 186,
+    "hold_success_rate": 0.0,
+    "reached_exact_rate": 0.0,
+    "goals": [
+     {
+      "goal": "Feathered_Peacock_Pose_o",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.681,
+      "best_err": 0.524,
+      "held_s": 0.0,
+      "hold_iou": 0.321
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.624,
+      "best_err": 0.59,
+      "held_s": 0.0,
+      "hold_iou": 0.017
+     }
+    ]
+   },
+   "fork_Supported_Headstand_pose_or_Salamba_Sirs": {
+    "replicas": 186,
+    "hold_success_rate": 0.0,
+    "reached_exact_rate": 0.0,
+    "goals": [
+     {
+      "goal": "Supported_Headstand_pose",
+      "hold_rate": 0.468,
+      "reach_rate": 0.489,
+      "hold_err": 0.649,
+      "best_err": 0.163,
+      "held_s": 0.0,
+      "hold_iou": 0.164
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.592,
+      "best_err": 0.534,
+      "held_s": 0.0,
+      "hold_iou": 0.0
+     }
+    ]
+   },
+   "fork_Side_Plank_Pose_or_Vasisthasana": {
+    "replicas": 186,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 1.0,
+    "goals": [
+     {
+      "goal": "Side_Plank_Pose_or_Vasis",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.067,
+      "best_err": 0.066,
+      "held_s": 6.2,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.037,
+      "best_err": 0.033,
+      "held_s": 2.867,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "fork_Downward_Facing_Dog_pose_or_Adho_Mukha_S": {
+    "replicas": 186,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 1.0,
+    "goals": [
+     {
+      "goal": "Downward-Facing_Dog_pose",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.104,
+      "best_err": 0.101,
+      "held_s": 4.333,
+      "hold_iou": 0.667
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.027,
+      "best_err": 0.025,
+      "held_s": 3.0,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "dwell_Warrior_II_Pose_or_Virabhadrasana_II_3s": {
+    "replicas": 186,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 0.0,
+    "goals": [
+     {
+      "goal": "Warrior_II_Pose_or_Virab",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.026,
+      "best_err": 0.024,
+      "held_s": 3.467,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.014,
+      "best_err": 0.013,
+      "held_s": 2.933,
+      "hold_iou": 0.5
+     }
+    ]
+   },
+   "dwell_Warrior_II_Pose_or_Virabhadrasana_II_10s": {
+    "replicas": 186,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 0.0,
+    "goals": [
+     {
+      "goal": "Warrior_II_Pose_or_Virab",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.024,
+      "best_err": 0.021,
+      "held_s": 10.467,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.014,
+      "best_err": 0.013,
+      "held_s": 2.933,
+      "hold_iou": 0.5
+     }
+    ]
+   },
+   "edge_B1": {
+    "replicas": 186,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 1.0,
+    "goals": [
+     {
+      "goal": "Crane_Crow_Pose_or_Bakas",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.079,
+      "best_err": 0.056,
+      "held_s": 3.467,
+      "hold_iou": 0.25
+     },
+     {
+      "goal": "Plank_Pose_or_Kumbhakasa",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.089,
+      "best_err": 0.078,
+      "held_s": 4.2,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "edge_E1": {
+    "replicas": 186,
+    "hold_success_rate": 0.0,
+    "reached_exact_rate": 0.296,
+    "goals": [
+     {
+      "goal": "Crane_Crow_Pose_or_Bakas",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.064,
+      "best_err": 0.041,
+      "held_s": 3.467,
+      "hold_iou": 0.226
+     },
+     {
+      "goal": "Handstand_pose_or_Adho_M",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.544,
+      "best_err": 0.435,
+      "held_s": 0.0,
+      "hold_iou": 0.466
+     }
+    ]
+   },
+   "edge_E2": {
+    "replicas": 186,
+    "hold_success_rate": 0.0,
+    "reached_exact_rate": 1.0,
+    "goals": [
+     {
+      "goal": "Crane_Crow_Pose_or_Bakas",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.081,
+      "best_err": 0.056,
+      "held_s": 3.467,
+      "hold_iou": 0.25
+     },
+     {
+      "goal": "Four-Limbed_Staff_Pose_o",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.422,
+      "best_err": 0.403,
+      "held_s": 0.0,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "edge_E3": {
+    "replicas": 186,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 0.0,
+    "goals": [
+     {
+      "goal": "Handstand_pose_or_Adho_M",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.043,
+      "best_err": 0.03,
+      "held_s": 3.467,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "Crane_Crow_Pose_or_Bakas",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.052,
+      "best_err": 0.049,
+      "held_s": 5.267,
+      "hold_iou": 0.217
+     }
+    ]
+   },
+   "edge_E5": {
+    "replicas": 186,
+    "hold_success_rate": 0.0,
+    "reached_exact_rate": 1.0,
+    "goals": [
+     {
+      "goal": "Handstand_pose_or_Adho_M",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.042,
+      "best_err": 0.033,
+      "held_s": 3.467,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "Four-Limbed_Staff_Pose_o",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.433,
+      "best_err": 0.3,
+      "held_s": 0.0,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "nohijack_B1": {
+    "replicas": 186,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 0.903,
+    "goals": [
+     {
+      "goal": "Crane_Crow_Pose_or_Bakas",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.07,
+      "best_err": 0.057,
+      "held_s": 3.467,
+      "hold_iou": 0.25
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.02,
+      "best_err": 0.017,
+      "held_s": 3.867,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "nohijack_E1": {
+    "replicas": 186,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 0.898,
+    "goals": [
+     {
+      "goal": "Crane_Crow_Pose_or_Bakas",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.07,
+      "best_err": 0.056,
+      "held_s": 3.467,
+      "hold_iou": 0.25
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.019,
+      "best_err": 0.017,
+      "held_s": 3.867,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "nohijack_E2": {
+    "replicas": 186,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 0.909,
+    "goals": [
+     {
+      "goal": "Crane_Crow_Pose_or_Bakas",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.07,
+      "best_err": 0.056,
+      "held_s": 3.467,
+      "hold_iou": 0.25
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.019,
+      "best_err": 0.017,
+      "held_s": 3.867,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "nohijack_E3": {
+    "replicas": 186,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 1.0,
+    "goals": [
+     {
+      "goal": "Handstand_pose_or_Adho_M",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.037,
+      "best_err": 0.029,
+      "held_s": 3.467,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "Handstand_pose_or_Adho_M",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.096,
+      "best_err": 0.089,
+      "held_s": 4.533,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "nohijack_E5": {
+    "replicas": 186,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 1.0,
+    "goals": [
+     {
+      "goal": "Handstand_pose_or_Adho_M",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.037,
+      "best_err": 0.029,
+      "held_s": 3.467,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "Handstand_pose_or_Adho_M",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.096,
+      "best_err": 0.089,
+      "held_s": 4.533,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "hold_Crane_Crow_Pos_LH_RH": {
+    "replicas": 186,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 0.0,
+    "goals": [
+     {
+      "goal": "hold",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.057,
+      "best_err": 0.046,
+      "held_s": 8.467,
+      "hold_iou": 0.333
+     }
+    ]
+   },
+   "hold_standing_LF_RF__upri": {
+    "replicas": 186,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 0.0,
+    "goals": [
+     {
+      "goal": "hold",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.025,
+      "best_err": 0.017,
+      "held_s": 8.467,
+      "hold_iou": 0.5
+     }
+    ]
+   }
+  },
+  "1500": {
+   "fork_Warrior_II_Pose_or_Virabhadrasana_II": {
+    "replicas": 186,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 1.0,
+    "goals": [
+     {
+      "goal": "Warrior_II_Pose_or_Virab",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.08,
+      "best_err": 0.08,
+      "held_s": 7.867,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.025,
+      "best_err": 0.023,
+      "held_s": 2.8,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "fork_Tree_Pose_or_Vrksasana": {
+    "replicas": 186,
+    "hold_success_rate": 0.0,
+    "reached_exact_rate": 0.0,
+    "goals": [
+     {
+      "goal": "Tree_Pose_or_Vrksasana",
+      "hold_rate": 0.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.522,
+      "best_err": 0.09,
+      "held_s": 2.267,
+      "hold_iou": 0.091
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.814,
+      "best_err": 0.63,
+      "held_s": 0.0,
+      "hold_iou": 0.342
+     }
+    ]
+   },
+   "fork_Crane_Crow_Pose_or_Bakasana": {
+    "replicas": 186,
+    "hold_success_rate": 0.0,
+    "reached_exact_rate": 0.0,
+    "goals": [
+     {
+      "goal": "Crane_Crow_Pose_or_Bakas",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.067,
+      "best_err": 0.062,
+      "held_s": 9.267,
+      "hold_iou": 0.2
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.51,
+      "best_err": 0.198,
+      "held_s": 0.0,
+      "hold_iou": 0.233
+     }
+    ]
+   },
+   "fork_Handstand_pose_or_Adho_Mukha_Vrksasana": {
+    "replicas": 186,
+    "hold_success_rate": 0.0,
+    "reached_exact_rate": 0.0,
+    "goals": [
+     {
+      "goal": "Handstand_pose_or_Adho_M",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.769,
+      "best_err": 0.693,
+      "held_s": 0.0,
+      "hold_iou": 0.393
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.663,
+      "best_err": 0.585,
+      "held_s": 0.0,
+      "hold_iou": 0.0
+     }
+    ]
+   },
+   "fork_Feathered_Peacock_Pose_or_Pincha_Mayuras": {
+    "replicas": 186,
+    "hold_success_rate": 0.0,
+    "reached_exact_rate": 0.0,
+    "goals": [
+     {
+      "goal": "Feathered_Peacock_Pose_o",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.748,
+      "best_err": 0.597,
+      "held_s": 0.0,
+      "hold_iou": 0.281
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.648,
+      "best_err": 0.588,
+      "held_s": 0.0,
+      "hold_iou": 0.0
+     }
+    ]
+   },
+   "fork_Supported_Headstand_pose_or_Salamba_Sirs": {
+    "replicas": 186,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 1.0,
+    "goals": [
+     {
+      "goal": "Supported_Headstand_pose",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.654,
+      "best_err": 0.642,
+      "held_s": 0.0,
+      "hold_iou": 0.2
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.031,
+      "best_err": 0.027,
+      "held_s": 4.2,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "fork_Side_Plank_Pose_or_Vasisthasana": {
+    "replicas": 186,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 0.962,
+    "goals": [
+     {
+      "goal": "Side_Plank_Pose_or_Vasis",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.055,
+      "best_err": 0.054,
+      "held_s": 5.867,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.041,
+      "best_err": 0.037,
+      "held_s": 2.733,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "fork_Downward_Facing_Dog_pose_or_Adho_Mukha_S": {
+    "replicas": 186,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 1.0,
+    "goals": [
+     {
+      "goal": "Downward-Facing_Dog_pose",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.138,
+      "best_err": 0.132,
+      "held_s": 3.6,
+      "hold_iou": 0.667
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.028,
+      "best_err": 0.022,
+      "held_s": 3.067,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "dwell_Warrior_II_Pose_or_Virabhadrasana_II_3s": {
+    "replicas": 186,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 1.0,
+    "goals": [
+     {
+      "goal": "Warrior_II_Pose_or_Virab",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.04,
+      "best_err": 0.032,
+      "held_s": 3.467,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.024,
+      "best_err": 0.022,
+      "held_s": 2.8,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "dwell_Warrior_II_Pose_or_Virabhadrasana_II_10s": {
+    "replicas": 186,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 1.0,
+    "goals": [
+     {
+      "goal": "Warrior_II_Pose_or_Virab",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.04,
+      "best_err": 0.029,
+      "held_s": 10.467,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.023,
+      "best_err": 0.022,
+      "held_s": 2.8,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "edge_B1": {
+    "replicas": 186,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 1.0,
+    "goals": [
+     {
+      "goal": "Crane_Crow_Pose_or_Bakas",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.075,
+      "best_err": 0.05,
+      "held_s": 3.467,
+      "hold_iou": 0.237
+     },
+     {
+      "goal": "Plank_Pose_or_Kumbhakasa",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.064,
+      "best_err": 0.058,
+      "held_s": 4.4,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "edge_E1": {
+    "replicas": 186,
+    "hold_success_rate": 0.0,
+    "reached_exact_rate": 0.0,
+    "goals": [
+     {
+      "goal": "Crane_Crow_Pose_or_Bakas",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.064,
+      "best_err": 0.041,
+      "held_s": 3.467,
+      "hold_iou": 0.25
+     },
+     {
+      "goal": "Handstand_pose_or_Adho_M",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.567,
+      "best_err": 0.513,
+      "held_s": 0.0,
+      "hold_iou": 0.331
+     }
+    ]
+   },
+   "edge_E2": {
+    "replicas": 186,
+    "hold_success_rate": 0.0,
+    "reached_exact_rate": 1.0,
+    "goals": [
+     {
+      "goal": "Crane_Crow_Pose_or_Bakas",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.079,
+      "best_err": 0.048,
+      "held_s": 3.467,
+      "hold_iou": 0.25
+     },
+     {
+      "goal": "Four-Limbed_Staff_Pose_o",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.451,
+      "best_err": 0.438,
+      "held_s": 0.0,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "edge_E3": {
+    "replicas": 186,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 0.0,
+    "goals": [
+     {
+      "goal": "Handstand_pose_or_Adho_M",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.047,
+      "best_err": 0.034,
+      "held_s": 3.467,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "Crane_Crow_Pose_or_Bakas",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.055,
+      "best_err": 0.054,
+      "held_s": 5.133,
+      "hold_iou": 0.25
+     }
+    ]
+   },
+   "edge_E5": {
+    "replicas": 186,
+    "hold_success_rate": 0.0,
+    "reached_exact_rate": 1.0,
+    "goals": [
+     {
+      "goal": "Handstand_pose_or_Adho_M",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.041,
+      "best_err": 0.035,
+      "held_s": 3.467,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "Four-Limbed_Staff_Pose_o",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.441,
+      "best_err": 0.299,
+      "held_s": 0.0,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "nohijack_B1": {
+    "replicas": 186,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 0.398,
+    "goals": [
+     {
+      "goal": "Crane_Crow_Pose_or_Bakas",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.071,
+      "best_err": 0.057,
+      "held_s": 3.467,
+      "hold_iou": 0.217
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.025,
+      "best_err": 0.024,
+      "held_s": 3.8,
+      "hold_iou": 0.567
+     }
+    ]
+   },
+   "nohijack_E1": {
+    "replicas": 186,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 0.468,
+    "goals": [
+     {
+      "goal": "Crane_Crow_Pose_or_Bakas",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.071,
+      "best_err": 0.056,
+      "held_s": 3.467,
+      "hold_iou": 0.217
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.026,
+      "best_err": 0.025,
+      "held_s": 3.8,
+      "hold_iou": 0.667
+     }
+    ]
+   },
+   "nohijack_E2": {
+    "replicas": 186,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 0.43,
+    "goals": [
+     {
+      "goal": "Crane_Crow_Pose_or_Bakas",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.071,
+      "best_err": 0.057,
+      "held_s": 3.467,
+      "hold_iou": 0.216
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.025,
+      "best_err": 0.023,
+      "held_s": 3.8,
+      "hold_iou": 0.55
+     }
+    ]
+   },
+   "nohijack_E3": {
+    "replicas": 186,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 1.0,
+    "goals": [
+     {
+      "goal": "Handstand_pose_or_Adho_M",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.031,
+      "best_err": 0.025,
+      "held_s": 3.467,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "Handstand_pose_or_Adho_M",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.086,
+      "best_err": 0.078,
+      "held_s": 4.467,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "nohijack_E5": {
+    "replicas": 186,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 1.0,
+    "goals": [
+     {
+      "goal": "Handstand_pose_or_Adho_M",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.031,
+      "best_err": 0.025,
+      "held_s": 3.467,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "Handstand_pose_or_Adho_M",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.086,
+      "best_err": 0.078,
+      "held_s": 4.467,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "hold_Crane_Crow_Pos_LH_RH": {
+    "replicas": 186,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 0.0,
+    "goals": [
+     {
+      "goal": "hold",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.058,
+      "best_err": 0.042,
+      "held_s": 8.467,
+      "hold_iou": 0.25
+     }
+    ]
+   },
+   "hold_standing_LF_RF__upri": {
+    "replicas": 186,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 0.0,
+    "goals": [
+     {
+      "goal": "hold",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.031,
+      "best_err": 0.02,
+      "held_s": 8.467,
+      "hold_iou": 0.5
+     }
+    ]
+   }
+  },
+  "2000": {
+   "fork_Warrior_II_Pose_or_Virabhadrasana_II": {
+    "replicas": 186,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 0.038,
+    "goals": [
+     {
+      "goal": "Warrior_II_Pose_or_Virab",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.077,
+      "best_err": 0.077,
+      "held_s": 8.0,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.017,
+      "best_err": 0.015,
+      "held_s": 2.867,
+      "hold_iou": 0.5
+     }
+    ]
+   },
+   "fork_Tree_Pose_or_Vrksasana": {
+    "replicas": 186,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 0.0,
+    "goals": [
+     {
+      "goal": "Tree_Pose_or_Vrksasana",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.039,
+      "best_err": 0.035,
+      "held_s": 7.133,
+      "hold_iou": 0.2
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.018,
+      "best_err": 0.017,
+      "held_s": 6.733,
+      "hold_iou": 0.5
+     }
+    ]
+   },
+   "fork_Crane_Crow_Pose_or_Bakasana": {
+    "replicas": 186,
+    "hold_success_rate": 0.0,
+    "reached_exact_rate": 0.0,
+    "goals": [
+     {
+      "goal": "Crane_Crow_Pose_or_Bakas",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.068,
+      "best_err": 0.063,
+      "held_s": 7.667,
+      "hold_iou": 0.204
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.605,
+      "best_err": 0.26,
+      "held_s": 0.0,
+      "hold_iou": 0.058
+     }
+    ]
+   },
+   "fork_Handstand_pose_or_Adho_Mukha_Vrksasana": {
+    "replicas": 186,
+    "hold_success_rate": 0.0,
+    "reached_exact_rate": 0.0,
+    "goals": [
+     {
+      "goal": "Handstand_pose_or_Adho_M",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.695,
+      "best_err": 0.688,
+      "held_s": 0.0,
+      "hold_iou": 0.25
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.544,
+      "best_err": 0.497,
+      "held_s": 0.0,
+      "hold_iou": 0.125
+     }
+    ]
+   },
+   "fork_Feathered_Peacock_Pose_or_Pincha_Mayuras": {
+    "replicas": 186,
+    "hold_success_rate": 0.0,
+    "reached_exact_rate": 0.0,
+    "goals": [
+     {
+      "goal": "Feathered_Peacock_Pose_o",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.689,
+      "best_err": 0.582,
+      "held_s": 0.0,
+      "hold_iou": 0.14
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.634,
+      "best_err": 0.568,
+      "held_s": 0.0,
+      "hold_iou": 0.025
+     }
+    ]
+   },
+   "fork_Supported_Headstand_pose_or_Salamba_Sirs": {
+    "replicas": 186,
+    "hold_success_rate": 0.43,
+    "reached_exact_rate": 0.349,
+    "goals": [
+     {
+      "goal": "Supported_Headstand_pose",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.653,
+      "best_err": 0.628,
+      "held_s": 0.0,
+      "hold_iou": 0.143
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 0.43,
+      "reach_rate": 0.43,
+      "hold_err": 0.662,
+      "best_err": 0.66,
+      "held_s": 0.0,
+      "hold_iou": 0.285
+     }
+    ]
+   },
+   "fork_Side_Plank_Pose_or_Vasisthasana": {
+    "replicas": 186,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 1.0,
+    "goals": [
+     {
+      "goal": "Side_Plank_Pose_or_Vasis",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.064,
+      "best_err": 0.063,
+      "held_s": 6.2,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.049,
+      "best_err": 0.047,
+      "held_s": 2.733,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "fork_Downward_Facing_Dog_pose_or_Adho_Mukha_S": {
+    "replicas": 186,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 1.0,
+    "goals": [
+     {
+      "goal": "Downward-Facing_Dog_pose",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.085,
+      "best_err": 0.078,
+      "held_s": 4.2,
+      "hold_iou": 0.667
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.026,
+      "best_err": 0.022,
+      "held_s": 3.133,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "dwell_Warrior_II_Pose_or_Virabhadrasana_II_3s": {
+    "replicas": 186,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 0.0,
+    "goals": [
+     {
+      "goal": "Warrior_II_Pose_or_Virab",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.03,
+      "best_err": 0.026,
+      "held_s": 3.467,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.017,
+      "best_err": 0.016,
+      "held_s": 2.867,
+      "hold_iou": 0.5
+     }
+    ]
+   },
+   "dwell_Warrior_II_Pose_or_Virabhadrasana_II_10s": {
+    "replicas": 186,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 0.0,
+    "goals": [
+     {
+      "goal": "Warrior_II_Pose_or_Virab",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.031,
+      "best_err": 0.027,
+      "held_s": 10.467,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.017,
+      "best_err": 0.016,
+      "held_s": 2.867,
+      "hold_iou": 0.5
+     }
+    ]
+   },
+   "edge_B1": {
+    "replicas": 186,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 1.0,
+    "goals": [
+     {
+      "goal": "Crane_Crow_Pose_or_Bakas",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.069,
+      "best_err": 0.051,
+      "held_s": 3.467,
+      "hold_iou": 0.203
+     },
+     {
+      "goal": "Plank_Pose_or_Kumbhakasa",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.073,
+      "best_err": 0.062,
+      "held_s": 4.267,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "edge_E1": {
+    "replicas": 186,
+    "hold_success_rate": 0.0,
+    "reached_exact_rate": 0.102,
+    "goals": [
+     {
+      "goal": "Crane_Crow_Pose_or_Bakas",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.073,
+      "best_err": 0.056,
+      "held_s": 3.467,
+      "hold_iou": 0.25
+     },
+     {
+      "goal": "Handstand_pose_or_Adho_M",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.555,
+      "best_err": 0.504,
+      "held_s": 0.0,
+      "hold_iou": 0.4
+     }
+    ]
+   },
+   "edge_E2": {
+    "replicas": 186,
+    "hold_success_rate": 0.0,
+    "reached_exact_rate": 1.0,
+    "goals": [
+     {
+      "goal": "Crane_Crow_Pose_or_Bakas",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.068,
+      "best_err": 0.047,
+      "held_s": 3.467,
+      "hold_iou": 0.21
+     },
+     {
+      "goal": "Four-Limbed_Staff_Pose_o",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.356,
+      "best_err": 0.345,
+      "held_s": 0.0,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "edge_E3": {
+    "replicas": 186,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 0.0,
+    "goals": [
+     {
+      "goal": "Handstand_pose_or_Adho_M",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.04,
+      "best_err": 0.036,
+      "held_s": 3.467,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "Crane_Crow_Pose_or_Bakas",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.052,
+      "best_err": 0.05,
+      "held_s": 5.1,
+      "hold_iou": 0.281
+     }
+    ]
+   },
+   "edge_E5": {
+    "replicas": 186,
+    "hold_success_rate": 0.0,
+    "reached_exact_rate": 1.0,
+    "goals": [
+     {
+      "goal": "Handstand_pose_or_Adho_M",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.038,
+      "best_err": 0.034,
+      "held_s": 3.467,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "Four-Limbed_Staff_Pose_o",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.374,
+      "best_err": 0.288,
+      "held_s": 0.0,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "nohijack_B1": {
+    "replicas": 186,
+    "hold_success_rate": 0.93,
+    "reached_exact_rate": 0.882,
+    "goals": [
+     {
+      "goal": "Crane_Crow_Pose_or_Bakas",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.069,
+      "best_err": 0.055,
+      "held_s": 3.467,
+      "hold_iou": 0.234
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 0.93,
+      "reach_rate": 0.935,
+      "hold_err": 0.03,
+      "best_err": 0.027,
+      "held_s": 3.8,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "nohijack_E1": {
+    "replicas": 186,
+    "hold_success_rate": 0.914,
+    "reached_exact_rate": 0.871,
+    "goals": [
+     {
+      "goal": "Crane_Crow_Pose_or_Bakas",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.07,
+      "best_err": 0.055,
+      "held_s": 3.467,
+      "hold_iou": 0.237
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 0.914,
+      "reach_rate": 0.914,
+      "hold_err": 0.031,
+      "best_err": 0.027,
+      "held_s": 3.8,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "nohijack_E2": {
+    "replicas": 186,
+    "hold_success_rate": 0.93,
+    "reached_exact_rate": 0.887,
+    "goals": [
+     {
+      "goal": "Crane_Crow_Pose_or_Bakas",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.07,
+      "best_err": 0.055,
+      "held_s": 3.467,
+      "hold_iou": 0.234
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 0.93,
+      "reach_rate": 0.93,
+      "hold_err": 0.031,
+      "best_err": 0.027,
+      "held_s": 3.8,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "nohijack_E3": {
+    "replicas": 186,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 1.0,
+    "goals": [
+     {
+      "goal": "Handstand_pose_or_Adho_M",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.042,
+      "best_err": 0.029,
+      "held_s": 3.467,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "Handstand_pose_or_Adho_M",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.108,
+      "best_err": 0.101,
+      "held_s": 5.533,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "nohijack_E5": {
+    "replicas": 186,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 1.0,
+    "goals": [
+     {
+      "goal": "Handstand_pose_or_Adho_M",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.041,
+      "best_err": 0.029,
+      "held_s": 3.467,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "Handstand_pose_or_Adho_M",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.109,
+      "best_err": 0.101,
+      "held_s": 5.533,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "hold_Crane_Crow_Pos_LH_RH": {
+    "replicas": 186,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 0.0,
+    "goals": [
+     {
+      "goal": "hold",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.056,
+      "best_err": 0.047,
+      "held_s": 8.467,
+      "hold_iou": 0.333
+     }
+    ]
+   },
+   "hold_standing_LF_RF__upri": {
+    "replicas": 186,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 0.0,
+    "goals": [
+     {
+      "goal": "hold",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.031,
+      "best_err": 0.024,
+      "held_s": 8.467,
+      "hold_iou": 0.5
+     }
+    ]
+   }
+  },
+  "2500": {
+   "fork_Warrior_II_Pose_or_Virabhadrasana_II": {
+    "replicas": 186,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 1.0,
+    "goals": [
+     {
+      "goal": "Warrior_II_Pose_or_Virab",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.076,
+      "best_err": 0.075,
+      "held_s": 8.067,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.023,
+      "best_err": 0.02,
+      "held_s": 3.067,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "fork_Tree_Pose_or_Vrksasana": {
+    "replicas": 186,
+    "hold_success_rate": 0.0,
+    "reached_exact_rate": 0.0,
+    "goals": [
+     {
+      "goal": "Tree_Pose_or_Vrksasana",
+      "hold_rate": 0.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.645,
+      "best_err": 0.06,
+      "held_s": 2.933,
+      "hold_iou": 0.107
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.734,
+      "best_err": 0.678,
+      "held_s": 0.0,
+      "hold_iou": 0.0
+     }
+    ]
+   },
+   "fork_Crane_Crow_Pose_or_Bakasana": {
+    "replicas": 186,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 0.914,
+    "goals": [
+     {
+      "goal": "Crane_Crow_Pose_or_Bakas",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.059,
+      "best_err": 0.055,
+      "held_s": 8.0,
+      "hold_iou": 0.202
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.045,
+      "best_err": 0.031,
+      "held_s": 2.6,
+      "hold_iou": 0.967
+     }
+    ]
+   },
+   "fork_Handstand_pose_or_Adho_Mukha_Vrksasana": {
+    "replicas": 186,
+    "hold_success_rate": 0.226,
+    "reached_exact_rate": 0.194,
+    "goals": [
+     {
+      "goal": "Handstand_pose_or_Adho_M",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.783,
+      "best_err": 0.627,
+      "held_s": 0.0,
+      "hold_iou": 0.318
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 0.226,
+      "reach_rate": 0.226,
+      "hold_err": 0.609,
+      "best_err": 0.486,
+      "held_s": 0.0,
+      "hold_iou": 0.211
+     }
+    ]
+   },
+   "fork_Feathered_Peacock_Pose_or_Pincha_Mayuras": {
+    "replicas": 186,
+    "hold_success_rate": 0.0,
+    "reached_exact_rate": 0.0,
+    "goals": [
+     {
+      "goal": "Feathered_Peacock_Pose_o",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.63,
+      "best_err": 0.587,
+      "held_s": 0.0,
+      "hold_iou": 0.246
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.6,
+      "best_err": 0.48,
+      "held_s": 0.0,
+      "hold_iou": 0.149
+     }
+    ]
+   },
+   "fork_Supported_Headstand_pose_or_Salamba_Sirs": {
+    "replicas": 186,
+    "hold_success_rate": 0.5,
+    "reached_exact_rate": 0.5,
+    "goals": [
+     {
+      "goal": "Supported_Headstand_pose",
+      "hold_rate": 0.995,
+      "reach_rate": 1.0,
+      "hold_err": 0.083,
+      "best_err": 0.081,
+      "held_s": 6.4,
+      "hold_iou": 0.578
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 0.5,
+      "reach_rate": 0.5,
+      "hold_err": 0.227,
+      "best_err": 0.218,
+      "held_s": 1.033,
+      "hold_iou": 0.71
+     }
+    ]
+   },
+   "fork_Side_Plank_Pose_or_Vasisthasana": {
+    "replicas": 186,
+    "hold_success_rate": 0.065,
+    "reached_exact_rate": 0.065,
+    "goals": [
+     {
+      "goal": "Side_Plank_Pose_or_Vasis",
+      "hold_rate": 0.065,
+      "reach_rate": 0.065,
+      "hold_err": 0.84,
+      "best_err": 0.258,
+      "held_s": 0.0,
+      "hold_iou": 0.039
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 0.065,
+      "reach_rate": 0.065,
+      "hold_err": 0.67,
+      "best_err": 0.644,
+      "held_s": 0.0,
+      "hold_iou": 0.0
+     }
+    ]
+   },
+   "fork_Downward_Facing_Dog_pose_or_Adho_Mukha_S": {
+    "replicas": 186,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 1.0,
+    "goals": [
+     {
+      "goal": "Downward-Facing_Dog_pose",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.126,
+      "best_err": 0.121,
+      "held_s": 3.733,
+      "hold_iou": 0.822
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.019,
+      "best_err": 0.017,
+      "held_s": 3.333,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "dwell_Warrior_II_Pose_or_Virabhadrasana_II_3s": {
+    "replicas": 186,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 1.0,
+    "goals": [
+     {
+      "goal": "Warrior_II_Pose_or_Virab",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.031,
+      "best_err": 0.03,
+      "held_s": 3.467,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.015,
+      "best_err": 0.013,
+      "held_s": 3.067,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "dwell_Warrior_II_Pose_or_Virabhadrasana_II_10s": {
+    "replicas": 186,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 1.0,
+    "goals": [
+     {
+      "goal": "Warrior_II_Pose_or_Virab",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.032,
+      "best_err": 0.029,
+      "held_s": 10.467,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.015,
+      "best_err": 0.013,
+      "held_s": 3.067,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "edge_B1": {
+    "replicas": 186,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 1.0,
+    "goals": [
+     {
+      "goal": "Crane_Crow_Pose_or_Bakas",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.052,
+      "best_err": 0.038,
+      "held_s": 3.467,
+      "hold_iou": 0.25
+     },
+     {
+      "goal": "Plank_Pose_or_Kumbhakasa",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.068,
+      "best_err": 0.06,
+      "held_s": 4.267,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "edge_E1": {
+    "replicas": 186,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 1.0,
+    "goals": [
+     {
+      "goal": "Crane_Crow_Pose_or_Bakas",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.058,
+      "best_err": 0.046,
+      "held_s": 3.467,
+      "hold_iou": 0.25
+     },
+     {
+      "goal": "Handstand_pose_or_Adho_M",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.087,
+      "best_err": 0.071,
+      "held_s": 5.333,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "edge_E2": {
+    "replicas": 186,
+    "hold_success_rate": 0.0,
+    "reached_exact_rate": 1.0,
+    "goals": [
+     {
+      "goal": "Crane_Crow_Pose_or_Bakas",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.053,
+      "best_err": 0.038,
+      "held_s": 3.467,
+      "hold_iou": 0.25
+     },
+     {
+      "goal": "Four-Limbed_Staff_Pose_o",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.405,
+      "best_err": 0.398,
+      "held_s": 0.0,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "edge_E3": {
+    "replicas": 186,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 0.0,
+    "goals": [
+     {
+      "goal": "Handstand_pose_or_Adho_M",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.036,
+      "best_err": 0.033,
+      "held_s": 3.467,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "Crane_Crow_Pose_or_Bakas",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.059,
+      "best_err": 0.055,
+      "held_s": 5.267,
+      "hold_iou": 0.284
+     }
+    ]
+   },
+   "edge_E5": {
+    "replicas": 186,
+    "hold_success_rate": 0.0,
+    "reached_exact_rate": 1.0,
+    "goals": [
+     {
+      "goal": "Handstand_pose_or_Adho_M",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.037,
+      "best_err": 0.035,
+      "held_s": 3.467,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "Four-Limbed_Staff_Pose_o",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.418,
+      "best_err": 0.308,
+      "held_s": 0.0,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "nohijack_B1": {
+    "replicas": 186,
+    "hold_success_rate": 0.989,
+    "reached_exact_rate": 0.952,
+    "goals": [
+     {
+      "goal": "Crane_Crow_Pose_or_Bakas",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.062,
+      "best_err": 0.048,
+      "held_s": 3.467,
+      "hold_iou": 0.25
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 0.989,
+      "reach_rate": 1.0,
+      "hold_err": 0.037,
+      "best_err": 0.03,
+      "held_s": 3.867,
+      "hold_iou": 0.989
+     }
+    ]
+   },
+   "nohijack_E1": {
+    "replicas": 186,
+    "hold_success_rate": 0.978,
+    "reached_exact_rate": 0.946,
+    "goals": [
+     {
+      "goal": "Crane_Crow_Pose_or_Bakas",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.062,
+      "best_err": 0.048,
+      "held_s": 3.467,
+      "hold_iou": 0.25
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 0.978,
+      "reach_rate": 1.0,
+      "hold_err": 0.036,
+      "best_err": 0.03,
+      "held_s": 3.8,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "nohijack_E2": {
+    "replicas": 186,
+    "hold_success_rate": 0.984,
+    "reached_exact_rate": 0.946,
+    "goals": [
+     {
+      "goal": "Crane_Crow_Pose_or_Bakas",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.062,
+      "best_err": 0.048,
+      "held_s": 3.467,
+      "hold_iou": 0.25
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 0.984,
+      "reach_rate": 1.0,
+      "hold_err": 0.037,
+      "best_err": 0.03,
+      "held_s": 3.8,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "nohijack_E3": {
+    "replicas": 186,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 1.0,
+    "goals": [
+     {
+      "goal": "Handstand_pose_or_Adho_M",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.035,
+      "best_err": 0.026,
+      "held_s": 3.467,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "Handstand_pose_or_Adho_M",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.095,
+      "best_err": 0.091,
+      "held_s": 5.6,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "nohijack_E5": {
+    "replicas": 186,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 1.0,
+    "goals": [
+     {
+      "goal": "Handstand_pose_or_Adho_M",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.035,
+      "best_err": 0.026,
+      "held_s": 3.467,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "Handstand_pose_or_Adho_M",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.095,
+      "best_err": 0.091,
+      "held_s": 5.6,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "hold_Crane_Crow_Pos_LH_RH": {
+    "replicas": 186,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 0.0,
+    "goals": [
+     {
+      "goal": "hold",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.045,
+      "best_err": 0.036,
+      "held_s": 8.467,
+      "hold_iou": 0.263
+     }
+    ]
+   },
+   "hold_standing_LF_RF__upri": {
+    "replicas": 186,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 0.0,
+    "goals": [
+     {
+      "goal": "hold",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.028,
+      "best_err": 0.019,
+      "held_s": 8.467,
+      "hold_iou": 0.5
+     }
+    ]
+   }
+  },
+  "3000": {
+   "fork_Warrior_II_Pose_or_Virabhadrasana_II": {
+    "replicas": 186,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 0.0,
+    "goals": [
+     {
+      "goal": "Warrior_II_Pose_or_Virab",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.069,
+      "best_err": 0.068,
+      "held_s": 7.8,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.017,
+      "best_err": 0.015,
+      "held_s": 2.733,
+      "hold_iou": 0.5
+     }
+    ]
+   },
+   "fork_Tree_Pose_or_Vrksasana": {
+    "replicas": 186,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 0.0,
+    "goals": [
+     {
+      "goal": "Tree_Pose_or_Vrksasana",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.03,
+      "best_err": 0.025,
+      "held_s": 7.133,
+      "hold_iou": 0.2
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.017,
+      "best_err": 0.016,
+      "held_s": 7.0,
+      "hold_iou": 0.5
+     }
+    ]
+   },
+   "fork_Crane_Crow_Pose_or_Bakasana": {
+    "replicas": 186,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 0.935,
+    "goals": [
+     {
+      "goal": "Crane_Crow_Pose_or_Bakas",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.052,
+      "best_err": 0.049,
+      "held_s": 8.133,
+      "hold_iou": 0.203
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.032,
+      "best_err": 0.024,
+      "held_s": 2.8,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "fork_Handstand_pose_or_Adho_Mukha_Vrksasana": {
+    "replicas": 186,
+    "hold_success_rate": 0.016,
+    "reached_exact_rate": 0.005,
+    "goals": [
+     {
+      "goal": "Handstand_pose_or_Adho_M",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.725,
+      "best_err": 0.694,
+      "held_s": 0.0,
+      "hold_iou": 0.0
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 0.016,
+      "reach_rate": 0.016,
+      "hold_err": 0.556,
+      "best_err": 0.513,
+      "held_s": 0.0,
+      "hold_iou": 0.0
+     }
+    ]
+   },
+   "fork_Feathered_Peacock_Pose_or_Pincha_Mayuras": {
+    "replicas": 186,
+    "hold_success_rate": 0.0,
+    "reached_exact_rate": 0.0,
+    "goals": [
+     {
+      "goal": "Feathered_Peacock_Pose_o",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.682,
+      "best_err": 0.626,
+      "held_s": 0.0,
+      "hold_iou": 0.384
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.709,
+      "best_err": 0.646,
+      "held_s": 0.0,
+      "hold_iou": 0.113
+     }
+    ]
+   },
+   "fork_Supported_Headstand_pose_or_Salamba_Sirs": {
+    "replicas": 186,
+    "hold_success_rate": 0.968,
+    "reached_exact_rate": 0.796,
+    "goals": [
+     {
+      "goal": "Supported_Headstand_pose",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.645,
+      "best_err": 0.625,
+      "held_s": 0.0,
+      "hold_iou": 0.2
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 0.968,
+      "reach_rate": 0.968,
+      "hold_err": 0.039,
+      "best_err": 0.038,
+      "held_s": 4.267,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "fork_Side_Plank_Pose_or_Vasisthasana": {
+    "replicas": 186,
+    "hold_success_rate": 0.022,
+    "reached_exact_rate": 0.022,
+    "goals": [
+     {
+      "goal": "Side_Plank_Pose_or_Vasis",
+      "hold_rate": 0.022,
+      "reach_rate": 0.027,
+      "hold_err": 0.849,
+      "best_err": 0.231,
+      "held_s": 0.0,
+      "hold_iou": 0.089
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 0.022,
+      "reach_rate": 0.022,
+      "hold_err": 0.682,
+      "best_err": 0.649,
+      "held_s": 0.0,
+      "hold_iou": 0.333
+     }
+    ]
+   },
+   "fork_Downward_Facing_Dog_pose_or_Adho_Mukha_S": {
+    "replicas": 186,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 1.0,
+    "goals": [
+     {
+      "goal": "Downward-Facing_Dog_pose",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.065,
+      "best_err": 0.062,
+      "held_s": 4.4,
+      "hold_iou": 0.667
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.019,
+      "best_err": 0.017,
+      "held_s": 3.133,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "dwell_Warrior_II_Pose_or_Virabhadrasana_II_3s": {
+    "replicas": 186,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 0.0,
+    "goals": [
+     {
+      "goal": "Warrior_II_Pose_or_Virab",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.033,
+      "best_err": 0.028,
+      "held_s": 3.467,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.012,
+      "best_err": 0.011,
+      "held_s": 2.933,
+      "hold_iou": 0.5
+     }
+    ]
+   },
+   "dwell_Warrior_II_Pose_or_Virabhadrasana_II_10s": {
+    "replicas": 186,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 0.005,
+    "goals": [
+     {
+      "goal": "Warrior_II_Pose_or_Virab",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.038,
+      "best_err": 0.029,
+      "held_s": 10.467,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.012,
+      "best_err": 0.011,
+      "held_s": 2.933,
+      "hold_iou": 0.5
+     }
+    ]
+   },
+   "edge_B1": {
+    "replicas": 186,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 1.0,
+    "goals": [
+     {
+      "goal": "Crane_Crow_Pose_or_Bakas",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.06,
+      "best_err": 0.045,
+      "held_s": 3.467,
+      "hold_iou": 0.213
+     },
+     {
+      "goal": "Plank_Pose_or_Kumbhakasa",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.061,
+      "best_err": 0.059,
+      "held_s": 4.4,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "edge_E1": {
+    "replicas": 186,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 1.0,
+    "goals": [
+     {
+      "goal": "Crane_Crow_Pose_or_Bakas",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.062,
+      "best_err": 0.045,
+      "held_s": 3.467,
+      "hold_iou": 0.214
+     },
+     {
+      "goal": "Handstand_pose_or_Adho_M",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.078,
+      "best_err": 0.038,
+      "held_s": 5.8,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "edge_E2": {
+    "replicas": 186,
+    "hold_success_rate": 0.0,
+    "reached_exact_rate": 1.0,
+    "goals": [
+     {
+      "goal": "Crane_Crow_Pose_or_Bakas",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.059,
+      "best_err": 0.041,
+      "held_s": 3.467,
+      "hold_iou": 0.216
+     },
+     {
+      "goal": "Four-Limbed_Staff_Pose_o",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.386,
+      "best_err": 0.378,
+      "held_s": 0.0,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "edge_E3": {
+    "replicas": 186,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 0.0,
+    "goals": [
+     {
+      "goal": "Handstand_pose_or_Adho_M",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.039,
+      "best_err": 0.036,
+      "held_s": 3.467,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "Crane_Crow_Pose_or_Bakas",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.046,
+      "best_err": 0.043,
+      "held_s": 5.133,
+      "hold_iou": 0.202
+     }
+    ]
+   },
+   "edge_E5": {
+    "replicas": 186,
+    "hold_success_rate": 0.0,
+    "reached_exact_rate": 1.0,
+    "goals": [
+     {
+      "goal": "Handstand_pose_or_Adho_M",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.034,
+      "best_err": 0.031,
+      "held_s": 3.467,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "Four-Limbed_Staff_Pose_o",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.38,
+      "best_err": 0.301,
+      "held_s": 0.0,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "nohijack_B1": {
+    "replicas": 186,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 0.995,
+    "goals": [
+     {
+      "goal": "Crane_Crow_Pose_or_Bakas",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.06,
+      "best_err": 0.051,
+      "held_s": 3.467,
+      "hold_iou": 0.25
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.033,
+      "best_err": 0.032,
+      "held_s": 3.933,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "nohijack_E1": {
+    "replicas": 186,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 0.995,
+    "goals": [
+     {
+      "goal": "Crane_Crow_Pose_or_Bakas",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.059,
+      "best_err": 0.051,
+      "held_s": 3.467,
+      "hold_iou": 0.25
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.033,
+      "best_err": 0.032,
+      "held_s": 3.933,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "nohijack_E2": {
+    "replicas": 186,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 1.0,
+    "goals": [
+     {
+      "goal": "Crane_Crow_Pose_or_Bakas",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.058,
+      "best_err": 0.051,
+      "held_s": 3.467,
+      "hold_iou": 0.241
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.033,
+      "best_err": 0.032,
+      "held_s": 3.933,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "nohijack_E3": {
+    "replicas": 186,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 1.0,
+    "goals": [
+     {
+      "goal": "Handstand_pose_or_Adho_M",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.03,
+      "best_err": 0.022,
+      "held_s": 3.467,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "Handstand_pose_or_Adho_M",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.098,
+      "best_err": 0.09,
+      "held_s": 5.533,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "nohijack_E5": {
+    "replicas": 186,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 1.0,
+    "goals": [
+     {
+      "goal": "Handstand_pose_or_Adho_M",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.029,
+      "best_err": 0.022,
+      "held_s": 3.467,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "Handstand_pose_or_Adho_M",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.098,
+      "best_err": 0.09,
+      "held_s": 5.533,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "hold_Crane_Crow_Pos_LH_RH": {
+    "replicas": 186,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 0.0,
+    "goals": [
+     {
+      "goal": "hold",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.051,
+      "best_err": 0.039,
+      "held_s": 8.467,
+      "hold_iou": 0.25
+     }
+    ]
+   },
+   "hold_standing_LF_RF__upri": {
+    "replicas": 186,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 0.0,
+    "goals": [
+     {
+      "goal": "hold",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.03,
+      "best_err": 0.024,
+      "held_s": 8.467,
+      "hold_iou": 0.5
+     }
+    ]
+   }
+  },
+  "3420h": {
+   "fork_Warrior_II_Pose_or_Virabhadrasana_II": {
+    "replicas": 163,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 1.0,
+    "goals": [
+     {
+      "goal": "Warrior_II_Pose_or_Virab",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.082,
+      "best_err": 0.082,
+      "held_s": 7.733,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.023,
+      "best_err": 0.021,
+      "held_s": 3.0,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "fork_Tree_Pose_or_Vrksasana": {
+    "replicas": 163,
+    "hold_success_rate": 0.061,
+    "reached_exact_rate": 0.061,
+    "goals": [
+     {
+      "goal": "Tree_Pose_or_Vrksasana",
+      "hold_rate": 0.061,
+      "reach_rate": 1.0,
+      "hold_err": 0.645,
+      "best_err": 0.063,
+      "held_s": 2.4,
+      "hold_iou": 0.159
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 0.061,
+      "reach_rate": 0.061,
+      "hold_err": 0.834,
+      "best_err": 0.695,
+      "held_s": 0.0,
+      "hold_iou": 0.387
+     }
+    ]
+   },
+   "fork_Crane_Crow_Pose_or_Bakasana": {
+    "replicas": 163,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 0.994,
+    "goals": [
+     {
+      "goal": "Crane_Crow_Pose_or_Bakas",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.069,
+      "best_err": 0.066,
+      "held_s": 9.4,
+      "hold_iou": 0.182
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.039,
+      "best_err": 0.035,
+      "held_s": 2.733,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "fork_Handstand_pose_or_Adho_Mukha_Vrksasana": {
+    "replicas": 163,
+    "hold_success_rate": 0.006,
+    "reached_exact_rate": 0.006,
+    "goals": [
+     {
+      "goal": "Handstand_pose_or_Adho_M",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.725,
+      "best_err": 0.625,
+      "held_s": 0.0,
+      "hold_iou": 0.0
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 0.006,
+      "reach_rate": 0.006,
+      "hold_err": 0.545,
+      "best_err": 0.498,
+      "held_s": 0.0,
+      "hold_iou": 0.014
+     }
+    ]
+   },
+   "fork_Feathered_Peacock_Pose_or_Pincha_Mayuras": {
+    "replicas": 163,
+    "hold_success_rate": 0.0,
+    "reached_exact_rate": 0.0,
+    "goals": [
+     {
+      "goal": "Feathered_Peacock_Pose_o",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.622,
+      "best_err": 0.567,
+      "held_s": 0.0,
+      "hold_iou": 0.429
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.714,
+      "best_err": 0.682,
+      "held_s": 0.0,
+      "hold_iou": 0.237
+     }
+    ]
+   },
+   "fork_Supported_Headstand_pose_or_Salamba_Sirs": {
+    "replicas": 163,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 1.0,
+    "goals": [
+     {
+      "goal": "Supported_Headstand_pose",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.665,
+      "best_err": 0.631,
+      "held_s": 0.0,
+      "hold_iou": 0.2
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.023,
+      "best_err": 0.022,
+      "held_s": 4.867,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "fork_Side_Plank_Pose_or_Vasisthasana": {
+    "replicas": 163,
+    "hold_success_rate": 0.0,
+    "reached_exact_rate": 0.0,
+    "goals": [
+     {
+      "goal": "Side_Plank_Pose_or_Vasis",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.57,
+      "best_err": 0.311,
+      "held_s": 0.0,
+      "hold_iou": 0.2
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.701,
+      "best_err": 0.635,
+      "held_s": 0.0,
+      "hold_iou": 0.125
+     }
+    ]
+   },
+   "fork_Downward_Facing_Dog_pose_or_Adho_Mukha_S": {
+    "replicas": 163,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 1.0,
+    "goals": [
+     {
+      "goal": "Downward-Facing_Dog_pose",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.057,
+      "best_err": 0.055,
+      "held_s": 4.267,
+      "hold_iou": 0.667
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.022,
+      "best_err": 0.021,
+      "held_s": 3.267,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "dwell_Warrior_II_Pose_or_Virabhadrasana_II_3s": {
+    "replicas": 163,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 0.38,
+    "goals": [
+     {
+      "goal": "Warrior_II_Pose_or_Virab",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.047,
+      "best_err": 0.04,
+      "held_s": 3.467,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.017,
+      "best_err": 0.015,
+      "held_s": 2.933,
+      "hold_iou": 0.683
+     }
+    ]
+   },
+   "dwell_Warrior_II_Pose_or_Virabhadrasana_II_10s": {
+    "replicas": 163,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 0.331,
+    "goals": [
+     {
+      "goal": "Warrior_II_Pose_or_Virab",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.048,
+      "best_err": 0.041,
+      "held_s": 10.467,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.017,
+      "best_err": 0.015,
+      "held_s": 2.933,
+      "hold_iou": 0.65
+     }
+    ]
+   },
+   "edge_B1": {
+    "replicas": 163,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 1.0,
+    "goals": [
+     {
+      "goal": "Crane_Crow_Pose_or_Bakas",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.069,
+      "best_err": 0.056,
+      "held_s": 3.467,
+      "hold_iou": 0.208
+     },
+     {
+      "goal": "Plank_Pose_or_Kumbhakasa",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.063,
+      "best_err": 0.054,
+      "held_s": 4.467,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "edge_E1": {
+    "replicas": 163,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 1.0,
+    "goals": [
+     {
+      "goal": "Crane_Crow_Pose_or_Bakas",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.065,
+      "best_err": 0.053,
+      "held_s": 3.467,
+      "hold_iou": 0.2
+     },
+     {
+      "goal": "Handstand_pose_or_Adho_M",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.071,
+      "best_err": 0.045,
+      "held_s": 5.667,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "edge_E2": {
+    "replicas": 163,
+    "hold_success_rate": 0.0,
+    "reached_exact_rate": 1.0,
+    "goals": [
+     {
+      "goal": "Crane_Crow_Pose_or_Bakas",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.06,
+      "best_err": 0.052,
+      "held_s": 3.467,
+      "hold_iou": 0.209
+     },
+     {
+      "goal": "Four-Limbed_Staff_Pose_o",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.393,
+      "best_err": 0.384,
+      "held_s": 0.0,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "edge_E3": {
+    "replicas": 163,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 0.0,
+    "goals": [
+     {
+      "goal": "Handstand_pose_or_Adho_M",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.043,
+      "best_err": 0.039,
+      "held_s": 3.467,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "Crane_Crow_Pose_or_Bakas",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.054,
+      "best_err": 0.051,
+      "held_s": 5.067,
+      "hold_iou": 0.202
+     }
+    ]
+   },
+   "edge_E5": {
+    "replicas": 163,
+    "hold_success_rate": 0.0,
+    "reached_exact_rate": 1.0,
+    "goals": [
+     {
+      "goal": "Handstand_pose_or_Adho_M",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.039,
+      "best_err": 0.035,
+      "held_s": 3.467,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "Four-Limbed_Staff_Pose_o",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.399,
+      "best_err": 0.321,
+      "held_s": 0.0,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "nohijack_B1": {
+    "replicas": 163,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 1.0,
+    "goals": [
+     {
+      "goal": "Crane_Crow_Pose_or_Bakas",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.075,
+      "best_err": 0.073,
+      "held_s": 3.467,
+      "hold_iou": 0.194
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.026,
+      "best_err": 0.025,
+      "held_s": 4.067,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "nohijack_E1": {
+    "replicas": 163,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 1.0,
+    "goals": [
+     {
+      "goal": "Crane_Crow_Pose_or_Bakas",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.075,
+      "best_err": 0.073,
+      "held_s": 3.467,
+      "hold_iou": 0.194
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.026,
+      "best_err": 0.026,
+      "held_s": 4.067,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "nohijack_E2": {
+    "replicas": 163,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 1.0,
+    "goals": [
+     {
+      "goal": "Crane_Crow_Pose_or_Bakas",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.075,
+      "best_err": 0.073,
+      "held_s": 3.467,
+      "hold_iou": 0.194
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.026,
+      "best_err": 0.026,
+      "held_s": 4.067,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "nohijack_E3": {
+    "replicas": 163,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 1.0,
+    "goals": [
+     {
+      "goal": "Handstand_pose_or_Adho_M",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.034,
+      "best_err": 0.025,
+      "held_s": 3.467,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "Handstand_pose_or_Adho_M",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.087,
+      "best_err": 0.082,
+      "held_s": 5.6,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "nohijack_E5": {
+    "replicas": 163,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 1.0,
+    "goals": [
+     {
+      "goal": "Handstand_pose_or_Adho_M",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.034,
+      "best_err": 0.025,
+      "held_s": 3.467,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "Handstand_pose_or_Adho_M",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.087,
+      "best_err": 0.082,
+      "held_s": 5.6,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "fork_edge_B1": {
+    "replicas": 163,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 1.0,
+    "goals": [
+     {
+      "goal": "Crane_Crow_Pose_or_Bakas",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.072,
+      "best_err": 0.07,
+      "held_s": 8.067,
+      "hold_iou": 0.2
+     },
+     {
+      "goal": "Plank_Pose_or_Kumbhakasa",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.07,
+      "best_err": 0.067,
+      "held_s": 4.267,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "fork_edge_E1": {
+    "replicas": 163,
+    "hold_success_rate": 0.945,
+    "reached_exact_rate": 0.975,
+    "goals": [
+     {
+      "goal": "Crane_Crow_Pose_or_Bakas",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.073,
+      "best_err": 0.071,
+      "held_s": 8.667,
+      "hold_iou": 0.2
+     },
+     {
+      "goal": "Handstand_pose_or_Adho_M",
+      "hold_rate": 0.945,
+      "reach_rate": 0.945,
+      "hold_err": 0.082,
+      "best_err": 0.066,
+      "held_s": 5.0,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "fork_edge_E2": {
+    "replicas": 163,
+    "hold_success_rate": 0.0,
+    "reached_exact_rate": 1.0,
+    "goals": [
+     {
+      "goal": "Crane_Crow_Pose_or_Bakas",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.065,
+      "best_err": 0.061,
+      "held_s": 8.133,
+      "hold_iou": 0.2
+     },
+     {
+      "goal": "Four-Limbed_Staff_Pose_o",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.387,
+      "best_err": 0.374,
+      "held_s": 0.0,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "fork_edge_E3": {
+    "replicas": 163,
+    "hold_success_rate": 0.012,
+    "reached_exact_rate": 0.0,
+    "goals": [
+     {
+      "goal": "Handstand_pose_or_Adho_M",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.751,
+      "best_err": 0.666,
+      "held_s": 0.0,
+      "hold_iou": 0.035
+     },
+     {
+      "goal": "Crane_Crow_Pose_or_Bakas",
+      "hold_rate": 0.012,
+      "reach_rate": 0.012,
+      "hold_err": 0.645,
+      "best_err": 0.64,
+      "held_s": 0.0,
+      "hold_iou": 0.0
+     }
+    ]
+   },
+   "fork_edge_E5": {
+    "replicas": 163,
+    "hold_success_rate": 0.0,
+    "reached_exact_rate": 0.546,
+    "goals": [
+     {
+      "goal": "Handstand_pose_or_Adho_M",
+      "hold_rate": 0.031,
+      "reach_rate": 0.055,
+      "hold_err": 0.67,
+      "best_err": 0.647,
+      "held_s": 0.0,
+      "hold_iou": 0.163
+     },
+     {
+      "goal": "Four-Limbed_Staff_Pose_o",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.452,
+      "best_err": 0.258,
+      "held_s": 0.0,
+      "hold_iou": 0.972
+     }
+    ]
+   }
+  },
+  "3420b": {
+   "fork_Warrior_II_Pose_or_Virabhadrasana_II": {
+    "replicas": 163,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 1.0,
+    "goals": [
+     {
+      "goal": "Warrior_II_Pose_or_Virab",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.061,
+      "best_err": 0.06,
+      "held_s": 7.733,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.022,
+      "best_err": 0.019,
+      "held_s": 5.4,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "fork_Tree_Pose_or_Vrksasana": {
+    "replicas": 163,
+    "hold_success_rate": 0.061,
+    "reached_exact_rate": 0.067,
+    "goals": [
+     {
+      "goal": "Tree_Pose_or_Vrksasana",
+      "hold_rate": 0.061,
+      "reach_rate": 1.0,
+      "hold_err": 0.526,
+      "best_err": 0.058,
+      "held_s": 2.467,
+      "hold_iou": 0.151
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 0.061,
+      "reach_rate": 0.061,
+      "hold_err": 0.76,
+      "best_err": 0.679,
+      "held_s": 0.0,
+      "hold_iou": 0.393
+     }
+    ]
+   },
+   "fork_Crane_Crow_Pose_or_Bakasana": {
+    "replicas": 163,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 1.0,
+    "goals": [
+     {
+      "goal": "Crane_Crow_Pose_or_Bakas",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.035,
+      "best_err": 0.034,
+      "held_s": 9.8,
+      "hold_iou": 0.182
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.039,
+      "best_err": 0.035,
+      "held_s": 2.733,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "fork_Handstand_pose_or_Adho_Mukha_Vrksasana": {
+    "replicas": 163,
+    "hold_success_rate": 0.0,
+    "reached_exact_rate": 0.0,
+    "goals": [
+     {
+      "goal": "Handstand_pose_or_Adho_M",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.671,
+      "best_err": 0.609,
+      "held_s": 0.0,
+      "hold_iou": 0.0
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.534,
+      "best_err": 0.498,
+      "held_s": 0.0,
+      "hold_iou": 0.01
+     }
+    ]
+   },
+   "fork_Feathered_Peacock_Pose_or_Pincha_Mayuras": {
+    "replicas": 163,
+    "hold_success_rate": 0.0,
+    "reached_exact_rate": 0.0,
+    "goals": [
+     {
+      "goal": "Feathered_Peacock_Pose_o",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.575,
+      "best_err": 0.536,
+      "held_s": 0.0,
+      "hold_iou": 0.429
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.601,
+      "best_err": 0.595,
+      "held_s": 0.0,
+      "hold_iou": 0.247
+     }
+    ]
+   },
+   "fork_Supported_Headstand_pose_or_Salamba_Sirs": {
+    "replicas": 163,
+    "hold_success_rate": 0.994,
+    "reached_exact_rate": 0.994,
+    "goals": [
+     {
+      "goal": "Supported_Headstand_pose",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.638,
+      "best_err": 0.582,
+      "held_s": 0.0,
+      "hold_iou": 0.2
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 0.994,
+      "reach_rate": 0.994,
+      "hold_err": 0.022,
+      "best_err": 0.019,
+      "held_s": 4.867,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "fork_Side_Plank_Pose_or_Vasisthasana": {
+    "replicas": 163,
+    "hold_success_rate": 0.0,
+    "reached_exact_rate": 0.0,
+    "goals": [
+     {
+      "goal": "Side_Plank_Pose_or_Vasis",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.559,
+      "best_err": 0.274,
+      "held_s": 0.0,
+      "hold_iou": 0.2
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.628,
+      "best_err": 0.619,
+      "held_s": 0.0,
+      "hold_iou": 0.111
+     }
+    ]
+   },
+   "fork_Downward_Facing_Dog_pose_or_Adho_Mukha_S": {
+    "replicas": 163,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 1.0,
+    "goals": [
+     {
+      "goal": "Downward-Facing_Dog_pose",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.032,
+      "best_err": 0.032,
+      "held_s": 5.6,
+      "hold_iou": 0.667
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.021,
+      "best_err": 0.02,
+      "held_s": 3.267,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "dwell_Warrior_II_Pose_or_Virabhadrasana_II_3s": {
+    "replicas": 163,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 0.344,
+    "goals": [
+     {
+      "goal": "Warrior_II_Pose_or_Virab",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.016,
+      "best_err": 0.015,
+      "held_s": 3.467,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.017,
+      "best_err": 0.014,
+      "held_s": 2.933,
+      "hold_iou": 0.683
+     }
+    ]
+   },
+   "dwell_Warrior_II_Pose_or_Virabhadrasana_II_10s": {
+    "replicas": 163,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 0.319,
+    "goals": [
+     {
+      "goal": "Warrior_II_Pose_or_Virab",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.018,
+      "best_err": 0.015,
+      "held_s": 10.467,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.017,
+      "best_err": 0.015,
+      "held_s": 2.933,
+      "hold_iou": 0.667
+     }
+    ]
+   },
+   "edge_B1": {
+    "replicas": 163,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 1.0,
+    "goals": [
+     {
+      "goal": "Crane_Crow_Pose_or_Bakas",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.038,
+      "best_err": 0.025,
+      "held_s": 3.467,
+      "hold_iou": 0.207
+     },
+     {
+      "goal": "Plank_Pose_or_Kumbhakasa",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.057,
+      "best_err": 0.052,
+      "held_s": 4.533,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "edge_E1": {
+    "replicas": 163,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 1.0,
+    "goals": [
+     {
+      "goal": "Crane_Crow_Pose_or_Bakas",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.035,
+      "best_err": 0.026,
+      "held_s": 3.467,
+      "hold_iou": 0.2
+     },
+     {
+      "goal": "Handstand_pose_or_Adho_M",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.068,
+      "best_err": 0.042,
+      "held_s": 5.6,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "edge_E2": {
+    "replicas": 163,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 1.0,
+    "goals": [
+     {
+      "goal": "Crane_Crow_Pose_or_Bakas",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.034,
+      "best_err": 0.022,
+      "held_s": 3.467,
+      "hold_iou": 0.209
+     },
+     {
+      "goal": "Four-Limbed_Staff_Pose_o",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.034,
+      "best_err": 0.032,
+      "held_s": 4.2,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "edge_E3": {
+    "replicas": 163,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 0.0,
+    "goals": [
+     {
+      "goal": "Handstand_pose_or_Adho_M",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.038,
+      "best_err": 0.032,
+      "held_s": 3.467,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "Crane_Crow_Pose_or_Bakas",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.036,
+      "best_err": 0.033,
+      "held_s": 5.6,
+      "hold_iou": 0.202
+     }
+    ]
+   },
+   "edge_E5": {
+    "replicas": 163,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 1.0,
+    "goals": [
+     {
+      "goal": "Handstand_pose_or_Adho_M",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.032,
+      "best_err": 0.028,
+      "held_s": 3.467,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "Four-Limbed_Staff_Pose_o",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.037,
+      "best_err": 0.036,
+      "held_s": 4.0,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "nohijack_B1": {
+    "replicas": 163,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 1.0,
+    "goals": [
+     {
+      "goal": "Crane_Crow_Pose_or_Bakas",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.035,
+      "best_err": 0.028,
+      "held_s": 3.467,
+      "hold_iou": 0.194
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.026,
+      "best_err": 0.025,
+      "held_s": 4.067,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "nohijack_E1": {
+    "replicas": 163,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 1.0,
+    "goals": [
+     {
+      "goal": "Crane_Crow_Pose_or_Bakas",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.034,
+      "best_err": 0.028,
+      "held_s": 3.467,
+      "hold_iou": 0.194
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.026,
+      "best_err": 0.025,
+      "held_s": 4.067,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "nohijack_E2": {
+    "replicas": 163,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 1.0,
+    "goals": [
+     {
+      "goal": "Crane_Crow_Pose_or_Bakas",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.035,
+      "best_err": 0.028,
+      "held_s": 3.467,
+      "hold_iou": 0.194
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.026,
+      "best_err": 0.025,
+      "held_s": 4.067,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "nohijack_E3": {
+    "replicas": 163,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 1.0,
+    "goals": [
+     {
+      "goal": "Handstand_pose_or_Adho_M",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.031,
+      "best_err": 0.022,
+      "held_s": 3.467,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "Handstand_pose_or_Adho_M",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.04,
+      "best_err": 0.034,
+      "held_s": 5.6,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "nohijack_E5": {
+    "replicas": 163,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 1.0,
+    "goals": [
+     {
+      "goal": "Handstand_pose_or_Adho_M",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.031,
+      "best_err": 0.022,
+      "held_s": 3.467,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "Handstand_pose_or_Adho_M",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.04,
+      "best_err": 0.034,
+      "held_s": 5.6,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "fork_edge_B1": {
+    "replicas": 163,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 1.0,
+    "goals": [
+     {
+      "goal": "Crane_Crow_Pose_or_Bakas",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.042,
+      "best_err": 0.041,
+      "held_s": 8.267,
+      "hold_iou": 0.2
+     },
+     {
+      "goal": "Plank_Pose_or_Kumbhakasa",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.057,
+      "best_err": 0.053,
+      "held_s": 4.333,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "fork_edge_E1": {
+    "replicas": 163,
+    "hold_success_rate": 0.945,
+    "reached_exact_rate": 0.957,
+    "goals": [
+     {
+      "goal": "Crane_Crow_Pose_or_Bakas",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.041,
+      "best_err": 0.04,
+      "held_s": 8.8,
+      "hold_iou": 0.2
+     },
+     {
+      "goal": "Handstand_pose_or_Adho_M",
+      "hold_rate": 0.945,
+      "reach_rate": 0.945,
+      "hold_err": 0.079,
+      "best_err": 0.063,
+      "held_s": 4.933,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "fork_edge_E2": {
+    "replicas": 163,
+    "hold_success_rate": 1.0,
+    "reached_exact_rate": 1.0,
+    "goals": [
+     {
+      "goal": "Crane_Crow_Pose_or_Bakas",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.042,
+      "best_err": 0.04,
+      "held_s": 8.333,
+      "hold_iou": 0.2
+     },
+     {
+      "goal": "Four-Limbed_Staff_Pose_o",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.036,
+      "best_err": 0.032,
+      "held_s": 3.933,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "fork_edge_E3": {
+    "replicas": 163,
+    "hold_success_rate": 0.018,
+    "reached_exact_rate": 0.0,
+    "goals": [
+     {
+      "goal": "Handstand_pose_or_Adho_M",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.672,
+      "best_err": 0.602,
+      "held_s": 0.0,
+      "hold_iou": 0.044
+     },
+     {
+      "goal": "Crane_Crow_Pose_or_Bakas",
+      "hold_rate": 0.018,
+      "reach_rate": 0.018,
+      "hold_err": 0.55,
+      "best_err": 0.541,
+      "held_s": 0.0,
+      "hold_iou": 0.0
+     }
+    ]
+   },
+   "fork_edge_E5": {
+    "replicas": 163,
+    "hold_success_rate": 0.65,
+    "reached_exact_rate": 0.509,
+    "goals": [
+     {
+      "goal": "Handstand_pose_or_Adho_M",
+      "hold_rate": 0.006,
+      "reach_rate": 0.025,
+      "hold_err": 0.608,
+      "best_err": 0.584,
+      "held_s": 0.0,
+      "hold_iou": 0.13
+     },
+     {
+      "goal": "Four-Limbed_Staff_Pose_o",
+      "hold_rate": 0.65,
+      "reach_rate": 0.65,
+      "hold_err": 0.111,
+      "best_err": 0.073,
+      "held_s": 3.933,
+      "hold_iou": 0.922
+     }
+    ]
+   }
+  }
+ },
+ "g1": {
+  "500": {
+   "fork_Warrior_II_Pose_or_Virabhadrasana_II": {
+    "replicas": 341,
+    "hold_success_rate": 1.0,
+    "min_goal_hold_rate": 1.0,
+    "final_err_p50": 0.021,
+    "goals": [
+     {
+      "goal": "Warrior_II_Pose_or_Virab",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.062,
+      "best_err": 0.06,
+      "held_s": 7.667,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.021,
+      "best_err": 0.017,
+      "held_s": 2.933,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "fork_Tree_Pose_or_Vrksasana": {
+    "replicas": 341,
+    "hold_success_rate": 0.0,
+    "min_goal_hold_rate": 0.0,
+    "final_err_p50": 0.699,
+    "goals": [
+     {
+      "goal": "Tree_Pose_or_Vrksasana",
+      "hold_rate": 0.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.592,
+      "best_err": 0.123,
+      "held_s": 1.333,
+      "hold_iou": 0.064
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.699,
+      "best_err": 0.687,
+      "held_s": 0.0,
+      "hold_iou": 0.121
+     }
+    ]
+   },
+   "fork_Crane_Crow_Pose_or_Bakasana": {
+    "replicas": 341,
+    "hold_success_rate": 0.0,
+    "min_goal_hold_rate": 0.0,
+    "final_err_p50": 0.583,
+    "goals": [
+     {
+      "goal": "Crane_Crow_Pose_or_Bakas",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.127,
+      "best_err": 0.1,
+      "held_s": 8.533,
+      "hold_iou": 0.281
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.583,
+      "best_err": 0.338,
+      "held_s": 0.0,
+      "hold_iou": 0.022
+     }
+    ]
+   },
+   "fork_Handstand_pose_or_Adho_Mukha_Vrksasana": {
+    "replicas": 341,
+    "hold_success_rate": 0.0,
+    "min_goal_hold_rate": 0.0,
+    "final_err_p50": 0.707,
+    "goals": [
+     {
+      "goal": "Handstand_pose_or_Adho_M",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.72,
+      "best_err": 0.607,
+      "held_s": 0.0,
+      "hold_iou": 0.0
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.707,
+      "best_err": 0.697,
+      "held_s": 0.0,
+      "hold_iou": 0.286
+     }
+    ]
+   },
+   "fork_Feathered_Peacock_Pose_or_Pincha_Mayuras": {
+    "replicas": 341,
+    "hold_success_rate": 0.0,
+    "min_goal_hold_rate": 0.0,
+    "final_err_p50": 0.61,
+    "goals": [
+     {
+      "goal": "Feathered_Peacock_Pose_o",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.769,
+      "best_err": 0.493,
+      "held_s": 0.0,
+      "hold_iou": 0.25
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.61,
+      "best_err": 0.57,
+      "held_s": 0.0,
+      "hold_iou": 0.0
+     }
+    ]
+   },
+   "fork_Supported_Headstand_pose_or_Salamba_Sirs": {
+    "replicas": 341,
+    "hold_success_rate": 0.569,
+    "min_goal_hold_rate": 0.337,
+    "final_err_p50": 0.069,
+    "goals": [
+     {
+      "goal": "Supported_Headstand_pose",
+      "hold_rate": 0.337,
+      "reach_rate": 0.352,
+      "hold_err": 0.403,
+      "best_err": 0.336,
+      "held_s": 0.0,
+      "hold_iou": 0.5
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 0.569,
+      "reach_rate": 0.569,
+      "hold_err": 0.069,
+      "best_err": 0.05,
+      "held_s": 1.8,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "fork_Side_Plank_Pose_or_Vasisthasana": {
+    "replicas": 341,
+    "hold_success_rate": 0.006,
+    "min_goal_hold_rate": 0.006,
+    "final_err_p50": 0.682,
+    "goals": [
+     {
+      "goal": "Side_Plank_Pose_or_Vasis",
+      "hold_rate": 0.006,
+      "reach_rate": 0.015,
+      "hold_err": 0.743,
+      "best_err": 0.208,
+      "held_s": 0.0,
+      "hold_iou": 0.147
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 0.006,
+      "reach_rate": 0.006,
+      "hold_err": 0.682,
+      "best_err": 0.667,
+      "held_s": 0.0,
+      "hold_iou": 0.171
+     }
+    ]
+   },
+   "fork_Downward_Facing_Dog_pose_or_Adho_Mukha_S": {
+    "replicas": 341,
+    "hold_success_rate": 1.0,
+    "min_goal_hold_rate": 1.0,
+    "final_err_p50": 0.031,
+    "goals": [
+     {
+      "goal": "Downward-Facing_Dog_pose",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.099,
+      "best_err": 0.094,
+      "held_s": 4.0,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.031,
+      "best_err": 0.03,
+      "held_s": 3.0,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "dwell_Warrior_II_Pose_or_Virabhadrasana_II_3s": {
+    "replicas": 341,
+    "hold_success_rate": 1.0,
+    "min_goal_hold_rate": 1.0,
+    "final_err_p50": 0.018,
+    "goals": [
+     {
+      "goal": "Warrior_II_Pose_or_Virab",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.036,
+      "best_err": 0.024,
+      "held_s": 3.467,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.018,
+      "best_err": 0.016,
+      "held_s": 3.067,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "dwell_Warrior_II_Pose_or_Virabhadrasana_II_10s": {
+    "replicas": 341,
+    "hold_success_rate": 1.0,
+    "min_goal_hold_rate": 1.0,
+    "final_err_p50": 0.018,
+    "goals": [
+     {
+      "goal": "Warrior_II_Pose_or_Virab",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.035,
+      "best_err": 0.024,
+      "held_s": 10.467,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.018,
+      "best_err": 0.016,
+      "held_s": 3.067,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "hold_standing_LF_RF__upri": {
+    "replicas": 341,
+    "hold_success_rate": 1.0,
+    "min_goal_hold_rate": 1.0,
+    "final_err_p50": 0.027,
+    "goals": [
+     {
+      "goal": "hold",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.027,
+      "best_err": 0.02,
+      "held_s": 8.467,
+      "hold_iou": 0.5
+     }
+    ]
+   },
+   "hold_Feathered_Peac_LA_LH": {
+    "replicas": 341,
+    "hold_success_rate": 0.0,
+    "min_goal_hold_rate": 0.0,
+    "final_err_p50": 0.225,
+    "goals": [
+     {
+      "goal": "hold",
+      "hold_rate": 0.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.225,
+      "best_err": 0.079,
+      "held_s": 6.867,
+      "hold_iou": 0.53
+     }
+    ]
+   }
+  },
+  "1000": {
+   "fork_Warrior_II_Pose_or_Virabhadrasana_II": {
+    "replicas": 341,
+    "hold_success_rate": 1.0,
+    "min_goal_hold_rate": 1.0,
+    "final_err_p50": 0.022,
+    "goals": [
+     {
+      "goal": "Warrior_II_Pose_or_Virab",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.06,
+      "best_err": 0.059,
+      "held_s": 7.667,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.022,
+      "best_err": 0.022,
+      "held_s": 3.2,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "fork_Tree_Pose_or_Vrksasana": {
+    "replicas": 341,
+    "hold_success_rate": 1.0,
+    "min_goal_hold_rate": 1.0,
+    "final_err_p50": 0.018,
+    "goals": [
+     {
+      "goal": "Tree_Pose_or_Vrksasana",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.032,
+      "best_err": 0.028,
+      "held_s": 7.067,
+      "hold_iou": 0.24
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.018,
+      "best_err": 0.016,
+      "held_s": 7.0,
+      "hold_iou": 0.5
+     }
+    ]
+   },
+   "fork_Crane_Crow_Pose_or_Bakasana": {
+    "replicas": 341,
+    "hold_success_rate": 0.83,
+    "min_goal_hold_rate": 0.83,
+    "final_err_p50": 0.025,
+    "goals": [
+     {
+      "goal": "Crane_Crow_Pose_or_Bakas",
+      "hold_rate": 0.991,
+      "reach_rate": 0.991,
+      "hold_err": 0.114,
+      "best_err": 0.092,
+      "held_s": 7.4,
+      "hold_iou": 0.203
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 0.83,
+      "reach_rate": 0.883,
+      "hold_err": 0.025,
+      "best_err": 0.022,
+      "held_s": 2.667,
+      "hold_iou": 0.833
+     }
+    ]
+   },
+   "fork_Handstand_pose_or_Adho_Mukha_Vrksasana": {
+    "replicas": 341,
+    "hold_success_rate": 0.0,
+    "min_goal_hold_rate": 0.0,
+    "final_err_p50": 0.739,
+    "goals": [
+     {
+      "goal": "Handstand_pose_or_Adho_M",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.712,
+      "best_err": 0.587,
+      "held_s": 0.0,
+      "hold_iou": 0.0
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.739,
+      "best_err": 0.721,
+      "held_s": 0.0,
+      "hold_iou": 0.0
+     }
+    ]
+   },
+   "fork_Feathered_Peacock_Pose_or_Pincha_Mayuras": {
+    "replicas": 341,
+    "hold_success_rate": 0.0,
+    "min_goal_hold_rate": 0.0,
+    "final_err_p50": 0.615,
+    "goals": [
+     {
+      "goal": "Feathered_Peacock_Pose_o",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.668,
+      "best_err": 0.595,
+      "held_s": 0.0,
+      "hold_iou": 0.0
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.615,
+      "best_err": 0.56,
+      "held_s": 0.0,
+      "hold_iou": 0.0
+     }
+    ]
+   },
+   "fork_Supported_Headstand_pose_or_Salamba_Sirs": {
+    "replicas": 341,
+    "hold_success_rate": 0.282,
+    "min_goal_hold_rate": 0.246,
+    "final_err_p50": 0.663,
+    "goals": [
+     {
+      "goal": "Supported_Headstand_pose",
+      "hold_rate": 0.246,
+      "reach_rate": 0.273,
+      "hold_err": 0.642,
+      "best_err": 0.41,
+      "held_s": 0.0,
+      "hold_iou": 0.0
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 0.282,
+      "reach_rate": 0.282,
+      "hold_err": 0.663,
+      "best_err": 0.614,
+      "held_s": 0.0,
+      "hold_iou": 0.0
+     }
+    ]
+   },
+   "fork_Side_Plank_Pose_or_Vasisthasana": {
+    "replicas": 341,
+    "hold_success_rate": 1.0,
+    "min_goal_hold_rate": 1.0,
+    "final_err_p50": 0.051,
+    "goals": [
+     {
+      "goal": "Side_Plank_Pose_or_Vasis",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.049,
+      "best_err": 0.047,
+      "held_s": 6.2,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.051,
+      "best_err": 0.046,
+      "held_s": 2.267,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "fork_Downward_Facing_Dog_pose_or_Adho_Mukha_S": {
+    "replicas": 341,
+    "hold_success_rate": 1.0,
+    "min_goal_hold_rate": 1.0,
+    "final_err_p50": 0.037,
+    "goals": [
+     {
+      "goal": "Downward-Facing_Dog_pose",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.128,
+      "best_err": 0.123,
+      "held_s": 3.8,
+      "hold_iou": 0.667
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.037,
+      "best_err": 0.034,
+      "held_s": 3.2,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "dwell_Warrior_II_Pose_or_Virabhadrasana_II_3s": {
+    "replicas": 341,
+    "hold_success_rate": 1.0,
+    "min_goal_hold_rate": 1.0,
+    "final_err_p50": 0.018,
+    "goals": [
+     {
+      "goal": "Warrior_II_Pose_or_Virab",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.03,
+      "best_err": 0.026,
+      "held_s": 3.467,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.018,
+      "best_err": 0.018,
+      "held_s": 3.067,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "dwell_Warrior_II_Pose_or_Virabhadrasana_II_10s": {
+    "replicas": 341,
+    "hold_success_rate": 1.0,
+    "min_goal_hold_rate": 1.0,
+    "final_err_p50": 0.018,
+    "goals": [
+     {
+      "goal": "Warrior_II_Pose_or_Virab",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.03,
+      "best_err": 0.026,
+      "held_s": 10.467,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.018,
+      "best_err": 0.018,
+      "held_s": 3.067,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "hold_standing_LF_RF__upri": {
+    "replicas": 341,
+    "hold_success_rate": 1.0,
+    "min_goal_hold_rate": 1.0,
+    "final_err_p50": 0.024,
+    "goals": [
+     {
+      "goal": "hold",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.024,
+      "best_err": 0.017,
+      "held_s": 8.467,
+      "hold_iou": 0.5
+     }
+    ]
+   },
+   "hold_Feathered_Peac_LA_LH": {
+    "replicas": 341,
+    "hold_success_rate": 0.0,
+    "min_goal_hold_rate": 0.0,
+    "final_err_p50": 0.206,
+    "goals": [
+     {
+      "goal": "hold",
+      "hold_rate": 0.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.206,
+      "best_err": 0.088,
+      "held_s": 7.467,
+      "hold_iou": 0.507
+     }
+    ]
+   }
+  },
+  "1500": {
+   "fork_Warrior_II_Pose_or_Virabhadrasana_II": {
+    "replicas": 341,
+    "hold_success_rate": 1.0,
+    "min_goal_hold_rate": 1.0,
+    "final_err_p50": 0.022,
+    "goals": [
+     {
+      "goal": "Warrior_II_Pose_or_Virab",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.043,
+      "best_err": 0.042,
+      "held_s": 7.667,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.022,
+      "best_err": 0.02,
+      "held_s": 2.8,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "fork_Tree_Pose_or_Vrksasana": {
+    "replicas": 341,
+    "hold_success_rate": 1.0,
+    "min_goal_hold_rate": 1.0,
+    "final_err_p50": 0.014,
+    "goals": [
+     {
+      "goal": "Tree_Pose_or_Vrksasana",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.041,
+      "best_err": 0.039,
+      "held_s": 7.067,
+      "hold_iou": 0.333
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.014,
+      "best_err": 0.013,
+      "held_s": 6.933,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "fork_Crane_Crow_Pose_or_Bakasana": {
+    "replicas": 341,
+    "hold_success_rate": 0.0,
+    "min_goal_hold_rate": 0.0,
+    "final_err_p50": 0.664,
+    "goals": [
+     {
+      "goal": "Crane_Crow_Pose_or_Bakas",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.108,
+      "best_err": 0.087,
+      "held_s": 8.6,
+      "hold_iou": 0.265
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.664,
+      "best_err": 0.244,
+      "held_s": 0.0,
+      "hold_iou": 0.078
+     }
+    ]
+   },
+   "fork_Handstand_pose_or_Adho_Mukha_Vrksasana": {
+    "replicas": 341,
+    "hold_success_rate": 0.0,
+    "min_goal_hold_rate": 0.0,
+    "final_err_p50": 0.552,
+    "goals": [
+     {
+      "goal": "Handstand_pose_or_Adho_M",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.736,
+      "best_err": 0.672,
+      "held_s": 0.0,
+      "hold_iou": 0.497
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.552,
+      "best_err": 0.484,
+      "held_s": 0.0,
+      "hold_iou": 0.027
+     }
+    ]
+   },
+   "fork_Feathered_Peacock_Pose_or_Pincha_Mayuras": {
+    "replicas": 341,
+    "hold_success_rate": 0.0,
+    "min_goal_hold_rate": 0.0,
+    "final_err_p50": 0.631,
+    "goals": [
+     {
+      "goal": "Feathered_Peacock_Pose_o",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.66,
+      "best_err": 0.562,
+      "held_s": 0.0,
+      "hold_iou": 0.0
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.631,
+      "best_err": 0.558,
+      "held_s": 0.0,
+      "hold_iou": 0.091
+     }
+    ]
+   },
+   "fork_Supported_Headstand_pose_or_Salamba_Sirs": {
+    "replicas": 341,
+    "hold_success_rate": 0.994,
+    "min_goal_hold_rate": 0.994,
+    "final_err_p50": 0.044,
+    "goals": [
+     {
+      "goal": "Supported_Headstand_pose",
+      "hold_rate": 0.997,
+      "reach_rate": 0.997,
+      "hold_err": 0.076,
+      "best_err": 0.074,
+      "held_s": 7.0,
+      "hold_iou": 0.6
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 0.994,
+      "reach_rate": 0.994,
+      "hold_err": 0.044,
+      "best_err": 0.033,
+      "held_s": 2.2,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "fork_Side_Plank_Pose_or_Vasisthasana": {
+    "replicas": 341,
+    "hold_success_rate": 0.0,
+    "min_goal_hold_rate": 0.0,
+    "final_err_p50": 0.733,
+    "goals": [
+     {
+      "goal": "Side_Plank_Pose_or_Vasis",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.578,
+      "best_err": 0.264,
+      "held_s": 0.0,
+      "hold_iou": 0.171
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.733,
+      "best_err": 0.66,
+      "held_s": 0.0,
+      "hold_iou": 0.167
+     }
+    ]
+   },
+   "fork_Downward_Facing_Dog_pose_or_Adho_Mukha_S": {
+    "replicas": 341,
+    "hold_success_rate": 1.0,
+    "min_goal_hold_rate": 1.0,
+    "final_err_p50": 0.029,
+    "goals": [
+     {
+      "goal": "Downward-Facing_Dog_pose",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.083,
+      "best_err": 0.079,
+      "held_s": 4.0,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.029,
+      "best_err": 0.027,
+      "held_s": 3.267,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "dwell_Warrior_II_Pose_or_Virabhadrasana_II_3s": {
+    "replicas": 341,
+    "hold_success_rate": 1.0,
+    "min_goal_hold_rate": 1.0,
+    "final_err_p50": 0.019,
+    "goals": [
+     {
+      "goal": "Warrior_II_Pose_or_Virab",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.03,
+      "best_err": 0.022,
+      "held_s": 3.467,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.019,
+      "best_err": 0.018,
+      "held_s": 2.933,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "dwell_Warrior_II_Pose_or_Virabhadrasana_II_10s": {
+    "replicas": 341,
+    "hold_success_rate": 1.0,
+    "min_goal_hold_rate": 1.0,
+    "final_err_p50": 0.019,
+    "goals": [
+     {
+      "goal": "Warrior_II_Pose_or_Virab",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.03,
+      "best_err": 0.022,
+      "held_s": 10.467,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.019,
+      "best_err": 0.018,
+      "held_s": 2.933,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "hold_standing_LF_RF__upri": {
+    "replicas": 341,
+    "hold_success_rate": 1.0,
+    "min_goal_hold_rate": 1.0,
+    "final_err_p50": 0.027,
+    "goals": [
+     {
+      "goal": "hold",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.027,
+      "best_err": 0.02,
+      "held_s": 8.467,
+      "hold_iou": 0.5
+     }
+    ]
+   },
+   "hold_Feathered_Peac_LA_LH": {
+    "replicas": 341,
+    "hold_success_rate": 0.0,
+    "min_goal_hold_rate": 0.0,
+    "final_err_p50": 0.266,
+    "goals": [
+     {
+      "goal": "hold",
+      "hold_rate": 0.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.266,
+      "best_err": 0.087,
+      "held_s": 4.333,
+      "hold_iou": 0.459
+     }
+    ]
+   }
+  },
+  "2000": {
+   "fork_Warrior_II_Pose_or_Virabhadrasana_II": {
+    "replicas": 341,
+    "hold_success_rate": 1.0,
+    "min_goal_hold_rate": 1.0,
+    "final_err_p50": 0.034,
+    "goals": [
+     {
+      "goal": "Warrior_II_Pose_or_Virab",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.065,
+      "best_err": 0.065,
+      "held_s": 7.733,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.034,
+      "best_err": 0.033,
+      "held_s": 3.0,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "fork_Tree_Pose_or_Vrksasana": {
+    "replicas": 341,
+    "hold_success_rate": 1.0,
+    "min_goal_hold_rate": 1.0,
+    "final_err_p50": 0.02,
+    "goals": [
+     {
+      "goal": "Tree_Pose_or_Vrksasana",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.027,
+      "best_err": 0.026,
+      "held_s": 7.133,
+      "hold_iou": 0.2
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.02,
+      "best_err": 0.017,
+      "held_s": 6.733,
+      "hold_iou": 0.5
+     }
+    ]
+   },
+   "fork_Crane_Crow_Pose_or_Bakasana": {
+    "replicas": 341,
+    "hold_success_rate": 0.0,
+    "min_goal_hold_rate": 0.0,
+    "final_err_p50": 0.661,
+    "goals": [
+     {
+      "goal": "Crane_Crow_Pose_or_Bakas",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.614,
+      "best_err": 0.165,
+      "held_s": 0.0,
+      "hold_iou": 0.0
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.661,
+      "best_err": 0.588,
+      "held_s": 0.0,
+      "hold_iou": 0.057
+     }
+    ]
+   },
+   "fork_Handstand_pose_or_Adho_Mukha_Vrksasana": {
+    "replicas": 341,
+    "hold_success_rate": 0.375,
+    "min_goal_hold_rate": 0.0,
+    "final_err_p50": 0.558,
+    "goals": [
+     {
+      "goal": "Handstand_pose_or_Adho_M",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.751,
+      "best_err": 0.682,
+      "held_s": 0.0,
+      "hold_iou": 0.0
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 0.375,
+      "reach_rate": 0.375,
+      "hold_err": 0.558,
+      "best_err": 0.46,
+      "held_s": 0.0,
+      "hold_iou": 0.202
+     }
+    ]
+   },
+   "fork_Feathered_Peacock_Pose_or_Pincha_Mayuras": {
+    "replicas": 341,
+    "hold_success_rate": 0.889,
+    "min_goal_hold_rate": 0.155,
+    "final_err_p50": 0.025,
+    "goals": [
+     {
+      "goal": "Feathered_Peacock_Pose_o",
+      "hold_rate": 0.155,
+      "reach_rate": 0.155,
+      "hold_err": 0.464,
+      "best_err": 0.311,
+      "held_s": 0.0,
+      "hold_iou": 0.4
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 0.889,
+      "reach_rate": 0.889,
+      "hold_err": 0.025,
+      "best_err": 0.023,
+      "held_s": 4.0,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "fork_Supported_Headstand_pose_or_Salamba_Sirs": {
+    "replicas": 341,
+    "hold_success_rate": 0.959,
+    "min_goal_hold_rate": 0.959,
+    "final_err_p50": 0.051,
+    "goals": [
+     {
+      "goal": "Supported_Headstand_pose",
+      "hold_rate": 0.965,
+      "reach_rate": 0.965,
+      "hold_err": 0.064,
+      "best_err": 0.062,
+      "held_s": 6.867,
+      "hold_iou": 0.6
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 0.959,
+      "reach_rate": 0.959,
+      "hold_err": 0.051,
+      "best_err": 0.035,
+      "held_s": 2.067,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "fork_Side_Plank_Pose_or_Vasisthasana": {
+    "replicas": 341,
+    "hold_success_rate": 0.493,
+    "min_goal_hold_rate": 0.493,
+    "final_err_p50": 0.599,
+    "goals": [
+     {
+      "goal": "Side_Plank_Pose_or_Vasis",
+      "hold_rate": 0.601,
+      "reach_rate": 0.686,
+      "hold_err": 0.091,
+      "best_err": 0.088,
+      "held_s": 5.2,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 0.493,
+      "reach_rate": 0.493,
+      "hold_err": 0.599,
+      "best_err": 0.507,
+      "held_s": 0.0,
+      "hold_iou": 0.387
+     }
+    ]
+   },
+   "fork_Downward_Facing_Dog_pose_or_Adho_Mukha_S": {
+    "replicas": 341,
+    "hold_success_rate": 1.0,
+    "min_goal_hold_rate": 1.0,
+    "final_err_p50": 0.015,
+    "goals": [
+     {
+      "goal": "Downward-Facing_Dog_pose",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.069,
+      "best_err": 0.063,
+      "held_s": 4.267,
+      "hold_iou": 0.817
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.015,
+      "best_err": 0.014,
+      "held_s": 3.133,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "dwell_Warrior_II_Pose_or_Virabhadrasana_II_3s": {
+    "replicas": 341,
+    "hold_success_rate": 1.0,
+    "min_goal_hold_rate": 1.0,
+    "final_err_p50": 0.023,
+    "goals": [
+     {
+      "goal": "Warrior_II_Pose_or_Virab",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.031,
+      "best_err": 0.023,
+      "held_s": 3.467,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.023,
+      "best_err": 0.022,
+      "held_s": 2.8,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "dwell_Warrior_II_Pose_or_Virabhadrasana_II_10s": {
+    "replicas": 341,
+    "hold_success_rate": 1.0,
+    "min_goal_hold_rate": 1.0,
+    "final_err_p50": 0.023,
+    "goals": [
+     {
+      "goal": "Warrior_II_Pose_or_Virab",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.031,
+      "best_err": 0.023,
+      "held_s": 10.467,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.023,
+      "best_err": 0.022,
+      "held_s": 2.8,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "hold_standing_LF_RF__upri": {
+    "replicas": 341,
+    "hold_success_rate": 1.0,
+    "min_goal_hold_rate": 1.0,
+    "final_err_p50": 0.025,
+    "goals": [
+     {
+      "goal": "hold",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.025,
+      "best_err": 0.017,
+      "held_s": 8.467,
+      "hold_iou": 0.5
+     }
+    ]
+   },
+   "hold_Feathered_Peac_LA_LH": {
+    "replicas": 341,
+    "hold_success_rate": 0.0,
+    "min_goal_hold_rate": 0.0,
+    "final_err_p50": 0.228,
+    "goals": [
+     {
+      "goal": "hold",
+      "hold_rate": 0.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.228,
+      "best_err": 0.085,
+      "held_s": 5.867,
+      "hold_iou": 0.693
+     }
+    ]
+   }
+  },
+  "2500": {
+   "fork_Warrior_II_Pose_or_Virabhadrasana_II": {
+    "replicas": 341,
+    "hold_success_rate": 1.0,
+    "min_goal_hold_rate": 1.0,
+    "final_err_p50": 0.018,
+    "goals": [
+     {
+      "goal": "Warrior_II_Pose_or_Virab",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.07,
+      "best_err": 0.068,
+      "held_s": 7.733,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.018,
+      "best_err": 0.017,
+      "held_s": 3.0,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "fork_Tree_Pose_or_Vrksasana": {
+    "replicas": 341,
+    "hold_success_rate": 1.0,
+    "min_goal_hold_rate": 1.0,
+    "final_err_p50": 0.022,
+    "goals": [
+     {
+      "goal": "Tree_Pose_or_Vrksasana",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.037,
+      "best_err": 0.034,
+      "held_s": 7.0,
+      "hold_iou": 0.333
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.022,
+      "best_err": 0.02,
+      "held_s": 6.733,
+      "hold_iou": 0.5
+     }
+    ]
+   },
+   "fork_Crane_Crow_Pose_or_Bakasana": {
+    "replicas": 341,
+    "hold_success_rate": 0.927,
+    "min_goal_hold_rate": 0.927,
+    "final_err_p50": 0.031,
+    "goals": [
+     {
+      "goal": "Crane_Crow_Pose_or_Bakas",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.097,
+      "best_err": 0.091,
+      "held_s": 7.8,
+      "hold_iou": 0.308
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 0.927,
+      "reach_rate": 0.947,
+      "hold_err": 0.031,
+      "best_err": 0.028,
+      "held_s": 2.667,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "fork_Handstand_pose_or_Adho_Mukha_Vrksasana": {
+    "replicas": 341,
+    "hold_success_rate": 0.0,
+    "min_goal_hold_rate": 0.0,
+    "final_err_p50": 0.74,
+    "goals": [
+     {
+      "goal": "Handstand_pose_or_Adho_M",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.709,
+      "best_err": 0.668,
+      "held_s": 0.0,
+      "hold_iou": 0.105
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.74,
+      "best_err": 0.701,
+      "held_s": 0.0,
+      "hold_iou": 0.0
+     }
+    ]
+   },
+   "fork_Feathered_Peacock_Pose_or_Pincha_Mayuras": {
+    "replicas": 341,
+    "hold_success_rate": 0.0,
+    "min_goal_hold_rate": 0.0,
+    "final_err_p50": 0.648,
+    "goals": [
+     {
+      "goal": "Feathered_Peacock_Pose_o",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.693,
+      "best_err": 0.57,
+      "held_s": 0.0,
+      "hold_iou": 0.104
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.648,
+      "best_err": 0.596,
+      "held_s": 0.0,
+      "hold_iou": 0.0
+     }
+    ]
+   },
+   "fork_Supported_Headstand_pose_or_Salamba_Sirs": {
+    "replicas": 341,
+    "hold_success_rate": 0.155,
+    "min_goal_hold_rate": 0.155,
+    "final_err_p50": 0.684,
+    "goals": [
+     {
+      "goal": "Supported_Headstand_pose",
+      "hold_rate": 0.158,
+      "reach_rate": 0.158,
+      "hold_err": 0.716,
+      "best_err": 0.441,
+      "held_s": 0.0,
+      "hold_iou": 0.0
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 0.155,
+      "reach_rate": 0.155,
+      "hold_err": 0.684,
+      "best_err": 0.52,
+      "held_s": 0.0,
+      "hold_iou": 0.0
+     }
+    ]
+   },
+   "fork_Side_Plank_Pose_or_Vasisthasana": {
+    "replicas": 341,
+    "hold_success_rate": 0.0,
+    "min_goal_hold_rate": 0.0,
+    "final_err_p50": 0.724,
+    "goals": [
+     {
+      "goal": "Side_Plank_Pose_or_Vasis",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.579,
+      "best_err": 0.294,
+      "held_s": 0.0,
+      "hold_iou": 0.168
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.724,
+      "best_err": 0.662,
+      "held_s": 0.0,
+      "hold_iou": 0.187
+     }
+    ]
+   },
+   "fork_Downward_Facing_Dog_pose_or_Adho_Mukha_S": {
+    "replicas": 341,
+    "hold_success_rate": 1.0,
+    "min_goal_hold_rate": 1.0,
+    "final_err_p50": 0.032,
+    "goals": [
+     {
+      "goal": "Downward-Facing_Dog_pose",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.142,
+      "best_err": 0.139,
+      "held_s": 3.733,
+      "hold_iou": 0.604
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.032,
+      "best_err": 0.031,
+      "held_s": 3.0,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "dwell_Warrior_II_Pose_or_Virabhadrasana_II_3s": {
+    "replicas": 341,
+    "hold_success_rate": 1.0,
+    "min_goal_hold_rate": 1.0,
+    "final_err_p50": 0.016,
+    "goals": [
+     {
+      "goal": "Warrior_II_Pose_or_Virab",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.03,
+      "best_err": 0.023,
+      "held_s": 3.467,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.016,
+      "best_err": 0.015,
+      "held_s": 2.867,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "dwell_Warrior_II_Pose_or_Virabhadrasana_II_10s": {
+    "replicas": 341,
+    "hold_success_rate": 1.0,
+    "min_goal_hold_rate": 1.0,
+    "final_err_p50": 0.016,
+    "goals": [
+     {
+      "goal": "Warrior_II_Pose_or_Virab",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.029,
+      "best_err": 0.021,
+      "held_s": 10.467,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.016,
+      "best_err": 0.015,
+      "held_s": 2.867,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "hold_standing_LF_RF__upri": {
+    "replicas": 341,
+    "hold_success_rate": 1.0,
+    "min_goal_hold_rate": 1.0,
+    "final_err_p50": 0.023,
+    "goals": [
+     {
+      "goal": "hold",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.023,
+      "best_err": 0.02,
+      "held_s": 8.467,
+      "hold_iou": 0.5
+     }
+    ]
+   },
+   "hold_Feathered_Peac_LA_LH": {
+    "replicas": 341,
+    "hold_success_rate": 0.0,
+    "min_goal_hold_rate": 0.0,
+    "final_err_p50": 0.259,
+    "goals": [
+     {
+      "goal": "hold",
+      "hold_rate": 0.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.259,
+      "best_err": 0.076,
+      "held_s": 4.8,
+      "hold_iou": 0.57
+     }
+    ]
+   }
+  },
+  "3000": {
+   "fork_Warrior_II_Pose_or_Virabhadrasana_II": {
+    "replicas": 341,
+    "hold_success_rate": 1.0,
+    "min_goal_hold_rate": 1.0,
+    "final_err_p50": 0.023,
+    "goals": [
+     {
+      "goal": "Warrior_II_Pose_or_Virab",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.064,
+      "best_err": 0.064,
+      "held_s": 7.733,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.023,
+      "best_err": 0.02,
+      "held_s": 3.0,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "fork_Tree_Pose_or_Vrksasana": {
+    "replicas": 341,
+    "hold_success_rate": 1.0,
+    "min_goal_hold_rate": 1.0,
+    "final_err_p50": 0.016,
+    "goals": [
+     {
+      "goal": "Tree_Pose_or_Vrksasana",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.049,
+      "best_err": 0.047,
+      "held_s": 7.133,
+      "hold_iou": 0.2
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.016,
+      "best_err": 0.014,
+      "held_s": 6.667,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "fork_Crane_Crow_Pose_or_Bakasana": {
+    "replicas": 341,
+    "hold_success_rate": 0.012,
+    "min_goal_hold_rate": 0.012,
+    "final_err_p50": 0.531,
+    "goals": [
+     {
+      "goal": "Crane_Crow_Pose_or_Bakas",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.081,
+      "best_err": 0.077,
+      "held_s": 8.333,
+      "hold_iou": 0.278
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 0.012,
+      "reach_rate": 0.018,
+      "hold_err": 0.531,
+      "best_err": 0.323,
+      "held_s": 0.0,
+      "hold_iou": 0.226
+     }
+    ]
+   },
+   "fork_Handstand_pose_or_Adho_Mukha_Vrksasana": {
+    "replicas": 341,
+    "hold_success_rate": 0.021,
+    "min_goal_hold_rate": 0.0,
+    "final_err_p50": 0.749,
+    "goals": [
+     {
+      "goal": "Handstand_pose_or_Adho_M",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.732,
+      "best_err": 0.606,
+      "held_s": 0.0,
+      "hold_iou": 0.0
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 0.021,
+      "reach_rate": 0.021,
+      "hold_err": 0.749,
+      "best_err": 0.699,
+      "held_s": 0.0,
+      "hold_iou": 0.0
+     }
+    ]
+   },
+   "fork_Feathered_Peacock_Pose_or_Pincha_Mayuras": {
+    "replicas": 341,
+    "hold_success_rate": 0.0,
+    "min_goal_hold_rate": 0.0,
+    "final_err_p50": 0.561,
+    "goals": [
+     {
+      "goal": "Feathered_Peacock_Pose_o",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.673,
+      "best_err": 0.537,
+      "held_s": 0.0,
+      "hold_iou": 0.0
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.561,
+      "best_err": 0.558,
+      "held_s": 0.0,
+      "hold_iou": 0.139
+     }
+    ]
+   },
+   "fork_Supported_Headstand_pose_or_Salamba_Sirs": {
+    "replicas": 341,
+    "hold_success_rate": 0.003,
+    "min_goal_hold_rate": 0.003,
+    "final_err_p50": 0.687,
+    "goals": [
+     {
+      "goal": "Supported_Headstand_pose",
+      "hold_rate": 0.003,
+      "reach_rate": 0.003,
+      "hold_err": 0.734,
+      "best_err": 0.388,
+      "held_s": 0.0,
+      "hold_iou": 0.0
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 0.003,
+      "reach_rate": 0.003,
+      "hold_err": 0.687,
+      "best_err": 0.654,
+      "held_s": 0.0,
+      "hold_iou": 0.0
+     }
+    ]
+   },
+   "fork_Side_Plank_Pose_or_Vasisthasana": {
+    "replicas": 341,
+    "hold_success_rate": 1.0,
+    "min_goal_hold_rate": 1.0,
+    "final_err_p50": 0.025,
+    "goals": [
+     {
+      "goal": "Side_Plank_Pose_or_Vasis",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.047,
+      "best_err": 0.046,
+      "held_s": 6.333,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.025,
+      "best_err": 0.024,
+      "held_s": 2.733,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "fork_Downward_Facing_Dog_pose_or_Adho_Mukha_S": {
+    "replicas": 341,
+    "hold_success_rate": 1.0,
+    "min_goal_hold_rate": 1.0,
+    "final_err_p50": 0.034,
+    "goals": [
+     {
+      "goal": "Downward-Facing_Dog_pose",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.082,
+      "best_err": 0.07,
+      "held_s": 4.333,
+      "hold_iou": 0.667
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.034,
+      "best_err": 0.033,
+      "held_s": 3.133,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "dwell_Warrior_II_Pose_or_Virabhadrasana_II_3s": {
+    "replicas": 341,
+    "hold_success_rate": 1.0,
+    "min_goal_hold_rate": 1.0,
+    "final_err_p50": 0.017,
+    "goals": [
+     {
+      "goal": "Warrior_II_Pose_or_Virab",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.026,
+      "best_err": 0.02,
+      "held_s": 3.467,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.017,
+      "best_err": 0.015,
+      "held_s": 3.067,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "dwell_Warrior_II_Pose_or_Virabhadrasana_II_10s": {
+    "replicas": 341,
+    "hold_success_rate": 1.0,
+    "min_goal_hold_rate": 1.0,
+    "final_err_p50": 0.017,
+    "goals": [
+     {
+      "goal": "Warrior_II_Pose_or_Virab",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.025,
+      "best_err": 0.019,
+      "held_s": 10.467,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.017,
+      "best_err": 0.015,
+      "held_s": 3.067,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "hold_standing_LF_RF__upri": {
+    "replicas": 341,
+    "hold_success_rate": 1.0,
+    "min_goal_hold_rate": 1.0,
+    "final_err_p50": 0.032,
+    "goals": [
+     {
+      "goal": "hold",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.032,
+      "best_err": 0.024,
+      "held_s": 8.467,
+      "hold_iou": 0.5
+     }
+    ]
+   },
+   "hold_Feathered_Peac_LA_LH": {
+    "replicas": 341,
+    "hold_success_rate": 0.0,
+    "min_goal_hold_rate": 0.0,
+    "final_err_p50": 0.264,
+    "goals": [
+     {
+      "goal": "hold",
+      "hold_rate": 0.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.264,
+      "best_err": 0.078,
+      "held_s": 4.2,
+      "hold_iou": 0.691
+     }
+    ]
+   }
+  },
+  "3500": {
+   "fork_Warrior_II_Pose_or_Virabhadrasana_II": {
+    "replicas": 341,
+    "hold_success_rate": 1.0,
+    "min_goal_hold_rate": 1.0,
+    "final_err_p50": 0.026,
+    "goals": [
+     {
+      "goal": "Warrior_II_Pose_or_Virab",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.056,
+      "best_err": 0.055,
+      "held_s": 7.667,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.026,
+      "best_err": 0.019,
+      "held_s": 2.667,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "fork_Tree_Pose_or_Vrksasana": {
+    "replicas": 341,
+    "hold_success_rate": 0.0,
+    "min_goal_hold_rate": 0.0,
+    "final_err_p50": 0.694,
+    "goals": [
+     {
+      "goal": "Tree_Pose_or_Vrksasana",
+      "hold_rate": 0.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.573,
+      "best_err": 0.081,
+      "held_s": 2.2,
+      "hold_iou": 0.217
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.694,
+      "best_err": 0.563,
+      "held_s": 0.0,
+      "hold_iou": 0.2
+     }
+    ]
+   },
+   "fork_Crane_Crow_Pose_or_Bakasana": {
+    "replicas": 341,
+    "hold_success_rate": 0.0,
+    "min_goal_hold_rate": 0.0,
+    "final_err_p50": 0.7,
+    "goals": [
+     {
+      "goal": "Crane_Crow_Pose_or_Bakas",
+      "hold_rate": 0.994,
+      "reach_rate": 0.994,
+      "hold_err": 0.086,
+      "best_err": 0.076,
+      "held_s": 8.4,
+      "hold_iou": 0.252
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 0.0,
+      "reach_rate": 0.006,
+      "hold_err": 0.7,
+      "best_err": 0.245,
+      "held_s": 0.0,
+      "hold_iou": 0.062
+     }
+    ]
+   },
+   "fork_Handstand_pose_or_Adho_Mukha_Vrksasana": {
+    "replicas": 341,
+    "hold_success_rate": 0.0,
+    "min_goal_hold_rate": 0.0,
+    "final_err_p50": 0.724,
+    "goals": [
+     {
+      "goal": "Handstand_pose_or_Adho_M",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.757,
+      "best_err": 0.665,
+      "held_s": 0.0,
+      "hold_iou": 0.0
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.724,
+      "best_err": 0.636,
+      "held_s": 0.0,
+      "hold_iou": 0.0
+     }
+    ]
+   },
+   "fork_Feathered_Peacock_Pose_or_Pincha_Mayuras": {
+    "replicas": 341,
+    "hold_success_rate": 0.0,
+    "min_goal_hold_rate": 0.0,
+    "final_err_p50": 0.691,
+    "goals": [
+     {
+      "goal": "Feathered_Peacock_Pose_o",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.684,
+      "best_err": 0.529,
+      "held_s": 0.0,
+      "hold_iou": 0.0
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.691,
+      "best_err": 0.591,
+      "held_s": 0.0,
+      "hold_iou": 0.044
+     }
+    ]
+   },
+   "fork_Supported_Headstand_pose_or_Salamba_Sirs": {
+    "replicas": 341,
+    "hold_success_rate": 0.015,
+    "min_goal_hold_rate": 0.012,
+    "final_err_p50": 0.668,
+    "goals": [
+     {
+      "goal": "Supported_Headstand_pose",
+      "hold_rate": 0.012,
+      "reach_rate": 0.015,
+      "hold_err": 0.653,
+      "best_err": 0.367,
+      "held_s": 0.0,
+      "hold_iou": 0.017
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 0.015,
+      "reach_rate": 0.015,
+      "hold_err": 0.668,
+      "best_err": 0.65,
+      "held_s": 0.0,
+      "hold_iou": 0.0
+     }
+    ]
+   },
+   "fork_Side_Plank_Pose_or_Vasisthasana": {
+    "replicas": 341,
+    "hold_success_rate": 0.0,
+    "min_goal_hold_rate": 0.0,
+    "final_err_p50": 0.825,
+    "goals": [
+     {
+      "goal": "Side_Plank_Pose_or_Vasis",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.552,
+      "best_err": 0.266,
+      "held_s": 0.0,
+      "hold_iou": 0.167
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.825,
+      "best_err": 0.709,
+      "held_s": 0.0,
+      "hold_iou": 0.188
+     }
+    ]
+   },
+   "fork_Downward_Facing_Dog_pose_or_Adho_Mukha_S": {
+    "replicas": 341,
+    "hold_success_rate": 1.0,
+    "min_goal_hold_rate": 1.0,
+    "final_err_p50": 0.031,
+    "goals": [
+     {
+      "goal": "Downward-Facing_Dog_pose",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.076,
+      "best_err": 0.069,
+      "held_s": 4.2,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.031,
+      "best_err": 0.029,
+      "held_s": 3.2,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "dwell_Warrior_II_Pose_or_Virabhadrasana_II_3s": {
+    "replicas": 341,
+    "hold_success_rate": 1.0,
+    "min_goal_hold_rate": 1.0,
+    "final_err_p50": 0.023,
+    "goals": [
+     {
+      "goal": "Warrior_II_Pose_or_Virab",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.033,
+      "best_err": 0.026,
+      "held_s": 3.467,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.023,
+      "best_err": 0.017,
+      "held_s": 2.733,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "dwell_Warrior_II_Pose_or_Virabhadrasana_II_10s": {
+    "replicas": 341,
+    "hold_success_rate": 1.0,
+    "min_goal_hold_rate": 1.0,
+    "final_err_p50": 0.023,
+    "goals": [
+     {
+      "goal": "Warrior_II_Pose_or_Virab",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.031,
+      "best_err": 0.02,
+      "held_s": 10.467,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.023,
+      "best_err": 0.017,
+      "held_s": 2.733,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "hold_standing_LF_RF__upri": {
+    "replicas": 341,
+    "hold_success_rate": 1.0,
+    "min_goal_hold_rate": 1.0,
+    "final_err_p50": 0.031,
+    "goals": [
+     {
+      "goal": "hold",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.031,
+      "best_err": 0.021,
+      "held_s": 8.467,
+      "hold_iou": 0.5
+     }
+    ]
+   },
+   "hold_Feathered_Peac_LA_LH": {
+    "replicas": 341,
+    "hold_success_rate": 0.0,
+    "min_goal_hold_rate": 0.0,
+    "final_err_p50": 0.263,
+    "goals": [
+     {
+      "goal": "hold",
+      "hold_rate": 0.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.263,
+      "best_err": 0.084,
+      "held_s": 5.267,
+      "hold_iou": 0.473
+     }
+    ]
+   }
+  },
+  "4000": {
+   "fork_Warrior_II_Pose_or_Virabhadrasana_II": {
+    "replicas": 341,
+    "hold_success_rate": 1.0,
+    "min_goal_hold_rate": 1.0,
+    "final_err_p50": 0.02,
+    "goals": [
+     {
+      "goal": "Warrior_II_Pose_or_Virab",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.068,
+      "best_err": 0.067,
+      "held_s": 7.8,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.02,
+      "best_err": 0.016,
+      "held_s": 2.733,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "fork_Tree_Pose_or_Vrksasana": {
+    "replicas": 341,
+    "hold_success_rate": 0.0,
+    "min_goal_hold_rate": 0.0,
+    "final_err_p50": 0.783,
+    "goals": [
+     {
+      "goal": "Tree_Pose_or_Vrksasana",
+      "hold_rate": 0.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.552,
+      "best_err": 0.047,
+      "held_s": 2.333,
+      "hold_iou": 0.203
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.783,
+      "best_err": 0.699,
+      "held_s": 0.0,
+      "hold_iou": 0.5
+     }
+    ]
+   },
+   "fork_Crane_Crow_Pose_or_Bakasana": {
+    "replicas": 341,
+    "hold_success_rate": 0.328,
+    "min_goal_hold_rate": 0.328,
+    "final_err_p50": 0.445,
+    "goals": [
+     {
+      "goal": "Crane_Crow_Pose_or_Bakas",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.074,
+      "best_err": 0.069,
+      "held_s": 8.6,
+      "hold_iou": 0.222
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 0.328,
+      "reach_rate": 0.381,
+      "hold_err": 0.445,
+      "best_err": 0.187,
+      "held_s": 0.0,
+      "hold_iou": 0.343
+     }
+    ]
+   },
+   "fork_Handstand_pose_or_Adho_Mukha_Vrksasana": {
+    "replicas": 341,
+    "hold_success_rate": 0.006,
+    "min_goal_hold_rate": 0.0,
+    "final_err_p50": 0.532,
+    "goals": [
+     {
+      "goal": "Handstand_pose_or_Adho_M",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.798,
+      "best_err": 0.725,
+      "held_s": 0.0,
+      "hold_iou": 0.193
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 0.006,
+      "reach_rate": 0.009,
+      "hold_err": 0.532,
+      "best_err": 0.487,
+      "held_s": 0.0,
+      "hold_iou": 0.0
+     }
+    ]
+   },
+   "fork_Feathered_Peacock_Pose_or_Pincha_Mayuras": {
+    "replicas": 341,
+    "hold_success_rate": 0.0,
+    "min_goal_hold_rate": 0.0,
+    "final_err_p50": 0.585,
+    "goals": [
+     {
+      "goal": "Feathered_Peacock_Pose_o",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.688,
+      "best_err": 0.542,
+      "held_s": 0.0,
+      "hold_iou": 0.0
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.585,
+      "best_err": 0.576,
+      "held_s": 0.0,
+      "hold_iou": 0.0
+     }
+    ]
+   },
+   "fork_Supported_Headstand_pose_or_Salamba_Sirs": {
+    "replicas": 341,
+    "hold_success_rate": 0.0,
+    "min_goal_hold_rate": 0.0,
+    "final_err_p50": 0.743,
+    "goals": [
+     {
+      "goal": "Supported_Headstand_pose",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.704,
+      "best_err": 0.504,
+      "held_s": 0.0,
+      "hold_iou": 0.0
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.743,
+      "best_err": 0.731,
+      "held_s": 0.0,
+      "hold_iou": 0.0
+     }
+    ]
+   },
+   "fork_Side_Plank_Pose_or_Vasisthasana": {
+    "replicas": 341,
+    "hold_success_rate": 1.0,
+    "min_goal_hold_rate": 1.0,
+    "final_err_p50": 0.042,
+    "goals": [
+     {
+      "goal": "Side_Plank_Pose_or_Vasis",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.042,
+      "best_err": 0.041,
+      "held_s": 6.133,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.042,
+      "best_err": 0.039,
+      "held_s": 2.533,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "fork_Downward_Facing_Dog_pose_or_Adho_Mukha_S": {
+    "replicas": 341,
+    "hold_success_rate": 1.0,
+    "min_goal_hold_rate": 0.0,
+    "final_err_p50": 0.027,
+    "goals": [
+     {
+      "goal": "Downward-Facing_Dog_pose",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.164,
+      "best_err": 0.156,
+      "held_s": 0.0,
+      "hold_iou": 0.667
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.027,
+      "best_err": 0.024,
+      "held_s": 3.2,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "dwell_Warrior_II_Pose_or_Virabhadrasana_II_3s": {
+    "replicas": 341,
+    "hold_success_rate": 1.0,
+    "min_goal_hold_rate": 1.0,
+    "final_err_p50": 0.013,
+    "goals": [
+     {
+      "goal": "Warrior_II_Pose_or_Virab",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.043,
+      "best_err": 0.03,
+      "held_s": 3.467,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.013,
+      "best_err": 0.011,
+      "held_s": 2.867,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "dwell_Warrior_II_Pose_or_Virabhadrasana_II_10s": {
+    "replicas": 341,
+    "hold_success_rate": 1.0,
+    "min_goal_hold_rate": 1.0,
+    "final_err_p50": 0.013,
+    "goals": [
+     {
+      "goal": "Warrior_II_Pose_or_Virab",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.04,
+      "best_err": 0.024,
+      "held_s": 10.467,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.013,
+      "best_err": 0.011,
+      "held_s": 2.867,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "hold_standing_LF_RF__upri": {
+    "replicas": 341,
+    "hold_success_rate": 1.0,
+    "min_goal_hold_rate": 1.0,
+    "final_err_p50": 0.027,
+    "goals": [
+     {
+      "goal": "hold",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.027,
+      "best_err": 0.021,
+      "held_s": 8.467,
+      "hold_iou": 0.5
+     }
+    ]
+   },
+   "hold_Feathered_Peac_LA_LH": {
+    "replicas": 341,
+    "hold_success_rate": 0.0,
+    "min_goal_hold_rate": 0.0,
+    "final_err_p50": 0.253,
+    "goals": [
+     {
+      "goal": "hold",
+      "hold_rate": 0.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.253,
+      "best_err": 0.089,
+      "held_s": 5.333,
+      "hold_iou": 0.537
+     }
+    ]
+   }
+  },
+  "4500": {
+   "fork_Warrior_II_Pose_or_Virabhadrasana_II": {
+    "replicas": 341,
+    "hold_success_rate": 1.0,
+    "min_goal_hold_rate": 1.0,
+    "final_err_p50": 0.022,
+    "goals": [
+     {
+      "goal": "Warrior_II_Pose_or_Virab",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.083,
+      "best_err": 0.082,
+      "held_s": 7.733,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.022,
+      "best_err": 0.019,
+      "held_s": 3.0,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "fork_Tree_Pose_or_Vrksasana": {
+    "replicas": 341,
+    "hold_success_rate": 1.0,
+    "min_goal_hold_rate": 1.0,
+    "final_err_p50": 0.012,
+    "goals": [
+     {
+      "goal": "Tree_Pose_or_Vrksasana",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.043,
+      "best_err": 0.041,
+      "held_s": 7.0,
+      "hold_iou": 0.333
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.012,
+      "best_err": 0.011,
+      "held_s": 6.667,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "fork_Crane_Crow_Pose_or_Bakasana": {
+    "replicas": 341,
+    "hold_success_rate": 1.0,
+    "min_goal_hold_rate": 1.0,
+    "final_err_p50": 0.022,
+    "goals": [
+     {
+      "goal": "Crane_Crow_Pose_or_Bakas",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.092,
+      "best_err": 0.084,
+      "held_s": 7.933,
+      "hold_iou": 0.205
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.022,
+      "best_err": 0.019,
+      "held_s": 2.733,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "fork_Handstand_pose_or_Adho_Mukha_Vrksasana": {
+    "replicas": 341,
+    "hold_success_rate": 0.088,
+    "min_goal_hold_rate": 0.0,
+    "final_err_p50": 0.522,
+    "goals": [
+     {
+      "goal": "Handstand_pose_or_Adho_M",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.797,
+      "best_err": 0.718,
+      "held_s": 0.0,
+      "hold_iou": 0.062
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 0.088,
+      "reach_rate": 0.088,
+      "hold_err": 0.522,
+      "best_err": 0.47,
+      "held_s": 0.0,
+      "hold_iou": 0.067
+     }
+    ]
+   },
+   "fork_Feathered_Peacock_Pose_or_Pincha_Mayuras": {
+    "replicas": 341,
+    "hold_success_rate": 0.0,
+    "min_goal_hold_rate": 0.0,
+    "final_err_p50": 0.688,
+    "goals": [
+     {
+      "goal": "Feathered_Peacock_Pose_o",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.719,
+      "best_err": 0.544,
+      "held_s": 0.0,
+      "hold_iou": 0.143
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.688,
+      "best_err": 0.62,
+      "held_s": 0.0,
+      "hold_iou": 0.2
+     }
+    ]
+   },
+   "fork_Supported_Headstand_pose_or_Salamba_Sirs": {
+    "replicas": 341,
+    "hold_success_rate": 0.645,
+    "min_goal_hold_rate": 0.499,
+    "final_err_p50": 0.035,
+    "goals": [
+     {
+      "goal": "Supported_Headstand_pose",
+      "hold_rate": 0.499,
+      "reach_rate": 0.572,
+      "hold_err": 0.15,
+      "best_err": 0.147,
+      "held_s": 2.733,
+      "hold_iou": 0.529
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 0.645,
+      "reach_rate": 0.645,
+      "hold_err": 0.035,
+      "best_err": 0.031,
+      "held_s": 2.6,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "fork_Side_Plank_Pose_or_Vasisthasana": {
+    "replicas": 341,
+    "hold_success_rate": 1.0,
+    "min_goal_hold_rate": 1.0,
+    "final_err_p50": 0.036,
+    "goals": [
+     {
+      "goal": "Side_Plank_Pose_or_Vasis",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.055,
+      "best_err": 0.054,
+      "held_s": 6.067,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.036,
+      "best_err": 0.033,
+      "held_s": 2.6,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "fork_Downward_Facing_Dog_pose_or_Adho_Mukha_S": {
+    "replicas": 341,
+    "hold_success_rate": 1.0,
+    "min_goal_hold_rate": 1.0,
+    "final_err_p50": 0.022,
+    "goals": [
+     {
+      "goal": "Downward-Facing_Dog_pose",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.075,
+      "best_err": 0.07,
+      "held_s": 4.067,
+      "hold_iou": 0.822
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.022,
+      "best_err": 0.021,
+      "held_s": 3.067,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "dwell_Warrior_II_Pose_or_Virabhadrasana_II_3s": {
+    "replicas": 341,
+    "hold_success_rate": 1.0,
+    "min_goal_hold_rate": 1.0,
+    "final_err_p50": 0.017,
+    "goals": [
+     {
+      "goal": "Warrior_II_Pose_or_Virab",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.039,
+      "best_err": 0.031,
+      "held_s": 3.467,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.017,
+      "best_err": 0.014,
+      "held_s": 2.933,
+      "hold_iou": 0.5
+     }
+    ]
+   },
+   "dwell_Warrior_II_Pose_or_Virabhadrasana_II_10s": {
+    "replicas": 341,
+    "hold_success_rate": 1.0,
+    "min_goal_hold_rate": 1.0,
+    "final_err_p50": 0.017,
+    "goals": [
+     {
+      "goal": "Warrior_II_Pose_or_Virab",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.039,
+      "best_err": 0.026,
+      "held_s": 10.467,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.017,
+      "best_err": 0.014,
+      "held_s": 2.933,
+      "hold_iou": 0.5
+     }
+    ]
+   },
+   "hold_standing_LF_RF__upri": {
+    "replicas": 341,
+    "hold_success_rate": 1.0,
+    "min_goal_hold_rate": 1.0,
+    "final_err_p50": 0.038,
+    "goals": [
+     {
+      "goal": "hold",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.038,
+      "best_err": 0.027,
+      "held_s": 8.467,
+      "hold_iou": 0.5
+     }
+    ]
+   },
+   "hold_Feathered_Peac_LA_LH": {
+    "replicas": 341,
+    "hold_success_rate": 0.0,
+    "min_goal_hold_rate": 0.0,
+    "final_err_p50": 0.259,
+    "goals": [
+     {
+      "goal": "hold",
+      "hold_rate": 0.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.259,
+      "best_err": 0.08,
+      "held_s": 5.133,
+      "hold_iou": 0.592
+     }
+    ]
+   }
+  },
+  "5000": {
+   "fork_Warrior_II_Pose_or_Virabhadrasana_II": {
+    "replicas": 341,
+    "hold_success_rate": 1.0,
+    "min_goal_hold_rate": 1.0,
+    "final_err_p50": 0.02,
+    "goals": [
+     {
+      "goal": "Warrior_II_Pose_or_Virab",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.086,
+      "best_err": 0.085,
+      "held_s": 7.867,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.02,
+      "best_err": 0.019,
+      "held_s": 3.067,
+      "hold_iou": 0.5
+     }
+    ]
+   },
+   "fork_Tree_Pose_or_Vrksasana": {
+    "replicas": 341,
+    "hold_success_rate": 1.0,
+    "min_goal_hold_rate": 1.0,
+    "final_err_p50": 0.02,
+    "goals": [
+     {
+      "goal": "Tree_Pose_or_Vrksasana",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.042,
+      "best_err": 0.04,
+      "held_s": 7.133,
+      "hold_iou": 0.2
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.02,
+      "best_err": 0.017,
+      "held_s": 6.667,
+      "hold_iou": 0.5
+     }
+    ]
+   },
+   "fork_Crane_Crow_Pose_or_Bakasana": {
+    "replicas": 341,
+    "hold_success_rate": 1.0,
+    "min_goal_hold_rate": 1.0,
+    "final_err_p50": 0.025,
+    "goals": [
+     {
+      "goal": "Crane_Crow_Pose_or_Bakas",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.08,
+      "best_err": 0.072,
+      "held_s": 7.733,
+      "hold_iou": 0.225
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.025,
+      "best_err": 0.022,
+      "held_s": 2.733,
+      "hold_iou": 0.5
+     }
+    ]
+   },
+   "fork_Handstand_pose_or_Adho_Mukha_Vrksasana": {
+    "replicas": 341,
+    "hold_success_rate": 0.0,
+    "min_goal_hold_rate": 0.0,
+    "final_err_p50": 0.534,
+    "goals": [
+     {
+      "goal": "Handstand_pose_or_Adho_M",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.705,
+      "best_err": 0.681,
+      "held_s": 0.0,
+      "hold_iou": 0.109
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.534,
+      "best_err": 0.495,
+      "held_s": 0.0,
+      "hold_iou": 0.0
+     }
+    ]
+   },
+   "fork_Feathered_Peacock_Pose_or_Pincha_Mayuras": {
+    "replicas": 341,
+    "hold_success_rate": 0.0,
+    "min_goal_hold_rate": 0.0,
+    "final_err_p50": 0.722,
+    "goals": [
+     {
+      "goal": "Feathered_Peacock_Pose_o",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.637,
+      "best_err": 0.542,
+      "held_s": 0.0,
+      "hold_iou": 0.0
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 0.0,
+      "reach_rate": 0.0,
+      "hold_err": 0.722,
+      "best_err": 0.71,
+      "held_s": 0.0,
+      "hold_iou": 0.174
+     }
+    ]
+   },
+   "fork_Supported_Headstand_pose_or_Salamba_Sirs": {
+    "replicas": 341,
+    "hold_success_rate": 0.918,
+    "min_goal_hold_rate": 0.018,
+    "final_err_p50": 0.032,
+    "goals": [
+     {
+      "goal": "Supported_Headstand_pose",
+      "hold_rate": 0.018,
+      "reach_rate": 0.032,
+      "hold_err": 0.629,
+      "best_err": 0.524,
+      "held_s": 0.0,
+      "hold_iou": 0.2
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 0.918,
+      "reach_rate": 0.918,
+      "hold_err": 0.032,
+      "best_err": 0.03,
+      "held_s": 4.133,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "fork_Side_Plank_Pose_or_Vasisthasana": {
+    "replicas": 341,
+    "hold_success_rate": 1.0,
+    "min_goal_hold_rate": 1.0,
+    "final_err_p50": 0.039,
+    "goals": [
+     {
+      "goal": "Side_Plank_Pose_or_Vasis",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.043,
+      "best_err": 0.041,
+      "held_s": 6.0,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.039,
+      "best_err": 0.035,
+      "held_s": 2.667,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "fork_Downward_Facing_Dog_pose_or_Adho_Mukha_S": {
+    "replicas": 341,
+    "hold_success_rate": 1.0,
+    "min_goal_hold_rate": 1.0,
+    "final_err_p50": 0.022,
+    "goals": [
+     {
+      "goal": "Downward-Facing_Dog_pose",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.095,
+      "best_err": 0.09,
+      "held_s": 4.333,
+      "hold_iou": 0.667
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.022,
+      "best_err": 0.021,
+      "held_s": 3.0,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "dwell_Warrior_II_Pose_or_Virabhadrasana_II_3s": {
+    "replicas": 341,
+    "hold_success_rate": 1.0,
+    "min_goal_hold_rate": 1.0,
+    "final_err_p50": 0.016,
+    "goals": [
+     {
+      "goal": "Warrior_II_Pose_or_Virab",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.037,
+      "best_err": 0.03,
+      "held_s": 3.467,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.016,
+      "best_err": 0.015,
+      "held_s": 3.0,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "dwell_Warrior_II_Pose_or_Virabhadrasana_II_10s": {
+    "replicas": 341,
+    "hold_success_rate": 1.0,
+    "min_goal_hold_rate": 1.0,
+    "final_err_p50": 0.016,
+    "goals": [
+     {
+      "goal": "Warrior_II_Pose_or_Virab",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.035,
+      "best_err": 0.024,
+      "held_s": 10.467,
+      "hold_iou": 1.0
+     },
+     {
+      "goal": "standing",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.016,
+      "best_err": 0.015,
+      "held_s": 3.0,
+      "hold_iou": 1.0
+     }
+    ]
+   },
+   "hold_standing_LF_RF__upri": {
+    "replicas": 341,
+    "hold_success_rate": 1.0,
+    "min_goal_hold_rate": 1.0,
+    "final_err_p50": 0.034,
+    "goals": [
+     {
+      "goal": "hold",
+      "hold_rate": 1.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.034,
+      "best_err": 0.027,
+      "held_s": 8.467,
+      "hold_iou": 0.5
+     }
+    ]
+   },
+   "hold_Feathered_Peac_LA_LH": {
+    "replicas": 341,
+    "hold_success_rate": 0.0,
+    "min_goal_hold_rate": 0.0,
+    "final_err_p50": 0.268,
+    "goals": [
+     {
+      "goal": "hold",
+      "hold_rate": 0.0,
+      "reach_rate": 1.0,
+      "hold_err": 0.268,
+      "best_err": 0.074,
+      "held_s": 4.533,
+      "hold_iou": 0.633
+     }
+    ]
+   }
+  }
+ },
+ "columns": [
+  "500",
+  "1000",
+  "1500",
+  "2000",
+  "2500",
+  "3000",
+  "3420h",
+  "3420b"
+ ]
+}

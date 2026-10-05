@@ -1,0 +1,1843 @@
+{
+ "3000": {
+  "220923_Half_Moon_Pose_or_Ardha_Chandrasana_-b": {
+   "total_J": 55.53611755371094,
+   "by_zone": {
+    "L_FOOT": 3.0400707721710205,
+    "R_FOOT": 19.59603500366211,
+    "L_HAND": 0.0,
+    "R_HAND": 32.9000129699707
+   },
+   "segments": [
+    {
+     "t0": 7.13,
+     "t1": 7.8,
+     "J": 19.1,
+     "where": "hold Half_Moon_Pose_or_Ardha_ [5.6-18.7]",
+     "pelvis_z": 0.83,
+     "stance_m": [
+      0.64,
+      0.64
+     ]
+    },
+    {
+     "t0": 4.93,
+     "t1": 5.2,
+     "J": 14.0,
+     "where": "between holds",
+     "pelvis_z": 0.85,
+     "stance_m": [
+      0.12,
+      0.17
+     ]
+    },
+    {
+     "t0": 6.3,
+     "t1": 6.5,
+     "J": 7.3,
+     "where": "hold Half_Moon_Pose_or_Ardha_ [5.6-18.7]",
+     "pelvis_z": 0.83,
+     "stance_m": [
+      0.69,
+      0.66
+     ]
+    },
+    {
+     "t0": 3.57,
+     "t1": 4.2,
+     "J": 5.6,
+     "where": "between holds",
+     "pelvis_z": 0.91,
+     "stance_m": [
+      0.19,
+      0.11
+     ]
+    },
+    {
+     "t0": 18.8,
+     "t1": 18.9,
+     "J": 4.7,
+     "where": "hold Half_Moon_Pose_or_Ardha_ [5.6-18.7]",
+     "pelvis_z": 0.83,
+     "stance_m": [
+      0.62,
+      0.62
+     ]
+    },
+    {
+     "t0": 1.17,
+     "t1": 1.2,
+     "J": 1.5,
+     "where": "between holds",
+     "pelvis_z": 0.94,
+     "stance_m": [
+      0.5,
+      0.5
+     ]
+    }
+   ]
+  },
+  "220926_Plow_Pose_or_Halasana_-b": {
+   "total_J": 108.6246337890625,
+   "by_zone": {
+    "L_FOOT": 23.19683837890625,
+    "R_FOOT": 62.0621223449707,
+    "L_HAND": 5.616148948669434,
+    "R_HAND": 17.749526977539062
+   },
+   "segments": [
+    {
+     "t0": 3.4,
+     "t1": 5.93,
+     "J": 45.1,
+     "where": "between holds",
+     "pelvis_z": 0.11,
+     "stance_m": [
+      0.28,
+      0.11
+     ]
+    },
+    {
+     "t0": 36.9,
+     "t1": 37.87,
+     "J": 35.4,
+     "where": "between holds",
+     "pelvis_z": 0.36,
+     "stance_m": [
+      0.33,
+      0.13
+     ]
+    },
+    {
+     "t0": 35.23,
+     "t1": 35.33,
+     "J": 13.0,
+     "where": "between holds",
+     "pelvis_z": 0.09,
+     "stance_m": [
+      0.15,
+      0.24
+     ]
+    },
+    {
+     "t0": 7.67,
+     "t1": 7.83,
+     "J": 3.5,
+     "where": "between holds",
+     "pelvis_z": 0.1,
+     "stance_m": [
+      0.1,
+      0.1
+     ]
+    },
+    {
+     "t0": 38.37,
+     "t1": 38.4,
+     "J": 1.9,
+     "where": "hold standing [38.6-40.2]",
+     "pelvis_z": 0.89,
+     "stance_m": [
+      0.59,
+      0.57
+     ]
+    },
+    {
+     "t0": 2.27,
+     "t1": 2.27,
+     "J": 1.8,
+     "where": "between holds",
+     "pelvis_z": 0.95,
+     "stance_m": [
+      0.38,
+      0.38
+     ]
+    }
+   ]
+  },
+  "220923_Scorpion_pose_or_vrischikasana-a": {
+   "total_J": 49.024539947509766,
+   "by_zone": {
+    "L_FOOT": 6.269224643707275,
+    "R_FOOT": 23.23209571838379,
+    "L_HAND": 2.505774974822998,
+    "R_HAND": 17.017444610595703
+   },
+   "segments": [
+    {
+     "t0": 8.27,
+     "t1": 8.4,
+     "J": 15.6,
+     "where": "between holds",
+     "pelvis_z": 0.72,
+     "stance_m": [
+      0.13,
+      0.15
+     ]
+    },
+    {
+     "t0": 3.87,
+     "t1": 4.47,
+     "J": 6.5,
+     "where": "between holds",
+     "pelvis_z": 0.41,
+     "stance_m": [
+      0.12,
+      0.12
+     ]
+    },
+    {
+     "t0": 9.13,
+     "t1": 9.43,
+     "J": 5.1,
+     "where": "between holds",
+     "pelvis_z": 0.73,
+     "stance_m": [
+      0.4,
+      0.43
+     ]
+    },
+    {
+     "t0": 49.13,
+     "t1": 49.53,
+     "J": 4.5,
+     "where": "between holds",
+     "pelvis_z": 0.66,
+     "stance_m": [
+      0.18,
+      0.15
+     ]
+    },
+    {
+     "t0": 13.0,
+     "t1": 13.03,
+     "J": 3.8,
+     "where": "hold Scorpion_pose_or_vrischi [10.9-13.0]",
+     "pelvis_z": 0.75,
+     "stance_m": [
+      0.01,
+      0.06
+     ]
+    },
+    {
+     "t0": 7.57,
+     "t1": 7.87,
+     "J": 3.4,
+     "where": "between holds",
+     "pelvis_z": 0.68,
+     "stance_m": [
+      0.12,
+      0.21
+     ]
+    }
+   ]
+  },
+  "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-b": {
+   "total_J": 101.15888977050781,
+   "by_zone": {
+    "L_FOOT": 24.198837280273438,
+    "R_FOOT": 3.9038116931915283,
+    "L_HAND": 6.920828819274902,
+    "R_HAND": 66.13541412353516
+   },
+   "segments": [
+    {
+     "t0": 17.13,
+     "t1": 18.77,
+     "J": 65.2,
+     "where": "hold Pose_Dedicated_to_the_Sa [16.6-18.2]",
+     "pelvis_z": 0.34,
+     "stance_m": [
+      1.58,
+      1.64
+     ]
+    },
+    {
+     "t0": 5.93,
+     "t1": 6.47,
+     "J": 10.0,
+     "where": "between holds",
+     "pelvis_z": 0.55,
+     "stance_m": [
+      0.11,
+      0.11
+     ]
+    },
+    {
+     "t0": 20.4,
+     "t1": 20.8,
+     "J": 6.6,
+     "where": "between holds",
+     "pelvis_z": 0.35,
+     "stance_m": [
+      1.15,
+      0.95
+     ]
+    },
+    {
+     "t0": 22.73,
+     "t1": 22.8,
+     "J": 4.7,
+     "where": "between holds",
+     "pelvis_z": 0.69,
+     "stance_m": [
+      0.62,
+      0.58
+     ]
+    },
+    {
+     "t0": 25.03,
+     "t1": 25.17,
+     "J": 3.4,
+     "where": "between holds",
+     "pelvis_z": 0.96,
+     "stance_m": [
+      0.14,
+      0.14
+     ]
+    },
+    {
+     "t0": 6.77,
+     "t1": 7.07,
+     "J": 2.9,
+     "where": "hold Pose_Dedicated_to_the_Sa [6.7-7.7]",
+     "pelvis_z": 0.72,
+     "stance_m": [
+      0.11,
+      0.12
+     ]
+    }
+   ]
+  },
+  "220923_Shoulder-Pressing_Pose_or_Bhujapidasana_-a": {
+   "total_J": 51.60465621948242,
+   "by_zone": {
+    "L_FOOT": 43.15772247314453,
+    "R_FOOT": 7.350490570068359,
+    "L_HAND": 0.0,
+    "R_HAND": 1.0964422225952148
+   },
+   "segments": [
+    {
+     "t0": 13.43,
+     "t1": 14.73,
+     "J": 44.2,
+     "where": "between holds",
+     "pelvis_z": 0.96,
+     "stance_m": [
+      0.3,
+      0.21
+     ]
+    },
+    {
+     "t0": 2.8,
+     "t1": 2.83,
+     "J": 2.2,
+     "where": "between holds",
+     "pelvis_z": 0.79,
+     "stance_m": [
+      0.35,
+      0.35
+     ]
+    },
+    {
+     "t0": 0.03,
+     "t1": 0.03,
+     "J": 2.0,
+     "where": "hold standing [0.0-0.9]",
+     "pelvis_z": 0.97,
+     "stance_m": [
+      0.09,
+      0.09
+     ]
+    },
+    {
+     "t0": 6.97,
+     "t1": 6.97,
+     "J": 1.1,
+     "where": "between holds",
+     "pelvis_z": 0.35,
+     "stance_m": [
+      0.21,
+      0.21
+     ]
+    },
+    {
+     "t0": 3.43,
+     "t1": 3.43,
+     "J": 1.0,
+     "where": "between holds",
+     "pelvis_z": 0.62,
+     "stance_m": [
+      0.34,
+      0.34
+     ]
+    },
+    {
+     "t0": 1.93,
+     "t1": 1.93,
+     "J": 0.9,
+     "where": "between holds",
+     "pelvis_z": 0.94,
+     "stance_m": [
+      0.46,
+      0.46
+     ]
+    }
+   ]
+  },
+  "220923_Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana_-a": {
+   "total_J": 4.340099334716797,
+   "by_zone": {
+    "L_FOOT": 0.0,
+    "R_FOOT": 1.7319729328155518,
+    "L_HAND": 0.0,
+    "R_HAND": 2.608126401901245
+   },
+   "segments": [
+    {
+     "t0": 8.9,
+     "t1": 9.17,
+     "J": 1.9,
+     "where": "between holds",
+     "pelvis_z": 0.85,
+     "stance_m": [
+      0.32,
+      0.48
+     ]
+    },
+    {
+     "t0": 10.47,
+     "t1": 10.47,
+     "J": 1.1,
+     "where": "between holds",
+     "pelvis_z": 0.87,
+     "stance_m": [
+      0.2,
+      0.2
+     ]
+    },
+    {
+     "t0": 13.27,
+     "t1": 13.27,
+     "J": 0.7,
+     "where": "hold standing [12.1-13.4]",
+     "pelvis_z": 0.97,
+     "stance_m": [
+      0.16,
+      0.16
+     ]
+    },
+    {
+     "t0": 7.8,
+     "t1": 7.8,
+     "J": 0.4,
+     "where": "hold Downward-Facing_Dog_pose [4.9-7.8]",
+     "pelvis_z": 0.78,
+     "stance_m": [
+      0.18,
+      0.18
+     ]
+    },
+    {
+     "t0": 8.57,
+     "t1": 8.57,
+     "J": 0.3,
+     "where": "between holds",
+     "pelvis_z": 0.83,
+     "stance_m": [
+      0.2,
+      0.2
+     ]
+    }
+   ]
+  },
+  "220923_Plank_Pose_or_Kumbhakasana_-a": {
+   "total_J": 15.70036792755127,
+   "by_zone": {
+    "L_FOOT": 9.015800476074219,
+    "R_FOOT": 0.6466701626777649,
+    "L_HAND": 1.939082384109497,
+    "R_HAND": 4.098814964294434
+   },
+   "segments": [
+    {
+     "t0": 5.47,
+     "t1": 6.2,
+     "J": 6.4,
+     "where": "between holds",
+     "pelvis_z": 0.58,
+     "stance_m": [
+      0.19,
+      0.12
+     ]
+    },
+    {
+     "t0": 12.13,
+     "t1": 12.4,
+     "J": 6.0,
+     "where": "between holds",
+     "pelvis_z": 0.86,
+     "stance_m": [
+      0.13,
+      0.15
+     ]
+    },
+    {
+     "t0": 4.43,
+     "t1": 4.5,
+     "J": 1.1,
+     "where": "between holds",
+     "pelvis_z": 0.78,
+     "stance_m": [
+      0.23,
+      0.24
+     ]
+    },
+    {
+     "t0": 9.37,
+     "t1": 9.4,
+     "J": 0.7,
+     "where": "hold Plank_Pose_or_Kumbhakasa [6.4-9.3]",
+     "pelvis_z": 0.51,
+     "stance_m": [
+      0.12,
+      0.12
+     ]
+    },
+    {
+     "t0": 9.9,
+     "t1": 9.97,
+     "J": 0.6,
+     "where": "between holds",
+     "pelvis_z": 0.62,
+     "stance_m": [
+      0.13,
+      0.13
+     ]
+    },
+    {
+     "t0": 11.13,
+     "t1": 11.13,
+     "J": 0.4,
+     "where": "between holds",
+     "pelvis_z": 0.81,
+     "stance_m": [
+      0.37,
+      0.37
+     ]
+    }
+   ]
+  },
+  "220923_Side_Plank_Pose_or_Vasisthasana_-a": {
+   "total_J": 55.44105911254883,
+   "by_zone": {
+    "L_FOOT": 5.4355034828186035,
+    "R_FOOT": 40.39217758178711,
+    "L_HAND": 6.199665069580078,
+    "R_HAND": 3.413715124130249
+   },
+   "segments": [
+    {
+     "t0": 5.07,
+     "t1": 6.17,
+     "J": 37.9,
+     "where": "between holds",
+     "pelvis_z": 0.71,
+     "stance_m": [
+      0.3,
+      0.29
+     ]
+    },
+    {
+     "t0": 8.93,
+     "t1": 9.23,
+     "J": 5.1,
+     "where": "between holds",
+     "pelvis_z": 0.67,
+     "stance_m": [
+      0.3,
+      0.27
+     ]
+    },
+    {
+     "t0": 7.87,
+     "t1": 8.03,
+     "J": 4.5,
+     "where": "between holds",
+     "pelvis_z": 0.65,
+     "stance_m": [
+      0.31,
+      0.33
+     ]
+    },
+    {
+     "t0": 4.17,
+     "t1": 4.27,
+     "J": 3.4,
+     "where": "between holds",
+     "pelvis_z": 0.74,
+     "stance_m": [
+      0.33,
+      0.31
+     ]
+    },
+    {
+     "t0": 3.53,
+     "t1": 3.57,
+     "J": 1.3,
+     "where": "between holds",
+     "pelvis_z": 0.72,
+     "stance_m": [
+      0.73,
+      0.71
+     ]
+    },
+    {
+     "t0": 9.5,
+     "t1": 9.67,
+     "J": 1.0,
+     "where": "between holds",
+     "pelvis_z": 0.65,
+     "stance_m": [
+      0.25,
+      0.25
+     ]
+    }
+   ]
+  },
+  "220923_Side_Plank_Pose_or_Vasisthasana_-b": {
+   "total_J": 19.479690551757812,
+   "by_zone": {
+    "L_FOOT": 8.448163032531738,
+    "R_FOOT": 3.7845354080200195,
+    "L_HAND": 0.19805753231048584,
+    "R_HAND": 7.048934459686279
+   },
+   "segments": [
+    {
+     "t0": 21.67,
+     "t1": 21.83,
+     "J": 8.4,
+     "where": "between holds",
+     "pelvis_z": 0.96,
+     "stance_m": [
+      0.19,
+      0.18
+     ]
+    },
+    {
+     "t0": 18.03,
+     "t1": 18.37,
+     "J": 6.6,
+     "where": "between holds",
+     "pelvis_z": 0.75,
+     "stance_m": [
+      0.07,
+      0.16
+     ]
+    },
+    {
+     "t0": 17.27,
+     "t1": 17.33,
+     "J": 3.0,
+     "where": "hold Side_Plank_Pose_or_Vasis [9.4-17.2]",
+     "pelvis_z": 0.75,
+     "stance_m": [
+      0.68,
+      0.63
+     ]
+    },
+    {
+     "t0": 2.57,
+     "t1": 2.73,
+     "J": 0.6,
+     "where": "between holds",
+     "pelvis_z": 0.79,
+     "stance_m": [
+      0.75,
+      0.68
+     ]
+    },
+    {
+     "t0": 3.87,
+     "t1": 3.87,
+     "J": 0.5,
+     "where": "between holds",
+     "pelvis_z": 0.76,
+     "stance_m": [
+      0.26,
+      0.26
+     ]
+    },
+    {
+     "t0": 21.13,
+     "t1": 21.13,
+     "J": 0.3,
+     "where": "between holds",
+     "pelvis_z": 0.93,
+     "stance_m": [
+      0.2,
+      0.2
+     ]
+    }
+   ]
+  },
+  "220923_Dolphin_Plank_Pose_or_Makara_Adho_Mukha_Svanasana_-a": {
+   "total_J": 62.69456481933594,
+   "by_zone": {
+    "L_FOOT": 16.405319213867188,
+    "R_FOOT": 26.959707260131836,
+    "L_HAND": 14.994760513305664,
+    "R_HAND": 4.334780693054199
+   },
+   "segments": [
+    {
+     "t0": 6.13,
+     "t1": 7.37,
+     "J": 29.6,
+     "where": "hold Dolphin_Plank_Pose_or_Ma [6.5-8.6]",
+     "pelvis_z": 0.51,
+     "stance_m": [
+      0.13,
+      0.13
+     ]
+    },
+    {
+     "t0": 7.87,
+     "t1": 8.67,
+     "J": 16.0,
+     "where": "hold Dolphin_Plank_Pose_or_Ma [6.5-8.6]",
+     "pelvis_z": 0.38,
+     "stance_m": [
+      0.13,
+      0.12
+     ]
+    },
+    {
+     "t0": 16.13,
+     "t1": 16.33,
+     "J": 7.0,
+     "where": "between holds",
+     "pelvis_z": 0.94,
+     "stance_m": [
+      0.16,
+      0.12
+     ]
+    },
+    {
+     "t0": 16.93,
+     "t1": 17.1,
+     "J": 4.1,
+     "where": "hold standing [17.1-18.5]",
+     "pelvis_z": 0.97,
+     "stance_m": [
+      0.11,
+      0.11
+     ]
+    },
+    {
+     "t0": 4.5,
+     "t1": 4.6,
+     "J": 2.1,
+     "where": "between holds",
+     "pelvis_z": 0.46,
+     "stance_m": [
+      0.11,
+      0.11
+     ]
+    },
+    {
+     "t0": 8.93,
+     "t1": 9.07,
+     "J": 1.3,
+     "where": "hold Dolphin_Plank_Pose_or_Ma [8.6-11.8]",
+     "pelvis_z": 0.3,
+     "stance_m": [
+      0.13,
+      0.13
+     ]
+    }
+   ]
+  },
+  "220923_Low_Lunge_pose_or_Anjaneyasana_-a": {
+   "total_J": 85.609130859375,
+   "by_zone": {
+    "L_FOOT": 14.848526000976562,
+    "R_FOOT": 70.11679077148438,
+    "L_HAND": 0.6438116431236267,
+    "R_HAND": 0.0
+   },
+   "segments": [
+    {
+     "t0": 4.83,
+     "t1": 6.73,
+     "J": 34.0,
+     "where": "between holds",
+     "pelvis_z": 0.6,
+     "stance_m": [
+      1.01,
+      1.03
+     ]
+    },
+    {
+     "t0": 23.63,
+     "t1": 23.97,
+     "J": 7.8,
+     "where": "between holds",
+     "pelvis_z": 0.54,
+     "stance_m": [
+      0.98,
+      0.91
+     ]
+    },
+    {
+     "t0": 11.43,
+     "t1": 11.73,
+     "J": 6.9,
+     "where": "between holds",
+     "pelvis_z": 0.39,
+     "stance_m": [
+      1.05,
+      1.08
+     ]
+    },
+    {
+     "t0": 27.13,
+     "t1": 27.27,
+     "J": 6.7,
+     "where": "hold standing [27.4-28.6]",
+     "pelvis_z": 0.97,
+     "stance_m": [
+      0.14,
+      0.13
+     ]
+    },
+    {
+     "t0": 24.63,
+     "t1": 24.73,
+     "J": 5.8,
+     "where": "between holds",
+     "pelvis_z": 0.81,
+     "stance_m": [
+      0.53,
+      0.48
+     ]
+    },
+    {
+     "t0": 1.93,
+     "t1": 1.93,
+     "J": 5.8,
+     "where": "between holds",
+     "pelvis_z": 0.9,
+     "stance_m": [
+      0.74,
+      0.74
+     ]
+    }
+   ]
+  },
+  "220926_Upward_Plank_Pose_or_Purvottanasana_-a": {
+   "total_J": 114.8589859008789,
+   "by_zone": {
+    "L_FOOT": 50.726768493652344,
+    "R_FOOT": 32.692039489746094,
+    "L_HAND": 28.801921844482422,
+    "R_HAND": 2.638260841369629
+   },
+   "segments": [
+    {
+     "t0": 7.7,
+     "t1": 9.4,
+     "J": 40.9,
+     "where": "hold Upward_Plank_Pose_or_Pur [8.1-11.8]",
+     "pelvis_z": 0.09,
+     "stance_m": [
+      0.12,
+      0.09
+     ]
+    },
+    {
+     "t0": 25.43,
+     "t1": 26.67,
+     "J": 32.4,
+     "where": "between holds",
+     "pelvis_z": 0.27,
+     "stance_m": [
+      0.09,
+      0.26
+     ]
+    },
+    {
+     "t0": 29.4,
+     "t1": 30.23,
+     "J": 14.6,
+     "where": "hold standing [29.1-30.8]",
+     "pelvis_z": 0.96,
+     "stance_m": [
+      0.27,
+      0.17
+     ]
+    },
+    {
+     "t0": 3.93,
+     "t1": 4.23,
+     "J": 12.5,
+     "where": "between holds",
+     "pelvis_z": 0.16,
+     "stance_m": [
+      0.25,
+      0.1
+     ]
+    },
+    {
+     "t0": 11.9,
+     "t1": 11.93,
+     "J": 5.9,
+     "where": "hold Upward_Plank_Pose_or_Pur [8.1-11.8]",
+     "pelvis_z": 0.09,
+     "stance_m": [
+      0.09,
+      0.09
+     ]
+    },
+    {
+     "t0": 27.33,
+     "t1": 27.53,
+     "J": 2.6,
+     "where": "between holds",
+     "pelvis_z": 0.29,
+     "stance_m": [
+      0.29,
+      0.29
+     ]
+    }
+   ]
+  }
+ },
+ "3420s": {
+  "220923_Half_Moon_Pose_or_Ardha_Chandrasana_-b": {
+   "total_J": 82.34085083007812,
+   "by_zone": {
+    "L_FOOT": 6.979720115661621,
+    "R_FOOT": 17.12137794494629,
+    "L_HAND": 0.0,
+    "R_HAND": 58.2397575378418
+   },
+   "segments": [
+    {
+     "t0": 10.27,
+     "t1": 11.33,
+     "J": 20.0,
+     "where": "hold Half_Moon_Pose_or_Ardha_ [5.6-18.7]",
+     "pelvis_z": 0.82,
+     "stance_m": [
+      0.65,
+      0.66
+     ]
+    },
+    {
+     "t0": 8.43,
+     "t1": 9.23,
+     "J": 13.5,
+     "where": "hold Half_Moon_Pose_or_Ardha_ [5.6-18.7]",
+     "pelvis_z": 0.82,
+     "stance_m": [
+      0.63,
+      0.64
+     ]
+    },
+    {
+     "t0": 4.43,
+     "t1": 4.77,
+     "J": 11.5,
+     "where": "between holds",
+     "pelvis_z": 0.84,
+     "stance_m": [
+      0.35,
+      0.38
+     ]
+    },
+    {
+     "t0": 1.37,
+     "t1": 1.73,
+     "J": 7.3,
+     "where": "between holds",
+     "pelvis_z": 0.95,
+     "stance_m": [
+      0.44,
+      0.32
+     ]
+    },
+    {
+     "t0": 9.53,
+     "t1": 9.93,
+     "J": 7.1,
+     "where": "hold Half_Moon_Pose_or_Ardha_ [5.6-18.7]",
+     "pelvis_z": 0.82,
+     "stance_m": [
+      0.65,
+      0.65
+     ]
+    },
+    {
+     "t0": 7.73,
+     "t1": 8.2,
+     "J": 6.3,
+     "where": "hold Half_Moon_Pose_or_Ardha_ [5.6-18.7]",
+     "pelvis_z": 0.83,
+     "stance_m": [
+      0.62,
+      0.63
+     ]
+    }
+   ]
+  },
+  "220926_Plow_Pose_or_Halasana_-b": {
+   "total_J": 97.69588470458984,
+   "by_zone": {
+    "L_FOOT": 56.03865051269531,
+    "R_FOOT": 32.6270751953125,
+    "L_HAND": 5.015602111816406,
+    "R_HAND": 4.0145649909973145
+   },
+   "segments": [
+    {
+     "t0": 3.5,
+     "t1": 4.33,
+     "J": 30.6,
+     "where": "between holds",
+     "pelvis_z": 0.25,
+     "stance_m": [
+      0.22,
+      0.09
+     ]
+    },
+    {
+     "t0": 37.77,
+     "t1": 37.8,
+     "J": 15.6,
+     "where": "between holds",
+     "pelvis_z": 0.95,
+     "stance_m": [
+      0.33,
+      0.33
+     ]
+    },
+    {
+     "t0": 32.9,
+     "t1": 33.4,
+     "J": 10.8,
+     "where": "between holds",
+     "pelvis_z": 0.11,
+     "stance_m": [
+      0.29,
+      0.34
+     ]
+    },
+    {
+     "t0": 4.57,
+     "t1": 5.43,
+     "J": 9.2,
+     "where": "between holds",
+     "pelvis_z": 0.1,
+     "stance_m": [
+      0.09,
+      0.09
+     ]
+    },
+    {
+     "t0": 38.4,
+     "t1": 38.7,
+     "J": 7.9,
+     "where": "hold standing [38.6-40.2]",
+     "pelvis_z": 0.96,
+     "stance_m": [
+      0.18,
+      0.1
+     ]
+    },
+    {
+     "t0": 32.3,
+     "t1": 32.3,
+     "J": 5.5,
+     "where": "between holds",
+     "pelvis_z": 0.26,
+     "stance_m": [
+      0.67,
+      0.67
+     ]
+    }
+   ]
+  },
+  "220923_Scorpion_pose_or_vrischikasana-a": {
+   "total_J": 149.60989379882812,
+   "by_zone": {
+    "L_FOOT": 29.07245635986328,
+    "R_FOOT": 100.73908996582031,
+    "L_HAND": 16.453758239746094,
+    "R_HAND": 3.3445935249328613
+   },
+   "segments": [
+    {
+     "t0": 32.0,
+     "t1": 32.77,
+     "J": 46.2,
+     "where": "hold Scorpion_pose_or_vrischi [27.8-46.0]",
+     "pelvis_z": 0.34,
+     "stance_m": [
+      0.5,
+      0.44
+     ]
+    },
+    {
+     "t0": 29.13,
+     "t1": 29.2,
+     "J": 20.3,
+     "where": "hold Scorpion_pose_or_vrischi [27.8-46.0]",
+     "pelvis_z": 0.51,
+     "stance_m": [
+      0.53,
+      0.41
+     ]
+    },
+    {
+     "t0": 26.9,
+     "t1": 27.07,
+     "J": 15.8,
+     "where": "between holds",
+     "pelvis_z": 0.62,
+     "stance_m": [
+      0.27,
+      0.46
+     ]
+    },
+    {
+     "t0": 7.63,
+     "t1": 7.8,
+     "J": 11.5,
+     "where": "between holds",
+     "pelvis_z": 0.7,
+     "stance_m": [
+      0.12,
+      0.15
+     ]
+    },
+    {
+     "t0": 25.73,
+     "t1": 25.93,
+     "J": 11.3,
+     "where": "hold Scorpion_pose_or_vrischi [23.7-25.7]",
+     "pelvis_z": 0.65,
+     "stance_m": [
+      0.52,
+      0.33
+     ]
+    },
+    {
+     "t0": 29.97,
+     "t1": 30.43,
+     "J": 9.8,
+     "where": "hold Scorpion_pose_or_vrischi [27.8-46.0]",
+     "pelvis_z": 0.49,
+     "stance_m": [
+      0.4,
+      0.46
+     ]
+    }
+   ]
+  },
+  "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-b": {
+   "total_J": 107.49064636230469,
+   "by_zone": {
+    "L_FOOT": 33.325904846191406,
+    "R_FOOT": 5.603510856628418,
+    "L_HAND": 0.0,
+    "R_HAND": 68.56121826171875
+   },
+   "segments": [
+    {
+     "t0": 16.8,
+     "t1": 18.37,
+     "J": 61.4,
+     "where": "hold Pose_Dedicated_to_the_Sa [16.6-18.2]",
+     "pelvis_z": 0.32,
+     "stance_m": [
+      1.56,
+      1.62
+     ]
+    },
+    {
+     "t0": 24.8,
+     "t1": 25.17,
+     "J": 18.9,
+     "where": "between holds",
+     "pelvis_z": 0.96,
+     "stance_m": [
+      0.13,
+      0.11
+     ]
+    },
+    {
+     "t0": 20.8,
+     "t1": 21.23,
+     "J": 5.6,
+     "where": "between holds",
+     "pelvis_z": 0.34,
+     "stance_m": [
+      0.97,
+      0.98
+     ]
+    },
+    {
+     "t0": 5.97,
+     "t1": 6.3,
+     "J": 5.3,
+     "where": "between holds",
+     "pelvis_z": 0.54,
+     "stance_m": [
+      0.13,
+      0.12
+     ]
+    },
+    {
+     "t0": 22.77,
+     "t1": 22.83,
+     "J": 5.2,
+     "where": "between holds",
+     "pelvis_z": 0.69,
+     "stance_m": [
+      0.61,
+      0.56
+     ]
+    },
+    {
+     "t0": 23.67,
+     "t1": 23.87,
+     "J": 2.5,
+     "where": "between holds",
+     "pelvis_z": 0.86,
+     "stance_m": [
+      0.13,
+      0.13
+     ]
+    }
+   ]
+  },
+  "220923_Shoulder-Pressing_Pose_or_Bhujapidasana_-a": {
+   "total_J": 106.55560302734375,
+   "by_zone": {
+    "L_FOOT": 48.156429290771484,
+    "R_FOOT": 46.812686920166016,
+    "L_HAND": 0.0,
+    "R_HAND": 11.586491584777832
+   },
+   "segments": [
+    {
+     "t0": 13.87,
+     "t1": 14.43,
+     "J": 46.2,
+     "where": "between holds",
+     "pelvis_z": 0.96,
+     "stance_m": [
+      0.36,
+      0.31
+     ]
+    },
+    {
+     "t0": 14.67,
+     "t1": 15.83,
+     "J": 45.7,
+     "where": "hold standing [14.6-16.1]",
+     "pelvis_z": 0.97,
+     "stance_m": [
+      0.3,
+      0.24
+     ]
+    },
+    {
+     "t0": 5.03,
+     "t1": 5.33,
+     "J": 8.3,
+     "where": "between holds",
+     "pelvis_z": 0.4,
+     "stance_m": [
+      0.45,
+      0.45
+     ]
+    },
+    {
+     "t0": 10.07,
+     "t1": 10.1,
+     "J": 2.2,
+     "where": "hold Shoulder-Pressing_Pose_o [7.8-10.8]",
+     "pelvis_z": 0.34,
+     "stance_m": [
+      0.16,
+      0.16
+     ]
+    },
+    {
+     "t0": 12.67,
+     "t1": 12.87,
+     "J": 1.9,
+     "where": "between holds",
+     "pelvis_z": 0.53,
+     "stance_m": [
+      0.37,
+      0.37
+     ]
+    },
+    {
+     "t0": 16.07,
+     "t1": 16.07,
+     "J": 1.0,
+     "where": "hold standing [14.6-16.1]",
+     "pelvis_z": 0.97,
+     "stance_m": [
+      0.24,
+      0.24
+     ]
+    }
+   ]
+  },
+  "220923_Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana_-a": {
+   "total_J": 29.246505737304688,
+   "by_zone": {
+    "L_FOOT": 4.961786270141602,
+    "R_FOOT": 23.23722267150879,
+    "L_HAND": 0.5469066500663757,
+    "R_HAND": 0.5005884170532227
+   },
+   "segments": [
+    {
+     "t0": 11.73,
+     "t1": 12.0,
+     "J": 16.1,
+     "where": "hold standing [12.1-13.4]",
+     "pelvis_z": 0.96,
+     "stance_m": [
+      0.16,
+      0.14
+     ]
+    },
+    {
+     "t0": 12.67,
+     "t1": 12.7,
+     "J": 4.4,
+     "where": "hold standing [12.1-13.4]",
+     "pelvis_z": 0.97,
+     "stance_m": [
+      0.12,
+      0.12
+     ]
+    },
+    {
+     "t0": 3.67,
+     "t1": 3.8,
+     "J": 3.9,
+     "where": "between holds",
+     "pelvis_z": 0.82,
+     "stance_m": [
+      0.2,
+      0.16
+     ]
+    },
+    {
+     "t0": 1.97,
+     "t1": 1.97,
+     "J": 2.7,
+     "where": "between holds",
+     "pelvis_z": 0.93,
+     "stance_m": [
+      0.32,
+      0.32
+     ]
+    },
+    {
+     "t0": 7.8,
+     "t1": 7.8,
+     "J": 1.0,
+     "where": "hold Downward-Facing_Dog_pose [4.9-7.8]",
+     "pelvis_z": 0.79,
+     "stance_m": [
+      0.17,
+      0.17
+     ]
+    },
+    {
+     "t0": 11.5,
+     "t1": 11.5,
+     "J": 1.0,
+     "where": "between holds",
+     "pelvis_z": 0.96,
+     "stance_m": [
+      0.16,
+      0.16
+     ]
+    }
+   ]
+  },
+  "220923_Plank_Pose_or_Kumbhakasana_-a": {
+   "total_J": 31.874658584594727,
+   "by_zone": {
+    "L_FOOT": 17.748092651367188,
+    "R_FOOT": 13.035186767578125,
+    "L_HAND": 0.45217975974082947,
+    "R_HAND": 0.6392004489898682
+   },
+   "segments": [
+    {
+     "t0": 6.07,
+     "t1": 6.87,
+     "J": 9.5,
+     "where": "hold Plank_Pose_or_Kumbhakasa [6.4-9.3]",
+     "pelvis_z": 0.52,
+     "stance_m": [
+      0.17,
+      0.12
+     ]
+    },
+    {
+     "t0": 13.63,
+     "t1": 13.8,
+     "J": 8.8,
+     "where": "between holds",
+     "pelvis_z": 0.96,
+     "stance_m": [
+      0.13,
+      0.12
+     ]
+    },
+    {
+     "t0": 1.83,
+     "t1": 1.9,
+     "J": 7.3,
+     "where": "between holds",
+     "pelvis_z": 0.91,
+     "stance_m": [
+      0.44,
+      0.45
+     ]
+    },
+    {
+     "t0": 12.07,
+     "t1": 12.47,
+     "J": 2.1,
+     "where": "between holds",
+     "pelvis_z": 0.86,
+     "stance_m": [
+      0.13,
+      0.14
+     ]
+    },
+    {
+     "t0": 9.37,
+     "t1": 9.47,
+     "J": 1.7,
+     "where": "hold Plank_Pose_or_Kumbhakasa [6.4-9.3]",
+     "pelvis_z": 0.51,
+     "stance_m": [
+      0.12,
+      0.12
+     ]
+    },
+    {
+     "t0": 4.3,
+     "t1": 4.47,
+     "J": 1.6,
+     "where": "between holds",
+     "pelvis_z": 0.78,
+     "stance_m": [
+      0.19,
+      0.21
+     ]
+    }
+   ]
+  },
+  "220923_Side_Plank_Pose_or_Vasisthasana_-a": {
+   "total_J": 125.37700653076172,
+   "by_zone": {
+    "L_FOOT": 16.163349151611328,
+    "R_FOOT": 15.530108451843262,
+    "L_HAND": 0.0,
+    "R_HAND": 93.68354797363281
+   },
+   "segments": [
+    {
+     "t0": 10.57,
+     "t1": 12.83,
+     "J": 42.9,
+     "where": "hold Side_Plank_Pose_or_Vasis [10.3-16.1]",
+     "pelvis_z": 0.61,
+     "stance_m": [
+      0.27,
+      0.23
+     ]
+    },
+    {
+     "t0": 15.6,
+     "t1": 16.77,
+     "J": 26.6,
+     "where": "hold Side_Plank_Pose_or_Vasis [10.3-16.1]",
+     "pelvis_z": 0.6,
+     "stance_m": [
+      0.23,
+      0.23
+     ]
+    },
+    {
+     "t0": 14.17,
+     "t1": 14.97,
+     "J": 15.8,
+     "where": "hold Side_Plank_Pose_or_Vasis [10.3-16.1]",
+     "pelvis_z": 0.6,
+     "stance_m": [
+      0.23,
+      0.23
+     ]
+    },
+    {
+     "t0": 4.7,
+     "t1": 5.5,
+     "J": 15.5,
+     "where": "between holds",
+     "pelvis_z": 0.74,
+     "stance_m": [
+      0.29,
+      0.32
+     ]
+    },
+    {
+     "t0": 20.07,
+     "t1": 20.4,
+     "J": 7.7,
+     "where": "between holds",
+     "pelvis_z": 0.96,
+     "stance_m": [
+      0.26,
+      0.25
+     ]
+    },
+    {
+     "t0": 10.07,
+     "t1": 10.33,
+     "J": 5.2,
+     "where": "hold Side_Plank_Pose_or_Vasis [10.3-16.1]",
+     "pelvis_z": 0.62,
+     "stance_m": [
+      0.28,
+      0.27
+     ]
+    }
+   ]
+  },
+  "220923_Side_Plank_Pose_or_Vasisthasana_-b": {
+   "total_J": 8.824226379394531,
+   "by_zone": {
+    "L_FOOT": 4.514782428741455,
+    "R_FOOT": 0.9105178117752075,
+    "L_HAND": 0.5993128418922424,
+    "R_HAND": 2.7996127605438232
+   },
+   "segments": [
+    {
+     "t0": 21.57,
+     "t1": 21.67,
+     "J": 3.9,
+     "where": "between holds",
+     "pelvis_z": 0.96,
+     "stance_m": [
+      0.24,
+      0.24
+     ]
+    },
+    {
+     "t0": 2.5,
+     "t1": 2.5,
+     "J": 1.2,
+     "where": "between holds",
+     "pelvis_z": 0.81,
+     "stance_m": [
+      0.74,
+      0.74
+     ]
+    },
+    {
+     "t0": 19.13,
+     "t1": 19.13,
+     "J": 1.1,
+     "where": "between holds",
+     "pelvis_z": 0.75,
+     "stance_m": [
+      0.73,
+      0.73
+     ]
+    },
+    {
+     "t0": 0.23,
+     "t1": 0.23,
+     "J": 0.9,
+     "where": "hold standing [0.0-0.9]",
+     "pelvis_z": 0.97,
+     "stance_m": [
+      0.09,
+      0.09
+     ]
+    },
+    {
+     "t0": 2.77,
+     "t1": 2.77,
+     "J": 0.6,
+     "where": "between holds",
+     "pelvis_z": 0.78,
+     "stance_m": [
+      0.67,
+      0.67
+     ]
+    },
+    {
+     "t0": 3.73,
+     "t1": 3.73,
+     "J": 0.6,
+     "where": "between holds",
+     "pelvis_z": 0.78,
+     "stance_m": [
+      0.18,
+      0.18
+     ]
+    }
+   ]
+  },
+  "220923_Dolphin_Plank_Pose_or_Makara_Adho_Mukha_Svanasana_-a": {
+   "total_J": 64.75415802001953,
+   "by_zone": {
+    "L_FOOT": 10.393660545349121,
+    "R_FOOT": 24.05375099182129,
+    "L_HAND": 16.8447322845459,
+    "R_HAND": 13.46201229095459
+   },
+   "segments": [
+    {
+     "t0": 6.13,
+     "t1": 7.1,
+     "J": 35.7,
+     "where": "hold Dolphin_Plank_Pose_or_Ma [6.5-8.6]",
+     "pelvis_z": 0.52,
+     "stance_m": [
+      0.12,
+      0.12
+     ]
+    },
+    {
+     "t0": 10.73,
+     "t1": 11.03,
+     "J": 4.7,
+     "where": "hold Dolphin_Plank_Pose_or_Ma [8.6-11.8]",
+     "pelvis_z": 0.28,
+     "stance_m": [
+      0.13,
+      0.14
+     ]
+    },
+    {
+     "t0": 16.53,
+     "t1": 16.63,
+     "J": 4.2,
+     "where": "between holds",
+     "pelvis_z": 0.96,
+     "stance_m": [
+      0.11,
+      0.09
+     ]
+    },
+    {
+     "t0": 16.2,
+     "t1": 16.3,
+     "J": 3.6,
+     "where": "between holds",
+     "pelvis_z": 0.94,
+     "stance_m": [
+      0.12,
+      0.12
+     ]
+    },
+    {
+     "t0": 8.63,
+     "t1": 8.67,
+     "J": 3.6,
+     "where": "hold Dolphin_Plank_Pose_or_Ma [6.5-8.6]",
+     "pelvis_z": 0.39,
+     "stance_m": [
+      0.12,
+      0.12
+     ]
+    },
+    {
+     "t0": 10.4,
+     "t1": 10.5,
+     "J": 2.2,
+     "where": "hold Dolphin_Plank_Pose_or_Ma [8.6-11.8]",
+     "pelvis_z": 0.29,
+     "stance_m": [
+      0.13,
+      0.13
+     ]
+    }
+   ]
+  },
+  "220923_Low_Lunge_pose_or_Anjaneyasana_-a": {
+   "total_J": 105.59273529052734,
+   "by_zone": {
+    "L_FOOT": 8.018182754516602,
+    "R_FOOT": 97.57455444335938,
+    "L_HAND": 0.0,
+    "R_HAND": 0.0
+   },
+   "segments": [
+    {
+     "t0": 4.73,
+     "t1": 6.17,
+     "J": 38.6,
+     "where": "between holds",
+     "pelvis_z": 0.63,
+     "stance_m": [
+      1.01,
+      1.06
+     ]
+    },
+    {
+     "t0": 27.13,
+     "t1": 27.33,
+     "J": 28.5,
+     "where": "hold standing [27.4-28.6]",
+     "pelvis_z": 0.97,
+     "stance_m": [
+      0.13,
+      0.11
+     ]
+    },
+    {
+     "t0": 23.2,
+     "t1": 24.0,
+     "J": 16.6,
+     "where": "between holds",
+     "pelvis_z": 0.47,
+     "stance_m": [
+      1.05,
+      0.92
+     ]
+    },
+    {
+     "t0": 11.43,
+     "t1": 11.77,
+     "J": 10.4,
+     "where": "between holds",
+     "pelvis_z": 0.39,
+     "stance_m": [
+      1.1,
+      1.15
+     ]
+    },
+    {
+     "t0": 24.7,
+     "t1": 24.73,
+     "J": 5.4,
+     "where": "between holds",
+     "pelvis_z": 0.81,
+     "stance_m": [
+      0.49,
+      0.45
+     ]
+    },
+    {
+     "t0": 8.07,
+     "t1": 8.2,
+     "J": 5.3,
+     "where": "hold Low_Lunge_pose_or_Anjane [7.1-8.0]",
+     "pelvis_z": 0.47,
+     "stance_m": [
+      1.07,
+      1.09
+     ]
+    }
+   ]
+  },
+  "220926_Upward_Plank_Pose_or_Purvottanasana_-a": {
+   "total_J": 114.12700653076172,
+   "by_zone": {
+    "L_FOOT": 15.346729278564453,
+    "R_FOOT": 2.5489230155944824,
+    "L_HAND": 69.22389221191406,
+    "R_HAND": 27.007463455200195
+   },
+   "segments": [
+    {
+     "t0": 8.03,
+     "t1": 9.3,
+     "J": 26.2,
+     "where": "hold Upward_Plank_Pose_or_Pur [8.1-11.8]",
+     "pelvis_z": 0.09,
+     "stance_m": [
+      0.17,
+      0.1
+     ]
+    },
+    {
+     "t0": 13.6,
+     "t1": 14.07,
+     "J": 22.5,
+     "where": "hold Upward_Plank_Pose_or_Pur [13.3-14.8]",
+     "pelvis_z": 0.31,
+     "stance_m": [
+      0.09,
+      0.09
+     ]
+    },
+    {
+     "t0": 22.57,
+     "t1": 23.77,
+     "J": 19.2,
+     "where": "hold Upward_Plank_Pose_or_Pur [17.8-24.7]",
+     "pelvis_z": 0.45,
+     "stance_m": [
+      0.1,
+      0.1
+     ]
+    },
+    {
+     "t0": 18.7,
+     "t1": 19.63,
+     "J": 12.7,
+     "where": "hold Upward_Plank_Pose_or_Pur [17.8-24.7]",
+     "pelvis_z": 0.43,
+     "stance_m": [
+      0.09,
+      0.09
+     ]
+    },
+    {
+     "t0": 4.17,
+     "t1": 5.13,
+     "J": 11.5,
+     "where": "between holds",
+     "pelvis_z": 0.09,
+     "stance_m": [
+      0.29,
+      0.1
+     ]
+    },
+    {
+     "t0": 25.93,
+     "t1": 26.17,
+     "J": 4.2,
+     "where": "between holds",
+     "pelvis_z": 0.09,
+     "stance_m": [
+      0.05,
+      0.11
+     ]
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,5405 @@
+{
+ "census": {
+  "nodes": 123,
+  "edges": 196,
+  "standing_nodes": [
+   120
+  ],
+  "edge_x0_count_hist": {
+   "1": 180,
+   "2": 15,
+   "4": 1
+  },
+  "edges_without_reverse": 141,
+  "top25": [
+   {
+    "node": 120,
+    "name": "standing",
+    "dwell_x0_s": 141.07,
+    "segs": 112,
+    "key": "standing|L_FOOT:G|R_FOOT:G@upright"
+   },
+   {
+    "node": 31,
+    "name": "Feathered_Peacock_Pose_or_Pincha_Mayurasana",
+    "dwell_x0_s": 47.42,
+    "segs": 4,
+    "key": "Feathered_Peacock_Pose_or_Pincha_Mayurasana|L_FOREARM:G|L_HAND:G|R_FOREARM:G|R_HAND:G@inverted"
+   },
+   {
+    "node": 100,
+    "name": "Standing_big_toe_hold_pose_or_Utthita_Padangusthasana",
+    "dwell_x0_s": 25.25,
+    "segs": 2,
+    "key": "Standing_big_toe_hold_pose_or_Utthita_Padangusthasana|L_FOOT:G@upright"
+   },
+   {
+    "node": 41,
+    "name": "Handstand_pose_or_Adho_Mukha_Vrksasana",
+    "dwell_x0_s": 14.57,
+    "segs": 2,
+    "key": "Handstand_pose_or_Adho_Mukha_Vrksasana|L_HAND:G|R_HAND:G@inverted"
+   },
+   {
+    "node": 94,
+    "name": "Side_Plank_Pose_or_Vasisthasana",
+    "dwell_x0_s": 13.55,
+    "segs": 2,
+    "key": "Side_Plank_Pose_or_Vasisthasana|R_FOOT:G|R_HAND:G@side_r"
+   },
+   {
+    "node": 109,
+    "name": "Tree_Pose_or_Vrksasana",
+    "dwell_x0_s": 10.32,
+    "segs": 4,
+    "key": "Tree_Pose_or_Vrksasana|R_FOOT:G@upright"
+   },
+   {
+    "node": 112,
+    "name": "Upward_Plank_Pose_or_Purvottanasana",
+    "dwell_x0_s": 9.75,
+    "segs": 3,
+    "key": "Upward_Plank_Pose_or_Purvottanasana|L_FOOT:G|L_HAND:G|R_FOOT:G|R_HAND:G@supine"
+   },
+   {
+    "node": 66,
+    "name": "Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II_h3",
+    "dwell_x0_s": 9.2,
+    "segs": 2,
+    "key": "Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II_h3|HEAD:G|L_HAND:G|R_HAND:G@inverted"
+   },
+   {
+    "node": 91,
+    "name": "Side_Crane_Crow_Pose_or_Parsva_Bakasana",
+    "dwell_x0_s": 6.72,
+    "segs": 2,
+    "key": "Side_Crane_Crow_Pose_or_Parsva_Bakasana|L_HAND:G|R_HAND:G@prone"
+   },
+   {
+    "node": 42,
+    "name": "Intense_Side_Stretch_Pose_or_Parsvottanasana_h1",
+    "dwell_x0_s": 6.08,
+    "segs": 2,
+    "key": "Intense_Side_Stretch_Pose_or_Parsvottanasana_h1|L_FOOT:G|R_FOOT:G@upright"
+   },
+   {
+    "node": 62,
+    "name": "Plow_Pose_or_Halasana",
+    "dwell_x0_s": 5.98,
+    "segs": 3,
+    "key": "Plow_Pose_or_Halasana|HEAD:G|L_FOOT:G|L_UPPER_ARM:G|R_FOOT:G|R_UPPER_ARM:G|TRUNK:G@inverted"
+   },
+   {
+    "node": 9,
+    "name": "Dolphin_Pose_or_Ardha_Pincha_Mayurasana",
+    "dwell_x0_s": 5.9,
+    "segs": 2,
+    "key": "Dolphin_Pose_or_Ardha_Pincha_Mayurasana|L_FOOT:G|L_FOREARM:G|L_HAND:G|R_FOOT:G|R_FOREARM:G|R_HAND:G@prone"
+   },
+   {
+    "node": 40,
+    "name": "Handstand_pose_or_Adho_Mukha_Vrksasana_h2",
+    "dwell_x0_s": 5.83,
+    "segs": 4,
+    "key": "Handstand_pose_or_Adho_Mukha_Vrksasana_h2|L_HAND:G|R_FOOT:G|R_HAND:G@prone"
+   },
+   {
+    "node": 15,
+    "name": "Eagle_Pose_or_Garudasana_h3",
+    "dwell_x0_s": 5.38,
+    "segs": 2,
+    "key": "Eagle_Pose_or_Garudasana_h3|L_FOOT:G@upright"
+   },
+   {
+    "node": 2,
+    "name": "Bridge_Pose_or_Setu_Bandha_Sarvangasana",
+    "dwell_x0_s": 4.38,
+    "segs": 2,
+    "key": "Bridge_Pose_or_Setu_Bandha_Sarvangasana|HEAD:G|L_FOOT:G|L_FOREARM:G|L_UPPER_ARM:G|R_FOOT:G|R_FOREARM:G|R_UPPER_ARM:G|TRUNK:G@supine"
+   },
+   {
+    "node": 80,
+    "name": "Side_Crane_Crow_Pose_or_Parsva_Bakasana_h1",
+    "dwell_x0_s": 4.12,
+    "segs": 2,
+    "key": "Side_Crane_Crow_Pose_or_Parsva_Bakasana_h1|L_FOOT:G|L_HAND:G|R_FOOT:G|R_HAND:G@prone"
+   },
+   {
+    "node": 76,
+    "name": "Scorpion_pose_or_vrischikasana_h2",
+    "dwell_x0_s": 4.05,
+    "segs": 2,
+    "key": "Scorpion_pose_or_vrischikasana_h2|L_FOREARM:G|L_HAND:G|R_FOOT:G|R_FOREARM:G|R_HAND:G@prone"
+   },
+   {
+    "node": 12,
+    "name": "Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana",
+    "dwell_x0_s": 3.67,
+    "segs": 2,
+    "key": "Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana|L_FOOT:G|L_HAND:G|R_FOOT:G|R_HAND:G@prone"
+   },
+   {
+    "node": 101,
+    "name": "Supported_Headstand_pose_or_Salamba_Sirsasana_h1",
+    "dwell_x0_s": 3.02,
+    "segs": 2,
+    "key": "Supported_Headstand_pose_or_Salamba_Sirsasana_h1|HEAD:G|L_FOOT:G|L_FOREARM:G|L_HAND:G|L_SHANK:G|R_FOOT:G|R_FOREARM:G|R_HAND:G|R_SHANK:G@prone"
+   },
+   {
+    "node": 24,
+    "name": "Feathered_Peacock_Pose_or_Pincha_Mayurasana_h1",
+    "dwell_x0_s": 2.78,
+    "segs": 2,
+    "key": "Feathered_Peacock_Pose_or_Pincha_Mayurasana_h1|L_FOOT:G|L_FOREARM:G|L_HAND:G|L_SHANK:G|R_FOOT:G|R_FOREARM:G|R_HAND:G|R_SHANK:G@prone"
+   },
+   {
+    "node": 25,
+    "name": "Feathered_Peacock_Pose_or_Pincha_Mayurasana_h1",
+    "dwell_x0_s": 2.67,
+    "segs": 2,
+    "key": "Feathered_Peacock_Pose_or_Pincha_Mayurasana_h1|L_FOREARM:G|L_HAND:G|R_FOOT:G|R_FOREARM:G|R_HAND:G@prone"
+   },
+   {
+    "node": 29,
+    "name": "Feathered_Peacock_Pose_or_Pincha_Mayurasana_h3",
+    "dwell_x0_s": 2.67,
+    "segs": 2,
+    "key": "Feathered_Peacock_Pose_or_Pincha_Mayurasana_h3|L_FOREARM:G|L_HAND:G|R_FOOT:G|R_FOREARM:G|R_HAND:G@prone"
+   },
+   {
+    "node": 57,
+    "name": "Plow_Pose_or_Halasana_h1",
+    "dwell_x0_s": 2.43,
+    "segs": 2,
+    "key": "Plow_Pose_or_Halasana_h1|HEAD:G|L_FOOT:G|L_UPPER_ARM:G|R_FOOT:G|R_UPPER_ARM:G|TRUNK:G@inverted"
+   },
+   {
+    "node": 98,
+    "name": "Standing_big_toe_hold_pose_or_Utthita_Padangusthasana_h1",
+    "dwell_x0_s": 2.25,
+    "segs": 2,
+    "key": "Standing_big_toe_hold_pose_or_Utthita_Padangusthasana_h1|L_FOOT:G|R_FOOT:G@upright"
+   },
+   {
+    "node": 68,
+    "name": "Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II_h5",
+    "dwell_x0_s": 2.12,
+    "segs": 2,
+    "key": "Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II_h5|L_HAND:G|R_HAND:G@prone"
+   }
+  ],
+  "top25_pairs": {
+   "direct": 27,
+   "two_hop_only": 117,
+   "neither": 456
+  },
+  "edge_dist_heading": {
+   "n": 196,
+   "p10": 0.091,
+   "p50": 0.532,
+   "p90": 0.936,
+   "max": 1.304
+  },
+  "edge_dist_bestyaw": {
+   "n": 196,
+   "p10": 0.076,
+   "p50": 0.472,
+   "p90": 0.877,
+   "max": 1.266
+  },
+  "edge_dist_bestyaw_nonstanding": {
+   "n": 97,
+   "p10": 0.044,
+   "p50": 0.239,
+   "p90": 0.517,
+   "max": 0.705
+  },
+  "nodes_with_degree": {
+   "standing_out": 48,
+   "standing_in": 52
+  }
+ },
+ "holds": [
+  {
+   "hold": "Crane_Crow_Pose_or_Bakasana_-a@424",
+   "hold_id": "220923_Crane_Crow_Pose_or_Bakasana_-a@424",
+   "node": 4,
+   "t_hold": 7.0667,
+   "dur": 1.8,
+   "orient": "prone",
+   "ground": [
+    "L_FOOT",
+    "L_HAND",
+    "R_HAND"
+   ],
+   "bb": [
+    "L_SHANK+L_UPPER_ARM",
+    "R_SHANK+R_UPPER_ARM"
+   ],
+   "role": "variant",
+   "gate": "pass",
+   "flags": [],
+   "statics": "held",
+   "s_star": 0.1036,
+   "util": {
+    "shoulders": 0.104,
+    "hips": 0.089,
+    "spine": 0.075,
+    "wrists": 0.104,
+    "elbows": 0.104,
+    "knees": 0.039,
+    "ankles": 0.104
+   },
+   "top_joint": [
+    "L_Wrist_x",
+    0.104
+   ],
+   "statue": true,
+   "tracked": 1.0,
+   "support_min": 0.0,
+   "err6": null,
+   "subst": {},
+   "pelvis_z": 0.778,
+   "com_z": 0.596
+  },
+  {
+   "hold": "Crane_Crow_Pose_or_Bakasana_-a@439",
+   "hold_id": "220923_Crane_Crow_Pose_or_Bakasana_-a@439",
+   "node": 5,
+   "t_hold": 10.85,
+   "dur": 3.83,
+   "orient": "prone",
+   "ground": [
+    "L_HAND",
+    "R_HAND"
+   ],
+   "bb": [
+    "L_SHANK+L_UPPER_ARM",
+    "R_SHANK+R_UPPER_ARM"
+   ],
+   "role": "family",
+   "gate": "pass",
+   "flags": [],
+   "statics": "feasible",
+   "s_star": 0.1647,
+   "util": {
+    "shoulders": 0.116,
+    "hips": 0.165,
+    "spine": 0.12,
+    "wrists": 0.165,
+    "elbows": 0.06,
+    "knees": 0.039,
+    "ankles": 0.006
+   },
+   "top_joint": [
+    "R_Wrist_z",
+    0.165
+   ],
+   "statue": false,
+   "tracked": 1.0,
+   "support_min": 1.0,
+   "err6": 0.064,
+   "subst": {},
+   "pelvis_z": 0.735,
+   "com_z": 0.589
+  },
+  {
+   "hold": "Dolphin_Plank_Pose_or_Makara_Adho_Mukha_Svanasana_-a@351",
+   "hold_id": "220923_Dolphin_Plank_Pose_or_Makara_Adho_Mukha_Svanasana_-a@351",
+   "node": 6,
+   "t_hold": 5.8167,
+   "dur": 1.03,
+   "orient": "prone",
+   "ground": [
+    "L_FOOT",
+    "R_FOOT",
+    "L_SHANK",
+    "R_SHANK",
+    "L_FOREARM",
+    "R_FOREARM",
+    "L_HAND",
+    "R_HAND"
+   ],
+   "bb": [],
+   "role": "preparation",
+   "gate": "flag",
+   "flags": [
+    "pose_preparation"
+   ],
+   "statics": "feasible",
+   "s_star": 0.1001,
+   "util": {
+    "shoulders": 0.047,
+    "hips": 0.039,
+    "spine": 0.009,
+    "wrists": 0.004,
+    "elbows": 0.025,
+    "knees": 0.002,
+    "ankles": 0.005
+   },
+   "top_joint": [
+    "Neck_y",
+    0.1
+   ],
+   "statue": false,
+   "tracked": 1.0,
+   "support_min": 0.0,
+   "err6": 0.051,
+   "subst": {},
+   "pelvis_z": 0.443,
+   "com_z": 0.313
+  },
+  {
+   "hold": "Dolphin_Plank_Pose_or_Makara_Adho_Mukha_Svanasana_-a@490",
+   "hold_id": "220923_Dolphin_Plank_Pose_or_Makara_Adho_Mukha_Svanasana_-a@490",
+   "node": 7,
+   "t_hold": 8.1667,
+   "dur": 2.12,
+   "orient": "prone",
+   "ground": [
+    "L_FOOT",
+    "R_FOOT",
+    "L_FOREARM",
+    "R_FOREARM",
+    "L_HAND",
+    "R_HAND"
+   ],
+   "bb": [],
+   "role": "family",
+   "gate": "flag",
+   "flags": [
+    "fit_closer"
+   ],
+   "statics": "held",
+   "s_star": 0.1216,
+   "util": {
+    "shoulders": 0.122,
+    "hips": 0.107,
+    "spine": 0.122,
+    "wrists": 0.004,
+    "elbows": 0.059,
+    "knees": 0.122,
+    "ankles": 0.122
+   },
+   "top_joint": [
+    "R_Toe_x",
+    0.122
+   ],
+   "statue": true,
+   "tracked": 1.0,
+   "support_min": 1.0,
+   "err6": 0.052,
+   "subst": {},
+   "pelvis_z": 0.33,
+   "com_z": 0.298
+  },
+  {
+   "hold": "Dolphin_Plank_Pose_or_Makara_Adho_Mukha_Svanasana_-a@677",
+   "hold_id": "220923_Dolphin_Plank_Pose_or_Makara_Adho_Mukha_Svanasana_-a@677",
+   "node": 8,
+   "t_hold": 11.2833,
+   "dur": 3.15,
+   "orient": "prone",
+   "ground": [
+    "L_FOOT",
+    "R_FOOT",
+    "L_FOREARM",
+    "R_FOREARM",
+    "L_HAND",
+    "R_HAND"
+   ],
+   "bb": [],
+   "role": "family",
+   "gate": "pass",
+   "flags": [],
+   "statics": "feasible",
+   "s_star": 0.1176,
+   "util": {
+    "shoulders": 0.118,
+    "hips": 0.093,
+    "spine": 0.095,
+    "wrists": 0.053,
+    "elbows": 0.118,
+    "knees": 0.118,
+    "ankles": 0.118
+   },
+   "top_joint": [
+    "R_Knee_y",
+    0.118
+   ],
+   "statue": false,
+   "tracked": 1.0,
+   "support_min": 1.0,
+   "err6": 0.043,
+   "subst": {},
+   "pelvis_z": 0.281,
+   "com_z": 0.268
+  },
+  {
+   "hold": "Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana_-a@448",
+   "hold_id": "220923_Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana_-a@448",
+   "node": 12,
+   "t_hold": 7.4667,
+   "dur": 2.88,
+   "orient": "prone",
+   "ground": [
+    "L_FOOT",
+    "R_FOOT",
+    "L_HAND",
+    "R_HAND"
+   ],
+   "bb": [],
+   "role": "family",
+   "gate": "pass",
+   "flags": [],
+   "statics": "held",
+   "s_star": 0.0798,
+   "util": {
+    "shoulders": 0.08,
+    "hips": 0.08,
+    "spine": 0.08,
+    "wrists": 0.08,
+    "elbows": 0.08,
+    "knees": 0.08,
+    "ankles": 0.08
+   },
+   "top_joint": [
+    "L_Wrist_y",
+    0.08
+   ],
+   "statue": true,
+   "tracked": 1.0,
+   "support_min": 1.0,
+   "err6": 0.057,
+   "subst": {},
+   "pelvis_z": 0.778,
+   "com_z": 0.546
+  },
+  {
+   "hold": "Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana_-b@281",
+   "hold_id": "220923_Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana_-b@281",
+   "node": 12,
+   "t_hold": 4.6833,
+   "dur": 0.78,
+   "orient": "prone",
+   "ground": [
+    "L_FOOT",
+    "R_FOOT",
+    "L_HAND",
+    "R_HAND"
+   ],
+   "bb": [],
+   "role": "family",
+   "gate": "pass",
+   "flags": [],
+   "statics": "held",
+   "s_star": 0.0681,
+   "util": {
+    "shoulders": 0.068,
+    "hips": 0.068,
+    "spine": 0.068,
+    "wrists": 0.068,
+    "elbows": 0.068,
+    "knees": 0.068,
+    "ankles": 0.068
+   },
+   "top_joint": [
+    "L_Ankle_x",
+    0.068
+   ],
+   "statue": true,
+   "tracked": 1.0,
+   "support_min": 1.0,
+   "err6": 0.044,
+   "subst": {},
+   "pelvis_z": 0.787,
+   "com_z": 0.556
+  },
+  {
+   "hold": "Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana_-b@407",
+   "hold_id": "220923_Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana_-b@407",
+   "node": 10,
+   "t_hold": 6.7833,
+   "dur": 1.58,
+   "orient": "prone",
+   "ground": [
+    "L_FOOT",
+    "R_FOOT",
+    "R_HAND"
+   ],
+   "bb": [
+    "R_SHANK+L_HAND"
+   ],
+   "role": "variant",
+   "gate": "pass",
+   "flags": [],
+   "statics": "feasible",
+   "s_star": 0.1098,
+   "util": {
+    "shoulders": 0.042,
+    "hips": 0.11,
+    "spine": 0.11,
+    "wrists": 0.11,
+    "elbows": 0.11,
+    "knees": 0.074,
+    "ankles": 0.11
+   },
+   "top_joint": [
+    "R_Ankle_y",
+    0.11
+   ],
+   "statue": false,
+   "tracked": 1.0,
+   "support_min": 1.0,
+   "err6": 0.044,
+   "subst": {},
+   "pelvis_z": 0.794,
+   "com_z": 0.563
+  },
+  {
+   "hold": "Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana_-b@594",
+   "hold_id": "220923_Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana_-b@594",
+   "node": 11,
+   "t_hold": 9.9,
+   "dur": 1.18,
+   "orient": "prone",
+   "ground": [
+    "L_FOOT",
+    "R_FOOT",
+    "R_HAND"
+   ],
+   "bb": [
+    "R_SHANK+L_HAND"
+   ],
+   "role": "variant",
+   "gate": "pass",
+   "flags": [],
+   "statics": "feasible",
+   "s_star": 0.1458,
+   "util": {
+    "shoulders": 0.072,
+    "hips": 0.146,
+    "spine": 0.146,
+    "wrists": 0.099,
+    "elbows": 0.146,
+    "knees": 0.126,
+    "ankles": 0.146
+   },
+   "top_joint": [
+    "Chest_y",
+    0.146
+   ],
+   "statue": false,
+   "tracked": 1.0,
+   "support_min": 1.0,
+   "err6": 0.051,
+   "subst": {},
+   "pelvis_z": 0.783,
+   "com_z": 0.544
+  },
+  {
+   "hold": "Feathered_Peacock_Pose_or_Pincha_Mayurasana_-a@569",
+   "hold_id": "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-a@569",
+   "node": 25,
+   "t_hold": 9.4833,
+   "dur": 1.52,
+   "orient": "prone",
+   "ground": [
+    "R_FOOT",
+    "L_FOREARM",
+    "R_FOREARM",
+    "L_HAND",
+    "R_HAND"
+   ],
+   "bb": [],
+   "role": "variant",
+   "gate": "pass",
+   "flags": [],
+   "statics": "held",
+   "s_star": 0.139,
+   "util": {
+    "shoulders": 0.047,
+    "hips": 0.137,
+    "spine": 0.139,
+    "wrists": 0.004,
+    "elbows": 0.07,
+    "knees": 0.102,
+    "ankles": 0.139
+   },
+   "top_joint": [
+    "Chest_y",
+    0.139
+   ],
+   "statue": true,
+   "tracked": 1.0,
+   "support_min": 1.0,
+   "err6": 0.059,
+   "subst": {},
+   "pelvis_z": 0.761,
+   "com_z": 0.635
+  },
+  {
+   "hold": "Feathered_Peacock_Pose_or_Pincha_Mayurasana_-a@867",
+   "hold_id": "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-a@867",
+   "node": 25,
+   "t_hold": 14.45,
+   "dur": 1.15,
+   "orient": "prone",
+   "ground": [
+    "R_FOOT",
+    "L_FOREARM",
+    "R_FOREARM",
+    "L_HAND",
+    "R_HAND"
+   ],
+   "bb": [],
+   "role": "variant",
+   "gate": "pass",
+   "flags": [],
+   "statics": "held",
+   "s_star": 0.1495,
+   "util": {
+    "shoulders": 0.047,
+    "hips": 0.15,
+    "spine": 0.134,
+    "wrists": 0.004,
+    "elbows": 0.072,
+    "knees": 0.149,
+    "ankles": 0.15
+   },
+   "top_joint": [
+    "R_Ankle_y",
+    0.15
+   ],
+   "statue": true,
+   "tracked": 1.0,
+   "support_min": 1.0,
+   "err6": 0.054,
+   "subst": {},
+   "pelvis_z": 0.737,
+   "com_z": 0.614
+  },
+  {
+   "hold": "Feathered_Peacock_Pose_or_Pincha_Mayurasana_-a@1254",
+   "hold_id": "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-a@1254",
+   "node": 31,
+   "t_hold": 20.9,
+   "dur": 10.05,
+   "orient": "inverted",
+   "ground": [
+    "L_FOREARM",
+    "R_FOREARM",
+    "L_HAND",
+    "R_HAND"
+   ],
+   "bb": [],
+   "role": "family",
+   "gate": "pass",
+   "flags": [],
+   "statics": "feasible",
+   "s_star": 0.2643,
+   "util": {
+    "shoulders": 0.076,
+    "hips": 0.032,
+    "spine": 0.264,
+    "wrists": 0.0,
+    "elbows": 0.255,
+    "knees": 0.017,
+    "ankles": 0.003
+   },
+   "top_joint": [
+    "Chest_y",
+    0.264
+   ],
+   "statue": false,
+   "tracked": 1.0,
+   "support_min": 1.0,
+   "err6": 0.037,
+   "subst": {},
+   "pelvis_z": 0.812,
+   "com_z": 0.766
+  },
+  {
+   "hold": "Feathered_Peacock_Pose_or_Pincha_Mayurasana_-b@420",
+   "hold_id": "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-b@420",
+   "node": 24,
+   "t_hold": 7.0,
+   "dur": 2.07,
+   "orient": "prone",
+   "ground": [
+    "L_FOOT",
+    "R_FOOT",
+    "L_SHANK",
+    "R_SHANK",
+    "L_FOREARM",
+    "R_FOREARM",
+    "L_HAND",
+    "R_HAND"
+   ],
+   "bb": [],
+   "role": "preparation",
+   "gate": "flag",
+   "flags": [
+    "pose_preparation"
+   ],
+   "statics": "held",
+   "s_star": 0.1022,
+   "util": {
+    "shoulders": 0.022,
+    "hips": 0.058,
+    "spine": 0.017,
+    "wrists": 0.004,
+    "elbows": 0.024,
+    "knees": 0.014,
+    "ankles": 0.004
+   },
+   "top_joint": [
+    "Neck_y",
+    0.102
+   ],
+   "statue": true,
+   "tracked": 1.0,
+   "support_min": 0.0,
+   "err6": 0.044,
+   "subst": {},
+   "pelvis_z": 0.419,
+   "com_z": 0.308
+  },
+  {
+   "hold": "Feathered_Peacock_Pose_or_Pincha_Mayurasana_-b@624",
+   "hold_id": "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-b@624",
+   "node": 27,
+   "t_hold": 9.8,
+   "dur": 0.98,
+   "orient": "prone",
+   "ground": [
+    "L_FOOT",
+    "R_FOOT",
+    "L_FOREARM",
+    "R_FOREARM",
+    "L_HAND",
+    "R_HAND"
+   ],
+   "bb": [],
+   "role": "preparation",
+   "gate": "flag",
+   "flags": [
+    "pose_preparation"
+   ],
+   "statics": "held",
+   "s_star": 0.1447,
+   "util": {
+    "shoulders": 0.054,
+    "hips": 0.089,
+    "spine": 0.145,
+    "wrists": 0.004,
+    "elbows": 0.069,
+    "knees": 0.145,
+    "ankles": 0.145
+   },
+   "top_joint": [
+    "R_Knee_y",
+    0.145
+   ],
+   "statue": true,
+   "tracked": 1.0,
+   "support_min": 1.0,
+   "err6": 0.062,
+   "subst": {},
+   "pelvis_z": 0.664,
+   "com_z": 0.461
+  },
+  {
+   "hold": "Feathered_Peacock_Pose_or_Pincha_Mayurasana_-b@747",
+   "hold_id": "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-b@747",
+   "node": 29,
+   "t_hold": 12.45,
+   "dur": 1.58,
+   "orient": "prone",
+   "ground": [
+    "R_FOOT",
+    "L_FOREARM",
+    "R_FOREARM",
+    "L_HAND",
+    "R_HAND"
+   ],
+   "bb": [],
+   "role": "variant",
+   "gate": "pass",
+   "flags": [],
+   "statics": "feasible",
+   "s_star": 0.1565,
+   "util": {
+    "shoulders": 0.079,
+    "hips": 0.152,
+    "spine": 0.157,
+    "wrists": 0.003,
+    "elbows": 0.074,
+    "knees": 0.091,
+    "ankles": 0.157
+   },
+   "top_joint": [
+    "R_Ankle_y",
+    0.157
+   ],
+   "statue": false,
+   "tracked": 1.0,
+   "support_min": 1.0,
+   "err6": 0.051,
+   "subst": {},
+   "pelvis_z": 0.761,
+   "com_z": 0.635
+  },
+  {
+   "hold": "Feathered_Peacock_Pose_or_Pincha_Mayurasana_-b@1045",
+   "hold_id": "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-b@1045",
+   "node": 29,
+   "t_hold": 17.4167,
+   "dur": 1.08,
+   "orient": "prone",
+   "ground": [
+    "R_FOOT",
+    "L_FOREARM",
+    "R_FOREARM",
+    "L_HAND",
+    "R_HAND"
+   ],
+   "bb": [],
+   "role": "variant",
+   "gate": "flag",
+   "flags": [
+    "fit_closer"
+   ],
+   "statics": "feasible",
+   "s_star": 0.1733,
+   "util": {
+    "shoulders": 0.051,
+    "hips": 0.153,
+    "spine": 0.174,
+    "wrists": 0.003,
+    "elbows": 0.085,
+    "knees": 0.142,
+    "ankles": 0.174
+   },
+   "top_joint": [
+    "Chest_y",
+    0.174
+   ],
+   "statue": false,
+   "tracked": 1.0,
+   "support_min": 1.0,
+   "err6": 0.042,
+   "subst": {},
+   "pelvis_z": 0.752,
+   "com_z": 0.626
+  },
+  {
+   "hold": "Feathered_Peacock_Pose_or_Pincha_Mayurasana_-b@1667",
+   "hold_id": "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-b@1667",
+   "node": 31,
+   "t_hold": 27.7833,
+   "dur": 9.85,
+   "orient": "inverted",
+   "ground": [
+    "L_FOREARM",
+    "R_FOREARM",
+    "L_HAND",
+    "R_HAND"
+   ],
+   "bb": [],
+   "role": "family",
+   "gate": "pass",
+   "flags": [],
+   "statics": "feasible",
+   "s_star": 0.3934,
+   "util": {
+    "shoulders": 0.123,
+    "hips": 0.093,
+    "spine": 0.393,
+    "wrists": 0.0,
+    "elbows": 0.277,
+    "knees": 0.036,
+    "ankles": 0.005
+   },
+   "top_joint": [
+    "Chest_y",
+    0.393
+   ],
+   "statue": false,
+   "tracked": 1.0,
+   "support_min": 1.0,
+   "err6": 0.045,
+   "subst": {},
+   "pelvis_z": 0.808,
+   "com_z": 0.669
+  },
+  {
+   "hold": "Feathered_Peacock_Pose_or_Pincha_Mayurasana_-c@670",
+   "hold_id": "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-c@670",
+   "node": 28,
+   "t_hold": 11.1667,
+   "dur": 1.97,
+   "orient": "prone",
+   "ground": [
+    "R_FOOT",
+    "L_FOREARM",
+    "R_FOREARM",
+    "L_HAND",
+    "R_HAND"
+   ],
+   "bb": [],
+   "role": "variant",
+   "gate": "pass",
+   "flags": [],
+   "statics": "held",
+   "s_star": 0.1902,
+   "util": {
+    "shoulders": 0.063,
+    "hips": 0.134,
+    "spine": 0.19,
+    "wrists": 0.004,
+    "elbows": 0.088,
+    "knees": 0.159,
+    "ankles": 0.19
+   },
+   "top_joint": [
+    "Chest_y",
+    0.19
+   ],
+   "statue": true,
+   "tracked": 1.0,
+   "support_min": 1.0,
+   "err6": 0.071,
+   "subst": {},
+   "pelvis_z": 0.758,
+   "com_z": 0.627
+  },
+  {
+   "hold": "Feathered_Peacock_Pose_or_Pincha_Mayurasana_-c@1554",
+   "hold_id": "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-c@1554",
+   "node": 31,
+   "t_hold": 25.9,
+   "dur": 16.7,
+   "orient": "inverted",
+   "ground": [
+    "L_FOREARM",
+    "R_FOREARM",
+    "L_HAND",
+    "R_HAND"
+   ],
+   "bb": [],
+   "role": "family",
+   "gate": "flag",
+   "flags": [
+    "fit_closer"
+   ],
+   "statics": "feasible",
+   "s_star": 0.4165,
+   "util": {
+    "shoulders": 0.137,
+    "hips": 0.039,
+    "spine": 0.416,
+    "wrists": 0.0,
+    "elbows": 0.288,
+    "knees": 0.048,
+    "ankles": 0.005
+   },
+   "top_joint": [
+    "Chest_y",
+    0.416
+   ],
+   "statue": false,
+   "tracked": 1.0,
+   "support_min": 1.0,
+   "err6": 0.084,
+   "subst": {},
+   "pelvis_z": 0.803,
+   "com_z": 0.723
+  },
+  {
+   "hold": "Feathered_Peacock_Pose_or_Pincha_Mayurasana_-d@357",
+   "hold_id": "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-d@357",
+   "node": 24,
+   "t_hold": 6.3833,
+   "dur": 0.72,
+   "orient": "prone",
+   "ground": [
+    "L_FOOT",
+    "R_FOOT",
+    "L_SHANK",
+    "R_SHANK",
+    "L_FOREARM",
+    "R_FOREARM",
+    "L_HAND",
+    "R_HAND"
+   ],
+   "bb": [],
+   "role": "preparation",
+   "gate": "flag",
+   "flags": [
+    "pose_preparation"
+   ],
+   "statics": "held",
+   "s_star": 0.0986,
+   "util": {
+    "shoulders": 0.011,
+    "hips": 0.069,
+    "spine": 0.043,
+    "wrists": 0.004,
+    "elbows": 0.016,
+    "knees": 0.037,
+    "ankles": 0.002
+   },
+   "top_joint": [
+    "Neck_y",
+    0.099
+   ],
+   "statue": true,
+   "tracked": 1.0,
+   "support_min": 0.0,
+   "err6": 0.042,
+   "subst": {},
+   "pelvis_z": 0.412,
+   "com_z": 0.307
+  },
+  {
+   "hold": "Feathered_Peacock_Pose_or_Pincha_Mayurasana_-d@431",
+   "hold_id": "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-d@431",
+   "node": 26,
+   "t_hold": 7.1833,
+   "dur": 1.05,
+   "orient": "prone",
+   "ground": [
+    "L_FOOT",
+    "R_FOOT",
+    "L_SHANK",
+    "R_SHANK",
+    "L_FOREARM",
+    "R_FOREARM",
+    "L_HAND",
+    "R_HAND"
+   ],
+   "bb": [],
+   "role": "preparation",
+   "gate": "flag",
+   "flags": [
+    "pose_preparation"
+   ],
+   "statics": "held",
+   "s_star": 0.1025,
+   "util": {
+    "shoulders": 0.02,
+    "hips": 0.05,
+    "spine": 0.018,
+    "wrists": 0.004,
+    "elbows": 0.023,
+    "knees": 0.016,
+    "ankles": 0.004
+   },
+   "top_joint": [
+    "Neck_y",
+    0.103
+   ],
+   "statue": true,
+   "tracked": 1.0,
+   "support_min": 0.0,
+   "err6": 0.039,
+   "subst": {},
+   "pelvis_z": 0.424,
+   "com_z": 0.312
+  },
+  {
+   "hold": "Feathered_Peacock_Pose_or_Pincha_Mayurasana_-d@664",
+   "hold_id": "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-d@664",
+   "node": 30,
+   "t_hold": 11.0667,
+   "dur": 1.35,
+   "orient": "prone",
+   "ground": [
+    "R_FOOT",
+    "L_FOREARM",
+    "R_FOREARM",
+    "L_HAND",
+    "R_HAND"
+   ],
+   "bb": [],
+   "role": "variant",
+   "gate": "pass",
+   "flags": [],
+   "statics": "feasible",
+   "s_star": 0.0935,
+   "util": {
+    "shoulders": 0.08,
+    "hips": 0.094,
+    "spine": 0.044,
+    "wrists": 0.0,
+    "elbows": 0.063,
+    "knees": 0.094,
+    "ankles": 0.046
+   },
+   "top_joint": [
+    "R_Knee_y",
+    0.094
+   ],
+   "statue": false,
+   "tracked": 1.0,
+   "support_min": 1.0,
+   "err6": 0.049,
+   "subst": {},
+   "pelvis_z": 0.74,
+   "com_z": 0.608
+  },
+  {
+   "hold": "Feathered_Peacock_Pose_or_Pincha_Mayurasana_-d@1213",
+   "hold_id": "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-d@1213",
+   "node": 31,
+   "t_hold": 20.2167,
+   "dur": 10.82,
+   "orient": "inverted",
+   "ground": [
+    "L_FOREARM",
+    "R_FOREARM",
+    "L_HAND",
+    "R_HAND"
+   ],
+   "bb": [],
+   "role": "family",
+   "gate": "flag",
+   "flags": [
+    "fit_closer"
+   ],
+   "statics": "feasible",
+   "s_star": 0.3661,
+   "util": {
+    "shoulders": 0.109,
+    "hips": 0.089,
+    "spine": 0.366,
+    "wrists": 0.0,
+    "elbows": 0.24,
+    "knees": 0.039,
+    "ankles": 0.005
+   },
+   "top_joint": [
+    "Chest_y",
+    0.366
+   ],
+   "statue": false,
+   "tracked": 0.982,
+   "support_min": 1.0,
+   "err6": 0.058,
+   "subst": {},
+   "pelvis_z": 0.809,
+   "com_z": 0.717
+  },
+  {
+   "hold": "Firefly_Pose_or_Tittibhasana_-a@270",
+   "hold_id": "220923_Firefly_Pose_or_Tittibhasana_-a@270",
+   "node": 32,
+   "t_hold": 4.5,
+   "dur": 0.87,
+   "orient": "prone",
+   "ground": [
+    "L_FOOT",
+    "R_FOOT",
+    "L_HAND",
+    "R_HAND"
+   ],
+   "bb": [
+    "R_THIGH+R_UPPER_ARM"
+   ],
+   "role": "variant",
+   "gate": "pass",
+   "flags": [],
+   "statics": "feasible",
+   "s_star": 0.099,
+   "util": {
+    "shoulders": 0.051,
+    "hips": 0.099,
+    "spine": 0.044,
+    "wrists": 0.099,
+    "elbows": 0.067,
+    "knees": 0.099,
+    "ankles": 0.099
+   },
+   "top_joint": [
+    "R_Hip_y",
+    0.099
+   ],
+   "statue": false,
+   "tracked": 1.0,
+   "support_min": 1.0,
+   "err6": 0.042,
+   "subst": {},
+   "pelvis_z": 0.634,
+   "com_z": 0.49
+  },
+  {
+   "hold": "Firefly_Pose_or_Tittibhasana_-a@351",
+   "hold_id": "220923_Firefly_Pose_or_Tittibhasana_-a@351",
+   "node": 33,
+   "t_hold": 5.85,
+   "dur": 1.18,
+   "orient": "upright",
+   "ground": [
+    "L_FOOT",
+    "R_FOOT",
+    "L_HAND",
+    "R_HAND"
+   ],
+   "bb": [
+    "L_THIGH+L_UPPER_ARM",
+    "R_THIGH+R_UPPER_ARM"
+   ],
+   "role": "variant",
+   "gate": "pass",
+   "flags": [],
+   "statics": "feasible",
+   "s_star": 0.0794,
+   "util": {
+    "shoulders": 0.043,
+    "hips": 0.08,
+    "spine": 0.08,
+    "wrists": 0.08,
+    "elbows": 0.08,
+    "knees": 0.08,
+    "ankles": 0.08
+   },
+   "top_joint": [
+    "L_Knee_x",
+    0.08
+   ],
+   "statue": false,
+   "tracked": 1.0,
+   "support_min": 1.0,
+   "err6": 0.042,
+   "subst": {},
+   "pelvis_z": 0.545,
+   "com_z": 0.455
+  },
+  {
+   "hold": "Firefly_Pose_or_Tittibhasana_-a@776",
+   "hold_id": "220923_Firefly_Pose_or_Tittibhasana_-a@776",
+   "node": 34,
+   "t_hold": 12.9333,
+   "dur": 4.73,
+   "orient": "upright",
+   "ground": [
+    "L_HAND",
+    "R_HAND"
+   ],
+   "bb": [
+    "L_THIGH+L_UPPER_ARM",
+    "R_THIGH+R_UPPER_ARM"
+   ],
+   "role": "family",
+   "gate": "pass",
+   "flags": [],
+   "statics": "feasible",
+   "s_star": 0.1867,
+   "util": {
+    "shoulders": 0.056,
+    "hips": 0.074,
+    "spine": 0.14,
+    "wrists": 0.187,
+    "elbows": 0.066,
+    "knees": 0.049,
+    "ankles": 0.005
+   },
+   "top_joint": [
+    "L_Wrist_z",
+    0.187
+   ],
+   "statue": false,
+   "tracked": 0.613,
+   "support_min": 1.0,
+   "err6": 0.106,
+   "subst": {
+    "L_FOOT": 0.204,
+    "R_FOOT": 0.373
+   },
+   "pelvis_z": 0.403,
+   "com_z": 0.473
+  },
+  {
+   "hold": "Four-Limbed_Staff_Pose_or_Chaturanga_Dandasana_-a@485",
+   "hold_id": "220923_Four-Limbed_Staff_Pose_or_Chaturanga_Dandasana_-a@485",
+   "node": 35,
+   "t_hold": 8.0833,
+   "dur": 1.68,
+   "orient": "prone",
+   "ground": [
+    "L_FOOT",
+    "R_FOOT",
+    "L_HAND",
+    "R_HAND"
+   ],
+   "bb": [],
+   "role": "family",
+   "gate": "pass",
+   "flags": [],
+   "statics": "held",
+   "s_star": 0.259,
+   "util": {
+    "shoulders": 0.259,
+    "hips": 0.131,
+    "spine": 0.143,
+    "wrists": 0.259,
+    "elbows": 0.259,
+    "knees": 0.182,
+    "ankles": 0.122
+   },
+   "top_joint": [
+    "L_Wrist_z",
+    0.259
+   ],
+   "statue": true,
+   "tracked": 1.0,
+   "support_min": 1.0,
+   "err6": 0.044,
+   "subst": {},
+   "pelvis_z": 0.265,
+   "com_z": 0.237
+  },
+  {
+   "hold": "Garland_Pose_or_Malasana_-a@334",
+   "hold_id": "220923_Garland_Pose_or_Malasana_-a@334",
+   "node": 36,
+   "t_hold": 5.5667,
+   "dur": 3.35,
+   "orient": "upright",
+   "ground": [
+    "L_FOOT",
+    "R_FOOT"
+   ],
+   "bb": [],
+   "role": "family",
+   "gate": "pass",
+   "flags": [],
+   "statics": "held",
+   "s_star": 0.2138,
+   "util": {
+    "shoulders": 0.015,
+    "hips": 0.16,
+    "spine": 0.214,
+    "wrists": 0.003,
+    "elbows": 0.018,
+    "knees": 0.214,
+    "ankles": 0.078
+   },
+   "top_joint": [
+    "L_Knee_y",
+    0.214
+   ],
+   "statue": true,
+   "tracked": 1.0,
+   "support_min": 1.0,
+   "err6": 0.048,
+   "subst": {},
+   "pelvis_z": 0.261,
+   "com_z": 0.383
+  },
+  {
+   "hold": "Handstand_pose_or_Adho_Mukha_Vrksasana_-a@182",
+   "hold_id": "220923_Handstand_pose_or_Adho_Mukha_Vrksasana_-a@182",
+   "node": 39,
+   "t_hold": 3.0333,
+   "dur": 0.87,
+   "orient": "prone",
+   "ground": [
+    "L_FOOT",
+    "R_FOOT",
+    "L_HAND",
+    "R_HAND"
+   ],
+   "bb": [],
+   "role": "preparation",
+   "gate": "flag",
+   "flags": [
+    "pose_preparation"
+   ],
+   "statics": "held",
+   "s_star": 0.112,
+   "util": {
+    "shoulders": 0.086,
+    "hips": 0.112,
+    "spine": 0.112,
+    "wrists": 0.112,
+    "elbows": 0.112,
+    "knees": 0.112,
+    "ankles": 0.112
+   },
+   "top_joint": [
+    "R_Knee_x",
+    0.112
+   ],
+   "statue": true,
+   "tracked": 1.0,
+   "support_min": 0.654,
+   "err6": 0.034,
+   "subst": {},
+   "pelvis_z": 0.852,
+   "com_z": 0.64
+  },
+  {
+   "hold": "Handstand_pose_or_Adho_Mukha_Vrksasana_-a@392",
+   "hold_id": "220923_Handstand_pose_or_Adho_Mukha_Vrksasana_-a@392",
+   "node": 40,
+   "t_hold": 6.5333,
+   "dur": 1.7,
+   "orient": "prone",
+   "ground": [
+    "R_FOOT",
+    "L_HAND",
+    "R_HAND"
+   ],
+   "bb": [],
+   "role": "undecided",
+   "gate": "pass",
+   "flags": [],
+   "statics": "held",
+   "s_star": 0.0847,
+   "util": {
+    "shoulders": 0.063,
+    "hips": 0.073,
+    "spine": 0.048,
+    "wrists": 0.081,
+    "elbows": 0.031,
+    "knees": 0.085,
+    "ankles": 0.052
+   },
+   "top_joint": [
+    "R_Knee_x",
+    0.085
+   ],
+   "statue": true,
+   "tracked": 1.0,
+   "support_min": 1.0,
+   "err6": 0.04,
+   "subst": {},
+   "pelvis_z": 0.944,
+   "com_z": 0.805
+  },
+  {
+   "hold": "Handstand_pose_or_Adho_Mukha_Vrksasana_-a@718",
+   "hold_id": "220923_Handstand_pose_or_Adho_Mukha_Vrksasana_-a@718",
+   "node": 40,
+   "t_hold": 11.9667,
+   "dur": 1.23,
+   "orient": "prone",
+   "ground": [
+    "R_FOOT",
+    "L_HAND",
+    "R_HAND"
+   ],
+   "bb": [],
+   "role": "variant",
+   "gate": "pass",
+   "flags": [],
+   "statics": "held",
+   "s_star": 0.1103,
+   "util": {
+    "shoulders": 0.034,
+    "hips": 0.11,
+    "spine": 0.11,
+    "wrists": 0.11,
+    "elbows": 0.036,
+    "knees": 0.103,
+    "ankles": 0.11
+   },
+   "top_joint": [
+    "Chest_y",
+    0.11
+   ],
+   "statue": true,
+   "tracked": 1.0,
+   "support_min": 1.0,
+   "err6": 0.062,
+   "subst": {},
+   "pelvis_z": 0.909,
+   "com_z": 0.778
+  },
+  {
+   "hold": "Handstand_pose_or_Adho_Mukha_Vrksasana_-a@1193",
+   "hold_id": "220923_Handstand_pose_or_Adho_Mukha_Vrksasana_-a@1193",
+   "node": 41,
+   "t_hold": 19.8833,
+   "dur": 9.18,
+   "orient": "inverted",
+   "ground": [
+    "L_HAND",
+    "R_HAND"
+   ],
+   "bb": [],
+   "role": "family",
+   "gate": "pass",
+   "flags": [],
+   "statics": "feasible",
+   "s_star": 0.3217,
+   "util": {
+    "shoulders": 0.133,
+    "hips": 0.065,
+    "spine": 0.315,
+    "wrists": 0.322,
+    "elbows": 0.167,
+    "knees": 0.027,
+    "ankles": 0.003
+   },
+   "top_joint": [
+    "R_Wrist_x",
+    0.322
+   ],
+   "statue": false,
+   "tracked": 1.0,
+   "support_min": 1.0,
+   "err6": 0.051,
+   "subst": {},
+   "pelvis_z": 1.063,
+   "com_z": 0.973
+  },
+  {
+   "hold": "Handstand_pose_or_Adho_Mukha_Vrksasana_-a@1632",
+   "hold_id": "220923_Handstand_pose_or_Adho_Mukha_Vrksasana_-a@1632",
+   "node": 40,
+   "t_hold": 27.2,
+   "dur": 1.07,
+   "orient": "prone",
+   "ground": [
+    "R_FOOT",
+    "L_HAND",
+    "R_HAND"
+   ],
+   "bb": [],
+   "role": "undecided",
+   "gate": "pass",
+   "flags": [],
+   "statics": "held",
+   "s_star": 0.1197,
+   "util": {
+    "shoulders": 0.024,
+    "hips": 0.12,
+    "spine": 0.12,
+    "wrists": 0.12,
+    "elbows": 0.025,
+    "knees": 0.102,
+    "ankles": 0.12
+   },
+   "top_joint": [
+    "Chest_y",
+    0.12
+   ],
+   "statue": true,
+   "tracked": 1.0,
+   "support_min": 1.0,
+   "err6": 0.082,
+   "subst": {},
+   "pelvis_z": 0.913,
+   "com_z": 0.782
+  },
+  {
+   "hold": "Handstand_pose_or_Adho_Mukha_Vrksasana_-a@2025",
+   "hold_id": "220923_Handstand_pose_or_Adho_Mukha_Vrksasana_-a@2025",
+   "node": 40,
+   "t_hold": 33.75,
+   "dur": 1.83,
+   "orient": "prone",
+   "ground": [
+    "R_FOOT",
+    "L_HAND",
+    "R_HAND"
+   ],
+   "bb": [],
+   "role": "variant",
+   "gate": "pass",
+   "flags": [],
+   "statics": "held",
+   "s_star": 0.1024,
+   "util": {
+    "shoulders": 0.035,
+    "hips": 0.103,
+    "spine": 0.103,
+    "wrists": 0.099,
+    "elbows": 0.031,
+    "knees": 0.098,
+    "ankles": 0.103
+   },
+   "top_joint": [
+    "R_Hip_y",
+    0.103
+   ],
+   "statue": true,
+   "tracked": 0.327,
+   "support_min": 0.327,
+   "err6": 0.13,
+   "subst": {},
+   "pelvis_z": 0.92,
+   "com_z": 0.787
+  },
+  {
+   "hold": "Handstand_pose_or_Adho_Mukha_Vrksasana_-a@2314",
+   "hold_id": "220923_Handstand_pose_or_Adho_Mukha_Vrksasana_-a@2314",
+   "node": 41,
+   "t_hold": 38.5667,
+   "dur": 5.38,
+   "orient": "inverted",
+   "ground": [
+    "L_HAND",
+    "R_HAND"
+   ],
+   "bb": [],
+   "role": "family",
+   "gate": "pass",
+   "flags": [],
+   "statics": "feasible",
+   "s_star": 0.491,
+   "util": {
+    "shoulders": 0.083,
+    "hips": 0.076,
+    "spine": 0.34,
+    "wrists": 0.491,
+    "elbows": 0.185,
+    "knees": 0.03,
+    "ankles": 0.004
+   },
+   "top_joint": [
+    "L_Wrist_x",
+    0.491
+   ],
+   "statue": false,
+   "tracked": 0.963,
+   "support_min": 1.0,
+   "err6": 0.117,
+   "subst": {},
+   "pelvis_z": 1.061,
+   "com_z": 0.948
+  },
+  {
+   "hold": "Peacock_Pose_or_Mayurasana_-a@434",
+   "hold_id": "220923_Peacock_Pose_or_Mayurasana_-a@434",
+   "node": 52,
+   "t_hold": 7.2333,
+   "dur": 1.0,
+   "orient": "prone",
+   "ground": [
+    "L_FOOT",
+    "R_FOOT",
+    "L_SHANK",
+    "R_SHANK",
+    "L_HAND",
+    "R_HAND"
+   ],
+   "bb": [],
+   "role": "variant",
+   "gate": "pass",
+   "flags": [],
+   "statics": "held",
+   "s_star": 0.1063,
+   "util": {
+    "shoulders": 0.048,
+    "hips": 0.038,
+    "spine": 0.017,
+    "wrists": 0.078,
+    "elbows": 0.004,
+    "knees": 0.018,
+    "ankles": 0.004
+   },
+   "top_joint": [
+    "Neck_y",
+    0.106
+   ],
+   "statue": true,
+   "tracked": 1.0,
+   "support_min": 0.0,
+   "err6": 0.155,
+   "subst": {},
+   "pelvis_z": 0.457,
+   "com_z": 0.399
+  },
+  {
+   "hold": "Peacock_Pose_or_Mayurasana_-a@619",
+   "hold_id": "220923_Peacock_Pose_or_Mayurasana_-a@619",
+   "node": 55,
+   "t_hold": 10.3167,
+   "dur": 1.02,
+   "orient": "prone",
+   "ground": [
+    "L_FOOT",
+    "R_FOOT",
+    "L_HAND",
+    "R_HAND"
+   ],
+   "bb": [
+    "TRUNK+L_FOREARM",
+    "TRUNK+R_FOREARM"
+   ],
+   "role": "family",
+   "gate": "pass",
+   "flags": [],
+   "statics": "feasible",
+   "s_star": 0.2569,
+   "util": {
+    "shoulders": 0.257,
+    "hips": 0.056,
+    "spine": 0.257,
+    "wrists": 0.257,
+    "elbows": 0.257,
+    "knees": 0.038,
+    "ankles": 0.027
+   },
+   "top_joint": [
+    "L_Shoulder_x",
+    0.257
+   ],
+   "statue": false,
+   "tracked": 1.0,
+   "support_min": 1.0,
+   "err6": null,
+   "subst": {},
+   "pelvis_z": 0.283,
+   "com_z": 0.266
+  },
+  {
+   "hold": "Peacock_Pose_or_Mayurasana_-a@788",
+   "hold_id": "220923_Peacock_Pose_or_Mayurasana_-a@788",
+   "node": 53,
+   "t_hold": 13.1333,
+   "dur": 2.7,
+   "orient": "prone",
+   "ground": [
+    "L_FOOT",
+    "L_HAND",
+    "R_HAND"
+   ],
+   "bb": [
+    "PELVIS+L_FOREARM",
+    "PELVIS+R_FOREARM",
+    "TRUNK+L_FOREARM",
+    "TRUNK+R_FOREARM"
+   ],
+   "role": "variant",
+   "gate": "pass",
+   "flags": [],
+   "statics": "feasible",
+   "s_star": 0.1467,
+   "util": {
+    "shoulders": 0.147,
+    "hips": 0.129,
+    "spine": 0.147,
+    "wrists": 0.147,
+    "elbows": 0.147,
+    "knees": 0.042,
+    "ankles": 0.027
+   },
+   "top_joint": [
+    "L_Wrist_x",
+    0.147
+   ],
+   "statue": false,
+   "tracked": 1.0,
+   "support_min": 1.0,
+   "err6": 0.106,
+   "subst": {
+    "HEAD": 1.0
+   },
+   "pelvis_z": 0.288,
+   "com_z": 0.286
+  },
+  {
+   "hold": "Peacock_Pose_or_Mayurasana_-a@1183",
+   "hold_id": "220923_Peacock_Pose_or_Mayurasana_-a@1183",
+   "node": 54,
+   "t_hold": 16.2167,
+   "dur": 3.82,
+   "orient": "prone",
+   "ground": [
+    "HEAD",
+    "L_HAND",
+    "R_HAND"
+   ],
+   "bb": [
+    "TRUNK+L_FOREARM",
+    "TRUNK+R_FOREARM"
+   ],
+   "role": "variant",
+   "gate": "pass",
+   "flags": [],
+   "statics": "feasible",
+   "s_star": 0.4023,
+   "util": {
+    "shoulders": 0.363,
+    "hips": 0.118,
+    "spine": 0.403,
+    "wrists": 0.132,
+    "elbows": 0.403,
+    "knees": 0.041,
+    "ankles": 0.004
+   },
+   "top_joint": [
+    "Spine_y",
+    0.403
+   ],
+   "statue": false,
+   "tracked": 1.0,
+   "support_min": 1.0,
+   "err6": 0.122,
+   "subst": {},
+   "pelvis_z": 0.321,
+   "com_z": 0.351
+  },
+  {
+   "hold": "Plank_Pose_or_Kumbhakasana_-a@541",
+   "hold_id": "220923_Plank_Pose_or_Kumbhakasana_-a@541",
+   "node": 56,
+   "t_hold": 9.0167,
+   "dur": 2.93,
+   "orient": "prone",
+   "ground": [
+    "L_FOOT",
+    "R_FOOT",
+    "L_HAND",
+    "R_HAND"
+   ],
+   "bb": [],
+   "role": "family",
+   "gate": "pass",
+   "flags": [],
+   "statics": "held",
+   "s_star": 0.1131,
+   "util": {
+    "shoulders": 0.113,
+    "hips": 0.113,
+    "spine": 0.113,
+    "wrists": 0.113,
+    "elbows": 0.065,
+    "knees": 0.113,
+    "ankles": 0.113
+   },
+   "top_joint": [
+    "R_Wrist_x",
+    0.113
+   ],
+   "statue": true,
+   "tracked": 1.0,
+   "support_min": 1.0,
+   "err6": 0.048,
+   "subst": {},
+   "pelvis_z": 0.485,
+   "com_z": 0.459
+  },
+  {
+   "hold": "Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-a@364",
+   "hold_id": "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-a@364",
+   "node": 63,
+   "t_hold": 5.9667,
+   "dur": 1.2,
+   "orient": "prone",
+   "ground": [
+    "L_FOOT",
+    "R_FOOT",
+    "L_SHANK",
+    "R_SHANK",
+    "HEAD",
+    "L_HAND",
+    "R_HAND"
+   ],
+   "bb": [],
+   "role": "preparation",
+   "gate": "flag",
+   "flags": [
+    "pose_preparation"
+   ],
+   "statics": "held",
+   "s_star": 0.0224,
+   "util": {
+    "shoulders": 0.022,
+    "hips": 0.022,
+    "spine": 0.022,
+    "wrists": 0.022,
+    "elbows": 0.022,
+    "knees": 0.022,
+    "ankles": 0.01
+   },
+   "top_joint": [
+    "Head_y",
+    0.022
+   ],
+   "statue": true,
+   "tracked": 1.0,
+   "support_min": 0.0,
+   "err6": 0.021,
+   "subst": {},
+   "pelvis_z": 0.431,
+   "com_z": 0.296
+  },
+  {
+   "hold": "Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-a@494",
+   "hold_id": "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-a@494",
+   "node": 65,
+   "t_hold": 8.6167,
+   "dur": 0.5,
+   "orient": "inverted",
+   "ground": [
+    "HEAD",
+    "L_HAND",
+    "R_HAND"
+   ],
+   "bb": [],
+   "role": "preparation",
+   "gate": "flag",
+   "flags": [
+    "pose_preparation"
+   ],
+   "statics": "held",
+   "s_star": 0.3832,
+   "util": {
+    "shoulders": 0.157,
+    "hips": 0.116,
+    "spine": 0.383,
+    "wrists": 0.117,
+    "elbows": 0.112,
+    "knees": 0.047,
+    "ankles": 0.005
+   },
+   "top_joint": [
+    "Chest_y",
+    0.383
+   ],
+   "statue": true,
+   "tracked": 1.0,
+   "support_min": 1.0,
+   "err6": 0.038,
+   "subst": {},
+   "pelvis_z": 0.737,
+   "com_z": 0.545
+  },
+  {
+   "hold": "Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-a@920",
+   "hold_id": "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-a@920",
+   "node": 66,
+   "t_hold": 15.3333,
+   "dur": 7.1,
+   "orient": "inverted",
+   "ground": [
+    "HEAD",
+    "L_HAND",
+    "R_HAND"
+   ],
+   "bb": [],
+   "role": "preparation",
+   "gate": "flag",
+   "flags": [
+    "pose_preparation"
+   ],
+   "statics": "held",
+   "s_star": 0.2811,
+   "util": {
+    "shoulders": 0.093,
+    "hips": 0.1,
+    "spine": 0.281,
+    "wrists": 0.087,
+    "elbows": 0.185,
+    "knees": 0.033,
+    "ankles": 0.005
+   },
+   "top_joint": [
+    "Spine_y",
+    0.281
+   ],
+   "statue": true,
+   "tracked": 1.0,
+   "support_min": 1.0,
+   "err6": 0.105,
+   "subst": {},
+   "pelvis_z": 0.736,
+   "com_z": 0.621
+  },
+  {
+   "hold": "Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-a@1033",
+   "hold_id": "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-a@1033",
+   "node": 67,
+   "t_hold": 17.2167,
+   "dur": 1.22,
+   "orient": "prone",
+   "ground": [
+    "HEAD",
+    "L_HAND",
+    "R_HAND"
+   ],
+   "bb": [
+    "R_THIGH+L_UPPER_ARM"
+   ],
+   "role": "variant",
+   "gate": "pass",
+   "flags": [],
+   "statics": "held",
+   "s_star": 0.1265,
+   "util": {
+    "shoulders": 0.127,
+    "hips": 0.09,
+    "spine": 0.127,
+    "wrists": 0.127,
+    "elbows": 0.127,
+    "knees": 0.039,
+    "ankles": 0.006
+   },
+   "top_joint": [
+    "Chest_y",
+    0.127
+   ],
+   "statue": true,
+   "tracked": 1.0,
+   "support_min": 1.0,
+   "err6": 0.071,
+   "subst": {},
+   "pelvis_z": 0.643,
+   "com_z": 0.525
+  },
+  {
+   "hold": "Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-a@1199",
+   "hold_id": "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-a@1199",
+   "node": 72,
+   "t_hold": 20.35,
+   "dur": 0.67,
+   "orient": "side_r",
+   "ground": [
+    "L_HAND",
+    "R_HAND"
+   ],
+   "bb": [
+    "R_THIGH+L_UPPER_ARM"
+   ],
+   "role": "family",
+   "gate": "pass",
+   "flags": [],
+   "statics": "feasible",
+   "s_star": 0.2667,
+   "util": {
+    "shoulders": 0.267,
+    "hips": 0.121,
+    "spine": 0.267,
+    "wrists": 0.267,
+    "elbows": 0.102,
+    "knees": 0.043,
+    "ankles": 0.006
+   },
+   "top_joint": [
+    "L_Shoulder_y",
+    0.267
+   ],
+   "statue": false,
+   "tracked": 1.0,
+   "support_min": 1.0,
+   "err6": 0.043,
+   "subst": {
+    "HEAD": 0.65
+   },
+   "pelvis_z": 0.444,
+   "com_z": 0.356
+  },
+  {
+   "hold": "Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-a@1374",
+   "hold_id": "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-a@1374",
+   "node": 69,
+   "t_hold": 22.9,
+   "dur": 2.93,
+   "orient": "side_r",
+   "ground": [
+    "L_HAND",
+    "R_HAND"
+   ],
+   "bb": [
+    "R_THIGH+L_UPPER_ARM"
+   ],
+   "role": "family",
+   "gate": "pass",
+   "flags": [],
+   "statics": "feasible",
+   "s_star": 0.3663,
+   "util": {
+    "shoulders": 0.367,
+    "hips": 0.134,
+    "spine": 0.367,
+    "wrists": 0.367,
+    "elbows": 0.139,
+    "knees": 0.044,
+    "ankles": 0.006
+   },
+   "top_joint": [
+    "Chest_y",
+    0.367
+   ],
+   "statue": false,
+   "tracked": 1.0,
+   "support_min": 1.0,
+   "err6": 0.051,
+   "subst": {},
+   "pelvis_z": 0.436,
+   "com_z": 0.396
+  },
+  {
+   "hold": "Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-a@1602",
+   "hold_id": "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-a@1602",
+   "node": 70,
+   "t_hold": 26.7333,
+   "dur": 0.8,
+   "orient": "prone",
+   "ground": [
+    "L_FOOT",
+    "R_FOOT",
+    "L_HAND",
+    "R_HAND"
+   ],
+   "bb": [],
+   "role": "preparation",
+   "gate": "flag",
+   "flags": [
+    "pose_preparation"
+   ],
+   "statics": "held",
+   "s_star": 0.1536,
+   "util": {
+    "shoulders": 0.145,
+    "hips": 0.068,
+    "spine": 0.154,
+    "wrists": 0.154,
+    "elbows": 0.148,
+    "knees": 0.126,
+    "ankles": 0.154
+   },
+   "top_joint": [
+    "L_Ankle_y",
+    0.154
+   ],
+   "statue": true,
+   "tracked": 1.0,
+   "support_min": 1.0,
+   "err6": 0.077,
+   "subst": {},
+   "pelvis_z": 0.887,
+   "com_z": 0.658
+  },
+  {
+   "hold": "Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-b@343",
+   "hold_id": "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-b@343",
+   "node": 63,
+   "t_hold": 5.4333,
+   "dur": 0.85,
+   "orient": "prone",
+   "ground": [
+    "L_FOOT",
+    "R_FOOT",
+    "L_SHANK",
+    "R_SHANK",
+    "HEAD",
+    "L_HAND",
+    "R_HAND"
+   ],
+   "bb": [],
+   "role": "preparation",
+   "gate": "flag",
+   "flags": [
+    "pose_preparation"
+   ],
+   "statics": "held",
+   "s_star": 0.0245,
+   "util": {
+    "shoulders": 0.025,
+    "hips": 0.025,
+    "spine": 0.025,
+    "wrists": 0.025,
+    "elbows": 0.025,
+    "knees": 0.025,
+    "ankles": 0.01
+   },
+   "top_joint": [
+    "L_Elbow_y",
+    0.025
+   ],
+   "statue": true,
+   "tracked": 1.0,
+   "support_min": 0.0,
+   "err6": 0.018,
+   "subst": {},
+   "pelvis_z": 0.431,
+   "com_z": 0.295
+  },
+  {
+   "hold": "Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-b@430",
+   "hold_id": "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-b@430",
+   "node": 64,
+   "t_hold": 7.15,
+   "dur": 0.98,
+   "orient": "prone",
+   "ground": [
+    "L_FOOT",
+    "R_FOOT",
+    "HEAD",
+    "L_HAND",
+    "R_HAND"
+   ],
+   "bb": [],
+   "role": "undecided",
+   "gate": "pass",
+   "flags": [],
+   "statics": "held",
+   "s_star": 0.0964,
+   "util": {
+    "shoulders": 0.069,
+    "hips": 0.06,
+    "spine": 0.096,
+    "wrists": 0.096,
+    "elbows": 0.096,
+    "knees": 0.087,
+    "ankles": 0.031
+   },
+   "top_joint": [
+    "Spine_y",
+    0.096
+   ],
+   "statue": true,
+   "tracked": 1.0,
+   "support_min": 1.0,
+   "err6": 0.023,
+   "subst": {},
+   "pelvis_z": 0.713,
+   "com_z": 0.492
+  },
+  {
+   "hold": "Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-b@578",
+   "hold_id": "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-b@578",
+   "node": 66,
+   "t_hold": 9.6333,
+   "dur": 2.1,
+   "orient": "inverted",
+   "ground": [
+    "HEAD",
+    "L_HAND",
+    "R_HAND"
+   ],
+   "bb": [],
+   "role": "undecided",
+   "gate": "pass",
+   "flags": [],
+   "statics": "held",
+   "s_star": 0.2845,
+   "util": {
+    "shoulders": 0.151,
+    "hips": 0.132,
+    "spine": 0.285,
+    "wrists": 0.102,
+    "elbows": 0.093,
+    "knees": 0.047,
+    "ankles": 0.006
+   },
+   "top_joint": [
+    "Torso_y",
+    0.285
+   ],
+   "statue": true,
+   "tracked": 1.0,
+   "support_min": 1.0,
+   "err6": 0.042,
+   "subst": {},
+   "pelvis_z": 0.751,
+   "com_z": 0.632
+  },
+  {
+   "hold": "Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-b@774",
+   "hold_id": "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-b@774",
+   "node": 67,
+   "t_hold": 12.9,
+   "dur": 0.87,
+   "orient": "prone",
+   "ground": [
+    "HEAD",
+    "L_HAND",
+    "R_HAND"
+   ],
+   "bb": [],
+   "role": "variant",
+   "gate": "pass",
+   "flags": [],
+   "statics": "held",
+   "s_star": 0.4073,
+   "util": {
+    "shoulders": 0.151,
+    "hips": 0.097,
+    "spine": 0.407,
+    "wrists": 0.13,
+    "elbows": 0.17,
+    "knees": 0.036,
+    "ankles": 0.003
+   },
+   "top_joint": [
+    "Spine_y",
+    0.407
+   ],
+   "statue": true,
+   "tracked": 1.0,
+   "support_min": 1.0,
+   "err6": 0.033,
+   "subst": {},
+   "pelvis_z": 0.696,
+   "com_z": 0.57
+  },
+  {
+   "hold": "Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-b@873",
+   "hold_id": "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-b@873",
+   "node": 71,
+   "t_hold": 14.8,
+   "dur": 0.98,
+   "orient": "prone",
+   "ground": [
+    "L_FOOT",
+    "R_FOOT",
+    "HEAD",
+    "L_HAND",
+    "R_HAND"
+   ],
+   "bb": [
+    "R_THIGH+R_UPPER_ARM"
+   ],
+   "role": "family",
+   "gate": "flag",
+   "flags": [
+    "fit_closer"
+   ],
+   "statics": "feasible",
+   "s_star": 0.1046,
+   "util": {
+    "shoulders": 0.105,
+    "hips": 0.038,
+    "spine": 0.105,
+    "wrists": 0.105,
+    "elbows": 0.105,
+    "knees": 0.105,
+    "ankles": 0.105
+   },
+   "top_joint": [
+    "Chest_y",
+    0.105
+   ],
+   "statue": false,
+   "tracked": 1.0,
+   "support_min": 1.0,
+   "err6": 0.03,
+   "subst": {},
+   "pelvis_z": 0.493,
+   "com_z": 0.361
+  },
+  {
+   "hold": "Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-b@1060",
+   "hold_id": "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-b@1060",
+   "node": 68,
+   "t_hold": 17.6667,
+   "dur": 1.53,
+   "orient": "prone",
+   "ground": [
+    "L_HAND",
+    "R_HAND"
+   ],
+   "bb": [
+    "R_THIGH+R_UPPER_ARM"
+   ],
+   "role": "variant",
+   "gate": "pass",
+   "flags": [],
+   "statics": "feasible",
+   "s_star": 0.407,
+   "util": {
+    "shoulders": 0.407,
+    "hips": 0.231,
+    "spine": 0.407,
+    "wrists": 0.403,
+    "elbows": 0.139,
+    "knees": 0.049,
+    "ankles": 0.005
+   },
+   "top_joint": [
+    "Chest_x",
+    0.407
+   ],
+   "statue": false,
+   "tracked": 1.0,
+   "support_min": 1.0,
+   "err6": 0.119,
+   "subst": {
+    "R_FOOT": 0.255,
+    "HEAD": 0.34
+   },
+   "pelvis_z": 0.336,
+   "com_z": 0.297
+  },
+  {
+   "hold": "Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-b@1178",
+   "hold_id": "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-b@1178",
+   "node": 68,
+   "t_hold": 19.6333,
+   "dur": 0.58,
+   "orient": "prone",
+   "ground": [
+    "L_HAND",
+    "R_HAND"
+   ],
+   "bb": [
+    "R_THIGH+R_UPPER_ARM"
+   ],
+   "role": "variant",
+   "gate": "pass",
+   "flags": [],
+   "statics": "feasible",
+   "s_star": 0.3891,
+   "util": {
+    "shoulders": 0.389,
+    "hips": 0.241,
+    "spine": 0.389,
+    "wrists": 0.389,
+    "elbows": 0.159,
+    "knees": 0.046,
+    "ankles": 0.005
+   },
+   "top_joint": [
+    "Chest_y",
+    0.389
+   ],
+   "statue": false,
+   "tracked": 1.0,
+   "support_min": 1.0,
+   "err6": 0.087,
+   "subst": {
+    "R_FOOT": 1.0
+   },
+   "pelvis_z": 0.337,
+   "com_z": 0.308
+  },
+  {
+   "hold": "Scorpion_pose_or_vrischikasana-a@359",
+   "hold_id": "220923_Scorpion_pose_or_vrischikasana-a@359",
+   "node": 73,
+   "t_hold": 5.9833,
+   "dur": 1.1,
+   "orient": "prone",
+   "ground": [
+    "L_FOOT",
+    "R_FOOT",
+    "L_SHANK",
+    "R_SHANK",
+    "L_FOREARM",
+    "R_FOREARM",
+    "L_HAND",
+    "R_HAND"
+   ],
+   "bb": [],
+   "role": "preparation",
+   "gate": "flag",
+   "flags": [
+    "pose_preparation"
+   ],
+   "statics": "held",
+   "s_star": 0.102,
+   "util": {
+    "shoulders": 0.004,
+    "hips": 0.021,
+    "spine": 0.042,
+    "wrists": 0.004,
+    "elbows": 0.017,
+    "knees": 0.091,
+    "ankles": 0.01
+   },
+   "top_joint": [
+    "Neck_y",
+    0.102
+   ],
+   "statue": true,
+   "tracked": 1.0,
+   "support_min": 0.0,
+   "err6": 0.047,
+   "subst": {},
+   "pelvis_z": 0.412,
+   "com_z": 0.307
+  },
+  {
+   "hold": "Scorpion_pose_or_vrischikasana-a@734",
+   "hold_id": "220923_Scorpion_pose_or_vrischikasana-a@734",
+   "node": 76,
+   "t_hold": 12.2333,
+   "dur": 2.03,
+   "orient": "prone",
+   "ground": [
+    "R_FOOT",
+    "L_FOREARM",
+    "R_FOREARM",
+    "L_HAND",
+    "R_HAND"
+   ],
+   "bb": [],
+   "role": "preparation",
+   "gate": "flag",
+   "flags": [
+    "pose_preparation"
+   ],
+   "statics": "feasible",
+   "s_star": 0.0899,
+   "util": {
+    "shoulders": 0.054,
+    "hips": 0.09,
+    "spine": 0.03,
+    "wrists": 0.0,
+    "elbows": 0.065,
+    "knees": 0.086,
+    "ankles": 0.005
+   },
+   "top_joint": [
+    "R_Hip_y",
+    0.09
+   ],
+   "statue": false,
+   "tracked": 1.0,
+   "support_min": 0.919,
+   "err6": 0.067,
+   "subst": {},
+   "pelvis_z": 0.762,
+   "com_z": 0.628
+  },
+  {
+   "hold": "Scorpion_pose_or_vrischikasana-a@1507",
+   "hold_id": "220923_Scorpion_pose_or_vrischikasana-a@1507",
+   "node": 76,
+   "t_hold": 25.1167,
+   "dur": 2.02,
+   "orient": "prone",
+   "ground": [
+    "R_FOOT",
+    "L_FOREARM",
+    "R_FOREARM",
+    "L_HAND",
+    "R_HAND"
+   ],
+   "bb": [],
+   "role": "preparation",
+   "gate": "flag",
+   "flags": [
+    "pose_preparation"
+   ],
+   "statics": "feasible",
+   "s_star": 0.1328,
+   "util": {
+    "shoulders": 0.046,
+    "hips": 0.133,
+    "spine": 0.121,
+    "wrists": 0.004,
+    "elbows": 0.081,
+    "knees": 0.133,
+    "ankles": 0.133
+   },
+   "top_joint": [
+    "R_Hip_y",
+    0.133
+   ],
+   "statue": false,
+   "tracked": 1.0,
+   "support_min": 1.0,
+   "err6": 0.076,
+   "subst": {},
+   "pelvis_z": 0.764,
+   "com_z": 0.632
+  },
+  {
+   "hold": "Scorpion_pose_or_vrischikasana-a@2684",
+   "hold_id": "220923_Scorpion_pose_or_vrischikasana-a@2684",
+   "node": 77,
+   "t_hold": 44.7333,
+   "dur": 18.23,
+   "orient": "inverted",
+   "ground": [
+    "L_FOREARM",
+    "R_FOREARM",
+    "L_HAND",
+    "R_HAND"
+   ],
+   "bb": [],
+   "role": "family",
+   "gate": "pass",
+   "flags": [],
+   "statics": "feasible",
+   "s_star": 0.4629,
+   "util": {
+    "shoulders": 0.154,
+    "hips": 0.069,
+    "spine": 0.463,
+    "wrists": 0.0,
+    "elbows": 0.339,
+    "knees": 0.025,
+    "ankles": 0.005
+   },
+   "top_joint": [
+    "Chest_y",
+    0.463
+   ],
+   "statue": false,
+   "tracked": 1.0,
+   "support_min": 1.0,
+   "err6": 0.122,
+   "subst": {},
+   "pelvis_z": 0.731,
+   "com_z": 0.619
+  },
+  {
+   "hold": "Scorpion_pose_or_vrischikasana-b@375",
+   "hold_id": "220923_Scorpion_pose_or_vrischikasana-b@375",
+   "node": 74,
+   "t_hold": 6.25,
+   "dur": 1.43,
+   "orient": "prone",
+   "ground": [
+    "L_FOOT",
+    "R_FOOT",
+    "L_HAND",
+    "R_HAND"
+   ],
+   "bb": [],
+   "role": "preparation",
+   "gate": "flag",
+   "flags": [
+    "pose_preparation"
+   ],
+   "statics": "held",
+   "s_star": 0.0826,
+   "util": {
+    "shoulders": 0.08,
+    "hips": 0.083,
+    "spine": 0.043,
+    "wrists": 0.083,
+    "elbows": 0.083,
+    "knees": 0.083,
+    "ankles": 0.083
+   },
+   "top_joint": [
+    "L_Wrist_y",
+    0.083
+   ],
+   "statue": true,
+   "tracked": 1.0,
+   "support_min": 1.0,
+   "err6": 0.053,
+   "subst": {},
+   "pelvis_z": 0.945,
+   "com_z": 0.705
+  },
+  {
+   "hold": "Scorpion_pose_or_vrischikasana-b@455",
+   "hold_id": "220923_Scorpion_pose_or_vrischikasana-b@455",
+   "node": 75,
+   "t_hold": 7.5833,
+   "dur": 1.25,
+   "orient": "prone",
+   "ground": [
+    "L_FOOT",
+    "R_FOOT",
+    "L_HAND",
+    "R_HAND"
+   ],
+   "bb": [],
+   "role": "preparation",
+   "gate": "flag",
+   "flags": [
+    "pose_preparation"
+   ],
+   "statics": "held",
+   "s_star": 0.0874,
+   "util": {
+    "shoulders": 0.088,
+    "hips": 0.044,
+    "spine": 0.088,
+    "wrists": 0.088,
+    "elbows": 0.086,
+    "knees": 0.088,
+    "ankles": 0.062
+   },
+   "top_joint": [
+    "Chest_y",
+    0.088
+   ],
+   "statue": true,
+   "tracked": 1.0,
+   "support_min": 0.079,
+   "err6": 0.058,
+   "subst": {},
+   "pelvis_z": 0.944,
+   "com_z": 0.701
+  },
+  {
+   "hold": "Shoulder-Pressing_Pose_or_Bhujapidasana_-a@543",
+   "hold_id": "220923_Shoulder-Pressing_Pose_or_Bhujapidasana_-a@543",
+   "node": 78,
+   "t_hold": 9.05,
+   "dur": 3.03,
+   "orient": "upright",
+   "ground": [
+    "L_HAND",
+    "R_HAND"
+   ],
+   "bb": [
+    "L_FOOT+R_FOOT",
+    "L_THIGH+L_UPPER_ARM",
+    "R_THIGH+R_UPPER_ARM"
+   ],
+   "role": "family",
+   "gate": "pass",
+   "flags": [],
+   "statics": "feasible",
+   "s_star": 0.1848,
+   "util": {
+    "shoulders": 0.166,
+    "hips": 0.086,
+    "spine": 0.177,
+    "wrists": 0.185,
+    "elbows": 0.115,
+    "knees": 0.031,
+    "ankles": 0.01
+   },
+   "top_joint": [
+    "R_Wrist_y",
+    0.185
+   ],
+   "statue": false,
+   "tracked": 1.0,
+   "support_min": 1.0,
+   "err6": 0.058,
+   "subst": {
+    "L_FOOT": 0.978
+   },
+   "pelvis_z": 0.356,
+   "com_z": 0.392
+  },
+  {
+   "hold": "Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a@296",
+   "hold_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a@296",
+   "node": 80,
+   "t_hold": 4.9333,
+   "dur": 1.92,
+   "orient": "prone",
+   "ground": [
+    "L_FOOT",
+    "R_FOOT",
+    "L_HAND",
+    "R_HAND"
+   ],
+   "bb": [],
+   "role": "preparation",
+   "gate": "flag",
+   "flags": [
+    "pose_preparation"
+   ],
+   "statics": "feasible",
+   "s_star": 0.2131,
+   "util": {
+    "shoulders": 0.134,
+    "hips": 0.075,
+    "spine": 0.213,
+    "wrists": 0.066,
+    "elbows": 0.128,
+    "knees": 0.213,
+    "ankles": 0.213
+   },
+   "top_joint": [
+    "Chest_y",
+    0.213
+   ],
+   "statue": false,
+   "tracked": 1.0,
+   "support_min": 0.948,
+   "err6": 0.041,
+   "subst": {},
+   "pelvis_z": 0.846,
+   "com_z": 0.639
+  },
+  {
+   "hold": "Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a@448",
+   "hold_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a@448",
+   "node": 84,
+   "t_hold": 7.4667,
+   "dur": 1.02,
+   "orient": "upright",
+   "ground": [
+    "L_FOOT",
+    "R_FOOT",
+    "L_HAND",
+    "R_HAND"
+   ],
+   "bb": [
+    "R_THIGH+L_UPPER_ARM"
+   ],
+   "role": "variant",
+   "gate": "pass",
+   "flags": [],
+   "statics": "feasible",
+   "s_star": 0.1349,
+   "util": {
+    "shoulders": 0.135,
+    "hips": 0.075,
+    "spine": 0.135,
+    "wrists": 0.085,
+    "elbows": 0.081,
+    "knees": 0.135,
+    "ankles": 0.135
+   },
+   "top_joint": [
+    "Chest_y",
+    0.135
+   ],
+   "statue": false,
+   "tracked": 1.0,
+   "support_min": 0.0,
+   "err6": 0.079,
+   "subst": {},
+   "pelvis_z": 0.532,
+   "com_z": 0.475
+  },
+  {
+   "hold": "Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a@571",
+   "hold_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a@571",
+   "node": 84,
+   "t_hold": 9.5167,
+   "dur": 0.92,
+   "orient": "upright",
+   "ground": [
+    "L_FOOT",
+    "R_FOOT",
+    "L_HAND",
+    "R_HAND"
+   ],
+   "bb": [
+    "R_THIGH+L_UPPER_ARM"
+   ],
+   "role": "variant",
+   "gate": "pass",
+   "flags": [],
+   "statics": "feasible",
+   "s_star": 0.1124,
+   "util": {
+    "shoulders": 0.113,
+    "hips": 0.113,
+    "spine": 0.113,
+    "wrists": 0.113,
+    "elbows": 0.113,
+    "knees": 0.113,
+    "ankles": 0.113
+   },
+   "top_joint": [
+    "R_Thorax_z",
+    0.113
+   ],
+   "statue": false,
+   "tracked": 1.0,
+   "support_min": 0.429,
+   "err6": 0.076,
+   "subst": {},
+   "pelvis_z": 0.496,
+   "com_z": 0.444
+  },
+  {
+   "hold": "Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a@680",
+   "hold_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a@680",
+   "node": 87,
+   "t_hold": 10.45,
+   "dur": 1.02,
+   "orient": "side_r",
+   "ground": [
+    "L_FOOT",
+    "R_FOOT",
+    "L_HAND",
+    "R_HAND"
+   ],
+   "bb": [
+    "R_THIGH+L_UPPER_ARM"
+   ],
+   "role": "variant",
+   "gate": "pass",
+   "flags": [],
+   "statics": "feasible",
+   "s_star": 0.1403,
+   "util": {
+    "shoulders": 0.14,
+    "hips": 0.077,
+    "spine": 0.14,
+    "wrists": 0.14,
+    "elbows": 0.14,
+    "knees": 0.14,
+    "ankles": 0.14
+   },
+   "top_joint": [
+    "R_Elbow_z",
+    0.14
+   ],
+   "statue": false,
+   "tracked": 1.0,
+   "support_min": 1.0,
+   "err6": 0.07,
+   "subst": {},
+   "pelvis_z": 0.432,
+   "com_z": 0.393
+  },
+  {
+   "hold": "Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a@871",
+   "hold_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a@871",
+   "node": 93,
+   "t_hold": 14.5167,
+   "dur": 4.8,
+   "orient": "side_r",
+   "ground": [
+    "L_HAND",
+    "R_HAND"
+   ],
+   "bb": [
+    "R_THIGH+L_UPPER_ARM"
+   ],
+   "role": "family",
+   "gate": "flag",
+   "flags": [
+    "fit_closer"
+   ],
+   "statics": "feasible",
+   "s_star": 0.2847,
+   "util": {
+    "shoulders": 0.285,
+    "hips": 0.138,
+    "spine": 0.285,
+    "wrists": 0.285,
+    "elbows": 0.285,
+    "knees": 0.045,
+    "ankles": 0.005
+   },
+   "top_joint": [
+    "L_Elbow_z",
+    0.285
+   ],
+   "statue": false,
+   "tracked": 1.0,
+   "support_min": 1.0,
+   "err6": 0.046,
+   "subst": {
+    "R_FOOT": 0.222
+   },
+   "pelvis_z": 0.391,
+   "com_z": 0.381
+  },
+  {
+   "hold": "Side_Crane_Crow_Pose_or_Parsva_Bakasana_-b@346",
+   "hold_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-b@346",
+   "node": 79,
+   "t_hold": 5.7167,
+   "dur": 1.12,
+   "orient": "prone",
+   "ground": [
+    "L_FOOT",
+    "R_FOOT",
+    "L_SHANK",
+    "R_SHANK",
+    "HEAD",
+    "L_HAND",
+    "R_HAND"
+   ],
+   "bb": [],
+   "role": "preparation",
+   "gate": "flag",
+   "flags": [
+    "pose_preparation"
+   ],
+   "statics": "held",
+   "s_star": 0.0233,
+   "util": {
+    "shoulders": 0.023,
+    "hips": 0.023,
+    "spine": 0.023,
+    "wrists": 0.023,
+    "elbows": 0.023,
+    "knees": 0.023,
+    "ankles": 0.015
+   },
+   "top_joint": [
+    "Torso_y",
+    0.023
+   ],
+   "statue": true,
+   "tracked": 1.0,
+   "support_min": 0.0,
+   "err6": 0.028,
+   "subst": {},
+   "pelvis_z": 0.427,
+   "com_z": 0.295
+  },
+  {
+   "hold": "Side_Crane_Crow_Pose_or_Parsva_Bakasana_-b@430",
+   "hold_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-b@430",
+   "node": 82,
+   "t_hold": 7.1667,
+   "dur": 1.43,
+   "orient": "prone",
+   "ground": [
+    "L_FOOT",
+    "R_FOOT",
+    "HEAD",
+    "L_HAND",
+    "R_HAND"
+   ],
+   "bb": [],
+   "role": "preparation",
+   "gate": "flag",
+   "flags": [
+    "pose_preparation"
+   ],
+   "statics": "held",
+   "s_star": 0.1017,
+   "util": {
+    "shoulders": 0.062,
+    "hips": 0.055,
+    "spine": 0.102,
+    "wrists": 0.102,
+    "elbows": 0.102,
+    "knees": 0.085,
+    "ankles": 0.028
+   },
+   "top_joint": [
+    "Spine_y",
+    0.102
+   ],
+   "statue": true,
+   "tracked": 1.0,
+   "support_min": 1.0,
+   "err6": 0.023,
+   "subst": {},
+   "pelvis_z": 0.712,
+   "com_z": 0.49
+  },
+  {
+   "hold": "Side_Crane_Crow_Pose_or_Parsva_Bakasana_-b@702",
+   "hold_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-b@702",
+   "node": 86,
+   "t_hold": 11.7,
+   "dur": 3.6,
+   "orient": "inverted",
+   "ground": [
+    "HEAD",
+    "L_HAND",
+    "R_HAND"
+   ],
+   "bb": [],
+   "role": "preparation",
+   "gate": "flag",
+   "flags": [
+    "pose_preparation"
+   ],
+   "statics": "held",
+   "s_star": 0.1332,
+   "util": {
+    "shoulders": 0.087,
+    "hips": 0.054,
+    "spine": 0.133,
+    "wrists": 0.081,
+    "elbows": 0.114,
+    "knees": 0.019,
+    "ankles": 0.002
+   },
+   "top_joint": [
+    "Spine_y",
+    0.133
+   ],
+   "statue": true,
+   "tracked": 1.0,
+   "support_min": 1.0,
+   "err6": 0.055,
+   "subst": {},
+   "pelvis_z": 0.773,
+   "com_z": 0.735
+  },
+  {
+   "hold": "Side_Crane_Crow_Pose_or_Parsva_Bakasana_-b@931",
+   "hold_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-b@931",
+   "node": 89,
+   "t_hold": 15.5167,
+   "dur": 0.88,
+   "orient": "inverted",
+   "ground": [
+    "HEAD",
+    "L_HAND",
+    "R_HAND"
+   ],
+   "bb": [],
+   "role": "preparation",
+   "gate": "flag",
+   "flags": [
+    "pose_preparation"
+   ],
+   "statics": "held",
+   "s_star": 0.3646,
+   "util": {
+    "shoulders": 0.113,
+    "hips": 0.096,
+    "spine": 0.365,
+    "wrists": 0.099,
+    "elbows": 0.086,
+    "knees": 0.044,
+    "ankles": 0.004
+   },
+   "top_joint": [
+    "Spine_y",
+    0.365
+   ],
+   "statue": true,
+   "tracked": 1.0,
+   "support_min": 1.0,
+   "err6": 0.034,
+   "subst": {},
+   "pelvis_z": 0.722,
+   "com_z": 0.515
+  },
+  {
+   "hold": "Side_Crane_Crow_Pose_or_Parsva_Bakasana_-b@1045",
+   "hold_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-b@1045",
+   "node": 83,
+   "t_hold": 17.4333,
+   "dur": 0.92,
+   "orient": "prone",
+   "ground": [
+    "L_FOOT",
+    "HEAD",
+    "L_HAND",
+    "R_HAND"
+   ],
+   "bb": [
+    "L_THIGH+R_UPPER_ARM"
+   ],
+   "role": "variant",
+   "gate": "pass",
+   "flags": [],
+   "statics": "held",
+   "s_star": 0.0802,
+   "util": {
+    "shoulders": 0.08,
+    "hips": 0.08,
+    "spine": 0.08,
+    "wrists": 0.08,
+    "elbows": 0.08,
+    "knees": 0.042,
+    "ankles": 0.055
+   },
+   "top_joint": [
+    "L_Hip_y",
+    0.08
+   ],
+   "statue": true,
+   "tracked": 1.0,
+   "support_min": 0.929,
+   "err6": 0.051,
+   "subst": {},
+   "pelvis_z": 0.648,
+   "com_z": 0.452
+  },
+  {
+   "hold": "Side_Crane_Crow_Pose_or_Parsva_Bakasana_-b@1230",
+   "hold_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-b@1230",
+   "node": 90,
+   "t_hold": 20.5,
+   "dur": 2.3,
+   "orient": "side_l",
+   "ground": [
+    "HEAD",
+    "L_HAND",
+    "R_HAND"
+   ],
+   "bb": [
+    "L_THIGH+R_UPPER_ARM"
+   ],
+   "role": "variant",
+   "gate": "flag",
+   "flags": [
+    "fit_closer"
+   ],
+   "statics": "feasible",
+   "s_star": 0.2048,
+   "util": {
+    "shoulders": 0.205,
+    "hips": 0.199,
+    "spine": 0.205,
+    "wrists": 0.205,
+    "elbows": 0.198,
+    "knees": 0.043,
+    "ankles": 0.005
+   },
+   "top_joint": [
+    "Torso_y",
+    0.205
+   ],
+   "statue": false,
+   "tracked": 1.0,
+   "support_min": 1.0,
+   "err6": 0.05,
+   "subst": {},
+   "pelvis_z": 0.424,
+   "com_z": 0.349
+  },
+  {
+   "hold": "Side_Crane_Crow_Pose_or_Parsva_Bakasana_-b@1493",
+   "hold_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-b@1493",
+   "node": 92,
+   "t_hold": 24.8833,
+   "dur": 5.68,
+   "orient": "side_l",
+   "ground": [
+    "L_HAND",
+    "R_HAND"
+   ],
+   "bb": [
+    "L_THIGH+R_UPPER_ARM"
+   ],
+   "role": "family",
+   "gate": "pass",
+   "flags": [],
+   "statics": "feasible",
+   "s_star": 0.2782,
+   "util": {
+    "shoulders": 0.278,
+    "hips": 0.122,
+    "spine": 0.278,
+    "wrists": 0.278,
+    "elbows": 0.117,
+    "knees": 0.038,
+    "ankles": 0.005
+   },
+   "top_joint": [
+    "R_Wrist_x",
+    0.278
+   ],
+   "statue": false,
+   "tracked": 1.0,
+   "support_min": 1.0,
+   "err6": 0.046,
+   "subst": {},
+   "pelvis_z": 0.389,
+   "com_z": 0.374
+  },
+  {
+   "hold": "Side_Crane_Crow_Pose_or_Parsva_Bakasana_-c@237",
+   "hold_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-c@237",
+   "node": 80,
+   "t_hold": 3.95,
+   "dur": 2.2,
+   "orient": "prone",
+   "ground": [
+    "L_FOOT",
+    "R_FOOT",
+    "L_HAND",
+    "R_HAND"
+   ],
+   "bb": [],
+   "role": "preparation",
+   "gate": "flag",
+   "flags": [
+    "pose_preparation"
+   ],
+   "statics": "held",
+   "s_star": 0.1044,
+   "util": {
+    "shoulders": 0.073,
+    "hips": 0.037,
+    "spine": 0.031,
+    "wrists": 0.062,
+    "elbows": 0.104,
+    "knees": 0.092,
+    "ankles": 0.104
+   },
+   "top_joint": [
+    "L_Elbow_x",
+    0.104
+   ],
+   "statue": true,
+   "tracked": 1.0,
+   "support_min": 1.0,
+   "err6": 0.043,
+   "subst": {},
+   "pelvis_z": 0.728,
+   "com_z": 0.564
+  },
+  {
+   "hold": "Side_Crane_Crow_Pose_or_Parsva_Bakasana_-c@371",
+   "hold_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-c@371",
+   "node": 85,
+   "t_hold": 6.1833,
+   "dur": 1.75,
+   "orient": "prone",
+   "ground": [
+    "R_FOOT",
+    "L_HAND",
+    "R_HAND"
+   ],
+   "bb": [
+    "L_SHANK+L_UPPER_ARM"
+   ],
+   "role": "variant",
+   "gate": "pass",
+   "flags": [],
+   "statics": "held",
+   "s_star": 0.11,
+   "util": {
+    "shoulders": 0.11,
+    "hips": 0.069,
+    "spine": 0.11,
+    "wrists": 0.11,
+    "elbows": 0.11,
+    "knees": 0.11,
+    "ankles": 0.11
+   },
+   "top_joint": [
+    "L_Elbow_z",
+    0.11
+   ],
+   "statue": true,
+   "tracked": 1.0,
+   "support_min": 1.0,
+   "err6": 0.055,
+   "subst": {},
+   "pelvis_z": 0.747,
+   "com_z": 0.569
+  },
+  {
+   "hold": "Side_Crane_Crow_Pose_or_Parsva_Bakasana_-c@606",
+   "hold_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-c@606",
+   "node": 91,
+   "t_hold": 10.1,
+   "dur": 5.6,
+   "orient": "prone",
+   "ground": [
+    "L_HAND",
+    "R_HAND"
+   ],
+   "bb": [
+    "L_SHANK+L_UPPER_ARM"
+   ],
+   "role": "family",
+   "gate": "pass",
+   "flags": [],
+   "statics": "feasible",
+   "s_star": 0.3231,
+   "util": {
+    "shoulders": 0.199,
+    "hips": 0.055,
+    "spine": 0.191,
+    "wrists": 0.323,
+    "elbows": 0.289,
+    "knees": 0.047,
+    "ankles": 0.006
+   },
+   "top_joint": [
+    "L_Wrist_z",
+    0.323
+   ],
+   "statue": false,
+   "tracked": 1.0,
+   "support_min": 1.0,
+   "err6": 0.124,
+   "subst": {},
+   "pelvis_z": 0.753,
+   "com_z": 0.573
+  },
+  {
+   "hold": "Side_Crane_Crow_Pose_or_Parsva_Bakasana_-c@1230",
+   "hold_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-c@1230",
+   "node": 81,
+   "t_hold": 20.5,
+   "dur": 2.5,
+   "orient": "prone",
+   "ground": [
+    "L_FOOT",
+    "L_HAND",
+    "R_HAND"
+   ],
+   "bb": [
+    "R_SHANK+R_UPPER_ARM"
+   ],
+   "role": "variant",
+   "gate": "pass",
+   "flags": [],
+   "statics": "held",
+   "s_star": 0.1213,
+   "util": {
+    "shoulders": 0.121,
+    "hips": 0.016,
+    "spine": 0.121,
+    "wrists": 0.121,
+    "elbows": 0.121,
+    "knees": 0.029,
+    "ankles": 0.121
+   },
+   "top_joint": [
+    "L_Thorax_z",
+    0.121
+   ],
+   "statue": true,
+   "tracked": 1.0,
+   "support_min": 1.0,
+   "err6": 0.044,
+   "subst": {},
+   "pelvis_z": 0.765,
+   "com_z": 0.57
+  },
+  {
+   "hold": "Side_Crane_Crow_Pose_or_Parsva_Bakasana_-c@1296",
+   "hold_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-c@1296",
+   "node": 91,
+   "t_hold": 22.4833,
+   "dur": 1.12,
+   "orient": "prone",
+   "ground": [
+    "L_HAND",
+    "R_HAND"
+   ],
+   "bb": [
+    "R_SHANK+R_UPPER_ARM"
+   ],
+   "role": "family",
+   "gate": "pass",
+   "flags": [],
+   "statics": "feasible",
+   "s_star": 0.2243,
+   "util": {
+    "shoulders": 0.145,
+    "hips": 0.037,
+    "spine": 0.225,
+    "wrists": 0.225,
+    "elbows": 0.225,
+    "knees": 0.035,
+    "ankles": 0.003
+   },
+   "top_joint": [
+    "R_Wrist_y",
+    0.225
+   ],
+   "statue": false,
+   "tracked": 1.0,
+   "support_min": 1.0,
+   "err6": 0.065,
+   "subst": {
+    "R_FOOT": 1.0
+   },
+   "pelvis_z": 0.769,
+   "com_z": 0.572
+  },
+  {
+   "hold": "Side_Crane_Crow_Pose_or_Parsva_Bakasana_-c@1863",
+   "hold_id": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-c@1863",
+   "node": 88,
+   "t_hold": 29.3833,
+   "dur": 0.93,
+   "orient": "prone",
+   "ground": [
+    "L_FOOT",
+    "R_FOOT",
+    "R_HAND"
+   ],
+   "bb": [],
+   "role": "preparation",
+   "gate": "flag",
+   "flags": [
+    "pose_preparation"
+   ],
+   "statics": "held",
+   "s_star": 0.1273,
+   "util": {
+    "shoulders": 0.061,
+    "hips": 0.127,
+    "spine": 0.127,
+    "wrists": 0.127,
+    "elbows": 0.077,
+    "knees": 0.127,
+    "ankles": 0.127
+   },
+   "top_joint": [
+    "R_Hand_z",
+    0.127
+   ],
+   "statue": true,
+   "tracked": 1.0,
+   "support_min": 1.0,
+   "err6": 0.125,
+   "subst": {},
+   "pelvis_z": 0.892,
+   "com_z": 0.693
+  },
+  {
+   "hold": "Supported_Headstand_pose_or_Salamba_Sirsasana_-b@605",
+   "hold_id": "220923_Supported_Headstand_pose_or_Salamba_Sirsasana_-b@605",
+   "node": 102,
+   "t_hold": 10.0833,
+   "dur": 1.38,
+   "orient": "inverted",
+   "ground": [
+    "HEAD",
+    "L_HAND",
+    "R_HAND"
+   ],
+   "bb": [],
+   "role": "variant",
+   "gate": "pass",
+   "flags": [],
+   "statics": "held",
+   "s_star": 0.3606,
+   "util": {
+    "shoulders": 0.167,
+    "hips": 0.123,
+    "spine": 0.361,
+    "wrists": 0.106,
+    "elbows": 0.067,
+    "knees": 0.048,
+    "ankles": 0.006
+   },
+   "top_joint": [
+    "Spine_y",
+    0.361
+   ],
+   "statue": true,
+   "tracked": 1.0,
+   "support_min": 1.0,
+   "err6": 0.039,
+   "subst": {},
+   "pelvis_z": 0.738,
+   "com_z": 0.557
+  },
+  {
+   "hold": "Supported_Headstand_pose_or_Salamba_Sirsasana_-b@1093",
+   "hold_id": "220923_Supported_Headstand_pose_or_Salamba_Sirsasana_-b@1093",
+   "node": 104,
+   "t_hold": 18.2167,
+   "dur": 9.37,
+   "orient": "inverted",
+   "ground": [
+    "HEAD",
+    "L_HAND",
+    "R_HAND"
+   ],
+   "bb": [],
+   "role": "family",
+   "gate": "pass",
+   "flags": [],
+   "statics": "held",
+   "s_star": 0.0892,
+   "util": {
+    "shoulders": 0.089,
+    "hips": 0.012,
+    "spine": 0.074,
+    "wrists": 0.089,
+    "elbows": 0.089,
+    "knees": 0.006,
+    "ankles": 0.002
+   },
+   "top_joint": [
+    "Head_x",
+    0.089
+   ],
+   "statue": true,
+   "tracked": 1.0,
+   "support_min": 1.0,
+   "err6": 0.05,
+   "subst": {},
+   "pelvis_z": 0.769,
+   "com_z": 0.735
+  },
+  {
+   "hold": "Supported_Headstand_pose_or_Salamba_Sirsasana_-a@338",
+   "hold_id": "220926_Supported_Headstand_pose_or_Salamba_Sirsasana_-a@338",
+   "node": 101,
+   "t_hold": 5.6333,
+   "dur": 0.67,
+   "orient": "prone",
+   "ground": [
+    "L_FOOT",
+    "R_FOOT",
+    "L_SHANK",
+    "R_SHANK",
+    "HEAD",
+    "L_FOREARM",
+    "R_FOREARM",
+    "L_HAND",
+    "R_HAND"
+   ],
+   "bb": [
+    "HEAD+R_HAND",
+    "L_HAND+R_HAND"
+   ],
+   "role": "variant",
+   "gate": "pass",
+   "flags": [],
+   "statics": "feasible",
+   "s_star": 0.0218,
+   "util": {
+    "shoulders": 0.022,
+    "hips": 0.022,
+    "spine": 0.022,
+    "wrists": 0.022,
+    "elbows": 0.014,
+    "knees": 0.022,
+    "ankles": 0.022
+   },
+   "top_joint": [
+    "L_Knee_y",
+    0.022
+   ],
+   "statue": false,
+   "tracked": 1.0,
+   "support_min": 1.0,
+   "err6": 0.064,
+   "subst": {},
+   "pelvis_z": 0.424,
+   "com_z": 0.282
+  },
+  {
+   "hold": "Supported_Headstand_pose_or_Salamba_Sirsasana_-a@466",
+   "hold_id": "220926_Supported_Headstand_pose_or_Salamba_Sirsasana_-a@466",
+   "node": 101,
+   "t_hold": 7.7667,
+   "dur": 2.35,
+   "orient": "prone",
+   "ground": [
+    "L_FOOT",
+    "R_FOOT",
+    "L_SHANK",
+    "R_SHANK",
+    "HEAD",
+    "L_FOREARM",
+    "R_FOREARM",
+    "L_HAND",
+    "R_HAND"
+   ],
+   "bb": [
+    "L_HAND+R_HAND"
+   ],
+   "role": "variant",
+   "gate": "pass",
+   "flags": [],
+   "statics": "feasible",
+   "s_star": 0.0185,
+   "util": {
+    "shoulders": 0.019,
+    "hips": 0.019,
+    "spine": 0.019,
+    "wrists": 0.006,
+    "elbows": 0.019,
+    "knees": 0.013,
+    "ankles": 0.004
+   },
+   "top_joint": [
+    "Neck_y",
+    0.019
+   ],
+   "statue": false,
+   "tracked": 1.0,
+   "support_min": 1.0,
+   "err6": 0.051,
+   "subst": {},
+   "pelvis_z": 0.435,
+   "com_z": 0.288
+  },
+  {
+   "hold": "Supported_Headstand_pose_or_Salamba_Sirsasana_-a@1051",
+   "hold_id": "220926_Supported_Headstand_pose_or_Salamba_Sirsasana_-a@1051",
+   "node": 103,
+   "t_hold": 17.5167,
+   "dur": 8.5,
+   "orient": "inverted",
+   "ground": [
+    "HEAD",
+    "L_FOREARM",
+    "R_FOREARM",
+    "L_HAND",
+    "R_HAND"
+   ],
+   "bb": [
+    "HEAD+L_HAND",
+    "HEAD+R_HAND",
+    "L_HAND+R_HAND"
+   ],
+   "role": "family",
+   "gate": "pass",
+   "flags": [],
+   "statics": "feasible",
+   "s_star": 0.1056,
+   "util": {
+    "shoulders": 0.053,
+    "hips": 0.009,
+    "spine": 0.106,
+    "wrists": 0.009,
+    "elbows": 0.106,
+    "knees": 0.008,
+    "ankles": 0.002
+   },
+   "top_joint": [
+    "Neck_y",
+    0.106
+   ],
+   "statue": false,
+   "tracked": 1.0,
+   "support_min": 1.0,
+   "err6": 0.045,
+   "subst": {},
+   "pelvis_z": 0.773,
+   "com_z": 0.726
+  }
+ ],
+ "cands": [
+  {
+   "label": "user: crow -> handstand (press)",
+   "src": "Crane_Crow_Pose_or_Bakasana_-a@439",
+   "dst": "Handstand_pose_or_Adho_Mukha_Vrksasana_-@1193",
+   "src_node": 5,
+   "dst_node": 41,
+   "orient": "prone->inverted",
+   "ground_break": [],
+   "ground_make": [],
+   "bb_break": [
+    "L_SHANK+L_UPPER_ARM",
+    "R_SHANK+R_UPPER_ARM"
+   ],
+   "bb_make": [],
+   "d6_heading": 0.649,
+   "d6_bestyaw": 0.568,
+   "direct_edge": false,
+   "path": [
+    {
+     "src": 5,
+     "dst": 120,
+     "n": 1,
+     "via": [
+      "Crane_Crow_Pose_or_Bakasana_"
+     ]
+    },
+    {
+     "src": 120,
+     "dst": 39,
+     "n": 1,
+     "via": [
+      "Handstand_pose_or_Adho_Mukha"
+     ]
+    },
+    {
+     "src": 39,
+     "dst": 40,
+     "n": 1,
+     "via": [
+      "Handstand_pose_or_Adho_Mukha"
+     ]
+    },
+    {
+     "src": 40,
+     "dst": 41,
+     "n": 2,
+     "via": [
+      "Handstand_pose_or_Adho_Mukha"
+     ]
+    }
+   ],
+   "witness": {
+    "witness_m": 0.144,
+    "clip": "Scorpion_pose_or_vrischikasana-b",
+    "t_from": 8.7,
+    "t_to": 11.9,
+    "d_from": 0.133,
+    "d_to": 0.144
+   },
+   "witness_other_clip": {
+    "witness_m": 0.144,
+    "clip": "Scorpion_pose_or_vrischikasana-b",
+    "t_from": 8.7,
+    "t_to": 11.9,
+    "d_from": 0.133,
+    "d_to": 0.144
+   },
+   "com_hands_off_src": 0.079,
+   "com_hands_off_dst": 0.076,
+   "feet_hands_span_src": 0.491,
+   "feet_hands_span_dst": 0.174,
+   "pelvis_dz": 0.328,
+   "com_dz": 0.383
+  },
+  {
+   "label": "user: crow -> chaturanga (jump back)",
+   "src": "Crane_Crow_Pose_or_Bakasana_-a@439",
+   "dst": "Four-Limbed_Staff_Pose_or_Chaturanga_Dan@485",
+   "src_node": 5,
+   "dst_node": 35,
+   "orient": "prone->prone",
+   "ground_break": [],
+   "ground_make": [
+    "L_FOOT",
+    "R_FOOT"
+   ],
+   "bb_break": [
+    "L_SHANK+L_UPPER_ARM",
+    "R_SHANK+R_UPPER_ARM"
+   ],
+   "bb_make": [],
+   "d6_heading": 0.746,
+   "d6_bestyaw": 0.452,
+   "direct_edge": false,
+   "path": [
+    {
+     "src": 5,
+     "dst": 120,
+     "n": 1,
+     "via": [
+      "Crane_Crow_Pose_or_Bakasana_"
+     ]
+    },
+    {
+     "src": 120,
+     "dst": 35,
+     "n": 1,
+     "via": [
+      "Four-Limbed_Staff_Pose_or_Ch"
+     ]
+    }
+   ],
+   "witness": {
+    "witness_m": 0.217,
+    "clip": "Peacock_Pose_or_Mayurasana_-a",
+    "t_from": 3.6,
+    "t_to": 10.4,
+    "d_from": 0.217,
+    "d_to": 0.154
+   },
+   "witness_other_clip": {
+    "witness_m": 0.217,
+    "clip": "Peacock_Pose_or_Mayurasana_-a",
+    "t_from": 3.6,
+    "t_to": 10.4,
+    "d_from": 0.217,
+    "d_to": 0.154
+   },
+   "com_hands_off_src": 0.079,
+   "com_hands_off_dst": 0.318,
+   "feet_hands_span_src": 0.491,
+   "feet_hands_span_dst": 1.282,
+   "pelvis_dz": -0.47,
+   "com_dz": -0.352
+  },
+  {
+   "label": "user: handstand -> crow (lower)",
+   "src": "Handstand_pose_or_Adho_Mukha_Vrksasana_-@1193",
+   "dst": "Crane_Crow_Pose_or_Bakasana_-a@439",
+   "src_node": 41,
+   "dst_node": 5,
+   "orient": "inverted->prone",
+   "ground_break": [],
+   "ground_make": [],
+   "bb_break": [],
+   "bb_make": [
+    "L_SHANK+L_UPPER_ARM",
+    "R_SHANK+R_UPPER_ARM"
+   ],
+   "d6_heading": 0.649,
+   "d6_bestyaw": 0.568,
+   "direct_edge": false,
+   "path": [
+    {
+     "src": 41,
+     "dst": 120,
+     "n": 1,
+     "via": [
+      "Handstand_pose_or_Adho_Mukha"
+     ]
+    },
+    {
+     "src": 120,
+     "dst": 4,
+     "n": 1,
+     "via": [
+      "Crane_Crow_Pose_or_Bakasana_"
+     ]
+    },
+    {
+     "src": 4,
+     "dst": 5,
+     "n": 1,
+     "via": [
+      "Crane_Crow_Pose_or_Bakasana_"
+     ]
+    }
+   ],
+   "witness": {
+    "witness_m": 0.232,
+    "clip": "Handstand_pose_or_Adho_Mukha_Vrksasana_-a",
+    "t_from": 40.2,
+    "t_to": 45.8,
+    "d_from": 0.034,
+    "d_to": 0.232
+   },
+   "witness_other_clip": {
+    "witness_m": 0.26,
+    "clip": "Feathered_Peacock_Pose_or_Pincha_Mayurasana_-a",
+    "t_from": 22.1,
+    "t_to": 32.1,
+    "d_from": 0.21,
+    "d_to": 0.26
+   },
+   "com_hands_off_src": 0.076,
+   "com_hands_off_dst": 0.079,
+   "feet_hands_span_src": 0.174,
+   "feet_hands_span_dst": 0.491,
+   "pelvis_dz": -0.328,
+   "com_dz": -0.383
+  },
+  {
+   "label": "crow -> tripod headstand",
+   "src": "Crane_Crow_Pose_or_Bakasana_-a@439",
+   "dst": "Pose_Dedicated_to_the_Sage_Koundinya_or_@578",
+   "src_node": 5,
+   "dst_node": 66,
+   "orient": "prone->inverted",
+   "ground_break": [],
+   "ground_make": [
+    "HEAD"
+   ],
+   "bb_break": [
+    "L_SHANK+L_UPPER_ARM",
+    "R_SHANK+R_UPPER_ARM"
+   ],
+   "bb_make": [],
+   "d6_heading": 0.596,
+   "d6_bestyaw": 0.559,
+   "direct_edge": false,
+   "path": [
+    {
+     "src": 5,
+     "dst": 120,
+     "n": 1,
+     "via": [
+      "Crane_Crow_Pose_or_Bakasana_"
+     ]
+    },
+    {
+     "src": 120,
+     "dst": 63,
+     "n": 2,
+     "via": [
+      "Pose_Dedicated_to_the_Sage_K"
+     ]
+    },
+    {
+     "src": 63,
+     "dst": 64,
+     "n": 1,
+     "via": [
+      "Pose_Dedicated_to_the_Sage_K"
+     ]
+    },
+    {
+     "src": 64,
+     "dst": 66,
+     "n": 1,
+     "via": [
+      "Pose_Dedicated_to_the_Sage_K"
+     ]
+    }
+   ],
+   "witness": {
+    "witness_m": 0.157,
+    "clip": "Side_Crane_Crow_Pose_or_Parsva_Bakasana_-b",
+    "t_from": 4.8,
+    "t_to": 13.7,
+    "d_from": 0.157,
+    "d_to": 0.019
+   },
+   "witness_other_clip": {
+    "witness_m": 0.157,
+    "clip": "Side_Crane_Crow_Pose_or_Parsva_Bakasana_-b",
+    "t_from": 4.8,
+    "t_to": 13.7,
+    "d_from": 0.157,
+    "d_to": 0.019
+   },
+   "com_hands_off_src": 0.079,
+   "com_hands_off_dst": 0.133,
+   "feet_hands_span_src": 0.491,
+   "feet_hands_span_dst": 0.588,
+   "pelvis_dz": 0.016,
+   "com_dz": 0.043
+  },
+  {
+   "label": "tripod headstand -> crow",
+   "src": "Pose_Dedicated_to_the_Sage_Koundinya_or_@578",
+   "dst": "Crane_Crow_Pose_or_Bakasana_-a@439",
+   "src_node": 66,
+   "dst_node": 5,
+   "orient": "inverted->prone",
+   "ground_break": [
+    "HEAD"
+   ],
+   "ground_make": [],
+   "bb_break": [],
+   "bb_make": [
+    "L_SHANK+L_UPPER_ARM",
+    "R_SHANK+R_UPPER_ARM"
+   ],
+   "d6_heading": 0.596,
+   "d6_bestyaw": 0.559,
+   "direct_edge": false,
+   "path": [
+    {
+     "src": 66,
+     "dst": 67,
+     "n": 2,
+     "via": [
+      "Pose_Dedicated_to_the_Sage_K"
+     ]
+    },
+    {
+     "src": 67,
+     "dst": 71,
+     "n": 1,
+     "via": [
+      "Pose_Dedicated_to_the_Sage_K"
+     ]
+    },
+    {
+     "src": 71,
+     "dst": 68,
+     "n": 1,
+     "via": [
+      "Pose_Dedicated_to_the_Sage_K"
+     ]
+    },
+    {
+     "src": 68,
+     "dst": 120,
+     "n": 1,
+     "via": [
+      "Pose_Dedicated_to_the_Sage_K"
+     ]
+    },
+    {
+     "src": 120,
+     "dst": 4,
+     "n": 1,
+     "via": [
+      "Crane_Crow_Pose_or_Bakasana_"
+     ]
+    },
+    {
+     "src": 4,
+     "dst": 5,
+     "n": 1,
+     "via": [
+      "Crane_Crow_Pose_or_Bakasana_"
+     ]
+    }
+   ],
+   "witness": {
+    "witness_m": 0.166,
+    "clip": "Supported_Headstand_pose_or_Salamba_Sirsasana_-b",
+    "t_from": 21.5,
+    "t_to": 23.7,
+    "d_from": 0.053,
+    "d_to": 0.166
+   },
+   "witness_other_clip": {
+    "witness_m": 0.166,
+    "clip": "Supported_Headstand_pose_or_Salamba_Sirsasana_-b",
+    "t_from": 21.5,
+    "t_to": 23.7,
+    "d_from": 0.053,
+    "d_to": 0.166
+   },
+   "com_hands_off_src": 0.133,
+   "com_hands_off_dst": 0.079,
+   "feet_hands_span_src": 0.588,
+   "feet_hands_span_dst": 0.491,
+   "pelvis_dz": -0.016,
+   "com_dz": -0.043
+  },
+  {
+   "label": "crow -> tripod headstand (Sirsasana -b)",
+   "src": "Crane_Crow_Pose_or_Bakasana_-a@439",
+   "dst": "Supported_Headstand_pose_or_Salamba_Sirs@1093",
+   "src_node": 5,
+   "dst_node": 104,
+   "orient": "prone->inverted",
+   "ground_break": [],
+   "ground_make": [
+    "HEAD"
+   ],
+   "bb_break": [
+    "L_SHANK+L_UPPER_ARM",
+    "R_SHANK+R_UPPER_ARM"
+   ],
+   "bb_make": [],
+   "d6_heading": 0.655,
+   "d6_bestyaw": 0.631,
+   "direct_edge": false,
+   "path": [
+    {
+     "src": 5,
+     "dst": 120,
+     "n": 1,
+     "via": [
+      "Crane_Crow_Pose_or_Bakasana_"
+     ]
+    },
+    {
+     "src": 120,
+     "dst": 102,
+     "n": 1,
+     "via": [
+      "Supported_Headstand_pose_or_"
+     ]
+    },
+    {
+     "src": 102,
+     "dst": 104,
+     "n": 1,
+     "via": [
+      "Supported_Headstand_pose_or_"
+     ]
+    }
+   ],
+   "witness": {
+    "witness_m": 0.157,
+    "clip": "Side_Crane_Crow_Pose_or_Parsva_Bakasana_-b",
+    "t_from": 4.8,
+    "t_to": 11.9,
+    "d_from": 0.157,
+    "d_to": 0.123
+   },
+   "witness_other_clip": {
+    "witness_m": 0.157,
+    "clip": "Side_Crane_Crow_Pose_or_Parsva_Bakasana_-b",
+    "t_from": 4.8,
+    "t_to": 11.9,
+    "d_from": 0.157,
+    "d_to": 0.123
+   },
+   "com_hands_off_src": 0.079,
+   "com_hands_off_dst": 0.169,
+   "feet_hands_span_src": 0.491,
+   "feet_hands_span_dst": 0.217,
+   "pelvis_dz": 0.034,
+   "com_dz": 0.146
+  },
+  {
+   "label": "tripod headstand (Sirsasana -b) -> crow",
+   "src": "Supported_Headstand_pose_or_Salamba_Sirs@1093",
+   "dst": "Crane_Crow_Pose_or_Bakasana_-a@439",
+   "src_node": 104,
+   "dst_node": 5,
+   "orient": "inverted->prone",
+   "ground_break": [
+    "HEAD"
+   ],
+   "ground_make": [],
+   "bb_break": [],
+   "bb_make": [
+    "L_SHANK+L_UPPER_ARM",
+    "R_SHANK+R_UPPER_ARM"
+   ],
+   "d6_heading": 0.655,
+   "d6_bestyaw": 0.631,
+   "direct_edge": false,
+   "path": [
+    {
+     "src": 104,
+     "dst": 120,
+     "n": 1,
+     "via": [
+      "Supported_Headstand_pose_or_"
+     ]
+    },
+    {
+     "src": 120,
+     "dst": 4,
+     "n": 1,
+     "via": [
+      "Crane_Crow_Pose_or_Bakasana_"
+     ]
+    },
+    {
+     "src": 4,
+     "dst": 5,
+     "n": 1,
+     "via": [
+      "Crane_Crow_Pose_or_Bakasana_"
+     ]
+    }
+   ],
+   "witness": {
+    "witness_m": 0.166,
+    "clip": "Supported_Headstand_pose_or_Salamba_Sirsasana_-b",
+    "t_from": 18.2,
+    "t_to": 23.7,
+    "d_from": 0.0,
+    "d_to": 0.166
+   },
+   "witness_other_clip": {
+    "witness_m": 0.232,
+    "clip": "Supported_Headstand_pose_or_Salamba_Sirsasana_-a",
+    "t_from": 18.9,
+    "t_to": 23.4,
+    "d_from": 0.141,
+    "d_to": 0.232
+   },
+   "com_hands_off_src": 0.169,
+   "com_hands_off_dst": 0.079,
+   "feet_hands_span_src": 0.217,
+   "feet_hands_span_dst": 0.491,
+   "pelvis_dz": -0.034,
+   "com_dz": -0.146
+  },
+  {
+   "label": "firefly -> crow",
+   "src": "Firefly_Pose_or_Tittibhasana_-a@776",
+   "dst": "Crane_Crow_Pose_or_Bakasana_-a@439",
+   "src_node": 34,
+   "dst_node": 5,
+   "orient": "upright->prone",
+   "ground_break": [],
+   "ground_make": [],
+   "bb_break": [
+    "L_THIGH+L_UPPER_ARM",
+    "R_THIGH+R_UPPER_ARM"
+   ],
+   "bb_make": [
+    "L_SHANK+L_UPPER_ARM",
+    "R_SHANK+R_UPPER_ARM"
+   ],
+   "d6_heading": 0.548,
+   "d6_bestyaw": 0.546,
+   "direct_edge": false,
+   "path": [
+    {
+     "src": 34,
+     "dst": 120,
+     "n": 1,
+     "via": [
+      "Firefly_Pose_or_Tittibhasana"
+     ]
+    },
+    {
+     "src": 120,
+     "dst": 4,
+     "n": 1,
+     "via": [
+      "Crane_Crow_Pose_or_Bakasana_"
+     ]
+    },
+    {
+     "src": 4,
+     "dst": 5,
+     "n": 1,
+     "via": [
+      "Crane_Crow_Pose_or_Bakasana_"
+     ]
+    }
+   ],
+   "witness": {
+    "witness_m": 0.207,
+    "clip": "Firefly_Pose_or_Tittibhasana_-a",
+    "t_from": 12.9,
+    "t_to": 15.9,
+    "d_from": 0.0,
+    "d_to": 0.207
+   },
+   "witness_other_clip": {
+    "witness_m": 0.22,
+    "clip": "Shoulder-Pressing_Pose_or_Bhujapidasana_-a",
+    "t_from": 11.1,
+    "t_to": 12.6,
+    "d_from": 0.22,
+    "d_to": 0.207
+   },
+   "com_hands_off_src": 0.079,
+   "com_hands_off_dst": 0.079,
+   "feet_hands_span_src": 0.502,
+   "feet_hands_span_dst": 0.491,
+   "pelvis_dz": 0.333,
+   "com_dz": 0.117
+  },
+  {
+   "label": "crow -> firefly",
+   "src": "Crane_Crow_Pose_or_Bakasana_-a@439",
+   "dst": "Firefly_Pose_or_Tittibhasana_-a@776",
+   "src_node": 5,
+   "dst_node": 34,
+   "orient": "prone->upright",
+   "ground_break": [],
+   "ground_make": [],
+   "bb_break": [
+    "L_SHANK+L_UPPER_ARM",
+    "R_SHANK+R_UPPER_ARM"
+   ],
+   "bb_make": [
+    "L_THIGH+L_UPPER_ARM",
+    "R_THIGH+R_UPPER_ARM"
+   ],
+   "d6_heading": 0.548,
+   "d6_bestyaw": 0.546,
+   "direct_edge": false,
+   "path": [
+    {
+     "src": 5,
+     "dst": 120,
+     "n": 1,
+     "via": [
+      "Crane_Crow_Pose_or_Bakasana_"
+     ]
+    },
+    {
+     "src": 120,
+     "dst": 32,
+     "n": 1,
+     "via": [
+      "Firefly_Pose_or_Tittibhasana"
+     ]
+    },
+    {
+     "src": 32,
+     "dst": 33,
+     "n": 1,
+     "via": [
+      "Firefly_Pose_or_Tittibhasana"
+     ]
+    },
+    {
+     "src": 33,
+     "dst": 34,
+     "n": 1,
+     "via": [
+      "Firefly_Pose_or_Tittibhasana"
+     ]
+    }
+   ],
+   "witness": {
+    "witness_m": 0.22,
+    "clip": "Shoulder-Pressing_Pose_or_Bhujapidasana_-a",
+    "t_from": 3.2,
+    "t_to": 11.1,
+    "d_from": 0.218,
+    "d_to": 0.22
+   },
+   "witness_other_clip": {
+    "witness_m": 0.22,
+    "clip": "Shoulder-Pressing_Pose_or_Bhujapidasana_-a",
+    "t_from": 3.2,
+    "t_to": 11.1,
+    "d_from": 0.218,
+    "d_to": 0.22
+   },
+   "com_hands_off_src": 0.079,
+   "com_hands_off_dst": 0.079,
+   "feet_hands_span_src": 0.491,
+   "feet_hands_span_dst": 0.502,
+   "pelvis_dz": -0.333,
+   "com_dz": -0.117
+  },
+  {
+   "label": "handstand -> chaturanga",
+   "src": "Handstand_pose_or_Adho_Mukha_Vrksasana_-@1193",
+   "dst": "Four-Limbed_Staff_Pose_or_Chaturanga_Dan@485",
+   "src_node": 41,
+   "dst_node": 35,
+   "orient": "inverted->prone",
+   "ground_break": [],
+   "ground_make": [
+    "L_FOOT",
+    "R_FOOT"
+   ],
+   "bb_break": [],
+   "bb_make": [],
+   "d6_heading": 0.854,
+   "d6_bestyaw": 0.826,
+   "direct_edge": false,
+   "path": [
+    {
+     "src": 41,
+     "dst": 120,
+     "n": 1,
+     "via": [
+      "Handstand_pose_or_Adho_Mukha"
+     ]
+    },
+    {
+     "src": 120,
+     "dst": 35,
+     "n": 1,
+     "via": [
+      "Four-Limbed_Staff_Pose_or_Ch"
+     ]
+    }
+   ],
+   "witness": {
+    "witness_m": 0.307,
+    "clip": "Supported_Headstand_pose_or_Salamba_Sirsasana_-b",
+    "t_from": 18.7,
+    "t_to": 24.4,
+    "d_from": 0.276,
+    "d_to": 0.307
+   },
+   "witness_other_clip": {
+    "witness_m": 0.307,
+    "clip": "Supported_Headstand_pose_or_Salamba_Sirsasana_-b",
+    "t_from": 18.7,
+    "t_to": 24.4,
+    "d_from": 0.276,
+    "d_to": 0.307
+   },
+   "com_hands_off_src": 0.076,
+   "com_hands_off_dst": 0.318,
+   "feet_hands_span_src": 0.174,
+   "feet_hands_span_dst": 1.282,
+   "pelvis_dz": -0.798,
+   "com_dz": -0.735
+  },
+  {
+   "label": "handstand -> plank",
+   "src": "Handstand_pose_or_Adho_Mukha_Vrksasana_-@1193",
+   "dst": "Plank_Pose_or_Kumbhakasana_-a@541",
+   "src_node": 41,
+   "dst_node": 56,
+   "orient": "inverted->prone",
+   "ground_break": [],
+   "ground_make": [
+    "L_FOOT",
+    "R_FOOT"
+   ],
+   "bb_break": [],
+   "bb_make": [],
+   "d6_heading": 0.865,
+   "d6_bestyaw": 0.858,
+   "direct_edge": false,
+   "path": [
+    {
+     "src": 41,
+     "dst": 120,
+     "n": 1,
+     "via": [
+      "Handstand_pose_or_Adho_Mukha"
+     ]
+    },
+    {
+     "src": 120,
+     "dst": 56,
+     "n": 1,
+     "via": [
+      "Plank_Pose_or_Kumbhakasana_-"
+     ]
+    }
+   ],
+   "witness": {
+    "witness_m": 0.267,
+    "clip": "Supported_Headstand_pose_or_Salamba_Sirsasana_-a",
+    "t_from": 17.9,
+    "t_to": 26.8,
+    "d_from": 0.267,
+    "d_to": 0.202
+   },
+   "witness_other_clip": {
+    "witness_m": 0.267,
+    "clip": "Supported_Headstand_pose_or_Salamba_Sirsasana_-a",
+    "t_from": 17.9,
+    "t_to": 26.8,
+    "d_from": 0.267,
+    "d_to": 0.202
+   },
+   "com_hands_off_src": 0.076,
+   "com_hands_off_dst": 0.447,
+   "feet_hands_span_src": 0.174,
+   "feet_hands_span_dst": 1.303,
+   "pelvis_dz": -0.578,
+   "com_dz": -0.514
+  },
+  {
+   "label": "crow -> plank (jump back, straight arms)",
+   "src": "Crane_Crow_Pose_or_Bakasana_-a@439",
+   "dst": "Plank_Pose_or_Kumbhakasana_-a@541",
+   "src_node": 5,
+   "dst_node": 56,
+   "orient": "prone->prone",
+   "ground_break": [],
+   "ground_make": [
+    "L_FOOT",
+    "R_FOOT"
+   ],
+   "bb_break": [
+    "L_SHANK+L_UPPER_ARM",
+    "R_SHANK+R_UPPER_ARM"
+   ],
+   "bb_make": [],
+   "d6_heading": 0.419,
+   "d6_bestyaw": 0.419,
+   "direct_edge": false,
+   "path": [
+    {
+     "src": 5,
+     "dst": 120,
+     "n": 1,
+     "via": [
+      "Crane_Crow_Pose_or_Bakasana_"
+     ]
+    },
+    {
+     "src": 120,
+     "dst": 56,
+     "n": 1,
+     "via": [
+      "Plank_Pose_or_Kumbhakasana_-"
+     ]
+    }
+   ],
+   "witness": {
+    "witness_m": 0.217,
+    "clip": "Peacock_Pose_or_Mayurasana_-a",
+    "t_from": 3.6,
+    "t_to": 4.4,
+    "d_from": 0.217,
+    "d_to": 0.183
+   },
+   "witness_other_clip": {
+    "witness_m": 0.217,
+    "clip": "Peacock_Pose_or_Mayurasana_-a",
+    "t_from": 3.6,
+    "t_to": 4.4,
+    "d_from": 0.217,
+    "d_to": 0.183
+   },
+   "com_hands_off_src": 0.079,
+   "com_hands_off_dst": 0.447,
+   "feet_hands_span_src": 0.491,
+   "feet_hands_span_dst": 1.303,
+   "pelvis_dz": -0.25,
+   "com_dz": -0.131
+  },
+  {
+   "label": "downdog -> handstand (float)",
+   "src": "Downward-Facing_Dog_pose_or_Adho_Mukha_S@448",
+   "dst": "Handstand_pose_or_Adho_Mukha_Vrksasana_-@1193",
+   "src_node": 12,
+   "dst_node": 41,
+   "orient": "prone->inverted",
+   "ground_break": [
+    "L_FOOT",
+    "R_FOOT"
+   ],
+   "ground_make": [],
+   "bb_break": [],
+   "bb_make": [],
+   "d6_heading": 0.796,
+   "d6_bestyaw": 0.799,
+   "direct_edge": false,
+   "path": [
+    {
+     "src": 12,
+     "dst": 120,
+     "n": 1,
+     "via": [
+      "Downward-Facing_Dog_pose_or_"
+     ]
+    },
+    {
+     "src": 120,
+     "dst": 39,
+     "n": 1,
+     "via": [
+      "Handstand_pose_or_Adho_Mukha"
+     ]
+    },
+    {
+     "src": 39,
+     "dst": 40,
+     "n": 1,
+     "via": [
+      "Handstand_pose_or_Adho_Mukha"
+     ]
+    },
+    {
+     "src": 40,
+     "dst": 41,
+     "n": 2,
+     "via": [
+      "Handstand_pose_or_Adho_Mukha"
+     ]
+    }
+   ],
+   "witness": {
+    "witness_m": 0.175,
+    "clip": "Handstand_pose_or_Adho_Mukha_Vrksasana_-a",
+    "t_from": 3.6,
+    "t_to": 9.6,
+    "d_from": 0.175,
+    "d_to": 0.146
+   },
+   "witness_other_clip": {
+    "witness_m": 0.192,
+    "clip": "Feathered_Peacock_Pose_or_Pincha_Mayurasana_-d",
+    "t_from": 8.5,
+    "t_to": 18.3,
+    "d_from": 0.188,
+    "d_to": 0.192
+   },
+   "com_hands_off_src": 0.753,
+   "com_hands_off_dst": 0.076,
+   "feet_hands_span_src": 1.065,
+   "feet_hands_span_dst": 0.174,
+   "pelvis_dz": 0.285,
+   "com_dz": 0.427
+  },
+  {
+   "label": "crow -> side crow -c",
+   "src": "Crane_Crow_Pose_or_Bakasana_-a@439",
+   "dst": "Side_Crane_Crow_Pose_or_Parsva_Bakasana_@606",
+   "src_node": 5,
+   "dst_node": 91,
+   "orient": "prone->prone",
+   "ground_break": [],
+   "ground_make": [],
+   "bb_break": [
+    "R_SHANK+R_UPPER_ARM"
+   ],
+   "bb_make": [],
+   "d6_heading": 0.259,
+   "d6_bestyaw": 0.18,
+   "direct_edge": false,
+   "path": [
+    {
+     "src": 5,
+     "dst": 120,
+     "n": 1,
+     "via": [
+      "Crane_Crow_Pose_or_Bakasana_"
+     ]
+    },
+    {
+     "src": 120,
+     "dst": 80,
+     "n": 2,
+     "via": [
+      "Side_Crane_Crow_Pose_or_Pars"
+     ]
+    },
+    {
+     "src": 80,
+     "dst": 85,
+     "n": 1,
+     "via": [
+      "Side_Crane_Crow_Pose_or_Pars"
+     ]
+    },
+    {
+     "src": 85,
+     "dst": 91,
+     "n": 1,
+     "via": [
+      "Side_Crane_Crow_Pose_or_Pars"
+     ]
+    }
+   ],
+   "witness": {
+    "witness_m": 0.111,
+    "clip": "Side_Crane_Crow_Pose_or_Parsva_Bakasana_-c",
+    "t_from": 6.6,
+    "t_to": 10.1,
+    "d_from": 0.111,
+    "d_to": 0.0
+   },
+   "witness_other_clip": {
+    "witness_m": 0.194,
+    "clip": "Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-b",
+    "t_from": 4.8,
+    "t_to": 6.1,
+    "d_from": 0.162,
+    "d_to": 0.194
+   },
+   "com_hands_off_src": 0.079,
+   "com_hands_off_dst": 0.077,
+   "feet_hands_span_src": 0.491,
+   "feet_hands_span_dst": 0.584,
+   "pelvis_dz": 0.017,
+   "com_dz": -0.016
+  },
+  {
+   "label": "crow -> side crow -a",
+   "src": "Crane_Crow_Pose_or_Bakasana_-a@439",
+   "dst": "Side_Crane_Crow_Pose_or_Parsva_Bakasana_@871",
+   "src_node": 5,
+   "dst_node": 93,
+   "orient": "prone->side_r",
+   "ground_break": [],
+   "ground_make": [],
+   "bb_break": [
+    "L_SHANK+L_UPPER_ARM",
+    "R_SHANK+R_UPPER_ARM"
+   ],
+   "bb_make": [
+    "R_THIGH+L_UPPER_ARM"
+   ],
+   "d6_heading": 0.444,
+   "d6_bestyaw": 0.38,
+   "direct_edge": false,
+   "path": [
+    {
+     "src": 5,
+     "dst": 120,
+     "n": 1,
+     "via": [
+      "Crane_Crow_Pose_or_Bakasana_"
+     ]
+    },
+    {
+     "src": 120,
+     "dst": 80,
+     "n": 2,
+     "via": [
+      "Side_Crane_Crow_Pose_or_Pars"
+     ]
+    },
+    {
+     "src": 80,
+     "dst": 84,
+     "n": 1,
+     "via": [
+      "Side_Crane_Crow_Pose_or_Pars"
+     ]
+    },
+    {
+     "src": 84,
+     "dst": 87,
+     "n": 1,
+     "via": [
+      "Side_Crane_Crow_Pose_or_Pars"
+     ]
+    },
+    {
+     "src": 87,
+     "dst": 93,
+     "n": 1,
+     "via": [
+      "Side_Crane_Crow_Pose_or_Pars"
+     ]
+    }
+   ],
+   "witness": {
+    "witness_m": 0.185,
+    "clip": "Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+    "t_from": 6.7,
+    "t_to": 14.5,
+    "d_from": 0.185,
+    "d_to": 0.0
+   },
+   "witness_other_clip": {
+    "witness_m": 0.268,
+    "clip": "Side_Crane_Crow_Pose_or_Parsva_Bakasana_-b",
+    "t_from": 3.2,
+    "t_to": 4.3,
+    "d_from": 0.17,
+    "d_to": 0.268
+   },
+   "com_hands_off_src": 0.079,
+   "com_hands_off_dst": 0.118,
+   "feet_hands_span_src": 0.491,
+   "feet_hands_span_dst": 0.716,
+   "pelvis_dz": -0.344,
+   "com_dz": -0.208
+  },
+  {
+   "label": "side crow -a -> Koundinya -a",
+   "src": "Side_Crane_Crow_Pose_or_Parsva_Bakasana_@871",
+   "dst": "Pose_Dedicated_to_the_Sage_Koundinya_or_@1199",
+   "src_node": 93,
+   "dst_node": 72,
+   "orient": "side_r->side_r",
+   "ground_break": [],
+   "ground_make": [],
+   "bb_break": [],
+   "bb_make": [],
+   "d6_heading": 0.247,
+   "d6_bestyaw": 0.242,
+   "direct_edge": false,
+   "path": [
+    {
+     "src": 93,
+     "dst": 120,
+     "n": 1,
+     "via": [
+      "Side_Crane_Crow_Pose_or_Pars"
+     ]
+    },
+    {
+     "src": 120,
+     "dst": 63,
+     "n": 2,
+     "via": [
+      "Pose_Dedicated_to_the_Sage_K"
+     ]
+    },
+    {
+     "src": 63,
+     "dst": 64,
+     "n": 1,
+     "via": [
+      "Pose_Dedicated_to_the_Sage_K"
+     ]
+    },
+    {
+     "src": 64,
+     "dst": 66,
+     "n": 1,
+     "via": [
+      "Pose_Dedicated_to_the_Sage_K"
+     ]
+    },
+    {
+     "src": 66,
+     "dst": 67,
+     "n": 2,
+     "via": [
+      "Pose_Dedicated_to_the_Sage_K"
+     ]
+    },
+    {
+     "src": 67,
+     "dst": 72,
+     "n": 1,
+     "via": [
+      "Pose_Dedicated_to_the_Sage_K"
+     ]
+    }
+   ],
+   "witness": {
+    "witness_m": 0.193,
+    "clip": "Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-a",
+    "t_from": 24.3,
+    "t_to": 24.4,
+    "d_from": 0.193,
+    "d_to": 0.169
+   },
+   "witness_other_clip": {
+    "witness_m": 0.311,
+    "clip": "Supported_Headstand_pose_or_Salamba_Sirsasana_-b",
+    "t_from": 23.7,
+    "t_to": 23.8,
+    "d_from": 0.309,
+    "d_to": 0.311
+   },
+   "com_hands_off_src": 0.118,
+   "com_hands_off_dst": 0.11,
+   "feet_hands_span_src": 0.716,
+   "feet_hands_span_dst": 0.728,
+   "pelvis_dz": 0.053,
+   "com_dz": -0.025
+  },
+  {
+   "label": "pincha -> crow",
+   "src": "Feathered_Peacock_Pose_or_Pincha_Mayuras@1554",
+   "dst": "Crane_Crow_Pose_or_Bakasana_-a@439",
+   "src_node": 31,
+   "dst_node": 5,
+   "orient": "inverted->prone",
+   "ground_break": [
+    "L_FOREARM",
+    "R_FOREARM"
+   ],
+   "ground_make": [],
+   "bb_break": [],
+   "bb_make": [
+    "L_SHANK+L_UPPER_ARM",
+    "R_SHANK+R_UPPER_ARM"
+   ],
+   "d6_heading": 0.588,
+   "d6_bestyaw": 0.45,
+   "direct_edge": false,
+   "path": [
+    {
+     "src": 31,
+     "dst": 120,
+     "n": 4,
+     "via": [
+      "Feathered_Peacock_Pose_or_Pi"
+     ]
+    },
+    {
+     "src": 120,
+     "dst": 4,
+     "n": 1,
+     "via": [
+      "Crane_Crow_Pose_or_Bakasana_"
+     ]
+    },
+    {
+     "src": 4,
+     "dst": 5,
+     "n": 1,
+     "via": [
+      "Crane_Crow_Pose_or_Bakasana_"
+     ]
+    }
+   ],
+   "witness": {
+    "witness_m": 0.232,
+    "clip": "Handstand_pose_or_Adho_Mukha_Vrksasana_-a",
+    "t_from": 40.3,
+    "t_to": 45.8,
+    "d_from": 0.226,
+    "d_to": 0.232
+   },
+   "witness_other_clip": {
+    "witness_m": 0.232,
+    "clip": "Handstand_pose_or_Adho_Mukha_Vrksasana_-a",
+    "t_from": 40.3,
+    "t_to": 45.8,
+    "d_from": 0.226,
+    "d_to": 0.232
+   },
+   "com_hands_off_src": 0.272,
+   "com_hands_off_dst": 0.079,
+   "feet_hands_span_src": 0.212,
+   "feet_hands_span_dst": 0.491,
+   "pelvis_dz": -0.067,
+   "com_dz": -0.134
+  },
+  {
+   "label": "handstand -> tripod headstand",
+   "src": "Handstand_pose_or_Adho_Mukha_Vrksasana_-@1193",
+   "dst": "Pose_Dedicated_to_the_Sage_Koundinya_or_@578",
+   "src_node": 41,
+   "dst_node": 66,
+   "orient": "inverted->inverted",
+   "ground_break": [],
+   "ground_make": [
+    "HEAD"
+   ],
+   "bb_break": [],
+   "bb_make": [],
+   "d6_heading": 0.541,
+   "d6_bestyaw": 0.418,
+   "direct_edge": false,
+   "path": [
+    {
+     "src": 41,
+     "dst": 120,
+     "n": 1,
+     "via": [
+      "Handstand_pose_or_Adho_Mukha"
+     ]
+    },
+    {
+     "src": 120,
+     "dst": 63,
+     "n": 2,
+     "via": [
+      "Pose_Dedicated_to_the_Sage_K"
+     ]
+    },
+    {
+     "src": 63,
+     "dst": 64,
+     "n": 1,
+     "via": [
+      "Pose_Dedicated_to_the_Sage_K"
+     ]
+    },
+    {
+     "src": 64,
+     "dst": 66,
+     "n": 1,
+     "via": [
+      "Pose_Dedicated_to_the_Sage_K"
+     ]
+    }
+   ],
+   "witness": {
+    "witness_m": 0.237,
+    "clip": "Scorpion_pose_or_vrischikasana-a",
+    "t_from": 30.8,
+    "t_to": 37.2,
+    "d_from": 0.187,
+    "d_to": 0.237
+   },
+   "witness_other_clip": {
+    "witness_m": 0.237,
+    "clip": "Scorpion_pose_or_vrischikasana-a",
+    "t_from": 30.8,
+    "t_to": 37.2,
+    "d_from": 0.187,
+    "d_to": 0.237
+   },
+   "com_hands_off_src": 0.076,
+   "com_hands_off_dst": 0.133,
+   "feet_hands_span_src": 0.174,
+   "feet_hands_span_dst": 0.588,
+   "pelvis_dz": -0.312,
+   "com_dz": -0.34
+  },
+  {
+   "label": "crow -> garland (bail-out)",
+   "src": "Crane_Crow_Pose_or_Bakasana_-a@439",
+   "dst": "Garland_Pose_or_Malasana_-a@334",
+   "src_node": 5,
+   "dst_node": 36,
+   "orient": "prone->upright",
+   "ground_break": [
+    "L_HAND",
+    "R_HAND"
+   ],
+   "ground_make": [
+    "L_FOOT",
+    "R_FOOT"
+   ],
+   "bb_break": [
+    "L_SHANK+L_UPPER_ARM",
+    "R_SHANK+R_UPPER_ARM"
+   ],
+   "bb_make": [],
+   "d6_heading": 0.582,
+   "d6_bestyaw": 0.579,
+   "direct_edge": false,
+   "path": [
+    {
+     "src": 5,
+     "dst": 120,
+     "n": 1,
+     "via": [
+      "Crane_Crow_Pose_or_Bakasana_"
+     ]
+    },
+    {
+     "src": 120,
+     "dst": 36,
+     "n": 1,
+     "via": [
+      "Garland_Pose_or_Malasana_-a"
+     ]
+    }
+   ],
+   "witness": {
+    "witness_m": 0.325,
+    "clip": "Scorpion_pose_or_vrischikasana-b",
+    "t_from": 26.0,
+    "t_to": 27.7,
+    "d_from": 0.268,
+    "d_to": 0.325
+   },
+   "witness_other_clip": {
+    "witness_m": 0.325,
+    "clip": "Scorpion_pose_or_vrischikasana-b",
+    "t_from": 26.0,
+    "t_to": 27.7,
+    "d_from": 0.268,
+    "d_to": 0.325
+   },
+   "com_hands_off_src": 0.079,
+   "com_hands_off_dst": 0.247,
+   "feet_hands_span_src": 0.491,
+   "feet_hands_span_dst": 0.17,
+   "pelvis_dz": -0.474,
+   "com_dz": -0.207
+  },
+  {
+   "label": "chaturanga -> crow",
+   "src": "Four-Limbed_Staff_Pose_or_Chaturanga_Dan@485",
+   "dst": "Crane_Crow_Pose_or_Bakasana_-a@439",
+   "src_node": 35,
+   "dst_node": 5,
+   "orient": "prone->prone",
+   "ground_break": [
+    "L_FOOT",
+    "R_FOOT"
+   ],
+   "ground_make": [],
+   "bb_break": [],
+   "bb_make": [
+    "L_SHANK+L_UPPER_ARM",
+    "R_SHANK+R_UPPER_ARM"
+   ],
+   "d6_heading": 0.746,
+   "d6_bestyaw": 0.452,
+   "direct_edge": false,
+   "path": [
+    {
+     "src": 35,
+     "dst": 120,
+     "n": 1,
+     "via": [
+      "Four-Limbed_Staff_Pose_or_Ch"
+     ]
+    },
+    {
+     "src": 120,
+     "dst": 4,
+     "n": 1,
+     "via": [
+      "Crane_Crow_Pose_or_Bakasana_"
+     ]
+    },
+    {
+     "src": 4,
+     "dst": 5,
+     "n": 1,
+     "via": [
+      "Crane_Crow_Pose_or_Bakasana_"
+     ]
+    }
+   ],
+   "witness": {
+    "witness_m": 0.219,
+    "clip": "Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-b",
+    "t_from": 21.2,
+    "t_to": 23.2,
+    "d_from": 0.219,
+    "d_to": 0.215
+   },
+   "witness_other_clip": {
+    "witness_m": 0.219,
+    "clip": "Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-b",
+    "t_from": 21.2,
+    "t_to": 23.2,
+    "d_from": 0.219,
+    "d_to": 0.215
+   },
+   "com_hands_off_src": 0.318,
+   "com_hands_off_dst": 0.079,
+   "feet_hands_span_src": 1.282,
+   "feet_hands_span_dst": 0.491,
+   "pelvis_dz": 0.47,
+   "com_dz": 0.352
+  },
+  {
+   "label": "bhujapidasana -> crow",
+   "src": "Shoulder-Pressing_Pose_or_Bhujapidasana_@543",
+   "dst": "Crane_Crow_Pose_or_Bakasana_-a@439",
+   "src_node": 78,
+   "dst_node": 5,
+   "orient": "upright->prone",
+   "ground_break": [],
+   "ground_make": [],
+   "bb_break": [
+    "L_FOOT+R_FOOT",
+    "L_THIGH+L_UPPER_ARM",
+    "R_THIGH+R_UPPER_ARM"
+   ],
+   "bb_make": [
+    "L_SHANK+L_UPPER_ARM",
+    "R_SHANK+R_UPPER_ARM"
+   ],
+   "d6_heading": 0.381,
+   "d6_bestyaw": 0.379,
+   "direct_edge": false,
+   "path": [
+    {
+     "src": 78,
+     "dst": 120,
+     "n": 1,
+     "via": [
+      "Shoulder-Pressing_Pose_or_Bh"
+     ]
+    },
+    {
+     "src": 120,
+     "dst": 4,
+     "n": 1,
+     "via": [
+      "Crane_Crow_Pose_or_Bakasana_"
+     ]
+    },
+    {
+     "src": 4,
+     "dst": 5,
+     "n": 1,
+     "via": [
+      "Crane_Crow_Pose_or_Bakasana_"
+     ]
+    }
+   ],
+   "witness": {
+    "witness_m": 0.207,
+    "clip": "Shoulder-Pressing_Pose_or_Bhujapidasana_-a",
+    "t_from": 9.1,
+    "t_to": 12.6,
+    "d_from": 0.001,
+    "d_to": 0.207
+   },
+   "witness_other_clip": {
+    "witness_m": 0.207,
+    "clip": "Firefly_Pose_or_Tittibhasana_-a",
+    "t_from": 14.8,
+    "t_to": 15.9,
+    "d_from": 0.1,
+    "d_to": 0.207
+   },
+   "com_hands_off_src": 0.08,
+   "com_hands_off_dst": 0.079,
+   "feet_hands_span_src": 0.152,
+   "feet_hands_span_dst": 0.491,
+   "pelvis_dz": 0.38,
+   "com_dz": 0.197
+  },
+  {
+   "label": "crow -> bhujapidasana",
+   "src": "Crane_Crow_Pose_or_Bakasana_-a@439",
+   "dst": "Shoulder-Pressing_Pose_or_Bhujapidasana_@543",
+   "src_node": 5,
+   "dst_node": 78,
+   "orient": "prone->upright",
+   "ground_break": [],
+   "ground_make": [],
+   "bb_break": [
+    "L_SHANK+L_UPPER_ARM",
+    "R_SHANK+R_UPPER_ARM"
+   ],
+   "bb_make": [
+    "L_FOOT+R_FOOT",
+    "L_THIGH+L_UPPER_ARM",
+    "R_THIGH+R_UPPER_ARM"
+   ],
+   "d6_heading": 0.381,
+   "d6_bestyaw": 0.379,
+   "direct_edge": false,
+   "path": [
+    {
+     "src": 5,
+     "dst": 120,
+     "n": 1,
+     "via": [
+      "Crane_Crow_Pose_or_Bakasana_"
+     ]
+    },
+    {
+     "src": 120,
+     "dst": 78,
+     "n": 1,
+     "via": [
+      "Shoulder-Pressing_Pose_or_Bh"
+     ]
+    }
+   ],
+   "witness": {
+    "witness_m": 0.213,
+    "clip": "Side_Crane_Crow_Pose_or_Parsva_Bakasana_-b",
+    "t_from": 3.2,
+    "t_to": 3.8,
+    "d_from": 0.17,
+    "d_to": 0.213
+   },
+   "witness_other_clip": {
+    "witness_m": 0.213,
+    "clip": "Side_Crane_Crow_Pose_or_Parsva_Bakasana_-b",
+    "t_from": 3.2,
+    "t_to": 3.8,
+    "d_from": 0.17,
+    "d_to": 0.213
+   },
+   "com_hands_off_src": 0.079,
+   "com_hands_off_dst": 0.08,
+   "feet_hands_span_src": 0.491,
+   "feet_hands_span_dst": 0.152,
+   "pelvis_dz": -0.38,
+   "com_dz": -0.197
+  },
+  {
+   "label": "Koundinya -a -> chaturanga",
+   "src": "Pose_Dedicated_to_the_Sage_Koundinya_or_@1199",
+   "dst": "Four-Limbed_Staff_Pose_or_Chaturanga_Dan@485",
+   "src_node": 72,
+   "dst_node": 35,
+   "orient": "side_r->prone",
+   "ground_break": [],
+   "ground_make": [
+    "L_FOOT",
+    "R_FOOT"
+   ],
+   "bb_break": [
+    "R_THIGH+L_UPPER_ARM"
+   ],
+   "bb_make": [],
+   "d6_heading": 0.471,
+   "d6_bestyaw": 0.414,
+   "direct_edge": false,
+   "path": [
+    {
+     "src": 72,
+     "dst": 69,
+     "n": 1,
+     "via": [
+      "Pose_Dedicated_to_the_Sage_K"
+     ]
+    },
+    {
+     "src": 69,
+     "dst": 70,
+     "n": 1,
+     "via": [
+      "Pose_Dedicated_to_the_Sage_K"
+     ]
+    },
+    {
+     "src": 70,
+     "dst": 120,
+     "n": 1,
+     "via": [
+      "Pose_Dedicated_to_the_Sage_K"
+     ]
+    },
+    {
+     "src": 120,
+     "dst": 35,
+     "n": 1,
+     "via": [
+      "Four-Limbed_Staff_Pose_or_Ch"
+     ]
+    }
+   ],
+   "witness": {
+    "witness_m": 0.311,
+    "clip": "Supported_Headstand_pose_or_Salamba_Sirsasana_-b",
+    "t_from": 23.8,
+    "t_to": 24.4,
+    "d_from": 0.311,
+    "d_to": 0.307
+   },
+   "witness_other_clip": {
+    "witness_m": 0.311,
+    "clip": "Supported_Headstand_pose_or_Salamba_Sirsasana_-b",
+    "t_from": 23.8,
+    "t_to": 24.4,
+    "d_from": 0.311,
+    "d_to": 0.307
+   },
+   "com_hands_off_src": 0.11,
+   "com_hands_off_dst": 0.318,
+   "feet_hands_span_src": 0.728,
+   "feet_hands_span_dst": 1.282,
+   "pelvis_dz": -0.179,
+   "com_dz": -0.119
+  }
+ ],
+ "H": {
+  "crow": "220923_Crane_Crow_Pose_or_Bakasana_-a@439",
+  "crow_prep": "220923_Crane_Crow_Pose_or_Bakasana_-a@424",
+  "hs": "220923_Handstand_pose_or_Adho_Mukha_Vrksasana_-a@1193",
+  "hs2": "220923_Handstand_pose_or_Adho_Mukha_Vrksasana_-a@2314",
+  "hs3leg": "220923_Handstand_pose_or_Adho_Mukha_Vrksasana_-a@1632",
+  "chat": "220923_Four-Limbed_Staff_Pose_or_Chaturanga_Dandasana_-a@485",
+  "plank": "220923_Plank_Pose_or_Kumbhakasana_-a@541",
+  "tripod_k_a": "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-a@920",
+  "tripod_k_b": "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-b@578",
+  "tripod_sh_b": "220923_Supported_Headstand_pose_or_Salamba_Sirsasana_-b@1093",
+  "tripod_sc_b": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-b@702",
+  "firefly": "220923_Firefly_Pose_or_Tittibhasana_-a@776",
+  "sidecrow_a": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a@871",
+  "sidecrow_b": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-b@1493",
+  "sidecrow_c": "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-c@606",
+  "koun_a": "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-a@1199",
+  "koun_b": "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-b@1060",
+  "pincha": "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-c@1554",
+  "downdog": "220923_Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana_-a@448",
+  "bhuja": "220923_Shoulder-Pressing_Pose_or_Bhujapidasana_-a@543",
+  "garland": "220923_Garland_Pose_or_Malasana_-a@334",
+  "koun_a_feet": "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-a@1602",
+  "sh_a": "220926_Supported_Headstand_pose_or_Salamba_Sirsasana_-a@1051",
+  "scorpion": "220923_Scorpion_pose_or_vrischikasana-a@2684",
+  "dolphin_plank": "220923_Dolphin_Plank_Pose_or_Makara_Adho_Mukha_Svanasana_-a@677"
+ }
+}

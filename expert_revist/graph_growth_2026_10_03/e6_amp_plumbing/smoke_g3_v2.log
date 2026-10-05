@@ -1,0 +1,239 @@
+# Integration stage (2026-10-04), GPU smoke of card E6 + card E3 on release v2 from G1's epoch_5000.ckpt.
+# Command:
+#   SMOKE=1 SMOKE_EPOCHS=10 RELEASE=holds_repaired_ftC_posefix.release_v2.a2dda5d2ac EXPERIMENT=zz_step3_smoke \
+#   CHECKPOINT=results/smpl_yogi_v2_expert56_amp_ft_a2dda5d2ac/epoch_5000.ckpt AMP_LINEAGE=Crane_Crow=0.5 \
+#     setsid nohup bash data/scripts/run_expert_graph_ft.sh > smoke.log 2>&1 &
+# Trimmed: 'Overriding control info' lines dropped, progress bars kept at 100% only. Run dir deleted afterwards.
+
+=== G3 graph SMOKE (10 epochs) on release holds_repaired_ftC_posefix.release_v2.a2dda5d2ac -> results/zz_step3_smoke_smoke
+    release        : purpose n/a; 0 synthetic variants: n/a
+    warm start     : results/smpl_yogi_v2_expert56_amp_ft_a2dda5d2ac/epoch_5000.ckpt (+ PPO and AMP optimisation state)
+    experiment     : examples/experiments/mimic/mlp_goal_conditioned_amp.py
+    robot / corpus : smpl_yogi_v2 | data/smpl/reference_curation/holds_repaired_ftC_posefix.release_v2.a2dda5d2ac/motions.pt (168 motions, 0 SYN_)
+    terms          : support -0.3 (EMA 0.25 s), swing -0.3 (0.1 s), lean -0.3; ref_respawn_offset 0.005
+    AMP            : w 0.5 from epoch 0 (full by 0); calibration ratio 0 (0 = off); disc batch 1024, GP 10.0
+    lineage        : Crane_Crow=0.5 -> 12 of 168 motions
+    demonstrations : x0 clips without [Scorpion_pose_or_vrischikasana-b SYN_] -> 55 motions (before the length filter); SYN_ among them: 0
+    sampling       : arrival 0.4, departure 0.2, pre-roll 0.5 s; mixture 0.8 uniform, motion prior package; support rule v2
+    normalisers    : actor/critic frozen True (discriminator free)
+    panel          : 10 plans (10 G1, 0 edge, 0 no-hijack; all resolve) -> --viz-num-sequences 12, every 0
+    envs / batch   : 256 / 1024; 10 epochs; eval every 2 over 150 steps (record: >= 1890); save every 2
+    command        : python protomotions/train_agent.py --robot-name smpl_yogi_v2 --simulator isaaclab --experiment-path examples/experiments/mimic/mlp_goal_conditioned_amp.py --experiment-name zz_step3_smoke_smoke --checkpoint results/smpl_yogi_v2_expert56_amp_ft_a2dda5d2ac/epoch_5000.ckpt --warm-start-optimization-state --motion-file data/smpl/reference_curation/holds_repaired_ftC_posefix.release_v2.a2dda5d2ac/motions.pt --hold-graph-file data/smpl/reference_curation/holds_repaired_ftC_posefix.release_v2.a2dda5d2ac/contact_graph.pt --release-record data/reference_curation/releases/holds_repaired_ftC_posefix.release_v2.a2dda5d2ac.json --contact-targets data/smpl/reference_curation/holds_repaired_ftC_posefix.release_v2.a2dda5d2ac/contact_targets.pt --goal-bodies all --sense-body-pair-contacts True --segment-start-prob 0.4 --segment-end-prob 0.2 --segment-pre-roll-s 0.5 --motion-prior package --freeze-obs-normalizers True --critic-future-steps 1 5 10 15 --interval-schedule True --curriculum mixture --uniform-fraction 0.8 --hold-manifest data/smpl/reference_curation/holds_repaired_ftC_posefix.release_v2.a2dda5d2ac/holds_extended.yaml --support-rule v2 --eval-every 2 --eval-max-steps 150 --save-every 2 --viz-sequences-every 0 --viz-num-sequences 12 --viz-max-seconds 24.0 --viz-log-scalars False --viz-plan-files data/smpl/reference_curation/holds_repaired_ftC_posefix.release_v2.a2dda5d2ac/plans/fork_Warrior_II_Pose_or_Virabhadrasana_II.json data/smpl/reference_curation/holds_repaired_ftC_posefix.release_v2.a2dda5d2ac/plans/fork_Tree_Pose_or_Vrksasana.json data/smpl/reference_curation/holds_repaired_ftC_posefix.release_v2.a2dda5d2ac/plans/fork_Crane_Crow_Pose_or_Bakasana.json data/smpl/reference_curation/holds_repaired_ftC_posefix.release_v2.a2dda5d2ac/plans/fork_Handstand_pose_or_Adho_Mukha_Vrksasana.json data/smpl/reference_curation/holds_repaired_ftC_posefix.release_v2.a2dda5d2ac/plans/fork_Feathered_Peacock_Pose_or_Pincha_Mayuras.json data/smpl/reference_curation/holds_repaired_ftC_posefix.release_v2.a2dda5d2ac/plans/fork_Supported_Headstand_pose_or_Salamba_Sirs.json data/smpl/reference_curation/holds_repaired_ftC_posefix.release_v2.a2dda5d2ac/plans/fork_Side_Plank_Pose_or_Vasisthasana.json data/smpl/reference_curation/holds_repaired_ftC_posefix.release_v2.a2dda5d2ac/plans/fork_Downward_Facing_Dog_pose_or_Adho_Mukha_S.json data/smpl/reference_curation/holds_repaired_ftC_posefix.release_v2.a2dda5d2ac/plans/dwell_Warrior_II_Pose_or_Virabhadrasana_II_3s.json data/smpl/reference_curation/holds_repaired_ftC_posefix.release_v2.a2dda5d2ac/plans/dwell_Warrior_II_Pose_or_Virabhadrasana_II_10s.json --support-penalty-weight -0.3 --support-clear-height 0.25 --support-load-ref-frac 0.1 --support-ema-tau 0.25 --physics-tables data/smpl/reference_curation/holds_repaired_ftC_posefix.release_v2.a2dda5d2ac/physics_tables.pt --swing-penalty-weight -0.3 --swing-ema-tau 0.1 --lean-penalty-weight -0.3 --lean-min-margin 0.03 --lean-scale 0.10 --drag-report-motions Plow_Pose_or_Halasana_-b Dolphin_Pose_or_Ardha_Pincha_Mayurasana_-a Upward_Plank_Pose_or_Purvottanasana_-a Bridge_Pose_or_Setu_Bandha_Sarvangasana_-a Low_Lunge_pose_or_Anjaneyasana_-a Peacock_Pose_or_Mayurasana_-a Plow_Pose_or_Halasana_-a Warrior_II_Pose_or_Virabhadrasana_II_-a --amp-reward-w 0.5 --amp-w-start-epoch 0 --amp-w-full-epoch 0 --amp-calibrate-style-ratio 0 --amp-disc-batch-size 1024 --amp-grad-penalty 10.0 --amp-lineage-weights Crane_Crow=0.5 --amp-demo-exclude-motions Scorpion_pose_or_vrischikasana-b SYN_ --num-envs 256 --batch-size 1024 --training-max-steps 81920 --headless True --overrides env.ref_respawn_offset=0.005 
+Initializing distributed: GLOBAL_RANK: 0, MEMBER: 1/1
+----------------------------------------------------------------------------------------------------
+distributed_backend=nccl
+All distributed processes registered. Starting with 1 processes
+----------------------------------------------------------------------------------------------------
+
+DEBUG:asyncio:Using selector: EpollSelector
+DEBUG:h5py._conv:Creating converter from 7 to 5
+DEBUG:h5py._conv:Creating converter from 5 to 7
+DEBUG:h5py._conv:Creating converter from 7 to 5
+DEBUG:h5py._conv:Creating converter from 5 to 7
+[rank: 0] Seed set to 0
+{'accelerator': 'gpu', 'devices': 1, 'num_nodes': 1, 'strategy': 'DDPStrategy', 'precision': '32-true', 'loggers': ['TensorBoardLogger'], 'callbacks': []}
+[INFO][AppLauncher]: Using device: cuda:0
+[INFO][AppLauncher]: Loading experience file: /home/visakii/Documents/moves/IsaacLab/apps/isaaclab.python.headless.kit
+Setting seed: 0
+Initial heightfield size: 2800x4300 = 12040000 vertices
+Optimizing mesh by merging flat regions...
+Optimized mesh vertex count: 70
+Creating empty SceneLib (no scenes)
+Loading motions from packaged file which is faster
+Loading motion library from data/smpl/reference_curation/holds_repaired_ftC_posefix.release_v2.a2dda5d2ac/motions.pt
+[INFO] IsaacLab logging to file: /tmp/isaaclab_2026-10-04_17-47-31.log
+[33m17:47:31 [simulation_context.py] WARNING: The `enable_external_forces_every_iteration` parameter in the PhysxCfg is set to False. If you are experiencing noisy velocities, consider enabling this flag. You may need to slightly increase the number of velocity iterations (setting it to 1 or 2 rather than 0), together with this flag, to improve the accuracy of velocity updates.[0m
+Loading user config located at: '/home/visakii/Documents/moves/env_isaaclab/lib/python3.11/site-packages/isaacsim/kit/data/Kit/Isaac-Sim/5.1/user.config.json'
+[Info] [carb] Logging to file: /home/visakii/Documents/moves/env_isaaclab/lib/python3.11/site-packages/isaacsim/kit/logs/Kit/Isaac-Sim/5.1/kit_20261004_174721.log
+2026-10-05T00:47:21Z [76ms] [Warning] [omni.usd_config.extension] Enable omni.materialx.libs extension to use MaterialX
+2026-10-05T00:47:22Z [422ms] [Warning] [carb] Acquiring non optional plugin interface which is not listed as dependency: [omni::physx::IPhysxBenchmarks v1.0] (plugin: <default plugin>), by client: omni.physics.physx.plugin. Add it to CARB_PLUGIN_IMPL_DEPS() macro of a client.
+2026-10-05T00:47:22Z [574ms] [Warning] [omni.isaac.dynamic_control] omni.isaac.dynamic_control is deprecated as of Isaac Sim 4.5. No action is needed from end-users.
+2026-10-05T00:47:27Z [6,185ms] [Warning] [gpu.foundation.plugin] Skipping unsupported non-NVIDIA GPU: Intel(R) UHD Graphics 770 (ADL-S GT1)
+2026-10-05T00:47:27Z [6,185ms] [Warning] [gpu.foundation.plugin] Skipping unsupported non-NVIDIA GPU: Intel(R) UHD Graphics 770 (ADL-S GT1)
+
+|---------------------------------------------------------------------------------------------|
+| Driver Version: 580.105.08    | Graphics API: Vulkan
+|=============================================================================================|
+| GPU | Name                             | Active | LDA | GPU Memory | Vendor-ID | LUID       |
+|     |                                  |        |     |            | Device-ID | UUID       |
+|     |                                  |        |     |            | Bus-ID    |            |
+|---------------------------------------------------------------------------------------------|
+| 0   | NVIDIA RTX A5000                 | Yes: 0 |     | 24810   MB | 10de      | 0          |
+|     |                                  |        |     |            | 2231      | 18cd7369.. |
+|     |                                  |        |     |            | 1         |            |
+|---------------------------------------------------------------------------------------------|
+| 1   | Intel(R) UHD Graphics 770 (ADL.. |        |     | 48029   MB | 8086      | 0          |
+|     |                                  |        |     |            | 4680      | fd8cf190.. |
+|     |                                  |        |     |            | 0         |            |
+|=============================================================================================|
+| OS: 22.10 (Kinetic Kudu) ubuntu, Version: 22.10.1999118452, Kernel: 5.19.0-46-generic
+| XServer Vendor: The X.Org Foundation, XServer Version: 12101004 (1.21.1.4)
+| Processor: 12th Gen Intel(R) Core(TM) i9-12900KS
+| Bare Metal Cores: 16 | Bare Metal Logical Cores: 32
+| Available Cores:  24 
+|---------------------------------------------------------------------------------------------|
+| Total Memory (MB): 64039 | Free Memory: 43626
+| Total Page/Swap (MB): 2047 | Free Page/Swap: 174
+|---------------------------------------------------------------------------------------------|
+2026-10-05T00:47:29Z [7,789ms] [Warning] [gpu.foundation.plugin] CPU performance profile is set to powersave. This profile sets the CPU to the lowest frequency reducing performance.
+2026-10-05T00:47:31Z [9,979ms] [Warning] [isaaclab.sim.simulation_context] The `enable_external_forces_every_iteration` parameter in the PhysxCfg is set to False. If you are experiencing noisy velocities, consider enabling this flag. You may need to slightly increase the number of velocity iterations (setting it to 1 or 2 rather than 0), together with this flag, to improve the accuracy of velocity updates.
+2026-10-05T00:47:32Z [10,353ms] [Warning] [isaaclab.sim.utils.prims] Could not perform 'modify_collision_properties' on any prims under: '/World/envs/env_0/Robot'. This might be because of the following reasons:
+	(1) The desired attribute does not exist on any of the prims.
+	(2) The desired attribute exists on an instanced prim.
+		Discovered list of instanced prim paths: ['/World/envs/env_0/Robot/Pelvis/Pelvis/visuals', '/World/envs/env_0/Robot/Pelvis/Pelvis/collisions', '/World/envs/env_0/Robot/Pelvis/L_Hip/visuals', '/World/envs/env_0/Robot/Pelvis/L_Hip/collisions', '/World/envs/env_0/Robot/Pelvis/L_Knee/visuals', '/World/envs/env_0/Robot/Pelvis/L_Knee/collisions', '/World/envs/env_0/Robot/Pelvis/L_Ankle/visuals', '/World/envs/env_0/Robot/Pelvis/L_Ankle/collisions', '/World/envs/env_0/Robot/Pelvis/L_Toe/visuals', '/World/envs/env_0/Robot/Pelvis/L_Toe/collisions', '/World/envs/env_0/Robot/Pelvis/R_Hip/visuals', '/World/envs/env_0/Robot/Pelvis/R_Hip/collisions', '/World/envs/env_0/Robot/Pelvis/R_Knee/visuals', '/World/envs/env_0/Robot/Pelvis/R_Knee/collisions', '/World/envs/env_0/Robot/Pelvis/R_Ankle/visuals', '/World/envs/env_0/Robot/Pelvis/R_Ankle/collisions', '/World/envs/env_0/Robot/Pelvis/R_Toe/visuals', '/World/envs/env_0/Robot/Pelvis/R_Toe/collisions', '/World/envs/env_0/Robot/Pelvis/Torso/visuals', '/World/envs/env_0/Robot/Pelvis/Torso/collisions', '/World/envs/env_0/Robot/Pelvis/Spine/visuals', '/World/envs/env_0/Robot/Pelvis/Spine/collisions', '/World/envs/env_0/Robot/Pelvis/Chest/visuals', '/World/envs/env_0/Robot/Pelvis/Chest/collisions', '/World/envs/env_0/Robot/Pelvis/Neck/visuals', '/World/envs/env_0/Robot/Pelvis/Neck/collisions', '/World/envs/env_0/Robot/Pelvis/Head/visuals', '/World/envs/env_0/Robot/Pelvis/Head/collisions', '/World/envs/env_0/Robot/Pelvis/L_Thorax/visuals', '/World/envs/env_0/Robot/Pelvis/L_Thorax/collisions', '/World/envs/env_0/Robot/Pelvis/L_Shoulder/visuals', '/World/envs/env_0/Robot/Pelvis/L_Shoulder/collisions', '/World/envs/env_0/Robot/Pelvis/L_Elbow/visuals', '/World/envs/env_0/Robot/Pelvis/L_Elbow/collisions', '/World/envs/env_0/Robot/Pelvis/L_Wrist/visuals', '/World/envs/env_0/Robot/Pelvis/L_Wrist/collisions', '/World/envs/env_0/Robot/Pelvis/L_Hand/visuals', '/World/envs/env_0/Robot/Pelvis/L_Hand/collisions', '/World/envs/env_0/Robot/Pelvis/R_Thorax/visuals', '/World/envs/env_0/Robot/Pelvis/R_Thorax/collisions', '/World/envs/env_0/Robot/Pelvis/R_Shoulder/visuals', '/World/envs/env_0/Robot/Pelvis/R_Shoulder/collisions', '/World/envs/env_0/Robot/Pelvis/R_Elbow/visuals', '/World/envs/env_0/Robot/Pelvis/R_Elbow/collisions', '/World/envs/env_0/Robot/Pelvis/R_Wrist/visuals', '/World/envs/env_0/Robot/Pelvis/R_Wrist/collisions', '/World/envs/env_0/Robot/Pelvis/R_Hand/visuals', '/World/envs/env_0/Robot/Pelvis/R_Hand/collisions']
+[33m17:47:32 [prims.py] WARNING: Could not perform 'modify_collision_properties' on any prims under: '/World/envs/env_0/Robot'. This might be because of the following reasons:
+	(1) The desired attribute does not exist on any of the prims.
+	(2) The desired attribute exists on an instanced prim.
+		Discovered list of instanced prim paths: ['/World/envs/env_0/Robot/Pelvis/Pelvis/visuals', '/World/envs/env_0/Robot/Pelvis/Pelvis/collisions', '/World/envs/env_0/Robot/Pelvis/L_Hip/visuals', '/World/envs/env_0/Robot/Pelvis/L_Hip/collisions', '/World/envs/env_0/Robot/Pelvis/L_Knee/visuals', '/World/envs/env_0/Robot/Pelvis/L_Knee/collisions', '/World/envs/env_0/Robot/Pelvis/L_Ankle/visuals', '/World/envs/env_0/Robot/Pelvis/L_Ankle/collisions', '/World/envs/env_0/Robot/Pelvis/L_Toe/visuals', '/World/envs/env_0/Robot/Pelvis/L_Toe/collisions', '/World/envs/env_0/Robot/Pelvis/R_Hip/visuals', '/World/envs/env_0/Robot/Pelvis/R_Hip/collisions', '/World/envs/env_0/Robot/Pelvis/R_Knee/visuals', '/World/envs/env_0/Robot/Pelvis/R_Knee/collisions', '/World/envs/env_0/Robot/Pelvis/R_Ankle/visuals', '/World/envs/env_0/Robot/Pelvis/R_Ankle/collisions', '/World/envs/env_0/Robot/Pelvis/R_Toe/visuals', '/World/envs/env_0/Robot/Pelvis/R_Toe/collisions', '/World/envs/env_0/Robot/Pelvis/Torso/visuals', '/World/envs/env_0/Robot/Pelvis/Torso/collisions', '/World/envs/env_0/Robot/Pelvis/Spine/visuals', '/World/envs/env_0/Robot/Pelvis/Spine/collisions', '/World/envs/env_0/Robot/Pelvis/Chest/visuals', '/World/envs/env_0/Robot/Pelvis/Chest/collisions', '/World/envs/env_0/Robot/Pelvis/Neck/visuals', '/World/envs/env_0/Robot/Pelvis/Neck/collisions', '/World/envs/env_0/Robot/Pelvis/Head/visuals', '/World/envs/env_0/Robot/Pelvis/Head/collisions', '/World/envs/env_0/Robot/Pelvis/L_Thorax/visuals', '/World/envs/env_0/Robot/Pelvis/L_Thorax/collisions', '/World/envs/env_0/Robot/Pelvis/L_Shoulder/visuals', '/World/envs/env_0/Robot/Pelvis/L_Shoulder/collisions', '/World/envs/env_0/Robot/Pelvis/L_Elbow/visuals', '/World/envs/env_0/Robot/Pelvis/L_Elbow/collisions', '/World/envs/env_0/Robot/Pelvis/L_Wrist/visuals', '/World/envs/env_0/Robot/Pelvis/L_Wrist/collisions', '/World/envs/env_0/Robot/Pelvis/L_Hand/visuals', '/World/envs/env_0/Robot/Pelvis/L_Hand/collisions', '/World/envs/env_0/Robot/Pelvis/R_Thorax/visuals', '/World/envs/env_0/Robot/Pelvis/R_Thorax/collisions', '/World/envs/env_0/Robot/Pelvis/R_Shoulder/visuals', '/World/envs/env_0/Robot/Pelvis/R_Shoulder/collisions', '/World/envs/env_0/Robot/Pelvis/R_Elbow/visuals', '/World/envs/env_0/Robot/Pelvis/R_Elbow/collisions', '/World/envs/env_0/Robot/Pelvis/R_Wrist/visuals', '/World/envs/env_0/Robot/Pelvis/R_Wrist/collisions', '/World/envs/env_0/Robot/Pelvis/R_Hand/visuals', '/World/envs/env_0/Robot/Pelvis/R_Hand/collisions'][0m
+[INFO]: Setup complete...
+Smoothing contact labels with window size 7...
+Contact smoothing complete for 168 motions. Contacts are now float values in [0, 1].
+ContactGraphMotionManager: anchoring 40% of resets to 810 segments over 168/168 motions (weighting 'uniform', pre-roll 0-0.50 s)
+ContactGraphMotionManager: departure-anchoring 20% of resets to 642 segments over 168/168 motions (segments ending within env_dt of their clip's end excluded)
+ContactGraphControl: 123 nodes, 104 contact pairs, 168/168 motions carry contact goals
+ContactGraphControl: unwanted-support load averaged over 0.250 s before the clamp (alpha 0.1176 per step)
+ContactGraphControl: scoring the reached-goal diagnostic over 104/104 contact pairs (89 of them body-body)
+ContactGraphControl: physics terms on (data/smpl/reference_curation/holds_repaired_ftC_posefix.release_v2.a2dda5d2ac/physics_tables.pt): swing labels (168, 3778, 15), swing tau 0.10 s, lean margin 0.030 m over 22 candidate points, 90 lean-gated segments, 0/168 motions excluded
+ContactGraphControl: contact targets on (data/smpl/reference_curation/holds_repaired_ftC_posefix.release_v2.a2dda5d2ac/contact_targets.pt, release holds_repaired_ftC_posefix.release_v2.a2dda5d2ac): 1545 required-support, 189 configured body-body and 3 masked segment contacts; 9699 known-free ground zone-segments
+ContactGraphControl: release holds_repaired_ftC_posefix.release_v2.a2dda5d2ac -- every loaded artifact matches its record
+HoldCurriculumEvaluator: package motion prior over 168 motions (weight: motions) {1.0: 168}
+[amp lineage] rule 'Crane_Crow' (w 0.5) matched 12 of 168 motions: 220923_Crane_Crow_Pose_or_Bakasana_-a, 220923_Crane_Crow_Pose_or_Bakasana_-a_x3s, 220923_Crane_Crow_Pose_or_Bakasana_-a_x7s, 220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a, 220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a_x3s, 220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a_x7s, 220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-b, 220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-b_x3s, 220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-b_x7s, 220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-c, 220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-c_x3s, 220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-c_x7s
+[amp lineage] 12 of 168 motions are 'syn' (matched); 156 are 'human' (w 1.0)
+Loading model from checkpoint: /home/visakii/Documents/moves/ProtoMotions/results/smpl_yogi_v2_expert56_amp_ft_a2dda5d2ac/epoch_5000.ckpt
+Warm start: restored running_reward_norm from checkpoint
+Warm start: restored PPO optimizer states and advantage EMA from checkpoint
+Warm start: restored AMP training state from checkpoint: discriminator optimizer (step 39920, lr 0.0001), disc-critic optimizer (step 39920, lr 0.0001), AMP reward normaliser (count 655360000, var 155.8)
+Warm start: AMP weight target 0.5 (configured; calibration off; equals the checkpoint's calibrated target); 1000 calibration ratio-history entries from the old run's epoch clock dropped
+freeze_obs_normalizers: froze ['_actor.mu.norm', '_critic.norm'] (9448 statistics); they are checked bit-for-bit after the first epoch that updates the policy
+[amp parity] amp_obs: 256 fresh envs, max 7.75e-07, median 4.77e-07, share<=1e-4 1.0000
+Epoch 0, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:07
+[amp demos] 55 of 168 motions serve as demonstrations, 1290.8 s usable (t >= 0.667 s); excluded 112 by regex '_x\\d+s$', 1 by name ['Scorpion_pose_or_vrischikasana-b', 'SYN_'], 0 too short
+[amp demos] excluded by name: 220923_Scorpion_pose_or_vrischikasana-b
+[amp demos] demonstrations: 220923_Half_Moon_Pose_or_Ardha_Chandrasana_-a, 220923_Half_Moon_Pose_or_Ardha_Chandrasana_-b, 220923_Standing_Split_pose_or_Urdhva_Prasarita_Eka_Padasana_-a, 220923_Standing_Split_pose_or_Urdhva_Prasarita_Eka_Padasana_-b, 220923_Standing_big_toe_hold_pose_or_Utthita_Padangusthasana-a, 220923_Standing_big_toe_hold_pose_or_Utthita_Padangusthasana-b, 220923_Tree_Pose_or_Vrksasana_-a, 220923_Tree_Pose_or_Vrksasana_-b, 220926_Eagle_Pose_or_Garudasana_-a, 220926_Lord_of_the_Dance_Pose_or_Natarajasana_-a, 220926_Lord_of_the_Dance_Pose_or_Natarajasana_-c, 220926_Warrior_III_Pose_or_Virabhadrasana_III_-a, 220926_Warrior_III_Pose_or_Virabhadrasana_III_-b, 220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-a, 220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-b, 220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-c, 220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-d, 220923_Handstand_pose_or_Adho_Mukha_Vrksasana_-a, 220923_Legs-Up-the-Wall_Pose_or_Viparita_Karani_-a, 220923_Plow_Pose_or_Halasana_-a, 220926_Plow_Pose_or_Halasana_-b, 220923_Scorpion_pose_or_vrischikasana-a, 220923_Supported_Headstand_pose_or_Salamba_Sirsasana_-b, 220926_Supported_Headstand_pose_or_Salamba_Sirsasana_-a, 220923_Supported_Shoulderstand_pose_or_Salamba_Sarvangasana_-a, 220923_Crane_Crow_Pose_or_Bakasana_-a, 220923_Firefly_Pose_or_Tittibhasana_-a, 220923_Peacock_Pose_or_Mayurasana_-a, 220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-a, 220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-b, 220923_Shoulder-Pressing_Pose_or_Bhujapidasana_-a, 220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a, 220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-b, 220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-c, 220923_Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana_-a, 220923_Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana_-b, 220923_Plank_Pose_or_Kumbhakasana_-a, 220923_Four-Limbed_Staff_Pose_or_Chaturanga_Dandasana_-a, 220923_Cobra_Pose_or_Bhujangasana_-a, 220923_Side_Plank_Pose_or_Vasisthasana_-a, 220923_Side_Plank_Pose_or_Vasisthasana_-b, 220923_Dolphin_Plank_Pose_or_Makara_Adho_Mukha_Svanasana_-a, 220923_Dolphin_Pose_or_Ardha_Pincha_Mayurasana_-a, 220923_Standing_Forward_Bend_pose_or_Uttanasana_-a, 220923_Garland_Pose_or_Malasana_-a, 220923_Low_Lunge_pose_or_Anjaneyasana_-a, 220926_Warrior_II_Pose_or_Virabhadrasana_II_-a, 220923_Extended_Revolved_Triangle_Pose_or_Utthita_Trikonasana_-a, 220923_Extended_Revolved_Side_Angle_Pose_or_Utthita_Parsvakonasana_-a, 220926_Upward_Plank_Pose_or_Purvottanasana_-a, 220923_Bridge_Pose_or_Setu_Bandha_Sarvangasana_-a, 220923_Extended_Revolved_Side_Angle_Pose_or_Utthita_Parsvakonasana_-b, 220923_Extended_Revolved_Triangle_Pose_or_Utthita_Trikonasana_-b, 220926_viparita_virabhadrasana_or_reverse_warrior_pose-a, 220926_Intense_Side_Stretch_Pose_or_Parsvottanasana_-b
+[amp demos] lineage-matched motions among the demonstrations: 4 (220923_Crane_Crow_Pose_or_Bakasana_-a, 220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a, 220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-b, 220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-c)
+[33m17:47:51 [agent.py] WARNING: Epoch 0: Skipping actor updates for remaining batches (clip_frac 0.661 > 0.6)[0m
+Epoch 0, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Evaluating motions 0 to 168, out of total 168
+Saving to: results/zz_step3_smoke_smoke/failed_motions/failed_motions_epoch_1_rank_0.txt
+Top 50 weights:
+Indices: tensor([148, 147, 149,   0,   1,   2,   3,   4,   5,   6,   7,   8,   9,  10,
+         11,  12,  13,  14,  15,  16,  17,  18,  19,  20,  21,  22,  23,  24,
+         25,  26,  27,  28,  29,  30,  31,  32,  33,  34,  35,  36,  37,  38,
+         39,  40,  41,  42,  43,  44,  45,  46], device='cuda:0')
+Values: tensor([0.0250, 0.0153, 0.0153, 0.0057, 0.0057, 0.0057, 0.0057, 0.0057, 0.0057,
+        0.0057, 0.0057, 0.0057, 0.0057, 0.0057, 0.0057, 0.0057, 0.0057, 0.0057,
+        0.0057, 0.0057, 0.0057, 0.0057, 0.0057, 0.0057, 0.0057, 0.0057, 0.0057,
+        0.0057, 0.0057, 0.0057, 0.0057, 0.0057, 0.0057, 0.0057, 0.0057, 0.0057,
+        0.0057, 0.0057, 0.0057, 0.0057, 0.0057, 0.0057, 0.0057, 0.0057, 0.0057,
+        0.0057, 0.0057, 0.0057, 0.0057, 0.0057], device='cuda:0')
+Smoothness metric: normalized_jerk_mean, value: 102.41690063476562
+Smoothness metric: high_jerk_frame_percentage_mean, value: 0.5224392034246453
+Action smoothness: mean_delta=0.0036 rad (0.21°), max_delta=0.0202 rad (1.16°)
+Predicted MotionLib saved to results/zz_step3_smoke_smoke/results/predicted_motion_lib_epoch_1.pt
+freeze_obs_normalizers: verified -- 6 statistics buffers of ['_actor.mu.norm', '_critic.norm'] bit-identical through this launch's first policy update (1 epoch(s); epoch counter now 1)
+Epoch 1, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:05
+Evaluating motions 0 to 168, out of total 168
+Saving to: results/zz_step3_smoke_smoke/failed_motions/failed_motions_epoch_2_rank_0.txt
+Top 50 weights:
+Indices: tensor([147, 148, 149,   0,   1,   2,   3,   4,   5,   6,   7,   8,   9,  10,
+         11,  12,  13,  14,  15,  16,  17,  18,  19,  20,  21,  22,  23,  24,
+         25,  26,  27,  28,  29,  30,  31,  32,  33,  34,  35,  36,  37,  38,
+         39,  40,  41,  42,  43,  44,  45,  46], device='cuda:0')
+Values: tensor([0.0245, 0.0245, 0.0104, 0.0057, 0.0057, 0.0057, 0.0057, 0.0057, 0.0057,
+        0.0057, 0.0057, 0.0057, 0.0057, 0.0057, 0.0057, 0.0057, 0.0057, 0.0057,
+        0.0057, 0.0057, 0.0057, 0.0057, 0.0057, 0.0057, 0.0057, 0.0057, 0.0057,
+        0.0057, 0.0057, 0.0057, 0.0057, 0.0057, 0.0057, 0.0057, 0.0057, 0.0057,
+        0.0057, 0.0057, 0.0057, 0.0057, 0.0057, 0.0057, 0.0057, 0.0057, 0.0057,
+        0.0057, 0.0057, 0.0057, 0.0057, 0.0057], device='cuda:0')
+Smoothness metric: normalized_jerk_mean, value: 102.74109649658203
+Smoothness metric: high_jerk_frame_percentage_mean, value: 0.6337787066253701
+Action smoothness: mean_delta=0.0036 rad (0.21°), max_delta=0.0202 rad (1.16°)
+Epoch 2, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:04
+Epoch 3, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:04
+[33m17:48:53 [agent.py] WARNING: Epoch 3: Skipping actor updates for remaining batches (clip_frac 0.714 > 0.6)[0m
+Epoch 3, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Evaluating motions 0 to 168, out of total 168
+Saving to: results/zz_step3_smoke_smoke/failed_motions/failed_motions_epoch_4_rank_0.txt
+Top 50 weights:
+Indices: tensor([147, 148, 149,   0,   1,   2,   3,   4,   5,   6,   7,   8,   9,  10,
+         11,  12,  13,  14,  15,  16,  17,  18,  19,  20,  21,  22,  23,  24,
+         25,  26,  27,  28,  29,  30,  31,  32,  33,  34,  35,  36,  37,  38,
+         39,  40,  41,  42,  43,  44,  45,  46], device='cuda:0')
+Values: tensor([0.0319, 0.0319, 0.0262, 0.0055, 0.0055, 0.0055, 0.0055, 0.0055, 0.0055,
+        0.0055, 0.0055, 0.0055, 0.0055, 0.0055, 0.0055, 0.0055, 0.0055, 0.0055,
+        0.0055, 0.0055, 0.0055, 0.0055, 0.0055, 0.0055, 0.0055, 0.0055, 0.0055,
+        0.0055, 0.0055, 0.0055, 0.0055, 0.0055, 0.0055, 0.0055, 0.0055, 0.0055,
+        0.0055, 0.0055, 0.0055, 0.0055, 0.0055, 0.0055, 0.0055, 0.0055, 0.0055,
+        0.0055, 0.0055, 0.0055, 0.0055, 0.0055], device='cuda:0')
+Smoothness metric: normalized_jerk_mean, value: 97.59356689453125
+Smoothness metric: high_jerk_frame_percentage_mean, value: 0.6551901493886751
+Action smoothness: mean_delta=0.0037 rad (0.21°), max_delta=0.0201 rad (1.15°)
+Epoch 4, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:04
+Epoch 5, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:04
+[33m17:49:20 [agent.py] WARNING: Epoch 5: Skipping actor updates for remaining batches (clip_frac 0.611 > 0.6)[0m
+Epoch 5, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Evaluating motions 0 to 168, out of total 168
+Saving to: results/zz_step3_smoke_smoke/failed_motions/failed_motions_epoch_6_rank_0.txt
+Top 50 weights:
+Indices: tensor([147, 148, 149,   0,   1,   2,   3,   4,   5,   6,   7,   8,   9,  10,
+         11,  12,  13,  14,  15,  16,  17,  18,  19,  20,  21,  22,  23,  24,
+         25,  26,  27,  28,  29,  30,  31,  32,  33,  34,  35,  36,  37,  38,
+         39,  40,  41,  42,  43,  44,  45,  46], device='cuda:0')
+Values: tensor([0.0354, 0.0354, 0.0317, 0.0054, 0.0054, 0.0054, 0.0054, 0.0054, 0.0054,
+        0.0054, 0.0054, 0.0054, 0.0054, 0.0054, 0.0054, 0.0054, 0.0054, 0.0054,
+        0.0054, 0.0054, 0.0054, 0.0054, 0.0054, 0.0054, 0.0054, 0.0054, 0.0054,
+        0.0054, 0.0054, 0.0054, 0.0054, 0.0054, 0.0054, 0.0054, 0.0054, 0.0054,
+        0.0054, 0.0054, 0.0054, 0.0054, 0.0054, 0.0054, 0.0054, 0.0054, 0.0054,
+        0.0054, 0.0054, 0.0054, 0.0054, 0.0054], device='cuda:0')
+Smoothness metric: normalized_jerk_mean, value: 97.30769348144531
+Smoothness metric: high_jerk_frame_percentage_mean, value: 0.44107572563613456
+Action smoothness: mean_delta=0.0036 rad (0.21°), max_delta=0.0199 rad (1.14°)
+Predicted MotionLib saved to results/zz_step3_smoke_smoke/results/predicted_motion_lib_epoch_6.pt
+Epoch 6, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:04
+Epoch 7, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:04
+[33m17:49:47 [agent.py] WARNING: Epoch 7: Skipping actor updates for remaining batches (clip_frac 0.654 > 0.6)[0m
+Epoch 7, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Evaluating motions 0 to 168, out of total 168
+Saving to: results/zz_step3_smoke_smoke/failed_motions/failed_motions_epoch_8_rank_0.txt
+Top 50 weights:
+Indices: tensor([147, 148, 149,   0,   1,   2,   3,   4,   5,   6,   7,   8,   9,  10,
+         11,  12,  13,  14,  15,  16,  17,  18,  19,  20,  21,  22,  23,  24,
+         25,  26,  27,  28,  29,  30,  31,  32,  33,  34,  35,  36,  37,  38,
+         39,  40,  41,  42,  43,  44,  45,  46], device='cuda:0')
+Values: tensor([0.0369, 0.0369, 0.0340, 0.0054, 0.0054, 0.0054, 0.0054, 0.0054, 0.0054,
+        0.0054, 0.0054, 0.0054, 0.0054, 0.0054, 0.0054, 0.0054, 0.0054, 0.0054,
+        0.0054, 0.0054, 0.0054, 0.0054, 0.0054, 0.0054, 0.0054, 0.0054, 0.0054,
+        0.0054, 0.0054, 0.0054, 0.0054, 0.0054, 0.0054, 0.0054, 0.0054, 0.0054,
+        0.0054, 0.0054, 0.0054, 0.0054, 0.0054, 0.0054, 0.0054, 0.0054, 0.0054,
+        0.0054, 0.0054, 0.0054, 0.0054, 0.0054], device='cuda:0')
+Smoothness metric: normalized_jerk_mean, value: 94.75337219238281
+Smoothness metric: high_jerk_frame_percentage_mean, value: 0.43679343819219085
+Action smoothness: mean_delta=0.0036 rad (0.21°), max_delta=0.0199 rad (1.14°)
+Epoch 8, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:04
+Epoch 9, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:04
+[33m17:50:15 [agent.py] WARNING: Epoch 9: Skipping actor updates for remaining batches (clip_frac 0.646 > 0.6)[0m
+Epoch 9, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Evaluating motions 0 to 168, out of total 168
+Saving to: results/zz_step3_smoke_smoke/failed_motions/failed_motions_epoch_10_rank_0.txt
+Top 50 weights:
+Indices: tensor([147, 148, 149,  32,  58,   0,   1,   2,   3,   4,   5,   6,   7,   8,
+          9,  10,  11,  12,  13,  14,  15,  16,  17,  18,  19,  20,  21,  22,
+         23,  24,  25,  26,  27,  28,  29,  30,  31,  33,  34,  35,  36,  37,
+         38,  39,  40,  41,  42,  43,  44,  45], device='cuda:0')
+Values: tensor([0.0362, 0.0362, 0.0349, 0.0114, 0.0064, 0.0054, 0.0054, 0.0054, 0.0054,
+        0.0054, 0.0054, 0.0054, 0.0054, 0.0054, 0.0054, 0.0054, 0.0054, 0.0054,
+        0.0054, 0.0054, 0.0054, 0.0054, 0.0054, 0.0054, 0.0054, 0.0054, 0.0054,
+        0.0054, 0.0054, 0.0054, 0.0054, 0.0054, 0.0054, 0.0054, 0.0054, 0.0054,
+        0.0054, 0.0054, 0.0054, 0.0054, 0.0054, 0.0054, 0.0054, 0.0054, 0.0054,
+        0.0054, 0.0054, 0.0054, 0.0054, 0.0054], device='cuda:0')
+Smoothness metric: normalized_jerk_mean, value: 90.83366394042969
+Smoothness metric: high_jerk_frame_percentage_mean, value: 0.4924631854962735
+Action smoothness: mean_delta=0.0036 rad (0.21°), max_delta=0.0198 rad (1.13°)
+------------Time Report------------
+-----------------------------------
+2026-10-05T00:47:51Z [29,942ms] [Warning] [protomotions.agents.ppo.agent] Epoch 0: Skipping actor updates for remaining batches (clip_frac 0.661 > 0.6)
+2026-10-05T00:48:53Z [91,507ms] [Warning] [protomotions.agents.ppo.agent] Epoch 3: Skipping actor updates for remaining batches (clip_frac 0.714 > 0.6)
+2026-10-05T00:49:20Z [118,643ms] [Warning] [protomotions.agents.ppo.agent] Epoch 5: Skipping actor updates for remaining batches (clip_frac 0.611 > 0.6)
+2026-10-05T00:49:47Z [146,004ms] [Warning] [protomotions.agents.ppo.agent] Epoch 7: Skipping actor updates for remaining batches (clip_frac 0.654 > 0.6)
+2026-10-05T00:50:15Z [173,390ms] [Warning] [protomotions.agents.ppo.agent] Epoch 9: Skipping actor updates for remaining batches (clip_frac 0.646 > 0.6)
+2026-10-05T00:50:35Z [194,023ms] [Warning] [carb] Recursive unloadAllPlugins() detected!

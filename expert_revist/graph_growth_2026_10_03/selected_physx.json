@@ -1,0 +1,4987 @@
+{
+ "schema_version": 1,
+ "generator": {
+  "module": "edge_synthesis.select_variants",
+  "git_rev": "5fdbd50f115d2e8da666c683a475d69c3ac43045",
+  "sha256": "9817b78370a95c4cf2a8615323ba88713e64ec34cf932e12562765b59f68de83"
+ },
+ "inputs": {
+  "expert_revist/graph_growth_2026_10_03/admitted_physx.json": "4e200ce95503c142deabcafa4f05edda781a5178a44046449d751fdca252a953"
+ },
+ "kind": "step3_variant_selection",
+ "decision": {
+  "date": "2026-10-04",
+  "by": "the user",
+  "edges": [
+   "E1",
+   "E3",
+   "B1",
+   "E2",
+   "E5"
+  ],
+  "dropped": {
+   "E4": "fails statics (as on MuJoCo); the executed head-lift is dynamic",
+   "B2": "never reaches crow (as on MuJoCo)"
+  },
+  "endpoints_advisory": [
+   "E2",
+   "E5"
+  ],
+  "note": "E2 and E5 end in a low chaturanga, 0.07-0.09 m (6-body) from the exemplar; accepted by the user"
+ },
+ "rule": {
+  "decision": {
+   "date": "2026-10-04",
+   "by": "the user",
+   "edges": [
+    "E1",
+    "E3",
+    "B1",
+    "E2",
+    "E5"
+   ],
+   "dropped": {
+    "E4": "fails statics (as on MuJoCo); the executed head-lift is dynamic",
+    "B2": "never reaches crow (as on MuJoCo)"
+   },
+   "endpoints_advisory": [
+    "E2",
+    "E5"
+   ],
+   "note": "E2 and E5 end in a low chaturanga, 0.07-0.09 m (6-body) from the exemplar; accepted by the user"
+  },
+  "t6_decision": {
+   "date": "2026-10-04",
+   "by": "the user",
+   "drift_cm": 1.0,
+   "seam_end": "attainable",
+   "landing_slide": "accept",
+   "note": "after card T6: 1) the planted-hand drift is read at 1.0 cm (the press's palms rock 0.7-1.3 cm transiently); 2) the palms' end offset is the exemplars' own 12 deg of yaw, read 'attainable': the policy learns around it; 3) the landings' slide is accepted (drift and end seams advisory on B1, E2, E5): the question is whether the policy can pick up the dynamic edges at all"
+  },
+  "hard_every_edge": [
+   "contract",
+   "statics",
+   "physx_cpu",
+   "held",
+   "seams",
+   "physx_reset"
+  ],
+  "hard_unless_endpoints_advisory": [
+   "endpoints"
+  ],
+  "advisory": [
+   "dynamics",
+   "naturalness_p99"
+  ],
+  "seams_end": "attainable",
+  "seams_drift_cm": 1.0,
+  "landing_slide": "accept",
+  "note": "seams and physx_reset apply to records that carry them (T6 on); the end seam read 'attainable' passes planted bodies whose offset to D's exemplar is the exemplars' own (seams.py); seams_drift_cm re-reads the recorded drift (the card's gate is 0.5 cm); landing_slide 'accept' keeps only the start seam hard on a landing edge (one that makes a support), its drift and end seams advisory",
+  "physx_reset_check": {
+   "library": {
+    "motion_dir": "output/edge_synthesis/physx/motions_t6",
+    "loaded": true,
+    "error": null,
+    "motions": 90,
+    "plant_sha256": "aa541c77bcc1526905777c425e5ab072f21cae7bcadad9f71e3b1eb531f98f91",
+    "plant": "v2",
+    "v1_refused": true,
+    "v1_error": "motion library /home/visakii/Documents/moves/ProtoMotions/data/smpl/yoga_motions_proto_yogi_expert60_ftC/220923_Crane_Crow_Pose_or_Bakasana_-a.motion carries no plant identity, so it predates plant v2"
+   },
+   "fk": {
+    "frames": 1800,
+    "exemplars": 0,
+    "clips": 90,
+    "pos_max_err_m": 1.057694236594526e-06,
+    "pos_p99_err_m": 6.039323129317225e-07,
+    "rot_max_err_deg": 0.00012659262559654107,
+    "dof_readback_max_err_rad": 0.0,
+    "worst": {
+     "stem": "SYN_E5_E5_E5_mid_s4_t6rpx12",
+     "frame": 50,
+     "exemplar": false,
+     "body": "R_Hand"
+    }
+   },
+   "reset_launched": 0,
+   "reset_frames": 1800,
+   "record": "output/edge_synthesis/physx/physx_launch_check_t6.json"
+  }
+ },
+ "summary": {
+  "E1": {
+   "variants": 8,
+   "names": [
+    "SYN_E1_E1_E1_high_s0_t6px",
+    "SYN_E1_E1_E1_high_s2_t6px",
+    "SYN_E1_E1_E1_high_s3_t6px",
+    "SYN_E1_E1_E1_high_s4_t6px",
+    "SYN_E1_E1_E1_mid_s0_t6px",
+    "SYN_E1_E1_E1_mid_s2_t6px",
+    "SYN_E1_E1_E1_mid_s3_t6px",
+    "SYN_E1_E1_E1_mid_s4_t6px"
+   ],
+   "final_d6_m": [
+    0.0308,
+    0.0318,
+    0.0317,
+    0.0337,
+    0.0217,
+    0.0161,
+    0.0317,
+    0.0269
+   ],
+   "hands_start_cm_max": 0.18,
+   "hands_end_cm_max": 0.75,
+   "feet_end_cm_max": 0
+  },
+  "E3": {
+   "variants": 3,
+   "names": [
+    "SYN_E3_E3_E3_high_s0_t6px",
+    "SYN_E3_E3_E3_high_s2_t6px",
+    "SYN_E3_E3_E3_high_s3_t6px12"
+   ],
+   "final_d6_m": [
+    0.0481,
+    0.0489,
+    0.0424
+   ],
+   "hands_start_cm_max": 0.18,
+   "hands_end_cm_max": 0.67,
+   "feet_end_cm_max": 0
+  },
+  "B1": {
+   "variants": 5,
+   "names": [
+    "SYN_B1_B1_B1_high_s1_t6rpx",
+    "SYN_B1_B1_B1_high_s2_t6rpx",
+    "SYN_B1_B1_B1_high_s4_t6rpx12",
+    "SYN_B1_B1_B1_mid_s0_t6rpx",
+    "SYN_B1_B1_B1_mid_s1_t6rpx12"
+   ],
+   "final_d6_m": [
+    0.0271,
+    0.0486,
+    0.0444,
+    0.0443,
+    0.0452
+   ],
+   "hands_start_cm_max": 0.21,
+   "hands_end_cm_max": 0.98,
+   "feet_end_cm_max": 10.07
+  },
+  "E2": {
+   "variants": 12,
+   "names": [
+    "SYN_E2_E2_E2_mid_s0_t6px12",
+    "SYN_E2_E2_E2_mid_s0_t6rpx12",
+    "SYN_E2_E2_E2_mid_s1_t6px12",
+    "SYN_E2_E2_E2_mid_s1_t6px",
+    "SYN_E2_E2_E2_mid_s1_t6rpx12",
+    "SYN_E2_E2_E2_mid_s1_t6rpx",
+    "SYN_E2_E2_E2_mid_s2_t6px12",
+    "SYN_E2_E2_E2_mid_s3_t6px12",
+    "SYN_E2_E2_E2_mid_s3_t6rpx12",
+    "SYN_E2_E2_E2_mid_s4_t6px12",
+    "SYN_E2_E2_E2_mid_s4_t6px",
+    "SYN_E2_E2_E2_mid_s4_t6rpx12"
+   ],
+   "final_d6_m": [
+    0.0784,
+    0.0906,
+    0.0863,
+    0.0919,
+    0.0839,
+    0.0953,
+    0.0918,
+    0.079,
+    0.0792,
+    0.0843,
+    0.085,
+    0.0957
+   ],
+   "hands_start_cm_max": 0.38,
+   "hands_end_cm_max": 3.27,
+   "feet_end_cm_max": 6.96
+  },
+  "E5": {
+   "variants": 1,
+   "names": [
+    "SYN_E5_E5_E5_mid_s0_t6rpx12"
+   ],
+   "final_d6_m": [
+    0.0887
+   ],
+   "hands_start_cm_max": 0.23,
+   "hands_end_cm_max": 0.56,
+   "feet_end_cm_max": 4.49
+  }
+ },
+ "variants": [
+  {
+   "variant": "SYN_B1_B1_B1_high_s1_t6rpx",
+   "edge": "B1",
+   "label": "crow -> plank (jump-back, straight arms)",
+   "motion": "output/edge_synthesis/physx/motions_t6/SYN_B1_B1_B1_high_s1_t6rpx.motion",
+   "sha256": "a837633312a7eab9b9ff5aaeea337e2db8176fbb58197e5d38aef2ab9971b4de",
+   "record": "output/edge_synthesis/physx/motions_t6/SYN_B1_B1_B1_high_s1_t6rpx.json",
+   "source_run": "output/edge_synthesis/physx/runs_t6_nocone/B1_B1_high_s1_t6rpx",
+   "frames": 234,
+   "fps": 60,
+   "recipe": {
+    "pass": "px",
+    "noise": 0.08,
+    "timing": "B1_high",
+    "durations_s": [
+     0.6,
+     1.0
+    ],
+    "T": 1.6,
+    "seed": 1,
+    "reference": "output/edge_synthesis/exact/B1_high",
+    "via": null,
+    "start": {
+     "mode": "exemplar",
+     "source": "release exemplar"
+    },
+    "weights": {}
+   },
+   "metrics": {
+    "final_d6_m": 0.0271,
+    "com_speed_end": 0.0345,
+    "held": true,
+    "landing_peak_bw": 0.964,
+    "hand_drift_cm": 1.55,
+    "torque_saturated_share_max": 0.278,
+    "speed_over_p99_max": 1.84,
+    "statics_s_star_max": 0.2715,
+    "free_violations": {}
+   },
+   "advisory_failed": [
+    "dynamics",
+    "naturalness_p99",
+    "seams_drift",
+    "seams_end"
+   ],
+   "seams": {
+    "hands_start_cm": 0.12,
+    "hands_end_cm": 0.85,
+    "feet_end_cm": 4.54,
+    "hand_width_m": {
+     "synthetic": 0.348,
+     "S": 0.3478,
+     "D": 0.3397
+    },
+    "hand_drift_cm": 0.97
+   },
+   "seams_t6": {
+    "pass": false,
+    "pass_attainable": false,
+    "start_all_max_cm": 0.575,
+    "start_planted_max_cm": 0.316,
+    "end_planted_max_cm": 4.541,
+    "end_beyond": [
+     "L_Ankle",
+     "L_Toe",
+     "L_Wrist",
+     "R_Ankle",
+     "R_Toe",
+     "R_Wrist"
+    ],
+    "end_exemplar_bodies": [
+     "L_Wrist"
+    ],
+    "end_by_body": {
+     "L_Ankle": {
+      "to_D_cm": 2.14,
+      "exemplars_S_to_D_cm": null,
+      "to_S_cm": null
+     },
+     "L_Toe": {
+      "to_D_cm": 2.578,
+      "exemplars_S_to_D_cm": null,
+      "to_S_cm": null
+     },
+     "L_Wrist": {
+      "to_D_cm": 1.801,
+      "exemplars_S_to_D_cm": 1.749,
+      "to_S_cm": 0.422
+     },
+     "L_Hand": {
+      "to_D_cm": 0.848,
+      "exemplars_S_to_D_cm": 0.407,
+      "to_S_cm": 0.827
+     },
+     "R_Ankle": {
+      "to_D_cm": 4.394,
+      "exemplars_S_to_D_cm": null,
+      "to_S_cm": null
+     },
+     "R_Toe": {
+      "to_D_cm": 4.541,
+      "exemplars_S_to_D_cm": null,
+      "to_S_cm": null
+     },
+     "R_Wrist": {
+      "to_D_cm": 1.545,
+      "exemplars_S_to_D_cm": 2.233,
+      "to_S_cm": 0.803
+     },
+     "R_Hand": {
+      "to_D_cm": 0.089,
+      "exemplars_S_to_D_cm": 0.407,
+      "to_S_cm": 0.362
+     }
+    },
+    "drift_max_cm": 22.485,
+    "drift_zones": {
+     "L_FOOT": 21.423,
+     "L_HAND": 1.486,
+     "R_FOOT": 22.485,
+     "R_HAND": 1.455
+    }
+   }
+  },
+  {
+   "variant": "SYN_B1_B1_B1_high_s2_t6rpx",
+   "edge": "B1",
+   "label": "crow -> plank (jump-back, straight arms)",
+   "motion": "output/edge_synthesis/physx/motions_t6/SYN_B1_B1_B1_high_s2_t6rpx.motion",
+   "sha256": "20193f82e3135e739b64393c0fac11755558bacbbfdb7f688023b75d0167469c",
+   "record": "output/edge_synthesis/physx/motions_t6/SYN_B1_B1_B1_high_s2_t6rpx.json",
+   "source_run": "output/edge_synthesis/physx/runs_t6_nocone/B1_B1_high_s2_t6rpx",
+   "frames": 234,
+   "fps": 60,
+   "recipe": {
+    "pass": "px",
+    "noise": 0.08,
+    "timing": "B1_high",
+    "durations_s": [
+     0.6,
+     1.0
+    ],
+    "T": 1.6,
+    "seed": 2,
+    "reference": "output/edge_synthesis/exact/B1_high",
+    "via": null,
+    "start": {
+     "mode": "exemplar",
+     "source": "release exemplar"
+    },
+    "weights": {}
+   },
+   "metrics": {
+    "final_d6_m": 0.0486,
+    "com_speed_end": 0.0293,
+    "held": true,
+    "landing_peak_bw": 1.174,
+    "hand_drift_cm": 1.57,
+    "torque_saturated_share_max": 0.286,
+    "speed_over_p99_max": 1.82,
+    "statics_s_star_max": 0.2726,
+    "free_violations": {}
+   },
+   "advisory_failed": [
+    "dynamics",
+    "naturalness_p99",
+    "seams_drift",
+    "seams_end"
+   ],
+   "seams": {
+    "hands_start_cm": 0.09,
+    "hands_end_cm": 0.98,
+    "feet_end_cm": 3.06,
+    "hand_width_m": {
+     "synthetic": 0.3473,
+     "S": 0.3478,
+     "D": 0.3397
+    },
+    "hand_drift_cm": 0.59
+   },
+   "seams_t6": {
+    "pass": false,
+    "pass_attainable": false,
+    "start_all_max_cm": 0.772,
+    "start_planted_max_cm": 0.357,
+    "end_planted_max_cm": 3.062,
+    "end_beyond": [
+     "L_Ankle",
+     "L_Toe",
+     "L_Wrist",
+     "R_Ankle",
+     "R_Wrist"
+    ],
+    "end_exemplar_bodies": [],
+    "end_by_body": {
+     "L_Ankle": {
+      "to_D_cm": 2.314,
+      "exemplars_S_to_D_cm": null,
+      "to_S_cm": null
+     },
+     "L_Toe": {
+      "to_D_cm": 3.062,
+      "exemplars_S_to_D_cm": null,
+      "to_S_cm": null
+     },
+     "L_Wrist": {
+      "to_D_cm": 1.722,
+      "exemplars_S_to_D_cm": 1.749,
+      "to_S_cm": 0.541
+     },
+     "L_Hand": {
+      "to_D_cm": 0.98,
+      "exemplars_S_to_D_cm": 0.407,
+      "to_S_cm": 0.961
+     },
+     "R_Ankle": {
+      "to_D_cm": 2.313,
+      "exemplars_S_to_D_cm": null,
+      "to_S_cm": null
+     },
+     "R_Toe": {
+      "to_D_cm": 1.15,
+      "exemplars_S_to_D_cm": null,
+      "to_S_cm": null
+     },
+     "R_Wrist": {
+      "to_D_cm": 1.728,
+      "exemplars_S_to_D_cm": 2.233,
+      "to_S_cm": 0.624
+     },
+     "R_Hand": {
+      "to_D_cm": 0.179,
+      "exemplars_S_to_D_cm": 0.407,
+      "to_S_cm": 0.266
+     }
+    },
+    "drift_max_cm": 26.069,
+    "drift_zones": {
+     "L_FOOT": 24.384,
+     "L_HAND": 1.583,
+     "R_FOOT": 26.069,
+     "R_HAND": 1.466
+    }
+   }
+  },
+  {
+   "variant": "SYN_B1_B1_B1_high_s4_t6rpx12",
+   "edge": "B1",
+   "label": "crow -> plank (jump-back, straight arms)",
+   "motion": "output/edge_synthesis/physx/motions_t6/SYN_B1_B1_B1_high_s4_t6rpx12.motion",
+   "sha256": "301eb8238dc0d6d100353ceac959a3ba73081b2dc4fe4631df9eb6487d47fd2f",
+   "record": "output/edge_synthesis/physx/motions_t6/SYN_B1_B1_B1_high_s4_t6rpx12.json",
+   "source_run": "output/edge_synthesis/physx/runs_t6_nocone/B1_B1_high_s4_t6rpx12",
+   "frames": 234,
+   "fps": 60,
+   "recipe": {
+    "pass": "px12",
+    "noise": 0.12,
+    "timing": "B1_high",
+    "durations_s": [
+     0.6,
+     1.0
+    ],
+    "T": 1.6,
+    "seed": 4,
+    "reference": "output/edge_synthesis/exact/B1_high",
+    "via": null,
+    "start": {
+     "mode": "exemplar",
+     "source": "release exemplar"
+    },
+    "weights": {}
+   },
+   "metrics": {
+    "final_d6_m": 0.0444,
+    "com_speed_end": 0.0239,
+    "held": true,
+    "landing_peak_bw": 1.17,
+    "hand_drift_cm": 1.31,
+    "torque_saturated_share_max": 0.761,
+    "speed_over_p99_max": 1.71,
+    "statics_s_star_max": 0.2332,
+    "free_violations": {}
+   },
+   "advisory_failed": [
+    "dynamics",
+    "naturalness_p99",
+    "seams_drift",
+    "seams_end"
+   ],
+   "seams": {
+    "hands_start_cm": 0.19,
+    "hands_end_cm": 0.4,
+    "feet_end_cm": 9.35,
+    "hand_width_m": {
+     "synthetic": 0.3466,
+     "S": 0.3478,
+     "D": 0.3397
+    },
+    "hand_drift_cm": 0.71
+   },
+   "seams_t6": {
+    "pass": false,
+    "pass_attainable": false,
+    "start_all_max_cm": 0.46,
+    "start_planted_max_cm": 0.34,
+    "end_planted_max_cm": 9.348,
+    "end_beyond": [
+     "L_Ankle",
+     "L_Toe",
+     "L_Wrist",
+     "R_Ankle",
+     "R_Toe",
+     "R_Wrist"
+    ],
+    "end_exemplar_bodies": [
+     "L_Wrist",
+     "R_Wrist"
+    ],
+    "end_by_body": {
+     "L_Ankle": {
+      "to_D_cm": 7.414,
+      "exemplars_S_to_D_cm": null,
+      "to_S_cm": null
+     },
+     "L_Toe": {
+      "to_D_cm": 7.482,
+      "exemplars_S_to_D_cm": null,
+      "to_S_cm": null
+     },
+     "L_Wrist": {
+      "to_D_cm": 1.709,
+      "exemplars_S_to_D_cm": 1.749,
+      "to_S_cm": 0.353
+     },
+     "L_Hand": {
+      "to_D_cm": 0.4,
+      "exemplars_S_to_D_cm": 0.407,
+      "to_S_cm": 0.359
+     },
+     "R_Ankle": {
+      "to_D_cm": 7.619,
+      "exemplars_S_to_D_cm": null,
+      "to_S_cm": null
+     },
+     "R_Toe": {
+      "to_D_cm": 9.348,
+      "exemplars_S_to_D_cm": null,
+      "to_S_cm": null
+     },
+     "R_Wrist": {
+      "to_D_cm": 2.078,
+      "exemplars_S_to_D_cm": 2.233,
+      "to_S_cm": 0.26
+     },
+     "R_Hand": {
+      "to_D_cm": 0.388,
+      "exemplars_S_to_D_cm": 0.407,
+      "to_S_cm": 0.602
+     }
+    },
+    "drift_max_cm": 16.476,
+    "drift_zones": {
+     "L_FOOT": 15.605,
+     "L_HAND": 1.289,
+     "R_FOOT": 16.476,
+     "R_HAND": 1.271
+    }
+   }
+  },
+  {
+   "variant": "SYN_B1_B1_B1_mid_s0_t6rpx",
+   "edge": "B1",
+   "label": "crow -> plank (jump-back, straight arms)",
+   "motion": "output/edge_synthesis/physx/motions_t6/SYN_B1_B1_B1_mid_s0_t6rpx.motion",
+   "sha256": "5ebdcf3fdf29631712041de38c6fa274c0bbc4471b25a9acabf1aed7f27f53fa",
+   "record": "output/edge_synthesis/physx/motions_t6/SYN_B1_B1_B1_mid_s0_t6rpx.json",
+   "source_run": "output/edge_synthesis/physx/runs_t6_nocone/B1_B1_mid_s0_t6rpx",
+   "frames": 204,
+   "fps": 60,
+   "recipe": {
+    "pass": "px",
+    "noise": 0.08,
+    "timing": "B1_mid",
+    "durations_s": [
+     0.425,
+     0.65
+    ],
+    "T": 1.075,
+    "seed": 0,
+    "reference": "output/edge_synthesis/exact/B1_mid",
+    "via": null,
+    "start": {
+     "mode": "exemplar",
+     "source": "release exemplar"
+    },
+    "weights": {}
+   },
+   "metrics": {
+    "final_d6_m": 0.0443,
+    "com_speed_end": 0.0353,
+    "held": true,
+    "landing_peak_bw": 1.485,
+    "hand_drift_cm": 1.0,
+    "torque_saturated_share_max": 0.208,
+    "speed_over_p99_max": 2.18,
+    "statics_s_star_max": 0.1985,
+    "free_violations": {}
+   },
+   "advisory_failed": [
+    "dynamics",
+    "naturalness_p99",
+    "seams_drift",
+    "seams_end"
+   ],
+   "seams": {
+    "hands_start_cm": 0.19,
+    "hands_end_cm": 0.34,
+    "feet_end_cm": 3.27,
+    "hand_width_m": {
+     "synthetic": 0.3479,
+     "S": 0.3478,
+     "D": 0.3397
+    },
+    "hand_drift_cm": 0.64
+   },
+   "seams_t6": {
+    "pass": false,
+    "pass_attainable": false,
+    "start_all_max_cm": 0.544,
+    "start_planted_max_cm": 0.444,
+    "end_planted_max_cm": 3.266,
+    "end_beyond": [
+     "L_Wrist",
+     "R_Toe",
+     "R_Wrist"
+    ],
+    "end_exemplar_bodies": [
+     "L_Wrist",
+     "R_Wrist"
+    ],
+    "end_by_body": {
+     "L_Ankle": {
+      "to_D_cm": 1.443,
+      "exemplars_S_to_D_cm": null,
+      "to_S_cm": null
+     },
+     "L_Toe": {
+      "to_D_cm": 1.277,
+      "exemplars_S_to_D_cm": null,
+      "to_S_cm": null
+     },
+     "L_Wrist": {
+      "to_D_cm": 1.63,
+      "exemplars_S_to_D_cm": 1.749,
+      "to_S_cm": 0.427
+     },
+     "L_Hand": {
+      "to_D_cm": 0.342,
+      "exemplars_S_to_D_cm": 0.407,
+      "to_S_cm": 0.245
+     },
+     "R_Ankle": {
+      "to_D_cm": 0.248,
+      "exemplars_S_to_D_cm": null,
+      "to_S_cm": null
+     },
+     "R_Toe": {
+      "to_D_cm": 3.266,
+      "exemplars_S_to_D_cm": null,
+      "to_S_cm": null
+     },
+     "R_Wrist": {
+      "to_D_cm": 2.035,
+      "exemplars_S_to_D_cm": 2.233,
+      "to_S_cm": 0.481
+     },
+     "R_Hand": {
+      "to_D_cm": 0.261,
+      "exemplars_S_to_D_cm": 0.407,
+      "to_S_cm": 0.552
+     }
+    },
+    "drift_max_cm": 13.198,
+    "drift_zones": {
+     "L_FOOT": 13.198,
+     "L_HAND": 1.143,
+     "R_FOOT": 13.152,
+     "R_HAND": 0.978
+    }
+   }
+  },
+  {
+   "variant": "SYN_B1_B1_B1_mid_s1_t6rpx12",
+   "edge": "B1",
+   "label": "crow -> plank (jump-back, straight arms)",
+   "motion": "output/edge_synthesis/physx/motions_t6/SYN_B1_B1_B1_mid_s1_t6rpx12.motion",
+   "sha256": "6a15a80d4d4c6f7e2cf313b33627ed7514b17439f6d9e083d1a09e8f79e6e18b",
+   "record": "output/edge_synthesis/physx/motions_t6/SYN_B1_B1_B1_mid_s1_t6rpx12.json",
+   "source_run": "output/edge_synthesis/physx/runs_t6_nocone/B1_B1_mid_s1_t6rpx12",
+   "frames": 204,
+   "fps": 60,
+   "recipe": {
+    "pass": "px12",
+    "noise": 0.12,
+    "timing": "B1_mid",
+    "durations_s": [
+     0.425,
+     0.65
+    ],
+    "T": 1.075,
+    "seed": 1,
+    "reference": "output/edge_synthesis/exact/B1_mid",
+    "via": null,
+    "start": {
+     "mode": "exemplar",
+     "source": "release exemplar"
+    },
+    "weights": {}
+   },
+   "metrics": {
+    "final_d6_m": 0.0452,
+    "com_speed_end": 0.0279,
+    "held": true,
+    "landing_peak_bw": 1.518,
+    "hand_drift_cm": 0.95,
+    "torque_saturated_share_max": 0.37,
+    "speed_over_p99_max": 2.03,
+    "statics_s_star_max": 0.1937,
+    "free_violations": {}
+   },
+   "advisory_failed": [
+    "dynamics",
+    "naturalness_p99",
+    "seams_drift",
+    "seams_end"
+   ],
+   "seams": {
+    "hands_start_cm": 0.21,
+    "hands_end_cm": 0.6,
+    "feet_end_cm": 10.07,
+    "hand_width_m": {
+     "synthetic": 0.3482,
+     "S": 0.3478,
+     "D": 0.3397
+    },
+    "hand_drift_cm": 0.55
+   },
+   "seams_t6": {
+    "pass": false,
+    "pass_attainable": false,
+    "start_all_max_cm": 0.614,
+    "start_planted_max_cm": 0.31,
+    "end_planted_max_cm": 10.067,
+    "end_beyond": [
+     "L_Ankle",
+     "L_Toe",
+     "R_Ankle",
+     "R_Toe",
+     "R_Wrist"
+    ],
+    "end_exemplar_bodies": [],
+    "end_by_body": {
+     "L_Ankle": {
+      "to_D_cm": 5.324,
+      "exemplars_S_to_D_cm": null,
+      "to_S_cm": null
+     },
+     "L_Toe": {
+      "to_D_cm": 5.882,
+      "exemplars_S_to_D_cm": null,
+      "to_S_cm": null
+     },
+     "L_Wrist": {
+      "to_D_cm": 0.867,
+      "exemplars_S_to_D_cm": 1.749,
+      "to_S_cm": 1.022
+     },
+     "L_Hand": {
+      "to_D_cm": 0.6,
+      "exemplars_S_to_D_cm": 0.407,
+      "to_S_cm": 0.303
+     },
+     "R_Ankle": {
+      "to_D_cm": 7.307,
+      "exemplars_S_to_D_cm": null,
+      "to_S_cm": null
+     },
+     "R_Toe": {
+      "to_D_cm": 10.067,
+      "exemplars_S_to_D_cm": null,
+      "to_S_cm": null
+     },
+     "R_Wrist": {
+      "to_D_cm": 1.784,
+      "exemplars_S_to_D_cm": 2.233,
+      "to_S_cm": 0.534
+     },
+     "R_Hand": {
+      "to_D_cm": 0.188,
+      "exemplars_S_to_D_cm": 0.407,
+      "to_S_cm": 0.256
+     }
+    },
+    "drift_max_cm": 8.372,
+    "drift_zones": {
+     "L_FOOT": 7.369,
+     "L_HAND": 1.047,
+     "R_FOOT": 8.372,
+     "R_HAND": 0.809
+    }
+   }
+  },
+  {
+   "variant": "SYN_E1_E1_E1_high_s0_t6px",
+   "edge": "E1",
+   "label": "crow -> handstand (press)",
+   "motion": "output/edge_synthesis/physx/motions_t6/SYN_E1_E1_E1_high_s0_t6px.motion",
+   "sha256": "3d9c4fdc30893617794ff423f6749ad67319f956d1f93a5cb52fc3c3710eb861",
+   "record": "output/edge_synthesis/physx/motions_t6/SYN_E1_E1_E1_high_s0_t6px.json",
+   "source_run": "output/edge_synthesis/physx/runs_t6/E1_E1_high_s0_t6px",
+   "frames": 408,
+   "fps": 60,
+   "recipe": {
+    "pass": "px",
+    "noise": 0.05,
+    "timing": "E1_high",
+    "durations_s": [
+     2.5,
+     2.0
+    ],
+    "T": 4.5,
+    "seed": 0,
+    "reference": "output/edge_synthesis/exact/E1_high",
+    "via": null,
+    "start": {
+     "mode": "exemplar",
+     "source": "release exemplar"
+    },
+    "weights": {
+     "track": 20,
+     "track_end": 20
+    }
+   },
+   "metrics": {
+    "final_d6_m": 0.0308,
+    "com_speed_end": 0.0269,
+    "held": true,
+    "landing_peak_bw": 0.649,
+    "hand_drift_cm": 0.43,
+    "torque_saturated_share_max": 0.306,
+    "speed_over_p99_max": 1.29,
+    "statics_s_star_max": 0.6165,
+    "free_violations": {}
+   },
+   "advisory_failed": [
+    "dynamics",
+    "naturalness_p99"
+   ],
+   "seams": {
+    "hands_start_cm": 0.15,
+    "hands_end_cm": 0.46,
+    "feet_end_cm": null,
+    "hand_width_m": {
+     "synthetic": 0.3482,
+     "S": 0.3478,
+     "D": 0.3584
+    },
+    "hand_drift_cm": 0.6
+   },
+   "seams_t6": {
+    "pass": false,
+    "pass_attainable": false,
+    "start_all_max_cm": 0.402,
+    "start_planted_max_cm": 0.289,
+    "end_planted_max_cm": 2.851,
+    "end_beyond": [
+     "L_Wrist",
+     "R_Wrist"
+    ],
+    "end_exemplar_bodies": [
+     "L_Wrist",
+     "R_Wrist"
+    ],
+    "end_by_body": {
+     "L_Wrist": {
+      "to_D_cm": 2.851,
+      "exemplars_S_to_D_cm": 2.909,
+      "to_S_cm": 0.283
+     },
+     "L_Hand": {
+      "to_D_cm": 0.465,
+      "exemplars_S_to_D_cm": 0.529,
+      "to_S_cm": 0.138
+     },
+     "R_Wrist": {
+      "to_D_cm": 2.389,
+      "exemplars_S_to_D_cm": 2.71,
+      "to_S_cm": 0.398
+     },
+     "R_Hand": {
+      "to_D_cm": 0.293,
+      "exemplars_S_to_D_cm": 0.529,
+      "to_S_cm": 0.341
+     }
+    },
+    "drift_max_cm": 0.88,
+    "drift_zones": {
+     "L_HAND": 0.88,
+     "R_HAND": 0.599
+    }
+   }
+  },
+  {
+   "variant": "SYN_E1_E1_E1_high_s2_t6px",
+   "edge": "E1",
+   "label": "crow -> handstand (press)",
+   "motion": "output/edge_synthesis/physx/motions_t6/SYN_E1_E1_E1_high_s2_t6px.motion",
+   "sha256": "6e936ec24cb22c14becc2b4de57e94a53b71889c2b16dca9b1b9921cba3ad252",
+   "record": "output/edge_synthesis/physx/motions_t6/SYN_E1_E1_E1_high_s2_t6px.json",
+   "source_run": "output/edge_synthesis/physx/runs_t6/E1_E1_high_s2_t6px",
+   "frames": 408,
+   "fps": 60,
+   "recipe": {
+    "pass": "px",
+    "noise": 0.05,
+    "timing": "E1_high",
+    "durations_s": [
+     2.5,
+     2.0
+    ],
+    "T": 4.5,
+    "seed": 2,
+    "reference": "output/edge_synthesis/exact/E1_high",
+    "via": null,
+    "start": {
+     "mode": "exemplar",
+     "source": "release exemplar"
+    },
+    "weights": {
+     "track": 20,
+     "track_end": 20
+    }
+   },
+   "metrics": {
+    "final_d6_m": 0.0318,
+    "com_speed_end": 0.0233,
+    "held": true,
+    "landing_peak_bw": 0.643,
+    "hand_drift_cm": 0.4,
+    "torque_saturated_share_max": 0.338,
+    "speed_over_p99_max": 1.2,
+    "statics_s_star_max": 0.6156,
+    "free_violations": {}
+   },
+   "advisory_failed": [
+    "dynamics",
+    "naturalness_p99"
+   ],
+   "seams": {
+    "hands_start_cm": 0.15,
+    "hands_end_cm": 0.44,
+    "feet_end_cm": null,
+    "hand_width_m": {
+     "synthetic": 0.3479,
+     "S": 0.3478,
+     "D": 0.3584
+    },
+    "hand_drift_cm": 0.59
+   },
+   "seams_t6": {
+    "pass": false,
+    "pass_attainable": false,
+    "start_all_max_cm": 0.476,
+    "start_planted_max_cm": 0.216,
+    "end_planted_max_cm": 2.776,
+    "end_beyond": [
+     "L_Wrist",
+     "R_Wrist"
+    ],
+    "end_exemplar_bodies": [
+     "L_Wrist",
+     "R_Wrist"
+    ],
+    "end_by_body": {
+     "L_Wrist": {
+      "to_D_cm": 2.776,
+      "exemplars_S_to_D_cm": 2.909,
+      "to_S_cm": 0.373
+     },
+     "L_Hand": {
+      "to_D_cm": 0.437,
+      "exemplars_S_to_D_cm": 0.529,
+      "to_S_cm": 0.265
+     },
+     "R_Wrist": {
+      "to_D_cm": 2.515,
+      "exemplars_S_to_D_cm": 2.71,
+      "to_S_cm": 0.319
+     },
+     "R_Hand": {
+      "to_D_cm": 0.215,
+      "exemplars_S_to_D_cm": 0.529,
+      "to_S_cm": 0.502
+     }
+    },
+    "drift_max_cm": 0.875,
+    "drift_zones": {
+     "L_HAND": 0.875,
+     "R_HAND": 0.608
+    }
+   }
+  },
+  {
+   "variant": "SYN_E1_E1_E1_high_s3_t6px",
+   "edge": "E1",
+   "label": "crow -> handstand (press)",
+   "motion": "output/edge_synthesis/physx/motions_t6/SYN_E1_E1_E1_high_s3_t6px.motion",
+   "sha256": "a507a7deee516398b4d0f9037d2315d8450e552c19bb28404e69ee72ea808789",
+   "record": "output/edge_synthesis/physx/motions_t6/SYN_E1_E1_E1_high_s3_t6px.json",
+   "source_run": "output/edge_synthesis/physx/runs_t6/E1_E1_high_s3_t6px",
+   "frames": 408,
+   "fps": 60,
+   "recipe": {
+    "pass": "px",
+    "noise": 0.05,
+    "timing": "E1_high",
+    "durations_s": [
+     2.5,
+     2.0
+    ],
+    "T": 4.5,
+    "seed": 3,
+    "reference": "output/edge_synthesis/exact/E1_high",
+    "via": null,
+    "start": {
+     "mode": "exemplar",
+     "source": "release exemplar"
+    },
+    "weights": {
+     "track": 20,
+     "track_end": 20
+    }
+   },
+   "metrics": {
+    "final_d6_m": 0.0317,
+    "com_speed_end": 0.0247,
+    "held": true,
+    "landing_peak_bw": 0.647,
+    "hand_drift_cm": 0.33,
+    "torque_saturated_share_max": 0.309,
+    "speed_over_p99_max": 1.22,
+    "statics_s_star_max": 0.6041,
+    "free_violations": {}
+   },
+   "advisory_failed": [
+    "dynamics",
+    "naturalness_p99"
+   ],
+   "seams": {
+    "hands_start_cm": 0.18,
+    "hands_end_cm": 0.56,
+    "feet_end_cm": null,
+    "hand_width_m": {
+     "synthetic": 0.3482,
+     "S": 0.3478,
+     "D": 0.3584
+    },
+    "hand_drift_cm": 0.48
+   },
+   "seams_t6": {
+    "pass": false,
+    "pass_attainable": false,
+    "start_all_max_cm": 0.281,
+    "start_planted_max_cm": 0.238,
+    "end_planted_max_cm": 2.796,
+    "end_beyond": [
+     "L_Wrist",
+     "R_Wrist"
+    ],
+    "end_exemplar_bodies": [
+     "L_Wrist",
+     "R_Wrist"
+    ],
+    "end_by_body": {
+     "L_Wrist": {
+      "to_D_cm": 2.796,
+      "exemplars_S_to_D_cm": 2.909,
+      "to_S_cm": 0.323
+     },
+     "L_Hand": {
+      "to_D_cm": 0.565,
+      "exemplars_S_to_D_cm": 0.529,
+      "to_S_cm": 0.19
+     },
+     "R_Wrist": {
+      "to_D_cm": 2.433,
+      "exemplars_S_to_D_cm": 2.71,
+      "to_S_cm": 0.38
+     },
+     "R_Hand": {
+      "to_D_cm": 0.324,
+      "exemplars_S_to_D_cm": 0.529,
+      "to_S_cm": 0.215
+     }
+    },
+    "drift_max_cm": 0.809,
+    "drift_zones": {
+     "L_HAND": 0.809,
+     "R_HAND": 0.505
+    }
+   }
+  },
+  {
+   "variant": "SYN_E1_E1_E1_high_s4_t6px",
+   "edge": "E1",
+   "label": "crow -> handstand (press)",
+   "motion": "output/edge_synthesis/physx/motions_t6/SYN_E1_E1_E1_high_s4_t6px.motion",
+   "sha256": "d21d94fa00d62e81db2778fc74e2f589707d077979d8c46d8c8bfcdb8fe959e5",
+   "record": "output/edge_synthesis/physx/motions_t6/SYN_E1_E1_E1_high_s4_t6px.json",
+   "source_run": "output/edge_synthesis/physx/runs_t6/E1_E1_high_s4_t6px",
+   "frames": 408,
+   "fps": 60,
+   "recipe": {
+    "pass": "px",
+    "noise": 0.05,
+    "timing": "E1_high",
+    "durations_s": [
+     2.5,
+     2.0
+    ],
+    "T": 4.5,
+    "seed": 4,
+    "reference": "output/edge_synthesis/exact/E1_high",
+    "via": null,
+    "start": {
+     "mode": "exemplar",
+     "source": "release exemplar"
+    },
+    "weights": {
+     "track": 20,
+     "track_end": 20
+    }
+   },
+   "metrics": {
+    "final_d6_m": 0.0337,
+    "com_speed_end": 0.0245,
+    "held": true,
+    "landing_peak_bw": 0.647,
+    "hand_drift_cm": 0.38,
+    "torque_saturated_share_max": 0.3,
+    "speed_over_p99_max": 1.25,
+    "statics_s_star_max": 0.6312,
+    "free_violations": {}
+   },
+   "advisory_failed": [
+    "dynamics",
+    "naturalness_p99"
+   ],
+   "seams": {
+    "hands_start_cm": 0.14,
+    "hands_end_cm": 0.75,
+    "feet_end_cm": null,
+    "hand_width_m": {
+     "synthetic": 0.3474,
+     "S": 0.3478,
+     "D": 0.3584
+    },
+    "hand_drift_cm": 0.64
+   },
+   "seams_t6": {
+    "pass": false,
+    "pass_attainable": false,
+    "start_all_max_cm": 0.401,
+    "start_planted_max_cm": 0.231,
+    "end_planted_max_cm": 2.799,
+    "end_beyond": [
+     "L_Wrist",
+     "R_Wrist"
+    ],
+    "end_exemplar_bodies": [
+     "L_Wrist",
+     "R_Wrist"
+    ],
+    "end_by_body": {
+     "L_Wrist": {
+      "to_D_cm": 2.799,
+      "exemplars_S_to_D_cm": 2.909,
+      "to_S_cm": 0.337
+     },
+     "L_Hand": {
+      "to_D_cm": 0.745,
+      "exemplars_S_to_D_cm": 0.529,
+      "to_S_cm": 0.293
+     },
+     "R_Wrist": {
+      "to_D_cm": 2.446,
+      "exemplars_S_to_D_cm": 2.71,
+      "to_S_cm": 0.337
+     },
+     "R_Hand": {
+      "to_D_cm": 0.225,
+      "exemplars_S_to_D_cm": 0.529,
+      "to_S_cm": 0.332
+     }
+    },
+    "drift_max_cm": 0.861,
+    "drift_zones": {
+     "L_HAND": 0.861,
+     "R_HAND": 0.582
+    }
+   }
+  },
+  {
+   "variant": "SYN_E1_E1_E1_mid_s0_t6px",
+   "edge": "E1",
+   "label": "crow -> handstand (press)",
+   "motion": "output/edge_synthesis/physx/motions_t6/SYN_E1_E1_E1_mid_s0_t6px.motion",
+   "sha256": "9bf90867840255bc6c621bfacd7c165110bd4a1c41f9e2ad4430e172dc374f0d",
+   "record": "output/edge_synthesis/physx/motions_t6/SYN_E1_E1_E1_mid_s0_t6px.json",
+   "source_run": "output/edge_synthesis/physx/runs_t6/E1_E1_mid_s0_t6px",
+   "frames": 318,
+   "fps": 60,
+   "recipe": {
+    "pass": "px",
+    "noise": 0.05,
+    "timing": "E1_mid",
+    "durations_s": [
+     1.65,
+     1.3
+    ],
+    "T": 2.95,
+    "seed": 0,
+    "reference": "output/edge_synthesis/exact/E1_mid",
+    "via": null,
+    "start": {
+     "mode": "exemplar",
+     "source": "release exemplar"
+    },
+    "weights": {
+     "track": 20,
+     "track_end": 20
+    }
+   },
+   "metrics": {
+    "final_d6_m": 0.0217,
+    "com_speed_end": 0.0197,
+    "held": true,
+    "landing_peak_bw": 0.676,
+    "hand_drift_cm": 0.53,
+    "torque_saturated_share_max": 0.469,
+    "speed_over_p99_max": 1.37,
+    "statics_s_star_max": 0.6265,
+    "free_violations": {}
+   },
+   "advisory_failed": [
+    "dynamics",
+    "naturalness_p99"
+   ],
+   "seams": {
+    "hands_start_cm": 0.13,
+    "hands_end_cm": 0.66,
+    "feet_end_cm": null,
+    "hand_width_m": {
+     "synthetic": 0.3485,
+     "S": 0.3478,
+     "D": 0.3584
+    },
+    "hand_drift_cm": 0.64
+   },
+   "seams_t6": {
+    "pass": false,
+    "pass_attainable": false,
+    "start_all_max_cm": 0.41,
+    "start_planted_max_cm": 0.283,
+    "end_planted_max_cm": 2.858,
+    "end_beyond": [
+     "L_Wrist",
+     "R_Wrist"
+    ],
+    "end_exemplar_bodies": [
+     "L_Wrist"
+    ],
+    "end_by_body": {
+     "L_Wrist": {
+      "to_D_cm": 2.858,
+      "exemplars_S_to_D_cm": 2.909,
+      "to_S_cm": 0.313
+     },
+     "L_Hand": {
+      "to_D_cm": 0.664,
+      "exemplars_S_to_D_cm": 0.529,
+      "to_S_cm": 0.199
+     },
+     "R_Wrist": {
+      "to_D_cm": 2.356,
+      "exemplars_S_to_D_cm": 2.71,
+      "to_S_cm": 0.51
+     },
+     "R_Hand": {
+      "to_D_cm": 0.584,
+      "exemplars_S_to_D_cm": 0.529,
+      "to_S_cm": 0.42
+     }
+    },
+    "drift_max_cm": 0.859,
+    "drift_zones": {
+     "L_HAND": 0.859,
+     "R_HAND": 0.635
+    }
+   }
+  },
+  {
+   "variant": "SYN_E1_E1_E1_mid_s2_t6px",
+   "edge": "E1",
+   "label": "crow -> handstand (press)",
+   "motion": "output/edge_synthesis/physx/motions_t6/SYN_E1_E1_E1_mid_s2_t6px.motion",
+   "sha256": "edc4f391923cd23f16f8d764470b1b142e367c96eb861a3404f727a81bd6f44b",
+   "record": "output/edge_synthesis/physx/motions_t6/SYN_E1_E1_E1_mid_s2_t6px.json",
+   "source_run": "output/edge_synthesis/physx/runs_t6/E1_E1_mid_s2_t6px",
+   "frames": 318,
+   "fps": 60,
+   "recipe": {
+    "pass": "px",
+    "noise": 0.05,
+    "timing": "E1_mid",
+    "durations_s": [
+     1.65,
+     1.3
+    ],
+    "T": 2.95,
+    "seed": 2,
+    "reference": "output/edge_synthesis/exact/E1_mid",
+    "via": null,
+    "start": {
+     "mode": "exemplar",
+     "source": "release exemplar"
+    },
+    "weights": {
+     "track": 20,
+     "track_end": 20
+    }
+   },
+   "metrics": {
+    "final_d6_m": 0.0161,
+    "com_speed_end": 0.0221,
+    "held": true,
+    "landing_peak_bw": 0.672,
+    "hand_drift_cm": 0.39,
+    "torque_saturated_share_max": 0.502,
+    "speed_over_p99_max": 1.39,
+    "statics_s_star_max": 0.6321,
+    "free_violations": {}
+   },
+   "advisory_failed": [
+    "dynamics",
+    "naturalness_p99"
+   ],
+   "seams": {
+    "hands_start_cm": 0.16,
+    "hands_end_cm": 0.66,
+    "feet_end_cm": null,
+    "hand_width_m": {
+     "synthetic": 0.3479,
+     "S": 0.3478,
+     "D": 0.3584
+    },
+    "hand_drift_cm": 0.57
+   },
+   "seams_t6": {
+    "pass": false,
+    "pass_attainable": false,
+    "start_all_max_cm": 0.458,
+    "start_planted_max_cm": 0.216,
+    "end_planted_max_cm": 2.901,
+    "end_beyond": [
+     "L_Wrist",
+     "R_Wrist"
+    ],
+    "end_exemplar_bodies": [
+     "L_Wrist",
+     "R_Wrist"
+    ],
+    "end_by_body": {
+     "L_Wrist": {
+      "to_D_cm": 2.901,
+      "exemplars_S_to_D_cm": 2.909,
+      "to_S_cm": 0.309
+     },
+     "L_Hand": {
+      "to_D_cm": 0.423,
+      "exemplars_S_to_D_cm": 0.529,
+      "to_S_cm": 0.158
+     },
+     "R_Wrist": {
+      "to_D_cm": 2.533,
+      "exemplars_S_to_D_cm": 2.71,
+      "to_S_cm": 0.453
+     },
+     "R_Hand": {
+      "to_D_cm": 0.662,
+      "exemplars_S_to_D_cm": 0.529,
+      "to_S_cm": 0.466
+     }
+    },
+    "drift_max_cm": 0.869,
+    "drift_zones": {
+     "L_HAND": 0.869,
+     "R_HAND": 0.571
+    }
+   }
+  },
+  {
+   "variant": "SYN_E1_E1_E1_mid_s3_t6px",
+   "edge": "E1",
+   "label": "crow -> handstand (press)",
+   "motion": "output/edge_synthesis/physx/motions_t6/SYN_E1_E1_E1_mid_s3_t6px.motion",
+   "sha256": "709caa2cb7428f065cada161c6e92d25757d25a9c718a9f88fe1911711a7d6d4",
+   "record": "output/edge_synthesis/physx/motions_t6/SYN_E1_E1_E1_mid_s3_t6px.json",
+   "source_run": "output/edge_synthesis/physx/runs_t6/E1_E1_mid_s3_t6px",
+   "frames": 318,
+   "fps": 60,
+   "recipe": {
+    "pass": "px",
+    "noise": 0.05,
+    "timing": "E1_mid",
+    "durations_s": [
+     1.65,
+     1.3
+    ],
+    "T": 2.95,
+    "seed": 3,
+    "reference": "output/edge_synthesis/exact/E1_mid",
+    "via": null,
+    "start": {
+     "mode": "exemplar",
+     "source": "release exemplar"
+    },
+    "weights": {
+     "track": 20,
+     "track_end": 20
+    }
+   },
+   "metrics": {
+    "final_d6_m": 0.0317,
+    "com_speed_end": 0.0232,
+    "held": true,
+    "landing_peak_bw": 0.685,
+    "hand_drift_cm": 0.47,
+    "torque_saturated_share_max": 0.538,
+    "speed_over_p99_max": 1.37,
+    "statics_s_star_max": 0.5976,
+    "free_violations": {}
+   },
+   "advisory_failed": [
+    "dynamics",
+    "naturalness_p99"
+   ],
+   "seams": {
+    "hands_start_cm": 0.18,
+    "hands_end_cm": 0.64,
+    "feet_end_cm": null,
+    "hand_width_m": {
+     "synthetic": 0.3483,
+     "S": 0.3478,
+     "D": 0.3584
+    },
+    "hand_drift_cm": 0.58
+   },
+   "seams_t6": {
+    "pass": false,
+    "pass_attainable": false,
+    "start_all_max_cm": 0.268,
+    "start_planted_max_cm": 0.243,
+    "end_planted_max_cm": 2.913,
+    "end_beyond": [
+     "L_Wrist",
+     "R_Wrist"
+    ],
+    "end_exemplar_bodies": [
+     "L_Wrist"
+    ],
+    "end_by_body": {
+     "L_Wrist": {
+      "to_D_cm": 2.905,
+      "exemplars_S_to_D_cm": 2.909,
+      "to_S_cm": 0.309
+     },
+     "L_Hand": {
+      "to_D_cm": 0.519,
+      "exemplars_S_to_D_cm": 0.529,
+      "to_S_cm": 0.094
+     },
+     "R_Wrist": {
+      "to_D_cm": 2.913,
+      "exemplars_S_to_D_cm": 2.71,
+      "to_S_cm": 0.522
+     },
+     "R_Hand": {
+      "to_D_cm": 0.643,
+      "exemplars_S_to_D_cm": 0.529,
+      "to_S_cm": 0.477
+     }
+    },
+    "drift_max_cm": 0.807,
+    "drift_zones": {
+     "L_HAND": 0.807,
+     "R_HAND": 0.607
+    }
+   }
+  },
+  {
+   "variant": "SYN_E1_E1_E1_mid_s4_t6px",
+   "edge": "E1",
+   "label": "crow -> handstand (press)",
+   "motion": "output/edge_synthesis/physx/motions_t6/SYN_E1_E1_E1_mid_s4_t6px.motion",
+   "sha256": "b7830b5f16fb2b738a8be22784d23e4c9ecdc62502250726ec37542dd8c2c1da",
+   "record": "output/edge_synthesis/physx/motions_t6/SYN_E1_E1_E1_mid_s4_t6px.json",
+   "source_run": "output/edge_synthesis/physx/runs_t6/E1_E1_mid_s4_t6px",
+   "frames": 318,
+   "fps": 60,
+   "recipe": {
+    "pass": "px",
+    "noise": 0.05,
+    "timing": "E1_mid",
+    "durations_s": [
+     1.65,
+     1.3
+    ],
+    "T": 2.95,
+    "seed": 4,
+    "reference": "output/edge_synthesis/exact/E1_mid",
+    "via": null,
+    "start": {
+     "mode": "exemplar",
+     "source": "release exemplar"
+    },
+    "weights": {
+     "track": 20,
+     "track_end": 20
+    }
+   },
+   "metrics": {
+    "final_d6_m": 0.0269,
+    "com_speed_end": 0.0198,
+    "held": true,
+    "landing_peak_bw": 0.647,
+    "hand_drift_cm": 0.42,
+    "torque_saturated_share_max": 0.498,
+    "speed_over_p99_max": 1.45,
+    "statics_s_star_max": 0.6301,
+    "free_violations": {}
+   },
+   "advisory_failed": [
+    "dynamics",
+    "naturalness_p99"
+   ],
+   "seams": {
+    "hands_start_cm": 0.14,
+    "hands_end_cm": 0.75,
+    "feet_end_cm": null,
+    "hand_width_m": {
+     "synthetic": 0.3473,
+     "S": 0.3478,
+     "D": 0.3584
+    },
+    "hand_drift_cm": 0.59
+   },
+   "seams_t6": {
+    "pass": false,
+    "pass_attainable": false,
+    "start_all_max_cm": 0.397,
+    "start_planted_max_cm": 0.221,
+    "end_planted_max_cm": 2.982,
+    "end_beyond": [
+     "L_Wrist",
+     "R_Wrist"
+    ],
+    "end_exemplar_bodies": [
+     "L_Wrist"
+    ],
+    "end_by_body": {
+     "L_Wrist": {
+      "to_D_cm": 2.961,
+      "exemplars_S_to_D_cm": 2.909,
+      "to_S_cm": 0.173
+     },
+     "L_Hand": {
+      "to_D_cm": 0.537,
+      "exemplars_S_to_D_cm": 0.529,
+      "to_S_cm": 0.276
+     },
+     "R_Wrist": {
+      "to_D_cm": 2.982,
+      "exemplars_S_to_D_cm": 2.71,
+      "to_S_cm": 0.624
+     },
+     "R_Hand": {
+      "to_D_cm": 0.746,
+      "exemplars_S_to_D_cm": 0.529,
+      "to_S_cm": 0.576
+     }
+    },
+    "drift_max_cm": 0.828,
+    "drift_zones": {
+     "L_HAND": 0.828,
+     "R_HAND": 0.715
+    }
+   }
+  },
+  {
+   "variant": "SYN_E2_E2_E2_mid_s0_t6px12",
+   "edge": "E2",
+   "label": "crow -> chaturanga (jump-back)",
+   "motion": "output/edge_synthesis/physx/motions_t6/SYN_E2_E2_E2_mid_s0_t6px12.motion",
+   "sha256": "f6c3f3b3bcb030a460d9fcb9ebf48cb837af30eb66618aa4bf36acf5c62e8556",
+   "record": "output/edge_synthesis/physx/motions_t6/SYN_E2_E2_E2_mid_s0_t6px12.json",
+   "source_run": "output/edge_synthesis/physx/runs_t6/E2_E2_mid_s0_t6px12",
+   "frames": 204,
+   "fps": 60,
+   "recipe": {
+    "pass": "px12",
+    "noise": 0.12,
+    "timing": "E2_mid",
+    "durations_s": [
+     0.425,
+     0.65
+    ],
+    "T": 1.075,
+    "seed": 0,
+    "reference": "output/edge_synthesis/exact/E2_mid",
+    "via": null,
+    "start": {
+     "mode": "exemplar",
+     "source": "release exemplar"
+    },
+    "weights": {
+     "flat": 100,
+     "cone": 10
+    }
+   },
+   "metrics": {
+    "final_d6_m": 0.0784,
+    "com_speed_end": 0.033,
+    "held": true,
+    "landing_peak_bw": 3.044,
+    "hand_drift_cm": 2.61,
+    "torque_saturated_share_max": 1.0,
+    "speed_over_p99_max": 2.72,
+    "statics_s_star_max": 0.282,
+    "free_violations": {
+     "L_SHANK": 7,
+     "L_THIGH": 7
+    }
+   },
+   "advisory_failed": [
+    "dynamics",
+    "endpoints",
+    "naturalness_p99",
+    "seams_drift",
+    "seams_end"
+   ],
+   "seams": {
+    "hands_start_cm": 0.18,
+    "hands_end_cm": 1.71,
+    "feet_end_cm": 3.19,
+    "hand_width_m": {
+     "synthetic": 0.3478,
+     "S": 0.3478,
+     "D": 0.368
+    },
+    "hand_drift_cm": 2.36
+   },
+   "seams_t6": {
+    "pass": false,
+    "pass_attainable": false,
+    "start_all_max_cm": 0.432,
+    "start_planted_max_cm": 0.432,
+    "end_planted_max_cm": 3.192,
+    "end_beyond": [
+     "L_Ankle",
+     "L_Toe",
+     "L_Wrist",
+     "R_Ankle",
+     "R_Toe",
+     "R_Wrist",
+     "R_Hand"
+    ],
+    "end_exemplar_bodies": [],
+    "end_by_body": {
+     "L_Ankle": {
+      "to_D_cm": 2.878,
+      "exemplars_S_to_D_cm": null,
+      "to_S_cm": null
+     },
+     "L_Toe": {
+      "to_D_cm": 2.547,
+      "exemplars_S_to_D_cm": null,
+      "to_S_cm": null
+     },
+     "L_Wrist": {
+      "to_D_cm": 2.206,
+      "exemplars_S_to_D_cm": 2.475,
+      "to_S_cm": 0.961
+     },
+     "L_Hand": {
+      "to_D_cm": 1.232,
+      "exemplars_S_to_D_cm": 1.007,
+      "to_S_cm": 2.236
+     },
+     "R_Ankle": {
+      "to_D_cm": 2.913,
+      "exemplars_S_to_D_cm": null,
+      "to_S_cm": null
+     },
+     "R_Toe": {
+      "to_D_cm": 3.192,
+      "exemplars_S_to_D_cm": null,
+      "to_S_cm": null
+     },
+     "R_Wrist": {
+      "to_D_cm": 2.104,
+      "exemplars_S_to_D_cm": 3.007,
+      "to_S_cm": 1.74
+     },
+     "R_Hand": {
+      "to_D_cm": 1.713,
+      "exemplars_S_to_D_cm": 1.007,
+      "to_S_cm": 0.983
+     }
+    },
+    "drift_max_cm": 3.696,
+    "drift_zones": {
+     "L_FOOT": 3.696,
+     "L_HAND": 2.15,
+     "R_FOOT": 3.632,
+     "R_HAND": 2.36
+    }
+   }
+  },
+  {
+   "variant": "SYN_E2_E2_E2_mid_s0_t6rpx12",
+   "edge": "E2",
+   "label": "crow -> chaturanga (jump-back)",
+   "motion": "output/edge_synthesis/physx/motions_t6/SYN_E2_E2_E2_mid_s0_t6rpx12.motion",
+   "sha256": "d32645305c4495b589256e52d058e0a9c1f96644aed3a8911aebfbad496af239",
+   "record": "output/edge_synthesis/physx/motions_t6/SYN_E2_E2_E2_mid_s0_t6rpx12.json",
+   "source_run": "output/edge_synthesis/physx/runs_t6_nocone/E2_E2_mid_s0_t6rpx12",
+   "frames": 204,
+   "fps": 60,
+   "recipe": {
+    "pass": "px12",
+    "noise": 0.12,
+    "timing": "E2_mid",
+    "durations_s": [
+     0.425,
+     0.65
+    ],
+    "T": 1.075,
+    "seed": 0,
+    "reference": "output/edge_synthesis/exact/E2_mid",
+    "via": null,
+    "start": {
+     "mode": "exemplar",
+     "source": "release exemplar"
+    },
+    "weights": {
+     "anchor": 8,
+     "flat": 0,
+     "box": 2
+    }
+   },
+   "metrics": {
+    "final_d6_m": 0.0906,
+    "com_speed_end": 0.0247,
+    "held": true,
+    "landing_peak_bw": 3.236,
+    "hand_drift_cm": 1.95,
+    "torque_saturated_share_max": 1.0,
+    "speed_over_p99_max": 2.65,
+    "statics_s_star_max": 0.212,
+    "free_violations": {
+     "L_SHANK": 6,
+     "L_THIGH": 6
+    }
+   },
+   "advisory_failed": [
+    "dynamics",
+    "endpoints",
+    "naturalness_p99",
+    "seams_drift",
+    "seams_end"
+   ],
+   "seams": {
+    "hands_start_cm": 0.2,
+    "hands_end_cm": 3.27,
+    "feet_end_cm": 4.35,
+    "hand_width_m": {
+     "synthetic": 0.3483,
+     "S": 0.3478,
+     "D": 0.368
+    },
+    "hand_drift_cm": 1.46
+   },
+   "seams_t6": {
+    "pass": false,
+    "pass_attainable": false,
+    "start_all_max_cm": 0.475,
+    "start_planted_max_cm": 0.475,
+    "end_planted_max_cm": 4.351,
+    "end_beyond": [
+     "L_Ankle",
+     "L_Toe",
+     "L_Wrist",
+     "R_Ankle",
+     "R_Toe",
+     "R_Wrist",
+     "R_Hand"
+    ],
+    "end_exemplar_bodies": [
+     "L_Wrist"
+    ],
+    "end_by_body": {
+     "L_Ankle": {
+      "to_D_cm": 3.952,
+      "exemplars_S_to_D_cm": null,
+      "to_S_cm": null
+     },
+     "L_Toe": {
+      "to_D_cm": 4.351,
+      "exemplars_S_to_D_cm": null,
+      "to_S_cm": null
+     },
+     "L_Wrist": {
+      "to_D_cm": 2.644,
+      "exemplars_S_to_D_cm": 2.475,
+      "to_S_cm": 0.385
+     },
+     "L_Hand": {
+      "to_D_cm": 0.595,
+      "exemplars_S_to_D_cm": 1.007,
+      "to_S_cm": 0.775
+     },
+     "R_Ankle": {
+      "to_D_cm": 3.154,
+      "exemplars_S_to_D_cm": null,
+      "to_S_cm": null
+     },
+     "R_Toe": {
+      "to_D_cm": 3.9,
+      "exemplars_S_to_D_cm": null,
+      "to_S_cm": null
+     },
+     "R_Wrist": {
+      "to_D_cm": 1.822,
+      "exemplars_S_to_D_cm": 3.007,
+      "to_S_cm": 2.172
+     },
+     "R_Hand": {
+      "to_D_cm": 3.266,
+      "exemplars_S_to_D_cm": 1.007,
+      "to_S_cm": 2.812
+     }
+    },
+    "drift_max_cm": 5.309,
+    "drift_zones": {
+     "L_FOOT": 5.309,
+     "L_HAND": 0.68,
+     "R_FOOT": 4.138,
+     "R_HAND": 1.571
+    }
+   }
+  },
+  {
+   "variant": "SYN_E2_E2_E2_mid_s1_t6px12",
+   "edge": "E2",
+   "label": "crow -> chaturanga (jump-back)",
+   "motion": "output/edge_synthesis/physx/motions_t6/SYN_E2_E2_E2_mid_s1_t6px12.motion",
+   "sha256": "3f6573c58658acefadabb33daea150d5de3e460888f6546b154c6259d4930c0d",
+   "record": "output/edge_synthesis/physx/motions_t6/SYN_E2_E2_E2_mid_s1_t6px12.json",
+   "source_run": "output/edge_synthesis/physx/runs_t6/E2_E2_mid_s1_t6px12",
+   "frames": 204,
+   "fps": 60,
+   "recipe": {
+    "pass": "px12",
+    "noise": 0.12,
+    "timing": "E2_mid",
+    "durations_s": [
+     0.425,
+     0.65
+    ],
+    "T": 1.075,
+    "seed": 1,
+    "reference": "output/edge_synthesis/exact/E2_mid",
+    "via": null,
+    "start": {
+     "mode": "exemplar",
+     "source": "release exemplar"
+    },
+    "weights": {
+     "flat": 100,
+     "cone": 10
+    }
+   },
+   "metrics": {
+    "final_d6_m": 0.0863,
+    "com_speed_end": 0.0284,
+    "held": true,
+    "landing_peak_bw": 1.777,
+    "hand_drift_cm": 2.62,
+    "torque_saturated_share_max": 1.0,
+    "speed_over_p99_max": 2.69,
+    "statics_s_star_max": 0.3068,
+    "free_violations": {
+     "L_SHANK": 6,
+     "L_THIGH": 6
+    }
+   },
+   "advisory_failed": [
+    "dynamics",
+    "endpoints",
+    "naturalness_p99",
+    "seams_drift",
+    "seams_end"
+   ],
+   "seams": {
+    "hands_start_cm": 0.22,
+    "hands_end_cm": 1.35,
+    "feet_end_cm": 5.54,
+    "hand_width_m": {
+     "synthetic": 0.3472,
+     "S": 0.3478,
+     "D": 0.368
+    },
+    "hand_drift_cm": 1.7
+   },
+   "seams_t6": {
+    "pass": false,
+    "pass_attainable": false,
+    "start_all_max_cm": 0.539,
+    "start_planted_max_cm": 0.276,
+    "end_planted_max_cm": 5.538,
+    "end_beyond": [
+     "L_Ankle",
+     "L_Toe",
+     "L_Wrist",
+     "R_Ankle",
+     "R_Toe",
+     "R_Wrist"
+    ],
+    "end_exemplar_bodies": [],
+    "end_by_body": {
+     "L_Ankle": {
+      "to_D_cm": 5.381,
+      "exemplars_S_to_D_cm": null,
+      "to_S_cm": null
+     },
+     "L_Toe": {
+      "to_D_cm": 3.46,
+      "exemplars_S_to_D_cm": null,
+      "to_S_cm": null
+     },
+     "L_Wrist": {
+      "to_D_cm": 2.756,
+      "exemplars_S_to_D_cm": 2.475,
+      "to_S_cm": 0.596
+     },
+     "L_Hand": {
+      "to_D_cm": 1.032,
+      "exemplars_S_to_D_cm": 1.007,
+      "to_S_cm": 0.504
+     },
+     "R_Ankle": {
+      "to_D_cm": 5.538,
+      "exemplars_S_to_D_cm": null,
+      "to_S_cm": null
+     },
+     "R_Toe": {
+      "to_D_cm": 3.44,
+      "exemplars_S_to_D_cm": null,
+      "to_S_cm": null
+     },
+     "R_Wrist": {
+      "to_D_cm": 1.914,
+      "exemplars_S_to_D_cm": 3.007,
+      "to_S_cm": 1.671
+     },
+     "R_Hand": {
+      "to_D_cm": 1.353,
+      "exemplars_S_to_D_cm": 1.007,
+      "to_S_cm": 0.803
+     }
+    },
+    "drift_max_cm": 2.343,
+    "drift_zones": {
+     "L_FOOT": 1.984,
+     "L_HAND": 0.761,
+     "R_FOOT": 1.544,
+     "R_HAND": 2.343
+    }
+   }
+  },
+  {
+   "variant": "SYN_E2_E2_E2_mid_s1_t6px",
+   "edge": "E2",
+   "label": "crow -> chaturanga (jump-back)",
+   "motion": "output/edge_synthesis/physx/motions_t6/SYN_E2_E2_E2_mid_s1_t6px.motion",
+   "sha256": "31646b52a0ec88e83ffb76071a3da8971113fd8aeed3102999eb20d4f80a9dfb",
+   "record": "output/edge_synthesis/physx/motions_t6/SYN_E2_E2_E2_mid_s1_t6px.json",
+   "source_run": "output/edge_synthesis/physx/runs_t6/E2_E2_mid_s1_t6px",
+   "frames": 204,
+   "fps": 60,
+   "recipe": {
+    "pass": "px",
+    "noise": 0.08,
+    "timing": "E2_mid",
+    "durations_s": [
+     0.425,
+     0.65
+    ],
+    "T": 1.075,
+    "seed": 1,
+    "reference": "output/edge_synthesis/exact/E2_mid",
+    "via": null,
+    "start": {
+     "mode": "exemplar",
+     "source": "release exemplar"
+    },
+    "weights": {
+     "flat": 100,
+     "cone": 10
+    }
+   },
+   "metrics": {
+    "final_d6_m": 0.0919,
+    "com_speed_end": 0.0251,
+    "held": true,
+    "landing_peak_bw": 1.566,
+    "hand_drift_cm": 2.2,
+    "torque_saturated_share_max": 0.998,
+    "speed_over_p99_max": 2.85,
+    "statics_s_star_max": 0.3114,
+    "free_violations": {
+     "L_SHANK": 7,
+     "L_THIGH": 7,
+     "R_THIGH": 2
+    }
+   },
+   "advisory_failed": [
+    "dynamics",
+    "endpoints",
+    "naturalness_p99",
+    "seams_drift",
+    "seams_end"
+   ],
+   "seams": {
+    "hands_start_cm": 0.2,
+    "hands_end_cm": 2.17,
+    "feet_end_cm": 5.28,
+    "hand_width_m": {
+     "synthetic": 0.3472,
+     "S": 0.3478,
+     "D": 0.368
+    },
+    "hand_drift_cm": 2.09
+   },
+   "seams_t6": {
+    "pass": false,
+    "pass_attainable": false,
+    "start_all_max_cm": 0.34,
+    "start_planted_max_cm": 0.34,
+    "end_planted_max_cm": 5.282,
+    "end_beyond": [
+     "L_Ankle",
+     "L_Toe",
+     "L_Wrist",
+     "L_Hand",
+     "R_Ankle",
+     "R_Toe",
+     "R_Wrist",
+     "R_Hand"
+    ],
+    "end_exemplar_bodies": [],
+    "end_by_body": {
+     "L_Ankle": {
+      "to_D_cm": 5.282,
+      "exemplars_S_to_D_cm": null,
+      "to_S_cm": null
+     },
+     "L_Toe": {
+      "to_D_cm": 2.085,
+      "exemplars_S_to_D_cm": null,
+      "to_S_cm": null
+     },
+     "L_Wrist": {
+      "to_D_cm": 2.545,
+      "exemplars_S_to_D_cm": 2.475,
+      "to_S_cm": 0.558
+     },
+     "L_Hand": {
+      "to_D_cm": 1.545,
+      "exemplars_S_to_D_cm": 1.007,
+      "to_S_cm": 0.806
+     },
+     "R_Ankle": {
+      "to_D_cm": 3.933,
+      "exemplars_S_to_D_cm": null,
+      "to_S_cm": null
+     },
+     "R_Toe": {
+      "to_D_cm": 1.716,
+      "exemplars_S_to_D_cm": null,
+      "to_S_cm": null
+     },
+     "R_Wrist": {
+      "to_D_cm": 2.285,
+      "exemplars_S_to_D_cm": 3.007,
+      "to_S_cm": 2.147
+     },
+     "R_Hand": {
+      "to_D_cm": 2.168,
+      "exemplars_S_to_D_cm": 1.007,
+      "to_S_cm": 1.518
+     }
+    },
+    "drift_max_cm": 3.813,
+    "drift_zones": {
+     "L_FOOT": 3.813,
+     "L_HAND": 0.865,
+     "R_FOOT": 2.989,
+     "R_HAND": 2.086
+    }
+   }
+  },
+  {
+   "variant": "SYN_E2_E2_E2_mid_s1_t6rpx12",
+   "edge": "E2",
+   "label": "crow -> chaturanga (jump-back)",
+   "motion": "output/edge_synthesis/physx/motions_t6/SYN_E2_E2_E2_mid_s1_t6rpx12.motion",
+   "sha256": "03fbf30a0a4d0084aeae55efe45ae10772bc3d30e8d3862f533fd947a4c70d5f",
+   "record": "output/edge_synthesis/physx/motions_t6/SYN_E2_E2_E2_mid_s1_t6rpx12.json",
+   "source_run": "output/edge_synthesis/physx/runs_t6_nocone/E2_E2_mid_s1_t6rpx12",
+   "frames": 204,
+   "fps": 60,
+   "recipe": {
+    "pass": "px12",
+    "noise": 0.12,
+    "timing": "E2_mid",
+    "durations_s": [
+     0.425,
+     0.65
+    ],
+    "T": 1.075,
+    "seed": 1,
+    "reference": "output/edge_synthesis/exact/E2_mid",
+    "via": null,
+    "start": {
+     "mode": "exemplar",
+     "source": "release exemplar"
+    },
+    "weights": {
+     "anchor": 8,
+     "flat": 0,
+     "box": 2
+    }
+   },
+   "metrics": {
+    "final_d6_m": 0.0839,
+    "com_speed_end": 0.0334,
+    "held": true,
+    "landing_peak_bw": 1.756,
+    "hand_drift_cm": 2.01,
+    "torque_saturated_share_max": 0.99,
+    "speed_over_p99_max": 2.72,
+    "statics_s_star_max": 0.232,
+    "free_violations": {
+     "L_SHANK": 6,
+     "L_THIGH": 6
+    }
+   },
+   "advisory_failed": [
+    "dynamics",
+    "endpoints",
+    "naturalness_p99",
+    "seams_drift",
+    "seams_end"
+   ],
+   "seams": {
+    "hands_start_cm": 0.22,
+    "hands_end_cm": 3.04,
+    "feet_end_cm": 3.98,
+    "hand_width_m": {
+     "synthetic": 0.3494,
+     "S": 0.3478,
+     "D": 0.368
+    },
+    "hand_drift_cm": 1.78
+   },
+   "seams_t6": {
+    "pass": false,
+    "pass_attainable": false,
+    "start_all_max_cm": 0.974,
+    "start_planted_max_cm": 0.334,
+    "end_planted_max_cm": 3.979,
+    "end_beyond": [
+     "L_Ankle",
+     "L_Toe",
+     "L_Wrist",
+     "R_Ankle",
+     "R_Toe",
+     "R_Wrist",
+     "R_Hand"
+    ],
+    "end_exemplar_bodies": [
+     "L_Wrist"
+    ],
+    "end_by_body": {
+     "L_Ankle": {
+      "to_D_cm": 2.487,
+      "exemplars_S_to_D_cm": null,
+      "to_S_cm": null
+     },
+     "L_Toe": {
+      "to_D_cm": 3.096,
+      "exemplars_S_to_D_cm": null,
+      "to_S_cm": null
+     },
+     "L_Wrist": {
+      "to_D_cm": 2.315,
+      "exemplars_S_to_D_cm": 2.475,
+      "to_S_cm": 0.391
+     },
+     "L_Hand": {
+      "to_D_cm": 0.938,
+      "exemplars_S_to_D_cm": 1.007,
+      "to_S_cm": 0.285
+     },
+     "R_Ankle": {
+      "to_D_cm": 3.979,
+      "exemplars_S_to_D_cm": null,
+      "to_S_cm": null
+     },
+     "R_Toe": {
+      "to_D_cm": 1.764,
+      "exemplars_S_to_D_cm": null,
+      "to_S_cm": null
+     },
+     "R_Wrist": {
+      "to_D_cm": 2.486,
+      "exemplars_S_to_D_cm": 3.007,
+      "to_S_cm": 2.048
+     },
+     "R_Hand": {
+      "to_D_cm": 3.039,
+      "exemplars_S_to_D_cm": 1.007,
+      "to_S_cm": 2.873
+     }
+    },
+    "drift_max_cm": 3.41,
+    "drift_zones": {
+     "L_FOOT": 3.41,
+     "L_HAND": 0.757,
+     "R_FOOT": 3.163,
+     "R_HAND": 1.851
+    }
+   }
+  },
+  {
+   "variant": "SYN_E2_E2_E2_mid_s1_t6rpx",
+   "edge": "E2",
+   "label": "crow -> chaturanga (jump-back)",
+   "motion": "output/edge_synthesis/physx/motions_t6/SYN_E2_E2_E2_mid_s1_t6rpx.motion",
+   "sha256": "f943c2cb3a1759e0a1c9fc3528844aa27df9d16fd0ac7e740dd96d1b6615723e",
+   "record": "output/edge_synthesis/physx/motions_t6/SYN_E2_E2_E2_mid_s1_t6rpx.json",
+   "source_run": "output/edge_synthesis/physx/runs_t6_nocone/E2_E2_mid_s1_t6rpx",
+   "frames": 204,
+   "fps": 60,
+   "recipe": {
+    "pass": "px",
+    "noise": 0.08,
+    "timing": "E2_mid",
+    "durations_s": [
+     0.425,
+     0.65
+    ],
+    "T": 1.075,
+    "seed": 1,
+    "reference": "output/edge_synthesis/exact/E2_mid",
+    "via": null,
+    "start": {
+     "mode": "exemplar",
+     "source": "release exemplar"
+    },
+    "weights": {
+     "anchor": 8,
+     "flat": 0,
+     "box": 2
+    }
+   },
+   "metrics": {
+    "final_d6_m": 0.0953,
+    "com_speed_end": 0.0277,
+    "held": true,
+    "landing_peak_bw": 4.009,
+    "hand_drift_cm": 2.54,
+    "torque_saturated_share_max": 0.998,
+    "speed_over_p99_max": 2.9,
+    "statics_s_star_max": 0.2939,
+    "free_violations": {
+     "L_SHANK": 9,
+     "L_THIGH": 9
+    }
+   },
+   "advisory_failed": [
+    "dynamics",
+    "endpoints",
+    "naturalness_p99",
+    "seams_drift",
+    "seams_end"
+   ],
+   "seams": {
+    "hands_start_cm": 0.22,
+    "hands_end_cm": 2.55,
+    "feet_end_cm": 4.25,
+    "hand_width_m": {
+     "synthetic": 0.3475,
+     "S": 0.3478,
+     "D": 0.368
+    },
+    "hand_drift_cm": 2.44
+   },
+   "seams_t6": {
+    "pass": false,
+    "pass_attainable": false,
+    "start_all_max_cm": 0.613,
+    "start_planted_max_cm": 0.366,
+    "end_planted_max_cm": 4.251,
+    "end_beyond": [
+     "L_Ankle",
+     "L_Toe",
+     "L_Wrist",
+     "L_Hand",
+     "R_Ankle",
+     "R_Toe",
+     "R_Wrist",
+     "R_Hand"
+    ],
+    "end_exemplar_bodies": [],
+    "end_by_body": {
+     "L_Ankle": {
+      "to_D_cm": 2.886,
+      "exemplars_S_to_D_cm": null,
+      "to_S_cm": null
+     },
+     "L_Toe": {
+      "to_D_cm": 3.683,
+      "exemplars_S_to_D_cm": null,
+      "to_S_cm": null
+     },
+     "L_Wrist": {
+      "to_D_cm": 3.663,
+      "exemplars_S_to_D_cm": 2.475,
+      "to_S_cm": 1.445
+     },
+     "L_Hand": {
+      "to_D_cm": 1.538,
+      "exemplars_S_to_D_cm": 1.007,
+      "to_S_cm": 0.952
+     },
+     "R_Ankle": {
+      "to_D_cm": 4.251,
+      "exemplars_S_to_D_cm": null,
+      "to_S_cm": null
+     },
+     "R_Toe": {
+      "to_D_cm": 2.824,
+      "exemplars_S_to_D_cm": null,
+      "to_S_cm": null
+     },
+     "R_Wrist": {
+      "to_D_cm": 2.496,
+      "exemplars_S_to_D_cm": 3.007,
+      "to_S_cm": 2.939
+     },
+     "R_Hand": {
+      "to_D_cm": 2.547,
+      "exemplars_S_to_D_cm": 1.007,
+      "to_S_cm": 2.069
+     }
+    },
+    "drift_max_cm": 3.711,
+    "drift_zones": {
+     "L_FOOT": 3.711,
+     "L_HAND": 1.696,
+     "R_FOOT": 2.871,
+     "R_HAND": 2.613
+    }
+   }
+  },
+  {
+   "variant": "SYN_E2_E2_E2_mid_s2_t6px12",
+   "edge": "E2",
+   "label": "crow -> chaturanga (jump-back)",
+   "motion": "output/edge_synthesis/physx/motions_t6/SYN_E2_E2_E2_mid_s2_t6px12.motion",
+   "sha256": "461ef6cb0b0b7b6c4126df1483f0cda36f7a20e1866c10915f7bd564f88268bb",
+   "record": "output/edge_synthesis/physx/motions_t6/SYN_E2_E2_E2_mid_s2_t6px12.json",
+   "source_run": "output/edge_synthesis/physx/runs_t6/E2_E2_mid_s2_t6px12",
+   "frames": 204,
+   "fps": 60,
+   "recipe": {
+    "pass": "px12",
+    "noise": 0.12,
+    "timing": "E2_mid",
+    "durations_s": [
+     0.425,
+     0.65
+    ],
+    "T": 1.075,
+    "seed": 2,
+    "reference": "output/edge_synthesis/exact/E2_mid",
+    "via": null,
+    "start": {
+     "mode": "exemplar",
+     "source": "release exemplar"
+    },
+    "weights": {
+     "flat": 100,
+     "cone": 10
+    }
+   },
+   "metrics": {
+    "final_d6_m": 0.0918,
+    "com_speed_end": 0.0284,
+    "held": true,
+    "landing_peak_bw": 1.741,
+    "hand_drift_cm": 2.32,
+    "torque_saturated_share_max": 1.0,
+    "speed_over_p99_max": 2.65,
+    "statics_s_star_max": 0.3115,
+    "free_violations": {
+     "L_SHANK": 8,
+     "R_SHANK": 5,
+     "L_THIGH": 8,
+     "R_THIGH": 5
+    }
+   },
+   "advisory_failed": [
+    "dynamics",
+    "endpoints",
+    "naturalness_p99",
+    "seams_drift",
+    "seams_end"
+   ],
+   "seams": {
+    "hands_start_cm": 0.29,
+    "hands_end_cm": 1.95,
+    "feet_end_cm": 4.63,
+    "hand_width_m": {
+     "synthetic": 0.3444,
+     "S": 0.3478,
+     "D": 0.368
+    },
+    "hand_drift_cm": 1.7
+   },
+   "seams_t6": {
+    "pass": false,
+    "pass_attainable": false,
+    "start_all_max_cm": 0.742,
+    "start_planted_max_cm": 0.323,
+    "end_planted_max_cm": 4.629,
+    "end_beyond": [
+     "L_Ankle",
+     "L_Toe",
+     "L_Wrist",
+     "R_Ankle",
+     "R_Hand"
+    ],
+    "end_exemplar_bodies": [
+     "L_Wrist"
+    ],
+    "end_by_body": {
+     "L_Ankle": {
+      "to_D_cm": 4.629,
+      "exemplars_S_to_D_cm": null,
+      "to_S_cm": null
+     },
+     "L_Toe": {
+      "to_D_cm": 2.922,
+      "exemplars_S_to_D_cm": null,
+      "to_S_cm": null
+     },
+     "L_Wrist": {
+      "to_D_cm": 2.375,
+      "exemplars_S_to_D_cm": 2.475,
+      "to_S_cm": 0.37
+     },
+     "L_Hand": {
+      "to_D_cm": 0.562,
+      "exemplars_S_to_D_cm": 1.007,
+      "to_S_cm": 0.479
+     },
+     "R_Ankle": {
+      "to_D_cm": 4.339,
+      "exemplars_S_to_D_cm": null,
+      "to_S_cm": null
+     },
+     "R_Toe": {
+      "to_D_cm": 1.385,
+      "exemplars_S_to_D_cm": null,
+      "to_S_cm": null
+     },
+     "R_Wrist": {
+      "to_D_cm": 0.949,
+      "exemplars_S_to_D_cm": 3.007,
+      "to_S_cm": 2.174
+     },
+     "R_Hand": {
+      "to_D_cm": 1.953,
+      "exemplars_S_to_D_cm": 1.007,
+      "to_S_cm": 0.947
+     }
+    },
+    "drift_max_cm": 2.705,
+    "drift_zones": {
+     "L_FOOT": 2.285,
+     "L_HAND": 0.647,
+     "R_FOOT": 2.705,
+     "R_HAND": 2.139
+    }
+   }
+  },
+  {
+   "variant": "SYN_E2_E2_E2_mid_s3_t6px12",
+   "edge": "E2",
+   "label": "crow -> chaturanga (jump-back)",
+   "motion": "output/edge_synthesis/physx/motions_t6/SYN_E2_E2_E2_mid_s3_t6px12.motion",
+   "sha256": "9b635297ef1a8961048b33040a02ff08e98dc80fc30455e0a661f90608bc2de4",
+   "record": "output/edge_synthesis/physx/motions_t6/SYN_E2_E2_E2_mid_s3_t6px12.json",
+   "source_run": "output/edge_synthesis/physx/runs_t6/E2_E2_mid_s3_t6px12",
+   "frames": 204,
+   "fps": 60,
+   "recipe": {
+    "pass": "px12",
+    "noise": 0.12,
+    "timing": "E2_mid",
+    "durations_s": [
+     0.425,
+     0.65
+    ],
+    "T": 1.075,
+    "seed": 3,
+    "reference": "output/edge_synthesis/exact/E2_mid",
+    "via": null,
+    "start": {
+     "mode": "exemplar",
+     "source": "release exemplar"
+    },
+    "weights": {
+     "flat": 100,
+     "cone": 10
+    }
+   },
+   "metrics": {
+    "final_d6_m": 0.079,
+    "com_speed_end": 0.0417,
+    "held": true,
+    "landing_peak_bw": 3.127,
+    "hand_drift_cm": 2.5,
+    "torque_saturated_share_max": 1.0,
+    "speed_over_p99_max": 2.74,
+    "statics_s_star_max": 0.2889,
+    "free_violations": {
+     "L_SHANK": 10,
+     "L_THIGH": 10
+    }
+   },
+   "advisory_failed": [
+    "dynamics",
+    "endpoints",
+    "naturalness_p99",
+    "seams_drift",
+    "seams_end"
+   ],
+   "seams": {
+    "hands_start_cm": 0.22,
+    "hands_end_cm": 2.98,
+    "feet_end_cm": 6.29,
+    "hand_width_m": {
+     "synthetic": 0.3479,
+     "S": 0.3478,
+     "D": 0.368
+    },
+    "hand_drift_cm": 2.44
+   },
+   "seams_t6": {
+    "pass": false,
+    "pass_attainable": false,
+    "start_all_max_cm": 0.415,
+    "start_planted_max_cm": 0.415,
+    "end_planted_max_cm": 6.293,
+    "end_beyond": [
+     "L_Ankle",
+     "L_Toe",
+     "L_Wrist",
+     "R_Ankle",
+     "R_Toe",
+     "R_Wrist",
+     "R_Hand"
+    ],
+    "end_exemplar_bodies": [],
+    "end_by_body": {
+     "L_Ankle": {
+      "to_D_cm": 6.293,
+      "exemplars_S_to_D_cm": null,
+      "to_S_cm": null
+     },
+     "L_Toe": {
+      "to_D_cm": 4.639,
+      "exemplars_S_to_D_cm": null,
+      "to_S_cm": null
+     },
+     "L_Wrist": {
+      "to_D_cm": 2.607,
+      "exemplars_S_to_D_cm": 2.475,
+      "to_S_cm": 0.831
+     },
+     "L_Hand": {
+      "to_D_cm": 0.382,
+      "exemplars_S_to_D_cm": 1.007,
+      "to_S_cm": 1.207
+     },
+     "R_Ankle": {
+      "to_D_cm": 5.164,
+      "exemplars_S_to_D_cm": null,
+      "to_S_cm": null
+     },
+     "R_Toe": {
+      "to_D_cm": 2.914,
+      "exemplars_S_to_D_cm": null,
+      "to_S_cm": null
+     },
+     "R_Wrist": {
+      "to_D_cm": 1.579,
+      "exemplars_S_to_D_cm": 3.007,
+      "to_S_cm": 1.439
+     },
+     "R_Hand": {
+      "to_D_cm": 2.983,
+      "exemplars_S_to_D_cm": 1.007,
+      "to_S_cm": 1.993
+     }
+    },
+    "drift_max_cm": 3.433,
+    "drift_zones": {
+     "L_FOOT": 3.433,
+     "L_HAND": 1.305,
+     "R_FOOT": 3.392,
+     "R_HAND": 2.44
+    }
+   }
+  },
+  {
+   "variant": "SYN_E2_E2_E2_mid_s3_t6rpx12",
+   "edge": "E2",
+   "label": "crow -> chaturanga (jump-back)",
+   "motion": "output/edge_synthesis/physx/motions_t6/SYN_E2_E2_E2_mid_s3_t6rpx12.motion",
+   "sha256": "1cc5e959e8a4d742e1b4220431561e5a7e7f422016150510185f5b2168baf7e8",
+   "record": "output/edge_synthesis/physx/motions_t6/SYN_E2_E2_E2_mid_s3_t6rpx12.json",
+   "source_run": "output/edge_synthesis/physx/runs_t6_nocone/E2_E2_mid_s3_t6rpx12",
+   "frames": 204,
+   "fps": 60,
+   "recipe": {
+    "pass": "px12",
+    "noise": 0.12,
+    "timing": "E2_mid",
+    "durations_s": [
+     0.425,
+     0.65
+    ],
+    "T": 1.075,
+    "seed": 3,
+    "reference": "output/edge_synthesis/exact/E2_mid",
+    "via": null,
+    "start": {
+     "mode": "exemplar",
+     "source": "release exemplar"
+    },
+    "weights": {
+     "anchor": 8,
+     "flat": 0,
+     "box": 2
+    }
+   },
+   "metrics": {
+    "final_d6_m": 0.0792,
+    "com_speed_end": 0.0261,
+    "held": true,
+    "landing_peak_bw": 4.192,
+    "hand_drift_cm": 1.9,
+    "torque_saturated_share_max": 1.0,
+    "speed_over_p99_max": 2.67,
+    "statics_s_star_max": 0.2219,
+    "free_violations": {
+     "L_SHANK": 77,
+     "L_THIGH": 66
+    }
+   },
+   "advisory_failed": [
+    "dynamics",
+    "endpoints",
+    "naturalness_p99",
+    "seams_drift",
+    "seams_end"
+   ],
+   "seams": {
+    "hands_start_cm": 0.2,
+    "hands_end_cm": 2.89,
+    "feet_end_cm": 6.96,
+    "hand_width_m": {
+     "synthetic": 0.349,
+     "S": 0.3478,
+     "D": 0.368
+    },
+    "hand_drift_cm": 1.69
+   },
+   "seams_t6": {
+    "pass": false,
+    "pass_attainable": false,
+    "start_all_max_cm": 0.667,
+    "start_planted_max_cm": 0.402,
+    "end_planted_max_cm": 6.957,
+    "end_beyond": [
+     "L_Ankle",
+     "L_Toe",
+     "L_Wrist",
+     "R_Ankle",
+     "R_Toe",
+     "R_Wrist",
+     "R_Hand"
+    ],
+    "end_exemplar_bodies": [
+     "L_Wrist"
+    ],
+    "end_by_body": {
+     "L_Ankle": {
+      "to_D_cm": 6.883,
+      "exemplars_S_to_D_cm": null,
+      "to_S_cm": null
+     },
+     "L_Toe": {
+      "to_D_cm": 3.565,
+      "exemplars_S_to_D_cm": null,
+      "to_S_cm": null
+     },
+     "L_Wrist": {
+      "to_D_cm": 2.279,
+      "exemplars_S_to_D_cm": 2.475,
+      "to_S_cm": 0.443
+     },
+     "L_Hand": {
+      "to_D_cm": 0.325,
+      "exemplars_S_to_D_cm": 1.007,
+      "to_S_cm": 0.701
+     },
+     "R_Ankle": {
+      "to_D_cm": 6.957,
+      "exemplars_S_to_D_cm": null,
+      "to_S_cm": null
+     },
+     "R_Toe": {
+      "to_D_cm": 4.231,
+      "exemplars_S_to_D_cm": null,
+      "to_S_cm": null
+     },
+     "R_Wrist": {
+      "to_D_cm": 2.027,
+      "exemplars_S_to_D_cm": 3.007,
+      "to_S_cm": 2.009
+     },
+     "R_Hand": {
+      "to_D_cm": 2.895,
+      "exemplars_S_to_D_cm": 1.007,
+      "to_S_cm": 2.333
+     }
+    },
+    "drift_max_cm": 3.676,
+    "drift_zones": {
+     "L_FOOT": 3.676,
+     "L_HAND": 0.704,
+     "R_FOOT": 3.038,
+     "R_HAND": 1.686
+    }
+   }
+  },
+  {
+   "variant": "SYN_E2_E2_E2_mid_s4_t6px12",
+   "edge": "E2",
+   "label": "crow -> chaturanga (jump-back)",
+   "motion": "output/edge_synthesis/physx/motions_t6/SYN_E2_E2_E2_mid_s4_t6px12.motion",
+   "sha256": "b8e47358ab2f15d8ea3673823c94d946ff8236dcda6cb69fb0ed8eb6d1d84ec9",
+   "record": "output/edge_synthesis/physx/motions_t6/SYN_E2_E2_E2_mid_s4_t6px12.json",
+   "source_run": "output/edge_synthesis/physx/runs_t6/E2_E2_mid_s4_t6px12",
+   "frames": 204,
+   "fps": 60,
+   "recipe": {
+    "pass": "px12",
+    "noise": 0.12,
+    "timing": "E2_mid",
+    "durations_s": [
+     0.425,
+     0.65
+    ],
+    "T": 1.075,
+    "seed": 4,
+    "reference": "output/edge_synthesis/exact/E2_mid",
+    "via": null,
+    "start": {
+     "mode": "exemplar",
+     "source": "release exemplar"
+    },
+    "weights": {
+     "flat": 100,
+     "cone": 10
+    }
+   },
+   "metrics": {
+    "final_d6_m": 0.0843,
+    "com_speed_end": 0.0206,
+    "held": true,
+    "landing_peak_bw": 1.597,
+    "hand_drift_cm": 2.05,
+    "torque_saturated_share_max": 1.0,
+    "speed_over_p99_max": 2.69,
+    "statics_s_star_max": 0.2882,
+    "free_violations": {
+     "L_SHANK": 6,
+     "L_THIGH": 6
+    }
+   },
+   "advisory_failed": [
+    "dynamics",
+    "endpoints",
+    "naturalness_p99",
+    "seams_drift",
+    "seams_end"
+   ],
+   "seams": {
+    "hands_start_cm": 0.38,
+    "hands_end_cm": 1.79,
+    "feet_end_cm": 4.24,
+    "hand_width_m": {
+     "synthetic": 0.3452,
+     "S": 0.3478,
+     "D": 0.368
+    },
+    "hand_drift_cm": 1.27
+   },
+   "seams_t6": {
+    "pass": false,
+    "pass_attainable": false,
+    "start_all_max_cm": 0.393,
+    "start_planted_max_cm": 0.393,
+    "end_planted_max_cm": 4.237,
+    "end_beyond": [
+     "L_Ankle",
+     "L_Toe",
+     "L_Wrist",
+     "R_Ankle",
+     "R_Toe",
+     "R_Hand"
+    ],
+    "end_exemplar_bodies": [],
+    "end_by_body": {
+     "L_Ankle": {
+      "to_D_cm": 3.307,
+      "exemplars_S_to_D_cm": null,
+      "to_S_cm": null
+     },
+     "L_Toe": {
+      "to_D_cm": 2.314,
+      "exemplars_S_to_D_cm": null,
+      "to_S_cm": null
+     },
+     "L_Wrist": {
+      "to_D_cm": 2.911,
+      "exemplars_S_to_D_cm": 2.475,
+      "to_S_cm": 0.591
+     },
+     "L_Hand": {
+      "to_D_cm": 0.267,
+      "exemplars_S_to_D_cm": 1.007,
+      "to_S_cm": 0.77
+     },
+     "R_Ankle": {
+      "to_D_cm": 4.237,
+      "exemplars_S_to_D_cm": null,
+      "to_S_cm": null
+     },
+     "R_Toe": {
+      "to_D_cm": 3.284,
+      "exemplars_S_to_D_cm": null,
+      "to_S_cm": null
+     },
+     "R_Wrist": {
+      "to_D_cm": 1.493,
+      "exemplars_S_to_D_cm": 3.007,
+      "to_S_cm": 1.578
+     },
+     "R_Hand": {
+      "to_D_cm": 1.785,
+      "exemplars_S_to_D_cm": 1.007,
+      "to_S_cm": 0.81
+     }
+    },
+    "drift_max_cm": 2.521,
+    "drift_zones": {
+     "L_FOOT": 2.191,
+     "L_HAND": 0.812,
+     "R_FOOT": 2.521,
+     "R_HAND": 1.814
+    }
+   }
+  },
+  {
+   "variant": "SYN_E2_E2_E2_mid_s4_t6px",
+   "edge": "E2",
+   "label": "crow -> chaturanga (jump-back)",
+   "motion": "output/edge_synthesis/physx/motions_t6/SYN_E2_E2_E2_mid_s4_t6px.motion",
+   "sha256": "4104218a86e4766f1ebff21f16634d94e230eeb07c80a8f24e290dfb601fa7df",
+   "record": "output/edge_synthesis/physx/motions_t6/SYN_E2_E2_E2_mid_s4_t6px.json",
+   "source_run": "output/edge_synthesis/physx/runs_t6/E2_E2_mid_s4_t6px",
+   "frames": 204,
+   "fps": 60,
+   "recipe": {
+    "pass": "px",
+    "noise": 0.08,
+    "timing": "E2_mid",
+    "durations_s": [
+     0.425,
+     0.65
+    ],
+    "T": 1.075,
+    "seed": 4,
+    "reference": "output/edge_synthesis/exact/E2_mid",
+    "via": null,
+    "start": {
+     "mode": "exemplar",
+     "source": "release exemplar"
+    },
+    "weights": {
+     "flat": 100,
+     "cone": 10
+    }
+   },
+   "metrics": {
+    "final_d6_m": 0.085,
+    "com_speed_end": 0.0423,
+    "held": true,
+    "landing_peak_bw": 1.533,
+    "hand_drift_cm": 1.9,
+    "torque_saturated_share_max": 1.0,
+    "speed_over_p99_max": 2.87,
+    "statics_s_star_max": 0.3118,
+    "free_violations": {
+     "L_SHANK": 8,
+     "L_THIGH": 8
+    }
+   },
+   "advisory_failed": [
+    "dynamics",
+    "endpoints",
+    "naturalness_p99",
+    "seams_drift",
+    "seams_end"
+   ],
+   "seams": {
+    "hands_start_cm": 0.35,
+    "hands_end_cm": 2.05,
+    "feet_end_cm": 2.82,
+    "hand_width_m": {
+     "synthetic": 0.3445,
+     "S": 0.3478,
+     "D": 0.368
+    },
+    "hand_drift_cm": 1.59
+   },
+   "seams_t6": {
+    "pass": false,
+    "pass_attainable": false,
+    "start_all_max_cm": 0.367,
+    "start_planted_max_cm": 0.367,
+    "end_planted_max_cm": 2.816,
+    "end_beyond": [
+     "L_Ankle",
+     "L_Wrist",
+     "R_Ankle",
+     "R_Toe",
+     "R_Wrist",
+     "R_Hand"
+    ],
+    "end_exemplar_bodies": [
+     "L_Wrist"
+    ],
+    "end_by_body": {
+     "L_Ankle": {
+      "to_D_cm": 2.816,
+      "exemplars_S_to_D_cm": null,
+      "to_S_cm": null
+     },
+     "L_Toe": {
+      "to_D_cm": 1.156,
+      "exemplars_S_to_D_cm": null,
+      "to_S_cm": null
+     },
+     "L_Wrist": {
+      "to_D_cm": 2.74,
+      "exemplars_S_to_D_cm": 2.475,
+      "to_S_cm": 0.478
+     },
+     "L_Hand": {
+      "to_D_cm": 0.537,
+      "exemplars_S_to_D_cm": 1.007,
+      "to_S_cm": 0.497
+     },
+     "R_Ankle": {
+      "to_D_cm": 2.634,
+      "exemplars_S_to_D_cm": null,
+      "to_S_cm": null
+     },
+     "R_Toe": {
+      "to_D_cm": 2.174,
+      "exemplars_S_to_D_cm": null,
+      "to_S_cm": null
+     },
+     "R_Wrist": {
+      "to_D_cm": 2.361,
+      "exemplars_S_to_D_cm": 3.007,
+      "to_S_cm": 2.373
+     },
+     "R_Hand": {
+      "to_D_cm": 2.053,
+      "exemplars_S_to_D_cm": 1.007,
+      "to_S_cm": 1.639
+     }
+    },
+    "drift_max_cm": 4.002,
+    "drift_zones": {
+     "L_FOOT": 4.002,
+     "L_HAND": 0.946,
+     "R_FOOT": 3.422,
+     "R_HAND": 2.03
+    }
+   }
+  },
+  {
+   "variant": "SYN_E2_E2_E2_mid_s4_t6rpx12",
+   "edge": "E2",
+   "label": "crow -> chaturanga (jump-back)",
+   "motion": "output/edge_synthesis/physx/motions_t6/SYN_E2_E2_E2_mid_s4_t6rpx12.motion",
+   "sha256": "b3beb001ba269f48818738aaf752b6d5cba348b33cf8f46c38e3396c6d1e9bf8",
+   "record": "output/edge_synthesis/physx/motions_t6/SYN_E2_E2_E2_mid_s4_t6rpx12.json",
+   "source_run": "output/edge_synthesis/physx/runs_t6_nocone/E2_E2_mid_s4_t6rpx12",
+   "frames": 204,
+   "fps": 60,
+   "recipe": {
+    "pass": "px12",
+    "noise": 0.12,
+    "timing": "E2_mid",
+    "durations_s": [
+     0.425,
+     0.65
+    ],
+    "T": 1.075,
+    "seed": 4,
+    "reference": "output/edge_synthesis/exact/E2_mid",
+    "via": null,
+    "start": {
+     "mode": "exemplar",
+     "source": "release exemplar"
+    },
+    "weights": {
+     "anchor": 8,
+     "flat": 0,
+     "box": 2
+    }
+   },
+   "metrics": {
+    "final_d6_m": 0.0957,
+    "com_speed_end": 0.0278,
+    "held": true,
+    "landing_peak_bw": 1.822,
+    "hand_drift_cm": 1.45,
+    "torque_saturated_share_max": 0.998,
+    "speed_over_p99_max": 2.58,
+    "statics_s_star_max": 0.2428,
+    "free_violations": {
+     "L_SHANK": 3,
+     "L_THIGH": 3
+    }
+   },
+   "advisory_failed": [
+    "dynamics",
+    "endpoints",
+    "naturalness_p99",
+    "seams_drift",
+    "seams_end"
+   ],
+   "seams": {
+    "hands_start_cm": 0.23,
+    "hands_end_cm": 2.43,
+    "feet_end_cm": 3.12,
+    "hand_width_m": {
+     "synthetic": 0.3456,
+     "S": 0.3478,
+     "D": 0.368
+    },
+    "hand_drift_cm": 1.0
+   },
+   "seams_t6": {
+    "pass": false,
+    "pass_attainable": false,
+    "start_all_max_cm": 0.311,
+    "start_planted_max_cm": 0.276,
+    "end_planted_max_cm": 3.123,
+    "end_beyond": [
+     "L_Ankle",
+     "L_Toe",
+     "L_Wrist",
+     "R_Ankle",
+     "R_Toe",
+     "R_Wrist",
+     "R_Hand"
+    ],
+    "end_exemplar_bodies": [],
+    "end_by_body": {
+     "L_Ankle": {
+      "to_D_cm": 1.92,
+      "exemplars_S_to_D_cm": null,
+      "to_S_cm": null
+     },
+     "L_Toe": {
+      "to_D_cm": 2.712,
+      "exemplars_S_to_D_cm": null,
+      "to_S_cm": null
+     },
+     "L_Wrist": {
+      "to_D_cm": 2.636,
+      "exemplars_S_to_D_cm": 2.475,
+      "to_S_cm": 0.618
+     },
+     "L_Hand": {
+      "to_D_cm": 1.375,
+      "exemplars_S_to_D_cm": 1.007,
+      "to_S_cm": 0.915
+     },
+     "R_Ankle": {
+      "to_D_cm": 2.918,
+      "exemplars_S_to_D_cm": null,
+      "to_S_cm": null
+     },
+     "R_Toe": {
+      "to_D_cm": 3.123,
+      "exemplars_S_to_D_cm": null,
+      "to_S_cm": null
+     },
+     "R_Wrist": {
+      "to_D_cm": 1.758,
+      "exemplars_S_to_D_cm": 3.007,
+      "to_S_cm": 1.582
+     },
+     "R_Hand": {
+      "to_D_cm": 2.426,
+      "exemplars_S_to_D_cm": 1.007,
+      "to_S_cm": 1.624
+     }
+    },
+    "drift_max_cm": 2.957,
+    "drift_zones": {
+     "L_FOOT": 2.104,
+     "L_HAND": 0.629,
+     "R_FOOT": 2.957,
+     "R_HAND": 1.267
+    }
+   }
+  },
+  {
+   "variant": "SYN_E3_E3_E3_high_s0_t6px",
+   "edge": "E3",
+   "label": "handstand -> crow (lower)",
+   "motion": "output/edge_synthesis/physx/motions_t6/SYN_E3_E3_E3_high_s0_t6px.motion",
+   "sha256": "f5c14bdeea5511d598451d435988ca4ed646abf6903fa014ef02450e4cffe331",
+   "record": "output/edge_synthesis/physx/motions_t6/SYN_E3_E3_E3_high_s0_t6px.json",
+   "source_run": "output/edge_synthesis/physx/runs_t6/E3_E3_high_s0_t6px",
+   "frames": 378,
+   "fps": 60,
+   "recipe": {
+    "pass": "px",
+    "noise": 0.05,
+    "timing": "E3_high",
+    "durations_s": [
+     3.0,
+     1.0
+    ],
+    "T": 4.0,
+    "seed": 0,
+    "reference": "output/edge_synthesis/exact/E3_high",
+    "via": null,
+    "start": {
+     "mode": "exemplar",
+     "source": "release exemplar"
+    },
+    "weights": {
+     "track": 20,
+     "track_end": 20
+    }
+   },
+   "metrics": {
+    "final_d6_m": 0.0481,
+    "com_speed_end": 0.0292,
+    "held": true,
+    "landing_peak_bw": 1.756,
+    "hand_drift_cm": 0.3,
+    "torque_saturated_share_max": 0.646,
+    "speed_over_p99_max": 1.87,
+    "statics_s_star_max": 0.6208,
+    "free_violations": {}
+   },
+   "advisory_failed": [
+    "dynamics",
+    "naturalness_p99"
+   ],
+   "seams": {
+    "hands_start_cm": 0.18,
+    "hands_end_cm": 0.49,
+    "feet_end_cm": null,
+    "hand_width_m": {
+     "synthetic": 0.3575,
+     "S": 0.3584,
+     "D": 0.3478
+    },
+    "hand_drift_cm": 0.57
+   },
+   "seams_t6": {
+    "pass": false,
+    "pass_attainable": false,
+    "start_all_max_cm": 0.235,
+    "start_planted_max_cm": 0.185,
+    "end_planted_max_cm": 2.902,
+    "end_beyond": [
+     "L_Wrist",
+     "R_Wrist"
+    ],
+    "end_exemplar_bodies": [
+     "L_Wrist",
+     "R_Wrist"
+    ],
+    "end_by_body": {
+     "L_Wrist": {
+      "to_D_cm": 2.902,
+      "exemplars_S_to_D_cm": 2.909,
+      "to_S_cm": 0.401
+     },
+     "L_Hand": {
+      "to_D_cm": 0.489,
+      "exemplars_S_to_D_cm": 0.529,
+      "to_S_cm": 0.219
+     },
+     "R_Wrist": {
+      "to_D_cm": 2.895,
+      "exemplars_S_to_D_cm": 2.71,
+      "to_S_cm": 0.387
+     },
+     "R_Hand": {
+      "to_D_cm": 0.402,
+      "exemplars_S_to_D_cm": 0.529,
+      "to_S_cm": 0.216
+     }
+    },
+    "drift_max_cm": 0.797,
+    "drift_zones": {
+     "L_HAND": 0.797,
+     "R_HAND": 0.543
+    }
+   }
+  },
+  {
+   "variant": "SYN_E3_E3_E3_high_s2_t6px",
+   "edge": "E3",
+   "label": "handstand -> crow (lower)",
+   "motion": "output/edge_synthesis/physx/motions_t6/SYN_E3_E3_E3_high_s2_t6px.motion",
+   "sha256": "91c8fe855b93333c6dae6c12950333c46a8a317f7f102dc4bdde3653fc5f1aae",
+   "record": "output/edge_synthesis/physx/motions_t6/SYN_E3_E3_E3_high_s2_t6px.json",
+   "source_run": "output/edge_synthesis/physx/runs_t6/E3_E3_high_s2_t6px",
+   "frames": 378,
+   "fps": 60,
+   "recipe": {
+    "pass": "px",
+    "noise": 0.05,
+    "timing": "E3_high",
+    "durations_s": [
+     3.0,
+     1.0
+    ],
+    "T": 4.0,
+    "seed": 2,
+    "reference": "output/edge_synthesis/exact/E3_high",
+    "via": null,
+    "start": {
+     "mode": "exemplar",
+     "source": "release exemplar"
+    },
+    "weights": {
+     "track": 20,
+     "track_end": 20
+    }
+   },
+   "metrics": {
+    "final_d6_m": 0.0489,
+    "com_speed_end": 0.0238,
+    "held": true,
+    "landing_peak_bw": 1.994,
+    "hand_drift_cm": 0.39,
+    "torque_saturated_share_max": 0.64,
+    "speed_over_p99_max": 1.79,
+    "statics_s_star_max": 0.6293,
+    "free_violations": {}
+   },
+   "advisory_failed": [
+    "dynamics",
+    "naturalness_p99"
+   ],
+   "seams": {
+    "hands_start_cm": 0.18,
+    "hands_end_cm": 0.41,
+    "feet_end_cm": null,
+    "hand_width_m": {
+     "synthetic": 0.3581,
+     "S": 0.3584,
+     "D": 0.3478
+    },
+    "hand_drift_cm": 0.94
+   },
+   "seams_t6": {
+    "pass": false,
+    "pass_attainable": false,
+    "start_all_max_cm": 0.188,
+    "start_planted_max_cm": 0.183,
+    "end_planted_max_cm": 3.222,
+    "end_beyond": [
+     "L_Wrist",
+     "R_Wrist"
+    ],
+    "end_exemplar_bodies": [
+     "L_Wrist",
+     "R_Wrist"
+    ],
+    "end_by_body": {
+     "L_Wrist": {
+      "to_D_cm": 3.222,
+      "exemplars_S_to_D_cm": 2.909,
+      "to_S_cm": 0.453
+     },
+     "L_Hand": {
+      "to_D_cm": 0.28,
+      "exemplars_S_to_D_cm": 0.529,
+      "to_S_cm": 0.412
+     },
+     "R_Wrist": {
+      "to_D_cm": 2.674,
+      "exemplars_S_to_D_cm": 2.71,
+      "to_S_cm": 0.273
+     },
+     "R_Hand": {
+      "to_D_cm": 0.407,
+      "exemplars_S_to_D_cm": 0.529,
+      "to_S_cm": 0.239
+     }
+    },
+    "drift_max_cm": 0.937,
+    "drift_zones": {
+     "L_HAND": 0.937,
+     "R_HAND": 0.705
+    }
+   }
+  },
+  {
+   "variant": "SYN_E3_E3_E3_high_s3_t6px12",
+   "edge": "E3",
+   "label": "handstand -> crow (lower)",
+   "motion": "output/edge_synthesis/physx/motions_t6/SYN_E3_E3_E3_high_s3_t6px12.motion",
+   "sha256": "b4739f9244658e44682af08a1d0e63552b496a0f639560d32f9a979e9690f812",
+   "record": "output/edge_synthesis/physx/motions_t6/SYN_E3_E3_E3_high_s3_t6px12.json",
+   "source_run": "output/edge_synthesis/physx/runs_t6/E3_E3_high_s3_t6px12",
+   "frames": 378,
+   "fps": 60,
+   "recipe": {
+    "pass": "px12",
+    "noise": 0.12,
+    "timing": "E3_high",
+    "durations_s": [
+     3.0,
+     1.0
+    ],
+    "T": 4.0,
+    "seed": 3,
+    "reference": "output/edge_synthesis/exact/E3_high",
+    "via": null,
+    "start": {
+     "mode": "exemplar",
+     "source": "release exemplar"
+    },
+    "weights": {
+     "track": 20,
+     "track_end": 20
+    }
+   },
+   "metrics": {
+    "final_d6_m": 0.0424,
+    "com_speed_end": 0.0288,
+    "held": true,
+    "landing_peak_bw": 1.055,
+    "hand_drift_cm": 0.57,
+    "torque_saturated_share_max": 0.635,
+    "speed_over_p99_max": 1.61,
+    "statics_s_star_max": 0.5684,
+    "free_violations": {}
+   },
+   "advisory_failed": [
+    "dynamics",
+    "naturalness_p99"
+   ],
+   "seams": {
+    "hands_start_cm": 0.17,
+    "hands_end_cm": 0.67,
+    "feet_end_cm": null,
+    "hand_width_m": {
+     "synthetic": 0.3567,
+     "S": 0.3584,
+     "D": 0.3478
+    },
+    "hand_drift_cm": 0.72
+   },
+   "seams_t6": {
+    "pass": false,
+    "pass_attainable": false,
+    "start_all_max_cm": 0.381,
+    "start_planted_max_cm": 0.173,
+    "end_planted_max_cm": 3.139,
+    "end_beyond": [
+     "L_Wrist",
+     "R_Wrist"
+    ],
+    "end_exemplar_bodies": [
+     "R_Wrist"
+    ],
+    "end_by_body": {
+     "L_Wrist": {
+      "to_D_cm": 3.054,
+      "exemplars_S_to_D_cm": 2.909,
+      "to_S_cm": 0.556
+     },
+     "L_Hand": {
+      "to_D_cm": 0.389,
+      "exemplars_S_to_D_cm": 0.529,
+      "to_S_cm": 0.571
+     },
+     "R_Wrist": {
+      "to_D_cm": 3.139,
+      "exemplars_S_to_D_cm": 2.71,
+      "to_S_cm": 0.495
+     },
+     "R_Hand": {
+      "to_D_cm": 0.665,
+      "exemplars_S_to_D_cm": 0.529,
+      "to_S_cm": 0.224
+     }
+    },
+    "drift_max_cm": 0.717,
+    "drift_zones": {
+     "L_HAND": 0.717,
+     "R_HAND": 0.689
+    }
+   }
+  },
+  {
+   "variant": "SYN_E5_E5_E5_mid_s0_t6rpx12",
+   "edge": "E5",
+   "label": "handstand -> chaturanga (float-down)",
+   "motion": "output/edge_synthesis/physx/motions_t6/SYN_E5_E5_E5_mid_s0_t6rpx12.motion",
+   "sha256": "839c4a8c0309e337924794005c398d82dbab6cfd019b8af1991f6f65d5bea205",
+   "record": "output/edge_synthesis/physx/motions_t6/SYN_E5_E5_E5_mid_s0_t6rpx12.json",
+   "source_run": "output/edge_synthesis/physx/runs_t6_nocone/E5_E5_mid_s0_t6rpx12",
+   "frames": 240,
+   "fps": 60,
+   "recipe": {
+    "pass": "px12",
+    "noise": 0.12,
+    "timing": "E5_mid",
+    "durations_s": [
+     1.0,
+     0.65
+    ],
+    "T": 1.65,
+    "seed": 0,
+    "reference": "output/edge_synthesis/exact/E5_mid",
+    "via": null,
+    "start": {
+     "mode": "exemplar",
+     "source": "release exemplar"
+    },
+    "weights": {}
+   },
+   "metrics": {
+    "final_d6_m": 0.0887,
+    "com_speed_end": 0.0243,
+    "held": true,
+    "landing_peak_bw": 3.624,
+    "hand_drift_cm": 1.47,
+    "torque_saturated_share_max": 0.79,
+    "speed_over_p99_max": 3.13,
+    "statics_s_star_max": 0.3467,
+    "free_violations": {}
+   },
+   "advisory_failed": [
+    "dynamics",
+    "endpoints",
+    "naturalness_p99",
+    "seams_drift",
+    "seams_end"
+   ],
+   "seams": {
+    "hands_start_cm": 0.23,
+    "hands_end_cm": 0.56,
+    "feet_end_cm": 4.49,
+    "hand_width_m": {
+     "synthetic": 0.3568,
+     "S": 0.3584,
+     "D": 0.368
+    },
+    "hand_drift_cm": 0.57
+   },
+   "seams_t6": {
+    "pass": false,
+    "pass_attainable": false,
+    "start_all_max_cm": 0.351,
+    "start_planted_max_cm": 0.233,
+    "end_planted_max_cm": 4.493,
+    "end_beyond": [
+     "L_Ankle",
+     "L_Toe",
+     "R_Ankle",
+     "R_Toe"
+    ],
+    "end_exemplar_bodies": [],
+    "end_by_body": {
+     "L_Ankle": {
+      "to_D_cm": 2.549,
+      "exemplars_S_to_D_cm": null,
+      "to_S_cm": null
+     },
+     "L_Toe": {
+      "to_D_cm": 3.465,
+      "exemplars_S_to_D_cm": null,
+      "to_S_cm": null
+     },
+     "L_Wrist": {
+      "to_D_cm": 1.09,
+      "exemplars_S_to_D_cm": 0.445,
+      "to_S_cm": 1.498
+     },
+     "L_Hand": {
+      "to_D_cm": 0.398,
+      "exemplars_S_to_D_cm": 0.477,
+      "to_S_cm": 0.179
+     },
+     "R_Ankle": {
+      "to_D_cm": 3.548,
+      "exemplars_S_to_D_cm": null,
+      "to_S_cm": null
+     },
+     "R_Toe": {
+      "to_D_cm": 4.493,
+      "exemplars_S_to_D_cm": null,
+      "to_S_cm": null
+     },
+     "R_Wrist": {
+      "to_D_cm": 0.59,
+      "exemplars_S_to_D_cm": 0.308,
+      "to_S_cm": 0.752
+     },
+     "R_Hand": {
+      "to_D_cm": 0.559,
+      "exemplars_S_to_D_cm": 0.477,
+      "to_S_cm": 0.491
+     }
+    },
+    "drift_max_cm": 12.406,
+    "drift_zones": {
+     "L_FOOT": 11.388,
+     "L_HAND": 1.454,
+     "R_FOOT": 12.406,
+     "R_HAND": 1.42
+    }
+   }
+  }
+ ],
+ "rejected": [
+  {
+   "variant": "SYN_B1_B1_B1_high_s0_t6px12",
+   "edge": "B1",
+   "failed_hard": [
+    "endpoints"
+   ]
+  },
+  {
+   "variant": "SYN_B1_B1_B1_high_s0_t6px",
+   "edge": "B1",
+   "failed_hard": [
+    "endpoints",
+    "held"
+   ]
+  },
+  {
+   "variant": "SYN_B1_B1_B1_high_s0_t6rpx12",
+   "edge": "B1",
+   "failed_hard": [
+    "endpoints",
+    "seams"
+   ],
+   "seams": {
+    "failed": [
+     "start",
+     "end",
+     "drift"
+    ],
+    "start": {
+     "all_max_cm": 0.543,
+     "all_worst": "R_Wrist",
+     "planted_max_cm": 0.543,
+     "planted_worst": "R_Wrist",
+     "pass": false
+    },
+    "drift": {
+     "zones": {
+      "L_FOOT": {
+       "kind": "makes",
+       "from_frame": 67,
+       "max_cm": 11.914,
+       "worst": "L_Ankle",
+       "touchdown_frame": 61
+      },
+      "L_HAND": {
+       "kind": "planted throughout",
+       "from_frame": 0,
+       "max_cm": 1.563,
+       "worst": "L_Wrist"
+      },
+      "R_FOOT": {
+       "kind": "makes",
+       "from_frame": 66,
+       "max_cm": 16.295,
+       "worst": "R_Ankle",
+       "touchdown_frame": 60
+      },
+      "R_HAND": {
+       "kind": "planted throughout",
+       "from_frame": 0,
+       "max_cm": 1.379,
+       "worst": "R_Wrist"
+      }
+     },
+     "max_cm": 16.295,
+     "never_touched": [],
+     "pass": false
+    },
+    "end": {
+     "planted_max_cm": 19.696,
+     "beyond": [
+      "L_Ankle",
+      "L_Toe",
+      "L_Wrist",
+      "R_Ankle",
+      "R_Toe",
+      "R_Wrist"
+     ],
+     "end_exemplar_bodies": [
+      "R_Wrist"
+     ],
+     "reason": "generator: L_Ankle, L_Toe, L_Wrist, R_Ankle, R_Toe end off D's exemplar"
+    }
+   }
+  },
+  {
+   "variant": "SYN_B1_B1_B1_high_s0_t6rpx",
+   "edge": "B1",
+   "failed_hard": [
+    "endpoints",
+    "seams"
+   ],
+   "seams": {
+    "failed": [
+     "start",
+     "end",
+     "drift"
+    ],
+    "start": {
+     "all_max_cm": 0.509,
+     "all_worst": "R_Wrist",
+     "planted_max_cm": 0.509,
+     "planted_worst": "R_Wrist",
+     "pass": false
+    },
+    "drift": {
+     "zones": {
+      "L_FOOT": {
+       "kind": "makes",
+       "from_frame": 61,
+       "max_cm": 15.796,
+       "worst": "L_Ankle",
+       "touchdown_frame": 55
+      },
+      "L_HAND": {
+       "kind": "planted throughout",
+       "from_frame": 0,
+       "max_cm": 1.282,
+       "worst": "L_Wrist"
+      },
+      "R_FOOT": {
+       "kind": "makes",
+       "from_frame": 59,
+       "max_cm": 27.518,
+       "worst": "R_Ankle",
+       "touchdown_frame": 53
+      },
+      "R_HAND": {
+       "kind": "planted throughout",
+       "from_frame": 0,
+       "max_cm": 1.215,
+       "worst": "R_Wrist"
+      }
+     },
+     "max_cm": 27.518,
+     "never_touched": [],
+     "pass": false
+    },
+    "end": {
+     "planted_max_cm": 23.334,
+     "beyond": [
+      "L_Ankle",
+      "L_Toe",
+      "L_Wrist",
+      "R_Ankle",
+      "R_Toe",
+      "R_Wrist"
+     ],
+     "end_exemplar_bodies": [
+      "L_Wrist"
+     ],
+     "reason": "generator: L_Ankle, L_Toe, R_Ankle, R_Toe, R_Wrist end off D's exemplar"
+    }
+   }
+  },
+  {
+   "variant": "SYN_B1_B1_B1_high_s1_t6px12",
+   "edge": "B1",
+   "failed_hard": [
+    "endpoints"
+   ]
+  },
+  {
+   "variant": "SYN_B1_B1_B1_high_s1_t6px",
+   "edge": "B1",
+   "failed_hard": [
+    "endpoints",
+    "held"
+   ]
+  },
+  {
+   "variant": "SYN_B1_B1_B1_high_s1_t6rpx12",
+   "edge": "B1",
+   "failed_hard": [
+    "endpoints"
+   ]
+  },
+  {
+   "variant": "SYN_B1_B1_B1_high_s2_t6px12",
+   "edge": "B1",
+   "failed_hard": [
+    "endpoints"
+   ]
+  },
+  {
+   "variant": "SYN_B1_B1_B1_high_s2_t6px",
+   "edge": "B1",
+   "failed_hard": [
+    "endpoints",
+    "held"
+   ]
+  },
+  {
+   "variant": "SYN_B1_B1_B1_high_s2_t6rpx12",
+   "edge": "B1",
+   "failed_hard": [
+    "endpoints"
+   ]
+  },
+  {
+   "variant": "SYN_B1_B1_B1_high_s3_t6px12",
+   "edge": "B1",
+   "failed_hard": [
+    "endpoints"
+   ]
+  },
+  {
+   "variant": "SYN_B1_B1_B1_high_s3_t6px",
+   "edge": "B1",
+   "failed_hard": [
+    "endpoints",
+    "held"
+   ]
+  },
+  {
+   "variant": "SYN_B1_B1_B1_high_s3_t6rpx12",
+   "edge": "B1",
+   "failed_hard": [
+    "endpoints"
+   ]
+  },
+  {
+   "variant": "SYN_B1_B1_B1_high_s3_t6rpx",
+   "edge": "B1",
+   "failed_hard": [
+    "endpoints"
+   ]
+  },
+  {
+   "variant": "SYN_B1_B1_B1_high_s4_t6px12",
+   "edge": "B1",
+   "failed_hard": [
+    "endpoints"
+   ]
+  },
+  {
+   "variant": "SYN_B1_B1_B1_high_s4_t6px",
+   "edge": "B1",
+   "failed_hard": [
+    "endpoints"
+   ]
+  },
+  {
+   "variant": "SYN_B1_B1_B1_high_s4_t6rpx",
+   "edge": "B1",
+   "failed_hard": [
+    "endpoints"
+   ]
+  },
+  {
+   "variant": "SYN_B1_B1_B1_mid_s0_t6px12",
+   "edge": "B1",
+   "failed_hard": [
+    "endpoints"
+   ]
+  },
+  {
+   "variant": "SYN_B1_B1_B1_mid_s0_t6px",
+   "edge": "B1",
+   "failed_hard": [
+    "endpoints"
+   ]
+  },
+  {
+   "variant": "SYN_B1_B1_B1_mid_s0_t6rpx12",
+   "edge": "B1",
+   "failed_hard": [
+    "seams"
+   ],
+   "seams": {
+    "failed": [
+     "start",
+     "end",
+     "drift"
+    ],
+    "start": {
+     "all_max_cm": 0.626,
+     "all_worst": "L_Toe",
+     "planted_max_cm": 0.523,
+     "planted_worst": "R_Wrist",
+     "pass": false
+    },
+    "drift": {
+     "zones": {
+      "L_FOOT": {
+       "kind": "makes",
+       "from_frame": 57,
+       "max_cm": 11.421,
+       "worst": "L_Ankle",
+       "touchdown_frame": 51
+      },
+      "L_HAND": {
+       "kind": "planted throughout",
+       "from_frame": 0,
+       "max_cm": 1.383,
+       "worst": "L_Wrist"
+      },
+      "R_FOOT": {
+       "kind": "makes",
+       "from_frame": 55,
+       "max_cm": 14.071,
+       "worst": "R_Ankle",
+       "touchdown_frame": 49
+      },
+      "R_HAND": {
+       "kind": "planted throughout",
+       "from_frame": 0,
+       "max_cm": 1.019,
+       "worst": "R_Wrist"
+      }
+     },
+     "max_cm": 14.071,
+     "never_touched": [],
+     "pass": false
+    },
+    "end": {
+     "planted_max_cm": 9.926,
+     "beyond": [
+      "L_Ankle",
+      "L_Toe",
+      "L_Wrist",
+      "R_Ankle",
+      "R_Toe",
+      "R_Wrist"
+     ],
+     "end_exemplar_bodies": [
+      "L_Wrist",
+      "R_Wrist"
+     ],
+     "reason": "generator: L_Ankle, L_Toe, R_Ankle, R_Toe end off D's exemplar"
+    }
+   }
+  },
+  {
+   "variant": "SYN_B1_B1_B1_mid_s1_t6px12",
+   "edge": "B1",
+   "failed_hard": [
+    "endpoints"
+   ]
+  },
+  {
+   "variant": "SYN_B1_B1_B1_mid_s1_t6px",
+   "edge": "B1",
+   "failed_hard": [
+    "endpoints",
+    "held"
+   ]
+  },
+  {
+   "variant": "SYN_B1_B1_B1_mid_s1_t6rpx",
+   "edge": "B1",
+   "failed_hard": [
+    "endpoints"
+   ]
+  },
+  {
+   "variant": "SYN_B1_B1_B1_mid_s2_t6px12",
+   "edge": "B1",
+   "failed_hard": [
+    "endpoints"
+   ]
+  },
+  {
+   "variant": "SYN_B1_B1_B1_mid_s2_t6px",
+   "edge": "B1",
+   "failed_hard": [
+    "endpoints",
+    "held"
+   ]
+  },
+  {
+   "variant": "SYN_B1_B1_B1_mid_s2_t6rpx12",
+   "edge": "B1",
+   "failed_hard": [
+    "endpoints"
+   ]
+  },
+  {
+   "variant": "SYN_B1_B1_B1_mid_s2_t6rpx",
+   "edge": "B1",
+   "failed_hard": [
+    "endpoints"
+   ]
+  },
+  {
+   "variant": "SYN_B1_B1_B1_mid_s3_t6px12",
+   "edge": "B1",
+   "failed_hard": [
+    "endpoints"
+   ]
+  },
+  {
+   "variant": "SYN_B1_B1_B1_mid_s3_t6px",
+   "edge": "B1",
+   "failed_hard": [
+    "endpoints",
+    "held"
+   ]
+  },
+  {
+   "variant": "SYN_B1_B1_B1_mid_s3_t6rpx12",
+   "edge": "B1",
+   "failed_hard": [
+    "endpoints"
+   ]
+  },
+  {
+   "variant": "SYN_B1_B1_B1_mid_s3_t6rpx",
+   "edge": "B1",
+   "failed_hard": [
+    "endpoints"
+   ]
+  },
+  {
+   "variant": "SYN_B1_B1_B1_mid_s4_t6px12",
+   "edge": "B1",
+   "failed_hard": [
+    "endpoints"
+   ]
+  },
+  {
+   "variant": "SYN_B1_B1_B1_mid_s4_t6px",
+   "edge": "B1",
+   "failed_hard": [
+    "endpoints"
+   ]
+  },
+  {
+   "variant": "SYN_B1_B1_B1_mid_s4_t6rpx12",
+   "edge": "B1",
+   "failed_hard": [
+    "endpoints"
+   ]
+  },
+  {
+   "variant": "SYN_B1_B1_B1_mid_s4_t6rpx",
+   "edge": "B1",
+   "failed_hard": [
+    "endpoints"
+   ]
+  },
+  {
+   "variant": "SYN_E1_E1_E1_high_s1_t6px",
+   "edge": "E1",
+   "failed_hard": [
+    "seams"
+   ],
+   "seams": {
+    "failed": [
+     "end",
+     "drift"
+    ],
+    "start": {
+     "all_max_cm": 0.422,
+     "all_worst": "L_Toe",
+     "planted_max_cm": 0.231,
+     "planted_worst": "R_Wrist",
+     "pass": true
+    },
+    "drift": {
+     "zones": {
+      "L_HAND": {
+       "kind": "planted throughout",
+       "from_frame": 0,
+       "max_cm": 1.093,
+       "worst": "L_Wrist"
+      },
+      "R_HAND": {
+       "kind": "planted throughout",
+       "from_frame": 0,
+       "max_cm": 0.879,
+       "worst": "R_Wrist"
+      }
+     },
+     "max_cm": 1.093,
+     "never_touched": [],
+     "pass": false
+    },
+    "end": {
+     "planted_max_cm": 2.863,
+     "beyond": [
+      "L_Wrist",
+      "R_Wrist"
+     ],
+     "end_exemplar_bodies": [
+      "L_Wrist"
+     ],
+     "reason": "generator: R_Wrist end off D's exemplar"
+    }
+   }
+  },
+  {
+   "variant": "SYN_E1_E1_E1_mid_s1_t6px",
+   "edge": "E1",
+   "failed_hard": [
+    "endpoints",
+    "statics",
+    "held",
+    "seams"
+   ],
+   "seams": {
+    "failed": [
+     "end",
+     "drift"
+    ],
+    "start": {
+     "all_max_cm": 0.395,
+     "all_worst": "L_Toe",
+     "planted_max_cm": 0.205,
+     "planted_worst": "R_Wrist",
+     "pass": true
+    },
+    "drift": {
+     "zones": {
+      "L_HAND": {
+       "kind": "planted throughout",
+       "from_frame": 0,
+       "max_cm": 0.903,
+       "worst": "L_Hand"
+      },
+      "R_HAND": {
+       "kind": "planted throughout",
+       "from_frame": 0,
+       "max_cm": 1.483,
+       "worst": "R_Wrist"
+      }
+     },
+     "max_cm": 1.483,
+     "never_touched": [],
+     "pass": false
+    },
+    "end": {
+     "planted_max_cm": 3.856,
+     "beyond": [
+      "L_Wrist",
+      "L_Hand",
+      "R_Wrist",
+      "R_Hand"
+     ],
+     "end_exemplar_bodies": [],
+     "reason": "generator: L_Hand, L_Wrist, R_Hand, R_Wrist end off D's exemplar"
+    }
+   }
+  },
+  {
+   "variant": "SYN_E2_E2_E2_mid_s0_t6px",
+   "edge": "E2",
+   "failed_hard": [
+    "statics",
+    "seams"
+   ],
+   "seams": {
+    "failed": [
+     "start",
+     "end",
+     "drift"
+    ],
+    "start": {
+     "all_max_cm": 0.567,
+     "all_worst": "R_Wrist",
+     "planted_max_cm": 0.567,
+     "planted_worst": "R_Wrist",
+     "pass": false
+    },
+    "drift": {
+     "zones": {
+      "L_FOOT": {
+       "kind": "makes",
+       "from_frame": 52,
+       "max_cm": 4.028,
+       "worst": "L_Ankle",
+       "touchdown_frame": 46
+      },
+      "L_HAND": {
+       "kind": "planted throughout",
+       "from_frame": 0,
+       "max_cm": 1.122,
+       "worst": "L_Wrist"
+      },
+      "R_FOOT": {
+       "kind": "makes",
+       "from_frame": 52,
+       "max_cm": 4.153,
+       "worst": "R_Ankle",
+       "touchdown_frame": 46
+      },
+      "R_HAND": {
+       "kind": "planted throughout",
+       "from_frame": 0,
+       "max_cm": 2.271,
+       "worst": "R_Hand"
+      }
+     },
+     "max_cm": 4.153,
+     "never_touched": [],
+     "pass": false
+    },
+    "end": {
+     "planted_max_cm": 3.422,
+     "beyond": [
+      "L_Ankle",
+      "L_Toe",
+      "L_Wrist",
+      "R_Ankle",
+      "R_Toe",
+      "R_Wrist",
+      "R_Hand"
+     ],
+     "end_exemplar_bodies": [],
+     "reason": "generator: L_Ankle, L_Toe, L_Wrist, R_Ankle, R_Hand, R_Toe, R_Wrist end off D's exemplar"
+    }
+   }
+  },
+  {
+   "variant": "SYN_E2_E2_E2_mid_s0_t6rpx",
+   "edge": "E2",
+   "failed_hard": [
+    "seams"
+   ],
+   "seams": {
+    "failed": [
+     "start",
+     "end",
+     "drift"
+    ],
+    "start": {
+     "all_max_cm": 0.58,
+     "all_worst": "R_Wrist",
+     "planted_max_cm": 0.58,
+     "planted_worst": "R_Wrist",
+     "pass": false
+    },
+    "drift": {
+     "zones": {
+      "L_FOOT": {
+       "kind": "makes",
+       "from_frame": 55,
+       "max_cm": 5.834,
+       "worst": "L_Ankle",
+       "touchdown_frame": 49
+      },
+      "L_HAND": {
+       "kind": "planted throughout",
+       "from_frame": 0,
+       "max_cm": 1.938,
+       "worst": "L_Wrist"
+      },
+      "R_FOOT": {
+       "kind": "makes",
+       "from_frame": 55,
+       "max_cm": 5.682,
+       "worst": "R_Ankle",
+       "touchdown_frame": 49
+      },
+      "R_HAND": {
+       "kind": "planted throughout",
+       "from_frame": 0,
+       "max_cm": 2.608,
+       "worst": "R_Hand"
+      }
+     },
+     "max_cm": 5.834,
+     "never_touched": [],
+     "pass": false
+    },
+    "end": {
+     "planted_max_cm": 4.054,
+     "beyond": [
+      "L_Ankle",
+      "L_Toe",
+      "L_Wrist",
+      "R_Ankle",
+      "R_Toe",
+      "R_Hand"
+     ],
+     "end_exemplar_bodies": [],
+     "reason": "generator: L_Ankle, L_Toe, L_Wrist, R_Ankle, R_Hand, R_Toe end off D's exemplar"
+    }
+   }
+  },
+  {
+   "variant": "SYN_E2_E2_E2_mid_s2_t6px",
+   "edge": "E2",
+   "failed_hard": [
+    "statics",
+    "held"
+   ]
+  },
+  {
+   "variant": "SYN_E2_E2_E2_mid_s2_t6rpx12",
+   "edge": "E2",
+   "failed_hard": [
+    "statics"
+   ]
+  },
+  {
+   "variant": "SYN_E2_E2_E2_mid_s2_t6rpx",
+   "edge": "E2",
+   "failed_hard": [
+    "held",
+    "seams"
+   ],
+   "seams": {
+    "failed": [
+     "start",
+     "end",
+     "drift"
+    ],
+    "start": {
+     "all_max_cm": 0.658,
+     "all_worst": "R_Wrist",
+     "planted_max_cm": 0.658,
+     "planted_worst": "R_Wrist",
+     "pass": false
+    },
+    "drift": {
+     "zones": {
+      "L_FOOT": {
+       "kind": "makes",
+       "from_frame": 54,
+       "max_cm": 8.166,
+       "worst": "L_Ankle",
+       "touchdown_frame": 48
+      },
+      "L_HAND": {
+       "kind": "planted throughout",
+       "from_frame": 0,
+       "max_cm": 5.279,
+       "worst": "L_Wrist"
+      },
+      "R_FOOT": {
+       "kind": "makes",
+       "from_frame": 54,
+       "max_cm": 7.269,
+       "worst": "R_Ankle",
+       "touchdown_frame": 48
+      },
+      "R_HAND": {
+       "kind": "planted throughout",
+       "from_frame": 0,
+       "max_cm": 5.293,
+       "worst": "R_Wrist"
+      }
+     },
+     "max_cm": 8.166,
+     "never_touched": [],
+     "pass": false
+    },
+    "end": {
+     "planted_max_cm": 7.484,
+     "beyond": [
+      "L_Ankle",
+      "L_Toe",
+      "L_Wrist",
+      "R_Ankle",
+      "R_Toe",
+      "R_Wrist",
+      "R_Hand"
+     ],
+     "end_exemplar_bodies": [],
+     "reason": "generator: L_Ankle, L_Toe, L_Wrist, R_Ankle, R_Hand, R_Toe, R_Wrist end off D's exemplar"
+    }
+   }
+  },
+  {
+   "variant": "SYN_E2_E2_E2_mid_s3_t6px",
+   "edge": "E2",
+   "failed_hard": [
+    "held",
+    "seams"
+   ],
+   "seams": {
+    "failed": [
+     "start",
+     "end",
+     "drift"
+    ],
+    "start": {
+     "all_max_cm": 0.561,
+     "all_worst": "R_Wrist",
+     "planted_max_cm": 0.561,
+     "planted_worst": "R_Wrist",
+     "pass": false
+    },
+    "drift": {
+     "zones": {
+      "L_FOOT": {
+       "kind": "makes",
+       "from_frame": 53,
+       "max_cm": 3.271,
+       "worst": "L_Ankle",
+       "touchdown_frame": 47
+      },
+      "L_HAND": {
+       "kind": "planted throughout",
+       "from_frame": 0,
+       "max_cm": 2.349,
+       "worst": "L_Hand"
+      },
+      "R_FOOT": {
+       "kind": "makes",
+       "from_frame": 53,
+       "max_cm": 2.623,
+       "worst": "R_Ankle",
+       "touchdown_frame": 47
+      },
+      "R_HAND": {
+       "kind": "planted throughout",
+       "from_frame": 0,
+       "max_cm": 2.345,
+       "worst": "R_Hand"
+      }
+     },
+     "max_cm": 3.271,
+     "never_touched": [],
+     "pass": false
+    },
+    "end": {
+     "planted_max_cm": 4.627,
+     "beyond": [
+      "L_Ankle",
+      "L_Toe",
+      "L_Wrist",
+      "R_Ankle",
+      "R_Toe",
+      "R_Wrist",
+      "R_Hand"
+     ],
+     "end_exemplar_bodies": [],
+     "reason": "generator: L_Ankle, L_Toe, L_Wrist, R_Ankle, R_Hand, R_Toe, R_Wrist end off D's exemplar"
+    }
+   }
+  },
+  {
+   "variant": "SYN_E2_E2_E2_mid_s3_t6rpx",
+   "edge": "E2",
+   "failed_hard": [
+    "held",
+    "seams"
+   ],
+   "seams": {
+    "failed": [
+     "start",
+     "end",
+     "drift"
+    ],
+    "start": {
+     "all_max_cm": 0.679,
+     "all_worst": "R_Wrist",
+     "planted_max_cm": 0.679,
+     "planted_worst": "R_Wrist",
+     "pass": false
+    },
+    "drift": {
+     "zones": {
+      "L_FOOT": {
+       "kind": "makes",
+       "from_frame": 55,
+       "max_cm": 0.919,
+       "worst": "L_Ankle",
+       "touchdown_frame": 49
+      },
+      "L_HAND": {
+       "kind": "planted throughout",
+       "from_frame": 0,
+       "max_cm": 1.691,
+       "worst": "L_Wrist"
+      },
+      "R_FOOT": {
+       "kind": "makes",
+       "from_frame": 54,
+       "max_cm": 3.422,
+       "worst": "R_Ankle",
+       "touchdown_frame": 48
+      },
+      "R_HAND": {
+       "kind": "planted throughout",
+       "from_frame": 0,
+       "max_cm": 2.255,
+       "worst": "R_Wrist"
+      }
+     },
+     "max_cm": 3.422,
+     "never_touched": [],
+     "pass": false
+    },
+    "end": {
+     "planted_max_cm": 7.303,
+     "beyond": [
+      "L_Ankle",
+      "L_Toe",
+      "L_Wrist",
+      "R_Ankle",
+      "R_Toe",
+      "R_Wrist",
+      "R_Hand"
+     ],
+     "end_exemplar_bodies": [],
+     "reason": "generator: L_Ankle, L_Toe, L_Wrist, R_Ankle, R_Hand, R_Toe, R_Wrist end off D's exemplar"
+    }
+   }
+  },
+  {
+   "variant": "SYN_E2_E2_E2_mid_s4_t6rpx",
+   "edge": "E2",
+   "failed_hard": [
+    "seams"
+   ],
+   "seams": {
+    "failed": [
+     "start",
+     "end",
+     "drift"
+    ],
+    "start": {
+     "all_max_cm": 0.548,
+     "all_worst": "R_Wrist",
+     "planted_max_cm": 0.548,
+     "planted_worst": "R_Wrist",
+     "pass": false
+    },
+    "drift": {
+     "zones": {
+      "L_FOOT": {
+       "kind": "makes",
+       "from_frame": 55,
+       "max_cm": 4.687,
+       "worst": "L_Ankle",
+       "touchdown_frame": 49
+      },
+      "L_HAND": {
+       "kind": "planted throughout",
+       "from_frame": 0,
+       "max_cm": 1.814,
+       "worst": "L_Wrist"
+      },
+      "R_FOOT": {
+       "kind": "makes",
+       "from_frame": 54,
+       "max_cm": 4.113,
+       "worst": "R_Ankle",
+       "touchdown_frame": 48
+      },
+      "R_HAND": {
+       "kind": "planted throughout",
+       "from_frame": 0,
+       "max_cm": 2.794,
+       "worst": "R_Wrist"
+      }
+     },
+     "max_cm": 4.687,
+     "never_touched": [],
+     "pass": false
+    },
+    "end": {
+     "planted_max_cm": 5.067,
+     "beyond": [
+      "L_Ankle",
+      "L_Toe",
+      "L_Wrist",
+      "R_Ankle",
+      "R_Toe",
+      "R_Wrist",
+      "R_Hand"
+     ],
+     "end_exemplar_bodies": [],
+     "reason": "generator: L_Ankle, L_Toe, L_Wrist, R_Ankle, R_Hand, R_Toe, R_Wrist end off D's exemplar"
+    }
+   }
+  },
+  {
+   "variant": "SYN_E3_E3_E3_high_s0_t6px12",
+   "edge": "E3",
+   "failed_hard": [
+    "endpoints",
+    "seams"
+   ],
+   "seams": {
+    "failed": [
+     "end",
+     "drift"
+    ],
+    "start": {
+     "all_max_cm": 0.395,
+     "all_worst": "R_Toe",
+     "planted_max_cm": 0.174,
+     "planted_worst": "L_Hand",
+     "pass": true
+    },
+    "drift": {
+     "zones": {
+      "L_HAND": {
+       "kind": "planted throughout",
+       "from_frame": 0,
+       "max_cm": 1.278,
+       "worst": "L_Wrist"
+      },
+      "R_HAND": {
+       "kind": "planted throughout",
+       "from_frame": 0,
+       "max_cm": 0.887,
+       "worst": "R_Hand"
+      }
+     },
+     "max_cm": 1.278,
+     "never_touched": [],
+     "pass": false
+    },
+    "end": {
+     "planted_max_cm": 3.263,
+     "beyond": [
+      "L_Wrist",
+      "R_Wrist"
+     ],
+     "end_exemplar_bodies": [
+      "L_Wrist"
+     ],
+     "reason": "generator: R_Wrist end off D's exemplar"
+    }
+   }
+  },
+  {
+   "variant": "SYN_E3_E3_E3_high_s1_t6px12",
+   "edge": "E3",
+   "failed_hard": [
+    "endpoints"
+   ]
+  },
+  {
+   "variant": "SYN_E3_E3_E3_high_s1_t6px",
+   "edge": "E3",
+   "failed_hard": [
+    "endpoints"
+   ]
+  },
+  {
+   "variant": "SYN_E3_E3_E3_high_s2_t6px12",
+   "edge": "E3",
+   "failed_hard": [
+    "seams"
+   ],
+   "seams": {
+    "failed": [
+     "end",
+     "drift"
+    ],
+    "start": {
+     "all_max_cm": 0.259,
+     "all_worst": "R_Hand",
+     "planted_max_cm": 0.259,
+     "planted_worst": "R_Hand",
+     "pass": true
+    },
+    "drift": {
+     "zones": {
+      "L_HAND": {
+       "kind": "planted throughout",
+       "from_frame": 0,
+       "max_cm": 1.085,
+       "worst": "L_Wrist"
+      },
+      "R_HAND": {
+       "kind": "planted throughout",
+       "from_frame": 0,
+       "max_cm": 0.626,
+       "worst": "R_Wrist"
+      }
+     },
+     "max_cm": 1.085,
+     "never_touched": [],
+     "pass": false
+    },
+    "end": {
+     "planted_max_cm": 3.885,
+     "beyond": [
+      "L_Wrist",
+      "R_Wrist"
+     ],
+     "end_exemplar_bodies": [
+      "R_Wrist"
+     ],
+     "reason": "generator: L_Wrist end off D's exemplar"
+    }
+   }
+  },
+  {
+   "variant": "SYN_E3_E3_E3_high_s3_t6px",
+   "edge": "E3",
+   "failed_hard": [
+    "seams"
+   ],
+   "seams": {
+    "failed": [
+     "end",
+     "drift"
+    ],
+    "start": {
+     "all_max_cm": 0.222,
+     "all_worst": "R_Toe",
+     "planted_max_cm": 0.175,
+     "planted_worst": "R_Hand",
+     "pass": true
+    },
+    "drift": {
+     "zones": {
+      "L_HAND": {
+       "kind": "planted throughout",
+       "from_frame": 0,
+       "max_cm": 1.222,
+       "worst": "L_Hand"
+      },
+      "R_HAND": {
+       "kind": "planted throughout",
+       "from_frame": 0,
+       "max_cm": 0.715,
+       "worst": "R_Wrist"
+      }
+     },
+     "max_cm": 1.222,
+     "never_touched": [],
+     "pass": false
+    },
+    "end": {
+     "planted_max_cm": 3.11,
+     "beyond": [
+      "L_Wrist",
+      "R_Wrist"
+     ],
+     "end_exemplar_bodies": [
+      "L_Wrist",
+      "R_Wrist"
+     ],
+     "reason": "the exemplars' own: these bodies keep S's pose and S's exemplar is beyond the tolerance from D's"
+    }
+   }
+  },
+  {
+   "variant": "SYN_E3_E3_E3_high_s4_t6px12",
+   "edge": "E3",
+   "failed_hard": [
+    "seams"
+   ],
+   "seams": {
+    "failed": [
+     "end",
+     "drift"
+    ],
+    "start": {
+     "all_max_cm": 0.463,
+     "all_worst": "R_Knee",
+     "planted_max_cm": 0.215,
+     "planted_worst": "R_Hand",
+     "pass": true
+    },
+    "drift": {
+     "zones": {
+      "L_HAND": {
+       "kind": "planted throughout",
+       "from_frame": 0,
+       "max_cm": 0.886,
+       "worst": "L_Hand"
+      },
+      "R_HAND": {
+       "kind": "planted throughout",
+       "from_frame": 0,
+       "max_cm": 1.013,
+       "worst": "R_Hand"
+      }
+     },
+     "max_cm": 1.013,
+     "never_touched": [],
+     "pass": false
+    },
+    "end": {
+     "planted_max_cm": 3.338,
+     "beyond": [
+      "L_Wrist",
+      "R_Wrist"
+     ],
+     "end_exemplar_bodies": [],
+     "reason": "generator: L_Wrist, R_Wrist end off D's exemplar"
+    }
+   }
+  },
+  {
+   "variant": "SYN_E3_E3_E3_high_s4_t6px",
+   "edge": "E3",
+   "failed_hard": [
+    "seams"
+   ],
+   "seams": {
+    "failed": [
+     "end",
+     "drift"
+    ],
+    "start": {
+     "all_max_cm": 0.277,
+     "all_worst": "R_Knee",
+     "planted_max_cm": 0.227,
+     "planted_worst": "R_Hand",
+     "pass": true
+    },
+    "drift": {
+     "zones": {
+      "L_HAND": {
+       "kind": "planted throughout",
+       "from_frame": 0,
+       "max_cm": 1.1,
+       "worst": "L_Hand"
+      },
+      "R_HAND": {
+       "kind": "planted throughout",
+       "from_frame": 0,
+       "max_cm": 0.659,
+       "worst": "R_Hand"
+      }
+     },
+     "max_cm": 1.1,
+     "never_touched": [],
+     "pass": false
+    },
+    "end": {
+     "planted_max_cm": 3.158,
+     "beyond": [
+      "L_Wrist",
+      "R_Wrist"
+     ],
+     "end_exemplar_bodies": [
+      "R_Wrist"
+     ],
+     "reason": "generator: L_Wrist end off D's exemplar"
+    }
+   }
+  },
+  {
+   "variant": "SYN_E5_E5_E5_mid_s0_t6px12",
+   "edge": "E5",
+   "failed_hard": [
+    "held"
+   ]
+  },
+  {
+   "variant": "SYN_E5_E5_E5_mid_s1_t6px12",
+   "edge": "E5",
+   "failed_hard": [
+    "held"
+   ]
+  },
+  {
+   "variant": "SYN_E5_E5_E5_mid_s1_t6rpx12",
+   "edge": "E5",
+   "failed_hard": [
+    "held",
+    "seams"
+   ],
+   "seams": {
+    "failed": [
+     "start",
+     "end",
+     "drift"
+    ],
+    "start": {
+     "all_max_cm": 0.627,
+     "all_worst": "R_Hand",
+     "planted_max_cm": 0.627,
+     "planted_worst": "R_Hand",
+     "pass": false
+    },
+    "drift": {
+     "zones": {
+      "L_FOOT": {
+       "kind": "makes",
+       "from_frame": 94,
+       "max_cm": 11.313,
+       "worst": "L_Toe",
+       "touchdown_frame": 88
+      },
+      "L_HAND": {
+       "kind": "planted throughout",
+       "from_frame": 0,
+       "max_cm": 1.689,
+       "worst": "L_Hand"
+      },
+      "R_FOOT": {
+       "kind": "makes",
+       "from_frame": 94,
+       "max_cm": 19.738,
+       "worst": "R_Toe",
+       "touchdown_frame": 88
+      },
+      "R_HAND": {
+       "kind": "planted throughout",
+       "from_frame": 0,
+       "max_cm": 1.685,
+       "worst": "R_Wrist"
+      }
+     },
+     "max_cm": 19.738,
+     "never_touched": [],
+     "pass": false
+    },
+    "end": {
+     "planted_max_cm": 9.587,
+     "beyond": [
+      "L_Ankle",
+      "L_Toe",
+      "L_Hand",
+      "R_Ankle",
+      "R_Toe"
+     ],
+     "end_exemplar_bodies": [],
+     "reason": "generator: L_Ankle, L_Hand, L_Toe, R_Ankle, R_Toe end off D's exemplar"
+    }
+   }
+  },
+  {
+   "variant": "SYN_E5_E5_E5_mid_s2_t6px12",
+   "edge": "E5",
+   "failed_hard": [
+    "held"
+   ]
+  },
+  {
+   "variant": "SYN_E5_E5_E5_mid_s2_t6rpx12",
+   "edge": "E5",
+   "failed_hard": [
+    "held"
+   ]
+  },
+  {
+   "variant": "SYN_E5_E5_E5_mid_s3_t6px12",
+   "edge": "E5",
+   "failed_hard": [
+    "held"
+   ]
+  },
+  {
+   "variant": "SYN_E5_E5_E5_mid_s3_t6rpx12",
+   "edge": "E5",
+   "failed_hard": [
+    "held"
+   ]
+  },
+  {
+   "variant": "SYN_E5_E5_E5_mid_s4_t6px12",
+   "edge": "E5",
+   "failed_hard": [
+    "held"
+   ]
+  },
+  {
+   "variant": "SYN_E5_E5_E5_mid_s4_t6rpx12",
+   "edge": "E5",
+   "failed_hard": [
+    "held"
+   ]
+  }
+ ]
+}

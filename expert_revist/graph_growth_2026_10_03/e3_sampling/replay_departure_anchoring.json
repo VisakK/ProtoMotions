@@ -1,0 +1,148 @@
+{
+  "card": "E3 (graph_growth_2026_10_03/PLAN.MD)",
+  "release": "data/smpl/reference_curation/holds_repaired_ftC_posefix.release_v2.a2dda5d2ac",
+  "config": {
+    "segment_start_prob": 0.4,
+    "segment_end_prob": 0.2,
+    "init_start_prob": 0.2,
+    "pre_roll_s": 0.5,
+    "segment_weighting": "uniform",
+    "num_envs": 4096,
+    "env_dt": 0.03333333333333333,
+    "rounds": 1000,
+    "seed": 0
+  },
+  "graph": {
+    "motions": 168,
+    "segments": 810,
+    "departure_eligible_segments": 642,
+    "motions_with_an_eligible_departure": 168,
+    "excluded_segments_ending_within_env_dt_of_clip_end": 168
+  },
+  "resets": 4096000,
+  "shares": {
+    "uniform": {
+      "expected": 0.31999996304512024,
+      "observed": 0.320058349609375,
+      "count": 1310959,
+      "abs_dev": 5.83865642547754e-05,
+      "rel_dev": 0.00018245803436715662,
+      "within_1pct": true
+    },
+    "t0": {
+      "expected": 0.07999999076128006,
+      "observed": 0.08012451171875,
+      "count": 328190,
+      "abs_dev": 0.00012452095746993963,
+      "rel_dev": 0.0015565121481264932,
+      "within_1pct": true
+    },
+    "arrival": {
+      "expected": 0.40000003576278687,
+      "observed": 0.39971923828125,
+      "count": 1637250,
+      "abs_dev": -0.00028079748153686523,
+      "rel_dev": 0.0007019936410790407,
+      "within_1pct": true
+    },
+    "departure": {
+      "expected": 0.20000001788139343,
+      "observed": 0.200097900390625,
+      "count": 819601,
+      "abs_dev": 9.788250923156716e-05,
+      "rel_dev": 0.0004894125024009483,
+      "within_1pct": true
+    }
+  },
+  "departure_landing": {
+    "departures": 819601,
+    "inside_t_end_minus_0.5_to_t_end_of_an_eligible_segment": 819601,
+    "outside_any_window": 0,
+    "inside_a_clips_final_segment_window": 0,
+    "at_or_after_last_frame_length_minus_env_dt": 0,
+    "lead_before_t_end_s": {
+      "min": 0.0,
+      "p50": 0.2503204345703125,
+      "max": 0.5,
+      "mean": 0.250240296125412
+    },
+    "min_distance_to_clip_end_s": 2.8167724609375,
+    "eligible_segments_drawn": 642,
+    "eligible_segments": 642,
+    "draws_per_eligible_segment": {
+      "min": 535,
+      "max": 4943
+    }
+  },
+  "logged_path": {
+    "mean_14_resets_per_step": {
+      "steps": 20000,
+      "steps_without_resets": 0,
+      "distinct_key_orders_over_steps": 1,
+      "keys": [
+        "anchor/uniform_resets",
+        "anchor/t0_resets",
+        "anchor/arrival_resets",
+        "anchor/departure_resets",
+        "anchor/resets"
+      ],
+      "env/anchor/resets (mean resets per step)": 14.0201997756958,
+      "env/anchor/<kind>_resets / env/anchor/resets": {
+        "uniform": 0.31964595515549876,
+        "t0": 0.08047673853472954,
+        "arrival": 0.3992952977792017,
+        "departure": 0.2005820255359325
+      },
+      "pooled_share": {
+        "uniform": 0.31964593943025066,
+        "t0": 0.08047674070270039,
+        "arrival": 0.39929530249211853,
+        "departure": 0.20058201737493045
+      },
+      "max_abs_diff_logged_vs_pooled": 1.5725248103670708e-08
+    },
+    "mean_0.5_resets_per_step": {
+      "steps": 20000,
+      "steps_without_resets": 12141,
+      "distinct_key_orders_over_steps": 1,
+      "keys": [
+        "anchor/uniform_resets",
+        "anchor/t0_resets",
+        "anchor/arrival_resets",
+        "anchor/departure_resets",
+        "anchor/resets"
+      ],
+      "env/anchor/resets (mean resets per step)": 0.49184998869895935,
+      "env/anchor/<kind>_resets / env/anchor/resets": {
+        "uniform": 0.31706820881342884,
+        "t0": 0.08173223480704109,
+        "arrival": 0.39564909108216456,
+        "departure": 0.20555047287140307
+      },
+      "pooled_share": {
+        "uniform": 0.31706821185320727,
+        "t0": 0.08173223543763343,
+        "arrival": 0.3956490800040663,
+        "departure": 0.20555047270509302
+      },
+      "max_abs_diff_logged_vs_pooled": 1.107809827205486e-08
+    }
+  },
+  "flags_off_vs_pre_e3": {
+    "config": {
+      "segment_start_prob": 0.6,
+      "segment_end_prob_in_pickle": false,
+      "segment_end_prob_read": 0.0,
+      "init_start_prob": 0.2,
+      "pre_roll_s": 0.5,
+      "segment_weighting": "uniform"
+    },
+    "pre_e3_commit": "5fdbd50f115d2e8da666c683a475d69c3ac43045",
+    "calls": 200,
+    "resets": 12378,
+    "calls_differing": 0,
+    "arrival_share_new_code": 0.60986328125
+  },
+  "pass": true,
+  "seconds": 9.3
+}

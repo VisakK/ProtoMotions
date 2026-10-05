@@ -1,0 +1,4105 @@
+{
+ "release": "holds_repaired_ftC_posefix.release_v2.a2dda5d2ac",
+ "libraries": {
+  "e15500:9500": {
+   "path": "results/smpl_yogi_v2_expert56_a2dda5d2ac/results/predicted_motion_lib_epoch_9500.pt",
+   "frames": 141300,
+   "tracked": 124464,
+   "posture": {
+    "median_joint_angle_deg": 14.944304466247559,
+    "frame_mean_angle_p50": 16.186735153198242,
+    "frame_mean_angle_by_group_p50": {
+     "arm_balance": 17.249828338623047,
+     "connective": 15.237068176269531,
+     "inversion": 16.562915802001953,
+     "single_leg": 16.034238815307617
+    },
+    "mean_bias_deg": 4.020050525665283,
+    "joints": {
+     "L_Hip": {
+      "median_deg": 14.62368106842041,
+      "bias_deg": 4.6176862716674805,
+      "bias_over_sd": 0.52057284116745,
+      "mean_vec": [
+       0.46,
+       -0.03,
+       -4.59
+      ]
+     },
+     "L_Knee": {
+      "median_deg": 15.360383987426758,
+      "bias_deg": 6.492761611938477,
+      "bias_over_sd": 0.44563910365104675,
+      "mean_vec": [
+       -1.47,
+       -6.01,
+       1.97
+      ]
+     },
+     "L_Ankle": {
+      "median_deg": 14.997346878051758,
+      "bias_deg": 3.5868358612060547,
+      "bias_over_sd": 0.3898559808731079,
+      "mean_vec": [
+       -3.55,
+       -0.45,
+       0.18
+      ]
+     },
+     "L_Toe": {
+      "median_deg": 12.657867431640625,
+      "bias_deg": 2.8372702598571777,
+      "bias_over_sd": 0.27005988359451294,
+      "mean_vec": [
+       0.16,
+       0.79,
+       -2.72
+      ]
+     },
+     "R_Hip": {
+      "median_deg": 15.416093826293945,
+      "bias_deg": 3.15594744682312,
+      "bias_over_sd": 0.2139279842376709,
+      "mean_vec": [
+       -1.95,
+       0.38,
+       2.45
+      ]
+     },
+     "R_Knee": {
+      "median_deg": 16.53154945373535,
+      "bias_deg": 4.17590856552124,
+      "bias_over_sd": 0.22959445416927338,
+      "mean_vec": [
+       -0.46,
+       -2.89,
+       -2.97
+      ]
+     },
+     "R_Ankle": {
+      "median_deg": 14.295719146728516,
+      "bias_deg": 2.467101573944092,
+      "bias_over_sd": 0.15579718351364136,
+      "mean_vec": [
+       1.17,
+       1.99,
+       0.88
+      ]
+     },
+     "R_Toe": {
+      "median_deg": 11.702081680297852,
+      "bias_deg": 2.90097975730896,
+      "bias_over_sd": 0.19884935021400452,
+      "mean_vec": [
+       1.87,
+       1.95,
+       1.07
+      ]
+     },
+     "Torso": {
+      "median_deg": 14.119922637939453,
+      "bias_deg": 4.428023815155029,
+      "bias_over_sd": 0.34854158759117126,
+      "mean_vec": [
+       2.8,
+       -2.4,
+       -2.45
+      ]
+     },
+     "Spine": {
+      "median_deg": 11.930027961730957,
+      "bias_deg": 4.185965061187744,
+      "bias_over_sd": 0.5224862098693848,
+      "mean_vec": [
+       -3.84,
+       -1.19,
+       -1.17
+      ]
+     },
+     "Chest": {
+      "median_deg": 12.839201927185059,
+      "bias_deg": 4.799014568328857,
+      "bias_over_sd": 0.42761436104774475,
+      "mean_vec": [
+       3.08,
+       2.17,
+       2.97
+      ]
+     },
+     "Neck": {
+      "median_deg": 17.339221954345703,
+      "bias_deg": 3.2343151569366455,
+      "bias_over_sd": 0.20774409174919128,
+      "mean_vec": [
+       -1.87,
+       -1.54,
+       -2.15
+      ]
+     },
+     "Head": {
+      "median_deg": 16.265710830688477,
+      "bias_deg": 1.8406858444213867,
+      "bias_over_sd": 0.12136999517679214,
+      "mean_vec": [
+       -0.41,
+       -1.14,
+       -1.38
+      ]
+     },
+     "L_Thorax": {
+      "median_deg": 14.191020965576172,
+      "bias_deg": 3.9750430583953857,
+      "bias_over_sd": 0.3940221071243286,
+      "mean_vec": [
+       -0.6,
+       -3.14,
+       -2.36
+      ]
+     },
+     "L_Shoulder": {
+      "median_deg": 16.44337272644043,
+      "bias_deg": 3.685086727142334,
+      "bias_over_sd": 0.2670704126358032,
+      "mean_vec": [
+       1.75,
+       -2.72,
+       1.76
+      ]
+     },
+     "L_Elbow": {
+      "median_deg": 17.82716941833496,
+      "bias_deg": 7.097275257110596,
+      "bias_over_sd": 0.370988130569458,
+      "mean_vec": [
+       -2.42,
+       -5.32,
+       4.03
+      ]
+     },
+     "L_Wrist": {
+      "median_deg": 17.21540069580078,
+      "bias_deg": 6.763659954071045,
+      "bias_over_sd": 0.2661933898925781,
+      "mean_vec": [
+       -4.85,
+       4.71,
+       0.18
+      ]
+     },
+     "L_Hand": {
+      "median_deg": 13.39224910736084,
+      "bias_deg": 6.855964183807373,
+      "bias_over_sd": 0.3937952518463135,
+      "mean_vec": [
+       4.53,
+       2.54,
+       -4.47
+      ]
+     },
+     "R_Thorax": {
+      "median_deg": 14.969481468200684,
+      "bias_deg": 0.4236845076084137,
+      "bias_over_sd": 0.04017685353755951,
+      "mean_vec": [
+       0.15,
+       -0.35,
+       0.18
+      ]
+     },
+     "R_Shoulder": {
+      "median_deg": 16.671051025390625,
+      "bias_deg": 2.6732308864593506,
+      "bias_over_sd": 0.2437354475259781,
+      "mean_vec": [
+       -0.86,
+       -2.51,
+       -0.3
+      ]
+     },
+     "R_Elbow": {
+      "median_deg": 16.27385902404785,
+      "bias_deg": 5.367514133453369,
+      "bias_over_sd": 0.2633943259716034,
+      "mean_vec": [
+       3.2,
+       -3.72,
+       -2.16
+      ]
+     },
+     "R_Wrist": {
+      "median_deg": 15.074759483337402,
+      "bias_deg": 2.9547269344329834,
+      "bias_over_sd": 0.1500755250453949,
+      "mean_vec": [
+       -0.06,
+       -1.66,
+       -2.45
+      ]
+     },
+     "R_Hand": {
+      "median_deg": 11.846231460571289,
+      "bias_deg": 3.942472457885742,
+      "bias_over_sd": 0.28211602568626404,
+      "mean_vec": [
+       -2.59,
+       1.79,
+       2.37
+      ]
+     }
+    },
+    "frame_mean_angle_p50_by_clip_x0": {
+     "220923_Half_Moon_Pose_or_Ardha_Chandrasana_-a": 13.949753761291504,
+     "220923_Half_Moon_Pose_or_Ardha_Chandrasana_-b": 16.046958923339844,
+     "220923_Standing_Split_pose_or_Urdhva_Prasarita_Eka_Padasana_-a": 16.529958724975586,
+     "220923_Standing_Split_pose_or_Urdhva_Prasarita_Eka_Padasana_-b": 24.79877281188965,
+     "220923_Standing_big_toe_hold_pose_or_Utthita_Padangusthasana-a": 15.944029808044434,
+     "220923_Standing_big_toe_hold_pose_or_Utthita_Padangusthasana-b": 14.9630765914917,
+     "220923_Tree_Pose_or_Vrksasana_-a": 16.300649642944336,
+     "220923_Tree_Pose_or_Vrksasana_-b": 15.759779930114746,
+     "220926_Eagle_Pose_or_Garudasana_-a": 17.846590042114258,
+     "220926_Lord_of_the_Dance_Pose_or_Natarajasana_-a": 16.288753509521484,
+     "220926_Lord_of_the_Dance_Pose_or_Natarajasana_-c": 19.708322525024414,
+     "220926_Warrior_III_Pose_or_Virabhadrasana_III_-a": 14.056883811950684,
+     "220926_Warrior_III_Pose_or_Virabhadrasana_III_-b": 12.867033958435059,
+     "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-a": 14.312280654907227,
+     "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-b": 17.357091903686523,
+     "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-c": 17.09905433654785,
+     "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-d": 15.894754409790039,
+     "220923_Handstand_pose_or_Adho_Mukha_Vrksasana_-a": 14.49042797088623,
+     "220923_Legs-Up-the-Wall_Pose_or_Viparita_Karani_-a": 17.75246810913086,
+     "220923_Plow_Pose_or_Halasana_-a": 16.629993438720703,
+     "220926_Plow_Pose_or_Halasana_-b": 22.48511505126953,
+     "220923_Scorpion_pose_or_vrischikasana-a": 16.641149520874023,
+     "220923_Scorpion_pose_or_vrischikasana-b": 13.30683422088623,
+     "220923_Supported_Headstand_pose_or_Salamba_Sirsasana_-b": 13.62018871307373,
+     "220926_Supported_Headstand_pose_or_Salamba_Sirsasana_-a": 25.7487735748291,
+     "220923_Supported_Shoulderstand_pose_or_Salamba_Sarvangasana_-a": 17.68865394592285,
+     "220923_Crane_Crow_Pose_or_Bakasana_-a": 17.167160034179688,
+     "220923_Firefly_Pose_or_Tittibhasana_-a": 15.41744327545166,
+     "220923_Peacock_Pose_or_Mayurasana_-a": 26.938879013061523,
+     "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-a": 15.388684272766113,
+     "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-b": 16.03718376159668,
+     "220923_Shoulder-Pressing_Pose_or_Bhujapidasana_-a": 17.494272232055664,
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a": 15.692691802978516,
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-b": 15.934545516967773,
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-c": 18.163785934448242,
+     "220923_Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana_-a": 14.795831680297852,
+     "220923_Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana_-b": 15.948575019836426,
+     "220923_Plank_Pose_or_Kumbhakasana_-a": 14.490723609924316,
+     "220923_Four-Limbed_Staff_Pose_or_Chaturanga_Dandasana_-a": 13.56138801574707,
+     "220923_Cobra_Pose_or_Bhujangasana_-a": 15.251296043395996,
+     "220923_Side_Plank_Pose_or_Vasisthasana_-a": 13.013689041137695,
+     "220923_Side_Plank_Pose_or_Vasisthasana_-b": 17.368555068969727,
+     "220923_Dolphin_Plank_Pose_or_Makara_Adho_Mukha_Svanasana_-a": 15.380476951599121,
+     "220923_Dolphin_Pose_or_Ardha_Pincha_Mayurasana_-a": 16.406211853027344,
+     "220923_Standing_Forward_Bend_pose_or_Uttanasana_-a": 15.847624778747559,
+     "220923_Garland_Pose_or_Malasana_-a": 16.816469192504883,
+     "220923_Low_Lunge_pose_or_Anjaneyasana_-a": 16.50286102294922,
+     "220926_Warrior_II_Pose_or_Virabhadrasana_II_-a": 11.98420524597168,
+     "220923_Extended_Revolved_Triangle_Pose_or_Utthita_Trikonasana_-a": 14.10037899017334,
+     "220923_Extended_Revolved_Side_Angle_Pose_or_Utthita_Parsvakonasana_-a": 14.757329940795898,
+     "220926_Upward_Plank_Pose_or_Purvottanasana_-a": 14.965287208557129,
+     "220923_Bridge_Pose_or_Setu_Bandha_Sarvangasana_-a": 23.2391357421875,
+     "220923_Extended_Revolved_Side_Angle_Pose_or_Utthita_Parsvakonasana_-b": 17.543594360351562,
+     "220923_Extended_Revolved_Triangle_Pose_or_Utthita_Trikonasana_-b": 12.56081485748291,
+     "220926_viparita_virabhadrasana_or_reverse_warrior_pose-a": 15.038222312927246,
+     "220926_Intense_Side_Stretch_Pose_or_Parsvottanasana_-b": 46.45134735107422
+    },
+    "x0_frame_mean_angle_p50_holds": 15.228045463562012,
+    "x0_frame_mean_angle_p50_between_holds": 17.283784866333008,
+    "global_body_rot_err_p50": 12.871236801147461,
+    "root_rot_err_p50": 10.526403427124023,
+    "in_root_frame_body_rot_err_p50": 16.84225845336914
+   },
+   "hold_stillness": {
+    "frames": 17707,
+    "speed_rms": {
+     "agent": 0.07878793030977249,
+     "reference": 0.11057733744382858
+    },
+    "speed_p50": {
+     "agent": 0.010144743137061596,
+     "reference": 0.02474234066903591
+    },
+    "accel_rms": {
+     "agent": 0.6527705788612366,
+     "reference": 0.8404276967048645
+    },
+    "accel_p50": {
+     "agent": 0.13784043490886688,
+     "reference": 0.22786590456962585
+    },
+    "accel_rms_by_body": {
+     "agent": {
+      "Pelvis": 0.3674774765968323,
+      "L_Hip": 0.43561723828315735,
+      "L_Knee": 0.6546007990837097,
+      "L_Ankle": 0.8177465796470642,
+      "L_Toe": 1.041638731956482,
+      "R_Hip": 0.4554269313812256,
+      "R_Knee": 0.5938698649406433,
+      "R_Ankle": 0.7093415856361389,
+      "R_Toe": 0.82334303855896,
+      "Torso": 0.40033483505249023,
+      "Spine": 0.3917590379714966,
+      "Chest": 0.3825218379497528,
+      "Neck": 0.4267251193523407,
+      "Head": 0.5370432734489441,
+      "L_Thorax": 0.38571685552597046,
+      "L_Shoulder": 0.46562114357948303,
+      "L_Elbow": 0.6375503540039062,
+      "L_Wrist": 0.831941545009613,
+      "L_Hand": 1.0923031568527222,
+      "R_Thorax": 0.3844800293445587,
+      "R_Shoulder": 0.4537586569786072,
+      "R_Elbow": 0.6263612508773804,
+      "R_Wrist": 0.8094130158424377,
+      "R_Hand": 0.9946698546409607
+     },
+     "reference": {
+      "Pelvis": 0.4793005883693695,
+      "L_Hip": 0.5522287487983704,
+      "L_Knee": 0.9729740619659424,
+      "L_Ankle": 1.1797091960906982,
+      "L_Toe": 1.256456971168518,
+      "R_Hip": 0.5540061593055725,
+      "R_Knee": 0.8927752375602722,
+      "R_Ankle": 1.122418999671936,
+      "R_Toe": 1.2808194160461426,
+      "Torso": 0.49303650856018066,
+      "Spine": 0.525005042552948,
+      "Chest": 0.5040475130081177,
+      "Neck": 0.6127956509590149,
+      "Head": 0.5999629497528076,
+      "L_Thorax": 0.5778634548187256,
+      "L_Shoulder": 0.8398774862289429,
+      "L_Elbow": 0.8088952302932739,
+      "L_Wrist": 0.9581316709518433,
+      "L_Hand": 1.2357195615768433,
+      "R_Thorax": 0.5160213112831116,
+      "R_Shoulder": 0.562372088432312,
+      "R_Elbow": 0.6540930271148682,
+      "R_Wrist": 0.8516002893447876,
+      "R_Hand": 1.0550298690795898
+     }
+    },
+    "by_group": {
+     "arm_balance": {
+      "speed_rms_agent": 0.08736808598041534,
+      "speed_rms_ref": 0.12535783648490906,
+      "accel_rms_agent": 0.6912811398506165,
+      "accel_rms_ref": 0.8400465250015259
+     },
+     "connective": {
+      "speed_rms_agent": 0.07838775217533112,
+      "speed_rms_ref": 0.10584931075572968,
+      "accel_rms_agent": 0.7794731259346008,
+      "accel_rms_ref": 0.8084579706192017
+     },
+     "inversion": {
+      "speed_rms_agent": 0.07701127976179123,
+      "speed_rms_ref": 0.10965606570243835,
+      "accel_rms_agent": 0.6641606092453003,
+      "accel_rms_ref": 1.0631537437438965
+     },
+     "single_leg": {
+      "speed_rms_agent": 0.07531643658876419,
+      "speed_rms_ref": 0.10662554949522018,
+      "accel_rms_agent": 0.4547685980796814,
+      "accel_rms_ref": 0.6353046298027039
+     }
+    }
+   }
+  },
+  "e15500:11000": {
+   "path": "results/smpl_yogi_v2_expert56_a2dda5d2ac/results/predicted_motion_lib_epoch_11000.pt",
+   "frames": 141300,
+   "tracked": 124655,
+   "posture": {
+    "median_joint_angle_deg": 14.3417329788208,
+    "frame_mean_angle_p50": 15.605159759521484,
+    "frame_mean_angle_by_group_p50": {
+     "arm_balance": 16.749727249145508,
+     "connective": 15.085289001464844,
+     "inversion": 16.46526527404785,
+     "single_leg": 15.095353126525879
+    },
+    "mean_bias_deg": 4.207301616668701,
+    "joints": {
+     "L_Hip": {
+      "median_deg": 15.862971305847168,
+      "bias_deg": 8.421693801879883,
+      "bias_over_sd": 0.8432270884513855,
+      "mean_vec": [
+       -2.91,
+       -0.99,
+       -7.84
+      ]
+     },
+     "L_Knee": {
+      "median_deg": 14.513894081115723,
+      "bias_deg": 5.181926727294922,
+      "bias_over_sd": 0.3970511555671692,
+      "mean_vec": [
+       -2.7,
+       -2.04,
+       3.93
+      ]
+     },
+     "L_Ankle": {
+      "median_deg": 13.888578414916992,
+      "bias_deg": 4.60556173324585,
+      "bias_over_sd": 0.4708118736743927,
+      "mean_vec": [
+       -4.03,
+       2.22,
+       -0.28
+      ]
+     },
+     "L_Toe": {
+      "median_deg": 14.129847526550293,
+      "bias_deg": 3.063720703125,
+      "bias_over_sd": 0.18240666389465332,
+      "mean_vec": [
+       0.64,
+       -2.25,
+       -1.98
+      ]
+     },
+     "R_Hip": {
+      "median_deg": 15.782963752746582,
+      "bias_deg": 2.7015881538391113,
+      "bias_over_sd": 0.2661197781562805,
+      "mean_vec": [
+       -2.36,
+       -1.25,
+       -0.43
+      ]
+     },
+     "R_Knee": {
+      "median_deg": 15.970516204833984,
+      "bias_deg": 4.102558612823486,
+      "bias_over_sd": 0.5043394565582275,
+      "mean_vec": [
+       -3.66,
+       1.83,
+       -0.23
+      ]
+     },
+     "R_Ankle": {
+      "median_deg": 13.283771514892578,
+      "bias_deg": 1.1752300262451172,
+      "bias_over_sd": 0.11029946058988571,
+      "mean_vec": [
+       1.06,
+       -0.32,
+       0.41
+      ]
+     },
+     "R_Toe": {
+      "median_deg": 11.243829727172852,
+      "bias_deg": 3.336512565612793,
+      "bias_over_sd": 0.31373873353004456,
+      "mean_vec": [
+       2.71,
+       -0.56,
+       1.86
+      ]
+     },
+     "Torso": {
+      "median_deg": 12.124286651611328,
+      "bias_deg": 3.087254285812378,
+      "bias_over_sd": 0.39020898938179016,
+      "mean_vec": [
+       2.96,
+       -0.57,
+       0.68
+      ]
+     },
+     "Spine": {
+      "median_deg": 10.886064529418945,
+      "bias_deg": 4.819559574127197,
+      "bias_over_sd": 0.4988354742527008,
+      "mean_vec": [
+       -2.43,
+       -0.71,
+       -4.1
+      ]
+     },
+     "Chest": {
+      "median_deg": 12.581683158874512,
+      "bias_deg": 4.196106910705566,
+      "bias_over_sd": 0.3087543249130249,
+      "mean_vec": [
+       1.46,
+       1.99,
+       3.4
+      ]
+     },
+     "Neck": {
+      "median_deg": 17.20485496520996,
+      "bias_deg": 5.668234348297119,
+      "bias_over_sd": 0.3309028744697571,
+      "mean_vec": [
+       -3.63,
+       -2.82,
+       -3.32
+      ]
+     },
+     "Head": {
+      "median_deg": 16.22260093688965,
+      "bias_deg": 4.858755588531494,
+      "bias_over_sd": 0.26308539509773254,
+      "mean_vec": [
+       3.95,
+       2.28,
+       1.67
+      ]
+     },
+     "L_Thorax": {
+      "median_deg": 13.865797996520996,
+      "bias_deg": 5.719141006469727,
+      "bias_over_sd": 0.41822531819343567,
+      "mean_vec": [
+       -2.52,
+       -3.48,
+       -3.77
+      ]
+     },
+     "L_Shoulder": {
+      "median_deg": 15.876572608947754,
+      "bias_deg": 3.265742063522339,
+      "bias_over_sd": 0.1933704912662506,
+      "mean_vec": [
+       1.92,
+       1.61,
+       2.1
+      ]
+     },
+     "L_Elbow": {
+      "median_deg": 17.201234817504883,
+      "bias_deg": 5.557033538818359,
+      "bias_over_sd": 0.3906943202018738,
+      "mean_vec": [
+       1.12,
+       -4.99,
+       2.18
+      ]
+     },
+     "L_Wrist": {
+      "median_deg": 15.614830017089844,
+      "bias_deg": 3.322667360305786,
+      "bias_over_sd": 0.17805306613445282,
+      "mean_vec": [
+       -3.07,
+       -0.17,
+       -1.25
+      ]
+     },
+     "L_Hand": {
+      "median_deg": 13.409997940063477,
+      "bias_deg": 4.116739273071289,
+      "bias_over_sd": 0.2421555519104004,
+      "mean_vec": [
+       1.48,
+       1.67,
+       -3.46
+      ]
+     },
+     "R_Thorax": {
+      "median_deg": 14.036800384521484,
+      "bias_deg": 1.3733993768692017,
+      "bias_over_sd": 0.1216781735420227,
+      "mean_vec": [
+       -1.2,
+       -0.54,
+       -0.39
+      ]
+     },
+     "R_Shoulder": {
+      "median_deg": 14.199664115905762,
+      "bias_deg": 3.028024673461914,
+      "bias_over_sd": 0.29085367918014526,
+      "mean_vec": [
+       -0.03,
+       -2.91,
+       0.83
+      ]
+     },
+     "R_Elbow": {
+      "median_deg": 14.907689094543457,
+      "bias_deg": 5.3943095207214355,
+      "bias_over_sd": 0.35766521096229553,
+      "mean_vec": [
+       4.3,
+       -2.39,
+       -2.21
+      ]
+     },
+     "R_Wrist": {
+      "median_deg": 14.483874320983887,
+      "bias_deg": 2.1776020526885986,
+      "bias_over_sd": 0.12891322374343872,
+      "mean_vec": [
+       -2.09,
+       0.38,
+       -0.5
+      ]
+     },
+     "R_Hand": {
+      "median_deg": 12.54017448425293,
+      "bias_deg": 7.594574928283691,
+      "bias_over_sd": 0.4290309250354767,
+      "mean_vec": [
+       -4.23,
+       4.96,
+       3.9
+      ]
+     }
+    },
+    "frame_mean_angle_p50_by_clip_x0": {
+     "220923_Half_Moon_Pose_or_Ardha_Chandrasana_-a": 15.356481552124023,
+     "220923_Half_Moon_Pose_or_Ardha_Chandrasana_-b": 16.383563995361328,
+     "220923_Standing_Split_pose_or_Urdhva_Prasarita_Eka_Padasana_-a": 16.099515914916992,
+     "220923_Standing_Split_pose_or_Urdhva_Prasarita_Eka_Padasana_-b": 23.461227416992188,
+     "220923_Standing_big_toe_hold_pose_or_Utthita_Padangusthasana-a": 15.085655212402344,
+     "220923_Standing_big_toe_hold_pose_or_Utthita_Padangusthasana-b": 14.58499526977539,
+     "220923_Tree_Pose_or_Vrksasana_-a": 15.626824378967285,
+     "220923_Tree_Pose_or_Vrksasana_-b": 14.563937187194824,
+     "220926_Eagle_Pose_or_Garudasana_-a": 15.231760025024414,
+     "220926_Lord_of_the_Dance_Pose_or_Natarajasana_-a": 14.552770614624023,
+     "220926_Lord_of_the_Dance_Pose_or_Natarajasana_-c": 19.63819122314453,
+     "220926_Warrior_III_Pose_or_Virabhadrasana_III_-a": 12.81598949432373,
+     "220926_Warrior_III_Pose_or_Virabhadrasana_III_-b": 12.266326904296875,
+     "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-a": 15.473721504211426,
+     "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-b": 18.418560028076172,
+     "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-c": 15.866081237792969,
+     "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-d": 15.990518569946289,
+     "220923_Handstand_pose_or_Adho_Mukha_Vrksasana_-a": 14.02346134185791,
+     "220923_Legs-Up-the-Wall_Pose_or_Viparita_Karani_-a": 16.710552215576172,
+     "220923_Plow_Pose_or_Halasana_-a": 15.917340278625488,
+     "220926_Plow_Pose_or_Halasana_-b": 20.638526916503906,
+     "220923_Scorpion_pose_or_vrischikasana-a": 17.623577117919922,
+     "220923_Scorpion_pose_or_vrischikasana-b": 13.514817237854004,
+     "220923_Supported_Headstand_pose_or_Salamba_Sirsasana_-b": 14.463591575622559,
+     "220926_Supported_Headstand_pose_or_Salamba_Sirsasana_-a": 20.55733299255371,
+     "220923_Supported_Shoulderstand_pose_or_Salamba_Sarvangasana_-a": 15.686600685119629,
+     "220923_Crane_Crow_Pose_or_Bakasana_-a": 16.341646194458008,
+     "220923_Firefly_Pose_or_Tittibhasana_-a": 15.100275039672852,
+     "220923_Peacock_Pose_or_Mayurasana_-a": 26.00355339050293,
+     "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-a": 15.647027015686035,
+     "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-b": 17.05374526977539,
+     "220923_Shoulder-Pressing_Pose_or_Bhujapidasana_-a": 15.969204902648926,
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a": 16.997211456298828,
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-b": 16.585161209106445,
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-c": 17.831064224243164,
+     "220923_Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana_-a": 15.063812255859375,
+     "220923_Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana_-b": 16.689376831054688,
+     "220923_Plank_Pose_or_Kumbhakasana_-a": 14.105598449707031,
+     "220923_Four-Limbed_Staff_Pose_or_Chaturanga_Dandasana_-a": 13.463114738464355,
+     "220923_Cobra_Pose_or_Bhujangasana_-a": 15.262740135192871,
+     "220923_Side_Plank_Pose_or_Vasisthasana_-a": 15.363139152526855,
+     "220923_Side_Plank_Pose_or_Vasisthasana_-b": 15.815069198608398,
+     "220923_Dolphin_Plank_Pose_or_Makara_Adho_Mukha_Svanasana_-a": 15.225445747375488,
+     "220923_Dolphin_Pose_or_Ardha_Pincha_Mayurasana_-a": 17.326292037963867,
+     "220923_Standing_Forward_Bend_pose_or_Uttanasana_-a": 14.87232494354248,
+     "220923_Garland_Pose_or_Malasana_-a": 14.759613990783691,
+     "220923_Low_Lunge_pose_or_Anjaneyasana_-a": 15.37557315826416,
+     "220926_Warrior_II_Pose_or_Virabhadrasana_II_-a": 10.776222229003906,
+     "220923_Extended_Revolved_Triangle_Pose_or_Utthita_Trikonasana_-a": 13.438558578491211,
+     "220923_Extended_Revolved_Side_Angle_Pose_or_Utthita_Parsvakonasana_-a": 14.150699615478516,
+     "220926_Upward_Plank_Pose_or_Purvottanasana_-a": 17.360431671142578,
+     "220923_Bridge_Pose_or_Setu_Bandha_Sarvangasana_-a": 23.167469024658203,
+     "220923_Extended_Revolved_Side_Angle_Pose_or_Utthita_Parsvakonasana_-b": 15.40196418762207,
+     "220923_Extended_Revolved_Triangle_Pose_or_Utthita_Trikonasana_-b": 12.170677185058594,
+     "220926_viparita_virabhadrasana_or_reverse_warrior_pose-a": 14.833490371704102,
+     "220926_Intense_Side_Stretch_Pose_or_Parsvottanasana_-b": 49.23472595214844
+    },
+    "x0_frame_mean_angle_p50_holds": 14.985062599182129,
+    "x0_frame_mean_angle_p50_between_holds": 16.765731811523438,
+    "global_body_rot_err_p50": 12.125298500061035,
+    "root_rot_err_p50": 10.876747131347656,
+    "in_root_frame_body_rot_err_p50": 16.200424194335938
+   },
+   "hold_stillness": {
+    "frames": 17241,
+    "speed_rms": {
+     "agent": 0.08399919420480728,
+     "reference": 0.11297488957643509
+    },
+    "speed_p50": {
+     "agent": 0.01156869251281023,
+     "reference": 0.024755414575338364
+    },
+    "accel_rms": {
+     "agent": 0.7025590538978577,
+     "reference": 0.8620275855064392
+    },
+    "accel_p50": {
+     "agent": 0.1450567990541458,
+     "reference": 0.22856168448925018
+    },
+    "accel_rms_by_body": {
+     "agent": {
+      "Pelvis": 0.44594189524650574,
+      "L_Hip": 0.5743263363838196,
+      "L_Knee": 0.7044525742530823,
+      "L_Ankle": 1.0292413234710693,
+      "L_Toe": 1.2528126239776611,
+      "R_Hip": 0.5625643134117126,
+      "R_Knee": 0.6731605529785156,
+      "R_Ankle": 0.9204106330871582,
+      "R_Toe": 1.1990951299667358,
+      "Torso": 0.4439462125301361,
+      "Spine": 0.37275099754333496,
+      "Chest": 0.33216485381126404,
+      "Neck": 0.3475433886051178,
+      "Head": 0.4618004858493805,
+      "L_Thorax": 0.31537917256355286,
+      "L_Shoulder": 0.39827704429626465,
+      "L_Elbow": 0.5840592384338379,
+      "L_Wrist": 0.7322591543197632,
+      "L_Hand": 0.9060552716255188,
+      "R_Thorax": 0.3254399597644806,
+      "R_Shoulder": 0.4057505428791046,
+      "R_Elbow": 0.6157459616661072,
+      "R_Wrist": 0.8469139933586121,
+      "R_Hand": 1.0168436765670776
+     },
+     "reference": {
+      "Pelvis": 0.48710593581199646,
+      "L_Hip": 0.5629733800888062,
+      "L_Knee": 0.9910107851028442,
+      "L_Ankle": 1.21701180934906,
+      "L_Toe": 1.3064085245132446,
+      "R_Hip": 0.5648921728134155,
+      "R_Knee": 0.9054110050201416,
+      "R_Ankle": 1.1582592725753784,
+      "R_Toe": 1.3294614553451538,
+      "Torso": 0.500126302242279,
+      "Spine": 0.5349388122558594,
+      "Chest": 0.5148331522941589,
+      "Neck": 0.6286271810531616,
+      "Head": 0.6066732406616211,
+      "L_Thorax": 0.5930236577987671,
+      "L_Shoulder": 0.8709018230438232,
+      "L_Elbow": 0.8019349575042725,
+      "L_Wrist": 0.9760549664497375,
+      "L_Hand": 1.2649964094161987,
+      "R_Thorax": 0.5277308821678162,
+      "R_Shoulder": 0.5744831562042236,
+      "R_Elbow": 0.6757627129554749,
+      "R_Wrist": 0.8702660202980042,
+      "R_Hand": 1.0811561346054077
+     }
+    },
+    "by_group": {
+     "arm_balance": {
+      "speed_rms_agent": 0.09125721454620361,
+      "speed_rms_ref": 0.12816274166107178,
+      "accel_rms_agent": 0.6229686141014099,
+      "accel_rms_ref": 0.8583223223686218
+     },
+     "connective": {
+      "speed_rms_agent": 0.08186481893062592,
+      "speed_rms_ref": 0.1078246682882309,
+      "accel_rms_agent": 0.7030101418495178,
+      "accel_rms_ref": 0.8132262229919434
+     },
+     "inversion": {
+      "speed_rms_agent": 0.08102413266897202,
+      "speed_rms_ref": 0.1111433207988739,
+      "accel_rms_agent": 0.8629641532897949,
+      "accel_rms_ref": 1.086638331413269
+     },
+     "single_leg": {
+      "speed_rms_agent": 0.08447277545928955,
+      "speed_rms_ref": 0.11032845079898834,
+      "accel_rms_agent": 0.5647580027580261,
+      "accel_rms_ref": 0.6480537056922913
+     }
+    }
+   }
+  },
+  "e15500:12500": {
+   "path": "results/smpl_yogi_v2_expert56_a2dda5d2ac/results/predicted_motion_lib_epoch_12500.pt",
+   "frames": 141300,
+   "tracked": 129416,
+   "posture": {
+    "median_joint_angle_deg": 13.468464851379395,
+    "frame_mean_angle_p50": 14.569158554077148,
+    "frame_mean_angle_by_group_p50": {
+     "arm_balance": 15.531506538391113,
+     "connective": 13.72332763671875,
+     "inversion": 15.536737442016602,
+     "single_leg": 14.604715347290039
+    },
+    "mean_bias_deg": 3.7425053119659424,
+    "joints": {
+     "L_Hip": {
+      "median_deg": 13.384610176086426,
+      "bias_deg": 4.306138515472412,
+      "bias_over_sd": 0.4554450213909149,
+      "mean_vec": [
+       -0.34,
+       -1.3,
+       -4.09
+      ]
+     },
+     "L_Knee": {
+      "median_deg": 14.030409812927246,
+      "bias_deg": 4.523375511169434,
+      "bias_over_sd": 0.3601516783237457,
+      "mean_vec": [
+       -1.72,
+       -4.11,
+       0.76
+      ]
+     },
+     "L_Ankle": {
+      "median_deg": 13.020895004272461,
+      "bias_deg": 3.987499237060547,
+      "bias_over_sd": 0.42042115330696106,
+      "mean_vec": [
+       -3.43,
+       1.84,
+       -0.87
+      ]
+     },
+     "L_Toe": {
+      "median_deg": 13.510149955749512,
+      "bias_deg": 1.1356703042984009,
+      "bias_over_sd": 0.10827354341745377,
+      "mean_vec": [
+       0.78,
+       -0.83,
+       -0.01
+      ]
+     },
+     "R_Hip": {
+      "median_deg": 14.779170989990234,
+      "bias_deg": 4.041442394256592,
+      "bias_over_sd": 0.4644600749015808,
+      "mean_vec": [
+       -4.01,
+       -0.47,
+       0.15
+      ]
+     },
+     "R_Knee": {
+      "median_deg": 13.835287094116211,
+      "bias_deg": 2.0049402713775635,
+      "bias_over_sd": 0.1349426656961441,
+      "mean_vec": [
+       0.11,
+       -1.6,
+       -1.2
+      ]
+     },
+     "R_Ankle": {
+      "median_deg": 12.861128807067871,
+      "bias_deg": 4.332050800323486,
+      "bias_over_sd": 0.34393927454948425,
+      "mean_vec": [
+       -1.54,
+       2.14,
+       3.44
+      ]
+     },
+     "R_Toe": {
+      "median_deg": 10.188993453979492,
+      "bias_deg": 3.185127019882202,
+      "bias_over_sd": 0.3115934729576111,
+      "mean_vec": [
+       2.52,
+       -1.88,
+       -0.52
+      ]
+     },
+     "Torso": {
+      "median_deg": 10.885834693908691,
+      "bias_deg": 1.5582116842269897,
+      "bias_over_sd": 0.20435847342014313,
+      "mean_vec": [
+       1.47,
+       -0.46,
+       0.23
+      ]
+     },
+     "Spine": {
+      "median_deg": 9.494922637939453,
+      "bias_deg": 2.842230796813965,
+      "bias_over_sd": 0.367311030626297,
+      "mean_vec": [
+       -0.37,
+       -0.11,
+       -2.82
+      ]
+     },
+     "Chest": {
+      "median_deg": 11.848840713500977,
+      "bias_deg": 4.007376194000244,
+      "bias_over_sd": 0.360099196434021,
+      "mean_vec": [
+       1.24,
+       0.7,
+       3.74
+      ]
+     },
+     "Neck": {
+      "median_deg": 15.509575843811035,
+      "bias_deg": 5.3924479484558105,
+      "bias_over_sd": 0.3712462782859802,
+      "mean_vec": [
+       -3.33,
+       -0.85,
+       -4.16
+      ]
+     },
+     "Head": {
+      "median_deg": 14.323993682861328,
+      "bias_deg": 0.752730131149292,
+      "bias_over_sd": 0.05445827543735504,
+      "mean_vec": [
+       0.52,
+       0.48,
+       -0.26
+      ]
+     },
+     "L_Thorax": {
+      "median_deg": 13.712434768676758,
+      "bias_deg": 5.42134428024292,
+      "bias_over_sd": 0.4655103087425232,
+      "mean_vec": [
+       -2.83,
+       -2.01,
+       -4.17
+      ]
+     },
+     "L_Shoulder": {
+      "median_deg": 16.454139709472656,
+      "bias_deg": 4.101272106170654,
+      "bias_over_sd": 0.2845807671546936,
+      "mean_vec": [
+       3.24,
+       2.08,
+       1.41
+      ]
+     },
+     "L_Elbow": {
+      "median_deg": 15.885909080505371,
+      "bias_deg": 4.425317764282227,
+      "bias_over_sd": 0.3242456316947937,
+      "mean_vec": [
+       1.3,
+       -3.89,
+       1.66
+      ]
+     },
+     "L_Wrist": {
+      "median_deg": 14.98475170135498,
+      "bias_deg": 5.847642421722412,
+      "bias_over_sd": 0.2874925136566162,
+      "mean_vec": [
+       -4.58,
+       -2.46,
+       -2.68
+      ]
+     },
+     "L_Hand": {
+      "median_deg": 11.40279769897461,
+      "bias_deg": 3.5854544639587402,
+      "bias_over_sd": 0.17908009886741638,
+      "mean_vec": [
+       2.7,
+       2.19,
+       -0.88
+      ]
+     },
+     "R_Thorax": {
+      "median_deg": 12.693318367004395,
+      "bias_deg": 3.9345221519470215,
+      "bias_over_sd": 0.31667259335517883,
+      "mean_vec": [
+       -0.71,
+       1.08,
+       -3.72
+      ]
+     },
+     "R_Shoulder": {
+      "median_deg": 15.107195854187012,
+      "bias_deg": 3.1840083599090576,
+      "bias_over_sd": 0.2782401442527771,
+      "mean_vec": [
+       -2.04,
+       -2.44,
+       -0.02
+      ]
+     },
+     "R_Elbow": {
+      "median_deg": 15.886167526245117,
+      "bias_deg": 4.31478214263916,
+      "bias_over_sd": 0.2727680206298828,
+      "mean_vec": [
+       3.29,
+       -2.75,
+       -0.48
+      ]
+     },
+     "R_Wrist": {
+      "median_deg": 14.337983131408691,
+      "bias_deg": 2.9662489891052246,
+      "bias_over_sd": 0.17092351615428925,
+      "mean_vec": [
+       0.45,
+       -2.55,
+       1.45
+      ]
+     },
+     "R_Hand": {
+      "median_deg": 11.037742614746094,
+      "bias_deg": 6.227787017822266,
+      "bias_over_sd": 0.35094472765922546,
+      "mean_vec": [
+       -4.55,
+       4.16,
+       0.87
+      ]
+     }
+    },
+    "frame_mean_angle_p50_by_clip_x0": {
+     "220923_Half_Moon_Pose_or_Ardha_Chandrasana_-a": 13.887358665466309,
+     "220923_Half_Moon_Pose_or_Ardha_Chandrasana_-b": 17.88005828857422,
+     "220923_Standing_Split_pose_or_Urdhva_Prasarita_Eka_Padasana_-a": 15.435025215148926,
+     "220923_Standing_Split_pose_or_Urdhva_Prasarita_Eka_Padasana_-b": 22.200634002685547,
+     "220923_Standing_big_toe_hold_pose_or_Utthita_Padangusthasana-a": 15.212867736816406,
+     "220923_Standing_big_toe_hold_pose_or_Utthita_Padangusthasana-b": 15.086274147033691,
+     "220923_Tree_Pose_or_Vrksasana_-a": 13.014605522155762,
+     "220923_Tree_Pose_or_Vrksasana_-b": 12.54493522644043,
+     "220926_Eagle_Pose_or_Garudasana_-a": 14.324250221252441,
+     "220926_Lord_of_the_Dance_Pose_or_Natarajasana_-a": 14.846159934997559,
+     "220926_Lord_of_the_Dance_Pose_or_Natarajasana_-c": 16.101512908935547,
+     "220926_Warrior_III_Pose_or_Virabhadrasana_III_-a": 13.646986961364746,
+     "220926_Warrior_III_Pose_or_Virabhadrasana_III_-b": 11.69664192199707,
+     "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-a": 13.956963539123535,
+     "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-b": 16.878040313720703,
+     "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-c": 14.87743854522705,
+     "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-d": 15.05738639831543,
+     "220923_Handstand_pose_or_Adho_Mukha_Vrksasana_-a": 13.560922622680664,
+     "220923_Legs-Up-the-Wall_Pose_or_Viparita_Karani_-a": 16.44556427001953,
+     "220923_Plow_Pose_or_Halasana_-a": 16.638582229614258,
+     "220926_Plow_Pose_or_Halasana_-b": 21.053661346435547,
+     "220923_Scorpion_pose_or_vrischikasana-a": 16.362316131591797,
+     "220923_Scorpion_pose_or_vrischikasana-b": 11.841512680053711,
+     "220923_Supported_Headstand_pose_or_Salamba_Sirsasana_-b": 13.023455619812012,
+     "220926_Supported_Headstand_pose_or_Salamba_Sirsasana_-a": 17.161706924438477,
+     "220923_Supported_Shoulderstand_pose_or_Salamba_Sarvangasana_-a": 14.786264419555664,
+     "220923_Crane_Crow_Pose_or_Bakasana_-a": 16.439271926879883,
+     "220923_Firefly_Pose_or_Tittibhasana_-a": 13.772555351257324,
+     "220923_Peacock_Pose_or_Mayurasana_-a": 25.860427856445312,
+     "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-a": 14.992632865905762,
+     "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-b": 15.51114559173584,
+     "220923_Shoulder-Pressing_Pose_or_Bhujapidasana_-a": 14.815583229064941,
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a": 14.791544914245605,
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-b": 15.279772758483887,
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-c": 14.642590522766113,
+     "220923_Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana_-a": 12.951735496520996,
+     "220923_Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana_-b": 14.477899551391602,
+     "220923_Plank_Pose_or_Kumbhakasana_-a": 13.190171241760254,
+     "220923_Four-Limbed_Staff_Pose_or_Chaturanga_Dandasana_-a": 12.369592666625977,
+     "220923_Cobra_Pose_or_Bhujangasana_-a": 14.372928619384766,
+     "220923_Side_Plank_Pose_or_Vasisthasana_-a": 13.178014755249023,
+     "220923_Side_Plank_Pose_or_Vasisthasana_-b": 14.42951488494873,
+     "220923_Dolphin_Plank_Pose_or_Makara_Adho_Mukha_Svanasana_-a": 14.14725399017334,
+     "220923_Dolphin_Pose_or_Ardha_Pincha_Mayurasana_-a": 12.749688148498535,
+     "220923_Standing_Forward_Bend_pose_or_Uttanasana_-a": 13.341348648071289,
+     "220923_Garland_Pose_or_Malasana_-a": 13.78329849243164,
+     "220923_Low_Lunge_pose_or_Anjaneyasana_-a": 13.765615463256836,
+     "220926_Warrior_II_Pose_or_Virabhadrasana_II_-a": 10.226859092712402,
+     "220923_Extended_Revolved_Triangle_Pose_or_Utthita_Trikonasana_-a": 13.626736640930176,
+     "220923_Extended_Revolved_Side_Angle_Pose_or_Utthita_Parsvakonasana_-a": 13.388938903808594,
+     "220926_Upward_Plank_Pose_or_Purvottanasana_-a": 13.624874114990234,
+     "220923_Bridge_Pose_or_Setu_Bandha_Sarvangasana_-a": 21.531463623046875,
+     "220923_Extended_Revolved_Side_Angle_Pose_or_Utthita_Parsvakonasana_-b": 14.526664733886719,
+     "220923_Extended_Revolved_Triangle_Pose_or_Utthita_Trikonasana_-b": 11.655891418457031,
+     "220926_viparita_virabhadrasana_or_reverse_warrior_pose-a": 13.919732093811035,
+     "220926_Intense_Side_Stretch_Pose_or_Parsvottanasana_-b": 50.798072814941406
+    },
+    "x0_frame_mean_angle_p50_holds": 14.188324928283691,
+    "x0_frame_mean_angle_p50_between_holds": 15.49884033203125,
+    "global_body_rot_err_p50": 11.344525337219238,
+    "root_rot_err_p50": 10.4484224319458,
+    "in_root_frame_body_rot_err_p50": 15.281195640563965
+   },
+   "hold_stillness": {
+    "frames": 18222,
+    "speed_rms": {
+     "agent": 0.07863260805606842,
+     "reference": 0.11111525446176529
+    },
+    "speed_p50": {
+     "agent": 0.010344923473894596,
+     "reference": 0.0247261431068182
+    },
+    "accel_rms": {
+     "agent": 0.9487045407295227,
+     "reference": 0.8475114703178406
+    },
+    "accel_p50": {
+     "agent": 0.12890486419200897,
+     "reference": 0.22983746230602264
+    },
+    "accel_rms_by_body": {
+     "agent": {
+      "Pelvis": 0.39345550537109375,
+      "L_Hip": 0.5671795606613159,
+      "L_Knee": 0.8576551079750061,
+      "L_Ankle": 1.017869472503662,
+      "L_Toe": 1.2581191062927246,
+      "R_Hip": 0.552214503288269,
+      "R_Knee": 1.3921257257461548,
+      "R_Ankle": 1.4969730377197266,
+      "R_Toe": 1.5749483108520508,
+      "Torso": 0.4060359597206116,
+      "Spine": 0.43268030881881714,
+      "Chest": 0.48357877135276794,
+      "Neck": 0.7538589239120483,
+      "Head": 1.0771185159683228,
+      "L_Thorax": 0.6001191735267639,
+      "L_Shoulder": 0.8301201462745667,
+      "L_Elbow": 0.960683286190033,
+      "L_Wrist": 1.0451637506484985,
+      "L_Hand": 1.1288424730300903,
+      "R_Thorax": 0.6162351965904236,
+      "R_Shoulder": 0.8946292400360107,
+      "R_Elbow": 0.8975467681884766,
+      "R_Wrist": 0.9672291874885559,
+      "R_Hand": 1.1095824241638184
+     },
+     "reference": {
+      "Pelvis": 0.4821471571922302,
+      "L_Hip": 0.5564424395561218,
+      "L_Knee": 0.9745506644248962,
+      "L_Ankle": 1.1865565776824951,
+      "L_Toe": 1.2777745723724365,
+      "R_Hip": 0.5580794215202332,
+      "R_Knee": 0.8908520936965942,
+      "R_Ankle": 1.1324409246444702,
+      "R_Toe": 1.301637053489685,
+      "Torso": 0.49580636620521545,
+      "Spine": 0.5274695158004761,
+      "Chest": 0.5070909261703491,
+      "Neck": 0.6166150569915771,
+      "Head": 0.5988646149635315,
+      "L_Thorax": 0.5814007520675659,
+      "L_Shoulder": 0.8499103784561157,
+      "L_Elbow": 0.8060515522956848,
+      "L_Wrist": 0.962094247341156,
+      "L_Hand": 1.251685619354248,
+      "R_Thorax": 0.5191946625709534,
+      "R_Shoulder": 0.5672191381454468,
+      "R_Elbow": 0.6741543412208557,
+      "R_Wrist": 0.8541319966316223,
+      "R_Hand": 1.0614101886749268
+     }
+    },
+    "by_group": {
+     "arm_balance": {
+      "speed_rms_agent": 0.08600626140832901,
+      "speed_rms_ref": 0.12584860622882843,
+      "accel_rms_agent": 0.7212507724761963,
+      "accel_rms_ref": 0.8439620137214661
+     },
+     "connective": {
+      "speed_rms_agent": 0.07615857571363449,
+      "speed_rms_ref": 0.10586432367563248,
+      "accel_rms_agent": 1.4848976135253906,
+      "accel_rms_ref": 0.8014691472053528
+     },
+     "inversion": {
+      "speed_rms_agent": 0.08032912015914917,
+      "speed_rms_ref": 0.11093387752771378,
+      "accel_rms_agent": 0.6144064664840698,
+      "accel_rms_ref": 1.080530047416687
+     },
+     "single_leg": {
+      "speed_rms_agent": 0.0751379132270813,
+      "speed_rms_ref": 0.10751199722290039,
+      "accel_rms_agent": 0.4982936978340149,
+      "accel_rms_ref": 0.6348386406898499
+     }
+    }
+   }
+  },
+  "e15500:14000": {
+   "path": "results/smpl_yogi_v2_expert56_a2dda5d2ac/results/predicted_motion_lib_epoch_14000.pt",
+   "frames": 141300,
+   "tracked": 130764,
+   "posture": {
+    "median_joint_angle_deg": 12.880512237548828,
+    "frame_mean_angle_p50": 14.12248706817627,
+    "frame_mean_angle_by_group_p50": {
+     "arm_balance": 14.59109115600586,
+     "connective": 13.204192161560059,
+     "inversion": 15.329724311828613,
+     "single_leg": 13.96496295928955
+    },
+    "mean_bias_deg": 3.0525200366973877,
+    "joints": {
+     "L_Hip": {
+      "median_deg": 13.362786293029785,
+      "bias_deg": 4.108530521392822,
+      "bias_over_sd": 0.33258312940597534,
+      "mean_vec": [
+       -1.04,
+       -2.45,
+       -3.13
+      ]
+     },
+     "L_Knee": {
+      "median_deg": 12.585526466369629,
+      "bias_deg": 3.185720443725586,
+      "bias_over_sd": 0.38512319326400757,
+      "mean_vec": [
+       -2.93,
+       -1.09,
+       0.64
+      ]
+     },
+     "L_Ankle": {
+      "median_deg": 12.597296714782715,
+      "bias_deg": 1.527254581451416,
+      "bias_over_sd": 0.10024973005056381,
+      "mean_vec": [
+       -0.9,
+       1.18,
+       -0.35
+      ]
+     },
+     "L_Toe": {
+      "median_deg": 12.171624183654785,
+      "bias_deg": 1.5469235181808472,
+      "bias_over_sd": 0.14875566959381104,
+      "mean_vec": [
+       -0.28,
+       0.81,
+       1.29
+      ]
+     },
+     "R_Hip": {
+      "median_deg": 14.674686431884766,
+      "bias_deg": 3.3050785064697266,
+      "bias_over_sd": 0.3628973960876465,
+      "mean_vec": [
+       -3.24,
+       0.04,
+       0.65
+      ]
+     },
+     "R_Knee": {
+      "median_deg": 14.067167282104492,
+      "bias_deg": 1.6508164405822754,
+      "bias_over_sd": 0.1263468712568283,
+      "mean_vec": [
+       -0.11,
+       -1.57,
+       -0.49
+      ]
+     },
+     "R_Ankle": {
+      "median_deg": 12.584333419799805,
+      "bias_deg": 2.242509126663208,
+      "bias_over_sd": 0.19152815639972687,
+      "mean_vec": [
+       -0.18,
+       1.01,
+       1.99
+      ]
+     },
+     "R_Toe": {
+      "median_deg": 8.64181137084961,
+      "bias_deg": 3.031022310256958,
+      "bias_over_sd": 0.33274418115615845,
+      "mean_vec": [
+       2.79,
+       -0.55,
+       -1.05
+      ]
+     },
+     "Torso": {
+      "median_deg": 10.363458633422852,
+      "bias_deg": 1.6256893873214722,
+      "bias_over_sd": 0.21259112656116486,
+      "mean_vec": [
+       1.56,
+       0.4,
+       -0.19
+      ]
+     },
+     "Spine": {
+      "median_deg": 9.272367477416992,
+      "bias_deg": 3.502082109451294,
+      "bias_over_sd": 0.4597027599811554,
+      "mean_vec": [
+       -0.55,
+       -0.9,
+       -3.34
+      ]
+     },
+     "Chest": {
+      "median_deg": 11.571578979492188,
+      "bias_deg": 3.6738011837005615,
+      "bias_over_sd": 0.42611992359161377,
+      "mean_vec": [
+       2.82,
+       -0.11,
+       2.35
+      ]
+     },
+     "Neck": {
+      "median_deg": 14.963838577270508,
+      "bias_deg": 3.2472684383392334,
+      "bias_over_sd": 0.2936192452907562,
+      "mean_vec": [
+       -2.77,
+       -1.33,
+       -1.06
+      ]
+     },
+     "Head": {
+      "median_deg": 12.804770469665527,
+      "bias_deg": 2.1494462490081787,
+      "bias_over_sd": 0.2216118723154068,
+      "mean_vec": [
+       -0.15,
+       1.99,
+       0.8
+      ]
+     },
+     "L_Thorax": {
+      "median_deg": 14.256356239318848,
+      "bias_deg": 6.3385138511657715,
+      "bias_over_sd": 0.5505390763282776,
+      "mean_vec": [
+       -5.54,
+       -1.82,
+       -2.49
+      ]
+     },
+     "L_Shoulder": {
+      "median_deg": 15.452539443969727,
+      "bias_deg": 4.363770008087158,
+      "bias_over_sd": 0.2965179979801178,
+      "mean_vec": [
+       2.87,
+       1.4,
+       2.97
+      ]
+     },
+     "L_Elbow": {
+      "median_deg": 16.014305114746094,
+      "bias_deg": 3.968559503555298,
+      "bias_over_sd": 0.307145357131958,
+      "mean_vec": [
+       1.79,
+       -3.54,
+       0.17
+      ]
+     },
+     "L_Wrist": {
+      "median_deg": 14.194719314575195,
+      "bias_deg": 5.346449851989746,
+      "bias_over_sd": 0.2641103267669678,
+      "mean_vec": [
+       -4.23,
+       -1.75,
+       -2.77
+      ]
+     },
+     "L_Hand": {
+      "median_deg": 10.924890518188477,
+      "bias_deg": 3.1434309482574463,
+      "bias_over_sd": 0.241448774933815,
+      "mean_vec": [
+       1.7,
+       2.41,
+       -1.08
+      ]
+     },
+     "R_Thorax": {
+      "median_deg": 13.059686660766602,
+      "bias_deg": 2.1538290977478027,
+      "bias_over_sd": 0.13421770930290222,
+      "mean_vec": [
+       -1.2,
+       0.8,
+       -1.6
+      ]
+     },
+     "R_Shoulder": {
+      "median_deg": 13.254213333129883,
+      "bias_deg": 0.8205523490905762,
+      "bias_over_sd": 0.06085722893476486,
+      "mean_vec": [
+       0.5,
+       -0.41,
+       0.51
+      ]
+     },
+     "R_Elbow": {
+      "median_deg": 15.590496063232422,
+      "bias_deg": 3.480759620666504,
+      "bias_over_sd": 0.2929522693157196,
+      "mean_vec": [
+       -0.03,
+       -3.37,
+       0.87
+      ]
+     },
+     "R_Wrist": {
+      "median_deg": 12.69681453704834,
+      "bias_deg": 2.2102699279785156,
+      "bias_over_sd": 0.1198464184999466,
+      "mean_vec": [
+       1.38,
+       1.5,
+       0.85
+      ]
+     },
+     "R_Hand": {
+      "median_deg": 10.676684379577637,
+      "bias_deg": 3.585684061050415,
+      "bias_over_sd": 0.3083485960960388,
+      "mean_vec": [
+       -1.67,
+       3.17,
+       0.18
+      ]
+     }
+    },
+    "frame_mean_angle_p50_by_clip_x0": {
+     "220923_Half_Moon_Pose_or_Ardha_Chandrasana_-a": 14.118782043457031,
+     "220923_Half_Moon_Pose_or_Ardha_Chandrasana_-b": 16.830812454223633,
+     "220923_Standing_Split_pose_or_Urdhva_Prasarita_Eka_Padasana_-a": 13.22230052947998,
+     "220923_Standing_Split_pose_or_Urdhva_Prasarita_Eka_Padasana_-b": 18.113561630249023,
+     "220923_Standing_big_toe_hold_pose_or_Utthita_Padangusthasana-a": 14.041947364807129,
+     "220923_Standing_big_toe_hold_pose_or_Utthita_Padangusthasana-b": 13.3356294631958,
+     "220923_Tree_Pose_or_Vrksasana_-a": 13.661691665649414,
+     "220923_Tree_Pose_or_Vrksasana_-b": 12.204449653625488,
+     "220926_Eagle_Pose_or_Garudasana_-a": 14.575372695922852,
+     "220926_Lord_of_the_Dance_Pose_or_Natarajasana_-a": 14.998806953430176,
+     "220926_Lord_of_the_Dance_Pose_or_Natarajasana_-c": 16.181499481201172,
+     "220926_Warrior_III_Pose_or_Virabhadrasana_III_-a": 13.36902141571045,
+     "220926_Warrior_III_Pose_or_Virabhadrasana_III_-b": 11.825074195861816,
+     "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-a": 14.140652656555176,
+     "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-b": 16.20210838317871,
+     "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-c": 14.47158145904541,
+     "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-d": 14.880908012390137,
+     "220923_Handstand_pose_or_Adho_Mukha_Vrksasana_-a": 16.661340713500977,
+     "220923_Legs-Up-the-Wall_Pose_or_Viparita_Karani_-a": 16.548633575439453,
+     "220923_Plow_Pose_or_Halasana_-a": 21.686046600341797,
+     "220926_Plow_Pose_or_Halasana_-b": 20.609357833862305,
+     "220923_Scorpion_pose_or_vrischikasana-a": 14.83389949798584,
+     "220923_Scorpion_pose_or_vrischikasana-b": 12.785661697387695,
+     "220923_Supported_Headstand_pose_or_Salamba_Sirsasana_-b": 10.242936134338379,
+     "220926_Supported_Headstand_pose_or_Salamba_Sirsasana_-a": 13.569687843322754,
+     "220923_Supported_Shoulderstand_pose_or_Salamba_Sarvangasana_-a": 14.15953254699707,
+     "220923_Crane_Crow_Pose_or_Bakasana_-a": 15.355135917663574,
+     "220923_Firefly_Pose_or_Tittibhasana_-a": 12.389472961425781,
+     "220923_Peacock_Pose_or_Mayurasana_-a": 23.21424674987793,
+     "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-a": 14.321024894714355,
+     "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-b": 14.843179702758789,
+     "220923_Shoulder-Pressing_Pose_or_Bhujapidasana_-a": 14.07136058807373,
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a": 14.55020523071289,
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-b": 12.537386894226074,
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-c": 13.672211647033691,
+     "220923_Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana_-a": 13.064275741577148,
+     "220923_Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana_-b": 14.929878234863281,
+     "220923_Plank_Pose_or_Kumbhakasana_-a": 12.310218811035156,
+     "220923_Four-Limbed_Staff_Pose_or_Chaturanga_Dandasana_-a": 12.100286483764648,
+     "220923_Cobra_Pose_or_Bhujangasana_-a": 14.115689277648926,
+     "220923_Side_Plank_Pose_or_Vasisthasana_-a": 13.47988510131836,
+     "220923_Side_Plank_Pose_or_Vasisthasana_-b": 13.267866134643555,
+     "220923_Dolphin_Plank_Pose_or_Makara_Adho_Mukha_Svanasana_-a": 12.825249671936035,
+     "220923_Dolphin_Pose_or_Ardha_Pincha_Mayurasana_-a": 12.900330543518066,
+     "220923_Standing_Forward_Bend_pose_or_Uttanasana_-a": 11.294748306274414,
+     "220923_Garland_Pose_or_Malasana_-a": 12.155806541442871,
+     "220923_Low_Lunge_pose_or_Anjaneyasana_-a": 12.721283912658691,
+     "220926_Warrior_II_Pose_or_Virabhadrasana_II_-a": 10.403264999389648,
+     "220923_Extended_Revolved_Triangle_Pose_or_Utthita_Trikonasana_-a": 13.383437156677246,
+     "220923_Extended_Revolved_Side_Angle_Pose_or_Utthita_Parsvakonasana_-a": 12.20166015625,
+     "220926_Upward_Plank_Pose_or_Purvottanasana_-a": 18.637426376342773,
+     "220923_Bridge_Pose_or_Setu_Bandha_Sarvangasana_-a": 20.87469482421875,
+     "220923_Extended_Revolved_Side_Angle_Pose_or_Utthita_Parsvakonasana_-b": 13.694474220275879,
+     "220923_Extended_Revolved_Triangle_Pose_or_Utthita_Trikonasana_-b": 11.83606243133545,
+     "220926_viparita_virabhadrasana_or_reverse_warrior_pose-a": 13.751777648925781,
+     "220926_Intense_Side_Stretch_Pose_or_Parsvottanasana_-b": 44.651084899902344
+    },
+    "x0_frame_mean_angle_p50_holds": 13.547133445739746,
+    "x0_frame_mean_angle_p50_between_holds": 14.99940013885498,
+    "global_body_rot_err_p50": 10.810901641845703,
+    "root_rot_err_p50": 10.075274467468262,
+    "in_root_frame_body_rot_err_p50": 14.62692928314209
+   },
+   "hold_stillness": {
+    "frames": 18128,
+    "speed_rms": {
+     "agent": 0.08060064911842346,
+     "reference": 0.11184003949165344
+    },
+    "speed_p50": {
+     "agent": 0.01046567689627409,
+     "reference": 0.024564536288380623
+    },
+    "accel_rms": {
+     "agent": 0.543371319770813,
+     "reference": 0.8522269129753113
+    },
+    "accel_p50": {
+     "agent": 0.12940935790538788,
+     "reference": 0.22807608544826508
+    },
+    "accel_rms_by_body": {
+     "agent": {
+      "Pelvis": 0.3342857360839844,
+      "L_Hip": 0.43057137727737427,
+      "L_Knee": 0.5357339978218079,
+      "L_Ankle": 0.6679104566574097,
+      "L_Toe": 0.7443510293960571,
+      "R_Hip": 0.4248889088630676,
+      "R_Knee": 0.5032745003700256,
+      "R_Ankle": 0.5962201952934265,
+      "R_Toe": 0.6379555463790894,
+      "Torso": 0.3322666883468628,
+      "Spine": 0.3120804727077484,
+      "Chest": 0.30482229590415955,
+      "Neck": 0.3299959897994995,
+      "Head": 0.4534200429916382,
+      "L_Thorax": 0.2999817430973053,
+      "L_Shoulder": 0.3619842827320099,
+      "L_Elbow": 0.5063867568969727,
+      "L_Wrist": 0.7706108689308167,
+      "L_Hand": 0.955406665802002,
+      "R_Thorax": 0.3042006194591522,
+      "R_Shoulder": 0.3799954354763031,
+      "R_Elbow": 0.48709729313850403,
+      "R_Wrist": 0.691670298576355,
+      "R_Hand": 0.8680821657180786
+     },
+     "reference": {
+      "Pelvis": 0.4811258018016815,
+      "L_Hip": 0.5563024878501892,
+      "L_Knee": 0.9793263077735901,
+      "L_Ankle": 1.209586501121521,
+      "L_Toe": 1.304926872253418,
+      "R_Hip": 0.5588295459747314,
+      "R_Knee": 0.8976359367370605,
+      "R_Ankle": 1.141447901725769,
+      "R_Toe": 1.3146476745605469,
+      "Torso": 0.49431899189949036,
+      "Spine": 0.5268058776855469,
+      "Chest": 0.5059873461723328,
+      "Neck": 0.6131454110145569,
+      "Head": 0.5883595943450928,
+      "L_Thorax": 0.5790826678276062,
+      "L_Shoulder": 0.8487911224365234,
+      "L_Elbow": 0.7801483273506165,
+      "L_Wrist": 0.9657920598983765,
+      "L_Hand": 1.2647385597229004,
+      "R_Thorax": 0.5159316658973694,
+      "R_Shoulder": 0.5615670084953308,
+      "R_Elbow": 0.675048291683197,
+      "R_Wrist": 0.8564106822013855,
+      "R_Hand": 1.0716097354888916
+     }
+    },
+    "by_group": {
+     "arm_balance": {
+      "speed_rms_agent": 0.0902256965637207,
+      "speed_rms_ref": 0.12535783648490906,
+      "accel_rms_agent": 0.5785626769065857,
+      "accel_rms_ref": 0.8400465250015259
+     },
+     "connective": {
+      "speed_rms_agent": 0.07833348959684372,
+      "speed_rms_ref": 0.10859659314155579,
+      "accel_rms_agent": 0.5707392692565918,
+      "accel_rms_ref": 0.8114703893661499
+     },
+     "inversion": {
+      "speed_rms_agent": 0.07881679385900497,
+      "speed_rms_ref": 0.11070868372917175,
+      "accel_rms_agent": 0.5691008567810059,
+      "accel_rms_ref": 1.0709277391433716
+     },
+     "single_leg": {
+      "speed_rms_agent": 0.07842639833688736,
+      "speed_rms_ref": 0.10751199722290039,
+      "accel_rms_agent": 0.46600431203842163,
+      "accel_rms_ref": 0.6348386406898499
+     }
+    }
+   }
+  },
+  "e15500:15500": {
+   "path": "results/smpl_yogi_v2_expert56_a2dda5d2ac/results/predicted_motion_lib_epoch_15500.pt",
+   "frames": 141300,
+   "tracked": 135613,
+   "posture": {
+    "median_joint_angle_deg": 12.550847053527832,
+    "frame_mean_angle_p50": 13.704437255859375,
+    "frame_mean_angle_by_group_p50": {
+     "arm_balance": 13.250962257385254,
+     "connective": 13.274645805358887,
+     "inversion": 14.209086418151855,
+     "single_leg": 14.012190818786621
+    },
+    "mean_bias_deg": 3.2368242740631104,
+    "joints": {
+     "L_Hip": {
+      "median_deg": 13.52613353729248,
+      "bias_deg": 6.265554904937744,
+      "bias_over_sd": 0.5645565390586853,
+      "mean_vec": [
+       -1.03,
+       -2.86,
+       -5.48
+      ]
+     },
+     "L_Knee": {
+      "median_deg": 12.630300521850586,
+      "bias_deg": 3.4877195358276367,
+      "bias_over_sd": 0.40348321199417114,
+      "mean_vec": [
+       -2.91,
+       -1.05,
+       1.61
+      ]
+     },
+     "L_Ankle": {
+      "median_deg": 11.955026626586914,
+      "bias_deg": 2.0876574516296387,
+      "bias_over_sd": 0.22257861495018005,
+      "mean_vec": [
+       -1.71,
+       0.38,
+       -1.13
+      ]
+     },
+     "L_Toe": {
+      "median_deg": 12.509013175964355,
+      "bias_deg": 2.522014617919922,
+      "bias_over_sd": 0.21377496421337128,
+      "mean_vec": [
+       1.54,
+       -1.25,
+       1.56
+      ]
+     },
+     "R_Hip": {
+      "median_deg": 13.953487396240234,
+      "bias_deg": 4.537765979766846,
+      "bias_over_sd": 0.3849935233592987,
+      "mean_vec": [
+       -3.27,
+       -1.59,
+       -2.71
+      ]
+     },
+     "R_Knee": {
+      "median_deg": 13.358826637268066,
+      "bias_deg": 0.9769254326820374,
+      "bias_over_sd": 0.07550449669361115,
+      "mean_vec": [
+       -0.54,
+       -0.31,
+       0.75
+      ]
+     },
+     "R_Ankle": {
+      "median_deg": 11.597125053405762,
+      "bias_deg": 2.074077606201172,
+      "bias_over_sd": 0.15993504226207733,
+      "mean_vec": [
+       -1.36,
+       1.52,
+       -0.39
+      ]
+     },
+     "R_Toe": {
+      "median_deg": 9.369060516357422,
+      "bias_deg": 2.5274319648742676,
+      "bias_over_sd": 0.22570760548114777,
+      "mean_vec": [
+       1.19,
+       -2.22,
+       -0.2
+      ]
+     },
+     "Torso": {
+      "median_deg": 11.415718078613281,
+      "bias_deg": 5.127089977264404,
+      "bias_over_sd": 0.48334962129592896,
+      "mean_vec": [
+       2.77,
+       -0.75,
+       -4.25
+      ]
+     },
+     "Spine": {
+      "median_deg": 8.20309066772461,
+      "bias_deg": 0.489355206489563,
+      "bias_over_sd": 0.08058039844036102,
+      "mean_vec": [
+       -0.32,
+       -0.18,
+       -0.33
+      ]
+     },
+     "Chest": {
+      "median_deg": 10.764382362365723,
+      "bias_deg": 2.7434425354003906,
+      "bias_over_sd": 0.3500051498413086,
+      "mean_vec": [
+       2.17,
+       0.87,
+       1.44
+      ]
+     },
+     "Neck": {
+      "median_deg": 14.014275550842285,
+      "bias_deg": 1.3083717823028564,
+      "bias_over_sd": 0.08468911051750183,
+      "mean_vec": [
+       -0.69,
+       0.63,
+       0.92
+      ]
+     },
+     "Head": {
+      "median_deg": 13.701212882995605,
+      "bias_deg": 4.128039836883545,
+      "bias_over_sd": 0.33608099818229675,
+      "mean_vec": [
+       -3.71,
+       1.58,
+       0.86
+      ]
+     },
+     "L_Thorax": {
+      "median_deg": 12.97422981262207,
+      "bias_deg": 3.4234824180603027,
+      "bias_over_sd": 0.3202560544013977,
+      "mean_vec": [
+       -1.19,
+       -2.5,
+       -2.02
+      ]
+     },
+     "L_Shoulder": {
+      "median_deg": 14.600434303283691,
+      "bias_deg": 3.579563856124878,
+      "bias_over_sd": 0.35124671459198,
+      "mean_vec": [
+       -1.41,
+       1.15,
+       3.08
+      ]
+     },
+     "L_Elbow": {
+      "median_deg": 15.864481925964355,
+      "bias_deg": 2.9434220790863037,
+      "bias_over_sd": 0.2370447963476181,
+      "mean_vec": [
+       0.09,
+       -2.88,
+       0.59
+      ]
+     },
+     "L_Wrist": {
+      "median_deg": 12.949962615966797,
+      "bias_deg": 2.223428726196289,
+      "bias_over_sd": 0.11917062848806381,
+      "mean_vec": [
+       -0.51,
+       -1.91,
+       -1.01
+      ]
+     },
+     "L_Hand": {
+      "median_deg": 9.993255615234375,
+      "bias_deg": 3.7224526405334473,
+      "bias_over_sd": 0.2643655836582184,
+      "mean_vec": [
+       0.77,
+       2.32,
+       -2.81
+      ]
+     },
+     "R_Thorax": {
+      "median_deg": 12.811460494995117,
+      "bias_deg": 4.785806179046631,
+      "bias_over_sd": 0.37631499767303467,
+      "mean_vec": [
+       -3.85,
+       -2.16,
+       1.86
+      ]
+     },
+     "R_Shoulder": {
+      "median_deg": 13.140320777893066,
+      "bias_deg": 2.8091516494750977,
+      "bias_over_sd": 0.20006626844406128,
+      "mean_vec": [
+       2.8,
+       0.21,
+       0.13
+      ]
+     },
+     "R_Elbow": {
+      "median_deg": 14.391193389892578,
+      "bias_deg": 4.049206733703613,
+      "bias_over_sd": 0.24480287730693817,
+      "mean_vec": [
+       2.83,
+       -2.28,
+       -1.78
+      ]
+     },
+     "R_Wrist": {
+      "median_deg": 12.786230087280273,
+      "bias_deg": 2.3601250648498535,
+      "bias_over_sd": 0.12954743206501007,
+      "mean_vec": [
+       -1.43,
+       -1.86,
+       -0.24
+      ]
+     },
+     "R_Hand": {
+      "median_deg": 10.509418487548828,
+      "bias_deg": 6.274872779846191,
+      "bias_over_sd": 0.4081425368785858,
+      "mean_vec": [
+       -2.66,
+       4.75,
+       3.11
+      ]
+     }
+    },
+    "frame_mean_angle_p50_by_clip_x0": {
+     "220923_Half_Moon_Pose_or_Ardha_Chandrasana_-a": 15.378862380981445,
+     "220923_Half_Moon_Pose_or_Ardha_Chandrasana_-b": 15.496075630187988,
+     "220923_Standing_Split_pose_or_Urdhva_Prasarita_Eka_Padasana_-a": 13.766763687133789,
+     "220923_Standing_Split_pose_or_Urdhva_Prasarita_Eka_Padasana_-b": 16.995386123657227,
+     "220923_Standing_big_toe_hold_pose_or_Utthita_Padangusthasana-a": 14.234848976135254,
+     "220923_Standing_big_toe_hold_pose_or_Utthita_Padangusthasana-b": 13.99665641784668,
+     "220923_Tree_Pose_or_Vrksasana_-a": 12.824324607849121,
+     "220923_Tree_Pose_or_Vrksasana_-b": 12.412078857421875,
+     "220926_Eagle_Pose_or_Garudasana_-a": 15.35788631439209,
+     "220926_Lord_of_the_Dance_Pose_or_Natarajasana_-a": 14.157364845275879,
+     "220926_Lord_of_the_Dance_Pose_or_Natarajasana_-c": 16.460901260375977,
+     "220926_Warrior_III_Pose_or_Virabhadrasana_III_-a": 11.978715896606445,
+     "220926_Warrior_III_Pose_or_Virabhadrasana_III_-b": 11.86213493347168,
+     "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-a": 13.536188125610352,
+     "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-b": 14.69562816619873,
+     "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-c": 13.429449081420898,
+     "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-d": 13.648837089538574,
+     "220923_Handstand_pose_or_Adho_Mukha_Vrksasana_-a": 17.54851722717285,
+     "220923_Legs-Up-the-Wall_Pose_or_Viparita_Karani_-a": 15.240072250366211,
+     "220923_Plow_Pose_or_Halasana_-a": 15.1919584274292,
+     "220926_Plow_Pose_or_Halasana_-b": 20.199005126953125,
+     "220923_Scorpion_pose_or_vrischikasana-a": 14.13502311706543,
+     "220923_Scorpion_pose_or_vrischikasana-b": 12.003832817077637,
+     "220923_Supported_Headstand_pose_or_Salamba_Sirsasana_-b": 10.27197551727295,
+     "220926_Supported_Headstand_pose_or_Salamba_Sirsasana_-a": 11.618904113769531,
+     "220923_Supported_Shoulderstand_pose_or_Salamba_Sarvangasana_-a": 13.544364929199219,
+     "220923_Crane_Crow_Pose_or_Bakasana_-a": 15.067176818847656,
+     "220923_Firefly_Pose_or_Tittibhasana_-a": 11.56467342376709,
+     "220923_Peacock_Pose_or_Mayurasana_-a": 21.848127365112305,
+     "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-a": 13.325553894042969,
+     "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-b": 13.342291831970215,
+     "220923_Shoulder-Pressing_Pose_or_Bhujapidasana_-a": 12.98042106628418,
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a": 12.884827613830566,
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-b": 12.049503326416016,
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-c": 13.843981742858887,
+     "220923_Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana_-a": 12.699686050415039,
+     "220923_Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana_-b": 13.909772872924805,
+     "220923_Plank_Pose_or_Kumbhakasana_-a": 12.116728782653809,
+     "220923_Four-Limbed_Staff_Pose_or_Chaturanga_Dandasana_-a": 11.54366683959961,
+     "220923_Cobra_Pose_or_Bhujangasana_-a": 13.4269437789917,
+     "220923_Side_Plank_Pose_or_Vasisthasana_-a": 14.45869255065918,
+     "220923_Side_Plank_Pose_or_Vasisthasana_-b": 13.94972038269043,
+     "220923_Dolphin_Plank_Pose_or_Makara_Adho_Mukha_Svanasana_-a": 12.727606773376465,
+     "220923_Dolphin_Pose_or_Ardha_Pincha_Mayurasana_-a": 11.914885520935059,
+     "220923_Standing_Forward_Bend_pose_or_Uttanasana_-a": 12.8779935836792,
+     "220923_Garland_Pose_or_Malasana_-a": 13.466471672058105,
+     "220923_Low_Lunge_pose_or_Anjaneyasana_-a": 12.695740699768066,
+     "220926_Warrior_II_Pose_or_Virabhadrasana_II_-a": 10.548898696899414,
+     "220923_Extended_Revolved_Triangle_Pose_or_Utthita_Trikonasana_-a": 13.677497863769531,
+     "220923_Extended_Revolved_Side_Angle_Pose_or_Utthita_Parsvakonasana_-a": 13.168044090270996,
+     "220926_Upward_Plank_Pose_or_Purvottanasana_-a": 14.401211738586426,
+     "220923_Bridge_Pose_or_Setu_Bandha_Sarvangasana_-a": 18.438491821289062,
+     "220923_Extended_Revolved_Side_Angle_Pose_or_Utthita_Parsvakonasana_-b": 13.556071281433105,
+     "220923_Extended_Revolved_Triangle_Pose_or_Utthita_Trikonasana_-b": 12.400522232055664,
+     "220926_viparita_virabhadrasana_or_reverse_warrior_pose-a": 13.886260032653809,
+     "220926_Intense_Side_Stretch_Pose_or_Parsvottanasana_-b": 59.9555549621582
+    },
+    "x0_frame_mean_angle_p50_holds": 13.232563972473145,
+    "x0_frame_mean_angle_p50_between_holds": 14.717850685119629,
+    "global_body_rot_err_p50": 10.486698150634766,
+    "root_rot_err_p50": 9.714933395385742,
+    "in_root_frame_body_rot_err_p50": 14.481959342956543
+   },
+   "hold_stillness": {
+    "frames": 18857,
+    "speed_rms": {
+     "agent": 0.08572322130203247,
+     "reference": 0.1110863983631134
+    },
+    "speed_p50": {
+     "agent": 0.011689716950058937,
+     "reference": 0.024837980046868324
+    },
+    "accel_rms": {
+     "agent": 0.8614421486854553,
+     "reference": 0.8474872708320618
+    },
+    "accel_p50": {
+     "agent": 0.13623985648155212,
+     "reference": 0.23181352019309998
+    },
+    "accel_rms_by_body": {
+     "agent": {
+      "Pelvis": 0.5087236166000366,
+      "L_Hip": 0.605425238609314,
+      "L_Knee": 0.826515257358551,
+      "L_Ankle": 1.2079672813415527,
+      "L_Toe": 1.5366429090499878,
+      "R_Hip": 0.6288642287254333,
+      "R_Knee": 0.9449338912963867,
+      "R_Ankle": 1.221827507019043,
+      "R_Toe": 1.4368462562561035,
+      "Torso": 0.5163994431495667,
+      "Spine": 0.5165810585021973,
+      "Chest": 0.49941274523735046,
+      "Neck": 0.550925612449646,
+      "Head": 0.7243108749389648,
+      "L_Thorax": 0.4950862228870392,
+      "L_Shoulder": 0.6397055387496948,
+      "L_Elbow": 0.7470777034759521,
+      "L_Wrist": 0.9672873020172119,
+      "L_Hand": 1.1561222076416016,
+      "R_Thorax": 0.5048031210899353,
+      "R_Shoulder": 0.6454751491546631,
+      "R_Elbow": 0.6524990797042847,
+      "R_Wrist": 0.8296998143196106,
+      "R_Hand": 0.9766638278961182
+     },
+     "reference": {
+      "Pelvis": 0.4785202741622925,
+      "L_Hip": 0.5528953075408936,
+      "L_Knee": 0.9691571593284607,
+      "L_Ankle": 1.1946606636047363,
+      "L_Toe": 1.290461778640747,
+      "R_Hip": 0.5545581579208374,
+      "R_Knee": 0.8909400105476379,
+      "R_Ankle": 1.1303058862686157,
+      "R_Toe": 1.301640272140503,
+      "Torso": 0.49193423986434937,
+      "Spine": 0.5234355330467224,
+      "Chest": 0.5031263828277588,
+      "Neck": 0.611005961894989,
+      "Head": 0.5939986109733582,
+      "L_Thorax": 0.5762686729431152,
+      "L_Shoulder": 0.8434863686561584,
+      "L_Elbow": 0.8068394660949707,
+      "L_Wrist": 0.961452841758728,
+      "L_Hand": 1.2564949989318848,
+      "R_Thorax": 0.5145725607872009,
+      "R_Shoulder": 0.5638192296028137,
+      "R_Elbow": 0.684106707572937,
+      "R_Wrist": 0.852931022644043,
+      "R_Hand": 1.0615326166152954
+     }
+    },
+    "by_group": {
+     "arm_balance": {
+      "speed_rms_agent": 0.09049629420042038,
+      "speed_rms_ref": 0.12572592496871948,
+      "accel_rms_agent": 0.9814155101776123,
+      "accel_rms_ref": 0.8482181429862976
+     },
+     "connective": {
+      "speed_rms_agent": 0.08377128094434738,
+      "speed_rms_ref": 0.10644828528165817,
+      "accel_rms_agent": 1.0133099555969238,
+      "accel_rms_ref": 0.8015826940536499
+     },
+     "inversion": {
+      "speed_rms_agent": 0.09018643200397491,
+      "speed_rms_ref": 0.11030630022287369,
+      "accel_rms_agent": 0.9359931945800781,
+      "accel_rms_ref": 1.0533009767532349
+     },
+     "single_leg": {
+      "speed_rms_agent": 0.08011772483587265,
+      "speed_rms_ref": 0.10751199722290039,
+      "accel_rms_agent": 0.4386902451515198,
+      "accel_rms_ref": 0.6348386406898499
+     }
+    }
+   }
+  },
+  "g1:1": {
+   "path": "results/smpl_yogi_v2_expert56_amp_ft_a2dda5d2ac/results/predicted_motion_lib_epoch_1.pt",
+   "frames": 141300,
+   "tracked": 135259,
+   "posture": {
+    "median_joint_angle_deg": 12.585029602050781,
+    "frame_mean_angle_p50": 13.690449714660645,
+    "frame_mean_angle_by_group_p50": {
+     "arm_balance": 13.23551082611084,
+     "connective": 13.286633491516113,
+     "inversion": 14.162786483764648,
+     "single_leg": 14.009320259094238
+    },
+    "mean_bias_deg": 3.2235472202301025,
+    "joints": {
+     "L_Hip": {
+      "median_deg": 13.585311889648438,
+      "bias_deg": 6.216073513031006,
+      "bias_over_sd": 0.5643753409385681,
+      "mean_vec": [
+       -0.97,
+       -2.77,
+       -5.48
+      ]
+     },
+     "L_Knee": {
+      "median_deg": 12.551576614379883,
+      "bias_deg": 3.4154205322265625,
+      "bias_over_sd": 0.40762677788734436,
+      "mean_vec": [
+       -2.93,
+       -0.83,
+       1.54
+      ]
+     },
+     "L_Ankle": {
+      "median_deg": 11.902689933776855,
+      "bias_deg": 2.1371729373931885,
+      "bias_over_sd": 0.23525236546993256,
+      "mean_vec": [
+       -1.81,
+       0.31,
+       -1.1
+      ]
+     },
+     "L_Toe": {
+      "median_deg": 12.441302299499512,
+      "bias_deg": 2.434782028198242,
+      "bias_over_sd": 0.2002824991941452,
+      "mean_vec": [
+       1.43,
+       -1.29,
+       1.49
+      ]
+     },
+     "R_Hip": {
+      "median_deg": 14.09064769744873,
+      "bias_deg": 4.381348609924316,
+      "bias_over_sd": 0.3792690932750702,
+      "mean_vec": [
+       -3.23,
+       -1.38,
+       -2.62
+      ]
+     },
+     "R_Knee": {
+      "median_deg": 13.513327598571777,
+      "bias_deg": 0.8384324908256531,
+      "bias_over_sd": 0.06984288990497589,
+      "mean_vec": [
+       -0.36,
+       -0.04,
+       0.76
+      ]
+     },
+     "R_Ankle": {
+      "median_deg": 11.631952285766602,
+      "bias_deg": 2.0696465969085693,
+      "bias_over_sd": 0.1619298905134201,
+      "mean_vec": [
+       -1.37,
+       1.49,
+       -0.43
+      ]
+     },
+     "R_Toe": {
+      "median_deg": 9.438620567321777,
+      "bias_deg": 2.554955005645752,
+      "bias_over_sd": 0.22917816042900085,
+      "mean_vec": [
+       1.21,
+       -2.24,
+       -0.16
+      ]
+     },
+     "Torso": {
+      "median_deg": 11.55148696899414,
+      "bias_deg": 5.182133674621582,
+      "bias_over_sd": 0.4945521354675293,
+      "mean_vec": [
+       2.64,
+       -0.97,
+       -4.35
+      ]
+     },
+     "Spine": {
+      "median_deg": 8.22001838684082,
+      "bias_deg": 0.4495929777622223,
+      "bias_over_sd": 0.07329919934272766,
+      "mean_vec": [
+       -0.28,
+       -0.14,
+       -0.32
+      ]
+     },
+     "Chest": {
+      "median_deg": 10.833063125610352,
+      "bias_deg": 2.828524589538574,
+      "bias_over_sd": 0.35941535234451294,
+      "mean_vec": [
+       2.24,
+       0.83,
+       1.51
+      ]
+     },
+     "Neck": {
+      "median_deg": 14.051373481750488,
+      "bias_deg": 1.378830909729004,
+      "bias_over_sd": 0.08580352365970612,
+      "mean_vec": [
+       -0.67,
+       0.77,
+       0.93
+      ]
+     },
+     "Head": {
+      "median_deg": 13.727717399597168,
+      "bias_deg": 4.23921012878418,
+      "bias_over_sd": 0.3446786403656006,
+      "mean_vec": [
+       -3.83,
+       1.62,
+       0.85
+      ]
+     },
+     "L_Thorax": {
+      "median_deg": 12.943700790405273,
+      "bias_deg": 3.3261897563934326,
+      "bias_over_sd": 0.31549742817878723,
+      "mean_vec": [
+       -1.13,
+       -2.44,
+       -1.97
+      ]
+     },
+     "L_Shoulder": {
+      "median_deg": 14.695929527282715,
+      "bias_deg": 3.7099647521972656,
+      "bias_over_sd": 0.3667702376842499,
+      "mean_vec": [
+       -1.39,
+       1.19,
+       3.23
+      ]
+     },
+     "L_Elbow": {
+      "median_deg": 15.990299224853516,
+      "bias_deg": 3.1482582092285156,
+      "bias_over_sd": 0.25337570905685425,
+      "mean_vec": [
+       0.08,
+       -3.09,
+       0.6
+      ]
+     },
+     "L_Wrist": {
+      "median_deg": 12.926199913024902,
+      "bias_deg": 2.3256444931030273,
+      "bias_over_sd": 0.12677137553691864,
+      "mean_vec": [
+       -0.7,
+       -2.03,
+       -0.89
+      ]
+     },
+     "L_Hand": {
+      "median_deg": 9.993544578552246,
+      "bias_deg": 3.625657796859741,
+      "bias_over_sd": 0.2682439088821411,
+      "mean_vec": [
+       0.64,
+       2.34,
+       -2.7
+      ]
+     },
+     "R_Thorax": {
+      "median_deg": 12.780341148376465,
+      "bias_deg": 4.653115272521973,
+      "bias_over_sd": 0.3669813573360443,
+      "mean_vec": [
+       -3.74,
+       -2.09,
+       1.8
+      ]
+     },
+     "R_Shoulder": {
+      "median_deg": 13.26988410949707,
+      "bias_deg": 2.837247371673584,
+      "bias_over_sd": 0.20196998119354248,
+      "mean_vec": [
+       2.82,
+       0.32,
+       0.08
+      ]
+     },
+     "R_Elbow": {
+      "median_deg": 14.300930976867676,
+      "bias_deg": 3.9358975887298584,
+      "bias_over_sd": 0.24934259057044983,
+      "mean_vec": [
+       2.85,
+       -2.14,
+       -1.67
+      ]
+     },
+     "R_Wrist": {
+      "median_deg": 12.765454292297363,
+      "bias_deg": 2.1627731323242188,
+      "bias_over_sd": 0.11841551959514618,
+      "mean_vec": [
+       -1.33,
+       -1.69,
+       -0.24
+      ]
+     },
+     "R_Hand": {
+      "median_deg": 10.58478832244873,
+      "bias_deg": 6.290708065032959,
+      "bias_over_sd": 0.42289796471595764,
+      "mean_vec": [
+       -2.53,
+       4.88,
+       3.06
+      ]
+     }
+    },
+    "frame_mean_angle_p50_by_clip_x0": {
+     "220923_Half_Moon_Pose_or_Ardha_Chandrasana_-a": 15.418501853942871,
+     "220923_Half_Moon_Pose_or_Ardha_Chandrasana_-b": 15.454998970031738,
+     "220923_Standing_Split_pose_or_Urdhva_Prasarita_Eka_Padasana_-a": 13.664445877075195,
+     "220923_Standing_Split_pose_or_Urdhva_Prasarita_Eka_Padasana_-b": 16.922100067138672,
+     "220923_Standing_big_toe_hold_pose_or_Utthita_Padangusthasana-a": 14.13785457611084,
+     "220923_Standing_big_toe_hold_pose_or_Utthita_Padangusthasana-b": 13.927947044372559,
+     "220923_Tree_Pose_or_Vrksasana_-a": 12.835747718811035,
+     "220923_Tree_Pose_or_Vrksasana_-b": 12.382774353027344,
+     "220926_Eagle_Pose_or_Garudasana_-a": 15.402685165405273,
+     "220926_Lord_of_the_Dance_Pose_or_Natarajasana_-a": 14.16443920135498,
+     "220926_Lord_of_the_Dance_Pose_or_Natarajasana_-c": 16.526039123535156,
+     "220926_Warrior_III_Pose_or_Virabhadrasana_III_-a": 11.947245597839355,
+     "220926_Warrior_III_Pose_or_Virabhadrasana_III_-b": 11.877141952514648,
+     "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-a": 13.539957046508789,
+     "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-b": 14.716570854187012,
+     "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-c": 13.545613288879395,
+     "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-d": 13.65188217163086,
+     "220923_Handstand_pose_or_Adho_Mukha_Vrksasana_-a": 17.58624267578125,
+     "220923_Legs-Up-the-Wall_Pose_or_Viparita_Karani_-a": 15.169085502624512,
+     "220923_Plow_Pose_or_Halasana_-a": 15.571746826171875,
+     "220926_Plow_Pose_or_Halasana_-b": 19.563209533691406,
+     "220923_Scorpion_pose_or_vrischikasana-a": 14.094525337219238,
+     "220923_Scorpion_pose_or_vrischikasana-b": 11.808349609375,
+     "220923_Supported_Headstand_pose_or_Salamba_Sirsasana_-b": 10.171601295471191,
+     "220926_Supported_Headstand_pose_or_Salamba_Sirsasana_-a": 11.65694522857666,
+     "220923_Supported_Shoulderstand_pose_or_Salamba_Sarvangasana_-a": 13.622115135192871,
+     "220923_Crane_Crow_Pose_or_Bakasana_-a": 14.93669319152832,
+     "220923_Firefly_Pose_or_Tittibhasana_-a": 11.54281234741211,
+     "220923_Peacock_Pose_or_Mayurasana_-a": 21.886682510375977,
+     "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-a": 13.311295509338379,
+     "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-b": 13.251792907714844,
+     "220923_Shoulder-Pressing_Pose_or_Bhujapidasana_-a": 12.899040222167969,
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a": 12.867151260375977,
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-b": 12.151937484741211,
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-c": 13.700943946838379,
+     "220923_Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana_-a": 12.69285774230957,
+     "220923_Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana_-b": 13.828703880310059,
+     "220923_Plank_Pose_or_Kumbhakasana_-a": 12.112833976745605,
+     "220923_Four-Limbed_Staff_Pose_or_Chaturanga_Dandasana_-a": 11.563233375549316,
+     "220923_Cobra_Pose_or_Bhujangasana_-a": 13.41954231262207,
+     "220923_Side_Plank_Pose_or_Vasisthasana_-a": 14.50489616394043,
+     "220923_Side_Plank_Pose_or_Vasisthasana_-b": 13.85120677947998,
+     "220923_Dolphin_Plank_Pose_or_Makara_Adho_Mukha_Svanasana_-a": 12.800699234008789,
+     "220923_Dolphin_Pose_or_Ardha_Pincha_Mayurasana_-a": 11.948482513427734,
+     "220923_Standing_Forward_Bend_pose_or_Uttanasana_-a": 12.761004447937012,
+     "220923_Garland_Pose_or_Malasana_-a": 13.545047760009766,
+     "220923_Low_Lunge_pose_or_Anjaneyasana_-a": 12.609890937805176,
+     "220926_Warrior_II_Pose_or_Virabhadrasana_II_-a": 10.494860649108887,
+     "220923_Extended_Revolved_Triangle_Pose_or_Utthita_Trikonasana_-a": 13.657831192016602,
+     "220923_Extended_Revolved_Side_Angle_Pose_or_Utthita_Parsvakonasana_-a": 13.04293441772461,
+     "220926_Upward_Plank_Pose_or_Purvottanasana_-a": 14.92018985748291,
+     "220923_Bridge_Pose_or_Setu_Bandha_Sarvangasana_-a": 18.055397033691406,
+     "220923_Extended_Revolved_Side_Angle_Pose_or_Utthita_Parsvakonasana_-b": 13.408041000366211,
+     "220923_Extended_Revolved_Triangle_Pose_or_Utthita_Trikonasana_-b": 12.342082023620605,
+     "220926_viparita_virabhadrasana_or_reverse_warrior_pose-a": 13.829972267150879,
+     "220926_Intense_Side_Stretch_Pose_or_Parsvottanasana_-b": 59.8686408996582
+    },
+    "x0_frame_mean_angle_p50_holds": 13.232584953308105,
+    "x0_frame_mean_angle_p50_between_holds": 14.72551441192627,
+    "global_body_rot_err_p50": 10.47043228149414,
+    "root_rot_err_p50": 9.75573444366455,
+    "in_root_frame_body_rot_err_p50": 14.513655662536621
+   },
+   "hold_stillness": {
+    "frames": 18809,
+    "speed_rms": {
+     "agent": 0.08400578051805496,
+     "reference": 0.11080321669578552
+    },
+    "speed_p50": {
+     "agent": 0.011574487201869488,
+     "reference": 0.024802451953291893
+    },
+    "accel_rms": {
+     "agent": 0.8170672059059143,
+     "reference": 0.8459413647651672
+    },
+    "accel_p50": {
+     "agent": 0.13602980971336365,
+     "reference": 0.23131480813026428
+    },
+    "accel_rms_by_body": {
+     "agent": {
+      "Pelvis": 0.48539820313453674,
+      "L_Hip": 0.5745387673377991,
+      "L_Knee": 0.8012694716453552,
+      "L_Ankle": 1.1248451471328735,
+      "L_Toe": 1.4081076383590698,
+      "R_Hip": 0.6161632537841797,
+      "R_Knee": 0.8857523202896118,
+      "R_Ankle": 1.1299026012420654,
+      "R_Toe": 1.333693027496338,
+      "Torso": 0.4958520829677582,
+      "Spine": 0.4889359772205353,
+      "Chest": 0.47310951352119446,
+      "Neck": 0.527188777923584,
+      "Head": 0.689265251159668,
+      "L_Thorax": 0.47536760568618774,
+      "L_Shoulder": 0.6132897138595581,
+      "L_Elbow": 0.7293596863746643,
+      "L_Wrist": 0.9752877950668335,
+      "L_Hand": 1.1487295627593994,
+      "R_Thorax": 0.47938552498817444,
+      "R_Shoulder": 0.6051266193389893,
+      "R_Elbow": 0.6164499521255493,
+      "R_Wrist": 0.7920746207237244,
+      "R_Hand": 0.9364683628082275
+     },
+     "reference": {
+      "Pelvis": 0.477659672498703,
+      "L_Hip": 0.551581621170044,
+      "L_Knee": 0.970184326171875,
+      "L_Ankle": 1.1956707239151,
+      "L_Toe": 1.2912312746047974,
+      "R_Hip": 0.5542764067649841,
+      "R_Knee": 0.8918935060501099,
+      "R_Ankle": 1.1314948797225952,
+      "R_Toe": 1.3030986785888672,
+      "Torso": 0.49087199568748474,
+      "Spine": 0.5207840204238892,
+      "Chest": 0.4993613362312317,
+      "Neck": 0.6065413355827332,
+      "Head": 0.5919287204742432,
+      "L_Thorax": 0.5712438821792603,
+      "L_Shoulder": 0.8255357146263123,
+      "L_Elbow": 0.8008264899253845,
+      "L_Wrist": 0.9604678750038147,
+      "L_Hand": 1.256059169769287,
+      "R_Thorax": 0.5111812353134155,
+      "R_Shoulder": 0.5599901676177979,
+      "R_Elbow": 0.6838165521621704,
+      "R_Wrist": 0.8526984453201294,
+      "R_Hand": 1.0604056119918823
+     }
+    },
+    "by_group": {
+     "arm_balance": {
+      "speed_rms_agent": 0.09008848667144775,
+      "speed_rms_ref": 0.1256026029586792,
+      "accel_rms_agent": 0.901089072227478,
+      "accel_rms_ref": 0.8474656343460083
+     },
+     "connective": {
+      "speed_rms_agent": 0.08208759129047394,
+      "speed_rms_ref": 0.10643582791090012,
+      "accel_rms_agent": 0.967379629611969,
+      "accel_rms_ref": 0.8012382388114929
+     },
+     "inversion": {
+      "speed_rms_agent": 0.08653730899095535,
+      "speed_rms_ref": 0.10933075845241547,
+      "accel_rms_agent": 0.886896550655365,
+      "accel_rms_ref": 1.0506354570388794
+     },
+     "single_leg": {
+      "speed_rms_agent": 0.07965493202209473,
+      "speed_rms_ref": 0.10751199722290039,
+      "accel_rms_agent": 0.4416970908641815,
+      "accel_rms_ref": 0.6348386406898499
+     }
+    }
+   }
+  },
+  "g1:1500": {
+   "path": "results/smpl_yogi_v2_expert56_amp_ft_a2dda5d2ac/results/predicted_motion_lib_epoch_1500.pt",
+   "frames": 141300,
+   "tracked": 132285,
+   "posture": {
+    "median_joint_angle_deg": 8.02298641204834,
+    "frame_mean_angle_p50": 8.877962112426758,
+    "frame_mean_angle_by_group_p50": {
+     "arm_balance": 9.003133773803711,
+     "connective": 8.857514381408691,
+     "inversion": 9.429884910583496,
+     "single_leg": 8.37060546875
+    },
+    "mean_bias_deg": 1.569795846939087,
+    "joints": {
+     "L_Hip": {
+      "median_deg": 9.084187507629395,
+      "bias_deg": 1.6488844156265259,
+      "bias_over_sd": 0.22754333913326263,
+      "mean_vec": [
+       -0.46,
+       -0.75,
+       -1.4
+      ]
+     },
+     "L_Knee": {
+      "median_deg": 8.28674602508545,
+      "bias_deg": 1.9718413352966309,
+      "bias_over_sd": 0.2952342629432678,
+      "mean_vec": [
+       -1.7,
+       -0.87,
+       0.5
+      ]
+     },
+     "L_Ankle": {
+      "median_deg": 8.824180603027344,
+      "bias_deg": 0.8793885707855225,
+      "bias_over_sd": 0.08034787327051163,
+      "mean_vec": [
+       0.01,
+       0.85,
+       -0.23
+      ]
+     },
+     "L_Toe": {
+      "median_deg": 6.105687618255615,
+      "bias_deg": 0.7297741174697876,
+      "bias_over_sd": 0.12294115126132965,
+      "mean_vec": [
+       0.65,
+       0.04,
+       0.34
+      ]
+     },
+     "R_Hip": {
+      "median_deg": 9.429601669311523,
+      "bias_deg": 1.1070587635040283,
+      "bias_over_sd": 0.1468925029039383,
+      "mean_vec": [
+       -0.98,
+       0.04,
+       0.52
+      ]
+     },
+     "R_Knee": {
+      "median_deg": 8.961896896362305,
+      "bias_deg": 0.7701840996742249,
+      "bias_over_sd": 0.05887656658887863,
+      "mean_vec": [
+       0.09,
+       -0.74,
+       -0.19
+      ]
+     },
+     "R_Ankle": {
+      "median_deg": 8.402868270874023,
+      "bias_deg": 1.0219178199768066,
+      "bias_over_sd": 0.12550866603851318,
+      "mean_vec": [
+       0.74,
+       -0.55,
+       0.44
+      ]
+     },
+     "R_Toe": {
+      "median_deg": 6.389962196350098,
+      "bias_deg": 1.1427031755447388,
+      "bias_over_sd": 0.13670244812965393,
+      "mean_vec": [
+       -0.56,
+       0.67,
+       -0.74
+      ]
+     },
+     "Torso": {
+      "median_deg": 6.936657428741455,
+      "bias_deg": 1.4070894718170166,
+      "bias_over_sd": 0.15112613141536713,
+      "mean_vec": [
+       0.68,
+       1.17,
+       0.4
+      ]
+     },
+     "Spine": {
+      "median_deg": 5.259544372558594,
+      "bias_deg": 0.5977087020874023,
+      "bias_over_sd": 0.06770531833171844,
+      "mean_vec": [
+       0.05,
+       -0.56,
+       -0.21
+      ]
+     },
+     "Chest": {
+      "median_deg": 4.4611406326293945,
+      "bias_deg": 0.519499659538269,
+      "bias_over_sd": 0.0636822059750557,
+      "mean_vec": [
+       -0.05,
+       -0.51,
+       -0.08
+      ]
+     },
+     "Neck": {
+      "median_deg": 7.516842842102051,
+      "bias_deg": 1.9323850870132446,
+      "bias_over_sd": 0.2528611719608307,
+      "mean_vec": [
+       1.01,
+       1.63,
+       0.26
+      ]
+     },
+     "Head": {
+      "median_deg": 6.543336391448975,
+      "bias_deg": 1.7567775249481201,
+      "bias_over_sd": 0.21376614272594452,
+      "mean_vec": [
+       -0.2,
+       1.69,
+       0.44
+      ]
+     },
+     "L_Thorax": {
+      "median_deg": 7.862701416015625,
+      "bias_deg": 1.1615082025527954,
+      "bias_over_sd": 0.13526858389377594,
+      "mean_vec": [
+       -0.43,
+       0.28,
+       1.04
+      ]
+     },
+     "L_Shoulder": {
+      "median_deg": 9.257081985473633,
+      "bias_deg": 0.9743332266807556,
+      "bias_over_sd": 0.13664594292640686,
+      "mean_vec": [
+       0.22,
+       -0.94,
+       -0.16
+      ]
+     },
+     "L_Elbow": {
+      "median_deg": 10.708622932434082,
+      "bias_deg": 2.2600793838500977,
+      "bias_over_sd": 0.21398308873176575,
+      "mean_vec": [
+       2.18,
+       0.39,
+       0.44
+      ]
+     },
+     "L_Wrist": {
+      "median_deg": 10.485902786254883,
+      "bias_deg": 4.490386486053467,
+      "bias_over_sd": 0.2729005515575409,
+      "mean_vec": [
+       -3.41,
+       -2.49,
+       1.54
+      ]
+     },
+     "L_Hand": {
+      "median_deg": 7.49061393737793,
+      "bias_deg": 2.636687755584717,
+      "bias_over_sd": 0.2127251774072647,
+      "mean_vec": [
+       1.88,
+       -0.44,
+       -1.79
+      ]
+     },
+     "R_Thorax": {
+      "median_deg": 7.928186893463135,
+      "bias_deg": 0.3797171711921692,
+      "bias_over_sd": 0.033204030245542526,
+      "mean_vec": [
+       0.32,
+       -0.04,
+       0.2
+      ]
+     },
+     "R_Shoulder": {
+      "median_deg": 9.710875511169434,
+      "bias_deg": 2.0461995601654053,
+      "bias_over_sd": 0.22128762304782867,
+      "mean_vec": [
+       1.2,
+       0.46,
+       1.59
+      ]
+     },
+     "R_Elbow": {
+      "median_deg": 10.561046600341797,
+      "bias_deg": 1.9164373874664307,
+      "bias_over_sd": 0.1509639173746109,
+      "mean_vec": [
+       -0.18,
+       -0.39,
+       -1.87
+      ]
+     },
+     "R_Wrist": {
+      "median_deg": 9.704232215881348,
+      "bias_deg": 0.6101306676864624,
+      "bias_over_sd": 0.05064673721790314,
+      "mean_vec": [
+       -0.01,
+       -0.38,
+       0.48
+      ]
+     },
+     "R_Hand": {
+      "median_deg": 6.902085781097412,
+      "bias_deg": 4.144615173339844,
+      "bias_over_sd": 0.29169270396232605,
+      "mean_vec": [
+       -3.98,
+       1.15,
+       -0.23
+      ]
+     }
+    },
+    "frame_mean_angle_p50_by_clip_x0": {
+     "220923_Half_Moon_Pose_or_Ardha_Chandrasana_-a": 10.093305587768555,
+     "220923_Half_Moon_Pose_or_Ardha_Chandrasana_-b": 10.59626293182373,
+     "220923_Standing_Split_pose_or_Urdhva_Prasarita_Eka_Padasana_-a": 8.18210220336914,
+     "220923_Standing_Split_pose_or_Urdhva_Prasarita_Eka_Padasana_-b": 9.475698471069336,
+     "220923_Standing_big_toe_hold_pose_or_Utthita_Padangusthasana-a": 7.368724822998047,
+     "220923_Standing_big_toe_hold_pose_or_Utthita_Padangusthasana-b": 6.878729820251465,
+     "220923_Tree_Pose_or_Vrksasana_-a": 8.206611633300781,
+     "220923_Tree_Pose_or_Vrksasana_-b": 7.6675615310668945,
+     "220926_Eagle_Pose_or_Garudasana_-a": 8.779273986816406,
+     "220926_Lord_of_the_Dance_Pose_or_Natarajasana_-a": 8.896211624145508,
+     "220926_Lord_of_the_Dance_Pose_or_Natarajasana_-c": 9.31394100189209,
+     "220926_Warrior_III_Pose_or_Virabhadrasana_III_-a": 7.578517913818359,
+     "220926_Warrior_III_Pose_or_Virabhadrasana_III_-b": 6.323480129241943,
+     "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-a": 10.429616928100586,
+     "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-b": 10.546306610107422,
+     "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-c": 7.6424560546875,
+     "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-d": 7.980285167694092,
+     "220923_Handstand_pose_or_Adho_Mukha_Vrksasana_-a": 11.219730377197266,
+     "220923_Legs-Up-the-Wall_Pose_or_Viparita_Karani_-a": 10.972148895263672,
+     "220923_Plow_Pose_or_Halasana_-a": 10.828866004943848,
+     "220926_Plow_Pose_or_Halasana_-b": 14.77403736114502,
+     "220923_Scorpion_pose_or_vrischikasana-a": 8.250558853149414,
+     "220923_Scorpion_pose_or_vrischikasana-b": 41.232784271240234,
+     "220923_Supported_Headstand_pose_or_Salamba_Sirsasana_-b": 7.4924845695495605,
+     "220926_Supported_Headstand_pose_or_Salamba_Sirsasana_-a": 7.79484224319458,
+     "220923_Supported_Shoulderstand_pose_or_Salamba_Sarvangasana_-a": 10.276987075805664,
+     "220923_Crane_Crow_Pose_or_Bakasana_-a": 8.408297538757324,
+     "220923_Firefly_Pose_or_Tittibhasana_-a": 8.550554275512695,
+     "220923_Peacock_Pose_or_Mayurasana_-a": 14.974496841430664,
+     "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-a": 7.958381175994873,
+     "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-b": 9.246635437011719,
+     "220923_Shoulder-Pressing_Pose_or_Bhujapidasana_-a": 10.144477844238281,
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a": 9.210723876953125,
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-b": 8.163174629211426,
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-c": 10.53271770477295,
+     "220923_Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana_-a": 7.587955474853516,
+     "220923_Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana_-b": 8.845542907714844,
+     "220923_Plank_Pose_or_Kumbhakasana_-a": 9.005341529846191,
+     "220923_Four-Limbed_Staff_Pose_or_Chaturanga_Dandasana_-a": 8.562493324279785,
+     "220923_Cobra_Pose_or_Bhujangasana_-a": 8.579097747802734,
+     "220923_Side_Plank_Pose_or_Vasisthasana_-a": 9.782275199890137,
+     "220923_Side_Plank_Pose_or_Vasisthasana_-b": 10.55670166015625,
+     "220923_Dolphin_Plank_Pose_or_Makara_Adho_Mukha_Svanasana_-a": 9.162484169006348,
+     "220923_Dolphin_Pose_or_Ardha_Pincha_Mayurasana_-a": 7.582780361175537,
+     "220923_Standing_Forward_Bend_pose_or_Uttanasana_-a": 8.048698425292969,
+     "220923_Garland_Pose_or_Malasana_-a": 9.047322273254395,
+     "220923_Low_Lunge_pose_or_Anjaneyasana_-a": 9.28322696685791,
+     "220926_Warrior_II_Pose_or_Virabhadrasana_II_-a": 7.337666988372803,
+     "220923_Extended_Revolved_Triangle_Pose_or_Utthita_Trikonasana_-a": 8.3513765335083,
+     "220923_Extended_Revolved_Side_Angle_Pose_or_Utthita_Parsvakonasana_-a": 9.321488380432129,
+     "220926_Upward_Plank_Pose_or_Purvottanasana_-a": 8.171162605285645,
+     "220923_Bridge_Pose_or_Setu_Bandha_Sarvangasana_-a": 14.615067481994629,
+     "220923_Extended_Revolved_Side_Angle_Pose_or_Utthita_Parsvakonasana_-b": 10.277162551879883,
+     "220923_Extended_Revolved_Triangle_Pose_or_Utthita_Trikonasana_-b": 8.446885108947754,
+     "220926_viparita_virabhadrasana_or_reverse_warrior_pose-a": 8.79908561706543,
+     "220926_Intense_Side_Stretch_Pose_or_Parsvottanasana_-b": 42.847476959228516
+    },
+    "x0_frame_mean_angle_p50_holds": 7.950605869293213,
+    "x0_frame_mean_angle_p50_between_holds": 10.586261749267578,
+    "global_body_rot_err_p50": 8.53968334197998,
+    "root_rot_err_p50": 7.782227993011475,
+    "in_root_frame_body_rot_err_p50": 11.167037963867188
+   },
+   "hold_stillness": {
+    "frames": 18049,
+    "speed_rms": {
+     "agent": 0.08153875917196274,
+     "reference": 0.11146214604377747
+    },
+    "speed_p50": {
+     "agent": 0.010219643823802471,
+     "reference": 0.024849485605955124
+    },
+    "accel_rms": {
+     "agent": 0.6034650206565857,
+     "reference": 0.8400512933731079
+    },
+    "accel_p50": {
+     "agent": 0.11838027834892273,
+     "reference": 0.22932027280330658
+    },
+    "accel_rms_by_body": {
+     "agent": {
+      "Pelvis": 0.3392621874809265,
+      "L_Hip": 0.3776533901691437,
+      "L_Knee": 0.598301112651825,
+      "L_Ankle": 0.8577686548233032,
+      "L_Toe": 0.9285635948181152,
+      "R_Hip": 0.4039922058582306,
+      "R_Knee": 0.5745849013328552,
+      "R_Ankle": 0.720522403717041,
+      "R_Toe": 0.7090486288070679,
+      "Torso": 0.3520210087299347,
+      "Spine": 0.32986539602279663,
+      "Chest": 0.32285913825035095,
+      "Neck": 0.34230726957321167,
+      "Head": 0.4060966968536377,
+      "L_Thorax": 0.32241371273994446,
+      "L_Shoulder": 0.3880543112754822,
+      "L_Elbow": 0.5691868662834167,
+      "L_Wrist": 0.7165107727050781,
+      "L_Hand": 0.8978270888328552,
+      "R_Thorax": 0.32198238372802734,
+      "R_Shoulder": 0.408193439245224,
+      "R_Elbow": 0.49754655361175537,
+      "R_Wrist": 0.9118521809577942,
+      "R_Hand": 1.0699387788772583
+     },
+     "reference": {
+      "Pelvis": 0.4795123040676117,
+      "L_Hip": 0.5529799461364746,
+      "L_Knee": 0.956897497177124,
+      "L_Ankle": 1.145103096961975,
+      "L_Toe": 1.2191354036331177,
+      "R_Hip": 0.5562010407447815,
+      "R_Knee": 0.8923696279525757,
+      "R_Ankle": 1.13152277469635,
+      "R_Toe": 1.2975122928619385,
+      "Torso": 0.4912744164466858,
+      "Spine": 0.5199124217033386,
+      "Chest": 0.4990996718406677,
+      "Neck": 0.6010252237319946,
+      "Head": 0.5890005826950073,
+      "L_Thorax": 0.5649425983428955,
+      "L_Shoulder": 0.8307195901870728,
+      "L_Elbow": 0.7847722172737122,
+      "L_Wrist": 0.9714769124984741,
+      "L_Hand": 1.2704086303710938,
+      "R_Thorax": 0.5104254484176636,
+      "R_Shoulder": 0.5574764609336853,
+      "R_Elbow": 0.6853122115135193,
+      "R_Wrist": 0.8677338361740112,
+      "R_Hand": 1.0827323198318481
+     }
+    },
+    "by_group": {
+     "arm_balance": {
+      "speed_rms_agent": 0.08654887974262238,
+      "speed_rms_ref": 0.12540915608406067,
+      "accel_rms_agent": 0.6222931146621704,
+      "accel_rms_ref": 0.8457867503166199
+     },
+     "connective": {
+      "speed_rms_agent": 0.07268637418746948,
+      "speed_rms_ref": 0.10807326436042786,
+      "accel_rms_agent": 0.7324602603912354,
+      "accel_rms_ref": 0.8084467053413391
+     },
+     "inversion": {
+      "speed_rms_agent": 0.09118903428316116,
+      "speed_rms_ref": 0.10968296229839325,
+      "accel_rms_agent": 0.6112608909606934,
+      "accel_rms_ref": 1.0411489009857178
+     },
+     "single_leg": {
+      "speed_rms_agent": 0.07708927989006042,
+      "speed_rms_ref": 0.1076415628194809,
+      "accel_rms_agent": 0.41897809505462646,
+      "accel_rms_ref": 0.6339060664176941
+     }
+    }
+   }
+  },
+  "g1:3000": {
+   "path": "results/smpl_yogi_v2_expert56_amp_ft_a2dda5d2ac/results/predicted_motion_lib_epoch_3000.pt",
+   "frames": 141300,
+   "tracked": 134787,
+   "posture": {
+    "median_joint_angle_deg": 7.408655166625977,
+    "frame_mean_angle_p50": 8.311761856079102,
+    "frame_mean_angle_by_group_p50": {
+     "arm_balance": 8.595099449157715,
+     "connective": 8.330370903015137,
+     "inversion": 8.664504051208496,
+     "single_leg": 7.677515506744385
+    },
+    "mean_bias_deg": 1.3500401973724365,
+    "joints": {
+     "L_Hip": {
+      "median_deg": 8.451632499694824,
+      "bias_deg": 1.6164551973342896,
+      "bias_over_sd": 0.17393599450588226,
+      "mean_vec": [
+       0.31,
+       -1.27,
+       -0.95
+      ]
+     },
+     "L_Knee": {
+      "median_deg": 8.108186721801758,
+      "bias_deg": 1.3096909523010254,
+      "bias_over_sd": 0.10564453154802322,
+      "mean_vec": [
+       -0.41,
+       -1.08,
+       -0.62
+      ]
+     },
+     "L_Ankle": {
+      "median_deg": 7.905196666717529,
+      "bias_deg": 1.6940301656723022,
+      "bias_over_sd": 0.13485760986804962,
+      "mean_vec": [
+       -0.57,
+       1.39,
+       -0.79
+      ]
+     },
+     "L_Toe": {
+      "median_deg": 5.603836536407471,
+      "bias_deg": 0.3943864107131958,
+      "bias_over_sd": 0.04604463279247284,
+      "mean_vec": [
+       -0.23,
+       -0.31,
+       0.06
+      ]
+     },
+     "R_Hip": {
+      "median_deg": 9.117508888244629,
+      "bias_deg": 1.377874493598938,
+      "bias_over_sd": 0.15762121975421906,
+      "mean_vec": [
+       -0.46,
+       0.76,
+       -1.05
+      ]
+     },
+     "R_Knee": {
+      "median_deg": 8.377134323120117,
+      "bias_deg": 2.157788038253784,
+      "bias_over_sd": 0.2068985551595688,
+      "mean_vec": [
+       1.04,
+       -1.68,
+       0.86
+      ]
+     },
+     "R_Ankle": {
+      "median_deg": 8.025235176086426,
+      "bias_deg": 0.9350939393043518,
+      "bias_over_sd": 0.09021836519241333,
+      "mean_vec": [
+       -0.22,
+       0.9,
+       -0.14
+      ]
+     },
+     "R_Toe": {
+      "median_deg": 5.7928056716918945,
+      "bias_deg": 1.1373910903930664,
+      "bias_over_sd": 0.15473930537700653,
+      "mean_vec": [
+       -0.64,
+       -0.54,
+       0.78
+      ]
+     },
+     "Torso": {
+      "median_deg": 6.402215957641602,
+      "bias_deg": 1.7996313571929932,
+      "bias_over_sd": 0.18549154698848724,
+      "mean_vec": [
+       0.29,
+       1.66,
+       0.62
+      ]
+     },
+     "Spine": {
+      "median_deg": 4.811100006103516,
+      "bias_deg": 0.6274866461753845,
+      "bias_over_sd": 0.07389669865369797,
+      "mean_vec": [
+       0.13,
+       -0.58,
+       0.2
+      ]
+     },
+     "Chest": {
+      "median_deg": 4.175859451293945,
+      "bias_deg": 1.0707333087921143,
+      "bias_over_sd": 0.3716242015361786,
+      "mean_vec": [
+       0.1,
+       0.06,
+       -1.06
+      ]
+     },
+     "Neck": {
+      "median_deg": 6.66617488861084,
+      "bias_deg": 1.6443815231323242,
+      "bias_over_sd": 0.2289215624332428,
+      "mean_vec": [
+       0.31,
+       -0.95,
+       1.3
+      ]
+     },
+     "Head": {
+      "median_deg": 6.041271209716797,
+      "bias_deg": 1.45012366771698,
+      "bias_over_sd": 0.21775402128696442,
+      "mean_vec": [
+       0.22,
+       1.42,
+       0.2
+      ]
+     },
+     "L_Thorax": {
+      "median_deg": 6.846981525421143,
+      "bias_deg": 0.7601233124732971,
+      "bias_over_sd": 0.11776383221149445,
+      "mean_vec": [
+       0.74,
+       0.14,
+       0.09
+      ]
+     },
+     "L_Shoulder": {
+      "median_deg": 8.40793514251709,
+      "bias_deg": 0.9904259443283081,
+      "bias_over_sd": 0.0872575044631958,
+      "mean_vec": [
+       -0.84,
+       0.34,
+       -0.4
+      ]
+     },
+     "L_Elbow": {
+      "median_deg": 10.340652465820312,
+      "bias_deg": 1.0690534114837646,
+      "bias_over_sd": 0.116780586540699,
+      "mean_vec": [
+       0.12,
+       -1.05,
+       -0.16
+      ]
+     },
+     "L_Wrist": {
+      "median_deg": 9.251465797424316,
+      "bias_deg": 1.131640076637268,
+      "bias_over_sd": 0.15175974369049072,
+      "mean_vec": [
+       -0.02,
+       -0.18,
+       -1.12
+      ]
+     },
+     "L_Hand": {
+      "median_deg": 7.123973369598389,
+      "bias_deg": 1.067086100578308,
+      "bias_over_sd": 0.07775049656629562,
+      "mean_vec": [
+       1.03,
+       -0.03,
+       0.28
+      ]
+     },
+     "R_Thorax": {
+      "median_deg": 6.9849019050598145,
+      "bias_deg": 1.019558310508728,
+      "bias_over_sd": 0.17439532279968262,
+      "mean_vec": [
+       0.59,
+       -0.83,
+       -0.04
+      ]
+     },
+     "R_Shoulder": {
+      "median_deg": 8.463592529296875,
+      "bias_deg": 1.8822096586227417,
+      "bias_over_sd": 0.14724323153495789,
+      "mean_vec": [
+       1.65,
+       0.79,
+       0.44
+      ]
+     },
+     "R_Elbow": {
+      "median_deg": 9.750940322875977,
+      "bias_deg": 2.261029005050659,
+      "bias_over_sd": 0.1923295110464096,
+      "mean_vec": [
+       -0.15,
+       -1.76,
+       -1.41
+      ]
+     },
+     "R_Wrist": {
+      "median_deg": 9.282525062561035,
+      "bias_deg": 1.4274365901947021,
+      "bias_over_sd": 0.12200301885604858,
+      "mean_vec": [
+       -0.23,
+       -1.38,
+       0.28
+      ]
+     },
+     "R_Hand": {
+      "median_deg": 6.649435997009277,
+      "bias_deg": 2.2272961139678955,
+      "bias_over_sd": 0.17223194241523743,
+      "mean_vec": [
+       -2.16,
+       0.37,
+       0.39
+      ]
+     }
+    },
+    "frame_mean_angle_p50_by_clip_x0": {
+     "220923_Half_Moon_Pose_or_Ardha_Chandrasana_-a": 9.054803848266602,
+     "220923_Half_Moon_Pose_or_Ardha_Chandrasana_-b": 9.418307304382324,
+     "220923_Standing_Split_pose_or_Urdhva_Prasarita_Eka_Padasana_-a": 7.057242393493652,
+     "220923_Standing_Split_pose_or_Urdhva_Prasarita_Eka_Padasana_-b": 8.821854591369629,
+     "220923_Standing_big_toe_hold_pose_or_Utthita_Padangusthasana-a": 6.837129592895508,
+     "220923_Standing_big_toe_hold_pose_or_Utthita_Padangusthasana-b": 5.710440635681152,
+     "220923_Tree_Pose_or_Vrksasana_-a": 7.092045783996582,
+     "220923_Tree_Pose_or_Vrksasana_-b": 6.750069618225098,
+     "220926_Eagle_Pose_or_Garudasana_-a": 8.652813911437988,
+     "220926_Lord_of_the_Dance_Pose_or_Natarajasana_-a": 7.63728141784668,
+     "220926_Lord_of_the_Dance_Pose_or_Natarajasana_-c": 8.925721168518066,
+     "220926_Warrior_III_Pose_or_Virabhadrasana_III_-a": 7.218351364135742,
+     "220926_Warrior_III_Pose_or_Virabhadrasana_III_-b": 6.03212308883667,
+     "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-a": 7.78719425201416,
+     "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-b": 9.090851783752441,
+     "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-c": 7.446720123291016,
+     "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-d": 7.854752063751221,
+     "220923_Handstand_pose_or_Adho_Mukha_Vrksasana_-a": 11.059011459350586,
+     "220923_Legs-Up-the-Wall_Pose_or_Viparita_Karani_-a": 9.175536155700684,
+     "220923_Plow_Pose_or_Halasana_-a": 10.436217308044434,
+     "220926_Plow_Pose_or_Halasana_-b": 12.7714262008667,
+     "220923_Scorpion_pose_or_vrischikasana-a": 7.954583168029785,
+     "220923_Scorpion_pose_or_vrischikasana-b": 12.95943832397461,
+     "220923_Supported_Headstand_pose_or_Salamba_Sirsasana_-b": 6.0837602615356445,
+     "220926_Supported_Headstand_pose_or_Salamba_Sirsasana_-a": 8.031998634338379,
+     "220923_Supported_Shoulderstand_pose_or_Salamba_Sarvangasana_-a": 8.833773612976074,
+     "220923_Crane_Crow_Pose_or_Bakasana_-a": 8.456448554992676,
+     "220923_Firefly_Pose_or_Tittibhasana_-a": 8.069540023803711,
+     "220923_Peacock_Pose_or_Mayurasana_-a": 14.949294090270996,
+     "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-a": 8.037576675415039,
+     "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-b": 8.414146423339844,
+     "220923_Shoulder-Pressing_Pose_or_Bhujapidasana_-a": 8.532552719116211,
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a": 8.583613395690918,
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-b": 7.684129238128662,
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-c": 10.029284477233887,
+     "220923_Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana_-a": 7.212529182434082,
+     "220923_Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana_-b": 7.592175483703613,
+     "220923_Plank_Pose_or_Kumbhakasana_-a": 8.159751892089844,
+     "220923_Four-Limbed_Staff_Pose_or_Chaturanga_Dandasana_-a": 7.458901405334473,
+     "220923_Cobra_Pose_or_Bhujangasana_-a": 7.681796073913574,
+     "220923_Side_Plank_Pose_or_Vasisthasana_-a": 9.526131629943848,
+     "220923_Side_Plank_Pose_or_Vasisthasana_-b": 9.320649147033691,
+     "220923_Dolphin_Plank_Pose_or_Makara_Adho_Mukha_Svanasana_-a": 9.171772003173828,
+     "220923_Dolphin_Pose_or_Ardha_Pincha_Mayurasana_-a": 6.802059173583984,
+     "220923_Standing_Forward_Bend_pose_or_Uttanasana_-a": 6.629638195037842,
+     "220923_Garland_Pose_or_Malasana_-a": 8.28430461883545,
+     "220923_Low_Lunge_pose_or_Anjaneyasana_-a": 8.888236999511719,
+     "220926_Warrior_II_Pose_or_Virabhadrasana_II_-a": 7.554494380950928,
+     "220923_Extended_Revolved_Triangle_Pose_or_Utthita_Trikonasana_-a": 7.5740065574646,
+     "220923_Extended_Revolved_Side_Angle_Pose_or_Utthita_Parsvakonasana_-a": 9.258044242858887,
+     "220926_Upward_Plank_Pose_or_Purvottanasana_-a": 11.033673286437988,
+     "220923_Bridge_Pose_or_Setu_Bandha_Sarvangasana_-a": 19.7554874420166,
+     "220923_Extended_Revolved_Side_Angle_Pose_or_Utthita_Parsvakonasana_-b": 10.12354564666748,
+     "220923_Extended_Revolved_Triangle_Pose_or_Utthita_Trikonasana_-b": 8.311746597290039,
+     "220926_viparita_virabhadrasana_or_reverse_warrior_pose-a": 8.565271377563477,
+     "220926_Intense_Side_Stretch_Pose_or_Parsvottanasana_-b": 29.918123245239258
+    },
+    "x0_frame_mean_angle_p50_holds": 7.180448532104492,
+    "x0_frame_mean_angle_p50_between_holds": 9.922536849975586,
+    "global_body_rot_err_p50": 8.040837287902832,
+    "root_rot_err_p50": 7.569389820098877,
+    "in_root_frame_body_rot_err_p50": 10.518083572387695
+   },
+   "hold_stillness": {
+    "frames": 18554,
+    "speed_rms": {
+     "agent": 0.08196255564689636,
+     "reference": 0.11157862097024918
+    },
+    "speed_p50": {
+     "agent": 0.010739154182374477,
+     "reference": 0.024660607799887657
+    },
+    "accel_rms": {
+     "agent": 0.6426645517349243,
+     "reference": 0.8471870422363281
+    },
+    "accel_p50": {
+     "agent": 0.11985590308904648,
+     "reference": 0.22982870042324066
+    },
+    "accel_rms_by_body": {
+     "agent": {
+      "Pelvis": 0.29797685146331787,
+      "L_Hip": 0.35054266452789307,
+      "L_Knee": 0.5629249811172485,
+      "L_Ankle": 1.0491746664047241,
+      "L_Toe": 1.2331279516220093,
+      "R_Hip": 0.364389032125473,
+      "R_Knee": 0.5076649785041809,
+      "R_Ankle": 0.8336126208305359,
+      "R_Toe": 1.0117535591125488,
+      "Torso": 0.30407625436782837,
+      "Spine": 0.29758286476135254,
+      "Chest": 0.2944318950176239,
+      "Neck": 0.3184329867362976,
+      "Head": 0.40785911679267883,
+      "L_Thorax": 0.28935912251472473,
+      "L_Shoulder": 0.34922677278518677,
+      "L_Elbow": 0.5603505373001099,
+      "L_Wrist": 0.6953733563423157,
+      "L_Hand": 0.8776963949203491,
+      "R_Thorax": 0.29574692249298096,
+      "R_Shoulder": 0.4141273498535156,
+      "R_Elbow": 0.6499919891357422,
+      "R_Wrist": 0.8169474005699158,
+      "R_Hand": 0.9977701902389526
+     },
+     "reference": {
+      "Pelvis": 0.4779526889324188,
+      "L_Hip": 0.5518108606338501,
+      "L_Knee": 0.9693986773490906,
+      "L_Ankle": 1.1896789073944092,
+      "L_Toe": 1.2826529741287231,
+      "R_Hip": 0.555232048034668,
+      "R_Knee": 0.894054114818573,
+      "R_Ankle": 1.1418687105178833,
+      "R_Toe": 1.3147456645965576,
+      "Torso": 0.4911663830280304,
+      "Spine": 0.5221047401428223,
+      "Chest": 0.502053439617157,
+      "Neck": 0.6093190312385559,
+      "Head": 0.5863909721374512,
+      "L_Thorax": 0.575125515460968,
+      "L_Shoulder": 0.8372123837471008,
+      "L_Elbow": 0.7824587225914001,
+      "L_Wrist": 0.9634107947349548,
+      "L_Hand": 1.2616612911224365,
+      "R_Thorax": 0.5125570297241211,
+      "R_Shoulder": 0.558843195438385,
+      "R_Elbow": 0.6769915223121643,
+      "R_Wrist": 0.8563396334648132,
+      "R_Hand": 1.068000316619873
+     }
+    },
+    "by_group": {
+     "arm_balance": {
+      "speed_rms_agent": 0.088319793343544,
+      "speed_rms_ref": 0.1250573843717575,
+      "accel_rms_agent": 0.8584719896316528,
+      "accel_rms_ref": 0.8428171873092651
+     },
+     "connective": {
+      "speed_rms_agent": 0.07816910743713379,
+      "speed_rms_ref": 0.10906801372766495,
+      "accel_rms_agent": 0.665870726108551,
+      "accel_rms_ref": 0.8103529810905457
+     },
+     "inversion": {
+      "speed_rms_agent": 0.0822870135307312,
+      "speed_rms_ref": 0.11011835187673569,
+      "accel_rms_agent": 0.5727599859237671,
+      "accel_rms_ref": 1.0463995933532715
+     },
+     "single_leg": {
+      "speed_rms_agent": 0.08131209760904312,
+      "speed_rms_ref": 0.10696489363908768,
+      "accel_rms_agent": 0.5294510126113892,
+      "accel_rms_ref": 0.6336382627487183
+     }
+    }
+   }
+  },
+  "g1:4500": {
+   "path": "results/smpl_yogi_v2_expert56_amp_ft_a2dda5d2ac/results/predicted_motion_lib_epoch_4500.pt",
+   "frames": 141300,
+   "tracked": 133511,
+   "posture": {
+    "median_joint_angle_deg": 7.2787322998046875,
+    "frame_mean_angle_p50": 8.111438751220703,
+    "frame_mean_angle_by_group_p50": {
+     "arm_balance": 8.512186050415039,
+     "connective": 8.337234497070312,
+     "inversion": 8.149016380310059,
+     "single_leg": 7.5762481689453125
+    },
+    "mean_bias_deg": 0.9587991833686829,
+    "joints": {
+     "L_Hip": {
+      "median_deg": 7.873227596282959,
+      "bias_deg": 1.9197258949279785,
+      "bias_over_sd": 0.20852404832839966,
+      "mean_vec": [
+       0.05,
+       -1.59,
+       -1.08
+      ]
+     },
+     "L_Knee": {
+      "median_deg": 7.621032238006592,
+      "bias_deg": 0.6888995170593262,
+      "bias_over_sd": 0.11688606441020966,
+      "mean_vec": [
+       -0.61,
+       -0.29,
+       -0.13
+      ]
+     },
+     "L_Ankle": {
+      "median_deg": 8.230154037475586,
+      "bias_deg": 0.347420334815979,
+      "bias_over_sd": 0.03215283527970314,
+      "mean_vec": [
+       -0.18,
+       0.3,
+       0.03
+      ]
+     },
+     "L_Toe": {
+      "median_deg": 5.7855682373046875,
+      "bias_deg": 0.6858729720115662,
+      "bias_over_sd": 0.07348646223545074,
+      "mean_vec": [
+       -0.38,
+       -0.56,
+       0.12
+      ]
+     },
+     "R_Hip": {
+      "median_deg": 8.551102638244629,
+      "bias_deg": 0.4346086382865906,
+      "bias_over_sd": 0.05291728302836418,
+      "mean_vec": [
+       0.32,
+       0.18,
+       -0.23
+      ]
+     },
+     "R_Knee": {
+      "median_deg": 8.122658729553223,
+      "bias_deg": 1.0861021280288696,
+      "bias_over_sd": 0.11899625509977341,
+      "mean_vec": [
+       0.55,
+       -0.62,
+       0.7
+      ]
+     },
+     "R_Ankle": {
+      "median_deg": 8.022544860839844,
+      "bias_deg": 1.5711510181427002,
+      "bias_over_sd": 0.1634056121110916,
+      "mean_vec": [
+       -0.15,
+       -1.56,
+       -0.09
+      ]
+     },
+     "R_Toe": {
+      "median_deg": 5.815408706665039,
+      "bias_deg": 0.5712254047393799,
+      "bias_over_sd": 0.104208804666996,
+      "mean_vec": [
+       -0.54,
+       -0.09,
+       -0.17
+      ]
+     },
+     "Torso": {
+      "median_deg": 6.765855312347412,
+      "bias_deg": 0.5171226263046265,
+      "bias_over_sd": 0.0881938487291336,
+      "mean_vec": [
+       -0.13,
+       0.35,
+       -0.36
+      ]
+     },
+     "Spine": {
+      "median_deg": 4.837648391723633,
+      "bias_deg": 0.2322309911251068,
+      "bias_over_sd": 0.06225712224841118,
+      "mean_vec": [
+       0.16,
+       -0.12,
+       0.12
+      ]
+     },
+     "Chest": {
+      "median_deg": 3.802189350128174,
+      "bias_deg": 0.40419143438339233,
+      "bias_over_sd": 0.12427636235952377,
+      "mean_vec": [
+       0.12,
+       0.15,
+       -0.36
+      ]
+     },
+     "Neck": {
+      "median_deg": 6.696417808532715,
+      "bias_deg": 0.4736658036708832,
+      "bias_over_sd": 0.07583754509687424,
+      "mean_vec": [
+       0.1,
+       0.13,
+       0.44
+      ]
+     },
+     "Head": {
+      "median_deg": 6.016843795776367,
+      "bias_deg": 0.5446290373802185,
+      "bias_over_sd": 0.11238198727369308,
+      "mean_vec": [
+       -0.46,
+       0.19,
+       0.22
+      ]
+     },
+     "L_Thorax": {
+      "median_deg": 6.5932769775390625,
+      "bias_deg": 0.9022493958473206,
+      "bias_over_sd": 0.16040301322937012,
+      "mean_vec": [
+       0.33,
+       -0.75,
+       -0.37
+      ]
+     },
+     "L_Shoulder": {
+      "median_deg": 8.022995948791504,
+      "bias_deg": 0.8918279409408569,
+      "bias_over_sd": 0.1440424621105194,
+      "mean_vec": [
+       -0.28,
+       0.82,
+       0.2
+      ]
+     },
+     "L_Elbow": {
+      "median_deg": 9.577141761779785,
+      "bias_deg": 1.2815016508102417,
+      "bias_over_sd": 0.09527062624692917,
+      "mean_vec": [
+       0.74,
+       -0.74,
+       0.74
+      ]
+     },
+     "L_Wrist": {
+      "median_deg": 8.692940711975098,
+      "bias_deg": 1.2830283641815186,
+      "bias_over_sd": 0.18407730758190155,
+      "mean_vec": [
+       -0.46,
+       -0.41,
+       -1.13
+      ]
+     },
+     "L_Hand": {
+      "median_deg": 6.765268802642822,
+      "bias_deg": 0.7392531633377075,
+      "bias_over_sd": 0.055467672646045685,
+      "mean_vec": [
+       0.68,
+       0.15,
+       0.25
+      ]
+     },
+     "R_Thorax": {
+      "median_deg": 7.376626968383789,
+      "bias_deg": 0.5846738815307617,
+      "bias_over_sd": 0.10314266383647919,
+      "mean_vec": [
+       0.31,
+       -0.5,
+       -0.01
+      ]
+     },
+     "R_Shoulder": {
+      "median_deg": 8.87221622467041,
+      "bias_deg": 2.4000062942504883,
+      "bias_over_sd": 0.2489188313484192,
+      "mean_vec": [
+       2.38,
+       0.33,
+       0.05
+      ]
+     },
+     "R_Elbow": {
+      "median_deg": 9.73718547821045,
+      "bias_deg": 1.9354615211486816,
+      "bias_over_sd": 0.24797070026397705,
+      "mean_vec": [
+       -1.86,
+       -0.53,
+       0.1
+      ]
+     },
+     "R_Wrist": {
+      "median_deg": 8.607950210571289,
+      "bias_deg": 1.1495137214660645,
+      "bias_over_sd": 0.12194451689720154,
+      "mean_vec": [
+       0.33,
+       -1.1,
+       0.01
+      ]
+     },
+     "R_Hand": {
+      "median_deg": 6.3786749839782715,
+      "bias_deg": 1.4080212116241455,
+      "bias_over_sd": 0.1288125365972519,
+      "mean_vec": [
+       -1.38,
+       0.27,
+       -0.12
+      ]
+     }
+    },
+    "frame_mean_angle_p50_by_clip_x0": {
+     "220923_Half_Moon_Pose_or_Ardha_Chandrasana_-a": 9.514883995056152,
+     "220923_Half_Moon_Pose_or_Ardha_Chandrasana_-b": 9.094491958618164,
+     "220923_Standing_Split_pose_or_Urdhva_Prasarita_Eka_Padasana_-a": 7.3275604248046875,
+     "220923_Standing_Split_pose_or_Urdhva_Prasarita_Eka_Padasana_-b": 7.41303825378418,
+     "220923_Standing_big_toe_hold_pose_or_Utthita_Padangusthasana-a": 6.632874965667725,
+     "220923_Standing_big_toe_hold_pose_or_Utthita_Padangusthasana-b": 6.356513500213623,
+     "220923_Tree_Pose_or_Vrksasana_-a": 7.144310474395752,
+     "220923_Tree_Pose_or_Vrksasana_-b": 6.75253963470459,
+     "220926_Eagle_Pose_or_Garudasana_-a": 8.69488525390625,
+     "220926_Lord_of_the_Dance_Pose_or_Natarajasana_-a": 7.626573085784912,
+     "220926_Lord_of_the_Dance_Pose_or_Natarajasana_-c": 8.552155494689941,
+     "220926_Warrior_III_Pose_or_Virabhadrasana_III_-a": 7.324344158172607,
+     "220926_Warrior_III_Pose_or_Virabhadrasana_III_-b": 6.053348064422607,
+     "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-a": 7.677624702453613,
+     "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-b": 8.693862915039062,
+     "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-c": 7.5775465965271,
+     "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-d": 7.689925670623779,
+     "220923_Handstand_pose_or_Adho_Mukha_Vrksasana_-a": 10.028059959411621,
+     "220923_Legs-Up-the-Wall_Pose_or_Viparita_Karani_-a": 8.807875633239746,
+     "220923_Plow_Pose_or_Halasana_-a": 10.397451400756836,
+     "220926_Plow_Pose_or_Halasana_-b": 11.239850044250488,
+     "220923_Scorpion_pose_or_vrischikasana-a": 8.128998756408691,
+     "220923_Scorpion_pose_or_vrischikasana-b": 19.018102645874023,
+     "220923_Supported_Headstand_pose_or_Salamba_Sirsasana_-b": 6.204585075378418,
+     "220926_Supported_Headstand_pose_or_Salamba_Sirsasana_-a": 7.432644844055176,
+     "220923_Supported_Shoulderstand_pose_or_Salamba_Sarvangasana_-a": 9.388274192810059,
+     "220923_Crane_Crow_Pose_or_Bakasana_-a": 8.135233879089355,
+     "220923_Firefly_Pose_or_Tittibhasana_-a": 8.301800727844238,
+     "220923_Peacock_Pose_or_Mayurasana_-a": 13.610612869262695,
+     "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-a": 7.667397975921631,
+     "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-b": 8.167559623718262,
+     "220923_Shoulder-Pressing_Pose_or_Bhujapidasana_-a": 8.60483169555664,
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a": 9.295028686523438,
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-b": 6.717474937438965,
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-c": 10.301874160766602,
+     "220923_Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana_-a": 6.9575581550598145,
+     "220923_Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana_-b": 7.476076126098633,
+     "220923_Plank_Pose_or_Kumbhakasana_-a": 8.064355850219727,
+     "220923_Four-Limbed_Staff_Pose_or_Chaturanga_Dandasana_-a": 7.894310474395752,
+     "220923_Cobra_Pose_or_Bhujangasana_-a": 7.904610633850098,
+     "220923_Side_Plank_Pose_or_Vasisthasana_-a": 10.104024887084961,
+     "220923_Side_Plank_Pose_or_Vasisthasana_-b": 8.349392890930176,
+     "220923_Dolphin_Plank_Pose_or_Makara_Adho_Mukha_Svanasana_-a": 8.834181785583496,
+     "220923_Dolphin_Pose_or_Ardha_Pincha_Mayurasana_-a": 6.625445365905762,
+     "220923_Standing_Forward_Bend_pose_or_Uttanasana_-a": 6.218141078948975,
+     "220923_Garland_Pose_or_Malasana_-a": 8.261473655700684,
+     "220923_Low_Lunge_pose_or_Anjaneyasana_-a": 8.931836128234863,
+     "220926_Warrior_II_Pose_or_Virabhadrasana_II_-a": 8.661737442016602,
+     "220923_Extended_Revolved_Triangle_Pose_or_Utthita_Trikonasana_-a": 7.444126129150391,
+     "220923_Extended_Revolved_Side_Angle_Pose_or_Utthita_Parsvakonasana_-a": 9.028992652893066,
+     "220926_Upward_Plank_Pose_or_Purvottanasana_-a": 9.009220123291016,
+     "220923_Bridge_Pose_or_Setu_Bandha_Sarvangasana_-a": 13.760083198547363,
+     "220923_Extended_Revolved_Side_Angle_Pose_or_Utthita_Parsvakonasana_-b": 9.010416030883789,
+     "220923_Extended_Revolved_Triangle_Pose_or_Utthita_Trikonasana_-b": 7.544262886047363,
+     "220926_viparita_virabhadrasana_or_reverse_warrior_pose-a": 8.89965534210205,
+     "220926_Intense_Side_Stretch_Pose_or_Parsvottanasana_-b": 23.31313133239746
+    },
+    "x0_frame_mean_angle_p50_holds": 7.101323127746582,
+    "x0_frame_mean_angle_p50_between_holds": 9.684976577758789,
+    "global_body_rot_err_p50": 8.060619354248047,
+    "root_rot_err_p50": 7.1387739181518555,
+    "in_root_frame_body_rot_err_p50": 10.405204772949219
+   },
+   "hold_stillness": {
+    "frames": 18534,
+    "speed_rms": {
+     "agent": 0.08564025163650513,
+     "reference": 0.11188250035047531
+    },
+    "speed_p50": {
+     "agent": 0.010531132109463215,
+     "reference": 0.024831298738718033
+    },
+    "accel_rms": {
+     "agent": 0.7079439163208008,
+     "reference": 0.8495965003967285
+    },
+    "accel_p50": {
+     "agent": 0.1124119758605957,
+     "reference": 0.23098765313625336
+    },
+    "accel_rms_by_body": {
+     "agent": {
+      "Pelvis": 0.3184104859828949,
+      "L_Hip": 0.35851913690567017,
+      "L_Knee": 0.6175057291984558,
+      "L_Ankle": 0.9728469848632812,
+      "L_Toe": 1.0988754034042358,
+      "R_Hip": 0.38089653849601746,
+      "R_Knee": 0.548575758934021,
+      "R_Ankle": 0.8189172148704529,
+      "R_Toe": 0.9470571279525757,
+      "Torso": 0.31882643699645996,
+      "Spine": 0.31512755155563354,
+      "Chest": 0.3108844459056854,
+      "Neck": 0.35303056240081787,
+      "Head": 0.40460318326950073,
+      "L_Thorax": 0.3207949995994568,
+      "L_Shoulder": 0.3830863833427429,
+      "L_Elbow": 0.5455014705657959,
+      "L_Wrist": 0.8418225646018982,
+      "L_Hand": 1.0943903923034668,
+      "R_Thorax": 0.3295433521270752,
+      "R_Shoulder": 0.3917873203754425,
+      "R_Elbow": 0.5887366533279419,
+      "R_Wrist": 1.0798503160476685,
+      "R_Hand": 1.5605648756027222
+     },
+     "reference": {
+      "Pelvis": 0.4778999388217926,
+      "L_Hip": 0.552687406539917,
+      "L_Knee": 0.9757046699523926,
+      "L_Ankle": 1.2028894424438477,
+      "L_Toe": 1.2946962118148804,
+      "R_Hip": 0.555034339427948,
+      "R_Knee": 0.8981494307518005,
+      "R_Ankle": 1.1405385732650757,
+      "R_Toe": 1.312050461769104,
+      "Torso": 0.4914306700229645,
+      "Spine": 0.5237786769866943,
+      "Chest": 0.5031700134277344,
+      "Neck": 0.611237108707428,
+      "Head": 0.5899618268013,
+      "L_Thorax": 0.576359212398529,
+      "L_Shoulder": 0.841723620891571,
+      "L_Elbow": 0.782952070236206,
+      "L_Wrist": 0.9602976441383362,
+      "L_Hand": 1.2657279968261719,
+      "R_Thorax": 0.5146329402923584,
+      "R_Shoulder": 0.5621981024742126,
+      "R_Elbow": 0.677921712398529,
+      "R_Wrist": 0.8535723090171814,
+      "R_Hand": 1.067592978477478
+     }
+    },
+    "by_group": {
+     "arm_balance": {
+      "speed_rms_agent": 0.08870863914489746,
+      "speed_rms_ref": 0.1250573843717575,
+      "accel_rms_agent": 0.8315959572792053,
+      "accel_rms_ref": 0.8428171873092651
+     },
+     "connective": {
+      "speed_rms_agent": 0.08117740601301193,
+      "speed_rms_ref": 0.10915527492761612,
+      "accel_rms_agent": 0.9187392592430115,
+      "accel_rms_ref": 0.8101536631584167
+     },
+     "inversion": {
+      "speed_rms_agent": 0.0900605320930481,
+      "speed_rms_ref": 0.11060319095849991,
+      "accel_rms_agent": 0.5820627212524414,
+      "accel_rms_ref": 1.0554561614990234
+     },
+     "single_leg": {
+      "speed_rms_agent": 0.08346066623926163,
+      "speed_rms_ref": 0.10751199722290039,
+      "accel_rms_agent": 0.472846120595932,
+      "accel_rms_ref": 0.6348386406898499
+     }
+    }
+   }
+  },
+  "g1:5000": {
+   "path": "output/renderings/expert56_v2_amp_g1_e5000/eval_standalone_e5000/results/predicted_motion_lib_epoch_0.pt",
+   "frames": 141300,
+   "tracked": 136211,
+   "posture": {
+    "median_joint_angle_deg": 7.384721755981445,
+    "frame_mean_angle_p50": 8.323659896850586,
+    "frame_mean_angle_by_group_p50": {
+     "arm_balance": 8.751297950744629,
+     "connective": 8.575052261352539,
+     "inversion": 8.319723129272461,
+     "single_leg": 7.687798500061035
+    },
+    "mean_bias_deg": 1.1835861206054688,
+    "joints": {
+     "L_Hip": {
+      "median_deg": 8.50426959991455,
+      "bias_deg": 1.8805235624313354,
+      "bias_over_sd": 0.21998079121112823,
+      "mean_vec": [
+       1.25,
+       -1.27,
+       -0.61
+      ]
+     },
+     "L_Knee": {
+      "median_deg": 7.850320816040039,
+      "bias_deg": 1.50760817527771,
+      "bias_over_sd": 0.24225853383541107,
+      "mean_vec": [
+       -1.3,
+       -0.37,
+       -0.67
+      ]
+     },
+     "L_Ankle": {
+      "median_deg": 8.532124519348145,
+      "bias_deg": 1.9464951753616333,
+      "bias_over_sd": 0.26412034034729004,
+      "mean_vec": [
+       -0.46,
+       1.27,
+       -1.4
+      ]
+     },
+     "L_Toe": {
+      "median_deg": 6.025708198547363,
+      "bias_deg": 0.5766162276268005,
+      "bias_over_sd": 0.09860086441040039,
+      "mean_vec": [
+       -0.36,
+       0.0,
+       0.45
+      ]
+     },
+     "R_Hip": {
+      "median_deg": 8.575433731079102,
+      "bias_deg": 0.4567248225212097,
+      "bias_over_sd": 0.05618945136666298,
+      "mean_vec": [
+       -0.31,
+       -0.12,
+       0.31
+      ]
+     },
+     "R_Knee": {
+      "median_deg": 7.849925994873047,
+      "bias_deg": 1.0219731330871582,
+      "bias_over_sd": 0.11610795557498932,
+      "mean_vec": [
+       0.59,
+       0.71,
+       -0.45
+      ]
+     },
+     "R_Ankle": {
+      "median_deg": 8.112165451049805,
+      "bias_deg": 1.8120105266571045,
+      "bias_over_sd": 0.1925201416015625,
+      "mean_vec": [
+       -0.32,
+       -1.72,
+       0.46
+      ]
+     },
+     "R_Toe": {
+      "median_deg": 5.740720272064209,
+      "bias_deg": 0.3522200584411621,
+      "bias_over_sd": 0.04679809510707855,
+      "mean_vec": [
+       0.25,
+       0.24,
+       -0.04
+      ]
+     },
+     "Torso": {
+      "median_deg": 6.5565080642700195,
+      "bias_deg": 1.4883947372436523,
+      "bias_over_sd": 0.17409133911132812,
+      "mean_vec": [
+       0.49,
+       1.4,
+       -0.11
+      ]
+     },
+     "Spine": {
+      "median_deg": 4.720256328582764,
+      "bias_deg": 0.5805585384368896,
+      "bias_over_sd": 0.09481431543827057,
+      "mean_vec": [
+       -0.06,
+       -0.58,
+       0.03
+      ]
+     },
+     "Chest": {
+      "median_deg": 3.9420814514160156,
+      "bias_deg": 0.5153535008430481,
+      "bias_over_sd": 0.11100713163614273,
+      "mean_vec": [
+       0.15,
+       -0.39,
+       -0.3
+      ]
+     },
+     "Neck": {
+      "median_deg": 6.403244495391846,
+      "bias_deg": 0.47608959674835205,
+      "bias_over_sd": 0.060292042791843414,
+      "mean_vec": [
+       0.2,
+       0.43,
+       -0.03
+      ]
+     },
+     "Head": {
+      "median_deg": 6.1425347328186035,
+      "bias_deg": 2.049624443054199,
+      "bias_over_sd": 0.3133072257041931,
+      "mean_vec": [
+       0.32,
+       1.94,
+       -0.59
+      ]
+     },
+     "L_Thorax": {
+      "median_deg": 6.775325775146484,
+      "bias_deg": 1.1428734064102173,
+      "bias_over_sd": 0.14075525104999542,
+      "mean_vec": [
+       -0.73,
+       0.09,
+       0.87
+      ]
+     },
+     "L_Shoulder": {
+      "median_deg": 8.635140419006348,
+      "bias_deg": 1.8877854347229004,
+      "bias_over_sd": 0.20411525666713715,
+      "mean_vec": [
+       0.94,
+       0.89,
+       -1.37
+      ]
+     },
+     "L_Elbow": {
+      "median_deg": 9.794975280761719,
+      "bias_deg": 1.263819694519043,
+      "bias_over_sd": 0.11666641384363174,
+      "mean_vec": [
+       -0.05,
+       0.28,
+       1.23
+      ]
+     },
+     "L_Wrist": {
+      "median_deg": 9.22049617767334,
+      "bias_deg": 1.7358778715133667,
+      "bias_over_sd": 0.18814051151275635,
+      "mean_vec": [
+       0.07,
+       -1.68,
+       0.45
+      ]
+     },
+     "L_Hand": {
+      "median_deg": 6.789153575897217,
+      "bias_deg": 0.7563619613647461,
+      "bias_over_sd": 0.06280634552240372,
+      "mean_vec": [
+       -0.73,
+       -0.05,
+       -0.2
+      ]
+     },
+     "R_Thorax": {
+      "median_deg": 7.098339557647705,
+      "bias_deg": 0.9742128252983093,
+      "bias_over_sd": 0.156513050198555,
+      "mean_vec": [
+       0.02,
+       -0.14,
+       0.96
+      ]
+     },
+     "R_Shoulder": {
+      "median_deg": 9.14870548248291,
+      "bias_deg": 1.580525517463684,
+      "bias_over_sd": 0.14869864284992218,
+      "mean_vec": [
+       1.31,
+       0.48,
+       0.75
+      ]
+     },
+     "R_Elbow": {
+      "median_deg": 9.869586944580078,
+      "bias_deg": 1.8566029071807861,
+      "bias_over_sd": 0.19162429869174957,
+      "mean_vec": [
+       -0.54,
+       -1.52,
+       -0.92
+      ]
+     },
+     "R_Wrist": {
+      "median_deg": 9.391410827636719,
+      "bias_deg": 1.1540714502334595,
+      "bias_over_sd": 0.1199408546090126,
+      "mean_vec": [
+       0.41,
+       -1.06,
+       -0.17
+      ]
+     },
+     "R_Hand": {
+      "median_deg": 6.4116973876953125,
+      "bias_deg": 0.2061557024717331,
+      "bias_over_sd": 0.023458179086446762,
+      "mean_vec": [
+       -0.17,
+       0.12,
+       0.02
+      ]
+     }
+    },
+    "frame_mean_angle_p50_by_clip_x0": {
+     "220923_Half_Moon_Pose_or_Ardha_Chandrasana_-a": 10.320662498474121,
+     "220923_Half_Moon_Pose_or_Ardha_Chandrasana_-b": 8.336237907409668,
+     "220923_Standing_Split_pose_or_Urdhva_Prasarita_Eka_Padasana_-a": 7.277612209320068,
+     "220923_Standing_Split_pose_or_Urdhva_Prasarita_Eka_Padasana_-b": 7.77386999130249,
+     "220923_Standing_big_toe_hold_pose_or_Utthita_Padangusthasana-a": 7.092646598815918,
+     "220923_Standing_big_toe_hold_pose_or_Utthita_Padangusthasana-b": 5.979273319244385,
+     "220923_Tree_Pose_or_Vrksasana_-a": 7.302680492401123,
+     "220923_Tree_Pose_or_Vrksasana_-b": 7.2746076583862305,
+     "220926_Eagle_Pose_or_Garudasana_-a": 8.667699813842773,
+     "220926_Lord_of_the_Dance_Pose_or_Natarajasana_-a": 8.2863187789917,
+     "220926_Lord_of_the_Dance_Pose_or_Natarajasana_-c": 9.013202667236328,
+     "220926_Warrior_III_Pose_or_Virabhadrasana_III_-a": 6.83671236038208,
+     "220926_Warrior_III_Pose_or_Virabhadrasana_III_-b": 6.039501667022705,
+     "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-a": 7.504058837890625,
+     "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-b": 9.080621719360352,
+     "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-c": 7.6538801193237305,
+     "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-d": 7.5324625968933105,
+     "220923_Handstand_pose_or_Adho_Mukha_Vrksasana_-a": 9.605125427246094,
+     "220923_Legs-Up-the-Wall_Pose_or_Viparita_Karani_-a": 8.9500093460083,
+     "220923_Plow_Pose_or_Halasana_-a": 10.990824699401855,
+     "220926_Plow_Pose_or_Halasana_-b": 13.970747947692871,
+     "220923_Scorpion_pose_or_vrischikasana-a": 7.626276969909668,
+     "220923_Scorpion_pose_or_vrischikasana-b": 16.769880294799805,
+     "220923_Supported_Headstand_pose_or_Salamba_Sirsasana_-b": 6.153342247009277,
+     "220926_Supported_Headstand_pose_or_Salamba_Sirsasana_-a": 7.798333644866943,
+     "220923_Supported_Shoulderstand_pose_or_Salamba_Sarvangasana_-a": 13.562250137329102,
+     "220923_Crane_Crow_Pose_or_Bakasana_-a": 8.694225311279297,
+     "220923_Firefly_Pose_or_Tittibhasana_-a": 8.920631408691406,
+     "220923_Peacock_Pose_or_Mayurasana_-a": 13.435935974121094,
+     "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-a": 7.551211833953857,
+     "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-b": 7.7897114753723145,
+     "220923_Shoulder-Pressing_Pose_or_Bhujapidasana_-a": 8.555122375488281,
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a": 9.07344913482666,
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-b": 6.711887359619141,
+     "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-c": 10.408854484558105,
+     "220923_Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana_-a": 6.870553493499756,
+     "220923_Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana_-b": 7.7857208251953125,
+     "220923_Plank_Pose_or_Kumbhakasana_-a": 8.25182056427002,
+     "220923_Four-Limbed_Staff_Pose_or_Chaturanga_Dandasana_-a": 8.121371269226074,
+     "220923_Cobra_Pose_or_Bhujangasana_-a": 8.233263969421387,
+     "220923_Side_Plank_Pose_or_Vasisthasana_-a": 10.091202735900879,
+     "220923_Side_Plank_Pose_or_Vasisthasana_-b": 8.838056564331055,
+     "220923_Dolphin_Plank_Pose_or_Makara_Adho_Mukha_Svanasana_-a": 9.280013084411621,
+     "220923_Dolphin_Pose_or_Ardha_Pincha_Mayurasana_-a": 7.0797624588012695,
+     "220923_Standing_Forward_Bend_pose_or_Uttanasana_-a": 6.52630615234375,
+     "220923_Garland_Pose_or_Malasana_-a": 8.273401260375977,
+     "220923_Low_Lunge_pose_or_Anjaneyasana_-a": 9.462064743041992,
+     "220926_Warrior_II_Pose_or_Virabhadrasana_II_-a": 7.057747840881348,
+     "220923_Extended_Revolved_Triangle_Pose_or_Utthita_Trikonasana_-a": 7.640414714813232,
+     "220923_Extended_Revolved_Side_Angle_Pose_or_Utthita_Parsvakonasana_-a": 8.917551040649414,
+     "220926_Upward_Plank_Pose_or_Purvottanasana_-a": 11.806121826171875,
+     "220923_Bridge_Pose_or_Setu_Bandha_Sarvangasana_-a": 13.45505428314209,
+     "220923_Extended_Revolved_Side_Angle_Pose_or_Utthita_Parsvakonasana_-b": 9.4404878616333,
+     "220923_Extended_Revolved_Triangle_Pose_or_Utthita_Trikonasana_-b": 7.58089017868042,
+     "220926_viparita_virabhadrasana_or_reverse_warrior_pose-a": 8.914156913757324,
+     "220926_Intense_Side_Stretch_Pose_or_Parsvottanasana_-b": 16.76384735107422
+    },
+    "x0_frame_mean_angle_p50_holds": 7.192954063415527,
+    "x0_frame_mean_angle_p50_between_holds": 9.893563270568848,
+    "global_body_rot_err_p50": 7.905354022979736,
+    "root_rot_err_p50": 7.076503753662109,
+    "in_root_frame_body_rot_err_p50": 10.258440971374512
+   },
+   "hold_stillness": {
+    "frames": 18811,
+    "speed_rms": {
+     "agent": 0.08636664599180222,
+     "reference": 0.11143794655799866
+    },
+    "speed_p50": {
+     "agent": 0.01060396246612072,
+     "reference": 0.024936452507972717
+    },
+    "accel_rms": {
+     "agent": 0.5756328701972961,
+     "reference": 0.8484620451927185
+    },
+    "accel_p50": {
+     "agent": 0.1133362278342247,
+     "reference": 0.23309804499149323
+    },
+    "accel_rms_by_body": {
+     "agent": {
+      "Pelvis": 0.33439192175865173,
+      "L_Hip": 0.36063745617866516,
+      "L_Knee": 0.544450044631958,
+      "L_Ankle": 0.8107514381408691,
+      "L_Toe": 0.9053358435630798,
+      "R_Hip": 0.37987154722213745,
+      "R_Knee": 0.545930802822113,
+      "R_Ankle": 0.7332395911216736,
+      "R_Toe": 0.7954836487770081,
+      "Torso": 0.35051360726356506,
+      "Spine": 0.3623191714286804,
+      "Chest": 0.37224751710891724,
+      "Neck": 0.4048462212085724,
+      "Head": 0.4926578402519226,
+      "L_Thorax": 0.3772418797016144,
+      "L_Shoulder": 0.4352238178253174,
+      "L_Elbow": 0.5034369230270386,
+      "L_Wrist": 0.6532355546951294,
+      "L_Hand": 0.8277924656867981,
+      "R_Thorax": 0.3791370391845703,
+      "R_Shoulder": 0.4468170404434204,
+      "R_Elbow": 0.5344309210777283,
+      "R_Wrist": 0.68507319688797,
+      "R_Hand": 0.8542009592056274
+     },
+     "reference": {
+      "Pelvis": 0.478961706161499,
+      "L_Hip": 0.5534393191337585,
+      "L_Knee": 0.9703999757766724,
+      "L_Ankle": 1.1965266466140747,
+      "L_Toe": 1.289581298828125,
+      "R_Hip": 0.5552204847335815,
+      "R_Knee": 0.893256425857544,
+      "R_Ankle": 1.1338850259780884,
+      "R_Toe": 1.3059061765670776,
+      "Torso": 0.4924388527870178,
+      "Spine": 0.5239843130111694,
+      "Chest": 0.5037720203399658,
+      "Neck": 0.6127282381057739,
+      "Head": 0.5957167148590088,
+      "L_Thorax": 0.5778318643569946,
+      "L_Shoulder": 0.8461308479309082,
+      "L_Elbow": 0.8100053071975708,
+      "L_Wrist": 0.9576286673545837,
+      "L_Hand": 1.256300687789917,
+      "R_Thorax": 0.5156805515289307,
+      "R_Shoulder": 0.5663620233535767,
+      "R_Elbow": 0.6863064169883728,
+      "R_Wrist": 0.8512051701545715,
+      "R_Hand": 1.0598478317260742
+     }
+    },
+    "by_group": {
+     "arm_balance": {
+      "speed_rms_agent": 0.08970635384321213,
+      "speed_rms_ref": 0.1250573843717575,
+      "accel_rms_agent": 0.5424049496650696,
+      "accel_rms_ref": 0.8428171873092651
+     },
+     "connective": {
+      "speed_rms_agent": 0.0862194150686264,
+      "speed_rms_ref": 0.10700216889381409,
+      "accel_rms_agent": 0.6535698771476746,
+      "accel_rms_ref": 0.8046562671661377
+     },
+     "inversion": {
+      "speed_rms_agent": 0.09005366265773773,
+      "speed_rms_ref": 0.11130582541227341,
+      "accel_rms_agent": 0.6329892873764038,
+      "accel_rms_ref": 1.060207486152649
+     },
+     "single_leg": {
+      "speed_rms_agent": 0.08065635710954666,
+      "speed_rms_ref": 0.10751199722290039,
+      "accel_rms_agent": 0.43311557173728943,
+      "accel_rms_ref": 0.6348386406898499
+     }
+    }
+   }
+  }
+ }
+}

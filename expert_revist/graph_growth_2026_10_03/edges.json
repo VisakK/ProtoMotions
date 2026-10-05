@@ -1,0 +1,3863 @@
+{
+ "schema_version": 1,
+ "generator": {
+  "module": "edge_synthesis.edge_spec",
+  "git_rev": "96638d57b3794d23748b062ad1a4a5cfec238402",
+  "sha256": "16f08677969f101722bd73844631e67a0923d1ffbb94606237ded32a37391a73"
+ },
+ "inputs": {
+  "data/reference_curation/releases/holds_repaired_ftC_posefix.release_v2.a2dda5d2ac.json": "10dc501f7213d1c26ab1811ce1a8fe5e6f2aeaf1d9ec3cace834d8605d79a3ff",
+  "data/smpl/reference_curation/holds_repaired_ftC_posefix.release_v2.a2dda5d2ac/release_holds.yaml": "faa474ee65296108a11c786a8c8139ba4259dc8dc25da69b42dcf40fe25581bb",
+  "data/smpl/reference_curation/holds_repaired_ftC_posefix.release_v2.a2dda5d2ac/contact_graph.json": "d57e8c3f5f07bf4c26b4a6469ddc1c5082731c1e23ff9027c1eb7771b25d5942",
+  "data/smpl/reference_curation/holds_repaired_ftC_posefix.release_v2.a2dda5d2ac/contact_targets.pt": "82f35fc3760e415230db6aa0bf954ea1244c71b1d096ec3cf77fb04bbd4ff880",
+  "data/reference_curation/statics_v2/holds_repaired_ftC_posefix.labels_v2.46024365fa.statics_v2.aab60189f4/holds.jsonl": "0eca067b6ba34782e6d08c8f363355786b468f613953e6a26d692f0e6d2a1530",
+  "data/reference_curation/labels/holds_repaired_ftC_posefix.labels_v2.e03994ad3c/annotations.jsonl": "50329f510557da1780f3028293e48462ed98c3c770bcf3e086683cd1c2dd7221",
+  "expert_revist/expert56_v2_e15500/data/library_e15500.json": "c21e98ea77be21ed4dec37ca7c52109b1cc50f8f6d43d1006bcd59d3bf871414",
+  "expert_revist/graph_growth_2026_10_03/evidence/census.json": "0a96d2ebb0a3c00906fa67fd3d7e2cec569b1c1b61679d095381cba6175d8083",
+  "expert_revist/graph_growth_2026_10_03/evidence/witness2.json": "4b90139fb6555b4707242fc5b80dac143f2564d7e2bcf5cf98cb5f445ce3d9d6"
+ },
+ "kind": "edge_spec",
+ "release_id": "holds_repaired_ftC_posefix.release_v2.a2dda5d2ac",
+ "plant_sha256": "aa541c77bcc1526905777c425e5ab072f21cae7bcadad9f71e3b1eb531f98f91",
+ "statics_id": "holds_repaired_ftC_posefix.labels_v2.46024365fa.statics_v2.aab60189f4",
+ "labels_id": "holds_repaired_ftC_posefix.labels_v2.e03994ad3c",
+ "zone_order": [
+  "L_FOOT",
+  "R_FOOT",
+  "L_SHANK",
+  "R_SHANK",
+  "L_THIGH",
+  "R_THIGH",
+  "PELVIS",
+  "TRUNK",
+  "HEAD",
+  "L_UPPER_ARM",
+  "R_UPPER_ARM",
+  "L_FOREARM",
+  "R_FOREARM",
+  "L_HAND",
+  "R_HAND"
+ ],
+ "conventions": {
+  "frames": "release v2 .motion frames at 60 fps (COMMON body order = MJCF order); t = frame / fps",
+  "ground": "zones planted (supports, labels v2 pairs_ground)",
+  "braces": "body-body contacts kept closed (labels v2 configured pairs)",
+  "free": "zones that must stay off the floor in the phase (not planted, state known at both ends: planted or the sidecar's known free); a zone in an event's make set may touch down inside that event's window only",
+  "touch_allowed": "body-body touches the reviewer allows at the endpoint (not braces; never charged)",
+  "events": "contact changes between consecutive configurations; t_range_s = the event's admissible time since the departure, from the phases' duration ranges",
+  "planted_anchor": "zones planted at both ends: the generator keeps them fixed (T2 re-anchors D on them)"
+ },
+ "duration_bases": {
+  "hands_inverted": "x0 hands-anchored transitions with an inverted end: inter-hold time p10/p50/p90 (corpus_timing)",
+  "tripod_to_arm": "human tripod -> legs-on-arms -> arm balance passages in Koundinya -a/-b and Side Crow -b",
+  "jump_back": "no human jump-back in the corpus: flight bounded by ballistics, landing by arrival dwell",
+  "settle": "arrival settle: the shortest trusted hold window in the corpus is 0.3 s; 1 s keeps the edge short"
+ },
+ "corpus_timing": {
+  "hands_inverted_transition_s": {
+   "n": 19,
+   "p10": 0.377,
+   "p50": 1.917,
+   "p90": 2.767
+  },
+  "passages": {
+   "Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-a@920->@1033": {
+    "from": "Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II_h3 ['HEAD:G', 'L_HAND:G', 'R_HAND:G']",
+    "to": "Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II_h4 ['HEAD:G', 'L_HAND:G', 'R_HAND:G', 'R_THIGH+L_UPPER_ARM']",
+    "transition_s": 0.383,
+    "hold_to_hold_s": 1.883,
+    "dwell_to_s": 1.217
+   },
+   "Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-a@1033->@1221": {
+    "from": "Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II_h4 ['HEAD:G', 'L_HAND:G', 'R_HAND:G', 'R_THIGH+L_UPPER_ARM']",
+    "to": "Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II ['L_HAND:G', 'R_HAND:G', 'R_THIGH+L_UPPER_ARM']",
+    "transition_s": 2.05,
+    "hold_to_hold_s": 3.133,
+    "dwell_to_s": 0.667
+   },
+   "Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-b@578->@774": {
+    "from": "Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II_h3 ['HEAD:G', 'L_HAND:G', 'R_HAND:G']",
+    "to": "Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II_h4 ['HEAD:G', 'L_HAND:G', 'R_HAND:G']",
+    "transition_s": 1.933,
+    "hold_to_hold_s": 3.267,
+    "dwell_to_s": 0.867
+   },
+   "Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-b@774->@888": {
+    "from": "Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II_h4 ['HEAD:G', 'L_HAND:G', 'R_HAND:G']",
+    "to": "Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II ['HEAD:G', 'L_FOOT:G', 'L_HAND:G', 'R_FOOT:G', 'R_HAND:G', 'R_THIGH+R_UPPER_ARM']",
+    "transition_s": 1.117,
+    "hold_to_hold_s": 1.9,
+    "dwell_to_s": 0.983
+   },
+   "Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-b@888->@1060": {
+    "from": "Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II ['HEAD:G', 'L_FOOT:G', 'L_HAND:G', 'R_FOOT:G', 'R_HAND:G', 'R_THIGH+R_UPPER_ARM']",
+    "to": "Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II_h5 ['L_HAND:G', 'R_HAND:G', 'R_THIGH+R_UPPER_ARM']",
+    "transition_s": 1.183,
+    "hold_to_hold_s": 2.867,
+    "dwell_to_s": 1.533
+   },
+   "Side_Crane_Crow_Pose_or_Parsva_Bakasana_-b@931->@1046": {
+    "from": "Side_Crane_Crow_Pose_or_Parsva_Bakasana_h4 ['HEAD:G', 'L_HAND:G', 'R_HAND:G']",
+    "to": "Side_Crane_Crow_Pose_or_Parsva_Bakasana_h2 ['HEAD:G', 'L_FOOT:G', 'L_HAND:G', 'L_THIGH+R_UPPER_ARM', 'R_HAND:G']",
+    "transition_s": 1.1,
+    "hold_to_hold_s": 1.917,
+    "dwell_to_s": 0.917
+   },
+   "Side_Crane_Crow_Pose_or_Parsva_Bakasana_-b@1046->@1230": {
+    "from": "Side_Crane_Crow_Pose_or_Parsva_Bakasana_h2 ['HEAD:G', 'L_FOOT:G', 'L_HAND:G', 'L_THIGH+R_UPPER_ARM', 'R_HAND:G']",
+    "to": "Side_Crane_Crow_Pose_or_Parsva_Bakasana_h5 ['HEAD:G', 'L_HAND:G', 'L_THIGH+R_UPPER_ARM', 'R_HAND:G']",
+    "transition_s": 1.15,
+    "hold_to_hold_s": 3.067,
+    "dwell_to_s": 2.3
+   },
+   "Side_Crane_Crow_Pose_or_Parsva_Bakasana_-b@1230->@1493": {
+    "from": "Side_Crane_Crow_Pose_or_Parsva_Bakasana_h5 ['HEAD:G', 'L_HAND:G', 'L_THIGH+R_UPPER_ARM', 'R_HAND:G']",
+    "to": "Side_Crane_Crow_Pose_or_Parsva_Bakasana ['L_HAND:G', 'L_THIGH+R_UPPER_ARM', 'R_HAND:G']",
+    "transition_s": 0.183,
+    "hold_to_hold_s": 4.383,
+    "dwell_to_s": 5.683
+   },
+   "Handstand_pose_or_Adho_Mukha_Vrksasana_-a@718->@1193": {
+    "from": "Handstand_pose_or_Adho_Mukha_Vrksasana_h2 ['L_HAND:G', 'R_FOOT:G', 'R_HAND:G']",
+    "to": "Handstand_pose_or_Adho_Mukha_Vrksasana ['L_HAND:G', 'R_HAND:G']",
+    "transition_s": 1.917,
+    "hold_to_hold_s": 7.917,
+    "dwell_to_s": 9.183
+   },
+   "Handstand_pose_or_Adho_Mukha_Vrksasana_-a@1193->@1632": {
+    "from": "Handstand_pose_or_Adho_Mukha_Vrksasana ['L_HAND:G', 'R_HAND:G']",
+    "to": "Handstand_pose_or_Adho_Mukha_Vrksasana_h2 ['L_HAND:G', 'R_FOOT:G', 'R_HAND:G']",
+    "transition_s": 2.95,
+    "hold_to_hold_s": 7.317,
+    "dwell_to_s": 1.067
+   },
+   "Handstand_pose_or_Adho_Mukha_Vrksasana_-a@2025->@2314": {
+    "from": "Handstand_pose_or_Adho_Mukha_Vrksasana_h2 ['L_HAND:G', 'R_FOOT:G', 'R_HAND:G']",
+    "to": "Handstand_pose_or_Adho_Mukha_Vrksasana ['L_HAND:G', 'R_HAND:G']",
+    "transition_s": 1.75,
+    "hold_to_hold_s": 4.817,
+    "dwell_to_s": 5.383
+   }
+  }
+ },
+ "edges": [
+  {
+   "id": "E1",
+   "rank": "primary",
+   "label": "crow -> handstand (press)",
+   "kind": "quasi_static",
+   "generator": "keyframe_statics",
+   "risk": "the press: shoulder and wrist torque mid-pike may exceed the plant (endpoint wrists s* 0.17 / 0.32); if statics says so the edge becomes a hop (Scorpion -b's pattern) or is dropped",
+   "source": {
+    "hold_id": "220923_Crane_Crow_Pose_or_Bakasana_-a@439",
+    "stem": "220923_Crane_Crow_Pose_or_Bakasana_-a",
+    "group": "arm_balance",
+    "name": "Crane_Crow_Pose_or_Bakasana",
+    "fps": 60,
+    "frame_hold": 651,
+    "t_hold": 10.85,
+    "frame_start": 489,
+    "frame_end": 719,
+    "t_start": 8.15,
+    "t_end": 11.9833,
+    "exemplar_moved": true,
+    "node": 5,
+    "node_key": "Crane_Crow_Pose_or_Bakasana|L_HAND:G|R_HAND:G@prone",
+    "orientation": "prone",
+    "ground": [
+     "L_HAND",
+     "R_HAND"
+    ],
+    "braces": [
+     {
+      "pair": "L_SHANK+L_UPPER_ARM",
+      "role": "required_touch",
+      "critical": true,
+      "statics_necessity": "useful",
+      "lp_load_n": 307.5
+     },
+     {
+      "pair": "R_SHANK+R_UPPER_ARM",
+      "role": "required_touch",
+      "critical": true,
+      "statics_necessity": "useful",
+      "lp_load_n": 357.9
+     }
+    ],
+    "touch_allowed": [
+     "L_FOOT+R_FOOT",
+     "L_THIGH+L_UPPER_ARM",
+     "L_THIGH+TRUNK",
+     "R_THIGH+R_UPPER_ARM",
+     "R_THIGH+TRUNK"
+    ],
+    "known_free": [
+     "L_FOOT",
+     "R_FOOT",
+     "L_SHANK",
+     "R_SHANK",
+     "L_THIGH",
+     "R_THIGH",
+     "PELVIS",
+     "TRUNK",
+     "HEAD",
+     "L_UPPER_ARM",
+     "R_UPPER_ARM",
+     "L_FOREARM",
+     "R_FOREARM"
+    ],
+    "known_free_share": {
+     "L_FOOT": 1.0,
+     "R_FOOT": 1.0,
+     "L_SHANK": 1.0,
+     "R_SHANK": 1.0,
+     "L_THIGH": 1.0,
+     "R_THIGH": 1.0,
+     "PELVIS": 1.0,
+     "TRUNK": 1.0,
+     "HEAD": 1.0,
+     "L_UPPER_ARM": 1.0,
+     "R_UPPER_ARM": 1.0,
+     "L_FOREARM": 1.0,
+     "R_FOREARM": 1.0,
+     "L_HAND": 0.0,
+     "R_HAND": 0.0
+    },
+    "unknown_zones": [],
+    "pose_role": "family",
+    "gate": "pass",
+    "gate_flags": [],
+    "statics": {
+     "statics_id": "holds_repaired_ftC_posefix.labels_v2.46024365fa.statics_v2.aab60189f4",
+     "verdict": "feasible",
+     "frame": 651,
+     "s_star": 0.1647,
+     "beyond_plant": false,
+     "top_joints": [
+      [
+       "R_Wrist_z",
+       0.165,
+       -4.9
+      ],
+      [
+       "R_Wrist_y",
+       0.165,
+       4.9
+      ],
+      [
+       "R_Wrist_x",
+       0.165,
+       4.9
+      ],
+      [
+       "L_Wrist_y",
+       0.165,
+       4.9
+      ],
+      [
+       "R_Hip_y",
+       0.165,
+       49.5
+      ],
+      [
+       "L_Wrist_x",
+       0.165,
+       -4.9
+      ]
+     ],
+     "group_util": {
+      "shoulders": 0.116,
+      "hips": 0.165,
+      "spine": 0.12,
+      "wrists": 0.165,
+      "elbows": 0.06,
+      "knees": 0.039,
+      "ankles": 0.006
+     },
+     "loads_n": {
+      "L_HAND:G": 355.7,
+      "R_HAND:G": 370.3,
+      "L_SHANK+L_UPPER_ARM": 307.5,
+      "R_SHANK+R_UPPER_ARM": 357.9
+     },
+     "limit_violations_deg": {
+      "L_Knee_x": 6.1,
+      "L_Knee_z": 7.8,
+      "R_Hip_z": 8.2,
+      "L_Wrist_x": 2.4,
+      "R_Wrist_x": 3.7
+     },
+     "witness_passed": false
+    },
+    "e15500": {
+     "tracked_share": 1.0,
+     "support_min": 1.0,
+     "err6_p50": 0.064,
+     "substitutions": {}
+    },
+    "anchor": {
+     "L_Wrist": [
+      0.1474,
+      0.4176,
+      0.0338
+     ],
+     "L_Hand": [
+      0.1887,
+      0.3189,
+      0.0147
+     ],
+     "R_Wrist": [
+      -0.123,
+      0.4194,
+      0.0338
+     ],
+     "R_Hand": [
+      -0.1591,
+      0.3207,
+      0.0144
+     ],
+     "hands_mid": [
+      0.0148,
+      0.3198,
+      0.0146
+     ],
+     "hands_width_m": 0.3478,
+     "hand_line_heading_deg": 179.7,
+     "com": [
+      0.0091,
+      0.3985,
+      0.5894
+     ],
+     "com_minus_hands_mid_xy_m": 0.0788,
+     "pelvis": [
+      0.0108,
+      0.5144,
+      0.7354
+     ]
+    }
+   },
+   "destination": {
+    "hold_id": "220923_Handstand_pose_or_Adho_Mukha_Vrksasana_-a@1193",
+    "stem": "220923_Handstand_pose_or_Adho_Mukha_Vrksasana_-a",
+    "group": "inversion",
+    "name": "Handstand_pose_or_Adho_Mukha_Vrksasana",
+    "fps": 60,
+    "frame_hold": 1193,
+    "t_hold": 19.8833,
+    "frame_start": 860,
+    "frame_end": 1411,
+    "t_start": 14.3333,
+    "t_end": 23.5167,
+    "exemplar_moved": false,
+    "node": 41,
+    "node_key": "Handstand_pose_or_Adho_Mukha_Vrksasana|L_HAND:G|R_HAND:G@inverted",
+    "orientation": "inverted",
+    "ground": [
+     "L_HAND",
+     "R_HAND"
+    ],
+    "braces": [],
+    "touch_allowed": [],
+    "known_free": [
+     "L_FOOT",
+     "R_FOOT",
+     "L_SHANK",
+     "R_SHANK",
+     "L_THIGH",
+     "R_THIGH",
+     "PELVIS",
+     "TRUNK",
+     "HEAD",
+     "L_UPPER_ARM",
+     "R_UPPER_ARM",
+     "L_FOREARM",
+     "R_FOREARM"
+    ],
+    "known_free_share": {
+     "L_FOOT": 1.0,
+     "R_FOOT": 1.0,
+     "L_SHANK": 1.0,
+     "R_SHANK": 1.0,
+     "L_THIGH": 1.0,
+     "R_THIGH": 1.0,
+     "PELVIS": 1.0,
+     "TRUNK": 1.0,
+     "HEAD": 1.0,
+     "L_UPPER_ARM": 1.0,
+     "R_UPPER_ARM": 1.0,
+     "L_FOREARM": 1.0,
+     "R_FOREARM": 1.0,
+     "L_HAND": 0.0,
+     "R_HAND": 0.0
+    },
+    "unknown_zones": [],
+    "pose_role": "family",
+    "gate": "pass",
+    "gate_flags": [],
+    "statics": {
+     "statics_id": "holds_repaired_ftC_posefix.labels_v2.46024365fa.statics_v2.aab60189f4",
+     "verdict": "feasible",
+     "frame": 1193,
+     "s_star": 0.3217,
+     "beyond_plant": false,
+     "top_joints": [
+      [
+       "R_Wrist_x",
+       0.322,
+       9.7
+      ],
+      [
+       "L_Wrist_y",
+       0.322,
+       9.7
+      ],
+      [
+       "R_Wrist_y",
+       0.322,
+       9.7
+      ],
+      [
+       "L_Wrist_x",
+       0.322,
+       -9.7
+      ],
+      [
+       "Chest_y",
+       0.315,
+       47.3
+      ],
+      [
+       "R_Wrist_z",
+       0.263,
+       7.9
+      ]
+     ],
+     "group_util": {
+      "shoulders": 0.133,
+      "hips": 0.065,
+      "spine": 0.315,
+      "wrists": 0.322,
+      "elbows": 0.167,
+      "knees": 0.027,
+      "ankles": 0.003
+     },
+     "loads_n": {
+      "L_HAND:G": 324.0,
+      "R_HAND:G": 402.0
+     },
+     "limit_violations_deg": {
+      "L_Ankle_x": 12.3,
+      "R_Hip_z": 12.3,
+      "R_Knee_x": 10.5,
+      "R_Knee_z": 2.4
+     },
+     "witness_passed": false
+    },
+    "e15500": {
+     "tracked_share": 1.0,
+     "support_min": 1.0,
+     "err6_p50": 0.051,
+     "substitutions": {}
+    },
+    "anchor": {
+     "L_Wrist": [
+      0.1684,
+      0.4267,
+      0.0338
+     ],
+     "L_Hand": [
+      0.189,
+      0.3217,
+      0.0147
+     ],
+     "R_Wrist": [
+      -0.1567,
+      0.4203,
+      0.0338
+     ],
+     "R_Hand": [
+      -0.1694,
+      0.3159,
+      0.0145
+     ],
+     "hands_mid": [
+      0.0098,
+      0.3188,
+      0.0146
+     ],
+     "hands_width_m": 0.3584,
+     "hand_line_heading_deg": -179.08,
+     "com": [
+      -0.0121,
+      0.3915,
+      0.9726
+     ],
+     "com_minus_hands_mid_xy_m": 0.0759,
+     "pelvis": [
+      -0.0127,
+      0.4026,
+      1.0634
+     ]
+    }
+   },
+   "contact_edit": {
+    "ground_break": [],
+    "ground_make": [],
+    "braces_break": [
+     "L_SHANK+L_UPPER_ARM",
+     "R_SHANK+R_UPPER_ARM"
+    ],
+    "braces_make": [],
+    "orientation": "prone->inverted"
+   },
+   "planted_anchor": [
+    "L_HAND",
+    "R_HAND"
+   ],
+   "phases": [
+    {
+     "name": "lift_tuck",
+     "ground": [
+      "L_HAND",
+      "R_HAND"
+     ],
+     "braces": [],
+     "duration_s": [
+      0.8,
+      2.5
+     ],
+     "quasi_static": true,
+     "basis": "hands_inverted",
+     "note": "shins leave the upper arms; the hips rise over the shoulders with the knees tucked to the chest (inverted tuck); the COM stays over the hands",
+     "free": [
+      "HEAD",
+      "L_FOOT",
+      "L_FOREARM",
+      "L_SHANK",
+      "L_THIGH",
+      "L_UPPER_ARM",
+      "PELVIS",
+      "R_FOOT",
+      "R_FOREARM",
+      "R_SHANK",
+      "R_THIGH",
+      "R_UPPER_ARM",
+      "TRUNK"
+     ]
+    },
+    {
+     "name": "extend",
+     "ground": [
+      "L_HAND",
+      "R_HAND"
+     ],
+     "braces": [],
+     "duration_s": [
+      0.6,
+      2.0
+     ],
+     "quasi_static": true,
+     "basis": "hands_inverted",
+     "note": "the legs extend to the handstand exemplar",
+     "free": [
+      "HEAD",
+      "L_FOOT",
+      "L_FOREARM",
+      "L_SHANK",
+      "L_THIGH",
+      "L_UPPER_ARM",
+      "PELVIS",
+      "R_FOOT",
+      "R_FOREARM",
+      "R_SHANK",
+      "R_THIGH",
+      "R_UPPER_ARM",
+      "TRUNK"
+     ]
+    }
+   ],
+   "events": [
+    {
+     "at": "start",
+     "phase_index": 0,
+     "t_range_s": [
+      0.0,
+      0.0
+     ],
+     "ground_break": [],
+     "ground_make": [],
+     "braces_break": [
+      "L_SHANK+L_UPPER_ARM",
+      "R_SHANK+R_UPPER_ARM"
+     ],
+     "braces_make": []
+    }
+   ],
+   "end_event": {
+    "ground_break": [],
+    "ground_make": [],
+    "braces_break": [],
+    "braces_make": []
+   },
+   "duration_s": [
+    1.4,
+    4.5
+   ],
+   "census": {
+    "label": "user: crow -> handstand (press)",
+    "d6_bestyaw": 0.568,
+    "d6_heading": 0.649,
+    "com_hands_off_src": 0.079,
+    "com_hands_off_dst": 0.076,
+    "pelvis_dz": 0.328,
+    "com_dz": 0.383,
+    "direct_edge": false
+   },
+   "support_checked_witness": {
+    "any": [
+     0.555,
+     "Crane_Crow_Pose_or_Bakasana_-a",
+     8.2,
+     9.5,
+     0.084,
+     0.555
+    ],
+    "other_clips": [
+     0.695,
+     "Shoulder-Pressing_Pose_or_Bhujapidasana_-a",
+     8.1,
+     10.8,
+     0.376,
+     0.695
+    ]
+   }
+  },
+  {
+   "id": "E2",
+   "rank": "primary",
+   "label": "crow -> chaturanga (jump-back)",
+   "kind": "dynamic",
+   "generator": "mppi",
+   "risk": "the landing on bent elbows",
+   "source": {
+    "hold_id": "220923_Crane_Crow_Pose_or_Bakasana_-a@439",
+    "stem": "220923_Crane_Crow_Pose_or_Bakasana_-a",
+    "group": "arm_balance",
+    "name": "Crane_Crow_Pose_or_Bakasana",
+    "fps": 60,
+    "frame_hold": 651,
+    "t_hold": 10.85,
+    "frame_start": 489,
+    "frame_end": 719,
+    "t_start": 8.15,
+    "t_end": 11.9833,
+    "exemplar_moved": true,
+    "node": 5,
+    "node_key": "Crane_Crow_Pose_or_Bakasana|L_HAND:G|R_HAND:G@prone",
+    "orientation": "prone",
+    "ground": [
+     "L_HAND",
+     "R_HAND"
+    ],
+    "braces": [
+     {
+      "pair": "L_SHANK+L_UPPER_ARM",
+      "role": "required_touch",
+      "critical": true,
+      "statics_necessity": "useful",
+      "lp_load_n": 307.5
+     },
+     {
+      "pair": "R_SHANK+R_UPPER_ARM",
+      "role": "required_touch",
+      "critical": true,
+      "statics_necessity": "useful",
+      "lp_load_n": 357.9
+     }
+    ],
+    "touch_allowed": [
+     "L_FOOT+R_FOOT",
+     "L_THIGH+L_UPPER_ARM",
+     "L_THIGH+TRUNK",
+     "R_THIGH+R_UPPER_ARM",
+     "R_THIGH+TRUNK"
+    ],
+    "known_free": [
+     "L_FOOT",
+     "R_FOOT",
+     "L_SHANK",
+     "R_SHANK",
+     "L_THIGH",
+     "R_THIGH",
+     "PELVIS",
+     "TRUNK",
+     "HEAD",
+     "L_UPPER_ARM",
+     "R_UPPER_ARM",
+     "L_FOREARM",
+     "R_FOREARM"
+    ],
+    "known_free_share": {
+     "L_FOOT": 1.0,
+     "R_FOOT": 1.0,
+     "L_SHANK": 1.0,
+     "R_SHANK": 1.0,
+     "L_THIGH": 1.0,
+     "R_THIGH": 1.0,
+     "PELVIS": 1.0,
+     "TRUNK": 1.0,
+     "HEAD": 1.0,
+     "L_UPPER_ARM": 1.0,
+     "R_UPPER_ARM": 1.0,
+     "L_FOREARM": 1.0,
+     "R_FOREARM": 1.0,
+     "L_HAND": 0.0,
+     "R_HAND": 0.0
+    },
+    "unknown_zones": [],
+    "pose_role": "family",
+    "gate": "pass",
+    "gate_flags": [],
+    "statics": {
+     "statics_id": "holds_repaired_ftC_posefix.labels_v2.46024365fa.statics_v2.aab60189f4",
+     "verdict": "feasible",
+     "frame": 651,
+     "s_star": 0.1647,
+     "beyond_plant": false,
+     "top_joints": [
+      [
+       "R_Wrist_z",
+       0.165,
+       -4.9
+      ],
+      [
+       "R_Wrist_y",
+       0.165,
+       4.9
+      ],
+      [
+       "R_Wrist_x",
+       0.165,
+       4.9
+      ],
+      [
+       "L_Wrist_y",
+       0.165,
+       4.9
+      ],
+      [
+       "R_Hip_y",
+       0.165,
+       49.5
+      ],
+      [
+       "L_Wrist_x",
+       0.165,
+       -4.9
+      ]
+     ],
+     "group_util": {
+      "shoulders": 0.116,
+      "hips": 0.165,
+      "spine": 0.12,
+      "wrists": 0.165,
+      "elbows": 0.06,
+      "knees": 0.039,
+      "ankles": 0.006
+     },
+     "loads_n": {
+      "L_HAND:G": 355.7,
+      "R_HAND:G": 370.3,
+      "L_SHANK+L_UPPER_ARM": 307.5,
+      "R_SHANK+R_UPPER_ARM": 357.9
+     },
+     "limit_violations_deg": {
+      "L_Knee_x": 6.1,
+      "L_Knee_z": 7.8,
+      "R_Hip_z": 8.2,
+      "L_Wrist_x": 2.4,
+      "R_Wrist_x": 3.7
+     },
+     "witness_passed": false
+    },
+    "e15500": {
+     "tracked_share": 1.0,
+     "support_min": 1.0,
+     "err6_p50": 0.064,
+     "substitutions": {}
+    },
+    "anchor": {
+     "L_Wrist": [
+      0.1474,
+      0.4176,
+      0.0338
+     ],
+     "L_Hand": [
+      0.1887,
+      0.3189,
+      0.0147
+     ],
+     "R_Wrist": [
+      -0.123,
+      0.4194,
+      0.0338
+     ],
+     "R_Hand": [
+      -0.1591,
+      0.3207,
+      0.0144
+     ],
+     "hands_mid": [
+      0.0148,
+      0.3198,
+      0.0146
+     ],
+     "hands_width_m": 0.3478,
+     "hand_line_heading_deg": 179.7,
+     "com": [
+      0.0091,
+      0.3985,
+      0.5894
+     ],
+     "com_minus_hands_mid_xy_m": 0.0788,
+     "pelvis": [
+      0.0108,
+      0.5144,
+      0.7354
+     ]
+    }
+   },
+   "destination": {
+    "hold_id": "220923_Four-Limbed_Staff_Pose_or_Chaturanga_Dandasana_-a@485",
+    "stem": "220923_Four-Limbed_Staff_Pose_or_Chaturanga_Dandasana_-a",
+    "group": "connective",
+    "name": "Four-Limbed_Staff_Pose_or_Chaturanga_Dandasana",
+    "fps": 60,
+    "frame_hold": 485,
+    "t_hold": 8.0833,
+    "frame_start": 401,
+    "frame_end": 502,
+    "t_start": 6.6833,
+    "t_end": 8.3667,
+    "exemplar_moved": false,
+    "node": 35,
+    "node_key": "Four-Limbed_Staff_Pose_or_Chaturanga_Dandasana|L_FOOT:G|L_HAND:G|R_FOOT:G|R_HAND:G@prone",
+    "orientation": "prone",
+    "ground": [
+     "L_FOOT",
+     "L_HAND",
+     "R_FOOT",
+     "R_HAND"
+    ],
+    "braces": [],
+    "touch_allowed": [
+     "TRUNK+R_FOREARM"
+    ],
+    "known_free": [
+     "L_SHANK",
+     "R_SHANK",
+     "L_THIGH",
+     "R_THIGH",
+     "PELVIS",
+     "TRUNK",
+     "HEAD",
+     "L_UPPER_ARM",
+     "R_UPPER_ARM",
+     "L_FOREARM",
+     "R_FOREARM"
+    ],
+    "known_free_share": {
+     "L_FOOT": 0.0,
+     "R_FOOT": 0.0,
+     "L_SHANK": 1.0,
+     "R_SHANK": 1.0,
+     "L_THIGH": 1.0,
+     "R_THIGH": 1.0,
+     "PELVIS": 1.0,
+     "TRUNK": 1.0,
+     "HEAD": 1.0,
+     "L_UPPER_ARM": 1.0,
+     "R_UPPER_ARM": 1.0,
+     "L_FOREARM": 1.0,
+     "R_FOREARM": 1.0,
+     "L_HAND": 0.0,
+     "R_HAND": 0.0
+    },
+    "unknown_zones": [],
+    "pose_role": "family",
+    "gate": "pass",
+    "gate_flags": [],
+    "statics": {
+     "statics_id": "holds_repaired_ftC_posefix.labels_v2.46024365fa.statics_v2.aab60189f4",
+     "verdict": "held",
+     "frame": 485,
+     "s_star": 0.259,
+     "beyond_plant": false,
+     "top_joints": [
+      [
+       "L_Wrist_z",
+       0.259,
+       -7.8
+      ],
+      [
+       "R_Wrist_x",
+       0.259,
+       7.8
+      ],
+      [
+       "R_Elbow_z",
+       0.259,
+       -25.9
+      ],
+      [
+       "L_Elbow_z",
+       0.259,
+       25.9
+      ],
+      [
+       "R_Wrist_z",
+       0.259,
+       7.8
+      ],
+      [
+       "R_Shoulder_z",
+       0.259,
+       38.9
+      ]
+     ],
+     "group_util": {
+      "shoulders": 0.259,
+      "hips": 0.131,
+      "spine": 0.143,
+      "wrists": 0.259,
+      "elbows": 0.259,
+      "knees": 0.182,
+      "ankles": 0.122
+     },
+     "loads_n": {
+      "L_FOOT:G": 75.0,
+      "R_FOOT:G": 72.0,
+      "L_HAND:G": 289.6,
+      "R_HAND:G": 289.4
+     },
+     "limit_violations_deg": {},
+     "witness_passed": true
+    },
+    "e15500": {
+     "tracked_share": 1.0,
+     "support_min": 1.0,
+     "err6_p50": 0.044,
+     "substitutions": {}
+    },
+    "anchor": {
+     "L_Wrist": [
+      0.1644,
+      0.2173,
+      0.0337
+     ],
+     "L_Hand": [
+      0.193,
+      0.1141,
+      0.0148
+     ],
+     "R_Wrist": [
+      -0.1598,
+      0.2151,
+      0.0336
+     ],
+     "R_Hand": [
+      -0.175,
+      0.111,
+      0.0145
+     ],
+     "hands_mid": [
+      0.009,
+      0.1126,
+      0.0147
+     ],
+     "hands_width_m": 0.368,
+     "hand_line_heading_deg": -179.52,
+     "com": [
+      0.0021,
+      0.4306,
+      0.2372
+     ],
+     "com_minus_hands_mid_xy_m": 0.3181,
+     "pelvis": [
+      0.0019,
+      0.437,
+      0.2655
+     ]
+    }
+   },
+   "contact_edit": {
+    "ground_break": [],
+    "ground_make": [
+     "L_FOOT",
+     "R_FOOT"
+    ],
+    "braces_break": [
+     "L_SHANK+L_UPPER_ARM",
+     "R_SHANK+R_UPPER_ARM"
+    ],
+    "braces_make": [],
+    "orientation": "prone->prone"
+   },
+   "planted_anchor": [
+    "L_HAND",
+    "R_HAND"
+   ],
+   "phases": [
+    {
+     "name": "float_back",
+     "ground": [
+      "L_HAND",
+      "R_HAND"
+     ],
+     "braces": [],
+     "duration_s": [
+      0.25,
+      0.6
+     ],
+     "quasi_static": false,
+     "basis": "jump_back",
+     "note": "braces break, the legs shoot back; the COM leaves the hand polygon (0.079 -> 0.318 m behind the hands) before the feet land",
+     "free": [
+      "HEAD",
+      "L_FOOT",
+      "L_FOREARM",
+      "L_SHANK",
+      "L_THIGH",
+      "L_UPPER_ARM",
+      "PELVIS",
+      "R_FOOT",
+      "R_FOREARM",
+      "R_SHANK",
+      "R_THIGH",
+      "R_UPPER_ARM",
+      "TRUNK"
+     ]
+    },
+    {
+     "name": "land",
+     "ground": [
+      "L_FOOT",
+      "L_HAND",
+      "R_FOOT",
+      "R_HAND"
+     ],
+     "braces": [],
+     "duration_s": [
+      0.3,
+      1.0
+     ],
+     "quasi_static": false,
+     "basis": "settle",
+     "note": "feet make (peak vertical force <= 3 BW); the landing loads bent elbows",
+     "free": [
+      "HEAD",
+      "L_FOREARM",
+      "L_SHANK",
+      "L_THIGH",
+      "L_UPPER_ARM",
+      "PELVIS",
+      "R_FOREARM",
+      "R_SHANK",
+      "R_THIGH",
+      "R_UPPER_ARM",
+      "TRUNK"
+     ]
+    }
+   ],
+   "events": [
+    {
+     "at": "start",
+     "phase_index": 0,
+     "t_range_s": [
+      0.0,
+      0.0
+     ],
+     "ground_break": [],
+     "ground_make": [],
+     "braces_break": [
+      "L_SHANK+L_UPPER_ARM",
+      "R_SHANK+R_UPPER_ARM"
+     ],
+     "braces_make": []
+    },
+    {
+     "at": "float_back->land",
+     "phase_index": 1,
+     "t_range_s": [
+      0.25,
+      0.6
+     ],
+     "ground_break": [],
+     "ground_make": [
+      "L_FOOT",
+      "R_FOOT"
+     ],
+     "braces_break": [],
+     "braces_make": []
+    }
+   ],
+   "end_event": {
+    "ground_break": [],
+    "ground_make": [],
+    "braces_break": [],
+    "braces_make": []
+   },
+   "duration_s": [
+    0.55,
+    1.6
+   ],
+   "census": {
+    "label": "user: crow -> chaturanga (jump back)",
+    "d6_bestyaw": 0.452,
+    "d6_heading": 0.746,
+    "com_hands_off_src": 0.079,
+    "com_hands_off_dst": 0.318,
+    "pelvis_dz": -0.47,
+    "com_dz": -0.352,
+    "direct_edge": false
+   },
+   "support_checked_witness": {
+    "any": [
+     0.488,
+     "Shoulder-Pressing_Pose_or_Bhujapidasana_-a",
+     11.2,
+     12.3,
+     0.435,
+     0.488
+    ],
+    "other_clips": [
+     0.488,
+     "Shoulder-Pressing_Pose_or_Bhujapidasana_-a",
+     11.2,
+     12.3,
+     0.435,
+     0.488
+    ]
+   }
+  },
+  {
+   "id": "E3",
+   "rank": "primary",
+   "label": "handstand -> crow (lower)",
+   "kind": "quasi_static",
+   "generator": "keyframe_statics",
+   "risk": "the braces close on rigid colliders",
+   "source": {
+    "hold_id": "220923_Handstand_pose_or_Adho_Mukha_Vrksasana_-a@1193",
+    "stem": "220923_Handstand_pose_or_Adho_Mukha_Vrksasana_-a",
+    "group": "inversion",
+    "name": "Handstand_pose_or_Adho_Mukha_Vrksasana",
+    "fps": 60,
+    "frame_hold": 1193,
+    "t_hold": 19.8833,
+    "frame_start": 860,
+    "frame_end": 1411,
+    "t_start": 14.3333,
+    "t_end": 23.5167,
+    "exemplar_moved": false,
+    "node": 41,
+    "node_key": "Handstand_pose_or_Adho_Mukha_Vrksasana|L_HAND:G|R_HAND:G@inverted",
+    "orientation": "inverted",
+    "ground": [
+     "L_HAND",
+     "R_HAND"
+    ],
+    "braces": [],
+    "touch_allowed": [],
+    "known_free": [
+     "L_FOOT",
+     "R_FOOT",
+     "L_SHANK",
+     "R_SHANK",
+     "L_THIGH",
+     "R_THIGH",
+     "PELVIS",
+     "TRUNK",
+     "HEAD",
+     "L_UPPER_ARM",
+     "R_UPPER_ARM",
+     "L_FOREARM",
+     "R_FOREARM"
+    ],
+    "known_free_share": {
+     "L_FOOT": 1.0,
+     "R_FOOT": 1.0,
+     "L_SHANK": 1.0,
+     "R_SHANK": 1.0,
+     "L_THIGH": 1.0,
+     "R_THIGH": 1.0,
+     "PELVIS": 1.0,
+     "TRUNK": 1.0,
+     "HEAD": 1.0,
+     "L_UPPER_ARM": 1.0,
+     "R_UPPER_ARM": 1.0,
+     "L_FOREARM": 1.0,
+     "R_FOREARM": 1.0,
+     "L_HAND": 0.0,
+     "R_HAND": 0.0
+    },
+    "unknown_zones": [],
+    "pose_role": "family",
+    "gate": "pass",
+    "gate_flags": [],
+    "statics": {
+     "statics_id": "holds_repaired_ftC_posefix.labels_v2.46024365fa.statics_v2.aab60189f4",
+     "verdict": "feasible",
+     "frame": 1193,
+     "s_star": 0.3217,
+     "beyond_plant": false,
+     "top_joints": [
+      [
+       "R_Wrist_x",
+       0.322,
+       9.7
+      ],
+      [
+       "L_Wrist_y",
+       0.322,
+       9.7
+      ],
+      [
+       "R_Wrist_y",
+       0.322,
+       9.7
+      ],
+      [
+       "L_Wrist_x",
+       0.322,
+       -9.7
+      ],
+      [
+       "Chest_y",
+       0.315,
+       47.3
+      ],
+      [
+       "R_Wrist_z",
+       0.263,
+       7.9
+      ]
+     ],
+     "group_util": {
+      "shoulders": 0.133,
+      "hips": 0.065,
+      "spine": 0.315,
+      "wrists": 0.322,
+      "elbows": 0.167,
+      "knees": 0.027,
+      "ankles": 0.003
+     },
+     "loads_n": {
+      "L_HAND:G": 324.0,
+      "R_HAND:G": 402.0
+     },
+     "limit_violations_deg": {
+      "L_Ankle_x": 12.3,
+      "R_Hip_z": 12.3,
+      "R_Knee_x": 10.5,
+      "R_Knee_z": 2.4
+     },
+     "witness_passed": false
+    },
+    "e15500": {
+     "tracked_share": 1.0,
+     "support_min": 1.0,
+     "err6_p50": 0.051,
+     "substitutions": {}
+    },
+    "anchor": {
+     "L_Wrist": [
+      0.1684,
+      0.4267,
+      0.0338
+     ],
+     "L_Hand": [
+      0.189,
+      0.3217,
+      0.0147
+     ],
+     "R_Wrist": [
+      -0.1567,
+      0.4203,
+      0.0338
+     ],
+     "R_Hand": [
+      -0.1694,
+      0.3159,
+      0.0145
+     ],
+     "hands_mid": [
+      0.0098,
+      0.3188,
+      0.0146
+     ],
+     "hands_width_m": 0.3584,
+     "hand_line_heading_deg": -179.08,
+     "com": [
+      -0.0121,
+      0.3915,
+      0.9726
+     ],
+     "com_minus_hands_mid_xy_m": 0.0759,
+     "pelvis": [
+      -0.0127,
+      0.4026,
+      1.0634
+     ]
+    }
+   },
+   "destination": {
+    "hold_id": "220923_Crane_Crow_Pose_or_Bakasana_-a@439",
+    "stem": "220923_Crane_Crow_Pose_or_Bakasana_-a",
+    "group": "arm_balance",
+    "name": "Crane_Crow_Pose_or_Bakasana",
+    "fps": 60,
+    "frame_hold": 651,
+    "t_hold": 10.85,
+    "frame_start": 489,
+    "frame_end": 719,
+    "t_start": 8.15,
+    "t_end": 11.9833,
+    "exemplar_moved": true,
+    "node": 5,
+    "node_key": "Crane_Crow_Pose_or_Bakasana|L_HAND:G|R_HAND:G@prone",
+    "orientation": "prone",
+    "ground": [
+     "L_HAND",
+     "R_HAND"
+    ],
+    "braces": [
+     {
+      "pair": "L_SHANK+L_UPPER_ARM",
+      "role": "required_touch",
+      "critical": true,
+      "statics_necessity": "useful",
+      "lp_load_n": 307.5
+     },
+     {
+      "pair": "R_SHANK+R_UPPER_ARM",
+      "role": "required_touch",
+      "critical": true,
+      "statics_necessity": "useful",
+      "lp_load_n": 357.9
+     }
+    ],
+    "touch_allowed": [
+     "L_FOOT+R_FOOT",
+     "L_THIGH+L_UPPER_ARM",
+     "L_THIGH+TRUNK",
+     "R_THIGH+R_UPPER_ARM",
+     "R_THIGH+TRUNK"
+    ],
+    "known_free": [
+     "L_FOOT",
+     "R_FOOT",
+     "L_SHANK",
+     "R_SHANK",
+     "L_THIGH",
+     "R_THIGH",
+     "PELVIS",
+     "TRUNK",
+     "HEAD",
+     "L_UPPER_ARM",
+     "R_UPPER_ARM",
+     "L_FOREARM",
+     "R_FOREARM"
+    ],
+    "known_free_share": {
+     "L_FOOT": 1.0,
+     "R_FOOT": 1.0,
+     "L_SHANK": 1.0,
+     "R_SHANK": 1.0,
+     "L_THIGH": 1.0,
+     "R_THIGH": 1.0,
+     "PELVIS": 1.0,
+     "TRUNK": 1.0,
+     "HEAD": 1.0,
+     "L_UPPER_ARM": 1.0,
+     "R_UPPER_ARM": 1.0,
+     "L_FOREARM": 1.0,
+     "R_FOREARM": 1.0,
+     "L_HAND": 0.0,
+     "R_HAND": 0.0
+    },
+    "unknown_zones": [],
+    "pose_role": "family",
+    "gate": "pass",
+    "gate_flags": [],
+    "statics": {
+     "statics_id": "holds_repaired_ftC_posefix.labels_v2.46024365fa.statics_v2.aab60189f4",
+     "verdict": "feasible",
+     "frame": 651,
+     "s_star": 0.1647,
+     "beyond_plant": false,
+     "top_joints": [
+      [
+       "R_Wrist_z",
+       0.165,
+       -4.9
+      ],
+      [
+       "R_Wrist_y",
+       0.165,
+       4.9
+      ],
+      [
+       "R_Wrist_x",
+       0.165,
+       4.9
+      ],
+      [
+       "L_Wrist_y",
+       0.165,
+       4.9
+      ],
+      [
+       "R_Hip_y",
+       0.165,
+       49.5
+      ],
+      [
+       "L_Wrist_x",
+       0.165,
+       -4.9
+      ]
+     ],
+     "group_util": {
+      "shoulders": 0.116,
+      "hips": 0.165,
+      "spine": 0.12,
+      "wrists": 0.165,
+      "elbows": 0.06,
+      "knees": 0.039,
+      "ankles": 0.006
+     },
+     "loads_n": {
+      "L_HAND:G": 355.7,
+      "R_HAND:G": 370.3,
+      "L_SHANK+L_UPPER_ARM": 307.5,
+      "R_SHANK+R_UPPER_ARM": 357.9
+     },
+     "limit_violations_deg": {
+      "L_Knee_x": 6.1,
+      "L_Knee_z": 7.8,
+      "R_Hip_z": 8.2,
+      "L_Wrist_x": 2.4,
+      "R_Wrist_x": 3.7
+     },
+     "witness_passed": false
+    },
+    "e15500": {
+     "tracked_share": 1.0,
+     "support_min": 1.0,
+     "err6_p50": 0.064,
+     "substitutions": {}
+    },
+    "anchor": {
+     "L_Wrist": [
+      0.1474,
+      0.4176,
+      0.0338
+     ],
+     "L_Hand": [
+      0.1887,
+      0.3189,
+      0.0147
+     ],
+     "R_Wrist": [
+      -0.123,
+      0.4194,
+      0.0338
+     ],
+     "R_Hand": [
+      -0.1591,
+      0.3207,
+      0.0144
+     ],
+     "hands_mid": [
+      0.0148,
+      0.3198,
+      0.0146
+     ],
+     "hands_width_m": 0.3478,
+     "hand_line_heading_deg": 179.7,
+     "com": [
+      0.0091,
+      0.3985,
+      0.5894
+     ],
+     "com_minus_hands_mid_xy_m": 0.0788,
+     "pelvis": [
+      0.0108,
+      0.5144,
+      0.7354
+     ]
+    }
+   },
+   "contact_edit": {
+    "ground_break": [],
+    "ground_make": [],
+    "braces_break": [],
+    "braces_make": [
+     "L_SHANK+L_UPPER_ARM",
+     "R_SHANK+R_UPPER_ARM"
+    ],
+    "orientation": "inverted->prone"
+   },
+   "planted_anchor": [
+    "L_HAND",
+    "R_HAND"
+   ],
+   "phases": [
+    {
+     "name": "lower_fold",
+     "ground": [
+      "L_HAND",
+      "R_HAND"
+     ],
+     "braces": [],
+     "duration_s": [
+      1.0,
+      3.0
+     ],
+     "quasi_static": true,
+     "basis": "hands_inverted",
+     "note": "eccentric: the legs fold and the hips descend behind the hands until the shins reach the upper arms",
+     "free": [
+      "HEAD",
+      "L_FOOT",
+      "L_FOREARM",
+      "L_SHANK",
+      "L_THIGH",
+      "L_UPPER_ARM",
+      "PELVIS",
+      "R_FOOT",
+      "R_FOREARM",
+      "R_SHANK",
+      "R_THIGH",
+      "R_UPPER_ARM",
+      "TRUNK"
+     ]
+    },
+    {
+     "name": "settle",
+     "ground": [
+      "L_HAND",
+      "R_HAND"
+     ],
+     "braces": [
+      "L_SHANK+L_UPPER_ARM",
+      "R_SHANK+R_UPPER_ARM"
+     ],
+     "duration_s": [
+      0.3,
+      1.0
+     ],
+     "quasi_static": true,
+     "basis": "settle",
+     "note": "both shin braces make on colliders that cannot press in (exemplar gaps -0.1 / +0.3 cm)",
+     "free": [
+      "HEAD",
+      "L_FOOT",
+      "L_FOREARM",
+      "L_SHANK",
+      "L_THIGH",
+      "L_UPPER_ARM",
+      "PELVIS",
+      "R_FOOT",
+      "R_FOREARM",
+      "R_SHANK",
+      "R_THIGH",
+      "R_UPPER_ARM",
+      "TRUNK"
+     ]
+    }
+   ],
+   "events": [
+    {
+     "at": "lower_fold->settle",
+     "phase_index": 1,
+     "t_range_s": [
+      1.0,
+      3.0
+     ],
+     "ground_break": [],
+     "ground_make": [],
+     "braces_break": [],
+     "braces_make": [
+      "L_SHANK+L_UPPER_ARM",
+      "R_SHANK+R_UPPER_ARM"
+     ]
+    }
+   ],
+   "end_event": {
+    "ground_break": [],
+    "ground_make": [],
+    "braces_break": [],
+    "braces_make": []
+   },
+   "duration_s": [
+    1.3,
+    4.0
+   ],
+   "census": {
+    "label": "user: handstand -> crow (lower)",
+    "d6_bestyaw": 0.568,
+    "d6_heading": 0.649,
+    "com_hands_off_src": 0.076,
+    "com_hands_off_dst": 0.079,
+    "pelvis_dz": -0.328,
+    "com_dz": -0.383,
+    "direct_edge": false
+   },
+   "support_checked_witness": {
+    "any": [
+     0.555,
+     "Crane_Crow_Pose_or_Bakasana_-a",
+     9.6,
+     10.8,
+     0.555,
+     0.0
+    ],
+    "other_clips": [
+     0.695,
+     "Shoulder-Pressing_Pose_or_Bhujapidasana_-a",
+     10.8,
+     10.9,
+     0.695,
+     0.391
+    ]
+   }
+  },
+  {
+   "id": "E4",
+   "rank": "primary",
+   "label": "tripod headstand -> crow",
+   "kind": "quasi_static",
+   "generator": "keyframe_statics",
+   "risk": "low; partial human precedent (Side Crow -b, Koundinya -a/-b go tripod -> legs onto arms -> arm balance)",
+   "source": {
+    "hold_id": "220923_Supported_Headstand_pose_or_Salamba_Sirsasana_-b@1093",
+    "stem": "220923_Supported_Headstand_pose_or_Salamba_Sirsasana_-b",
+    "group": "inversion",
+    "name": "Supported_Headstand_pose_or_Salamba_Sirsasana",
+    "fps": 60,
+    "frame_hold": 1093,
+    "t_hold": 18.2167,
+    "frame_start": 633,
+    "frame_end": 1195,
+    "t_start": 10.55,
+    "t_end": 19.9167,
+    "exemplar_moved": false,
+    "node": 104,
+    "node_key": "Supported_Headstand_pose_or_Salamba_Sirsasana|HEAD:G|L_HAND:G|R_HAND:G@inverted",
+    "orientation": "inverted",
+    "ground": [
+     "HEAD",
+     "L_HAND",
+     "R_HAND"
+    ],
+    "braces": [],
+    "touch_allowed": [
+     "L_FOOT+R_FOOT",
+     "L_THIGH+R_THIGH"
+    ],
+    "known_free": [
+     "L_FOOT",
+     "R_FOOT",
+     "L_SHANK",
+     "R_SHANK",
+     "L_THIGH",
+     "R_THIGH",
+     "PELVIS",
+     "TRUNK",
+     "L_UPPER_ARM",
+     "R_UPPER_ARM",
+     "L_FOREARM",
+     "R_FOREARM"
+    ],
+    "known_free_share": {
+     "L_FOOT": 1.0,
+     "R_FOOT": 1.0,
+     "L_SHANK": 1.0,
+     "R_SHANK": 1.0,
+     "L_THIGH": 1.0,
+     "R_THIGH": 1.0,
+     "PELVIS": 1.0,
+     "TRUNK": 1.0,
+     "HEAD": 0.0,
+     "L_UPPER_ARM": 1.0,
+     "R_UPPER_ARM": 1.0,
+     "L_FOREARM": 1.0,
+     "R_FOREARM": 1.0,
+     "L_HAND": 0.0,
+     "R_HAND": 0.0
+    },
+    "unknown_zones": [],
+    "pose_role": "family",
+    "gate": "pass",
+    "gate_flags": [],
+    "statics": {
+     "statics_id": "holds_repaired_ftC_posefix.labels_v2.46024365fa.statics_v2.aab60189f4",
+     "verdict": "held",
+     "frame": 1093,
+     "s_star": 0.0892,
+     "beyond_plant": false,
+     "top_joints": [
+      [
+       "Head_x",
+       0.089,
+       -2.2
+      ],
+      [
+       "L_Elbow_x",
+       0.089,
+       -8.9
+      ],
+      [
+       "Neck_x",
+       0.089,
+       6.7
+      ],
+      [
+       "L_Elbow_z",
+       0.089,
+       8.9
+      ],
+      [
+       "R_Shoulder_y",
+       0.089,
+       -13.4
+      ],
+      [
+       "R_Wrist_x",
+       0.089,
+       2.7
+      ]
+     ],
+     "group_util": {
+      "shoulders": 0.089,
+      "hips": 0.012,
+      "spine": 0.074,
+      "wrists": 0.089,
+      "elbows": 0.089,
+      "knees": 0.006,
+      "ankles": 0.002
+     },
+     "loads_n": {
+      "HEAD:G": 506.4,
+      "L_HAND:G": 85.9,
+      "R_HAND:G": 133.6
+     },
+     "limit_violations_deg": {
+      "L_Wrist_x": 5.1,
+      "R_Wrist_x": 3.7
+     },
+     "witness_passed": true
+    },
+    "e15500": {
+     "tracked_share": 1.0,
+     "support_min": 1.0,
+     "err6_p50": 0.05,
+     "substitutions": {}
+    },
+    "anchor": {
+     "L_Wrist": [
+      0.1529,
+      0.7028,
+      0.0337
+     ],
+     "L_Hand": [
+      0.186,
+      0.6011,
+      0.0148
+     ],
+     "R_Wrist": [
+      -0.1726,
+      0.7133,
+      0.0337
+     ],
+     "R_Hand": [
+      -0.1965,
+      0.6109,
+      0.0145
+     ],
+     "hands_mid": [
+      -0.0052,
+      0.606,
+      0.0146
+     ],
+     "hands_width_m": 0.3827,
+     "hand_line_heading_deg": 178.53,
+     "com": [
+      -0.0074,
+      0.4365,
+      0.7354
+     ],
+     "com_minus_hands_mid_xy_m": 0.1695,
+     "pelvis": [
+      -0.0021,
+      0.4368,
+      0.7689
+     ]
+    }
+   },
+   "destination": {
+    "hold_id": "220923_Crane_Crow_Pose_or_Bakasana_-a@439",
+    "stem": "220923_Crane_Crow_Pose_or_Bakasana_-a",
+    "group": "arm_balance",
+    "name": "Crane_Crow_Pose_or_Bakasana",
+    "fps": 60,
+    "frame_hold": 651,
+    "t_hold": 10.85,
+    "frame_start": 489,
+    "frame_end": 719,
+    "t_start": 8.15,
+    "t_end": 11.9833,
+    "exemplar_moved": true,
+    "node": 5,
+    "node_key": "Crane_Crow_Pose_or_Bakasana|L_HAND:G|R_HAND:G@prone",
+    "orientation": "prone",
+    "ground": [
+     "L_HAND",
+     "R_HAND"
+    ],
+    "braces": [
+     {
+      "pair": "L_SHANK+L_UPPER_ARM",
+      "role": "required_touch",
+      "critical": true,
+      "statics_necessity": "useful",
+      "lp_load_n": 307.5
+     },
+     {
+      "pair": "R_SHANK+R_UPPER_ARM",
+      "role": "required_touch",
+      "critical": true,
+      "statics_necessity": "useful",
+      "lp_load_n": 357.9
+     }
+    ],
+    "touch_allowed": [
+     "L_FOOT+R_FOOT",
+     "L_THIGH+L_UPPER_ARM",
+     "L_THIGH+TRUNK",
+     "R_THIGH+R_UPPER_ARM",
+     "R_THIGH+TRUNK"
+    ],
+    "known_free": [
+     "L_FOOT",
+     "R_FOOT",
+     "L_SHANK",
+     "R_SHANK",
+     "L_THIGH",
+     "R_THIGH",
+     "PELVIS",
+     "TRUNK",
+     "HEAD",
+     "L_UPPER_ARM",
+     "R_UPPER_ARM",
+     "L_FOREARM",
+     "R_FOREARM"
+    ],
+    "known_free_share": {
+     "L_FOOT": 1.0,
+     "R_FOOT": 1.0,
+     "L_SHANK": 1.0,
+     "R_SHANK": 1.0,
+     "L_THIGH": 1.0,
+     "R_THIGH": 1.0,
+     "PELVIS": 1.0,
+     "TRUNK": 1.0,
+     "HEAD": 1.0,
+     "L_UPPER_ARM": 1.0,
+     "R_UPPER_ARM": 1.0,
+     "L_FOREARM": 1.0,
+     "R_FOREARM": 1.0,
+     "L_HAND": 0.0,
+     "R_HAND": 0.0
+    },
+    "unknown_zones": [],
+    "pose_role": "family",
+    "gate": "pass",
+    "gate_flags": [],
+    "statics": {
+     "statics_id": "holds_repaired_ftC_posefix.labels_v2.46024365fa.statics_v2.aab60189f4",
+     "verdict": "feasible",
+     "frame": 651,
+     "s_star": 0.1647,
+     "beyond_plant": false,
+     "top_joints": [
+      [
+       "R_Wrist_z",
+       0.165,
+       -4.9
+      ],
+      [
+       "R_Wrist_y",
+       0.165,
+       4.9
+      ],
+      [
+       "R_Wrist_x",
+       0.165,
+       4.9
+      ],
+      [
+       "L_Wrist_y",
+       0.165,
+       4.9
+      ],
+      [
+       "R_Hip_y",
+       0.165,
+       49.5
+      ],
+      [
+       "L_Wrist_x",
+       0.165,
+       -4.9
+      ]
+     ],
+     "group_util": {
+      "shoulders": 0.116,
+      "hips": 0.165,
+      "spine": 0.12,
+      "wrists": 0.165,
+      "elbows": 0.06,
+      "knees": 0.039,
+      "ankles": 0.006
+     },
+     "loads_n": {
+      "L_HAND:G": 355.7,
+      "R_HAND:G": 370.3,
+      "L_SHANK+L_UPPER_ARM": 307.5,
+      "R_SHANK+R_UPPER_ARM": 357.9
+     },
+     "limit_violations_deg": {
+      "L_Knee_x": 6.1,
+      "L_Knee_z": 7.8,
+      "R_Hip_z": 8.2,
+      "L_Wrist_x": 2.4,
+      "R_Wrist_x": 3.7
+     },
+     "witness_passed": false
+    },
+    "e15500": {
+     "tracked_share": 1.0,
+     "support_min": 1.0,
+     "err6_p50": 0.064,
+     "substitutions": {}
+    },
+    "anchor": {
+     "L_Wrist": [
+      0.1474,
+      0.4176,
+      0.0338
+     ],
+     "L_Hand": [
+      0.1887,
+      0.3189,
+      0.0147
+     ],
+     "R_Wrist": [
+      -0.123,
+      0.4194,
+      0.0338
+     ],
+     "R_Hand": [
+      -0.1591,
+      0.3207,
+      0.0144
+     ],
+     "hands_mid": [
+      0.0148,
+      0.3198,
+      0.0146
+     ],
+     "hands_width_m": 0.3478,
+     "hand_line_heading_deg": 179.7,
+     "com": [
+      0.0091,
+      0.3985,
+      0.5894
+     ],
+     "com_minus_hands_mid_xy_m": 0.0788,
+     "pelvis": [
+      0.0108,
+      0.5144,
+      0.7354
+     ]
+    }
+   },
+   "contact_edit": {
+    "ground_break": [
+     "HEAD"
+    ],
+    "ground_make": [],
+    "braces_break": [],
+    "braces_make": [
+     "L_SHANK+L_UPPER_ARM",
+     "R_SHANK+R_UPPER_ARM"
+    ],
+    "orientation": "inverted->prone"
+   },
+   "planted_anchor": [
+    "L_HAND",
+    "R_HAND"
+   ],
+   "phases": [
+    {
+     "name": "fold_legs",
+     "ground": [
+      "HEAD",
+      "L_HAND",
+      "R_HAND"
+     ],
+     "braces": [],
+     "duration_s": [
+      0.4,
+      2.0
+     ],
+     "quasi_static": true,
+     "basis": "tripod_to_arm",
+     "note": "the legs fold down from the headstand until the shins reach the upper arms",
+     "free": [
+      "L_FOOT",
+      "L_FOREARM",
+      "L_SHANK",
+      "L_THIGH",
+      "L_UPPER_ARM",
+      "PELVIS",
+      "R_FOOT",
+      "R_FOREARM",
+      "R_SHANK",
+      "R_THIGH",
+      "R_UPPER_ARM",
+      "TRUNK"
+     ]
+    },
+    {
+     "name": "shift_forward",
+     "ground": [
+      "HEAD",
+      "L_HAND",
+      "R_HAND"
+     ],
+     "braces": [
+      "L_SHANK+L_UPPER_ARM",
+      "R_SHANK+R_UPPER_ARM"
+     ],
+     "duration_s": [
+      0.5,
+      2.5
+     ],
+     "quasi_static": true,
+     "basis": "tripod_to_arm",
+     "note": "both shin braces make; the COM shifts forward over the hands, unloading the head",
+     "free": [
+      "L_FOOT",
+      "L_FOREARM",
+      "L_SHANK",
+      "L_THIGH",
+      "L_UPPER_ARM",
+      "PELVIS",
+      "R_FOOT",
+      "R_FOREARM",
+      "R_SHANK",
+      "R_THIGH",
+      "R_UPPER_ARM",
+      "TRUNK"
+     ]
+    },
+    {
+     "name": "settle",
+     "ground": [
+      "L_HAND",
+      "R_HAND"
+     ],
+     "braces": [
+      "L_SHANK+L_UPPER_ARM",
+      "R_SHANK+R_UPPER_ARM"
+     ],
+     "duration_s": [
+      0.3,
+      1.0
+     ],
+     "quasi_static": true,
+     "basis": "settle",
+     "note": "the head breaks: crow",
+     "free": [
+      "HEAD",
+      "L_FOOT",
+      "L_FOREARM",
+      "L_SHANK",
+      "L_THIGH",
+      "L_UPPER_ARM",
+      "PELVIS",
+      "R_FOOT",
+      "R_FOREARM",
+      "R_SHANK",
+      "R_THIGH",
+      "R_UPPER_ARM",
+      "TRUNK"
+     ]
+    }
+   ],
+   "events": [
+    {
+     "at": "fold_legs->shift_forward",
+     "phase_index": 1,
+     "t_range_s": [
+      0.4,
+      2.0
+     ],
+     "ground_break": [],
+     "ground_make": [],
+     "braces_break": [],
+     "braces_make": [
+      "L_SHANK+L_UPPER_ARM",
+      "R_SHANK+R_UPPER_ARM"
+     ]
+    },
+    {
+     "at": "shift_forward->settle",
+     "phase_index": 2,
+     "t_range_s": [
+      0.9,
+      4.5
+     ],
+     "ground_break": [
+      "HEAD"
+     ],
+     "ground_make": [],
+     "braces_break": [],
+     "braces_make": []
+    }
+   ],
+   "end_event": {
+    "ground_break": [],
+    "ground_make": [],
+    "braces_break": [],
+    "braces_make": []
+   },
+   "duration_s": [
+    1.2,
+    5.5
+   ],
+   "census": {
+    "label": "tripod headstand (Sirsasana -b) -> crow",
+    "d6_bestyaw": 0.631,
+    "d6_heading": 0.655,
+    "com_hands_off_src": 0.169,
+    "com_hands_off_dst": 0.079,
+    "pelvis_dz": -0.034,
+    "com_dz": -0.146,
+    "direct_edge": false
+   },
+   "support_checked_witness": {
+    "any": null,
+    "other_clips": null
+   }
+  },
+  {
+   "id": "E5",
+   "rank": "primary",
+   "label": "handstand -> chaturanga (float-down)",
+   "kind": "dynamic",
+   "generator": "mppi",
+   "risk": "the highest: 0.826 m 6-body distance, beyond every within-clip edge (max 0.705 m)",
+   "source": {
+    "hold_id": "220923_Handstand_pose_or_Adho_Mukha_Vrksasana_-a@1193",
+    "stem": "220923_Handstand_pose_or_Adho_Mukha_Vrksasana_-a",
+    "group": "inversion",
+    "name": "Handstand_pose_or_Adho_Mukha_Vrksasana",
+    "fps": 60,
+    "frame_hold": 1193,
+    "t_hold": 19.8833,
+    "frame_start": 860,
+    "frame_end": 1411,
+    "t_start": 14.3333,
+    "t_end": 23.5167,
+    "exemplar_moved": false,
+    "node": 41,
+    "node_key": "Handstand_pose_or_Adho_Mukha_Vrksasana|L_HAND:G|R_HAND:G@inverted",
+    "orientation": "inverted",
+    "ground": [
+     "L_HAND",
+     "R_HAND"
+    ],
+    "braces": [],
+    "touch_allowed": [],
+    "known_free": [
+     "L_FOOT",
+     "R_FOOT",
+     "L_SHANK",
+     "R_SHANK",
+     "L_THIGH",
+     "R_THIGH",
+     "PELVIS",
+     "TRUNK",
+     "HEAD",
+     "L_UPPER_ARM",
+     "R_UPPER_ARM",
+     "L_FOREARM",
+     "R_FOREARM"
+    ],
+    "known_free_share": {
+     "L_FOOT": 1.0,
+     "R_FOOT": 1.0,
+     "L_SHANK": 1.0,
+     "R_SHANK": 1.0,
+     "L_THIGH": 1.0,
+     "R_THIGH": 1.0,
+     "PELVIS": 1.0,
+     "TRUNK": 1.0,
+     "HEAD": 1.0,
+     "L_UPPER_ARM": 1.0,
+     "R_UPPER_ARM": 1.0,
+     "L_FOREARM": 1.0,
+     "R_FOREARM": 1.0,
+     "L_HAND": 0.0,
+     "R_HAND": 0.0
+    },
+    "unknown_zones": [],
+    "pose_role": "family",
+    "gate": "pass",
+    "gate_flags": [],
+    "statics": {
+     "statics_id": "holds_repaired_ftC_posefix.labels_v2.46024365fa.statics_v2.aab60189f4",
+     "verdict": "feasible",
+     "frame": 1193,
+     "s_star": 0.3217,
+     "beyond_plant": false,
+     "top_joints": [
+      [
+       "R_Wrist_x",
+       0.322,
+       9.7
+      ],
+      [
+       "L_Wrist_y",
+       0.322,
+       9.7
+      ],
+      [
+       "R_Wrist_y",
+       0.322,
+       9.7
+      ],
+      [
+       "L_Wrist_x",
+       0.322,
+       -9.7
+      ],
+      [
+       "Chest_y",
+       0.315,
+       47.3
+      ],
+      [
+       "R_Wrist_z",
+       0.263,
+       7.9
+      ]
+     ],
+     "group_util": {
+      "shoulders": 0.133,
+      "hips": 0.065,
+      "spine": 0.315,
+      "wrists": 0.322,
+      "elbows": 0.167,
+      "knees": 0.027,
+      "ankles": 0.003
+     },
+     "loads_n": {
+      "L_HAND:G": 324.0,
+      "R_HAND:G": 402.0
+     },
+     "limit_violations_deg": {
+      "L_Ankle_x": 12.3,
+      "R_Hip_z": 12.3,
+      "R_Knee_x": 10.5,
+      "R_Knee_z": 2.4
+     },
+     "witness_passed": false
+    },
+    "e15500": {
+     "tracked_share": 1.0,
+     "support_min": 1.0,
+     "err6_p50": 0.051,
+     "substitutions": {}
+    },
+    "anchor": {
+     "L_Wrist": [
+      0.1684,
+      0.4267,
+      0.0338
+     ],
+     "L_Hand": [
+      0.189,
+      0.3217,
+      0.0147
+     ],
+     "R_Wrist": [
+      -0.1567,
+      0.4203,
+      0.0338
+     ],
+     "R_Hand": [
+      -0.1694,
+      0.3159,
+      0.0145
+     ],
+     "hands_mid": [
+      0.0098,
+      0.3188,
+      0.0146
+     ],
+     "hands_width_m": 0.3584,
+     "hand_line_heading_deg": -179.08,
+     "com": [
+      -0.0121,
+      0.3915,
+      0.9726
+     ],
+     "com_minus_hands_mid_xy_m": 0.0759,
+     "pelvis": [
+      -0.0127,
+      0.4026,
+      1.0634
+     ]
+    }
+   },
+   "destination": {
+    "hold_id": "220923_Four-Limbed_Staff_Pose_or_Chaturanga_Dandasana_-a@485",
+    "stem": "220923_Four-Limbed_Staff_Pose_or_Chaturanga_Dandasana_-a",
+    "group": "connective",
+    "name": "Four-Limbed_Staff_Pose_or_Chaturanga_Dandasana",
+    "fps": 60,
+    "frame_hold": 485,
+    "t_hold": 8.0833,
+    "frame_start": 401,
+    "frame_end": 502,
+    "t_start": 6.6833,
+    "t_end": 8.3667,
+    "exemplar_moved": false,
+    "node": 35,
+    "node_key": "Four-Limbed_Staff_Pose_or_Chaturanga_Dandasana|L_FOOT:G|L_HAND:G|R_FOOT:G|R_HAND:G@prone",
+    "orientation": "prone",
+    "ground": [
+     "L_FOOT",
+     "L_HAND",
+     "R_FOOT",
+     "R_HAND"
+    ],
+    "braces": [],
+    "touch_allowed": [
+     "TRUNK+R_FOREARM"
+    ],
+    "known_free": [
+     "L_SHANK",
+     "R_SHANK",
+     "L_THIGH",
+     "R_THIGH",
+     "PELVIS",
+     "TRUNK",
+     "HEAD",
+     "L_UPPER_ARM",
+     "R_UPPER_ARM",
+     "L_FOREARM",
+     "R_FOREARM"
+    ],
+    "known_free_share": {
+     "L_FOOT": 0.0,
+     "R_FOOT": 0.0,
+     "L_SHANK": 1.0,
+     "R_SHANK": 1.0,
+     "L_THIGH": 1.0,
+     "R_THIGH": 1.0,
+     "PELVIS": 1.0,
+     "TRUNK": 1.0,
+     "HEAD": 1.0,
+     "L_UPPER_ARM": 1.0,
+     "R_UPPER_ARM": 1.0,
+     "L_FOREARM": 1.0,
+     "R_FOREARM": 1.0,
+     "L_HAND": 0.0,
+     "R_HAND": 0.0
+    },
+    "unknown_zones": [],
+    "pose_role": "family",
+    "gate": "pass",
+    "gate_flags": [],
+    "statics": {
+     "statics_id": "holds_repaired_ftC_posefix.labels_v2.46024365fa.statics_v2.aab60189f4",
+     "verdict": "held",
+     "frame": 485,
+     "s_star": 0.259,
+     "beyond_plant": false,
+     "top_joints": [
+      [
+       "L_Wrist_z",
+       0.259,
+       -7.8
+      ],
+      [
+       "R_Wrist_x",
+       0.259,
+       7.8
+      ],
+      [
+       "R_Elbow_z",
+       0.259,
+       -25.9
+      ],
+      [
+       "L_Elbow_z",
+       0.259,
+       25.9
+      ],
+      [
+       "R_Wrist_z",
+       0.259,
+       7.8
+      ],
+      [
+       "R_Shoulder_z",
+       0.259,
+       38.9
+      ]
+     ],
+     "group_util": {
+      "shoulders": 0.259,
+      "hips": 0.131,
+      "spine": 0.143,
+      "wrists": 0.259,
+      "elbows": 0.259,
+      "knees": 0.182,
+      "ankles": 0.122
+     },
+     "loads_n": {
+      "L_FOOT:G": 75.0,
+      "R_FOOT:G": 72.0,
+      "L_HAND:G": 289.6,
+      "R_HAND:G": 289.4
+     },
+     "limit_violations_deg": {},
+     "witness_passed": true
+    },
+    "e15500": {
+     "tracked_share": 1.0,
+     "support_min": 1.0,
+     "err6_p50": 0.044,
+     "substitutions": {}
+    },
+    "anchor": {
+     "L_Wrist": [
+      0.1644,
+      0.2173,
+      0.0337
+     ],
+     "L_Hand": [
+      0.193,
+      0.1141,
+      0.0148
+     ],
+     "R_Wrist": [
+      -0.1598,
+      0.2151,
+      0.0336
+     ],
+     "R_Hand": [
+      -0.175,
+      0.111,
+      0.0145
+     ],
+     "hands_mid": [
+      0.009,
+      0.1126,
+      0.0147
+     ],
+     "hands_width_m": 0.368,
+     "hand_line_heading_deg": -179.52,
+     "com": [
+      0.0021,
+      0.4306,
+      0.2372
+     ],
+     "com_minus_hands_mid_xy_m": 0.3181,
+     "pelvis": [
+      0.0019,
+      0.437,
+      0.2655
+     ]
+    }
+   },
+   "contact_edit": {
+    "ground_break": [],
+    "ground_make": [
+     "L_FOOT",
+     "R_FOOT"
+    ],
+    "braces_break": [],
+    "braces_make": [],
+    "orientation": "inverted->prone"
+   },
+   "planted_anchor": [
+    "L_HAND",
+    "R_HAND"
+   ],
+   "phases": [
+    {
+     "name": "overbalance_arc",
+     "ground": [
+      "L_HAND",
+      "R_HAND"
+     ],
+     "braces": [],
+     "duration_s": [
+      0.5,
+      1.5
+     ],
+     "quasi_static": false,
+     "basis": "hands_inverted",
+     "note": "the legs arc over behind the hands as the shoulders move forward",
+     "free": [
+      "HEAD",
+      "L_FOOT",
+      "L_FOREARM",
+      "L_SHANK",
+      "L_THIGH",
+      "L_UPPER_ARM",
+      "PELVIS",
+      "R_FOOT",
+      "R_FOREARM",
+      "R_SHANK",
+      "R_THIGH",
+      "R_UPPER_ARM",
+      "TRUNK"
+     ]
+    },
+    {
+     "name": "land",
+     "ground": [
+      "L_FOOT",
+      "L_HAND",
+      "R_FOOT",
+      "R_HAND"
+     ],
+     "braces": [],
+     "duration_s": [
+      0.3,
+      1.0
+     ],
+     "quasi_static": false,
+     "basis": "settle",
+     "note": "feet make (peak vertical force <= 3 BW); the COM drops 0.73 m onto the wrists and shoulders",
+     "free": [
+      "HEAD",
+      "L_FOREARM",
+      "L_SHANK",
+      "L_THIGH",
+      "L_UPPER_ARM",
+      "PELVIS",
+      "R_FOREARM",
+      "R_SHANK",
+      "R_THIGH",
+      "R_UPPER_ARM",
+      "TRUNK"
+     ]
+    }
+   ],
+   "events": [
+    {
+     "at": "overbalance_arc->land",
+     "phase_index": 1,
+     "t_range_s": [
+      0.5,
+      1.5
+     ],
+     "ground_break": [],
+     "ground_make": [
+      "L_FOOT",
+      "R_FOOT"
+     ],
+     "braces_break": [],
+     "braces_make": []
+    }
+   ],
+   "end_event": {
+    "ground_break": [],
+    "ground_make": [],
+    "braces_break": [],
+    "braces_make": []
+   },
+   "duration_s": [
+    0.8,
+    2.5
+   ],
+   "census": {
+    "label": "handstand -> chaturanga",
+    "d6_bestyaw": 0.826,
+    "d6_heading": 0.854,
+    "com_hands_off_src": 0.076,
+    "com_hands_off_dst": 0.318,
+    "pelvis_dz": -0.798,
+    "com_dz": -0.735,
+    "direct_edge": false
+   },
+   "support_checked_witness": {
+    "any": [
+     0.454,
+     "Handstand_pose_or_Adho_Mukha_Vrksasana_-a",
+     40.2,
+     45.9,
+     0.034,
+     0.454
+    ],
+    "other_clips": [
+     0.491,
+     "Side_Crane_Crow_Pose_or_Parsva_Bakasana_-c",
+     25.6,
+     26.7,
+     0.491,
+     0.481
+    ]
+   }
+  },
+  {
+   "id": "B1",
+   "rank": "backup",
+   "label": "crow -> plank (jump-back, straight arms)",
+   "kind": "dynamic",
+   "generator": "mppi",
+   "risk": "an easier landing than chaturanga",
+   "source": {
+    "hold_id": "220923_Crane_Crow_Pose_or_Bakasana_-a@439",
+    "stem": "220923_Crane_Crow_Pose_or_Bakasana_-a",
+    "group": "arm_balance",
+    "name": "Crane_Crow_Pose_or_Bakasana",
+    "fps": 60,
+    "frame_hold": 651,
+    "t_hold": 10.85,
+    "frame_start": 489,
+    "frame_end": 719,
+    "t_start": 8.15,
+    "t_end": 11.9833,
+    "exemplar_moved": true,
+    "node": 5,
+    "node_key": "Crane_Crow_Pose_or_Bakasana|L_HAND:G|R_HAND:G@prone",
+    "orientation": "prone",
+    "ground": [
+     "L_HAND",
+     "R_HAND"
+    ],
+    "braces": [
+     {
+      "pair": "L_SHANK+L_UPPER_ARM",
+      "role": "required_touch",
+      "critical": true,
+      "statics_necessity": "useful",
+      "lp_load_n": 307.5
+     },
+     {
+      "pair": "R_SHANK+R_UPPER_ARM",
+      "role": "required_touch",
+      "critical": true,
+      "statics_necessity": "useful",
+      "lp_load_n": 357.9
+     }
+    ],
+    "touch_allowed": [
+     "L_FOOT+R_FOOT",
+     "L_THIGH+L_UPPER_ARM",
+     "L_THIGH+TRUNK",
+     "R_THIGH+R_UPPER_ARM",
+     "R_THIGH+TRUNK"
+    ],
+    "known_free": [
+     "L_FOOT",
+     "R_FOOT",
+     "L_SHANK",
+     "R_SHANK",
+     "L_THIGH",
+     "R_THIGH",
+     "PELVIS",
+     "TRUNK",
+     "HEAD",
+     "L_UPPER_ARM",
+     "R_UPPER_ARM",
+     "L_FOREARM",
+     "R_FOREARM"
+    ],
+    "known_free_share": {
+     "L_FOOT": 1.0,
+     "R_FOOT": 1.0,
+     "L_SHANK": 1.0,
+     "R_SHANK": 1.0,
+     "L_THIGH": 1.0,
+     "R_THIGH": 1.0,
+     "PELVIS": 1.0,
+     "TRUNK": 1.0,
+     "HEAD": 1.0,
+     "L_UPPER_ARM": 1.0,
+     "R_UPPER_ARM": 1.0,
+     "L_FOREARM": 1.0,
+     "R_FOREARM": 1.0,
+     "L_HAND": 0.0,
+     "R_HAND": 0.0
+    },
+    "unknown_zones": [],
+    "pose_role": "family",
+    "gate": "pass",
+    "gate_flags": [],
+    "statics": {
+     "statics_id": "holds_repaired_ftC_posefix.labels_v2.46024365fa.statics_v2.aab60189f4",
+     "verdict": "feasible",
+     "frame": 651,
+     "s_star": 0.1647,
+     "beyond_plant": false,
+     "top_joints": [
+      [
+       "R_Wrist_z",
+       0.165,
+       -4.9
+      ],
+      [
+       "R_Wrist_y",
+       0.165,
+       4.9
+      ],
+      [
+       "R_Wrist_x",
+       0.165,
+       4.9
+      ],
+      [
+       "L_Wrist_y",
+       0.165,
+       4.9
+      ],
+      [
+       "R_Hip_y",
+       0.165,
+       49.5
+      ],
+      [
+       "L_Wrist_x",
+       0.165,
+       -4.9
+      ]
+     ],
+     "group_util": {
+      "shoulders": 0.116,
+      "hips": 0.165,
+      "spine": 0.12,
+      "wrists": 0.165,
+      "elbows": 0.06,
+      "knees": 0.039,
+      "ankles": 0.006
+     },
+     "loads_n": {
+      "L_HAND:G": 355.7,
+      "R_HAND:G": 370.3,
+      "L_SHANK+L_UPPER_ARM": 307.5,
+      "R_SHANK+R_UPPER_ARM": 357.9
+     },
+     "limit_violations_deg": {
+      "L_Knee_x": 6.1,
+      "L_Knee_z": 7.8,
+      "R_Hip_z": 8.2,
+      "L_Wrist_x": 2.4,
+      "R_Wrist_x": 3.7
+     },
+     "witness_passed": false
+    },
+    "e15500": {
+     "tracked_share": 1.0,
+     "support_min": 1.0,
+     "err6_p50": 0.064,
+     "substitutions": {}
+    },
+    "anchor": {
+     "L_Wrist": [
+      0.1474,
+      0.4176,
+      0.0338
+     ],
+     "L_Hand": [
+      0.1887,
+      0.3189,
+      0.0147
+     ],
+     "R_Wrist": [
+      -0.123,
+      0.4194,
+      0.0338
+     ],
+     "R_Hand": [
+      -0.1591,
+      0.3207,
+      0.0144
+     ],
+     "hands_mid": [
+      0.0148,
+      0.3198,
+      0.0146
+     ],
+     "hands_width_m": 0.3478,
+     "hand_line_heading_deg": 179.7,
+     "com": [
+      0.0091,
+      0.3985,
+      0.5894
+     ],
+     "com_minus_hands_mid_xy_m": 0.0788,
+     "pelvis": [
+      0.0108,
+      0.5144,
+      0.7354
+     ]
+    }
+   },
+   "destination": {
+    "hold_id": "220923_Plank_Pose_or_Kumbhakasana_-a@541",
+    "stem": "220923_Plank_Pose_or_Kumbhakasana_-a",
+    "group": "connective",
+    "name": "Plank_Pose_or_Kumbhakasana",
+    "fps": 60,
+    "frame_hold": 541,
+    "t_hold": 9.0167,
+    "frame_start": 383,
+    "frame_end": 559,
+    "t_start": 6.3833,
+    "t_end": 9.3167,
+    "exemplar_moved": false,
+    "node": 56,
+    "node_key": "Plank_Pose_or_Kumbhakasana|L_FOOT:G|L_HAND:G|R_FOOT:G|R_HAND:G@prone",
+    "orientation": "prone",
+    "ground": [
+     "L_FOOT",
+     "L_HAND",
+     "R_FOOT",
+     "R_HAND"
+    ],
+    "braces": [],
+    "touch_allowed": [],
+    "known_free": [
+     "L_SHANK",
+     "R_SHANK",
+     "L_THIGH",
+     "R_THIGH",
+     "PELVIS",
+     "TRUNK",
+     "HEAD",
+     "L_UPPER_ARM",
+     "R_UPPER_ARM",
+     "L_FOREARM",
+     "R_FOREARM"
+    ],
+    "known_free_share": {
+     "L_FOOT": 0.0,
+     "R_FOOT": 0.0,
+     "L_SHANK": 1.0,
+     "R_SHANK": 1.0,
+     "L_THIGH": 1.0,
+     "R_THIGH": 1.0,
+     "PELVIS": 1.0,
+     "TRUNK": 1.0,
+     "HEAD": 1.0,
+     "L_UPPER_ARM": 1.0,
+     "R_UPPER_ARM": 1.0,
+     "L_FOREARM": 1.0,
+     "R_FOREARM": 1.0,
+     "L_HAND": 0.0,
+     "R_HAND": 0.0
+    },
+    "unknown_zones": [],
+    "pose_role": "family",
+    "gate": "pass",
+    "gate_flags": [],
+    "statics": {
+     "statics_id": "holds_repaired_ftC_posefix.labels_v2.46024365fa.statics_v2.aab60189f4",
+     "verdict": "held",
+     "frame": 541,
+     "s_star": 0.1131,
+     "beyond_plant": false,
+     "top_joints": [
+      [
+       "R_Wrist_x",
+       0.113,
+       3.4
+      ],
+      [
+       "L_Wrist_x",
+       0.113,
+       -3.4
+      ],
+      [
+       "L_Wrist_y",
+       0.113,
+       3.4
+      ],
+      [
+       "Torso_y",
+       0.113,
+       34.0
+      ],
+      [
+       "L_Shoulder_x",
+       0.113,
+       17.0
+      ],
+      [
+       "R_Shoulder_x",
+       0.113,
+       -17.0
+      ]
+     ],
+     "group_util": {
+      "shoulders": 0.113,
+      "hips": 0.113,
+      "spine": 0.113,
+      "wrists": 0.113,
+      "elbows": 0.065,
+      "knees": 0.113,
+      "ankles": 0.113
+     },
+     "loads_n": {
+      "L_FOOT:G": 94.7,
+      "R_FOOT:G": 123.6,
+      "L_HAND:G": 262.3,
+      "R_HAND:G": 245.3
+     },
+     "limit_violations_deg": {
+      "R_Wrist_x": 2.4
+     },
+     "witness_passed": true
+    },
+    "e15500": {
+     "tracked_share": 1.0,
+     "support_min": 1.0,
+     "err6_p50": 0.048,
+     "substitutions": {}
+    },
+    "anchor": {
+     "L_Wrist": [
+      0.1554,
+      0.213,
+      0.0338
+     ],
+     "L_Hand": [
+      0.1743,
+      0.1077,
+      0.0147
+     ],
+     "R_Wrist": [
+      -0.1527,
+      0.2205,
+      0.0338
+     ],
+     "R_Hand": [
+      -0.1653,
+      0.1162,
+      0.0145
+     ],
+     "hands_mid": [
+      0.0045,
+      0.1119,
+      0.0146
+     ],
+     "hands_width_m": 0.3397,
+     "hand_line_heading_deg": 178.57,
+     "com": [
+      0.0023,
+      0.5594,
+      0.4586
+     ],
+     "com_minus_hands_mid_xy_m": 0.4475,
+     "pelvis": [
+      0.0072,
+      0.5781,
+      0.4849
+     ]
+    }
+   },
+   "contact_edit": {
+    "ground_break": [],
+    "ground_make": [
+     "L_FOOT",
+     "R_FOOT"
+    ],
+    "braces_break": [
+     "L_SHANK+L_UPPER_ARM",
+     "R_SHANK+R_UPPER_ARM"
+    ],
+    "braces_make": [],
+    "orientation": "prone->prone"
+   },
+   "planted_anchor": [
+    "L_HAND",
+    "R_HAND"
+   ],
+   "phases": [
+    {
+     "name": "float_back",
+     "ground": [
+      "L_HAND",
+      "R_HAND"
+     ],
+     "braces": [],
+     "duration_s": [
+      0.25,
+      0.6
+     ],
+     "quasi_static": false,
+     "basis": "jump_back",
+     "note": "braces break, the legs shoot back with straight arms",
+     "free": [
+      "HEAD",
+      "L_FOOT",
+      "L_FOREARM",
+      "L_SHANK",
+      "L_THIGH",
+      "L_UPPER_ARM",
+      "PELVIS",
+      "R_FOOT",
+      "R_FOREARM",
+      "R_SHANK",
+      "R_THIGH",
+      "R_UPPER_ARM",
+      "TRUNK"
+     ]
+    },
+    {
+     "name": "land",
+     "ground": [
+      "L_FOOT",
+      "L_HAND",
+      "R_FOOT",
+      "R_HAND"
+     ],
+     "braces": [],
+     "duration_s": [
+      0.3,
+      1.0
+     ],
+     "quasi_static": false,
+     "basis": "settle",
+     "note": "feet make (peak vertical force <= 3 BW)",
+     "free": [
+      "HEAD",
+      "L_FOREARM",
+      "L_SHANK",
+      "L_THIGH",
+      "L_UPPER_ARM",
+      "PELVIS",
+      "R_FOREARM",
+      "R_SHANK",
+      "R_THIGH",
+      "R_UPPER_ARM",
+      "TRUNK"
+     ]
+    }
+   ],
+   "events": [
+    {
+     "at": "start",
+     "phase_index": 0,
+     "t_range_s": [
+      0.0,
+      0.0
+     ],
+     "ground_break": [],
+     "ground_make": [],
+     "braces_break": [
+      "L_SHANK+L_UPPER_ARM",
+      "R_SHANK+R_UPPER_ARM"
+     ],
+     "braces_make": []
+    },
+    {
+     "at": "float_back->land",
+     "phase_index": 1,
+     "t_range_s": [
+      0.25,
+      0.6
+     ],
+     "ground_break": [],
+     "ground_make": [
+      "L_FOOT",
+      "R_FOOT"
+     ],
+     "braces_break": [],
+     "braces_make": []
+    }
+   ],
+   "end_event": {
+    "ground_break": [],
+    "ground_make": [],
+    "braces_break": [],
+    "braces_make": []
+   },
+   "duration_s": [
+    0.55,
+    1.6
+   ],
+   "census": {
+    "label": "crow -> plank (jump back, straight arms)",
+    "d6_bestyaw": 0.419,
+    "d6_heading": 0.419,
+    "com_hands_off_src": 0.079,
+    "com_hands_off_dst": 0.447,
+    "pelvis_dz": -0.25,
+    "com_dz": -0.131,
+    "direct_edge": false
+   },
+   "support_checked_witness": {
+    "any": [
+     0.424,
+     "Crane_Crow_Pose_or_Bakasana_-a",
+     8.2,
+     12.7,
+     0.084,
+     0.424
+    ],
+    "other_clips": [
+     0.508,
+     "Shoulder-Pressing_Pose_or_Bhujapidasana_-a",
+     8.1,
+     12.2,
+     0.376,
+     0.508
+    ]
+   }
+  },
+  {
+   "id": "B2",
+   "rank": "backup",
+   "label": "firefly -> crow",
+   "kind": "quasi_static",
+   "generator": "keyframe_statics",
+   "risk": "the Firefly end is weak (tracked 0.613 at e15500, feet down)",
+   "source": {
+    "hold_id": "220923_Firefly_Pose_or_Tittibhasana_-a@776",
+    "stem": "220923_Firefly_Pose_or_Tittibhasana_-a",
+    "group": "arm_balance",
+    "name": "Firefly_Pose_or_Tittibhasana",
+    "fps": 60,
+    "frame_hold": 776,
+    "t_hold": 12.9333,
+    "frame_start": 559,
+    "frame_end": 843,
+    "t_start": 9.3167,
+    "t_end": 14.05,
+    "exemplar_moved": false,
+    "node": 34,
+    "node_key": "Firefly_Pose_or_Tittibhasana|L_HAND:G|R_HAND:G@upright",
+    "orientation": "upright",
+    "ground": [
+     "L_HAND",
+     "R_HAND"
+    ],
+    "braces": [
+     {
+      "pair": "L_THIGH+L_UPPER_ARM",
+      "role": "required_touch",
+      "critical": true,
+      "statics_necessity": "useful",
+      "lp_load_n": 215.9
+     },
+     {
+      "pair": "R_THIGH+R_UPPER_ARM",
+      "role": "required_touch",
+      "critical": true,
+      "statics_necessity": "useful",
+      "lp_load_n": 200.9
+     }
+    ],
+    "touch_allowed": [
+     "L_SHANK+L_UPPER_ARM",
+     "L_SHANK+TRUNK",
+     "L_THIGH+L_FOREARM",
+     "L_THIGH+TRUNK",
+     "R_SHANK+R_UPPER_ARM",
+     "R_THIGH+R_FOREARM",
+     "R_THIGH+TRUNK"
+    ],
+    "known_free": [
+     "L_FOOT",
+     "R_FOOT",
+     "L_SHANK",
+     "R_SHANK",
+     "L_THIGH",
+     "R_THIGH",
+     "PELVIS",
+     "TRUNK",
+     "HEAD",
+     "L_UPPER_ARM",
+     "R_UPPER_ARM",
+     "L_FOREARM",
+     "R_FOREARM"
+    ],
+    "known_free_share": {
+     "L_FOOT": 1.0,
+     "R_FOOT": 1.0,
+     "L_SHANK": 1.0,
+     "R_SHANK": 1.0,
+     "L_THIGH": 1.0,
+     "R_THIGH": 1.0,
+     "PELVIS": 1.0,
+     "TRUNK": 1.0,
+     "HEAD": 1.0,
+     "L_UPPER_ARM": 1.0,
+     "R_UPPER_ARM": 1.0,
+     "L_FOREARM": 1.0,
+     "R_FOREARM": 1.0,
+     "L_HAND": 0.0,
+     "R_HAND": 0.0
+    },
+    "unknown_zones": [],
+    "pose_role": "family",
+    "gate": "pass",
+    "gate_flags": [],
+    "statics": {
+     "statics_id": "holds_repaired_ftC_posefix.labels_v2.46024365fa.statics_v2.aab60189f4",
+     "verdict": "feasible",
+     "frame": 776,
+     "s_star": 0.1867,
+     "beyond_plant": false,
+     "top_joints": [
+      [
+       "L_Wrist_z",
+       0.187,
+       5.6
+      ],
+      [
+       "L_Wrist_x",
+       0.187,
+       -5.6
+      ],
+      [
+       "R_Wrist_y",
+       0.187,
+       5.6
+      ],
+      [
+       "R_Wrist_x",
+       0.187,
+       5.6
+      ],
+      [
+       "L_Wrist_y",
+       0.187,
+       5.6
+      ],
+      [
+       "Spine_y",
+       0.14,
+       28.1
+      ]
+     ],
+     "group_util": {
+      "shoulders": 0.056,
+      "hips": 0.074,
+      "spine": 0.14,
+      "wrists": 0.187,
+      "elbows": 0.066,
+      "knees": 0.049,
+      "ankles": 0.005
+     },
+     "loads_n": {
+      "L_HAND:G": 379.0,
+      "R_HAND:G": 347.0,
+      "L_THIGH+L_UPPER_ARM": 215.9,
+      "R_THIGH+R_UPPER_ARM": 200.9
+     },
+     "limit_violations_deg": {
+      "L_Hip_x": 18.8,
+      "L_Hip_z": 34.3,
+      "L_Ankle_x": 15.5,
+      "R_Hip_x": 28.1,
+      "R_Hip_z": 37.5,
+      "R_Ankle_x": 10.2,
+      "Torso_x": 12.4,
+      "Torso_z": 19.9,
+      "R_Wrist_x": 2.2
+     },
+     "witness_passed": false
+    },
+    "e15500": {
+     "tracked_share": 0.613,
+     "support_min": 1.0,
+     "err6_p50": 0.106,
+     "substitutions": {
+      "L_FOOT": 0.204,
+      "R_FOOT": 0.373
+     }
+    },
+    "anchor": {
+     "L_Wrist": [
+      0.1378,
+      1.0388,
+      0.034
+     ],
+     "L_Hand": [
+      0.1708,
+      0.9371,
+      0.0146
+     ],
+     "R_Wrist": [
+      -0.1343,
+      1.0296,
+      0.0339
+     ],
+     "R_Hand": [
+      -0.1632,
+      0.9285,
+      0.0144
+     ],
+     "hands_mid": [
+      0.0038,
+      0.9328,
+      0.0145
+     ],
+     "hands_width_m": 0.3341,
+     "hand_line_heading_deg": -178.53,
+     "com": [
+      0.0059,
+      1.0119,
+      0.4728
+     ],
+     "com_minus_hands_mid_xy_m": 0.0791,
+     "pelvis": [
+      -0.0014,
+      1.1746,
+      0.4026
+     ]
+    }
+   },
+   "destination": {
+    "hold_id": "220923_Crane_Crow_Pose_or_Bakasana_-a@439",
+    "stem": "220923_Crane_Crow_Pose_or_Bakasana_-a",
+    "group": "arm_balance",
+    "name": "Crane_Crow_Pose_or_Bakasana",
+    "fps": 60,
+    "frame_hold": 651,
+    "t_hold": 10.85,
+    "frame_start": 489,
+    "frame_end": 719,
+    "t_start": 8.15,
+    "t_end": 11.9833,
+    "exemplar_moved": true,
+    "node": 5,
+    "node_key": "Crane_Crow_Pose_or_Bakasana|L_HAND:G|R_HAND:G@prone",
+    "orientation": "prone",
+    "ground": [
+     "L_HAND",
+     "R_HAND"
+    ],
+    "braces": [
+     {
+      "pair": "L_SHANK+L_UPPER_ARM",
+      "role": "required_touch",
+      "critical": true,
+      "statics_necessity": "useful",
+      "lp_load_n": 307.5
+     },
+     {
+      "pair": "R_SHANK+R_UPPER_ARM",
+      "role": "required_touch",
+      "critical": true,
+      "statics_necessity": "useful",
+      "lp_load_n": 357.9
+     }
+    ],
+    "touch_allowed": [
+     "L_FOOT+R_FOOT",
+     "L_THIGH+L_UPPER_ARM",
+     "L_THIGH+TRUNK",
+     "R_THIGH+R_UPPER_ARM",
+     "R_THIGH+TRUNK"
+    ],
+    "known_free": [
+     "L_FOOT",
+     "R_FOOT",
+     "L_SHANK",
+     "R_SHANK",
+     "L_THIGH",
+     "R_THIGH",
+     "PELVIS",
+     "TRUNK",
+     "HEAD",
+     "L_UPPER_ARM",
+     "R_UPPER_ARM",
+     "L_FOREARM",
+     "R_FOREARM"
+    ],
+    "known_free_share": {
+     "L_FOOT": 1.0,
+     "R_FOOT": 1.0,
+     "L_SHANK": 1.0,
+     "R_SHANK": 1.0,
+     "L_THIGH": 1.0,
+     "R_THIGH": 1.0,
+     "PELVIS": 1.0,
+     "TRUNK": 1.0,
+     "HEAD": 1.0,
+     "L_UPPER_ARM": 1.0,
+     "R_UPPER_ARM": 1.0,
+     "L_FOREARM": 1.0,
+     "R_FOREARM": 1.0,
+     "L_HAND": 0.0,
+     "R_HAND": 0.0
+    },
+    "unknown_zones": [],
+    "pose_role": "family",
+    "gate": "pass",
+    "gate_flags": [],
+    "statics": {
+     "statics_id": "holds_repaired_ftC_posefix.labels_v2.46024365fa.statics_v2.aab60189f4",
+     "verdict": "feasible",
+     "frame": 651,
+     "s_star": 0.1647,
+     "beyond_plant": false,
+     "top_joints": [
+      [
+       "R_Wrist_z",
+       0.165,
+       -4.9
+      ],
+      [
+       "R_Wrist_y",
+       0.165,
+       4.9
+      ],
+      [
+       "R_Wrist_x",
+       0.165,
+       4.9
+      ],
+      [
+       "L_Wrist_y",
+       0.165,
+       4.9
+      ],
+      [
+       "R_Hip_y",
+       0.165,
+       49.5
+      ],
+      [
+       "L_Wrist_x",
+       0.165,
+       -4.9
+      ]
+     ],
+     "group_util": {
+      "shoulders": 0.116,
+      "hips": 0.165,
+      "spine": 0.12,
+      "wrists": 0.165,
+      "elbows": 0.06,
+      "knees": 0.039,
+      "ankles": 0.006
+     },
+     "loads_n": {
+      "L_HAND:G": 355.7,
+      "R_HAND:G": 370.3,
+      "L_SHANK+L_UPPER_ARM": 307.5,
+      "R_SHANK+R_UPPER_ARM": 357.9
+     },
+     "limit_violations_deg": {
+      "L_Knee_x": 6.1,
+      "L_Knee_z": 7.8,
+      "R_Hip_z": 8.2,
+      "L_Wrist_x": 2.4,
+      "R_Wrist_x": 3.7
+     },
+     "witness_passed": false
+    },
+    "e15500": {
+     "tracked_share": 1.0,
+     "support_min": 1.0,
+     "err6_p50": 0.064,
+     "substitutions": {}
+    },
+    "anchor": {
+     "L_Wrist": [
+      0.1474,
+      0.4176,
+      0.0338
+     ],
+     "L_Hand": [
+      0.1887,
+      0.3189,
+      0.0147
+     ],
+     "R_Wrist": [
+      -0.123,
+      0.4194,
+      0.0338
+     ],
+     "R_Hand": [
+      -0.1591,
+      0.3207,
+      0.0144
+     ],
+     "hands_mid": [
+      0.0148,
+      0.3198,
+      0.0146
+     ],
+     "hands_width_m": 0.3478,
+     "hand_line_heading_deg": 179.7,
+     "com": [
+      0.0091,
+      0.3985,
+      0.5894
+     ],
+     "com_minus_hands_mid_xy_m": 0.0788,
+     "pelvis": [
+      0.0108,
+      0.5144,
+      0.7354
+     ]
+    }
+   },
+   "contact_edit": {
+    "ground_break": [],
+    "ground_make": [],
+    "braces_break": [
+     "L_THIGH+L_UPPER_ARM",
+     "R_THIGH+R_UPPER_ARM"
+    ],
+    "braces_make": [
+     "L_SHANK+L_UPPER_ARM",
+     "R_SHANK+R_UPPER_ARM"
+    ],
+    "orientation": "upright->prone"
+   },
+   "planted_anchor": [
+    "L_HAND",
+    "R_HAND"
+   ],
+   "phases": [
+    {
+     "name": "bend_knees",
+     "ground": [
+      "L_HAND",
+      "R_HAND"
+     ],
+     "braces": [
+      "L_THIGH+L_UPPER_ARM",
+      "R_THIGH+R_UPPER_ARM"
+     ],
+     "duration_s": [
+      0.5,
+      2.0
+     ],
+     "quasi_static": true,
+     "basis": "hands_inverted",
+     "note": "the knees bend and the legs draw back along the arms",
+     "free": [
+      "HEAD",
+      "L_FOOT",
+      "L_FOREARM",
+      "L_SHANK",
+      "L_THIGH",
+      "L_UPPER_ARM",
+      "PELVIS",
+      "R_FOOT",
+      "R_FOREARM",
+      "R_SHANK",
+      "R_THIGH",
+      "R_UPPER_ARM",
+      "TRUNK"
+     ]
+    },
+    {
+     "name": "settle",
+     "ground": [
+      "L_HAND",
+      "R_HAND"
+     ],
+     "braces": [
+      "L_SHANK+L_UPPER_ARM",
+      "R_SHANK+R_UPPER_ARM"
+     ],
+     "duration_s": [
+      0.3,
+      1.0
+     ],
+     "quasi_static": true,
+     "basis": "settle",
+     "note": "thigh braces swap for shin braces: crow",
+     "free": [
+      "HEAD",
+      "L_FOOT",
+      "L_FOREARM",
+      "L_SHANK",
+      "L_THIGH",
+      "L_UPPER_ARM",
+      "PELVIS",
+      "R_FOOT",
+      "R_FOREARM",
+      "R_SHANK",
+      "R_THIGH",
+      "R_UPPER_ARM",
+      "TRUNK"
+     ]
+    }
+   ],
+   "events": [
+    {
+     "at": "bend_knees->settle",
+     "phase_index": 1,
+     "t_range_s": [
+      0.5,
+      2.0
+     ],
+     "ground_break": [],
+     "ground_make": [],
+     "braces_break": [
+      "L_THIGH+L_UPPER_ARM",
+      "R_THIGH+R_UPPER_ARM"
+     ],
+     "braces_make": [
+      "L_SHANK+L_UPPER_ARM",
+      "R_SHANK+R_UPPER_ARM"
+     ]
+    }
+   ],
+   "end_event": {
+    "ground_break": [],
+    "ground_make": [],
+    "braces_break": [],
+    "braces_make": []
+   },
+   "duration_s": [
+    0.8,
+    3.0
+   ],
+   "census": {
+    "label": "firefly -> crow",
+    "d6_bestyaw": 0.546,
+    "d6_heading": 0.548,
+    "com_hands_off_src": 0.079,
+    "com_hands_off_dst": 0.079,
+    "pelvis_dz": 0.333,
+    "com_dz": 0.117,
+    "direct_edge": false
+   },
+   "support_checked_witness": {
+    "any": [
+     0.376,
+     "Shoulder-Pressing_Pose_or_Bhujapidasana_-a",
+     8.0,
+     8.1,
+     0.249,
+     0.376
+    ],
+    "other_clips": [
+     0.376,
+     "Shoulder-Pressing_Pose_or_Bhujapidasana_-a",
+     8.0,
+     8.1,
+     0.249,
+     0.376
+    ]
+   }
+  }
+ ],
+ "free_edge": {
+  "id": "FREE",
+  "rank": "free",
+  "label": "squat -> handstand (hop), human capture",
+  "stem": "220923_Scorpion_pose_or_vrischikasana-b",
+  "window_s": [
+   8.3,
+   13.0
+  ],
+  "kind": "human_capture",
+  "generator": "cut (card R1)",
+  "src": "220923_Scorpion_pose_or_vrischikasana-b@455",
+  "dst": null,
+  "note": "the destination hold does not exist in release v2: R1 labels it (ground set from markers and mat, expected hands) and truncates the clip, which also removes the scorpion gate v2 certified as beyond the plant",
+  "source": {
+   "hold_id": "220923_Scorpion_pose_or_vrischikasana-b@455",
+   "stem": "220923_Scorpion_pose_or_vrischikasana-b",
+   "group": "inversion",
+   "name": "Scorpion_pose_or_vrischikasana_h2",
+   "fps": 60,
+   "frame_hold": 455,
+   "t_hold": 7.5833,
+   "frame_start": 397,
+   "frame_end": 472,
+   "t_start": 6.6167,
+   "t_end": 7.8667,
+   "exemplar_moved": false,
+   "node": 75,
+   "node_key": "Scorpion_pose_or_vrischikasana_h2|L_FOOT:G|L_HAND:G|R_FOOT:G|R_HAND:G@prone",
+   "orientation": "prone",
+   "ground": [
+    "L_FOOT",
+    "L_HAND",
+    "R_FOOT",
+    "R_HAND"
+   ],
+   "braces": [],
+   "touch_allowed": [],
+   "known_free": [
+    "L_SHANK",
+    "R_SHANK",
+    "L_THIGH",
+    "R_THIGH",
+    "PELVIS",
+    "TRUNK",
+    "HEAD",
+    "L_UPPER_ARM",
+    "R_UPPER_ARM",
+    "L_FOREARM",
+    "R_FOREARM"
+   ],
+   "known_free_share": {
+    "L_FOOT": 0.0,
+    "R_FOOT": 0.0,
+    "L_SHANK": 1.0,
+    "R_SHANK": 1.0,
+    "L_THIGH": 1.0,
+    "R_THIGH": 1.0,
+    "PELVIS": 1.0,
+    "TRUNK": 1.0,
+    "HEAD": 1.0,
+    "L_UPPER_ARM": 1.0,
+    "R_UPPER_ARM": 1.0,
+    "L_FOREARM": 1.0,
+    "R_FOREARM": 1.0,
+    "L_HAND": 0.0,
+    "R_HAND": 0.0
+   },
+   "unknown_zones": [],
+   "pose_role": "preparation",
+   "gate": "flag",
+   "gate_flags": [
+    "pose_preparation"
+   ],
+   "statics": {
+    "statics_id": "holds_repaired_ftC_posefix.labels_v2.46024365fa.statics_v2.aab60189f4",
+    "verdict": "held",
+    "frame": 455,
+    "s_star": 0.0874,
+    "beyond_plant": false,
+    "top_joints": [
+     [
+      "Chest_y",
+      0.088,
+      -13.1
+     ],
+     [
+      "R_Wrist_z",
+      0.088,
+      2.6
+     ],
+     [
+      "L_Wrist_x",
+      0.088,
+      -2.6
+     ],
+     [
+      "L_Shoulder_z",
+      0.088,
+      13.1
+     ],
+     [
+      "R_Knee_y",
+      0.088,
+      -17.5
+     ],
+     [
+      "R_Shoulder_z",
+      0.088,
+      -13.1
+     ]
+    ],
+    "group_util": {
+     "shoulders": 0.088,
+     "hips": 0.044,
+     "spine": 0.088,
+     "wrists": 0.088,
+     "elbows": 0.086,
+     "knees": 0.088,
+     "ankles": 0.062
+    },
+    "loads_n": {
+     "L_FOOT:G": 64.4,
+     "R_FOOT:G": 111.7,
+     "L_HAND:G": 286.6,
+     "R_HAND:G": 263.3
+    },
+    "limit_violations_deg": {
+     "L_Hip_z": 2.7,
+     "L_Ankle_x": 19.0,
+     "L_Ankle_z": 8.4,
+     "R_Ankle_x": 21.9,
+     "R_Ankle_z": 16.9
+    },
+    "witness_passed": true
+   },
+   "e15500": {
+    "tracked_share": 1.0,
+    "support_min": 0.079,
+    "err6_p50": 0.058,
+    "substitutions": {}
+   },
+   "anchor": {
+    "L_Wrist": [
+     0.1594,
+     1.1674,
+     0.0339
+    ],
+    "L_Hand": [
+     0.1872,
+     1.0641,
+     0.0147
+    ],
+    "R_Wrist": [
+     -0.1495,
+     1.1603,
+     0.0338
+    ],
+    "R_Hand": [
+     -0.1704,
+     1.0573,
+     0.0144
+    ],
+    "hands_mid": [
+     0.0084,
+     1.0607,
+     0.0145
+    ],
+    "hands_width_m": 0.3576,
+    "hand_line_heading_deg": -178.91,
+    "com": [
+     0.0042,
+     1.2536,
+     0.7015
+    ],
+    "com_minus_hands_mid_xy_m": 0.193,
+    "pelvis": [
+     0.0056,
+     1.2856,
+     0.9438
+    ]
+   }
+  }
+ }
+}

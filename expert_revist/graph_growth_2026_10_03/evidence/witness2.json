@@ -1,0 +1,289 @@
+{
+ "crow->hs": {
+  "any": [
+   0.555,
+   "Crane_Crow_Pose_or_Bakasana_-a",
+   8.2,
+   9.5,
+   0.084,
+   0.555
+  ],
+  "other_clips": [
+   0.695,
+   "Shoulder-Pressing_Pose_or_Bhujapidasana_-a",
+   8.1,
+   10.8,
+   0.376,
+   0.695
+  ]
+ },
+ "crow->chat": {
+  "any": [
+   0.488,
+   "Shoulder-Pressing_Pose_or_Bhujapidasana_-a",
+   11.2,
+   12.3,
+   0.435,
+   0.488
+  ],
+  "other_clips": [
+   0.488,
+   "Shoulder-Pressing_Pose_or_Bhujapidasana_-a",
+   11.2,
+   12.3,
+   0.435,
+   0.488
+  ]
+ },
+ "hs->crow": {
+  "any": [
+   0.555,
+   "Crane_Crow_Pose_or_Bakasana_-a",
+   9.6,
+   10.8,
+   0.555,
+   0.0
+  ],
+  "other_clips": [
+   0.695,
+   "Shoulder-Pressing_Pose_or_Bhujapidasana_-a",
+   10.8,
+   10.9,
+   0.695,
+   0.391
+  ]
+ },
+ "crow->tripod_k_b": {
+  "any": null,
+  "other_clips": null
+ },
+ "tripod_k_b->crow": {
+  "any": null,
+  "other_clips": null
+ },
+ "tripod_sh_b->crow": {
+  "any": null,
+  "other_clips": null
+ },
+ "crow->tripod_sh_b": {
+  "any": null,
+  "other_clips": null
+ },
+ "firefly->crow": {
+  "any": [
+   0.376,
+   "Shoulder-Pressing_Pose_or_Bhujapidasana_-a",
+   8.0,
+   8.1,
+   0.249,
+   0.376
+  ],
+  "other_clips": [
+   0.376,
+   "Shoulder-Pressing_Pose_or_Bhujapidasana_-a",
+   8.0,
+   8.1,
+   0.249,
+   0.376
+  ]
+ },
+ "crow->firefly": {
+  "any": [
+   0.376,
+   "Shoulder-Pressing_Pose_or_Bhujapidasana_-a",
+   8.1,
+   11.1,
+   0.376,
+   0.22
+  ],
+  "other_clips": [
+   0.376,
+   "Shoulder-Pressing_Pose_or_Bhujapidasana_-a",
+   8.1,
+   11.1,
+   0.376,
+   0.22
+  ]
+ },
+ "hs->chat": {
+  "any": [
+   0.454,
+   "Handstand_pose_or_Adho_Mukha_Vrksasana_-a",
+   40.2,
+   45.9,
+   0.034,
+   0.454
+  ],
+  "other_clips": [
+   0.491,
+   "Side_Crane_Crow_Pose_or_Parsva_Bakasana_-c",
+   25.6,
+   26.7,
+   0.491,
+   0.481
+  ]
+ },
+ "hs->plank": {
+  "any": [
+   0.359,
+   "Handstand_pose_or_Adho_Mukha_Vrksasana_-a",
+   40.2,
+   45.9,
+   0.034,
+   0.359
+  ],
+  "other_clips": [
+   0.491,
+   "Side_Crane_Crow_Pose_or_Parsva_Bakasana_-c",
+   25.6,
+   26.7,
+   0.491,
+   0.423
+  ]
+ },
+ "crow->plank": {
+  "any": [
+   0.424,
+   "Crane_Crow_Pose_or_Bakasana_-a",
+   8.2,
+   12.7,
+   0.084,
+   0.424
+  ],
+  "other_clips": [
+   0.508,
+   "Shoulder-Pressing_Pose_or_Bhujapidasana_-a",
+   8.1,
+   12.2,
+   0.376,
+   0.508
+  ]
+ },
+ "downdog->hs": {
+  "any": [
+   0.175,
+   "Handstand_pose_or_Adho_Mukha_Vrksasana_-a",
+   3.6,
+   9.6,
+   0.175,
+   0.146
+  ],
+  "other_clips": [
+   0.193,
+   "Scorpion_pose_or_vrischikasana-b",
+   4.3,
+   11.9,
+   0.193,
+   0.144
+  ]
+ },
+ "pincha->crow": {
+  "any": null,
+  "other_clips": null
+ },
+ "hs->tripod_k_b": {
+  "any": [
+   0.676,
+   "Peacock_Pose_or_Mayurasana_-a",
+   14.6,
+   18.8,
+   0.676,
+   0.357
+  ],
+  "other_clips": [
+   0.676,
+   "Peacock_Pose_or_Mayurasana_-a",
+   14.6,
+   18.8,
+   0.676,
+   0.357
+  ]
+ },
+ "chat->crow": {
+  "any": [
+   0.505,
+   "Shoulder-Pressing_Pose_or_Bhujapidasana_-a",
+   4.5,
+   8.1,
+   0.505,
+   0.376
+  ],
+  "other_clips": [
+   0.505,
+   "Shoulder-Pressing_Pose_or_Bhujapidasana_-a",
+   4.5,
+   8.1,
+   0.505,
+   0.376
+  ]
+ },
+ "bhuja->crow": {
+  "any": [
+   0.376,
+   "Shoulder-Pressing_Pose_or_Bhujapidasana_-a",
+   8.0,
+   8.1,
+   0.012,
+   0.376
+  ],
+  "other_clips": null
+ },
+ "crow->bhuja": {
+  "any": [
+   0.376,
+   "Shoulder-Pressing_Pose_or_Bhujapidasana_-a",
+   8.1,
+   9.1,
+   0.376,
+   0.001
+  ],
+  "other_clips": null
+ },
+ "koun_a->chat": {
+  "any": [
+   0.369,
+   "Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+   15.2,
+   17.1,
+   0.242,
+   0.369
+  ],
+  "other_clips": [
+   0.369,
+   "Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+   15.2,
+   17.1,
+   0.242,
+   0.369
+  ]
+ },
+ "sidecrow_a->koun_a": {
+  "any": [
+   0.193,
+   "Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_P",
+   24.3,
+   24.4,
+   0.193,
+   0.169
+  ],
+  "other_clips": null
+ },
+ "crow->garland": {
+  "any": [
+   0.476,
+   "Shoulder-Pressing_Pose_or_Bhujapidasana_-a",
+   8.1,
+   13.8,
+   0.376,
+   0.476
+  ],
+  "other_clips": [
+   0.476,
+   "Shoulder-Pressing_Pose_or_Bhujapidasana_-a",
+   8.1,
+   13.8,
+   0.376,
+   0.476
+  ]
+ }
+}

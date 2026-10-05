@@ -1,0 +1,27 @@
+=== G3 graph TIMING (50 epochs) on release holds_repaired_ftC_posefix.release_v3.2f132f4299 -> results/zz_g3_2f132f4299_timing
+    release        : purpose candidate; 28 synthetic variants: SYN_E1_press_high_s0_t6px, SYN_E1_press_high_s2_t6px, SYN_E1_press_high_s3_t6px, SYN_E1_press_high_s4_t6px, SYN_E1_press_mid_s0_t6px, SYN_E1_press_mid_s2_t6px, SYN_E1_press_mid_s3_t6px, SYN_E1_press_mid_s4_t6px, SYN_E3_lower_high_s0_t6px
+    warm start     : results/smpl_yogi_v2_expert56_amp_ft_a2dda5d2ac/epoch_5000.ckpt (+ PPO and AMP optimisation state)
+    robot / corpus : smpl_yogi_v2 | data/smpl/reference_curation/holds_repaired_ftC_posefix.release_v3.2f132f4299/motions.pt (252 motions, 84 SYN_)
+    AMP            : w 0.5 from epoch 0 (full by 0); calibration ratio 0 (0 = off); disc batch 4096, GP 10.0
+    lineage        : SYN_=0.5 -> 84 of 252 motions
+    demonstrations : x0 clips without [Scorpion_pose_or_vrischikasana-b SYN_] -> 55 motions (before the length filter); SYN_ among them: 0
+    sampling       : arrival 0.4, departure 0.2, pre-roll 0.5 s; mixture 0.8 uniform, motion prior package; support rule v2
+    normalisers    : actor/critic frozen True (discriminator free)
+    panel          : 20 plans (10 G1, 5 edge, 5 no-hijack; all resolve) -> --viz-num-sequences 22, every 0
+    envs / batch   : 4096 / 16384; 50 epochs; eval every 100000 over 2250 steps (record: >= 1890); save every 100000
+ContactGraphControl: release holds_repaired_ftC_posefix.release_v3.2f132f4299 -- every loaded artifact matches its record
+HoldCurriculumEvaluator: package motion prior over 252 motions (weight: motions) {0.27272728085517883: 33, 0.375: 24, 0.6000000238418579: 15, 1.0: 177, 3.0: 3}
+Warm start: restored running_reward_norm from checkpoint
+Warm start: restored PPO optimizer states and advantage EMA from checkpoint
+Warm start: restored AMP training state from checkpoint: discriminator optimizer (step 39920, lr 0.0001), disc-critic optimizer (step 39920, lr 0.0001), AMP reward normaliser (count 655360000, var 155.8)
+Warm start: AMP weight target 0.5 (configured; calibration off; equals the checkpoint's calibrated target); 1000 calibration ratio-history entries from the old run's epoch clock dropped
+freeze_obs_normalizers: froze ['_actor.mu.norm', '_critic.norm'] (9448 statistics); they are checked bit-for-bit after the first epoch that updates the policy
+Predicted MotionLib saved to results/zz_g3_2f132f4299_timing/results/predicted_motion_lib_epoch_1.pt
+freeze_obs_normalizers: verified -- 6 statistics buffers of ['_actor.mu.norm', '_critic.norm'] bit-identical through this launch's first policy update (1 epoch(s); epoch counter now 1)
+[33m19:59:10 [agent.py] WARNING: Epoch 3: Skipping actor updates for remaining batches (clip_frac 0.659 > 0.6)[0m
+[33m19:59:19 [agent.py] WARNING: Epoch 4: Skipping actor updates for remaining batches (clip_frac 0.636 > 0.6)[0m
+[33m19:59:28 [agent.py] WARNING: Epoch 5: Skipping actor updates for remaining batches (clip_frac 0.603 > 0.6)[0m
+[33m19:59:36 [agent.py] WARNING: Epoch 6: Skipping actor updates for remaining batches (clip_frac 0.606 > 0.6)[0m
+[33m19:59:45 [agent.py] WARNING: Epoch 7: Skipping actor updates for remaining batches (clip_frac 0.640 > 0.6)[0m
+[33m19:59:55 [agent.py] WARNING: Epoch 8: Skipping actor updates for remaining batches (clip_frac 0.633 > 0.6)[0m
+[33m20:00:15 [agent.py] WARNING: Epoch 10: Skipping actor updates for remaining batches (clip_frac 0.638 > 0.6)[0m

@@ -1,0 +1,49 @@
+# Optimiser step counts, AMP normaliser and calibration of G1's epoch_5000.ckpt and the smoke's checkpoints
+# (CPU, mmap), and how far the non-normaliser weights moved over the smoke.
+
+results/smpl_yogi_v2_expert56_amp_ft_a2dda5d2ac/epoch_5000.ckpt: epoch 5000, step_count 655360000
+  actor_optimizer: 14 params, step [163680.0], lr [2e-05]
+  critic_optimizer: 10 params, step [163680.0], lr [0.0001]
+  discriminator_optimizer: 6 params, step [39920.0], lr [0.0001]
+  disc_critic_optimizer: 8 params, step [39920.0], lr [0.0001]
+  running_reward_norm: count 2686976000, mean 89.766, var 631.616
+  running_amp_reward_norm: count 655360000, mean 44.8864, var 155.758
+  amp_weight_calibration: target 0.5, 1000 ratio-history entries
+results/zz_step3_smoke_smoke/epoch_2.ckpt: epoch 2, step_count 16384
+  actor_optimizer: 14 params, step [163682.0], lr [2e-05]
+  critic_optimizer: 10 params, step [163682.0], lr [0.0001]
+  discriminator_optimizer: 6 params, step [39922.0], lr [0.0001]
+  disc_critic_optimizer: 8 params, step [39922.0], lr [0.0001]
+  running_reward_norm: count 2686992384, mean 89.7656, var 631.637
+  running_amp_reward_norm: count 655376384, mean 44.8856, var 155.779
+  amp_weight_calibration: target None, 2 ratio-history entries
+results/zz_step3_smoke_smoke/epoch_4.ckpt: epoch 4, step_count 32768
+  actor_optimizer: 14 params, step [163684.0], lr [2e-05]
+  critic_optimizer: 10 params, step [163684.0], lr [0.0001]
+  discriminator_optimizer: 6 params, step [39924.0], lr [0.0001]
+  disc_critic_optimizer: 8 params, step [39924.0], lr [0.0001]
+  running_reward_norm: count 2687008768, mean 89.7654, var 631.639
+  running_amp_reward_norm: count 655392768, mean 44.8852, var 155.782
+  amp_weight_calibration: target None, 4 ratio-history entries
+results/zz_step3_smoke_smoke/epoch_10.ckpt: epoch 10, step_count 81920
+  actor_optimizer: 14 params, step [163687.0], lr [2e-05]
+  critic_optimizer: 10 params, step [163687.0], lr [0.0001]
+  discriminator_optimizer: 6 params, step [39927.0], lr [0.0001]
+  disc_critic_optimizer: 8 params, step [39927.0], lr [0.0001]
+  running_reward_norm: count 2687057920, mean 89.7653, var 631.639
+  running_amp_reward_norm: count 655441920, mean 44.8847, var 155.786
+  amp_weight_calibration: target None, 10 ratio-history entries
+results/zz_step3_smoke_smoke/last.ckpt: epoch 10, step_count 81920
+  actor_optimizer: 14 params, step [163687.0], lr [2e-05]
+  critic_optimizer: 10 params, step [163687.0], lr [0.0001]
+  discriminator_optimizer: 6 params, step [39927.0], lr [0.0001]
+  disc_critic_optimizer: 8 params, step [39927.0], lr [0.0001]
+  running_reward_norm: count 2687057920, mean 89.7653, var 631.639
+  running_amp_reward_norm: count 655441920, mean 44.8847, var 155.786
+  amp_weight_calibration: target None, 10 ratio-history entries
+weights (non-normaliser params) max |d| epoch_5000 -> smoke last.ckpt:
+  _actor.logstd                1 tensors, max |d| 0, tensors changed 0
+  _actor.mu                    14 tensors, max |d| 0.000571, tensors changed 14
+  _critic                      10 tensors, max |d| 0.00277, tensors changed 10
+  _discriminator               6 tensors, max |d| 0.00278, tensors changed 6
+  _disc_critic                 8 tensors, max |d| 0.00342, tensors changed 8

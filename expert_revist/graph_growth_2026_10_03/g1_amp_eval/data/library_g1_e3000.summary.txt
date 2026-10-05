@@ -1,0 +1,27 @@
+
+| holds | n | tracked >= 90 % of window | commanded supports down >= 90 % | 6-body pose < 0.15 m | substitution |
+|---|---|---|---|---|---|
+| all | 270 | 258 (96%) | 236 (91%) | 239 (93%) | 10 (4%) |
+| single_leg | 54 | 54 (100%) | 51 (94%) | 53 (98%) | 3 (6%) |
+| inversion | 69 | 64 (93%) | 54 (84%) | 61 (95%) | 0 (0%) |
+| arm_balance | 60 | 60 (100%) | 58 (97%) | 53 (88%) | 3 (5%) |
+| connective | 87 | 80 (92%) | 73 (91%) | 72 (90%) | 4 (5%) |
+| role: family | 71 | 67 (94%) | 60 (90%) | 65 (97%) | 4 (6%) |
+| role: standing | 112 | 106 (95%) | 105 (99%) | 96 (91%) | 0 (0%) |
+| role: variant | 49 | 49 (100%) | 40 (82%) | 42 (86%) | 5 (10%) |
+| role: preparation | 30 | 28 (93%) | 23 (82%) | 28 (100%) | 0 (0%) |
+| role: undecided | 8 | 8 (100%) | 8 (100%) | 8 (100%) | 1 (12%) |
+
+substitutions (tracked holds):
+  Eagle_Pose_or_Garudasana_-a @7.2s [variant] ground L_FOOT: R_FOOT down 100% (reference 11.7 cm up)
+  Eagle_Pose_or_Garudasana_-a @11.7s [undecided] ground L_FOOT: R_FOOT down 100% (reference 10.3 cm up)
+  Eagle_Pose_or_Garudasana_-a @13.3s [family] ground L_FOOT: R_FOOT down 100% (reference 9.4 cm up)
+  Peacock_Pose_or_Mayurasana_-a @10.3s [family] ground L_FOOT+R_FOOT+L_HAND+R_HAND: R_SHANK down 29% (reference 10.2 cm up)
+  Peacock_Pose_or_Mayurasana_-a @13.1s [variant] ground L_FOOT+L_HAND+R_HAND: HEAD down 100% (reference 12.0 cm up)
+  Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-b @19.6s [variant] ground L_HAND+R_HAND: R_FOOT down 100% (reference 8.9 cm up)
+  Side_Plank_Pose_or_Vasisthasana_-a @14.7s [family] ground R_FOOT+R_HAND: L_FOOT down 100% (reference 7.2 cm up)
+  Bridge_Pose_or_Setu_Bandha_Sarvangasana_-a @11.9s [variant] ground L_FOOT+R_FOOT+TRUNK+HEAD+L_UPPER_ARM+R_UPPER_ARM+L_FOREARM+R_FOREARM: PELVIS down 100% (reference 17.8 cm up)
+  Bridge_Pose_or_Setu_Bandha_Sarvangasana_-a @14.1s [family] ground L_FOOT+R_FOOT+TRUNK+HEAD+L_UPPER_ARM+R_UPPER_ARM+L_FOREARM+R_FOREARM: PELVIS down 100% (reference 20.5 cm up)
+  Bridge_Pose_or_Setu_Bandha_Sarvangasana_-a @20.7s [variant] ground L_FOOT+R_FOOT+TRUNK+HEAD+L_UPPER_ARM+R_UPPER_ARM: R_FOREARM down 38% (reference 4.3 cm up)
+
+56 rollouts -> expert_revist/graph_growth_2026_10_03/g1_amp_eval/data/library_g1_e3000.json

@@ -1,0 +1,13 @@
+Loading motions from packaged file which is faster
+Loading motion library from /home/visakii/Documents/moves/ProtoMotions/data/smpl/reference_curation/holds_repaired_ftC_posefix.release_v2.a2dda5d2ac/motions.pt
+windows: 137940 agent (131882 tracked), 38697 reference; 56 base clips; features 1304 (7 s)
+in-sample (random 20 % held out)             all=1.000  tracked=1.000  tracked/arm_balance=1.000  tracked/connective=1.000  tracked/inversion=1.000  tracked/single_leg=1.000  tracked/agent_x0=1.000  tracked/agent_x3s=1.000  tracked/agent_x7s=1.000
+leave-clips-out (5 folds)                    all=0.792  tracked=0.791  tracked/arm_balance=0.746  tracked/connective=0.739  tracked/inversion=0.878  tracked/single_leg=0.790  tracked/agent_x0=0.807  tracked/agent_x3s=0.792  tracked/agent_x7s=0.777
+newest frame only                            all=1.000  tracked=1.000  tracked/arm_balance=1.000  tracked/connective=1.000  tracked/inversion=1.000  tracked/single_leg=1.000  tracked/agent_x0=1.000  tracked/agent_x3s=1.000  tracked/agent_x7s=1.000
+block: posture (height, gravity)             all=0.629  tracked=0.627  tracked/arm_balance=0.580  tracked/connective=0.655  tracked/inversion=0.658  tracked/single_leg=0.606  tracked/agent_x0=0.618  tracked/agent_x3s=0.625  tracked/agent_x7s=0.634
+block: root velocities                       all=0.807  tracked=0.810  tracked/arm_balance=0.757  tracked/connective=0.820  tracked/inversion=0.797  tracked/single_leg=0.884  tracked/agent_x0=0.808  tracked/agent_x3s=0.812  tracked/agent_x7s=0.810
+block: local rotations                       all=1.000  tracked=1.000  tracked/arm_balance=1.000  tracked/connective=1.000  tracked/inversion=1.000  tracked/single_leg=1.000  tracked/agent_x0=1.000  tracked/agent_x3s=1.000  tracked/agent_x7s=1.000
+block: key bodies                            all=0.847  tracked=0.846  tracked/arm_balance=0.802  tracked/connective=0.814  tracked/inversion=0.916  tracked/single_leg=0.814  tracked/agent_x0=0.835  tracked/agent_x3s=0.843  tracked/agent_x7s=0.857
+top |d|: [('t-1:L_Ankle_rot1', 0.185), ('t-2:L_Ankle_rot1', 0.185), ('t-3:L_Ankle_rot1', 0.185), ('t-4:L_Ankle_rot1', 0.185), ('t-6:L_Ankle_rot1', 0.185), ('t-9:L_Ankle_rot1', 0.185), ('t-14:L_Ankle_rot1', 0.184), ('t-20:L_Ankle_rot1', 0.184)]
+root-velocity jitter p50 (agent tracked / reference): {'agent_tracked': 0.012817363254725933, 'reference': 0.020876489579677582}
+-> expert_revist/graph_growth_2026_10_03/g1_amp_eval/data/separability_g1_e5000.json (142.1 s)

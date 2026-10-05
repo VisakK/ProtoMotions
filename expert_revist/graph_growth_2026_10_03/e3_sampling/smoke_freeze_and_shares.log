@@ -1,0 +1,120 @@
+# Integration stage (2026-10-04): the 10-epoch normaliser-freeze check and the anchoring/prior read-out, from the
+# card E6 smoke (release v2, 256 envs, warm start from G1's epoch_5000.ckpt, --freeze-obs-normalizers True,
+# --segment-start-prob 0.4 --segment-end-prob 0.2 --segment-pre-roll-s 0.5 --motion-prior package).
+# Full run log: ../e6_amp_plumbing/smoke_g3_v2.log. Run dir results/zz_step3_smoke_smoke deleted afterwards.
+
+## E3's printed lines in the run log
+ContactGraphMotionManager: anchoring 40% of resets to 810 segments over 168/168 motions (weighting 'uniform', pre-roll 0-0.50 s)
+ContactGraphMotionManager: departure-anchoring 20% of resets to 642 segments over 168/168 motions (segments ending within env_dt of their clip's end excluded)
+HoldCurriculumEvaluator: package motion prior over 168 motions (weight: motions) {1.0: 168}
+freeze_obs_normalizers: froze ['_actor.mu.norm', '_critic.norm'] (9448 statistics); they are checked bit-for-bit after the first epoch that updates the policy
+[33m17:47:51 [agent.py] WARNING: Epoch 0: Skipping actor updates for remaining batches (clip_frac 0.661 > 0.6)[0m
+Epoch 0, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+freeze_obs_normalizers: verified -- 6 statistics buffers of ['_actor.mu.norm', '_critic.norm'] bit-identical through this launch's first policy update (1 epoch(s); epoch counter now 1)
+[33m17:48:53 [agent.py] WARNING: Epoch 3: Skipping actor updates for remaining batches (clip_frac 0.714 > 0.6)[0m
+Epoch 3, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+[33m17:49:20 [agent.py] WARNING: Epoch 5: Skipping actor updates for remaining batches (clip_frac 0.611 > 0.6)[0m
+Epoch 5, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+[33m17:49:47 [agent.py] WARNING: Epoch 7: Skipping actor updates for remaining batches (clip_frac 0.654 > 0.6)[0m
+Epoch 7, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+[33m17:50:15 [agent.py] WARNING: Epoch 9: Skipping actor updates for remaining batches (clip_frac 0.646 > 0.6)[0m
+Epoch 9, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+2026-10-05T00:47:51Z [29,942ms] [Warning] [protomotions.agents.ppo.agent] Epoch 0: Skipping actor updates for remaining batches (clip_frac 0.661 > 0.6)
+2026-10-05T00:48:53Z [91,507ms] [Warning] [protomotions.agents.ppo.agent] Epoch 3: Skipping actor updates for remaining batches (clip_frac 0.714 > 0.6)
+2026-10-05T00:49:20Z [118,643ms] [Warning] [protomotions.agents.ppo.agent] Epoch 5: Skipping actor updates for remaining batches (clip_frac 0.611 > 0.6)
+2026-10-05T00:49:47Z [146,004ms] [Warning] [protomotions.agents.ppo.agent] Epoch 7: Skipping actor updates for remaining batches (clip_frac 0.654 > 0.6)
+2026-10-05T00:50:15Z [173,390ms] [Warning] [protomotions.agents.ppo.agent] Epoch 9: Skipping actor updates for remaining batches (clip_frac 0.646 > 0.6)
+
+## compare_normalizer_stats.py G1 epoch_5000.ckpt -> the smoke's checkpoints (exit 0 = actor/critic bit-identical)
+### G1 epoch_5000 -> smoke last.ckpt
+_actor.mu.norm                   (frozen): count identical, mean identical, var identical
+_critic.norm                     (frozen): count identical, mean identical, var identical
+_disc_critic.models.0.norm       (free): count identical, mean max |d| 0.00799, var max |d| 0.0303
+_discriminator.models.0.norm     (free): count identical, mean max |d| 0.0023, var max |d| 0.00863
+actor and critic statistics bit-identical (epoch 5000 -> 10): True
+exit=0
+### G1 epoch_5000 -> smoke epoch_10.ckpt
+_actor.mu.norm                   (frozen): count identical, mean identical, var identical
+_critic.norm                     (frozen): count identical, mean identical, var identical
+_disc_critic.models.0.norm       (free): count identical, mean max |d| 0.00799, var max |d| 0.0303
+_discriminator.models.0.norm     (free): count identical, mean max |d| 0.0023, var max |d| 0.00863
+actor and critic statistics bit-identical (epoch 5000 -> 10): True
+exit=0
+### G1 epoch_5000 -> smoke epoch_2.ckpt
+_actor.mu.norm                   (frozen): count identical, mean identical, var identical
+_critic.norm                     (frozen): count identical, mean identical, var identical
+_disc_critic.models.0.norm       (free): count identical, mean max |d| 0.00178, var max |d| 0.00496
+_discriminator.models.0.norm     (free): count identical, mean max |d| 0.000996, var max |d| 0.00387
+actor and critic statistics bit-identical (epoch 5000 -> 2): True
+exit=0
+
+## the policy did move (so the freeze check is not vacuous): non-normaliser weights, epoch_5000 -> smoke last.ckpt
+weights (non-normaliser params) max |d| epoch_5000 -> smoke last.ckpt:
+  _actor.logstd                1 tensors, max |d| 0, tensors changed 0
+  _actor.mu                    14 tensors, max |d| 0.000571, tensors changed 14
+  _critic                      10 tensors, max |d| 0.00277, tensors changed 10
+  _discriminator               6 tensors, max |d| 0.00278, tensors changed 6
+  _disc_critic                 8 tensors, max |d| 0.00342, tensors changed 8
+results/smpl_yogi_v2_expert56_amp_ft_a2dda5d2ac/epoch_5000.ckpt: epoch 5000, step_count 655360000
+  actor_optimizer: 14 params, step [163680.0], lr [2e-05]
+  critic_optimizer: 10 params, step [163680.0], lr [0.0001]
+results/zz_step3_smoke_smoke/epoch_2.ckpt: epoch 2, step_count 16384
+  actor_optimizer: 14 params, step [163682.0], lr [2e-05]
+  critic_optimizer: 10 params, step [163682.0], lr [0.0001]
+results/zz_step3_smoke_smoke/epoch_4.ckpt: epoch 4, step_count 32768
+  actor_optimizer: 14 params, step [163684.0], lr [2e-05]
+  critic_optimizer: 10 params, step [163684.0], lr [0.0001]
+results/zz_step3_smoke_smoke/epoch_10.ckpt: epoch 10, step_count 81920
+  actor_optimizer: 14 params, step [163687.0], lr [2e-05]
+  critic_optimizer: 10 params, step [163687.0], lr [0.0001]
+results/zz_step3_smoke_smoke/last.ckpt: epoch 10, step_count 81920
+  actor_optimizer: 14 params, step [163687.0], lr [2e-05]
+  critic_optimizer: 10 params, step [163687.0], lr [0.0001]
+weights (non-normaliser params) max |d| epoch_5000 -> smoke last.ckpt:
+
+## anchoring counts and drawn shares (TB, per epoch; share = env/anchor/<kind>_resets / env/anchor/resets)
+== anchoring counts (5 tags)
+  env/anchor/arrival_resets                                    1:6.75 2:0.53125 3:0.21875 4:0.25 5:0.21875 6:0.53125 7:0.6875 8:0.40625 9:0.40625 10:0.21875
+  env/anchor/departure_resets                                  1:2.875 2:0.25 3:0.25 4:0.125 5:0.15625 6:0.1875 7:0.125 8:0.0625 9:0.3125 10:0.375
+  env/anchor/resets                                            1:16.156 2:1.1875 3:0.84375 4:0.53125 5:0.53125 6:0.9375 7:1.1562 8:0.53125 9:1.0938 10:0.8125
+  env/anchor/t0_resets                                         1:1.125 2:0.09375 3:0.09375 4:0 5:0 6:0.0625 7:0.125 8:0 9:0.0625 10:0.03125
+  env/anchor/uniform_resets                                    1:5.4062 2:0.3125 3:0.28125 4:0.15625 5:0.15625 6:0.15625 7:0.21875 8:0.0625 9:0.3125 10:0.1875
+
+== drawn shares (env/anchor/<kind>_resets / env/anchor/resets)
+  step 1: resets/step 16.16 | arrival 0.4178 departure 0.1779 t0 0.0696 uniform 0.3346 | sum 1.00000
+  step 2: resets/step 1.188 | arrival 0.4474 departure 0.2105 t0 0.0789 uniform 0.2632 | sum 1.00000
+  step 3: resets/step 0.8438 | arrival 0.2593 departure 0.2963 t0 0.1111 uniform 0.3333 | sum 1.00000
+  step 4: resets/step 0.5312 | arrival 0.4706 departure 0.2353 t0 0.0000 uniform 0.2941 | sum 1.00000
+  step 5: resets/step 0.5312 | arrival 0.4118 departure 0.2941 t0 0.0000 uniform 0.2941 | sum 1.00000
+  step 6: resets/step 0.9375 | arrival 0.5667 departure 0.2000 t0 0.0667 uniform 0.1667 | sum 1.00000
+  step 7: resets/step 1.156 | arrival 0.5946 departure 0.1081 t0 0.1081 uniform 0.1892 | sum 1.00000
+  step 8: resets/step 0.5312 | arrival 0.7647 departure 0.1176 t0 0.0000 uniform 0.1176 | sum 1.00000
+  step 9: resets/step 1.094 | arrival 0.3714 departure 0.2857 t0 0.0571 uniform 0.2857 | sum 1.00000
+  step 10: resets/step 0.8125 | arrival 0.2692 departure 0.4615 t0 0.0385 uniform 0.2308 | sum 1.00000
+  pooled over logged epochs (equal step counts per epoch): arrival 0.4297 departure 0.1984 t0 0.0670 uniform 0.3049
+
+all 10 epochs: 761 resets
+  arrival     327  share 0.4297  expected 0.40  z +1.67
+  departure   151  share 0.1984  expected 0.20  z -0.11
+  t0           51  share 0.0670  expected 0.08  z -1.32
+  uniform     232  share 0.3049  expected 0.32  z -0.90
+epochs 1-9 (without the launch's two full resets): 244 resets
+  arrival     111  share 0.4549  expected 0.40  z +1.75
+  departure    59  share 0.2418  expected 0.20  z +1.63
+  t0           15  share 0.0615  expected 0.08  z -1.07
+  uniform      59  share 0.2418  expected 0.32  z -2.62
+
+## motion prior and curriculum (TB; step 1 = the loaded checkpoint's evaluation after epoch 0)
+== curriculum (11 tags)
+  eval/curriculum/ess                                          1:153.89 2:149.94 4:129.2 6:119.19 8:114.91 10:114.77
+  eval/curriculum/group_prob/arm_balance                       1:0.15453 2:0.15392 4:0.14891 6:0.14687 8:0.146 10:0.14491
+  eval/curriculum/group_prob/connective                        1:0.39904 2:0.40141 4:0.4209 6:0.42883 8:0.43223 10:0.42942
+  eval/curriculum/group_prob/inversion                         1:0.22321 2:0.22233 4:0.21509 6:0.21215 8:0.21089 10:0.21032
+  eval/curriculum/group_prob/single_leg                        1:0.22321 2:0.22233 4:0.21509 6:0.21215 8:0.21089 10:0.21536
+  eval/curriculum/max_prob_x_n                                 1:4.1923 2:4.1127 4:5.3559 6:5.943 8:6.1944 10:6.0891
+  eval/curriculum/prior_share/arm_balance                      1:0.16071 2:0.16071 4:0.16071 6:0.16071 8:0.16071 10:0.16071
+  eval/curriculum/prior_share/connective                       1:0.375 2:0.375 4:0.375 6:0.375 8:0.375 10:0.375
+  eval/curriculum/prior_share/inversion                        1:0.23214 2:0.23214 4:0.23214 6:0.23214 8:0.23214 10:0.23214
+  eval/curriculum/prior_share/single_leg                       1:0.23214 2:0.23214 4:0.23214 6:0.23214 8:0.23214 10:0.23214
+  eval/curriculum/prioritized_top10_share                      1:0.24038 2:0.25822 4:0.4049 6:0.46456 8:0.49012 10:0.52209
+

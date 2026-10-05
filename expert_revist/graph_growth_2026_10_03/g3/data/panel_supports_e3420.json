@@ -1,0 +1,6816 @@
+{
+ "fork_Warrior_II_Pose_or_Virabhadrasana_II": [
+  {
+   "goal": "Warrior_II_Pose_or_Virab",
+   "window_s": [
+    5.12,
+    9.12
+   ],
+   "classes": {
+    "feet only (upright)": 8
+   },
+   "err6_p50": 0.089,
+   "pelvis_z_p50": 0.813,
+   "down_mean": {
+    "L_HAND": 0.0,
+    "R_HAND": 0.0,
+    "L_FOOT": 1.0,
+    "R_FOOT": 1.0,
+    "HEAD": 0.0,
+    "L_KNEE": 0.0,
+    "R_KNEE": 0.0
+   },
+   "replicas": [
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.816,
+     "err6": 0.091,
+     "class": "feet only (upright)"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.814,
+     "err6": 0.089,
+     "class": "feet only (upright)"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.813,
+     "err6": 0.089,
+     "class": "feet only (upright)"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.814,
+     "err6": 0.089,
+     "class": "feet only (upright)"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.811,
+     "err6": 0.084,
+     "class": "feet only (upright)"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.811,
+     "err6": 0.087,
+     "class": "feet only (upright)"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.814,
+     "err6": 0.089,
+     "class": "feet only (upright)"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.813,
+     "err6": 0.087,
+     "class": "feet only (upright)"
+    }
+   ]
+  },
+  {
+   "goal": "standing",
+   "window_s": [
+    12.59,
+    14.59
+   ],
+   "classes": {
+    "feet only (upright)": 8
+   },
+   "err6_p50": 0.03,
+   "pelvis_z_p50": 0.969,
+   "down_mean": {
+    "L_HAND": 0.0,
+    "R_HAND": 0.0,
+    "L_FOOT": 1.0,
+    "R_FOOT": 1.0,
+    "HEAD": 0.0,
+    "L_KNEE": 0.0,
+    "R_KNEE": 0.0
+   },
+   "replicas": [
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.969,
+     "err6": 0.027,
+     "class": "feet only (upright)"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.968,
+     "err6": 0.03,
+     "class": "feet only (upright)"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.968,
+     "err6": 0.033,
+     "class": "feet only (upright)"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.969,
+     "err6": 0.03,
+     "class": "feet only (upright)"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.969,
+     "err6": 0.029,
+     "class": "feet only (upright)"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.969,
+     "err6": 0.03,
+     "class": "feet only (upright)"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.968,
+     "err6": 0.033,
+     "class": "feet only (upright)"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.969,
+     "err6": 0.028,
+     "class": "feet only (upright)"
+    }
+   ]
+  }
+ ],
+ "fork_Tree_Pose_or_Vrksasana": [
+  {
+   "goal": "Tree_Pose_or_Vrksasana",
+   "window_s": [
+    3.45,
+    7.45
+   ],
+   "classes": {
+    "other": 3,
+    "hands + one foot": 4,
+    "one foot": 1
+   },
+   "err6_p50": 0.616,
+   "pelvis_z_p50": 0.402,
+   "down_mean": {
+    "L_HAND": 0.86,
+    "R_HAND": 0.56,
+    "L_FOOT": 0.69,
+    "R_FOOT": 0.68,
+    "HEAD": 0.1,
+    "L_KNEE": 0.41,
+    "R_KNEE": 0.3
+   },
+   "replicas": [
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 0.16666666666666666,
+      "L_FOOT": 0.9,
+      "R_FOOT": 0.4666666666666667,
+      "HEAD": 0.08333333333333333,
+      "L_KNEE": 0.8333333333333334,
+      "R_KNEE": 0.95
+     },
+     "pelvis_z": 0.101,
+     "err6": 0.684,
+     "class": "other"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 0.26666666666666666,
+      "L_FOOT": 0.8666666666666667,
+      "R_FOOT": 0.5166666666666667,
+      "HEAD": 0.1,
+      "L_KNEE": 0.85,
+      "R_KNEE": 0.8833333333333333
+     },
+     "pelvis_z": 0.1,
+     "err6": 0.665,
+     "class": "other"
+    },
+    {
+     "down": {
+      "L_HAND": 0.9833333333333333,
+      "R_HAND": 0.9666666666666667,
+      "L_FOOT": 0.8833333333333333,
+      "R_FOOT": 0.85,
+      "HEAD": 0.016666666666666666,
+      "L_KNEE": 0.21666666666666667,
+      "R_KNEE": 0.016666666666666666
+     },
+     "pelvis_z": 0.445,
+     "err6": 0.606,
+     "class": "hands + one foot"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.972,
+     "err6": 0.046,
+     "class": "one foot"
+    },
+    {
+     "down": {
+      "L_HAND": 0.95,
+      "R_HAND": 0.9333333333333333,
+      "L_FOOT": 0.75,
+      "R_FOOT": 0.8166666666666667,
+      "HEAD": 0.0,
+      "L_KNEE": 0.23333333333333334,
+      "R_KNEE": 0.016666666666666666
+     },
+     "pelvis_z": 0.475,
+     "err6": 0.606,
+     "class": "hands + one foot"
+    },
+    {
+     "down": {
+      "L_HAND": 0.9833333333333333,
+      "R_HAND": 0.9666666666666667,
+      "L_FOOT": 0.36666666666666664,
+      "R_FOOT": 0.7333333333333333,
+      "HEAD": 0.05,
+      "L_KNEE": 0.23333333333333334,
+      "R_KNEE": 0.016666666666666666
+     },
+     "pelvis_z": 0.435,
+     "err6": 0.604,
+     "class": "hands + one foot"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 0.3,
+      "L_FOOT": 0.9,
+      "R_FOOT": 0.5666666666666667,
+      "HEAD": 0.43333333333333335,
+      "L_KNEE": 0.6833333333333333,
+      "R_KNEE": 0.48333333333333334
+     },
+     "pelvis_z": 0.176,
+     "err6": 0.639,
+     "class": "other"
+    },
+    {
+     "down": {
+      "L_HAND": 0.9333333333333333,
+      "R_HAND": 0.9166666666666666,
+      "L_FOOT": 0.8666666666666667,
+      "R_FOOT": 0.48333333333333334,
+      "HEAD": 0.15,
+      "L_KNEE": 0.21666666666666667,
+      "R_KNEE": 0.03333333333333333
+     },
+     "pelvis_z": 0.37,
+     "err6": 0.626,
+     "class": "hands + one foot"
+    }
+   ]
+  },
+  {
+   "goal": "standing",
+   "window_s": [
+    13.45,
+    15.45
+   ],
+   "classes": {
+    "other": 5,
+    "feet only (upright)": 1,
+    "head down": 1,
+    "hands only (arm balance)": 1
+   },
+   "err6_p50": 0.805,
+   "pelvis_z_p50": 0.292,
+   "down_mean": {
+    "L_HAND": 0.73,
+    "R_HAND": 0.56,
+    "L_FOOT": 0.57,
+    "R_FOOT": 0.15,
+    "HEAD": 0.12,
+    "L_KNEE": 0.09,
+    "R_KNEE": 0.0
+   },
+   "replicas": [
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.388,
+     "err6": 0.948,
+     "class": "other"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.321,
+     "err6": 0.945,
+     "class": "other"
+    },
+    {
+     "down": {
+      "L_HAND": 0.8333333333333334,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.23333333333333334,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.099,
+     "err6": 0.711,
+     "class": "other"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.966,
+     "err6": 0.022,
+     "class": "feet only (upright)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 0.4666666666666667,
+      "L_FOOT": 0.36666666666666664,
+      "R_FOOT": 0.16666666666666666,
+      "HEAD": 0.0,
+      "L_KNEE": 0.7,
+      "R_KNEE": 0.03333333333333333
+     },
+     "pelvis_z": 0.264,
+     "err6": 0.848,
+     "class": "other"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.099,
+     "err6": 0.703,
+     "class": "other"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 0.0,
+      "HEAD": 1.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.327,
+     "err6": 0.922,
+     "class": "head down"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.09,
+     "err6": 0.762,
+     "class": "hands only (arm balance)"
+    }
+   ]
+  }
+ ],
+ "fork_Crane_Crow_Pose_or_Bakasana": [
+  {
+   "goal": "Crane_Crow_Pose_or_Bakas",
+   "window_s": [
+    7.25,
+    11.25
+   ],
+   "classes": {
+    "hands only (arm balance)": 8
+   },
+   "err6_p50": 0.037,
+   "pelvis_z_p50": 0.721,
+   "down_mean": {
+    "L_HAND": 1.0,
+    "R_HAND": 1.0,
+    "L_FOOT": 0.0,
+    "R_FOOT": 0.0,
+    "HEAD": 0.0,
+    "L_KNEE": 0.0,
+    "R_KNEE": 0.0
+   },
+   "replicas": [
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.722,
+     "err6": 0.037,
+     "class": "hands only (arm balance)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.72,
+     "err6": 0.037,
+     "class": "hands only (arm balance)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.722,
+     "err6": 0.038,
+     "class": "hands only (arm balance)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.719,
+     "err6": 0.036,
+     "class": "hands only (arm balance)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.72,
+     "err6": 0.037,
+     "class": "hands only (arm balance)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.721,
+     "err6": 0.038,
+     "class": "hands only (arm balance)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.721,
+     "err6": 0.04,
+     "class": "hands only (arm balance)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.721,
+     "err6": 0.038,
+     "class": "hands only (arm balance)"
+    }
+   ]
+  },
+  {
+   "goal": "standing",
+   "window_s": [
+    14.47,
+    16.47
+   ],
+   "classes": {
+    "feet only (upright)": 8
+   },
+   "err6_p50": 0.054,
+   "pelvis_z_p50": 0.968,
+   "down_mean": {
+    "L_HAND": 0.0,
+    "R_HAND": 0.0,
+    "L_FOOT": 1.0,
+    "R_FOOT": 1.0,
+    "HEAD": 0.0,
+    "L_KNEE": 0.0,
+    "R_KNEE": 0.0
+   },
+   "replicas": [
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.968,
+     "err6": 0.053,
+     "class": "feet only (upright)"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.968,
+     "err6": 0.054,
+     "class": "feet only (upright)"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.968,
+     "err6": 0.055,
+     "class": "feet only (upright)"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.966,
+     "err6": 0.041,
+     "class": "feet only (upright)"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.969,
+     "err6": 0.055,
+     "class": "feet only (upright)"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.968,
+     "err6": 0.054,
+     "class": "feet only (upright)"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.968,
+     "err6": 0.053,
+     "class": "feet only (upright)"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.969,
+     "err6": 0.054,
+     "class": "feet only (upright)"
+    }
+   ]
+  }
+ ],
+ "fork_Handstand_pose_or_Adho_Mukha_Vrksasana": [
+  {
+   "goal": "Handstand_pose_or_Adho_M",
+   "window_s": [
+    10.0,
+    14.0
+   ],
+   "classes": {
+    "other": 8
+   },
+   "err6_p50": 0.866,
+   "pelvis_z_p50": 0.097,
+   "down_mean": {
+    "L_HAND": 0.0,
+    "R_HAND": 0.08,
+    "L_FOOT": 0.0,
+    "R_FOOT": 0.0,
+    "HEAD": 0.0,
+    "L_KNEE": 0.0,
+    "R_KNEE": 0.0
+   },
+   "replicas": [
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.097,
+     "err6": 0.861,
+     "class": "other"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.097,
+     "err6": 0.871,
+     "class": "other"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.097,
+     "err6": 0.886,
+     "class": "other"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.097,
+     "err6": 0.882,
+     "class": "other"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.097,
+     "err6": 0.861,
+     "class": "other"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.097,
+     "err6": 0.853,
+     "class": "other"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.097,
+     "err6": 0.877,
+     "class": "other"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.6666666666666666,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.091,
+     "err6": 0.792,
+     "class": "other"
+    }
+   ]
+  },
+  {
+   "goal": "standing",
+   "window_s": [
+    20.0,
+    22.0
+   ],
+   "classes": {
+    "hands only (arm balance)": 2,
+    "other": 6
+   },
+   "err6_p50": 0.768,
+   "pelvis_z_p50": 0.09,
+   "down_mean": {
+    "L_HAND": 0.62,
+    "R_HAND": 0.65,
+    "L_FOOT": 0.07,
+    "R_FOOT": 0.02,
+    "HEAD": 0.0,
+    "L_KNEE": 0.0,
+    "R_KNEE": 0.0
+   },
+   "replicas": [
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.09,
+     "err6": 0.724,
+     "class": "hands only (arm balance)"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.109,
+     "err6": 0.716,
+     "class": "other"
+    },
+    {
+     "down": {
+      "L_HAND": 0.5,
+      "R_HAND": 0.7333333333333333,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.09,
+     "err6": 0.782,
+     "class": "other"
+    },
+    {
+     "down": {
+      "L_HAND": 0.9333333333333333,
+      "R_HAND": 0.6,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.09,
+     "err6": 0.785,
+     "class": "other"
+    },
+    {
+     "down": {
+      "L_HAND": 0.4,
+      "R_HAND": 0.0,
+      "L_FOOT": 0.4666666666666667,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.124,
+     "err6": 0.79,
+     "class": "other"
+    },
+    {
+     "down": {
+      "L_HAND": 0.16666666666666666,
+      "R_HAND": 0.7333333333333333,
+      "L_FOOT": 0.1,
+      "R_FOOT": 0.13333333333333333,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.09,
+     "err6": 0.754,
+     "class": "other"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 0.16666666666666666,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.131,
+     "err6": 0.825,
+     "class": "other"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.09,
+     "err6": 0.559,
+     "class": "hands only (arm balance)"
+    }
+   ]
+  }
+ ],
+ "fork_Feathered_Peacock_Pose_or_Pincha_Mayuras": [
+  {
+   "goal": "Feathered_Peacock_Pose_o",
+   "window_s": [
+    10.0,
+    14.0
+   ],
+   "classes": {
+    "hands only (arm balance)": 6,
+    "other": 2
+   },
+   "err6_p50": 0.666,
+   "pelvis_z_p50": 0.094,
+   "down_mean": {
+    "L_HAND": 0.75,
+    "R_HAND": 1.0,
+    "L_FOOT": 0.0,
+    "R_FOOT": 0.0,
+    "HEAD": 0.0,
+    "L_KNEE": 0.0,
+    "R_KNEE": 0.0
+   },
+   "replicas": [
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.092,
+     "err6": 0.687,
+     "class": "hands only (arm balance)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.097,
+     "err6": 0.668,
+     "class": "hands only (arm balance)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.095,
+     "err6": 0.664,
+     "class": "hands only (arm balance)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.09,
+     "err6": 0.711,
+     "class": "hands only (arm balance)"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.105,
+     "err6": 0.664,
+     "class": "other"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.104,
+     "err6": 0.663,
+     "class": "other"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.093,
+     "err6": 0.673,
+     "class": "hands only (arm balance)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.093,
+     "err6": 0.651,
+     "class": "hands only (arm balance)"
+    }
+   ]
+  },
+  {
+   "goal": "standing",
+   "window_s": [
+    20.0,
+    22.0
+   ],
+   "classes": {
+    "other": 7,
+    "hands only (arm balance)": 1
+   },
+   "err6_p50": 0.71,
+   "pelvis_z_p50": 0.094,
+   "down_mean": {
+    "L_HAND": 0.19,
+    "R_HAND": 0.98,
+    "L_FOOT": 0.07,
+    "R_FOOT": 0.0,
+    "HEAD": 0.0,
+    "L_KNEE": 0.0,
+    "R_KNEE": 0.0
+   },
+   "replicas": [
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.5,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.094,
+     "err6": 0.701,
+     "class": "other"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.098,
+     "err6": 0.715,
+     "class": "other"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.094,
+     "err6": 0.705,
+     "class": "other"
+    },
+    {
+     "down": {
+      "L_HAND": 0.26666666666666666,
+      "R_HAND": 0.8333333333333334,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.091,
+     "err6": 0.73,
+     "class": "other"
+    },
+    {
+     "down": {
+      "L_HAND": 0.23333333333333334,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.097,
+     "err6": 0.715,
+     "class": "other"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.098,
+     "err6": 0.72,
+     "class": "hands only (arm balance)"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.03333333333333333,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.093,
+     "err6": 0.699,
+     "class": "other"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.06666666666666667,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.094,
+     "err6": 0.702,
+     "class": "other"
+    }
+   ]
+  }
+ ],
+ "fork_Supported_Headstand_pose_or_Salamba_Sirs": [
+  {
+   "goal": "Supported_Headstand_pose",
+   "window_s": [
+    9.57,
+    13.57
+   ],
+   "classes": {
+    "other": 8
+   },
+   "err6_p50": 0.796,
+   "pelvis_z_p50": 0.78,
+   "down_mean": {
+    "L_HAND": 0.0,
+    "R_HAND": 1.0,
+    "L_FOOT": 1.0,
+    "R_FOOT": 1.0,
+    "HEAD": 0.0,
+    "L_KNEE": 0.0,
+    "R_KNEE": 0.0
+   },
+   "replicas": [
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.78,
+     "err6": 0.797,
+     "class": "other"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.78,
+     "err6": 0.795,
+     "class": "other"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.78,
+     "err6": 0.795,
+     "class": "other"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.781,
+     "err6": 0.796,
+     "class": "other"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.784,
+     "err6": 0.792,
+     "class": "other"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.775,
+     "err6": 0.797,
+     "class": "other"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.781,
+     "err6": 0.796,
+     "class": "other"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.781,
+     "err6": 0.797,
+     "class": "other"
+    }
+   ]
+  },
+  {
+   "goal": "standing",
+   "window_s": [
+    19.57,
+    21.57
+   ],
+   "classes": {
+    "feet only (upright)": 8
+   },
+   "err6_p50": 0.033,
+   "pelvis_z_p50": 0.968,
+   "down_mean": {
+    "L_HAND": 0.0,
+    "R_HAND": 0.0,
+    "L_FOOT": 1.0,
+    "R_FOOT": 1.0,
+    "HEAD": 0.0,
+    "L_KNEE": 0.0,
+    "R_KNEE": 0.0
+   },
+   "replicas": [
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.968,
+     "err6": 0.032,
+     "class": "feet only (upright)"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.968,
+     "err6": 0.034,
+     "class": "feet only (upright)"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.968,
+     "err6": 0.035,
+     "class": "feet only (upright)"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.968,
+     "err6": 0.034,
+     "class": "feet only (upright)"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.967,
+     "err6": 0.02,
+     "class": "feet only (upright)"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.968,
+     "err6": 0.029,
+     "class": "feet only (upright)"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.968,
+     "err6": 0.034,
+     "class": "feet only (upright)"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.966,
+     "err6": 0.018,
+     "class": "feet only (upright)"
+    }
+   ]
+  }
+ ],
+ "fork_Side_Plank_Pose_or_Vasisthasana": [
+  {
+   "goal": "Side_Plank_Pose_or_Vasis",
+   "window_s": [
+    8.53,
+    12.53
+   ],
+   "classes": {
+    "hands + one foot": 8
+   },
+   "err6_p50": 0.783,
+   "pelvis_z_p50": 0.389,
+   "down_mean": {
+    "L_HAND": 1.0,
+    "R_HAND": 0.99,
+    "L_FOOT": 0.95,
+    "R_FOOT": 0.01,
+    "HEAD": 0.02,
+    "L_KNEE": 0.04,
+    "R_KNEE": 0.0
+   },
+   "replicas": [
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.387,
+     "err6": 0.784,
+     "class": "hands + one foot"
+    },
+    {
+     "down": {
+      "L_HAND": 0.9833333333333333,
+      "R_HAND": 0.95,
+      "L_FOOT": 0.8333333333333334,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.1,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.395,
+     "err6": 0.785,
+     "class": "hands + one foot"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.9666666666666667,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.411,
+     "err6": 0.787,
+     "class": "hands + one foot"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.9833333333333333,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.404,
+     "err6": 0.784,
+     "class": "hands + one foot"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.8333333333333334,
+      "R_FOOT": 0.06666666666666667,
+      "HEAD": 0.18333333333333332,
+      "L_KNEE": 0.2,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.391,
+     "err6": 0.782,
+     "class": "hands + one foot"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.369,
+     "err6": 0.779,
+     "class": "hands + one foot"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.384,
+     "err6": 0.781,
+     "class": "hands + one foot"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.9833333333333333,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.387,
+     "err6": 0.78,
+     "class": "hands + one foot"
+    }
+   ]
+  },
+  {
+   "goal": "standing",
+   "window_s": [
+    17.56,
+    19.56
+   ],
+   "classes": {
+    "hands only (arm balance)": 1,
+    "other": 2,
+    "hands + one foot": 4,
+    "hands + feet (plank family)": 1
+   },
+   "err6_p50": 0.772,
+   "pelvis_z_p50": 0.305,
+   "down_mean": {
+    "L_HAND": 1.0,
+    "R_HAND": 0.86,
+    "L_FOOT": 0.52,
+    "R_FOOT": 0.12,
+    "HEAD": 0.0,
+    "L_KNEE": 0.71,
+    "R_KNEE": 0.0
+   },
+   "replicas": [
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 1.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.294,
+     "err6": 0.776,
+     "class": "hands only (arm balance)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 0.13333333333333333,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.1,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.093,
+     "err6": 0.834,
+     "class": "other"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 1.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.326,
+     "err6": 0.759,
+     "class": "hands + one foot"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.6333333333333333,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 1.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.317,
+     "err6": 0.778,
+     "class": "hands + one foot"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 1.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.22,
+     "err6": 0.76,
+     "class": "hands + feet (plank family)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.6666666666666666,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.8,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.333,
+     "err6": 0.78,
+     "class": "hands + one foot"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.6666666666666666,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.7666666666666667,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.365,
+     "err6": 0.768,
+     "class": "hands + one foot"
+    },
+    {
+     "down": {
+      "L_HAND": 0.9666666666666667,
+      "R_HAND": 0.8666666666666667,
+      "L_FOOT": 0.1,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.09,
+     "err6": 0.757,
+     "class": "other"
+    }
+   ]
+  }
+ ],
+ "fork_Downward_Facing_Dog_pose_or_Adho_Mukha_S": [
+  {
+   "goal": "Downward-Facing_Dog_pose",
+   "window_s": [
+    3.98,
+    7.98
+   ],
+   "classes": {
+    "hands + feet (fold / dog)": 8
+   },
+   "err6_p50": 0.041,
+   "pelvis_z_p50": 0.792,
+   "down_mean": {
+    "L_HAND": 1.0,
+    "R_HAND": 1.0,
+    "L_FOOT": 1.0,
+    "R_FOOT": 1.0,
+    "HEAD": 0.0,
+    "L_KNEE": 0.0,
+    "R_KNEE": 0.0
+   },
+   "replicas": [
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.792,
+     "err6": 0.041,
+     "class": "hands + feet (fold / dog)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.792,
+     "err6": 0.04,
+     "class": "hands + feet (fold / dog)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.792,
+     "err6": 0.041,
+     "class": "hands + feet (fold / dog)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.793,
+     "err6": 0.041,
+     "class": "hands + feet (fold / dog)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.793,
+     "err6": 0.041,
+     "class": "hands + feet (fold / dog)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.792,
+     "err6": 0.041,
+     "class": "hands + feet (fold / dog)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.793,
+     "err6": 0.041,
+     "class": "hands + feet (fold / dog)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.792,
+     "err6": 0.041,
+     "class": "hands + feet (fold / dog)"
+    }
+   ]
+  },
+  {
+   "goal": "standing",
+   "window_s": [
+    12.33,
+    14.33
+   ],
+   "classes": {
+    "feet only (upright)": 8
+   },
+   "err6_p50": 0.025,
+   "pelvis_z_p50": 0.966,
+   "down_mean": {
+    "L_HAND": 0.0,
+    "R_HAND": 0.0,
+    "L_FOOT": 1.0,
+    "R_FOOT": 1.0,
+    "HEAD": 0.0,
+    "L_KNEE": 0.0,
+    "R_KNEE": 0.0
+   },
+   "replicas": [
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.966,
+     "err6": 0.025,
+     "class": "feet only (upright)"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.966,
+     "err6": 0.026,
+     "class": "feet only (upright)"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.966,
+     "err6": 0.024,
+     "class": "feet only (upright)"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.966,
+     "err6": 0.024,
+     "class": "feet only (upright)"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.966,
+     "err6": 0.026,
+     "class": "feet only (upright)"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.967,
+     "err6": 0.025,
+     "class": "feet only (upright)"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.966,
+     "err6": 0.026,
+     "class": "feet only (upright)"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.966,
+     "err6": 0.024,
+     "class": "feet only (upright)"
+    }
+   ]
+  }
+ ],
+ "dwell_Warrior_II_Pose_or_Virabhadrasana_II_3s": [
+  {
+   "goal": "Warrior_II_Pose_or_Virab",
+   "window_s": [
+    0.5,
+    3.5
+   ],
+   "classes": {
+    "feet only (upright)": 8
+   },
+   "err6_p50": 0.015,
+   "pelvis_z_p50": 0.72,
+   "down_mean": {
+    "L_HAND": 0.0,
+    "R_HAND": 0.0,
+    "L_FOOT": 1.0,
+    "R_FOOT": 1.0,
+    "HEAD": 0.0,
+    "L_KNEE": 0.0,
+    "R_KNEE": 0.0
+   },
+   "replicas": [
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.72,
+     "err6": 0.015,
+     "class": "feet only (upright)"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.72,
+     "err6": 0.015,
+     "class": "feet only (upright)"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.719,
+     "err6": 0.015,
+     "class": "feet only (upright)"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.72,
+     "err6": 0.015,
+     "class": "feet only (upright)"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.72,
+     "err6": 0.014,
+     "class": "feet only (upright)"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.72,
+     "err6": 0.014,
+     "class": "feet only (upright)"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.72,
+     "err6": 0.015,
+     "class": "feet only (upright)"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.719,
+     "err6": 0.015,
+     "class": "feet only (upright)"
+    }
+   ]
+  },
+  {
+   "goal": "standing",
+   "window_s": [
+    6.97,
+    8.97
+   ],
+   "classes": {
+    "feet only (upright)": 8
+   },
+   "err6_p50": 0.021,
+   "pelvis_z_p50": 0.968,
+   "down_mean": {
+    "L_HAND": 0.0,
+    "R_HAND": 0.0,
+    "L_FOOT": 1.0,
+    "R_FOOT": 1.0,
+    "HEAD": 0.0,
+    "L_KNEE": 0.0,
+    "R_KNEE": 0.0
+   },
+   "replicas": [
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.967,
+     "err6": 0.022,
+     "class": "feet only (upright)"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.968,
+     "err6": 0.02,
+     "class": "feet only (upright)"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.967,
+     "err6": 0.022,
+     "class": "feet only (upright)"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.966,
+     "err6": 0.023,
+     "class": "feet only (upright)"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.968,
+     "err6": 0.021,
+     "class": "feet only (upright)"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.968,
+     "err6": 0.02,
+     "class": "feet only (upright)"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.969,
+     "err6": 0.019,
+     "class": "feet only (upright)"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.967,
+     "err6": 0.021,
+     "class": "feet only (upright)"
+    }
+   ]
+  }
+ ],
+ "dwell_Warrior_II_Pose_or_Virabhadrasana_II_10s": [
+  {
+   "goal": "Warrior_II_Pose_or_Virab",
+   "window_s": [
+    0.5,
+    10.5
+   ],
+   "classes": {
+    "feet only (upright)": 8
+   },
+   "err6_p50": 0.017,
+   "pelvis_z_p50": 0.719,
+   "down_mean": {
+    "L_HAND": 0.0,
+    "R_HAND": 0.0,
+    "L_FOOT": 1.0,
+    "R_FOOT": 1.0,
+    "HEAD": 0.0,
+    "L_KNEE": 0.0,
+    "R_KNEE": 0.0
+   },
+   "replicas": [
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.719,
+     "err6": 0.017,
+     "class": "feet only (upright)"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.718,
+     "err6": 0.017,
+     "class": "feet only (upright)"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.719,
+     "err6": 0.017,
+     "class": "feet only (upright)"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.719,
+     "err6": 0.017,
+     "class": "feet only (upright)"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.719,
+     "err6": 0.017,
+     "class": "feet only (upright)"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.719,
+     "err6": 0.017,
+     "class": "feet only (upright)"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.719,
+     "err6": 0.017,
+     "class": "feet only (upright)"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.719,
+     "err6": 0.017,
+     "class": "feet only (upright)"
+    }
+   ]
+  },
+  {
+   "goal": "standing",
+   "window_s": [
+    13.97,
+    15.97
+   ],
+   "classes": {
+    "feet only (upright)": 8
+   },
+   "err6_p50": 0.021,
+   "pelvis_z_p50": 0.968,
+   "down_mean": {
+    "L_HAND": 0.0,
+    "R_HAND": 0.0,
+    "L_FOOT": 1.0,
+    "R_FOOT": 1.0,
+    "HEAD": 0.0,
+    "L_KNEE": 0.0,
+    "R_KNEE": 0.0
+   },
+   "replicas": [
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.969,
+     "err6": 0.02,
+     "class": "feet only (upright)"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.966,
+     "err6": 0.022,
+     "class": "feet only (upright)"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.967,
+     "err6": 0.023,
+     "class": "feet only (upright)"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.968,
+     "err6": 0.021,
+     "class": "feet only (upright)"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.967,
+     "err6": 0.022,
+     "class": "feet only (upright)"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.969,
+     "err6": 0.019,
+     "class": "feet only (upright)"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.969,
+     "err6": 0.019,
+     "class": "feet only (upright)"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.967,
+     "err6": 0.021,
+     "class": "feet only (upright)"
+    }
+   ]
+  }
+ ],
+ "edge_B1": [
+  {
+   "goal": "Crane_Crow_Pose_or_Bakas",
+   "window_s": [
+    0.5,
+    3.5
+   ],
+   "classes": {
+    "hands only (arm balance)": 8
+   },
+   "err6_p50": 0.044,
+   "pelvis_z_p50": 0.729,
+   "down_mean": {
+    "L_HAND": 1.0,
+    "R_HAND": 1.0,
+    "L_FOOT": 0.0,
+    "R_FOOT": 0.0,
+    "HEAD": 0.0,
+    "L_KNEE": 0.0,
+    "R_KNEE": 0.0
+   },
+   "replicas": [
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.728,
+     "err6": 0.044,
+     "class": "hands only (arm balance)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.729,
+     "err6": 0.043,
+     "class": "hands only (arm balance)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.729,
+     "err6": 0.043,
+     "class": "hands only (arm balance)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.729,
+     "err6": 0.042,
+     "class": "hands only (arm balance)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.729,
+     "err6": 0.044,
+     "class": "hands only (arm balance)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.729,
+     "err6": 0.045,
+     "class": "hands only (arm balance)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.729,
+     "err6": 0.044,
+     "class": "hands only (arm balance)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.729,
+     "err6": 0.046,
+     "class": "hands only (arm balance)"
+    }
+   ]
+  },
+  {
+   "goal": "Plank_Pose_or_Kumbhakasa",
+   "window_s": [
+    5.6,
+    8.6
+   ],
+   "classes": {
+    "hands + feet (plank family)": 8
+   },
+   "err6_p50": 0.07,
+   "pelvis_z_p50": 0.46,
+   "down_mean": {
+    "L_HAND": 1.0,
+    "R_HAND": 1.0,
+    "L_FOOT": 1.0,
+    "R_FOOT": 1.0,
+    "HEAD": 0.0,
+    "L_KNEE": 0.0,
+    "R_KNEE": 0.0
+   },
+   "replicas": [
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.46,
+     "err6": 0.067,
+     "class": "hands + feet (plank family)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.459,
+     "err6": 0.069,
+     "class": "hands + feet (plank family)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.46,
+     "err6": 0.07,
+     "class": "hands + feet (plank family)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.461,
+     "err6": 0.068,
+     "class": "hands + feet (plank family)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.461,
+     "err6": 0.07,
+     "class": "hands + feet (plank family)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.458,
+     "err6": 0.07,
+     "class": "hands + feet (plank family)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.46,
+     "err6": 0.068,
+     "class": "hands + feet (plank family)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.457,
+     "err6": 0.07,
+     "class": "hands + feet (plank family)"
+    }
+   ]
+  }
+ ],
+ "edge_E1": [
+  {
+   "goal": "Crane_Crow_Pose_or_Bakas",
+   "window_s": [
+    0.5,
+    3.5
+   ],
+   "classes": {
+    "hands only (arm balance)": 8
+   },
+   "err6_p50": 0.044,
+   "pelvis_z_p50": 0.735,
+   "down_mean": {
+    "L_HAND": 1.0,
+    "R_HAND": 1.0,
+    "L_FOOT": 0.0,
+    "R_FOOT": 0.0,
+    "HEAD": 0.0,
+    "L_KNEE": 0.0,
+    "R_KNEE": 0.0
+   },
+   "replicas": [
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.735,
+     "err6": 0.043,
+     "class": "hands only (arm balance)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.735,
+     "err6": 0.045,
+     "class": "hands only (arm balance)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.735,
+     "err6": 0.044,
+     "class": "hands only (arm balance)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.736,
+     "err6": 0.044,
+     "class": "hands only (arm balance)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.735,
+     "err6": 0.045,
+     "class": "hands only (arm balance)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.736,
+     "err6": 0.043,
+     "class": "hands only (arm balance)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.735,
+     "err6": 0.044,
+     "class": "hands only (arm balance)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.736,
+     "err6": 0.044,
+     "class": "hands only (arm balance)"
+    }
+   ]
+  },
+  {
+   "goal": "Handstand_pose_or_Adho_M",
+   "window_s": [
+    8.5,
+    11.5
+   ],
+   "classes": {
+    "hands only (handstand)": 8
+   },
+   "err6_p50": 0.086,
+   "pelvis_z_p50": 1.053,
+   "down_mean": {
+    "L_HAND": 1.0,
+    "R_HAND": 1.0,
+    "L_FOOT": 0.0,
+    "R_FOOT": 0.0,
+    "HEAD": 0.0,
+    "L_KNEE": 0.0,
+    "R_KNEE": 0.0
+   },
+   "replicas": [
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 1.053,
+     "err6": 0.089,
+     "class": "hands only (handstand)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 1.053,
+     "err6": 0.089,
+     "class": "hands only (handstand)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 1.053,
+     "err6": 0.085,
+     "class": "hands only (handstand)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 1.054,
+     "err6": 0.087,
+     "class": "hands only (handstand)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 1.053,
+     "err6": 0.085,
+     "class": "hands only (handstand)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 1.053,
+     "err6": 0.086,
+     "class": "hands only (handstand)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 1.053,
+     "err6": 0.085,
+     "class": "hands only (handstand)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 1.053,
+     "err6": 0.087,
+     "class": "hands only (handstand)"
+    }
+   ]
+  }
+ ],
+ "edge_E2": [
+  {
+   "goal": "Crane_Crow_Pose_or_Bakas",
+   "window_s": [
+    0.5,
+    3.5
+   ],
+   "classes": {
+    "hands only (arm balance)": 8
+   },
+   "err6_p50": 0.04,
+   "pelvis_z_p50": 0.729,
+   "down_mean": {
+    "L_HAND": 1.0,
+    "R_HAND": 1.0,
+    "L_FOOT": 0.0,
+    "R_FOOT": 0.0,
+    "HEAD": 0.0,
+    "L_KNEE": 0.0,
+    "R_KNEE": 0.0
+   },
+   "replicas": [
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.728,
+     "err6": 0.04,
+     "class": "hands only (arm balance)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.73,
+     "err6": 0.039,
+     "class": "hands only (arm balance)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.729,
+     "err6": 0.041,
+     "class": "hands only (arm balance)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.73,
+     "err6": 0.04,
+     "class": "hands only (arm balance)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.729,
+     "err6": 0.04,
+     "class": "hands only (arm balance)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.73,
+     "err6": 0.039,
+     "class": "hands only (arm balance)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.729,
+     "err6": 0.04,
+     "class": "hands only (arm balance)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.729,
+     "err6": 0.041,
+     "class": "hands only (arm balance)"
+    }
+   ]
+  },
+  {
+   "goal": "Four-Limbed_Staff_Pose_o",
+   "window_s": [
+    5.07,
+    8.07
+   ],
+   "classes": {
+    "hands + feet (plank family)": 8
+   },
+   "err6_p50": 0.042,
+   "pelvis_z_p50": 0.254,
+   "down_mean": {
+    "L_HAND": 1.0,
+    "R_HAND": 1.0,
+    "L_FOOT": 1.0,
+    "R_FOOT": 1.0,
+    "HEAD": 0.0,
+    "L_KNEE": 0.0,
+    "R_KNEE": 0.0
+   },
+   "replicas": [
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.254,
+     "err6": 0.041,
+     "class": "hands + feet (plank family)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.254,
+     "err6": 0.042,
+     "class": "hands + feet (plank family)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.253,
+     "err6": 0.042,
+     "class": "hands + feet (plank family)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.254,
+     "err6": 0.043,
+     "class": "hands + feet (plank family)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.253,
+     "err6": 0.043,
+     "class": "hands + feet (plank family)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.255,
+     "err6": 0.041,
+     "class": "hands + feet (plank family)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.254,
+     "err6": 0.041,
+     "class": "hands + feet (plank family)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.253,
+     "err6": 0.042,
+     "class": "hands + feet (plank family)"
+    }
+   ]
+  }
+ ],
+ "edge_E3": [
+  {
+   "goal": "Handstand_pose_or_Adho_M",
+   "window_s": [
+    0.5,
+    3.5
+   ],
+   "classes": {
+    "hands only (handstand)": 8
+   },
+   "err6_p50": 0.049,
+   "pelvis_z_p50": 1.064,
+   "down_mean": {
+    "L_HAND": 1.0,
+    "R_HAND": 1.0,
+    "L_FOOT": 0.0,
+    "R_FOOT": 0.0,
+    "HEAD": 0.0,
+    "L_KNEE": 0.0,
+    "R_KNEE": 0.0
+   },
+   "replicas": [
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 1.064,
+     "err6": 0.049,
+     "class": "hands only (handstand)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 1.064,
+     "err6": 0.051,
+     "class": "hands only (handstand)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 1.064,
+     "err6": 0.051,
+     "class": "hands only (handstand)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 1.064,
+     "err6": 0.049,
+     "class": "hands only (handstand)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 1.064,
+     "err6": 0.049,
+     "class": "hands only (handstand)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 1.064,
+     "err6": 0.049,
+     "class": "hands only (handstand)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 1.064,
+     "err6": 0.049,
+     "class": "hands only (handstand)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 1.064,
+     "err6": 0.049,
+     "class": "hands only (handstand)"
+    }
+   ]
+  },
+  {
+   "goal": "Crane_Crow_Pose_or_Bakas",
+   "window_s": [
+    8.0,
+    11.0
+   ],
+   "classes": {
+    "hands only (arm balance)": 8
+   },
+   "err6_p50": 0.032,
+   "pelvis_z_p50": 0.724,
+   "down_mean": {
+    "L_HAND": 1.0,
+    "R_HAND": 1.0,
+    "L_FOOT": 0.0,
+    "R_FOOT": 0.0,
+    "HEAD": 0.0,
+    "L_KNEE": 0.0,
+    "R_KNEE": 0.0
+   },
+   "replicas": [
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.725,
+     "err6": 0.032,
+     "class": "hands only (arm balance)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.722,
+     "err6": 0.032,
+     "class": "hands only (arm balance)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.723,
+     "err6": 0.032,
+     "class": "hands only (arm balance)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.725,
+     "err6": 0.032,
+     "class": "hands only (arm balance)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.724,
+     "err6": 0.031,
+     "class": "hands only (arm balance)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.724,
+     "err6": 0.032,
+     "class": "hands only (arm balance)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.724,
+     "err6": 0.032,
+     "class": "hands only (arm balance)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.723,
+     "err6": 0.031,
+     "class": "hands only (arm balance)"
+    }
+   ]
+  }
+ ],
+ "edge_E5": [
+  {
+   "goal": "Handstand_pose_or_Adho_M",
+   "window_s": [
+    0.5,
+    3.5
+   ],
+   "classes": {
+    "hands only (handstand)": 8
+   },
+   "err6_p50": 0.041,
+   "pelvis_z_p50": 1.063,
+   "down_mean": {
+    "L_HAND": 1.0,
+    "R_HAND": 1.0,
+    "L_FOOT": 0.0,
+    "R_FOOT": 0.0,
+    "HEAD": 0.0,
+    "L_KNEE": 0.0,
+    "R_KNEE": 0.0
+   },
+   "replicas": [
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 1.063,
+     "err6": 0.041,
+     "class": "hands only (handstand)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 1.063,
+     "err6": 0.041,
+     "class": "hands only (handstand)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 1.063,
+     "err6": 0.041,
+     "class": "hands only (handstand)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 1.063,
+     "err6": 0.041,
+     "class": "hands only (handstand)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 1.063,
+     "err6": 0.041,
+     "class": "hands only (handstand)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 1.063,
+     "err6": 0.041,
+     "class": "hands only (handstand)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 1.063,
+     "err6": 0.041,
+     "class": "hands only (handstand)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 1.063,
+     "err6": 0.041,
+     "class": "hands only (handstand)"
+    }
+   ]
+  },
+  {
+   "goal": "Four-Limbed_Staff_Pose_o",
+   "window_s": [
+    5.65,
+    8.65
+   ],
+   "classes": {
+    "hands + feet (plank family)": 8
+   },
+   "err6_p50": 0.048,
+   "pelvis_z_p50": 0.255,
+   "down_mean": {
+    "L_HAND": 1.0,
+    "R_HAND": 1.0,
+    "L_FOOT": 1.0,
+    "R_FOOT": 1.0,
+    "HEAD": 0.0,
+    "L_KNEE": 0.0,
+    "R_KNEE": 0.0
+   },
+   "replicas": [
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.256,
+     "err6": 0.048,
+     "class": "hands + feet (plank family)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.255,
+     "err6": 0.048,
+     "class": "hands + feet (plank family)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.257,
+     "err6": 0.05,
+     "class": "hands + feet (plank family)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.255,
+     "err6": 0.048,
+     "class": "hands + feet (plank family)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.256,
+     "err6": 0.049,
+     "class": "hands + feet (plank family)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.255,
+     "err6": 0.048,
+     "class": "hands + feet (plank family)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.255,
+     "err6": 0.048,
+     "class": "hands + feet (plank family)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.254,
+     "err6": 0.047,
+     "class": "hands + feet (plank family)"
+    }
+   ]
+  }
+ ],
+ "nohijack_B1": [
+  {
+   "goal": "Crane_Crow_Pose_or_Bakas",
+   "window_s": [
+    0.5,
+    3.5
+   ],
+   "classes": {
+    "hands only (arm balance)": 8
+   },
+   "err6_p50": 0.036,
+   "pelvis_z_p50": 0.724,
+   "down_mean": {
+    "L_HAND": 1.0,
+    "R_HAND": 1.0,
+    "L_FOOT": 0.0,
+    "R_FOOT": 0.0,
+    "HEAD": 0.0,
+    "L_KNEE": 0.0,
+    "R_KNEE": 0.0
+   },
+   "replicas": [
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.724,
+     "err6": 0.036,
+     "class": "hands only (arm balance)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.724,
+     "err6": 0.035,
+     "class": "hands only (arm balance)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.724,
+     "err6": 0.036,
+     "class": "hands only (arm balance)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.724,
+     "err6": 0.035,
+     "class": "hands only (arm balance)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.724,
+     "err6": 0.036,
+     "class": "hands only (arm balance)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.724,
+     "err6": 0.036,
+     "class": "hands only (arm balance)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.724,
+     "err6": 0.036,
+     "class": "hands only (arm balance)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.724,
+     "err6": 0.036,
+     "class": "hands only (arm balance)"
+    }
+   ]
+  },
+  {
+   "goal": "standing",
+   "window_s": [
+    7.22,
+    10.22
+   ],
+   "classes": {
+    "feet only (upright)": 8
+   },
+   "err6_p50": 0.035,
+   "pelvis_z_p50": 0.968,
+   "down_mean": {
+    "L_HAND": 0.0,
+    "R_HAND": 0.0,
+    "L_FOOT": 1.0,
+    "R_FOOT": 1.0,
+    "HEAD": 0.0,
+    "L_KNEE": 0.0,
+    "R_KNEE": 0.0
+   },
+   "replicas": [
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.968,
+     "err6": 0.035,
+     "class": "feet only (upright)"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.968,
+     "err6": 0.036,
+     "class": "feet only (upright)"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.965,
+     "err6": 0.032,
+     "class": "feet only (upright)"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.968,
+     "err6": 0.035,
+     "class": "feet only (upright)"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.968,
+     "err6": 0.034,
+     "class": "feet only (upright)"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.968,
+     "err6": 0.036,
+     "class": "feet only (upright)"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.968,
+     "err6": 0.035,
+     "class": "feet only (upright)"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.968,
+     "err6": 0.035,
+     "class": "feet only (upright)"
+    }
+   ]
+  }
+ ],
+ "nohijack_E1": [
+  {
+   "goal": "Crane_Crow_Pose_or_Bakas",
+   "window_s": [
+    0.5,
+    3.5
+   ],
+   "classes": {
+    "hands only (arm balance)": 8
+   },
+   "err6_p50": 0.036,
+   "pelvis_z_p50": 0.724,
+   "down_mean": {
+    "L_HAND": 1.0,
+    "R_HAND": 1.0,
+    "L_FOOT": 0.0,
+    "R_FOOT": 0.0,
+    "HEAD": 0.0,
+    "L_KNEE": 0.0,
+    "R_KNEE": 0.0
+   },
+   "replicas": [
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.724,
+     "err6": 0.036,
+     "class": "hands only (arm balance)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.724,
+     "err6": 0.035,
+     "class": "hands only (arm balance)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.724,
+     "err6": 0.036,
+     "class": "hands only (arm balance)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.724,
+     "err6": 0.036,
+     "class": "hands only (arm balance)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.724,
+     "err6": 0.036,
+     "class": "hands only (arm balance)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.724,
+     "err6": 0.036,
+     "class": "hands only (arm balance)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.724,
+     "err6": 0.036,
+     "class": "hands only (arm balance)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.724,
+     "err6": 0.036,
+     "class": "hands only (arm balance)"
+    }
+   ]
+  },
+  {
+   "goal": "standing",
+   "window_s": [
+    7.22,
+    10.22
+   ],
+   "classes": {
+    "feet only (upright)": 8
+   },
+   "err6_p50": 0.036,
+   "pelvis_z_p50": 0.968,
+   "down_mean": {
+    "L_HAND": 0.0,
+    "R_HAND": 0.0,
+    "L_FOOT": 1.0,
+    "R_FOOT": 1.0,
+    "HEAD": 0.0,
+    "L_KNEE": 0.0,
+    "R_KNEE": 0.0
+   },
+   "replicas": [
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.968,
+     "err6": 0.035,
+     "class": "feet only (upright)"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.968,
+     "err6": 0.036,
+     "class": "feet only (upright)"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.968,
+     "err6": 0.035,
+     "class": "feet only (upright)"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.968,
+     "err6": 0.036,
+     "class": "feet only (upright)"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.968,
+     "err6": 0.036,
+     "class": "feet only (upright)"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.968,
+     "err6": 0.034,
+     "class": "feet only (upright)"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.968,
+     "err6": 0.036,
+     "class": "feet only (upright)"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.968,
+     "err6": 0.036,
+     "class": "feet only (upright)"
+    }
+   ]
+  }
+ ],
+ "nohijack_E2": [
+  {
+   "goal": "Crane_Crow_Pose_or_Bakas",
+   "window_s": [
+    0.5,
+    3.5
+   ],
+   "classes": {
+    "hands only (arm balance)": 8
+   },
+   "err6_p50": 0.036,
+   "pelvis_z_p50": 0.724,
+   "down_mean": {
+    "L_HAND": 1.0,
+    "R_HAND": 1.0,
+    "L_FOOT": 0.0,
+    "R_FOOT": 0.0,
+    "HEAD": 0.0,
+    "L_KNEE": 0.0,
+    "R_KNEE": 0.0
+   },
+   "replicas": [
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.724,
+     "err6": 0.036,
+     "class": "hands only (arm balance)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.724,
+     "err6": 0.036,
+     "class": "hands only (arm balance)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.724,
+     "err6": 0.036,
+     "class": "hands only (arm balance)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.724,
+     "err6": 0.036,
+     "class": "hands only (arm balance)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.724,
+     "err6": 0.036,
+     "class": "hands only (arm balance)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.724,
+     "err6": 0.036,
+     "class": "hands only (arm balance)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.724,
+     "err6": 0.036,
+     "class": "hands only (arm balance)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.724,
+     "err6": 0.036,
+     "class": "hands only (arm balance)"
+    }
+   ]
+  },
+  {
+   "goal": "standing",
+   "window_s": [
+    7.22,
+    10.22
+   ],
+   "classes": {
+    "feet only (upright)": 8
+   },
+   "err6_p50": 0.036,
+   "pelvis_z_p50": 0.968,
+   "down_mean": {
+    "L_HAND": 0.0,
+    "R_HAND": 0.0,
+    "L_FOOT": 1.0,
+    "R_FOOT": 1.0,
+    "HEAD": 0.0,
+    "L_KNEE": 0.0,
+    "R_KNEE": 0.0
+   },
+   "replicas": [
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.968,
+     "err6": 0.036,
+     "class": "feet only (upright)"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.968,
+     "err6": 0.035,
+     "class": "feet only (upright)"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.968,
+     "err6": 0.036,
+     "class": "feet only (upright)"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.968,
+     "err6": 0.035,
+     "class": "feet only (upright)"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.968,
+     "err6": 0.036,
+     "class": "feet only (upright)"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.968,
+     "err6": 0.035,
+     "class": "feet only (upright)"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.968,
+     "err6": 0.036,
+     "class": "feet only (upright)"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.968,
+     "err6": 0.036,
+     "class": "feet only (upright)"
+    }
+   ]
+  }
+ ],
+ "nohijack_E3": [
+  {
+   "goal": "Handstand_pose_or_Adho_M",
+   "window_s": [
+    0.5,
+    3.5
+   ],
+   "classes": {
+    "hands only (handstand)": 8
+   },
+   "err6_p50": 0.03,
+   "pelvis_z_p50": 1.056,
+   "down_mean": {
+    "L_HAND": 1.0,
+    "R_HAND": 1.0,
+    "L_FOOT": 0.0,
+    "R_FOOT": 0.0,
+    "HEAD": 0.0,
+    "L_KNEE": 0.0,
+    "R_KNEE": 0.0
+   },
+   "replicas": [
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 1.056,
+     "err6": 0.03,
+     "class": "hands only (handstand)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 1.056,
+     "err6": 0.03,
+     "class": "hands only (handstand)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 1.056,
+     "err6": 0.03,
+     "class": "hands only (handstand)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 1.057,
+     "err6": 0.03,
+     "class": "hands only (handstand)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 1.056,
+     "err6": 0.031,
+     "class": "hands only (handstand)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 1.057,
+     "err6": 0.03,
+     "class": "hands only (handstand)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 1.056,
+     "err6": 0.03,
+     "class": "hands only (handstand)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 1.056,
+     "err6": 0.031,
+     "class": "hands only (handstand)"
+    }
+   ]
+  },
+  {
+   "goal": "Handstand_pose_or_Adho_M",
+   "window_s": [
+    6.95,
+    9.95
+   ],
+   "classes": {
+    "hands + one foot": 8
+   },
+   "err6_p50": 0.049,
+   "pelvis_z_p50": 0.904,
+   "down_mean": {
+    "L_HAND": 1.0,
+    "R_HAND": 1.0,
+    "L_FOOT": 0.0,
+    "R_FOOT": 1.0,
+    "HEAD": 0.0,
+    "L_KNEE": 0.0,
+    "R_KNEE": 0.0
+   },
+   "replicas": [
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.904,
+     "err6": 0.049,
+     "class": "hands + one foot"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.904,
+     "err6": 0.049,
+     "class": "hands + one foot"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.904,
+     "err6": 0.049,
+     "class": "hands + one foot"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.904,
+     "err6": 0.049,
+     "class": "hands + one foot"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.904,
+     "err6": 0.048,
+     "class": "hands + one foot"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.904,
+     "err6": 0.049,
+     "class": "hands + one foot"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.904,
+     "err6": 0.048,
+     "class": "hands + one foot"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.904,
+     "err6": 0.049,
+     "class": "hands + one foot"
+    }
+   ]
+  }
+ ],
+ "nohijack_E5": [
+  {
+   "goal": "Handstand_pose_or_Adho_M",
+   "window_s": [
+    0.5,
+    3.5
+   ],
+   "classes": {
+    "hands only (handstand)": 8
+   },
+   "err6_p50": 0.03,
+   "pelvis_z_p50": 1.056,
+   "down_mean": {
+    "L_HAND": 1.0,
+    "R_HAND": 1.0,
+    "L_FOOT": 0.0,
+    "R_FOOT": 0.0,
+    "HEAD": 0.0,
+    "L_KNEE": 0.0,
+    "R_KNEE": 0.0
+   },
+   "replicas": [
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 1.056,
+     "err6": 0.03,
+     "class": "hands only (handstand)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 1.056,
+     "err6": 0.03,
+     "class": "hands only (handstand)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 1.056,
+     "err6": 0.03,
+     "class": "hands only (handstand)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 1.056,
+     "err6": 0.03,
+     "class": "hands only (handstand)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 1.056,
+     "err6": 0.031,
+     "class": "hands only (handstand)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 1.056,
+     "err6": 0.03,
+     "class": "hands only (handstand)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 1.056,
+     "err6": 0.03,
+     "class": "hands only (handstand)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 1.057,
+     "err6": 0.03,
+     "class": "hands only (handstand)"
+    }
+   ]
+  },
+  {
+   "goal": "Handstand_pose_or_Adho_M",
+   "window_s": [
+    6.95,
+    9.95
+   ],
+   "classes": {
+    "hands + one foot": 8
+   },
+   "err6_p50": 0.049,
+   "pelvis_z_p50": 0.904,
+   "down_mean": {
+    "L_HAND": 1.0,
+    "R_HAND": 1.0,
+    "L_FOOT": 0.0,
+    "R_FOOT": 1.0,
+    "HEAD": 0.0,
+    "L_KNEE": 0.0,
+    "R_KNEE": 0.0
+   },
+   "replicas": [
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.904,
+     "err6": 0.049,
+     "class": "hands + one foot"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.904,
+     "err6": 0.048,
+     "class": "hands + one foot"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.904,
+     "err6": 0.049,
+     "class": "hands + one foot"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.904,
+     "err6": 0.049,
+     "class": "hands + one foot"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.904,
+     "err6": 0.049,
+     "class": "hands + one foot"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.904,
+     "err6": 0.049,
+     "class": "hands + one foot"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.904,
+     "err6": 0.049,
+     "class": "hands + one foot"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.904,
+     "err6": 0.049,
+     "class": "hands + one foot"
+    }
+   ]
+  }
+ ],
+ "fork_edge_B1": [
+  {
+   "goal": "Crane_Crow_Pose_or_Bakas",
+   "window_s": [
+    7.25,
+    10.25
+   ],
+   "classes": {
+    "hands only (arm balance)": 8
+   },
+   "err6_p50": 0.047,
+   "pelvis_z_p50": 0.731,
+   "down_mean": {
+    "L_HAND": 1.0,
+    "R_HAND": 1.0,
+    "L_FOOT": 0.0,
+    "R_FOOT": 0.0,
+    "HEAD": 0.0,
+    "L_KNEE": 0.0,
+    "R_KNEE": 0.0
+   },
+   "replicas": [
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.733,
+     "err6": 0.048,
+     "class": "hands only (arm balance)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.731,
+     "err6": 0.047,
+     "class": "hands only (arm balance)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.731,
+     "err6": 0.047,
+     "class": "hands only (arm balance)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.731,
+     "err6": 0.047,
+     "class": "hands only (arm balance)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.73,
+     "err6": 0.047,
+     "class": "hands only (arm balance)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.731,
+     "err6": 0.047,
+     "class": "hands only (arm balance)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.733,
+     "err6": 0.049,
+     "class": "hands only (arm balance)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.73,
+     "err6": 0.047,
+     "class": "hands only (arm balance)"
+    }
+   ]
+  },
+  {
+   "goal": "Plank_Pose_or_Kumbhakasa",
+   "window_s": [
+    12.35,
+    15.35
+   ],
+   "classes": {
+    "hands + feet (plank family)": 8
+   },
+   "err6_p50": 0.071,
+   "pelvis_z_p50": 0.459,
+   "down_mean": {
+    "L_HAND": 1.0,
+    "R_HAND": 1.0,
+    "L_FOOT": 1.0,
+    "R_FOOT": 1.0,
+    "HEAD": 0.0,
+    "L_KNEE": 0.0,
+    "R_KNEE": 0.0
+   },
+   "replicas": [
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.459,
+     "err6": 0.069,
+     "class": "hands + feet (plank family)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.458,
+     "err6": 0.071,
+     "class": "hands + feet (plank family)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.46,
+     "err6": 0.071,
+     "class": "hands + feet (plank family)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.459,
+     "err6": 0.071,
+     "class": "hands + feet (plank family)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.458,
+     "err6": 0.07,
+     "class": "hands + feet (plank family)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.459,
+     "err6": 0.071,
+     "class": "hands + feet (plank family)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.458,
+     "err6": 0.07,
+     "class": "hands + feet (plank family)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.459,
+     "err6": 0.07,
+     "class": "hands + feet (plank family)"
+    }
+   ]
+  }
+ ],
+ "fork_edge_E1": [
+  {
+   "goal": "Crane_Crow_Pose_or_Bakas",
+   "window_s": [
+    7.25,
+    10.25
+   ],
+   "classes": {
+    "hands only (arm balance)": 8
+   },
+   "err6_p50": 0.051,
+   "pelvis_z_p50": 0.735,
+   "down_mean": {
+    "L_HAND": 1.0,
+    "R_HAND": 1.0,
+    "L_FOOT": 0.0,
+    "R_FOOT": 0.0,
+    "HEAD": 0.0,
+    "L_KNEE": 0.0,
+    "R_KNEE": 0.0
+   },
+   "replicas": [
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.735,
+     "err6": 0.051,
+     "class": "hands only (arm balance)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.734,
+     "err6": 0.05,
+     "class": "hands only (arm balance)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.736,
+     "err6": 0.05,
+     "class": "hands only (arm balance)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.735,
+     "err6": 0.051,
+     "class": "hands only (arm balance)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.737,
+     "err6": 0.052,
+     "class": "hands only (arm balance)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.734,
+     "err6": 0.052,
+     "class": "hands only (arm balance)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.737,
+     "err6": 0.052,
+     "class": "hands only (arm balance)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.735,
+     "err6": 0.052,
+     "class": "hands only (arm balance)"
+    }
+   ]
+  },
+  {
+   "goal": "Handstand_pose_or_Adho_M",
+   "window_s": [
+    15.25,
+    18.25
+   ],
+   "classes": {
+    "hands only (handstand)": 8
+   },
+   "err6_p50": 0.101,
+   "pelvis_z_p50": 1.048,
+   "down_mean": {
+    "L_HAND": 1.0,
+    "R_HAND": 1.0,
+    "L_FOOT": 0.0,
+    "R_FOOT": 0.0,
+    "HEAD": 0.0,
+    "L_KNEE": 0.0,
+    "R_KNEE": 0.0
+   },
+   "replicas": [
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 1.049,
+     "err6": 0.105,
+     "class": "hands only (handstand)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 1.048,
+     "err6": 0.101,
+     "class": "hands only (handstand)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 1.049,
+     "err6": 0.097,
+     "class": "hands only (handstand)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 1.048,
+     "err6": 0.101,
+     "class": "hands only (handstand)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 1.049,
+     "err6": 0.099,
+     "class": "hands only (handstand)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 1.048,
+     "err6": 0.104,
+     "class": "hands only (handstand)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 1.049,
+     "err6": 0.096,
+     "class": "hands only (handstand)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 1.048,
+     "err6": 0.103,
+     "class": "hands only (handstand)"
+    }
+   ]
+  }
+ ],
+ "fork_edge_E2": [
+  {
+   "goal": "Crane_Crow_Pose_or_Bakas",
+   "window_s": [
+    7.25,
+    10.25
+   ],
+   "classes": {
+    "hands only (arm balance)": 8
+   },
+   "err6_p50": 0.049,
+   "pelvis_z_p50": 0.732,
+   "down_mean": {
+    "L_HAND": 1.0,
+    "R_HAND": 1.0,
+    "L_FOOT": 0.0,
+    "R_FOOT": 0.0,
+    "HEAD": 0.0,
+    "L_KNEE": 0.0,
+    "R_KNEE": 0.0
+   },
+   "replicas": [
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.732,
+     "err6": 0.048,
+     "class": "hands only (arm balance)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.732,
+     "err6": 0.048,
+     "class": "hands only (arm balance)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.732,
+     "err6": 0.049,
+     "class": "hands only (arm balance)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.733,
+     "err6": 0.048,
+     "class": "hands only (arm balance)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.733,
+     "err6": 0.049,
+     "class": "hands only (arm balance)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.732,
+     "err6": 0.049,
+     "class": "hands only (arm balance)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.733,
+     "err6": 0.05,
+     "class": "hands only (arm balance)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.733,
+     "err6": 0.048,
+     "class": "hands only (arm balance)"
+    }
+   ]
+  },
+  {
+   "goal": "Four-Limbed_Staff_Pose_o",
+   "window_s": [
+    11.82,
+    14.82
+   ],
+   "classes": {
+    "hands + feet (plank family)": 8
+   },
+   "err6_p50": 0.042,
+   "pelvis_z_p50": 0.256,
+   "down_mean": {
+    "L_HAND": 1.0,
+    "R_HAND": 1.0,
+    "L_FOOT": 1.0,
+    "R_FOOT": 1.0,
+    "HEAD": 0.0,
+    "L_KNEE": 0.0,
+    "R_KNEE": 0.0
+   },
+   "replicas": [
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.256,
+     "err6": 0.042,
+     "class": "hands + feet (plank family)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.255,
+     "err6": 0.042,
+     "class": "hands + feet (plank family)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.256,
+     "err6": 0.043,
+     "class": "hands + feet (plank family)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.255,
+     "err6": 0.043,
+     "class": "hands + feet (plank family)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.255,
+     "err6": 0.042,
+     "class": "hands + feet (plank family)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.256,
+     "err6": 0.043,
+     "class": "hands + feet (plank family)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.256,
+     "err6": 0.043,
+     "class": "hands + feet (plank family)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.256,
+     "err6": 0.042,
+     "class": "hands + feet (plank family)"
+    }
+   ]
+  }
+ ],
+ "fork_edge_E3": [
+  {
+   "goal": "Handstand_pose_or_Adho_M",
+   "window_s": [
+    10.0,
+    13.0
+   ],
+   "classes": {
+    "other": 7,
+    "hands + feet (plank family)": 1
+   },
+   "err6_p50": 0.813,
+   "pelvis_z_p50": 0.09,
+   "down_mean": {
+    "L_HAND": 0.26,
+    "R_HAND": 0.99,
+    "L_FOOT": 0.13,
+    "R_FOOT": 0.12,
+    "HEAD": 0.0,
+    "L_KNEE": 0.0,
+    "R_KNEE": 0.0
+   },
+   "replicas": [
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.09,
+     "err6": 0.818,
+     "class": "other"
+    },
+    {
+     "down": {
+      "L_HAND": 0.3111111111111111,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.09,
+     "err6": 0.831,
+     "class": "other"
+    },
+    {
+     "down": {
+      "L_HAND": 0.3111111111111111,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.09,
+     "err6": 0.817,
+     "class": "other"
+    },
+    {
+     "down": {
+      "L_HAND": 0.37777777777777777,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.094,
+     "err6": 0.77,
+     "class": "other"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.09,
+     "err6": 0.84,
+     "class": "other"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.095,
+     "err6": 0.745,
+     "class": "other"
+    },
+    {
+     "down": {
+      "L_HAND": 0.08888888888888889,
+      "R_HAND": 0.9111111111111111,
+      "L_FOOT": 0.044444444444444446,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.091,
+     "err6": 0.809,
+     "class": "other"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.714,
+     "err6": 0.639,
+     "class": "hands + feet (plank family)"
+    }
+   ]
+  },
+  {
+   "goal": "Crane_Crow_Pose_or_Bakas",
+   "window_s": [
+    17.5,
+    20.5
+   ],
+   "classes": {
+    "other": 7,
+    "hands + one foot": 1
+   },
+   "err6_p50": 0.71,
+   "pelvis_z_p50": 0.093,
+   "down_mean": {
+    "L_HAND": 0.28,
+    "R_HAND": 0.12,
+    "L_FOOT": 0.09,
+    "R_FOOT": 0.0,
+    "HEAD": 0.0,
+    "L_KNEE": 0.0,
+    "R_KNEE": 0.0
+   },
+   "replicas": [
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.092,
+     "err6": 0.712,
+     "class": "other"
+    },
+    {
+     "down": {
+      "L_HAND": 0.17777777777777778,
+      "R_HAND": 0.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.093,
+     "err6": 0.705,
+     "class": "other"
+    },
+    {
+     "down": {
+      "L_HAND": 0.022222222222222223,
+      "R_HAND": 0.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.093,
+     "err6": 0.709,
+     "class": "other"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.092,
+     "err6": 0.713,
+     "class": "other"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 0.044444444444444446,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.093,
+     "err6": 0.701,
+     "class": "other"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.092,
+     "err6": 0.712,
+     "class": "other"
+    },
+    {
+     "down": {
+      "L_HAND": 0.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 0.0,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.095,
+     "err6": 0.719,
+     "class": "other"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 0.6666666666666666,
+      "R_FOOT": 0.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.72,
+     "err6": 0.104,
+     "class": "hands + one foot"
+    }
+   ]
+  }
+ ],
+ "fork_edge_E5": [
+  {
+   "goal": "Handstand_pose_or_Adho_M",
+   "window_s": [
+    10.0,
+    13.0
+   ],
+   "classes": {
+    "hands + one foot": 2,
+    "other": 6
+   },
+   "err6_p50": 0.731,
+   "pelvis_z_p50": 0.778,
+   "down_mean": {
+    "L_HAND": 1.0,
+    "R_HAND": 0.35,
+    "L_FOOT": 0.96,
+    "R_FOOT": 0.97,
+    "HEAD": 0.0,
+    "L_KNEE": 0.0,
+    "R_KNEE": 0.0
+   },
+   "replicas": [
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 0.9333333333333333,
+      "L_FOOT": 0.8444444444444444,
+      "R_FOOT": 0.8666666666666667,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.716,
+     "err6": 0.667,
+     "class": "hands + one foot"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.783,
+     "err6": 0.742,
+     "class": "other"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 0.28888888888888886,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.777,
+     "err6": 0.728,
+     "class": "other"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.781,
+     "err6": 0.738,
+     "class": "other"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.78,
+     "err6": 0.734,
+     "class": "other"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 0.6666666666666666,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.75,
+     "err6": 0.681,
+     "class": "other"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 0.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.779,
+     "err6": 0.734,
+     "class": "other"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 0.9333333333333333,
+      "L_FOOT": 0.8444444444444444,
+      "R_FOOT": 0.8666666666666667,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.717,
+     "err6": 0.667,
+     "class": "hands + one foot"
+    }
+   ]
+  },
+  {
+   "goal": "Four-Limbed_Staff_Pose_o",
+   "window_s": [
+    15.15,
+    18.15
+   ],
+   "classes": {
+    "hands + feet (plank family)": 8
+   },
+   "err6_p50": 0.207,
+   "pelvis_z_p50": 0.343,
+   "down_mean": {
+    "L_HAND": 1.0,
+    "R_HAND": 1.0,
+    "L_FOOT": 1.0,
+    "R_FOOT": 1.0,
+    "HEAD": 0.0,
+    "L_KNEE": 0.0,
+    "R_KNEE": 0.0
+   },
+   "replicas": [
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.265,
+     "err6": 0.062,
+     "class": "hands + feet (plank family)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.424,
+     "err6": 0.292,
+     "class": "hands + feet (plank family)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.197,
+     "err6": 0.142,
+     "class": "hands + feet (plank family)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.428,
+     "err6": 0.294,
+     "class": "hands + feet (plank family)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.42,
+     "err6": 0.29,
+     "class": "hands + feet (plank family)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.257,
+     "err6": 0.068,
+     "class": "hands + feet (plank family)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.425,
+     "err6": 0.271,
+     "class": "hands + feet (plank family)"
+    },
+    {
+     "down": {
+      "L_HAND": 1.0,
+      "R_HAND": 1.0,
+      "L_FOOT": 1.0,
+      "R_FOOT": 1.0,
+      "HEAD": 0.0,
+      "L_KNEE": 0.0,
+      "R_KNEE": 0.0
+     },
+     "pelvis_z": 0.264,
+     "err6": 0.062,
+     "class": "hands + feet (plank family)"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,1 @@
+retarget_v2 physx: library 84 motions on v2 (v1 refused: True); FK 1680 frames of 84 clips <= 8.3e-07 m, rot <= 1.2e-04 deg; positive control 3/3 seen; resets launched 0/1680 (overshoot <= 0.0 cm, vz <= 0.0 m/s) -> expert_revist/graph_growth_2026_10_03/r3_release/physx_reset_check.json

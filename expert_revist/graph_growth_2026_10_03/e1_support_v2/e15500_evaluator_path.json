@@ -1,0 +1,113 @@
+{
+ "forces": "synthesised from the contact-flag proxy",
+ "rule": "v2",
+ "logs": {
+  "eval/perf/score": 0.9717921018600464,
+  "eval/perf/track": 0.9692157506942749,
+  "eval/perf/hold": 0.9743685722351074,
+  "eval/perf/family_hold": 0.9910207390785217,
+  "eval/perf/support_violation": 0.001918389112688601,
+  "eval/perf/track_fail_frac": 0.030784212052822113,
+  "eval/perf/worst10_score": 0.7184913158416748,
+  "eval/perf_group/arm_balance_score": 0.9765682220458984,
+  "eval/perf_group/arm_balance_hold": 0.9648168087005615,
+  "eval/perf_group/arm_balance_family": 0.9844344854354858,
+  "eval/perf_group/arm_balance_family_event": 0.9844344854354858,
+  "eval/perf_group/connective_score": 0.98268723487854,
+  "eval/perf_group/connective_hold": 0.9830827713012695,
+  "eval/perf_group/connective_family": 0.9947090148925781,
+  "eval/perf_group/connective_family_event": 0.9947090148925781,
+  "eval/perf_group/inversion_score": 0.9227840900421143,
+  "eval/perf_group/inversion_hold": 0.9412731528282166,
+  "eval/perf_group/inversion_family": 0.979595422744751,
+  "eval/perf_group/inversion_family_event": 0.979595422744751,
+  "eval/perf_group/single_leg_score": 0.9998940825462341,
+  "eval/perf_group/single_leg_hold": 1.0,
+  "eval/perf_group/single_leg_family": 1.0,
+  "eval/perf_group/single_leg_family_event": 1.0,
+  "eval/perf/arm_balance_family_penalised": 0.9844344854354858,
+  "eval/perf/arm_balance_family_event_penalised": 0.9844344854354858,
+  "eval/perf_v2/score": 0.9571589231491089,
+  "eval/perf_v2/hold": 0.9451022148132324,
+  "eval/perf_v2/family_hold": 0.9473515152931213,
+  "eval/perf_v2/family_hold_event": 0.9473515152931213,
+  "eval/perf/support_violation_v2": 0.0467512421309948,
+  "eval/perf_v2/worst10_score": 0.7123211026191711,
+  "eval/perf_group_v2/arm_balance_score": 0.9179534316062927,
+  "eval/perf_group_v2/arm_balance_hold": 0.8475872874259949,
+  "eval/perf_group_v2/arm_balance_family": 0.8113575577735901,
+  "eval/perf_group_v2/connective_score": 0.9744549989700317,
+  "eval/perf_group_v2/connective_hold": 0.9666184186935425,
+  "eval/perf_group_v2/connective_family": 0.952458918094635,
+  "eval/perf_group_v2/inversion_score": 0.9227840900421143,
+  "eval/perf_group_v2/inversion_hold": 0.9412731528282166,
+  "eval/perf_group_v2/inversion_family": 0.979595422744751,
+  "eval/perf_group_v2/single_leg_score": 0.9907365441322327,
+  "eval/perf_group_v2/single_leg_hold": 0.9816849827766418,
+  "eval/perf_group_v2/single_leg_family": 1.0,
+  "eval/perf/support_realised_v2": 0.8888888888888888,
+  "eval/perf/substitution_holds_v2": 35.0,
+  "eval/perf/holds_tracked_v2": 783.0,
+  "eval/perf/support_realised_v2_x0": 0.8923076923076924,
+  "eval/perf/substitution_holds_v2_x0": 13.0,
+  "eval/perf/holds_tracked_v2_x0": 260.0,
+  "eval/curriculum/ess": 146.78146362304688,
+  "eval/curriculum/max_prob_x_n": 2.436307191848755,
+  "eval/curriculum/prioritized_top10_share": 0.391945481300354
+ },
+ "flagged_x0": [
+  [
+   "Eagle_Pose_or_Garudasana_-a",
+   "11.67:R_FOOT;13.33:R_FOOT"
+  ],
+  [
+   "Handstand_pose_or_Adho_Mukha_Vrksasana_-a",
+   "48.95:L_FOREARM+R_FOREARM+L_HAND+R_HAND(untracked)"
+  ],
+  [
+   "Plow_Pose_or_Halasana_-b",
+   "40.02:R_THIGH+R_HAND(untracked)"
+  ],
+  [
+   "Supported_Shoulderstand_pose_or_Salamba_Sarvangasana_-a",
+   "26.70:L_THIGH+R_THIGH+L_HAND(untracked)"
+  ],
+  [
+   "Firefly_Pose_or_Tittibhasana_-a",
+   "12.93:R_FOOT(untracked)"
+  ],
+  [
+   "Peacock_Pose_or_Mayurasana_-a",
+   "13.13:HEAD"
+  ],
+  [
+   "Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-a",
+   "17.22:R_FOOT"
+  ],
+  [
+   "Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-b",
+   "17.67:R_FOOT+HEAD;19.63:R_FOOT"
+  ],
+  [
+   "Shoulder-Pressing_Pose_or_Bhujapidasana_-a",
+   "9.05:L_FOOT"
+  ],
+  [
+   "Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a",
+   "14.52:R_FOOT"
+  ],
+  [
+   "Side_Crane_Crow_Pose_or_Parsva_Bakasana_-c",
+   "22.48:R_FOOT"
+  ],
+  [
+   "Upward_Plank_Pose_or_Purvottanasana_-a",
+   "11.32:L_THIGH;23.48:HEAD+R_FOREARM;24.75:L_THIGH+PELVIS+TRUNK+HEAD+R_UPPER_ARM+R_FOREARM(untracked);30.42:L_THIGH+PELVIS+TRUNK+L_UPPER_ARM+L_FOREARM(untracked)"
+  ],
+  [
+   "Bridge_Pose_or_Setu_Bandha_Sarvangasana_-a",
+   "11.93:R_HAND(untracked);14.13:R_HAND;17.60:R_HAND"
+  ]
+ ],
+ "seconds": 3.5194618701934814
+}

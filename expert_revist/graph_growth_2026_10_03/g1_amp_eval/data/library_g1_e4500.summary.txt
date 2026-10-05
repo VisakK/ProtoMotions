@@ -1,0 +1,25 @@
+
+| holds | n | tracked >= 90 % of window | commanded supports down >= 90 % | 6-body pose < 0.15 m | substitution |
+|---|---|---|---|---|---|
+| all | 270 | 261 (97%) | 236 (90%) | 245 (94%) | 8 (3%) |
+| single_leg | 54 | 54 (100%) | 51 (94%) | 53 (98%) | 3 (6%) |
+| inversion | 69 | 66 (96%) | 58 (88%) | 63 (95%) | 0 (0%) |
+| arm_balance | 60 | 60 (100%) | 52 (87%) | 54 (90%) | 4 (7%) |
+| connective | 87 | 81 (93%) | 75 (93%) | 75 (93%) | 1 (1%) |
+| role: family | 71 | 66 (93%) | 61 (92%) | 65 (98%) | 4 (6%) |
+| role: standing | 112 | 111 (99%) | 109 (98%) | 100 (90%) | 0 (0%) |
+| role: variant | 49 | 47 (96%) | 41 (87%) | 43 (91%) | 3 (6%) |
+| role: preparation | 30 | 29 (97%) | 17 (59%) | 29 (100%) | 0 (0%) |
+| role: undecided | 8 | 8 (100%) | 8 (100%) | 8 (100%) | 1 (12%) |
+
+substitutions (tracked holds):
+  Eagle_Pose_or_Garudasana_-a @7.2s [variant] ground L_FOOT: R_FOOT down 100% (reference 11.7 cm up)
+  Eagle_Pose_or_Garudasana_-a @11.7s [undecided] ground L_FOOT: R_FOOT down 100% (reference 10.3 cm up)
+  Eagle_Pose_or_Garudasana_-a @13.3s [family] ground L_FOOT: R_FOOT down 100% (reference 9.4 cm up)
+  Peacock_Pose_or_Mayurasana_-a @10.3s [family] ground L_FOOT+R_FOOT+L_HAND+R_HAND: L_SHANK down 42% (reference 7.4 cm up), R_SHANK down 45% (reference 10.2 cm up), L_THIGH down 29% (reference 8.1 cm up), R_THIGH down 42% (reference 12.1 cm up)
+  Peacock_Pose_or_Mayurasana_-a @13.1s [variant] ground L_FOOT+L_HAND+R_HAND: HEAD down 100% (reference 12.0 cm up)
+  Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-b @17.7s [variant] ground L_HAND+R_HAND: L_FOOT down 89% (reference 35.8 cm up), L_SHANK down 85% (reference 25.0 cm up), L_THIGH down 57% (reference 23.5 cm up)
+  Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a @14.5s [family] ground L_HAND+R_HAND: R_FOOT down 91% (reference 15.9 cm up)
+  Side_Plank_Pose_or_Vasisthasana_-a @14.7s [family] ground R_FOOT+R_HAND: L_FOOT down 100% (reference 7.2 cm up)
+
+56 rollouts -> expert_revist/graph_growth_2026_10_03/g1_amp_eval/data/library_g1_e4500.json
