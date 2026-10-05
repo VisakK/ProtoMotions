@@ -188,10 +188,10 @@ def main() -> int:
         env.align_motion_with_humanoid(
             env_ids, env.simulator.get_root_state().root_pos
         )
-        env._current_context = env._build_global_context(env.simulator.get_robot_state())
-        env.compute_observations(context=env._current_context)
+        # The exact rebuild: a naive one after env.step reads a zero contact
+        # force rate (BaseEnv.rebuild_observations; S0 of graph_growth PLAN.MD).
         obs_td = agent.obs_dict_to_tensordict(
-            agent.add_agent_info_to_obs(env.get_obs())
+            agent.add_agent_info_to_obs(env.rebuild_observations())
         )
         switch_error = tracking_error(env).cpu().numpy()
 

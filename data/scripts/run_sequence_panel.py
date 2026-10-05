@@ -60,6 +60,10 @@ parser.add_argument("--hold-lead-mode", choices=("clamp", "park"),
                          "substitutes hold_lead only after the reach window "
                          "expires, so a large lead does not also inflate the "
                          "reach deadlines of a multi-goal plan")
+parser.add_argument("--timing", choices=("legacy", "training"), default="legacy",
+                    help="legacy: the shipped protocol (hold lead, one value in both dwell channels). training: "
+                         "each goal served as the segment a scheduled slot carries under include_current_segment, "
+                         "re-issued the step a goal ends (SequenceVizConfig.timing; S1 of graph_growth PLAN.MD)")
 parser.add_argument("--reissue-every", type=float, default=0.5)
 parser.add_argument("--settle-steps", type=int, default=10)
 parser.add_argument("--max-replicas", type=int, default=0,
@@ -127,6 +131,7 @@ def main() -> int:
         legacy_settle=args.legacy_settle,
         dump_traces=args.dump_traces,
         log_scalars=False,
+        timing=args.timing,
     )
     runner = SequenceVizRunner(agent, config)
     log.info(

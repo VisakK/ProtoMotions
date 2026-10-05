@@ -201,6 +201,14 @@ class BaseEnv:
         self.contact_air_age_steps = None
         self.contact_temporal_valid = None
         self._physics_step_count = 0
+        # What the latest observation build read, for rebuild_observations():
+        # the contact sample a post-physics build used (captured before
+        # _finalize_contact_state promotes this step's force to "previous"),
+        # and the rows whose latest build was a reset's cleared sample.
+        self._obs_contact_sample: Optional[Dict[str, Tensor]] = None
+        self._obs_reset_rows = torch.ones(
+            self.num_envs, dtype=torch.bool, device=self.device
+        )
 
         # Action buffers (current step only; previous actions come from state_history)
         num_actions = robot_config.number_of_actions
@@ -1165,6 +1173,10 @@ class BaseEnv:
         # Build context once and reuse for observations, rewards, and terminations
         self._current_context = self._build_global_context(current_state)
 
+        # Every row is now built from the post-physics state, none from a reset.
+        reset_rows = getattr(self, "_obs_reset_rows", None)
+        if reset_rows is not None:
+            reset_rows.zero_()
         self.compute_observations(context=self._current_context)
         self.compute_reward(context=self._current_context)
         self.reset_buf[:], self.terminate_buf[:] = self.check_resets_and_terminations(
@@ -1186,6 +1198,13 @@ class BaseEnv:
 
         self._record_contact_diagnostics(rbs)
 
+        # The sample this step's observations were computed against, kept for
+        # rebuild_observations(): the two writes below overwrite it in place.
+        self._obs_contact_sample = {
+            key: value.clone()
+            for key in self._OBS_CONTACT_SAMPLE
+            if (value := getattr(self, key, None)) is not None
+        }
         # Update previous contact forces for next step's impact penalty
         self.prev_contact_force_magnitudes[:] = torch.norm(
             rbs.rigid_body_contact_forces, dim=-1
@@ -1215,6 +1234,60 @@ class BaseEnv:
         self.terrain_obs_cb.compute_observations(env_ids)
         if self.scene_lib.num_scenes() > 0:
             self.scene_obs_cb.compute_observations(env_ids)
+
+    # Env buffers a post-physics observation build reads and post_physics_step
+    # then overwrites (_finalize_contact_state and the impact-penalty update).
+    _OBS_CONTACT_SAMPLE = (
+        "previous_contact_forces",
+        "contact_temporal_valid",
+        "prev_contact_force_magnitudes",
+    )
+
+    def rebuild_observations(self) -> Dict[str, Tensor]:
+        """Recompute every observation as the latest build did; returns ``get_obs()``.
+
+        For drivers that change what a control component serves (a manual goal,
+        a schedule swap) between an ``env.step`` or ``env.reset`` and the next
+        action. Rebuilding an unchanged goal gives that step's observation bit
+        for bit. A naive rebuild (``_build_global_context(get_robot_state())``
+        then ``compute_observations``) does not, because two inputs have moved
+        since the build:
+
+        * after ``step``: ``_finalize_contact_state`` has already promoted this
+          step's force to ``previous_contact_forces``, so the force rate reads 0
+          (``contact_obs_v1`` off by up to 0.78; S0 of
+          ``expert_revist/graph_growth_2026_10_03/PLAN.MD``). The sample captured
+          before that promotion is used instead;
+        * after ``reset``: the build used a cleared contact sample, and IsaacLab
+          does not refresh contact sensors on a state write, so the live state
+          still carries the pre-teleport forces. Those rows are cleared again.
+
+        Not exact after ``restore_state`` (its contact sensors are stale until
+        the next physics step). The env's own buffers are left as they were.
+        """
+        state = self.simulator.get_robot_state()
+        reset_rows = getattr(self, "_obs_reset_rows", None)
+        if reset_rows is None:
+            reset_rows = torch.zeros(self.num_envs, dtype=torch.bool, device=self.device)
+        if bool(reset_rows.any()):
+            state = self._clear_reset_contact_sample(
+                state, reset_rows.nonzero(as_tuple=True)[0]
+            )
+        live = {}
+        for key, captured in (getattr(self, "_obs_contact_sample", None) or {}).items():
+            current = getattr(self, key)
+            live[key] = current
+            # Reset rows were built from the reset's sample, which nothing has
+            # touched since; every other row from the captured pre-step one.
+            rows = reset_rows.view(-1, *([1] * (current.dim() - 1)))
+            setattr(self, key, torch.where(rows, current, captured))
+        try:
+            self._current_context = self._build_global_context(state)
+            self.compute_observations(context=self._current_context)
+            return self.get_obs()
+        finally:
+            for key, value in live.items():
+                setattr(self, key, value)
 
     def check_resets_and_terminations(self, context: EnvContext):
         """Check reset and termination conditions.
@@ -1635,6 +1708,10 @@ class BaseEnv:
         self._current_context = None
         self._current_context = self._build_global_context(current_state)
         self.compute_observations(env_ids, context=self._current_context)
+        # These rows were built from the cleared contact sample above.
+        reset_rows = getattr(self, "_obs_reset_rows", None)
+        if reset_rows is not None:
+            reset_rows[env_ids] = True
 
         return self.get_obs(), {}
 

@@ -37,7 +37,7 @@ work unchanged; ``ctx.contact_goal`` carries the contact half.
 
 import logging
 from dataclasses import dataclass, field
-from typing import TYPE_CHECKING, Dict, List, Optional, Tuple
+from typing import TYPE_CHECKING, Any, Dict, List, Optional, Tuple
 
 import torch
 from torch import Tensor
@@ -213,6 +213,20 @@ class ContactGraphControlConfig(MaskedMimicControlConfig):
             tables and the sidecar this control loads must be that release's
             artifacts by sha256, or construction fails
             (``protomotions/utils/release_identity.py``).
+        expert_view_steps: Publish an unmasked copy of the first this-many goal
+            slots as ``ctx.expert_masked_mimic`` / ``ctx.expert_contact_goal``,
+            for a frozen goal-conditioned (Design-B) expert distilled in this
+            env (card S1 of ``expert_revist/graph_growth_2026_10_03/PLAN.MD``).
+            Such an expert was trained on a few slots, every body and every
+            half always visible; the student's own view is masked and has more
+            slots. 0, the default, publishes nothing.
+        expert_view_num_bodies: Bodies per slot in the expert view's body
+            masks: the length of the expert's own ``conditionable_body_ids``.
+        expert_view_contract: The expert's schedule semantics and the env
+            settings its goal observation depends on, from its resolved config
+            (``protomotions.agents.supervised.expert_port.expert_goal_contract``).
+            Construction fails unless this control and its env match them,
+            since the expert view is a slice of this control's own schedule.
     """
 
     _target_: str = "protomotions.envs.control.contact_graph_control.ContactGraphControl"
@@ -247,6 +261,9 @@ class ContactGraphControlConfig(MaskedMimicControlConfig):
     physics_exclude_motions: List[str] = field(default_factory=list)
     contact_targets_file: str = ""
     release_file: str = ""
+    expert_view_steps: int = 0
+    expert_view_num_bodies: int = 0
+    expert_view_contract: Dict[str, Any] = field(default_factory=dict)
 
 
 class ContactGraphControl(MaskedMimicControl):
@@ -349,6 +366,7 @@ class ContactGraphControl(MaskedMimicControl):
         self._init_physics_terms()
         self._init_contact_targets()
         self._init_release()
+        self._init_expert_view()
 
         # Contact-event history: measured past in the goal's own vocabulary.
         # getattr defaults keep resolved configs frozen before these fields
@@ -606,6 +624,124 @@ class ContactGraphControl(MaskedMimicControl):
             plant_identity.require(release["plant"].get(plant_identity.KEY), mjcf, f"release {release['release_id']}")
         self.release = release
         print(f"ContactGraphControl: release {release['release_id']} -- every loaded artifact matches its record")
+
+    # Schedule semantics the expert view inherits from this control. The view is a
+    # slice of this control's own schedule, so each must equal the expert's.
+    EXPERT_SCHEDULE_KEYS = (
+        "include_current_segment",
+        "dwell_channels",
+        "min_lead_s",
+        "interval_schedule",
+        "history_time_clip_s",
+    )
+    # Env settings the expert's inputs depend on (the goal poses' spawn offset,
+    # contact_obs_v1's hysteresis) or that shape the reference it was trained
+    # with (the reference contact smoothing), compared for equality.
+    EXPERT_ENV_KEYS = (
+        "ref_respawn_offset",
+        "contact_force_on_threshold_n",
+        "contact_force_off_threshold_n",
+        "ref_contact_smooth_window",
+    )
+
+    def _init_expert_view(self) -> None:
+        """Check the expert view's contract (``expert_view_*`` in the config docstring)."""
+        cfg = self.config
+        steps = int(getattr(cfg, "expert_view_steps", 0) or 0)
+        self._expert_view_steps = steps
+        self._expert_view_num_bodies = 0
+        if steps <= 0:
+            return
+        bodies = int(getattr(cfg, "expert_view_num_bodies", 0) or 0)
+        contract = dict(getattr(cfg, "expert_view_contract", None) or {})
+        problems = []
+        if not contract:
+            problems.append("expert_view_contract is empty: record the expert's resolved config")
+        if steps > cfg.num_goal_steps:
+            problems.append(f"expert_view_steps {steps} > num_goal_steps {cfg.num_goal_steps}")
+        if bodies <= 0:
+            problems.append("expert_view_num_bodies must be the length of the expert's conditionable_body_ids")
+        if contract and contract.get("num_goal_steps") != steps:
+            problems.append(f"the expert has {contract.get('num_goal_steps')} goal slots, the view {steps}")
+        if contract and not contract.get("full_visibility", False):
+            problems.append("the expert was not trained with every body and both halves of every slot visible, "
+                            "so an unmasked view is not its training distribution")
+        for key in self.EXPERT_SCHEDULE_KEYS:
+            if contract and key not in contract:
+                problems.append(f"the contract lacks {key}")
+            elif contract and getattr(cfg, key) != contract[key]:
+                problems.append(f"{key}: this control {getattr(cfg, key)!r}, the expert {contract[key]!r}")
+        if float(cfg.far_goal_prob) > 0.0:
+            problems.append("far_goal_prob > 0 shifts the forward window, which the expert never saw")
+        env_cfg = getattr(self.env, "config", None)
+        if env_cfg is not None:
+            for key in self.EXPERT_ENV_KEYS:
+                if key in contract and getattr(env_cfg, key, None) != contract[key]:
+                    problems.append(f"env.{key}: {getattr(env_cfg, key, None)!r}, the expert's {contract[key]!r}")
+            need = contract.get("num_state_history_steps")
+            have = int(getattr(env_cfg, "num_state_history_steps", 0) or 0)
+            if need is not None and have < int(need):
+                problems.append(f"env.num_state_history_steps {have} < the expert's {need}")
+            key = "realign_motion_with_humanoid_on_each_step"
+            manager = getattr(env_cfg, "motion_manager", None)
+            if key in contract and bool(getattr(manager, key, False)) != bool(contract[key]):
+                # Realignment re-anchors the reference, so the expert's world-anchored goal poses move.
+                problems.append(f"env.motion_manager.{key}: {getattr(manager, key, False)!r}, "
+                                f"the expert's {contract[key]!r}")
+        if "pair_names" in contract and list(contract["pair_names"]) != list(self.graph.pair_names):
+            problems.append("the graph's pair vocabulary is not the expert's")
+        if "graph_sha256" in contract:
+            have_sha = file_sha256(cfg.graph_file)
+            if have_sha != contract["graph_sha256"]:
+                problems.append(f"graph sha256 {have_sha[:12]} is not the expert's {str(contract['graph_sha256'])[:12]}")
+        if problems:
+            raise ValueError("ContactGraphControl expert view:\n  " + "\n  ".join(problems))
+        self._expert_view_num_bodies = bodies
+        print(
+            f"ContactGraphControl: expert view on -- slots [:{steps}] of {cfg.num_goal_steps}, "
+            f"{bodies} bodies, every half of a valid slot visible"
+        )
+
+    def _populate_expert_view(
+        self, ctx: EnvContext, ref_pos: Tensor, ref_rot: Tensor, node_ids: Tensor
+    ) -> None:
+        """``ctx.expert_masked_mimic`` and ``ctx.expert_contact_goal``: the first slots, unmasked.
+
+        What the expert's own control publishes at this state. Its config reveals every body and
+        both halves of every slot (probabilities 1.0), so its masks are ``goal_valid`` broadcast.
+        The window, deadlines, dwell channels and contact sets are this control's first slots:
+        ``ContactGraph.next_goal_indices`` serves a prefix of the same window for fewer slots, and
+        ``_init_expert_view`` asserted the schedule semantics agree. A manual goal passes through.
+        """
+        k = self._expert_view_steps
+        num_envs = self.env.num_envs
+        valid = self.goal_valid[:, :k].contiguous()
+        body_masks = (
+            valid.view(num_envs, k, 1, 1)
+            .expand(num_envs, k, self._expert_view_num_bodies, 2)
+            .reshape(num_envs, -1)
+        )
+        ctx.expert_masked_mimic = MaskedMimicContext(
+            mimic=ctx.mimic,
+            ref_pos=ref_pos[:, :k].contiguous(),
+            ref_rot=ref_rot[:, :k].contiguous(),
+            target_times=self.target_times[:, :k].contiguous(),
+            time_offsets=self._time_offsets[:, :k].contiguous(),
+            target_poses_masks=valid,
+            target_bodies_masks=body_masks,
+        )
+        visible = valid.float()
+        ctx.expert_contact_goal = ContactGoalContext(
+            contact_spec=self._gathered["contact"][:, :k] * visible.unsqueeze(-1),
+            orient_spec=torch.nn.functional.one_hot(
+                self._gathered["orient"][:, :k], self.graph.num_orientations
+            ).float() * visible.unsqueeze(-1),
+            visible=visible,
+            time_offsets=self._time_offsets[:, :k].contiguous(),
+            dwell_features=self._dwell_features[:, :k].contiguous(),
+            node_ids=node_ids[:, :k].contiguous(),
+            reached=ctx.contact_goal.reached,
+        )
 
     def _target_terms(self, ctx: EnvContext) -> Dict[str, Optional[Tensor]]:
         """Weight-0 diagnostics of the contact-target sidecar (all ``[E]``), or all None without one.
@@ -909,6 +1045,8 @@ class ContactGraphControl(MaskedMimicControl):
         pose_visible: Tensor,
         contact_visible: Tensor,
         hold_seconds: Optional[Tensor] = None,
+        hold_duration: Optional[Tensor] = None,
+        deadline_floor: Optional[float] = None,
     ) -> None:
         """Drive the goal from an explicit query instead of the clip's schedule.
 
@@ -917,19 +1055,30 @@ class ContactGraphControl(MaskedMimicControl):
         named as (clip, time) because that is the only pose representation the
         motion library can serve.  Every argument is ``[num_envs, num_goal_steps]``.
 
-        ``hold_seconds`` is ``[num_envs, num_goal_steps]`` seconds the caller
-        wants each configuration *held* once reached, and it is what feeds the
-        dwell channels. It matters more than it looks: without it the manual
-        path would report a hold duration of **zero**, because a manual goal has
-        no segment and ``t_start = t_end = t_hold``. Every pinned probe would
-        then be commanding "stay 0 seconds" -- the exact opposite of what a 12 s
-        hold probe means -- and the dwell feature would look broken when it was
-        the driver that was wrong. Pass the *remaining* hold at issue time and
-        re-issue as the plan advances; the countdown between issues is handled
-        here. None keeps the pre-v10_1 behaviour (duration 0), which is correct
-        only when the dwell channels are off.
+        The two dwell channels a scheduled slot carries are ``duration =
+        t_end - t_hold`` (how long the configuration lasts past the commanded
+        frame; constant) and ``remaining = t_end - now`` (counts down; before the
+        frame it is the deadline plus the duration). A manual goal has no
+        segment, so the caller supplies both:
 
-        Call :meth:`clear_manual_goal` to return to the clip schedule.
+        * ``hold_seconds`` feeds ``remaining``: the seconds left until the
+          commanded configuration ends, at issue time. It counts down here
+          between issues and stops at 0. Without it the channel reads 0, i.e.
+          "stay 0 s" -- the opposite of what a 12 s hold probe means.
+        * ``hold_duration`` feeds ``duration`` and stays put. None reuses
+          ``hold_seconds``, the pre-S1 behaviour: one value in both channels,
+          which misstates the duration by 4.1 s at p50 and 9.7 s at p90 over
+          every scheduled slot of release v3 (S0 of
+          ``expert_revist/graph_growth_2026_10_03/PLAN.MD``). Kept so old probe
+          results reproduce; drivers on training's semantics pass it.
+        * ``deadline_floor``: the deadline (``time_offsets``) counts down by
+          ``dt`` per step and stops here. None is ``min_lead_s``, the legacy
+          schedule's floor (its nearest hold is always at least that far away);
+          with ``include_current_segment`` a reached goal's deadline is 0 in
+          training, so drivers on that semantics pass 0.0.
+
+        Re-issue as the plan advances. Call :meth:`clear_manual_goal` to return
+        to the clip schedule.
 
         Raises:
             RuntimeError: if called before the first ``reset()``. ``step()``
@@ -958,10 +1107,11 @@ class ContactGraphControl(MaskedMimicControl):
         ):
             if tuple(tensor.shape) != expected:
                 raise ValueError(f"{name} must be {expected}, got {tuple(tensor.shape)}")
-        if hold_seconds is not None and tuple(hold_seconds.shape) != expected:
-            raise ValueError(
-                f"hold_seconds must be {expected}, got {tuple(hold_seconds.shape)}"
-            )
+        for name, tensor in (("hold_seconds", hold_seconds), ("hold_duration", hold_duration)):
+            if tensor is not None and tuple(tensor.shape) != expected:
+                raise ValueError(f"{name} must be {expected}, got {tuple(tensor.shape)}")
+        if deadline_floor is not None and float(deadline_floor) < 0.0:
+            raise ValueError(f"deadline_floor must be >= 0, got {deadline_floor}")
         if hold_seconds is None and self.config.dwell_channels:
             log.warning(
                 "set_manual_goal() without hold_seconds while dwell_channels is on: "
@@ -975,6 +1125,12 @@ class ContactGraphControl(MaskedMimicControl):
                     f"outside [-1, {self.graph.num_nodes - 1}] (-1 = unspecified slot)"
                 )
         device = self.env.device
+
+        def seconds(tensor: Optional[Tensor]) -> Tensor:
+            if tensor is None:
+                return torch.zeros_like(time_offsets.to(device).float())
+            return tensor.to(device).float().clone()
+
         # Cloned, not just moved: `.to(device).long()` is the identity when dtype
         # and device already match, which would leave `_manual` aliasing the
         # caller's buffers -- and `_refresh_manual_goals` re-reads them every
@@ -986,17 +1142,13 @@ class ContactGraphControl(MaskedMimicControl):
             "offset": time_offsets.to(device).float().clone(),
             "pose_visible": pose_visible.to(device).bool().clone(),
             "contact_visible": contact_visible.to(device).bool().clone(),
-            # `total` is what was asked for and stays put; `remaining` counts
+            # `total` is the duration channel and stays put; `remaining` counts
             # down between re-issues so the channel reads 12 -> 0 over a hold.
-            "hold_total": (
-                hold_seconds.to(device).float().clone()
-                if hold_seconds is not None
-                else torch.zeros_like(time_offsets.to(device).float())
-            ),
-            "hold_remaining": (
-                hold_seconds.to(device).float().clone()
-                if hold_seconds is not None
-                else torch.zeros_like(time_offsets.to(device).float())
+            "hold_total": seconds(hold_duration if hold_duration is not None else hold_seconds),
+            "hold_remaining": seconds(hold_seconds),
+            "deadline_floor": (
+                float(deadline_floor) if deadline_floor is not None
+                else float(self.config.min_lead_s)
             ),
         }
         # A manual query specifies bodies explicitly: reveal all of them where
@@ -1199,7 +1351,7 @@ class ContactGraphControl(MaskedMimicControl):
             # the "time to target" the policy sees means the same thing it did
             # during training.
             self._manual["offset"] = (self._manual["offset"] - self.env.dt).clamp(
-                min=self.config.min_lead_s
+                min=self._manual.get("deadline_floor", self.config.min_lead_s)
             )
             # The requested dwell counts down to zero and stops; unlike the
             # deadline it has no floor, because "0 s left" is a meaningful
@@ -1564,3 +1716,5 @@ class ContactGraphControl(MaskedMimicControl):
             support_gate=support_gate,
             **physics,
         )
+        if getattr(self, "_expert_view_steps", 0) > 0:
+            self._populate_expert_view(ctx, ref_pos, ref_rot, node_ids)

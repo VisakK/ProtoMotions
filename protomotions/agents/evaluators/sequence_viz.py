@@ -160,6 +160,23 @@ class SequenceVizConfig:
                           "hold-to-hold gap is ~1.4 s; the 0.2 s floor was "
                           "never sustained in training)."},
     )
+    timing: str = field(
+        default="legacy",
+        metadata={
+            "help": "How a plan's timing reaches the goal channels. 'legacy' "
+            "(the shipped protocol): the deadline is max(reach left, "
+            "hold_lead_s) or parked, and one value, the hold left, feeds both "
+            "dwell channels. 'training': the channels a scheduled segment "
+            "carries under include_current_segment, with t_hold = the goal's "
+            "reach end and t_end = its end -- deadline max(t_hold - t, 0), "
+            "duration = hold_s, remaining = max(t_end - t, 0) -- and the slots "
+            "advance on the step a goal ends, not at the next re-issue. A plan "
+            "that mirrors a clip's own segments (make_route_probe_plans.py) "
+            "then commands exactly what training served at that clip time. "
+            "Needs a control with include_current_segment (S0/S1 of "
+            "expert_revist/graph_growth_2026_10_03/PLAN.MD)."
+        },
+    )
     render_fps: int = field(
         default=15,
         metadata={"help": "Video frame rate; sim steps are subsampled to it."},
@@ -287,6 +304,7 @@ def fill_goal_slots(
     hold_lead_s: float,
     device: torch.device,
     hold_lead_mode: str = "clamp",
+    timing: str = "legacy",
 ) -> Dict[str, Tensor]:
     """Per-env goal-slot tensors for ``set_manual_goal`` at sequence time ``t``.
 
@@ -294,6 +312,11 @@ def fill_goal_slots(
     the ``k``-th upcoming goal, slot 0's deadline counts down to the end of its
     reach window and then parks at ``hold_lead_s`` instead of the 0.2 s floor.
     A sequence past its end keeps its final goal at ``hold_lead_s``.
+
+    ``timing="training"`` (``SequenceVizConfig.timing``) serves each goal as the
+    segment ``[t_hold, t_end] = [reach end, end]``: deadline ``max(t_hold - t,
+    0)``, ``hold_duration = hold_s`` and ``hold_seconds = max(t_end - t, 0)``,
+    with ``deadline_floor`` 0. ``hold_lead_s`` and ``hold_lead_mode`` are unused.
 
     ``hold_lead_mode`` decides what a large ``hold_lead_s`` does to the REACH
     phase, and the distinction is not cosmetic — it confounded the first
@@ -308,12 +331,15 @@ def fill_goal_slots(
       the hold. That is the arm that isolates "what does the deadline mean
       while I am being asked to stay?".
     """
+    if timing not in ("legacy", "training"):
+        raise ValueError(f"timing must be 'legacy' or 'training', got {timing!r}")
     num_seq = len(sequences)
     seq_node = torch.full((num_seq, slots), -1, dtype=torch.long)
     seq_pose_motion = torch.zeros(num_seq, slots, dtype=torch.long)
     seq_pose_time = torch.zeros(num_seq, slots)
     seq_offset = torch.zeros(num_seq, slots)
     seq_hold = torch.zeros(num_seq, slots)
+    seq_duration = torch.zeros(num_seq, slots)
     seq_visible = torch.zeros(num_seq, slots, dtype=torch.bool)
 
     for s, sequence in enumerate(sequences):
@@ -327,6 +353,12 @@ def fill_goal_slots(
             seq_node[s, slot] = goal.node
             seq_pose_motion[s, slot] = goal.pose_motion
             seq_pose_time[s, slot] = goal.pose_time
+            seq_visible[s, slot] = True
+            if timing == "training":
+                seq_offset[s, slot] = max(remaining, 0.0)
+                seq_hold[s, slot] = max(ends[index] - t, 0.0)
+                seq_duration[s, slot] = goal.hold_s
+                continue
             if hold_lead_mode == "clamp":
                 deadline = max(remaining, hold_lead_s)
             else:
@@ -338,10 +370,9 @@ def fill_goal_slots(
             # "stay 0 s" for every probe. Re-issued on the driver's own cadence,
             # and counted down by ContactGraphControl between issues.
             seq_hold[s, slot] = float(min(max(ends[index] - t, 0.0), goal.hold_s))
-            seq_visible[s, slot] = True
 
     env_sequence = env_sequence.cpu()
-    return {
+    out = {
         "node_ids": seq_node[env_sequence].to(device),
         "pose_motion_ids": seq_pose_motion[env_sequence].to(device),
         "pose_times": seq_pose_time[env_sequence].to(device),
@@ -350,6 +381,10 @@ def fill_goal_slots(
         "contact_visible": seq_visible[env_sequence].to(device),
         "hold_seconds": seq_hold[env_sequence].to(device),
     }
+    if timing == "training":
+        out["hold_duration"] = seq_duration[env_sequence].to(device)
+        out["deadline_floor"] = 0.0
+    return out
 
 
 def derive_node_dwell(graph) -> Dict[int, Tuple[float, int, float]]:
@@ -566,6 +601,18 @@ class SequenceVizRunner:
             raise RuntimeError("no control component exposes set_manual_goal")
         self.graph = self.control.graph
         self.slots = int(self.control.config.num_goal_steps)
+        self.timing = str(getattr(config, "timing", "legacy") or "legacy")
+        if self.timing not in ("legacy", "training"):
+            raise ValueError(f"SequenceVizConfig.timing must be 'legacy' or 'training', got {self.timing!r}")
+        if self.timing == "training" and not getattr(
+            self.control.config, "include_current_segment", False
+        ):
+            # Under the legacy schedule a reached goal leaves slot 0 min_lead_s
+            # before its hold frame, so "deadline 0 while held" was never served.
+            raise ValueError(
+                "SequenceVizConfig.timing='training' serves include_current_segment's "
+                "semantics, and this control was trained without it"
+            )
 
         motion_lib = self.env.motion_lib
         files = getattr(motion_lib, "motion_files", None) or []
@@ -755,13 +802,20 @@ class SequenceVizRunner:
     # The rollout
     # ------------------------------------------------------------------ #
     def _refresh_obs(self):
-        env = self.env
-        env._current_context = env._build_global_context(
-            env.simulator.get_robot_state()
-        )
-        env.compute_observations(context=env._current_context)
-        return self.agent.obs_dict_to_tensordict(
-            self.agent.add_agent_info_to_obs(env.get_obs())
+        # The exact rebuild (BaseEnv.rebuild_observations): a naive one after
+        # env.step reads a zero contact force rate, and one after env.reset the
+        # pre-teleport contact forces.
+        obs = self.env.rebuild_observations()
+        return self.agent.obs_dict_to_tensordict(self.agent.add_agent_info_to_obs(obs))
+
+    def _issue(self, sequences, env_sequence, t: float) -> None:
+        self.control.set_manual_goal(
+            **fill_goal_slots(
+                sequences, env_sequence, t, self.slots,
+                self.config.hold_lead_s, self.device,
+                getattr(self.config, "hold_lead_mode", "clamp"),
+                timing=self.timing,
+            )
         )
 
     def _measured_ground_zones(self, state, limit: int) -> Tensor:
@@ -841,13 +895,7 @@ class SequenceVizRunner:
             # install (the standalone renderer does flush; the panel did not).
             legacy = bool(getattr(self.config, "legacy_settle", False))
             if not legacy:
-                self.control.set_manual_goal(
-                    **fill_goal_slots(
-                        sequences, env_sequence, 0.0, self.slots,
-                        self.config.hold_lead_s, self.device,
-                        getattr(self.config, "hold_lead_mode", "clamp"),
-                    )
-                )
+                self._issue(sequences, env_sequence, 0.0)
                 if flush_intent is not None:
                     flush_intent()
                 obs_td = self._refresh_obs()
@@ -861,13 +909,7 @@ class SequenceVizRunner:
 
             # Re-arm so the deadline the plan starts on is the one t=0 means,
             # not one the settle steps have already counted down.
-            self.control.set_manual_goal(
-                **fill_goal_slots(
-                    sequences, env_sequence, 0.0, self.slots,
-                    self.config.hold_lead_s, self.device,
-                    getattr(self.config, "hold_lead_mode", "clamp"),
-                )
-            )
+            self._issue(sequences, env_sequence, 0.0)
             obs_td = self._refresh_obs()
             active_index = [s.active_index(0.0) for s in sequences]
 
@@ -877,18 +919,19 @@ class SequenceVizRunner:
             zones: List[Tensor] = []
             for step in range(total_steps):
                 t = step * dt
-                if step > 0 and step % reissue_every == 0:
-                    self.control.set_manual_goal(
-                        **fill_goal_slots(
-                            sequences, env_sequence, t, self.slots,
-                            self.config.hold_lead_s, self.device,
-                            getattr(self.config, "hold_lead_mode", "clamp"),
-                        )
-                    )
+                periodic = step > 0 and step % reissue_every == 0
+                # Training's schedule moves a goal out of slot 0 the moment its
+                # segment ends; the legacy protocol waits for the next re-arm.
+                now = (
+                    [s.active_index(t) for s in sequences]
+                    if periodic or self.timing == "training"
+                    else active_index
+                )
+                if periodic or now != active_index:
+                    self._issue(sequences, env_sequence, t)
                     # Flush only where the plan actually ADVANCED a goal, not on
                     # the periodic deadline re-arms -- the renderer's rule
                     # (`GoalDriver.issue`), which the panel never had.
-                    now = [s.active_index(t) for s in sequences]
                     changed = [i for i, (a, b) in enumerate(zip(active_index, now))
                                if a != b]
                     if changed and flush_intent is not None and not legacy:

@@ -1,0 +1,89 @@
+{
+ "expert vs expert (same seed)": {
+  "identical": 241,
+  "gt001": 3,
+  "gt005": 1,
+  "gt02": 0,
+  "mean_abs": 0.00047,
+  "never_diverge_1e3": 150,
+  "median_first_div_step": 282.5,
+  "p10_first_div_step": 137.3,
+  "perf": [
+   0.98511,
+   0.98473
+  ],
+  "success": [
+   0.9563,
+   0.9563
+  ],
+  "big": [
+   "Scorpion_pose_or_vrischikasana-a_x3s"
+  ]
+ },
+ "expert vs student": {
+  "identical": 244,
+  "gt001": 4,
+  "gt005": 2,
+  "gt02": 1,
+  "mean_abs": 0.00395,
+  "never_diverge_1e3": 98,
+  "median_first_div_step": 86.5,
+  "p10_first_div_step": 2.0,
+  "perf": [
+   0.98511,
+   0.98837
+  ],
+  "success": [
+   0.9563,
+   0.9603
+  ],
+  "big": [
+   "Half_Moon_Pose_or_Ardha_Chandrasana_-b",
+   "Upward_Plank_Pose_or_Purvottanasana_-a"
+  ]
+ },
+ "expert rerun vs student": {
+  "identical": 241,
+  "gt001": 4,
+  "gt005": 3,
+  "gt02": 1,
+  "mean_abs": 0.0043,
+  "never_diverge_1e3": 97,
+  "median_first_div_step": 79.0,
+  "p10_first_div_step": 2.0,
+  "perf": [
+   0.98473,
+   0.98837
+  ],
+  "success": [
+   0.9563,
+   0.9603
+  ],
+  "big": [
+   "Half_Moon_Pose_or_Ardha_Chandrasana_-b",
+   "Scorpion_pose_or_vrischikasana-a_x3s",
+   "Upward_Plank_Pose_or_Purvottanasana_-a"
+  ]
+ },
+ "expert vs student, both warmed up": {
+  "identical": 245,
+  "gt001": 3,
+  "gt005": 1,
+  "gt02": 0,
+  "mean_abs": 0.00066,
+  "never_diverge_1e3": 143,
+  "median_first_div_step": 308.0,
+  "p10_first_div_step": 141.6,
+  "perf": [
+   0.98487,
+   0.9853
+  ],
+  "success": [
+   0.9563,
+   0.9563
+  ],
+  "big": [
+   "Upward_Plank_Pose_or_Purvottanasana_-a"
+  ]
+ }
+}

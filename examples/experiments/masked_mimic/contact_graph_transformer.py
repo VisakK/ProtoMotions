@@ -526,6 +526,7 @@ def env_config(robot_cfg: RobotConfig, args: argparse.Namespace) -> EnvConfig:
     expert_paths = _expert_paths(args)
     if expert_paths:
         from protomotions.agents.supervised.expert_utils import (
+            get_expert_actor_in_keys,
             get_expert_observation_components,
         )
         from protomotions.utils.config_utils import (
@@ -550,10 +551,24 @@ def env_config(robot_cfg: RobotConfig, args: argparse.Namespace) -> EnvConfig:
                 f"{path} requires={expert_history_steps}"
             )
 
-            if getattr(expert_env_config, "control_components", None):
+            # The expert's future window exists to feed its mimic_target_poses.
+            # A goal-conditioned (Design-B) expert reads that only in its critic,
+            # which is never built here, and its future_steps is then an offset
+            # list ([1, 5, 10, 15]) that the int comparison below cannot take.
+            expert_actor_keys = get_expert_actor_in_keys(expert_agent_config)
+            if (
+                getattr(expert_env_config, "control_components", None)
+                and "mimic_target_poses" in expert_actor_keys
+            ):
                 for ctrl_cfg in expert_env_config.control_components.values():
                     expert_num_future = getattr(ctrl_cfg, "future_steps", None)
                     if expert_num_future is not None:
+                        if not isinstance(expert_num_future, int):
+                            raise ValueError(
+                                f"{path}: an actor reading mimic_target_poses over the "
+                                f"offsets {expert_num_future} is not supported; the "
+                                "expert copy is pinned to consecutive leading positions"
+                            )
                         cfg = control_components["contact_graph"]
                         if cfg.future_steps < expert_num_future:
                             cfg.future_steps = expert_num_future

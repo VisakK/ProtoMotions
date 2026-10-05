@@ -37,8 +37,12 @@ def add_common_args(parser) -> None:
     )
 
 
-def build(args, app_launcher_cls: Optional[Any] = None) -> Dict[str, Any]:
+def build(args, app_launcher_cls: Optional[Any] = None, load_checkpoint: bool = True) -> Dict[str, Any]:
     """Build fabric, components, env and agent from a checkpoint.
+
+    ``load_checkpoint=False`` builds from the resolved configs beside ``args.checkpoint`` without loading weights
+    (``args.checkpoint`` need not exist): an untrained student around its frozen experts, from a
+    ``--create-config-only`` run.
 
     Returns a dict with keys: fabric, env, agent, motion_lib, simulator, configs.
     """
@@ -174,7 +178,8 @@ def build(args, app_launcher_cls: Optional[Any] = None) -> Dict[str, Any]:
         config=agent_config, env=env, fabric=fabric, root_dir=checkpoint.parent
     )
     agent.setup()
-    agent.load(args.checkpoint, load_env=False, load_training_state=False)
+    if load_checkpoint:
+        agent.load(args.checkpoint, load_env=False, load_training_state=False)
 
     return dict(
         fabric=fabric,

@@ -1,0 +1,3819 @@
+{
+ "runs": {
+  "S0_shipped": "output/goal_causality_x0/g3_e3420_forks@data/smpl/reference_curation/holds_repaired_ftC_posefix.release_v3.2f132f4299/plans",
+  "release_legacy": "output/s1_port/forks_release_legacy@data/smpl/reference_curation/holds_repaired_ftC_posefix.release_v3.2f132f4299/plans",
+  "release_training": "output/s1_port/forks_release_training@data/smpl/reference_curation/holds_repaired_ftC_posefix.release_v3.2f132f4299/plans",
+  "route_legacy": "output/s1_port/forks_route_legacy@data/scripts/plans_release_v3_route,data/smpl/reference_curation/holds_repaired_ftC_posefix.release_v3.2f132f4299/plans",
+  "route_training": "output/s1_port/forks_route_training@data/scripts/plans_release_v3_route,data/smpl/reference_curation/holds_repaired_ftC_posefix.release_v3.2f132f4299/plans"
+ },
+ "plans": {
+  "edge_B1": {
+   "S0_shipped": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0569,
+    "held_s_p50": 4.533,
+    "pelvis_z_p50": 0.458,
+    "reach_rate24": 1.0,
+    "node": "Plank_Pose_or_Kumbhakasana|L_FOOT:G|L_HAND:G|R_FOOT:G|R_HAND:G@prone"
+   },
+   "release_legacy": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.057050000000000003,
+    "held_s_p50": 4.533,
+    "pelvis_z_p50": 0.458,
+    "reach_rate24": 1.0,
+    "node": "Plank_Pose_or_Kumbhakasana|L_FOOT:G|L_HAND:G|R_FOOT:G|R_HAND:G@prone"
+   },
+   "release_training": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0582,
+    "held_s_p50": 4.533,
+    "pelvis_z_p50": 0.465,
+    "reach_rate24": 1.0,
+    "node": "Plank_Pose_or_Kumbhakasana|L_FOOT:G|L_HAND:G|R_FOOT:G|R_HAND:G@prone"
+   },
+   "route_legacy": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0571,
+    "held_s_p50": 4.467,
+    "pelvis_z_p50": 0.458,
+    "reach_rate24": 1.0,
+    "node": "Plank_Pose_or_Kumbhakasana|L_FOOT:G|L_HAND:G|R_FOOT:G|R_HAND:G@prone"
+   },
+   "route_training": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0583,
+    "held_s_p50": 4.533,
+    "pelvis_z_p50": 0.465,
+    "reach_rate24": 1.0,
+    "node": "Plank_Pose_or_Kumbhakasana|L_FOOT:G|L_HAND:G|R_FOOT:G|R_HAND:G@prone"
+   }
+  },
+  "edge_E1": {
+   "S0_shipped": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0683,
+    "held_s_p50": 5.6,
+    "pelvis_z_p50": 1.053,
+    "reach_rate24": 1.0,
+    "node": "Handstand_pose_or_Adho_Mukha_Vrksasana|L_HAND:G|R_HAND:G@inverted"
+   },
+   "release_legacy": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0683,
+    "held_s_p50": 5.6,
+    "pelvis_z_p50": 1.053,
+    "reach_rate24": 1.0,
+    "node": "Handstand_pose_or_Adho_Mukha_Vrksasana|L_HAND:G|R_HAND:G@inverted"
+   },
+   "release_training": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0745,
+    "held_s_p50": 5.1,
+    "pelvis_z_p50": 1.052,
+    "reach_rate24": 1.0,
+    "node": "Handstand_pose_or_Adho_Mukha_Vrksasana|L_HAND:G|R_HAND:G@inverted"
+   },
+   "route_legacy": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0684,
+    "held_s_p50": 5.6,
+    "pelvis_z_p50": 1.053,
+    "reach_rate24": 1.0,
+    "node": "Handstand_pose_or_Adho_Mukha_Vrksasana|L_HAND:G|R_HAND:G@inverted"
+   },
+   "route_training": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0746,
+    "held_s_p50": 5.067,
+    "pelvis_z_p50": 1.052,
+    "reach_rate24": 1.0,
+    "node": "Handstand_pose_or_Adho_Mukha_Vrksasana|L_HAND:G|R_HAND:G@inverted"
+   }
+  },
+  "edge_E2": {
+   "S0_shipped": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0339,
+    "held_s_p50": 4.2,
+    "pelvis_z_p50": 0.254,
+    "reach_rate24": 1.0,
+    "node": "Four-Limbed_Staff_Pose_or_Chaturanga_Dandasana|L_FOOT:G|L_HAND:G|R_FOOT:G|R_HAND:G@prone"
+   },
+   "release_legacy": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0339,
+    "held_s_p50": 4.2,
+    "pelvis_z_p50": 0.253,
+    "reach_rate24": 1.0,
+    "node": "Four-Limbed_Staff_Pose_or_Chaturanga_Dandasana|L_FOOT:G|L_HAND:G|R_FOOT:G|R_HAND:G@prone"
+   },
+   "release_training": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0332,
+    "held_s_p50": 4.2,
+    "pelvis_z_p50": 0.26,
+    "reach_rate24": 1.0,
+    "node": "Four-Limbed_Staff_Pose_or_Chaturanga_Dandasana|L_FOOT:G|L_HAND:G|R_FOOT:G|R_HAND:G@prone"
+   },
+   "route_legacy": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.034,
+    "held_s_p50": 4.2,
+    "pelvis_z_p50": 0.253,
+    "reach_rate24": 1.0,
+    "node": "Four-Limbed_Staff_Pose_or_Chaturanga_Dandasana|L_FOOT:G|L_HAND:G|R_FOOT:G|R_HAND:G@prone"
+   },
+   "route_training": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0333,
+    "held_s_p50": 4.2,
+    "pelvis_z_p50": 0.26,
+    "reach_rate24": 1.0,
+    "node": "Four-Limbed_Staff_Pose_or_Chaturanga_Dandasana|L_FOOT:G|L_HAND:G|R_FOOT:G|R_HAND:G@prone"
+   }
+  },
+  "edge_E3": {
+   "S0_shipped": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0358,
+    "held_s_p50": 5.6,
+    "pelvis_z_p50": 0.7235,
+    "reach_rate24": 1.0,
+    "node": "Crane_Crow_Pose_or_Bakasana|L_HAND:G|R_HAND:G@prone"
+   },
+   "release_legacy": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0357,
+    "held_s_p50": 5.6,
+    "pelvis_z_p50": 0.723,
+    "reach_rate24": 1.0,
+    "node": "Crane_Crow_Pose_or_Bakasana|L_HAND:G|R_HAND:G@prone"
+   },
+   "release_training": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.035,
+    "held_s_p50": 5.2,
+    "pelvis_z_p50": 0.721,
+    "reach_rate24": 1.0,
+    "node": "Crane_Crow_Pose_or_Bakasana|L_HAND:G|R_HAND:G@prone"
+   },
+   "route_legacy": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0358,
+    "held_s_p50": 5.6,
+    "pelvis_z_p50": 0.723,
+    "reach_rate24": 1.0,
+    "node": "Crane_Crow_Pose_or_Bakasana|L_HAND:G|R_HAND:G@prone"
+   },
+   "route_training": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0349,
+    "held_s_p50": 5.2,
+    "pelvis_z_p50": 0.721,
+    "reach_rate24": 1.0,
+    "node": "Crane_Crow_Pose_or_Bakasana|L_HAND:G|R_HAND:G@prone"
+   }
+  },
+  "edge_E5": {
+   "S0_shipped": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.036750000000000005,
+    "held_s_p50": 4.0,
+    "pelvis_z_p50": 0.256,
+    "reach_rate24": 1.0,
+    "node": "Four-Limbed_Staff_Pose_or_Chaturanga_Dandasana|L_FOOT:G|L_HAND:G|R_FOOT:G|R_HAND:G@prone"
+   },
+   "release_legacy": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.036750000000000005,
+    "held_s_p50": 4.0,
+    "pelvis_z_p50": 0.256,
+    "reach_rate24": 1.0,
+    "node": "Four-Limbed_Staff_Pose_or_Chaturanga_Dandasana|L_FOOT:G|L_HAND:G|R_FOOT:G|R_HAND:G@prone"
+   },
+   "release_training": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0342,
+    "held_s_p50": 3.933,
+    "pelvis_z_p50": 0.259,
+    "reach_rate24": 1.0,
+    "node": "Four-Limbed_Staff_Pose_or_Chaturanga_Dandasana|L_FOOT:G|L_HAND:G|R_FOOT:G|R_HAND:G@prone"
+   },
+   "route_legacy": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0369,
+    "held_s_p50": 4.0,
+    "pelvis_z_p50": 0.256,
+    "reach_rate24": 1.0,
+    "node": "Four-Limbed_Staff_Pose_or_Chaturanga_Dandasana|L_FOOT:G|L_HAND:G|R_FOOT:G|R_HAND:G@prone"
+   },
+   "route_training": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0342,
+    "held_s_p50": 3.933,
+    "pelvis_z_p50": 0.259,
+    "reach_rate24": 1.0,
+    "node": "Four-Limbed_Staff_Pose_or_Chaturanga_Dandasana|L_FOOT:G|L_HAND:G|R_FOOT:G|R_HAND:G@prone"
+   }
+  },
+  "fork_Bridge_Pose_or_Setu_Bandha_Sarvangasana": {
+   "S0_shipped": {
+    "success": 0.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 0.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.1289,
+    "held_s_p50": 3.867,
+    "pelvis_z_p50": 0.221,
+    "reach_rate24": 1.0,
+    "node": "Bridge_Pose_or_Setu_Bandha_Sarvangasana|HEAD:G|L_FOOT:G|L_FOREARM:G|L_UPPER_ARM:G|R_FOOT:G|R_FOREARM:G|R_UPPER_ARM:G|TRUNK:G@supine"
+   },
+   "release_legacy": {
+    "success": 0.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 0.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.12865,
+    "held_s_p50": 3.933,
+    "pelvis_z_p50": 0.221,
+    "reach_rate24": 1.0,
+    "node": "Bridge_Pose_or_Setu_Bandha_Sarvangasana|HEAD:G|L_FOOT:G|L_FOREARM:G|L_UPPER_ARM:G|R_FOOT:G|R_FOREARM:G|R_UPPER_ARM:G|TRUNK:G@supine"
+   },
+   "release_training": {
+    "success": 0.0,
+    "hold_rate24": 0.0,
+    "supports_realised": 0.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.16299999999999998,
+    "held_s_p50": 0.133,
+    "pelvis_z_p50": 0.196,
+    "reach_rate24": 0.5512820512820513,
+    "node": "Bridge_Pose_or_Setu_Bandha_Sarvangasana|HEAD:G|L_FOOT:G|L_FOREARM:G|L_UPPER_ARM:G|R_FOOT:G|R_FOREARM:G|R_UPPER_ARM:G|TRUNK:G@supine"
+   },
+   "route_legacy": {
+    "success": 0.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 0.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0579,
+    "held_s_p50": 3.733,
+    "pelvis_z_p50": 0.286,
+    "reach_rate24": 1.0,
+    "node": "Bridge_Pose_or_Setu_Bandha_Sarvangasana|HEAD:G|L_FOOT:G|L_FOREARM:G|L_UPPER_ARM:G|R_FOOT:G|R_FOREARM:G|R_UPPER_ARM:G|TRUNK:G@supine",
+    "segment_supports": 0.0,
+    "segment_success": 0.0,
+    "segment_hold": 1.0,
+    "segment_s": [
+     14.967,
+     18.267
+    ],
+    "replicas": 71
+   },
+   "route_training": {
+    "success": 0.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 0.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0456,
+    "held_s_p50": 3.733,
+    "pelvis_z_p50": 0.295,
+    "reach_rate24": 1.0,
+    "node": "Bridge_Pose_or_Setu_Bandha_Sarvangasana|HEAD:G|L_FOOT:G|L_FOREARM:G|L_UPPER_ARM:G|R_FOOT:G|R_FOREARM:G|R_UPPER_ARM:G|TRUNK:G@supine",
+    "segment_supports": 0.0,
+    "segment_success": 0.0,
+    "segment_hold": 1.0,
+    "segment_s": [
+     14.967,
+     18.267
+    ],
+    "replicas": 71
+   }
+  },
+  "fork_Cobra_Pose_or_Bhujangasana": {
+   "S0_shipped": {
+    "success": 0.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 0.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0249,
+    "held_s_p50": 6.4,
+    "pelvis_z_p50": 0.103,
+    "reach_rate24": 1.0,
+    "node": "Cobra_Pose_or_Bhujangasana|L_FOOT:G|L_HAND:G|L_SHANK:G|L_THIGH:G|R_FOOT:G|R_HAND:G|R_SHANK:G|R_THIGH:G@prone"
+   },
+   "release_legacy": {
+    "success": 0.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 0.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0249,
+    "held_s_p50": 6.4,
+    "pelvis_z_p50": 0.102,
+    "reach_rate24": 1.0,
+    "node": "Cobra_Pose_or_Bhujangasana|L_FOOT:G|L_HAND:G|L_SHANK:G|L_THIGH:G|R_FOOT:G|R_HAND:G|R_SHANK:G|R_THIGH:G@prone"
+   },
+   "release_training": {
+    "success": 0.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 0.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0272,
+    "held_s_p50": 6.467,
+    "pelvis_z_p50": 0.101,
+    "reach_rate24": 1.0,
+    "node": "Cobra_Pose_or_Bhujangasana|L_FOOT:G|L_HAND:G|L_SHANK:G|L_THIGH:G|R_FOOT:G|R_HAND:G|R_SHANK:G|R_THIGH:G@prone"
+   },
+   "route_legacy": {
+    "success": 0.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 0.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0228,
+    "held_s_p50": 5.6,
+    "pelvis_z_p50": 0.107,
+    "reach_rate24": 1.0,
+    "node": "Cobra_Pose_or_Bhujangasana|L_FOOT:G|L_HAND:G|L_SHANK:G|L_THIGH:G|R_FOOT:G|R_HAND:G|R_SHANK:G|R_THIGH:G@prone",
+    "segment_supports": 0.0,
+    "segment_success": 0.0,
+    "segment_hold": 1.0,
+    "segment_s": [
+     7.95,
+     11.35
+    ],
+    "replicas": 71
+   },
+   "route_training": {
+    "success": 0.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 0.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0271,
+    "held_s_p50": 5.6,
+    "pelvis_z_p50": 0.103,
+    "reach_rate24": 1.0,
+    "node": "Cobra_Pose_or_Bhujangasana|L_FOOT:G|L_HAND:G|L_SHANK:G|L_THIGH:G|R_FOOT:G|R_HAND:G|R_SHANK:G|R_THIGH:G@prone",
+    "segment_supports": 0.0,
+    "segment_success": 0.0,
+    "segment_hold": 1.0,
+    "segment_s": [
+     7.95,
+     11.35
+    ],
+    "replicas": 71
+   }
+  },
+  "fork_Crane_Crow_Pose_or_Bakasana": {
+   "S0_shipped": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0345,
+    "held_s_p50": 9.8,
+    "pelvis_z_p50": 0.72,
+    "reach_rate24": 1.0,
+    "node": "Crane_Crow_Pose_or_Bakasana|L_HAND:G|R_HAND:G@prone"
+   },
+   "release_legacy": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0347,
+    "held_s_p50": 9.8,
+    "pelvis_z_p50": 0.72,
+    "reach_rate24": 1.0,
+    "node": "Crane_Crow_Pose_or_Bakasana|L_HAND:G|R_HAND:G@prone"
+   },
+   "release_training": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0332,
+    "held_s_p50": 9.867,
+    "pelvis_z_p50": 0.72,
+    "reach_rate24": 1.0,
+    "node": "Crane_Crow_Pose_or_Bakasana|L_HAND:G|R_HAND:G@prone"
+   },
+   "route_legacy": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0343,
+    "held_s_p50": 4.8,
+    "pelvis_z_p50": 0.731,
+    "reach_rate24": 1.0,
+    "node": "Crane_Crow_Pose_or_Bakasana|L_HAND:G|R_HAND:G@prone",
+    "segment_supports": 1.0,
+    "segment_success": 1.0,
+    "segment_hold": 1.0,
+    "segment_s": [
+     8.15,
+     11.983
+    ],
+    "replicas": 71
+   },
+   "route_training": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0312,
+    "held_s_p50": 4.8,
+    "pelvis_z_p50": 0.73,
+    "reach_rate24": 1.0,
+    "node": "Crane_Crow_Pose_or_Bakasana|L_HAND:G|R_HAND:G@prone",
+    "segment_supports": 1.0,
+    "segment_success": 1.0,
+    "segment_hold": 1.0,
+    "segment_s": [
+     8.15,
+     11.983
+    ],
+    "replicas": 71
+   }
+  },
+  "fork_Dolphin_Plank_Pose_or_Makara_Adho_Mukha": {
+   "S0_shipped": {
+    "success": 0.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 0.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0347,
+    "held_s_p50": 7.933,
+    "pelvis_z_p50": 0.293,
+    "reach_rate24": 1.0,
+    "node": "Dolphin_Plank_Pose_or_Makara_Adho_Mukha_Svanasana|L_FOOT:G|L_FOREARM:G|L_HAND:G|R_FOOT:G|R_FOREARM:G|R_HAND:G@prone"
+   },
+   "release_legacy": {
+    "success": 0.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 0.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.035,
+    "held_s_p50": 7.933,
+    "pelvis_z_p50": 0.294,
+    "reach_rate24": 1.0,
+    "node": "Dolphin_Plank_Pose_or_Makara_Adho_Mukha_Svanasana|L_FOOT:G|L_FOREARM:G|L_HAND:G|R_FOOT:G|R_FOREARM:G|R_HAND:G@prone"
+   },
+   "release_training": {
+    "success": 0.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 0.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0353,
+    "held_s_p50": 7.933,
+    "pelvis_z_p50": 0.291,
+    "reach_rate24": 1.0,
+    "node": "Dolphin_Plank_Pose_or_Makara_Adho_Mukha_Svanasana|L_FOOT:G|L_FOREARM:G|L_HAND:G|R_FOOT:G|R_FOREARM:G|R_HAND:G@prone"
+   },
+   "route_legacy": {
+    "success": 0.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 0.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.029,
+    "held_s_p50": 3.067,
+    "pelvis_z_p50": 0.28,
+    "reach_rate24": 1.0,
+    "node": "Dolphin_Plank_Pose_or_Makara_Adho_Mukha_Svanasana|L_FOOT:G|L_FOREARM:G|L_HAND:G|R_FOOT:G|R_FOREARM:G|R_HAND:G@prone",
+    "segment_supports": 0.0,
+    "segment_success": 0.0,
+    "segment_hold": 1.0,
+    "segment_s": [
+     8.617,
+     11.767
+    ],
+    "replicas": 71
+   },
+   "route_training": {
+    "success": 0.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 0.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0286,
+    "held_s_p50": 3.067,
+    "pelvis_z_p50": 0.281,
+    "reach_rate24": 1.0,
+    "node": "Dolphin_Plank_Pose_or_Makara_Adho_Mukha_Svanasana|L_FOOT:G|L_FOREARM:G|L_HAND:G|R_FOOT:G|R_FOREARM:G|R_HAND:G@prone",
+    "segment_supports": 0.0,
+    "segment_success": 0.0,
+    "segment_hold": 1.0,
+    "segment_s": [
+     8.617,
+     11.767
+    ],
+    "replicas": 71
+   }
+  },
+  "fork_Dolphin_Pose_or_Ardha_Pincha_Mayurasana": {
+   "S0_shipped": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0152,
+    "held_s_p50": 7.267,
+    "pelvis_z_p50": 0.713,
+    "reach_rate24": 1.0,
+    "node": "Dolphin_Pose_or_Ardha_Pincha_Mayurasana|L_FOOT:G|L_FOREARM:G|L_HAND:G|R_FOOT:G|R_FOREARM:G|R_HAND:G@prone"
+   },
+   "release_legacy": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.01465,
+    "held_s_p50": 7.267,
+    "pelvis_z_p50": 0.713,
+    "reach_rate24": 1.0,
+    "node": "Dolphin_Pose_or_Ardha_Pincha_Mayurasana|L_FOOT:G|L_FOREARM:G|L_HAND:G|R_FOOT:G|R_FOREARM:G|R_HAND:G@prone"
+   },
+   "release_training": {
+    "success": 0.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 0.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0199,
+    "held_s_p50": 7.333,
+    "pelvis_z_p50": 0.705,
+    "reach_rate24": 1.0,
+    "node": "Dolphin_Pose_or_Ardha_Pincha_Mayurasana|L_FOOT:G|L_FOREARM:G|L_HAND:G|R_FOOT:G|R_FOREARM:G|R_HAND:G@prone"
+   },
+   "route_legacy": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0272,
+    "held_s_p50": 5.333,
+    "pelvis_z_p50": 0.709,
+    "reach_rate24": 1.0,
+    "node": "Dolphin_Pose_or_Ardha_Pincha_Mayurasana|L_FOOT:G|L_FOREARM:G|L_HAND:G|R_FOOT:G|R_FOREARM:G|R_HAND:G@prone",
+    "segment_supports": 1.0,
+    "segment_success": 1.0,
+    "segment_hold": 1.0,
+    "segment_s": [
+     6.6,
+     11.3
+    ],
+    "replicas": 71
+   },
+   "route_training": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0294,
+    "held_s_p50": 5.333,
+    "pelvis_z_p50": 0.705,
+    "reach_rate24": 1.0,
+    "node": "Dolphin_Pose_or_Ardha_Pincha_Mayurasana|L_FOOT:G|L_FOREARM:G|L_HAND:G|R_FOOT:G|R_FOREARM:G|R_HAND:G@prone",
+    "segment_supports": 1.0,
+    "segment_success": 1.0,
+    "segment_hold": 1.0,
+    "segment_s": [
+     6.6,
+     11.3
+    ],
+    "replicas": 71
+   }
+  },
+  "fork_Downward_Facing_Dog_pose_or_Adho_Mukha_S": {
+   "S0_shipped": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0325,
+    "held_s_p50": 5.6,
+    "pelvis_z_p50": 0.792,
+    "reach_rate24": 1.0,
+    "node": "Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana|L_FOOT:G|L_HAND:G|R_FOOT:G|R_HAND:G@prone"
+   },
+   "release_legacy": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0325,
+    "held_s_p50": 5.6,
+    "pelvis_z_p50": 0.792,
+    "reach_rate24": 1.0,
+    "node": "Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana|L_FOOT:G|L_HAND:G|R_FOOT:G|R_HAND:G@prone"
+   },
+   "release_training": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0273,
+    "held_s_p50": 5.533,
+    "pelvis_z_p50": 0.786,
+    "reach_rate24": 1.0,
+    "node": "Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana|L_FOOT:G|L_HAND:G|R_FOOT:G|R_HAND:G@prone"
+   },
+   "route_legacy": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0395,
+    "held_s_p50": 4.333,
+    "pelvis_z_p50": 0.799,
+    "reach_rate24": 1.0,
+    "node": "Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana|L_FOOT:G|L_HAND:G|R_FOOT:G|R_HAND:G@prone",
+    "segment_supports": 1.0,
+    "segment_success": 1.0,
+    "segment_hold": 1.0,
+    "segment_s": [
+     4.867,
+     7.75
+    ],
+    "replicas": 71
+   },
+   "route_training": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0281,
+    "held_s_p50": 4.267,
+    "pelvis_z_p50": 0.789,
+    "reach_rate24": 1.0,
+    "node": "Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana|L_FOOT:G|L_HAND:G|R_FOOT:G|R_HAND:G@prone",
+    "segment_supports": 1.0,
+    "segment_success": 1.0,
+    "segment_hold": 1.0,
+    "segment_s": [
+     4.867,
+     7.75
+    ],
+    "replicas": 71
+   }
+  },
+  "fork_Eagle_Pose_or_Garudasana": {
+   "S0_shipped": {
+    "success": 0.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 0.0,
+    "err24_p50": 0.0489,
+    "held_s_p50": 6.067,
+    "pelvis_z_p50": 0.888,
+    "reach_rate24": 1.0,
+    "node": "Eagle_Pose_or_Garudasana|L_FOOT:G@upright"
+   },
+   "release_legacy": {
+    "success": 0.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 0.0,
+    "err24_p50": 0.0489,
+    "held_s_p50": 6.067,
+    "pelvis_z_p50": 0.89,
+    "reach_rate24": 1.0,
+    "node": "Eagle_Pose_or_Garudasana|L_FOOT:G@upright"
+   },
+   "release_training": {
+    "success": 0.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 0.0,
+    "err24_p50": 0.0497,
+    "held_s_p50": 6.067,
+    "pelvis_z_p50": 0.889,
+    "reach_rate24": 1.0,
+    "node": "Eagle_Pose_or_Garudasana|L_FOOT:G@upright"
+   },
+   "route_legacy": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0398,
+    "held_s_p50": 3.467,
+    "pelvis_z_p50": 0.865,
+    "reach_rate24": 1.0,
+    "node": "Eagle_Pose_or_Garudasana|L_FOOT:G@upright",
+    "segment_supports": 1.0,
+    "segment_success": 1.0,
+    "segment_hold": 1.0,
+    "segment_s": [
+     2.833,
+     6.067
+    ],
+    "replicas": 71
+   },
+   "route_training": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0411,
+    "held_s_p50": 3.467,
+    "pelvis_z_p50": 0.863,
+    "reach_rate24": 1.0,
+    "node": "Eagle_Pose_or_Garudasana|L_FOOT:G@upright",
+    "segment_supports": 1.0,
+    "segment_success": 1.0,
+    "segment_hold": 1.0,
+    "segment_s": [
+     2.833,
+     6.067
+    ],
+    "replicas": 71
+   }
+  },
+  "fork_Extended_Revolved_Side_Angle_Pose_or_Utt": {
+   "S0_shipped": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0649,
+    "held_s_p50": 8.067,
+    "pelvis_z_p50": 0.722,
+    "reach_rate24": 1.0,
+    "node": "Extended_Revolved_Side_Angle_Pose_or_Utthita_Parsvakonasana|L_FOOT:G|R_FOOT:G@upright"
+   },
+   "release_legacy": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0646,
+    "held_s_p50": 8.067,
+    "pelvis_z_p50": 0.722,
+    "reach_rate24": 1.0,
+    "node": "Extended_Revolved_Side_Angle_Pose_or_Utthita_Parsvakonasana|L_FOOT:G|R_FOOT:G@upright"
+   },
+   "release_training": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0596,
+    "held_s_p50": 7.8,
+    "pelvis_z_p50": 0.721,
+    "reach_rate24": 1.0,
+    "node": "Extended_Revolved_Side_Angle_Pose_or_Utthita_Parsvakonasana|L_FOOT:G|R_FOOT:G@upright"
+   },
+   "route_legacy": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0396,
+    "held_s_p50": 3.733,
+    "pelvis_z_p50": 0.717,
+    "reach_rate24": 1.0,
+    "node": "Extended_Revolved_Side_Angle_Pose_or_Utthita_Parsvakonasana|L_FOOT:G|R_FOOT:G@upright",
+    "segment_supports": 1.0,
+    "segment_success": 1.0,
+    "segment_hold": 1.0,
+    "segment_s": [
+     7.45,
+     11.583
+    ],
+    "replicas": 71
+   },
+   "route_training": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0391,
+    "held_s_p50": 4.067,
+    "pelvis_z_p50": 0.716,
+    "reach_rate24": 1.0,
+    "node": "Extended_Revolved_Side_Angle_Pose_or_Utthita_Parsvakonasana|L_FOOT:G|R_FOOT:G@upright",
+    "segment_supports": 1.0,
+    "segment_success": 1.0,
+    "segment_hold": 1.0,
+    "segment_s": [
+     7.45,
+     11.583
+    ],
+    "replicas": 71
+   }
+  },
+  "fork_Extended_Revolved_Triangle_Pose_or_Utthi": {
+   "S0_shipped": {
+    "success": 0.05128205128205128,
+    "hold_rate24": 1.0,
+    "supports_realised": 0.05128205128205128,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0763,
+    "held_s_p50": 8.333,
+    "pelvis_z_p50": 0.792,
+    "reach_rate24": 1.0,
+    "node": "Extended_Revolved_Triangle_Pose_or_Utthita_Trikonasana|L_FOOT:G|L_HAND:G|R_FOOT:G@prone"
+   },
+   "release_legacy": {
+    "success": 0.05128205128205128,
+    "hold_rate24": 1.0,
+    "supports_realised": 0.05128205128205128,
+    "no_substitution": 1.0,
+    "err24_p50": 0.07635,
+    "held_s_p50": 8.333,
+    "pelvis_z_p50": 0.792,
+    "reach_rate24": 1.0,
+    "node": "Extended_Revolved_Triangle_Pose_or_Utthita_Trikonasana|L_FOOT:G|L_HAND:G|R_FOOT:G@prone"
+   },
+   "release_training": {
+    "success": 0.5,
+    "hold_rate24": 1.0,
+    "supports_realised": 0.5,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0737,
+    "held_s_p50": 8.4,
+    "pelvis_z_p50": 0.784,
+    "reach_rate24": 1.0,
+    "node": "Extended_Revolved_Triangle_Pose_or_Utthita_Trikonasana|L_FOOT:G|L_HAND:G|R_FOOT:G@prone"
+   },
+   "route_legacy": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0503,
+    "held_s_p50": 7.667,
+    "pelvis_z_p50": 0.789,
+    "reach_rate24": 1.0,
+    "node": "Extended_Revolved_Triangle_Pose_or_Utthita_Trikonasana|L_FOOT:G|L_HAND:G|R_FOOT:G@prone",
+    "segment_supports": 1.0,
+    "segment_success": 1.0,
+    "segment_hold": 1.0,
+    "segment_s": [
+     7.383,
+     14.6
+    ],
+    "replicas": 71
+   },
+   "route_training": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0509,
+    "held_s_p50": 7.667,
+    "pelvis_z_p50": 0.783,
+    "reach_rate24": 1.0,
+    "node": "Extended_Revolved_Triangle_Pose_or_Utthita_Trikonasana|L_FOOT:G|L_HAND:G|R_FOOT:G@prone",
+    "segment_supports": 1.0,
+    "segment_success": 1.0,
+    "segment_hold": 1.0,
+    "segment_s": [
+     7.383,
+     14.6
+    ],
+    "replicas": 71
+   }
+  },
+  "fork_Feathered_Peacock_Pose_or_Pincha_Mayuras": {
+   "S0_shipped": {
+    "success": 0.0,
+    "hold_rate24": 0.0,
+    "supports_realised": 0.41025641025641024,
+    "no_substitution": 0.0,
+    "err24_p50": 0.57555,
+    "held_s_p50": 0.0,
+    "pelvis_z_p50": 0.095,
+    "reach_rate24": 0.0,
+    "node": "Feathered_Peacock_Pose_or_Pincha_Mayurasana|L_FOREARM:G|L_HAND:G|R_FOREARM:G|R_HAND:G@inverted"
+   },
+   "release_legacy": {
+    "success": 0.0,
+    "hold_rate24": 0.0,
+    "supports_realised": 0.3974358974358974,
+    "no_substitution": 0.0,
+    "err24_p50": 0.5747,
+    "held_s_p50": 0.0,
+    "pelvis_z_p50": 0.095,
+    "reach_rate24": 0.0,
+    "node": "Feathered_Peacock_Pose_or_Pincha_Mayurasana|L_FOREARM:G|L_HAND:G|R_FOREARM:G|R_HAND:G@inverted"
+   },
+   "release_training": {
+    "success": 0.0,
+    "hold_rate24": 0.0,
+    "supports_realised": 0.02564102564102564,
+    "no_substitution": 0.0,
+    "err24_p50": 0.58545,
+    "held_s_p50": 0.0,
+    "pelvis_z_p50": 0.092,
+    "reach_rate24": 0.0,
+    "node": "Feathered_Peacock_Pose_or_Pincha_Mayurasana|L_FOREARM:G|L_HAND:G|R_FOREARM:G|R_HAND:G@inverted"
+   },
+   "route_legacy": {
+    "success": 0.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 0.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0499,
+    "held_s_p50": 14.133,
+    "pelvis_z_p50": 0.785,
+    "reach_rate24": 1.0,
+    "node": "Feathered_Peacock_Pose_or_Pincha_Mayurasana|L_FOREARM:G|L_HAND:G|R_FOREARM:G|R_HAND:G@inverted",
+    "segment_supports": 0.0,
+    "segment_success": 0.0,
+    "segment_hold": 1.0,
+    "segment_s": [
+     14.867,
+     31.567
+    ],
+    "replicas": 71
+   },
+   "route_training": {
+    "success": 0.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 0.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0373,
+    "held_s_p50": 14.2,
+    "pelvis_z_p50": 0.785,
+    "reach_rate24": 1.0,
+    "node": "Feathered_Peacock_Pose_or_Pincha_Mayurasana|L_FOREARM:G|L_HAND:G|R_FOREARM:G|R_HAND:G@inverted",
+    "segment_supports": 0.0,
+    "segment_success": 0.0,
+    "segment_hold": 1.0,
+    "segment_s": [
+     14.867,
+     31.567
+    ],
+    "replicas": 71
+   }
+  },
+  "fork_Firefly_Pose_or_Tittibhasana": {
+   "S0_shipped": {
+    "success": 0.0,
+    "hold_rate24": 0.0,
+    "supports_realised": 0.0,
+    "no_substitution": 0.0,
+    "err24_p50": 0.4766,
+    "held_s_p50": 0.0,
+    "pelvis_z_p50": 0.099,
+    "reach_rate24": 0.0,
+    "node": "Firefly_Pose_or_Tittibhasana|L_HAND:G|R_HAND:G@upright"
+   },
+   "release_legacy": {
+    "success": 0.0,
+    "hold_rate24": 0.0,
+    "supports_realised": 0.0,
+    "no_substitution": 0.0,
+    "err24_p50": 0.47685,
+    "held_s_p50": 0.0,
+    "pelvis_z_p50": 0.099,
+    "reach_rate24": 0.0,
+    "node": "Firefly_Pose_or_Tittibhasana|L_HAND:G|R_HAND:G@upright"
+   },
+   "release_training": {
+    "success": 0.0,
+    "hold_rate24": 0.0,
+    "supports_realised": 0.05128205128205128,
+    "no_substitution": 0.0,
+    "err24_p50": 0.471,
+    "held_s_p50": 0.0,
+    "pelvis_z_p50": 0.0985,
+    "reach_rate24": 0.0,
+    "node": "Firefly_Pose_or_Tittibhasana|L_HAND:G|R_HAND:G@upright"
+   },
+   "route_legacy": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0771,
+    "held_s_p50": 4.467,
+    "pelvis_z_p50": 0.407,
+    "reach_rate24": 1.0,
+    "node": "Firefly_Pose_or_Tittibhasana|L_HAND:G|R_HAND:G@upright",
+    "segment_supports": 1.0,
+    "segment_success": 1.0,
+    "segment_hold": 1.0,
+    "segment_s": [
+     9.317,
+     14.05
+    ],
+    "replicas": 71
+   },
+   "route_training": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0734,
+    "held_s_p50": 3.933,
+    "pelvis_z_p50": 0.404,
+    "reach_rate24": 1.0,
+    "node": "Firefly_Pose_or_Tittibhasana|L_HAND:G|R_HAND:G@upright",
+    "segment_supports": 1.0,
+    "segment_success": 1.0,
+    "segment_hold": 1.0,
+    "segment_s": [
+     9.317,
+     14.05
+    ],
+    "replicas": 71
+   }
+  },
+  "fork_Four_Limbed_Staff_Pose_or_Chaturanga_Dan": {
+   "S0_shipped": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0193,
+    "held_s_p50": 5.533,
+    "pelvis_z_p50": 0.266,
+    "reach_rate24": 1.0,
+    "node": "Four-Limbed_Staff_Pose_or_Chaturanga_Dandasana|L_FOOT:G|L_HAND:G|R_FOOT:G|R_HAND:G@prone"
+   },
+   "release_legacy": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0194,
+    "held_s_p50": 5.533,
+    "pelvis_z_p50": 0.266,
+    "reach_rate24": 1.0,
+    "node": "Four-Limbed_Staff_Pose_or_Chaturanga_Dandasana|L_FOOT:G|L_HAND:G|R_FOOT:G|R_HAND:G@prone"
+   },
+   "release_training": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0205,
+    "held_s_p50": 5.467,
+    "pelvis_z_p50": 0.2755,
+    "reach_rate24": 1.0,
+    "node": "Four-Limbed_Staff_Pose_or_Chaturanga_Dandasana|L_FOOT:G|L_HAND:G|R_FOOT:G|R_HAND:G@prone"
+   },
+   "route_legacy": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.02,
+    "held_s_p50": 3.0,
+    "pelvis_z_p50": 0.268,
+    "reach_rate24": 1.0,
+    "node": "Four-Limbed_Staff_Pose_or_Chaturanga_Dandasana|L_FOOT:G|L_HAND:G|R_FOOT:G|R_HAND:G@prone",
+    "segment_supports": 1.0,
+    "segment_success": 1.0,
+    "segment_hold": 1.0,
+    "segment_s": [
+     6.683,
+     8.367
+    ],
+    "replicas": 71
+   },
+   "route_training": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0196,
+    "held_s_p50": 3.0,
+    "pelvis_z_p50": 0.275,
+    "reach_rate24": 1.0,
+    "node": "Four-Limbed_Staff_Pose_or_Chaturanga_Dandasana|L_FOOT:G|L_HAND:G|R_FOOT:G|R_HAND:G@prone",
+    "segment_supports": 1.0,
+    "segment_success": 1.0,
+    "segment_hold": 1.0,
+    "segment_s": [
+     6.683,
+     8.367
+    ],
+    "replicas": 71
+   }
+  },
+  "fork_Garland_Pose_or_Malasana": {
+   "S0_shipped": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0406,
+    "held_s_p50": 4.8,
+    "pelvis_z_p50": 0.257,
+    "reach_rate24": 1.0,
+    "node": "Garland_Pose_or_Malasana|L_FOOT:G|R_FOOT:G@upright"
+   },
+   "release_legacy": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0406,
+    "held_s_p50": 4.8,
+    "pelvis_z_p50": 0.257,
+    "reach_rate24": 1.0,
+    "node": "Garland_Pose_or_Malasana|L_FOOT:G|R_FOOT:G@upright"
+   },
+   "release_training": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0425,
+    "held_s_p50": 4.733,
+    "pelvis_z_p50": 0.256,
+    "reach_rate24": 1.0,
+    "node": "Garland_Pose_or_Malasana|L_FOOT:G|R_FOOT:G@upright"
+   },
+   "route_legacy": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0308,
+    "held_s_p50": 3.8,
+    "pelvis_z_p50": 0.269,
+    "reach_rate24": 1.0,
+    "node": "Garland_Pose_or_Malasana|L_FOOT:G|R_FOOT:G@upright",
+    "segment_supports": 1.0,
+    "segment_success": 1.0,
+    "segment_hold": 1.0,
+    "segment_s": [
+     3.233,
+     6.583
+    ],
+    "replicas": 71
+   },
+   "route_training": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0362,
+    "held_s_p50": 3.867,
+    "pelvis_z_p50": 0.264,
+    "reach_rate24": 1.0,
+    "node": "Garland_Pose_or_Malasana|L_FOOT:G|R_FOOT:G@upright",
+    "segment_supports": 1.0,
+    "segment_success": 1.0,
+    "segment_hold": 1.0,
+    "segment_s": [
+     3.233,
+     6.583
+    ],
+    "replicas": 71
+   }
+  },
+  "fork_Half_Moon_Pose_or_Ardha_Chandrasana": {
+   "S0_shipped": {
+    "success": 0.9487179487179487,
+    "hold_rate24": 0.9743589743589743,
+    "supports_realised": 0.9487179487179487,
+    "no_substitution": 0.9743589743589743,
+    "err24_p50": 0.076,
+    "held_s_p50": 3.933,
+    "pelvis_z_p50": 0.832,
+    "reach_rate24": 1.0,
+    "node": "Half_Moon_Pose_or_Ardha_Chandrasana|L_FOOT:G|R_HAND:G@prone"
+   },
+   "release_legacy": {
+    "success": 0.8846153846153846,
+    "hold_rate24": 0.9743589743589743,
+    "supports_realised": 0.8846153846153846,
+    "no_substitution": 0.9743589743589743,
+    "err24_p50": 0.07644999999999999,
+    "held_s_p50": 3.933,
+    "pelvis_z_p50": 0.832,
+    "reach_rate24": 1.0,
+    "node": "Half_Moon_Pose_or_Ardha_Chandrasana|L_FOOT:G|R_HAND:G@prone"
+   },
+   "release_training": {
+    "success": 0.2948717948717949,
+    "hold_rate24": 0.2948717948717949,
+    "supports_realised": 0.2948717948717949,
+    "no_substitution": 0.2948717948717949,
+    "err24_p50": 0.29635,
+    "held_s_p50": 1.4,
+    "pelvis_z_p50": 0.163,
+    "reach_rate24": 1.0,
+    "node": "Half_Moon_Pose_or_Ardha_Chandrasana|L_FOOT:G|R_HAND:G@prone"
+   },
+   "route_legacy": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0634,
+    "held_s_p50": 13.733,
+    "pelvis_z_p50": 0.823,
+    "reach_rate24": 1.0,
+    "node": "Half_Moon_Pose_or_Ardha_Chandrasana|L_FOOT:G|R_HAND:G@prone",
+    "segment_supports": 1.0,
+    "segment_success": 1.0,
+    "segment_hold": 1.0,
+    "segment_s": [
+     5.617,
+     18.7
+    ],
+    "replicas": 71
+   },
+   "route_training": {
+    "success": 0.6338028169014085,
+    "hold_rate24": 0.6338028169014085,
+    "supports_realised": 0.704225352112676,
+    "no_substitution": 0.6338028169014085,
+    "err24_p50": 0.0759,
+    "held_s_p50": 13.533,
+    "pelvis_z_p50": 0.818,
+    "reach_rate24": 1.0,
+    "node": "Half_Moon_Pose_or_Ardha_Chandrasana|L_FOOT:G|R_HAND:G@prone",
+    "segment_supports": 0.6338028169014085,
+    "segment_success": 0.6338028169014085,
+    "segment_hold": 0.6338028169014085,
+    "segment_s": [
+     5.617,
+     18.7
+    ],
+    "replicas": 71
+   }
+  },
+  "fork_Handstand_pose_or_Adho_Mukha_Vrksasana": {
+   "S0_shipped": {
+    "success": 0.0,
+    "hold_rate24": 0.0,
+    "supports_realised": 0.01282051282051282,
+    "no_substitution": 0.0,
+    "err24_p50": 0.6725,
+    "held_s_p50": 0.0,
+    "pelvis_z_p50": 0.097,
+    "reach_rate24": 0.0,
+    "node": "Handstand_pose_or_Adho_Mukha_Vrksasana|L_HAND:G|R_HAND:G@inverted"
+   },
+   "release_legacy": {
+    "success": 0.0,
+    "hold_rate24": 0.0,
+    "supports_realised": 0.02564102564102564,
+    "no_substitution": 0.0,
+    "err24_p50": 0.6722,
+    "held_s_p50": 0.0,
+    "pelvis_z_p50": 0.097,
+    "reach_rate24": 0.0,
+    "node": "Handstand_pose_or_Adho_Mukha_Vrksasana|L_HAND:G|R_HAND:G@inverted"
+   },
+   "release_training": {
+    "success": 0.0,
+    "hold_rate24": 0.0,
+    "supports_realised": 0.0,
+    "no_substitution": 0.0,
+    "err24_p50": 0.6628000000000001,
+    "held_s_p50": 0.0,
+    "pelvis_z_p50": 0.097,
+    "reach_rate24": 0.0,
+    "node": "Handstand_pose_or_Adho_Mukha_Vrksasana|L_HAND:G|R_HAND:G@inverted"
+   },
+   "route_legacy": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0352,
+    "held_s_p50": 9.133,
+    "pelvis_z_p50": 1.051,
+    "reach_rate24": 1.0,
+    "node": "Handstand_pose_or_Adho_Mukha_Vrksasana|L_HAND:G|R_HAND:G@inverted",
+    "segment_supports": 1.0,
+    "segment_success": 1.0,
+    "segment_hold": 1.0,
+    "segment_s": [
+     14.333,
+     23.517
+    ],
+    "replicas": 71
+   },
+   "route_training": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0415,
+    "held_s_p50": 9.333,
+    "pelvis_z_p50": 1.05,
+    "reach_rate24": 1.0,
+    "node": "Handstand_pose_or_Adho_Mukha_Vrksasana|L_HAND:G|R_HAND:G@inverted",
+    "segment_supports": 1.0,
+    "segment_success": 1.0,
+    "segment_hold": 1.0,
+    "segment_s": [
+     14.333,
+     23.517
+    ],
+    "replicas": 71
+   }
+  },
+  "fork_Intense_Side_Stretch_Pose_or_Parsvottana": {
+   "S0_shipped": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0967,
+    "held_s_p50": 11.0,
+    "pelvis_z_p50": 0.844,
+    "reach_rate24": 1.0,
+    "node": "Intense_Side_Stretch_Pose_or_Parsvottanasana|L_FOOT:G|R_FOOT:G@prone"
+   },
+   "release_legacy": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0965,
+    "held_s_p50": 11.0,
+    "pelvis_z_p50": 0.844,
+    "reach_rate24": 1.0,
+    "node": "Intense_Side_Stretch_Pose_or_Parsvottanasana|L_FOOT:G|R_FOOT:G@prone"
+   },
+   "release_training": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.1005,
+    "held_s_p50": 10.8,
+    "pelvis_z_p50": 0.845,
+    "reach_rate24": 1.0,
+    "node": "Intense_Side_Stretch_Pose_or_Parsvottanasana|L_FOOT:G|R_FOOT:G@prone"
+   },
+   "route_legacy": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0289,
+    "held_s_p50": 5.133,
+    "pelvis_z_p50": 0.809,
+    "reach_rate24": 1.0,
+    "node": "Intense_Side_Stretch_Pose_or_Parsvottanasana|L_FOOT:G|R_FOOT:G@prone",
+    "segment_supports": 1.0,
+    "segment_success": 1.0,
+    "segment_hold": 1.0,
+    "segment_s": [
+     10.817,
+     17.85
+    ],
+    "replicas": 71
+   },
+   "route_training": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.033,
+    "held_s_p50": 5.2,
+    "pelvis_z_p50": 0.806,
+    "reach_rate24": 1.0,
+    "node": "Intense_Side_Stretch_Pose_or_Parsvottanasana|L_FOOT:G|R_FOOT:G@prone",
+    "segment_supports": 1.0,
+    "segment_success": 1.0,
+    "segment_hold": 1.0,
+    "segment_s": [
+     10.817,
+     17.85
+    ],
+    "replicas": 71
+   }
+  },
+  "fork_Legs_Up_the_Wall_Pose_or_Viparita_Karani": {
+   "S0_shipped": {
+    "success": 0.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 0.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0317,
+    "held_s_p50": 5.2,
+    "pelvis_z_p50": 0.09,
+    "reach_rate24": 1.0,
+    "node": "Legs-Up-the-Wall_Pose_or_Viparita_Karani|HEAD:G|L_FOREARM:G|L_HAND:G|L_UPPER_ARM:G|PELVIS:G|R_FOREARM:G|R_HAND:G|R_UPPER_ARM:G|TRUNK:G@supine"
+   },
+   "release_legacy": {
+    "success": 0.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 0.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.03165,
+    "held_s_p50": 5.2,
+    "pelvis_z_p50": 0.09,
+    "reach_rate24": 1.0,
+    "node": "Legs-Up-the-Wall_Pose_or_Viparita_Karani|HEAD:G|L_FOREARM:G|L_HAND:G|L_UPPER_ARM:G|PELVIS:G|R_FOREARM:G|R_HAND:G|R_UPPER_ARM:G|TRUNK:G@supine"
+   },
+   "release_training": {
+    "success": 0.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 0.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0295,
+    "held_s_p50": 5.467,
+    "pelvis_z_p50": 0.09,
+    "reach_rate24": 1.0,
+    "node": "Legs-Up-the-Wall_Pose_or_Viparita_Karani|HEAD:G|L_FOREARM:G|L_HAND:G|L_UPPER_ARM:G|PELVIS:G|R_FOREARM:G|R_HAND:G|R_UPPER_ARM:G|TRUNK:G@supine"
+   },
+   "route_legacy": {
+    "success": 0.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 0.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0281,
+    "held_s_p50": 5.467,
+    "pelvis_z_p50": 0.09,
+    "reach_rate24": 1.0,
+    "node": "Legs-Up-the-Wall_Pose_or_Viparita_Karani|HEAD:G|L_FOREARM:G|L_HAND:G|L_UPPER_ARM:G|PELVIS:G|R_FOREARM:G|R_HAND:G|R_UPPER_ARM:G|TRUNK:G@supine",
+    "segment_supports": 0.0,
+    "segment_success": 0.0,
+    "segment_hold": 1.0,
+    "segment_s": [
+     6.567,
+     10.867
+    ],
+    "replicas": 71
+   },
+   "route_training": {
+    "success": 0.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 0.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0285,
+    "held_s_p50": 5.8,
+    "pelvis_z_p50": 0.09,
+    "reach_rate24": 1.0,
+    "node": "Legs-Up-the-Wall_Pose_or_Viparita_Karani|HEAD:G|L_FOREARM:G|L_HAND:G|L_UPPER_ARM:G|PELVIS:G|R_FOREARM:G|R_HAND:G|R_UPPER_ARM:G|TRUNK:G@supine",
+    "segment_supports": 0.0,
+    "segment_success": 0.0,
+    "segment_hold": 1.0,
+    "segment_s": [
+     6.567,
+     10.867
+    ],
+    "replicas": 71
+   }
+  },
+  "fork_Lord_of_the_Dance_Pose_or_Natarajasana": {
+   "S0_shipped": {
+    "success": 0.0,
+    "hold_rate24": 0.0,
+    "supports_realised": 0.10256410256410256,
+    "no_substitution": 0.0,
+    "err24_p50": 0.65585,
+    "held_s_p50": 0.0,
+    "pelvis_z_p50": 0.1585,
+    "reach_rate24": 0.0,
+    "node": "Lord_of_the_Dance_Pose_or_Natarajasana|R_FOOT:G@upright"
+   },
+   "release_legacy": {
+    "success": 0.0,
+    "hold_rate24": 0.0,
+    "supports_realised": 0.14102564102564102,
+    "no_substitution": 0.0,
+    "err24_p50": 0.6529,
+    "held_s_p50": 0.0,
+    "pelvis_z_p50": 0.1555,
+    "reach_rate24": 0.0,
+    "node": "Lord_of_the_Dance_Pose_or_Natarajasana|R_FOOT:G@upright"
+   },
+   "release_training": {
+    "success": 0.0,
+    "hold_rate24": 0.0,
+    "supports_realised": 0.0,
+    "no_substitution": 0.0,
+    "err24_p50": 0.6864,
+    "held_s_p50": 0.0,
+    "pelvis_z_p50": 0.193,
+    "reach_rate24": 0.0,
+    "node": "Lord_of_the_Dance_Pose_or_Natarajasana|R_FOOT:G@upright"
+   },
+   "route_legacy": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0408,
+    "held_s_p50": 12.333,
+    "pelvis_z_p50": 0.95,
+    "reach_rate24": 1.0,
+    "node": "Lord_of_the_Dance_Pose_or_Natarajasana|R_FOOT:G@upright",
+    "segment_supports": 1.0,
+    "segment_success": 1.0,
+    "segment_hold": 1.0,
+    "segment_s": [
+     4.133,
+     25.85
+    ],
+    "replicas": 71
+   },
+   "route_training": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0296,
+    "held_s_p50": 9.8,
+    "pelvis_z_p50": 0.953,
+    "reach_rate24": 1.0,
+    "node": "Lord_of_the_Dance_Pose_or_Natarajasana|R_FOOT:G@upright",
+    "segment_supports": 1.0,
+    "segment_success": 1.0,
+    "segment_hold": 1.0,
+    "segment_s": [
+     4.133,
+     25.85
+    ],
+    "replicas": 71
+   }
+  },
+  "fork_Low_Lunge_pose_or_Anjaneyasana": {
+   "S0_shipped": {
+    "success": 0.0,
+    "hold_rate24": 0.0,
+    "supports_realised": 0.0,
+    "no_substitution": 0.0,
+    "err24_p50": 0.64605,
+    "held_s_p50": 0.0,
+    "pelvis_z_p50": 0.09,
+    "reach_rate24": 0.05128205128205128,
+    "node": "Low_Lunge_pose_or_Anjaneyasana|L_FOOT:G|R_FOOT:G|R_SHANK:G@upright"
+   },
+   "release_legacy": {
+    "success": 0.0,
+    "hold_rate24": 0.0,
+    "supports_realised": 0.0,
+    "no_substitution": 0.0,
+    "err24_p50": 0.64125,
+    "held_s_p50": 0.0,
+    "pelvis_z_p50": 0.09,
+    "reach_rate24": 0.0,
+    "node": "Low_Lunge_pose_or_Anjaneyasana|L_FOOT:G|R_FOOT:G|R_SHANK:G@upright"
+   },
+   "release_training": {
+    "success": 0.0,
+    "hold_rate24": 0.0,
+    "supports_realised": 0.0,
+    "no_substitution": 0.0,
+    "err24_p50": 0.6406499999999999,
+    "held_s_p50": 1.6,
+    "pelvis_z_p50": 0.09,
+    "reach_rate24": 1.0,
+    "node": "Low_Lunge_pose_or_Anjaneyasana|L_FOOT:G|R_FOOT:G|R_SHANK:G@upright"
+   },
+   "route_legacy": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0545,
+    "held_s_p50": 1.933,
+    "pelvis_z_p50": 0.35,
+    "reach_rate24": 1.0,
+    "node": "Low_Lunge_pose_or_Anjaneyasana|L_FOOT:G|R_FOOT:G|R_SHANK:G@upright",
+    "segment_supports": 1.0,
+    "segment_success": 0.9577464788732394,
+    "segment_hold": 0.9577464788732394,
+    "segment_s": [
+     12.817,
+     16.517
+    ],
+    "replicas": 71
+   },
+   "route_training": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0475,
+    "held_s_p50": 2.067,
+    "pelvis_z_p50": 0.345,
+    "reach_rate24": 1.0,
+    "node": "Low_Lunge_pose_or_Anjaneyasana|L_FOOT:G|R_FOOT:G|R_SHANK:G@upright",
+    "segment_supports": 1.0,
+    "segment_success": 1.0,
+    "segment_hold": 1.0,
+    "segment_s": [
+     12.817,
+     16.517
+    ],
+    "replicas": 71
+   }
+  },
+  "fork_Peacock_Pose_or_Mayurasana": {
+   "S0_shipped": {
+    "success": 0.0,
+    "hold_rate24": 0.0,
+    "supports_realised": 0.01282051282051282,
+    "no_substitution": 0.0,
+    "err24_p50": 0.29710000000000003,
+    "held_s_p50": 0.0,
+    "pelvis_z_p50": 0.093,
+    "reach_rate24": 0.0,
+    "node": "Peacock_Pose_or_Mayurasana|L_FOOT:G|L_HAND:G|R_FOOT:G|R_HAND:G@prone"
+   },
+   "release_legacy": {
+    "success": 0.0,
+    "hold_rate24": 0.0,
+    "supports_realised": 0.038461538461538464,
+    "no_substitution": 0.0,
+    "err24_p50": 0.2892,
+    "held_s_p50": 0.0,
+    "pelvis_z_p50": 0.093,
+    "reach_rate24": 0.0,
+    "node": "Peacock_Pose_or_Mayurasana|L_FOOT:G|L_HAND:G|R_FOOT:G|R_HAND:G@prone"
+   },
+   "release_training": {
+    "success": 0.0,
+    "hold_rate24": 0.0,
+    "supports_realised": 0.15384615384615385,
+    "no_substitution": 0.0,
+    "err24_p50": 0.27835,
+    "held_s_p50": 0.0,
+    "pelvis_z_p50": 0.092,
+    "reach_rate24": 0.0,
+    "node": "Peacock_Pose_or_Mayurasana|L_FOOT:G|L_HAND:G|R_FOOT:G|R_HAND:G@prone"
+   },
+   "route_legacy": {
+    "success": null,
+    "hold_rate24": null,
+    "supports_realised": null,
+    "no_substitution": null,
+    "err24_p50": null,
+    "held_s_p50": null,
+    "pelvis_z_p50": null,
+    "reach_rate24": null,
+    "node": "Peacock_Pose_or_Mayurasana|L_FOOT:G|L_HAND:G|R_FOOT:G|R_HAND:G@prone",
+    "segment_supports": 0.07042253521126761,
+    "segment_success": 0.07042253521126761,
+    "segment_hold": 1.0,
+    "segment_s": [
+     9.3,
+     10.317
+    ],
+    "replicas": 71
+   },
+   "route_training": {
+    "success": null,
+    "hold_rate24": null,
+    "supports_realised": null,
+    "no_substitution": null,
+    "err24_p50": null,
+    "held_s_p50": null,
+    "pelvis_z_p50": null,
+    "reach_rate24": null,
+    "node": "Peacock_Pose_or_Mayurasana|L_FOOT:G|L_HAND:G|R_FOOT:G|R_HAND:G@prone",
+    "segment_supports": 0.8450704225352113,
+    "segment_success": 0.8450704225352113,
+    "segment_hold": 1.0,
+    "segment_s": [
+     9.3,
+     10.317
+    ],
+    "replicas": 71
+   }
+  },
+  "fork_Plank_Pose_or_Kumbhakasana": {
+   "S0_shipped": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0266,
+    "held_s_p50": 5.133,
+    "pelvis_z_p50": 0.485,
+    "reach_rate24": 1.0,
+    "node": "Plank_Pose_or_Kumbhakasana|L_FOOT:G|L_HAND:G|R_FOOT:G|R_HAND:G@prone"
+   },
+   "release_legacy": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0266,
+    "held_s_p50": 5.133,
+    "pelvis_z_p50": 0.485,
+    "reach_rate24": 1.0,
+    "node": "Plank_Pose_or_Kumbhakasana|L_FOOT:G|L_HAND:G|R_FOOT:G|R_HAND:G@prone"
+   },
+   "release_training": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0266,
+    "held_s_p50": 5.067,
+    "pelvis_z_p50": 0.493,
+    "reach_rate24": 1.0,
+    "node": "Plank_Pose_or_Kumbhakasana|L_FOOT:G|L_HAND:G|R_FOOT:G|R_HAND:G@prone"
+   },
+   "route_legacy": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0305,
+    "held_s_p50": 3.867,
+    "pelvis_z_p50": 0.488,
+    "reach_rate24": 1.0,
+    "node": "Plank_Pose_or_Kumbhakasana|L_FOOT:G|L_HAND:G|R_FOOT:G|R_HAND:G@prone",
+    "segment_supports": 1.0,
+    "segment_success": 1.0,
+    "segment_hold": 1.0,
+    "segment_s": [
+     6.383,
+     9.317
+    ],
+    "replicas": 71
+   },
+   "route_training": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0293,
+    "held_s_p50": 3.8,
+    "pelvis_z_p50": 0.494,
+    "reach_rate24": 1.0,
+    "node": "Plank_Pose_or_Kumbhakasana|L_FOOT:G|L_HAND:G|R_FOOT:G|R_HAND:G@prone",
+    "segment_supports": 1.0,
+    "segment_success": 1.0,
+    "segment_hold": 1.0,
+    "segment_s": [
+     6.383,
+     9.317
+    ],
+    "replicas": 71
+   }
+  },
+  "fork_Plow_Pose_or_Halasana": {
+   "S0_shipped": {
+    "success": 0.0,
+    "hold_rate24": 0.0,
+    "supports_realised": 0.0,
+    "no_substitution": 0.0,
+    "err24_p50": 0.49029999999999996,
+    "held_s_p50": 0.0,
+    "pelvis_z_p50": 0.104,
+    "reach_rate24": 0.0,
+    "node": "Plow_Pose_or_Halasana|HEAD:G|L_FOOT:G|L_UPPER_ARM:G|R_FOOT:G|R_UPPER_ARM:G|TRUNK:G@inverted"
+   },
+   "release_legacy": {
+    "success": 0.0,
+    "hold_rate24": 0.0,
+    "supports_realised": 0.0,
+    "no_substitution": 0.0,
+    "err24_p50": 0.4873,
+    "held_s_p50": 0.0,
+    "pelvis_z_p50": 0.104,
+    "reach_rate24": 0.0,
+    "node": "Plow_Pose_or_Halasana|HEAD:G|L_FOOT:G|L_UPPER_ARM:G|R_FOOT:G|R_UPPER_ARM:G|TRUNK:G@inverted"
+   },
+   "release_training": {
+    "success": 0.0,
+    "hold_rate24": 0.0,
+    "supports_realised": 0.0,
+    "no_substitution": 0.0,
+    "err24_p50": 0.3814,
+    "held_s_p50": 0.0,
+    "pelvis_z_p50": 0.1675,
+    "reach_rate24": 0.0,
+    "node": "Plow_Pose_or_Halasana|HEAD:G|L_FOOT:G|L_UPPER_ARM:G|R_FOOT:G|R_UPPER_ARM:G|TRUNK:G@inverted"
+   },
+   "route_legacy": {
+    "success": 0.4507042253521127,
+    "hold_rate24": 1.0,
+    "supports_realised": 0.4507042253521127,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0839,
+    "held_s_p50": 2.4,
+    "pelvis_z_p50": 0.348,
+    "reach_rate24": 1.0,
+    "node": "Plow_Pose_or_Halasana|HEAD:G|L_FOOT:G|L_UPPER_ARM:G|R_FOOT:G|R_UPPER_ARM:G|TRUNK:G@inverted",
+    "segment_supports": 0.0,
+    "segment_success": 0.0,
+    "segment_hold": 1.0,
+    "segment_s": [
+     21.183,
+     23.617
+    ],
+    "replicas": 71
+   },
+   "route_training": {
+    "success": 0.5774647887323944,
+    "hold_rate24": 1.0,
+    "supports_realised": 0.5774647887323944,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0651,
+    "held_s_p50": 2.4,
+    "pelvis_z_p50": 0.356,
+    "reach_rate24": 1.0,
+    "node": "Plow_Pose_or_Halasana|HEAD:G|L_FOOT:G|L_UPPER_ARM:G|R_FOOT:G|R_UPPER_ARM:G|TRUNK:G@inverted",
+    "segment_supports": 0.2535211267605634,
+    "segment_success": 0.2535211267605634,
+    "segment_hold": 1.0,
+    "segment_s": [
+     21.183,
+     23.617
+    ],
+    "replicas": 71
+   }
+  },
+  "fork_Pose_Dedicated_to_the_Sage_Koundinya_or": {
+   "S0_shipped": {
+    "success": 0.0,
+    "hold_rate24": 0.0,
+    "supports_realised": 0.0,
+    "no_substitution": 0.0,
+    "err24_p50": 0.5221,
+    "held_s_p50": 0.0,
+    "pelvis_z_p50": 0.092,
+    "reach_rate24": 0.0,
+    "node": "Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II|HEAD:G|L_FOOT:G|L_HAND:G|R_FOOT:G|R_HAND:G@prone"
+   },
+   "release_legacy": {
+    "success": 0.0,
+    "hold_rate24": 0.0,
+    "supports_realised": 0.0,
+    "no_substitution": 0.0,
+    "err24_p50": 0.5237499999999999,
+    "held_s_p50": 0.0,
+    "pelvis_z_p50": 0.092,
+    "reach_rate24": 0.0,
+    "node": "Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II|HEAD:G|L_FOOT:G|L_HAND:G|R_FOOT:G|R_HAND:G@prone"
+   },
+   "release_training": {
+    "success": 0.0,
+    "hold_rate24": 0.0,
+    "supports_realised": 0.0,
+    "no_substitution": 0.0,
+    "err24_p50": 0.5987,
+    "held_s_p50": 0.0,
+    "pelvis_z_p50": 0.09,
+    "reach_rate24": 0.0,
+    "node": "Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II|HEAD:G|L_FOOT:G|L_HAND:G|R_FOOT:G|R_HAND:G@prone"
+   },
+   "route_legacy": {
+    "success": 0.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 0.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0335,
+    "held_s_p50": 1.133,
+    "pelvis_z_p50": 0.482,
+    "reach_rate24": 1.0,
+    "node": "Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II|HEAD:G|L_FOOT:G|L_HAND:G|R_FOOT:G|R_HAND:G@prone",
+    "segment_supports": 0.0,
+    "segment_success": 0.0,
+    "segment_hold": 1.0,
+    "segment_s": [
+     14.467,
+     15.45
+    ],
+    "replicas": 71
+   },
+   "route_training": {
+    "success": 0.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 0.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.03,
+    "held_s_p50": 1.267,
+    "pelvis_z_p50": 0.482,
+    "reach_rate24": 1.0,
+    "node": "Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II|HEAD:G|L_FOOT:G|L_HAND:G|R_FOOT:G|R_HAND:G@prone",
+    "segment_supports": 0.0,
+    "segment_success": 0.0,
+    "segment_hold": 1.0,
+    "segment_s": [
+     14.467,
+     15.45
+    ],
+    "replicas": 71
+   }
+  },
+  "fork_Scorpion_pose_or_vrischikasana": {
+   "S0_shipped": {
+    "success": 0.0,
+    "hold_rate24": 0.0,
+    "supports_realised": 0.0,
+    "no_substitution": 0.0,
+    "err24_p50": 0.474,
+    "held_s_p50": 0.0,
+    "pelvis_z_p50": 0.1215,
+    "reach_rate24": 0.0,
+    "node": "Scorpion_pose_or_vrischikasana|L_FOREARM:G|L_HAND:G|R_FOREARM:G|R_HAND:G@inverted"
+   },
+   "release_legacy": {
+    "success": 0.0,
+    "hold_rate24": 0.0,
+    "supports_realised": 0.0,
+    "no_substitution": 0.0,
+    "err24_p50": 0.47809999999999997,
+    "held_s_p50": 0.0,
+    "pelvis_z_p50": 0.11699999999999999,
+    "reach_rate24": 0.0,
+    "node": "Scorpion_pose_or_vrischikasana|L_FOREARM:G|L_HAND:G|R_FOREARM:G|R_HAND:G@inverted"
+   },
+   "release_training": {
+    "success": 0.0,
+    "hold_rate24": 0.0,
+    "supports_realised": 0.0,
+    "no_substitution": 0.0,
+    "err24_p50": 0.48995,
+    "held_s_p50": 0.0,
+    "pelvis_z_p50": 0.09,
+    "reach_rate24": 0.0,
+    "node": "Scorpion_pose_or_vrischikasana|L_FOREARM:G|L_HAND:G|R_FOREARM:G|R_HAND:G@inverted"
+   },
+   "route_legacy": {
+    "success": 0.0,
+    "hold_rate24": 0.0,
+    "supports_realised": 0.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.2055,
+    "held_s_p50": 9.733,
+    "pelvis_z_p50": 0.777,
+    "reach_rate24": 1.0,
+    "node": "Scorpion_pose_or_vrischikasana|L_FOREARM:G|L_HAND:G|R_FOREARM:G|R_HAND:G@inverted",
+    "segment_supports": 0.0,
+    "segment_success": 0.0,
+    "segment_hold": 0.0,
+    "segment_s": [
+     27.783,
+     46.017
+    ],
+    "replicas": 71
+   },
+   "route_training": {
+    "success": 0.9436619718309859,
+    "hold_rate24": 0.9436619718309859,
+    "supports_realised": 0.9436619718309859,
+    "no_substitution": 0.9436619718309859,
+    "err24_p50": 0.0576,
+    "held_s_p50": 9.2,
+    "pelvis_z_p50": 0.747,
+    "reach_rate24": 0.9436619718309859,
+    "node": "Scorpion_pose_or_vrischikasana|L_FOREARM:G|L_HAND:G|R_FOREARM:G|R_HAND:G@inverted",
+    "segment_supports": 0.0,
+    "segment_success": 0.0,
+    "segment_hold": 0.0,
+    "segment_s": [
+     27.783,
+     46.017
+    ],
+    "replicas": 71
+   }
+  },
+  "fork_Shoulder_Pressing_Pose_or_Bhujapidasana": {
+   "S0_shipped": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0332,
+    "held_s_p50": 7.2,
+    "pelvis_z_p50": 0.346,
+    "reach_rate24": 1.0,
+    "node": "Shoulder-Pressing_Pose_or_Bhujapidasana|L_HAND:G|R_HAND:G@upright"
+   },
+   "release_legacy": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.03325,
+    "held_s_p50": 7.2,
+    "pelvis_z_p50": 0.346,
+    "reach_rate24": 1.0,
+    "node": "Shoulder-Pressing_Pose_or_Bhujapidasana|L_HAND:G|R_HAND:G@upright"
+   },
+   "release_training": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.032850000000000004,
+    "held_s_p50": 7.067,
+    "pelvis_z_p50": 0.345,
+    "reach_rate24": 1.0,
+    "node": "Shoulder-Pressing_Pose_or_Bhujapidasana|L_HAND:G|R_HAND:G@upright"
+   },
+   "route_legacy": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0329,
+    "held_s_p50": 6.0,
+    "pelvis_z_p50": 0.347,
+    "reach_rate24": 1.0,
+    "node": "Shoulder-Pressing_Pose_or_Bhujapidasana|L_HAND:G|R_HAND:G@upright",
+    "segment_supports": 1.0,
+    "segment_success": 1.0,
+    "segment_hold": 1.0,
+    "segment_s": [
+     7.817,
+     10.85
+    ],
+    "replicas": 71
+   },
+   "route_training": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0297,
+    "held_s_p50": 5.733,
+    "pelvis_z_p50": 0.341,
+    "reach_rate24": 1.0,
+    "node": "Shoulder-Pressing_Pose_or_Bhujapidasana|L_HAND:G|R_HAND:G@upright",
+    "segment_supports": 1.0,
+    "segment_success": 1.0,
+    "segment_hold": 1.0,
+    "segment_s": [
+     7.817,
+     10.85
+    ],
+    "replicas": 71
+   }
+  },
+  "fork_Side_Crane_Crow_Pose_or_Parsva_Bakasana": {
+   "S0_shipped": {
+    "success": 0.0,
+    "hold_rate24": 0.0,
+    "supports_realised": 0.0,
+    "no_substitution": 0.0,
+    "err24_p50": 0.4294,
+    "held_s_p50": 0.0,
+    "pelvis_z_p50": 0.099,
+    "reach_rate24": 0.0,
+    "node": "Side_Crane_Crow_Pose_or_Parsva_Bakasana|L_HAND:G|R_HAND:G@side_l"
+   },
+   "release_legacy": {
+    "success": 0.0,
+    "hold_rate24": 0.0,
+    "supports_realised": 0.0,
+    "no_substitution": 0.0,
+    "err24_p50": 0.42810000000000004,
+    "held_s_p50": 0.0,
+    "pelvis_z_p50": 0.099,
+    "reach_rate24": 0.0,
+    "node": "Side_Crane_Crow_Pose_or_Parsva_Bakasana|L_HAND:G|R_HAND:G@side_l"
+   },
+   "release_training": {
+    "success": 0.0,
+    "hold_rate24": 0.0,
+    "supports_realised": 0.0,
+    "no_substitution": 0.0,
+    "err24_p50": 0.43385,
+    "held_s_p50": 0.0,
+    "pelvis_z_p50": 0.099,
+    "reach_rate24": 0.0,
+    "node": "Side_Crane_Crow_Pose_or_Parsva_Bakasana|L_HAND:G|R_HAND:G@side_l"
+   },
+   "route_legacy": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.037,
+    "held_s_p50": 5.867,
+    "pelvis_z_p50": 0.38,
+    "reach_rate24": 1.0,
+    "node": "Side_Crane_Crow_Pose_or_Parsva_Bakasana|L_HAND:G|R_HAND:G@side_l",
+    "segment_supports": 1.0,
+    "segment_success": 1.0,
+    "segment_hold": 1.0,
+    "segment_s": [
+     21.583,
+     27.267
+    ],
+    "replicas": 71
+   },
+   "route_training": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0337,
+    "held_s_p50": 5.867,
+    "pelvis_z_p50": 0.381,
+    "reach_rate24": 1.0,
+    "node": "Side_Crane_Crow_Pose_or_Parsva_Bakasana|L_HAND:G|R_HAND:G@side_l",
+    "segment_supports": 1.0,
+    "segment_success": 1.0,
+    "segment_hold": 1.0,
+    "segment_s": [
+     21.583,
+     27.267
+    ],
+    "replicas": 71
+   }
+  },
+  "fork_Side_Plank_Pose_or_Vasisthasana": {
+   "S0_shipped": {
+    "success": 0.0,
+    "hold_rate24": 0.0,
+    "supports_realised": 0.0,
+    "no_substitution": 0.0,
+    "err24_p50": 0.5598000000000001,
+    "held_s_p50": 0.0,
+    "pelvis_z_p50": 0.386,
+    "reach_rate24": 0.0,
+    "node": "Side_Plank_Pose_or_Vasisthasana|R_FOOT:G|R_HAND:G@side_r"
+   },
+   "release_legacy": {
+    "success": 0.0,
+    "hold_rate24": 0.0,
+    "supports_realised": 0.0,
+    "no_substitution": 0.0,
+    "err24_p50": 0.5612,
+    "held_s_p50": 0.0,
+    "pelvis_z_p50": 0.3845,
+    "reach_rate24": 0.0,
+    "node": "Side_Plank_Pose_or_Vasisthasana|R_FOOT:G|R_HAND:G@side_r"
+   },
+   "release_training": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0378,
+    "held_s_p50": 6.667,
+    "pelvis_z_p50": 0.754,
+    "reach_rate24": 1.0,
+    "node": "Side_Plank_Pose_or_Vasisthasana|R_FOOT:G|R_HAND:G@side_r"
+   },
+   "route_legacy": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0561,
+    "held_s_p50": 6.467,
+    "pelvis_z_p50": 0.766,
+    "reach_rate24": 1.0,
+    "node": "Side_Plank_Pose_or_Vasisthasana|R_FOOT:G|R_HAND:G@side_r",
+    "segment_supports": 1.0,
+    "segment_success": 1.0,
+    "segment_hold": 1.0,
+    "segment_s": [
+     9.4,
+     17.2
+    ],
+    "replicas": 71
+   },
+   "route_training": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0429,
+    "held_s_p50": 8.8,
+    "pelvis_z_p50": 0.749,
+    "reach_rate24": 1.0,
+    "node": "Side_Plank_Pose_or_Vasisthasana|R_FOOT:G|R_HAND:G@side_r",
+    "segment_supports": 1.0,
+    "segment_success": 1.0,
+    "segment_hold": 1.0,
+    "segment_s": [
+     9.4,
+     17.2
+    ],
+    "replicas": 71
+   }
+  },
+  "fork_Standing_Forward_Bend_pose_or_Uttanasana": {
+   "S0_shipped": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0511,
+    "held_s_p50": 3.8,
+    "pelvis_z_p50": 0.854,
+    "reach_rate24": 1.0,
+    "node": "Standing_Forward_Bend_pose_or_Uttanasana|L_FOOT:G|R_FOOT:G@prone"
+   },
+   "release_legacy": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0509,
+    "held_s_p50": 3.8,
+    "pelvis_z_p50": 0.854,
+    "reach_rate24": 1.0,
+    "node": "Standing_Forward_Bend_pose_or_Uttanasana|L_FOOT:G|R_FOOT:G@prone"
+   },
+   "release_training": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0571,
+    "held_s_p50": 3.667,
+    "pelvis_z_p50": 0.855,
+    "reach_rate24": 1.0,
+    "node": "Standing_Forward_Bend_pose_or_Uttanasana|L_FOOT:G|R_FOOT:G@prone"
+   },
+   "route_legacy": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0221,
+    "held_s_p50": 5.467,
+    "pelvis_z_p50": 0.853,
+    "reach_rate24": 1.0,
+    "node": "Standing_Forward_Bend_pose_or_Uttanasana|L_FOOT:G|R_FOOT:G@prone",
+    "segment_supports": 1.0,
+    "segment_success": 1.0,
+    "segment_hold": 1.0,
+    "segment_s": [
+     2.983,
+     8.933
+    ],
+    "replicas": 71
+   },
+   "route_training": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0215,
+    "held_s_p50": 5.867,
+    "pelvis_z_p50": 0.853,
+    "reach_rate24": 1.0,
+    "node": "Standing_Forward_Bend_pose_or_Uttanasana|L_FOOT:G|R_FOOT:G@prone",
+    "segment_supports": 1.0,
+    "segment_success": 1.0,
+    "segment_hold": 1.0,
+    "segment_s": [
+     2.983,
+     8.933
+    ],
+    "replicas": 71
+   }
+  },
+  "fork_Standing_Split_pose_or_Urdhva_Prasarita": {
+   "S0_shipped": {
+    "success": 0.10256410256410256,
+    "hold_rate24": 0.10256410256410256,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.1511,
+    "held_s_p50": 2.133,
+    "pelvis_z_p50": 0.891,
+    "reach_rate24": 1.0,
+    "node": "Standing_Split_pose_or_Urdhva_Prasarita_Eka_Padasana|L_FOOT:G|R_HAND:G@prone"
+   },
+   "release_legacy": {
+    "success": 0.23076923076923078,
+    "hold_rate24": 0.23076923076923078,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.1507,
+    "held_s_p50": 2.133,
+    "pelvis_z_p50": 0.891,
+    "reach_rate24": 1.0,
+    "node": "Standing_Split_pose_or_Urdhva_Prasarita_Eka_Padasana|L_FOOT:G|R_HAND:G@prone"
+   },
+   "release_training": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.1419,
+    "held_s_p50": 2.467,
+    "pelvis_z_p50": 0.892,
+    "reach_rate24": 1.0,
+    "node": "Standing_Split_pose_or_Urdhva_Prasarita_Eka_Padasana|L_FOOT:G|R_HAND:G@prone"
+   },
+   "route_legacy": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0854,
+    "held_s_p50": 5.333,
+    "pelvis_z_p50": 0.89,
+    "reach_rate24": 1.0,
+    "node": "Standing_Split_pose_or_Urdhva_Prasarita_Eka_Padasana|L_FOOT:G|R_HAND:G@prone",
+    "segment_supports": 1.0,
+    "segment_success": 1.0,
+    "segment_hold": 1.0,
+    "segment_s": [
+     3.9,
+     11.217
+    ],
+    "replicas": 71
+   },
+   "route_training": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0643,
+    "held_s_p50": 5.8,
+    "pelvis_z_p50": 0.888,
+    "reach_rate24": 1.0,
+    "node": "Standing_Split_pose_or_Urdhva_Prasarita_Eka_Padasana|L_FOOT:G|R_HAND:G@prone",
+    "segment_supports": 1.0,
+    "segment_success": 1.0,
+    "segment_hold": 1.0,
+    "segment_s": [
+     3.9,
+     11.217
+    ],
+    "replicas": 71
+   }
+  },
+  "fork_Standing_big_toe_hold_pose_or_Utthita_Pa": {
+   "S0_shipped": {
+    "success": 0.0,
+    "hold_rate24": 0.0,
+    "supports_realised": 0.47435897435897434,
+    "no_substitution": 0.0,
+    "err24_p50": 0.5971,
+    "held_s_p50": 0.0,
+    "pelvis_z_p50": 0.106,
+    "reach_rate24": 0.0,
+    "node": "Standing_big_toe_hold_pose_or_Utthita_Padangusthasana|L_FOOT:G@upright"
+   },
+   "release_legacy": {
+    "success": 0.0,
+    "hold_rate24": 0.0,
+    "supports_realised": 0.4358974358974359,
+    "no_substitution": 0.0,
+    "err24_p50": 0.5967,
+    "held_s_p50": 0.0,
+    "pelvis_z_p50": 0.105,
+    "reach_rate24": 0.0,
+    "node": "Standing_big_toe_hold_pose_or_Utthita_Padangusthasana|L_FOOT:G@upright"
+   },
+   "release_training": {
+    "success": 0.0,
+    "hold_rate24": 0.0,
+    "supports_realised": 0.9230769230769231,
+    "no_substitution": 0.0,
+    "err24_p50": 0.61885,
+    "held_s_p50": 0.933,
+    "pelvis_z_p50": 0.2185,
+    "reach_rate24": 0.8974358974358975,
+    "node": "Standing_big_toe_hold_pose_or_Utthita_Padangusthasana|L_FOOT:G@upright"
+   },
+   "route_legacy": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0308,
+    "held_s_p50": 4.333,
+    "pelvis_z_p50": 0.992,
+    "reach_rate24": 1.0,
+    "node": "Standing_big_toe_hold_pose_or_Utthita_Padangusthasana|L_FOOT:G@upright",
+    "segment_supports": 1.0,
+    "segment_success": 0.0,
+    "segment_hold": 0.0,
+    "segment_s": [
+     3.233,
+     17.033
+    ],
+    "replicas": 71
+   },
+   "route_training": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0297,
+    "held_s_p50": 5.867,
+    "pelvis_z_p50": 0.992,
+    "reach_rate24": 1.0,
+    "node": "Standing_big_toe_hold_pose_or_Utthita_Padangusthasana|L_FOOT:G@upright",
+    "segment_supports": 1.0,
+    "segment_success": 0.0,
+    "segment_hold": 0.0,
+    "segment_s": [
+     3.233,
+     17.033
+    ],
+    "replicas": 71
+   }
+  },
+  "fork_Supported_Headstand_pose_or_Salamba_Sirs": {
+   "S0_shipped": {
+    "success": 0.0,
+    "hold_rate24": 0.0,
+    "supports_realised": 0.0,
+    "no_substitution": 0.0,
+    "err24_p50": 0.6381,
+    "held_s_p50": 0.0,
+    "pelvis_z_p50": 0.781,
+    "reach_rate24": 0.0,
+    "node": "Supported_Headstand_pose_or_Salamba_Sirsasana|HEAD:G|L_HAND:G|R_HAND:G@inverted"
+   },
+   "release_legacy": {
+    "success": 0.0,
+    "hold_rate24": 0.0,
+    "supports_realised": 0.0,
+    "no_substitution": 0.0,
+    "err24_p50": 0.638,
+    "held_s_p50": 0.0,
+    "pelvis_z_p50": 0.782,
+    "reach_rate24": 0.0,
+    "node": "Supported_Headstand_pose_or_Salamba_Sirsasana|HEAD:G|L_HAND:G|R_HAND:G@inverted"
+   },
+   "release_training": {
+    "success": 0.0,
+    "hold_rate24": 0.0,
+    "supports_realised": 0.0,
+    "no_substitution": 0.0,
+    "err24_p50": 0.63425,
+    "held_s_p50": 0.0,
+    "pelvis_z_p50": 0.797,
+    "reach_rate24": 0.0,
+    "node": "Supported_Headstand_pose_or_Salamba_Sirsasana|HEAD:G|L_HAND:G|R_HAND:G@inverted"
+   },
+   "route_legacy": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0533,
+    "held_s_p50": 6.2,
+    "pelvis_z_p50": 0.757,
+    "reach_rate24": 1.0,
+    "node": "Supported_Headstand_pose_or_Salamba_Sirsasana|HEAD:G|L_HAND:G|R_HAND:G@inverted",
+    "segment_supports": 1.0,
+    "segment_success": 1.0,
+    "segment_hold": 1.0,
+    "segment_s": [
+     10.55,
+     19.917
+    ],
+    "replicas": 71
+   },
+   "route_training": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0374,
+    "held_s_p50": 6.2,
+    "pelvis_z_p50": 0.764,
+    "reach_rate24": 1.0,
+    "node": "Supported_Headstand_pose_or_Salamba_Sirsasana|HEAD:G|L_HAND:G|R_HAND:G@inverted",
+    "segment_supports": 1.0,
+    "segment_success": 1.0,
+    "segment_hold": 1.0,
+    "segment_s": [
+     10.55,
+     19.917
+    ],
+    "replicas": 71
+   }
+  },
+  "fork_Supported_Shoulderstand_pose_or_Salamba": {
+   "S0_shipped": {
+    "success": 0.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 0.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.04065,
+    "held_s_p50": 5.667,
+    "pelvis_z_p50": 0.412,
+    "reach_rate24": 1.0,
+    "node": "Supported_Shoulderstand_pose_or_Salamba_Sarvangasana|HEAD:G|L_UPPER_ARM:G|R_UPPER_ARM:G|TRUNK:G@inverted"
+   },
+   "release_legacy": {
+    "success": 0.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 0.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.04135,
+    "held_s_p50": 5.667,
+    "pelvis_z_p50": 0.412,
+    "reach_rate24": 1.0,
+    "node": "Supported_Shoulderstand_pose_or_Salamba_Sarvangasana|HEAD:G|L_UPPER_ARM:G|R_UPPER_ARM:G|TRUNK:G@inverted"
+   },
+   "release_training": {
+    "success": 0.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 0.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0368,
+    "held_s_p50": 5.533,
+    "pelvis_z_p50": 0.412,
+    "reach_rate24": 1.0,
+    "node": "Supported_Shoulderstand_pose_or_Salamba_Sarvangasana|HEAD:G|L_UPPER_ARM:G|R_UPPER_ARM:G|TRUNK:G@inverted"
+   },
+   "route_legacy": {
+    "success": 0.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 0.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0402,
+    "held_s_p50": 8.133,
+    "pelvis_z_p50": 0.409,
+    "reach_rate24": 1.0,
+    "node": "Supported_Shoulderstand_pose_or_Salamba_Sarvangasana|HEAD:G|L_UPPER_ARM:G|R_UPPER_ARM:G|TRUNK:G@inverted",
+    "segment_supports": 0.0,
+    "segment_success": 0.0,
+    "segment_hold": 1.0,
+    "segment_s": [
+     9.5,
+     16.317
+    ],
+    "replicas": 71
+   },
+   "route_training": {
+    "success": 0.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 0.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0404,
+    "held_s_p50": 7.467,
+    "pelvis_z_p50": 0.413,
+    "reach_rate24": 1.0,
+    "node": "Supported_Shoulderstand_pose_or_Salamba_Sarvangasana|HEAD:G|L_UPPER_ARM:G|R_UPPER_ARM:G|TRUNK:G@inverted",
+    "segment_supports": 0.0,
+    "segment_success": 0.0,
+    "segment_hold": 1.0,
+    "segment_s": [
+     9.5,
+     16.317
+    ],
+    "replicas": 71
+   }
+  },
+  "fork_Tree_Pose_or_Vrksasana": {
+   "S0_shipped": {
+    "success": 0.05128205128205128,
+    "hold_rate24": 0.05128205128205128,
+    "supports_realised": 0.0641025641025641,
+    "no_substitution": 0.05128205128205128,
+    "err24_p50": 0.5271,
+    "held_s_p50": 2.467,
+    "pelvis_z_p50": 0.1785,
+    "reach_rate24": 1.0,
+    "node": "Tree_Pose_or_Vrksasana|R_FOOT:G@upright"
+   },
+   "release_legacy": {
+    "success": 0.02564102564102564,
+    "hold_rate24": 0.02564102564102564,
+    "supports_realised": 0.02564102564102564,
+    "no_substitution": 0.02564102564102564,
+    "err24_p50": 0.52085,
+    "held_s_p50": 2.4,
+    "pelvis_z_p50": 0.161,
+    "reach_rate24": 1.0,
+    "node": "Tree_Pose_or_Vrksasana|R_FOOT:G@upright"
+   },
+   "release_training": {
+    "success": 0.0,
+    "hold_rate24": 0.0,
+    "supports_realised": 0.0,
+    "no_substitution": 0.0,
+    "err24_p50": 0.50995,
+    "held_s_p50": 2.533,
+    "pelvis_z_p50": 0.136,
+    "reach_rate24": 1.0,
+    "node": "Tree_Pose_or_Vrksasana|R_FOOT:G@upright"
+   },
+   "route_legacy": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0377,
+    "held_s_p50": 6.467,
+    "pelvis_z_p50": 0.979,
+    "reach_rate24": 1.0,
+    "node": "Tree_Pose_or_Vrksasana|R_FOOT:G@upright",
+    "segment_supports": 1.0,
+    "segment_success": 1.0,
+    "segment_hold": 1.0,
+    "segment_s": [
+     4.417,
+     9.033
+    ],
+    "replicas": 71
+   },
+   "route_training": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.043,
+    "held_s_p50": 6.467,
+    "pelvis_z_p50": 0.978,
+    "reach_rate24": 1.0,
+    "node": "Tree_Pose_or_Vrksasana|R_FOOT:G@upright",
+    "segment_supports": 1.0,
+    "segment_success": 1.0,
+    "segment_hold": 1.0,
+    "segment_s": [
+     4.417,
+     9.033
+    ],
+    "replicas": 71
+   }
+  },
+  "fork_Upward_Plank_Pose_or_Purvottanasana": {
+   "S0_shipped": {
+    "success": 0.0,
+    "hold_rate24": 0.0,
+    "supports_realised": 0.48717948717948717,
+    "no_substitution": 0.0,
+    "err24_p50": 0.27995000000000003,
+    "held_s_p50": 0.0,
+    "pelvis_z_p50": 0.093,
+    "reach_rate24": 0.0,
+    "node": "Upward_Plank_Pose_or_Purvottanasana|L_FOOT:G|L_HAND:G|R_FOOT:G|R_HAND:G@supine"
+   },
+   "release_legacy": {
+    "success": 0.0,
+    "hold_rate24": 0.0,
+    "supports_realised": 0.34615384615384615,
+    "no_substitution": 0.0,
+    "err24_p50": 0.27975,
+    "held_s_p50": 0.0,
+    "pelvis_z_p50": 0.093,
+    "reach_rate24": 0.0,
+    "node": "Upward_Plank_Pose_or_Purvottanasana|L_FOOT:G|L_HAND:G|R_FOOT:G|R_HAND:G@supine"
+   },
+   "release_training": {
+    "success": 0.0,
+    "hold_rate24": 0.0,
+    "supports_realised": 0.01282051282051282,
+    "no_substitution": 0.0,
+    "err24_p50": 0.28545,
+    "held_s_p50": 0.0,
+    "pelvis_z_p50": 0.093,
+    "reach_rate24": 0.0,
+    "node": "Upward_Plank_Pose_or_Purvottanasana|L_FOOT:G|L_HAND:G|R_FOOT:G|R_HAND:G@supine"
+   },
+   "route_legacy": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0453,
+    "held_s_p50": 6.867,
+    "pelvis_z_p50": 0.497,
+    "reach_rate24": 1.0,
+    "node": "Upward_Plank_Pose_or_Purvottanasana|L_FOOT:G|L_HAND:G|R_FOOT:G|R_HAND:G@supine",
+    "segment_supports": 1.0,
+    "segment_success": 1.0,
+    "segment_hold": 1.0,
+    "segment_s": [
+     17.8,
+     24.733
+    ],
+    "replicas": 71
+   },
+   "route_training": {
+    "success": 0.4225352112676056,
+    "hold_rate24": 0.4788732394366197,
+    "supports_realised": 0.4225352112676056,
+    "no_substitution": 0.5352112676056338,
+    "err24_p50": 0.1668,
+    "held_s_p50": 7.133,
+    "pelvis_z_p50": 0.425,
+    "reach_rate24": 1.0,
+    "node": "Upward_Plank_Pose_or_Purvottanasana|L_FOOT:G|L_HAND:G|R_FOOT:G|R_HAND:G@supine",
+    "segment_supports": 0.5774647887323944,
+    "segment_success": 0.5774647887323944,
+    "segment_hold": 0.7746478873239436,
+    "segment_s": [
+     17.8,
+     24.733
+    ],
+    "replicas": 71
+   }
+  },
+  "fork_Warrior_III_Pose_or_Virabhadrasana_III": {
+   "S0_shipped": {
+    "success": 0.0,
+    "hold_rate24": 0.0,
+    "supports_realised": 0.01282051282051282,
+    "no_substitution": 0.0,
+    "err24_p50": 0.42364999999999997,
+    "held_s_p50": 0.0,
+    "pelvis_z_p50": 0.0965,
+    "reach_rate24": 0.0,
+    "node": "Warrior_III_Pose_or_Virabhadrasana_III|R_FOOT:G@prone"
+   },
+   "release_legacy": {
+    "success": 0.0,
+    "hold_rate24": 0.0,
+    "supports_realised": 0.0,
+    "no_substitution": 0.0,
+    "err24_p50": 0.42069999999999996,
+    "held_s_p50": 0.0,
+    "pelvis_z_p50": 0.0975,
+    "reach_rate24": 0.0,
+    "node": "Warrior_III_Pose_or_Virabhadrasana_III|R_FOOT:G@prone"
+   },
+   "release_training": {
+    "success": 0.0,
+    "hold_rate24": 0.0,
+    "supports_realised": 0.0,
+    "no_substitution": 0.0,
+    "err24_p50": 0.42785,
+    "held_s_p50": 0.0,
+    "pelvis_z_p50": 0.095,
+    "reach_rate24": 0.0,
+    "node": "Warrior_III_Pose_or_Virabhadrasana_III|R_FOOT:G@prone"
+   },
+   "route_legacy": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0338,
+    "held_s_p50": 10.0,
+    "pelvis_z_p50": 0.899,
+    "reach_rate24": 1.0,
+    "node": "Warrior_III_Pose_or_Virabhadrasana_III|R_FOOT:G@prone",
+    "segment_supports": 1.0,
+    "segment_success": 1.0,
+    "segment_hold": 1.0,
+    "segment_s": [
+     4.133,
+     14.95
+    ],
+    "replicas": 71
+   },
+   "route_training": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0331,
+    "held_s_p50": 10.0,
+    "pelvis_z_p50": 0.898,
+    "reach_rate24": 1.0,
+    "node": "Warrior_III_Pose_or_Virabhadrasana_III|R_FOOT:G@prone",
+    "segment_supports": 1.0,
+    "segment_success": 1.0,
+    "segment_hold": 1.0,
+    "segment_s": [
+     4.133,
+     14.95
+    ],
+    "replicas": 71
+   }
+  },
+  "fork_Warrior_II_Pose_or_Virabhadrasana_II": {
+   "S0_shipped": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.06055,
+    "held_s_p50": 7.733,
+    "pelvis_z_p50": 0.813,
+    "reach_rate24": 1.0,
+    "node": "Warrior_II_Pose_or_Virabhadrasana_II|L_FOOT:G|R_FOOT:G@upright"
+   },
+   "release_legacy": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.060450000000000004,
+    "held_s_p50": 7.733,
+    "pelvis_z_p50": 0.813,
+    "reach_rate24": 1.0,
+    "node": "Warrior_II_Pose_or_Virabhadrasana_II|L_FOOT:G|R_FOOT:G@upright"
+   },
+   "release_training": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0638,
+    "held_s_p50": 7.667,
+    "pelvis_z_p50": 0.817,
+    "reach_rate24": 1.0,
+    "node": "Warrior_II_Pose_or_Virabhadrasana_II|L_FOOT:G|R_FOOT:G@upright"
+   },
+   "route_legacy": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0237,
+    "held_s_p50": 4.4,
+    "pelvis_z_p50": 0.745,
+    "reach_rate24": 1.0,
+    "node": "Warrior_II_Pose_or_Virabhadrasana_II|L_FOOT:G|R_FOOT:G@upright",
+    "segment_supports": 1.0,
+    "segment_success": 1.0,
+    "segment_hold": 1.0,
+    "segment_s": [
+     5.883,
+     10.083
+    ],
+    "replicas": 71
+   },
+   "route_training": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0214,
+    "held_s_p50": 4.6,
+    "pelvis_z_p50": 0.742,
+    "reach_rate24": 1.0,
+    "node": "Warrior_II_Pose_or_Virabhadrasana_II|L_FOOT:G|R_FOOT:G@upright",
+    "segment_supports": 1.0,
+    "segment_success": 1.0,
+    "segment_hold": 1.0,
+    "segment_s": [
+     5.883,
+     10.083
+    ],
+    "replicas": 71
+   }
+  },
+  "fork_edge_B1": {
+   "S0_shipped": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0567,
+    "held_s_p50": 4.333,
+    "pelvis_z_p50": 0.459,
+    "reach_rate24": 1.0,
+    "node": "Plank_Pose_or_Kumbhakasana|L_FOOT:G|L_HAND:G|R_FOOT:G|R_HAND:G@prone"
+   },
+   "release_legacy": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0566,
+    "held_s_p50": 4.333,
+    "pelvis_z_p50": 0.459,
+    "reach_rate24": 1.0,
+    "node": "Plank_Pose_or_Kumbhakasana|L_FOOT:G|L_HAND:G|R_FOOT:G|R_HAND:G@prone"
+   },
+   "release_training": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0568,
+    "held_s_p50": 4.533,
+    "pelvis_z_p50": 0.468,
+    "reach_rate24": 1.0,
+    "node": "Plank_Pose_or_Kumbhakasana|L_FOOT:G|L_HAND:G|R_FOOT:G|R_HAND:G@prone"
+   },
+   "route_legacy": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0567,
+    "held_s_p50": 4.333,
+    "pelvis_z_p50": 0.459,
+    "reach_rate24": 1.0,
+    "node": "Plank_Pose_or_Kumbhakasana|L_FOOT:G|L_HAND:G|R_FOOT:G|R_HAND:G@prone"
+   },
+   "route_training": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0573,
+    "held_s_p50": 4.533,
+    "pelvis_z_p50": 0.468,
+    "reach_rate24": 1.0,
+    "node": "Plank_Pose_or_Kumbhakasana|L_FOOT:G|L_HAND:G|R_FOOT:G|R_HAND:G@prone"
+   }
+  },
+  "fork_edge_E1": {
+   "S0_shipped": {
+    "success": 0.9487179487179487,
+    "hold_rate24": 0.9487179487179487,
+    "supports_realised": 1.0,
+    "no_substitution": 0.9487179487179487,
+    "err24_p50": 0.0794,
+    "held_s_p50": 4.933,
+    "pelvis_z_p50": 1.049,
+    "reach_rate24": 0.9487179487179487,
+    "node": "Handstand_pose_or_Adho_Mukha_Vrksasana|L_HAND:G|R_HAND:G@inverted"
+   },
+   "release_legacy": {
+    "success": 0.9230769230769231,
+    "hold_rate24": 0.9230769230769231,
+    "supports_realised": 1.0,
+    "no_substitution": 0.9230769230769231,
+    "err24_p50": 0.0795,
+    "held_s_p50": 4.867,
+    "pelvis_z_p50": 1.049,
+    "reach_rate24": 0.9230769230769231,
+    "node": "Handstand_pose_or_Adho_Mukha_Vrksasana|L_HAND:G|R_HAND:G@inverted"
+   },
+   "release_training": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.097,
+    "held_s_p50": 4.533,
+    "pelvis_z_p50": 1.044,
+    "reach_rate24": 1.0,
+    "node": "Handstand_pose_or_Adho_Mukha_Vrksasana|L_HAND:G|R_HAND:G@inverted"
+   },
+   "route_legacy": {
+    "success": 0.9295774647887324,
+    "hold_rate24": 0.9295774647887324,
+    "supports_realised": 1.0,
+    "no_substitution": 0.9295774647887324,
+    "err24_p50": 0.0797,
+    "held_s_p50": 4.933,
+    "pelvis_z_p50": 1.049,
+    "reach_rate24": 0.9436619718309859,
+    "node": "Handstand_pose_or_Adho_Mukha_Vrksasana|L_HAND:G|R_HAND:G@inverted"
+   },
+   "route_training": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0972,
+    "held_s_p50": 4.533,
+    "pelvis_z_p50": 1.044,
+    "reach_rate24": 1.0,
+    "node": "Handstand_pose_or_Adho_Mukha_Vrksasana|L_HAND:G|R_HAND:G@inverted"
+   }
+  },
+  "fork_edge_E2": {
+   "S0_shipped": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.036,
+    "held_s_p50": 3.933,
+    "pelvis_z_p50": 0.256,
+    "reach_rate24": 1.0,
+    "node": "Four-Limbed_Staff_Pose_or_Chaturanga_Dandasana|L_FOOT:G|L_HAND:G|R_FOOT:G|R_HAND:G@prone"
+   },
+   "release_legacy": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0359,
+    "held_s_p50": 3.933,
+    "pelvis_z_p50": 0.256,
+    "reach_rate24": 1.0,
+    "node": "Four-Limbed_Staff_Pose_or_Chaturanga_Dandasana|L_FOOT:G|L_HAND:G|R_FOOT:G|R_HAND:G@prone"
+   },
+   "release_training": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0346,
+    "held_s_p50": 4.133,
+    "pelvis_z_p50": 0.263,
+    "reach_rate24": 1.0,
+    "node": "Four-Limbed_Staff_Pose_or_Chaturanga_Dandasana|L_FOOT:G|L_HAND:G|R_FOOT:G|R_HAND:G@prone"
+   },
+   "route_legacy": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0361,
+    "held_s_p50": 3.933,
+    "pelvis_z_p50": 0.256,
+    "reach_rate24": 1.0,
+    "node": "Four-Limbed_Staff_Pose_or_Chaturanga_Dandasana|L_FOOT:G|L_HAND:G|R_FOOT:G|R_HAND:G@prone"
+   },
+   "route_training": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0346,
+    "held_s_p50": 4.133,
+    "pelvis_z_p50": 0.263,
+    "reach_rate24": 1.0,
+    "node": "Four-Limbed_Staff_Pose_or_Chaturanga_Dandasana|L_FOOT:G|L_HAND:G|R_FOOT:G|R_HAND:G@prone"
+   }
+  },
+  "fork_edge_E3": {
+   "S0_shipped": {
+    "success": 0.01282051282051282,
+    "hold_rate24": 0.05128205128205128,
+    "supports_realised": 0.08974358974358974,
+    "no_substitution": 0.01282051282051282,
+    "err24_p50": 0.55035,
+    "held_s_p50": 0.0,
+    "pelvis_z_p50": 0.093,
+    "reach_rate24": 0.05128205128205128,
+    "node": "Crane_Crow_Pose_or_Bakasana|L_HAND:G|R_HAND:G@prone"
+   },
+   "release_legacy": {
+    "success": 0.0,
+    "hold_rate24": 0.038461538461538464,
+    "supports_realised": 0.11538461538461539,
+    "no_substitution": 0.0,
+    "err24_p50": 0.54965,
+    "held_s_p50": 0.0,
+    "pelvis_z_p50": 0.093,
+    "reach_rate24": 0.038461538461538464,
+    "node": "Crane_Crow_Pose_or_Bakasana|L_HAND:G|R_HAND:G@prone"
+   },
+   "release_training": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0538,
+    "held_s_p50": 7.467,
+    "pelvis_z_p50": 0.718,
+    "reach_rate24": 1.0,
+    "node": "Crane_Crow_Pose_or_Bakasana|L_HAND:G|R_HAND:G@prone"
+   },
+   "route_legacy": {
+    "success": 0.0,
+    "hold_rate24": 0.014084507042253521,
+    "supports_realised": 0.04225352112676056,
+    "no_substitution": 0.0,
+    "err24_p50": 0.5509,
+    "held_s_p50": 0.0,
+    "pelvis_z_p50": 0.093,
+    "reach_rate24": 0.014084507042253521,
+    "node": "Crane_Crow_Pose_or_Bakasana|L_HAND:G|R_HAND:G@prone"
+   },
+   "route_training": {
+    "success": 0.971830985915493,
+    "hold_rate24": 0.971830985915493,
+    "supports_realised": 0.971830985915493,
+    "no_substitution": 0.971830985915493,
+    "err24_p50": 0.0548,
+    "held_s_p50": 7.467,
+    "pelvis_z_p50": 0.717,
+    "reach_rate24": 0.971830985915493,
+    "node": "Crane_Crow_Pose_or_Bakasana|L_HAND:G|R_HAND:G@prone"
+   }
+  },
+  "fork_edge_E5": {
+   "S0_shipped": {
+    "success": 0.5128205128205128,
+    "hold_rate24": 0.6923076923076923,
+    "supports_realised": 0.7564102564102564,
+    "no_substitution": 0.5384615384615384,
+    "err24_p50": 0.11025,
+    "held_s_p50": 3.933,
+    "pelvis_z_p50": 0.2605,
+    "reach_rate24": 0.6923076923076923,
+    "node": "Four-Limbed_Staff_Pose_or_Chaturanga_Dandasana|L_FOOT:G|L_HAND:G|R_FOOT:G|R_HAND:G@prone"
+   },
+   "release_legacy": {
+    "success": 0.5384615384615384,
+    "hold_rate24": 0.6923076923076923,
+    "supports_realised": 0.8076923076923077,
+    "no_substitution": 0.5384615384615384,
+    "err24_p50": 0.10685,
+    "held_s_p50": 3.933,
+    "pelvis_z_p50": 0.2595,
+    "reach_rate24": 0.6923076923076923,
+    "node": "Four-Limbed_Staff_Pose_or_Chaturanga_Dandasana|L_FOOT:G|L_HAND:G|R_FOOT:G|R_HAND:G@prone"
+   },
+   "release_training": {
+    "success": 0.0,
+    "hold_rate24": 0.0,
+    "supports_realised": 0.0,
+    "no_substitution": 0.0,
+    "err24_p50": 0.37075,
+    "held_s_p50": 0.0,
+    "pelvis_z_p50": 0.09,
+    "reach_rate24": 0.0,
+    "node": "Four-Limbed_Staff_Pose_or_Chaturanga_Dandasana|L_FOOT:G|L_HAND:G|R_FOOT:G|R_HAND:G@prone"
+   },
+   "route_legacy": {
+    "success": 0.6056338028169014,
+    "hold_rate24": 0.7464788732394366,
+    "supports_realised": 0.7323943661971831,
+    "no_substitution": 0.676056338028169,
+    "err24_p50": 0.055,
+    "held_s_p50": 4.0,
+    "pelvis_z_p50": 0.261,
+    "reach_rate24": 0.7464788732394366,
+    "node": "Four-Limbed_Staff_Pose_or_Chaturanga_Dandasana|L_FOOT:G|L_HAND:G|R_FOOT:G|R_HAND:G@prone"
+   },
+   "route_training": {
+    "success": 0.0,
+    "hold_rate24": 0.0,
+    "supports_realised": 0.0,
+    "no_substitution": 0.0,
+    "err24_p50": 0.371,
+    "held_s_p50": 0.0,
+    "pelvis_z_p50": 0.09,
+    "reach_rate24": 0.0,
+    "node": "Four-Limbed_Staff_Pose_or_Chaturanga_Dandasana|L_FOOT:G|L_HAND:G|R_FOOT:G|R_HAND:G@prone"
+   }
+  },
+  "fork_viparita_virabhadrasana_or_reverse_warri": {
+   "S0_shipped": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.06985,
+    "held_s_p50": 7.333,
+    "pelvis_z_p50": 0.7995000000000001,
+    "reach_rate24": 1.0,
+    "node": "viparita_virabhadrasana_or_reverse_warrior_pose|L_FOOT:G|R_FOOT:G@upright"
+   },
+   "release_legacy": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0697,
+    "held_s_p50": 7.4,
+    "pelvis_z_p50": 0.8,
+    "reach_rate24": 1.0,
+    "node": "viparita_virabhadrasana_or_reverse_warrior_pose|L_FOOT:G|R_FOOT:G@upright"
+   },
+   "release_training": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0635,
+    "held_s_p50": 7.267,
+    "pelvis_z_p50": 0.791,
+    "reach_rate24": 1.0,
+    "node": "viparita_virabhadrasana_or_reverse_warrior_pose|L_FOOT:G|R_FOOT:G@upright"
+   },
+   "route_legacy": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0373,
+    "held_s_p50": 6.333,
+    "pelvis_z_p50": 0.762,
+    "reach_rate24": 1.0,
+    "node": "viparita_virabhadrasana_or_reverse_warrior_pose|L_FOOT:G|R_FOOT:G@upright",
+    "segment_supports": 1.0,
+    "segment_success": 1.0,
+    "segment_hold": 1.0,
+    "segment_s": [
+     7.4,
+     14.117
+    ],
+    "replicas": 71
+   },
+   "route_training": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0317,
+    "held_s_p50": 6.267,
+    "pelvis_z_p50": 0.758,
+    "reach_rate24": 1.0,
+    "node": "viparita_virabhadrasana_or_reverse_warrior_pose|L_FOOT:G|R_FOOT:G@upright",
+    "segment_supports": 1.0,
+    "segment_success": 1.0,
+    "segment_hold": 1.0,
+    "segment_s": [
+     7.4,
+     14.117
+    ],
+    "replicas": 71
+   }
+  },
+  "nohijack_B1": {
+   "S0_shipped": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0262,
+    "held_s_p50": 4.067,
+    "pelvis_z_p50": 0.968,
+    "reach_rate24": 1.0,
+    "node": "standing|L_FOOT:G|R_FOOT:G@upright"
+   },
+   "release_legacy": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.026,
+    "held_s_p50": 4.067,
+    "pelvis_z_p50": 0.968,
+    "reach_rate24": 1.0,
+    "node": "standing|L_FOOT:G|R_FOOT:G@upright"
+   },
+   "release_training": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.01865,
+    "held_s_p50": 3.533,
+    "pelvis_z_p50": 0.966,
+    "reach_rate24": 1.0,
+    "node": "standing|L_FOOT:G|R_FOOT:G@upright"
+   },
+   "route_legacy": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.026,
+    "held_s_p50": 4.067,
+    "pelvis_z_p50": 0.968,
+    "reach_rate24": 1.0,
+    "node": "standing|L_FOOT:G|R_FOOT:G@upright"
+   },
+   "route_training": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0183,
+    "held_s_p50": 3.533,
+    "pelvis_z_p50": 0.967,
+    "reach_rate24": 1.0,
+    "node": "standing|L_FOOT:G|R_FOOT:G@upright"
+   }
+  },
+  "nohijack_E1": {
+   "S0_shipped": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.02615,
+    "held_s_p50": 4.067,
+    "pelvis_z_p50": 0.968,
+    "reach_rate24": 1.0,
+    "node": "standing|L_FOOT:G|R_FOOT:G@upright"
+   },
+   "release_legacy": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0261,
+    "held_s_p50": 4.067,
+    "pelvis_z_p50": 0.968,
+    "reach_rate24": 1.0,
+    "node": "standing|L_FOOT:G|R_FOOT:G@upright"
+   },
+   "release_training": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0187,
+    "held_s_p50": 3.533,
+    "pelvis_z_p50": 0.966,
+    "reach_rate24": 1.0,
+    "node": "standing|L_FOOT:G|R_FOOT:G@upright"
+   },
+   "route_legacy": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.026,
+    "held_s_p50": 4.067,
+    "pelvis_z_p50": 0.968,
+    "reach_rate24": 1.0,
+    "node": "standing|L_FOOT:G|R_FOOT:G@upright"
+   },
+   "route_training": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0186,
+    "held_s_p50": 3.533,
+    "pelvis_z_p50": 0.966,
+    "reach_rate24": 1.0,
+    "node": "standing|L_FOOT:G|R_FOOT:G@upright"
+   }
+  },
+  "nohijack_E2": {
+   "S0_shipped": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0261,
+    "held_s_p50": 4.067,
+    "pelvis_z_p50": 0.968,
+    "reach_rate24": 1.0,
+    "node": "standing|L_FOOT:G|R_FOOT:G@upright"
+   },
+   "release_legacy": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.026,
+    "held_s_p50": 4.067,
+    "pelvis_z_p50": 0.968,
+    "reach_rate24": 1.0,
+    "node": "standing|L_FOOT:G|R_FOOT:G@upright"
+   },
+   "release_training": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0185,
+    "held_s_p50": 3.533,
+    "pelvis_z_p50": 0.966,
+    "reach_rate24": 1.0,
+    "node": "standing|L_FOOT:G|R_FOOT:G@upright"
+   },
+   "route_legacy": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0262,
+    "held_s_p50": 4.067,
+    "pelvis_z_p50": 0.968,
+    "reach_rate24": 1.0,
+    "node": "standing|L_FOOT:G|R_FOOT:G@upright"
+   },
+   "route_training": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0188,
+    "held_s_p50": 3.533,
+    "pelvis_z_p50": 0.966,
+    "reach_rate24": 1.0,
+    "node": "standing|L_FOOT:G|R_FOOT:G@upright"
+   }
+  },
+  "nohijack_E3": {
+   "S0_shipped": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0398,
+    "held_s_p50": 5.6,
+    "pelvis_z_p50": 0.904,
+    "reach_rate24": 1.0,
+    "node": "Handstand_pose_or_Adho_Mukha_Vrksasana_h2|L_HAND:G|R_FOOT:G|R_HAND:G@prone"
+   },
+   "release_legacy": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.03975,
+    "held_s_p50": 5.6,
+    "pelvis_z_p50": 0.904,
+    "reach_rate24": 1.0,
+    "node": "Handstand_pose_or_Adho_Mukha_Vrksasana_h2|L_HAND:G|R_FOOT:G|R_HAND:G@prone"
+   },
+   "release_training": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0424,
+    "held_s_p50": 5.6,
+    "pelvis_z_p50": 0.9,
+    "reach_rate24": 1.0,
+    "node": "Handstand_pose_or_Adho_Mukha_Vrksasana_h2|L_HAND:G|R_FOOT:G|R_HAND:G@prone"
+   },
+   "route_legacy": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0398,
+    "held_s_p50": 5.6,
+    "pelvis_z_p50": 0.904,
+    "reach_rate24": 1.0,
+    "node": "Handstand_pose_or_Adho_Mukha_Vrksasana_h2|L_HAND:G|R_FOOT:G|R_HAND:G@prone"
+   },
+   "route_training": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0424,
+    "held_s_p50": 5.6,
+    "pelvis_z_p50": 0.9,
+    "reach_rate24": 1.0,
+    "node": "Handstand_pose_or_Adho_Mukha_Vrksasana_h2|L_HAND:G|R_FOOT:G|R_HAND:G@prone"
+   }
+  },
+  "nohijack_E5": {
+   "S0_shipped": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0398,
+    "held_s_p50": 5.6,
+    "pelvis_z_p50": 0.904,
+    "reach_rate24": 1.0,
+    "node": "Handstand_pose_or_Adho_Mukha_Vrksasana_h2|L_HAND:G|R_FOOT:G|R_HAND:G@prone"
+   },
+   "release_legacy": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0398,
+    "held_s_p50": 5.6,
+    "pelvis_z_p50": 0.904,
+    "reach_rate24": 1.0,
+    "node": "Handstand_pose_or_Adho_Mukha_Vrksasana_h2|L_HAND:G|R_FOOT:G|R_HAND:G@prone"
+   },
+   "release_training": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0426,
+    "held_s_p50": 5.6,
+    "pelvis_z_p50": 0.9,
+    "reach_rate24": 1.0,
+    "node": "Handstand_pose_or_Adho_Mukha_Vrksasana_h2|L_HAND:G|R_FOOT:G|R_HAND:G@prone"
+   },
+   "route_legacy": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0398,
+    "held_s_p50": 5.6,
+    "pelvis_z_p50": 0.904,
+    "reach_rate24": 1.0,
+    "node": "Handstand_pose_or_Adho_Mukha_Vrksasana_h2|L_HAND:G|R_FOOT:G|R_HAND:G@prone"
+   },
+   "route_training": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0425,
+    "held_s_p50": 5.6,
+    "pelvis_z_p50": 0.9,
+    "reach_rate24": 1.0,
+    "node": "Handstand_pose_or_Adho_Mukha_Vrksasana_h2|L_HAND:G|R_FOOT:G|R_HAND:G@prone"
+   }
+  },
+  "route_edge_B1": {
+   "S0_shipped": null,
+   "release_legacy": null,
+   "release_training": null,
+   "route_legacy": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0315,
+    "held_s_p50": 3.267,
+    "pelvis_z_p50": 0.486,
+    "reach_rate24": 1.0,
+    "node": "Plank_Pose_or_Kumbhakasana|L_FOOT:G|L_HAND:G|R_FOOT:G|R_HAND:G@prone",
+    "segment_supports": 1.0,
+    "segment_success": 1.0,
+    "segment_hold": 1.0,
+    "segment_s": [
+     7.483,
+     9.8
+    ],
+    "replicas": 71
+   },
+   "route_training": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0312,
+    "held_s_p50": 3.4,
+    "pelvis_z_p50": 0.488,
+    "reach_rate24": 1.0,
+    "node": "Plank_Pose_or_Kumbhakasana|L_FOOT:G|L_HAND:G|R_FOOT:G|R_HAND:G@prone",
+    "segment_supports": 1.0,
+    "segment_success": 1.0,
+    "segment_hold": 1.0,
+    "segment_s": [
+     7.483,
+     9.8
+    ],
+    "replicas": 71
+   }
+  },
+  "route_edge_E1": {
+   "S0_shipped": null,
+   "release_legacy": null,
+   "release_training": null,
+   "route_legacy": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0296,
+    "held_s_p50": 8.267,
+    "pelvis_z_p50": 1.059,
+    "reach_rate24": 1.0,
+    "node": "Handstand_pose_or_Adho_Mukha_Vrksasana|L_HAND:G|R_HAND:G@inverted",
+    "segment_supports": 1.0,
+    "segment_success": 1.0,
+    "segment_hold": 1.0,
+    "segment_s": [
+     10.383,
+     16.033
+    ],
+    "replicas": 71
+   },
+   "route_training": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0346,
+    "held_s_p50": 7.067,
+    "pelvis_z_p50": 1.058,
+    "reach_rate24": 1.0,
+    "node": "Handstand_pose_or_Adho_Mukha_Vrksasana|L_HAND:G|R_HAND:G@inverted",
+    "segment_supports": 1.0,
+    "segment_success": 1.0,
+    "segment_hold": 1.0,
+    "segment_s": [
+     10.383,
+     16.033
+    ],
+    "replicas": 71
+   }
+  },
+  "route_edge_E2": {
+   "S0_shipped": null,
+   "release_legacy": null,
+   "release_training": null,
+   "route_legacy": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0188,
+    "held_s_p50": 2.933,
+    "pelvis_z_p50": 0.274,
+    "reach_rate24": 1.0,
+    "node": "Four-Limbed_Staff_Pose_or_Chaturanga_Dandasana|L_FOOT:G|L_HAND:G|R_FOOT:G|R_HAND:G@prone",
+    "segment_supports": 1.0,
+    "segment_success": 1.0,
+    "segment_hold": 1.0,
+    "segment_s": [
+     6.967,
+     9.283
+    ],
+    "replicas": 71
+   },
+   "route_training": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.019,
+    "held_s_p50": 3.067,
+    "pelvis_z_p50": 0.275,
+    "reach_rate24": 1.0,
+    "node": "Four-Limbed_Staff_Pose_or_Chaturanga_Dandasana|L_FOOT:G|L_HAND:G|R_FOOT:G|R_HAND:G@prone",
+    "segment_supports": 1.0,
+    "segment_success": 1.0,
+    "segment_hold": 1.0,
+    "segment_s": [
+     6.967,
+     9.283
+    ],
+    "replicas": 71
+   }
+  },
+  "route_edge_E3": {
+   "S0_shipped": null,
+   "release_legacy": null,
+   "release_training": null,
+   "route_legacy": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0464,
+    "held_s_p50": 5.267,
+    "pelvis_z_p50": 0.698,
+    "reach_rate24": 1.0,
+    "node": "Crane_Crow_Pose_or_Bakasana|L_HAND:G|R_HAND:G@prone",
+    "segment_supports": 1.0,
+    "segment_success": 1.0,
+    "segment_hold": 1.0,
+    "segment_s": [
+     13.0,
+     16.15
+    ],
+    "replicas": 71
+   },
+   "route_training": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0442,
+    "held_s_p50": 4.533,
+    "pelvis_z_p50": 0.697,
+    "reach_rate24": 1.0,
+    "node": "Crane_Crow_Pose_or_Bakasana|L_HAND:G|R_HAND:G@prone",
+    "segment_supports": 1.0,
+    "segment_success": 1.0,
+    "segment_hold": 1.0,
+    "segment_s": [
+     13.0,
+     16.15
+    ],
+    "replicas": 71
+   }
+  },
+  "route_edge_E5": {
+   "S0_shipped": null,
+   "release_legacy": null,
+   "release_training": null,
+   "route_legacy": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0211,
+    "held_s_p50": 2.867,
+    "pelvis_z_p50": 0.27,
+    "reach_rate24": 1.0,
+    "node": "Four-Limbed_Staff_Pose_or_Chaturanga_Dandasana|L_FOOT:G|L_HAND:G|R_FOOT:G|R_HAND:G@prone",
+    "segment_supports": 1.0,
+    "segment_success": 1.0,
+    "segment_hold": 1.0,
+    "segment_s": [
+     10.65,
+     13.0
+    ],
+    "replicas": 71
+   },
+   "route_training": {
+    "success": 1.0,
+    "hold_rate24": 1.0,
+    "supports_realised": 1.0,
+    "no_substitution": 1.0,
+    "err24_p50": 0.0231,
+    "held_s_p50": 2.8,
+    "pelvis_z_p50": 0.275,
+    "reach_rate24": 1.0,
+    "node": "Four-Limbed_Staff_Pose_or_Chaturanga_Dandasana|L_FOOT:G|L_HAND:G|R_FOOT:G|R_HAND:G@prone",
+    "segment_supports": 1.0,
+    "segment_success": 1.0,
+    "segment_hold": 1.0,
+    "segment_s": [
+     10.65,
+     13.0
+    ],
+    "replicas": 71
+   }
+  }
+ },
+ "family_success": {
+  "S0_shipped": {
+   "scored": 37,
+   "succeeded": 13,
+   "mean": 0.3555093555093555,
+   "segment_scored": 0,
+   "segment_succeeded": 0
+  },
+  "release_legacy": {
+   "scored": 37,
+   "succeeded": 13,
+   "mean": 0.35654885654885654,
+   "segment_scored": 0,
+   "segment_succeeded": 0
+  },
+  "release_training": {
+   "scored": 37,
+   "succeeded": 14,
+   "mean": 0.3728343728343729,
+   "segment_scored": 0,
+   "segment_succeeded": 0
+  },
+  "route_legacy": {
+   "scored": 36,
+   "succeeded": 27,
+   "mean": 0.7625195618153364,
+   "segment_scored": 37,
+   "segment_succeeded": 27
+  },
+  "route_training": {
+   "scored": 36,
+   "succeeded": 28,
+   "mean": 0.7660406885758998,
+   "segment_scored": 37,
+   "segment_succeeded": 28
+  }
+ }
+}

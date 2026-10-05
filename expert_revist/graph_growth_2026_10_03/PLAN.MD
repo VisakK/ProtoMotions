@@ -84,8 +84,21 @@ Read §0–§3, then only that card in §4, and update §5 when done. Cards in d
   - Gate: the fine-tuned expert must pass a goal-causality test at the hubs the new edges create.
   - Size: it is a 3–4-week item.
 
-**Where the programme stands (updated 2026-10-05).**
-- **Lane S has started: S0 is done (2026-10-05), and S1 is next** ([`s0_x0/README.MD`](s0_x0/README.MD)).
+**Where the programme stands (updated 2026-10-05, evening).**
+- **S1 is done (2026-10-05): the student is ported to G3's `epoch_3420.ckpt`, and S2 is next**
+  ([`s1_port/README.MD`](s1_port/README.MD)).
+  - **Both parity tests pass.** In the student env, G3's 12 actor inputs equal the expert's own computation on the
+    same state, bit for bit (1,497 comparisons × 4,096 envs). With the expert acting, the student env reproduces
+    G3's own evaluation within G3's own same-seed rerun: 245 against 241 identical motion scores.
+  - **G3 e3420's "lost" Warrior III, Tree and Side Plank forks were the plans', not the teacher's.** On plans with
+    training's deadline (`data/scripts/plans_release_v3_route/`), all three succeed on every replica.
+    - Family forks: 13 → 28 of 36; the pose is held in 35 of 36 and no family falls.
+    - What fails is seven families that hold the pose without a labelled support (Pincha on its forearms only, …):
+      the teacher's habits, which S2's student will inherit.
+  - S0's three fixes are in: `env.rebuild_observations()` (exact after a step *and* after a reset, a second trap),
+    `set_manual_goal(hold_duration, deadline_floor)` with `SequenceVizConfig.timing="training"`, and the route plans.
+  - **Kickoff for S2:** `bash data/scripts/run_student_distill_release_v3.sh` (S2's recipe; `s1_port/README.MD` §6).
+- **Lane S has started: S0 is done (2026-10-05)** ([`s0_x0/README.MD`](s0_x0/README.MD)).
   - **G3's `epoch_3420.ckpt` passes the X0 falsifier at every hub.** Holding the robot's state fixed, a different
     commanded goal moves the action 0.21 / 0.31 / 0.24 σ_a more than a same-pose goal does, near the end of the
     dwell, at the standing / crow / handstand hubs (threshold 0.05).
@@ -95,8 +108,8 @@ Read §0–§3, then only that card in §4, and update §5 when done. Cards in d
     - G3 e3420 executes E1, B1 and E3 from a held source pose (1.00).
     - It loses Warrior III, Tree and Side Plank from standing, under fork plans that still carry the expert60
       deadline defect.
-  - **S1's card now opens with the three fixes S0 found:** `set_manual_goal`'s dwell semantics, the
-    rebuild-after-step contact sample, and the fork plans' deadline.
+  - S1's card opened with the three fixes S0 found (`set_manual_goal`'s dwell semantics, the rebuild-after-step
+    contact sample, the fork plans' deadline); all three are done (S1, above).
 - **Step 1 is done.** E1 (support rule v2) and E2 (the AMP experiment) are finished; records in
   [`e1_support_v2/README.MD`](e1_support_v2/README.MD) and [`e2_amp/README.MD`](e2_amp/README.MD).
 - **G1 finished (05:16 PDT, 4 Oct) and is evaluated** (2026-10-04): [`g1_amp_eval/README.MD`](g1_amp_eval/README.MD).
@@ -208,10 +221,11 @@ Read §0–§3, then only that card in §4, and update §5 when done. Cards in d
     epoch 3,420 passes X0 at every hub;**
   - fix the panel's pose metric (best yaw; `g3/run_panel_bestyaw.py` shows it) before any panel number is quoted for a
     prone or inverted goal;
-  - **Lane S is next (the user, 2026-10-05; G4 and E4 are skipped):** ~~S0~~ (done: X0 passes; three tooling traps
-    and the fork plans' deadline defect to fix before probes become acceptance, card S0) and S1 (the student
-    port), then S2/G5 and S3/G6. The substitution gate (7.7 against ≤ 6) stays open; the student inherits those
-    holds;
+  - **Lane S is next (the user, 2026-10-05; G4 and E4 are skipped):** ~~S0~~ (done: X0 passes) and ~~S1~~ (done:
+    the port, both parity tests, S0's three fixes; [`s1_port/README.MD`](s1_port/README.MD)), then **S2/G5** (launch
+    with `data/scripts/run_student_distill_release_v3.sh`) and S3/G6. The substitution gate (7.7 against ≤ 6) stays
+    open; the student inherits those holds, and seven family forks hold the pose without a labelled support
+    (`s1_port/README.MD` §4.2);
   - lane E: E5 (E5 can reuse E2's feature function; read its card's note first);
   - R1 is deferred (D2).
   - While a GPU run is active, keep MPPI below 20 threads (§2, Operations).
@@ -303,16 +317,19 @@ Read §0–§3, then only that card in §4, and update §5 when done. Cards in d
 5. **Step 4 (student): gated, and partial goals are what justify it.**
    - **The gate's X0 half is passed (S0, 2026-10-05; [`s0_x0/README.MD`](s0_x0/README.MD)).** G3's epoch 3,420
      changes its action with the commanded goal at a fixed state, 4–6 times the falsification threshold, at every
-     hub. The fork battery is measured too: the new edges run on command from a held source pose; several family
-     forks from standing fail under plans that still need their deadlines fixed.
+     hub. The fork battery is measured too: the new edges run on command from a held source pose.
+   - **The port is done and exact (S1, 2026-10-05; [`s1_port/README.MD`](s1_port/README.MD)).** The expert's
+     inputs are bit-identical in the student env, and its evaluation reproduces there. On plans with training's
+     deadline, G3 holds the commanded pose in 35 of 36 family forks from standing and succeeds on 28; the shipped
+     plans' failures were their deadlines.
    - **What the student adds.** The Design-B expert's actor already consumes only deployable inputs. So the student's
      reason to exist is commanding a contact configuration with a partial pose, plus merging experts and a multimodal
      head.
    - **The ceiling is the teacher.** Distilling e15500 now would inherit clip replay.
-   - **Porting to the release-v2 expert needs an unmasked expert view of the goal schedule.**
+   - **Porting to the release-v2 expert needs an unmasked expert view of the goal schedule** (built in S1).
      - The expert saw 2 slots × 24 bodies, always visible.
      - The student publishes 5 slots × 6 bodies, masked.
-     - There is also a crash to fix.
+     - There is also a crash to fix (fixed in S1).
    - **"PPO loss" means one of two things in practice:**
      - token-level RL fine-tuning with the decoder frozen (the repo has this for the GPC prior, not for the FSQ student);
      - PRISM's λ-ramped PPO + DAgger.
@@ -765,6 +782,10 @@ between two panel runs (`notes/Student_v9_tier0_report.MD`), so read one checkpo
     threshold.
   - From those hubs every new edge and every no-hijack control succeeds on command (1.00).
   - From standing: crow → handstand / plank / chaturanga 0.95–1.00. The handstand-sourced forks fail.
+  - **Re-measured on plans with training's deadline (S1; [`s1_port/README.MD`](s1_port/README.MD) §4):** family
+    forks from standing 28 of 36 (13 of 37 on the shipped plans), the pose held in 35 and no falls. Warrior III,
+    Tree and Side Plank are 1.00, so their S0 failures were the plans'. The seven that still fail hold the pose
+    without a labelled support.
 - **What the student adds.**
   - The expert's actor inputs (`mlp_goal_conditioned.py:152-165`) are all deployable in the student's sense. They are
     sim-privileged only against a real robot: per-body contact forces, terrain-grid proximity, and pair-filtered body–body
@@ -1013,7 +1034,19 @@ plus body–body braces), seeded from policy arrival states and admitted by Phys
   within 2 cm of the floor carrying under 1 N. Score supports by load, never by the flag or by geometry alone.
 
 **Student**
-- **A crash in the student's merge loop:** `contact_graph_transformer.py:553-559` compares an int with a list.
+- **A crash in the student's merge loop:** `contact_graph_transformer.py:553-559` compared an int with a list. Fixed
+  in S1: the loop reads an expert's future window only if its actor reads `mimic_target_poses`.
+- **Rebuild observations with `env.rebuild_observations()`** (S1). A naive rebuild reads a zero contact force rate
+  after `env.step` (S0) and the stale pre-teleport contact forces after `env.reset` (S1). Anything recomputed from
+  `env._current_context` after `env.step` has the first trap too: `_finalize_contact_state` overwrites
+  `previous_contact_forces` in place. S1's own parity harness hit it.
+- **Probe a policy trained with `include_current_segment` on its training timing** (S1):
+  `SequenceVizConfig.timing="training"` (and `--timing` / `--fork-timing` on the tools), with plans that mirror a
+  clip (`make_route_probe_plans.py`). The release's own plans keep their defective deadlines; release v3's
+  `make_hold_graph_probe_plans.py` is a hash-pinned builder and must not be edited.
+- **GPU PhysX does not reproduce across processes, even for the expert in its own env** (S1): two same-seed
+  evaluations diverge from about step 10. Compare runs against a same-seed rerun, and give both envs the same seeded
+  warm-up (`s1_port_parity.py --warmup-steps`) when their construction-time resets differ.
 - **`eval/success_rate` is greedy clip tracking.** Choose student checkpoints by probes, and evaluate both the greedy and
   the sampled streams.
 
@@ -1100,7 +1133,7 @@ T  generator      T0 -> T1 -> (T2 || T3) -> T4 -> T5   G1  AMP warm-start fine-t
                   -> T6 (endpoint-exact re-export)     G2  = G3's first 1,500 epochs on the candidate v3 (D3)
 R  release        R2 (after T6) -> R3 (+ R4a plans)    G3  full fine-tune, release v3     (after T6, R2, R3, E3, E6)
                   R4b funnel tooling ; R1 deferred     G4  perturbation fine-tune         (after G3, E4)
-S  student        S0 done; S1 (after R3)               G5  student DAgger, G6 student RL  (after S1, S0 pass; S3)
+S  student        S0, S1 done; S2 = G5 next            G5  student DAgger, G6 student RL  (after S1, S0 pass; S3)
 P  paper          P1 (by 8 Oct)
 ```
 
@@ -1116,6 +1149,10 @@ P  paper          P1 (by 8 Oct)
   - **Lane T** writes only `data/scripts/edge_synthesis/` (new) and `expert_revist/graph_growth_2026_10_03/`.
   - **Lane R** writes only new `reference_curation/*_v3.py`-style modules and their tests.
   - **Lane S** edits `contact_graph_control.py` (the expert view). No other card edits it.
+    - S1 also touched shared code, additively and default-off: `base_env/env.py` (`rebuild_observations`),
+      `context_views.py` (two context fields), `sequence_viz.py` (`timing`, the exact rebuild), the
+      `contact_graph_transformer.py` merge loop, `policy_setup.py` and four probe tools. Every existing config
+      behaves as before.
   - **G1's live code.** G1's control, and any resume of G1, imports these files:
     - `protomotions/agents/amp/goal_conditioned.py`;
     - `protomotions/envs/obs/amp_features.py`;
@@ -2695,8 +2732,14 @@ a pushed G4 teacher.
 - **Score S0's and the student's probes with the best-yaw pose metric** (`g3/run_panel_bestyaw.py`) and supports
   (`g3/panel_supports.py`). The stock panel metric misreads prone goals.
 - **S0 is done (2026-10-05; [`s0_x0/README.MD`](s0_x0/README.MD)).** The teacher passes X0, so S2's gate is met on
-  its X0 half. Kickoff for the next session: `Implement card S1 of expert_revist/graph_growth_2026_10_03/PLAN.MD`.
-  S1's card opens with the fixes S0 found; do them before any manual-goal probe is used as acceptance.
+  its X0 half.
+- **S1 is done (2026-10-05; [`s1_port/README.MD`](s1_port/README.MD)).** The port is exact (both parity tests),
+  and S0's fixes are in. Kickoff for the next session: `Implement card S2 of
+  expert_revist/graph_growth_2026_10_03/PLAN.MD`. Its launcher is `data/scripts/run_student_distill_release_v3.sh`;
+  read `s1_port/README.MD` §6 first.
+- **Probe on training's timing.** Score the student's probes with `timing="training"` and the route plans
+  (`data/scripts/plans_release_v3_route/`). Compare against the teacher's `route_training` row
+  (`s1_port/data/forks_compare.json`), whose seven support habits the student inherits.
 
 #### S0: X0 falsifier and fork battery (code now; run on e15500, then on G3 and G4)
 
@@ -2749,6 +2792,37 @@ fork.
 
 #### S1: port the student to the release-v3 expert (after R3)
 
+**Done (2026-10-05).** Record: [`s1_port/README.MD`](s1_port/README.MD). Experiment
+`examples/experiments/masked_mimic/contact_graph_fsq_release_v3.py`, launcher
+`data/scripts/run_student_distill_release_v3.sh`, parity tool `data/scripts/s1_port_parity.py`.
+- **Acceptance met: both parity tests pass.**
+  - Expert observations are bit-identical between the expert's env and the student env on the same state: G3's 12
+    actor inputs against its own control and components as a twin, 1,497 comparisons × 4,096 envs. The comparisons
+    cover clip starts, the student's own resets and manual goals on route plans; max |Δ| 0.
+  - With the expert acting, the student env reproduces G3's own evaluation (`HoldCurriculumEvaluator`, its config).
+    With the same warm-up, 245 of 252 motion scores are identical against 241 between two same-seed runs of the
+    expert in its own env, with the same 3 / 1 / 0 motions beyond 0.01 / 0.05 / 0.2. Perf 0.9853 against 0.9849,
+    success equal.
+  - GPU PhysX is not bit-reproducible across processes even for the expert itself.
+- **The port:**
+  - `ContactGraphControlConfig.expert_view_*` publishes slots `[:2]` unmasked as `ctx.expert_masked_mimic` /
+    `ctx.expert_contact_goal`;
+  - `expert_port.py` holds the contract, the rewiring of the six goal components and the identity asserts (robot,
+    plant, simulator, package, graph sha256 and pair vocabulary, single-expert routing);
+  - the schedule's five keys are copied from G3 and asserted;
+  - the merge-loop crash is fixed.
+- **S0's fixes:**
+  - `BaseEnv.rebuild_observations()` is exact after a step and after a reset; the post-reset stale contact sample
+    is a second trap S1 found;
+  - `set_manual_goal(hold_duration, deadline_floor)` and `SequenceVizConfig.timing="training"`: the manual-path
+    check now reports no differing actor input;
+  - route plans `data/scripts/plans_release_v3_route/` (37 family forks, 5 edge routes;
+    `make_route_probe_plans.py`).
+- **Decision: G3 e3420's lost Warrior III, Tree and Side Plank forks were the plans'** (1.00 on route plans).
+  Family forks 13 → 28 of 36, pose held 35 of 36, no falls. The remaining seven hold the pose without a labelled
+  support.
+- 42 CPU tests; release v3 `--check` 68 of 68; a 4-epoch SMOKE of the launcher trains with finite losses.
+
 **Added by S0 (2026-10-05; [`s0_x0/README.MD`](s0_x0/README.MD) §5–§6). Fix these before any manual-goal probe
 becomes acceptance.** Lane S owns `contact_graph_control.py`.
 - **`set_manual_goal` takes one `hold_seconds` and writes it into both dwell channels.** Training's duration is the
@@ -2789,6 +2863,12 @@ becomes acceptance.** Lane S owns `contact_graph_control.py`.
 **Effort.** 3–5 days.
 
 #### S2 (= G5): DAgger SFT (after S1, and S0 passing on G3/G4)
+
+**Ready (S1, 2026-10-05):** `bash data/scripts/run_student_distill_release_v3.sh` runs this recipe on the ported
+student (no pushes: the head of Lane S). Before launching, read [`s1_port/README.MD`](s1_port/README.MD) §6:
+- the student evaluator's 20 s window;
+- probes on `timing="training"` with the route plans;
+- the teacher's fork row to compare against.
 
 **Recipe: v9's.**
 - A one-token code (`--fsq-scalars 4 --fsq-scalars-per-token 4`).
@@ -2878,8 +2958,8 @@ Build route (a) and keep (b) as the baseline.
 | G3 full fine-tune | **stopped at epoch 3,420 (user) and evaluated** | 2026-10-05 | [`g3/README.MD`](g3/README.MD). Stopped 06:42 PDT, 10.4 h after launch, 5 s after a `last.ckpt` write (`epoch_3420.ckpt` = that `last.ckpt`). **Edges:** all 84 synthetic motions track their transition (1.000) and hold D with its supports, against 0 of 84 at epoch 1; on command (panel, a held S → D) 163 of 163 for all five, no-hijack 163 of 163 at every hub; from standing a real hands-only crow and standing → crow → handstand 94 %. **The training panel's 0 for E2/E5 is the heading-chart pose metric misreading chaturanga** (0.40 m against 0.03 m after the best yaw; `g3/run_panel_bestyaw.py`). **Human gates over 2,000/2,500/3,000:** groups 0.998 / 0.948 / 0.997 / 0.994 pass, drag 36.7 J, jerk 61.0, high-jerk 1.13 % pass, realisability no worse (float 0.7 %), posture kept (7.2°); **substitutions 7.7 > 6 fail** (8 at 3,420: Eagle ×2, Peacock ×2, Koundinya -b ×2, Side Crow -a, Side Plank -a, all flagged at some G1 evaluation). Clips: Shoulderstand -a fixed (0.44 → 1.00), Upward Plank -a better (last three 0.37 → 0.90), Half Moon -b and Scorpion -a dip at 3,420. Side-plank fork from standing lost from 2,500. Renders of all 84 x0 motions with a reference ghost, and the new-edges video, in `output/renderings/expert56_v2_g3_e3420/` |
 | G4 perturbation fine-tune | **skipped (user, 2026-10-05)** | 2026-10-05 | Lane S distils G3's epoch 3,420 instead (note at the head of Lane S) |
 | S0 X0 + fork battery | **done** | 2026-10-05 | [`s0_x0/README.MD`](s0_x0/README.MD); `data/scripts/goal_causality_x0.py`. **X0 passes on G3 e3420 at every hub** (h = 1, |Δa| / σ_a near the end of the dwell, different goal against same pose): standing 0.237 / 0.025 (the card's known case), crow 0.327 / 0.019, handstand 0.252 / 0.015; paired h = 24: floor ≤ 0.05 σ_a / 0.4 cm, different goals up to 1.1 σ_a / 29 cm. e15500 also passes, so magnitude only falsifies; G3's response is timed to the departure. Fork battery (52 plans × 78 replicas, supports by load) on e15500, G1 e5000, G3 e2000, G3 e3420: G3 e3420 executes E1/B1/E3 from a held S at 1.00 (the others 0); families 16 → 13 of 37, with Warrior III, Tree and Side Plank lost under plans that still carry the expert60 deadline defect. Traps for S1: rebuild-after-step zeroes the force rate; `set_manual_goal` misstates the dwell duration (4.1 s p50); E2/E5's chaturanga is an attractor |
-| S1 student port | **todo, next** | 2026-10-05 | Starts in a new session. Its card opens with S0's three fixes: `set_manual_goal`'s dwell duration, the rebuild-after-step contact sample, and the fork plans' deadline |
-| S2 / G5 DAgger SFT | todo | | |
+| S1 student port | **done** | 2026-10-05 | [`s1_port/README.MD`](s1_port/README.MD). **Both parity tests pass:** G3's 12 actor inputs bit-identical in the student env (1,497 × 4,096-env comparisons, twin of the expert's own control + components); the student env with the expert acting reproduces G3's evaluation within G3's own same-seed rerun (warmed up: 245 vs 241 identical motion scores, 3/1/0 beyond 0.01/0.05/0.2; GPU PhysX is not reproducible across processes even for the expert). Expert view (`expert_view_*`), `expert_port.py` (contract, rewiring, identity asserts), merge-loop fix, `contact_graph_fsq_release_v3.py` + `run_student_distill_release_v3.sh`, single-expert routing table. S0's fixes: `env.rebuild_observations()` (also the post-reset stale-contact trap), `set_manual_goal(hold_duration, deadline_floor)` + `timing="training"` (manual-path check: no differing input), route plans `plans_release_v3_route/`. **Forks on training's deadline: 28 of 36 (13 of 37 shipped), pose held 35/36, no falls; Warrior III / Tree / Side Plank 1.00 → the plans' artefacts.** Seven families hold the pose without a labelled support (the student inherits them). 42 CPU tests; release v3 `--check` 68/68; SMOKE trains |
+| S2 / G5 DAgger SFT | **next** | | Launch `bash data/scripts/run_student_distill_release_v3.sh` (v9 recipe, no pushes); read `s1_port/README.MD` §6 (eval window, probe timing, the teacher's fork row) |
 | S3 / G6 PPO loss | todo | | |
 | P1 paper | todo | | deadline 8 Oct AoE. Figure candidates exist: MuJoCo videos of the press and the jump-back (`output/edge_synthesis/videos/`) |
 
@@ -2895,16 +2975,16 @@ and launches G3. Times are wall clock on one A5000.
 |---|---|---|
 | Sat 3 Oct | *Done:* E2 smoke and timing; **G1 AMP fine-tune launched 13:51 PDT** (two days early) | *Done:* E1; E2 and its offline check; T0 → T1; T2 ‖ T3 built |
 | Sun 4 Oct | *Done:* G1 ended 05:16 (5,000 epochs); a standalone evaluation of epoch 5,000; the 20 renders, side by side. The control is on hold (user) | *Done:* G1 evaluated (`g1_amp_eval/`); T4/T5 (2 provisional); **Step 3 planned** (§4, "Step 3 runbook"); seams measured; **lane T in PhysX (T7)**; **D1 settled: E1, E3, B1, E2, E5**; **T6 done** (the GPU ran its 90 PhysX variants, about 1 h): E1/E3 exact, landings not, 0 selected under the card's thresholds; **R2, E3 and E6 done** (evening; E3+E6's 10-epoch GPU smoke on release v2 passed); **R3 done** (late evening: the candidate `release_v3.2f132f4299`; checklist items 3–7, the GPU ones included); **G3 launched 20:20 PDT** |
-| Mon 5 Oct | *Done:* G3 stopped by the user at epoch 3,420 (06:42 PDT) and evaluated (`g3/`); **S0's runs** (X0 and the fork battery on G3 e3420 and e15500, the fork battery on G1 e5000 and G3 e2000; about 1 h) | *Done:* ~~R3~~ (Sun 4 Oct evening, items 3–7 included); R4b's scripts; **S0** (`s0_x0/`). Next: **S1** |
+| Mon 5 Oct | *Done:* G3 stopped by the user at epoch 3,420 (06:42 PDT) and evaluated (`g3/`); **S0's runs** (X0 and the fork battery on G3 e3420 and e15500, the fork battery on G1 e5000 and G3 e2000; about 1 h); **S1's runs** (both parity tests, X0 again, four fork arms, a SMOKE; about 1.5 h) | *Done:* ~~R3~~ (Sun 4 Oct evening, items 3–7 included); R4b's scripts; **S0** (`s0_x0/`); **S1** (`s1_port/`). Next: **S2** (G5) |
 | Tue 6 Oct | Short smokes of E3 and E6 on release v2 | R2 on the decided T6 selection; R3 starts; P1 |
 | Wed 7 Oct | — | R3; P1 final (a MuJoCo edge figure: the press or the jump-back) |
 | Thu 8 Oct | — | **paper submitted** (AoE = Fri 9 Oct 05:00 PDT); R3 done |
 | Fri 9 Oct | Pre-launch checks, about 1.5 h; then **G3 launched** (user), about 19 h | R4b, `edge_tracking.py`, `g3_gates.py`; S0 |
 | Sat 10 Oct | G3's 1,500-epoch decision (G2) about 5 h after launch; G3 continues, or G3b starts | Read G2; build the final v3 if anything drops |
 | Sun 11 Oct | G3 ends (G3b about 14 h more if it branched) | G3's acceptance: gates, banks from G3, funnel, S0 |
-| Mon 12 Oct | G3 evaluated; renders; **G4**, about 11 h (needs E4) | E4 (if not done); S1 |
-| Tue 13 Oct | G4 evaluated | S1 parity tests; S3 |
-| 14–16 Oct | **G5 DAgger SFT**, about 2 days | S3 |
+| Mon 12 Oct | G3 evaluated; renders; **G4**, about 11 h (needs E4) | E4 (if not done); ~~S1~~ (done Mon 5 Oct) |
+| Tue 13 Oct | G4 evaluated | ~~S1 parity tests~~ (done Mon 5 Oct); S3 |
+| 14–16 Oct | **G5 DAgger SFT**, about 2 days (ready to launch since Mon 5 Oct) | S3 |
 | 18–24 Oct | **G6 PPO fine-tune** | evaluation, renders, camera-ready material |
 | 22 Oct / 27 Oct / 12 Nov | — | notification / camera-ready / workshop |
 

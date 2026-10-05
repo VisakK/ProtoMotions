@@ -116,6 +116,10 @@ parser.add_argument("--corpus-steps", type=int, default=600)
 parser.add_argument("--fork-plans", nargs="*", default=None,
                     help="default: the release's fork_*, edge_* and nohijack_* plans")
 parser.add_argument("--fork-max-seconds", type=float, default=24.0)
+parser.add_argument("--fork-timing", choices=("legacy", "training"), default="legacy",
+                    help="SequenceVizConfig.timing for the battery: 'legacy' is S0's protocol (1.2 s hold lead, one "
+                         "value in both dwell channels); 'training' serves each goal as the segment a scheduled slot "
+                         "carries, for plans that mirror a clip (make_route_probe_plans.py; S1)")
 parser.add_argument("--seed", type=int, default=0)
 args = parser.parse_args()
 args.headless = True
@@ -310,20 +314,19 @@ class Harness:
         obs, *_ = self.env.step(action)
         return obs
 
-    def rebuild(self):
-        """Recompute every observation from the current sim state, as the last env.step did."""
+    def rebuild(self, naive: bool = False):
+        """Recompute every observation from the current sim state, as the last env.step did.
+
+        ``BaseEnv.rebuild_observations`` (S1) restores the pre-step contact sample itself. ``naive=True`` is
+        the rebuild every tool did before S1, kept to document the trap: after ``env.step`` it reads a zero
+        contact force rate.
+        """
         env = self.env
-        post = {k: getattr(env, k) for k in CONTACT_SAMPLE}
-        if self.pre_contact is not None:
-            for k, v in self.pre_contact.items():
-                setattr(env, k, v)
-        try:
-            env._current_context = env._build_global_context(env.simulator.get_robot_state())
-            env.compute_observations(context=env._current_context)
-            return env.get_obs()
-        finally:
-            for k, v in post.items():
-                setattr(env, k, v)
+        if not naive:
+            return env.rebuild_observations()
+        env._current_context = env._build_global_context(env.simulator.get_robot_state())
+        env.compute_observations(context=env._current_context)
+        return env.get_obs()
 
     def reset_to(self, motion_ids: torch.Tensor, times: torch.Tensor):
         env = self.env
@@ -724,10 +727,7 @@ def run_x0(h: Harness, out: Path, sigma: torch.Tensor):
             env_rows = torch.tensor([g[0] for g in group], device=dev)
             # the naive rebuild (no contact-sample restore) once, to document the trap
             if checks["naive_rebuild_contact_obs_max_abs"] is None and h.pre_contact is not None:
-                saved = h.pre_contact
-                h.pre_contact = None
-                naive = h.rebuild()
-                h.pre_contact = saved
+                naive = h.rebuild(naive=True)
                 checks["naive_rebuild_contact_obs_max_abs"] = float(
                     fdiff(naive["contact_obs_v1"], own_obs["contact_obs_v1"]).abs().max())
             if checks["manual_path"] is None:
@@ -875,35 +875,46 @@ def run_x0(h: Harness, out: Path, sigma: torch.Tensor):
 def manual_path_check(h: Harness, own_obs):
     """The card's literal installer, measured: every env's OWN window re-issued through ``set_manual_goal``.
 
-    ``set_manual_goal`` takes one ``hold_seconds`` per slot and uses it for both dwell channels (duration and
-    remaining), while a scheduled segment has ``duration = t_end - t_hold`` and ``remaining = t_end - now``; its
-    ``step()`` also floors the deadline at ``min_lead_s`` where training's floor is 0. This reports which actor
-    inputs differ from training's when the same window goes through the manual path (passing the remaining dwell,
-    as the panel does), then clears it and checks the schedule comes back exactly.
+    A scheduled segment carries ``duration = t_end - t_hold`` and ``remaining = t_end - now``. Two calls are
+    measured against training's window:
+
+    * ``legacy``: ``hold_seconds`` = the remaining dwell, as the panel did before S1. ``set_manual_goal`` then
+      writes that one value into both dwell channels (S0's trap 2);
+    * ``fixed`` (S1): ``hold_duration = t_end - t_hold`` as well, and ``deadline_floor`` 0 (training's floor
+      for a reached goal under ``include_current_segment``). It must change no actor input.
+
+    Each is cleared afterwards and the schedule must come back exactly.
     """
     c = h.ctrl
-    snap = h.snapshot_schedule()
     now = h.env.motion_manager.motion_times
     nodes = torch.where(c.goal_valid, c._gathered["node"], torch.full_like(c._gathered["node"], -1))
     remaining = (c._gathered["t_end"] - now.unsqueeze(-1)).clamp(min=0.0)
     remaining = torch.where(torch.isfinite(remaining), remaining, torch.zeros_like(remaining))
+    duration = c._gathered["t_end"] - c._gathered["t_hold"]
+    duration = torch.where(torch.isfinite(duration), duration, torch.zeros_like(duration))
     ones = torch.ones_like(c.goal_valid)
-    c.set_manual_goal(node_ids=nodes.clone(), pose_motion_ids=c._goal_motion_ids.clone(),
-                      pose_times=c.target_times.clone(), time_offsets=c._time_offsets.clone(),
-                      pose_visible=ones, contact_visible=ones, hold_seconds=remaining)
-    try:
-        man = h.rebuild()
-        diffs = {k: float(fdiff(man[k], own_obs[k]).abs().max()) for k in h.actor_keys}
-        a_man, a_own = h.act(man), h.act(own_obs)
-        rms = float(((a_man - a_own) ** 2).mean(-1).sqrt().median())
-    finally:
-        c.clear_manual_goal()
-        h.restore_schedule(snap)
-    back = h.rebuild()
-    restored = max(float(fdiff(back[k], own_obs[k]).abs().max()) for k in own_obs)
-    say(f"manual-path check: actor inputs that differ from training's window: "
-        f"{ {k: round(v, 4) for k, v in diffs.items() if v > 0} }; restored exactly: {restored == 0.0}")
-    return dict(max_abs_by_key=diffs, action_rms_p50_raw=rms, schedule_restored_max_abs=restored)
+    out = {}
+    for name, extra in (("legacy", {}), ("fixed", dict(hold_duration=duration, deadline_floor=0.0))):
+        snap = h.snapshot_schedule()
+        c.set_manual_goal(node_ids=nodes.clone(), pose_motion_ids=c._goal_motion_ids.clone(),
+                          pose_times=c.target_times.clone(), time_offsets=c._time_offsets.clone(),
+                          pose_visible=ones, contact_visible=ones, hold_seconds=remaining, **extra)
+        try:
+            man = h.rebuild()
+            diffs = {k: float(fdiff(man[k], own_obs[k]).abs().max()) for k in h.actor_keys}
+            a_man, a_own = h.act(man), h.act(own_obs)
+            rms = float(((a_man - a_own) ** 2).mean(-1).sqrt().median())
+        finally:
+            c.clear_manual_goal()
+            h.restore_schedule(snap)
+        back = h.rebuild()
+        restored = max(float(fdiff(back[k], own_obs[k]).abs().max()) for k in own_obs)
+        say(f"manual-path check ({name}): actor inputs that differ from training's window: "
+            f"{ {k: round(v, 4) for k, v in diffs.items() if v > 0} }; restored exactly: {restored == 0.0}")
+        out[name] = dict(max_abs_by_key=diffs, action_rms_p50_raw=rms, schedule_restored_max_abs=restored,
+                         differing_inputs=sorted(k for k, v in diffs.items() if v > 0))
+    # S0's record read these keys: they are the legacy call's.
+    return dict(**out["legacy"], legacy=out["legacy"], fixed=out["fixed"])
 
 
 def summarise_x0(rows, blocks_meta, act_rec, pos_rec, pair_env, sigma, checks, out: Path):
@@ -1001,7 +1012,7 @@ def run_forks(h: Harness, out: Path):
     cfg = SequenceVizConfig(viz_every=1, plan_files=list(plans), num_sequences=len(plans), num_hold_sequences=0,
                             max_seconds=args.fork_max_seconds, settle_steps=10, reissue_every_s=0.5,
                             hold_lead_s=1.2, hold_lead_mode="clamp", max_replicas=0, pose_arrive_m=0.15,
-                            pose_depart_m=0.30, log_scalars=False, dump_traces=True)
+                            pose_depart_m=0.30, log_scalars=False, dump_traces=True, timing=args.fork_timing)
     runner = SequenceVizRunner(h.agent, cfg)
     if len(runner.sequences) != len(plans):
         say(f"forks: WARNING only {len(runner.sequences)} of {len(plans)} plans resolved")

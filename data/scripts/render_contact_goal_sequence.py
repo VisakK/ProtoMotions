@@ -97,6 +97,13 @@ parser.add_argument("--hold-lead", type=float, default=1.2,
                     help="deadline held during a goal's hold phase, seconds. The "
                          "graph's median hold-to-hold gap is 1.43 s; the countdown's "
                          "0.2 s floor is not a value the policy saw sustained.")
+parser.add_argument("--timing", choices=("legacy", "training"), default="legacy",
+                    help="legacy: the deadline holds at --hold-lead and the hold left feeds "
+                         "both dwell channels. training: each goal is served as the segment "
+                         "[reach end, end] a scheduled slot carries under include_current_segment "
+                         "(deadline to the reach end then 0, duration = hold_s, remaining to the "
+                         "end), re-issued the step a goal ends (SequenceVizConfig.timing; S1 of "
+                         "expert_revist/graph_growth_2026_10_03/PLAN.MD)")
 parser.add_argument("--settle-steps", type=int, default=10,
                     help="policy steps after reset before the plan starts")
 parser.add_argument("--flush-seconds", type=float, default=2.0,
@@ -207,6 +214,9 @@ class GoalDriver:
         self.slots = control.config.num_goal_steps
         self.num_envs = env.num_envs
         self.device = env.device
+        if args.timing == "training" and not getattr(control.config, "include_current_segment", False):
+            raise SystemExit("--timing training serves include_current_segment's semantics, and this "
+                             "checkpoint was trained without it")
         for goal in goals:
             node = goal["node"]
             if not 0 <= node < control.graph.num_nodes:
@@ -238,27 +248,34 @@ class GoalDriver:
         pose_time = torch.zeros(n, k, device=dev)
         offset = torch.zeros(n, k, device=dev)
         hold_seconds = torch.zeros(n, k, device=dev)
+        hold_duration = torch.zeros(n, k, device=dev)
         pose_visible = torch.zeros(n, k, dtype=torch.bool, device=dev)
         contact_visible = torch.zeros(n, k, dtype=torch.bool, device=dev)
+        training = self.args.timing == "training"
 
         start = self.active_index(t)
         for slot, index in enumerate(range(start, min(start + k, len(self.goals)))):
             goal = self.goals[index]
-            # Slot 0 counts down to the end of its *reach* window and then holds
-            # at --hold-lead rather than decaying to the 0.2 s floor.
             remaining = self.ends[index] - goal["hold_s"] - t
-            deadline = max(remaining, self.args.hold_lead)
             node[:, slot] = goal["node"]
             pose_motion[:, slot] = goal["pose_motion"]
             pose_time[:, slot] = goal["pose_time"]
-            offset[:, slot] = deadline
+            pose_visible[:, slot] = not self.args.no_pose
+            contact_visible[:, slot] = not self.args.no_contacts
+            if training:
+                # The segment [reach end, end], as training's schedule serves it.
+                offset[:, slot] = max(remaining, 0.0)
+                hold_seconds[:, slot] = max(self.ends[index] - t, 0.0)
+                hold_duration[:, slot] = goal["hold_s"]
+                continue
+            # Slot 0 counts down to the end of its *reach* window and then holds
+            # at --hold-lead rather than decaying to the 0.2 s floor.
+            offset[:, slot] = max(remaining, self.args.hold_lead)
             # Outstanding seconds of the requested hold. A manual goal has no
             # graph segment, so the plan is the only source of this; omitting it
             # makes ContactGraphControl's dwell channels read "stay 0 s" for
             # every probe.
             hold_seconds[:, slot] = min(max(self.ends[index] - t, 0.0), goal["hold_s"])
-            pose_visible[:, slot] = not self.args.no_pose
-            contact_visible[:, slot] = not self.args.no_contacts
         if not bool(pose_visible[:, 0].any() or contact_visible[:, 0].any()):
             raise SystemExit(
                 "the nearest goal would specify neither a pose nor a contact set; "
@@ -273,6 +290,8 @@ class GoalDriver:
             pose_visible=pose_visible,
             contact_visible=contact_visible,
             hold_seconds=hold_seconds,
+            hold_duration=hold_duration if training else None,
+            deadline_floor=0.0 if training else None,
         )
         # Chunked-intent models (the FSQ student) hold their latent for up to
         # chunk_steps; when the plan actually advances a step — not on the
@@ -286,15 +305,13 @@ class GoalDriver:
         return self.refresh_obs()
 
     def refresh_obs(self):
-        """Rebuild observations so the next action sees the goal just issued."""
-        env = self.env
-        env._current_context = None
-        env._current_context = env._build_global_context(
-            self.simulator.get_robot_state()
-        )
-        env.compute_observations(context=env._current_context)
+        """Rebuild observations so the next action sees the goal just issued.
+
+        ``BaseEnv.rebuild_observations`` is exact; a naive rebuild after a step
+        reads a zero contact force rate (S0 of graph_growth PLAN.MD).
+        """
         return self.agent.obs_dict_to_tensordict(
-            self.agent.add_agent_info_to_obs(env.get_obs())
+            self.agent.add_agent_info_to_obs(self.env.rebuild_observations())
         )
 
 
@@ -390,7 +407,8 @@ def main() -> int:
     obs_td = driver.issue(0.0)
     for step in range(total_steps):
         t = step * dt
-        if step > 0 and step % reissue_every == 0:
+        advanced = args.timing == "training" and driver.active_index(t) != driver._last_active_index
+        if (step > 0 and step % reissue_every == 0) or advanced:
             obs_td = driver.issue(t)
 
         with torch.no_grad():

@@ -1,0 +1,89 @@
+{
+ "student_dir": "results/smpl_yogi_v2_student_release_v3_s1_parity",
+ "checkpoint": "results/smpl_yogi_v2_expert56_g3_2f132f4299/epoch_3420.ckpt",
+ "num_envs": 4096,
+ "steps_per_phase": 300,
+ "expert_inputs": [
+  "max_coords_obs",
+  "contact_obs_v1",
+  "contact_proximity_obs",
+  "contact_state_obs",
+  "previous_actions",
+  "historical_pose_obs",
+  "masked_mimic_target_poses",
+  "masked_mimic_target_masks",
+  "masked_mimic_target_times",
+  "masked_mimic_target_poses_masks",
+  "contact_goal_obs",
+  "contact_goal_masks"
+ ],
+ "comparisons": 1497,
+ "max_abs_by_key": {
+  "max_coords_obs": 0.0,
+  "contact_obs_v1": 0.0,
+  "contact_proximity_obs": 0.0,
+  "contact_state_obs": 0.0,
+  "previous_actions": 0.0,
+  "historical_pose_obs": 0.0,
+  "masked_mimic_target_poses": 0.0,
+  "masked_mimic_target_masks": 0.0,
+  "masked_mimic_target_times": 0.0,
+  "masked_mimic_target_poses_masks": 0.0,
+  "contact_goal_obs": 0.0,
+  "contact_goal_masks": 0.0
+ },
+ "by_phase": {
+  "clip_starts": {
+   "max_coords_obs": 0.0,
+   "contact_obs_v1": 0.0,
+   "contact_proximity_obs": 0.0,
+   "contact_state_obs": 0.0,
+   "previous_actions": 0.0,
+   "historical_pose_obs": 0.0,
+   "masked_mimic_target_poses": 0.0,
+   "masked_mimic_target_masks": 0.0,
+   "masked_mimic_target_times": 0.0,
+   "masked_mimic_target_poses_masks": 0.0,
+   "contact_goal_obs": 0.0,
+   "contact_goal_masks": 0.0
+  },
+  "training_resets": {
+   "max_coords_obs": 0.0,
+   "contact_obs_v1": 0.0,
+   "contact_proximity_obs": 0.0,
+   "contact_state_obs": 0.0,
+   "previous_actions": 0.0,
+   "historical_pose_obs": 0.0,
+   "masked_mimic_target_poses": 0.0,
+   "masked_mimic_target_masks": 0.0,
+   "masked_mimic_target_times": 0.0,
+   "masked_mimic_target_poses_masks": 0.0,
+   "contact_goal_obs": 0.0,
+   "contact_goal_masks": 0.0
+  },
+  "manual_goals": {
+   "max_coords_obs": 0.0,
+   "contact_obs_v1": 0.0,
+   "contact_proximity_obs": 0.0,
+   "contact_state_obs": 0.0,
+   "previous_actions": 0.0,
+   "historical_pose_obs": 0.0,
+   "masked_mimic_target_poses": 0.0,
+   "masked_mimic_target_masks": 0.0,
+   "masked_mimic_target_times": 0.0,
+   "masked_mimic_target_poses_masks": 0.0,
+   "contact_goal_obs": 0.0,
+   "contact_goal_masks": 0.0
+  }
+ },
+ "bit_identical": true,
+ "rebuild": {
+  "step_max_abs": 0.0,
+  "reset_max_abs": 0.0,
+  "naive_contact_obs_v1_max_abs": 1.0,
+  "naive_after_reset_contact_obs_v1_max_abs": 1.0,
+  "steps": 900,
+  "resets": 296
+ },
+ "rebuild_exact": true
+}

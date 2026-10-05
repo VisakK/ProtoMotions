@@ -826,6 +826,11 @@ class EnvContext:
     mimic: Optional[MimicContext] = NestedField(MimicContext)
     masked_mimic: Optional[MaskedMimicContext] = NestedField(MaskedMimicContext)
     contact_goal: Optional[ContactGoalContext] = NestedField(ContactGoalContext)
+    # The unmasked goal view a frozen goal-conditioned expert reads when it is
+    # distilled in a student env (ContactGraphControlConfig.expert_view_steps):
+    # the same window, its own slot count, every body and half visible.
+    expert_masked_mimic: Optional[MaskedMimicContext] = NestedField(MaskedMimicContext)
+    expert_contact_goal: Optional[ContactGoalContext] = NestedField(ContactGoalContext)
     steering: Optional[SteeringContext] = NestedField(SteeringContext)
     path: Optional[PathContext] = NestedField(PathContext)
     target: Optional[TargetContext] = NestedField(TargetContext)
@@ -866,6 +871,8 @@ class EnvContext:
         steering: Optional[SteeringContext] = None,
         path: Optional[PathContext] = None,
         target: Optional[TargetContext] = None,
+        expert_masked_mimic: Optional[MaskedMimicContext] = None,
+        expert_contact_goal: Optional[ContactGoalContext] = None,
     ):
         """Initialize EnvContext with all state views.
 
@@ -899,6 +906,8 @@ class EnvContext:
             odom_yaw_cos_sin: Per-episode yaw bias as (cos, sin) [num_envs, 2] (optional).
             mimic: Mimic control context (optional).
             masked_mimic: Masked mimic context (optional).
+            expert_masked_mimic / expert_contact_goal: A distilled expert's
+                unmasked goal view (ContactGraphControl's expert view; optional).
             steering: Steering control context (optional).
             path: Path following context (optional).
             target: Target-reaching context (optional).
@@ -947,6 +956,8 @@ class EnvContext:
         self.mimic = mimic
         self.masked_mimic = masked_mimic
         self.contact_goal = contact_goal
+        self.expert_masked_mimic = expert_masked_mimic
+        self.expert_contact_goal = expert_contact_goal
         self.steering = steering
         self.path = path
         self.target = target

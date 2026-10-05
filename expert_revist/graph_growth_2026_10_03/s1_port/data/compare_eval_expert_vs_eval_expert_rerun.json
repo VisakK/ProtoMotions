@@ -1,0 +1,2896 @@
+{
+ "runs": [
+  "output/s1_port/eval_expert",
+  "output/s1_port/eval_expert_rerun"
+ ],
+ "action_steps": [
+  1888,
+  1888
+ ],
+ "actions_bit_identical": false,
+ "first_differing_step": 10,
+ "max_abs_action_diff": 0.808012843132019,
+ "motions": [
+  252,
+  252
+ ],
+ "csv_rows_differing": 252,
+ "csv_differences": {
+  "220923_Bridge_Pose_or_Setu_Bandha_Sarvangasana_-a": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ],
+   "drag_s": [
+    "4.27",
+    "4.20"
+   ],
+   "drag_J": [
+    "78.94",
+    "77.14"
+   ]
+  },
+  "220923_Bridge_Pose_or_Setu_Bandha_Sarvangasana_-a_x3s": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ]
+  },
+  "220923_Bridge_Pose_or_Setu_Bandha_Sarvangasana_-a_x7s": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ]
+  },
+  "220923_Cobra_Pose_or_Bhujangasana_-a": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ],
+   "drag_s": [
+    "0.90",
+    "0.83"
+   ],
+   "drag_J": [
+    "38.36",
+    "33.27"
+   ]
+  },
+  "220923_Cobra_Pose_or_Bhujangasana_-a_x3s": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ],
+   "drag_J": [
+    "33.78",
+    "36.53"
+   ]
+  },
+  "220923_Cobra_Pose_or_Bhujangasana_-a_x7s": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ],
+   "drag_s": [
+    "0.87",
+    "0.83"
+   ],
+   "drag_J": [
+    "31.12",
+    "34.32"
+   ]
+  },
+  "220923_Crane_Crow_Pose_or_Bakasana_-a": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ]
+  },
+  "220923_Crane_Crow_Pose_or_Bakasana_-a_x3s": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ]
+  },
+  "220923_Crane_Crow_Pose_or_Bakasana_-a_x7s": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ]
+  },
+  "220923_Dolphin_Plank_Pose_or_Makara_Adho_Mukha_Svanasana_-a": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ],
+   "drag_s": [
+    "2.87",
+    "2.97"
+   ],
+   "drag_J": [
+    "69.17",
+    "69.20"
+   ]
+  },
+  "220923_Dolphin_Plank_Pose_or_Makara_Adho_Mukha_Svanasana_-a_x3s": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ],
+   "drag_s": [
+    "5.03",
+    "4.57"
+   ],
+   "drag_J": [
+    "103.68",
+    "105.85"
+   ]
+  },
+  "220923_Dolphin_Plank_Pose_or_Makara_Adho_Mukha_Svanasana_-a_x7s": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ],
+   "drag_s": [
+    "6.33",
+    "5.67"
+   ],
+   "drag_J": [
+    "132.17",
+    "120.14"
+   ]
+  },
+  "220923_Dolphin_Pose_or_Ardha_Pincha_Mayurasana_-a": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ]
+  },
+  "220923_Dolphin_Pose_or_Ardha_Pincha_Mayurasana_-a_x3s": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ]
+  },
+  "220923_Dolphin_Pose_or_Ardha_Pincha_Mayurasana_-a_x7s": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ]
+  },
+  "220923_Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana_-a": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ]
+  },
+  "220923_Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana_-a_x3s": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ]
+  },
+  "220923_Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana_-a_x7s": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ]
+  },
+  "220923_Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana_-b": {
+   "sampling_prob": [
+    "0.007432",
+    "0.007277"
+   ]
+  },
+  "220923_Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana_-b_x3s": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ]
+  },
+  "220923_Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana_-b_x7s": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ],
+   "drag_s": [
+    "0.80",
+    "0.47"
+   ],
+   "drag_J": [
+    "47.60",
+    "30.78"
+   ],
+   "drag_J_swing": [
+    "2.24",
+    "2.20"
+   ]
+  },
+  "220923_Extended_Revolved_Side_Angle_Pose_or_Utthita_Parsvakonasana_-a": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ],
+   "drag_s": [
+    "2.73",
+    "2.00"
+   ],
+   "drag_J": [
+    "92.00",
+    "81.69"
+   ]
+  },
+  "220923_Extended_Revolved_Side_Angle_Pose_or_Utthita_Parsvakonasana_-a_x3s": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ],
+   "drag_s": [
+    "1.93",
+    "2.43"
+   ],
+   "drag_J": [
+    "70.65",
+    "83.75"
+   ]
+  },
+  "220923_Extended_Revolved_Side_Angle_Pose_or_Utthita_Parsvakonasana_-a_x7s": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ],
+   "drag_s": [
+    "1.40",
+    "1.77"
+   ],
+   "drag_J": [
+    "67.04",
+    "70.35"
+   ]
+  },
+  "220923_Extended_Revolved_Side_Angle_Pose_or_Utthita_Parsvakonasana_-b": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ]
+  },
+  "220923_Extended_Revolved_Side_Angle_Pose_or_Utthita_Parsvakonasana_-b_x3s": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ]
+  },
+  "220923_Extended_Revolved_Side_Angle_Pose_or_Utthita_Parsvakonasana_-b_x7s": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ]
+  },
+  "220923_Extended_Revolved_Triangle_Pose_or_Utthita_Trikonasana_-a": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ],
+   "drag_J": [
+    "13.92",
+    "15.67"
+   ]
+  },
+  "220923_Extended_Revolved_Triangle_Pose_or_Utthita_Trikonasana_-a_x3s": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ],
+   "drag_s": [
+    "0.40",
+    "0.43"
+   ],
+   "drag_J": [
+    "11.81",
+    "11.90"
+   ]
+  },
+  "220923_Extended_Revolved_Triangle_Pose_or_Utthita_Trikonasana_-a_x7s": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ]
+  },
+  "220923_Extended_Revolved_Triangle_Pose_or_Utthita_Trikonasana_-b": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ]
+  },
+  "220923_Extended_Revolved_Triangle_Pose_or_Utthita_Trikonasana_-b_x3s": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ]
+  },
+  "220923_Extended_Revolved_Triangle_Pose_or_Utthita_Trikonasana_-b_x7s": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ]
+  },
+  "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-a": {
+   "sampling_prob": [
+    "0.004098",
+    "0.004084"
+   ]
+  },
+  "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-a_x3s": {
+   "sampling_prob": [
+    "0.004074",
+    "0.004061"
+   ]
+  },
+  "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-a_x7s": {
+   "sampling_prob": [
+    "0.004048",
+    "0.004036"
+   ]
+  },
+  "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-b": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ],
+   "drag_s": [
+    "3.33",
+    "3.27"
+   ],
+   "drag_J": [
+    "116.87",
+    "106.86"
+   ]
+  },
+  "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-b_x3s": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ]
+  },
+  "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-b_x7s": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ]
+  },
+  "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-c": {
+   "sampling_prob": [
+    "0.003959",
+    "0.003950"
+   ]
+  },
+  "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-c_x3s": {
+   "sampling_prob": [
+    "0.003891",
+    "0.003885"
+   ]
+  },
+  "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-c_x7s": {
+   "sampling_prob": [
+    "0.003818",
+    "0.003815"
+   ]
+  },
+  "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-d": {
+   "sampling_prob": [
+    "0.004159",
+    "0.004142"
+   ]
+  },
+  "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-d_x3s": {
+   "sampling_prob": [
+    "0.004008",
+    "0.003997"
+   ]
+  },
+  "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-d_x7s": {
+   "sampling_prob": [
+    "0.003936",
+    "0.003928"
+   ]
+  },
+  "220923_Firefly_Pose_or_Tittibhasana_-a": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ]
+  },
+  "220923_Firefly_Pose_or_Tittibhasana_-a_x3s": {
+   "sampling_prob": [
+    "0.004079",
+    "0.004065"
+   ]
+  },
+  "220923_Firefly_Pose_or_Tittibhasana_-a_x7s": {
+   "sampling_prob": [
+    "0.004170",
+    "0.004153"
+   ]
+  },
+  "220923_Four-Limbed_Staff_Pose_or_Chaturanga_Dandasana_-a": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ]
+  },
+  "220923_Four-Limbed_Staff_Pose_or_Chaturanga_Dandasana_-a_x3s": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ]
+  },
+  "220923_Four-Limbed_Staff_Pose_or_Chaturanga_Dandasana_-a_x7s": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ]
+  },
+  "220923_Garland_Pose_or_Malasana_-a": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ]
+  },
+  "220923_Garland_Pose_or_Malasana_-a_x3s": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ]
+  },
+  "220923_Garland_Pose_or_Malasana_-a_x7s": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ]
+  },
+  "220923_Half_Moon_Pose_or_Ardha_Chandrasana_-a": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ]
+  },
+  "220923_Half_Moon_Pose_or_Ardha_Chandrasana_-a_x3s": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ]
+  },
+  "220923_Half_Moon_Pose_or_Ardha_Chandrasana_-a_x7s": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ],
+   "drag_J": [
+    "25.76",
+    "25.78"
+   ]
+  },
+  "220923_Half_Moon_Pose_or_Ardha_Chandrasana_-b": {
+   "sampling_prob": [
+    "0.035671",
+    "0.034330"
+   ]
+  },
+  "220923_Half_Moon_Pose_or_Ardha_Chandrasana_-b_x3s": {
+   "sampling_prob": [
+    "0.036127",
+    "0.034767"
+   ],
+   "drag_s": [
+    "5.30",
+    "5.40"
+   ],
+   "drag_J": [
+    "201.46",
+    "203.07"
+   ],
+   "drag_J_swing": [
+    "16.65",
+    "18.28"
+   ]
+  },
+  "220923_Half_Moon_Pose_or_Ardha_Chandrasana_-b_x7s": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ]
+  },
+  "220923_Handstand_pose_or_Adho_Mukha_Vrksasana_-a": {
+   "sampling_prob": [
+    "0.005131",
+    "0.005073"
+   ]
+  },
+  "220923_Handstand_pose_or_Adho_Mukha_Vrksasana_-a_x3s": {
+   "sampling_prob": [
+    "0.004985",
+    "0.004933"
+   ]
+  },
+  "220923_Handstand_pose_or_Adho_Mukha_Vrksasana_-a_x7s": {
+   "sampling_prob": [
+    "0.004833",
+    "0.004788"
+   ]
+  },
+  "220923_Legs-Up-the-Wall_Pose_or_Viparita_Karani_-a": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ]
+  },
+  "220923_Legs-Up-the-Wall_Pose_or_Viparita_Karani_-a_x3s": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ]
+  },
+  "220923_Legs-Up-the-Wall_Pose_or_Viparita_Karani_-a_x7s": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ]
+  },
+  "220923_Low_Lunge_pose_or_Anjaneyasana_-a": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ]
+  },
+  "220923_Low_Lunge_pose_or_Anjaneyasana_-a_x3s": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ]
+  },
+  "220923_Low_Lunge_pose_or_Anjaneyasana_-a_x7s": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ]
+  },
+  "220923_Peacock_Pose_or_Mayurasana_-a": {
+   "sampling_prob": [
+    "0.007432",
+    "0.007277"
+   ],
+   "drag_s": [
+    "2.80",
+    "3.00"
+   ],
+   "drag_J": [
+    "55.24",
+    "62.63"
+   ]
+  },
+  "220923_Peacock_Pose_or_Mayurasana_-a_x3s": {
+   "sampling_prob": [
+    "0.006825",
+    "0.006696"
+   ],
+   "drag_s": [
+    "3.57",
+    "3.50"
+   ],
+   "drag_J": [
+    "63.08",
+    "69.59"
+   ]
+  },
+  "220923_Peacock_Pose_or_Mayurasana_-a_x7s": {
+   "sampling_prob": [
+    "0.006825",
+    "0.006696"
+   ],
+   "drag_s": [
+    "3.43",
+    "3.37"
+   ],
+   "drag_J": [
+    "70.71",
+    "67.52"
+   ]
+  },
+  "220923_Plank_Pose_or_Kumbhakasana_-a": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ]
+  },
+  "220923_Plank_Pose_or_Kumbhakasana_-a_x3s": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ]
+  },
+  "220923_Plank_Pose_or_Kumbhakasana_-a_x7s": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ]
+  },
+  "220923_Plow_Pose_or_Halasana_-a": {
+   "p_track": [
+    "0.9658",
+    "0.9672"
+   ],
+   "score": [
+    "0.9829",
+    "0.9836"
+   ],
+   "score_ema": [
+    "0.9829",
+    "0.9836"
+   ],
+   "sampling_prob": [
+    "0.004415",
+    "0.004363"
+   ],
+   "drag_J": [
+    "73.03",
+    "73.99"
+   ],
+   "score_v2": [
+    "0.9829",
+    "0.9836"
+   ]
+  },
+  "220923_Plow_Pose_or_Halasana_-a_x3s": {
+   "p_track": [
+    "0.9709",
+    "0.9697"
+   ],
+   "score": [
+    "0.9855",
+    "0.9848"
+   ],
+   "score_ema": [
+    "0.9855",
+    "0.9848"
+   ],
+   "sampling_prob": [
+    "0.004321",
+    "0.004320"
+   ],
+   "drag_s": [
+    "2.43",
+    "2.40"
+   ],
+   "drag_J": [
+    "66.95",
+    "66.36"
+   ],
+   "score_v2": [
+    "0.9855",
+    "0.9848"
+   ]
+  },
+  "220923_Plow_Pose_or_Halasana_-a_x7s": {
+   "sampling_prob": [
+    "0.004252",
+    "0.004231"
+   ],
+   "drag_s": [
+    "2.47",
+    "2.33"
+   ],
+   "drag_J": [
+    "67.12",
+    "64.84"
+   ]
+  },
+  "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-a": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ]
+  },
+  "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-a_x3s": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ]
+  },
+  "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-a_x7s": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ]
+  },
+  "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-b": {
+   "sampling_prob": [
+    "0.006067",
+    "0.005970"
+   ]
+  },
+  "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-b_x3s": {
+   "sampling_prob": [
+    "0.006067",
+    "0.005970"
+   ]
+  },
+  "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-b_x7s": {
+   "sampling_prob": [
+    "0.006067",
+    "0.005970"
+   ]
+  },
+  "220923_Scorpion_pose_or_vrischikasana-a": {
+   "sampling_prob": [
+    "0.010356",
+    "0.010078"
+   ]
+  },
+  "220923_Scorpion_pose_or_vrischikasana-a_x3s": {
+   "p_track": [
+    "0.8150",
+    "0.6966"
+   ],
+   "score": [
+    "0.8241",
+    "0.7650"
+   ],
+   "score_ema": [
+    "0.8241",
+    "0.7650"
+   ],
+   "sampling_prob": [
+    "0.010193",
+    "0.011985"
+   ],
+   "drag_s": [
+    "3.00",
+    "3.43"
+   ],
+   "drag_J": [
+    "114.27",
+    "120.74"
+   ],
+   "drag_J_swing": [
+    "8.31",
+    "32.93"
+   ],
+   "score_v2": [
+    "0.8241",
+    "0.7650"
+   ],
+   "support_realised_v2": [
+    "0.8000",
+    "0.7500"
+   ],
+   "holds_tracked_v2": [
+    "5",
+    "4"
+   ]
+  },
+  "220923_Scorpion_pose_or_vrischikasana-a_x7s": {
+   "sampling_prob": [
+    "0.009934",
+    "0.009674"
+   ]
+  },
+  "220923_Scorpion_pose_or_vrischikasana-b": {
+   "sampling_prob": [
+    "0.006070",
+    "0.005972"
+   ]
+  },
+  "220923_Scorpion_pose_or_vrischikasana-b_x3s": {
+   "sampling_prob": [
+    "0.006049",
+    "0.005953"
+   ]
+  },
+  "220923_Scorpion_pose_or_vrischikasana-b_x7s": {
+   "sampling_prob": [
+    "0.006070",
+    "0.005972"
+   ]
+  },
+  "220923_Shoulder-Pressing_Pose_or_Bhujapidasana_-a": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ]
+  },
+  "220923_Shoulder-Pressing_Pose_or_Bhujapidasana_-a_x3s": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ]
+  },
+  "220923_Shoulder-Pressing_Pose_or_Bhujapidasana_-a_x7s": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ]
+  },
+  "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a": {
+   "score_ema": [
+    "1.0000",
+    "0.9286"
+   ],
+   "sampling_prob": [
+    "0.003792",
+    "0.006281"
+   ],
+   "drag_s": [
+    "1.73",
+    "2.23"
+   ],
+   "drag_J": [
+    "32.50",
+    "54.82"
+   ],
+   "drag_J_swing": [
+    "10.60",
+    "19.95"
+   ],
+   "score_v2": [
+    "1.0000",
+    "0.9286"
+   ],
+   "p_hold_v2": [
+    "1.0000",
+    "0.8571"
+   ],
+   "p_family_v2": [
+    "1.0000",
+    "0.0000"
+   ],
+   "support_violation_v2": [
+    "0.0000",
+    "0.3922"
+   ]
+  },
+  "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a_x3s": {
+   "score_ema": [
+    "1.0000",
+    "0.9286"
+   ],
+   "sampling_prob": [
+    "0.003792",
+    "0.006281"
+   ],
+   "drag_s": [
+    "1.93",
+    "2.07"
+   ],
+   "drag_J": [
+    "37.19",
+    "48.01"
+   ],
+   "drag_J_swing": [
+    "9.92",
+    "19.13"
+   ],
+   "score_v2": [
+    "1.0000",
+    "0.9286"
+   ],
+   "p_hold_v2": [
+    "1.0000",
+    "0.8571"
+   ],
+   "p_family_v2": [
+    "1.0000",
+    "0.0000"
+   ],
+   "support_violation_v2": [
+    "0.0000",
+    "0.6173"
+   ]
+  },
+  "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a_x7s": {
+   "p_track": [
+    "0.9865",
+    "0.9899"
+   ],
+   "score": [
+    "0.9932",
+    "0.9949"
+   ],
+   "score_ema": [
+    "0.9848",
+    "0.9854"
+   ],
+   "sampling_prob": [
+    "0.004346",
+    "0.004299"
+   ],
+   "drag_s": [
+    "2.10",
+    "2.40"
+   ],
+   "drag_J": [
+    "32.45",
+    "42.05"
+   ],
+   "drag_J_swing": [
+    "8.25",
+    "8.58"
+   ],
+   "score_v2": [
+    "0.9848",
+    "0.9854"
+   ],
+   "p_hold_v2": [
+    "0.9831",
+    "0.9810"
+   ],
+   "p_family_v2": [
+    "0.8815",
+    "0.8667"
+   ],
+   "support_violation_v2": [
+    "0.0882",
+    "0.0992"
+   ]
+  },
+  "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-b": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ],
+   "drag_s": [
+    "1.00",
+    "0.90"
+   ],
+   "drag_J": [
+    "20.41",
+    "17.78"
+   ]
+  },
+  "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-b_x3s": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ],
+   "drag_s": [
+    "0.97",
+    "0.87"
+   ],
+   "drag_J": [
+    "19.29",
+    "16.99"
+   ]
+  },
+  "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-b_x7s": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ],
+   "drag_s": [
+    "1.03",
+    "0.97"
+   ],
+   "drag_J": [
+    "21.44",
+    "21.29"
+   ]
+  },
+  "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-c": {
+   "p_hold": [
+    "0.9669",
+    "0.9694"
+   ],
+   "p_family": [
+    "0.8676",
+    "0.8775"
+   ],
+   "score": [
+    "0.9800",
+    "0.9813"
+   ],
+   "score_ema": [
+    "0.9800",
+    "0.9813"
+   ],
+   "sampling_prob": [
+    "0.004518",
+    "0.004444"
+   ],
+   "p_family_event": [
+    "0.8676",
+    "0.8775"
+   ],
+   "drag_s": [
+    "1.60",
+    "1.13"
+   ],
+   "drag_J": [
+    "65.38",
+    "54.23"
+   ],
+   "score_v2": [
+    "0.9800",
+    "0.9813"
+   ],
+   "p_hold_v2": [
+    "0.9669",
+    "0.9694"
+   ],
+   "p_family_v2": [
+    "0.8676",
+    "0.8775"
+   ]
+  },
+  "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-c_x3s": {
+   "p_track": [
+    "0.9967",
+    "0.9959"
+   ],
+   "p_hold": [
+    "0.9785",
+    "0.9915"
+   ],
+   "p_family": [
+    "0.9141",
+    "0.9661"
+   ],
+   "score": [
+    "0.9876",
+    "0.9937"
+   ],
+   "score_ema": [
+    "0.9876",
+    "0.9937"
+   ],
+   "sampling_prob": [
+    "0.004244",
+    "0.004011"
+   ],
+   "p_family_event": [
+    "0.9141",
+    "0.9661"
+   ],
+   "drag_s": [
+    "1.27",
+    "1.03"
+   ],
+   "drag_J": [
+    "56.19",
+    "49.34"
+   ],
+   "drag_J_swing": [
+    "0.19",
+    "0.16"
+   ],
+   "score_v2": [
+    "0.9876",
+    "0.9937"
+   ],
+   "p_hold_v2": [
+    "0.9785",
+    "0.9915"
+   ],
+   "p_family_v2": [
+    "0.9141",
+    "0.9661"
+   ]
+  },
+  "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-c_x7s": {
+   "sampling_prob": [
+    "0.003855",
+    "0.003851"
+   ]
+  },
+  "220923_Side_Plank_Pose_or_Vasisthasana_-a": {
+   "sampling_prob": [
+    "0.010161",
+    "0.009892"
+   ]
+  },
+  "220923_Side_Plank_Pose_or_Vasisthasana_-a_x3s": {
+   "sampling_prob": [
+    "0.010076",
+    "0.009811"
+   ]
+  },
+  "220923_Side_Plank_Pose_or_Vasisthasana_-a_x7s": {
+   "sampling_prob": [
+    "0.010088",
+    "0.009822"
+   ]
+  },
+  "220923_Side_Plank_Pose_or_Vasisthasana_-b": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ]
+  },
+  "220923_Side_Plank_Pose_or_Vasisthasana_-b_x3s": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ]
+  },
+  "220923_Side_Plank_Pose_or_Vasisthasana_-b_x7s": {
+   "sampling_prob": [
+    "0.004126",
+    "0.004110"
+   ]
+  },
+  "220923_Standing_Forward_Bend_pose_or_Uttanasana_-a": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ]
+  },
+  "220923_Standing_Forward_Bend_pose_or_Uttanasana_-a_x3s": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ]
+  },
+  "220923_Standing_Forward_Bend_pose_or_Uttanasana_-a_x7s": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ]
+  },
+  "220923_Standing_Split_pose_or_Urdhva_Prasarita_Eka_Padasana_-a": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ],
+   "drag_J": [
+    "13.83",
+    "12.75"
+   ]
+  },
+  "220923_Standing_Split_pose_or_Urdhva_Prasarita_Eka_Padasana_-a_x3s": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ],
+   "drag_s": [
+    "0.30",
+    "0.20"
+   ],
+   "drag_J": [
+    "9.73",
+    "10.53"
+   ]
+  },
+  "220923_Standing_Split_pose_or_Urdhva_Prasarita_Eka_Padasana_-a_x7s": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ]
+  },
+  "220923_Standing_Split_pose_or_Urdhva_Prasarita_Eka_Padasana_-b": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ]
+  },
+  "220923_Standing_Split_pose_or_Urdhva_Prasarita_Eka_Padasana_-b_x3s": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ]
+  },
+  "220923_Standing_Split_pose_or_Urdhva_Prasarita_Eka_Padasana_-b_x7s": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ],
+   "drag_s": [
+    "0.20",
+    "0.30"
+   ],
+   "drag_J": [
+    "13.25",
+    "17.32"
+   ]
+  },
+  "220923_Standing_big_toe_hold_pose_or_Utthita_Padangusthasana-a": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ]
+  },
+  "220923_Standing_big_toe_hold_pose_or_Utthita_Padangusthasana-a_x3s": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ]
+  },
+  "220923_Standing_big_toe_hold_pose_or_Utthita_Padangusthasana-a_x7s": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ]
+  },
+  "220923_Standing_big_toe_hold_pose_or_Utthita_Padangusthasana-b": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ]
+  },
+  "220923_Standing_big_toe_hold_pose_or_Utthita_Padangusthasana-b_x3s": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ]
+  },
+  "220923_Standing_big_toe_hold_pose_or_Utthita_Padangusthasana-b_x7s": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ]
+  },
+  "220923_Supported_Headstand_pose_or_Salamba_Sirsasana_-b": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ]
+  },
+  "220923_Supported_Headstand_pose_or_Salamba_Sirsasana_-b_x3s": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ]
+  },
+  "220923_Supported_Headstand_pose_or_Salamba_Sirsasana_-b_x7s": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ]
+  },
+  "220923_Supported_Shoulderstand_pose_or_Salamba_Sarvangasana_-a": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ],
+   "drag_s": [
+    "1.40",
+    "1.37"
+   ],
+   "drag_J": [
+    "27.77",
+    "26.74"
+   ]
+  },
+  "220923_Supported_Shoulderstand_pose_or_Salamba_Sarvangasana_-a_x3s": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ]
+  },
+  "220923_Supported_Shoulderstand_pose_or_Salamba_Sarvangasana_-a_x7s": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ]
+  },
+  "220923_Tree_Pose_or_Vrksasana_-a": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ]
+  },
+  "220923_Tree_Pose_or_Vrksasana_-a_x3s": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ]
+  },
+  "220923_Tree_Pose_or_Vrksasana_-a_x7s": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ]
+  },
+  "220923_Tree_Pose_or_Vrksasana_-b": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ]
+  },
+  "220923_Tree_Pose_or_Vrksasana_-b_x3s": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ]
+  },
+  "220923_Tree_Pose_or_Vrksasana_-b_x7s": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ]
+  },
+  "220926_Eagle_Pose_or_Garudasana_-a": {
+   "sampling_prob": [
+    "0.008992",
+    "0.008772"
+   ]
+  },
+  "220926_Eagle_Pose_or_Garudasana_-a_x3s": {
+   "sampling_prob": [
+    "0.008992",
+    "0.008772"
+   ]
+  },
+  "220926_Eagle_Pose_or_Garudasana_-a_x7s": {
+   "sampling_prob": [
+    "0.008992",
+    "0.008772"
+   ]
+  },
+  "220926_Intense_Side_Stretch_Pose_or_Parsvottanasana_-b": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ],
+   "drag_s": [
+    "1.10",
+    "1.07"
+   ],
+   "drag_J": [
+    "40.00",
+    "36.29"
+   ],
+   "drag_J_swing": [
+    "2.61",
+    "2.60"
+   ]
+  },
+  "220926_Intense_Side_Stretch_Pose_or_Parsvottanasana_-b_x3s": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ],
+   "drag_s": [
+    "1.10",
+    "1.30"
+   ],
+   "drag_J": [
+    "39.20",
+    "49.23"
+   ],
+   "drag_J_swing": [
+    "1.93",
+    "2.37"
+   ]
+  },
+  "220926_Intense_Side_Stretch_Pose_or_Parsvottanasana_-b_x7s": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ],
+   "drag_s": [
+    "1.03",
+    "1.20"
+   ],
+   "drag_J": [
+    "34.41",
+    "42.17"
+   ],
+   "drag_J_swing": [
+    "2.59",
+    "2.70"
+   ]
+  },
+  "220926_Lord_of_the_Dance_Pose_or_Natarajasana_-a": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ]
+  },
+  "220926_Lord_of_the_Dance_Pose_or_Natarajasana_-a_x3s": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ]
+  },
+  "220926_Lord_of_the_Dance_Pose_or_Natarajasana_-a_x7s": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ]
+  },
+  "220926_Lord_of_the_Dance_Pose_or_Natarajasana_-c": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ]
+  },
+  "220926_Lord_of_the_Dance_Pose_or_Natarajasana_-c_x3s": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ]
+  },
+  "220926_Lord_of_the_Dance_Pose_or_Natarajasana_-c_x7s": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ]
+  },
+  "220926_Plow_Pose_or_Halasana_-b": {
+   "p_track": [
+    "0.9328",
+    "0.9336"
+   ],
+   "score": [
+    "0.9664",
+    "0.9668"
+   ],
+   "score_ema": [
+    "0.9664",
+    "0.9668"
+   ],
+   "sampling_prob": [
+    "0.005016",
+    "0.004948"
+   ],
+   "drag_s": [
+    "4.00",
+    "3.87"
+   ],
+   "drag_J": [
+    "78.71",
+    "88.57"
+   ],
+   "drag_J_swing": [
+    "4.07",
+    "4.19"
+   ],
+   "score_v2": [
+    "0.9664",
+    "0.9668"
+   ]
+  },
+  "220926_Plow_Pose_or_Halasana_-b_x3s": {
+   "p_track": [
+    "0.8989",
+    "0.8982"
+   ],
+   "score": [
+    "0.9414",
+    "0.9411"
+   ],
+   "score_ema": [
+    "0.9414",
+    "0.9411"
+   ],
+   "sampling_prob": [
+    "0.005924",
+    "0.005845"
+   ],
+   "drag_s": [
+    "3.43",
+    "3.53"
+   ],
+   "drag_J": [
+    "68.52",
+    "66.58"
+   ],
+   "drag_J_swing": [
+    "3.40",
+    "3.17"
+   ],
+   "score_v2": [
+    "0.9414",
+    "0.9411"
+   ]
+  },
+  "220926_Plow_Pose_or_Halasana_-b_x7s": {
+   "p_hold": [
+    "0.9885",
+    "0.9880"
+   ],
+   "p_family": [
+    "0.9541",
+    "0.9520"
+   ],
+   "score": [
+    "0.9484",
+    "0.9481"
+   ],
+   "score_ema": [
+    "0.9484",
+    "0.9481"
+   ],
+   "sampling_prob": [
+    "0.005670",
+    "0.005599"
+   ],
+   "p_family_event": [
+    "0.9541",
+    "0.9520"
+   ],
+   "drag_s": [
+    "3.77",
+    "3.67"
+   ],
+   "drag_J": [
+    "74.28",
+    "87.04"
+   ],
+   "drag_J_swing": [
+    "3.36",
+    "3.28"
+   ],
+   "score_v2": [
+    "0.9484",
+    "0.9481"
+   ],
+   "p_hold_v2": [
+    "0.9885",
+    "0.9880"
+   ],
+   "p_family_v2": [
+    "0.9541",
+    "0.9520"
+   ]
+  },
+  "220926_Supported_Headstand_pose_or_Salamba_Sirsasana_-a": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ],
+   "drag_s": [
+    "2.97",
+    "2.87"
+   ],
+   "drag_J": [
+    "72.07",
+    "63.95"
+   ]
+  },
+  "220926_Supported_Headstand_pose_or_Salamba_Sirsasana_-a_x3s": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ],
+   "drag_s": [
+    "5.40",
+    "4.17"
+   ],
+   "drag_J": [
+    "113.92",
+    "87.26"
+   ]
+  },
+  "220926_Supported_Headstand_pose_or_Salamba_Sirsasana_-a_x7s": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ],
+   "drag_s": [
+    "5.63",
+    "5.40"
+   ],
+   "drag_J": [
+    "105.38",
+    "92.87"
+   ]
+  },
+  "220926_Upward_Plank_Pose_or_Purvottanasana_-a": {
+   "p_track": [
+    "0.7855",
+    "0.7302"
+   ],
+   "score": [
+    "0.6785",
+    "0.6508"
+   ],
+   "score_ema": [
+    "0.6785",
+    "0.6508"
+   ],
+   "sampling_prob": [
+    "0.015495",
+    "0.015965"
+   ],
+   "drag_s": [
+    "6.87",
+    "8.47"
+   ],
+   "drag_J": [
+    "247.53",
+    "332.82"
+   ],
+   "drag_J_swing": [
+    "15.97",
+    "31.66"
+   ],
+   "score_v2": [
+    "0.6785",
+    "0.6508"
+   ],
+   "support_violation_v2": [
+    "0.2000",
+    "0.4467"
+   ],
+   "substitutions_v2": [
+    "24.75:PELVIS+TRUNK+R_UPPER_ARM+L_FOREARM+R_FOREARM(untracked);30.42:L_THIGH+PELVIS+TRUNK+L_HAND+R_HAND(untracked)",
+    "23.48:TRUNK+L_UPPER_ARM+R_UPPER_ARM(untracked);24.75:PELVIS+TRUNK+L_UPPER_ARM+R_UPPER_ARM+L_FOREARM+R_FOREARM(untracked);30.42:PELVIS+L_HAND+R_HAND(untracked)"
+   ]
+  },
+  "220926_Upward_Plank_Pose_or_Purvottanasana_-a_x3s": {
+   "sampling_prob": [
+    "0.011188",
+    "0.010876"
+   ],
+   "drag_s": [
+    "3.67",
+    "2.97"
+   ],
+   "drag_J": [
+    "118.70",
+    "71.90"
+   ],
+   "drag_J_swing": [
+    "6.82",
+    "8.57"
+   ]
+  },
+  "220926_Upward_Plank_Pose_or_Purvottanasana_-a_x7s": {
+   "p_track": [
+    "0.7663",
+    "0.7411"
+   ],
+   "p_hold": [
+    "0.5847",
+    "0.5714"
+   ],
+   "p_family": [
+    "0.6977",
+    "0.6667"
+   ],
+   "score": [
+    "0.6755",
+    "0.6563"
+   ],
+   "score_ema": [
+    "0.6755",
+    "0.6563"
+   ],
+   "sampling_prob": [
+    "0.015603",
+    "0.015775"
+   ],
+   "p_family_event": [
+    "0.6977",
+    "0.6667"
+   ],
+   "drag_s": [
+    "8.07",
+    "7.57"
+   ],
+   "drag_J": [
+    "330.17",
+    "334.71"
+   ],
+   "drag_J_swing": [
+    "15.94",
+    "29.04"
+   ],
+   "score_v2": [
+    "0.6755",
+    "0.6563"
+   ],
+   "p_hold_v2": [
+    "0.5847",
+    "0.5714"
+   ],
+   "p_family_v2": [
+    "0.6977",
+    "0.6667"
+   ],
+   "support_violation_v2": [
+    "0.2936",
+    "0.3538"
+   ],
+   "substitutions_v2": [
+    "37.48:TRUNK+L_UPPER_ARM+R_UPPER_ARM(untracked);45.75:TRUNK+L_UPPER_ARM+R_UPPER_ARM(untracked);51.42:PELVIS+L_HAND+R_HAND(untracked)",
+    "37.48:TRUNK+HEAD+L_UPPER_ARM+R_UPPER_ARM(untracked);45.75:TRUNK+HEAD+L_UPPER_ARM+R_UPPER_ARM(untracked);51.42:PELVIS+L_HAND+R_HAND(untracked)"
+   ]
+  },
+  "220926_Warrior_III_Pose_or_Virabhadrasana_III_-a": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ]
+  },
+  "220926_Warrior_III_Pose_or_Virabhadrasana_III_-a_x3s": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ]
+  },
+  "220926_Warrior_III_Pose_or_Virabhadrasana_III_-a_x7s": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ]
+  },
+  "220926_Warrior_III_Pose_or_Virabhadrasana_III_-b": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ]
+  },
+  "220926_Warrior_III_Pose_or_Virabhadrasana_III_-b_x3s": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ],
+   "drag_s": [
+    "0.17",
+    "0.13"
+   ],
+   "drag_J": [
+    "3.87",
+    "2.60"
+   ]
+  },
+  "220926_Warrior_III_Pose_or_Virabhadrasana_III_-b_x7s": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ],
+   "drag_s": [
+    "0.27",
+    "0.10"
+   ],
+   "drag_J": [
+    "8.75",
+    "2.55"
+   ]
+  },
+  "220926_Warrior_II_Pose_or_Virabhadrasana_II_-a": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ]
+  },
+  "220926_Warrior_II_Pose_or_Virabhadrasana_II_-a_x3s": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ]
+  },
+  "220926_Warrior_II_Pose_or_Virabhadrasana_II_-a_x7s": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ]
+  },
+  "220926_viparita_virabhadrasana_or_reverse_warrior_pose-a": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ]
+  },
+  "220926_viparita_virabhadrasana_or_reverse_warrior_pose-a_x3s": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ]
+  },
+  "220926_viparita_virabhadrasana_or_reverse_warrior_pose-a_x7s": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ]
+  },
+  "SYN_B1_jumpplank_high_s1_t6rpx": {
+   "sampling_prob": [
+    "0.002290",
+    "0.002288"
+   ]
+  },
+  "SYN_B1_jumpplank_high_s1_t6rpx_x3s": {
+   "sampling_prob": [
+    "0.002290",
+    "0.002288"
+   ],
+   "drag_s": [
+    "1.10",
+    "0.90"
+   ],
+   "drag_J": [
+    "16.38",
+    "18.39"
+   ]
+  },
+  "SYN_B1_jumpplank_high_s1_t6rpx_x7s": {
+   "sampling_prob": [
+    "0.002290",
+    "0.002288"
+   ],
+   "drag_s": [
+    "1.00",
+    "1.13"
+   ],
+   "drag_J": [
+    "20.23",
+    "23.63"
+   ],
+   "drag_J_swing": [
+    "2.52",
+    "2.51"
+   ]
+  },
+  "SYN_B1_jumpplank_high_s2_t6rpx": {
+   "sampling_prob": [
+    "0.002290",
+    "0.002288"
+   ],
+   "drag_s": [
+    "1.03",
+    "1.10"
+   ],
+   "drag_J": [
+    "16.70",
+    "17.01"
+   ]
+  },
+  "SYN_B1_jumpplank_high_s2_t6rpx_x3s": {
+   "sampling_prob": [
+    "0.002290",
+    "0.002288"
+   ],
+   "drag_s": [
+    "1.10",
+    "0.93"
+   ],
+   "drag_J": [
+    "27.37",
+    "17.18"
+   ]
+  },
+  "SYN_B1_jumpplank_high_s2_t6rpx_x7s": {
+   "sampling_prob": [
+    "0.002290",
+    "0.002288"
+   ],
+   "drag_J": [
+    "16.33",
+    "19.27"
+   ]
+  },
+  "SYN_B1_jumpplank_high_s4_t6rpx12": {
+   "sampling_prob": [
+    "0.002290",
+    "0.002288"
+   ],
+   "drag_s": [
+    "1.13",
+    "1.23"
+   ],
+   "drag_J": [
+    "18.28",
+    "26.04"
+   ]
+  },
+  "SYN_B1_jumpplank_high_s4_t6rpx12_x3s": {
+   "sampling_prob": [
+    "0.002290",
+    "0.002288"
+   ]
+  },
+  "SYN_B1_jumpplank_high_s4_t6rpx12_x7s": {
+   "sampling_prob": [
+    "0.002290",
+    "0.002288"
+   ],
+   "drag_s": [
+    "0.97",
+    "1.13"
+   ],
+   "drag_J": [
+    "18.13",
+    "21.27"
+   ]
+  },
+  "SYN_B1_jumpplank_mid_s0_t6rpx": {
+   "sampling_prob": [
+    "0.002290",
+    "0.002288"
+   ],
+   "drag_s": [
+    "0.83",
+    "0.97"
+   ],
+   "drag_J": [
+    "18.48",
+    "17.97"
+   ]
+  },
+  "SYN_B1_jumpplank_mid_s0_t6rpx_x3s": {
+   "sampling_prob": [
+    "0.002290",
+    "0.002288"
+   ],
+   "drag_s": [
+    "0.87",
+    "1.00"
+   ],
+   "drag_J": [
+    "18.12",
+    "19.55"
+   ]
+  },
+  "SYN_B1_jumpplank_mid_s0_t6rpx_x7s": {
+   "sampling_prob": [
+    "0.002290",
+    "0.002288"
+   ]
+  },
+  "SYN_B1_jumpplank_mid_s1_t6rpx12": {
+   "sampling_prob": [
+    "0.002290",
+    "0.002288"
+   ]
+  },
+  "SYN_B1_jumpplank_mid_s1_t6rpx12_x3s": {
+   "sampling_prob": [
+    "0.002290",
+    "0.002288"
+   ]
+  },
+  "SYN_B1_jumpplank_mid_s1_t6rpx12_x7s": {
+   "sampling_prob": [
+    "0.002290",
+    "0.002288"
+   ],
+   "drag_s": [
+    "1.07",
+    "1.00"
+   ],
+   "drag_J": [
+    "19.46",
+    "20.39"
+   ]
+  },
+  "SYN_E1_press_high_s0_t6px": {
+   "sampling_prob": [
+    "0.001445",
+    "0.001443"
+   ]
+  },
+  "SYN_E1_press_high_s0_t6px_x3s": {
+   "sampling_prob": [
+    "0.001445",
+    "0.001443"
+   ]
+  },
+  "SYN_E1_press_high_s0_t6px_x7s": {
+   "sampling_prob": [
+    "0.001445",
+    "0.001443"
+   ]
+  },
+  "SYN_E1_press_high_s2_t6px": {
+   "sampling_prob": [
+    "0.001445",
+    "0.001443"
+   ]
+  },
+  "SYN_E1_press_high_s2_t6px_x3s": {
+   "sampling_prob": [
+    "0.001445",
+    "0.001443"
+   ]
+  },
+  "SYN_E1_press_high_s2_t6px_x7s": {
+   "sampling_prob": [
+    "0.001445",
+    "0.001443"
+   ]
+  },
+  "SYN_E1_press_high_s3_t6px": {
+   "sampling_prob": [
+    "0.001445",
+    "0.001443"
+   ]
+  },
+  "SYN_E1_press_high_s3_t6px_x3s": {
+   "sampling_prob": [
+    "0.001445",
+    "0.001443"
+   ]
+  },
+  "SYN_E1_press_high_s3_t6px_x7s": {
+   "sampling_prob": [
+    "0.001445",
+    "0.001443"
+   ]
+  },
+  "SYN_E1_press_high_s4_t6px": {
+   "sampling_prob": [
+    "0.001445",
+    "0.001443"
+   ]
+  },
+  "SYN_E1_press_high_s4_t6px_x3s": {
+   "sampling_prob": [
+    "0.001445",
+    "0.001443"
+   ]
+  },
+  "SYN_E1_press_high_s4_t6px_x7s": {
+   "sampling_prob": [
+    "0.001445",
+    "0.001443"
+   ]
+  },
+  "SYN_E1_press_mid_s0_t6px": {
+   "sampling_prob": [
+    "0.001445",
+    "0.001443"
+   ]
+  },
+  "SYN_E1_press_mid_s0_t6px_x3s": {
+   "sampling_prob": [
+    "0.001445",
+    "0.001443"
+   ]
+  },
+  "SYN_E1_press_mid_s0_t6px_x7s": {
+   "sampling_prob": [
+    "0.001445",
+    "0.001443"
+   ]
+  },
+  "SYN_E1_press_mid_s2_t6px": {
+   "sampling_prob": [
+    "0.001445",
+    "0.001443"
+   ]
+  },
+  "SYN_E1_press_mid_s2_t6px_x3s": {
+   "sampling_prob": [
+    "0.001445",
+    "0.001443"
+   ]
+  },
+  "SYN_E1_press_mid_s2_t6px_x7s": {
+   "sampling_prob": [
+    "0.001445",
+    "0.001443"
+   ]
+  },
+  "SYN_E1_press_mid_s3_t6px": {
+   "sampling_prob": [
+    "0.001445",
+    "0.001443"
+   ]
+  },
+  "SYN_E1_press_mid_s3_t6px_x3s": {
+   "sampling_prob": [
+    "0.001445",
+    "0.001443"
+   ]
+  },
+  "SYN_E1_press_mid_s3_t6px_x7s": {
+   "sampling_prob": [
+    "0.001445",
+    "0.001443"
+   ]
+  },
+  "SYN_E1_press_mid_s4_t6px": {
+   "sampling_prob": [
+    "0.001445",
+    "0.001443"
+   ]
+  },
+  "SYN_E1_press_mid_s4_t6px_x3s": {
+   "sampling_prob": [
+    "0.001445",
+    "0.001443"
+   ]
+  },
+  "SYN_E1_press_mid_s4_t6px_x7s": {
+   "sampling_prob": [
+    "0.001445",
+    "0.001443"
+   ]
+  },
+  "SYN_E2_jumpback_mid_s0_t6px12": {
+   "sampling_prob": [
+    "0.001061",
+    "0.001059"
+   ],
+   "drag_s": [
+    "0.73",
+    "0.90"
+   ],
+   "drag_J": [
+    "19.92",
+    "28.34"
+   ]
+  },
+  "SYN_E2_jumpback_mid_s0_t6px12_x3s": {
+   "sampling_prob": [
+    "0.001061",
+    "0.001059"
+   ],
+   "drag_J": [
+    "22.25",
+    "21.42"
+   ]
+  },
+  "SYN_E2_jumpback_mid_s0_t6px12_x7s": {
+   "sampling_prob": [
+    "0.001061",
+    "0.001059"
+   ]
+  },
+  "SYN_E2_jumpback_mid_s0_t6rpx12": {
+   "sampling_prob": [
+    "0.001061",
+    "0.001059"
+   ],
+   "drag_s": [
+    "0.70",
+    "0.73"
+   ],
+   "drag_J": [
+    "19.71",
+    "25.48"
+   ]
+  },
+  "SYN_E2_jumpback_mid_s0_t6rpx12_x3s": {
+   "sampling_prob": [
+    "0.001061",
+    "0.001059"
+   ]
+  },
+  "SYN_E2_jumpback_mid_s0_t6rpx12_x7s": {
+   "sampling_prob": [
+    "0.001061",
+    "0.001059"
+   ],
+   "drag_s": [
+    "0.80",
+    "1.03"
+   ],
+   "drag_J": [
+    "26.28",
+    "33.55"
+   ]
+  },
+  "SYN_E2_jumpback_mid_s1_t6px": {
+   "sampling_prob": [
+    "0.001061",
+    "0.001059"
+   ],
+   "drag_J": [
+    "24.55",
+    "21.50"
+   ]
+  },
+  "SYN_E2_jumpback_mid_s1_t6px12": {
+   "sampling_prob": [
+    "0.001061",
+    "0.001059"
+   ],
+   "drag_s": [
+    "0.83",
+    "0.77"
+   ],
+   "drag_J": [
+    "33.08",
+    "30.42"
+   ]
+  },
+  "SYN_E2_jumpback_mid_s1_t6px12_x3s": {
+   "sampling_prob": [
+    "0.001061",
+    "0.001059"
+   ],
+   "drag_s": [
+    "0.87",
+    "0.73"
+   ],
+   "drag_J": [
+    "29.07",
+    "25.68"
+   ]
+  },
+  "SYN_E2_jumpback_mid_s1_t6px12_x7s": {
+   "sampling_prob": [
+    "0.001061",
+    "0.001059"
+   ],
+   "drag_s": [
+    "0.77",
+    "0.73"
+   ],
+   "drag_J": [
+    "25.74",
+    "25.37"
+   ]
+  },
+  "SYN_E2_jumpback_mid_s1_t6px_x3s": {
+   "sampling_prob": [
+    "0.001061",
+    "0.001059"
+   ],
+   "drag_J": [
+    "21.26",
+    "22.73"
+   ]
+  },
+  "SYN_E2_jumpback_mid_s1_t6px_x7s": {
+   "sampling_prob": [
+    "0.001061",
+    "0.001059"
+   ],
+   "drag_s": [
+    "0.73",
+    "0.77"
+   ],
+   "drag_J": [
+    "36.98",
+    "38.39"
+   ]
+  },
+  "SYN_E2_jumpback_mid_s1_t6rpx": {
+   "sampling_prob": [
+    "0.001061",
+    "0.001059"
+   ]
+  },
+  "SYN_E2_jumpback_mid_s1_t6rpx12": {
+   "sampling_prob": [
+    "0.001061",
+    "0.001059"
+   ],
+   "drag_s": [
+    "1.03",
+    "0.83"
+   ],
+   "drag_J": [
+    "28.48",
+    "26.03"
+   ]
+  },
+  "SYN_E2_jumpback_mid_s1_t6rpx12_x3s": {
+   "sampling_prob": [
+    "0.001061",
+    "0.001059"
+   ]
+  },
+  "SYN_E2_jumpback_mid_s1_t6rpx12_x7s": {
+   "sampling_prob": [
+    "0.001061",
+    "0.001059"
+   ],
+   "drag_s": [
+    "0.80",
+    "0.87"
+   ],
+   "drag_J": [
+    "34.06",
+    "34.71"
+   ]
+  },
+  "SYN_E2_jumpback_mid_s1_t6rpx_x3s": {
+   "sampling_prob": [
+    "0.001061",
+    "0.001059"
+   ],
+   "drag_s": [
+    "0.67",
+    "0.90"
+   ],
+   "drag_J": [
+    "24.28",
+    "27.94"
+   ]
+  },
+  "SYN_E2_jumpback_mid_s1_t6rpx_x7s": {
+   "sampling_prob": [
+    "0.001061",
+    "0.001059"
+   ]
+  },
+  "SYN_E2_jumpback_mid_s2_t6px12": {
+   "sampling_prob": [
+    "0.001061",
+    "0.001059"
+   ]
+  },
+  "SYN_E2_jumpback_mid_s2_t6px12_x3s": {
+   "sampling_prob": [
+    "0.001061",
+    "0.001059"
+   ],
+   "drag_s": [
+    "0.77",
+    "0.80"
+   ],
+   "drag_J": [
+    "24.70",
+    "28.61"
+   ]
+  },
+  "SYN_E2_jumpback_mid_s2_t6px12_x7s": {
+   "sampling_prob": [
+    "0.001061",
+    "0.001059"
+   ]
+  },
+  "SYN_E2_jumpback_mid_s3_t6px12": {
+   "sampling_prob": [
+    "0.001061",
+    "0.001059"
+   ],
+   "drag_J": [
+    "27.58",
+    "29.62"
+   ]
+  },
+  "SYN_E2_jumpback_mid_s3_t6px12_x3s": {
+   "sampling_prob": [
+    "0.001061",
+    "0.001059"
+   ],
+   "drag_J": [
+    "26.77",
+    "26.88"
+   ]
+  },
+  "SYN_E2_jumpback_mid_s3_t6px12_x7s": {
+   "sampling_prob": [
+    "0.001061",
+    "0.001059"
+   ]
+  },
+  "SYN_E2_jumpback_mid_s4_t6px": {
+   "sampling_prob": [
+    "0.001061",
+    "0.001059"
+   ],
+   "drag_s": [
+    "0.73",
+    "0.80"
+   ],
+   "drag_J": [
+    "28.31",
+    "27.39"
+   ]
+  },
+  "SYN_E2_jumpback_mid_s4_t6px12": {
+   "sampling_prob": [
+    "0.001061",
+    "0.001059"
+   ],
+   "drag_s": [
+    "0.87",
+    "0.77"
+   ],
+   "drag_J": [
+    "24.15",
+    "20.57"
+   ]
+  },
+  "SYN_E2_jumpback_mid_s4_t6px12_x3s": {
+   "sampling_prob": [
+    "0.001061",
+    "0.001059"
+   ]
+  },
+  "SYN_E2_jumpback_mid_s4_t6px12_x7s": {
+   "sampling_prob": [
+    "0.001061",
+    "0.001059"
+   ],
+   "drag_J": [
+    "24.29",
+    "25.66"
+   ]
+  },
+  "SYN_E2_jumpback_mid_s4_t6px_x3s": {
+   "sampling_prob": [
+    "0.001061",
+    "0.001059"
+   ],
+   "drag_s": [
+    "0.73",
+    "0.80"
+   ],
+   "drag_J": [
+    "20.83",
+    "23.73"
+   ]
+  },
+  "SYN_E2_jumpback_mid_s4_t6px_x7s": {
+   "sampling_prob": [
+    "0.001061",
+    "0.001059"
+   ],
+   "drag_s": [
+    "0.80",
+    "0.67"
+   ],
+   "drag_J": [
+    "28.71",
+    "20.60"
+   ]
+  },
+  "SYN_E2_jumpback_mid_s4_t6rpx12": {
+   "sampling_prob": [
+    "0.001061",
+    "0.001059"
+   ]
+  },
+  "SYN_E2_jumpback_mid_s4_t6rpx12_x3s": {
+   "sampling_prob": [
+    "0.001061",
+    "0.001059"
+   ]
+  },
+  "SYN_E2_jumpback_mid_s4_t6rpx12_x7s": {
+   "sampling_prob": [
+    "0.001061",
+    "0.001059"
+   ]
+  },
+  "SYN_E3_lower_high_s0_t6px": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ]
+  },
+  "SYN_E3_lower_high_s0_t6px_x3s": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ]
+  },
+  "SYN_E3_lower_high_s0_t6px_x7s": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ]
+  },
+  "SYN_E3_lower_high_s2_t6px": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ]
+  },
+  "SYN_E3_lower_high_s2_t6px_x3s": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ]
+  },
+  "SYN_E3_lower_high_s2_t6px_x7s": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ],
+   "drag_s": [
+    "0.80",
+    "0.93"
+   ],
+   "drag_J": [
+    "34.94",
+    "43.81"
+   ]
+  },
+  "SYN_E3_lower_high_s3_t6px12": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ],
+   "drag_J": [
+    "44.04",
+    "46.12"
+   ]
+  },
+  "SYN_E3_lower_high_s3_t6px12_x3s": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ]
+  },
+  "SYN_E3_lower_high_s3_t6px12_x7s": {
+   "sampling_prob": [
+    "0.003792",
+    "0.003791"
+   ]
+  },
+  "SYN_E5_floatdown_mid_s0_t6rpx12": {
+   "sampling_prob": [
+    "0.011304",
+    "0.011302"
+   ]
+  },
+  "SYN_E5_floatdown_mid_s0_t6rpx12_x3s": {
+   "sampling_prob": [
+    "0.011304",
+    "0.011302"
+   ]
+  },
+  "SYN_E5_floatdown_mid_s0_t6rpx12_x7s": {
+   "sampling_prob": [
+    "0.011304",
+    "0.011302"
+   ],
+   "drag_s": [
+    "0.90",
+    "0.80"
+   ],
+   "drag_J": [
+    "31.21",
+    "31.48"
+   ]
+  }
+ },
+ "aggregate_differing": {
+  "eval/action_delta_max_deg": [
+   0.7685738599434799,
+   0.7671534491651039
+  ],
+  "eval/action_delta_max_rad": [
+   0.013414133070332427,
+   0.013389342246458881
+  ],
+  "eval/action_delta_mean_deg": [
+   0.14771785965684037,
+   0.14739779185915852
+  ],
+  "eval/action_delta_mean_rad": [
+   0.0025781608373296283,
+   0.0025725746051489654
+  ],
+  "eval/action_rate_mean_rad_s": [
+   0.07734482511988885,
+   0.07717723815446896
+  ],
+  "eval/curriculum/ess": [
+   136.0532684326172,
+   138.91195678710938
+  ],
+  "eval/curriculum/group_prob/arm_balance": [
+   0.12138070166110992,
+   0.12524516880512238
+  ],
+  "eval/curriculum/group_prob/connective": [
+   0.29274433851242065,
+   0.2920188903808594
+  ],
+  "eval/curriculum/group_prob/edge": [
+   0.1720713973045349,
+   0.17194291949272156
+  ],
+  "eval/curriculum/group_prob/inversion": [
+   0.18609285354614258,
+   0.18649590015411377
+  ],
+  "eval/curriculum/group_prob/single_leg": [
+   0.22771063446998596,
+   0.22429713606834412
+  ],
+  "eval/curriculum/max_prob_x_n": [
+   9.104104042053223,
+   8.76130199432373
+  ],
+  "eval/curriculum/prioritized_top10_share": [
+   0.6369996666908264,
+   0.6287111043930054
+  ],
+  "eval/drag/Bridge_Pose_or_Setu_Bandha_Sarvangasana_-a_J": [
+   78.2693862915039,
+   77.67047882080078
+  ],
+  "eval/drag/Peacock_Pose_or_Mayurasana_-a_J": [
+   63.0076789855957,
+   66.57921600341797
+  ],
+  "eval/drag/Plow_Pose_or_Halasana_-a_J": [
+   69.03641510009766,
+   68.39663696289062
+  ],
+  "eval/drag/Plow_Pose_or_Halasana_-b_J": [
+   73.83744049072266,
+   80.72742462158203
+  ],
+  "eval/drag/Upward_Plank_Pose_or_Purvottanasana_-a_J": [
+   232.1327667236328,
+   246.4765167236328
+  ],
+  "eval/drag/all_J": [
+   40.263668060302734,
+   40.53660583496094
+  ],
+  "eval/drag/all_s": [
+   1.288095235824585,
+   1.281613826751709
+  ],
+  "eval/drag/all_swing_J": [
+   1.0929163694381714,
+   1.3942705392837524
+  ],
+  "eval/drag/top_J": [
+   85.3966293334961,
+   88.34244537353516
+  ],
+  "eval/drag/top_s": [
+   3.140277624130249,
+   3.144444465637207
+  ],
+  "eval/drag/top_swing_J": [
+   2.450404405593872,
+   3.7150144577026367
+  ],
+  "eval/drag_group/arm_balance_J": [
+   54.161102294921875,
+   55.28610610961914
+  ],
+  "eval/drag_group/arm_balance_s": [
+   1.6777777671813965,
+   1.6790122985839844
+  ],
+  "eval/drag_group/arm_balance_swing_J": [
+   1.3066225051879883,
+   2.0050904750823975
+  ],
+  "eval/drag_group/connective_J": [
+   54.71558380126953,
+   55.31035232543945
+  ],
+  "eval/drag_group/connective_s": [
+   1.728042483329773,
+   1.717989444732666
+  ],
+  "eval/drag_group/connective_swing_J": [
+   1.3243045806884766,
+   1.8170244693756104
+  ],
+  "eval/drag_group/edge_J": [
+   22.68194007873535,
+   23.11154556274414
+  ],
+  "eval/drag_group/edge_s": [
+   0.6900793313980103,
+   0.6972222328186035
+  ],
+  "eval/drag_group/edge_swing_J": [
+   0.02996373176574707,
+   0.029884561896324158
+  ],
+  "eval/drag_group/inversion_J": [
+   64.55047607421875,
+   63.70178985595703
+  ],
+  "eval/drag_group/inversion_s": [
+   2.252136707305908,
+   2.2128207683563232
+  ],
+  "eval/drag_group/inversion_swing_J": [
+   2.830836534500122,
+   3.457097053527832
+  ],
+  "eval/drag_group/single_leg_J": [
+   20.878517150878906,
+   20.825809478759766
+  ],
+  "eval/drag_group/single_leg_s": [
+   0.6316238641738892,
+   0.6290597915649414
+  ],
+  "eval/drag_group/single_leg_swing_J": [
+   1.1227004528045654,
+   1.1643363237380981
+  ],
+  "eval/gr_error/mean": [
+   0.16805234551429749,
+   0.16900132596492767
+  ],
+  "eval/gt_error/mean": [
+   0.06104891002178192,
+   0.061394885182380676
+  ],
+  "eval/high_jerk_frame_percentage_mean": [
+   0.9328726291959544,
+   0.9504737096860827
+  ],
+  "eval/max_joint_error/max": [
+   2.6415295600891113,
+   2.6582069396972656
+  ],
+  "eval/max_joint_error/mean": [
+   0.13884013891220093,
+   0.13993826508522034
+  ],
+  "eval/normalized_jerk_mean": [
+   55.029571533203125,
+   55.17823028564453
+  ],
+  "eval/perf/arm_balance_family_event_penalised": [
+   0.991604208946228,
+   0.9939845204353333
+  ],
+  "eval/perf/arm_balance_family_penalised": [
+   0.991604208946228,
+   0.9939845204353333
+  ],
+  "eval/perf/family_hold": [
+   0.9870835542678833,
+   0.9871991872787476
+  ],
+  "eval/perf/hold": [
+   0.9851129651069641,
+   0.9851194024085999
+  ],
+  "eval/perf/holds_tracked_v2": [
+   1129.0,
+   1128.0
+  ],
+  "eval/perf/score": [
+   0.9851118922233582,
+   0.9847265481948853
+  ],
+  "eval/perf/support_realised_v2": [
+   0.9574844995571302,
+   0.9574468085106383
+  ],
+  "eval/perf/support_violation_v2": [
+   0.025995932519435883,
+   0.0312633253633976
+  ],
+  "eval/perf/track": [
+   0.9851108193397522,
+   0.9843334555625916
+  ],
+  "eval/perf/track_fail_frac": [
+   0.01488923467695713,
+   0.015666523948311806
+  ],
+  "eval/perf/worst10_score": [
+   0.6736395359039307,
+   0.6630395650863647
+  ],
+  "eval/perf_group/arm_balance_family": [
+   0.991604208946228,
+   0.9939845204353333
+  ],
+  "eval/perf_group/arm_balance_family_event": [
+   0.991604208946228,
+   0.9939845204353333
+  ],
+  "eval/perf_group/arm_balance_hold": [
+   0.9979787468910217,
+   0.9985518455505371
+  ],
+  "eval/perf_group/arm_balance_score": [
+   0.9978108406066895,
+   0.9981445670127869
+  ],
+  "eval/perf_group/connective_family": [
+   0.9899106621742249,
+   0.9894180297851562
+  ],
+  "eval/perf_group/connective_family_event": [
+   0.9899106621742249,
+   0.9894180297851562
+  ],
+  "eval/perf_group/connective_hold": [
+   0.9820705652236938,
+   0.9818593859672546
+  ],
+  "eval/perf_group/connective_score": [
+   0.9860471487045288,
+   0.9853037595748901
+  ],
+  "eval/perf_group/inversion_family": [
+   0.9902955293655396,
+   0.990234911441803
+  ],
+  "eval/perf_group/inversion_family_event": [
+   0.9902955293655396,
+   0.990234911441803
+  ],
+  "eval/perf_group/inversion_hold": [
+   0.9854512214660645,
+   0.985437273979187
+  ],
+  "eval/perf_group/inversion_score": [
+   0.9730924963951111,
+   0.9715719223022461
+  ],
+  "eval/perf_group_v2/arm_balance_family": [
+   0.9870458245277405,
+   0.9119332432746887
+  ],
+  "eval/perf_group_v2/arm_balance_hold": [
+   0.9637097120285034,
+   0.9536224007606506
+  ],
+  "eval/perf_group_v2/arm_balance_score": [
+   0.9806762933731079,
+   0.975679874420166
+  ],
+  "eval/perf_group_v2/connective_family": [
+   0.9422916173934937,
+   0.941798985004425
+  ],
+  "eval/perf_group_v2/connective_hold": [
+   0.9630228877067566,
+   0.9628117084503174
+  ],
+  "eval/perf_group_v2/connective_score": [
+   0.9765233397483826,
+   0.9757799506187439
+  ],
+  "eval/perf_group_v2/inversion_family": [
+   0.9902955293655396,
+   0.990234911441803
+  ],
+  "eval/perf_group_v2/inversion_hold": [
+   0.9854512214660645,
+   0.985437273979187
+  ],
+  "eval/perf_group_v2/inversion_score": [
+   0.9730924963951111,
+   0.9715719223022461
+  ],
+  "eval/perf_v2/family_hold": [
+   0.9745088815689087,
+   0.9665002226829529
+  ],
+  "eval/perf_v2/family_hold_event": [
+   0.9745088815689087,
+   0.9665002226829529
+  ],
+  "eval/perf_v2/hold": [
+   0.9732780456542969,
+   0.9721422791481018
+  ],
+  "eval/perf_v2/score": [
+   0.9791944026947021,
+   0.9782379269599915
+  ],
+  "eval/perf_v2/worst10_score": [
+   0.6509679555892944,
+   0.6403680443763733
+  ]
+ },
+ "eval/perf/score": [
+  0.9851118922233582,
+  0.9847265481948853
+ ],
+ "eval/success_rate": [
+  0.9563492052257061,
+  0.9563492052257061
+ ],
+ "groups": {
+  "eval/perf_group/arm_balance_score": [
+   0.9978108406066895,
+   0.9981445670127869
+  ],
+  "eval/perf_group/connective_score": [
+   0.9860471487045288,
+   0.9853037595748901
+  ],
+  "eval/perf_group/edge_score": [
+   1.0,
+   1.0
+  ],
+  "eval/perf_group/inversion_score": [
+   0.9730924963951111,
+   0.9715719223022461
+  ],
+  "eval/perf_group/single_leg_score": [
+   0.9547621607780457,
+   0.9547621607780457
+  ]
+ }
+}
