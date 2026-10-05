@@ -20,6 +20,10 @@ The analysis this plan rests on is [`README.MD`](README.MD) in this folder.
 
 **Kickoff prompt:** `Implement the next todo step of expert_revist/reference_curation_review_2026_09_28/BUILD_PLAN.MD`.
 
+**All ten steps are done (2026-10-05).** Step 10's expert went on through the graph-growth round
+([`../graph_growth_2026_10_03/PLAN.MD`](../graph_growth_2026_10_03/PLAN.MD)), and the user has chosen its next stage:
+**Lane S, the student, skipping the perturbation fine-tune.** Read "After Step 10" (§3) before starting it.
+
 **Dependencies:**
 
 | Step | Depends on | Notes |
@@ -704,6 +708,42 @@ Their posing arrays (J_regressor, weights, posedirs, faces, kinematic parents) a
 - Evaluate on the original corpus plus the realisability metrics.
 - Later, Pass D reviews policy rollouts with the same packet machinery.
 
+**After Step 10** *(2026-10-05)*.
+- **Step 10's expert was carried into the graph-growth round** ([`../graph_growth_2026_10_03/PLAN.MD`](../graph_growth_2026_10_03/PLAN.MD)):
+  - e15500 ([`../expert56_v2_e15500/README.MD`](../expert56_v2_e15500/README.MD));
+  - **G1**, an AMP warm start: posture 40 % closer to the human
+    ([`g1_amp_eval/README.MD`](../graph_growth_2026_10_03/g1_amp_eval/README.MD));
+  - **release v3** `holds_repaired_ftC_posefix.release_v3.2f132f4299`: release v2, unchanged, plus 28 synthesised
+    transitions of five new edges, spliced between real clips (crow → handstand, handstand → crow, crow → plank,
+    crow → chaturanga, handstand → chaturanga);
+  - **G3**, G1 fine-tuned on release v3.
+- **G3 was stopped by the user at epoch 3,420 and evaluated**
+  ([`g3/README.MD`](../graph_growth_2026_10_03/g3/README.MD)). Use
+  `results/smpl_yogi_v2_expert56_g3_2f132f4299/epoch_3420.ckpt`; `score_based.ckpt` (epoch 3,000) also holds every
+  edge.
+  - **Edges:** all 84 synthetic motions track their transition and hold the destination with its supports (0 of 84
+    before G3). On command, from a held source pose, each edge succeeds on 163 of 163 replicas, and commanding the
+    clip's own continuation instead also succeeds: the goal is causal at the hubs.
+  - **From standing:** a real hands-only crow, and standing → crow → handstand on 94 % of replicas. The direct
+    handstand, Pincha, headstand and side-plank forks fail; the side-plank fork was lost from epoch 2,500.
+  - **Human clips:** every group floor, drag (36.7 J), jerk, realisability and posture pass. **Substitutions fail
+    (7.7 against ≤ 6)**, the holds G1 already flipped in and out of. Supported Shoulderstand -a is fixed (0.44 →
+    1.00); Half Moon -b and Scorpion -a are unreliable at this checkpoint.
+  - **The training panel misreads prone goals:** its heading-chart pose error scored the learnt crow → chaturanga
+    and handstand → chaturanga edges at 0. Use the best-yaw metric (`g3/run_panel_bestyaw.py`) for any prone or
+    inverted goal.
+- **Decision (user, 2026-10-05): skip the perturbation fine-tune and go directly to Lane S.** The expert's renders
+  looked promising, so card E4 and run G4 are not run. The student is distilled from G3's epoch 3,420 (PLAN.MD §4,
+  "Lane S": S0 → S1 → S2/G5 → S3/G6).
+  - **The Lane S cards were written assuming G4.** Where they say "G3/G4" or "G4", read G3 epoch 3,420.
+  - **S2's "pushes on, at G4's final magnitude" has no magnitude to take.** The teacher was never trained under
+    pushes, so its DAgger labels on pushed states are untested. Distil without pushes, or first measure G3's own push
+    recovery with E4's perturbed battery and push only where it recovers.
+  - **The student cannot exceed its teacher here:**
+    - the handstand is reachable from standing only through crow;
+    - the side-plank fork is lost;
+    - the substitution holds (Eagle's kickstand, Peacock's head, Koundinya -b) are what the expert does.
+
 ## 4. Status
 
 | Step | State | Date | Measured / notes |
@@ -718,7 +758,7 @@ Their posing arrays (J_regressor, weights, posedirs, faces, kinematic parents) a
 | 7: gated statics and witness | done | 2026-09-29 | `reference_curation/{statics,witness}.py`; 19 tests pass in 9 s. **Statics v1** in `data/reference_curation/statics/holds_repaired_ftC_posefix.labels_v1.249a920cea.statics_v1.<hash>/` (`holds.jsonl`, `contacts.jsonl`, `statics.json`, `summary.md`; 2.2 MB): every hold of labels v1 at its corrected exemplar on the shipped ftC references, 303 holds in 8 s on 8 workers. **Gated LP** (ground points ≤ 2 cm, pairs ≤ 1 cm, typed statuses, finite and residual checks): `support_not_realised` 226, `infeasible` 31, `beyond_plant` 8, within the limits 38, `numerical` 0. The old solver passed 295 of the 303 within the limits. **The card's controls:** the 0.5 m lift is `support_not_realised` (the old solver's s\* is unchanged by it); an open pair (Side Crow -c h2's other shelf, 12 cm) carries exactly 0 N and leaves s\* unchanged; **Side Crow -c's shelf is useful, not required, in both holds**: min load 0 N, s\* 0.578 → 0.5135 (h1) and 0.5241 → 0.3606 (h2) with it, in the counterfactual, because the reference cannot say (h1's right hand floats 3.85 cm; h2's tilted right hand leaves the COM 0.8 cm outside its in-band corners, gated `infeasible`). **Counterfactual** (the human's contacts closed): 221 of 226 unrealised holds and 29 of 31 infeasible ones become feasible within the limits. **Necessity** (strict; the min-load and s\*-without tests agree on every contact): the 196 `required_touch` pairs are 114 useful, 82 redundant, 0 required (the reviewer's critical pairs 22 / 9 / 0); the 479 `required_touch` ground supports are 82 required, 276 useful, 101 redundant, 20 undecided; 9 of the 445 `required_support` ones are redundant. `beyond_plant` is the box hand: 7 of 8 peak at a wrist or hand hinge (10–20 N m). Joint stops relieve s\* ≥ 0.02 on 4 of 54 decided holds; 290 of 303 exemplars violate an XYZ hinge range by > 2°. **Statue witness** (MuJoCo, 1 kHz, μ 0.75/0.5, the training gains ×10 with the plant's torque limits, joint limits off; settle < 5 cm in 0.5 s, then drift < 2 cm, contacts kept): **4 of 38 feasible holds held** — Warrior II -a@572 (settle 2.41, drift 0.22 cm) and Uttanasana -a@25, @719, @896. It fails on the standing references because their foot boxes are supinated about 12° at uneven heights (31 settle ≥ 5 cm). Deviations from the card: a stiffened statue (it buckles at the training gains), the settle window, the three-way contact rule, effort-based `useful`, the counterfactual closure (card traps). **Still open** (card): validation against the recorded PhysX forces, the training plant's joint limits, an IsaacLab statue |
 | 8: retarget and Pass C | done; 3 of 4 exit tests met (not "no new penetrations") | 2026-09-29 | `reference_curation/{plant,retarget,edits,roles}.py`, `isaac_statue.py`, `prompts/pass_c.md`, `schemas/pass_c.json`. 22 new tests; the suite's 164 pass in 7.3 min. **Step 7's open checks are closed** (see its card): PhysX's joint coordinates are the exp-map and its limits a hard box, so Step 7's soft-limit trap was wrong. The gated LP holds 95.3 % of PhysX's measured ground loads and 98.9 % of its pair loads. The IsaacLab statue is built but not usable. **Retarget `…retarget_v1.22c19e569d`** (motions and lineage in `output/reference_curation/retarget/`, 226 MB; records in `data/reference_curation/retarget/`): 59 clips in 61 min on 8 workers. It is deterministic: two runs of one code are bit-identical. Standing big toe hold -c's fit is unreadable, so its shipped motion is carried. **Exit 1, met:** labelled supports floating > 2 cm fall from **367 / 833 (44.1 %) to 36 / 833 (4.3 %)**, and to **0 of the 797** that are neither head-collider crowns (17) nor supports labels v1 removed (19). Labels v1's 461 / 924 (49.9 %) fall to 27 / 924, 0 of 897 without the crowns. Human-touch zone-frames floating 47.5 % → 0.2 %; frames past a joint range 84.5 % → 0; plant body-pair overlaps > 1 cm 72,659 → 232 pair-frames; 184 of 220 requested pairs closed within 1 cm. **Exit 2, not met:** 214 of those overlaps are new, in 5 clips: the two lotus clips 145 (to 4.4 cm; the plant's knee range cannot fold a lotus), Supported Headstand -a 30, the two Fireflies 39. **Exit 3, met:** round trip ≤ 2.8e-7 m and rad. **Smoothness, not fully met:** 13 of 28 jerky clips are re-solved gently, and 24 clips still add 1–33 frames over 100 m/s² (card trap). **Statics** on the retarget (`statics_v1.7d3b9e15b4`): **270 of 303 holds holdable within the plant's limits** (182 held + 88 feasible), against 38 on the shipped references. 28 are `support_not_realised` (27 crowns, 1 pelvis), 3 infeasible (the carried -c clip), 2 beyond the plant (Scorpion -b s* 1.35, Peacock -a 1.04). The MuJoCo statue holds 182 / 270 by Step 7's rule and 228 / 270 by motion alone; its tips are balances. Pilot: 52 of 59 holdable, statue 34 / 52 and 48 / 52. **Labels v1.1** (`labels_v1_1.3b3fc75828`): 63 `required_touch` ground supports become `required_support`; no pair is statically required (78 useful, 63 redundant). **Pass C:** the controls admit "not the same pose" (32 / 32 swaps, 0 false) and "closer to the human" (42 / 42); artefacts stay advisory (recall 0.375). **Exit 4, met:** 279 of 300 edits accepted (93.0 %); 269 / 283 without the lotus clips. $62.66 for 498 verdicts. Budget flags: 8 clips over the edit budget |
 | 9: training artifacts v2 | done (as BodyFix Step 5, on plant v2) | 2026-10-01 | Built from gate v2's release manifest, labels v2 and the `retarget_v2` references. Hold extension v2 (real-frame pressure, inserted frames invalid), graph v2 (stable hold ids; manual goals resolve the side-specific segment, no 0.5-vote union), physics tables v2 (column 1 for newtons, column 2 for shares, the attribution-visibility gate on "unloaded"), the contact-target sidecar and the runtime identity checks: `reference_curation/{hold_extension_v2,contact_targets_v2,release_v2}.py`, `build_hold_graph_v2.py`, `build_physics_tables_v2.py`, `protomotions/{utils/release_identity,envs/control/contact_targets}.py`. **Exit met:** the package round trip (frame by frame), the runtime load on `smpl_yogi_v2` (the release check passes at startup), and the weight-0 smoke (256 envs, 4 epochs). Numbers in `BodyFix.MD` "What Step 5 found". |
-| 10: release and training | in progress (as BodyFix Step 5) | 2026-10-01 | Release `holds_repaired_ftC_posefix.release_v2.a2dda5d2ac`: record `data/reference_curation/releases/<id>.json`, heavy files in `data/smpl/reference_curation/<id>/`; validated by 26 identity checks. Fresh expert `smpl_yogi_v2_expert56_a2dda5d2ac` (wandb `06k9vjpn`) training on `smpl_yogi_v2` with new normalisers, 30k epochs. Evaluation and Pass D wait for checkpoints. |
+| 10: release and training | done; continued as the graph-growth round | 2026-10-05 | Release `holds_repaired_ftC_posefix.release_v2.a2dda5d2ac`: record `data/reference_curation/releases/<id>.json`, heavy files in `data/smpl/reference_curation/<id>/`; validated by 26 identity checks. Fresh expert `smpl_yogi_v2_expert56_a2dda5d2ac` (wandb `06k9vjpn`) on `smpl_yogi_v2` with new normalisers, stopped at epoch 15,500 and evaluated (`expert56_v2_e15500/README.MD`). The graph-growth round then warm-started it: G1 (AMP) and **G3** on release v3 `…release_v3.2f132f4299` (v2 + 28 synthesised edge clips). **G3 stopped by the user at epoch 3,420 and evaluated (`graph_growth_2026_10_03/g3/README.MD`):** all five edges learnt (84/84 motions; 163/163 on command), human gates pass except substitutions (7.7 > 6). **Next: Lane S, the student; the perturbation fine-tune (G4) is skipped (user, 2026-10-05).** See "After Step 10". Pass D not run. |
 
 ## 5. Spike: Claude as the VLM (2026-09-28)
 

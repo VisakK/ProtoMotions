@@ -1,0 +1,1685 @@
+{
+ "schema_version": 1,
+ "generator": {
+  "module": "reference_curation.release_v3",
+  "git_rev": "9e7f962c9541492fc35367fd2ecac52b38883f1f",
+  "sha256": "1721e51b5da095ce314db5cd9e577d3e541f14852307cad7023a3721e67f1778"
+ },
+ "inputs": {
+  "data/reference_curation/releases/holds_repaired_ftC_posefix.release_v2.a2dda5d2ac.json": "10dc501f7213d1c26ab1811ce1a8fe5e6f2aeaf1d9ec3cace834d8605d79a3ff",
+  "data/reference_curation/synthetic_v3/synthetic_v3.d034199f23.json": "20d6c3f71914dc1e4da4de5801e6a2d8c34706552e35c7208b3d0d25562ae058",
+  "expert_revist/graph_growth_2026_10_03/edges.json": "dfee450912a301f8af88f00cadb8034cad52d80d881c8b8a27d5c3a7dd1edcd8",
+  "data/reference_curation/gate_v2/holds_repaired_ftC_posefix.gate_v2.b2f76f2606/release_holds.yaml": "faa474ee65296108a11c786a8c8139ba4259dc8dc25da69b42dcf40fe25581bb",
+  "data/reference_curation/labels/holds_repaired_ftC_posefix.labels_v2.e03994ad3c/annotations.jsonl": "50329f510557da1780f3028293e48462ed98c3c770bcf3e086683cd1c2dd7221",
+  "data/assets/smpl/smpl_yogi03596_v2.xml": "aa541c77bcc1526905777c425e5ab072f21cae7bcadad9f71e3b1eb531f98f91",
+  "data/assets/smpl/smpl_yogi03596_v2_flat.xml": "968f7e94ffce0011d6c43a8fb30d55a21885ba733207dd07bc1aa3fd1a110e17"
+ },
+ "kind": "reference_release",
+ "release_id": "holds_repaired_ftC_posefix.release_v3.2f132f4299",
+ "release_version": "release_v3",
+ "purpose": "candidate",
+ "drop": [
+  "SYN_E2_jumpback_mid_s3_t6rpx12"
+ ],
+ "variants": [
+  "SYN_E1_press_high_s0_t6px",
+  "SYN_E1_press_high_s2_t6px",
+  "SYN_E1_press_high_s3_t6px",
+  "SYN_E1_press_high_s4_t6px",
+  "SYN_E1_press_mid_s0_t6px",
+  "SYN_E1_press_mid_s2_t6px",
+  "SYN_E1_press_mid_s3_t6px",
+  "SYN_E1_press_mid_s4_t6px",
+  "SYN_E3_lower_high_s0_t6px",
+  "SYN_E3_lower_high_s2_t6px",
+  "SYN_E3_lower_high_s3_t6px12",
+  "SYN_B1_jumpplank_high_s1_t6rpx",
+  "SYN_B1_jumpplank_high_s2_t6rpx",
+  "SYN_B1_jumpplank_high_s4_t6rpx12",
+  "SYN_B1_jumpplank_mid_s0_t6rpx",
+  "SYN_B1_jumpplank_mid_s1_t6rpx12",
+  "SYN_E2_jumpback_mid_s0_t6px12",
+  "SYN_E2_jumpback_mid_s0_t6rpx12",
+  "SYN_E2_jumpback_mid_s1_t6px",
+  "SYN_E2_jumpback_mid_s1_t6px12",
+  "SYN_E2_jumpback_mid_s1_t6rpx",
+  "SYN_E2_jumpback_mid_s1_t6rpx12",
+  "SYN_E2_jumpback_mid_s2_t6px12",
+  "SYN_E2_jumpback_mid_s3_t6px12",
+  "SYN_E2_jumpback_mid_s4_t6px",
+  "SYN_E2_jumpback_mid_s4_t6px12",
+  "SYN_E2_jumpback_mid_s4_t6rpx12",
+  "SYN_E5_floatdown_mid_s0_t6rpx12"
+ ],
+ "plant": {
+  "plant": "v2",
+  "mjcf": "data/assets/smpl/smpl_yogi03596_v2.xml",
+  "plant_sha256": "aa541c77bcc1526905777c425e5ab072f21cae7bcadad9f71e3b1eb531f98f91"
+ },
+ "robot": "smpl_yogi_v2",
+ "release_v2": {
+  "release_id": "holds_repaired_ftC_posefix.release_v2.a2dda5d2ac",
+  "record": "data/reference_curation/releases/holds_repaired_ftC_posefix.release_v2.a2dda5d2ac.json",
+  "sha256": "10dc501f7213d1c26ab1811ce1a8fe5e6f2aeaf1d9ec3cace834d8605d79a3ff"
+ },
+ "synthetic": {
+  "synthetic_id": "synthetic_v3.d034199f23",
+  "record": "data/reference_curation/synthetic_v3/synthetic_v3.d034199f23.json",
+  "sha256": "20d6c3f71914dc1e4da4de5801e6a2d8c34706552e35c7208b3d0d25562ae058",
+  "order": [
+   "SYN_E1_press_high_s0_t6px",
+   "SYN_E1_press_high_s2_t6px",
+   "SYN_E1_press_high_s3_t6px",
+   "SYN_E1_press_high_s4_t6px",
+   "SYN_E1_press_mid_s0_t6px",
+   "SYN_E1_press_mid_s2_t6px",
+   "SYN_E1_press_mid_s3_t6px",
+   "SYN_E1_press_mid_s4_t6px",
+   "SYN_E3_lower_high_s0_t6px",
+   "SYN_E3_lower_high_s2_t6px",
+   "SYN_E3_lower_high_s3_t6px12",
+   "SYN_B1_jumpplank_high_s1_t6rpx",
+   "SYN_B1_jumpplank_high_s2_t6rpx",
+   "SYN_B1_jumpplank_high_s4_t6rpx12",
+   "SYN_B1_jumpplank_mid_s0_t6rpx",
+   "SYN_B1_jumpplank_mid_s1_t6rpx12",
+   "SYN_E2_jumpback_mid_s0_t6px12",
+   "SYN_E2_jumpback_mid_s0_t6rpx12",
+   "SYN_E2_jumpback_mid_s1_t6px",
+   "SYN_E2_jumpback_mid_s1_t6px12",
+   "SYN_E2_jumpback_mid_s1_t6rpx",
+   "SYN_E2_jumpback_mid_s1_t6rpx12",
+   "SYN_E2_jumpback_mid_s2_t6px12",
+   "SYN_E2_jumpback_mid_s3_t6px12",
+   "SYN_E2_jumpback_mid_s3_t6rpx12",
+   "SYN_E2_jumpback_mid_s4_t6px",
+   "SYN_E2_jumpback_mid_s4_t6px12",
+   "SYN_E2_jumpback_mid_s4_t6rpx12",
+   "SYN_E5_floatdown_mid_s0_t6rpx12"
+  ],
+  "kept": [
+   "SYN_E1_press_high_s0_t6px",
+   "SYN_E1_press_high_s2_t6px",
+   "SYN_E1_press_high_s3_t6px",
+   "SYN_E1_press_high_s4_t6px",
+   "SYN_E1_press_mid_s0_t6px",
+   "SYN_E1_press_mid_s2_t6px",
+   "SYN_E1_press_mid_s3_t6px",
+   "SYN_E1_press_mid_s4_t6px",
+   "SYN_E3_lower_high_s0_t6px",
+   "SYN_E3_lower_high_s2_t6px",
+   "SYN_E3_lower_high_s3_t6px12",
+   "SYN_B1_jumpplank_high_s1_t6rpx",
+   "SYN_B1_jumpplank_high_s2_t6rpx",
+   "SYN_B1_jumpplank_high_s4_t6rpx12",
+   "SYN_B1_jumpplank_mid_s0_t6rpx",
+   "SYN_B1_jumpplank_mid_s1_t6rpx12",
+   "SYN_E2_jumpback_mid_s0_t6px12",
+   "SYN_E2_jumpback_mid_s0_t6rpx12",
+   "SYN_E2_jumpback_mid_s1_t6px",
+   "SYN_E2_jumpback_mid_s1_t6px12",
+   "SYN_E2_jumpback_mid_s1_t6rpx",
+   "SYN_E2_jumpback_mid_s1_t6rpx12",
+   "SYN_E2_jumpback_mid_s2_t6px12",
+   "SYN_E2_jumpback_mid_s3_t6px12",
+   "SYN_E2_jumpback_mid_s4_t6px",
+   "SYN_E2_jumpback_mid_s4_t6px12",
+   "SYN_E2_jumpback_mid_s4_t6rpx12",
+   "SYN_E5_floatdown_mid_s0_t6rpx12"
+  ],
+  "edges": {
+   "E1": [
+    "SYN_E1_press_high_s0_t6px",
+    "SYN_E1_press_high_s2_t6px",
+    "SYN_E1_press_high_s3_t6px",
+    "SYN_E1_press_high_s4_t6px",
+    "SYN_E1_press_mid_s0_t6px",
+    "SYN_E1_press_mid_s2_t6px",
+    "SYN_E1_press_mid_s3_t6px",
+    "SYN_E1_press_mid_s4_t6px"
+   ],
+   "E3": [
+    "SYN_E3_lower_high_s0_t6px",
+    "SYN_E3_lower_high_s2_t6px",
+    "SYN_E3_lower_high_s3_t6px12"
+   ],
+   "B1": [
+    "SYN_B1_jumpplank_high_s1_t6rpx",
+    "SYN_B1_jumpplank_high_s2_t6rpx",
+    "SYN_B1_jumpplank_high_s4_t6rpx12",
+    "SYN_B1_jumpplank_mid_s0_t6rpx",
+    "SYN_B1_jumpplank_mid_s1_t6rpx12"
+   ],
+   "E2": [
+    "SYN_E2_jumpback_mid_s0_t6px12",
+    "SYN_E2_jumpback_mid_s0_t6rpx12",
+    "SYN_E2_jumpback_mid_s1_t6px",
+    "SYN_E2_jumpback_mid_s1_t6px12",
+    "SYN_E2_jumpback_mid_s1_t6rpx",
+    "SYN_E2_jumpback_mid_s1_t6rpx12",
+    "SYN_E2_jumpback_mid_s2_t6px12",
+    "SYN_E2_jumpback_mid_s3_t6px12",
+    "SYN_E2_jumpback_mid_s4_t6px",
+    "SYN_E2_jumpback_mid_s4_t6px12",
+    "SYN_E2_jumpback_mid_s4_t6rpx12"
+   ],
+   "E5": [
+    "SYN_E5_floatdown_mid_s0_t6rpx12"
+   ]
+  },
+  "name_collisions": [
+   [
+    "SYN_E2_jumpback_mid_s1_t6px",
+    "SYN_E2_jumpback_mid_s1_t6px12"
+   ],
+   [
+    "SYN_E2_jumpback_mid_s1_t6px",
+    "SYN_E2_jumpback_mid_s1_t6px12_x3s"
+   ],
+   [
+    "SYN_E2_jumpback_mid_s1_t6px",
+    "SYN_E2_jumpback_mid_s1_t6px12_x7s"
+   ],
+   [
+    "SYN_E2_jumpback_mid_s1_t6rpx",
+    "SYN_E2_jumpback_mid_s1_t6rpx12"
+   ],
+   [
+    "SYN_E2_jumpback_mid_s1_t6rpx",
+    "SYN_E2_jumpback_mid_s1_t6rpx12_x3s"
+   ],
+   [
+    "SYN_E2_jumpback_mid_s1_t6rpx",
+    "SYN_E2_jumpback_mid_s1_t6rpx12_x7s"
+   ],
+   [
+    "SYN_E2_jumpback_mid_s4_t6px",
+    "SYN_E2_jumpback_mid_s4_t6px12"
+   ],
+   [
+    "SYN_E2_jumpback_mid_s4_t6px",
+    "SYN_E2_jumpback_mid_s4_t6px12_x3s"
+   ],
+   [
+    "SYN_E2_jumpback_mid_s4_t6px",
+    "SYN_E2_jumpback_mid_s4_t6px12_x7s"
+   ]
+  ],
+  "transition_contacts": {
+   "SYN_E2_jumpback_mid_s0_t6px12": {
+    "L_SHANK": 10,
+    "L_THIGH": 11
+   },
+   "SYN_E2_jumpback_mid_s0_t6rpx12": {
+    "L_SHANK": 8,
+    "L_THIGH": 8
+   },
+   "SYN_E2_jumpback_mid_s1_t6px": {
+    "L_SHANK": 10,
+    "L_THIGH": 11
+   },
+   "SYN_E2_jumpback_mid_s1_t6px12": {
+    "L_SHANK": 8,
+    "L_THIGH": 9
+   },
+   "SYN_E2_jumpback_mid_s1_t6rpx": {
+    "L_SHANK": 12,
+    "L_THIGH": 14
+   },
+   "SYN_E2_jumpback_mid_s1_t6rpx12": {
+    "L_SHANK": 9,
+    "L_THIGH": 9
+   },
+   "SYN_E2_jumpback_mid_s2_t6px12": {
+    "L_SHANK": 11,
+    "L_THIGH": 11,
+    "R_THIGH": 4
+   },
+   "SYN_E2_jumpback_mid_s3_t6px12": {
+    "L_SHANK": 13,
+    "L_THIGH": 14
+   },
+   "SYN_E2_jumpback_mid_s4_t6px": {
+    "L_SHANK": 10,
+    "L_THIGH": 11
+   },
+   "SYN_E2_jumpback_mid_s4_t6px12": {
+    "L_SHANK": 5,
+    "L_THIGH": 6
+   }
+  },
+  "windows_trimmed": {},
+  "d1_policy": {
+   "decision": {
+    "date": "2026-10-04",
+    "by": "the user",
+    "edges": [
+     "E1",
+     "E3",
+     "B1",
+     "E2",
+     "E5"
+    ],
+    "dropped": {
+     "E4": "fails statics (as on MuJoCo); the executed head-lift is dynamic",
+     "B2": "never reaches crow (as on MuJoCo)"
+    },
+    "endpoints_advisory": [
+     "E2",
+     "E5"
+    ],
+    "note": "E2 and E5 end in a low chaturanga, 0.07-0.09 m (6-body) from the exemplar; accepted by the user"
+   },
+   "t6_decision": {
+    "date": "2026-10-04",
+    "by": "the user",
+    "drift_cm": 1.0,
+    "seam_end": "attainable",
+    "landing_slide": "accept",
+    "note": "after card T6: 1) the planted-hand drift is read at 1.0 cm (the press's palms rock 0.7-1.3 cm transiently); 2) the palms' end offset is the exemplars' own 12 deg of yaw, read 'attainable': the policy learns around it; 3) the landings' slide is accepted (drift and end seams advisory on B1, E2, E5): the question is whether the policy can pick up the dynamic edges at all"
+   },
+   "hard_every_edge": [
+    "contract",
+    "statics",
+    "physx_cpu",
+    "held",
+    "seams",
+    "physx_reset"
+   ],
+   "hard_unless_endpoints_advisory": [
+    "endpoints"
+   ],
+   "advisory": [
+    "dynamics",
+    "naturalness_p99"
+   ],
+   "seams_end": "attainable",
+   "seams_drift_cm": 1.0,
+   "landing_slide": "accept",
+   "note": "seams and physx_reset apply to records that carry them (T6 on); the end seam read 'attainable' passes planted bodies whose offset to D's exemplar is the exemplars' own (seams.py); seams_drift_cm re-reads the recorded drift (the card's gate is 0.5 cm); landing_slide 'accept' keeps only the start seam hard on a landing edge (one that makes a support), its drift and end seams advisory"
+  },
+  "t6_decision": {
+   "date": "2026-10-04",
+   "by": "the user",
+   "drift_cm": 1.0,
+   "seam_end": "attainable",
+   "landing_slide": "accept",
+   "note": "after card T6: 1) the planted-hand drift is read at 1.0 cm (the press's palms rock 0.7-1.3 cm transiently); 2) the palms' end offset is the exemplars' own 12 deg of yaw, read 'attainable': the policy learns around it; 3) the landings' slide is accepted (drift and end seams advisory on B1, E2, E5): the question is whether the policy can pick up the dynamic edges at all"
+  }
+ },
+ "gate_id": "holds_repaired_ftC_posefix.gate_v2.b2f76f2606",
+ "labels_id": "holds_repaired_ftC_posefix.labels_v2.e03994ad3c",
+ "statics_id": "holds_repaired_ftC_posefix.labels_v2.46024365fa.statics_v2.aab60189f4",
+ "retarget_id": "holds_repaired_ftC_posefix.labels_v1_1.3b3fc75828.retarget_v2.e4278ada02",
+ "fit_id": "fit_v2.v1.b8f5e86fc9",
+ "dir": "data/smpl/reference_curation/holds_repaired_ftC_posefix.release_v3.2f132f4299",
+ "key": {
+  "schema": 1,
+  "version": "release_v3",
+  "release_v2": {
+   "release_id": "holds_repaired_ftC_posefix.release_v2.a2dda5d2ac",
+   "record_sha256": "10dc501f7213d1c26ab1811ce1a8fe5e6f2aeaf1d9ec3cace834d8605d79a3ff"
+  },
+  "synthetic": {
+   "synthetic_id": "synthetic_v3.d034199f23",
+   "record_sha256": "20d6c3f71914dc1e4da4de5801e6a2d8c34706552e35c7208b3d0d25562ae058"
+  },
+  "drop": [
+   "SYN_E2_jumpback_mid_s3_t6rpx12"
+  ],
+  "purpose": "candidate",
+  "d1_policy": {
+   "decision": {
+    "date": "2026-10-04",
+    "by": "the user",
+    "edges": [
+     "E1",
+     "E3",
+     "B1",
+     "E2",
+     "E5"
+    ],
+    "dropped": {
+     "E4": "fails statics (as on MuJoCo); the executed head-lift is dynamic",
+     "B2": "never reaches crow (as on MuJoCo)"
+    },
+    "endpoints_advisory": [
+     "E2",
+     "E5"
+    ],
+    "note": "E2 and E5 end in a low chaturanga, 0.07-0.09 m (6-body) from the exemplar; accepted by the user"
+   },
+   "t6_decision": {
+    "date": "2026-10-04",
+    "by": "the user",
+    "drift_cm": 1.0,
+    "seam_end": "attainable",
+    "landing_slide": "accept",
+    "note": "after card T6: 1) the planted-hand drift is read at 1.0 cm (the press's palms rock 0.7-1.3 cm transiently); 2) the palms' end offset is the exemplars' own 12 deg of yaw, read 'attainable': the policy learns around it; 3) the landings' slide is accepted (drift and end seams advisory on B1, E2, E5): the question is whether the policy can pick up the dynamic edges at all"
+   },
+   "hard_every_edge": [
+    "contract",
+    "statics",
+    "physx_cpu",
+    "held",
+    "seams",
+    "physx_reset"
+   ],
+   "hard_unless_endpoints_advisory": [
+    "endpoints"
+   ],
+   "advisory": [
+    "dynamics",
+    "naturalness_p99"
+   ],
+   "seams_end": "attainable",
+   "seams_drift_cm": 1.0,
+   "landing_slide": "accept",
+   "note": "seams and physx_reset apply to records that carry them (T6 on); the end seam read 'attainable' passes planted bodies whose offset to D's exemplar is the exemplars' own (seams.py); seams_drift_cm re-reads the recorded drift (the card's gate is 0.5 cm); landing_slide 'accept' keeps only the start seam hard on a landing edge (one that makes a support), its drift and end seams advisory"
+  },
+  "t6_decision": {
+   "date": "2026-10-04",
+   "by": "the user",
+   "drift_cm": 1.0,
+   "seam_end": "attainable",
+   "landing_slide": "accept",
+   "note": "after card T6: 1) the planted-hand drift is read at 1.0 cm (the press's palms rock 0.7-1.3 cm transiently); 2) the palms' end offset is the exemplars' own 12 deg of yaw, read 'attainable': the policy learns around it; 3) the landings' slide is accepted (drift and end seams advisory on B1, E2, E5): the question is whether the policy can pick up the dynamic edges at all"
+  },
+  "builders": {
+   "data/scripts/reference_curation/release_v3.py": "1721e51b5da095ce314db5cd9e577d3e541f14852307cad7023a3721e67f1778",
+   "data/scripts/reference_curation/contact_targets_v3.py": "ea6ed93eaf9cde8e92b252b3bcad2d1f1e1434191978e97cc53fbbcfbac3f3b2",
+   "data/scripts/reference_curation/physics_tables_v3.py": "19cccfffde1b4adfeb44759e72aafdb5e1e6cc1860853bcb0d865eed5d81b59f",
+   "data/scripts/make_edge_probe_plans.py": "4ba9796cbb61767ed29765156a8d7a01f0dd84aec92a28359e92d66bd0dc93ef",
+   "data/scripts/reference_curation/release_v2.py": "a793f552b4fcbed40bea4ba29f1c84ce2104458de8c251983455fc08bae9d635",
+   "data/scripts/reference_curation/hold_extension_v2.py": "02b0009a0882fb95c09ca623a82240428b4f5ebebc548bde1ccf2f61c0062533",
+   "data/scripts/reference_curation/contact_targets_v2.py": "71176cee302a4bb72502317bbfc2a5fe120d5f54469ad724bd2e3f40558d3a74",
+   "data/scripts/make_hold_extended_clips.py": "804f86615d0292cea59f53e4c58cc232b78974383af922711ba898ad1d4f3c70",
+   "data/scripts/package_motion_subset.py": "68acac2244d4a4ee5bc62c271470ee9bd7f052ca24af0e37b15ba70ae825886b",
+   "data/scripts/build_hold_graph_v2.py": "f9dd358ec335d8aab468ddf6fa99eae76a98c022ac44fd8e0c2bcc01315aeee4",
+   "data/scripts/build_hold_graph.py": "3a37c2137b040be34d49ea7b603dc0ca0782332afa5f1d4015405f1aa5d075d8",
+   "data/scripts/build_physics_tables_v2.py": "69e5352a350039b79778c9a135b60ed6d6cc7afb0b573e9d2ee0039fa13208a1",
+   "data/scripts/build_physics_tables.py": "80e1496243157f209f9858a2deb2f15a9fa3f55c4673e37decc939210811efaf",
+   "data/scripts/make_hold_graph_probe_plans.py": "3869a32b5b679efe154ff584b2c645b34ac15d85fdf50c94794fd9f2f052ef24",
+   "data/scripts/extract_contact_configs.py": "4fe7b1bf3d89051f0db263677540aa3130766c620326994b8c2642df22590948",
+   "data/scripts/contact_geometry.py": "a60df795287b10ad3d539937727a473660a4969cfce8709ae354e92c98cee2df",
+   "data/scripts/reference_curation/capture_v4.py": "011d52fe5baae9f11c946ceefaad9583b49e3e0c0120535d29a2ae0b6e74e487",
+   "data/scripts/reference_curation/retarget.py": "4e73475b2f8a74e66eec646082a55f427f7ad1f45cfe7722e3f1f9d787cf354a",
+   "data/scripts/reference_curation/retarget_v2.py": "8431859fe0e2828d28a1f5d58e8dd375d3accf85a1fa343ea03341fb4df68a7e",
+   "data/scripts/reference_curation/fit_writer.py": "e4dd6b968562f3c0a877175cc66c680e4a8a3f91d039b36c49e1175c1db75581",
+   "data/scripts/reference_curation/mosh_replay.py": "1f9703344d6a24e10b2a901f14812344c6047144eab8a50bbe544d5c362b04d4",
+   "data/scripts/reference_curation/human_mesh.py": "399ec32098fc847ffd0b97220180a84d16575a84b339e9bc4ddd0fe66d614401"
+  },
+  "parameters": {
+   "variants_s": [
+    0.0,
+    3.0,
+    7.0
+   ],
+   "fps": 60,
+   "min_lead_s": 0.2,
+   "known_free_share": 0.95,
+   "pair_close_m": 0.01,
+   "tables": "build_physics_tables_v2.py via physics_tables_v3 (synthetic clips: no-pressure path)",
+   "release_v2": "holds_repaired_ftC_posefix.release_v2.a2dda5d2ac",
+   "synthetic_id": "synthetic_v3.d034199f23",
+   "order": "release v2's motions in its order, then the kept synthetic clips in the synthetic record's order (edge, timing, seed, tag), each as x0, x3s, x7s",
+   "drop_match": "exact stem",
+   "edge_clips": 3,
+   "weights": "1.0 per human motion; 3/n per motion of an edge with n kept variants (D5)",
+   "synthetic_extension": "hold_extension_v2 at S, the clip's only extend hold; x0 = R2's file byte for byte",
+   "sidecar": {
+    "synthetic_segments": "every array copied from the inherited hold's row (the inherits hold's x0 motion)",
+    "synthetic_frames": "real frames: capture v4 at the source stem's source_frame (avatar_pair_gap <= 0.01 m, human_pair_state == 1); synthetic and blend frames: ref = the clip's geometry (capture_v4.zone_pair_gaps) <= 0.01 m, human = the generator's planned brace for the frame's phase (edges.json, variant_t, durations_s; sketch.Schedule's rule); x3s/x7s rows through the variant's index"
+   },
+   "plans": "make_hold_graph_probe_plans.py, then make_edge_probe_plans.py (R4a)"
+  }
+ },
+ "parameters": {
+  "variants_s": [
+   0.0,
+   3.0,
+   7.0
+  ],
+  "fps": 60,
+  "min_lead_s": 0.2,
+  "known_free_share": 0.95,
+  "pair_close_m": 0.01,
+  "tables": "build_physics_tables_v2.py via physics_tables_v3 (synthetic clips: no-pressure path)",
+  "release_v2": "holds_repaired_ftC_posefix.release_v2.a2dda5d2ac",
+  "synthetic_id": "synthetic_v3.d034199f23",
+  "order": "release v2's motions in its order, then the kept synthetic clips in the synthetic record's order (edge, timing, seed, tag), each as x0, x3s, x7s",
+  "drop_match": "exact stem",
+  "edge_clips": 3,
+  "weights": "1.0 per human motion; 3/n per motion of an edge with n kept variants (D5)",
+  "synthetic_extension": "hold_extension_v2 at S, the clip's only extend hold; x0 = R2's file byte for byte",
+  "sidecar": {
+   "synthetic_segments": "every array copied from the inherited hold's row (the inherits hold's x0 motion)",
+   "synthetic_frames": "real frames: capture v4 at the source stem's source_frame (avatar_pair_gap <= 0.01 m, human_pair_state == 1); synthetic and blend frames: ref = the clip's geometry (capture_v4.zone_pair_gaps) <= 0.01 m, human = the generator's planned brace for the frame's phase (edges.json, variant_t, durations_s; sketch.Schedule's rule); x3s/x7s rows through the variant's index"
+  },
+  "plans": "make_hold_graph_probe_plans.py, then make_edge_probe_plans.py (R4a)"
+ },
+ "builders": {
+  "data/scripts/reference_curation/release_v3.py": "1721e51b5da095ce314db5cd9e577d3e541f14852307cad7023a3721e67f1778",
+  "data/scripts/reference_curation/contact_targets_v3.py": "ea6ed93eaf9cde8e92b252b3bcad2d1f1e1434191978e97cc53fbbcfbac3f3b2",
+  "data/scripts/reference_curation/physics_tables_v3.py": "19cccfffde1b4adfeb44759e72aafdb5e1e6cc1860853bcb0d865eed5d81b59f",
+  "data/scripts/make_edge_probe_plans.py": "4ba9796cbb61767ed29765156a8d7a01f0dd84aec92a28359e92d66bd0dc93ef",
+  "data/scripts/reference_curation/release_v2.py": "a793f552b4fcbed40bea4ba29f1c84ce2104458de8c251983455fc08bae9d635",
+  "data/scripts/reference_curation/hold_extension_v2.py": "02b0009a0882fb95c09ca623a82240428b4f5ebebc548bde1ccf2f61c0062533",
+  "data/scripts/reference_curation/contact_targets_v2.py": "71176cee302a4bb72502317bbfc2a5fe120d5f54469ad724bd2e3f40558d3a74",
+  "data/scripts/make_hold_extended_clips.py": "804f86615d0292cea59f53e4c58cc232b78974383af922711ba898ad1d4f3c70",
+  "data/scripts/package_motion_subset.py": "68acac2244d4a4ee5bc62c271470ee9bd7f052ca24af0e37b15ba70ae825886b",
+  "data/scripts/build_hold_graph_v2.py": "f9dd358ec335d8aab468ddf6fa99eae76a98c022ac44fd8e0c2bcc01315aeee4",
+  "data/scripts/build_hold_graph.py": "3a37c2137b040be34d49ea7b603dc0ca0782332afa5f1d4015405f1aa5d075d8",
+  "data/scripts/build_physics_tables_v2.py": "69e5352a350039b79778c9a135b60ed6d6cc7afb0b573e9d2ee0039fa13208a1",
+  "data/scripts/build_physics_tables.py": "80e1496243157f209f9858a2deb2f15a9fa3f55c4673e37decc939210811efaf",
+  "data/scripts/make_hold_graph_probe_plans.py": "3869a32b5b679efe154ff584b2c645b34ac15d85fdf50c94794fd9f2f052ef24",
+  "data/scripts/extract_contact_configs.py": "4fe7b1bf3d89051f0db263677540aa3130766c620326994b8c2642df22590948",
+  "data/scripts/contact_geometry.py": "a60df795287b10ad3d539937727a473660a4969cfce8709ae354e92c98cee2df",
+  "data/scripts/reference_curation/capture_v4.py": "011d52fe5baae9f11c946ceefaad9583b49e3e0c0120535d29a2ae0b6e74e487",
+  "data/scripts/reference_curation/retarget.py": "4e73475b2f8a74e66eec646082a55f427f7ad1f45cfe7722e3f1f9d787cf354a",
+  "data/scripts/reference_curation/retarget_v2.py": "8431859fe0e2828d28a1f5d58e8dd375d3accf85a1fa343ea03341fb4df68a7e",
+  "data/scripts/reference_curation/fit_writer.py": "e4dd6b968562f3c0a877175cc66c680e4a8a3f91d039b36c49e1175c1db75581",
+  "data/scripts/reference_curation/mosh_replay.py": "1f9703344d6a24e10b2a901f14812344c6047144eab8a50bbe544d5c362b04d4",
+  "data/scripts/reference_curation/human_mesh.py": "399ec32098fc847ffd0b97220180a84d16575a84b339e9bc4ddd0fe66d614401"
+ },
+ "check_modules": {
+  "data/scripts/reference_curation/splice_v3.py": "8776ed45d102641f397b1e88134df7e706009df87319051964a1a2ec4932394e"
+ },
+ "artifacts": {
+  "package": {
+   "path": "data/smpl/reference_curation/holds_repaired_ftC_posefix.release_v3.2f132f4299/motions.pt",
+   "sha256": "95774ae748ca7cdd3d45e5bad34242db015b9d2574e92070c07f652138d292c0",
+   "bytes": 976781683
+  },
+  "package_manifest": {
+   "path": "data/smpl/reference_curation/holds_repaired_ftC_posefix.release_v3.2f132f4299/motions.yaml",
+   "sha256": "b4810adf79ac8965d9319dc5f39dbd333c2458e0356d0e34bac6d460955035e9",
+   "bytes": 22512
+  },
+  "graph": {
+   "path": "data/smpl/reference_curation/holds_repaired_ftC_posefix.release_v3.2f132f4299/contact_graph.pt",
+   "sha256": "f7f4b0407b33d8d830cd2a250b066278f5da4dea97fa62447b18259ccfb01eed",
+   "bytes": 1124517
+  },
+  "graph_description": {
+   "path": "data/smpl/reference_curation/holds_repaired_ftC_posefix.release_v3.2f132f4299/contact_graph.json",
+   "sha256": "ef241e8352598da022dd9acad4ff8ebe51b303c51da8fc36849ebae077b55f58",
+   "bytes": 1477833
+  },
+  "physics_tables": {
+   "path": "data/smpl/reference_curation/holds_repaired_ftC_posefix.release_v3.2f132f4299/physics_tables.pt",
+   "sha256": "d06025251c168160f79bc197699a4677e61c491f2c397292166202185de5a808",
+   "bytes": 29007645
+  },
+  "physics_tables_stats": {
+   "path": "data/smpl/reference_curation/holds_repaired_ftC_posefix.release_v3.2f132f4299/physics_tables.json",
+   "sha256": "3ff5a98e0c935941ea13f4e838d51428db3b37d7cd45dba7bced830e0232c547",
+   "bytes": 90086
+  },
+  "contact_targets": {
+   "path": "data/smpl/reference_curation/holds_repaired_ftC_posefix.release_v3.2f132f4299/contact_targets.pt",
+   "sha256": "ba20e7f5f7313efc4150e53cbfbab4ee9d777005d7b97db3e5066831def28738",
+   "bytes": 73288247
+  },
+  "contact_targets_summary": {
+   "path": "data/smpl/reference_curation/holds_repaired_ftC_posefix.release_v3.2f132f4299/contact_targets.json",
+   "sha256": "da928068f9e69ca4d5f2742c3505bdebd0d7015c25b830817f8a77312cbcf151",
+   "bytes": 19262
+  },
+  "holds_extended": {
+   "path": "data/smpl/reference_curation/holds_repaired_ftC_posefix.release_v3.2f132f4299/holds_extended.yaml",
+   "sha256": "62f6e8f53e9f877c57f4ea37f01fe25da8c25ec20035388853803ae784f339f1",
+   "bytes": 3336653
+  },
+  "release_holds": {
+   "path": "data/smpl/reference_curation/holds_repaired_ftC_posefix.release_v3.2f132f4299/release_holds.yaml",
+   "sha256": "222592c7778c17856439195894261fc13c3fef31de92df399ded80c523e77946",
+   "bytes": 1319485
+  },
+  "lineage": {
+   "path": "data/smpl/reference_curation/holds_repaired_ftC_posefix.release_v3.2f132f4299/lineage.npz",
+   "sha256": "cfbc44e77073a16de1340594f97ac66fa43da9cff1d8184c71a063ce6a8949a0",
+   "bytes": 920927
+  }
+ },
+ "plans": {
+  "dwell_Bridge_Pose_or_Setu_Bandha_Sarvangasana_10s.json": "7b9d8f82275291d9d3d0ece5438a466a9516c91bb36b944b5e274ca1011fa1c0",
+  "dwell_Bridge_Pose_or_Setu_Bandha_Sarvangasana_3s.json": "ae49aad9e540c9a0d4ca2156d7325b4775a14b90a93eab43cb17d6f40a77697c",
+  "dwell_Bridge_Pose_or_Setu_Bandha_Sarvangasana_6s.json": "76f8444aee86b22904301a116c2217f110dd6c6d2b3d4e99450293ae2df39a80",
+  "dwell_Cobra_Pose_or_Bhujangasana_10s.json": "65030aa707e1deccb70f8f3e295afa0a04e4064463d91c445427523d3c0139c8",
+  "dwell_Cobra_Pose_or_Bhujangasana_3s.json": "9018e8ca63287f49082059f1854bb22ba3113d89338dcdc4f05d0a62e29ca007",
+  "dwell_Cobra_Pose_or_Bhujangasana_6s.json": "7034e43ecad224491399ff95d3cd20f2bb7a20eadfe573a93ecbb069c55c7ab5",
+  "dwell_Crane_Crow_Pose_or_Bakasana_10s.json": "30b6bd25d9b39862293335b19251af16fb0dcf491130761b53b85af46610acaa",
+  "dwell_Crane_Crow_Pose_or_Bakasana_3s.json": "2d01e1b383572e9a247d323ed8b5ae7c6900fe3136ba31ca10de7bac3121c537",
+  "dwell_Crane_Crow_Pose_or_Bakasana_6s.json": "1dc71d77deba1dba1c563ddb15c837dfbd05a6173ade0154ba00bcd8c2dc2a1f",
+  "dwell_Dolphin_Plank_Pose_or_Makara_Adho_Mukha_10s.json": "f9aea31db2a36f9fd6eed539503aaea119152b86b13c71567288830965b0f721",
+  "dwell_Dolphin_Plank_Pose_or_Makara_Adho_Mukha_3s.json": "f1760accbddfb1e9a0e80a2f78986aff3022187fb024da0ac16046dcb6261af5",
+  "dwell_Dolphin_Plank_Pose_or_Makara_Adho_Mukha_6s.json": "424cd08bdfed7ed68ec9d72ba94aa5b98819cb1e9621c2f6bfab9102943dbb50",
+  "dwell_Dolphin_Pose_or_Ardha_Pincha_Mayurasana_10s.json": "893fc711134fabe056d620291b1d6fdb70fbd09ec50b1a3bb2e2ff686f6bdf39",
+  "dwell_Dolphin_Pose_or_Ardha_Pincha_Mayurasana_3s.json": "ba8382a90920e7eb5dab85447c14efd5fc484926079f24c6c4fc12857360ea88",
+  "dwell_Dolphin_Pose_or_Ardha_Pincha_Mayurasana_6s.json": "1578928f2f5f5f0100dd421fe76d2c864b7686cd4c21dc16ebd2a5f4765dc399",
+  "dwell_Downward_Facing_Dog_pose_or_Adho_Mukha_S_10s.json": "45e9f2d53c118deb9c7a7b039b3a0831212a0f144317efe712afae1ae8322862",
+  "dwell_Downward_Facing_Dog_pose_or_Adho_Mukha_S_3s.json": "00cfd1c19ab7fab66d78b65e30c0d51d86b1d1ccf93732ba6fa1c91f9aae3b11",
+  "dwell_Downward_Facing_Dog_pose_or_Adho_Mukha_S_6s.json": "0b5b66081ac8d1e4bf799da6f98ca807912bedec5a3e89769a39bc49f5ffa0dd",
+  "dwell_Eagle_Pose_or_Garudasana_10s.json": "2345668067c0d77899630c05346c818fbc2e9d8f9ec299fc3041203e3f4969c0",
+  "dwell_Eagle_Pose_or_Garudasana_3s.json": "ede67ad768799e68b07df039d6dde4374fb97e38b812c626ca65d098128d1755",
+  "dwell_Eagle_Pose_or_Garudasana_6s.json": "1d116c966a614ad5ca1b75a59c07230f762ae4eebd92084a4d2509cbc8af928d",
+  "dwell_Extended_Revolved_Side_Angle_Pose_or_Utt_10s.json": "293ee6dda6f728846250c1daf032f1011d8208707cbb4423de94444a7669e672",
+  "dwell_Extended_Revolved_Side_Angle_Pose_or_Utt_3s.json": "245e4307f75b070113d6cf95ca9abb57eaf91096b9d1293f830a3d68964dfac9",
+  "dwell_Extended_Revolved_Side_Angle_Pose_or_Utt_6s.json": "f28262b2b4d0c56c49f439a3e77d9fc50577a2f736338b0f2d647ed26b256c53",
+  "dwell_Extended_Revolved_Triangle_Pose_or_Utthi_10s.json": "0fae7f9237432f206bad9c4e563a879a552701c1733c5103a99ecb2077a5ae2c",
+  "dwell_Extended_Revolved_Triangle_Pose_or_Utthi_3s.json": "a169bf042a4d908fd914876f4e24eafea147744e6d2013be9981900245a87720",
+  "dwell_Extended_Revolved_Triangle_Pose_or_Utthi_6s.json": "2a50807b00efd32ff2e0fab628856481c123f119a0be3f309e28a678a2c626f4",
+  "dwell_Feathered_Peacock_Pose_or_Pincha_Mayuras_10s.json": "9c20646c42cc9ee86a5b4551cbc96523c1f998a0102096f78789e73315e84571",
+  "dwell_Feathered_Peacock_Pose_or_Pincha_Mayuras_3s.json": "1c3ef39608e162ba71105d0530726a7f158c77991c820231242cc3a7fa68c8fd",
+  "dwell_Feathered_Peacock_Pose_or_Pincha_Mayuras_6s.json": "e69d6ab92be131a2179da8e265412fb4a1ab72589ed47e76bbc63d64c1be7720",
+  "dwell_Firefly_Pose_or_Tittibhasana_10s.json": "3dc7783e37384aaf89401ad66a8404d1aa6af1dc131a1bf4f5e3c3674b0b660d",
+  "dwell_Firefly_Pose_or_Tittibhasana_3s.json": "5ec985740808f93e378ce13932871121e2eae9a1089ea48d64626d3b8aa881e5",
+  "dwell_Firefly_Pose_or_Tittibhasana_6s.json": "dd151efca21fa87cc03f2b745c4e11861b43f726c8f35ba139514a80b7c59b89",
+  "dwell_Four_Limbed_Staff_Pose_or_Chaturanga_Dan_10s.json": "383d87251df233112f3dfabeea96dcf45257783bd2efb167053b0b2cf2bfc5e9",
+  "dwell_Four_Limbed_Staff_Pose_or_Chaturanga_Dan_3s.json": "5b62412b5239e273e3b0c7baa85fe6df7830f1e4bddb328175812c8b8c3cd0ee",
+  "dwell_Four_Limbed_Staff_Pose_or_Chaturanga_Dan_6s.json": "769c434cbbf4b83648df425ae5ff042fa4a8159b2d2863a273d5318bf167af34",
+  "dwell_Garland_Pose_or_Malasana_10s.json": "d23ef7ac68011eaec6bb2acde7ef27ed5a18bf6f2b2c9abb5a0cc3d124e10003",
+  "dwell_Garland_Pose_or_Malasana_3s.json": "d7154aa1cac16331c090c559a2aaa3f0bb10667de0a8c4fc15c67c7fe5550d41",
+  "dwell_Garland_Pose_or_Malasana_6s.json": "d3e71a7de027c2e5d300e88da18a6faac51acbbb111da0aed901c360c029818a",
+  "dwell_Half_Moon_Pose_or_Ardha_Chandrasana_10s.json": "2577cabdb702341263f9423a78de7a45509b491fcca016c7eb5333aabe6aedaa",
+  "dwell_Half_Moon_Pose_or_Ardha_Chandrasana_3s.json": "de5018b66d1234cc853158ff735181f4234edcbc3e9ba07141df46041fe28cb4",
+  "dwell_Half_Moon_Pose_or_Ardha_Chandrasana_6s.json": "8332f9ea104e4058356a58997be14bc5b2f6351f2ca7253f3d31cb4665ed42aa",
+  "dwell_Handstand_pose_or_Adho_Mukha_Vrksasana_10s.json": "f1696b00fa640ed4708f0b616400d4c329fddeee0ca80a8af369a3f34e30da58",
+  "dwell_Handstand_pose_or_Adho_Mukha_Vrksasana_3s.json": "d52b629b4840cb64206c0c93b682a66c4a6524272530bfd819d24a04d7953886",
+  "dwell_Handstand_pose_or_Adho_Mukha_Vrksasana_6s.json": "083e152a099b2726d265bb93768d40707c45e0967988c8d8b2e570a2ce8b79a3",
+  "dwell_Intense_Side_Stretch_Pose_or_Parsvottana_10s.json": "c686f9be82cb63977396a67496dc3ac87ce3009e0521e961f8a428892269b088",
+  "dwell_Intense_Side_Stretch_Pose_or_Parsvottana_3s.json": "c4ca0037144dd4c55ea447dd1ad4576700cf83f0ee29994051ea4d4cb65b1cb4",
+  "dwell_Intense_Side_Stretch_Pose_or_Parsvottana_6s.json": "44dac8cc4930c0e931330e732c49bab6ca6dd53958cfdec52ad98f48ca336c2d",
+  "dwell_Legs_Up_the_Wall_Pose_or_Viparita_Karani_10s.json": "66d45c5204dbb827937b8ac3a3c1c696b2382aa41f28aa54f8b053aa6e116e64",
+  "dwell_Legs_Up_the_Wall_Pose_or_Viparita_Karani_3s.json": "d0288a758621ca4c2c903681e6bf749527edd4fdbc2ab5ba7f9dbee73190fe8d",
+  "dwell_Legs_Up_the_Wall_Pose_or_Viparita_Karani_6s.json": "93702728bacbd5082b7a6e2b6b7b8805da02d5146e8e7a36fe07825804e0e87a",
+  "dwell_Lord_of_the_Dance_Pose_or_Natarajasana_10s.json": "7b9c309c07ae285ce7d111c93cc3f44dfeda1d5e7d266156670c3b6fd68c2b5b",
+  "dwell_Lord_of_the_Dance_Pose_or_Natarajasana_3s.json": "ca684b3dee3fa82ab402c216566d132961e2e43ae6386cccc52f9c9246c69019",
+  "dwell_Lord_of_the_Dance_Pose_or_Natarajasana_6s.json": "acedcb5c0e78c3c28c3c9bc91f3ef700287bb51dd47593c38d2f99f68eff6bb2",
+  "dwell_Low_Lunge_pose_or_Anjaneyasana_10s.json": "05087a8f6ef16085ad124d7cb17f19f411331b785c8c63a6850313a262f6d624",
+  "dwell_Low_Lunge_pose_or_Anjaneyasana_3s.json": "517e3c9a8a9143f1fabe36e18171ab0845babf36b3d4da2f2d49521abf52e9a8",
+  "dwell_Low_Lunge_pose_or_Anjaneyasana_6s.json": "b5bfaca252b9f1d0337c7ba70ae392339bdcafbb2dd5e179289ff9e6af24a239",
+  "dwell_Peacock_Pose_or_Mayurasana_10s.json": "6bf580c935391b8ee31d4f9e1d213e4f2c178d42747958746d66cd43b4c38b27",
+  "dwell_Peacock_Pose_or_Mayurasana_3s.json": "f4a76f1ad6f7520fe9866cbe604fc1475736c96d47dac413f06774a7393f81a9",
+  "dwell_Peacock_Pose_or_Mayurasana_6s.json": "cf1deeba246c881799dd389545ab29e9c5ae77ca189aa050db54575596e3f539",
+  "dwell_Plank_Pose_or_Kumbhakasana_10s.json": "400b22c102cc36477b0a59d1a73952bc959ab9a105438c2326c8e4feb2ac09c0",
+  "dwell_Plank_Pose_or_Kumbhakasana_3s.json": "36e2fde20e3c77e401e2c46c58ae43b825838af0932b73550b4c3474b613af38",
+  "dwell_Plank_Pose_or_Kumbhakasana_6s.json": "0f4ec57c39e5b901b2d541aca12fc69ea237d0ae93c3b623b5b3ecefa51548b0",
+  "dwell_Plow_Pose_or_Halasana_10s.json": "05bac288ed069316310ae5960421bfc2ba73cc01edd0d877a2b29b1c4ae20b4d",
+  "dwell_Plow_Pose_or_Halasana_3s.json": "160bff5fce0206882bc5a3e63fc02729dc08661b6e255d9a8e7ebede33b55107",
+  "dwell_Plow_Pose_or_Halasana_6s.json": "d8c6becdab91cf9c59cb3f474300c8404e8bc1d5bce6513ed37bbaf402b61395",
+  "dwell_Pose_Dedicated_to_the_Sage_Koundinya_or_10s.json": "d181a01da5194da74e11662a38c66f949cc338ee8522d56628f51b46aa86b142",
+  "dwell_Pose_Dedicated_to_the_Sage_Koundinya_or_3s.json": "33630c95ddf99908bbe06527a2d828a96763458d9cf15c1539a53756c3abcf44",
+  "dwell_Pose_Dedicated_to_the_Sage_Koundinya_or_6s.json": "e8f875086038c4c52acec2671f7fdfb7602220e38d3947738d0e51e3d0dba361",
+  "dwell_Scorpion_pose_or_vrischikasana_10s.json": "0981eb7b3cc7a44179df15593655b0c4915cac17dabd65220e3b0ace2428960c",
+  "dwell_Scorpion_pose_or_vrischikasana_3s.json": "e17f0ab68fc8e60a27b9e13460b53a83c03bfac16d6258bf2f5fdaaa2ff65e17",
+  "dwell_Scorpion_pose_or_vrischikasana_6s.json": "313d66a3e53ed71845f1b3872bed5d1c5073ff56ceb00cd495f3956a1c4a959a",
+  "dwell_Shoulder_Pressing_Pose_or_Bhujapidasana_10s.json": "984ced05fb20ac4373708b7927fd7ddd611bed04498aa61c6e0a17f31c51567a",
+  "dwell_Shoulder_Pressing_Pose_or_Bhujapidasana_3s.json": "642006ee22e5d3418fe039a7dab5e5fc41ae26ae91cd9d488e3a6fd0a842d466",
+  "dwell_Shoulder_Pressing_Pose_or_Bhujapidasana_6s.json": "d2318c5b1c81dc54e441fb51b203fb1a88e4d2cb297d44f70c2029b10e6ae96b",
+  "dwell_Side_Crane_Crow_Pose_or_Parsva_Bakasana_10s.json": "05b40d05b0f94dc9b2c015ee88998a36ae40dc842fc35ca579ad2eccbae7f9ff",
+  "dwell_Side_Crane_Crow_Pose_or_Parsva_Bakasana_3s.json": "d4f9dd74d8d8a4c0ad3bb929e04753f52e3ff20506999897393b1da38ea2e222",
+  "dwell_Side_Crane_Crow_Pose_or_Parsva_Bakasana_6s.json": "657b5a2c067915eb54fbe3d172f024c3df27522ebd36096c3c5f0782c09e2f58",
+  "dwell_Side_Plank_Pose_or_Vasisthasana_10s.json": "88f3cabbf40e1c5ff6b535c265dbf337551d746624d2f876cd2d1115cbc751a5",
+  "dwell_Side_Plank_Pose_or_Vasisthasana_3s.json": "54cc27087138b80db17844144965ae2c46e0ee982600938f12ddb04d5c1030bc",
+  "dwell_Side_Plank_Pose_or_Vasisthasana_6s.json": "c0374919a2e218e7ddcdc341e1497c45659ecbe3aaf89eb0a7c640cbe8d9ba7f",
+  "dwell_Standing_Forward_Bend_pose_or_Uttanasana_10s.json": "d45c8f4fe9e8084ea76fef19498c61867051d1031b5d88fcf6eedf271e508d67",
+  "dwell_Standing_Forward_Bend_pose_or_Uttanasana_3s.json": "831de4d5df5d3506e5aa5e25555351839d589b1657feef1863a91d28a88cfbde",
+  "dwell_Standing_Forward_Bend_pose_or_Uttanasana_6s.json": "4c1066cdb8d082b2bce6ee2273cef893ee1792d51601cb3d935ed4def178915b",
+  "dwell_Standing_Split_pose_or_Urdhva_Prasarita_10s.json": "085b2f77e6acf397cd84b990ad13e38e65366cefa264e7b0736f2df536fea8e3",
+  "dwell_Standing_Split_pose_or_Urdhva_Prasarita_3s.json": "c5e6e59b7e8cda4e3ded5dd89f05819c6bba3fcc2b83d0bfcd321eef3e307bcc",
+  "dwell_Standing_Split_pose_or_Urdhva_Prasarita_6s.json": "6b3f931cc07c07bb62e423b168d378b7c8b047f5994488a90c960abc79cd05f7",
+  "dwell_Standing_big_toe_hold_pose_or_Utthita_Pa_10s.json": "e6631b89cedb09e67c6c7f69644b563a3fc4761bb48cc2aff7af408268660576",
+  "dwell_Standing_big_toe_hold_pose_or_Utthita_Pa_3s.json": "da697dd529eb96cc82d4fee674dfdafc1c8f30b67191b5762af26e43a413cc29",
+  "dwell_Standing_big_toe_hold_pose_or_Utthita_Pa_6s.json": "b1663bf8456afdb6195348832f951b9afcaf2f116b7b97d5a8e03c2e10bf2b14",
+  "dwell_Supported_Headstand_pose_or_Salamba_Sirs_10s.json": "14b3c34ddf7048dd11a10a1dc5bfce90a18a3a5426853f0f917ba9f8bacb112d",
+  "dwell_Supported_Headstand_pose_or_Salamba_Sirs_3s.json": "7716b0b0fe01f687fa34e3644069c6bab3a2a2711afbaa9b9095c141b5a21d41",
+  "dwell_Supported_Headstand_pose_or_Salamba_Sirs_6s.json": "8f9200ee88a9bf7a8dc81a128d48b375d94a195b834a0d92cb25a906eba3b24d",
+  "dwell_Supported_Shoulderstand_pose_or_Salamba_10s.json": "0d4cfd52bce73cd130b8426d01648379ddce8839f31d074931f636580383ad00",
+  "dwell_Supported_Shoulderstand_pose_or_Salamba_3s.json": "130da45e962180db1d3350d408531953320a37544491c23c7116e84c22f39b4d",
+  "dwell_Supported_Shoulderstand_pose_or_Salamba_6s.json": "8a084a19a6c686d75ebe9a07165cd90370d1dc33bd0cbc913662d75851a691ff",
+  "dwell_Tree_Pose_or_Vrksasana_10s.json": "9e67ba0b4c8562bbfd104acd730589b0a7320646e40bc33cae116c13b3d97de3",
+  "dwell_Tree_Pose_or_Vrksasana_3s.json": "0d47f0ff2b27e0850e8a82bf25a1f009d0fb4afc7b174f755275fbea0b38e5fe",
+  "dwell_Tree_Pose_or_Vrksasana_6s.json": "6849b4650ccdb70f585b7e0e6be0b8d1d566ce48d78a859d770aadf45c7a6397",
+  "dwell_Upward_Plank_Pose_or_Purvottanasana_10s.json": "60572e0a4ab36f0206878a8476e4c0df8c6e8e3f368f32209191f448ec89a15b",
+  "dwell_Upward_Plank_Pose_or_Purvottanasana_3s.json": "9a9396ebad4f5a8949c924609d994ecd0c2caec95b4cb6a427ea59d3e63e3c1f",
+  "dwell_Upward_Plank_Pose_or_Purvottanasana_6s.json": "c9ea33aa90372d7daa6ec825dcc0fdf2b5afe30b0e4f75fcbce01b5566ff206a",
+  "dwell_Warrior_III_Pose_or_Virabhadrasana_III_10s.json": "fef3b9eca1a38b382e57fe75c8000193ba5246d83ee5af48af1cb8d5590a1a65",
+  "dwell_Warrior_III_Pose_or_Virabhadrasana_III_3s.json": "27f662b7bc841d291d4684bfd05a12be4cfb86c50c3dc0ee89a82936b48afb40",
+  "dwell_Warrior_III_Pose_or_Virabhadrasana_III_6s.json": "81e38bd07e4bb3fec0813bf8b917d672e13d8daa82b89129cfa4c4e0536daf3d",
+  "dwell_Warrior_II_Pose_or_Virabhadrasana_II_10s.json": "89801d0513cfc142fd3a96e47e2a8aa74942f3b524f9638da86541bb306c2c8e",
+  "dwell_Warrior_II_Pose_or_Virabhadrasana_II_3s.json": "bf5e8e323d34acdb2cc39d2254186fbd22c60db593ee04d2fd3d9317e62b81ce",
+  "dwell_Warrior_II_Pose_or_Virabhadrasana_II_6s.json": "c4f9513f35c51199cf31ca713af8eebbe46fb8ab08ab86c61ee1c34c6195a3c5",
+  "dwell_viparita_virabhadrasana_or_reverse_warri_10s.json": "56bf20e4015e17b4134be4a102fed29f445595e83de7647dc54f916c8a64bbeb",
+  "dwell_viparita_virabhadrasana_or_reverse_warri_3s.json": "cf07f16853ad1406658635d31ed6d2d8ac6a3137d085ecb26b2040aee35d463f",
+  "dwell_viparita_virabhadrasana_or_reverse_warri_6s.json": "6008c0ca0862ead94702e3124257e7cb1c769d1a4470ef221e05e0e1f65c7065",
+  "edge_B1.json": "4d42567e6443b1a0744886a273bf77820b0491161ba52867362883783893616d",
+  "edge_E1.json": "e09ff4f148a4d85c920bcad1a0908c23c1de363f4a709598e10289c543b30f41",
+  "edge_E2.json": "a1b828595ead5a1125a31866847d5e9bf0f25bab27707d49912b6f751372538e",
+  "edge_E3.json": "face4d3861936368de3eeac91d0b2f0f6d4ebcc3c3465ae2bedce9ae913d7d35",
+  "edge_E5.json": "066f267c14599eb59701e2c5b51a87221258ce8e6f50d92a1a7911e2393e42e0",
+  "fork_Bridge_Pose_or_Setu_Bandha_Sarvangasana.json": "49b065ac11d9dca8c9dab88888373893463c6bc6087cc8d7332a6375177009d1",
+  "fork_Cobra_Pose_or_Bhujangasana.json": "e952dce0c103d8b08dab90744567aa41cd02d97f17a7b39c4691596057c0f15a",
+  "fork_Crane_Crow_Pose_or_Bakasana.json": "267443bf67394d74370e4db17ed4ddb653567524ecbe50c89f3aa22b42892ee7",
+  "fork_Dolphin_Plank_Pose_or_Makara_Adho_Mukha.json": "252386f76aa910eb47baee53507de7b01e02c6374fb82ce8459001210b44f3ff",
+  "fork_Dolphin_Pose_or_Ardha_Pincha_Mayurasana.json": "eaf115c7fdd0892e478bcabe81d07313870e9f01e158f2809ada606e9a44d4ed",
+  "fork_Downward_Facing_Dog_pose_or_Adho_Mukha_S.json": "b82156002aec9d52cc1b06580b98253cbfe45c022a86e4d8d840605a8e9518c0",
+  "fork_Eagle_Pose_or_Garudasana.json": "a1ecf5bb86a5116244b4d1e617bdbf6a644d5b6e0886d352fca0c30e2e399c20",
+  "fork_Extended_Revolved_Side_Angle_Pose_or_Utt.json": "2c1df050d319a5073321a321b696a29ebfc2b36ca7a1ec37f43e9c3737767671",
+  "fork_Extended_Revolved_Triangle_Pose_or_Utthi.json": "462374e028bfbb8359b144676c66390b0dfcf5214ecac9fd517576d313beeaae",
+  "fork_Feathered_Peacock_Pose_or_Pincha_Mayuras.json": "85cc4857f4109ccad4c326f70ea194456237fa071985d301b74fb11fb19c00b0",
+  "fork_Firefly_Pose_or_Tittibhasana.json": "5f8ab7a781d316c278b67b47e2cf71a059f8dadd8c6cc1ce55ebc81a64bd7530",
+  "fork_Four_Limbed_Staff_Pose_or_Chaturanga_Dan.json": "4448f06af9bea6255b33a63c8819b3c6d30c6d4fcd75aea2291e532b215abb70",
+  "fork_Garland_Pose_or_Malasana.json": "664bb19a537cf8ff302d160f0a02de6b279485874ffb436fa6cf5a07075fde94",
+  "fork_Half_Moon_Pose_or_Ardha_Chandrasana.json": "76584080cf3bc93b8d85033f95aca7cfbc6ffe54b03f6c81a3bc7568fba9c0c4",
+  "fork_Handstand_pose_or_Adho_Mukha_Vrksasana.json": "1b782f0374b43e339f4d3ca84f4374bfe3dd22b2bde0f6301b820c51d8f205ed",
+  "fork_Intense_Side_Stretch_Pose_or_Parsvottana.json": "84775aac748b9cbc49274947e89802cee715849edbe26c30af24e140af8fd022",
+  "fork_Legs_Up_the_Wall_Pose_or_Viparita_Karani.json": "48fd30e3576703ca965735619e424781064698d3aca58316ff3f96b5e82d77f3",
+  "fork_Lord_of_the_Dance_Pose_or_Natarajasana.json": "adcbfa2a90d8021c14120e22cd0acb157b7a57f2dd2f81becd3412ef50da1ca8",
+  "fork_Low_Lunge_pose_or_Anjaneyasana.json": "26a1f8b9cd6aa15ba1c61f34b573b24eb753a2d80c2bf9087e7da5ea8fcd4dcc",
+  "fork_Peacock_Pose_or_Mayurasana.json": "a7645d27ed99bb8cfdd731419d8798fe8b974654451a114240c80d49aa460120",
+  "fork_Plank_Pose_or_Kumbhakasana.json": "ae1d080bc539c207026d7f5d3554912932f18b5753b164d5d6e4af348f03433c",
+  "fork_Plow_Pose_or_Halasana.json": "444a79c175005dccb86733d7b50fca5eac14b231d737aba9fdd35f926b6b55d8",
+  "fork_Pose_Dedicated_to_the_Sage_Koundinya_or.json": "2b51353d9d4c62bf57e078c8909e0905bcf103b0dc08cf6edb0f23823008e0f1",
+  "fork_Scorpion_pose_or_vrischikasana.json": "c318ca4394f4df3dd110ab724fe6fee5f8f47102ba23e0aa29402bb06f9c51bf",
+  "fork_Shoulder_Pressing_Pose_or_Bhujapidasana.json": "0ba8affde133d3966d0b0af7e4305e91350ecfe1296d9956c7f7fcb7a109bd51",
+  "fork_Side_Crane_Crow_Pose_or_Parsva_Bakasana.json": "aa7d66cda1d58b68520413a8f5553b6113ea3cb652c06ca329b1279691bfbd9d",
+  "fork_Side_Plank_Pose_or_Vasisthasana.json": "1074ff0eba0cf4ca14598c4da1429c23718a5c94c4752aadfcaa1881b96befe4",
+  "fork_Standing_Forward_Bend_pose_or_Uttanasana.json": "35478526dc45435722367081b07992290cf93a52aa93c66efec378e48adab1b4",
+  "fork_Standing_Split_pose_or_Urdhva_Prasarita.json": "92e14c15e4ced5895292b060ed1d51d06f1c402d5b0a78036ec7af99d8effdfb",
+  "fork_Standing_big_toe_hold_pose_or_Utthita_Pa.json": "bb75a8927af5585b12fac9cea30795eb6bf99d17e2253f6db36d888bec1afa9a",
+  "fork_Supported_Headstand_pose_or_Salamba_Sirs.json": "e26547da21a88d2e1d3cfd48e3cb81abf400222d6e00cff320b790766701a6e6",
+  "fork_Supported_Shoulderstand_pose_or_Salamba.json": "679aff57fa7d9def3b404d4556b40d14f688844fd563c1c5c70f41a4fcf6d2e0",
+  "fork_Tree_Pose_or_Vrksasana.json": "fc6b1c08de193051c818fc076bb5863662b284d39c7687257f4f2881aa4a06e6",
+  "fork_Upward_Plank_Pose_or_Purvottanasana.json": "8f6f81e332b081be200bade5951a39f017b001b5c9fd180a6ccd75d66412726d",
+  "fork_Warrior_III_Pose_or_Virabhadrasana_III.json": "939c97b977c7c6c3bbfc761e4e32f7129df3f0c2f3b302649facabc4d461c4ab",
+  "fork_Warrior_II_Pose_or_Virabhadrasana_II.json": "dcb2ac59823a99aa875206ae3b298485f091e3865205d1283b4e4835d887c3e2",
+  "fork_edge_B1.json": "61c388004306aa4b4580dd413a8ff4f2d611bc291251188aeb1cd1d3dfa3fb1a",
+  "fork_edge_E1.json": "45ce1d217ceea4278bcd0ce9a027c76f22668ab8c69ec7c071e370ecf145254d",
+  "fork_edge_E2.json": "1bd9db08088710836d610ff38fde79c087b23de13e5476c82adfd3fbc076caf9",
+  "fork_edge_E3.json": "66577d2c616d37ddafc56876bf6555437c1eec647fddf7421a94784a4b9694ac",
+  "fork_edge_E5.json": "45d79246734b5c62a5d6311ec7961ad2f69d911589c825c483d654fbd2c0c59c",
+  "fork_viparita_virabhadrasana_or_reverse_warri.json": "dd52a732fe6a532a13916a2a34d57d387a8b35f6140af9787c1c60036b216fa4",
+  "nohijack_B1.json": "16c7121909de3796747d220d2ff04bfb80d05970646b927c13d7ebf651d3dfd1",
+  "nohijack_E1.json": "7ab5ac271a9487e98c621a7b8d5c16b62c986d1e83c5976422790b185f030753",
+  "nohijack_E2.json": "c8269bdacf6e3723e8381bc076290d7a1b4bf74c6f15f94e51038be642b8165a",
+  "nohijack_E3.json": "e0bb9166ccb822d56831401a110356b6c980f31d0d4fc4d9d35b2409f30f0627",
+  "nohijack_E5.json": "152d0464d26ee3947087441e8a687e5b7cc7b694f7ce41aa4c357bfd42fcbff6"
+ },
+ "motions": {
+  "220923_Half_Moon_Pose_or_Ardha_Chandrasana_-a": "a9a0ebbe1c0f97adb1b3cd7f8b46699df8508421b2dae9fb2c749bde095c745c",
+  "220923_Half_Moon_Pose_or_Ardha_Chandrasana_-a_x3s": "79aa25dc68e8f3ecff65aff2c08d12b6161b0c1e0b468bd5ee4335afac9f4750",
+  "220923_Half_Moon_Pose_or_Ardha_Chandrasana_-a_x7s": "401129779849bf4ab731420ac2d0cb1769138ad3cf2fe7172b82318f39626013",
+  "220923_Half_Moon_Pose_or_Ardha_Chandrasana_-b": "234ad1f9dfeb227a688b432e94f8d9c7745f9f02d92cac66eb64b5c6e13c343e",
+  "220923_Half_Moon_Pose_or_Ardha_Chandrasana_-b_x3s": "e628924a3f1511c8b4f89bec431872f85bb5077453bab95c707c0b671fadd653",
+  "220923_Half_Moon_Pose_or_Ardha_Chandrasana_-b_x7s": "7a022b864a8c1a81f9bcd7d3fdc908b52a410d87e5d09ba02b7f2f9503e8c5be",
+  "220923_Standing_Split_pose_or_Urdhva_Prasarita_Eka_Padasana_-a": "aff386cf608eace315fc9627f316d55b2218ca073a424f51ddff1c28887dc859",
+  "220923_Standing_Split_pose_or_Urdhva_Prasarita_Eka_Padasana_-a_x3s": "c5e950d7fcb7ae27a389d8f149e764d927f926315b1254292f9fd7e2df15ecab",
+  "220923_Standing_Split_pose_or_Urdhva_Prasarita_Eka_Padasana_-a_x7s": "f7006e561fcbe9ce80775c039316376781d72bcf7098348c8d895c7238d313e0",
+  "220923_Standing_Split_pose_or_Urdhva_Prasarita_Eka_Padasana_-b": "d84c37418400e20174864d31f0f0ad423af553f2c51e89b677ff2c6fa057b9cd",
+  "220923_Standing_Split_pose_or_Urdhva_Prasarita_Eka_Padasana_-b_x3s": "b0020038977c8ccc9565fd8d08f9d9e8d3d80e8f940fa2dd3e927d9a19f0c125",
+  "220923_Standing_Split_pose_or_Urdhva_Prasarita_Eka_Padasana_-b_x7s": "0901a424a3878e67148e97bb4eb7df332151b69f50cabfc226b7290dafa94973",
+  "220923_Standing_big_toe_hold_pose_or_Utthita_Padangusthasana-a": "42416be0bbf16c3ebbd3c56028a8de048221adced19de14eb693dd06e3d3909d",
+  "220923_Standing_big_toe_hold_pose_or_Utthita_Padangusthasana-a_x3s": "1c90dc6eee5bbb605b20173909cfedd4c442394d516882af45601bc7511651d3",
+  "220923_Standing_big_toe_hold_pose_or_Utthita_Padangusthasana-a_x7s": "cfa8b9d967b3508afbe1139c13077c7623156e6b629548fa951bb0db552718dd",
+  "220923_Standing_big_toe_hold_pose_or_Utthita_Padangusthasana-b": "0a89d8d8681c2db9bbc76fe0aecdc6404faeff4f21cee1b0fb586c73712f48b4",
+  "220923_Standing_big_toe_hold_pose_or_Utthita_Padangusthasana-b_x3s": "8bba4926c160333df7a6ceff00720ca640b17480f28f73c58299931c65e52ff0",
+  "220923_Standing_big_toe_hold_pose_or_Utthita_Padangusthasana-b_x7s": "c2532f61eb4bcad1b896807c5099db1116e1859c19727aca577f5e99114eecce",
+  "220923_Tree_Pose_or_Vrksasana_-a": "5b2579f286d3780d1c51d92c77e91a1bbbd9d949ddf2193a62a17a64e2a82053",
+  "220923_Tree_Pose_or_Vrksasana_-a_x3s": "c2add3de94576e9254d4f95b7e0465dcbcff06279b83295f74ebee348c19cf2e",
+  "220923_Tree_Pose_or_Vrksasana_-a_x7s": "655d33bdbf92811b184cfaca17a4b2e5496ab270be913eeaa9a90f30114d6dc6",
+  "220923_Tree_Pose_or_Vrksasana_-b": "4c5f700c9f1c935155aec66fafd7f59178154e1443df08fc39396f6e82aed9d5",
+  "220923_Tree_Pose_or_Vrksasana_-b_x3s": "de59d0c9a2ee5a67d87e025e91b1e14331bbddc817c19d16bb03de76369d6379",
+  "220923_Tree_Pose_or_Vrksasana_-b_x7s": "2b70b847a1dc26f5986cb7f31d7439ead9647dec1ed3f1489f3919ee5012b6d7",
+  "220926_Eagle_Pose_or_Garudasana_-a": "0af80215b004fa01e3befee499f7b2c3ea5a18faad79bc43a15e768372c104a7",
+  "220926_Eagle_Pose_or_Garudasana_-a_x3s": "cdafa983363834ce44edef8384bf4e8a5dc1fad04f8f5251c5da502ae5aab700",
+  "220926_Eagle_Pose_or_Garudasana_-a_x7s": "314c741c2d88808b842d920ee585bc1750109db0e4d263fd11d6f21a2b358686",
+  "220926_Lord_of_the_Dance_Pose_or_Natarajasana_-a": "588209c2400727cf102b4686637d685640f3509241512cab2208bf59561bb103",
+  "220926_Lord_of_the_Dance_Pose_or_Natarajasana_-a_x3s": "684dfee4847cf9d1ba97d938acfa4ef1d70fe58d3e6da26a33792dbedf65399a",
+  "220926_Lord_of_the_Dance_Pose_or_Natarajasana_-a_x7s": "25ab09d8cc7a82932fe71c7e5da0180751d6d2d29f0f20bdf04eda37bbcba897",
+  "220926_Lord_of_the_Dance_Pose_or_Natarajasana_-c": "fb1f6d084696d30ce5c1e273bae9efe107a66cbe26ce19f2f889747fe8b47426",
+  "220926_Lord_of_the_Dance_Pose_or_Natarajasana_-c_x3s": "499255ca61d7d0fd27ddfc47c960f8493b3769ecc0458c81ddb8e3da4b5b8228",
+  "220926_Lord_of_the_Dance_Pose_or_Natarajasana_-c_x7s": "8fc846e7172d12c0cc7a6bd09fc8d51fde65480b4adf38f4aa5767f77d472a17",
+  "220926_Warrior_III_Pose_or_Virabhadrasana_III_-a": "b33f25b56a7ee1eabbae6e9fdaf962b96919e58838e28f22d94e069a87d3617f",
+  "220926_Warrior_III_Pose_or_Virabhadrasana_III_-a_x3s": "02567d963ed55745c94416d31215b64363a8a874b28bb4f8db1bc535852687e2",
+  "220926_Warrior_III_Pose_or_Virabhadrasana_III_-a_x7s": "c8b77a9557ac9cd4aeeb1402219cc14e0608e841a9a0c3550d89801e1e38a286",
+  "220926_Warrior_III_Pose_or_Virabhadrasana_III_-b": "32be552da855270d0c7ac7d0e05f657024e3087ce287905c2cf7847858f23204",
+  "220926_Warrior_III_Pose_or_Virabhadrasana_III_-b_x3s": "2272aca3a9ec12c99ebfb8f86148606275a96aeab0a0813a16752600bc7ed7c2",
+  "220926_Warrior_III_Pose_or_Virabhadrasana_III_-b_x7s": "3c9de4945108c7fd2c47054aaed56342050d5b4debf1d69ffdf1a8583864c371",
+  "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-a": "611b0332a91ce1e902f065873f00691bff4cd36f21a6fca86cfb11abc191618d",
+  "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-a_x3s": "afe5aebe23b6cde97936a6b9ca69176b934f152b1ac15b627385ad0d199a94b4",
+  "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-a_x7s": "a6500329a33fd4757e72f2dec9e5e1f135b076498ae6273c670a12319ba963b0",
+  "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-b": "0547770abd680dde2c1d1192b05d0d2528eef31232d93bcd273218f733a16935",
+  "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-b_x3s": "cecad075894d6e2aff41254f79d51ae90b1e9feb4ae71f485e48acd52473a5de",
+  "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-b_x7s": "0ade54be99766a1afd76ead665bba320a6e49aebe705dff7d285504d34114cec",
+  "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-c": "87b5a3d9e37e31776d75d08c588814bbf53f0a88238dac7277f7721b61ba0daa",
+  "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-c_x3s": "a5cb6dc91c4a6f8313e8d7e40191756ea021d3459de1356c0d9805cefb157ed5",
+  "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-c_x7s": "50afc7afe0bd3d606c11508826fe8c20925bb394ad53e01424be5a66ec17c9bd",
+  "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-d": "22ceb5e3c41622846f28cbf255822c0c25f5afe1c71bff04346939a05b05baf6",
+  "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-d_x3s": "a822e302f52be96ac7d18a0db5f68f415a3019f7459df8a64bd1025567b4b906",
+  "220923_Feathered_Peacock_Pose_or_Pincha_Mayurasana_-d_x7s": "b04b97669a5830f43d9704945d9474a854581cfc2012a3697aaec933e09ccf64",
+  "220923_Handstand_pose_or_Adho_Mukha_Vrksasana_-a": "106c21cc22b84516cd49b1928fc30dbbe0c4a22f0146be9669a08d05c2f202d7",
+  "220923_Handstand_pose_or_Adho_Mukha_Vrksasana_-a_x3s": "a1dd4fb025e557bef1066051c4bb443a59fca29c22663974b711742179006926",
+  "220923_Handstand_pose_or_Adho_Mukha_Vrksasana_-a_x7s": "f38aa3a39b044f039483f53aa3432fa4a48eb3907e72f35e30d0e40288041ac6",
+  "220923_Legs-Up-the-Wall_Pose_or_Viparita_Karani_-a": "4355e53632275e14f1c508ca27d6aaff2e428a9e71cd5f340611385902ddd93e",
+  "220923_Legs-Up-the-Wall_Pose_or_Viparita_Karani_-a_x3s": "e543cda3f87d1adc588f81ac3e0122f20ab0192e06b99387c492698ceb387892",
+  "220923_Legs-Up-the-Wall_Pose_or_Viparita_Karani_-a_x7s": "ea8d784b75291e534a39f32f1e25dae3a3163e9df19129bdd9719e98ed114522",
+  "220923_Plow_Pose_or_Halasana_-a": "cfb5d1b75e21bd2ee5cc5184a817ae094d8e24a86a039ffdad2cdd7b6e94fbc4",
+  "220923_Plow_Pose_or_Halasana_-a_x3s": "abf24873de262e89f95b4a651e6477f2bb677ab72327670dcfc806e3f6a31cb3",
+  "220923_Plow_Pose_or_Halasana_-a_x7s": "efe2d555647c328d71701bf5aa2fe395998b7fe61788d9529587e1d7e08a7289",
+  "220926_Plow_Pose_or_Halasana_-b": "bbbf50d53a523af750af04b09bbd7af821487c84c5096bd44daadae8a94c0f85",
+  "220926_Plow_Pose_or_Halasana_-b_x3s": "2df819d84c5c5a8fb7607ed3668d7360e36a963307c416c74c374a2b90723090",
+  "220926_Plow_Pose_or_Halasana_-b_x7s": "a397cb1579817bf75b4d06746880994e0df9ab5ba5201f699e0259e88b5a1349",
+  "220923_Scorpion_pose_or_vrischikasana-a": "e3a064340d5a2aae2b60e434373936a65ebcda34385c60e3eeb87285b85d6ffc",
+  "220923_Scorpion_pose_or_vrischikasana-a_x3s": "b5f19fae0584a1d87ab570eec6a5d0d7aa02759bdabe87a55104b88b3b4bbd05",
+  "220923_Scorpion_pose_or_vrischikasana-a_x7s": "0d4eb09605a3acaba8b93fc6ef85536a2f6c0225c33f6891997c5c99759ca1d4",
+  "220923_Scorpion_pose_or_vrischikasana-b": "0ea48042735a03a8cca6f0ef0a483704b8bced34bfee3dd2af9b1b273d97ee86",
+  "220923_Scorpion_pose_or_vrischikasana-b_x3s": "a00574f01fe103aa50267995a97844846b5e3bfd2f0bb854d2fe5a0803fd1de1",
+  "220923_Scorpion_pose_or_vrischikasana-b_x7s": "f3ca07b37c0bde8e20924b8dade70cb7033ad53cd6ad0fb86420756177672e10",
+  "220923_Supported_Headstand_pose_or_Salamba_Sirsasana_-b": "522fcf1431804eb1fe4501a2741109ac7dbcc9cf724b225e6d5be1f0a0812028",
+  "220923_Supported_Headstand_pose_or_Salamba_Sirsasana_-b_x3s": "e245be0c8a529e0dcea6d22a188671b545326c553000d49c1b961df108360171",
+  "220923_Supported_Headstand_pose_or_Salamba_Sirsasana_-b_x7s": "6667f80b6f3a33a69adb2a34e076caecaad606b5b9aaf2c8047f8507c972507c",
+  "220926_Supported_Headstand_pose_or_Salamba_Sirsasana_-a": "e48e3a6e5bbaf5e9854f497ebb662b4f46d95b2b9afcfc6e3e159ca1cd741551",
+  "220926_Supported_Headstand_pose_or_Salamba_Sirsasana_-a_x3s": "1b829acd78b553fbe001926a7229f32082ed3765381b038eda115090f41aa803",
+  "220926_Supported_Headstand_pose_or_Salamba_Sirsasana_-a_x7s": "fd54c420eb7ca807e0ab86b8d8011677bacb04847aa848ff830d86e5a02f83c6",
+  "220923_Supported_Shoulderstand_pose_or_Salamba_Sarvangasana_-a": "a403bc3417d15b920549be12ebca908ff31dcc95790459b0d09765890530a79d",
+  "220923_Supported_Shoulderstand_pose_or_Salamba_Sarvangasana_-a_x3s": "5684a7ec5603dba47c7c056a259ca31476af4c7361c51c1db86bac15dbf87868",
+  "220923_Supported_Shoulderstand_pose_or_Salamba_Sarvangasana_-a_x7s": "794324e2096a46f430d497b3996b9c19422aeb65d9a78662198f80afadcf3c59",
+  "220923_Crane_Crow_Pose_or_Bakasana_-a": "3aeb86142afc942be9b79704709f67325b6d6818a761b0a3ab27f4392e369488",
+  "220923_Crane_Crow_Pose_or_Bakasana_-a_x3s": "4adacce0a90c32d96ee3f3a8e7ebfad86431d6246a40c584ed5f3f666ef055b0",
+  "220923_Crane_Crow_Pose_or_Bakasana_-a_x7s": "a550caf8831ffe8ca65d6bca1872acbef66dbccb2254dec2225c79e5af824e7e",
+  "220923_Firefly_Pose_or_Tittibhasana_-a": "450a904c6cab681fa03328ea1835b50e25ad49b2beaffdaf65195d19f87db730",
+  "220923_Firefly_Pose_or_Tittibhasana_-a_x3s": "1030138643e61c55d3819f726901ba371d9422c2ca8e4e87b0c0ef14eaeb76bb",
+  "220923_Firefly_Pose_or_Tittibhasana_-a_x7s": "0af5877a7e795e373edc2a41611b9a4c2d8503a95cee046044b522cbb58aadc2",
+  "220923_Peacock_Pose_or_Mayurasana_-a": "48f05cfba7f1025d3de50ed76f87fdb218e085fa83fb7e9842e46f5b7f2aa409",
+  "220923_Peacock_Pose_or_Mayurasana_-a_x3s": "9f450e39f741c815617673867f9d13b60f6b7063fbb105a5f36f485d934226d0",
+  "220923_Peacock_Pose_or_Mayurasana_-a_x7s": "b964aaba5637968bcf29ec1615c8812ff8f5e8ac0e1488a8b1795894736ce6b8",
+  "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-a": "664cf3c3bd09cdc3eab6047295ba82304b993190467590d8b2f4dc61c81c57c9",
+  "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-a_x3s": "d88ee2dc2f0d77bc46a5d9b3ce6f5cb946f1dcb38906f04ffa1e004ae0951a99",
+  "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-a_x7s": "ffda344e153be5fc76e7533ac395b293654df3e97da555ce871ef530bcbbafa7",
+  "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-b": "747e7d2ec7275d2824ee30f4de3691109e1fce291e5353b1cb50c4d6f7616ac8",
+  "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-b_x3s": "1a6cced8620ff1ee9c5ed3f4f8c3308e05decd223c2b9f17cc0a8caec367dae2",
+  "220923_Pose_Dedicated_to_the_Sage_Koundinya_or_Eka_Pada_Koundinyanasana_I_and_II-b_x7s": "cb6323e3c9cdfab2d352e972cdc8b9d552e8ed9a351aa6e280a24288ba4d21ee",
+  "220923_Shoulder-Pressing_Pose_or_Bhujapidasana_-a": "408984f7b40be79e479c627413e56bfef70d3bf987b524e47c02cf5addd6ded8",
+  "220923_Shoulder-Pressing_Pose_or_Bhujapidasana_-a_x3s": "6bb1388b94a62e25c68b2c737ead7f8f39d222dafef8b8a6cd3a283852a94585",
+  "220923_Shoulder-Pressing_Pose_or_Bhujapidasana_-a_x7s": "9f343eb7e27e7e94ed55d640a0cbe8b4a1925ae3417fa83c68d8fc2aa1237492",
+  "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a": "8252305cf06b4217fbdca87d44d052915a8bd0b4e076705c577b5231860b18ba",
+  "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a_x3s": "ad4ddec74b71efd34e4391f92be25e80cd682601bfc7eb333a40b00509df8073",
+  "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-a_x7s": "56c2cd01c9f3e691425eef91e0bd5ef3c7b9da0c474edfb5adbe1a512f5d81c5",
+  "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-b": "6c0455dc9142528d2bc2cc626998e3fb697504ce2dd49ce44b64a6de3ba336b0",
+  "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-b_x3s": "25f21574b12f3840ae0aadc8a83c0e2f2eaf17e06f76bea50d467a9e7e1ff2cb",
+  "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-b_x7s": "f680e029bc02dcc9a99fee1571f6cb94b5311a209946c966d3739a8204167311",
+  "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-c": "dc07ba287174dd14a11c05041b58e619f0172a93b302a699360451354bfb776e",
+  "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-c_x3s": "0f3df48a7f15f8273ecd895d55bda966a92be8a14ee41dab28be2ff428b4bc77",
+  "220923_Side_Crane_Crow_Pose_or_Parsva_Bakasana_-c_x7s": "e9d3f5315702cd2a34d5077080314037f364a4c9089cd3d753fdaad151edb3c3",
+  "220923_Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana_-a": "298d63e12c5f008180946a0c2f487099f23276b945c728b9765129429d7a7cc2",
+  "220923_Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana_-a_x3s": "0b461ea67133e2f69c5d6ea86cfca2ba9922e4aa8f16ddfbfa2a2fac2f955477",
+  "220923_Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana_-a_x7s": "3a72e8274f068a6001ede5d9c0727eff3295f3d5b7e7e0b6103fb323fe4c71f9",
+  "220923_Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana_-b": "270e211e4847943d07448196cdac0381ef4cbc497bf5ab7ad9eee3ee97a39364",
+  "220923_Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana_-b_x3s": "a6f68d5a9e716850aac74fbf8ae28a58fc7b354cd2528c1a42b869b1041ecfab",
+  "220923_Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana_-b_x7s": "1336ddcd46bd4fccb96f8090fcf6448a204c58982b0c7dfde485f1b8b251cc9e",
+  "220923_Plank_Pose_or_Kumbhakasana_-a": "8738ee7c22c652332b5fcd19af7df271aad12c4b573909cd418877611382d20d",
+  "220923_Plank_Pose_or_Kumbhakasana_-a_x3s": "4a1752167cfce5d30ca6ddf3d29376b59f4f800277dadaec2816d5f137041916",
+  "220923_Plank_Pose_or_Kumbhakasana_-a_x7s": "cc3009d22f3b78d9ea4325d420a59283db82619bbf3a98aeb91f0f9fd27ec1a0",
+  "220923_Four-Limbed_Staff_Pose_or_Chaturanga_Dandasana_-a": "e658a28f304ad93988842758ca6990c2e9c9ec1ebf7beb998c5a01753262c12f",
+  "220923_Four-Limbed_Staff_Pose_or_Chaturanga_Dandasana_-a_x3s": "4abbb2e8c95ca80edba76a66a0e6bab364fd9a1f5a9e7ffd68c1079f45e28f4d",
+  "220923_Four-Limbed_Staff_Pose_or_Chaturanga_Dandasana_-a_x7s": "8a45c40bee244fe71b88cbdb0169e555e6ac05af8f34e8dd6c4d8b247abdf710",
+  "220923_Cobra_Pose_or_Bhujangasana_-a": "73afe56cde05a1382b603a43b134d69a13ef515973d9283785977160d0a234ba",
+  "220923_Cobra_Pose_or_Bhujangasana_-a_x3s": "1ee9f80c0958de46440a0a699ea15ef21c7b3d3e194f61903e53366e63082d58",
+  "220923_Cobra_Pose_or_Bhujangasana_-a_x7s": "dd743a8561660442139d502bc69d80cde5b27528483e267e478e1e8bac718537",
+  "220923_Side_Plank_Pose_or_Vasisthasana_-a": "7c7fce71b876e6232b4c6263b5bb13820f170a898c36c5e50c311e4a9f754c4d",
+  "220923_Side_Plank_Pose_or_Vasisthasana_-a_x3s": "8224233325f0f35ae7b491b517ba89ffbd66dd8d02a2804b0c85aeb233dcb7fd",
+  "220923_Side_Plank_Pose_or_Vasisthasana_-a_x7s": "6de85d399c08ee0eb1ebd37270915ec9205442d3a143961bd526d4e759fe4372",
+  "220923_Side_Plank_Pose_or_Vasisthasana_-b": "26419188235afa0d73e8258a9b53190e6653f93bbdbedabdb87f0cec9b1772db",
+  "220923_Side_Plank_Pose_or_Vasisthasana_-b_x3s": "17f2fa10c250637bd2d87b0d8486fd2796800d446af65668488adda7dc839240",
+  "220923_Side_Plank_Pose_or_Vasisthasana_-b_x7s": "df6da3d281b4d25cc5a0f5d7d0a745938c8ecec0327d91bc5c26b2aa5985431b",
+  "220923_Dolphin_Plank_Pose_or_Makara_Adho_Mukha_Svanasana_-a": "929872f7b5da85e1f9b170b4f237b835255589f3075ac38d27632ce355f725cb",
+  "220923_Dolphin_Plank_Pose_or_Makara_Adho_Mukha_Svanasana_-a_x3s": "2787e93b013e82bcd17e55144867ebed513756cbdc92f5531346b97a30dcf9f9",
+  "220923_Dolphin_Plank_Pose_or_Makara_Adho_Mukha_Svanasana_-a_x7s": "14234a72e4936fc071041dad661dc7629e378bbdd0aa17db13b9f0ead870bbe9",
+  "220923_Dolphin_Pose_or_Ardha_Pincha_Mayurasana_-a": "6a542e8b09c1083e9ae212fdc23fd2b20e5bb014e62c2919c5d0b223c14fb9d4",
+  "220923_Dolphin_Pose_or_Ardha_Pincha_Mayurasana_-a_x3s": "0f2efaab2a98271ef615fb585aaa0c0fd690ebc9be4fdd51b15f5b01c86eb10a",
+  "220923_Dolphin_Pose_or_Ardha_Pincha_Mayurasana_-a_x7s": "5e28be8e5b9ec2894a239a577ca5961869f5bb16479945058f6119695cbdb1e4",
+  "220923_Standing_Forward_Bend_pose_or_Uttanasana_-a": "8f8cead5835885469667b25ae9dad68b51d029a2a75ba7bc325925287aac3983",
+  "220923_Standing_Forward_Bend_pose_or_Uttanasana_-a_x3s": "6c19f4dcb4d7785b70e28db4d19b8daa9bc88022bcc4159f45ab56c22f175f51",
+  "220923_Standing_Forward_Bend_pose_or_Uttanasana_-a_x7s": "54cdd66d368df12c3160d615d28c6502ed4014542fc9bb34db59d08adb813a98",
+  "220923_Garland_Pose_or_Malasana_-a": "c161e481ee14bb8154a8b7b9122d13f497acf41a675f0d9b53905ce5bffd176b",
+  "220923_Garland_Pose_or_Malasana_-a_x3s": "7a7721daf66ec62fe98dcd90e98c0d143c3b901294919f7f34c34cf4665a992f",
+  "220923_Garland_Pose_or_Malasana_-a_x7s": "d501e2602359ab61bcf2716752843813bf4a8b671d8ebbe7284806849bb378b3",
+  "220923_Low_Lunge_pose_or_Anjaneyasana_-a": "6e102f4f7c496571d133b76c0cf7a2a91a3528d8446fc41afb6e3f64f43c4eb9",
+  "220923_Low_Lunge_pose_or_Anjaneyasana_-a_x3s": "0a2a326cb18f9cc301a662109677ff0c1b1175bcef7aea574fbf26878bc4dc6d",
+  "220923_Low_Lunge_pose_or_Anjaneyasana_-a_x7s": "ff9b1d7aeba570a0d4e79a1d41bcd208c06c2c5ef0b491fcd522291383a8eb65",
+  "220926_Warrior_II_Pose_or_Virabhadrasana_II_-a": "b241f7d834f03912d4010bba7774e97175628f8e675653036bce396892c5cc4f",
+  "220926_Warrior_II_Pose_or_Virabhadrasana_II_-a_x3s": "75627c6d4a7e41a7fd34aa95f14aa37282d40f1293b23ec6b3ccaae6e6ae648c",
+  "220926_Warrior_II_Pose_or_Virabhadrasana_II_-a_x7s": "d089cc4c897152283f5b119b803336ca4e53b5ba57b722b5a0f5d5d735b002b6",
+  "220923_Extended_Revolved_Triangle_Pose_or_Utthita_Trikonasana_-a": "90fb0f91c6b52a53c54dcded39d99a7342570596182d01991620e1d8ecd65132",
+  "220923_Extended_Revolved_Triangle_Pose_or_Utthita_Trikonasana_-a_x3s": "63094ae455f342d66bc3e8a2d1f8b64ea44b8d5c4d895990c014778e8d02df2f",
+  "220923_Extended_Revolved_Triangle_Pose_or_Utthita_Trikonasana_-a_x7s": "cd307ac376af02266f82a2d3b55e9370a76c1164de2b9b737fac64789f7b9025",
+  "220923_Extended_Revolved_Side_Angle_Pose_or_Utthita_Parsvakonasana_-a": "83f53732d4a47e32d1118468cd382de705f3a55cf740d53ac5cab024d8529055",
+  "220923_Extended_Revolved_Side_Angle_Pose_or_Utthita_Parsvakonasana_-a_x3s": "f04c7191750c17d5f8d1c41541692c88d9d56baf6b640904560e3da279dbf8db",
+  "220923_Extended_Revolved_Side_Angle_Pose_or_Utthita_Parsvakonasana_-a_x7s": "d824d1259788d5ff4ad661e3bae578a9e1c8e1cd38edd36e08435c080e0c7be1",
+  "220926_Upward_Plank_Pose_or_Purvottanasana_-a": "e51aa80bef2e52ca6db6099ceeadcf1e70d259914b31f47dcd3423a8c2bef405",
+  "220926_Upward_Plank_Pose_or_Purvottanasana_-a_x3s": "16b750c7babf87d0d792d12d1a5199d13f627f1b2a7b7894e533b8a6857288fc",
+  "220926_Upward_Plank_Pose_or_Purvottanasana_-a_x7s": "b58cd84c90c79c6fde671dffb8555dd9cdb6cddfa349177f85b1f447c95122aa",
+  "220923_Bridge_Pose_or_Setu_Bandha_Sarvangasana_-a": "4bcfaa29eff8c3bca9365cf60ff10ef9a60cbf6660a93cb70cb934e3fc49760f",
+  "220923_Bridge_Pose_or_Setu_Bandha_Sarvangasana_-a_x3s": "206c9e866a735018d3a7fe22e51d79abd94330e6ba810bdaf1701f86230701e5",
+  "220923_Bridge_Pose_or_Setu_Bandha_Sarvangasana_-a_x7s": "a4adf7490206f07fd569ba56adc784dc4c7f5d6837340542ec4b68966b18cbe3",
+  "220923_Extended_Revolved_Side_Angle_Pose_or_Utthita_Parsvakonasana_-b": "d1e73fccc45b2c0561fe7aba08d5d5ddf1b6a56554d5b9ff6ef6be8a7b88109a",
+  "220923_Extended_Revolved_Side_Angle_Pose_or_Utthita_Parsvakonasana_-b_x3s": "cfde69108a8d21054be6d30b35cdf3b8ab29f812daef344131d1f55fb6c23cc6",
+  "220923_Extended_Revolved_Side_Angle_Pose_or_Utthita_Parsvakonasana_-b_x7s": "de344578da1dd8fb9d1c61733685f2472054b21826035629f24e97febcf991fd",
+  "220923_Extended_Revolved_Triangle_Pose_or_Utthita_Trikonasana_-b": "cbf04f4921f50ea7bc1076a86242e904ce59a4168e6625829d11190c3975c3d0",
+  "220923_Extended_Revolved_Triangle_Pose_or_Utthita_Trikonasana_-b_x3s": "b3a71f5146161e2d95821e409921784be87f8330ba9a6735ec731d57502e2114",
+  "220923_Extended_Revolved_Triangle_Pose_or_Utthita_Trikonasana_-b_x7s": "c9f55761ae4abb0e89b4274d2e6eadfc371f877c71966f8645b0fd661cf6dee5",
+  "220926_viparita_virabhadrasana_or_reverse_warrior_pose-a": "a7c59549d5a00a819bb77b6447c3988427582d18fccec20d27e14c5226b524d0",
+  "220926_viparita_virabhadrasana_or_reverse_warrior_pose-a_x3s": "a5935421cd771ee7a7b4d0808e616fff0de9da59bc3424345921d70852b9c741",
+  "220926_viparita_virabhadrasana_or_reverse_warrior_pose-a_x7s": "a8105c657f2a2e6b20e1adf8ed770646a5eb26f44eb31a017e3a9c8d91692c08",
+  "220926_Intense_Side_Stretch_Pose_or_Parsvottanasana_-b": "cef52c0505967d708308019b36248d51b4a0835dbb83565574f6626e2b9a1c66",
+  "220926_Intense_Side_Stretch_Pose_or_Parsvottanasana_-b_x3s": "e6516b11c32df5e1f807764a5d482bd451ff2020fe43b3a1ef73d90c3e6ca00b",
+  "220926_Intense_Side_Stretch_Pose_or_Parsvottanasana_-b_x7s": "b8817180525a2a2d81a014a03b832d98413649780d7b9b8b284c3147134a5fd9",
+  "SYN_E1_press_high_s0_t6px": "1dc53caf94daab8e2cc296ca40ff8358264bc2cc99741b26623a4f3fd1e820d4",
+  "SYN_E1_press_high_s0_t6px_x3s": "dad429f070df2068c025ffda40b475f596f649dc43cb3be6fb0ab5ff590d5858",
+  "SYN_E1_press_high_s0_t6px_x7s": "30886fe92449e20bde7b13ef55705bc493d75c35a3a239ffe6b1a586443c509a",
+  "SYN_E1_press_high_s2_t6px": "40f568d4f899cabc89e2ebc1b444cc7d5b3a101efa1086f637481740a354931d",
+  "SYN_E1_press_high_s2_t6px_x3s": "b54f93569cb75838fcaae23bf1efdc2c3ec0e61d7a0ea635b8275212834f75f8",
+  "SYN_E1_press_high_s2_t6px_x7s": "79e764d36750d9484924828cb179bdbafe6eb621504c76bffd9f7b438eff3610",
+  "SYN_E1_press_high_s3_t6px": "b17008d2fbcd9c7c83cd0b4a98418671db7a0c25c4dcfd85b882312ec7da4d3e",
+  "SYN_E1_press_high_s3_t6px_x3s": "f06a7f73eb829836d8f8c859ba51c0dd89ae1daa41c9f962a52fb8556467f233",
+  "SYN_E1_press_high_s3_t6px_x7s": "bb699f9eb1a2e62da72a78f18ed47e1cf093c13c7c12d410d33b197931b5fb81",
+  "SYN_E1_press_high_s4_t6px": "b437716344a28b4a6e6defb89b863ba1fba65f6b508b1030f32ada0581dbd634",
+  "SYN_E1_press_high_s4_t6px_x3s": "1e09da1c10a7093c321d860aa6f0c8eeefc7f67dbaaf3638e9c3e100171367c2",
+  "SYN_E1_press_high_s4_t6px_x7s": "6cdbf2af128724ec51ea227a56e15dddaaf783244e4e86a76fe45f67b91037e0",
+  "SYN_E1_press_mid_s0_t6px": "9aa9d16e9725d8a17276dacbe4da01f9d5c46e5c4c0947463285d3992f0df187",
+  "SYN_E1_press_mid_s0_t6px_x3s": "899dfbac55e1c254e41ffa0f2695235637ea77c1ac15b53965d990d0de3315f0",
+  "SYN_E1_press_mid_s0_t6px_x7s": "616dcaa0b58c35447215760cfb7f5ec97d784d4c2f1eca763b7591db967bf1a5",
+  "SYN_E1_press_mid_s2_t6px": "85cb189ac591cf0417e3d6f232ea6daa27393dcff3453efb0fcd4b8c124f3661",
+  "SYN_E1_press_mid_s2_t6px_x3s": "6ab17326414c7bb3a1603d6a1d3612d8a8c09084b7ba016262fa98e8a3f37c51",
+  "SYN_E1_press_mid_s2_t6px_x7s": "2b55be79f83c21a1ff227f330a10b789e62930ad7526017dccd12c1e55437eea",
+  "SYN_E1_press_mid_s3_t6px": "2d0f212ad12268691e015cfa2b0ddf92b860fbb20494d6bff6edd1d8fe9800ed",
+  "SYN_E1_press_mid_s3_t6px_x3s": "ae9eb53cf0fd86e6454da821fc62758cc6c07fb4594cf10043e64bb5c171edd2",
+  "SYN_E1_press_mid_s3_t6px_x7s": "f16859612260b00806049141eaff1c032b65a18284b5696047f45b24e0eddca4",
+  "SYN_E1_press_mid_s4_t6px": "5b394aafbca939a1f2a250a5e8103eb657ad082588b69d003349a39aa3b327fe",
+  "SYN_E1_press_mid_s4_t6px_x3s": "94d6d8f40ae090d7e5eb6f41adfe634ab3cde135f0ffeb9bbc95fdd4e593ba99",
+  "SYN_E1_press_mid_s4_t6px_x7s": "f6f958109c733dcd8e5b5945f2181d3adc7effe346070f3adc3cf76e73ca5cc4",
+  "SYN_E3_lower_high_s0_t6px": "2657e2cd73ef36310fe1b8d9ea36f1aedd46d1a68119b658e8af88964f89bb7e",
+  "SYN_E3_lower_high_s0_t6px_x3s": "1f2b8e1404bc7c55ba6f0e2e8e2c869c1b5c8980812ce05d6e9e889cb02d9554",
+  "SYN_E3_lower_high_s0_t6px_x7s": "aa4a10b22b68dabd43880a77d2cc372fa087d87b32acad14f34e6cad1bcbe641",
+  "SYN_E3_lower_high_s2_t6px": "4be49b31784639ceff0841846c862eaf74b672bff0dcccc2fc234f7e74d635a8",
+  "SYN_E3_lower_high_s2_t6px_x3s": "8e8b52d7bce0e879a016d7fdb1cce63b9bdb20ab6303a789f45328ce1bbd8927",
+  "SYN_E3_lower_high_s2_t6px_x7s": "829a5e869de2ce2840cde14537d94834c46d4c2d4c80050d6e39d5722e415ae6",
+  "SYN_E3_lower_high_s3_t6px12": "32a60c36396a212ef32cac8731106e54a917df5f3d4682a0979c1a5da99b23b7",
+  "SYN_E3_lower_high_s3_t6px12_x3s": "a5e7911aef9260316fac7d6a050ee24839e346b650585fe3546b274463b521a2",
+  "SYN_E3_lower_high_s3_t6px12_x7s": "80e6a25b08d08f01e24b91b2f3625e6d3058934864e4ce705d5b0b6bcd2bbeed",
+  "SYN_B1_jumpplank_high_s1_t6rpx": "c4f3c2bd96adf6ee4f3ac79d0464474af999f1995f319512cf1794d84853deff",
+  "SYN_B1_jumpplank_high_s1_t6rpx_x3s": "8debf886c1f1bdd6bd23c317dc4c7703891d1681657534347b9501734acf37e9",
+  "SYN_B1_jumpplank_high_s1_t6rpx_x7s": "65d4f73c66245d03247ce9f227642cc16d517dd230569cf10124e467b02341cd",
+  "SYN_B1_jumpplank_high_s2_t6rpx": "cbec7682b63abe8871badbabf92b7384ba4fa896ee46fb4f3e76aabf343c5779",
+  "SYN_B1_jumpplank_high_s2_t6rpx_x3s": "89f367e366093029898e7141e8b8a47d3c3b500d1d889cdf49d41fedd8680689",
+  "SYN_B1_jumpplank_high_s2_t6rpx_x7s": "b92f2c2ea08534a6b5898cd5f3e0994070373093f40ebeb35115012ac2e299c2",
+  "SYN_B1_jumpplank_high_s4_t6rpx12": "e06cfb67eb687a36efd608e04ec975cd45b6ddacf95e6afb3ba658b1a23e5f9c",
+  "SYN_B1_jumpplank_high_s4_t6rpx12_x3s": "3482b87140f2bc199833b35df3804879975750ef31561b4f036ef9fc1453b225",
+  "SYN_B1_jumpplank_high_s4_t6rpx12_x7s": "cc79237bdf7476d1a5e8513e5630f3ac7bbaaa7c896c930642c5aeb10b866803",
+  "SYN_B1_jumpplank_mid_s0_t6rpx": "5b5a94e50cbe657a87d687e49a8214cf4eae958c38bf5192bb082f9041fe167b",
+  "SYN_B1_jumpplank_mid_s0_t6rpx_x3s": "5062796625317e6eefa4a3e5810ffffc4848aae5979de546559b9482b37cd5ad",
+  "SYN_B1_jumpplank_mid_s0_t6rpx_x7s": "37afef5411fd9166487188b193dfe745f5c1554be8eafc947a4a1c52dadbd3e2",
+  "SYN_B1_jumpplank_mid_s1_t6rpx12": "7b2de0b1e82cc6812beca748a7fd3f969b746c11bdfad79b1a11066fa63cd00d",
+  "SYN_B1_jumpplank_mid_s1_t6rpx12_x3s": "a2d844f2061d8704bbce3c2f27b9a8bf3e2390cd4fbe0ed9d5dab2ccf5b929c8",
+  "SYN_B1_jumpplank_mid_s1_t6rpx12_x7s": "20605fe1dbf60f453e04fe0b5a9540056f2df9195742d3055261f891d865462d",
+  "SYN_E2_jumpback_mid_s0_t6px12": "7c35c61bab69012c2d017f5190b8cf2d8e8f9c6e46216a61948ed3e9418a4a34",
+  "SYN_E2_jumpback_mid_s0_t6px12_x3s": "06dace6722d638498767a3793e199e32eecd6dd68a918a976b5e1d956f95e123",
+  "SYN_E2_jumpback_mid_s0_t6px12_x7s": "3a4e52f07377926dcf7d0899d7e082ec0d0b855b75934f1260379c1576e5d0ab",
+  "SYN_E2_jumpback_mid_s0_t6rpx12": "e3e80587ad309712c4bc4134b6b252448acd56705f88ff2495c6997e03f08f7f",
+  "SYN_E2_jumpback_mid_s0_t6rpx12_x3s": "b6350b0ac7cee0d06b544ef5f461b5aaae3bd203b94de5461ed90e921e0c7e7c",
+  "SYN_E2_jumpback_mid_s0_t6rpx12_x7s": "5e3f01b7f38a1a4ff14f5212a0ef68978cc820b413c16b6bda6767df17105436",
+  "SYN_E2_jumpback_mid_s1_t6px": "6d519d724d5dde0d19ecfb7f437e6fd1a8155264ab523d377ef10af4f721dc93",
+  "SYN_E2_jumpback_mid_s1_t6px_x3s": "c2c263b919c7d44180ea4372703c0853c3bd912662378f177c3f88cc10482a6e",
+  "SYN_E2_jumpback_mid_s1_t6px_x7s": "69acded9dd08715bdfaa3ed0693e70429c96d52e052e41e48ad368a07a55e29a",
+  "SYN_E2_jumpback_mid_s1_t6px12": "e6b3b2e2a7e06363af852a8adc2c53f4f07224488811ce9106f6f688435550a9",
+  "SYN_E2_jumpback_mid_s1_t6px12_x3s": "599c7c1aee62ca5814dee7e22246f3c89dd0712abbd705e82e2b05600a539740",
+  "SYN_E2_jumpback_mid_s1_t6px12_x7s": "86d39dcb485ad0ed54abbfb485019d9d858458d09aff9e3f19b40e7b3956a747",
+  "SYN_E2_jumpback_mid_s1_t6rpx": "a5e70ac0ef8204cde245674b1c309ee6c0b6f35c18e6bd6346d271c77e876b6d",
+  "SYN_E2_jumpback_mid_s1_t6rpx_x3s": "f1e4df776f680beceb1c22f3839e73195f20a53b411846481b0a7d9ff80cf19b",
+  "SYN_E2_jumpback_mid_s1_t6rpx_x7s": "c733985df52236c3ca777c1344198646271bb20f3702e35526cd7654c095f373",
+  "SYN_E2_jumpback_mid_s1_t6rpx12": "6b0f5b55b877a714810809713551c4f3a9ad3f06c5698efd40ec29e9ab140b48",
+  "SYN_E2_jumpback_mid_s1_t6rpx12_x3s": "8b895dbb0897f814d8bec4f2e01b87fe5fcdcb7bbf98c5c367b43781a0ebc2b3",
+  "SYN_E2_jumpback_mid_s1_t6rpx12_x7s": "c14d22e6809d773c67a076997fa8d0967c0722fe24e084d57c97e0a47ef13aa6",
+  "SYN_E2_jumpback_mid_s2_t6px12": "babdd42eb283d3500c9d318ba6a852803219e07fec308b3ecff8cc63d07ed458",
+  "SYN_E2_jumpback_mid_s2_t6px12_x3s": "f63a4db03dd1dd134b028633e787f20200bc35cb2d9d067a28d99c8cdce27fc7",
+  "SYN_E2_jumpback_mid_s2_t6px12_x7s": "8e632c430601d466207ea5cd9d4e46651c5eaf1d7317508d4e28f6f36c436406",
+  "SYN_E2_jumpback_mid_s3_t6px12": "96501198a54a637ac52da7751c5548b682416adcf7b41e6e515a60539865f824",
+  "SYN_E2_jumpback_mid_s3_t6px12_x3s": "589d0360bb580cd158c04d53c3d922a1eea60b762166aa09c6848d28aa41bff3",
+  "SYN_E2_jumpback_mid_s3_t6px12_x7s": "ff95ceb1c84e168852fceca45adc657741a049c5999d7f4e37417b2ca3988cdc",
+  "SYN_E2_jumpback_mid_s4_t6px": "10f9579c03fafc6c61ec4fc96eec342a5e91194c0517cef8b3f5a2c862a18e58",
+  "SYN_E2_jumpback_mid_s4_t6px_x3s": "0ead8bb6432028e661e72c70feeda1d4d84cd3fbcfb62fab6416c192e1fbd5e1",
+  "SYN_E2_jumpback_mid_s4_t6px_x7s": "f33324308ff4ebbcaf7b2a26f3188e5187e7050c8277a2ebe9b69e90d2058ade",
+  "SYN_E2_jumpback_mid_s4_t6px12": "7c256a210f253a5e1323cc3db9aaa26210821420e30d3deda11798e5a9fc6aa3",
+  "SYN_E2_jumpback_mid_s4_t6px12_x3s": "e318f9b9cd93a22c6e0b8e5d6f7f71afd5a8a41cdaf3b6021848d4dd43608e2a",
+  "SYN_E2_jumpback_mid_s4_t6px12_x7s": "ccf8b1e8e2c3475be2ec9742a2bd738d7ab9ff87d24f5a8a27f2a88ac7adead3",
+  "SYN_E2_jumpback_mid_s4_t6rpx12": "06c8810f6d5a4be57b0f66a53f8bbe2443028c52281a04853b75ae9a00d1aa2d",
+  "SYN_E2_jumpback_mid_s4_t6rpx12_x3s": "550de5b1fe847a21c6face88853239f9ac2a25c676eebcb573c4a9a6b667b25c",
+  "SYN_E2_jumpback_mid_s4_t6rpx12_x7s": "08c00367cb4e7ace38a7d326c0df647554803dbe609948db839dee9f3ec66060",
+  "SYN_E5_floatdown_mid_s0_t6rpx12": "1b6fa0e4ee885b83f07ad87bb02569364314e9b7f0ef7096951b15bb233d7387",
+  "SYN_E5_floatdown_mid_s0_t6rpx12_x3s": "bf9dbbf5cbe2cac5a9bdca7efc0fb7d689fcf375bf3b0daf3c05031060dc14d9",
+  "SYN_E5_floatdown_mid_s0_t6rpx12_x7s": "a6f6e72c51d5609893d5fc251819f9367a0ebab81a0b8d174bfe7fdd5f5364d7"
+ },
+ "weights": {
+  "edges": {
+   "E1": {
+    "variants": 8,
+    "per_motion": 0.375
+   },
+   "E3": {
+    "variants": 3,
+    "per_motion": 1.0
+   },
+   "B1": {
+    "variants": 5,
+    "per_motion": 0.6
+   },
+   "E2": {
+    "variants": 11,
+    "per_motion": 0.2727272727272727
+   },
+   "E5": {
+    "variants": 1,
+    "per_motion": 3.0
+   }
+  },
+  "uniform_share_edges": 0.2113
+ },
+ "counts": {
+  "clips": 84,
+  "human_clips": 56,
+  "synthetic_clips": 28,
+  "groups": {
+   "single_leg": 13,
+   "inversion": 13,
+   "arm_balance": 9,
+   "connective": 21,
+   "edge": 28
+  },
+  "holds": 382,
+  "motions": 252,
+  "frames": 387588,
+  "inserted_frames": 55200,
+  "synthetic_motions": 84,
+  "synthetic_frames": 104652,
+  "synthetic_inserted_frames": 16800,
+  "synthetic_velocity_drift_max": {
+   "dof_vel": {
+    "mean": 2e-06,
+    "max": 4e-05
+   },
+   "rigid_body_vel": {
+    "mean": 0.0,
+    "max": 0.0
+   },
+   "rigid_body_ang_vel": {
+    "mean": 5e-06,
+    "max": 0.11738
+   }
+  },
+  "graph": {
+   "nodes": 123,
+   "edges": 201,
+   "segments": 1146,
+   "hold_ids": 382,
+   "max_segments": 9,
+   "max_segments_v2": 9,
+   "nodes_with_pair_conflicts": 5,
+   "new_edges": [
+    [
+     "Crane_Crow_Pose_or_Bakasana|L_HAND:G|R_HAND:G@prone",
+     "Four-Limbed_Staff_Pose_or_Chaturanga_Dandasana|L_FOOT:G|L_HAND:G|R_FOOT:G|R_HAND:G@prone"
+    ],
+    [
+     "Crane_Crow_Pose_or_Bakasana|L_HAND:G|R_HAND:G@prone",
+     "Handstand_pose_or_Adho_Mukha_Vrksasana|L_HAND:G|R_HAND:G@inverted"
+    ],
+    [
+     "Crane_Crow_Pose_or_Bakasana|L_HAND:G|R_HAND:G@prone",
+     "Plank_Pose_or_Kumbhakasana|L_FOOT:G|L_HAND:G|R_FOOT:G|R_HAND:G@prone"
+    ],
+    [
+     "Handstand_pose_or_Adho_Mukha_Vrksasana|L_HAND:G|R_HAND:G@inverted",
+     "Crane_Crow_Pose_or_Bakasana|L_HAND:G|R_HAND:G@prone"
+    ],
+    [
+     "Handstand_pose_or_Adho_Mukha_Vrksasana|L_HAND:G|R_HAND:G@inverted",
+     "Four-Limbed_Staff_Pose_or_Chaturanga_Dandasana|L_FOOT:G|L_HAND:G|R_FOOT:G|R_HAND:G@prone"
+    ]
+   ],
+   "s_to_d": {
+    "E1": {
+     "S": "Crane_Crow_Pose_or_Bakasana|L_HAND:G|R_HAND:G@prone",
+     "D": "Handstand_pose_or_Adho_Mukha_Vrksasana|L_HAND:G|R_HAND:G@inverted",
+     "in_v2": false,
+     "synthetic_occurrences": 24,
+     "motions": 24,
+     "pass": true
+    },
+    "E3": {
+     "S": "Handstand_pose_or_Adho_Mukha_Vrksasana|L_HAND:G|R_HAND:G@inverted",
+     "D": "Crane_Crow_Pose_or_Bakasana|L_HAND:G|R_HAND:G@prone",
+     "in_v2": false,
+     "synthetic_occurrences": 9,
+     "motions": 9,
+     "pass": true
+    },
+    "B1": {
+     "S": "Crane_Crow_Pose_or_Bakasana|L_HAND:G|R_HAND:G@prone",
+     "D": "Plank_Pose_or_Kumbhakasana|L_FOOT:G|L_HAND:G|R_FOOT:G|R_HAND:G@prone",
+     "in_v2": false,
+     "synthetic_occurrences": 15,
+     "motions": 15,
+     "pass": true
+    },
+    "E2": {
+     "S": "Crane_Crow_Pose_or_Bakasana|L_HAND:G|R_HAND:G@prone",
+     "D": "Four-Limbed_Staff_Pose_or_Chaturanga_Dandasana|L_FOOT:G|L_HAND:G|R_FOOT:G|R_HAND:G@prone",
+     "in_v2": false,
+     "synthetic_occurrences": 33,
+     "motions": 33,
+     "pass": true
+    },
+    "E5": {
+     "S": "Handstand_pose_or_Adho_Mukha_Vrksasana|L_HAND:G|R_HAND:G@inverted",
+     "D": "Four-Limbed_Staff_Pose_or_Chaturanga_Dandasana|L_FOOT:G|L_HAND:G|R_FOOT:G|R_HAND:G@prone",
+     "in_v2": false,
+     "synthetic_occurrences": 3,
+     "motions": 3,
+     "pass": true
+    }
+   },
+   "v2_segment_counts": {
+    "2": 6,
+    "3": 39,
+    "5": 30,
+    "4": 45,
+    "6": 18,
+    "7": 12,
+    "9": 15,
+    "8": 3
+   }
+  },
+  "tables": {
+   "swing_zone_frames": 427680,
+   "lean_gated_segments": 207,
+   "cop_valid_segments": 768,
+   "share_valid_segments": 735,
+   "synthetic_swing_zone_frames": 81826,
+   "synthetic_velocity_labels": 81826,
+   "synthetic_lean_gated_segments": 117
+  },
+  "sidecar": {
+   "holds": 382,
+   "roles": {
+    "required_support": {
+     "ground": 801,
+     "pair": 0
+    },
+    "required_touch": {
+     "ground": 307,
+     "pair": 165
+    },
+    "forbidden_support": {
+     "ground": 28,
+     "pair": 0
+    },
+    "allowed": {
+     "ground": 0,
+     "pair": 526
+    },
+    "incidental": {
+     "ground": 0,
+     "pair": 255
+    },
+    "unresolved": {
+     "ground": 0,
+     "pair": 78
+    },
+    "unspecified": {
+     "ground": 0,
+     "pair": 197
+    }
+   },
+   "configured_body_body": 165,
+   "critical": 161,
+   "restored": 4,
+   "masked": {
+    "R_HAND:G": 1
+   },
+   "flags": {
+    "fit_closer": 24,
+    "critical_not_realised": 0,
+    "critical_partly_realised": 1,
+    "statue_moved_single_leg": 17,
+    "pose_preparation": 30,
+    "jerk_in_window": 0,
+    "over_edit_budget": 0,
+    "not_same_pose_unadmitted": 0
+   },
+   "pose_roles": {
+    "family": 127,
+    "standing": 132,
+    "variant": 77,
+    "preparation": 30,
+    "undecided": 16
+   },
+   "known_free_zone_holds": 4619,
+   "free_unknown": {
+    "220923_Standing_Split_pose_or_Urdhva_Prasarita_Eka_Padasana_-a@540": {
+     "R_FOOT": 0.21
+    },
+    "220923_Standing_big_toe_hold_pose_or_Utthita_Padangusthasana-a@950": {
+     "L_THIGH": 0.911
+    },
+    "220923_Garland_Pose_or_Malasana_-a@334": {
+     "PELVIS": 0.644
+    }
+   },
+   "frame_pair_partly_realised": {
+    "220923_Supported_Shoulderstand_pose_or_Salamba_Sarvangasana_-a@914:TRUNK+L_HAND": 0.471
+   },
+   "synthetic_x0": {
+    "holds": 112,
+    "critical": 102,
+    "restored": 0,
+    "known_free_zone_holds": 1386,
+    "frame_pair_partly_realised": {}
+   },
+   "real_frame_gap_vs_capture_max_m": 2.198233839401098e-07
+  },
+  "plans": 163,
+  "edge_plans": {
+   "count": 163,
+   "edge_plans": [
+    "edge_B1.json",
+    "edge_E1.json",
+    "edge_E2.json",
+    "edge_E3.json",
+    "edge_E5.json",
+    "fork_edge_B1.json",
+    "fork_edge_E1.json",
+    "fork_edge_E2.json",
+    "fork_edge_E3.json",
+    "fork_edge_E5.json",
+    "nohijack_B1.json",
+    "nohijack_E1.json",
+    "nohijack_E2.json",
+    "nohijack_E3.json",
+    "nohijack_E5.json"
+   ],
+   "panel": [
+    "edge_B1.json",
+    "edge_E1.json",
+    "edge_E2.json",
+    "edge_E3.json",
+    "edge_E5.json",
+    "nohijack_B1.json",
+    "nohijack_E1.json",
+    "nohijack_E2.json",
+    "nohijack_E3.json",
+    "nohijack_E5.json"
+   ],
+   "picks": {
+    "E1": "SYN_E1_press_high_s0_t6px",
+    "E3": "SYN_E3_lower_high_s3_t6px12",
+    "B1": "SYN_B1_jumpplank_high_s1_t6rpx",
+    "E2": "SYN_E2_jumpback_mid_s0_t6px12",
+    "E5": "SYN_E5_floatdown_mid_s0_t6rpx12"
+   },
+   "total_s": {
+    "edge_B1": 8.6,
+    "edge_E1": 11.5,
+    "edge_E2": 8.07,
+    "edge_E3": 11.0,
+    "edge_E5": 8.65,
+    "fork_edge_B1": 15.35,
+    "fork_edge_E1": 18.25,
+    "fork_edge_E2": 14.82,
+    "fork_edge_E3": 20.5,
+    "fork_edge_E5": 18.15,
+    "nohijack_B1": 10.22,
+    "nohijack_E1": 10.22,
+    "nohijack_E2": 10.22,
+    "nohijack_E3": 9.95,
+    "nohijack_E5": 9.95
+   }
+  }
+ },
+ "synthetic_lineage": {
+  "SYN_E1_press_high_s0_t6px": {
+   "real_pos_m": 5.960464477539062e-07,
+   "real_dof_exact": true,
+   "real_vel": 0.00184,
+   "ang_vel_horizon_ties": 1,
+   "synthetic_pos_m": 4.4889748096466064e-07,
+   "synthetic_dof_exact": true,
+   "fk_round_trip_m": 4.2215660567279656e-07,
+   "windows_trimmed": []
+  },
+  "SYN_E1_press_high_s2_t6px": {
+   "real_pos_m": 5.960464477539062e-07,
+   "real_dof_exact": true,
+   "real_vel": 0.00184,
+   "ang_vel_horizon_ties": 1,
+   "synthetic_pos_m": 5.960464477539062e-07,
+   "synthetic_dof_exact": true,
+   "fk_round_trip_m": 4.2215660567279656e-07,
+   "windows_trimmed": []
+  },
+  "SYN_E1_press_high_s3_t6px": {
+   "real_pos_m": 5.960464477539062e-07,
+   "real_dof_exact": true,
+   "real_vel": 0.00184,
+   "ang_vel_horizon_ties": 1,
+   "synthetic_pos_m": 4.76837158203125e-07,
+   "synthetic_dof_exact": true,
+   "fk_round_trip_m": 4.2215660567279656e-07,
+   "windows_trimmed": []
+  },
+  "SYN_E1_press_high_s4_t6px": {
+   "real_pos_m": 5.960464477539062e-07,
+   "real_dof_exact": true,
+   "real_vel": 0.00184,
+   "ang_vel_horizon_ties": 1,
+   "synthetic_pos_m": 3.725290298461914e-07,
+   "synthetic_dof_exact": true,
+   "fk_round_trip_m": 4.2215660567279656e-07,
+   "windows_trimmed": []
+  },
+  "SYN_E1_press_mid_s0_t6px": {
+   "real_pos_m": 5.960464477539062e-07,
+   "real_dof_exact": true,
+   "real_vel": 0.00184,
+   "ang_vel_horizon_ties": 1,
+   "synthetic_pos_m": 4.76837158203125e-07,
+   "synthetic_dof_exact": true,
+   "fk_round_trip_m": 4.2215660567279656e-07,
+   "windows_trimmed": []
+  },
+  "SYN_E1_press_mid_s2_t6px": {
+   "real_pos_m": 5.960464477539062e-07,
+   "real_dof_exact": true,
+   "real_vel": 0.00184,
+   "ang_vel_horizon_ties": 1,
+   "synthetic_pos_m": 3.8929283618927e-07,
+   "synthetic_dof_exact": true,
+   "fk_round_trip_m": 4.363295316167637e-07,
+   "windows_trimmed": []
+  },
+  "SYN_E1_press_mid_s3_t6px": {
+   "real_pos_m": 5.960464477539062e-07,
+   "real_dof_exact": true,
+   "real_vel": 0.00184,
+   "ang_vel_horizon_ties": 1,
+   "synthetic_pos_m": 3.5762786865234375e-07,
+   "synthetic_dof_exact": true,
+   "fk_round_trip_m": 4.2215660567279656e-07,
+   "windows_trimmed": []
+  },
+  "SYN_E1_press_mid_s4_t6px": {
+   "real_pos_m": 5.960464477539062e-07,
+   "real_dof_exact": true,
+   "real_vel": 0.00184,
+   "ang_vel_horizon_ties": 1,
+   "synthetic_pos_m": 5.122274160385132e-07,
+   "synthetic_dof_exact": true,
+   "fk_round_trip_m": 4.2215660567279656e-07,
+   "windows_trimmed": []
+  },
+  "SYN_E3_lower_high_s0_t6px": {
+   "real_pos_m": 6.258487701416016e-07,
+   "real_dof_exact": true,
+   "real_vel": 0.006025,
+   "ang_vel_horizon_ties": 0,
+   "synthetic_pos_m": 5.662441253662109e-07,
+   "synthetic_dof_exact": true,
+   "fk_round_trip_m": 4.1330544087170296e-07,
+   "windows_trimmed": []
+  },
+  "SYN_E3_lower_high_s2_t6px": {
+   "real_pos_m": 6.258487701416016e-07,
+   "real_dof_exact": true,
+   "real_vel": 0.006025,
+   "ang_vel_horizon_ties": 0,
+   "synthetic_pos_m": 5.681067705154419e-07,
+   "synthetic_dof_exact": true,
+   "fk_round_trip_m": 4.1330544087170296e-07,
+   "windows_trimmed": []
+  },
+  "SYN_E3_lower_high_s3_t6px12": {
+   "real_pos_m": 6.258487701416016e-07,
+   "real_dof_exact": true,
+   "real_vel": 0.006025,
+   "ang_vel_horizon_ties": 0,
+   "synthetic_pos_m": 5.681067705154419e-07,
+   "synthetic_dof_exact": true,
+   "fk_round_trip_m": 4.1330544087170296e-07,
+   "windows_trimmed": []
+  },
+  "SYN_B1_jumpplank_high_s1_t6rpx": {
+   "real_pos_m": 4.355691980428844e-07,
+   "real_dof_exact": true,
+   "real_vel": 0.006475,
+   "ang_vel_horizon_ties": 0,
+   "synthetic_pos_m": 2.384185791015625e-07,
+   "synthetic_dof_exact": true,
+   "fk_round_trip_m": 3.569256181168434e-07,
+   "windows_trimmed": []
+  },
+  "SYN_B1_jumpplank_high_s2_t6rpx": {
+   "real_pos_m": 4.355691980428844e-07,
+   "real_dof_exact": true,
+   "real_vel": 0.006475,
+   "ang_vel_horizon_ties": 0,
+   "synthetic_pos_m": 2.5704503059387207e-07,
+   "synthetic_dof_exact": true,
+   "fk_round_trip_m": 3.569256181168434e-07,
+   "windows_trimmed": []
+  },
+  "SYN_B1_jumpplank_high_s4_t6rpx12": {
+   "real_pos_m": 4.355691980428844e-07,
+   "real_dof_exact": true,
+   "real_vel": 0.006475,
+   "ang_vel_horizon_ties": 0,
+   "synthetic_pos_m": 2.5331974029541016e-07,
+   "synthetic_dof_exact": true,
+   "fk_round_trip_m": 3.569256181168434e-07,
+   "windows_trimmed": []
+  },
+  "SYN_B1_jumpplank_mid_s0_t6rpx": {
+   "real_pos_m": 4.355691980428844e-07,
+   "real_dof_exact": true,
+   "real_vel": 0.006475,
+   "ang_vel_horizon_ties": 0,
+   "synthetic_pos_m": 2.384185791015625e-07,
+   "synthetic_dof_exact": true,
+   "fk_round_trip_m": 3.569256181168434e-07,
+   "windows_trimmed": []
+  },
+  "SYN_B1_jumpplank_mid_s1_t6rpx12": {
+   "real_pos_m": 4.355691980428844e-07,
+   "real_dof_exact": true,
+   "real_vel": 0.006475,
+   "ang_vel_horizon_ties": 0,
+   "synthetic_pos_m": 2.682209014892578e-07,
+   "synthetic_dof_exact": true,
+   "fk_round_trip_m": 3.569256181168434e-07,
+   "windows_trimmed": []
+  },
+  "SYN_E2_jumpback_mid_s0_t6px12": {
+   "real_pos_m": 4.3213367462158203e-07,
+   "real_dof_exact": true,
+   "real_vel": 0.003162,
+   "ang_vel_horizon_ties": 1,
+   "synthetic_pos_m": 3.5762786865234375e-07,
+   "synthetic_dof_exact": true,
+   "fk_round_trip_m": 4.630200647892657e-07,
+   "windows_trimmed": []
+  },
+  "SYN_E2_jumpback_mid_s0_t6rpx12": {
+   "real_pos_m": 4.3213367462158203e-07,
+   "real_dof_exact": true,
+   "real_vel": 0.003162,
+   "ang_vel_horizon_ties": 1,
+   "synthetic_pos_m": 2.384185791015625e-07,
+   "synthetic_dof_exact": true,
+   "fk_round_trip_m": 4.630200647892657e-07,
+   "windows_trimmed": []
+  },
+  "SYN_E2_jumpback_mid_s1_t6px": {
+   "real_pos_m": 4.3213367462158203e-07,
+   "real_dof_exact": true,
+   "real_vel": 0.003162,
+   "ang_vel_horizon_ties": 1,
+   "synthetic_pos_m": 2.384185791015625e-07,
+   "synthetic_dof_exact": true,
+   "fk_round_trip_m": 4.630200647892657e-07,
+   "windows_trimmed": []
+  },
+  "SYN_E2_jumpback_mid_s1_t6px12": {
+   "real_pos_m": 4.3213367462158203e-07,
+   "real_dof_exact": true,
+   "real_vel": 0.003162,
+   "ang_vel_horizon_ties": 1,
+   "synthetic_pos_m": 2.384185791015625e-07,
+   "synthetic_dof_exact": true,
+   "fk_round_trip_m": 4.630200647892657e-07,
+   "windows_trimmed": []
+  },
+  "SYN_E2_jumpback_mid_s1_t6rpx": {
+   "real_pos_m": 4.3213367462158203e-07,
+   "real_dof_exact": true,
+   "real_vel": 0.003162,
+   "ang_vel_horizon_ties": 1,
+   "synthetic_pos_m": 2.7567148208618164e-07,
+   "synthetic_dof_exact": true,
+   "fk_round_trip_m": 4.630200647892657e-07,
+   "windows_trimmed": []
+  },
+  "SYN_E2_jumpback_mid_s1_t6rpx12": {
+   "real_pos_m": 4.3213367462158203e-07,
+   "real_dof_exact": true,
+   "real_vel": 0.003162,
+   "ang_vel_horizon_ties": 1,
+   "synthetic_pos_m": 2.384185791015625e-07,
+   "synthetic_dof_exact": true,
+   "fk_round_trip_m": 4.630200647892657e-07,
+   "windows_trimmed": []
+  },
+  "SYN_E2_jumpback_mid_s2_t6px12": {
+   "real_pos_m": 4.3213367462158203e-07,
+   "real_dof_exact": true,
+   "real_vel": 0.003162,
+   "ang_vel_horizon_ties": 1,
+   "synthetic_pos_m": 2.682209014892578e-07,
+   "synthetic_dof_exact": true,
+   "fk_round_trip_m": 4.630200647892657e-07,
+   "windows_trimmed": []
+  },
+  "SYN_E2_jumpback_mid_s3_t6px12": {
+   "real_pos_m": 4.3213367462158203e-07,
+   "real_dof_exact": true,
+   "real_vel": 0.003162,
+   "ang_vel_horizon_ties": 1,
+   "synthetic_pos_m": 2.384185791015625e-07,
+   "synthetic_dof_exact": true,
+   "fk_round_trip_m": 4.630200647892657e-07,
+   "windows_trimmed": []
+  },
+  "SYN_E2_jumpback_mid_s4_t6px": {
+   "real_pos_m": 4.3213367462158203e-07,
+   "real_dof_exact": true,
+   "real_vel": 0.003162,
+   "ang_vel_horizon_ties": 1,
+   "synthetic_pos_m": 2.384185791015625e-07,
+   "synthetic_dof_exact": true,
+   "fk_round_trip_m": 4.630200647892657e-07,
+   "windows_trimmed": []
+  },
+  "SYN_E2_jumpback_mid_s4_t6px12": {
+   "real_pos_m": 4.3213367462158203e-07,
+   "real_dof_exact": true,
+   "real_vel": 0.003162,
+   "ang_vel_horizon_ties": 1,
+   "synthetic_pos_m": 2.384185791015625e-07,
+   "synthetic_dof_exact": true,
+   "fk_round_trip_m": 4.630200647892657e-07,
+   "windows_trimmed": []
+  },
+  "SYN_E2_jumpback_mid_s4_t6rpx12": {
+   "real_pos_m": 4.3213367462158203e-07,
+   "real_dof_exact": true,
+   "real_vel": 0.003162,
+   "ang_vel_horizon_ties": 1,
+   "synthetic_pos_m": 2.4586915969848633e-07,
+   "synthetic_dof_exact": true,
+   "fk_round_trip_m": 4.630200647892657e-07,
+   "windows_trimmed": []
+  },
+  "SYN_E5_floatdown_mid_s0_t6rpx12": {
+   "real_pos_m": 6.258487701416016e-07,
+   "real_dof_exact": true,
+   "real_vel": 0.003364,
+   "ang_vel_horizon_ties": 1,
+   "synthetic_pos_m": 3.5762786865234375e-07,
+   "synthetic_dof_exact": true,
+   "fk_round_trip_m": 4.1330544087170296e-07,
+   "windows_trimmed": []
+  }
+ },
+ "training": {
+  "robot": "smpl_yogi_v2",
+  "longest_motion_s": 62.967,
+  "eval_max_steps": 1890,
+  "note": "the full-clip evaluator must cover the longest motion: eval_max_steps >= this"
+ },
+ "checks": {
+  "passed": [
+   "release v2 passes its own identity checks and its artifacts are its record's: 26 passed, failed [], moved []",
+   "manifest: release v2's (every field, its clips first), then the kept synthetic entries in the record's order: 56 + 28 clips",
+   "sources: release v2's references and ports; the synthetic record's clip files",
+   "extended clips: release v2's motions in its order, then every kept synthetic clip as x0, x3s, x7s: 252 motions",
+   "human slice: the extended-manifest entries are release v2's",
+   "human slice: the motion files are release v2's, byte for byte",
+   "human slice: lineage.npz keeps release v2's arrays",
+   "every synthetic variant is its x0 spliced at S (kinematics, plant, fps, lineage index/inserted)",
+   "pressure: zero with every validity column 0 on every frame of every synthetic motion",
+   "the synthetic x0 motions are R2's files byte for byte",
+   "every synthetic variant's holds are its clip's, re-timed, hold ids kept",
+   "lineage.npz: each synthetic variant's R2 lineage read through its index, and nothing else added",
+   "hold extension's velocity guard on the synthetic clips (mean <= 0.02 per field): {'dof_vel': (2e-06, 4e-05), 'rigid_body_vel': (0.0, 0.0), 'rigid_body_ang_vel': (5e-06, 0.11738)}",
+   "package order is the extended manifest's",
+   "package frame counts, fps and plant",
+   "package equals the synthetic motions frame by frame, the pressure channels included",
+   "human slice: package entries are release v2's (every per-motion value and per-frame slice)",
+   "package weights: 1.0 per human motion, 3/n per motion of an edge with n kept variants (D5), the yaml's: {'E1': 0.375, 'E3': 1.0, 'B1': 0.6, 'E2': 0.2727, 'E5': 3.0}; edges 45.000 of 213.000",
+   "graph v2 built from this package and manifest",
+   "graph motion order, frames and fps are the package's",
+   "graph pair and orientation vocabularies are the extractor's and release v2's, in order",
+   "graph node-key set equals release v2's (no node id moves): 123 nodes",
+   "graph segments are the manifest's holds (hold id, times, commanded contacts, node key)",
+   "A4: every commanded ground set is the configured supports minus the gate's masks (inherited ids)",
+   "manual goals resolve the side-specific segment (every hold's pose -> its own contact set): 1146 segments",
+   "human slice: graph rows and node tables are release v2's (after padding); SYN_ hold ids sort after v2's",
+   "human slice: the graph description's human clips, node keys and goal pairs, and every v2 edge's human occurrences are release v2's",
+   "each kept edge's S -> D is present once per synthetic motion, and no other edge is new: E1: 24/24; E3: 9/9; B1: 15/15; E2: 33/33; E5: 3/3; new 5",
+   "tables v2 built with this graph, package and manifest",
+   "tables keyed to the package (names, frames, fps), the robot's body order and plant v2",
+   "tables' pair names, zone order and segment layout are the graph's",
+   "no pressure-sourced swing label on an inserted frame",
+   "synthetic motions took the no-pressure path: velocity labels only, no COP or share signature: 81826 synthetic swing zone-frames",
+   "human slice: table rows, body constants, rules and parameters are release v2's (after padding)",
+   "sidecar compiled for this graph, package and manifest",
+   "sidecar names, pairs, hold ids and frames are the graph's",
+   "sidecar: commanded = configured - masks = the graph's seg_contact",
+   "sidecar counts equal the labels' and the gate's over the x0 holds (synthetic: the inherited hold ids): critical 161, restored 4, masks {'R_HAND:G': 1}",
+   "human slice: sidecar rows, vocabularies and rules, and release v2's sidecar summary (after padding)",
+   "inherited labels: every synthetic segment's sidecar row equals its inherits hold's",
+   "sidecar frames of the synthetic motions: capture v4 on real frames, the planned brace and the clip's geometry on synthetic and blend frames, x3s/x7s through the index",
+   "no synthetic frame's planned ground zone is known-free in the hold the schedule commands there: 0 conflicts",
+   "runtime loaders accept the graph, tables and sidecar",
+   "probe plans resolve against the release's graph and library: 163 plans; ",
+   "family plans: release v2's, file for file (no synthetic clip takes a family over): 148 plans",
+   "edge plans: edge_, nohijack_ and fork_edge_ per kept edge, R4a's (plan clip by its rule): E1 <- SYN_E1_press_high_s0_t6px, E3 <- SYN_E3_lower_high_s3_t6px12, B1 <- SYN_B1_jumpplank_high_s1_t6rpx, E2 <- SYN_E2_jumpback_mid_s0_t6px12, E5 <- SYN_E5_floatdown_mid_s0_t6rpx12",
+   "the plan-clip rule reproduces the card's R4a picks (where they are kept): 5 of 5 card picks kept",
+   "edge plans resolve with SequenceViz's loader and keep every goal within the panel's 24 s",
+   "names: no synthetic stem contains a real stem or ends in _x<digits>s; the substring collisions are the synthetic record's among the kept clips: 9 collisions",
+   "synthetic lineage: real frames = release v2 after the transform, transition frames = the admitted variant, FK, plant, zero pressure, the windows' content (R2's checks)",
+   "inherited labels: every synthetic hold's copied fields (name, pairs, orientation, labels, gate, ...) equal its inherits hold's, and each frame_hold is that hold's own exemplar",
+   "plant: every synthetic motion carries plant v2's sha256 and every human motion is release v2's file (on plant v2 by v2's own check); the package, graph, tables and sidecar are checked above",
+   "record: training.eval_max_steps covers the longest motion (the synthetic ones included): longest 62.967 s (synthetic 27.367 s) -> 1890 steps"
+  ],
+  "failed": []
+ },
+ "calibration_c3": {
+  "rules": {
+   "absolute_newtons": "column 1 >= 0.9",
+   "shares": "column 2 >= 0.9",
+   "cop": "column 0 or column 2 >= 0.9",
+   "unloaded": "zone's lowest patch point within 0.06 m of the floor and over the mat (+0.02 m)",
+   "inserted_frames": "ground_reaction_valid 0: no pressure label, no signature frame"
+  },
+  "all_motions": {
+   "frames": 387588,
+   "labels": 427680,
+   "velocity_only": 404169,
+   "pressure_only": 17649,
+   "both": 5862,
+   "vetoed": 24,
+   "labels_v1_rule": 438175,
+   "pressure_only_v1_rule": 28147,
+   "vetoed_v1_rule": 27,
+   "unloaded_invisible_frames": 6807
+  },
+  "baselines_180_motions": {
+   "ftC": {
+    "velocity_only": 342170,
+    "pressure_only": 18254,
+    "vetoed": 129,
+    "frames": 309528
+   },
+   "ftR": {
+    "velocity_only": 338561,
+    "pressure_only": 50824,
+    "vetoed": 168,
+    "frames": 309528
+   }
+  },
+  "x0_against_human_evidence": {
+   "velocity": {
+    "zone_frames": 107457,
+    "human_separated": 107325,
+    "human_contact": 117,
+    "human_unknown": 15,
+    "mat_visible": 629,
+    "mat_over_14n": 25,
+    "mat_over_70n": 0,
+    "human_contact_share": 0.0011,
+    "human_separated_share": 0.9988,
+    "mat_over_14n_share_of_visible": 0.0397
+   },
+   "pressure": {
+    "zone_frames": 5883,
+    "human_separated": 1039,
+    "human_contact": 4844,
+    "human_unknown": 0,
+    "mat_visible": 5883,
+    "mat_over_14n": 0,
+    "mat_over_70n": 0,
+    "human_contact_share": 0.8234,
+    "human_separated_share": 0.1766,
+    "mat_over_14n_share_of_visible": 0.0
+   },
+   "both": {
+    "zone_frames": 1954,
+    "human_separated": 1786,
+    "human_contact": 168,
+    "human_unknown": 0,
+    "mat_visible": 1954,
+    "mat_over_14n": 0,
+    "mat_over_70n": 0,
+    "human_contact_share": 0.086,
+    "human_separated_share": 0.914,
+    "mat_over_14n_share_of_visible": 0.0
+   }
+  },
+  "human_load_on_labelled_feet_hands_n": {
+   "frames": 8141,
+   "p50": 0.0,
+   "p90": 3.23,
+   "p99": 12.9,
+   "max": 30.82
+  },
+  "zones_note": "pressure rule on ['L_FOOT', 'R_FOOT', 'L_HAND', 'R_HAND']; zone bodies {'L_FOOT': ['L_Ankle', 'L_Toe'], 'R_FOOT': ['R_Ankle', 'R_Toe'], 'L_HAND': ['L_Wrist', 'L_Hand'], 'R_HAND': ['R_Wrist', 'R_Hand']}",
+  "synthetic_motions": {
+   "motions": 84,
+   "labels": 81826,
+   "velocity_only": 81826,
+   "pressure": 0
+  },
+  "note": "x0_against_human_evidence and human_load_on_labelled_feet_hands_n are over the human x0 stems (release v2's); all_motions counts every v3 motion, the synthetic ones included"
+ },
+ "seconds": 88.0
+}
