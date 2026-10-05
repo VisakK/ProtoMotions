@@ -1060,8 +1060,9 @@ minus the gate's exclusions and masks), the Step 3 motions and plant v2. Then tr
 **Acceptance.** BUILD_PLAN Step 9's exit tests on the new release, and a first expert whose single-leg and
 headstand clips do not regress against the ftC-era numbers (probe: single-leg 0.998, inversion 0.998 on ftC).
 
-**What Step 5 found (2026-10-01).** In progress. BUILD_PLAN Step 9's exit is met and the release is recorded; the
-fresh expert is training. The expert half of the acceptance, the evaluation and Pass D wait for checkpoints.
+**What Step 5 found (2026-10-01).** In progress. BUILD_PLAN Step 9's exit is met and the release is recorded. The
+fresh expert was trained to epoch 15,500 and stopped on 2026-10-03, then evaluated: single-leg met, inversion not
+(see "Stopped at epoch 15,500" under Training). Pass D is still open.
 - **The release** is `holds_repaired_ftC_posefix.release_v2.a2dda5d2ac`.
   - Record: `data/reference_curation/releases/<id>.json` (+ `.md`), with every artifact's sha256.
   - Heavy files: `data/smpl/reference_curation/<id>/`, 1.4 GB. They are untracked, like every corpus in `data/smpl/`.
@@ -1233,6 +1234,31 @@ fresh expert is training. The expert half of the acceptance, the evaluation and 
     - Realisability, on the only rollout library so far (epoch 500; the next is at 2,000): float 12.6 % of
       commanded supports, slide p90 0.96 cm/s, COM–COP p50 4.3 cm. Only tracked frames count: 19.7 % of the
       rollout frames, 0.23 per motion. This is the from-scratch baseline the later checkpoints are read against.
+  - **Stopped at epoch 15,500 (2026-10-03), at the user's request, and evaluated.** The evaluation is
+    [`../expert56_v2_e15500/README.MD`](../expert56_v2_e15500/README.MD).
+    - How it was stopped: `kill -9` right after the epoch-15,500 checkpoint, evaluation and viz panel.
+      `last.ckpt` and `score_based.ckpt` hold the same weights as `epoch_15500.ckpt`. Re-running the launcher
+      resumes from them.
+    - **Acceptance: single-leg met, inversion not.** Single-leg 1.000 (0.983 ± 0.031 over 13,000–15,500); inversion
+      0.923 (0.878 ± 0.024). Arm balance 0.977 and connective 0.983 are above ft_c's 0.899 and 0.951. Jerk is 71.9
+      against ft_c's 87.1; drag 38.4 J against 23.3. 15,500 is the best evaluation for every group, within 0.003.
+      `eval_checkpoint.py` re-run standalone on the same weights reproduces every group within 0.001. The large
+      swings between evaluations (13 of 56 clips by more than 0.2) are therefore the policy changing between
+      checkpoints, not evaluation noise.
+    - **Six clips fail** (success 0.893): Handstand -a, Plow -b, Scorpion -a/-b, Shoulderstand -a, Upward Plank -a.
+      - Most fail at the **exit off the floor**: the pose is held, the get-up is not.
+      - 3 of the 6 soft-support clips fail, against 6 of the other 50.
+      - Scorpion -b still asks for the scorpion that gate v2 excluded as beyond the plant.
+    - **The evaluator's support rule cannot see support substitutions.**
+      - Ten holds in seven clips put down a zone the reference keeps at least 4 cm up: Eagle's toe-tip kickstand,
+        Bhujapidasana's and the Side Crows' feet, Peacock -a's head.
+      - The rule registers a violation in one of those clips. The reasons: "down" is a body origin below 8 cm, and a
+        zone is checked only if the reference keeps it above 15 cm.
+      - Commanded supports are realised on 89 % of tracked holds (preparation holds 67 %).
+    - Realisability at 15,500: float 2.4 %, slide below the reference's, COM–COP p50 3.6 cm against the reference's
+      1.4 cm.
+    - The weight-0 pair-target rate reached 42 % of eligible frames.
+    - 20 IsaacLab videos are in `output/renderings/expert56_v2_e15500/`.
 - **Decisions, with the measurement behind each.**
   - **The attribution chain is not re-run on the variants**, a deviation from "Carried in from Step 4".
     `add_pressure_to_motions.py` pairs a motion's frame i with capture frame i, so on a variant every frame after
@@ -1277,7 +1303,7 @@ fresh expert is training. The expert half of the acceptance, the evaluation and 
 | 2: USD, robot config, plant identity | done | 2026-09-30 | USD `smpl_yogi03596_v2_usd/` (`build_plant_v2_usd.py`, record `usd_v2.json`); robot `smpl_yogi_v2`; PhysX sanity `reference_curation.plant_v2_physx` (`physx_smpl_yogi_v2.json`, v1 baseline `physx_smpl_yogi.json`); `protomotions/utils/plant_identity.py`; 22 tests. One articulation root (Pelvis); colliders ≤ 8e-6 mm / 5e-6°; PhysX 74.000 kg, every body ≤ 2.6e-7; limits ≤ 8e-8 rad; wrist / hand 30 / 15 N·m; neck 1158 / 116; FK 418 frames ≤ 1.4e-6 m; default and 136 standing resets: no launch; v1 / legacy / mixed data raises `PlantMismatchError`. Capture / statics loader checks go to Step 4's new store versions. See "What Step 2 found". |
 | 3: references on plant v2 | done; 9 of 10 acceptance tests met (open: worst-body p50) | 2026-09-30 | Writer `reference_curation/fit_writer.py` (`fit_v2.v1.b8f5e86fc9`, 56 clips; Cockerel -b, Scale -a, big toe hold -c and, by the user's decision after the first run, Firefly -b dropped); retarget `reference_curation/retarget_v2.py` (`…labels_v1_1.3b3fc75828.retarget_v2.e4278ada02`, 14 min on 16 workers; the other 56 motions are byte-identical to the 57-clip run's); PhysX `retarget_v2_physx.py`; 11 tests (`test_retarget_v2.py`). Fit → retarget: frames past the box 26,532 → 0; labelled floats 48 → 1 of 864; crowns 21/21; touch penetration 43.0 % → 0.01 % (skin 15.3 %); slide p90 2.96 → 2.99 cm/s, > 5 cm/s 6.7 → 6.9 %; new jerk frames 0; overlaps > 1 cm 63,201 → 604, 0 new; mean displacement p50 1.37 cm (Step 8 3.61), **worst body p50 10.6 cm (Step 8 15.5; soft supports, poses past the box, palm loading)**; COM–COP p50 1.10 cm. PhysX: library loads on v2, v1 refused, FK 1.2e-6 m on 701 frames, 0/701 resets launch (control 3/3). See "What Step 3 found". |
 | 4: reviewer re-run, labels v2, gate v2 | done; all 5 acceptance tests met | 2026-10-01 | Modules `reference_curation/{pressure_v2, capture_v4, audit_v2, witness_v2, statics_v2, render_v4, packets_v4, calibrate_v4, b6, labels_v2, labels_v2_restore, edits_v2, gate_v2}.py`; 59 tests (`test_step4_{evidence,rules,review,final}.py`). Labels v2 `…labels_v2.e03994ad3c` (statics `…labels_v2.46024365fa.statics_v2.aab60189f4`); gate v2 `…gate_v2.b2f76f2606`: 270 / 280 holds released (204 pass, 65 flagged, 1 masked), 10 excluded (8 transitions, 2 Scorpion -b beyond the plant). Mat explained ≥ 90 % on 99.9 % of loaded frames; labelled floats 434 → 1 / 864; unexplained-load holds 33 → 0; LP-holdable 277 / 280; statue (D4) 198 / 277. Pass A v4 admits float, floor and left/right. B6 admitted (0.933 on 135 claims): 59 critical pairs in 44 holds, plus 4 restored by statics (Peacock -a@788); 0 configured pairs unrealised. Pass C: 0 / 272 called a different pose, 24 `fit_closer`. Reviewer $106.94 (plan ~$90). See "What Step 4 found". |
-| 5: release and fresh training | in progress: Step 9 exit met, release recorded, expert training | 2026-10-01 | Release `holds_repaired_ftC_posefix.release_v2.a2dda5d2ac` (`reference_curation.release_v2`; record `data/reference_curation/releases/`, 1.4 GB in `data/smpl/reference_curation/`): 56 clips, 270 holds, 168 motions (0/3/7 s, 38,400 inserted frames carrying no measurement), graph v2 (123 nodes, 270 hold ids; manual goals resolve the side-specific segment, which v1's 0.5 vote got wrong on 18 segments, e.g. Side Crow -c's two shelves), tables v2 (pressure-only swing labels 28,147 → 17,649), sidecar (59 critical + 4 restored pairs, 1 mask, 3,233 known-free zone-holds, per-frame pair masks). 26 / 26 identity checks (C5); C3: velocity-rule labels human-separated 99.88 %, the human's own load on labels p99 12.9 N vs the 72.6 N saturation. Runtime checks: frames, fps, pair names, graph sha256, release record. Weight-0 smoke passed; the runtime lookup reproduces the sidecar's coverage (0.126 / 0.127). Realisability tooling (`realisability_v2`): the reference baseline is float 0, slide p90 2.5 cm/s, COM–COP p50 1.4 cm. 25 new tests. Training `smpl_yogi_v2_expert56_a2dda5d2ac` (wandb `06k9vjpn`, PID 215359) since 16:32. At epoch 1,558 (20:41) the score was 0.277 → 0.394 → 0.462 over the evaluations at 500 / 1,000 / 1,500, with single-leg 0.458 and inversion 0.304 against the 0.998 bar. Drag and jerk are rising with survival (watch them). The run ends around 2026-10-05 00:19. Step 5's files were staged on 2026-10-01. See "What Step 5 found". |
+| 5: release and fresh training | in progress: Step 9 exit met, release recorded; expert stopped at epoch 15,500 and evaluated (single-leg met, inversion not) | 2026-10-03 | Release `holds_repaired_ftC_posefix.release_v2.a2dda5d2ac` (`reference_curation.release_v2`; record `data/reference_curation/releases/`, 1.4 GB in `data/smpl/reference_curation/`): 56 clips, 270 holds, 168 motions (0/3/7 s, 38,400 inserted frames carrying no measurement), graph v2 (123 nodes, 270 hold ids; manual goals resolve the side-specific segment, which v1's 0.5 vote got wrong on 18 segments, e.g. Side Crow -c's two shelves), tables v2 (pressure-only swing labels 28,147 → 17,649), sidecar (59 critical + 4 restored pairs, 1 mask, 3,233 known-free zone-holds, per-frame pair masks). 26 / 26 identity checks (C5); C3: velocity-rule labels human-separated 99.88 %, the human's own load on labels p99 12.9 N vs the 72.6 N saturation. Runtime checks: frames, fps, pair names, graph sha256, release record. Weight-0 smoke passed; the runtime lookup reproduces the sidecar's coverage (0.126 / 0.127). Realisability tooling (`realisability_v2`): the reference baseline is float 0, slide p90 2.5 cm/s, COM–COP p50 1.4 cm. 25 new tests. Training `smpl_yogi_v2_expert56_a2dda5d2ac` (wandb `06k9vjpn`, PID 215359) since 16:32. At epoch 1,558 (20:41) the score was 0.277 → 0.394 → 0.462 over the evaluations at 500 / 1,000 / 1,500, with single-leg 0.458 and inversion 0.304 against the 0.998 bar. Drag and jerk are rising with survival (watch them). **Stopped by the user at epoch 15,500 (2026-10-03).** Single-leg 1.000 (met), inversion 0.923 (not met), arm balance 0.977, connective 0.983, jerk 71.9 (ft_c 87.1), drag 38.4 J (ft_c 23.3). Six clips fail, mostly at the exit off the floor. The evaluator's support rule misses support substitutions (ten holds in seven clips). Evaluation and 20 videos: `expert_revist/expert56_v2_e15500/README.MD`. Step 5's files were staged on 2026-10-01. See "What Step 5 found". |
 
 **How this relates to the existing plan.**
 - `TODO_before_step9.MD` A1–A3 are done in Step 3:
@@ -1318,19 +1344,23 @@ fresh expert is training. The expert half of the acceptance, the evaluation and 
 - BUILD_PLAN Steps 9–10 run after Step 4 here, on labels v2, plant v2 and the Step 3 references. Their cards' inputs
   ("labels v1.1", "the retargeted references", ftR) are superseded.
 
-**Next, in order** (updated 2026-10-01, Step 5 in progress):
-1. **Watch the fresh run** (`smpl_yogi_v2_expert56_a2dda5d2ac`, wandb `06k9vjpn`, PID 215359). It ends around
-   2026-10-05 00:19. Every 500 epochs, check:
-   - `eval/perf_group/single_leg_score` and `inversion_score` against ft_c's 0.998 / 0.998 (0.458 / 0.304 at
-     epoch 1,500), and the other groups;
-   - `eval/drag/*` and `eval/normalized_jerk_mean`. They rose 41.5 → 111.0 J and 97.8 → 211.8 over the first three
-     evaluations; they should fall once tracking saturates, or the swing term's weight is the first lever;
-   - `env/raw_r/diag_pair_target_met`, about 0.02 of eligible frames at weight 0;
-   - the viz panel.
+**Next, in order** (updated 2026-10-03, Step 5 in progress):
+1. **The fresh run is stopped (2026-10-03, epoch 15,500) and evaluated:**
+   [`../expert56_v2_e15500/README.MD`](../expert56_v2_e15500/README.MD). Its §8 is the next list:
+   - Decide Scorpion -b: drop it, or cut it before the kick-up. Either needs a new release id.
+   - Check the exits off the floor before changing any reward: measure their share of training resets, and run a
+     fine-tune with resets confined to the exit windows.
+   - Fix the evaluator's support rule before selecting or prioritising by score: collider patches and the sidecar's
+     known-free zones.
+   - Decide whether the required-support term gets a weight. The left knee hovers 2.3–7 cm in 8 clips' kneeling
+     preparations. The reference kneels on both knees on plant v2, so this is a learned habit, and nothing prices it
+     at weight 0.
+   - Then resume (one command) or retrain; run Pass D on the rendered rollouts, and record PhysX force rollouts for
+     `plant.py`.
 
-   Score each saved rollout library (epochs 500, 2,000, 3,500, …) with `realisability_v2 --rollouts`. Confirm a
-   candidate checkpoint standalone with `eval_checkpoint.py` (see "What Step 5 found"). Then run Pass D on it and
-   record PhysX rollouts for `plant.py`'s force validation.
+   The original monitoring list for the run (single-leg/inversion, drag, jerk, the pair-target rate, the viz panel,
+   `realisability_v2` on each library, `eval_checkpoint.py`) was carried out at the stop; the numbers are in the
+   evaluation.
 2. **Step 5's files are staged** (2026-10-01) for the user's commit.
    - Code: the builders, the runtime changes, the launcher and the tests.
    - Records: the release record (`data/reference_curation/releases/`) and this text.

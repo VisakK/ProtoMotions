@@ -35,6 +35,29 @@
   substring -> weight, default 1.0 for every motion; Step 3 will weight
   synthesised clips by it). It scales each env's AMP reward by its motion's weight.
 
+Card E6 (the Step 3 fine-tune, G3) adds three things:
+
+* **The lineage rules from the command line** (``--amp-lineage-weights
+  PATTERN=W ...``, parsed by ``parse_amp_lineage_weights``) and, once rules are
+  set, **per-lineage diagnostics**: every rollout step splits the unweighted
+  style reward by the env's motion at reward time into "syn" (a motion some
+  rule matches) and "human" (the rest), and each epoch logs
+  ``amp/reward_mean_syn``, ``amp/reward_mean_human``,
+  ``amp/reward_mean_syn_weighted`` and ``amp/syn_sample_share``. A group with
+  no samples in an epoch is left out of that epoch's log (never NaN). With no
+  rules nothing is accumulated or logged.
+* **The AMP training state on a warm start**
+  (``GoalConditionedAMP._load_optimization_state``, under
+  ``--warm-start-optimization-state``): the discriminator and disc-critic
+  optimisers, the AMP reward normaliser and the weight calibration load after
+  PPO's state. A checkpoint without them (a PPO checkpoint) is skipped with a
+  printed note. The calibration's ratio history is dropped (it counts epochs
+  on the old run's clock), and with calibration off the configured
+  ``amp_reward_w_target`` wins over a restored calibrated target.
+* **Printed setup lines** the smoke greps for: ``[amp lineage]`` (what each
+  rule matched) and ``[amp demos]`` (the demonstration set). The package's
+  ``log.info`` lines do not reach a run's log.
+
 The discriminator reward threshold is expected to be 0 (no discriminator
 termination): an early, sharp discriminator would otherwise end episodes en
 masse. ``-log(1 - D)`` is never negative, so a 0 threshold never fires.
@@ -50,10 +73,11 @@ demonstration features at its (motion, time). The result is logged once as
 from __future__ import annotations
 
 import logging
+import math
 import re
 from dataclasses import dataclass, field
 from pathlib import Path
-from typing import Dict, List, Optional
+from typing import Dict, Iterable, List, Optional, Tuple
 
 import torch
 from torch import Tensor
@@ -119,6 +143,142 @@ def demo_motion_mask(stems: List[str], exclude_regex: str, exclude_motions: List
             for s in stems]
 
 
+# ---------------------------------------------------------------------- #
+# Lineage rules (card E6)
+# ---------------------------------------------------------------------- #
+def parse_amp_lineage_rule(item: str) -> Tuple[str, float]:
+    """One ``PATTERN=W`` rule: a non-empty stem substring and a finite weight >= 0. Raises ValueError."""
+    text = str(item)
+    if text.count("=") != 1:
+        raise ValueError(f"lineage rule {text!r}: expected PATTERN=W with exactly one '='")
+    pattern, _, weight = text.partition("=")
+    if not pattern or pattern != pattern.strip():
+        raise ValueError(f"lineage rule {text!r}: PATTERN must be a non-empty stem substring without "
+                         f"surrounding whitespace")
+    try:
+        w = float(weight)
+    except ValueError:
+        raise ValueError(f"lineage rule {text!r}: W {weight!r} is not a number") from None
+    if not math.isfinite(w) or w < 0.0:
+        raise ValueError(f"lineage rule {text!r}: W must be finite and >= 0, got {w}")
+    return pattern, w
+
+
+def parse_amp_lineage_weights(items: Optional[Iterable[str]]) -> Dict[str, float]:
+    """``["SYN_=0.5", ...]`` -> ``{"SYN_": 0.5, ...}`` in the order given (first match wins).
+
+    A pattern given twice raises: the second could never match, so it is a typo.
+    """
+    rules: Dict[str, float] = {}
+    for item in list(items or []):
+        pattern, w = parse_amp_lineage_rule(item)
+        if pattern in rules:
+            raise ValueError(f"lineage rule {item!r}: pattern {pattern!r} given twice")
+        rules[pattern] = w
+    return rules
+
+
+def lineage_match(stems: List[str], rules: Dict[str, float]) -> Tuple[List[float], List[int]]:
+    """Per stem: its AMP weight and the index of the rule that matched it (-1: none, weight 1.0).
+
+    A rule matches when its pattern is a substring of the stem; the first rule in ``rules``' order wins.
+    """
+    items = list(rules.items())
+    weights, which = [], []
+    for stem in stems:
+        hit = next((k for k, (pat, _) in enumerate(items) if pat in stem), -1)
+        which.append(hit)
+        weights.append(float(items[hit][1]) if hit >= 0 else 1.0)
+    return weights, which
+
+
+class LineageRewardMeter:
+    """Per-epoch sums of the style reward over env-steps, split by lineage.
+
+    "syn" is an env-step whose motion some lineage rule matched; "human" is every other env-step. The
+    *unweighted* discriminator reward is the comparison the plan asks for (does the style term fight
+    tracking on the edges?); the weighted mean is kept for syn only, since a human motion's weight is 1.0
+    and its weighted mean is its unweighted one. Everything stays on the device until ``pop_log``.
+    """
+
+    # n_all, n_syn, raw_all, raw_syn, weighted_syn
+    _N = 5
+
+    def __init__(self, device):
+        self._sums = torch.zeros(self._N, dtype=torch.float64, device=device)
+
+    @torch.no_grad()
+    def record(self, raw: Tensor, weighted: Tensor, is_syn: Tensor) -> None:
+        raw64 = raw.flatten().to(torch.float64)
+        syn = is_syn.flatten().to(torch.float64)
+        self._sums += torch.stack([
+            torch.ones_like(raw64).sum(), syn.sum(), raw64.sum(), (raw64 * syn).sum(),
+            (weighted.flatten().to(torch.float64) * syn).sum(),
+        ])
+
+    def pop_log(self) -> Dict[str, Tensor]:
+        """This epoch's log entries; resets the sums. A group without samples is left out."""
+        n_all, n_syn, raw_all, raw_syn, w_syn = (float(x) for x in self._sums.tolist())
+        self._sums.zero_()
+        out: Dict[str, Tensor] = {}
+        if n_all <= 0:
+            return out
+        out["amp/syn_sample_share"] = torch.tensor(n_syn / n_all)
+        if n_syn > 0:
+            out["amp/reward_mean_syn"] = torch.tensor(raw_syn / n_syn)
+            out["amp/reward_mean_syn_weighted"] = torch.tensor(w_syn / n_syn)
+        if n_all - n_syn > 0:
+            out["amp/reward_mean_human"] = torch.tensor((raw_all - raw_syn) / (n_all - n_syn))
+        return out
+
+
+# ---------------------------------------------------------------------- #
+# Warm start (card E6)
+# ---------------------------------------------------------------------- #
+def amp_training_state_keys(state_dict: dict, use_disc_critic: bool,
+                            normalize_rewards: bool) -> Tuple[List[str], List[str]]:
+    """The AMP training-state entries a checkpoint must carry, split into (present, missing)."""
+    need = ["discriminator_optimizer"]
+    if use_disc_critic:
+        need.append("disc_critic_optimizer")
+    if normalize_rewards:
+        need.append("running_amp_reward_norm")
+    present = [k for k in need if k in state_dict]
+    return present, [k for k in need if k not in state_dict]
+
+
+def warm_start_calibration(restored_target: Optional[float], configured_target: float,
+                           calibrate_ratio: float) -> Tuple[Optional[float], str]:
+    """The calibrated target a warm start keeps, and the line saying which weight is in force.
+
+    * Calibration off (``calibrate_ratio`` <= 0): the configured target is the weight. A restored calibrated
+      target is dropped, so ``target_w()`` reads the configured one, and the note says whether it differed.
+    * Calibration on: a restored target is kept, frozen (no re-calibration); without one the run calibrates
+      at its own start epoch.
+    """
+    configured = float(configured_target)
+    if float(calibrate_ratio or 0.0) <= 0.0:
+        if restored_target is None:
+            return None, f"AMP weight target {configured:g} (configured; calibration off, none in the checkpoint)"
+        if abs(float(restored_target) - configured) <= 1e-12:
+            return None, (f"AMP weight target {configured:g} (configured; calibration off; equals the "
+                          f"checkpoint's calibrated target)")
+        return None, (f"AMP weight target {configured:g} (configured) replaces the checkpoint's calibrated "
+                      f"target {float(restored_target):g} (calibration off)")
+    if restored_target is not None:
+        return float(restored_target), (f"AMP weight target {float(restored_target):g} (the checkpoint's "
+                                         f"calibration, kept frozen; configured {configured:g} unused)")
+    return None, (f"AMP weight target: calibrated at this run's start epoch (calibration on, none in the "
+                  f"checkpoint; configured {configured:g} is the fallback)")
+
+
+def optimizer_step_count(optimizer) -> int:
+    """The largest per-parameter ``step`` in an optimiser's state (0 when it has never stepped)."""
+    state = optimizer.state_dict().get("state", {})
+    steps = [float(s["step"]) for s in state.values() if isinstance(s, dict) and "step" in s]
+    return int(max(steps)) if steps else 0
+
+
 class GoalConditionedAMPComponent(AMPTrainingComponent):
     """AMPTrainingComponent with the x0 demonstration sampler, the schedule and the lineage hook."""
 
@@ -129,6 +289,8 @@ class GoalConditionedAMPComponent(AMPTrainingComponent):
         self._demo_len: Optional[Tensor] = None
         self._demo_p: Optional[Tensor] = None
         self._motion_amp_weight: Optional[Tensor] = None
+        self._motion_is_syn: Optional[Tensor] = None
+        self._lineage_meter: Optional[LineageRewardMeter] = None
         self._lineage_ready = False
         self.current_w = 0.0
         # one-shot weight calibration (amp_calibrate_style_ratio): per-epoch raw ratios, then the frozen target
@@ -159,6 +321,23 @@ class GoalConditionedAMPComponent(AMPTrainingComponent):
         excluded = [s for s, k in zip(stems, keep) if not k]
         log.info("AMP demonstrations: %d of %d motions, %.1f s usable (t >= %.3f s); %d excluded, e.g. %s",
                  ids.numel(), len(stems), float(span.sum()), lo, len(excluded), excluded[:3])
+        # Printed (log.info does not reach a run's log): the smoke checks that no SYN_ stem is a demonstration.
+        self.setup_lineage()
+        regex = re.compile(cfg.demo_exclude_regex) if cfg.demo_exclude_regex else None
+        by_regex = [s for s in excluded if regex is not None and regex.search(s)]
+        by_name = [s for s in excluded if not (regex is not None and regex.search(s))]
+        short = [s for i, (s, k) in enumerate(zip(stems, keep)) if k and float(lengths[i]) <= lo]
+        demos = [stems[i] for i in ids.tolist()]
+        print(f"[amp demos] {len(demos)} of {len(stems)} motions serve as demonstrations, {float(span.sum()):.1f} s "
+              f"usable (t >= {lo:.3f} s); excluded {len(by_regex)} by regex {cfg.demo_exclude_regex!r}, "
+              f"{len(by_name)} by name {list(cfg.demo_exclude_motions)}, {len(short)} too short")
+        print(f"[amp demos] excluded by name: {', '.join(by_name) if by_name else '-'}")
+        print(f"[amp demos] demonstrations: {', '.join(demos)}")
+        if self._motion_is_syn is not None:
+            syn = self._motion_is_syn.tolist()
+            syn_demos = [s for i, s in zip(ids.tolist(), demos) if syn[i]]
+            print(f"[amp demos] lineage-matched motions among the demonstrations: {len(syn_demos)}"
+                  + (f" ({', '.join(syn_demos)})" if syn_demos else ""))
 
     def sample_demo(self, num_samples: int):
         self._setup_demo_sampler()
@@ -193,17 +372,38 @@ class GoalConditionedAMPComponent(AMPTrainingComponent):
     # ------------------------------------------------------------------ #
     # Lineage hook
     # ------------------------------------------------------------------ #
+    def setup_lineage(self) -> None:
+        """Build the per-motion lineage tables once; print what each rule matched (nothing without rules)."""
+        if self._lineage_ready:
+            return
+        self._lineage_ready = True
+        rules = dict(self.config.amp_lineage_weights or {})
+        if not rules:
+            return
+        stems = self._stems()
+        weights, which = lineage_match(stems, rules)
+        self._motion_amp_weight = torch.tensor(weights, device=self.device)
+        self._motion_is_syn = torch.tensor([k >= 0 for k in which], device=self.device, dtype=torch.bool)
+        self._lineage_meter = LineageRewardMeter(self.device)
+        log.info("AMP lineage weights: %s (motions not matched: 1.0)", rules)
+        for k, (pattern, w) in enumerate(rules.items()):
+            hits = [s for s, j in zip(stems, which) if j == k]
+            if hits:
+                print(f"[amp lineage] rule {pattern!r} (w {w:g}) matched {len(hits)} of {len(stems)} motions: "
+                      f"{', '.join(hits)}")
+            else:
+                # Say why: either no stem contains the pattern, or an earlier rule took every one that does.
+                shadowed = sum(1 for s, j in zip(stems, which) if pattern in s and 0 <= j < k)
+                why = (f"{shadowed} stem(s) contain it, all taken by an earlier rule" if shadowed
+                       else "no stem contains it")
+                print(f"[amp lineage] WARNING: rule {pattern!r} (w {w:g}) matched no motion "
+                      f"(of {len(stems)}; {why})")
+        n_syn = sum(j >= 0 for j in which)
+        print(f"[amp lineage] {n_syn} of {len(stems)} motions are 'syn' (matched); {len(stems) - n_syn} are "
+              f"'human' (w 1.0)")
+
     def _env_amp_weight(self) -> Optional[Tensor]:
-        if not self._lineage_ready:
-            self._lineage_ready = True
-            rules = dict(self.config.amp_lineage_weights or {})
-            if rules:
-                weights = []
-                for stem in self._stems():
-                    hit = next((w for pat, w in rules.items() if pat in stem), 1.0)
-                    weights.append(float(hit))
-                self._motion_amp_weight = torch.tensor(weights, device=self.device)
-                log.info("AMP lineage weights: %s (motions not matched: 1.0)", rules)
+        self.setup_lineage()
         if self._motion_amp_weight is None:
             return None
         return self._motion_amp_weight[self.agent.motion_manager.motion_ids]
@@ -222,7 +422,13 @@ class GoalConditionedAMPComponent(AMPTrainingComponent):
 
         weight = self._env_amp_weight()
         if weight is not None:
+            raw_rewards = amp_rewards
             amp_rewards = amp_rewards * weight
+            # The env's motion at reward time: resets happen at the next step's start, so this is the motion
+            # the transition tracked -- the same ids the weight was gathered with.
+            if self._lineage_meter is not None:
+                self._lineage_meter.record(raw_rewards, amp_rewards,
+                                           self._motion_is_syn[self.agent.motion_manager.motion_ids])
 
         if self.use_disc_critic:
             next_disc_value = self.disc_critic(next_obs_td)[self.disc_critic.module.config.out_keys[0]]
@@ -304,6 +510,8 @@ class GoalConditionedAMPComponent(AMPTrainingComponent):
         if parity:
             training_log_dict.update(parity)
             self.agent._amp_parity_log = None
+        if self._lineage_meter is not None:
+            training_log_dict.update(self._lineage_meter.pop_log())
 
     # The calibration survives a resume (a checkpoint after the start epoch carries the frozen target).
     def add_state_dict(self, state_dict) -> dict:
@@ -319,6 +527,38 @@ class GoalConditionedAMPComponent(AMPTrainingComponent):
             self.ratio_history = [list(x) for x in cal.get("ratio_history", [])]
             self.calibrated_target = cal.get("calibrated_target")
 
+    def load_warm_start_state(self, state_dict) -> List[str]:
+        """A warm start's AMP state (card E6); returns the lines to print.
+
+        ``load_training_state`` restores exactly the discriminator and disc-critic optimisers (Adam moments,
+        step counts and the checkpoint's learning rates), the AMP reward normaliser (mean/var/count) and the
+        weight calibration. The networks themselves, their observation normalisers included, came with the
+        model state dict. Nothing else the component owns is checkpointed, so these start fresh: the replay
+        buffer (the first epoch's own samples stand in), the per-env bad-transition counters, the
+        demonstration sampler and lineage tables (built from this run's library and config), and
+        ``current_w`` (recomputed every epoch). Two things the resume path keeps are wrong here: the
+        calibration's ratio history counts epochs on the old run's clock (this run restarts at epoch 0, so a
+        calibration window would read the old run's ratios), and the calibrated target must yield to the
+        configured one when calibration is off (``warm_start_calibration``).
+        """
+        self.load_training_state(state_dict)
+        cfg = self.config
+        dropped = len(self.ratio_history)
+        self.ratio_history = []
+        self.calibrated_target, weight_note = warm_start_calibration(
+            self.calibrated_target, cfg.amp_reward_w_target, getattr(cfg, "amp_calibrate_style_ratio", 0.0))
+        parts = [f"discriminator optimizer (step {optimizer_step_count(self.discriminator_optimizer)}, "
+                 f"lr {self.discriminator_optimizer.param_groups[0]['lr']:g})"]
+        if self.use_disc_critic:
+            parts.append(f"disc-critic optimizer (step {optimizer_step_count(self.disc_critic_optimizer)}, "
+                         f"lr {self.disc_critic_optimizer.param_groups[0]['lr']:g})")
+        if cfg.normalize_rewards:
+            norm = self.running_reward_norm
+            parts.append(f"AMP reward normaliser (count {int(norm.count)}, var {float(norm.var.flatten()[0]):.4g})")
+        return [f"Warm start: restored AMP training state from checkpoint: {', '.join(parts)}",
+                f"Warm start: {weight_note}; {dropped} calibration ratio-history entries from the old run's "
+                f"epoch clock dropped"]
+
 
 class GoalConditionedAMP(AMP):
     """``AMP`` with ``GoalConditionedAMPComponent`` (see the module docstring)."""
@@ -332,6 +572,38 @@ class GoalConditionedAMP(AMP):
         self.amp_component = GoalConditionedAMPComponent(self)
         self._amp_parity_done = not bool(getattr(config, "amp_parity_check", True))
         self._amp_parity_log = None
+
+    def setup(self):
+        super().setup()
+        # The lineage tables need only the library: build them (and print what each rule matched) now, not
+        # at the first rollout step. A no-op without rules.
+        AMPTrainingComponent.for_agent(self).setup_lineage()
+
+    def _load_optimization_state(self, state_dict):
+        """Warm start (``--warm-start-optimization-state``): PPO's state, then the AMP component's (card E6).
+
+        PPO's restores the task reward normaliser, the actor/critic optimisers and the advantage EMA. A
+        checkpoint without a discriminator, or without its training state (a PPO checkpoint), leaves the AMP
+        state fresh with a printed note. One that carries only part of it raises.
+        """
+        super()._load_optimization_state(state_dict)
+        component = AMPTrainingComponent.for_agent(self)
+        fresh = ("the discriminator/disc-critic optimisers, the AMP reward normaliser and the weight "
+                 "calibration start fresh")
+        if getattr(self, "_warm_start_from_non_amp_checkpoint", False):
+            print(f"Warm start: no AMP training state loaded -- the checkpoint has no discriminator (a PPO "
+                  f"checkpoint); {fresh}")
+            return
+        present, missing = amp_training_state_keys(state_dict, component.use_disc_critic,
+                                                   bool(self.config.normalize_rewards))
+        if not present:
+            print(f"Warm start: no AMP training state loaded -- the checkpoint carries none; {fresh}")
+            return
+        if missing:
+            raise KeyError(f"Warm start: the checkpoint carries part of the AMP training state ({present}) "
+                           f"but not {missing}")
+        for line in component.load_warm_start_state(state_dict):
+            print(line)
 
     @torch.no_grad()
     def collect_rollout_step(self, obs_td, step):

@@ -27,6 +27,13 @@ realised by collider geometry. Every pre-existing key (``eval/perf/*``,
 ``eval/perf/substitution_holds_v2[_x0]``) and to columns appended to the CSV.
 ``HoldCurriculumConfig.support_rule = "v2"`` makes only the curriculum's sampling
 (``score_ema`` -> mixture probabilities) run on the v2 score.
+
+**Package prior** (card E3). The package's per-motion yaml ``weight`` used to apply
+only until the first evaluation replaced the manager's weights. With
+``HoldCurriculumConfig.motion_prior = "package"`` it is captured once, when the
+evaluator is built, and every evaluation's uniform share becomes
+``uniform_fraction * w_m / sum(w)`` (``hold_curriculum.mixture_sampling_probs``);
+``eval/curriculum/prior_share/<group>`` logs each group's share of it.
 """
 
 from __future__ import annotations
@@ -51,6 +58,7 @@ from protomotions.agents.evaluators.hold_curriculum import (
     score_clip,
     support_v2_holds,
     tracked_frames,
+    uniform_share,
     update_score_ema,
     zone_lowest_points,
     zone_vertical_load,
@@ -73,6 +81,56 @@ class HoldCurriculumEvaluator(MimicEvaluator):
         self._support_rule = "v1"
         self._v2 = None  # support rule v2 tables (_setup_support_v2), None when unavailable
         self._v2_text = None  # per-motion flagged holds of the last evaluation (CSV)
+        # Captured now, before the first evaluation overwrites the manager's weights;
+        # never saved -- every launch re-reads it from the same package.
+        self._motion_prior = self._capture_motion_prior()
+
+    def _capture_motion_prior(self) -> Optional[torch.Tensor]:
+        """The package's per-motion weights (``[M]``, CPU), or None for ``motion_prior='none'``.
+
+        They are the library's ``motion_weights`` -- motions.yaml's ``weight`` as packed. When the
+        library is a packed ``X.pt`` with an ``X.yaml`` beside it, the yaml is read too and must
+        agree motion for motion: a package whose yaml says one thing and whose .pt another would
+        otherwise train on a prior nobody wrote down.
+        """
+        mode = str(getattr(self.config.curriculum, "motion_prior", "none") or "none")
+        if mode not in ("none", "package"):
+            raise ValueError(f"HoldCurriculumConfig.motion_prior must be 'none' or 'package', got {mode!r}")
+        if mode == "none":
+            return None
+        def stem(path) -> str:
+            # 'X.motion' -> 'X' (a stem may itself contain dots); anything else -> Path.stem
+            name = Path(str(path)).name
+            return name[: -len(".motion")] if name.endswith(".motion") else Path(name).stem
+
+        weights = self.motion_lib.motion_weights.detach().to(device="cpu", dtype=torch.float32).clone()
+        stems = [stem(f) for f in self.motion_lib.motion_files]
+        if len(stems) != weights.numel():
+            raise ValueError(f"motion library has {len(stems)} files and {weights.numel()} weights")
+        library = Path(str(getattr(self.motion_lib, "motion_file", "") or ""))
+        sidecar = library.with_suffix(".yaml")
+        if library.suffix == ".pt" and sidecar.is_file():
+            with open(sidecar) as handle:
+                entries = (yaml.safe_load(handle) or {}).get("motions") or []
+            by_stem = {stem(e["file"]): float(e.get("weight", 1.0)) for e in entries}
+            missing = [s for s in stems if s not in by_stem]
+            if missing:
+                raise ValueError(f"motion prior: {len(missing)} motions missing from {sidecar}: {missing[:3]}")
+            # compared as the library stores them (float32: a yaml 0.6 is packed as 0.6000000238)
+            declared = torch.tensor([by_stem[s] for s in stems], dtype=torch.float32)
+            wrong = [s for m, s in enumerate(stems) if bool(declared[m] != weights[m])]
+            if wrong:
+                raise ValueError(
+                    f"motion prior: {sidecar} and the packed library disagree on {len(wrong)} weights "
+                    f"(e.g. {wrong[0]}: yaml {by_stem[wrong[0]]}, library {float(weights[stems.index(wrong[0])])})"
+                )
+        if bool((weights < 0).any()) or not bool(torch.isfinite(weights).all()) or float(weights.sum()) <= 0.0:
+            raise ValueError("motion prior: the package weights must be finite, non-negative and not all zero")
+        values, counts = torch.unique(weights, return_counts=True)
+        histogram = {float(v): int(c) for v, c in zip(values, counts)}
+        print(f"HoldCurriculumEvaluator: package motion prior over {weights.numel()} motions "
+              f"(weight: motions) {histogram}")
+        return weights
 
     # ------------------------------------------------------------------ #
     def _setup_tables(self) -> None:
@@ -349,7 +407,8 @@ class HoldCurriculumEvaluator(MimicEvaluator):
         key = "score_v2" if self._support_rule == "v2" else "score"
         self._score_ema = update_score_ema(self._score_ema, scores[key], c.score_ema_keep)
         probs = mixture_sampling_probs(
-            self._score_ema, c.uniform_fraction, power=c.priority_power, eps=c.priority_eps
+            self._score_ema, c.uniform_fraction, power=c.priority_power, eps=c.priority_eps,
+            prior=getattr(self, "_motion_prior", None),
         )
         self.env.motion_manager.update_sampling_weights(probs.to(self.env.motion_manager.motion_weights.device))
         return probs
@@ -420,12 +479,22 @@ class HoldCurriculumEvaluator(MimicEvaluator):
         logs.update(self._drag_logs(scores))
         logs.update(self._support_v2_logs(scores))
         n = probs.numel()
-        prioritized = probs - self.config.curriculum.uniform_fraction / n
+        prior = getattr(self, "_motion_prior", None)
+        if prior is not None:
+            prior = prior.to(probs.device)
+        prioritized = probs - uniform_share(n, self.config.curriculum.uniform_fraction, prior)
         logs["eval/curriculum/ess"] = float(1.0 / (probs ** 2).sum())
         logs["eval/curriculum/max_prob_x_n"] = float(probs.max() * n)
         if prioritized.sum() > 0:
             top = torch.topk(prioritized, min(10, n)).values.sum() / prioritized.sum()
             logs["eval/curriculum/prioritized_top10_share"] = float(top)
+        if prior is not None:
+            # the prior's share of the uniform mass, and the group's whole sampling probability
+            share = prior / prior.sum()
+            for g in sorted(set(self._groups)):
+                idx = torch.tensor([i for i, x in enumerate(self._groups) if x == g], device=probs.device)
+                logs[f"eval/curriculum/prior_share/{g}"] = float(share[idx].sum())
+                logs[f"eval/curriculum/group_prob/{g}"] = float(probs[idx].sum())
         return {k: v for k, v in logs.items() if not math.isnan(v)}
 
     def _support_v2_logs(self, scores) -> Dict[str, float]:

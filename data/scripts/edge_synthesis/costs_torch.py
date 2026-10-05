@@ -137,6 +137,12 @@ class EdgeCostTorch:
             on[:, k] = t >= te - 0.05
             self.place_zone.append(torch.as_tensor(npc.zone_bodies[zi], dtype=torch.long, device=device))
         self.place_on = torch.as_tensor(on, device=device)
+        # the landing cone's points (costs.EdgeCost's)
+        self.cone_body = torch.as_tensor(np.asarray(npc.cone_body), dtype=torch.long, device=device)
+        self.cone_local = torch.as_tensor(np.asarray(npc.cone_local).reshape(-1, 3), **f32)
+        self.cone_radius = torch.as_tensor(np.asarray(npc.cone_radius), **f32)
+        self.cone_xy = torch.as_tensor(np.asarray(npc.cone_xy).reshape(-1, 2), **f32)
+        self.cone_h0 = torch.as_tensor(np.asarray(npc.cone_h0), **f32)
 
     def _window(self, j: int) -> slice:
         return slice(j + 1, j + 1 + self.H)
@@ -197,6 +203,12 @@ class EdgeCostTorch:
             dd = v.ctrl[:, 2:] - 2 * v.ctrl[:, 1:-1] + v.ctrl[:, :-2]
             terms["smooth"] = w.smooth * ((dd / S["smooth"]) ** 2).sum((1, 2)) / v.ctrl.shape[-1]
         terms["box"] = w.box * ((v.box / S["box"]) ** 2).sum((1, 2))
+        terms["cone"] = torch.zeros(M, device=self.device)
+        if w.cone and len(self.cone_body):
+            cp = v.pos[:, :, self.cone_body] + (v.R[:, :, self.cone_body] @ self.cone_local[:, :, None])[..., 0]
+            d = (cp[..., :2] - self.cone_xy).norm(dim=-1)
+            g = cp[..., 2] - self.cone_radius - self.cone_h0 - C.CONE_SLOPE * (d - C.CONE_TOL_M).clamp(min=0)
+            terms["cone"] = w.cone * ((g.clamp(max=0) / S["cone"]) ** 2).sum((1, 2))
         total = sum(terms.values())
         return total, terms
 

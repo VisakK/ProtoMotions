@@ -38,12 +38,15 @@ def _edge_setup(plant, edge_id: str, timing: str = "mid", via: str | None = None
     return e, ep, sched, sk
 
 
-@pytest.mark.parametrize("edge_id,t0", [("B1", 0.2), ("B1", 0.9), ("E2", 0.4)])
-def test_edge_cost_torch_matches_numpy(plant, edge_id, t0):
+@pytest.mark.parametrize("edge_id,t0,cone", [("B1", 0.2, 0.0), ("B1", 0.9, 0.0), ("E2", 0.4, 0.0), ("B1", 0.35, 10.0),
+                                             ("E2", 0.5, 10.0)])
+def test_edge_cost_torch_matches_numpy(plant, edge_id, t0, cone):
     """Every term of ``EdgeCostTorch`` equals ``costs.EdgeCost``'s on the same MuJoCo rollouts (the plant-specific
-    inputs -- torque utilisation in hinge coordinates, the box on the exp-map -- fed from MuJoCo's own)."""
+    inputs -- torque utilisation in hinge coordinates, the box on the exp-map -- fed from MuJoCo's own); with T6's
+    landing cone on, around the touchdown where it binds."""
     e, ep, sched, sk = _edge_setup(plant, edge_id)
-    npc = C.EdgeCost(plant, sk, sched, ep.src_qpos, ep.dst_qpos)
+    weights = C.EdgeWeights(cone=cone)
+    npc = C.EdgeCost(plant, sk, sched, ep.src_qpos, ep.dst_qpos, weights)
     H, n, dt = 24, 6, 1.0 / pm.CTRL_HZ
     rng = np.random.default_rng(3)
     base = sk.pd_targets(t0 + dt * np.arange(H))
@@ -57,7 +60,7 @@ def test_edge_cost_torch_matches_numpy(plant, edge_id, t0):
     j = 5
     grid = CT.Grid(t0 - j * dt, dt, j + H + 3)
     assert np.allclose(grid.t[j + 1:j + 1 + H], r.t, atol=1e-12)
-    ctc = CT.EdgeCostTorch(plant, sk, sched, ep.src_qpos, ep.dst_qpos, C.EdgeWeights(), grid, "cpu", H)
+    ctc = CT.EdgeCostTorch(plant, sk, sched, ep.src_qpos, ep.dst_qpos, weights, grid, "cpu", H)
     pos, rot = r.fk()
     tau = plant.kp * (r.ctrl - r.qpos[..., 7:]) - plant.kd * r.qvel[..., 6:]
     _, _, dof = plant.expmap_from_qpos(r.qpos)
@@ -71,6 +74,8 @@ def test_edge_cost_torch_matches_numpy(plant, edge_id, t0):
         a, b = np.asarray(terms_np[k], float), terms_t[k].double().numpy()
         assert np.allclose(a, b, rtol=2e-3, atol=1e-4 * max(1.0, np.abs(a).max())), (k, a, b)
     assert np.allclose(c_np, c_t.double().numpy(), rtol=2e-3)
+    if cone:
+        assert len(npc.cone_body) >= 4 and terms_np["cone"].max() > 0, "the cone never binds on this window"
 
 
 def test_zone_lowest_torch(plant):

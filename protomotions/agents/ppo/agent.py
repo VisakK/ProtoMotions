@@ -29,7 +29,12 @@ from lightning.fabric import Fabric
 from protomotions.utils.hydra_replacement import get_class
 
 from protomotions.agents.ppo.model import PPOModel
-from protomotions.agents.common.common import MODULE_INTERNALS_KEY, weight_init_trainable
+from protomotions.agents.common.common import (
+    MODULE_INTERNALS_KEY,
+    freeze_obs_normalizers,
+    obs_normalizer_statistics,
+    weight_init_trainable,
+)
 from protomotions.agents.optimizer.factory import (
     instantiate_optimizer,
     optimizer_learning_rate,
@@ -200,6 +205,97 @@ class PPO(BaseAgent):
         super()._load_optimization_state(state_dict)
         self._load_ppo_training_state(state_dict, require_optimizers=False)
         print("Warm start: restored PPO optimizer states and advantage EMA from checkpoint")
+
+    # -----------------------------
+    # Fine-tune normaliser freeze (graph_growth PLAN.MD card E3)
+    # -----------------------------
+    def _before_first_rollout(self) -> None:
+        super()._before_first_rollout()
+        if getattr(self.config, "freeze_obs_normalizers", False):
+            self._freeze_actor_critic_obs_normalizers()
+
+    def _freeze_actor_critic_obs_normalizers(self) -> None:
+        """Freeze the actor's and the critic's observation statistics for this launch.
+
+        Every RunningMeanStd is an EMA (decay 0.999) that re-centres within ~1,000
+        updates, so a fine-tune on a changed corpus would rescale the inputs the
+        loaded policy was trained on. ``_freeze_running`` is not in the state dict,
+        hence this runs on every launch, after the checkpoint loads. Only
+        ``model._actor`` and ``model._critic`` are touched: an AMP discriminator's
+        and its critic's normalisers live elsewhere and stay free.
+        """
+        frozen = {}
+        frozen.update(freeze_obs_normalizers(self.model._actor, prefix="_actor"))
+        frozen.update(freeze_obs_normalizers(self.model._critic, prefix="_critic"))
+        stats = obs_normalizer_statistics(frozen)
+        if not stats:
+            raise RuntimeError(
+                "freeze_obs_normalizers: the actor and the critic have no observation "
+                "normaliser statistics to freeze (normalize_obs is off everywhere)"
+            )
+        self._frozen_obs_norms = frozen
+        self._frozen_obs_norm_stats = stats
+        print(
+            f"freeze_obs_normalizers: froze {sorted(frozen)} "
+            f"({sum(v.numel() for k, v in stats.items() if k.endswith('.mean'))} statistics); "
+            "they are checked bit-for-bit after the first epoch that updates the policy"
+        )
+        if not self.just_loaded_checkpoint_should_evaluate:
+            print(
+                "freeze_obs_normalizers: WARNING no checkpoint was loaded -- the frozen "
+                "statistics are the initial ones"
+            )
+
+    def _verify_frozen_obs_normalizers(self, updated_policy: bool = True) -> None:
+        """Once per launch: the frozen statistics must be unchanged through the launch's
+        first epoch that updates the policy.
+
+        Normalisers record moments only in training-mode forwards, which happen only
+        in a policy update. A resume skips the update of its first epoch, and the
+        evaluation at the end of that epoch skips the next one's, so a check after
+        the first epoch alone would compare two statistics nothing could have moved.
+        Every epoch up to and including the first update is compared (a change in
+        any of them raises); the snapshot is dropped only after that update.
+
+        The comparison is over mean, var and count: in EMA mode (the default decay
+        0.999) ``count`` never changes, so counts alone would pass an unfrozen run.
+        """
+        expected = getattr(self, "_frozen_obs_norm_stats", None)
+        if expected is None:
+            return
+        self._frozen_obs_norm_epochs = getattr(self, "_frozen_obs_norm_epochs", 0) + 1
+        current = obs_normalizer_statistics(self._frozen_obs_norms)
+        unfrozen = [name for name, norm in self._frozen_obs_norms.items() if not norm._freeze_running]
+        changed = [
+            name for name, value in expected.items()
+            if name not in current or not torch.equal(value, current[name])
+        ]
+        if unfrozen or changed:
+            self._frozen_obs_norm_stats = None
+            raise RuntimeError(
+                f"freeze_obs_normalizers: FAILED over this launch's first "
+                f"{self._frozen_obs_norm_epochs} epoch(s) (epoch counter now {self.current_epoch}) "
+                f"-- statistics changed: {changed}; freeze flag cleared on: {unfrozen}"
+            )
+        if not updated_policy:
+            print(
+                f"freeze_obs_normalizers: epoch {self.current_epoch - 1} skipped its policy "
+                "update (resume, or the epoch after an evaluation); statistics unchanged, the "
+                "check continues until an epoch updates the policy"
+            )
+            return
+        self._frozen_obs_norm_stats = None
+        print(
+            f"freeze_obs_normalizers: verified -- {len(expected)} statistics buffers of "
+            f"{sorted(self._frozen_obs_norms)} bit-identical through this launch's first policy "
+            f"update ({self._frozen_obs_norm_epochs} epoch(s); epoch counter now {self.current_epoch})"
+        )
+
+    def post_epoch_logging(self, training_log_dict):
+        # BaseAgent.fit marks an epoch that skipped optimize_model this way.
+        updated_policy = "skipped_policy_update" not in training_log_dict
+        super().post_epoch_logging(training_log_dict)
+        self._verify_frozen_obs_normalizers(updated_policy)
 
     def _load_ppo_training_state(self, state_dict, require_optimizers: bool):
         if require_optimizers or "actor_optimizer" in state_dict:

@@ -376,7 +376,9 @@ def _install_balance_mask():
     """``retarget_v2._balance`` builds each frame's support hull from every targeted point; a problem built here may
     carry ``plan["balance_keep"]`` (the pre-load: a support about to break leaves the hull). Wrap the function in this
     process so it reads the masked weights -- ``retarget_v2.py`` itself stays untouched (its source hash is part of
-    the retarget record) and problems without the mask are unchanged."""
+    the retarget record) and problems without the mask are unchanged. A problem may also carry
+    ``plan["balance_w"]``: the hull's points when they differ from the support rows' (``exact``: pinned hands keep
+    their place in the hull but have no support rows)."""
     from reference_curation import retarget_v2 as rv2
 
     if getattr(rv2._balance, "_edge_synthesis", False):
@@ -385,10 +387,12 @@ def _install_balance_mask():
 
     def _balance(prob, st, jacobian):
         keep = prob.plan.get("balance_keep")
-        if keep is None:
+        hull_w = prob.plan.get("balance_w")
+        if keep is None and hull_w is None:
             return orig(prob, st, jacobian)
         tw = prob.plan["target_w"]
-        prob.plan["target_w"] = np.where(keep, tw, 0.0)
+        base = tw if hull_w is None else hull_w
+        prob.plan["target_w"] = base if keep is None else np.where(keep, base, 0.0)
         try:
             return orig(prob, st, jacobian)
         finally:
@@ -449,8 +453,9 @@ def certify(sk, prob, x: torch.Tensor, sched: SK.Schedule | Contacts, times: np.
     com = ((mass[None, :, None] * (pos_np + np.einsum("tbij,bj->tbi", rot_np, centre))).sum(1) / mass.sum())
     margins = []
     keep = prob.plan.get("balance_keep")
+    hull_w = prob.plan.get("balance_w", prob.plan["target_w"])
     for f in range(len(times)):
-        sel = prob.plan["target_w"][f] > 0.5
+        sel = hull_w[f] > 0.5
         if keep is not None:
             sel &= keep[f]
         if sel.sum() >= 3 and con.balance[f]:

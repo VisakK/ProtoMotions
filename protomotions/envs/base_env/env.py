@@ -1172,6 +1172,11 @@ class BaseEnv:
         )
 
         self.extras["terminate"] = self.terminate_buf
+        # Start-kind counts of the resets since the last step (ContactGraphMotionManager,
+        # graph_growth PLAN.MD card E3): logged by the agent as env/anchor/*.
+        pop_step_logs = getattr(self.motion_manager, "pop_step_logs", None)
+        if pop_step_logs is not None:
+            self.extras.update(pop_step_logs())
 
         rbs = current_state
         for k, _ in rbs.get_shape_mapping(flattened=True).items():

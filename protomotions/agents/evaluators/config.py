@@ -165,6 +165,16 @@ class HoldCurriculumConfig:
         default=0.9, metadata={"help": "v2: a hold counts (realised / substitution totals) when this share "
                                        "of its window is tracked."}
     )
+    # --- Per-motion prior in the uniform share (card E3) --- #
+    # Plain scalar default: configs pickled before the field existed read 'none'.
+    motion_prior: str = field(
+        default="none",
+        metadata={"help": "'none': the uniform share is uniform_fraction / N per motion. 'package': it is "
+                          "uniform_fraction * w_m / sum(w), w = the package's per-motion weights (motions.yaml "
+                          "'weight', as packed into the library), captured once when the evaluator is built "
+                          "and kept for every evaluation. With every weight 1.0 the two are bit-identical.",
+                  "options": ["none", "package"]},
+    )
 
 
 @dataclass

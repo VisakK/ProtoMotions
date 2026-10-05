@@ -150,6 +150,37 @@ class NormObsBase(nn.Module):
         return norm_obs
 
 
+def freeze_obs_normalizers(module: nn.Module, prefix: str = "") -> Dict[str, NormObsBase]:
+    """Stop the running statistics of every observation normaliser under ``module``.
+
+    Sets ``_freeze_running``: training-mode forwards keep normalising with the
+    current statistics and stop recording moments. The flag is a plain attribute,
+    not in the state dict, so it has to be set again on every launch. Returns the
+    frozen normalisers by module path (``prefix`` joined to the path inside
+    ``module``, e.g. ``_actor.mu.norm``).
+    """
+    frozen = {}
+    for name, sub in module.named_modules(prefix=prefix):
+        if isinstance(sub, NormObsBase):
+            sub._freeze_running = True
+            frozen[name] = sub
+    return frozen
+
+
+def obs_normalizer_statistics(norms: Dict[str, NormObsBase]) -> Dict[str, Tensor]:
+    """A copy of every running-statistics buffer (mean, var, count) of ``norms``,
+    keyed by buffer path; normalisers without (or not yet materialised) statistics
+    contribute nothing."""
+    stats = {}
+    for name, norm in norms.items():
+        running = getattr(norm, "running_obs_norm", None)
+        if running is None:
+            continue
+        for buffer_name, buffer in running.named_buffers(prefix=f"{name}.running_obs_norm"):
+            stats[buffer_name] = buffer.detach().clone()
+    return stats
+
+
 def apply_module_operations(
     obs: Tensor,
     module_operations: List[ModuleOperationConfig],

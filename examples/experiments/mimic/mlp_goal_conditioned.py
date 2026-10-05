@@ -47,6 +47,11 @@ A curation release (``reference_curation.release_v2``, BodyFix Step 5) adds two 
 the human is known to keep free, masked contacts leave every target, and five target diagnostics are
 logged at weight 0), and ``--release-record`` makes every artifact the run loads prove by sha256 that it
 is that release's (``data/scripts/run_expert_release_v2.sh`` passes both).
+Card E3 of ``expert_revist/graph_growth_2026_10_03/PLAN.MD`` adds three fine-tune flags, all off by default:
+``--segment-end-prob`` (departure anchoring: starts just before a hold *ends*, sharing the draw with
+``--segment-start-prob``), ``--motion-prior package`` (the mixture curriculum's uniform share follows the
+package's yaml weights) and ``--freeze-obs-normalizers True`` (the actor's and critic's observation
+statistics stay the checkpoint's).
 
 **Goals** come from ``data/scripts/build_hold_graph.py`` (nodes = named holds
 from the kinematic manifest; the transitions are the gaps between them), on
@@ -196,6 +201,13 @@ def additional_experiment_arguments(parser: argparse.ArgumentParser):
         "--segment-start-prob", type=float, default=0.6,
         help="Probability an episode starts just before a hold (ContactGraphMotionManager).",
     )
+    parser.add_argument(
+        "--segment-end-prob", type=float, default=0.0,
+        help="Probability an episode starts just before a hold ENDS (departure anchoring, "
+             "graph_growth PLAN.MD card E3): t_end - U(0, pre-roll) of a segment that does not end "
+             "the clip. Shares the draw with --segment-start-prob (their sum must be <= 1). 0 keeps "
+             "the arrival-only sampling, random stream included.",
+    )
     parser.add_argument("--segment-pre-roll-s", type=float, default=0.5)
     parser.add_argument(
         "--segment-weighting", type=str, default="uniform",
@@ -246,6 +258,12 @@ def additional_experiment_arguments(parser: argparse.ArgumentParser):
     )
     parser.add_argument("--uniform-fraction", type=float, default=0.8)
     parser.add_argument(
+        "--motion-prior", type=str, default="none", choices=["none", "package"],
+        help="mixture: 'package' spreads the uniform share by the package's per-motion yaml weight "
+             "(u * w_m / sum(w), captured once at start-up and kept for every evaluation) instead of "
+             "u / N; 'none' is round 1 (graph_growth PLAN.MD card E3).",
+    )
+    parser.add_argument(
         "--score-ema-keep", type=float, default=0.5,
         help="mixture: EMA weight on a motion's previous score across evaluations.",
     )
@@ -268,6 +286,15 @@ def additional_experiment_arguments(parser: argparse.ArgumentParser):
     )
     parser.add_argument("--save-every", type=int, default=1000,
                         help="save_epoch_checkpoint_every.")
+    parser.add_argument(
+        "--freeze-obs-normalizers",
+        type=lambda v: str(v).lower() not in ("0", "false", "no"),
+        default=False,
+        help="Freeze the actor's and the critic's observation normalisers for the whole run "
+             "(PPOAgentConfig.freeze_obs_normalizers; re-applied on every launch after the checkpoint "
+             "loads, checked unchanged after the first epoch). An AMP discriminator's stay free. "
+             "For fine-tunes from a checkpoint (graph_growth PLAN.MD card E3).",
+    )
     # --- Unwanted-support penalty (expert_revist/contact_reward/README.MD) ---- #
     # Absent by default: without --support-penalty-weight the reward dict is
     # exactly fine-tune A's.
@@ -701,6 +728,7 @@ def env_config(robot_cfg: RobotConfig, args: argparse.Namespace) -> EnvConfig:
             resample_on_reset=True,
             graph_file=graph_file,
             segment_start_prob=getattr(args, "segment_start_prob", 0.6),
+            segment_end_prob=float(getattr(args, "segment_end_prob", 0.0) or 0.0),
             pre_roll_s=getattr(args, "segment_pre_roll_s", 0.5),
             segment_weighting=getattr(args, "segment_weighting", "uniform"),
         ),
@@ -776,6 +804,11 @@ def agent_config(
     }
     eval_every = int(getattr(args, "eval_every", 200) or 200)
     eval_max_steps = int(getattr(args, "eval_max_steps", 600) or 600)
+    motion_prior = str(getattr(args, "motion_prior", "none") or "none")
+    if motion_prior != "none" and getattr(args, "curriculum", "legacy") != "mixture":
+        # Only the mixture curriculum has a uniform share for the prior to shape;
+        # refuse rather than silently train without it.
+        raise ValueError(f"--motion-prior {motion_prior} needs --curriculum mixture")
     if getattr(args, "curriculum", "legacy") == "mixture":
         from protomotions.agents.evaluators.config import (
             HoldCurriculumConfig,
@@ -797,6 +830,7 @@ def agent_config(
                 report_exclude_motions=list(getattr(args, "report_exclude_motions", None) or []),
                 drag_report_motions=list(getattr(args, "drag_report_motions", None) or []),
                 support_rule=str(getattr(args, "support_rule", "v1") or "v1"),
+                motion_prior=motion_prior,
             ),
         )
     else:
@@ -829,6 +863,7 @@ def agent_config(
         advantage_normalization=AdvantageNormalizationConfig(
             enabled=True, shift_mean=True, use_ema=True
         ),
+        freeze_obs_normalizers=bool(getattr(args, "freeze_obs_normalizers", False)),
     )
 
 
@@ -852,3 +887,5 @@ def apply_inference_overrides(
     # of resets (audit 2026-09-21 runtime §8); inference means clip starts.
     if hasattr(env_cfg.motion_manager, "segment_start_prob"):
         env_cfg.motion_manager.segment_start_prob = 0.0
+        # Departure anchoring (card E3) shares the draw: zero it with the arrivals.
+        env_cfg.motion_manager.segment_end_prob = 0.0

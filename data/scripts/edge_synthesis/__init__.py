@@ -1,5 +1,6 @@
 """Graph growth, lane T: synthesised edges between released holds
-(``expert_revist/graph_growth_2026_10_03/PLAN.MD`` cards T0-T5). CPU only.
+(``expert_revist/graph_growth_2026_10_03/PLAN.MD`` cards T0-T5 on the CPU; T7, the PhysX generator, and T6, the
+endpoint-exact references (``exact``), the landing cone and the seam group (``seams``), on the GPU's IsaacLab).
 
 Run modules as ``PYTHONPATH=.:data/scripts python -m edge_synthesis.<module>``.
 """

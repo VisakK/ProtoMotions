@@ -248,6 +248,13 @@ class BaseAgent:
     def _after_create_optimizers(self) -> None:
         """Hook after optimizers/DDP wrappers are created."""
 
+    def _before_first_rollout(self) -> None:
+        """Hook at the start of fit(): after any checkpoint load, before the first rollout.
+
+        Runs on every launch (fresh, warm start, resume), so state that is not in
+        the checkpoint -- e.g. a normaliser freeze -- is applied here.
+        """
+
     @abstractmethod
     def create_model(self):
         pass
@@ -690,6 +697,7 @@ class BaseAgent:
         if self.fit_start_time is None:
             self.fit_start_time = time.time()
         self.fabric.call("on_fit_start", self)
+        self._before_first_rollout()
 
         while self.current_epoch < self.max_epochs:
             self.epoch_start_time = time.time()

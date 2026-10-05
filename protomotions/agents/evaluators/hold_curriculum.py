@@ -338,11 +338,35 @@ def update_score_ema(previous: Optional[Tensor], current: Tensor, keep: float) -
 
 
 def mixture_sampling_probs(
-    score_ema: Tensor, uniform_fraction: float, power: float = 1.0, eps: float = 1e-3
+    score_ema: Tensor, uniform_fraction: float, power: float = 1.0, eps: float = 1e-3,
+    prior: Optional[Tensor] = None,
 ) -> Tensor:
     """``uniform_fraction`` of the mass uniform over clips, the rest in proportion to
-    ``(1 - score) ** power + eps``. Every clip keeps at least ``uniform_fraction / N``."""
+    ``(1 - score) ** power + eps``. Every clip keeps at least ``uniform_fraction / N``.
+
+    ``prior`` (``[N]``, non-negative, card E3): the uniform share becomes
+    ``uniform_fraction * w_m / sum(w)`` -- e.g. the package's yaml weights, so a clip
+    weighted 3 is sampled like three. ``None`` is the path above, unchanged."""
     n = score_ema.numel()
     need = (1.0 - score_ema).clamp(min=0.0).pow(power) + eps
     prioritized = need / need.sum()
-    return uniform_fraction / n + (1.0 - uniform_fraction) * prioritized
+    if prior is not None:
+        prior = prior.to(device=score_ema.device)
+    return uniform_share(n, uniform_fraction, prior) + (1.0 - uniform_fraction) * prioritized
+
+
+def uniform_share(n: int, uniform_fraction: float, prior: Optional[Tensor] = None):
+    """The mixture's uniform share per clip: the float ``uniform_fraction / n``, or with a
+    prior the tensor ``uniform_fraction * w_m / sum(w)``.
+
+    The prior is applied as ``(uniform_fraction / n) * (w_m * n / sum(w))`` -- the same
+    product, ordered so that equal weights give the factor 1.0 exactly and the result is
+    bit-identical to the no-prior path (``u * w / sum(w)`` rounds differently)."""
+    if prior is None:
+        return uniform_fraction / n
+    prior = prior.to(dtype=torch.float32)
+    if prior.numel() != n:
+        raise ValueError(f"motion prior has {prior.numel()} weights for {n} motions")
+    if bool((prior < 0).any()) or not bool(torch.isfinite(prior).all()) or float(prior.sum()) <= 0.0:
+        raise ValueError("motion prior weights must be finite, non-negative and not all zero")
+    return uniform_fraction / n * (prior * n / prior.sum())

@@ -100,11 +100,27 @@ class ContactGraphMotionManagerConfig(MimicMotionManagerConfig):
             "max": 1.0,
         },
     )
+    # Plain scalar default on purpose: a config pickled before this field existed
+    # reads the class default, 0.0, which is the behaviour it was trained with.
+    segment_end_prob: float = field(
+        default=0.0,
+        metadata={
+            "help": "Probability a reset starts just before a graph segment ENDS "
+            "(departure anchoring: t_end - U(0, pre_roll_s)) rather than at the "
+            "uniformly-sampled time. Shares the draw with segment_start_prob, so "
+            "segment_start_prob + segment_end_prob must be <= 1. A clip's segments "
+            "that end within env_dt of the clip's end are never drawn; a clip with "
+            "no other segment keeps its uniform time.",
+            "min": 0.0,
+            "max": 1.0,
+        },
+    )
     pre_roll_s: float = field(
         default=0.5,
         metadata={
             "help": "Start up to this many seconds BEFORE the chosen segment "
-            "begins, sampled uniformly in [0, pre_roll_s]. A fixed offset would "
+            "begins (or, for a departure start, ends), sampled uniformly in "
+            "[0, pre_roll_s]. A fixed offset would "
             "put every episode at the same phase relative to the transition; the "
             "spread covers the approach as well as the hold.",
             "min": 0.0,

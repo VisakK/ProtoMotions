@@ -199,3 +199,15 @@ class PPOAgentConfig(BaseAgentConfig):
         default_factory=AdvantageNormalizationConfig,
         metadata={"help": "Advantage normalization settings."},
     )
+
+    # Fine-tune normaliser freeze (graph_growth PLAN.MD card E3). A plain default,
+    # so a config pickled before the field existed reads False.
+    freeze_obs_normalizers: bool = field(
+        default=False,
+        metadata={
+            "help": "Freeze the actor's and the critic's observation normalisers "
+            "(running mean/var) for the whole run, re-applied on every launch after "
+            "the checkpoint loads; verified unchanged after the first epoch. Other "
+            "normalisers (an AMP discriminator's, its critic's) stay free."
+        },
+    )

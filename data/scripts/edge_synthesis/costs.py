@@ -32,6 +32,11 @@ term                charge
 ``speed``           a body faster than the corpus p99 of that body ("joint velocity and jerk, against corpus
                     percentiles"); ``smooth`` charges the PD targets' second difference
 ``box``             PhysX's exp-map box excess ("exp-map box excess")
+``cone``            card T6's landing cone (weight 0 unless a recipe sets it): every collider point of a making
+                    zone that touches the floor at D lies at least ``CONE_SLOPE`` x its horizontal distance from
+                    its own spot at D (less ``CONE_TOL_M``) above that spot's height. A short touchdown and a
+                    loaded foot sliding toward its spot (both measured on the first PhysX B1 runs: 15-26 cm short,
+                    then 10-20 cm of slide) cost the same as their distance; landing on the spot costs nothing
 ==================  =========================================================================================
 
 Self-penetration is left to the physics (MuJoCo's contacts keep every pair the plant collides apart) and checked
@@ -55,7 +60,7 @@ CORPUS_KIN = ids.REPO / "output/edge_synthesis/corpus_body_kinematics.json"
 SCALES = {"pos": 0.05, "support": 0.01, "anchor": 0.01, "slip": 0.05, "place": 0.03, "free": 0.01, "landing": 1.0,
           "flat": 0.05, "capture": 0.02,
           "balance": 0.02, "ang_mom": 5.0, "torque": 0.1, "speed": 0.25, "smooth": 0.05, "box": 0.05,
-          "height": 0.05, "up": 0.1, "com_vel": 0.1}
+          "height": 0.05, "up": 0.1, "com_vel": 0.1, "cone": 0.01}
 LOAD_N = 5.0                 # a zone "carries load" above this normal force
 FREE_M = 0.02                # known-free zones stay this far above the floor
 CLEAR_M = {"HEAD": 0.06, "TRUNK": 0.06}   # ... and these this far (a face plant in the first E5 run)
@@ -63,6 +68,9 @@ PLANTED_M = 0.01             # a planted support's lowest point lies within this
 LANDING_BW = 3.0
 TORQUE_UTIL = 0.8
 BALANCE_MARGIN_M = 0.015
+CONE_SLOPE = 0.25            # exact.CONE_SLOPE: a landing point at height h lies within h / CONE_SLOPE of its spot ...
+CONE_TOL_M = 0.015           # ... less the card's 1.5 cm placement tolerance
+CONE_TOUCH_M = 0.015         # D's collider points this close to the floor are a making zone's landing points
 
 
 @dataclass
@@ -84,6 +92,7 @@ class EdgeWeights:
     speed: float = 1.0
     smooth: float = 0.05
     box: float = 20.0
+    cone: float = 0.0
 
 
 def corpus_speed_p99() -> np.ndarray:
@@ -167,6 +176,16 @@ class EdgeCost:
         self.zone_bodies = [[plant.body_index[b] for b in ZONES[z]] for z in ZONE_ORDER]
         # making zones: from their event on they should land where D has them
         self.place = [(te, ZONE_ORDER.index(z)) for te, z, kind in sched.events if kind == "make"]
+        # the landing cone's points: the making zones' collider points that touch the floor at D
+        sk = self.sk
+        cands = np.concatenate([sk.zone_cands[zi] for _, zi in self.place]).astype(int) if self.place else \
+            np.zeros(0, int)
+        cb = sk.cand_body[cands]
+        pts = dp[0, cb] + np.einsum("kij,kj->ki", dr[0, cb], sk.cand_local[cands])
+        h = pts[:, 2] - sk.cand_radius[cands]
+        keep = h < CONE_TOUCH_M
+        self.cone_body, self.cone_local = cb[keep], sk.cand_local[cands][keep]
+        self.cone_radius, self.cone_xy, self.cone_h0 = sk.cand_radius[cands][keep], pts[keep, :2], h[keep]
         # the support hull of every phase, from the sketch at the phase's midpoint (planted zones do not move)
         self.hulls = {}
         for p in range(-1, len(sched.phase_names) + 1):
@@ -261,9 +280,16 @@ class EdgeCost:
             terms["smooth"] = w.smooth * ((dd / S["smooth"]) ** 2).sum((1, 2)) / self.plant.nu
         _, _, dof = self.plant.expmap_from_qpos(r.qpos)
         terms["box"] = w.box * ((self.plant.box_excess(dof) / S["box"]) ** 2).sum((1, 2))
+        terms["cone"] = np.zeros(n)
+        if w.cone and len(self.cone_body):
+            cp = pos[:, :, self.cone_body] + np.einsum("nhkij,kj->nhki", rot[:, :, self.cone_body], self.cone_local)
+            d = np.linalg.norm(cp[..., :2] - self.cone_xy, axis=-1)
+            g = cp[..., 2] - self.cone_radius - self.cone_h0 - CONE_SLOPE * np.maximum(d - CONE_TOL_M, 0.0)
+            terms["cone"] = w.cone * ((np.minimum(g, 0.0) / S["cone"]) ** 2).sum((1, 2))
         total = sum(terms.values())
         return total, terms
 
     def describe(self) -> dict:
         return {"weights": asdict(self.w), "scales": SCALES, "planted_from_start": self.planted_from_start,
-                "hull_sizes": {int(k): int(len(v)) for k, v in self.hulls.items()}}
+                "hull_sizes": {int(k): int(len(v)) for k, v in self.hulls.items()},
+                "cone": {"points": int(len(self.cone_body)), "slope": CONE_SLOPE, "tol_m": CONE_TOL_M}}

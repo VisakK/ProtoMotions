@@ -19,15 +19,24 @@ endpoints           final 6-body error to D <= 0.05 m; COM speed <= 0.05 m/s at 
                     at a crow end
 physx               stored ``rigid_body_pos`` = FK of the stored coordinates to 1e-5 m; the clip loads into a
                     ``MotionLib`` whose plant is smpl_yogi_v2's (CPU); 0 launches at reset in PhysX -- **pending**
-                    (IsaacLab needs the GPU, which G1 holds)
+                    until ``--physx-launch-check`` gives ``retarget_v2_physx.py``'s record of the same files
+seams               card T6 (``seams.check``): the first frame at S's exemplar (every body <= 1 cm, the planted hands
+                    <= 0.5 cm), the last frame's planted bodies at D's exemplar placed by the hand-anchor transform
+                    (<= 1.5 cm), and planted bodies drifting <= 0.5 cm inside the variant; ``end_attainable`` passes
+                    the bodies whose end offset is the exemplars' own (``seams``' module doc)
 ==================  ===================================================================================================
 
 A variant is ``admitted`` when every computed check passes, and stays ``provisional`` while a pending check is
 pending: the gate never assumes a check it could not run. The advisory VLM packet (Pass-C style) is not run here.
+With ``--policy d1`` every row also carries the user's D1 decision as ``select_variants`` applies it (``d1``), and
+the record the policy itself (``d1_policy``); by default with the user's T6 reading of the seam group
+(``select_variants.T6_DECISION``: drift 1.0 cm, end attainable, the landings' slide accepted).
 
 CLI::
 
     PYTHONPATH=.:data/scripts python -m edge_synthesis.admit output/edge_synthesis/motions/SYN_*.json
+    PYTHONPATH=.:data/scripts python -m edge_synthesis.admit output/edge_synthesis/physx/motions_t6/SYN_*.json \\
+        --physx-launch-check output/edge_synthesis/physx/physx_launch_check_t6.json --policy d1 --out <json>
 """
 
 from __future__ import annotations
@@ -204,32 +213,89 @@ def check_variant(js: Path) -> dict:
     physx = {"round_trip_pos_m": rt_["pos_m"], "round_trip_ok": fw.round_trip_ok(rt_), "motionlib_cpu_plant_v2": plant_ok,
              "motionlib_frames": int(lib.motion_num_frames[0]), "launches_at_reset": "pending (IsaacLab, GPU)"}
     physx["pass_cpu"] = physx["round_trip_ok"] and plant_ok is True
-    out.update(contract=contract, statics=statics, dynamics=dynamics, naturalness=nat, endpoints=endpoints, physx=physx)
-    computed = [contract["pass"], statics["pass"], dynamics["pass"], nat["pass_p99"], endpoints["pass"], physx["pass_cpu"]]
-    out["failed"] = [k for k, ok in zip(("contract", "statics", "dynamics", "naturalness_p99", "endpoints", "physx_cpu"),
-                                        computed) if not ok]
+    # ---------------- seams (card T6)
+    from edge_synthesis import seams as SM
+    sm = SM.check(mot, e)
+    sm["legacy"] = SM.legacy(mot, e)
+    out.update(contract=contract, statics=statics, dynamics=dynamics, naturalness=nat, endpoints=endpoints, physx=physx,
+               seams=sm)
+    out["held"] = bool(m.get("held"))
+    computed = [contract["pass"], statics["pass"], dynamics["pass"], nat["pass_p99"], endpoints["pass"], physx["pass_cpu"],
+                sm["pass"]]
+    out["failed"] = [k for k, ok in zip(("contract", "statics", "dynamics", "naturalness_p99", "endpoints", "physx_cpu",
+                                         "seams"), computed) if not ok]
     out["decision"] = "provisional" if all(computed) else "rejected"
     out["pending"] = ["naturalness critic (E5)", "PhysX: 0 launches at reset"]
     return out
+
+
+def apply_launch_check(rows: list, path: Path) -> dict:
+    """Fill every row's PhysX reset launches from ``retarget_v2_physx.py``'s record of the same files (the sha256 of
+    each motion must be the record's input) and return the record's summary."""
+    chk = json.load(open(path))
+    inputs = {Path(k).name: v for k, v in chk["inputs"].items()}
+    if chk.get("failures"):
+        raise RuntimeError(f"{path}: the launch check itself failed: {chk['failures']}")
+    launched = chk["reset"]["launched"]
+    rows_l = chk["reset"]["launched_rows"]
+    per_clip = chk["fk"]["frames"] // max(chk["fk"]["clips"], 1)
+    for r in rows:
+        name = Path(r["motion"]).name
+        if inputs.get(name) != r["sha256"]:
+            raise RuntimeError(f"{name}: not in {path}, or changed since (sha256 {inputs.get(name)} vs {r['sha256']})")
+        n = sum(1 for x in rows_l if x["stem"] == Path(name).stem)
+        exact = launched == len(rows_l)
+        r["physx"]["launches_at_reset"] = (f"{n} of {per_clip} frames (retarget_v2_physx, {ids.display_path(path)})"
+                                           + ("" if exact else f"; the record lists {len(rows_l)} of {launched}"))
+        r["physx"]["pass_reset"] = n == 0 and (exact or launched == 0)
+        r["pending"] = [p for p in r["pending"] if not p.startswith("PhysX")]
+    return {k: chk[k] for k in ("library", "fk")} | {"reset_launched": launched, "reset_frames": chk["reset"]["frames"],
+                                                      "record": ids.display_path(path)}
 
 
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
     ap.add_argument("variants", nargs="+", type=Path, help="export_motion JSON records")
     ap.add_argument("--out", type=Path, default=OUT)
+    ap.add_argument("--physx-launch-check", type=Path, default=None,
+                    help="retarget_v2_physx.py's record of these motions: fills the PhysX reset launches")
+    ap.add_argument("--policy", choices=("none", "d1"), default="none",
+                    help="d1: record the user's D1 decision per variant (select_variants.verdict) and the policy")
+    ap.add_argument("--seam-end", choices=("attainable", "strict"), default="attainable",
+                    help="with --policy d1: how D1's hard seam group reads the end seam (seams' module doc)")
+    ap.add_argument("--drift-cm", type=float, default=1.0,
+                    help="with --policy d1: the drift threshold D1 reads (the user's 1.0 cm; the card's 0.5)")
+    ap.add_argument("--landing-slide", choices=("accept", "reject"), default="accept",
+                    help="with --policy d1: accept (the user's) keeps only the start seam hard on a landing edge")
+    ap.add_argument("--note", default=None)
     args = ap.parse_args(argv)
     print("cpu policy", gpu_guard.be_polite(), flush=True)
     torch.set_num_threads(1)
     rows = [check_variant(p) for p in args.variants]
+    extra = {}
+    if args.physx_launch_check is not None:
+        extra["physx_launch_check"] = apply_launch_check(rows, args.physx_launch_check)
+    if args.policy == "d1":
+        from edge_synthesis import select_variants as SV
+        extra["d1_policy"] = SV.policy(args.seam_end, args.drift_cm, args.landing_slide)
+        for r in rows:
+            r["d1"] = SV.verdict(r, args.seam_end, drift_cm=args.drift_cm, landing_slide=args.landing_slide)
+    if args.note:
+        extra["note"] = args.note
+    from edge_synthesis import seams as SM
     rec = {**ids.provenance(1, "edge_synthesis.admit", __file__, args.variants), "kind": "edge_admission",
            "thresholds": {"box_deg": BOX_DEG, "floor_cm": FLOOR_CM, "overlap_m": OVERLAP_M, "acc_max": ACC_MAX,
                           "impact_s": IMPACT_S, "torque_util": TORQUE_UTIL, "torque_share": TORQUE_SHARE, "mu": MU,
-                          "cone_tol": CONE_TOL, "d6_max": D6_MAX, "com_speed_max": COM_SPEED_MAX, "brace_cm": BRACE_CM},
-           "variants": rows,
-           "summary": {r["variant"]: {"decision": r["decision"], "failed": r["failed"]} for r in rows}}
+                          "cone_tol": CONE_TOL, "d6_max": D6_MAX, "com_speed_max": COM_SPEED_MAX, "brace_cm": BRACE_CM,
+                          "seams_cm": {"start_all": SM.START_ALL_CM, "start_planted": SM.START_PLANTED_CM,
+                                       "end_planted": SM.END_PLANTED_CM, "drift": SM.DRIFT_CM}},
+           **extra, "variants": rows,
+           "summary": {r["variant"]: {"decision": r["decision"], "failed": r["failed"],
+                                      **({"d1": r["d1"]["selected"]} if "d1" in r else {})} for r in rows}}
     args.out.write_text(json.dumps(rec, indent=1, default=str) + "\n")
     for r in rows:
-        print(r["variant"], r["decision"], "failed:", r["failed"])
+        print(r["variant"], r["decision"], "failed:", r["failed"],
+              *(["| D1:", "selected" if r["d1"]["selected"] else f"rejected {r['d1']['failed_hard']}"] if "d1" in r else []))
     return 0
 
 

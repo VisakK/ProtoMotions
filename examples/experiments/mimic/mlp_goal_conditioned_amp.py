@@ -28,6 +28,13 @@ random (``AMPAgentMixin._load_model_state_dict``). The task reward is unchanged,
 what makes restoring the optimisation state correct. Launcher:
 ``data/scripts/run_expert_amp_ft.sh`` (``CONTROL=1`` runs the matched no-AMP
 continuation with the base experiment file).
+
+Warm start from an AMP checkpoint (G3 from G1, card E6): the discriminator networks load
+with the model, and ``--warm-start-optimization-state`` also restores their optimisers,
+the AMP reward normaliser and the weight calibration (with calibration off, the
+configured ``--amp-reward-w`` wins). ``--amp-lineage-weights PATTERN=W ...`` weights the
+style reward per motion lineage (G3: ``SYN_=0.5``). Launcher:
+``data/scripts/run_expert_graph_ft.sh``.
 """
 
 from __future__ import annotations
@@ -71,6 +78,17 @@ def _bool(v) -> bool:
     return str(v).lower() not in ("0", "false", "no")
 
 
+def _lineage_rule(v) -> str:
+    """argparse type for ``--amp-lineage-weights``: validates one PATTERN=W, keeps the string."""
+    from protomotions.agents.amp.goal_conditioned import parse_amp_lineage_rule
+
+    try:
+        parse_amp_lineage_rule(v)
+    except ValueError as exc:
+        raise argparse.ArgumentTypeError(str(exc)) from None
+    return str(v)
+
+
 def additional_experiment_arguments(parser: argparse.ArgumentParser):
     base.additional_experiment_arguments(parser)
     g = parser.add_argument_group("AMP (graph-growth card E2)")
@@ -97,6 +115,14 @@ def additional_experiment_arguments(parser: argparse.ArgumentParser):
                    help="Motion-stem substrings never used as demonstrations (x3s/x7s variants are always excluded).")
     g.add_argument("--amp-parity-check", type=_bool, default=True,
                    help="Compare agent and demonstration features once at the first rollout step.")
+    g.add_argument("--amp-lineage-weights", type=_lineage_rule, nargs="*", default=[], metavar="PATTERN=W",
+                   help="Per-lineage style-reward weights (card E6): the AMP reward of a motion whose stem contains "
+                        "PATTERN is multiplied by W (finite, >= 0) before the reward normaliser; the first rule "
+                        "that matches wins, in the order given; unmatched motions weigh 1.0. Per motion, not per "
+                        "frame (PLAN.MD D4). Substring match: a pattern also covers every stem that extends it "
+                        "(SYN_E1_press_high_s0_t6px matches ..._t6px12 too), so list the longer pattern first. "
+                        "Rules also switch on amp/reward_mean_{syn,human} and amp/syn_sample_share. Default: "
+                        "none (G1's config).")
 
 
 def env_config(robot_cfg: RobotConfig, args: argparse.Namespace) -> EnvConfig:
@@ -135,7 +161,7 @@ def env_config(robot_cfg: RobotConfig, args: argparse.Namespace) -> EnvConfig:
 
 def agent_config(robot_config: RobotConfig, env_config: EnvConfig, args: argparse.Namespace):
     from protomotions.agents.amp.config import AMPModelConfig, AMPParametersConfig, DiscriminatorConfig
-    from protomotions.agents.amp.goal_conditioned import GoalConditionedAMPAgentConfig
+    from protomotions.agents.amp.goal_conditioned import GoalConditionedAMPAgentConfig, parse_amp_lineage_weights
     from protomotions.agents.base_agent.config import OptimizerConfig
     from protomotions.agents.common.config import MLPLayerConfig, MLPWithConcatConfig, ModuleContainerConfig
     from protomotions.agents.ppo.config import PPOAgentConfig
@@ -232,6 +258,7 @@ def agent_config(robot_config: RobotConfig, env_config: EnvConfig, args: argpars
         amp_reward_w_max=float(getattr(args, "amp_w_max", 0.5)),
         demo_exclude_motions=list(getattr(args, "amp_demo_exclude_motions", None) or []),
         demo_min_time_steps=max(AMP_FEATURES_V1_STEPS),
+        amp_lineage_weights=parse_amp_lineage_weights(getattr(args, "amp_lineage_weights", None) or []),
         amp_parity_check=bool(getattr(args, "amp_parity_check", True)),
     )
 
